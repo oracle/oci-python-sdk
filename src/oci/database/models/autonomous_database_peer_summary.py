@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabasePeerSummary(object):
     """
-    The object holds details about a peer Autonomous Database for Oracle Autonomous Database.
+    The object holds details about a peer Autonomous AI Database for Oracle Autonomous AI Database.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class AutonomousDatabasePeerSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDatabasePeerSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -58,7 +58,7 @@ class AutonomousDatabasePeerSummary(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDatabasePeerSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class AutonomousDatabasePeerSummary(object):
     def region(self):
         """
         Gets the region of this AutonomousDatabasePeerSummary.
-        The name of the region where this peer Autonomous Database clone exists.
+        The name of the region where this peer Autonomous AI Database clone exists.
 
 
         :return: The region of this AutonomousDatabasePeerSummary.
@@ -84,7 +84,7 @@ class AutonomousDatabasePeerSummary(object):
     def region(self, region):
         """
         Sets the region of this AutonomousDatabasePeerSummary.
-        The name of the region where this peer Autonomous Database clone exists.
+        The name of the region where this peer Autonomous AI Database clone exists.
 
 
         :param region: The region of this AutonomousDatabasePeerSummary.

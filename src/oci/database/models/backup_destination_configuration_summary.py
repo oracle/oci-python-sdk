@@ -448,7 +448,7 @@ class BackupDestinationConfigurationSummary(object):
     def backup_retention_policy_on_terminate(self):
         """
         Gets the backup_retention_policy_on_terminate of this BackupDestinationConfigurationSummary.
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
         The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
 
@@ -465,7 +465,7 @@ class BackupDestinationConfigurationSummary(object):
     def backup_retention_policy_on_terminate(self, backup_retention_policy_on_terminate):
         """
         Sets the backup_retention_policy_on_terminate of this BackupDestinationConfigurationSummary.
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.
         The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
 

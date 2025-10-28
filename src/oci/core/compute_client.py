@@ -108,9 +108,11 @@ class ComputeClient(object):
             'base_path': '/20160918',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
+            'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
-            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled'),
+            'client_level_dualstack_endpoints_enabled': kwargs.get('client_level_dualstack_endpoints_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -10886,6 +10888,11 @@ class ComputeClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param bool compute_host_in_subtree: (optional)
+            When set to true, all the compartments in the tenancy are traversed
+            and the hosts in the specified tenancy and its compartments are fetched.
+            Default is false.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10925,7 +10932,8 @@ class ComputeClient(object):
             "sort_order",
             "compute_host_lifecycle_state",
             "compute_host_health",
-            "compute_host_group_id"
+            "compute_host_group_id",
+            "compute_host_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10957,7 +10965,8 @@ class ComputeClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "computeHostLifecycleState": kwargs.get("compute_host_lifecycle_state", missing),
             "computeHostHealth": kwargs.get("compute_host_health", missing),
-            "computeHostGroupId": kwargs.get("compute_host_group_id", missing)
+            "computeHostGroupId": kwargs.get("compute_host_group_id", missing),
+            "computeHostInSubtree": kwargs.get("compute_host_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

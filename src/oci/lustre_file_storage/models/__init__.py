@@ -7,13 +7,25 @@
 from __future__ import absolute_import
 
 from .change_lustre_file_system_compartment_details import ChangeLustreFileSystemCompartmentDetails
+from .change_object_storage_link_compartment_details import ChangeObjectStorageLinkCompartmentDetails
+from .cluster_placement_group import ClusterPlacementGroup
 from .create_lustre_file_system_details import CreateLustreFileSystemDetails
+from .create_object_storage_link_details import CreateObjectStorageLinkDetails
 from .lustre_file_system import LustreFileSystem
 from .lustre_file_system_collection import LustreFileSystemCollection
 from .lustre_file_system_summary import LustreFileSystemSummary
 from .maintenance_window import MaintenanceWindow
+from .network_security_group import NetworkSecurityGroup
+from .object_storage_link import ObjectStorageLink
+from .object_storage_link_collection import ObjectStorageLinkCollection
+from .object_storage_link_summary import ObjectStorageLinkSummary
 from .root_squash_configuration import RootSquashConfiguration
+from .subnet import Subnet
+from .sync_job import SyncJob
+from .sync_job_collection import SyncJobCollection
+from .sync_job_summary import SyncJobSummary
 from .update_lustre_file_system_details import UpdateLustreFileSystemDetails
+from .update_object_storage_link_details import UpdateObjectStorageLinkDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -26,13 +38,25 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for lustre_file_storage services.
 lustre_file_storage_type_mapping = {
     "ChangeLustreFileSystemCompartmentDetails": ChangeLustreFileSystemCompartmentDetails,
+    "ChangeObjectStorageLinkCompartmentDetails": ChangeObjectStorageLinkCompartmentDetails,
+    "ClusterPlacementGroup": ClusterPlacementGroup,
     "CreateLustreFileSystemDetails": CreateLustreFileSystemDetails,
+    "CreateObjectStorageLinkDetails": CreateObjectStorageLinkDetails,
     "LustreFileSystem": LustreFileSystem,
     "LustreFileSystemCollection": LustreFileSystemCollection,
     "LustreFileSystemSummary": LustreFileSystemSummary,
     "MaintenanceWindow": MaintenanceWindow,
+    "NetworkSecurityGroup": NetworkSecurityGroup,
+    "ObjectStorageLink": ObjectStorageLink,
+    "ObjectStorageLinkCollection": ObjectStorageLinkCollection,
+    "ObjectStorageLinkSummary": ObjectStorageLinkSummary,
     "RootSquashConfiguration": RootSquashConfiguration,
+    "Subnet": Subnet,
+    "SyncJob": SyncJob,
+    "SyncJobCollection": SyncJobCollection,
+    "SyncJobSummary": SyncJobSummary,
     "UpdateLustreFileSystemDetails": UpdateLustreFileSystemDetails,
+    "UpdateObjectStorageLinkDetails": UpdateObjectStorageLinkDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

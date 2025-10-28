@@ -51,6 +51,11 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
             Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
         :type runtime_support: str
 
+        :param runtime_identity:
+            The value to assign to the runtime_identity property of this CreateDatabaseToolsConnectionGenericJdbcDetails.
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+        :type runtime_identity: str
+
         :param url:
             The value to assign to the url property of this CreateDatabaseToolsConnectionGenericJdbcDetails.
         :type url: str
@@ -80,6 +85,7 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
             'locks': 'list[ResourceLock]',
             'type': 'str',
             'runtime_support': 'str',
+            'runtime_identity': 'str',
             'url': 'str',
             'user_name': 'str',
             'user_password': 'DatabaseToolsUserPasswordDetails',
@@ -94,6 +100,7 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
             'locks': 'locks',
             'type': 'type',
             'runtime_support': 'runtimeSupport',
+            'runtime_identity': 'runtimeIdentity',
             'url': 'url',
             'user_name': 'userName',
             'user_password': 'userPassword',
@@ -107,6 +114,7 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
         self._locks = None
         self._type = None
         self._runtime_support = None
+        self._runtime_identity = None
         self._url = None
         self._user_name = None
         self._user_password = None

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseConnectionStrings(object):
     """
-    Connection strings to connect to an Oracle Autonomous Database.
+    Connection strings to connect to an Oracle Autonomous AI Database.
 
     Example output for connection strings. See :func:`database_connection_string_profile` for additional details:
 
@@ -214,8 +214,8 @@ class AutonomousDatabaseConnectionStrings(object):
     def all_connection_strings(self):
         """
         Gets the all_connection_strings of this AutonomousDatabaseConnectionStrings.
-        Returns all connection strings that can be used to connect to the Autonomous Database.
-        For more information, please see `Predefined Database Service Names for Autonomous Transaction Processing`__
+        Returns all connection strings that can be used to connect to the Autonomous AI Database.
+        For more information, please see `Predefined Database Service Names for Autonomous AI Transaction Processing`__
 
         __ https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE
 
@@ -229,8 +229,8 @@ class AutonomousDatabaseConnectionStrings(object):
     def all_connection_strings(self, all_connection_strings):
         """
         Sets the all_connection_strings of this AutonomousDatabaseConnectionStrings.
-        Returns all connection strings that can be used to connect to the Autonomous Database.
-        For more information, please see `Predefined Database Service Names for Autonomous Transaction Processing`__
+        Returns all connection strings that can be used to connect to the Autonomous AI Database.
+        For more information, please see `Predefined Database Service Names for Autonomous AI Transaction Processing`__
 
         __ https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE
 

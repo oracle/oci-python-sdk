@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Oracle Autonomous Database by cloning from a backup of an existing Autonomous Database.
+    Details to create an Oracle Autonomous AI Database by cloning from a backup of an existing Autonomous AI Database.
     """
 
     #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseFromBackupDetails.
@@ -76,7 +76,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseFromBackupDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -449,7 +449,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     def autonomous_database_backup_id(self):
         """
         **[Required]** Gets the autonomous_database_backup_id of this CreateAutonomousDatabaseFromBackupDetails.
-        The `OCID`__ of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -463,7 +463,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     def autonomous_database_backup_id(self, autonomous_database_backup_id):
         """
         Sets the autonomous_database_backup_id of this CreateAutonomousDatabaseFromBackupDetails.
-        The `OCID`__ of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -477,7 +477,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     def clone_type(self):
         """
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseFromBackupDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
@@ -491,7 +491,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     def clone_type(self, clone_type):
         """
         Sets the clone_type of this CreateAutonomousDatabaseFromBackupDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
 
         :param clone_type: The clone_type of this CreateAutonomousDatabaseFromBackupDetails.
@@ -508,7 +508,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     def clone_table_space_list(self):
         """
         Gets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
 
 
         :return: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
@@ -520,7 +520,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     def clone_table_space_list(self, clone_table_space_list):
         """
         Sets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
 
 
         :param clone_table_space_list: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.

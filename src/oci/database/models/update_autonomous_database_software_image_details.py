@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAutonomousDatabaseSoftwareImageDetails(object):
     """
-    Describes the parameters for updating the Autonomous Database Software Image
+    Describes the parameters for updating the Autonomous AI Database Software Image
     """
 
     def __init__(self, **kwargs):

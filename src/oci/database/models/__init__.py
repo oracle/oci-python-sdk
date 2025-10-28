@@ -502,6 +502,7 @@ from .update_vm_cluster_details import UpdateVmClusterDetails
 from .update_vm_cluster_network_details import UpdateVmClusterNetworkDetails
 from .upgrade_database_details import UpgradeDatabaseDetails
 from .upgrade_db_system_details import UpgradeDbSystemDetails
+from .vanity_url_details import VanityUrlDetails
 from .vm_cluster import VmCluster
 from .vm_cluster_network import VmClusterNetwork
 from .vm_cluster_network_details import VmClusterNetworkDetails
@@ -1014,6 +1015,7 @@ database_type_mapping = {
     "UpdateVmClusterNetworkDetails": UpdateVmClusterNetworkDetails,
     "UpgradeDatabaseDetails": UpgradeDatabaseDetails,
     "UpgradeDbSystemDetails": UpgradeDbSystemDetails,
+    "VanityUrlDetails": VanityUrlDetails,
     "VmCluster": VmCluster,
     "VmClusterNetwork": VmClusterNetwork,
     "VmClusterNetworkDetails": VmClusterNetworkDetails,

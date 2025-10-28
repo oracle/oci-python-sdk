@@ -48,6 +48,10 @@ class CreatePrivateIpDetails(object):
             The value to assign to the ip_address property of this CreatePrivateIpDetails.
         :type ip_address: str
 
+        :param cidr_prefix_length:
+            The value to assign to the cidr_prefix_length property of this CreatePrivateIpDetails.
+        :type cidr_prefix_length: int
+
         :param vnic_id:
             The value to assign to the vnic_id property of this CreatePrivateIpDetails.
         :type vnic_id: str
@@ -59,6 +63,10 @@ class CreatePrivateIpDetails(object):
         :param subnet_id:
             The value to assign to the subnet_id property of this CreatePrivateIpDetails.
         :type subnet_id: str
+
+        :param ipv4_subnet_cidr_at_creation:
+            The value to assign to the ipv4_subnet_cidr_at_creation property of this CreatePrivateIpDetails.
+        :type ipv4_subnet_cidr_at_creation: str
 
         :param lifetime:
             The value to assign to the lifetime property of this CreatePrivateIpDetails.
@@ -76,9 +84,11 @@ class CreatePrivateIpDetails(object):
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'ip_address': 'str',
+            'cidr_prefix_length': 'int',
             'vnic_id': 'str',
             'vlan_id': 'str',
             'subnet_id': 'str',
+            'ipv4_subnet_cidr_at_creation': 'str',
             'lifetime': 'str',
             'route_table_id': 'str'
         }
@@ -88,9 +98,11 @@ class CreatePrivateIpDetails(object):
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
+            'cidr_prefix_length': 'cidrPrefixLength',
             'vnic_id': 'vnicId',
             'vlan_id': 'vlanId',
             'subnet_id': 'subnetId',
+            'ipv4_subnet_cidr_at_creation': 'ipv4SubnetCidrAtCreation',
             'lifetime': 'lifetime',
             'route_table_id': 'routeTableId'
         }
@@ -99,9 +111,11 @@ class CreatePrivateIpDetails(object):
         self._freeform_tags = None
         self._hostname_label = None
         self._ip_address = None
+        self._cidr_prefix_length = None
         self._vnic_id = None
         self._vlan_id = None
         self._subnet_id = None
+        self._ipv4_subnet_cidr_at_creation = None
         self._lifetime = None
         self._route_table_id = None
 
@@ -284,6 +298,42 @@ class CreatePrivateIpDetails(object):
         self._ip_address = ip_address
 
     @property
+    def cidr_prefix_length(self):
+        """
+        Gets the cidr_prefix_length of this CreatePrivateIpDetails.
+        An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs.
+        The CIDR range created by this combination must be within the subnet's CIDR
+        and the CIDR range should not collide with any existing IPv4 address allocation.
+        The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses.
+        If you don't specify a value, this option will be ignored.
+
+        Example: 18
+
+
+        :return: The cidr_prefix_length of this CreatePrivateIpDetails.
+        :rtype: int
+        """
+        return self._cidr_prefix_length
+
+    @cidr_prefix_length.setter
+    def cidr_prefix_length(self, cidr_prefix_length):
+        """
+        Sets the cidr_prefix_length of this CreatePrivateIpDetails.
+        An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs.
+        The CIDR range created by this combination must be within the subnet's CIDR
+        and the CIDR range should not collide with any existing IPv4 address allocation.
+        The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses.
+        If you don't specify a value, this option will be ignored.
+
+        Example: 18
+
+
+        :param cidr_prefix_length: The cidr_prefix_length of this CreatePrivateIpDetails.
+        :type: int
+        """
+        self._cidr_prefix_length = cidr_prefix_length
+
+    @property
     def vnic_id(self):
         """
         Gets the vnic_id of this CreatePrivateIpDetails.
@@ -376,6 +426,30 @@ class CreatePrivateIpDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def ipv4_subnet_cidr_at_creation(self):
+        """
+        Gets the ipv4_subnet_cidr_at_creation of this CreatePrivateIpDetails.
+        Any one of the IPv4 CIDRs allocated to the subnet.
+
+
+        :return: The ipv4_subnet_cidr_at_creation of this CreatePrivateIpDetails.
+        :rtype: str
+        """
+        return self._ipv4_subnet_cidr_at_creation
+
+    @ipv4_subnet_cidr_at_creation.setter
+    def ipv4_subnet_cidr_at_creation(self, ipv4_subnet_cidr_at_creation):
+        """
+        Sets the ipv4_subnet_cidr_at_creation of this CreatePrivateIpDetails.
+        Any one of the IPv4 CIDRs allocated to the subnet.
+
+
+        :param ipv4_subnet_cidr_at_creation: The ipv4_subnet_cidr_at_creation of this CreatePrivateIpDetails.
+        :type: str
+        """
+        self._ipv4_subnet_cidr_at_creation = ipv4_subnet_cidr_at_creation
 
     @property
     def lifetime(self):

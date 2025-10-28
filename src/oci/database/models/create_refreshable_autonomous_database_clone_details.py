@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Oracle Autonomous Database refreshable clone.
+    Details to create an Oracle Autonomous AI Database refreshable clone.
     """
 
     #: A constant which can be used with the refreshable_mode property of a CreateRefreshableAutonomousDatabaseCloneDetails.
@@ -92,7 +92,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateRefreshableAutonomousDatabaseCloneDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -495,7 +495,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def source_id(self):
         """
         **[Required]** Gets the source_id of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -509,7 +509,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def source_id(self, source_id):
         """
         Sets the source_id of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -523,7 +523,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def refreshable_mode(self):
         """
         Gets the refreshable_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
 
         Allowed values for this property are: "AUTOMATIC", "MANUAL"
 
@@ -537,7 +537,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def refreshable_mode(self, refreshable_mode):
         """
         Sets the refreshable_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
 
 
         :param refreshable_mode: The refreshable_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
@@ -602,7 +602,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def time_of_auto_refresh_start(self):
         """
         Gets the time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 
 
         :return: The time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
@@ -614,7 +614,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def time_of_auto_refresh_start(self, time_of_auto_refresh_start):
         """
         Sets the time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 
 
         :param time_of_auto_refresh_start: The time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
@@ -626,7 +626,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def open_mode(self):
         """
         Gets the open_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -642,7 +642,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -661,7 +661,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def clone_type(self):
         """
         Gets the clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
@@ -675,7 +675,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     def clone_type(self, clone_type):
         """
         Sets the clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
 
         :param clone_type: The clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.

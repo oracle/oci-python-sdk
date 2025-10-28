@@ -90,6 +90,14 @@ class ExtensionSocialIdentityProvider(object):
             The value to assign to the consumer_secret property of this ExtensionSocialIdentityProvider.
         :type consumer_secret: str
 
+        :param apple_dev_id:
+            The value to assign to the apple_dev_id property of this ExtensionSocialIdentityProvider.
+        :type apple_dev_id: str
+
+        :param apple_key_id:
+            The value to assign to the apple_key_id property of this ExtensionSocialIdentityProvider.
+        :type apple_key_id: str
+
         :param service_provider_name:
             The value to assign to the service_provider_name property of this ExtensionSocialIdentityProvider.
         :type service_provider_name: str
@@ -131,6 +139,8 @@ class ExtensionSocialIdentityProvider(object):
             'admin_scope': 'list[str]',
             'consumer_key': 'str',
             'consumer_secret': 'str',
+            'apple_dev_id': 'str',
+            'apple_key_id': 'str',
             'service_provider_name': 'str',
             'clock_skew_in_seconds': 'int',
             'redirect_url': 'str',
@@ -154,6 +164,8 @@ class ExtensionSocialIdentityProvider(object):
             'admin_scope': 'adminScope',
             'consumer_key': 'consumerKey',
             'consumer_secret': 'consumerSecret',
+            'apple_dev_id': 'appleDevId',
+            'apple_key_id': 'appleKeyId',
             'service_provider_name': 'serviceProviderName',
             'clock_skew_in_seconds': 'clockSkewInSeconds',
             'redirect_url': 'redirectUrl',
@@ -176,6 +188,8 @@ class ExtensionSocialIdentityProvider(object):
         self._admin_scope = None
         self._consumer_key = None
         self._consumer_secret = None
+        self._apple_dev_id = None
+        self._apple_key_id = None
         self._service_provider_name = None
         self._clock_skew_in_seconds = None
         self._redirect_url = None
@@ -910,6 +924,102 @@ class ExtensionSocialIdentityProvider(object):
         :type: str
         """
         self._consumer_secret = consumer_secret
+
+    @property
+    def apple_dev_id(self):
+        """
+        Gets the apple_dev_id of this ExtensionSocialIdentityProvider.
+        Apple Developer ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :return: The apple_dev_id of this ExtensionSocialIdentityProvider.
+        :rtype: str
+        """
+        return self._apple_dev_id
+
+    @apple_dev_id.setter
+    def apple_dev_id(self, apple_dev_id):
+        """
+        Sets the apple_dev_id of this ExtensionSocialIdentityProvider.
+        Apple Developer ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param apple_dev_id: The apple_dev_id of this ExtensionSocialIdentityProvider.
+        :type: str
+        """
+        self._apple_dev_id = apple_dev_id
+
+    @property
+    def apple_key_id(self):
+        """
+        Gets the apple_key_id of this ExtensionSocialIdentityProvider.
+        Apple Private Key ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :return: The apple_key_id of this ExtensionSocialIdentityProvider.
+        :rtype: str
+        """
+        return self._apple_key_id
+
+    @apple_key_id.setter
+    def apple_key_id(self, apple_key_id):
+        """
+        Sets the apple_key_id of this ExtensionSocialIdentityProvider.
+        Apple Private Key ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param apple_key_id: The apple_key_id of this ExtensionSocialIdentityProvider.
+        :type: str
+        """
+        self._apple_key_id = apple_key_id
 
     @property
     def service_provider_name(self):

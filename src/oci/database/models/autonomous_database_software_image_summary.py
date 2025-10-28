@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseSoftwareImageSummary(object):
     """
-    The Database service supports the creation of Autonomous Database Software Images for use in creating Autonomous Container Database.
+    The Database service supports the creation of Autonomous AI Database Software Images for use in creating Autonomous Container Database.
     """
 
     def __init__(self, **kwargs):
@@ -128,7 +128,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDatabaseSoftwareImageSummary.
-        The `OCID`__ of the Autonomous Database Software Image.
+        The `OCID`__ of the Autonomous AI Database Software Image.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -142,7 +142,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDatabaseSoftwareImageSummary.
-        The `OCID`__ of the Autonomous Database Software Image.
+        The `OCID`__ of the Autonomous AI Database Software Image.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -184,7 +184,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def database_version(self):
         """
         **[Required]** Gets the database_version of this AutonomousDatabaseSoftwareImageSummary.
-        The database version with which the Autonomous Database Software Image is to be built.
+        The database version with which the Autonomous AI Database Software Image is to be built.
 
 
         :return: The database_version of this AutonomousDatabaseSoftwareImageSummary.
@@ -196,7 +196,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def database_version(self, database_version):
         """
         Sets the database_version of this AutonomousDatabaseSoftwareImageSummary.
-        The database version with which the Autonomous Database Software Image is to be built.
+        The database version with which the Autonomous AI Database Software Image is to be built.
 
 
         :param database_version: The database_version of this AutonomousDatabaseSoftwareImageSummary.
@@ -208,7 +208,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AutonomousDatabaseSoftwareImageSummary.
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 
 
         :return: The display_name of this AutonomousDatabaseSoftwareImageSummary.
@@ -220,7 +220,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutonomousDatabaseSoftwareImageSummary.
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 
 
         :param display_name: The display_name of this AutonomousDatabaseSoftwareImageSummary.
@@ -232,7 +232,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseSoftwareImageSummary.
-        The current state of the Autonomous Database Software Image.
+        The current state of the Autonomous AI Database Software Image.
 
 
         :return: The lifecycle_state of this AutonomousDatabaseSoftwareImageSummary.
@@ -244,7 +244,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousDatabaseSoftwareImageSummary.
-        The current state of the Autonomous Database Software Image.
+        The current state of the Autonomous AI Database Software Image.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseSoftwareImageSummary.
@@ -280,7 +280,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AutonomousDatabaseSoftwareImageSummary.
-        The date and time the Autonomous Database Software Image was created.
+        The date and time the Autonomous AI Database Software Image was created.
 
 
         :return: The time_created of this AutonomousDatabaseSoftwareImageSummary.
@@ -292,7 +292,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutonomousDatabaseSoftwareImageSummary.
-        The date and time the Autonomous Database Software Image was created.
+        The date and time the Autonomous AI Database Software Image was created.
 
 
         :param time_created: The time_created of this AutonomousDatabaseSoftwareImageSummary.
@@ -422,7 +422,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def autonomous_dsi_one_off_patches(self):
         """
         Gets the autonomous_dsi_one_off_patches of this AutonomousDatabaseSoftwareImageSummary.
-        One-off patches included in the Autonomous Database Software Image
+        One-off patches included in the Autonomous AI Database Software Image
 
 
         :return: The autonomous_dsi_one_off_patches of this AutonomousDatabaseSoftwareImageSummary.
@@ -434,7 +434,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
     def autonomous_dsi_one_off_patches(self, autonomous_dsi_one_off_patches):
         """
         Sets the autonomous_dsi_one_off_patches of this AutonomousDatabaseSoftwareImageSummary.
-        One-off patches included in the Autonomous Database Software Image
+        One-off patches included in the Autonomous AI Database Software Image
 
 
         :param autonomous_dsi_one_off_patches: The autonomous_dsi_one_off_patches of this AutonomousDatabaseSoftwareImageSummary.

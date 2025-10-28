@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Oracle Autonomous Database by cloning an existing Autonomous Database.
+    Details to create an Oracle Autonomous AI Database by cloning an existing Autonomous AI Database.
     """
 
     #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseCloneDetails.
@@ -76,7 +76,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseCloneDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -442,7 +442,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     def source_id(self):
         """
         **[Required]** Gets the source_id of this CreateAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -456,7 +456,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     def source_id(self, source_id):
         """
         Sets the source_id of this CreateAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -470,7 +470,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     def clone_type(self):
         """
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseCloneDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
@@ -484,7 +484,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     def clone_type(self, clone_type):
         """
         Sets the clone_type of this CreateAutonomousDatabaseCloneDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
 
         :param clone_type: The clone_type of this CreateAutonomousDatabaseCloneDetails.

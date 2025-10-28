@@ -655,7 +655,7 @@ class CloudAutonomousVmClusterSummary(object):
         Gets the nsg_ids of this CloudAutonomousVmClusterSummary.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -672,7 +672,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the nsg_ids of this CloudAutonomousVmClusterSummary.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -1085,7 +1085,7 @@ class CloudAutonomousVmClusterSummary(object):
     def compute_model(self):
         """
         Gets the compute_model of this CloudAutonomousVmClusterSummary.
-        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure`__ for more details.
+        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure`__ for more details.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
@@ -1102,7 +1102,7 @@ class CloudAutonomousVmClusterSummary(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this CloudAutonomousVmClusterSummary.
-        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure`__ for more details.
+        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure`__ for more details.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
@@ -1191,10 +1191,10 @@ class CloudAutonomousVmClusterSummary(object):
     def license_model(self):
         """
         Gets the license_model of this CloudAutonomousVmClusterSummary.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1214,10 +1214,10 @@ class CloudAutonomousVmClusterSummary(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this CloudAutonomousVmClusterSummary.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1505,7 +1505,7 @@ class CloudAutonomousVmClusterSummary(object):
     def available_cpus(self):
         """
         Gets the available_cpus of this CloudAutonomousVmClusterSummary.
-        CPU cores available for allocation to Autonomous Databases.
+        CPU cores available for allocation to Autonomous AI Databases.
 
 
         :return: The available_cpus of this CloudAutonomousVmClusterSummary.
@@ -1517,7 +1517,7 @@ class CloudAutonomousVmClusterSummary(object):
     def available_cpus(self, available_cpus):
         """
         Sets the available_cpus of this CloudAutonomousVmClusterSummary.
-        CPU cores available for allocation to Autonomous Databases.
+        CPU cores available for allocation to Autonomous AI Databases.
 
 
         :param available_cpus: The available_cpus of this CloudAutonomousVmClusterSummary.
@@ -1529,7 +1529,7 @@ class CloudAutonomousVmClusterSummary(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this CloudAutonomousVmClusterSummary.
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this CloudAutonomousVmClusterSummary.
@@ -1541,7 +1541,7 @@ class CloudAutonomousVmClusterSummary(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this CloudAutonomousVmClusterSummary.
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this CloudAutonomousVmClusterSummary.
@@ -1601,7 +1601,7 @@ class CloudAutonomousVmClusterSummary(object):
     def available_autonomous_data_storage_size_in_tbs(self):
         """
         Gets the available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
 
 
         :return: The available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
@@ -1613,7 +1613,7 @@ class CloudAutonomousVmClusterSummary(object):
     def available_autonomous_data_storage_size_in_tbs(self, available_autonomous_data_storage_size_in_tbs):
         """
         Sets the available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
 
 
         :param available_autonomous_data_storage_size_in_tbs: The available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
@@ -1625,7 +1625,7 @@ class CloudAutonomousVmClusterSummary(object):
     def autonomous_data_storage_size_in_tbs(self):
         """
         Gets the autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
 
 
         :return: The autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
@@ -1637,7 +1637,7 @@ class CloudAutonomousVmClusterSummary(object):
     def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
         """
         Sets the autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
 
 
         :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterSummary.
@@ -1773,7 +1773,7 @@ class CloudAutonomousVmClusterSummary(object):
     def autonomous_data_storage_percentage(self):
         """
         Gets the autonomous_data_storage_percentage of this CloudAutonomousVmClusterSummary.
-        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
 
 
         :return: The autonomous_data_storage_percentage of this CloudAutonomousVmClusterSummary.
@@ -1785,7 +1785,7 @@ class CloudAutonomousVmClusterSummary(object):
     def autonomous_data_storage_percentage(self, autonomous_data_storage_percentage):
         """
         Sets the autonomous_data_storage_percentage of this CloudAutonomousVmClusterSummary.
-        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
 
 
         :param autonomous_data_storage_percentage: The autonomous_data_storage_percentage of this CloudAutonomousVmClusterSummary.
@@ -1845,7 +1845,7 @@ class CloudAutonomousVmClusterSummary(object):
     def total_autonomous_data_storage_in_tbs(self):
         """
         Gets the total_autonomous_data_storage_in_tbs of this CloudAutonomousVmClusterSummary.
-        The total data disk group size for Autonomous Databases, in TBs.
+        The total data disk group size for Autonomous AI Databases, in TBs.
 
 
         :return: The total_autonomous_data_storage_in_tbs of this CloudAutonomousVmClusterSummary.
@@ -1857,7 +1857,7 @@ class CloudAutonomousVmClusterSummary(object):
     def total_autonomous_data_storage_in_tbs(self, total_autonomous_data_storage_in_tbs):
         """
         Sets the total_autonomous_data_storage_in_tbs of this CloudAutonomousVmClusterSummary.
-        The total data disk group size for Autonomous Databases, in TBs.
+        The total data disk group size for Autonomous AI Databases, in TBs.
 
 
         :param total_autonomous_data_storage_in_tbs: The total_autonomous_data_storage_in_tbs of this CloudAutonomousVmClusterSummary.

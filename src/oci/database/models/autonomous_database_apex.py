@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseApex(object):
     """
-    Oracle APEX Application Development is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features. Autonomous Database with the APEX workload type is optimized to support APEX development.
+    Oracle APEX AI Application Development is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features. Autonomous AI Database with the APEX workload type is optimized to support APEX development.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class AutonomousDatabaseApex(object):
     def apex_version(self):
         """
         Gets the apex_version of this AutonomousDatabaseApex.
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
 
 
         :return: The apex_version of this AutonomousDatabaseApex.
@@ -56,7 +56,7 @@ class AutonomousDatabaseApex(object):
     def apex_version(self, apex_version):
         """
         Sets the apex_version of this AutonomousDatabaseApex.
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
 
 
         :param apex_version: The apex_version of this AutonomousDatabaseApex.

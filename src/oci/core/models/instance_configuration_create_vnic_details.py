@@ -63,6 +63,10 @@ class InstanceConfigurationCreateVnicDetails(object):
             The value to assign to the nsg_ids property of this InstanceConfigurationCreateVnicDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_cidr:
+            The value to assign to the subnet_cidr property of this InstanceConfigurationCreateVnicDetails.
+        :type subnet_cidr: str
+
         :param private_ip:
             The value to assign to the private_ip property of this InstanceConfigurationCreateVnicDetails.
         :type private_ip: str
@@ -87,6 +91,7 @@ class InstanceConfigurationCreateVnicDetails(object):
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'list[InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails]',
             'hostname_label': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_cidr': 'str',
             'private_ip': 'str',
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str'
@@ -102,6 +107,7 @@ class InstanceConfigurationCreateVnicDetails(object):
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
             'hostname_label': 'hostnameLabel',
             'nsg_ids': 'nsgIds',
+            'subnet_cidr': 'subnetCidr',
             'private_ip': 'privateIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId'
@@ -116,6 +122,7 @@ class InstanceConfigurationCreateVnicDetails(object):
         self._ipv6_address_ipv6_subnet_cidr_pair_details = None
         self._hostname_label = None
         self._nsg_ids = None
+        self._subnet_cidr = None
         self._private_ip = None
         self._skip_source_dest_check = None
         self._subnet_id = None
@@ -419,6 +426,42 @@ class InstanceConfigurationCreateVnicDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def subnet_cidr(self):
+        """
+        Gets the subnet_cidr of this InstanceConfigurationCreateVnicDetails.
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+        from which the VNIC's private IP address will be assigned if `privateIp` or
+        `privateIpId` is not specified.
+        Either this field or the `privateIp` (or `privateIpId`, if applicable) field
+        must be provided, but not both simultaneously.
+        Example: `192.168.1.0/28`
+        See the `subnetCidr` attribute of :class:`CreateVnicDetails` for more information.
+
+
+        :return: The subnet_cidr of this InstanceConfigurationCreateVnicDetails.
+        :rtype: str
+        """
+        return self._subnet_cidr
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, subnet_cidr):
+        """
+        Sets the subnet_cidr of this InstanceConfigurationCreateVnicDetails.
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+        from which the VNIC's private IP address will be assigned if `privateIp` or
+        `privateIpId` is not specified.
+        Either this field or the `privateIp` (or `privateIpId`, if applicable) field
+        must be provided, but not both simultaneously.
+        Example: `192.168.1.0/28`
+        See the `subnetCidr` attribute of :class:`CreateVnicDetails` for more information.
+
+
+        :param subnet_cidr: The subnet_cidr of this InstanceConfigurationCreateVnicDetails.
+        :type: str
+        """
+        self._subnet_cidr = subnet_cidr
 
     @property
     def private_ip(self):

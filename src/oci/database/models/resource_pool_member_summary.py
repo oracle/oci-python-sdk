@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourcePoolMemberSummary(object):
     """
-    An Autonomous Database resource pool member summary.
+    An Autonomous AI Database resource pool member summary.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ResourcePoolMemberSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResourcePoolMemberSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -51,7 +51,7 @@ class ResourcePoolMemberSummary(object):
     def id(self, id):
         """
         Sets the id of this ResourcePoolMemberSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

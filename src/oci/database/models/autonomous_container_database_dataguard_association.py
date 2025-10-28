@@ -326,7 +326,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def autonomous_container_database_id(self):
         """
         **[Required]** Gets the autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
-        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -340,7 +340,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def autonomous_container_database_id(self, autonomous_container_database_id):
         """
         Sets the autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
-        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -354,7 +354,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def role(self):
         """
         **[Required]** Gets the role of this AutonomousContainerDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -369,7 +369,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def role(self, role):
         """
         Sets the role of this AutonomousContainerDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousContainerDatabaseDataguardAssociation.
@@ -490,7 +490,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def peer_role(self):
         """
         **[Required]** Gets the peer_role of this AutonomousContainerDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -505,7 +505,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def peer_role(self, peer_role):
         """
         Sets the peer_role of this AutonomousContainerDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param peer_role: The peer_role of this AutonomousContainerDatabaseDataguardAssociation.

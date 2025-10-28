@@ -39,6 +39,14 @@ class UpdateLoadBalancerDetails(object):
             Allowed values for this property are: "IPV4", "IPV6"
         :type ip_mode: str
 
+        :param ipv6_subnet_cidr:
+            The value to assign to the ipv6_subnet_cidr property of this UpdateLoadBalancerDetails.
+        :type ipv6_subnet_cidr: str
+
+        :param reserved_ips:
+            The value to assign to the reserved_ips property of this UpdateLoadBalancerDetails.
+        :type reserved_ips: list[oci.load_balancer.models.ReservedIP]
+
         :param is_delete_protection_enabled:
             The value to assign to the is_delete_protection_enabled property of this UpdateLoadBalancerDetails.
         :type is_delete_protection_enabled: bool
@@ -67,6 +75,8 @@ class UpdateLoadBalancerDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'ip_mode': 'str',
+            'ipv6_subnet_cidr': 'str',
+            'reserved_ips': 'list[ReservedIP]',
             'is_delete_protection_enabled': 'bool',
             'is_request_id_enabled': 'bool',
             'request_id_header': 'str',
@@ -77,6 +87,8 @@ class UpdateLoadBalancerDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'ip_mode': 'ipMode',
+            'ipv6_subnet_cidr': 'ipv6SubnetCidr',
+            'reserved_ips': 'reservedIps',
             'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'is_request_id_enabled': 'isRequestIdEnabled',
             'request_id_header': 'requestIdHeader',
@@ -86,6 +98,8 @@ class UpdateLoadBalancerDetails(object):
         }
         self._display_name = None
         self._ip_mode = None
+        self._ipv6_subnet_cidr = None
+        self._reserved_ips = None
         self._is_delete_protection_enabled = None
         self._is_request_id_enabled = None
         self._request_id_header = None
@@ -165,6 +179,58 @@ class UpdateLoadBalancerDetails(object):
                 f"Invalid value for `ip_mode`, must be None or one of {allowed_values}"
             )
         self._ip_mode = ip_mode
+
+    @property
+    def ipv6_subnet_cidr(self):
+        """
+        Gets the ipv6_subnet_cidr of this UpdateLoadBalancerDetails.
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: \"2002::1234:abcd:ffff:c0a8:101/64\"
+
+
+        :return: The ipv6_subnet_cidr of this UpdateLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._ipv6_subnet_cidr
+
+    @ipv6_subnet_cidr.setter
+    def ipv6_subnet_cidr(self, ipv6_subnet_cidr):
+        """
+        Sets the ipv6_subnet_cidr of this UpdateLoadBalancerDetails.
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: \"2002::1234:abcd:ffff:c0a8:101/64\"
+
+
+        :param ipv6_subnet_cidr: The ipv6_subnet_cidr of this UpdateLoadBalancerDetails.
+        :type: str
+        """
+        self._ipv6_subnet_cidr = ipv6_subnet_cidr
+
+    @property
+    def reserved_ips(self):
+        """
+        Gets the reserved_ips of this UpdateLoadBalancerDetails.
+        An array of reserved Ips.
+
+
+        :return: The reserved_ips of this UpdateLoadBalancerDetails.
+        :rtype: list[oci.load_balancer.models.ReservedIP]
+        """
+        return self._reserved_ips
+
+    @reserved_ips.setter
+    def reserved_ips(self, reserved_ips):
+        """
+        Sets the reserved_ips of this UpdateLoadBalancerDetails.
+        An array of reserved Ips.
+
+
+        :param reserved_ips: The reserved_ips of this UpdateLoadBalancerDetails.
+        :type: list[oci.load_balancer.models.ReservedIP]
+        """
+        self._reserved_ips = reserved_ips
 
     @property
     def is_delete_protection_enabled(self):

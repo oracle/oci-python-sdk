@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseConnectionString(object):
     """
-    The Oracle Database connection string.
+    The Oracle AI Database connection string.
     """
 
     #: A constant which can be used with the protocol property of a DatabaseConnectionString.

@@ -102,9 +102,11 @@ class DatabaseClient(object):
             'base_path': '/20160918',
             'service_endpoint_template': 'https://database.{region}.{secondLevelDomain}',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
+            'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
-            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled'),
+            'client_level_dualstack_endpoints_enabled': kwargs.get('client_level_dualstack_endpoints_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -356,7 +358,7 @@ class DatabaseClient(object):
 
     def add_storage_capacity_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        Makes the storage capacity from additional storage servers available for Cloud VM Cluster consumption. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -826,7 +828,7 @@ class DatabaseClient(object):
 
     def autonomous_database_manual_refresh(self, autonomous_database_id, autonomous_database_manual_refresh_details, **kwargs):
         """
-        Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
+        Initiates a data refresh for an Autonomous AI Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
 
 
         :param str autonomous_database_id: (required)
@@ -835,7 +837,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
-            Request details for manually refreshing an Autonomous Database refreshable clone.
+            Request details for manually refreshing an Autonomous AI Database refreshable clone.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1420,15 +1422,15 @@ class DatabaseClient(object):
 
     def change_autonomous_database_compartment(self, change_compartment_details, autonomous_database_id, **kwargs):
         """
-        Move the Autonomous Database and its dependent resources to the specified compartment.
-        For more information about moving Autonomous Databases, see
+        Move the Autonomous AI Database and its dependent resources to the specified compartment.
+        For more information about moving Autonomous AI Databases, see
         `Moving Database Resources to a Different Compartment`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
-            Request to move Autonomous Database to a different compartment
+            Request to move Autonomous AI Database to a different compartment
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
@@ -1548,14 +1550,14 @@ class DatabaseClient(object):
 
     def change_autonomous_database_software_image_compartment(self, change_autonomous_database_software_image_compartment_details, autonomous_database_software_image_id, **kwargs):
         """
-        Move the Autonomous Database Software Image and its dependent resources to the specified compartment.
+        Move the Autonomous AI Database Software Image and its dependent resources to the specified compartment.
 
 
         :param oci.database.models.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails change_autonomous_database_software_image_compartment_details: (required)
-            Request to move Autonomous Database Software Image to a different compartment
+            Request to move Autonomous AI Database Software Image to a different compartment
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1666,11 +1668,11 @@ class DatabaseClient(object):
 
     def change_autonomous_database_subscription(self, change_autonomous_database_subscription_details, autonomous_database_id, **kwargs):
         """
-        Associate an Autonomous Database with a different subscription.
+        Associate an Autonomous AI Database with a different subscription.
 
 
         :param oci.database.models.ChangeAutonomousDatabaseSubscriptionDetails change_autonomous_database_subscription_details: (required)
-            Associate an Autonomous Database with a different subscription.
+            Associate an Autonomous AI Database with a different subscription.
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
@@ -2506,7 +2508,7 @@ class DatabaseClient(object):
 
     def change_cloud_exadata_infrastructure_compartment(self, change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see `Moving Database Resources to a Different Compartment`__.
+        Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see `Moving Database Resources to a Different Compartment`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
 
@@ -3356,7 +3358,7 @@ class DatabaseClient(object):
 
     def change_disaster_recovery_configuration(self, autonomous_database_id, change_disaster_recovery_configuration_details, **kwargs):
         """
-        This operation updates the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database, and must be run on the standby side.
+        This operation updates the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database, and must be run on the standby side.
 
 
         :param str autonomous_database_id: (required)
@@ -3365,7 +3367,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
-            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5498,7 +5500,7 @@ class DatabaseClient(object):
 
     def configure_autonomous_database_vault_key(self, autonomous_database_id, configure_autonomous_database_vault_key_details, **kwargs):
         """
-        Configures the Autonomous Database Vault service `key`__.
+        Configures the Autonomous AI Database Vault service `key`__.
 
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
@@ -5509,7 +5511,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails configure_autonomous_database_vault_key_details: (required)
-            Configuration details for the Autonomous Database Vault service `key`__.
+            Configuration details for the Autonomous AI Database Vault service `key`__.
 
             __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
@@ -5866,7 +5868,7 @@ class DatabaseClient(object):
 
     def configure_saas_admin_user(self, autonomous_database_id, configure_saas_admin_user_details, **kwargs):
         """
-        This operation updates SaaS administrative user configuration of the Autonomous Database.
+        This operation updates SaaS administrative user configuration of the Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -5875,7 +5877,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
-            Request to update SaaS administrative user configuration of the Autonomous Database.
+            Request to update SaaS administrative user configuration of the Autonomous AI Database.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6996,11 +6998,11 @@ class DatabaseClient(object):
 
     def create_autonomous_database(self, create_autonomous_database_details, **kwargs):
         """
-        Creates a new Autonomous Database.
+        Creates a new Autonomous AI Database.
 
 
         :param oci.database.models.CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
-            Request to create a new Autonomous Database.
+            Request to create a new Autonomous AI Database.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -7098,11 +7100,11 @@ class DatabaseClient(object):
 
     def create_autonomous_database_backup(self, create_autonomous_database_backup_details, **kwargs):
         """
-        Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
+        Creates a new Autonomous AI Database backup for the specified database based on the provided request parameters.
 
 
         :param oci.database.models.CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
-            Request to create a new Autonomous Database backup.
+            Request to create a new Autonomous AI Database backup.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -7200,11 +7202,11 @@ class DatabaseClient(object):
 
     def create_autonomous_database_software_image(self, create_autonomous_database_software_image_details, **kwargs):
         """
-        create Autonomous Database Software Image in the specified compartment.
+        create Autonomous AI Database Software Image in the specified compartment.
 
 
         :param oci.database.models.CreateAutonomousDatabaseSoftwareImageDetails create_autonomous_database_software_image_details: (required)
-            Request to create Autonomous Database Software Image.
+            Request to create Autonomous AI Database Software Image.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -7681,7 +7683,7 @@ class DatabaseClient(object):
 
     def create_cloud_exadata_infrastructure(self, create_cloud_exadata_infrastructure_details, **kwargs):
         """
-        Creates a cloud Exadata infrastructure resource. This resource is used to create either an `Exadata Cloud Service`__ instance or an Autonomous Database on dedicated Exadata infrastructure.
+        Creates a cloud Exadata infrastructure resource. This resource is used to create either an `Exadata Cloud Service`__ instance or an Autonomous AI Database on dedicated Exadata infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
@@ -10813,7 +10815,7 @@ class DatabaseClient(object):
 
     def delete_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Deletes the specified Autonomous Database.
+        Deletes the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -10830,7 +10832,7 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param bool must_delete_associated_long_term_backups: (optional)
-            If set to true, terminating the Autonomous Database also deletes its associated long-term backups if the retention lock is not enabled.
+            If set to true, terminating the Autonomous AI Database also deletes its associated long-term backups if the retention lock is not enabled.
 
         :param bool opc_dry_run: (optional)
             Indicates that the request is a dry run, if set to \"true\". A dry run request does not actually
@@ -10937,7 +10939,7 @@ class DatabaseClient(object):
 
 
         :param str autonomous_database_backup_id: (required)
-            The `OCID`__ of the Autonomous Database backup.
+            The `OCID`__ of the Autonomous AI Database backup.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11042,11 +11044,11 @@ class DatabaseClient(object):
 
     def delete_autonomous_database_software_image(self, autonomous_database_software_image_id, **kwargs):
         """
-        Delete an Autonomous Database Software Image
+        Delete an Autonomous AI Database Software Image
 
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11552,7 +11554,7 @@ class DatabaseClient(object):
 
     def delete_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -14287,7 +14289,7 @@ class DatabaseClient(object):
 
     def deregister_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
-        Asynchronously deregisters this Autonomous Database with Data Safe.
+        Asynchronously deregisters this Autonomous AI Database with Data Safe.
 
 
         :param str autonomous_database_id: (required)
@@ -14303,7 +14305,7 @@ class DatabaseClient(object):
             creating or updating a resource and is used only to perform validation on the submitted data.
 
         :param oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails deregister_autonomous_database_data_safe_details: (optional)
-            Details for deregistering an Autonomous Database with Data Safe.
+            Details for deregistering an Autonomous AI Database with Data Safe.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -14395,7 +14397,7 @@ class DatabaseClient(object):
 
     def disable_autonomous_database_management(self, autonomous_database_id, **kwargs):
         """
-        Disables Database Management for the Autonomous Database resource.
+        Disables Database Management for the Autonomous AI Database resource.
 
 
         :param str autonomous_database_id: (required)
@@ -14497,7 +14499,7 @@ class DatabaseClient(object):
 
     def disable_autonomous_database_operations_insights(self, autonomous_database_id, **kwargs):
         """
-        Disables Operations Insights for the Autonomous Database resource.
+        Disables Operations Insights for the Autonomous AI Database resource.
 
 
         :param str autonomous_database_id: (required)
@@ -16315,7 +16317,7 @@ class DatabaseClient(object):
 
     def enable_autonomous_database_management(self, autonomous_database_id, **kwargs):
         """
-        Enables Database Management for Autonomous Database.
+        Enables Database Management for Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -16417,7 +16419,7 @@ class DatabaseClient(object):
 
     def enable_autonomous_database_operations_insights(self, autonomous_database_id, **kwargs):
         """
-        Enables the specified Autonomous Database with Operations Insights.
+        Enables the specified Autonomous AI Database with Operations Insights.
 
 
         :param str autonomous_database_id: (required)
@@ -17715,7 +17717,7 @@ class DatabaseClient(object):
 
     def fail_over_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Initiates a failover of the specified Autonomous Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
+        Initiates a failover of the specified Autonomous AI Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
         This API should be called in the remote region where the peer database resides.
         Below parameter is optional:
           - `peerDbId`
@@ -18309,7 +18311,7 @@ class DatabaseClient(object):
 
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
-        Creates and downloads a wallet for the specified Autonomous Database.
+        Creates and downloads a wallet for the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -18318,7 +18320,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.GenerateAutonomousDatabaseWalletDetails generate_autonomous_database_wallet_details: (required)
-            Request to create a new Autonomous Database wallet.
+            Request to create a new Autonomous AI Database wallet.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -18919,7 +18921,7 @@ class DatabaseClient(object):
 
     def get_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Gets the details of the specified Autonomous Database.
+        Gets the details of the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -19017,11 +19019,11 @@ class DatabaseClient(object):
 
     def get_autonomous_database_backup(self, autonomous_database_backup_id, **kwargs):
         """
-        Gets information about the specified Autonomous Database backup.
+        Gets information about the specified Autonomous AI Database backup.
 
 
         :param str autonomous_database_backup_id: (required)
-            The `OCID`__ of the Autonomous Database backup.
+            The `OCID`__ of the Autonomous AI Database backup.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -19115,7 +19117,7 @@ class DatabaseClient(object):
 
     def get_autonomous_database_dataguard_association(self, autonomous_database_id, autonomous_database_dataguard_association_id, **kwargs):
         """
-        *Deprecated.* Use the :func:`get_autonomous_container_database` operation to gets an Autonomous Data Guard-enabled database associated with the specified Autonomous Database.
+        *Deprecated.* Use the :func:`get_autonomous_container_database` operation to gets an Autonomous Data Guard-enabled database associated with the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -19219,7 +19221,7 @@ class DatabaseClient(object):
 
     def get_autonomous_database_regional_wallet(self, **kwargs):
         """
-        Gets the Autonomous Database regional wallet details.
+        Gets the Autonomous AI Database regional wallet details.
 
 
         :param str opc_request_id: (optional)
@@ -19300,11 +19302,11 @@ class DatabaseClient(object):
 
     def get_autonomous_database_software_image(self, autonomous_database_software_image_id, **kwargs):
         """
-        Gets information about the specified Autonomous Database Software Image.
+        Gets information about the specified Autonomous AI Database Software Image.
 
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -19398,7 +19400,7 @@ class DatabaseClient(object):
 
     def get_autonomous_database_wallet(self, autonomous_database_id, **kwargs):
         """
-        Gets the wallet details for the specified Autonomous Database.
+        Gets the wallet details for the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -20348,7 +20350,7 @@ class DatabaseClient(object):
 
     def get_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -25785,7 +25787,7 @@ class DatabaseClient(object):
 
     def launch_autonomous_exadata_infrastructure(self, launch_autonomous_exadata_infrastructure_details, **kwargs):
         """
-        **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the :func:`create_cloud_exadata_infrastructure` and :func:`create_cloud_autonomous_vm_cluster` operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
+        **Deprecated** To create a new Autonomous AI Database system on dedicated Exadata Infrastructure, use the :func:`create_cloud_exadata_infrastructure` and :func:`create_cloud_autonomous_vm_cluster` operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
 
 
         :param oci.database.models.LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
@@ -26755,7 +26757,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_backups(self, **kwargs):
         """
-        Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+        Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
 
 
         :param str autonomous_database_id: (optional)
@@ -26951,10 +26953,10 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param bool is_shared: (optional)
-            Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+            Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
 
         :param bool is_dedicated: (optional)
-            Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+            Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
 
         :param str character_set_type: (optional)
             Specifies whether this request pertains to database character sets or national character sets.
@@ -27055,7 +27057,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_clones(self, compartment_id, autonomous_database_id, **kwargs):
         """
-        Lists the Autonomous Database clones for the specified Autonomous Database.
+        Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
 
 
         :param str compartment_id: (required)
@@ -27238,7 +27240,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_dataguard_associations(self, autonomous_database_id, **kwargs):
         """
-        *Deprecated.* Use the :func:`get_autonomous_container_database` operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+        *Deprecated.* Use the :func:`get_autonomous_container_database` operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -27346,7 +27348,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_peers(self, autonomous_database_id, **kwargs):
         """
-        Lists the Autonomous Database peers for the specified Autonomous Database.
+        Lists the Autonomous AI Database peers for the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -27460,7 +27462,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_refreshable_clones(self, autonomous_database_id, **kwargs):
         """
-        Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
+        Lists the OCIDs of the Autonomous AI Database local and connected remote refreshable clones with the region where they exist for the specified source database.
 
 
         :param str autonomous_database_id: (required)
@@ -27574,7 +27576,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_software_images(self, compartment_id, image_shape_family, **kwargs):
         """
-        Gets a list of the Autonomous Database Software Images in the specified compartment.
+        Gets a list of the Autonomous AI Database Software Images in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -27599,7 +27601,7 @@ class DatabaseClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            parameter according to which Autonomous Database Software Images will be sorted.
+            parameter according to which Autonomous AI Database Software Images will be sorted.
 
             Allowed values are: "TIMECREATED", "DISPLAYNAME"
 
@@ -27736,7 +27738,7 @@ class DatabaseClient(object):
 
     def list_autonomous_databases(self, compartment_id, **kwargs):
         """
-        Gets a list of Autonomous Databases based on the query parameters specified.
+        Gets a list of Autonomous AI Databases based on the query parameters specified.
 
 
         :param str compartment_id: (required)
@@ -27783,12 +27785,12 @@ class DatabaseClient(object):
             Allowed values are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY"
 
         :param str db_workload: (optional)
-            A filter to return only autonomous database resources that match the specified workload type.
+            A filter to return only Autonomous AI Database resources that match the specified workload type.
 
-            Allowed values are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values are: "OLTP", "DW", "AJD", "APEX", "LH"
 
         :param str db_version: (optional)
-            A filter to return only autonomous database resources that match the specified dbVersion.
+            A filter to return only Autonomous AI Database resources that match the specified dbVersion.
 
         :param bool is_free_tier: (optional)
             Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources.
@@ -27811,7 +27813,7 @@ class DatabaseClient(object):
             Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
 
         :param str resource_pool_leader_id: (optional)
-            The database `OCID`__ of the resourcepool Leader Autonomous Database.
+            The database `OCID`__ of the resourcepool Leader Autonomous AI Database.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -27903,7 +27905,7 @@ class DatabaseClient(object):
                 )
 
         if 'db_workload' in kwargs:
-            db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+            db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
                     f"Invalid value for `db_workload`, must be one of { db_workload_allowed_values }"
@@ -27971,8 +27973,8 @@ class DatabaseClient(object):
 
     def list_autonomous_db_preview_versions(self, compartment_id, **kwargs):
         """
-        Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-        Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
+        Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
+        Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
 
 
         :param str compartment_id: (required)
@@ -28105,7 +28107,7 @@ class DatabaseClient(object):
 
     def list_autonomous_db_versions(self, compartment_id, **kwargs):
         """
-        Gets a list of supported Autonomous Database versions.
+        Gets a list of supported Autonomous AI Database versions.
 
 
         :param str compartment_id: (required)
@@ -28123,9 +28125,9 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param str db_workload: (optional)
-            A filter to return only autonomous database resources that match the specified workload type.
+            A filter to return only Autonomous AI Database resources that match the specified workload type.
 
-            Allowed values are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values are: "OLTP", "DW", "AJD", "APEX", "LH"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -28173,7 +28175,7 @@ class DatabaseClient(object):
                 f"list_autonomous_db_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'db_workload' in kwargs:
-            db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+            db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
                     f"Invalid value for `db_workload`, must be one of { db_workload_allowed_values }"
@@ -29441,7 +29443,7 @@ class DatabaseClient(object):
 
     def list_cloud_exadata_infrastructures(self, compartment_id, **kwargs):
         """
-        Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
 
         :param str compartment_id: (required)
@@ -35320,7 +35322,7 @@ class DatabaseClient(object):
             The pagination token to continue listing from.
 
         :param bool is_local_adg: (optional)
-            A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+            A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
 
         :param str sort_by: (optional)
             The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
@@ -36366,7 +36368,7 @@ class DatabaseClient(object):
 
     def list_resource_pool_members(self, autonomous_database_id, **kwargs):
         """
-        Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+        Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
 
 
         :param str autonomous_database_id: (required)
@@ -39322,7 +39324,7 @@ class DatabaseClient(object):
 
     def register_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
-        Asynchronously registers this Autonomous Database with Data Safe.
+        Asynchronously registers this Autonomous AI Database with Data Safe.
 
 
         :param str autonomous_database_id: (required)
@@ -39338,7 +39340,7 @@ class DatabaseClient(object):
             creating or updating a resource and is used only to perform validation on the submitted data.
 
         :param oci.database.models.RegisterAutonomousDatabaseDataSafeDetails register_autonomous_database_data_safe_details: (optional)
-            Request to register an Autonomous Database with Data Safe.
+            Request to register an Autonomous AI Database with Data Safe.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -41063,7 +41065,7 @@ class DatabaseClient(object):
 
     def restart_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Restarts the specified Autonomous Database.
+        Restarts the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -41169,7 +41171,7 @@ class DatabaseClient(object):
 
     def restore_autonomous_database(self, autonomous_database_id, restore_autonomous_database_details, **kwargs):
         """
-        Restores an Autonomous Database based on the provided request parameters.
+        Restores an Autonomous AI Database based on the provided request parameters.
 
 
         :param str autonomous_database_id: (required)
@@ -41178,7 +41180,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
-            Request to perform an Autonomous Database restore.
+            Request to perform an Autonomous AI Database restore.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -41411,7 +41413,7 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param oci.database.models.RotateAutonomousContainerDatabaseEncryptionKeyDetails rotate_autonomous_container_database_encryption_key_details: (optional)
-            Key details provided by the user for rotate key operation for Autonomous Database.
+            Key details provided by the user for rotate key operation for Autonomous AI Database.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -41534,7 +41536,7 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param oci.database.models.RotateAutonomousDatabaseEncryptionKeyDetails rotate_autonomous_database_encryption_key_details: (optional)
-            Key details provided by the user for rotate key operation for Autonomous Database.
+            Key details provided by the user for rotate key operation for Autonomous AI Database.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -42561,7 +42563,7 @@ class DatabaseClient(object):
 
     def saas_admin_user_status(self, autonomous_database_id, **kwargs):
         """
-        This operation gets SaaS administrative user status of the Autonomous Database.
+        This operation gets SaaS administrative user status of the Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -43129,7 +43131,7 @@ class DatabaseClient(object):
 
     def start_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Starts the specified Autonomous Database.
+        Starts the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -43350,7 +43352,7 @@ class DatabaseClient(object):
 
     def stop_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Stops the specified Autonomous Database.
+        Stops the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -43917,7 +43919,7 @@ class DatabaseClient(object):
 
     def switchover_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Initiates a switchover of the specified Autonomous Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
+        Initiates a switchover of the specified Autonomous AI Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
         This API should be called in the remote region where the peer database resides.
         Below parameter is optional:
           - `peerDbId`
@@ -44808,7 +44810,7 @@ class DatabaseClient(object):
 
     def update_autonomous_database(self, autonomous_database_id, update_autonomous_database_details, **kwargs):
         """
-        Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
+        Updates one or more attributes of the specified Autonomous AI Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
 
 
         :param str autonomous_database_id: (required)
@@ -44817,7 +44819,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
-            Request to update the properties of an Autonomous Database.
+            Request to update the properties of an Autonomous AI Database.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -44924,16 +44926,16 @@ class DatabaseClient(object):
 
     def update_autonomous_database_backup(self, autonomous_database_backup_id, update_autonomous_database_backup_details, **kwargs):
         """
-        Updates the Autonomous Database backup of the specified database based on the request parameters.
+        Updates the Autonomous AI Database backup of the specified database based on the request parameters.
 
 
         :param str autonomous_database_backup_id: (required)
-            The `OCID`__ of the Autonomous Database backup.
+            The `OCID`__ of the Autonomous AI Database backup.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseBackupDetails update_autonomous_database_backup_details: (required)
-            Request to update an existing Autonomous Database backup.
+            Request to update an existing Autonomous AI Database backup.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -45040,11 +45042,11 @@ class DatabaseClient(object):
 
     def update_autonomous_database_regional_wallet(self, update_autonomous_database_wallet_details, **kwargs):
         """
-        Updates the Autonomous Database regional wallet.
+        Updates the Autonomous AI Database regional wallet.
 
 
         :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
-            Request to update the properties of Autonomous Database regional wallet.
+            Request to update the properties of Autonomous AI Database regional wallet.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -45130,16 +45132,16 @@ class DatabaseClient(object):
 
     def update_autonomous_database_software_image(self, autonomous_database_software_image_id, update_autonomous_database_software_image_details, **kwargs):
         """
-        Updates the properties of an Autonomous Database Software Image, like add tags
+        Updates the properties of an Autonomous AI Database Software Image, like add tags
 
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseSoftwareImageDetails update_autonomous_database_software_image_details: (required)
-            Request to update the properties of an Autonomous Database Software Image.
+            Request to update the properties of an Autonomous AI Database Software Image.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -45240,7 +45242,7 @@ class DatabaseClient(object):
 
     def update_autonomous_database_wallet(self, autonomous_database_id, update_autonomous_database_wallet_details, **kwargs):
         """
-        Updates the wallet for the specified Autonomous Database.
+        Updates the wallet for the specified Autonomous AI Database.
 
 
         :param str autonomous_database_id: (required)
@@ -45249,7 +45251,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
-            Request to update the properties of an Autonomous Database wallet.
+            Request to update the properties of an Autonomous AI Database wallet.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -45901,7 +45903,7 @@ class DatabaseClient(object):
 
     def update_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **kwargs):
         """
-        Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+        Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 
 
         :param str cloud_exadata_infrastructure_id: (required)

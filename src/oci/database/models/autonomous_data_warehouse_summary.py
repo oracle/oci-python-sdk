@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDataWarehouseSummary(object):
     """
-    **Deprecated.** See :func:`autonomous_database` for reference information about Autonomous Databases with the warehouse workload type.
+    **Deprecated.** See :func:`autonomous_database` for reference information about Autonomous AI Databases with the warehouse workload type.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -199,7 +199,7 @@ class AutonomousDataWarehouseSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDataWarehouseSummary.
-        The `OCID`__ of the Autonomous Data Warehouse.
+        The `OCID`__ of the Autonomous AI Lakehouse.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -213,7 +213,7 @@ class AutonomousDataWarehouseSummary(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDataWarehouseSummary.
-        The `OCID`__ of the Autonomous Data Warehouse.
+        The `OCID`__ of the Autonomous AI Lakehouse.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -406,7 +406,7 @@ class AutonomousDataWarehouseSummary(object):
     def display_name(self):
         """
         Gets the display_name of this AutonomousDataWarehouseSummary.
-        The user-friendly name for the Autonomous Data Warehouse. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Lakehouse. The name does not have to be unique.
 
 
         :return: The display_name of this AutonomousDataWarehouseSummary.
@@ -418,7 +418,7 @@ class AutonomousDataWarehouseSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutonomousDataWarehouseSummary.
-        The user-friendly name for the Autonomous Data Warehouse. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Lakehouse. The name does not have to be unique.
 
 
         :param display_name: The display_name of this AutonomousDataWarehouseSummary.
@@ -430,7 +430,7 @@ class AutonomousDataWarehouseSummary(object):
     def service_console_url(self):
         """
         Gets the service_console_url of this AutonomousDataWarehouseSummary.
-        The URL of the Service Console for the Data Warehouse.
+        The URL of the Service Console for the AI Lakehouse.
 
 
         :return: The service_console_url of this AutonomousDataWarehouseSummary.
@@ -442,7 +442,7 @@ class AutonomousDataWarehouseSummary(object):
     def service_console_url(self, service_console_url):
         """
         Sets the service_console_url of this AutonomousDataWarehouseSummary.
-        The URL of the Service Console for the Data Warehouse.
+        The URL of the Service Console for the AI Lakehouse.
 
 
         :param service_console_url: The service_console_url of this AutonomousDataWarehouseSummary.
@@ -454,7 +454,7 @@ class AutonomousDataWarehouseSummary(object):
     def connection_strings(self):
         """
         Gets the connection_strings of this AutonomousDataWarehouseSummary.
-        The connection string used to connect to the Data Warehouse. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Data Warehouse for the password value.
+        The connection string used to connect to the AI Lakehouse. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Lakehouse for the password value.
 
 
         :return: The connection_strings of this AutonomousDataWarehouseSummary.
@@ -466,7 +466,7 @@ class AutonomousDataWarehouseSummary(object):
     def connection_strings(self, connection_strings):
         """
         Sets the connection_strings of this AutonomousDataWarehouseSummary.
-        The connection string used to connect to the Data Warehouse. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Data Warehouse for the password value.
+        The connection string used to connect to the AI Lakehouse. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Lakehouse for the password value.
 
 
         :param connection_strings: The connection_strings of this AutonomousDataWarehouseSummary.
@@ -478,7 +478,7 @@ class AutonomousDataWarehouseSummary(object):
     def license_model(self):
         """
         Gets the license_model of this AutonomousDataWarehouseSummary.
-        The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default is BRING_YOUR_OWN_LICENSE.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -492,7 +492,7 @@ class AutonomousDataWarehouseSummary(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this AutonomousDataWarehouseSummary.
-        The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the Oracle Autonomous AI Lakehouse. The default is BRING_YOUR_OWN_LICENSE.
 
 
         :param license_model: The license_model of this AutonomousDataWarehouseSummary.
@@ -573,7 +573,7 @@ class AutonomousDataWarehouseSummary(object):
     def db_version(self):
         """
         Gets the db_version of this AutonomousDataWarehouseSummary.
-        A valid Oracle Database version for Autonomous Data Warehouse.
+        A valid Oracle AI Database version for Autonomous AI Lakehouse.
 
 
         :return: The db_version of this AutonomousDataWarehouseSummary.
@@ -585,7 +585,7 @@ class AutonomousDataWarehouseSummary(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this AutonomousDataWarehouseSummary.
-        A valid Oracle Database version for Autonomous Data Warehouse.
+        A valid Oracle AI Database version for Autonomous AI Lakehouse.
 
 
         :param db_version: The db_version of this AutonomousDataWarehouseSummary.

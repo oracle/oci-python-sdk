@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseEncryptionKeyHistoryEntry(object):
     """
-    The Autonomous Database encryption key history entry.
+    The Autonomous AI Database encryption key history entry.
     """
 
     def __init__(self, **kwargs):

@@ -63,6 +63,14 @@ class DrProtectionGroup(object):
     #: This constant has a value of "DR_DRILL_IN_PROGRESS"
     LIFECYCLE_SUB_STATE_DR_DRILL_IN_PROGRESS = "DR_DRILL_IN_PROGRESS"
 
+    #: A constant which can be used with the lifecycle_sub_state property of a DrProtectionGroup.
+    #: This constant has a value of "DR_PLAN_EXECUTION_IN_PROGRESS"
+    LIFECYCLE_SUB_STATE_DR_PLAN_EXECUTION_IN_PROGRESS = "DR_PLAN_EXECUTION_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrProtectionGroup.
+    #: This constant has a value of "AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS"
+    LIFECYCLE_SUB_STATE_AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS = "AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrProtectionGroup object with values from keyword arguments.
@@ -122,7 +130,7 @@ class DrProtectionGroup(object):
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this DrProtectionGroup.
-            Allowed values for this property are: "DR_DRILL_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DR_DRILL_IN_PROGRESS", "DR_PLAN_EXECUTION_IN_PROGRESS", "AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -522,7 +530,7 @@ class DrProtectionGroup(object):
         Gets the lifecycle_sub_state of this DrProtectionGroup.
         The current sub-state of the DR protection group.
 
-        Allowed values for this property are: "DR_DRILL_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DR_DRILL_IN_PROGRESS", "DR_PLAN_EXECUTION_IN_PROGRESS", "AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -541,7 +549,7 @@ class DrProtectionGroup(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this DrProtectionGroup.
         :type: str
         """
-        allowed_values = ["DR_DRILL_IN_PROGRESS"]
+        allowed_values = ["DR_DRILL_IN_PROGRESS", "DR_PLAN_EXECUTION_IN_PROGRESS", "AUTOMATIC_DR_PLAN_EXECUTION_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state

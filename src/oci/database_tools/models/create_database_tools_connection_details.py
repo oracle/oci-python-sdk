@@ -39,6 +39,14 @@ class CreateDatabaseToolsConnectionDetails(object):
     #: This constant has a value of "UNSUPPORTED"
     RUNTIME_SUPPORT_UNSUPPORTED = "UNSUPPORTED"
 
+    #: A constant which can be used with the runtime_identity property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "AUTHENTICATED_PRINCIPAL"
+    RUNTIME_IDENTITY_AUTHENTICATED_PRINCIPAL = "AUTHENTICATED_PRINCIPAL"
+
+    #: A constant which can be used with the runtime_identity property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "RESOURCE_PRINCIPAL"
+    RUNTIME_IDENTITY_RESOURCE_PRINCIPAL = "RESOURCE_PRINCIPAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseToolsConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -81,6 +89,11 @@ class CreateDatabaseToolsConnectionDetails(object):
             Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
         :type runtime_support: str
 
+        :param runtime_identity:
+            The value to assign to the runtime_identity property of this CreateDatabaseToolsConnectionDetails.
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+        :type runtime_identity: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -89,7 +102,8 @@ class CreateDatabaseToolsConnectionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'locks': 'list[ResourceLock]',
             'type': 'str',
-            'runtime_support': 'str'
+            'runtime_support': 'str',
+            'runtime_identity': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -98,7 +112,8 @@ class CreateDatabaseToolsConnectionDetails(object):
             'freeform_tags': 'freeformTags',
             'locks': 'locks',
             'type': 'type',
-            'runtime_support': 'runtimeSupport'
+            'runtime_support': 'runtimeSupport',
+            'runtime_identity': 'runtimeIdentity'
         }
         self._display_name = None
         self._compartment_id = None
@@ -107,6 +122,7 @@ class CreateDatabaseToolsConnectionDetails(object):
         self._locks = None
         self._type = None
         self._runtime_support = None
+        self._runtime_identity = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -319,6 +335,37 @@ class CreateDatabaseToolsConnectionDetails(object):
                 f"Invalid value for `runtime_support`, must be None or one of {allowed_values}"
             )
         self._runtime_support = runtime_support
+
+    @property
+    def runtime_identity(self):
+        """
+        Gets the runtime_identity of this CreateDatabaseToolsConnectionDetails.
+        Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+
+        Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+
+
+        :return: The runtime_identity of this CreateDatabaseToolsConnectionDetails.
+        :rtype: str
+        """
+        return self._runtime_identity
+
+    @runtime_identity.setter
+    def runtime_identity(self, runtime_identity):
+        """
+        Sets the runtime_identity of this CreateDatabaseToolsConnectionDetails.
+        Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+
+
+        :param runtime_identity: The runtime_identity of this CreateDatabaseToolsConnectionDetails.
+        :type: str
+        """
+        allowed_values = ["AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"]
+        if not value_allowed_none_or_none_sentinel(runtime_identity, allowed_values):
+            raise ValueError(
+                f"Invalid value for `runtime_identity`, must be None or one of {allowed_values}"
+            )
+        self._runtime_identity = runtime_identity
 
     def __repr__(self):
         return formatted_flat_dict(self)

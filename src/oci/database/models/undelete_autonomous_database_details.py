@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
     """
-    Details to undelete an Oracle Autonomous Database.
+    Details to undelete an Oracle Autonomous AI Database.
     """
 
     def __init__(self, **kwargs):
@@ -64,7 +64,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
 
         :param db_workload:
             The value to assign to the db_workload property of this UndeleteAutonomousDatabaseDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -422,7 +422,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
     def source_id(self):
         """
         **[Required]** Gets the source_id of this UndeleteAutonomousDatabaseDetails.
-        The `OCID`__ of the Autonomous Database that you want to undelete.
+        The `OCID`__ of the Autonomous AI Database that you want to undelete.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -436,7 +436,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
     def source_id(self, source_id):
         """
         Sets the source_id of this UndeleteAutonomousDatabaseDetails.
-        The `OCID`__ of the Autonomous Database that you want to undelete.
+        The `OCID`__ of the Autonomous AI Database that you want to undelete.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

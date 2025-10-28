@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseConsoleTokenDetails(object):
     """
-    The token that allows the OCI Console to access the Autonomous Database Service Console.
+    The token that allows the OCI Console to access the Autonomous AI Database Service Console.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class AutonomousDatabaseConsoleTokenDetails(object):
     def token(self):
         """
         Gets the token of this AutonomousDatabaseConsoleTokenDetails.
-        The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+        The token that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
 
 
         :return: The token of this AutonomousDatabaseConsoleTokenDetails.
@@ -56,7 +56,7 @@ class AutonomousDatabaseConsoleTokenDetails(object):
     def token(self, token):
         """
         Sets the token of this AutonomousDatabaseConsoleTokenDetails.
-        The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+        The token that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
 
 
         :param token: The token of this AutonomousDatabaseConsoleTokenDetails.
@@ -68,7 +68,7 @@ class AutonomousDatabaseConsoleTokenDetails(object):
     def login_url(self):
         """
         Gets the login_url of this AutonomousDatabaseConsoleTokenDetails.
-        The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+        The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
 
 
         :return: The login_url of this AutonomousDatabaseConsoleTokenDetails.
@@ -80,7 +80,7 @@ class AutonomousDatabaseConsoleTokenDetails(object):
     def login_url(self, login_url):
         """
         Sets the login_url of this AutonomousDatabaseConsoleTokenDetails.
-        The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+        The login URL that allows the OCI Console to access the Autonomous AI Transaction Processing Service Console.
 
 
         :param login_url: The login_url of this AutonomousDatabaseConsoleTokenDetails.

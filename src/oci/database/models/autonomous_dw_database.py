@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDwDatabase(object):
     """
-    An Oracle Autonomous Database.
+    An Oracle Autonomous AI Database.
     """
 
     #: A constant which can be used with the lifecycle_state property of a AutonomousDwDatabase.
@@ -138,6 +138,10 @@ class AutonomousDwDatabase(object):
     #: A constant which can be used with the db_workload property of a AutonomousDwDatabase.
     #: This constant has a value of "APEX"
     DB_WORKLOAD_APEX = "APEX"
+
+    #: A constant which can be used with the db_workload property of a AutonomousDwDatabase.
+    #: This constant has a value of "LH"
+    DB_WORKLOAD_LH = "LH"
 
     #: A constant which can be used with the data_safe_status property of a AutonomousDwDatabase.
     #: This constant has a value of "REGISTERING"
@@ -523,6 +527,10 @@ class AutonomousDwDatabase(object):
             The value to assign to the public_connection_urls property of this AutonomousDwDatabase.
         :type public_connection_urls: oci.database.models.AutonomousDatabaseConnectionUrls
 
+        :param vanity_connection_urls:
+            The value to assign to the vanity_connection_urls property of this AutonomousDwDatabase.
+        :type vanity_connection_urls: oci.database.models.AutonomousDatabaseConnectionUrls
+
         :param license_model:
             The value to assign to the license_model property of this AutonomousDwDatabase.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -582,7 +590,7 @@ class AutonomousDwDatabase(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDwDatabase.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param is_dev_tier:
@@ -820,6 +828,10 @@ class AutonomousDwDatabase(object):
             The value to assign to the db_tools_details property of this AutonomousDwDatabase.
         :type db_tools_details: list[oci.database.models.DatabaseTool]
 
+        :param vanity_url_details:
+            The value to assign to the vanity_url_details property of this AutonomousDwDatabase.
+        :type vanity_url_details: oci.database.models.VanityUrlDetails
+
         :param local_disaster_recovery_type:
             The value to assign to the local_disaster_recovery_type property of this AutonomousDwDatabase.
         :type local_disaster_recovery_type: str
@@ -916,6 +928,7 @@ class AutonomousDwDatabase(object):
             'connection_strings': 'AutonomousDatabaseConnectionStrings',
             'connection_urls': 'AutonomousDatabaseConnectionUrls',
             'public_connection_urls': 'AutonomousDatabaseConnectionUrls',
+            'vanity_connection_urls': 'AutonomousDatabaseConnectionUrls',
             'license_model': 'str',
             'byol_compute_count_limit': 'float',
             'used_data_storage_size_in_tbs': 'int',
@@ -987,6 +1000,7 @@ class AutonomousDwDatabase(object):
             'actual_used_data_storage_size_in_tbs': 'float',
             'database_edition': 'str',
             'db_tools_details': 'list[DatabaseTool]',
+            'vanity_url_details': 'VanityUrlDetails',
             'local_disaster_recovery_type': 'str',
             'disaster_recovery_region_type': 'str',
             'time_disaster_recovery_role_changed': 'datetime',
@@ -1050,6 +1064,7 @@ class AutonomousDwDatabase(object):
             'connection_strings': 'connectionStrings',
             'connection_urls': 'connectionUrls',
             'public_connection_urls': 'publicConnectionUrls',
+            'vanity_connection_urls': 'vanityConnectionUrls',
             'license_model': 'licenseModel',
             'byol_compute_count_limit': 'byolComputeCountLimit',
             'used_data_storage_size_in_tbs': 'usedDataStorageSizeInTBs',
@@ -1121,6 +1136,7 @@ class AutonomousDwDatabase(object):
             'actual_used_data_storage_size_in_tbs': 'actualUsedDataStorageSizeInTBs',
             'database_edition': 'databaseEdition',
             'db_tools_details': 'dbToolsDetails',
+            'vanity_url_details': 'vanityUrlDetails',
             'local_disaster_recovery_type': 'localDisasterRecoveryType',
             'disaster_recovery_region_type': 'disasterRecoveryRegionType',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
@@ -1183,6 +1199,7 @@ class AutonomousDwDatabase(object):
         self._connection_strings = None
         self._connection_urls = None
         self._public_connection_urls = None
+        self._vanity_connection_urls = None
         self._license_model = None
         self._byol_compute_count_limit = None
         self._used_data_storage_size_in_tbs = None
@@ -1254,6 +1271,7 @@ class AutonomousDwDatabase(object):
         self._actual_used_data_storage_size_in_tbs = None
         self._database_edition = None
         self._db_tools_details = None
+        self._vanity_url_details = None
         self._local_disaster_recovery_type = None
         self._disaster_recovery_region_type = None
         self._time_disaster_recovery_role_changed = None
@@ -1269,7 +1287,7 @@ class AutonomousDwDatabase(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDwDatabase.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1283,7 +1301,7 @@ class AutonomousDwDatabase(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDwDatabase.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1353,7 +1371,7 @@ class AutonomousDwDatabase(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AutonomousDwDatabase.
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY"
 
@@ -1367,7 +1385,7 @@ class AutonomousDwDatabase(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousDwDatabase.
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousDwDatabase.
@@ -1506,7 +1524,7 @@ class AutonomousDwDatabase(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this AutonomousDwDatabase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :return: The kms_key_version_id of this AutonomousDwDatabase.
@@ -1518,7 +1536,7 @@ class AutonomousDwDatabase(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this AutonomousDwDatabase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this AutonomousDwDatabase.
@@ -1554,7 +1572,7 @@ class AutonomousDwDatabase(object):
     def character_set(self):
         """
         Gets the character_set of this AutonomousDwDatabase.
-        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
 
         AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
 
@@ -1568,7 +1586,7 @@ class AutonomousDwDatabase(object):
     def character_set(self, character_set):
         """
         Sets the character_set of this AutonomousDwDatabase.
-        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+        The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
 
         AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
 
@@ -1582,7 +1600,7 @@ class AutonomousDwDatabase(object):
     def ncharacter_set(self):
         """
         Gets the ncharacter_set of this AutonomousDwDatabase.
-        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are:
+        The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are:
         AL16UTF16 or UTF8.
 
 
@@ -1595,7 +1613,7 @@ class AutonomousDwDatabase(object):
     def ncharacter_set(self, ncharacter_set):
         """
         Sets the ncharacter_set of this AutonomousDwDatabase.
-        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are:
+        The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are:
         AL16UTF16 or UTF8.
 
 
@@ -1608,7 +1626,7 @@ class AutonomousDwDatabase(object):
     def in_memory_percentage(self):
         """
         Gets the in_memory_percentage of this AutonomousDwDatabase.
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
 
 
         :return: The in_memory_percentage of this AutonomousDwDatabase.
@@ -1620,7 +1638,7 @@ class AutonomousDwDatabase(object):
     def in_memory_percentage(self, in_memory_percentage):
         """
         Sets the in_memory_percentage of this AutonomousDwDatabase.
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
 
 
         :param in_memory_percentage: The in_memory_percentage of this AutonomousDwDatabase.
@@ -1632,7 +1650,7 @@ class AutonomousDwDatabase(object):
     def in_memory_area_in_gbs(self):
         """
         Gets the in_memory_area_in_gbs of this AutonomousDwDatabase.
-        The area assigned to In-Memory tables in Autonomous Database.
+        The area assigned to In-Memory tables in Autonomous AI Database.
 
 
         :return: The in_memory_area_in_gbs of this AutonomousDwDatabase.
@@ -1644,7 +1662,7 @@ class AutonomousDwDatabase(object):
     def in_memory_area_in_gbs(self, in_memory_area_in_gbs):
         """
         Sets the in_memory_area_in_gbs of this AutonomousDwDatabase.
-        The area assigned to In-Memory tables in Autonomous Database.
+        The area assigned to In-Memory tables in Autonomous AI Database.
 
 
         :param in_memory_area_in_gbs: The in_memory_area_in_gbs of this AutonomousDwDatabase.
@@ -1700,7 +1718,7 @@ class AutonomousDwDatabase(object):
     def is_free_tier(self):
         """
         Gets the is_free_tier of this AutonomousDwDatabase.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
 
@@ -1714,7 +1732,7 @@ class AutonomousDwDatabase(object):
     def is_free_tier(self, is_free_tier):
         """
         Sets the is_free_tier of this AutonomousDwDatabase.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
 
@@ -1874,11 +1892,11 @@ class AutonomousDwDatabase(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this AutonomousDwDatabase.
-        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
 
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/
 
 
         :return: The cpu_core_count of this AutonomousDwDatabase.
@@ -1890,11 +1908,11 @@ class AutonomousDwDatabase(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this AutonomousDwDatabase.
-        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
 
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/
 
 
         :param cpu_core_count: The cpu_core_count of this AutonomousDwDatabase.
@@ -1930,7 +1948,7 @@ class AutonomousDwDatabase(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousDwDatabase.
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
         Allowed values for this property are: "ECPU", "OCPU"
 
@@ -1944,7 +1962,7 @@ class AutonomousDwDatabase(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousDwDatabase.
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
 
         :param compute_model: The compute_model of this AutonomousDwDatabase.
@@ -1961,7 +1979,7 @@ class AutonomousDwDatabase(object):
     def compute_count(self):
         """
         Gets the compute_count of this AutonomousDwDatabase.
-        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure.
         The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
 
 
@@ -1974,7 +1992,7 @@ class AutonomousDwDatabase(object):
     def compute_count(self, compute_count):
         """
         Sets the compute_count of this AutonomousDwDatabase.
-        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure.
         The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
 
 
@@ -2038,11 +2056,11 @@ class AutonomousDwDatabase(object):
         The number of OCPU cores to be made available to the database.
 
         The following points apply:
-        - For Autonomous Databases on Dedicated Exadata Infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        - To provision cores, enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both serverless and dedicated Exadata infrastructure.
-        - For Autonomous Database Serverless instances, this parameter is not used.
+        - For Autonomous AI Databases on Dedicated Exadata Infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous AI Database Serverless instances.)
+        - To provision cores, enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous AI Databases on both serverless and dedicated Exadata infrastructure.
+        - For Autonomous AI Database Serverless instances, this parameter is not used.
 
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 
@@ -2061,11 +2079,11 @@ class AutonomousDwDatabase(object):
         The number of OCPU cores to be made available to the database.
 
         The following points apply:
-        - For Autonomous Databases on Dedicated Exadata Infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        - To provision cores, enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both serverless and dedicated Exadata infrastructure.
-        - For Autonomous Database Serverless instances, this parameter is not used.
+        - For Autonomous AI Databases on Dedicated Exadata Infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous AI Database Serverless instances.)
+        - To provision cores, enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous AI Databases on both serverless and dedicated Exadata infrastructure.
+        - For Autonomous AI Database Serverless instances, this parameter is not used.
 
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 
@@ -2081,7 +2099,7 @@ class AutonomousDwDatabase(object):
     def provisionable_cpus(self):
         """
         Gets the provisionable_cpus of this AutonomousDwDatabase.
-        An array of CPU values that an Autonomous Database can be scaled to.
+        An array of CPU values that an Autonomous AI Database can be scaled to.
 
 
         :return: The provisionable_cpus of this AutonomousDwDatabase.
@@ -2093,7 +2111,7 @@ class AutonomousDwDatabase(object):
     def provisionable_cpus(self, provisionable_cpus):
         """
         Sets the provisionable_cpus of this AutonomousDwDatabase.
-        An array of CPU values that an Autonomous Database can be scaled to.
+        An array of CPU values that an Autonomous AI Database can be scaled to.
 
 
         :param provisionable_cpus: The provisionable_cpus of this AutonomousDwDatabase.
@@ -2107,9 +2125,9 @@ class AutonomousDwDatabase(object):
         **[Required]** Gets the data_storage_size_in_tbs of this AutonomousDwDatabase.
         The quantity of data in the database, in terabytes.
 
-        The following points apply to Autonomous Databases on Serverless Infrastructure:
+        The following points apply to Autonomous AI Databases on Serverless Infrastructure:
         - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
-        - To get the exact value of data storage size without rounding error, please see `dataStorageSizeInGBs` of Autonomous Database.
+        - To get the exact value of data storage size without rounding error, please see `dataStorageSizeInGBs` of Autonomous AI Database.
 
 
         :return: The data_storage_size_in_tbs of this AutonomousDwDatabase.
@@ -2123,9 +2141,9 @@ class AutonomousDwDatabase(object):
         Sets the data_storage_size_in_tbs of this AutonomousDwDatabase.
         The quantity of data in the database, in terabytes.
 
-        The following points apply to Autonomous Databases on Serverless Infrastructure:
+        The following points apply to Autonomous AI Databases on Serverless Infrastructure:
         - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
-        - To get the exact value of data storage size without rounding error, please see `dataStorageSizeInGBs` of Autonomous Database.
+        - To get the exact value of data storage size without rounding error, please see `dataStorageSizeInGBs` of Autonomous AI Database.
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this AutonomousDwDatabase.
@@ -2187,7 +2205,7 @@ class AutonomousDwDatabase(object):
         Gets the data_storage_size_in_gbs of this AutonomousDwDatabase.
         The quantity of data in the database, in gigabytes.
 
-        For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and `dataStorageSizeInTBs` will be populated instead.
+        For Autonomous AI Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and `dataStorageSizeInTBs` will be populated instead.
 
 
         :return: The data_storage_size_in_gbs of this AutonomousDwDatabase.
@@ -2201,7 +2219,7 @@ class AutonomousDwDatabase(object):
         Sets the data_storage_size_in_gbs of this AutonomousDwDatabase.
         The quantity of data in the database, in gigabytes.
 
-        For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and `dataStorageSizeInTBs` will be populated instead.
+        For Autonomous AI Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and `dataStorageSizeInTBs` will be populated instead.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this AutonomousDwDatabase.
@@ -2213,7 +2231,7 @@ class AutonomousDwDatabase(object):
     def used_data_storage_size_in_gbs(self):
         """
         Gets the used_data_storage_size_in_gbs of this AutonomousDwDatabase.
-        The storage space consumed by Autonomous Database in GBs.
+        The storage space consumed by Autonomous AI Database in GBs.
 
 
         :return: The used_data_storage_size_in_gbs of this AutonomousDwDatabase.
@@ -2225,7 +2243,7 @@ class AutonomousDwDatabase(object):
     def used_data_storage_size_in_gbs(self, used_data_storage_size_in_gbs):
         """
         Sets the used_data_storage_size_in_gbs of this AutonomousDwDatabase.
-        The storage space consumed by Autonomous Database in GBs.
+        The storage space consumed by Autonomous AI Database in GBs.
 
 
         :param used_data_storage_size_in_gbs: The used_data_storage_size_in_gbs of this AutonomousDwDatabase.
@@ -2296,7 +2314,7 @@ class AutonomousDwDatabase(object):
     def autonomous_container_database_id(self):
         """
         Gets the autonomous_container_database_id of this AutonomousDwDatabase.
-        The Autonomous Container Database `OCID`__. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The Autonomous Container Database `OCID`__. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2310,7 +2328,7 @@ class AutonomousDwDatabase(object):
     def autonomous_container_database_id(self, autonomous_container_database_id):
         """
         Sets the autonomous_container_database_id of this AutonomousDwDatabase.
-        The Autonomous Container Database `OCID`__. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The Autonomous Container Database `OCID`__. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2324,7 +2342,7 @@ class AutonomousDwDatabase(object):
     def is_backup_retention_locked(self):
         """
         Gets the is_backup_retention_locked of this AutonomousDwDatabase.
-        Indicates if the Autonomous Database is backup retention locked.
+        Indicates if the Autonomous AI Database is backup retention locked.
 
 
         :return: The is_backup_retention_locked of this AutonomousDwDatabase.
@@ -2336,7 +2354,7 @@ class AutonomousDwDatabase(object):
     def is_backup_retention_locked(self, is_backup_retention_locked):
         """
         Sets the is_backup_retention_locked of this AutonomousDwDatabase.
-        Indicates if the Autonomous Database is backup retention locked.
+        Indicates if the Autonomous AI Database is backup retention locked.
 
 
         :param is_backup_retention_locked: The is_backup_retention_locked of this AutonomousDwDatabase.
@@ -2348,7 +2366,7 @@ class AutonomousDwDatabase(object):
     def time_undeleted(self):
         """
         Gets the time_undeleted of this AutonomousDwDatabase.
-        The date and time the Autonomous Database was most recently undeleted.
+        The date and time the Autonomous AI Database was most recently undeleted.
 
 
         :return: The time_undeleted of this AutonomousDwDatabase.
@@ -2360,7 +2378,7 @@ class AutonomousDwDatabase(object):
     def time_undeleted(self, time_undeleted):
         """
         Sets the time_undeleted of this AutonomousDwDatabase.
-        The date and time the Autonomous Database was most recently undeleted.
+        The date and time the Autonomous AI Database was most recently undeleted.
 
 
         :param time_undeleted: The time_undeleted of this AutonomousDwDatabase.
@@ -2372,7 +2390,7 @@ class AutonomousDwDatabase(object):
     def time_earliest_available_db_version_upgrade(self):
         """
         Gets the time_earliest_available_db_version_upgrade of this AutonomousDwDatabase.
-        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 
 
         :return: The time_earliest_available_db_version_upgrade of this AutonomousDwDatabase.
@@ -2384,7 +2402,7 @@ class AutonomousDwDatabase(object):
     def time_earliest_available_db_version_upgrade(self, time_earliest_available_db_version_upgrade):
         """
         Sets the time_earliest_available_db_version_upgrade of this AutonomousDwDatabase.
-        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 
 
         :param time_earliest_available_db_version_upgrade: The time_earliest_available_db_version_upgrade of this AutonomousDwDatabase.
@@ -2396,7 +2414,7 @@ class AutonomousDwDatabase(object):
     def time_latest_available_db_version_upgrade(self):
         """
         Gets the time_latest_available_db_version_upgrade of this AutonomousDwDatabase.
-        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 
 
         :return: The time_latest_available_db_version_upgrade of this AutonomousDwDatabase.
@@ -2408,7 +2426,7 @@ class AutonomousDwDatabase(object):
     def time_latest_available_db_version_upgrade(self, time_latest_available_db_version_upgrade):
         """
         Sets the time_latest_available_db_version_upgrade of this AutonomousDwDatabase.
-        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 
 
         :param time_latest_available_db_version_upgrade: The time_latest_available_db_version_upgrade of this AutonomousDwDatabase.
@@ -2420,7 +2438,7 @@ class AutonomousDwDatabase(object):
     def time_scheduled_db_version_upgrade(self):
         """
         Gets the time_scheduled_db_version_upgrade of this AutonomousDwDatabase.
-        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 
 
         :return: The time_scheduled_db_version_upgrade of this AutonomousDwDatabase.
@@ -2432,7 +2450,7 @@ class AutonomousDwDatabase(object):
     def time_scheduled_db_version_upgrade(self, time_scheduled_db_version_upgrade):
         """
         Sets the time_scheduled_db_version_upgrade of this AutonomousDwDatabase.
-        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 
 
         :param time_scheduled_db_version_upgrade: The time_scheduled_db_version_upgrade of this AutonomousDwDatabase.
@@ -2444,7 +2462,7 @@ class AutonomousDwDatabase(object):
     def time_created(self):
         """
         Gets the time_created of this AutonomousDwDatabase.
-        The date and time the Autonomous Database was created.
+        The date and time the Autonomous AI Database was created.
 
 
         :return: The time_created of this AutonomousDwDatabase.
@@ -2456,7 +2474,7 @@ class AutonomousDwDatabase(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutonomousDwDatabase.
-        The date and time the Autonomous Database was created.
+        The date and time the Autonomous AI Database was created.
 
 
         :param time_created: The time_created of this AutonomousDwDatabase.
@@ -2468,7 +2486,7 @@ class AutonomousDwDatabase(object):
     def display_name(self):
         """
         Gets the display_name of this AutonomousDwDatabase.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
 
 
         :return: The display_name of this AutonomousDwDatabase.
@@ -2480,7 +2498,7 @@ class AutonomousDwDatabase(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutonomousDwDatabase.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
 
 
         :param display_name: The display_name of this AutonomousDwDatabase.
@@ -2492,7 +2510,7 @@ class AutonomousDwDatabase(object):
     def service_console_url(self):
         """
         Gets the service_console_url of this AutonomousDwDatabase.
-        The URL of the Service Console for the Autonomous Database.
+        The URL of the Service Console for the Autonomous AI Database.
 
 
         :return: The service_console_url of this AutonomousDwDatabase.
@@ -2504,7 +2522,7 @@ class AutonomousDwDatabase(object):
     def service_console_url(self, service_console_url):
         """
         Sets the service_console_url of this AutonomousDwDatabase.
-        The URL of the Service Console for the Autonomous Database.
+        The URL of the Service Console for the Autonomous AI Database.
 
 
         :param service_console_url: The service_console_url of this AutonomousDwDatabase.
@@ -2516,7 +2534,7 @@ class AutonomousDwDatabase(object):
     def connection_strings(self):
         """
         Gets the connection_strings of this AutonomousDwDatabase.
-        The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+        The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
 
 
         :return: The connection_strings of this AutonomousDwDatabase.
@@ -2528,7 +2546,7 @@ class AutonomousDwDatabase(object):
     def connection_strings(self, connection_strings):
         """
         Sets the connection_strings of this AutonomousDwDatabase.
-        The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+        The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
 
 
         :param connection_strings: The connection_strings of this AutonomousDwDatabase.
@@ -2581,13 +2599,33 @@ class AutonomousDwDatabase(object):
         self._public_connection_urls = public_connection_urls
 
     @property
+    def vanity_connection_urls(self):
+        """
+        Gets the vanity_connection_urls of this AutonomousDwDatabase.
+
+        :return: The vanity_connection_urls of this AutonomousDwDatabase.
+        :rtype: oci.database.models.AutonomousDatabaseConnectionUrls
+        """
+        return self._vanity_connection_urls
+
+    @vanity_connection_urls.setter
+    def vanity_connection_urls(self, vanity_connection_urls):
+        """
+        Sets the vanity_connection_urls of this AutonomousDwDatabase.
+
+        :param vanity_connection_urls: The vanity_connection_urls of this AutonomousDwDatabase.
+        :type: oci.database.models.AutonomousDatabaseConnectionUrls
+        """
+        self._vanity_connection_urls = vanity_connection_urls
+
+    @property
     def license_model(self):
         """
         Gets the license_model of this AutonomousDwDatabase.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -2606,10 +2644,10 @@ class AutonomousDwDatabase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this AutonomousDwDatabase.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -2655,7 +2693,7 @@ class AutonomousDwDatabase(object):
     def used_data_storage_size_in_tbs(self):
         """
         Gets the used_data_storage_size_in_tbs of this AutonomousDwDatabase.
-        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+        The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
 
 
         :return: The used_data_storage_size_in_tbs of this AutonomousDwDatabase.
@@ -2667,7 +2705,7 @@ class AutonomousDwDatabase(object):
     def used_data_storage_size_in_tbs(self, used_data_storage_size_in_tbs):
         """
         Sets the used_data_storage_size_in_tbs of this AutonomousDwDatabase.
-        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+        The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
 
 
         :param used_data_storage_size_in_tbs: The used_data_storage_size_in_tbs of this AutonomousDwDatabase.
@@ -2780,7 +2818,7 @@ class AutonomousDwDatabase(object):
         **Subnet Restrictions:**
         - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         - For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
-        - For Autonomous Database, setting this will disable public secure access to the database.
+        - For Autonomous AI Database, setting this will disable public secure access to the database.
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -2803,7 +2841,7 @@ class AutonomousDwDatabase(object):
         **Subnet Restrictions:**
         - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         - For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
-        - For Autonomous Database, setting this will disable public secure access to the database.
+        - For Autonomous AI Database, setting this will disable public secure access to the database.
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -2823,7 +2861,7 @@ class AutonomousDwDatabase(object):
         Gets the nsg_ids of this AutonomousDwDatabase.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -2840,7 +2878,7 @@ class AutonomousDwDatabase(object):
         Sets the nsg_ids of this AutonomousDwDatabase.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -2961,7 +2999,7 @@ class AutonomousDwDatabase(object):
     def db_version(self):
         """
         Gets the db_version of this AutonomousDwDatabase.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :return: The db_version of this AutonomousDwDatabase.
@@ -2973,7 +3011,7 @@ class AutonomousDwDatabase(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this AutonomousDwDatabase.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :param db_version: The db_version of this AutonomousDwDatabase.
@@ -2985,7 +3023,7 @@ class AutonomousDwDatabase(object):
     def is_preview(self):
         """
         Gets the is_preview of this AutonomousDwDatabase.
-        Indicates if the Autonomous Database version is a preview version.
+        Indicates if the Autonomous AI Database version is a preview version.
 
 
         :return: The is_preview of this AutonomousDwDatabase.
@@ -2997,7 +3035,7 @@ class AutonomousDwDatabase(object):
     def is_preview(self, is_preview):
         """
         Sets the is_preview of this AutonomousDwDatabase.
-        Indicates if the Autonomous Database version is a preview version.
+        Indicates if the Autonomous AI Database version is a preview version.
 
 
         :param is_preview: The is_preview of this AutonomousDwDatabase.
@@ -3009,16 +3047,17 @@ class AutonomousDwDatabase(object):
     def db_workload(self):
         """
         Gets the db_workload of this AutonomousDwDatabase.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
 
 
         :return: The db_workload of this AutonomousDwDatabase.
@@ -3030,12 +3069,13 @@ class AutonomousDwDatabase(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this AutonomousDwDatabase.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -3043,7 +3083,7 @@ class AutonomousDwDatabase(object):
         :param db_workload: The db_workload of this AutonomousDwDatabase.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             raise ValueError(
                 f"Invalid value for `db_workload`, must be None or one of {allowed_values}"
@@ -3054,7 +3094,7 @@ class AutonomousDwDatabase(object):
     def is_dev_tier(self):
         """
         Gets the is_dev_tier of this AutonomousDwDatabase.
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 
 
         :return: The is_dev_tier of this AutonomousDwDatabase.
@@ -3066,7 +3106,7 @@ class AutonomousDwDatabase(object):
     def is_dev_tier(self, is_dev_tier):
         """
         Sets the is_dev_tier of this AutonomousDwDatabase.
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 
 
         :param is_dev_tier: The is_dev_tier of this AutonomousDwDatabase.
@@ -3084,7 +3124,7 @@ class AutonomousDwDatabase(object):
          if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
         When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
-        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
+        This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform. For Autonomous AI Database Serverless instances, `whitelistedIps` is used.
 
 
         :return: The is_access_control_enabled of this AutonomousDwDatabase.
@@ -3102,7 +3142,7 @@ class AutonomousDwDatabase(object):
          if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
         When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
-        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
+        This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform. For Autonomous AI Database Serverless instances, `whitelistedIps` is used.
 
 
         :param is_access_control_enabled: The is_access_control_enabled of this AutonomousDwDatabase.
@@ -3114,11 +3154,11 @@ class AutonomousDwDatabase(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this AutonomousDwDatabase.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -3140,11 +3180,11 @@ class AutonomousDwDatabase(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this AutonomousDwDatabase.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -3166,9 +3206,9 @@ class AutonomousDwDatabase(object):
     def are_primary_whitelisted_ips_used(self):
         """
         Gets the are_primary_whitelisted_ips_used of this AutonomousDwDatabase.
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-        It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
-        It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled.
+        It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby.
+        It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
 
 
         :return: The are_primary_whitelisted_ips_used of this AutonomousDwDatabase.
@@ -3180,9 +3220,9 @@ class AutonomousDwDatabase(object):
     def are_primary_whitelisted_ips_used(self, are_primary_whitelisted_ips_used):
         """
         Sets the are_primary_whitelisted_ips_used of this AutonomousDwDatabase.
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-        It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
-        It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled.
+        It's value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby.
+        It's value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
 
 
         :param are_primary_whitelisted_ips_used: The are_primary_whitelisted_ips_used of this AutonomousDwDatabase.
@@ -3194,11 +3234,11 @@ class AutonomousDwDatabase(object):
     def standby_whitelisted_ips(self):
         """
         Gets the standby_whitelisted_ips of this AutonomousDwDatabase.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -3220,11 +3260,11 @@ class AutonomousDwDatabase(object):
     def standby_whitelisted_ips(self, standby_whitelisted_ips):
         """
         Sets the standby_whitelisted_ips of this AutonomousDwDatabase.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -3246,7 +3286,7 @@ class AutonomousDwDatabase(object):
     def apex_details(self):
         """
         Gets the apex_details of this AutonomousDwDatabase.
-        Information about Oracle APEX Application Development.
+        Information about Oracle APEX AI Application Development.
 
 
         :return: The apex_details of this AutonomousDwDatabase.
@@ -3258,7 +3298,7 @@ class AutonomousDwDatabase(object):
     def apex_details(self, apex_details):
         """
         Sets the apex_details of this AutonomousDwDatabase.
-        Information about Oracle APEX Application Development.
+        Information about Oracle APEX AI Application Development.
 
 
         :param apex_details: The apex_details of this AutonomousDwDatabase.
@@ -3270,7 +3310,7 @@ class AutonomousDwDatabase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this AutonomousDwDatabase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
 
 
         :return: The is_auto_scaling_enabled of this AutonomousDwDatabase.
@@ -3282,7 +3322,7 @@ class AutonomousDwDatabase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this AutonomousDwDatabase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this AutonomousDwDatabase.
@@ -3294,7 +3334,7 @@ class AutonomousDwDatabase(object):
     def data_safe_status(self):
         """
         Gets the data_safe_status of this AutonomousDwDatabase.
-        Status of the Data Safe registration for this Autonomous Database.
+        Status of the Data Safe registration for this Autonomous AI Database.
 
         Allowed values for this property are: "REGISTERING", "REGISTERED", "DEREGISTERING", "NOT_REGISTERED", "FAILED"
 
@@ -3308,7 +3348,7 @@ class AutonomousDwDatabase(object):
     def data_safe_status(self, data_safe_status):
         """
         Sets the data_safe_status of this AutonomousDwDatabase.
-        Status of the Data Safe registration for this Autonomous Database.
+        Status of the Data Safe registration for this Autonomous AI Database.
 
 
         :param data_safe_status: The data_safe_status of this AutonomousDwDatabase.
@@ -3325,7 +3365,7 @@ class AutonomousDwDatabase(object):
     def operations_insights_status(self):
         """
         Gets the operations_insights_status of this AutonomousDwDatabase.
-        Status of Operations Insights for this Autonomous Database.
+        Status of Operations Insights for this Autonomous AI Database.
 
         Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "NOT_ENABLED", "FAILED_ENABLING", "FAILED_DISABLING"
 
@@ -3339,7 +3379,7 @@ class AutonomousDwDatabase(object):
     def operations_insights_status(self, operations_insights_status):
         """
         Sets the operations_insights_status of this AutonomousDwDatabase.
-        Status of Operations Insights for this Autonomous Database.
+        Status of Operations Insights for this Autonomous AI Database.
 
 
         :param operations_insights_status: The operations_insights_status of this AutonomousDwDatabase.
@@ -3356,7 +3396,7 @@ class AutonomousDwDatabase(object):
     def database_management_status(self):
         """
         Gets the database_management_status of this AutonomousDwDatabase.
-        Status of Database Management for this Autonomous Database.
+        Status of Database Management for this Autonomous AI Database.
 
         Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "NOT_ENABLED", "FAILED_ENABLING", "FAILED_DISABLING"
 
@@ -3370,7 +3410,7 @@ class AutonomousDwDatabase(object):
     def database_management_status(self, database_management_status):
         """
         Sets the database_management_status of this AutonomousDwDatabase.
-        Status of Database Management for this Autonomous Database.
+        Status of Database Management for this Autonomous AI Database.
 
 
         :param database_management_status: The database_management_status of this AutonomousDwDatabase.
@@ -3459,7 +3499,7 @@ class AutonomousDwDatabase(object):
     def is_refreshable_clone(self):
         """
         Gets the is_refreshable_clone of this AutonomousDwDatabase.
-        Indicates if the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous AI Database is a refreshable clone.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -3473,7 +3513,7 @@ class AutonomousDwDatabase(object):
     def is_refreshable_clone(self, is_refreshable_clone):
         """
         Sets the is_refreshable_clone of this AutonomousDwDatabase.
-        Indicates if the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous AI Database is a refreshable clone.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -3559,7 +3599,7 @@ class AutonomousDwDatabase(object):
     def open_mode(self):
         """
         Gets the open_mode of this AutonomousDwDatabase.
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -3575,7 +3615,7 @@ class AutonomousDwDatabase(object):
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this AutonomousDwDatabase.
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -3594,7 +3634,7 @@ class AutonomousDwDatabase(object):
     def refreshable_status(self):
         """
         Gets the refreshable_status of this AutonomousDwDatabase.
-        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
 
         Allowed values for this property are: "REFRESHING", "NOT_REFRESHING"
 
@@ -3608,7 +3648,7 @@ class AutonomousDwDatabase(object):
     def refreshable_status(self, refreshable_status):
         """
         Sets the refreshable_status of this AutonomousDwDatabase.
-        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
 
 
         :param refreshable_status: The refreshable_status of this AutonomousDwDatabase.
@@ -3625,7 +3665,7 @@ class AutonomousDwDatabase(object):
     def refreshable_mode(self):
         """
         Gets the refreshable_mode of this AutonomousDwDatabase.
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
 
         Allowed values for this property are: "AUTOMATIC", "MANUAL"
 
@@ -3639,7 +3679,7 @@ class AutonomousDwDatabase(object):
     def refreshable_mode(self, refreshable_mode):
         """
         Sets the refreshable_mode of this AutonomousDwDatabase.
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
 
 
         :param refreshable_mode: The refreshable_mode of this AutonomousDwDatabase.
@@ -3656,7 +3696,7 @@ class AutonomousDwDatabase(object):
     def source_id(self):
         """
         Gets the source_id of this AutonomousDwDatabase.
-        The `OCID`__ of the source Autonomous Database that was cloned to create the current Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -3670,7 +3710,7 @@ class AutonomousDwDatabase(object):
     def source_id(self, source_id):
         """
         Sets the source_id of this AutonomousDwDatabase.
-        The `OCID`__ of the source Autonomous Database that was cloned to create the current Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -3684,7 +3724,7 @@ class AutonomousDwDatabase(object):
     def permission_level(self):
         """
         Gets the permission_level of this AutonomousDwDatabase.
-        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+        The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -3700,7 +3740,7 @@ class AutonomousDwDatabase(object):
     def permission_level(self, permission_level):
         """
         Sets the permission_level of this AutonomousDwDatabase.
-        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+        The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -3719,7 +3759,7 @@ class AutonomousDwDatabase(object):
     def time_of_last_switchover(self):
         """
         Gets the time_of_last_switchover of this AutonomousDwDatabase.
-        The timestamp of the last switchover operation for the Autonomous Database.
+        The timestamp of the last switchover operation for the Autonomous AI Database.
 
 
         :return: The time_of_last_switchover of this AutonomousDwDatabase.
@@ -3731,7 +3771,7 @@ class AutonomousDwDatabase(object):
     def time_of_last_switchover(self, time_of_last_switchover):
         """
         Sets the time_of_last_switchover of this AutonomousDwDatabase.
-        The timestamp of the last switchover operation for the Autonomous Database.
+        The timestamp of the last switchover operation for the Autonomous AI Database.
 
 
         :param time_of_last_switchover: The time_of_last_switchover of this AutonomousDwDatabase.
@@ -3767,7 +3807,7 @@ class AutonomousDwDatabase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this AutonomousDwDatabase.
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this AutonomousDwDatabase.
@@ -3779,7 +3819,7 @@ class AutonomousDwDatabase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this AutonomousDwDatabase.
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousDwDatabase.
@@ -3839,7 +3879,7 @@ class AutonomousDwDatabase(object):
     def is_local_data_guard_enabled(self):
         """
         Gets the is_local_data_guard_enabled of this AutonomousDwDatabase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_local_data_guard_enabled of this AutonomousDwDatabase.
@@ -3851,7 +3891,7 @@ class AutonomousDwDatabase(object):
     def is_local_data_guard_enabled(self, is_local_data_guard_enabled):
         """
         Sets the is_local_data_guard_enabled of this AutonomousDwDatabase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_local_data_guard_enabled: The is_local_data_guard_enabled of this AutonomousDwDatabase.
@@ -3863,7 +3903,7 @@ class AutonomousDwDatabase(object):
     def is_remote_data_guard_enabled(self):
         """
         Gets the is_remote_data_guard_enabled of this AutonomousDwDatabase.
-        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_remote_data_guard_enabled of this AutonomousDwDatabase.
@@ -3875,7 +3915,7 @@ class AutonomousDwDatabase(object):
     def is_remote_data_guard_enabled(self, is_remote_data_guard_enabled):
         """
         Sets the is_remote_data_guard_enabled of this AutonomousDwDatabase.
-        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_remote_data_guard_enabled: The is_remote_data_guard_enabled of this AutonomousDwDatabase.
@@ -3907,7 +3947,7 @@ class AutonomousDwDatabase(object):
     def role(self):
         """
         Gets the role of this AutonomousDwDatabase.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"
 
@@ -3921,7 +3961,7 @@ class AutonomousDwDatabase(object):
     def role(self, role):
         """
         Sets the role of this AutonomousDwDatabase.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousDwDatabase.
@@ -3938,7 +3978,7 @@ class AutonomousDwDatabase(object):
     def available_upgrade_versions(self):
         """
         Gets the available_upgrade_versions of this AutonomousDwDatabase.
-        List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+        List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 
 
         :return: The available_upgrade_versions of this AutonomousDwDatabase.
@@ -3950,7 +3990,7 @@ class AutonomousDwDatabase(object):
     def available_upgrade_versions(self, available_upgrade_versions):
         """
         Sets the available_upgrade_versions of this AutonomousDwDatabase.
-        List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+        List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
 
 
         :param available_upgrade_versions: The available_upgrade_versions of this AutonomousDwDatabase.
@@ -4062,7 +4102,7 @@ class AutonomousDwDatabase(object):
     def time_of_auto_refresh_start(self):
         """
         Gets the time_of_auto_refresh_start of this AutonomousDwDatabase.
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 
 
         :return: The time_of_auto_refresh_start of this AutonomousDwDatabase.
@@ -4074,7 +4114,7 @@ class AutonomousDwDatabase(object):
     def time_of_auto_refresh_start(self, time_of_auto_refresh_start):
         """
         Sets the time_of_auto_refresh_start of this AutonomousDwDatabase.
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 
 
         :param time_of_auto_refresh_start: The time_of_auto_refresh_start of this AutonomousDwDatabase.
@@ -4086,7 +4126,7 @@ class AutonomousDwDatabase(object):
     def supported_regions_to_clone_to(self):
         """
         Gets the supported_regions_to_clone_to of this AutonomousDwDatabase.
-        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+        The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
 
 
         :return: The supported_regions_to_clone_to of this AutonomousDwDatabase.
@@ -4098,7 +4138,7 @@ class AutonomousDwDatabase(object):
     def supported_regions_to_clone_to(self, supported_regions_to_clone_to):
         """
         Sets the supported_regions_to_clone_to of this AutonomousDwDatabase.
-        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+        The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
 
 
         :param supported_regions_to_clone_to: The supported_regions_to_clone_to of this AutonomousDwDatabase.
@@ -4134,7 +4174,7 @@ class AutonomousDwDatabase(object):
     def time_local_data_guard_enabled(self):
         """
         Gets the time_local_data_guard_enabled of this AutonomousDwDatabase.
-        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+        The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
 
 
         :return: The time_local_data_guard_enabled of this AutonomousDwDatabase.
@@ -4146,7 +4186,7 @@ class AutonomousDwDatabase(object):
     def time_local_data_guard_enabled(self, time_local_data_guard_enabled):
         """
         Sets the time_local_data_guard_enabled of this AutonomousDwDatabase.
-        The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+        The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
 
 
         :param time_local_data_guard_enabled: The time_local_data_guard_enabled of this AutonomousDwDatabase.
@@ -4158,7 +4198,7 @@ class AutonomousDwDatabase(object):
     def dataguard_region_type(self):
         """
         Gets the dataguard_region_type of this AutonomousDwDatabase.
-        **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
 
         Allowed values for this property are: "PRIMARY_DG_REGION", "REMOTE_STANDBY_DG_REGION"
 
@@ -4172,7 +4212,7 @@ class AutonomousDwDatabase(object):
     def dataguard_region_type(self, dataguard_region_type):
         """
         Sets the dataguard_region_type of this AutonomousDwDatabase.
-        **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+        **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
 
 
         :param dataguard_region_type: The dataguard_region_type of this AutonomousDwDatabase.
@@ -4189,7 +4229,7 @@ class AutonomousDwDatabase(object):
     def time_data_guard_role_changed(self):
         """
         Gets the time_data_guard_role_changed of this AutonomousDwDatabase.
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the \"primary\" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the \"primary\" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
 
 
         :return: The time_data_guard_role_changed of this AutonomousDwDatabase.
@@ -4201,7 +4241,7 @@ class AutonomousDwDatabase(object):
     def time_data_guard_role_changed(self, time_data_guard_role_changed):
         """
         Sets the time_data_guard_role_changed of this AutonomousDwDatabase.
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the \"primary\" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the \"primary\" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
 
 
         :param time_data_guard_role_changed: The time_data_guard_role_changed of this AutonomousDwDatabase.
@@ -4213,7 +4253,7 @@ class AutonomousDwDatabase(object):
     def peer_db_ids(self):
         """
         Gets the peer_db_ids of this AutonomousDwDatabase.
-        The list of `OCIDs`__ of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+        The list of `OCIDs`__ of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -4227,7 +4267,7 @@ class AutonomousDwDatabase(object):
     def peer_db_ids(self, peer_db_ids):
         """
         Sets the peer_db_ids of this AutonomousDwDatabase.
-        The list of `OCIDs`__ of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+        The list of `OCIDs`__ of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -4241,7 +4281,7 @@ class AutonomousDwDatabase(object):
     def is_mtls_connection_required(self):
         """
         Gets the is_mtls_connection_required of this AutonomousDwDatabase.
-        Specifies if the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous AI Database requires mTLS connections.
 
         This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -4249,7 +4289,7 @@ class AutonomousDwDatabase(object):
         - CreateAutonomousDatabase
         - GetAutonomousDatabase
         - UpdateAutonomousDatabase
-        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Database Serverless.
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless.
         Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
         How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
@@ -4263,7 +4303,7 @@ class AutonomousDwDatabase(object):
     def is_mtls_connection_required(self, is_mtls_connection_required):
         """
         Sets the is_mtls_connection_required of this AutonomousDwDatabase.
-        Specifies if the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous AI Database requires mTLS connections.
 
         This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -4271,7 +4311,7 @@ class AutonomousDwDatabase(object):
         - CreateAutonomousDatabase
         - GetAutonomousDatabase
         - UpdateAutonomousDatabase
-        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Database Serverless.
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless.
         Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
         How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
@@ -4309,7 +4349,7 @@ class AutonomousDwDatabase(object):
     def resource_pool_leader_id(self):
         """
         Gets the resource_pool_leader_id of this AutonomousDwDatabase.
-        The unique identifier for leader autonomous database OCID `OCID`__.
+        The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -4323,7 +4363,7 @@ class AutonomousDwDatabase(object):
     def resource_pool_leader_id(self, resource_pool_leader_id):
         """
         Sets the resource_pool_leader_id of this AutonomousDwDatabase.
-        The unique identifier for leader autonomous database OCID `OCID`__.
+        The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -4405,7 +4445,7 @@ class AutonomousDwDatabase(object):
     def autonomous_maintenance_schedule_type(self):
         """
         Gets the autonomous_maintenance_schedule_type of this AutonomousDwDatabase.
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+        The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule
         follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 
         Allowed values for this property are: "EARLY", "REGULAR"
@@ -4420,7 +4460,7 @@ class AutonomousDwDatabase(object):
     def autonomous_maintenance_schedule_type(self, autonomous_maintenance_schedule_type):
         """
         Sets the autonomous_maintenance_schedule_type of this AutonomousDwDatabase.
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+        The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule
         follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 
 
@@ -4466,7 +4506,7 @@ class AutonomousDwDatabase(object):
     def is_auto_scaling_for_storage_enabled(self):
         """
         Gets the is_auto_scaling_for_storage_enabled of this AutonomousDwDatabase.
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
 
 
         :return: The is_auto_scaling_for_storage_enabled of this AutonomousDwDatabase.
@@ -4478,7 +4518,7 @@ class AutonomousDwDatabase(object):
     def is_auto_scaling_for_storage_enabled(self, is_auto_scaling_for_storage_enabled):
         """
         Sets the is_auto_scaling_for_storage_enabled of this AutonomousDwDatabase.
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
 
 
         :param is_auto_scaling_for_storage_enabled: The is_auto_scaling_for_storage_enabled of this AutonomousDwDatabase.
@@ -4542,7 +4582,7 @@ class AutonomousDwDatabase(object):
     def database_edition(self):
         """
         Gets the database_edition of this AutonomousDwDatabase.
-        The Oracle Database Edition that applies to the Autonomous databases.
+        The Oracle AI Database Edition that applies to the Autonomous AI Databases.
 
         Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
 
@@ -4556,7 +4596,7 @@ class AutonomousDwDatabase(object):
     def database_edition(self, database_edition):
         """
         Sets the database_edition of this AutonomousDwDatabase.
-        The Oracle Database Edition that applies to the Autonomous databases.
+        The Oracle AI Database Edition that applies to the Autonomous AI Databases.
 
 
         :param database_edition: The database_edition of this AutonomousDwDatabase.
@@ -4598,10 +4638,30 @@ class AutonomousDwDatabase(object):
         self._db_tools_details = db_tools_details
 
     @property
+    def vanity_url_details(self):
+        """
+        Gets the vanity_url_details of this AutonomousDwDatabase.
+
+        :return: The vanity_url_details of this AutonomousDwDatabase.
+        :rtype: oci.database.models.VanityUrlDetails
+        """
+        return self._vanity_url_details
+
+    @vanity_url_details.setter
+    def vanity_url_details(self, vanity_url_details):
+        """
+        Sets the vanity_url_details of this AutonomousDwDatabase.
+
+        :param vanity_url_details: The vanity_url_details of this AutonomousDwDatabase.
+        :type: oci.database.models.VanityUrlDetails
+        """
+        self._vanity_url_details = vanity_url_details
+
+    @property
     def local_disaster_recovery_type(self):
         """
         Gets the local_disaster_recovery_type of this AutonomousDwDatabase.
-        Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance.
+        Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
         Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
         Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 
@@ -4615,7 +4675,7 @@ class AutonomousDwDatabase(object):
     def local_disaster_recovery_type(self, local_disaster_recovery_type):
         """
         Sets the local_disaster_recovery_type of this AutonomousDwDatabase.
-        Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance.
+        Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance.
         Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
         Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 
@@ -4629,7 +4689,7 @@ class AutonomousDwDatabase(object):
     def disaster_recovery_region_type(self):
         """
         Gets the disaster_recovery_region_type of this AutonomousDwDatabase.
-        **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
 
         Allowed values for this property are: "PRIMARY", "REMOTE"
 
@@ -4643,7 +4703,7 @@ class AutonomousDwDatabase(object):
     def disaster_recovery_region_type(self, disaster_recovery_region_type):
         """
         Sets the disaster_recovery_region_type of this AutonomousDwDatabase.
-        **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
 
 
         :param disaster_recovery_region_type: The disaster_recovery_region_type of this AutonomousDwDatabase.
@@ -4660,7 +4720,7 @@ class AutonomousDwDatabase(object):
     def time_disaster_recovery_role_changed(self):
         """
         Gets the time_disaster_recovery_role_changed of this AutonomousDwDatabase.
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
 
 
         :return: The time_disaster_recovery_role_changed of this AutonomousDwDatabase.
@@ -4672,7 +4732,7 @@ class AutonomousDwDatabase(object):
     def time_disaster_recovery_role_changed(self, time_disaster_recovery_role_changed):
         """
         Sets the time_disaster_recovery_role_changed of this AutonomousDwDatabase.
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
 
 
         :param time_disaster_recovery_role_changed: The time_disaster_recovery_role_changed of this AutonomousDwDatabase.
@@ -4735,7 +4795,7 @@ class AutonomousDwDatabase(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this AutonomousDwDatabase.
-        The availability domain where the Autonomous Database Serverless instance is located.
+        The availability domain where the Autonomous AI Database Serverless instance is located.
 
 
         :return: The availability_domain of this AutonomousDwDatabase.
@@ -4747,7 +4807,7 @@ class AutonomousDwDatabase(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this AutonomousDwDatabase.
-        The availability domain where the Autonomous Database Serverless instance is located.
+        The availability domain where the Autonomous AI Database Serverless instance is located.
 
 
         :param availability_domain: The availability_domain of this AutonomousDwDatabase.
@@ -4787,7 +4847,7 @@ class AutonomousDwDatabase(object):
     def clone_table_space_list(self):
         """
         Gets the clone_table_space_list of this AutonomousDwDatabase.
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
 
 
         :return: The clone_table_space_list of this AutonomousDwDatabase.
@@ -4799,7 +4859,7 @@ class AutonomousDwDatabase(object):
     def clone_table_space_list(self, clone_table_space_list):
         """
         Sets the clone_table_space_list of this AutonomousDwDatabase.
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
 
 
         :param clone_table_space_list: The clone_table_space_list of this AutonomousDwDatabase.
@@ -4811,7 +4871,7 @@ class AutonomousDwDatabase(object):
     def clone_type(self):
         """
         Gets the clone_type of this AutonomousDwDatabase.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
@@ -4825,7 +4885,7 @@ class AutonomousDwDatabase(object):
     def clone_type(self, clone_type):
         """
         Sets the clone_type of this AutonomousDwDatabase.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
 
         :param clone_type: The clone_type of this AutonomousDwDatabase.

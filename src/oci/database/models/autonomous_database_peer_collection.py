@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabasePeerCollection(object):
     """
-    The object holds details about the peer Autonomous Databases for an Oracle Autonomous Database.
+    The object holds details about the peer Autonomous AI Databases for an Oracle Autonomous AI Database.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class AutonomousDatabasePeerCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this AutonomousDatabasePeerCollection.
-        This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
 
 
         :return: The items of this AutonomousDatabasePeerCollection.
@@ -49,7 +49,7 @@ class AutonomousDatabasePeerCollection(object):
     def items(self, items):
         """
         Sets the items of this AutonomousDatabasePeerCollection.
-        This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
 
 
         :param items: The items of this AutonomousDatabasePeerCollection.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourcePoolMemberCollection(object):
     """
-    A list of Autonomous Database resource pool member OCIDs.
+    A list of Autonomous AI Database resource pool member OCIDs.
     """
 
     def __init__(self, **kwargs):

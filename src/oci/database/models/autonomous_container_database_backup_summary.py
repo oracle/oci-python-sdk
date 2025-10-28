@@ -207,7 +207,7 @@ class AutonomousContainerDatabaseBackupSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousContainerDatabaseBackupSummary.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -221,7 +221,7 @@ class AutonomousContainerDatabaseBackupSummary(object):
     def id(self, id):
         """
         Sets the id of this AutonomousContainerDatabaseBackupSummary.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -667,7 +667,7 @@ class AutonomousContainerDatabaseBackupSummary(object):
     def autonomous_databases(self):
         """
         Gets the autonomous_databases of this AutonomousContainerDatabaseBackupSummary.
-        List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
 
 
         :return: The autonomous_databases of this AutonomousContainerDatabaseBackupSummary.
@@ -679,7 +679,7 @@ class AutonomousContainerDatabaseBackupSummary(object):
     def autonomous_databases(self, autonomous_databases):
         """
         Sets the autonomous_databases of this AutonomousContainerDatabaseBackupSummary.
-        List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
 
 
         :param autonomous_databases: The autonomous_databases of this AutonomousContainerDatabaseBackupSummary.

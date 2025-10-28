@@ -76,6 +76,15 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
             Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
         :type runtime_support: str
 
+        :param runtime_endpoint:
+            The value to assign to the runtime_endpoint property of this DatabaseToolsConnectionMySqlSummary.
+        :type runtime_endpoint: str
+
+        :param runtime_identity:
+            The value to assign to the runtime_identity property of this DatabaseToolsConnectionMySqlSummary.
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+        :type runtime_identity: str
+
         :param related_resource:
             The value to assign to the related_resource property of this DatabaseToolsConnectionMySqlSummary.
         :type related_resource: oci.database_tools.models.DatabaseToolsRelatedResourceMySql
@@ -119,6 +128,8 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
             'locks': 'list[ResourceLock]',
             'type': 'str',
             'runtime_support': 'str',
+            'runtime_endpoint': 'str',
+            'runtime_identity': 'str',
             'related_resource': 'DatabaseToolsRelatedResourceMySql',
             'connection_string': 'str',
             'user_name': 'str',
@@ -141,6 +152,8 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
             'locks': 'locks',
             'type': 'type',
             'runtime_support': 'runtimeSupport',
+            'runtime_endpoint': 'runtimeEndpoint',
+            'runtime_identity': 'runtimeIdentity',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
@@ -162,6 +175,8 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
         self._locks = None
         self._type = None
         self._runtime_support = None
+        self._runtime_endpoint = None
+        self._runtime_identity = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None

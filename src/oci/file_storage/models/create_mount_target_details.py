@@ -68,6 +68,10 @@ class CreateMountTargetDetails(object):
             The value to assign to the defined_tags property of this CreateMountTargetDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateMountTargetDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param locks:
             The value to assign to the locks property of this CreateMountTargetDetails.
         :type locks: list[oci.file_storage.models.ResourceLock]
@@ -90,6 +94,7 @@ class CreateMountTargetDetails(object):
             'kerberos': 'CreateKerberosDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]',
             'requested_throughput': 'int'
         }
@@ -106,6 +111,7 @@ class CreateMountTargetDetails(object):
             'kerberos': 'kerberos',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'locks': 'locks',
             'requested_throughput': 'requestedThroughput'
         }
@@ -121,6 +127,7 @@ class CreateMountTargetDetails(object):
         self._kerberos = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._locks = None
         self._requested_throughput = None
 
@@ -513,6 +520,44 @@ class CreateMountTargetDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateMountTargetDetails.
+        `Security attributes`__ are labels
+        for a resource that can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this CreateMountTargetDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateMountTargetDetails.
+        `Security attributes`__ are labels
+        for a resource that can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this CreateMountTargetDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def locks(self):

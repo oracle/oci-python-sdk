@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RegisterAutonomousDatabaseDataSafeDetails(object):
     """
-    Details for registering an Autonomous Database with Data Safe.
+    Details for registering an Autonomous AI Database with Data Safe.
     """
 
     def __init__(self, **kwargs):

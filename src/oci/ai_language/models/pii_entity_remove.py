@@ -23,7 +23,7 @@ class PiiEntityRemove(PiiEntityMasking):
 
         :param mode:
             The value to assign to the mode property of this PiiEntityRemove.
-            Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
+            Allowed values for this property are: "REPLACE", "MASK", "REMOVE", "RELEXIFY"
         :type mode: str
 
         :param exclude:

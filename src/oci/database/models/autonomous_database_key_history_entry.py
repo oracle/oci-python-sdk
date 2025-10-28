@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseKeyHistoryEntry(object):
     """
-    The Autonomous Database `Vault`__ service key management history entry.
+    The Autonomous AI Database `Vault`__ service key management history entry.
 
     __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
     """
@@ -60,7 +60,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDatabaseKeyHistoryEntry.
-        The id of the Autonomous Database `Vault`__ service key management history entry.
+        The id of the Autonomous AI Database `Vault`__ service key management history entry.
 
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
@@ -74,7 +74,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDatabaseKeyHistoryEntry.
-        The id of the Autonomous Database `Vault`__ service key management history entry.
+        The id of the Autonomous AI Database `Vault`__ service key management history entry.
 
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
@@ -88,7 +88,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :return: The kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
@@ -100,7 +100,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.

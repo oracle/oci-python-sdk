@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseSoftwareImageCollection(object):
     """
-    Result of List Autonomous Database Software Images.
+    Result of List Autonomous AI Database Software Images.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class AutonomousDatabaseSoftwareImageCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this AutonomousDatabaseSoftwareImageCollection.
-        List of Autonomous Database Software Images.
+        List of Autonomous AI Database Software Images.
 
 
         :return: The items of this AutonomousDatabaseSoftwareImageCollection.
@@ -49,7 +49,7 @@ class AutonomousDatabaseSoftwareImageCollection(object):
     def items(self, items):
         """
         Sets the items of this AutonomousDatabaseSoftwareImageCollection.
-        List of Autonomous Database Software Images.
+        List of Autonomous AI Database Software Images.
 
 
         :param items: The items of this AutonomousDatabaseSoftwareImageCollection.

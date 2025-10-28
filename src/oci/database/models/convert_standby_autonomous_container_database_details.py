@@ -74,7 +74,7 @@ class ConvertStandbyAutonomousContainerDatabaseDetails(object):
     def role(self):
         """
         **[Required]** Gets the role of this ConvertStandbyAutonomousContainerDatabaseDetails.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"
 
@@ -88,7 +88,7 @@ class ConvertStandbyAutonomousContainerDatabaseDetails(object):
     def role(self, role):
         """
         Sets the role of this ConvertStandbyAutonomousContainerDatabaseDetails.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this ConvertStandbyAutonomousContainerDatabaseDetails.

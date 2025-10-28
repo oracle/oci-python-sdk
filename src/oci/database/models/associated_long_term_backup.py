@@ -44,7 +44,7 @@ class AssociatedLongTermBackup(object):
     def id(self):
         """
         Gets the id of this AssociatedLongTermBackup.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -58,7 +58,7 @@ class AssociatedLongTermBackup(object):
     def id(self, id):
         """
         Sets the id of this AssociatedLongTermBackup.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class AssociatedLongTermBackup(object):
     def display_name(self):
         """
         Gets the display_name of this AssociatedLongTermBackup.
-        The display name for the long term backup for the autonomous database.
+        The display name for the long term backup for the Autonomous AI Database.
 
 
         :return: The display_name of this AssociatedLongTermBackup.
@@ -84,7 +84,7 @@ class AssociatedLongTermBackup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AssociatedLongTermBackup.
-        The display name for the long term backup for the autonomous database.
+        The display name for the long term backup for the Autonomous AI Database.
 
 
         :param display_name: The display_name of this AssociatedLongTermBackup.

@@ -31,6 +31,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "MOVE_LUSTRE_FILE_SYSTEM"
     OPERATION_TYPE_MOVE_LUSTRE_FILE_SYSTEM = "MOVE_LUSTRE_FILE_SYSTEM"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_OBJECT_STORAGE_LINK"
+    OPERATION_TYPE_DELETE_OBJECT_STORAGE_LINK = "DELETE_OBJECT_STORAGE_LINK"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -70,7 +74,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_LUSTRE_FILE_SYSTEM", "UPDATE_LUSTRE_FILE_SYSTEM", "DELETE_LUSTRE_FILE_SYSTEM", "MOVE_LUSTRE_FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_LUSTRE_FILE_SYSTEM", "UPDATE_LUSTRE_FILE_SYSTEM", "DELETE_LUSTRE_FILE_SYSTEM", "MOVE_LUSTRE_FILE_SYSTEM", "DELETE_OBJECT_STORAGE_LINK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -154,7 +158,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_LUSTRE_FILE_SYSTEM", "UPDATE_LUSTRE_FILE_SYSTEM", "DELETE_LUSTRE_FILE_SYSTEM", "MOVE_LUSTRE_FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_LUSTRE_FILE_SYSTEM", "UPDATE_LUSTRE_FILE_SYSTEM", "DELETE_LUSTRE_FILE_SYSTEM", "MOVE_LUSTRE_FILE_SYSTEM", "DELETE_OBJECT_STORAGE_LINK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -173,7 +177,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_LUSTRE_FILE_SYSTEM", "UPDATE_LUSTRE_FILE_SYSTEM", "DELETE_LUSTRE_FILE_SYSTEM", "MOVE_LUSTRE_FILE_SYSTEM"]
+        allowed_values = ["CREATE_LUSTRE_FILE_SYSTEM", "UPDATE_LUSTRE_FILE_SYSTEM", "DELETE_LUSTRE_FILE_SYSTEM", "MOVE_LUSTRE_FILE_SYSTEM", "DELETE_OBJECT_STORAGE_LINK"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

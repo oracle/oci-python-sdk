@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAutonomousDatabaseBackupDetails(object):
     """
-    Details for updating the Autonomous Database backup.
+    Details for updating the Autonomous AI Database backup.
 
     **Warning:** Oracle recommends avoiding using confidential information when you supply string values using the API.
     """

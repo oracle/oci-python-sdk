@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseInBackup(object):
     """
-    Details of Autonomous Database in Autonomous Container Database
+    Details of Autonomous AI Database in Autonomous Container Database
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class AutonomousDatabaseInBackup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AutonomousDatabaseInBackup.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
 
 
         :return: The display_name of this AutonomousDatabaseInBackup.
@@ -84,7 +84,7 @@ class AutonomousDatabaseInBackup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutonomousDatabaseInBackup.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
 
 
         :param display_name: The display_name of this AutonomousDatabaseInBackup.

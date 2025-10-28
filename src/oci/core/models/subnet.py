@@ -60,6 +60,10 @@ class Subnet(object):
             The value to assign to the cidr_block property of this Subnet.
         :type cidr_block: str
 
+        :param ipv4_cidr_blocks:
+            The value to assign to the ipv4_cidr_blocks property of this Subnet.
+        :type ipv4_cidr_blocks: list[str]
+
         :param compartment_id:
             The value to assign to the compartment_id property of this Subnet.
         :type compartment_id: str
@@ -146,6 +150,7 @@ class Subnet(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'cidr_block': 'str',
+            'ipv4_cidr_blocks': 'list[str]',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'dhcp_options_id': 'str',
@@ -170,6 +175,7 @@ class Subnet(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
+            'ipv4_cidr_blocks': 'ipv4CidrBlocks',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'dhcp_options_id': 'dhcpOptionsId',
@@ -193,6 +199,7 @@ class Subnet(object):
         }
         self._availability_domain = None
         self._cidr_block = None
+        self._ipv4_cidr_blocks = None
         self._compartment_id = None
         self._defined_tags = None
         self._dhcp_options_id = None
@@ -271,6 +278,36 @@ class Subnet(object):
         :type: str
         """
         self._cidr_block = cidr_block
+
+    @property
+    def ipv4_cidr_blocks(self):
+        """
+        Gets the ipv4_cidr_blocks of this Subnet.
+        The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        - Ipv4 CIDR blocks must be valid.
+        - Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        - The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+
+
+        :return: The ipv4_cidr_blocks of this Subnet.
+        :rtype: list[str]
+        """
+        return self._ipv4_cidr_blocks
+
+    @ipv4_cidr_blocks.setter
+    def ipv4_cidr_blocks(self, ipv4_cidr_blocks):
+        """
+        Sets the ipv4_cidr_blocks of this Subnet.
+        The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+        - Ipv4 CIDR blocks must be valid.
+        - Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        - The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+
+
+        :param ipv4_cidr_blocks: The ipv4_cidr_blocks of this Subnet.
+        :type: list[str]
+        """
+        self._ipv4_cidr_blocks = ipv4_cidr_blocks
 
     @property
     def compartment_id(self):

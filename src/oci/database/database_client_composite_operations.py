@@ -556,7 +556,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
-            Request details for manually refreshing an Autonomous Database refreshable clone.
+            Request details for manually refreshing an Autonomous AI Database refreshable clone.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -597,7 +597,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
-            Request details for manually refreshing an Autonomous Database refreshable clone.
+            Request details for manually refreshing an Autonomous AI Database refreshable clone.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -844,7 +844,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
-            Request to move Autonomous Database to a different compartment
+            Request to move Autonomous AI Database to a different compartment
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
@@ -885,10 +885,10 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails change_autonomous_database_software_image_compartment_details: (required)
-            Request to move Autonomous Database Software Image to a different compartment
+            Request to move Autonomous AI Database Software Image to a different compartment
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -926,7 +926,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.ChangeAutonomousDatabaseSubscriptionDetails change_autonomous_database_subscription_details: (required)
-            Associate an Autonomous Database with a different subscription.
+            Associate an Autonomous AI Database with a different subscription.
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
@@ -1559,7 +1559,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
-            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1600,7 +1600,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
-            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
+            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -2344,7 +2344,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails configure_autonomous_database_vault_key_details: (required)
-            Configuration details for the Autonomous Database Vault service `key`__.
+            Configuration details for the Autonomous AI Database Vault service `key`__.
 
             __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
@@ -2563,7 +2563,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
-            Request to update SaaS administrative user configuration of the Autonomous Database.
+            Request to update SaaS administrative user configuration of the Autonomous AI Database.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2604,7 +2604,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
-            Request to update SaaS administrative user configuration of the Autonomous Database.
+            Request to update SaaS administrative user configuration of the Autonomous AI Database.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -3368,7 +3368,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
-            Request to create a new Autonomous Database.
+            Request to create a new Autonomous AI Database.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -3404,7 +3404,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousDatabaseBase create_autonomous_database_details: (required)
-            Request to create a new Autonomous Database.
+            Request to create a new Autonomous AI Database.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -3446,7 +3446,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
-            Request to create a new Autonomous Database backup.
+            Request to create a new Autonomous AI Database backup.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -3482,7 +3482,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousDatabaseBackupDetails create_autonomous_database_backup_details: (required)
-            Request to create a new Autonomous Database backup.
+            Request to create a new Autonomous AI Database backup.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabaseBackup.lifecycle_state`
@@ -3524,7 +3524,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousDatabaseSoftwareImageDetails create_autonomous_database_software_image_details: (required)
-            Request to create Autonomous Database Software Image.
+            Request to create Autonomous AI Database Software Image.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -3560,7 +3560,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousDatabaseSoftwareImageDetails create_autonomous_database_software_image_details: (required)
-            Request to create Autonomous Database Software Image.
+            Request to create Autonomous AI Database Software Image.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabaseSoftwareImage.lifecycle_state`
@@ -6258,7 +6258,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str autonomous_database_backup_id: (required)
-            The `OCID`__ of the Autonomous Database backup.
+            The `OCID`__ of the Autonomous AI Database backup.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6296,7 +6296,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11380,7 +11380,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
-            Request to perform an Autonomous Database restore.
+            Request to perform an Autonomous AI Database restore.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11421,7 +11421,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
-            Request to perform an Autonomous Database restore.
+            Request to perform an Autonomous AI Database restore.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -13487,7 +13487,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
-            Request to update the properties of an Autonomous Database.
+            Request to update the properties of an Autonomous AI Database.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13528,7 +13528,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
-            Request to update the properties of an Autonomous Database.
+            Request to update the properties of an Autonomous AI Database.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -13570,12 +13570,12 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str autonomous_database_backup_id: (required)
-            The `OCID`__ of the Autonomous Database backup.
+            The `OCID`__ of the Autonomous AI Database backup.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseBackupDetails update_autonomous_database_backup_details: (required)
-            Request to update an existing Autonomous Database backup.
+            Request to update an existing Autonomous AI Database backup.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13611,12 +13611,12 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str autonomous_database_backup_id: (required)
-            The `OCID`__ of the Autonomous Database backup.
+            The `OCID`__ of the Autonomous AI Database backup.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseBackupDetails update_autonomous_database_backup_details: (required)
-            Request to update an existing Autonomous Database backup.
+            Request to update an existing Autonomous AI Database backup.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabaseBackup.lifecycle_state`
@@ -13658,7 +13658,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
-            Request to update the properties of Autonomous Database regional wallet.
+            Request to update the properties of Autonomous AI Database regional wallet.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13694,12 +13694,12 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str autonomous_database_software_image_id: (required)
-            The Autonomous Database Software Image `OCID`__.
+            The Autonomous AI Database Software Image `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseSoftwareImageDetails update_autonomous_database_software_image_details: (required)
-            Request to update the properties of an Autonomous Database Software Image.
+            Request to update the properties of an Autonomous AI Database Software Image.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabaseSoftwareImage.lifecycle_state`
@@ -13746,7 +13746,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
-            Request to update the properties of an Autonomous Database wallet.
+            Request to update the properties of an Autonomous AI Database wallet.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`

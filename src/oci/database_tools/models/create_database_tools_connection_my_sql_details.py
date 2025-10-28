@@ -51,6 +51,11 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
         :type runtime_support: str
 
+        :param runtime_identity:
+            The value to assign to the runtime_identity property of this CreateDatabaseToolsConnectionMySqlDetails.
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+        :type runtime_identity: str
+
         :param related_resource:
             The value to assign to the related_resource property of this CreateDatabaseToolsConnectionMySqlDetails.
         :type related_resource: oci.database_tools.models.CreateDatabaseToolsRelatedResourceMySqlDetails
@@ -88,6 +93,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             'locks': 'list[ResourceLock]',
             'type': 'str',
             'runtime_support': 'str',
+            'runtime_identity': 'str',
             'related_resource': 'CreateDatabaseToolsRelatedResourceMySqlDetails',
             'connection_string': 'str',
             'user_name': 'str',
@@ -104,6 +110,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             'locks': 'locks',
             'type': 'type',
             'runtime_support': 'runtimeSupport',
+            'runtime_identity': 'runtimeIdentity',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
@@ -119,6 +126,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
         self._locks = None
         self._type = None
         self._runtime_support = None
+        self._runtime_identity = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None

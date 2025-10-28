@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourcePoolShapeSummary(object):
     """
-    An Autonomous Database Resource Pool. This object provides all the information related to the resource pool.
+    An Autonomous AI Database Resource Pool. This object provides all the information related to the resource pool.
     """
 
     def __init__(self, **kwargs):

@@ -809,7 +809,7 @@ class AutonomousContainerDatabase(object):
     def autonomous_exadata_infrastructure_id(self):
         """
         Gets the autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 
 
         :return: The autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
@@ -821,7 +821,7 @@ class AutonomousContainerDatabase(object):
     def autonomous_exadata_infrastructure_id(self, autonomous_exadata_infrastructure_id):
         """
         Sets the autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 
 
         :param autonomous_exadata_infrastructure_id: The autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
@@ -969,7 +969,7 @@ class AutonomousContainerDatabase(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this AutonomousContainerDatabase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :return: The kms_key_version_id of this AutonomousContainerDatabase.
@@ -981,7 +981,7 @@ class AutonomousContainerDatabase(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this AutonomousContainerDatabase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this AutonomousContainerDatabase.
@@ -1451,7 +1451,7 @@ class AutonomousContainerDatabase(object):
     def role(self):
         """
         Gets the role of this AutonomousContainerDatabase.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1466,7 +1466,7 @@ class AutonomousContainerDatabase(object):
     def role(self, role):
         """
         Sets the role of this AutonomousContainerDatabase.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousContainerDatabase.
@@ -1505,7 +1505,7 @@ class AutonomousContainerDatabase(object):
     def db_version(self):
         """
         Gets the db_version of this AutonomousContainerDatabase.
-        Oracle Database version of the Autonomous Container Database.
+        Oracle AI Database version of the Autonomous Container Database.
 
 
         :return: The db_version of this AutonomousContainerDatabase.
@@ -1517,7 +1517,7 @@ class AutonomousContainerDatabase(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this AutonomousContainerDatabase.
-        Oracle Database version of the Autonomous Container Database.
+        Oracle AI Database version of the Autonomous Container Database.
 
 
         :param db_version: The db_version of this AutonomousContainerDatabase.
@@ -1765,7 +1765,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousContainerDatabase.
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1777,7 +1777,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousContainerDatabase.
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1789,7 +1789,7 @@ class AutonomousContainerDatabase(object):
     def provisionable_cpus(self):
         """
         Gets the provisionable_cpus of this AutonomousContainerDatabase.
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
 
 
         :return: The provisionable_cpus of this AutonomousContainerDatabase.
@@ -1801,7 +1801,7 @@ class AutonomousContainerDatabase(object):
     def provisionable_cpus(self, provisionable_cpus):
         """
         Sets the provisionable_cpus of this AutonomousContainerDatabase.
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
 
 
         :param provisionable_cpus: The provisionable_cpus of this AutonomousContainerDatabase.
@@ -1837,7 +1837,7 @@ class AutonomousContainerDatabase(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousContainerDatabase.
-        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+        The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure`__ for more details.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
@@ -1854,7 +1854,7 @@ class AutonomousContainerDatabase(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousContainerDatabase.
-        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+        The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure`__ for more details.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
@@ -1919,7 +1919,7 @@ class AutonomousContainerDatabase(object):
     def largest_provisionable_autonomous_database_in_cpus(self):
         """
         Gets the largest_provisionable_autonomous_database_in_cpus of this AutonomousContainerDatabase.
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
 
 
         :return: The largest_provisionable_autonomous_database_in_cpus of this AutonomousContainerDatabase.
@@ -1931,7 +1931,7 @@ class AutonomousContainerDatabase(object):
     def largest_provisionable_autonomous_database_in_cpus(self, largest_provisionable_autonomous_database_in_cpus):
         """
         Sets the largest_provisionable_autonomous_database_in_cpus of this AutonomousContainerDatabase.
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
 
 
         :param largest_provisionable_autonomous_database_in_cpus: The largest_provisionable_autonomous_database_in_cpus of this AutonomousContainerDatabase.
@@ -1967,7 +1967,7 @@ class AutonomousContainerDatabase(object):
     def db_split_threshold(self):
         """
         Gets the db_split_threshold of this AutonomousContainerDatabase.
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 
 
         :return: The db_split_threshold of this AutonomousContainerDatabase.
@@ -1979,7 +1979,7 @@ class AutonomousContainerDatabase(object):
     def db_split_threshold(self, db_split_threshold):
         """
         Sets the db_split_threshold of this AutonomousContainerDatabase.
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 
 
         :param db_split_threshold: The db_split_threshold of this AutonomousContainerDatabase.
@@ -2015,7 +2015,7 @@ class AutonomousContainerDatabase(object):
     def distribution_affinity(self):
         """
         Gets the distribution_affinity of this AutonomousContainerDatabase.
-        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 
         Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -2030,7 +2030,7 @@ class AutonomousContainerDatabase(object):
     def distribution_affinity(self, distribution_affinity):
         """
         Sets the distribution_affinity of this AutonomousContainerDatabase.
-        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 
 
         :param distribution_affinity: The distribution_affinity of this AutonomousContainerDatabase.
@@ -2099,7 +2099,7 @@ class AutonomousContainerDatabase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this AutonomousContainerDatabase.
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this AutonomousContainerDatabase.
@@ -2111,7 +2111,7 @@ class AutonomousContainerDatabase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this AutonomousContainerDatabase.
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousContainerDatabase.

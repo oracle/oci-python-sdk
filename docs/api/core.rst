@@ -29,6 +29,7 @@ Core Services
     oci.core.models.AddDrgRouteRuleDetails
     oci.core.models.AddDrgRouteRulesDetails
     oci.core.models.AddImageShapeCompatibilityEntryDetails
+    oci.core.models.AddIpv4SubnetCidrDetails
     oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.AddPublicIpPoolCapacityDetails
     oci.core.models.AddSecurityRuleDetails
@@ -479,6 +480,7 @@ Core Services
     oci.core.models.MeasuredBootReport
     oci.core.models.MeasuredBootReportMeasurements
     oci.core.models.MemberReplica
+    oci.core.models.ModifyIpv4SubnetCidrDetails
     oci.core.models.ModifyVcnCidrDetails
     oci.core.models.MultipathDevice
     oci.core.models.NatGateway
@@ -507,6 +509,7 @@ Core Services
     oci.core.models.RemotePeeringConnectionDrgAttachmentNetworkDetails
     oci.core.models.RemoveDrgRouteDistributionStatementsDetails
     oci.core.models.RemoveDrgRouteRulesDetails
+    oci.core.models.RemoveIpv4SubnetCidrDetails
     oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.RemovePublicIpPoolCapacityDetails
     oci.core.models.RemoveSubnetIpv6CidrDetails

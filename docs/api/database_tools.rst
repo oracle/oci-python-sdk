@@ -20,12 +20,15 @@ Database Tools
 
     oci.database_tools.models.AddResourceLockDetails
     oci.database_tools.models.ChangeDatabaseToolsConnectionCompartmentDetails
+    oci.database_tools.models.ChangeDatabaseToolsIdentityCompartmentDetails
     oci.database_tools.models.ChangeDatabaseToolsPrivateEndpointCompartmentDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionGenericJdbcDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionMySqlDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionPostgresqlDetails
+    oci.database_tools.models.CreateDatabaseToolsIdentityDetails
+    oci.database_tools.models.CreateDatabaseToolsIdentityOracleDatabaseResourcePrincipalDetails
     oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails
     oci.database_tools.models.CreateDatabaseToolsRelatedResourceDetails
     oci.database_tools.models.CreateDatabaseToolsRelatedResourceMySqlDetails
@@ -53,6 +56,11 @@ Database Tools
     oci.database_tools.models.DatabaseToolsEndpointService
     oci.database_tools.models.DatabaseToolsEndpointServiceCollection
     oci.database_tools.models.DatabaseToolsEndpointServiceSummary
+    oci.database_tools.models.DatabaseToolsIdentity
+    oci.database_tools.models.DatabaseToolsIdentityCollection
+    oci.database_tools.models.DatabaseToolsIdentityOracleDatabaseResourcePrincipal
+    oci.database_tools.models.DatabaseToolsIdentityOracleDatabaseResourcePrincipalSummary
+    oci.database_tools.models.DatabaseToolsIdentitySummary
     oci.database_tools.models.DatabaseToolsKeyStore
     oci.database_tools.models.DatabaseToolsKeyStoreContent
     oci.database_tools.models.DatabaseToolsKeyStoreContentDetails
@@ -127,6 +135,8 @@ Database Tools
     oci.database_tools.models.DatabaseToolsUserPasswordSecretIdDetails
     oci.database_tools.models.DatabaseToolsUserPasswordSecretIdSummary
     oci.database_tools.models.DatabaseToolsUserPasswordSummary
+    oci.database_tools.models.RefreshDatabaseToolsIdentityCredentialDetails
+    oci.database_tools.models.RefreshDatabaseToolsIdentityOracleDatabaseResourcePrincipalCredentialDetails
     oci.database_tools.models.RemoveResourceLockDetails
     oci.database_tools.models.ResourceLock
     oci.database_tools.models.UpdateDatabaseToolsConnectionDetails
@@ -134,6 +144,8 @@ Database Tools
     oci.database_tools.models.UpdateDatabaseToolsConnectionMySqlDetails
     oci.database_tools.models.UpdateDatabaseToolsConnectionOracleDatabaseDetails
     oci.database_tools.models.UpdateDatabaseToolsConnectionPostgresqlDetails
+    oci.database_tools.models.UpdateDatabaseToolsIdentityDetails
+    oci.database_tools.models.UpdateDatabaseToolsIdentityOracleDatabaseResourcePrincipalDetails
     oci.database_tools.models.UpdateDatabaseToolsPrivateEndpointDetails
     oci.database_tools.models.UpdateDatabaseToolsRelatedResourceDetails
     oci.database_tools.models.UpdateDatabaseToolsRelatedResourceMySqlDetails
@@ -146,6 +158,11 @@ Database Tools
     oci.database_tools.models.ValidateDatabaseToolsConnectionPostgresqlDetails
     oci.database_tools.models.ValidateDatabaseToolsConnectionPostgresqlResult
     oci.database_tools.models.ValidateDatabaseToolsConnectionResult
+    oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialDetails
+    oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialOracleDatabaseResourcePrincipalDetails
+    oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialOracleDatabaseResourcePrincipalResult
+    oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialResult
+    oci.database_tools.models.ValidationIdentityStatus
     oci.database_tools.models.WorkRequest
     oci.database_tools.models.WorkRequestCollection
     oci.database_tools.models.WorkRequestError

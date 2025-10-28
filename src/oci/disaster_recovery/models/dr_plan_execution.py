@@ -176,6 +176,14 @@ class DrPlanExecution(object):
             The value to assign to the life_cycle_details property of this DrPlanExecution.
         :type life_cycle_details: str
 
+        :param is_automatic:
+            The value to assign to the is_automatic property of this DrPlanExecution.
+        :type is_automatic: bool
+
+        :param automatic_execution_details:
+            The value to assign to the automatic_execution_details property of this DrPlanExecution.
+        :type automatic_execution_details: oci.disaster_recovery.models.AutomaticExecutionDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DrPlanExecution.
         :type freeform_tags: dict(str, str)
@@ -208,6 +216,8 @@ class DrPlanExecution(object):
             'group_executions': 'list[DrPlanGroupExecution]',
             'lifecycle_state': 'str',
             'life_cycle_details': 'str',
+            'is_automatic': 'bool',
+            'automatic_execution_details': 'AutomaticExecutionDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -231,6 +241,8 @@ class DrPlanExecution(object):
             'group_executions': 'groupExecutions',
             'lifecycle_state': 'lifecycleState',
             'life_cycle_details': 'lifeCycleDetails',
+            'is_automatic': 'isAutomatic',
+            'automatic_execution_details': 'automaticExecutionDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -253,6 +265,8 @@ class DrPlanExecution(object):
         self._group_executions = None
         self._lifecycle_state = None
         self._life_cycle_details = None
+        self._is_automatic = None
+        self._automatic_execution_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -746,6 +760,54 @@ class DrPlanExecution(object):
         :type: str
         """
         self._life_cycle_details = life_cycle_details
+
+    @property
+    def is_automatic(self):
+        """
+        **[Required]** Gets the is_automatic of this DrPlanExecution.
+        A flag indicating whether execution was submitted automatically by Automatic DR Configuration.
+
+        Example: `false`
+
+
+        :return: The is_automatic of this DrPlanExecution.
+        :rtype: bool
+        """
+        return self._is_automatic
+
+    @is_automatic.setter
+    def is_automatic(self, is_automatic):
+        """
+        Sets the is_automatic of this DrPlanExecution.
+        A flag indicating whether execution was submitted automatically by Automatic DR Configuration.
+
+        Example: `false`
+
+
+        :param is_automatic: The is_automatic of this DrPlanExecution.
+        :type: bool
+        """
+        self._is_automatic = is_automatic
+
+    @property
+    def automatic_execution_details(self):
+        """
+        Gets the automatic_execution_details of this DrPlanExecution.
+
+        :return: The automatic_execution_details of this DrPlanExecution.
+        :rtype: oci.disaster_recovery.models.AutomaticExecutionDetails
+        """
+        return self._automatic_execution_details
+
+    @automatic_execution_details.setter
+    def automatic_execution_details(self, automatic_execution_details):
+        """
+        Sets the automatic_execution_details of this DrPlanExecution.
+
+        :param automatic_execution_details: The automatic_execution_details of this DrPlanExecution.
+        :type: oci.disaster_recovery.models.AutomaticExecutionDetails
+        """
+        self._automatic_execution_details = automatic_execution_details
 
     @property
     def freeform_tags(self):

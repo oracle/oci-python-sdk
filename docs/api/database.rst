@@ -514,6 +514,7 @@ Database
     oci.database.models.UpdateVmClusterNetworkDetails
     oci.database.models.UpgradeDatabaseDetails
     oci.database.models.UpgradeDbSystemDetails
+    oci.database.models.VanityUrlDetails
     oci.database.models.VmCluster
     oci.database.models.VmClusterNetwork
     oci.database.models.VmClusterNetworkDetails

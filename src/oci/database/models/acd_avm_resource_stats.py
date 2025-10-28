@@ -124,7 +124,7 @@ class AcdAvmResourceStats(object):
     def provisioned_cpus(self):
         """
         Gets the provisioned_cpus of this AcdAvmResourceStats.
-        CPUs/cores assigned to Autonomous Databases for the ACD instance in given Autonomus VM.
+        CPUs/cores assigned to Autonomous AI Databases for the ACD instance in given Autonomus VM.
 
 
         :return: The provisioned_cpus of this AcdAvmResourceStats.
@@ -136,7 +136,7 @@ class AcdAvmResourceStats(object):
     def provisioned_cpus(self, provisioned_cpus):
         """
         Sets the provisioned_cpus of this AcdAvmResourceStats.
-        CPUs/cores assigned to Autonomous Databases for the ACD instance in given Autonomus VM.
+        CPUs/cores assigned to Autonomous AI Databases for the ACD instance in given Autonomus VM.
 
 
         :param provisioned_cpus: The provisioned_cpus of this AcdAvmResourceStats.
@@ -202,7 +202,7 @@ class AcdAvmResourceStats(object):
         Gets the reclaimable_cpus of this AcdAvmResourceStats.
         CPUs/cores that continue to be included in the count of OCPUs available to the
         Autonomous Container Database in given Autonomous VM, even after one of its
-        Autonomous Database is terminated or scaled down. You can release them to the available
+        Autonomous AI Database is terminated or scaled down. You can release them to the available
         OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 
 
@@ -217,7 +217,7 @@ class AcdAvmResourceStats(object):
         Sets the reclaimable_cpus of this AcdAvmResourceStats.
         CPUs/cores that continue to be included in the count of OCPUs available to the
         Autonomous Container Database in given Autonomous VM, even after one of its
-        Autonomous Database is terminated or scaled down. You can release them to the available
+        Autonomous AI Database is terminated or scaled down. You can release them to the available
         OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 
 
