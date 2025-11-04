@@ -19,18 +19,48 @@ class DrgAttachmentNetworkCreateDetails(object):
     #: This constant has a value of "VCN"
     TYPE_VCN = "VCN"
 
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkCreateDetails.
+    #: This constant has a value of "VIRTUAL_CIRCUIT"
+    TYPE_VIRTUAL_CIRCUIT = "VIRTUAL_CIRCUIT"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkCreateDetails.
+    #: This constant has a value of "REMOTE_PEERING_CONNECTION"
+    TYPE_REMOTE_PEERING_CONNECTION = "REMOTE_PEERING_CONNECTION"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkCreateDetails.
+    #: This constant has a value of "IPSEC_TUNNEL"
+    TYPE_IPSEC_TUNNEL = "IPSEC_TUNNEL"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkCreateDetails.
+    #: This constant has a value of "LOOPBACK"
+    TYPE_LOOPBACK = "LOOPBACK"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkCreateDetails.
+    #: This constant has a value of "FLEX_TUNNEL"
+    TYPE_FLEX_TUNNEL = "FLEX_TUNNEL"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkCreateDetails.
+    #: This constant has a value of "INTERNET"
+    TYPE_INTERNET = "INTERNET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrgAttachmentNetworkCreateDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.vn_monitoring.models.IpsecTunnelDrgAttachmentNetworkCreateDetails`
+        * :class:`~oci.vn_monitoring.models.LoopBackDrgAttachmentNetworkCreateDetails`
+        * :class:`~oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkCreateDetails`
+        * :class:`~oci.vn_monitoring.models.RemotePeeringConnectionDrgAttachmentNetworkCreateDetails`
+        * :class:`~oci.vn_monitoring.models.InternetDrgAttachmentNetworkCreateDetails`
         * :class:`~oci.vn_monitoring.models.VcnDrgAttachmentNetworkCreateDetails`
+        * :class:`~oci.vn_monitoring.models.FlexTunnelDrgAttachmentNetworkCreateDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this DrgAttachmentNetworkCreateDetails.
-            Allowed values for this property are: "VCN"
+            Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "LOOPBACK", "FLEX_TUNNEL", "INTERNET"
         :type type: str
 
         :param id:
@@ -57,8 +87,26 @@ class DrgAttachmentNetworkCreateDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'IPSEC_TUNNEL':
+            return 'IpsecTunnelDrgAttachmentNetworkCreateDetails'
+
+        if type == 'LOOPBACK':
+            return 'LoopBackDrgAttachmentNetworkCreateDetails'
+
+        if type == 'VIRTUAL_CIRCUIT':
+            return 'VirtualCircuitDrgAttachmentNetworkCreateDetails'
+
+        if type == 'REMOTE_PEERING_CONNECTION':
+            return 'RemotePeeringConnectionDrgAttachmentNetworkCreateDetails'
+
+        if type == 'INTERNET':
+            return 'InternetDrgAttachmentNetworkCreateDetails'
+
         if type == 'VCN':
             return 'VcnDrgAttachmentNetworkCreateDetails'
+
+        if type == 'FLEX_TUNNEL':
+            return 'FlexTunnelDrgAttachmentNetworkCreateDetails'
         else:
             return 'DrgAttachmentNetworkCreateDetails'
 
@@ -66,7 +114,7 @@ class DrgAttachmentNetworkCreateDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrgAttachmentNetworkCreateDetails.
-        Allowed values for this property are: "VCN"
+        Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "LOOPBACK", "FLEX_TUNNEL", "INTERNET"
 
 
         :return: The type of this DrgAttachmentNetworkCreateDetails.
@@ -82,7 +130,7 @@ class DrgAttachmentNetworkCreateDetails(object):
         :param type: The type of this DrgAttachmentNetworkCreateDetails.
         :type: str
         """
-        allowed_values = ["VCN"]
+        allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "LOOPBACK", "FLEX_TUNNEL", "INTERNET"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

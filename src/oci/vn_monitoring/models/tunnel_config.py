@@ -12,10 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelConfig(object):
     """
-    Deprecated. For tunnel information, instead see:
-
-    * :class:`IPSecConnectionTunnel`
-    * :class:`IPSecConnectionTunnelSharedSecret`
+    Specific connection details for an IPSec tunnel.
     """
 
     def __init__(self, **kwargs):

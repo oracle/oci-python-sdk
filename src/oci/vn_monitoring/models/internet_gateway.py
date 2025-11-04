@@ -82,10 +82,6 @@ class InternetGateway(object):
             The value to assign to the vcn_id property of this InternetGateway.
         :type vcn_id: str
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this InternetGateway.
-        :type route_table_id: str
-
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -96,8 +92,7 @@ class InternetGateway(object):
             'is_enabled': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'vcn_id': 'str',
-            'route_table_id': 'str'
+            'vcn_id': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -108,8 +103,7 @@ class InternetGateway(object):
             'is_enabled': 'isEnabled',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'vcn_id': 'vcnId',
-            'route_table_id': 'routeTableId'
+            'vcn_id': 'vcnId'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -120,7 +114,6 @@ class InternetGateway(object):
         self._lifecycle_state = None
         self._time_created = None
         self._vcn_id = None
-        self._route_table_id = None
 
     @property
     def compartment_id(self):
@@ -372,34 +365,6 @@ class InternetGateway(object):
         :type: str
         """
         self._vcn_id = vcn_id
-
-    @property
-    def route_table_id(self):
-        """
-        Gets the route_table_id of this InternetGateway.
-        The `OCID`__ of the route table the Internet Gateway is using.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The route_table_id of this InternetGateway.
-        :rtype: str
-        """
-        return self._route_table_id
-
-    @route_table_id.setter
-    def route_table_id(self, route_table_id):
-        """
-        Sets the route_table_id of this InternetGateway.
-        The `OCID`__ of the route table the Internet Gateway is using.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param route_table_id: The route_table_id of this InternetGateway.
-        :type: str
-        """
-        self._route_table_id = route_table_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

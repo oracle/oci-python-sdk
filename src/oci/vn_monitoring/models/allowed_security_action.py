@@ -23,7 +23,7 @@ class AllowedSecurityAction(SecurityAction):
 
         :param action:
             The value to assign to the action property of this AllowedSecurityAction.
-            Allowed values for this property are: "ALLOWED", "DENIED"
+            Allowed values for this property are: "ALLOWED", "DENIED", "ZPR_DENIED", "ZPR_ALLOWED", "ZPR_CIDR_UNSUPPORTED", "ZPR_NSG_UNSUPPORTED", "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE", "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED", "ZPR_MISSING_POLICY"
         :type action: str
 
         :param action_type:

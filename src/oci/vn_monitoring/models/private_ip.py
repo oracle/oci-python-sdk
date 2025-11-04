@@ -38,11 +38,6 @@ class PrivateIp(object):
     :func:`attach_vnic`. To update the hostname
     for a primary private IP, you use :func:`update_vnic`.
 
-    `PrivateIp` objects that are created for use with the Oracle Cloud VMware Solution are
-    assigned to a VLAN and not a VNIC in a subnet. See the
-    descriptions of the relevant attributes in the `PrivateIp` object. Also see
-    :class:`Vlan`.
-
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
@@ -92,10 +87,6 @@ class PrivateIp(object):
             The value to assign to the is_primary property of this PrivateIp.
         :type is_primary: bool
 
-        :param vlan_id:
-            The value to assign to the vlan_id property of this PrivateIp.
-        :type vlan_id: str
-
         :param subnet_id:
             The value to assign to the subnet_id property of this PrivateIp.
         :type subnet_id: str
@@ -119,7 +110,6 @@ class PrivateIp(object):
             'id': 'str',
             'ip_address': 'str',
             'is_primary': 'bool',
-            'vlan_id': 'str',
             'subnet_id': 'str',
             'time_created': 'datetime',
             'vnic_id': 'str'
@@ -134,7 +124,6 @@ class PrivateIp(object):
             'id': 'id',
             'ip_address': 'ipAddress',
             'is_primary': 'isPrimary',
-            'vlan_id': 'vlanId',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId'
@@ -148,7 +137,6 @@ class PrivateIp(object):
         self._id = None
         self._ip_address = None
         self._is_primary = None
-        self._vlan_id = None
         self._subnet_id = None
         self._time_created = None
         self._vnic_id = None
@@ -157,8 +145,7 @@ class PrivateIp(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this PrivateIp.
-        The private IP's availability domain. This attribute will be null if this is a *secondary*
-        private IP assigned to a VNIC that is in a *regional* subnet.
+        The private IP's availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -172,8 +159,7 @@ class PrivateIp(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this PrivateIp.
-        The private IP's availability domain. This attribute will be null if this is a *secondary*
-        private IP assigned to a VNIC that is in a *regional* subnet.
+        The private IP's availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -376,9 +362,6 @@ class PrivateIp(object):
         The private IP address of the `privateIp` object. The address is within the CIDR
         of the VNIC's subnet.
 
-        However, if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution, the address is from the range specified by the
-        `cidrBlock` attribute for the VLAN. See :class:`Vlan`.
 
         Example: `10.0.3.3`
 
@@ -395,9 +378,6 @@ class PrivateIp(object):
         The private IP address of the `privateIp` object. The address is within the CIDR
         of the VNIC's subnet.
 
-        However, if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution, the address is from the range specified by the
-        `cidrBlock` attribute for the VLAN. See :class:`Vlan`.
 
         Example: `10.0.3.3`
 
@@ -438,45 +418,10 @@ class PrivateIp(object):
         self._is_primary = is_primary
 
     @property
-    def vlan_id(self):
-        """
-        Gets the vlan_id of this PrivateIp.
-        Applicable only if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution. The `vlanId` is the `OCID`__ of the VLAN. See
-        :class:`Vlan`.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The vlan_id of this PrivateIp.
-        :rtype: str
-        """
-        return self._vlan_id
-
-    @vlan_id.setter
-    def vlan_id(self, vlan_id):
-        """
-        Sets the vlan_id of this PrivateIp.
-        Applicable only if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution. The `vlanId` is the `OCID`__ of the VLAN. See
-        :class:`Vlan`.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param vlan_id: The vlan_id of this PrivateIp.
-        :type: str
-        """
-        self._vlan_id = vlan_id
-
-    @property
     def subnet_id(self):
         """
         Gets the subnet_id of this PrivateIp.
         The `OCID`__ of the subnet the VNIC is in.
-
-        However, if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution, the `subnetId` is null.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -491,9 +436,6 @@ class PrivateIp(object):
         """
         Sets the subnet_id of this PrivateIp.
         The `OCID`__ of the subnet the VNIC is in.
-
-        However, if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution, the `subnetId` is null.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -541,8 +483,6 @@ class PrivateIp(object):
         Gets the vnic_id of this PrivateIp.
         The `OCID`__ of the VNIC the private IP is assigned to. The VNIC and private IP
         must be in the same subnet.
-        However, if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution, the `vnicId` is null.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -558,8 +498,6 @@ class PrivateIp(object):
         Sets the vnic_id of this PrivateIp.
         The `OCID`__ of the VNIC the private IP is assigned to. The VNIC and private IP
         must be in the same subnet.
-        However, if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution, the `vnicId` is null.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

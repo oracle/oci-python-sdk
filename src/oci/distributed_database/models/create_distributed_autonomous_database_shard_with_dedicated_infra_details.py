@@ -54,6 +54,10 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
             The value to assign to the peer_cloud_autonomous_vm_cluster_ids property of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
         :type peer_cloud_autonomous_vm_cluster_ids: list[str]
 
+        :param peer_details:
+            The value to assign to the peer_details property of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :type peer_details: list[oci.distributed_database.models.CreateShardPeerWithDedicatedInfraDetails]
+
         :param vault_id:
             The value to assign to the vault_id property of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
         :type vault_id: str
@@ -76,6 +80,7 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
             'is_auto_scaling_enabled': 'bool',
             'cloud_autonomous_vm_cluster_id': 'str',
             'peer_cloud_autonomous_vm_cluster_ids': 'list[str]',
+            'peer_details': 'list[CreateShardPeerWithDedicatedInfraDetails]',
             'vault_id': 'str',
             'kms_key_id': 'str',
             'kms_key_version_id': 'str'
@@ -89,6 +94,7 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'cloud_autonomous_vm_cluster_id': 'cloudAutonomousVmClusterId',
             'peer_cloud_autonomous_vm_cluster_ids': 'peerCloudAutonomousVmClusterIds',
+            'peer_details': 'peerDetails',
             'vault_id': 'vaultId',
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId'
@@ -101,6 +107,7 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
         self._is_auto_scaling_enabled = None
         self._cloud_autonomous_vm_cluster_id = None
         self._peer_cloud_autonomous_vm_cluster_ids = None
+        self._peer_details = None
         self._vault_id = None
         self._kms_key_id = None
         self._kms_key_version_id = None
@@ -262,9 +269,8 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
     def peer_cloud_autonomous_vm_cluster_ids(self):
         """
         Gets the peer_cloud_autonomous_vm_cluster_ids of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
-        The collection of `OCID`__ of the peer cloudAutonomousExadataVMClusters.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers
+        on new shards of distributed autonomous database please use peerDetails.
 
 
         :return: The peer_cloud_autonomous_vm_cluster_ids of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
@@ -276,15 +282,38 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
     def peer_cloud_autonomous_vm_cluster_ids(self, peer_cloud_autonomous_vm_cluster_ids):
         """
         Sets the peer_cloud_autonomous_vm_cluster_ids of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
-        The collection of `OCID`__ of the peer cloudAutonomousExadataVMClusters.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers
+        on new shards of distributed autonomous database please use peerDetails.
 
 
         :param peer_cloud_autonomous_vm_cluster_ids: The peer_cloud_autonomous_vm_cluster_ids of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
         :type: list[str]
         """
         self._peer_cloud_autonomous_vm_cluster_ids = peer_cloud_autonomous_vm_cluster_ids
+
+    @property
+    def peer_details(self):
+        """
+        Gets the peer_details of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
+
+
+        :return: The peer_details of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :rtype: list[oci.distributed_database.models.CreateShardPeerWithDedicatedInfraDetails]
+        """
+        return self._peer_details
+
+    @peer_details.setter
+    def peer_details(self, peer_details):
+        """
+        Sets the peer_details of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        The details required for creation of the peer for the autonomous dedicated infrastructure based shard.
+
+
+        :param peer_details: The peer_details of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :type: list[oci.distributed_database.models.CreateShardPeerWithDedicatedInfraDetails]
+        """
+        self._peer_details = peer_details
 
     @property
     def vault_id(self):

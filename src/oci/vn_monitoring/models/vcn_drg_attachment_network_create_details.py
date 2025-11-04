@@ -23,7 +23,7 @@ class VcnDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDetails):
 
         :param type:
             The value to assign to the type property of this VcnDrgAttachmentNetworkCreateDetails.
-            Allowed values for this property are: "VCN"
+            Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "LOOPBACK", "FLEX_TUNNEL", "INTERNET"
         :type type: str
 
         :param id:
@@ -34,27 +34,20 @@ class VcnDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDetails):
             The value to assign to the route_table_id property of this VcnDrgAttachmentNetworkCreateDetails.
         :type route_table_id: str
 
-        :param vcn_route_type:
-            The value to assign to the vcn_route_type property of this VcnDrgAttachmentNetworkCreateDetails.
-        :type vcn_route_type: str
-
         """
         self.swagger_types = {
             'type': 'str',
             'id': 'str',
-            'route_table_id': 'str',
-            'vcn_route_type': 'str'
+            'route_table_id': 'str'
         }
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
-            'route_table_id': 'routeTableId',
-            'vcn_route_type': 'vcnRouteType'
+            'route_table_id': 'routeTableId'
         }
         self._type = None
         self._id = None
         self._route_table_id = None
-        self._vcn_route_type = None
         self._type = 'VCN'
 
     @property
@@ -104,32 +97,6 @@ class VcnDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDetails):
         :type: str
         """
         self._route_table_id = route_table_id
-
-    @property
-    def vcn_route_type(self):
-        """
-        Gets the vcn_route_type of this VcnDrgAttachmentNetworkCreateDetails.
-        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
-        Routes from the VCN ingress route table are always imported.
-
-
-        :return: The vcn_route_type of this VcnDrgAttachmentNetworkCreateDetails.
-        :rtype: str
-        """
-        return self._vcn_route_type
-
-    @vcn_route_type.setter
-    def vcn_route_type(self, vcn_route_type):
-        """
-        Sets the vcn_route_type of this VcnDrgAttachmentNetworkCreateDetails.
-        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
-        Routes from the VCN ingress route table are always imported.
-
-
-        :param vcn_route_type: The vcn_route_type of this VcnDrgAttachmentNetworkCreateDetails.
-        :type: str
-        """
-        self._vcn_route_type = vcn_route_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

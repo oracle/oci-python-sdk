@@ -82,10 +82,6 @@ class DrgAttachment(object):
             The value to assign to the freeform_tags property of this DrgAttachment.
         :type freeform_tags: dict(str, str)
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this DrgAttachment.
-        :type route_table_id: str
-
         :param vcn_id:
             The value to assign to the vcn_id property of this DrgAttachment.
         :type vcn_id: str
@@ -110,7 +106,6 @@ class DrgAttachment(object):
             'network_details': 'DrgAttachmentNetworkDetails',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'route_table_id': 'str',
             'vcn_id': 'str',
             'export_drg_route_distribution_id': 'str',
             'is_cross_tenancy': 'bool'
@@ -126,7 +121,6 @@ class DrgAttachment(object):
             'network_details': 'networkDetails',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId',
             'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
             'is_cross_tenancy': 'isCrossTenancy'
@@ -141,7 +135,6 @@ class DrgAttachment(object):
         self._network_details = None
         self._defined_tags = None
         self._freeform_tags = None
-        self._route_table_id = None
         self._vcn_id = None
         self._export_drg_route_distribution_id = None
         self._is_cross_tenancy = None
@@ -422,54 +415,6 @@ class DrgAttachment(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
-
-    @property
-    def route_table_id(self):
-        """
-        Gets the route_table_id of this DrgAttachment.
-        The `OCID`__ of the route table the DRG attachment is using.
-
-        For information about why you would associate a route table with a DRG attachment, see:
-
-          * `Transit Routing: Access to Multiple VCNs in Same Region`__
-          * `Transit Routing: Private Access to Oracle Services`__
-
-        This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The route_table_id of this DrgAttachment.
-        :rtype: str
-        """
-        return self._route_table_id
-
-    @route_table_id.setter
-    def route_table_id(self, route_table_id):
-        """
-        Sets the route_table_id of this DrgAttachment.
-        The `OCID`__ of the route table the DRG attachment is using.
-
-        For information about why you would associate a route table with a DRG attachment, see:
-
-          * `Transit Routing: Access to Multiple VCNs in Same Region`__
-          * `Transit Routing: Private Access to Oracle Services`__
-
-        This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param route_table_id: The route_table_id of this DrgAttachment.
-        :type: str
-        """
-        self._route_table_id = route_table_id
 
     @property
     def vcn_id(self):

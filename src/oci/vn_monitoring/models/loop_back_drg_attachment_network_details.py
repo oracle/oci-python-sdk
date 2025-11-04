@@ -23,7 +23,7 @@ class LoopBackDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
 
         :param type:
             The value to assign to the type property of this LoopBackDrgAttachmentNetworkDetails.
-            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION"
+            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "FLEX_TUNNEL", "LOOPBACK", "INTERNET"
         :type type: str
 
         :param id:
@@ -34,20 +34,41 @@ class LoopBackDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             The value to assign to the ids property of this LoopBackDrgAttachmentNetworkDetails.
         :type ids: list[str]
 
+        :param mpls_label:
+            The value to assign to the mpls_label property of this LoopBackDrgAttachmentNetworkDetails.
+        :type mpls_label: int
+
+        :param import_route_target:
+            The value to assign to the import_route_target property of this LoopBackDrgAttachmentNetworkDetails.
+        :type import_route_target: str
+
+        :param export_route_target:
+            The value to assign to the export_route_target property of this LoopBackDrgAttachmentNetworkDetails.
+        :type export_route_target: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'id': 'str',
-            'ids': 'list[str]'
+            'ids': 'list[str]',
+            'mpls_label': 'int',
+            'import_route_target': 'str',
+            'export_route_target': 'str'
         }
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
-            'ids': 'ids'
+            'ids': 'ids',
+            'mpls_label': 'mplsLabel',
+            'import_route_target': 'importRouteTarget',
+            'export_route_target': 'exportRouteTarget'
         }
         self._type = None
         self._id = None
         self._ids = None
+        self._mpls_label = None
+        self._import_route_target = None
+        self._export_route_target = None
         self._type = 'LOOPBACK'
 
     @property
@@ -77,6 +98,82 @@ class LoopBackDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         :type: list[str]
         """
         self._ids = ids
+
+    @property
+    def mpls_label(self):
+        """
+        Gets the mpls_label of this LoopBackDrgAttachmentNetworkDetails.
+        The MPLS label of the DRG attachment.
+
+
+        :return: The mpls_label of this LoopBackDrgAttachmentNetworkDetails.
+        :rtype: int
+        """
+        return self._mpls_label
+
+    @mpls_label.setter
+    def mpls_label(self, mpls_label):
+        """
+        Sets the mpls_label of this LoopBackDrgAttachmentNetworkDetails.
+        The MPLS label of the DRG attachment.
+
+
+        :param mpls_label: The mpls_label of this LoopBackDrgAttachmentNetworkDetails.
+        :type: int
+        """
+        self._mpls_label = mpls_label
+
+    @property
+    def import_route_target(self):
+        """
+        Gets the import_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+        tagged with the attachment's import route target.
+
+
+        :return: The import_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._import_route_target
+
+    @import_route_target.setter
+    def import_route_target(self, import_route_target):
+        """
+        Sets the import_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+        tagged with the attachment's import route target.
+
+
+        :param import_route_target: The import_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._import_route_target = import_route_target
+
+    @property
+    def export_route_target(self):
+        """
+        Gets the export_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        Routes which are exported to the attachment are exported to the route reflectors
+        with the route target set to the value of the attachment's export route target.
+
+
+        :return: The export_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._export_route_target
+
+    @export_route_target.setter
+    def export_route_target(self, export_route_target):
+        """
+        Sets the export_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        Routes which are exported to the attachment are exported to the route reflectors
+        with the route target set to the value of the attachment's export route target.
+
+
+        :param export_route_target: The export_route_target of this LoopBackDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._export_route_target = export_route_target
 
     def __repr__(self):
         return formatted_flat_dict(self)

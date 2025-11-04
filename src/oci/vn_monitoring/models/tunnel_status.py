@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelStatus(object):
     """
-    Deprecated. For tunnel information, instead see :class:`IPSecConnectionTunnel`.
+    Specific connection details for an IPSec tunnel.
     """
 
     #: A constant which can be used with the lifecycle_state property of a TunnelStatus.
@@ -27,10 +27,6 @@ class TunnelStatus(object):
     #: This constant has a value of "DOWN_FOR_MAINTENANCE"
     LIFECYCLE_STATE_DOWN_FOR_MAINTENANCE = "DOWN_FOR_MAINTENANCE"
 
-    #: A constant which can be used with the lifecycle_state property of a TunnelStatus.
-    #: This constant has a value of "PARTIAL_UP"
-    LIFECYCLE_STATE_PARTIAL_UP = "PARTIAL_UP"
-
     def __init__(self, **kwargs):
         """
         Initializes a new TunnelStatus object with values from keyword arguments.
@@ -42,7 +38,7 @@ class TunnelStatus(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TunnelStatus.
-            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP"
+            Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE"
         :type lifecycle_state: str
 
         :param time_created:
@@ -105,7 +101,7 @@ class TunnelStatus(object):
         Gets the lifecycle_state of this TunnelStatus.
         The tunnel's current state.
 
-        Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP"
+        Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE"
 
 
         :return: The lifecycle_state of this TunnelStatus.
@@ -123,7 +119,7 @@ class TunnelStatus(object):
         :param lifecycle_state: The lifecycle_state of this TunnelStatus.
         :type: str
         """
-        allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP"]
+        allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
                 f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"

@@ -15,18 +15,6 @@ class UpdateDhcpDetails(object):
     UpdateDhcpDetails model.
     """
 
-    #: A constant which can be used with the domain_name_type property of a UpdateDhcpDetails.
-    #: This constant has a value of "SUBNET_DOMAIN"
-    DOMAIN_NAME_TYPE_SUBNET_DOMAIN = "SUBNET_DOMAIN"
-
-    #: A constant which can be used with the domain_name_type property of a UpdateDhcpDetails.
-    #: This constant has a value of "VCN_DOMAIN"
-    DOMAIN_NAME_TYPE_VCN_DOMAIN = "VCN_DOMAIN"
-
-    #: A constant which can be used with the domain_name_type property of a UpdateDhcpDetails.
-    #: This constant has a value of "CUSTOM_DOMAIN"
-    DOMAIN_NAME_TYPE_CUSTOM_DOMAIN = "CUSTOM_DOMAIN"
-
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDhcpDetails object with values from keyword arguments.
@@ -48,31 +36,23 @@ class UpdateDhcpDetails(object):
             The value to assign to the options property of this UpdateDhcpDetails.
         :type options: list[oci.vn_monitoring.models.DhcpOption]
 
-        :param domain_name_type:
-            The value to assign to the domain_name_type property of this UpdateDhcpDetails.
-            Allowed values for this property are: "SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"
-        :type domain_name_type: str
-
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'options': 'list[DhcpOption]',
-            'domain_name_type': 'str'
+            'options': 'list[DhcpOption]'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'options': 'options',
-            'domain_name_type': 'domainNameType'
+            'options': 'options'
         }
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._options = None
-        self._domain_name_type = None
 
     @property
     def defined_tags(self):
@@ -171,37 +151,6 @@ class UpdateDhcpDetails(object):
         :type: list[oci.vn_monitoring.models.DhcpOption]
         """
         self._options = options
-
-    @property
-    def domain_name_type(self):
-        """
-        Gets the domain_name_type of this UpdateDhcpDetails.
-        The search domain name type of DHCP options
-
-        Allowed values for this property are: "SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"
-
-
-        :return: The domain_name_type of this UpdateDhcpDetails.
-        :rtype: str
-        """
-        return self._domain_name_type
-
-    @domain_name_type.setter
-    def domain_name_type(self, domain_name_type):
-        """
-        Sets the domain_name_type of this UpdateDhcpDetails.
-        The search domain name type of DHCP options
-
-
-        :param domain_name_type: The domain_name_type of this UpdateDhcpDetails.
-        :type: str
-        """
-        allowed_values = ["SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"]
-        if not value_allowed_none_or_none_sentinel(domain_name_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `domain_name_type`, must be None or one of {allowed_values}"
-            )
-        self._domain_name_type = domain_name_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -38,6 +38,10 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
             The value to assign to the peer_vm_cluster_ids property of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
         :type peer_vm_cluster_ids: list[str]
 
+        :param peer_details:
+            The value to assign to the peer_details property of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
+        :type peer_details: list[oci.distributed_database.models.CreateCatalogPeerWithExadbXsDetails]
+
         :param shard_space:
             The value to assign to the shard_space property of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
         :type shard_space: str
@@ -60,6 +64,7 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
             'vm_cluster_id': 'str',
             'admin_password': 'str',
             'peer_vm_cluster_ids': 'list[str]',
+            'peer_details': 'list[CreateCatalogPeerWithExadbXsDetails]',
             'shard_space': 'str',
             'vault_id': 'str',
             'kms_key_id': 'str',
@@ -70,6 +75,7 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
             'vm_cluster_id': 'vmClusterId',
             'admin_password': 'adminPassword',
             'peer_vm_cluster_ids': 'peerVmClusterIds',
+            'peer_details': 'peerDetails',
             'shard_space': 'shardSpace',
             'vault_id': 'vaultId',
             'kms_key_id': 'kmsKeyId',
@@ -79,6 +85,7 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
         self._vm_cluster_id = None
         self._admin_password = None
         self._peer_vm_cluster_ids = None
+        self._peer_details = None
         self._shard_space = None
         self._vault_id = None
         self._kms_key_id = None
@@ -141,9 +148,8 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
     def peer_vm_cluster_ids(self):
         """
         Gets the peer_vm_cluster_ids of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
-        The collection of `OCID`__ of the peer VmClusterIds.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        This field is deprecated. This should not be used while creation of new distributed database. To set the peers
+        on catalog of distributed database please use peerDetails.
 
 
         :return: The peer_vm_cluster_ids of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
@@ -155,15 +161,38 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
     def peer_vm_cluster_ids(self, peer_vm_cluster_ids):
         """
         Sets the peer_vm_cluster_ids of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
-        The collection of `OCID`__ of the peer VmClusterIds.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        This field is deprecated. This should not be used while creation of new distributed database. To set the peers
+        on catalog of distributed database please use peerDetails.
 
 
         :param peer_vm_cluster_ids: The peer_vm_cluster_ids of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
         :type: list[str]
         """
         self._peer_vm_cluster_ids = peer_vm_cluster_ids
+
+    @property
+    def peer_details(self):
+        """
+        Gets the peer_details of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
+        The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+
+
+        :return: The peer_details of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
+        :rtype: list[oci.distributed_database.models.CreateCatalogPeerWithExadbXsDetails]
+        """
+        return self._peer_details
+
+    @peer_details.setter
+    def peer_details(self, peer_details):
+        """
+        Sets the peer_details of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
+        The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+
+
+        :param peer_details: The peer_details of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
+        :type: list[oci.distributed_database.models.CreateCatalogPeerWithExadbXsDetails]
+        """
+        self._peer_details = peer_details
 
     @property
     def shard_space(self):

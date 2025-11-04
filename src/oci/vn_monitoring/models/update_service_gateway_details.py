@@ -36,10 +36,6 @@ class UpdateServiceGatewayDetails(object):
             The value to assign to the freeform_tags property of this UpdateServiceGatewayDetails.
         :type freeform_tags: dict(str, str)
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this UpdateServiceGatewayDetails.
-        :type route_table_id: str
-
         :param services:
             The value to assign to the services property of this UpdateServiceGatewayDetails.
         :type services: list[oci.vn_monitoring.models.ServiceIdRequestDetails]
@@ -50,7 +46,6 @@ class UpdateServiceGatewayDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'route_table_id': 'str',
             'services': 'list[ServiceIdRequestDetails]'
         }
         self.attribute_map = {
@@ -58,14 +53,12 @@ class UpdateServiceGatewayDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'route_table_id': 'routeTableId',
             'services': 'services'
         }
         self._block_traffic = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
-        self._route_table_id = None
         self._services = None
 
     @property
@@ -175,40 +168,6 @@ class UpdateServiceGatewayDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
-
-    @property
-    def route_table_id(self):
-        """
-        Gets the route_table_id of this UpdateServiceGatewayDetails.
-        The `OCID`__ of the route table the service gateway will use.
-        For information about why you would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-
-
-        :return: The route_table_id of this UpdateServiceGatewayDetails.
-        :rtype: str
-        """
-        return self._route_table_id
-
-    @route_table_id.setter
-    def route_table_id(self, route_table_id):
-        """
-        Sets the route_table_id of this UpdateServiceGatewayDetails.
-        The `OCID`__ of the route table the service gateway will use.
-        For information about why you would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-
-
-        :param route_table_id: The route_table_id of this UpdateServiceGatewayDetails.
-        :type: str
-        """
-        self._route_table_id = route_table_id
 
     @property
     def services(self):

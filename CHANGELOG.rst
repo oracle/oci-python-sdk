@@ -5,6 +5,63 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.163.0 - 2025-11-04
+====================
+
+Added 
+----- 
+* Support for Data Intelligence Foundation service 
+* Support for Private Service Access (PSA) service 
+* Support for pluggable database snapshots for exadata databases in the Database service 
+* Support for backup configurations for globally distributed databases in the Database service 
+* Support for fine grained configurations for data guards in globally distributed databases in the Database service 
+* Support for Zero trust Packet Routing (ZPR) policy analysis in the Network Monitoring service 
+* Support for instance pool pre-termination action in the Compute service  
+
+Breaking 
+-------- 
+* Model was renamed from `ChangeDrgCompartmentDetails` to `ChangeDrgAttachmentCompartmentDetails` in the Network Monitoring service 
+* Model was renamed from `ChangeNatGatewayCompartmentDetails` to `ChangeFlexTunnelCompartmentDetails` in the Network Monitoring service 
+* Model was renamed from `ByoipRangeCollection` to `FlexTunnelCollection` in the Network Monitoring service 
+* Model was renamed from `TunnelRouteSummary` to `FlexTunnelRouteSummary` in the Network Monitoring service 
+* Model was renamed from `PublicIpPoolSummary` to `FlexTunnelSummary` in the Network Monitoring service 
+* Property `cpe_device_shape_id` is removed from models `Cpe`,`CreateCpeDetails` in the Network Monitoring service 
+* Property `defined_tag` is removed from models `CreateCrossConnectDetails`,`CreateCrossConnectGroupDetails` in the Network Monitoring service 
+* Property `domain_name_type` is removed from model `CreateDhcpDetails` in the Network Monitoring service 
+* Property `route_table_id` is removed from models `CreateDrgAttachmentDetails`,`CreateInternetGatewayDetails`, `CreateLocalPeeringGatewayDetails`, `CreateServiceGatewayDetails`, `DrgAttachment`, `InternetGateway`, `UpdateDrgAttachmentDetails`, `UpdateInternetGatewayDetails`, `UpdateLocalPeeringGatewayDetails`,`UpdateServiceGatewayDetails` in the Network Monitoring service 
+* Property `cpe_local_identifier` , `cpe_local_identifier_type`, `tunnel_configuration`, `tunnel_count` are removed from model `CreateIPSecConnectionDetails`  in the Network Monitoring service 
+* Property `ipv6_subnet_cidr` is removed from model `CreateIpv6Details` in the Network Monitoring service 
+* Property `vlan_id` is removed from model `CreatePrivateIpDetails` in the Network Monitoring service 
+* Property `public_ip_pool_id from` is removed from model `CreatePublicIpDetails` in the Network Monitoring service 
+* Property `defined_tags`, `freeform_tags` are removed from models `CreateRemotePeeringConnectionDetails`, `RemotePeeringConnection`, `UpdateCrossConnectDetails`, `UpdateRemotePeeringConnectionDetails`  in the Network Monitoring service 
+* Property `ipv6_cidr_blocks`, `prohibit_internet_ingress` are removed from model `CreateSubnetDetails` in the Network Monitoring service 
+* Property `pv6_private_cidr_blocks`, `is_oracle_gua_allocation_enabled` ,` byoipv6_cidr_details` are removed from model `CreateSubnetDetails`  in the Network Monitoring service 
+* Property `routing_policy`, `bgp_admin_state`, `is_bfd_enabled`, `customer_asn`, `defined_tags`, `freeform_tags`, `provider_service_key_name`, `ip_mtu` are removed from model `CreateVirtualCircuitDetails` in the Network Monitoring service 
+* Property `defined_tags`, `freeform_tags`, `customer_reference_name`, `macsec_properties`, `oci_physical_device_name`, `oci_logical_device_name` are removed from models `CrossConnectGroup`, `CrossConnect`  in the Network Monitoring service 
+* Property `customer_bgp_peering_ipv6`, `oracle_bgp_peering_ipv6` are removed from model `CrossConnectMapping` in the Network Monitoring service 
+* Property `encryption_status`, `light_levels_in_d_bm` are removed from model `CrossConnectStatus` in the Network Monitoring service 
+* Property `domain_name_type` is removed from model `DhcpOptions` in the Network Monitoring service 
+* Property `description` is removed from models `EgressSecurityRule`, `IngressSecurityRule` in the Network Monitoring service 
+* Property `customer_asn_management`,`provider_service_key_management`,`bandwith_shape_management`,`required_total_cross_connects` are removed from model `FastConnectProviderService`  in the Network Monitoring service 
+* Property `cpe_local_identifier`, `cpe_local_identifier_type` are removed from model `IPSecConnection` in the Network Monitoring service 
+* Property `peer_advertised_cidr_details`, `peer_id`, `route_table_id` are removed from model `LocalPeeringGateway` in the Network Monitoring service 
+* Property `vlan_id` is removed from models `PrivateIp`, `Vnic` in the Network Monitoring service 
+* Property `assigned_entity_id`, `assigned_entity_type`, `public_ip_pool_id` are removed from model `PublicIp` in the Network Monitoring service 
+* Property `description`, `route_type` are removed from model `RouteRule` in the Network Monitoring service 
+* Property `ipv6_cidr_blocks`, `prohibit_internet_ingress` are removed from model `Subnet` in the Network Monitoring service 
+* Property `cpe_device_shape_id` is removed from model `UpdateCpeDetails` in the Network Monitoring service 
+* Property `defined_tags`, `freeform_tags`, `customer_reference_name`, `macsec_properties`, `display_name` are removed from model `UpdateCrossConnectGroupDetails`  in the Network Monitoring service 
+* Property `domain_name_type` is removed from mode `UpdateDhcpDetails` in the Network Monitoring service 
+* Property `cpe_local_identifier`, `cpe_local_identifier_type`, `static_routes from` are removed from model `UpdateIPSecConnectionDetails`  in the Network Monitoring service 
+* Property `cidr_block`, `ipv6_cidr_block`, `ipv6_cidr_blocks` are removed from model `UpdateSubnetDetails`  in the Network Monitoring service 
+* Property `outing_policy`, `bgp_admin_state`, `is_bfd_enabled`, `customer_asn`, `defined_tags`, `freeform_tags`, `provider_service_key_name`, `ip_mtu` are removed from model `UpdateVirtualCircuitDetails`  in the Network Monitoring service 
+* Property `vcn_route_type from` are removed from models `VcnDrgAttachmentNetworkCreateDetails`, `VcnDrgAttachmentNetworkDetails`, `VcnDrgAttachmentNetworkUpdateDetails` in the Network Monitoring service 
+* Property `byoipv6_cidr_blocks`, `ipv6_private_cidr_blocks`, `cidr_blocks`, `ipv6_cidr_blocks` are removed from model `Vcn`  in the Network Monitoring service 
+* Property `bgp_ipv6_session_state`, `routing_policy`, `bgp_admin_state`, `is_bfd_enabled`, `customer_asn`, `defined_tags`, `freeform_tags`, `provider_service_key_name`, `type`, `ip_mtu` are removed from model `VirtualCircuit`  in the Network Monitoring service 
+* Property `domain_name_type` is removed from model `UpdateDhcpDetails` in the Network Monitoring service 
+* Removed support for classes `AddPublicIpPoolCapacityDetails`, `AddSubnetIpv6CidrDetails`, `AddVcnCidrDetails`, `AddVcnIpv6CidrDetails`, `AllowedIkeIPSecParameters`, `AllowedPhaseOneParameters`, `AllowedPhaseTwoParameters`, `BgpSessionInfo`, `ByoipAllocatedRangeCollection`, `ByoipAllocatedRangeSummary`, `ByoipRangeSummary`, `ByoipRangeVcnIpv6AllocationSummary`, `ByoipRange`, `Byoipv6CidrDetails`, `CaptureFilter`, `ChangeByoipRangeCompartmentDetails`, `ChangeCaptureFilterCompartmentDetails`, `ChangeCpeCompartmentDetails`, `ChangeCrossConnectCompartmentDetails`, `ChangeCrossConnectGroupCompartmentDetails`, `ChangeDhcpOptionsCompartmentDetails`, `ChangeInternetGatewayCompartmentDetails`, `ChangeIPSecConnectionCompartmentDetails`, `ChangeLocalPeeringGatewayCompartmentDetails`, `ChangeNetworkSecurityGroupCompartmentDetails`, `ChangePublicIpCompartmentDetails`, `ChangePublicIpPoolCompartmentDetails`, `ChangeRemotePeeringConnectionCompartmentDetails`, `ChangeRouteTableCompartmentDetails`, `ChangeSecurityListCompartmentDetails`, `ChangeServiceGatewayCompartmentDetails`, `ChangeSubnetCompartmentDetails`, `ChangeVirtualCircuitCompartmentDetails`, `ChangeVlanCompartmentDetails`, `ChangeVtapCompartmentDetails`, `CpeDeviceConfigAnswer`, `CpeDeviceConfigQuestion`, `CpeDeviceInfo`, `CpeDeviceShapeDetail`, `CpeDeviceShapeSummary`, `CreateByoipRangeDetails`, `CreateCaptureFilterDetails`, `CreateIPSecConnectionTunnelDetails`, `CreateIPSecTunnelBgpSessionDetails`, `CreateIPSecTunnelEncryptionDomainDetails`, `CreateMacsecKey`, `CreateMacsecProperties`, `CreateNatGatewayDetails`, `CreatePublicIpPoolDetails`, `CreateVlanDetails`, `CreateVnicDetails`, `CreateVtapDetails`, `CrossConnectMappingDetailsCollection`, `CrossConnectMappingDetails`, `DefaultPhaseOneParameters`, `DefaultPhaseTwoParameters`, `DpdConfig`, `DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria`, `DrgRedundancyStatus`, `EncryptionDomainConfig`, `FastConnectProviderServiceKey`, `FlowLogCaptureFilterRuleDetails`, `IPSecConnectionTunnelErrorDetails`, `IPSecConnectionTunnelSharedSecret`, `MacsecKey`, `MacsecProperties`, `ModifyVcnCidrDetails`, `NatGateway`, `PhaseOneConfigDetails`, `PhaseTwoConfigDetails`, `PublicIpPool`, `RemovePublicIpPoolCapacityDetails`, `RemoveSubnetIpv6CidrDetails`, `RemoveVcnCidrDetails`, `RemoveVcnIpv6CidrDetails`, `TunnelCpeDeviceConfig`, `TunnelPhaseOneDetails`, `TunnelPhaseTwoDetails`, `TunnelSecurityAssociationSummary`, `UpdateByoipRangeDetails`, `UpdateCaptureFilterDetails`, `UpdateIPSecConnectionTunnelDetails`, `UpdateIPSecConnectionTunnelSharedSecretDetails`, `UpdateIPSecTunnelBgpSessionDetails`, `UpdateIPSecTunnelEncryptionDomainDetails`, `UpdateMacsecKey`, `UpdateMacsecProperties`, `UpdateNatGatewayDetails`, `UpdatePublicIpPoolDetails`, `UpdateTunnelCpeDeviceConfigDetails`, `UpdateVlanDetails`, `UpdateVtapDetails`, `VcnDnsResolverAssociation`, `Vlan`, `VtapCaptureFilterRuleDetails`, `Vtap` in the Network Monitoring service  
+
+====================
 2.162.0 - 2025-10-28
 ====================
 

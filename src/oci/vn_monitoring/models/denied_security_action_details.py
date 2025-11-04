@@ -75,7 +75,7 @@ class DeniedSecurityActionDetails(object):
     def evaluated_security_list_ids(self):
         """
         Gets the evaluated_security_list_ids of this DeniedSecurityActionDetails.
-        The list of `OCIDs`__ of evaluated security lists associcated
+        The list of `OCIDs`__ of evaluated security lists associated
         with the OCI resource's subnet.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -90,7 +90,7 @@ class DeniedSecurityActionDetails(object):
     def evaluated_security_list_ids(self, evaluated_security_list_ids):
         """
         Sets the evaluated_security_list_ids of this DeniedSecurityActionDetails.
-        The list of `OCIDs`__ of evaluated security lists associcated
+        The list of `OCIDs`__ of evaluated security lists associated
         with the OCI resource's subnet.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm

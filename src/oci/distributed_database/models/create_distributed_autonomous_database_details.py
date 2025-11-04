@@ -132,6 +132,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
             The value to assign to the catalog_details property of this CreateDistributedAutonomousDatabaseDetails.
         :type catalog_details: list[oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogDetails]
 
+        :param db_backup_config:
+            The value to assign to the db_backup_config property of this CreateDistributedAutonomousDatabaseDetails.
+        :type db_backup_config: oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDistributedAutonomousDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -162,6 +166,7 @@ class CreateDistributedAutonomousDatabaseDetails(object):
             'db_deployment_type': 'str',
             'shard_details': 'list[CreateDistributedAutonomousDatabaseShardDetails]',
             'catalog_details': 'list[CreateDistributedAutonomousDatabaseCatalogDetails]',
+            'db_backup_config': 'DistributedAutonomousDbBackupConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -186,6 +191,7 @@ class CreateDistributedAutonomousDatabaseDetails(object):
             'db_deployment_type': 'dbDeploymentType',
             'shard_details': 'shardDetails',
             'catalog_details': 'catalogDetails',
+            'db_backup_config': 'dbBackupConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -209,6 +215,7 @@ class CreateDistributedAutonomousDatabaseDetails(object):
         self._db_deployment_type = None
         self._shard_details = None
         self._catalog_details = None
+        self._db_backup_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -377,7 +384,7 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def db_workload(self):
         """
         **[Required]** Gets the db_workload of this CreateDistributedAutonomousDatabaseDetails.
-        Possible workload types.
+        Possible workload types. Currently only OLTP workload type is supported.
 
         Allowed values for this property are: "OLTP", "DW"
 
@@ -391,7 +398,7 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this CreateDistributedAutonomousDatabaseDetails.
-        Possible workload types.
+        Possible workload types. Currently only OLTP workload type is supported.
 
 
         :param db_workload: The db_workload of this CreateDistributedAutonomousDatabaseDetails.
@@ -456,8 +463,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def chunks(self):
         """
         Gets the chunks of this CreateDistributedAutonomousDatabaseDetails.
-        The default number of unique chunks in a shardspace. The value of chunks must be
-        greater than 2 times the size of the largest shardgroup in any shardspace.
+        Number of chunks in a shardspace. The value of chunks must be
+        greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is
+        required to be provided for distributed autonomous databases being created with
+        SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 
 
         :return: The chunks of this CreateDistributedAutonomousDatabaseDetails.
@@ -469,8 +478,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def chunks(self, chunks):
         """
         Sets the chunks of this CreateDistributedAutonomousDatabaseDetails.
-        The default number of unique chunks in a shardspace. The value of chunks must be
-        greater than 2 times the size of the largest shardgroup in any shardspace.
+        Number of chunks in a shardspace. The value of chunks must be
+        greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is
+        required to be provided for distributed autonomous databases being created with
+        SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 
 
         :param chunks: The chunks of this CreateDistributedAutonomousDatabaseDetails.
@@ -482,7 +493,9 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def listener_port(self):
         """
         **[Required]** Gets the listener_port of this CreateDistributedAutonomousDatabaseDetails.
-        The listener port number for the Globally distributed autonomous database.
+        The listener port number for the Globally distributed autonomous database. The listener port number
+        has to be unique for a customer tenancy across all distributed autonomous databases. Same port number
+        should not be re-used for any other distributed autonomous database.
 
 
         :return: The listener_port of this CreateDistributedAutonomousDatabaseDetails.
@@ -494,7 +507,9 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def listener_port(self, listener_port):
         """
         Sets the listener_port of this CreateDistributedAutonomousDatabaseDetails.
-        The listener port number for the Globally distributed autonomous database.
+        The listener port number for the Globally distributed autonomous database. The listener port number
+        has to be unique for a customer tenancy across all distributed autonomous databases. Same port number
+        should not be re-used for any other distributed autonomous database.
 
 
         :param listener_port: The listener_port of this CreateDistributedAutonomousDatabaseDetails.
@@ -506,7 +521,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def listener_port_tls(self):
         """
         Gets the listener_port_tls of this CreateDistributedAutonomousDatabaseDetails.
-        The TLS listener port number for Globally distributed autonomous database.
+        The TLS listener port number for Globally distributed autonomous database. The TLS listener port number
+        has to be unique for a customer tenancy across all distributed autonomous databases. Same port number
+        should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory
+        for dedicated infrastructure based distributed autonomous databases.
 
 
         :return: The listener_port_tls of this CreateDistributedAutonomousDatabaseDetails.
@@ -518,7 +536,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def listener_port_tls(self, listener_port_tls):
         """
         Sets the listener_port_tls of this CreateDistributedAutonomousDatabaseDetails.
-        The TLS listener port number for Globally distributed autonomous database.
+        The TLS listener port number for Globally distributed autonomous database. The TLS listener port number
+        has to be unique for a customer tenancy across all distributed autonomous databases. Same port number
+        should not be re-used for any other distributed autonomous database. The listenerPortTls is mandatory
+        for dedicated infrastructure based distributed autonomous databases.
 
 
         :param listener_port_tls: The listener_port_tls of this CreateDistributedAutonomousDatabaseDetails.
@@ -530,7 +551,9 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def ons_port_local(self):
         """
         **[Required]** Gets the ons_port_local of this CreateDistributedAutonomousDatabaseDetails.
-        Ons local port number.
+        Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for
+        a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for
+        any other distributed autonomous database.
 
 
         :return: The ons_port_local of this CreateDistributedAutonomousDatabaseDetails.
@@ -542,7 +565,9 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def ons_port_local(self, ons_port_local):
         """
         Sets the ons_port_local of this CreateDistributedAutonomousDatabaseDetails.
-        Ons local port number.
+        Ons local port number for Globally distributed autonomous database. The onsPortLocal has to be unique for
+        a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for
+        any other distributed autonomous database.
 
 
         :param ons_port_local: The ons_port_local of this CreateDistributedAutonomousDatabaseDetails.
@@ -554,7 +579,9 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def ons_port_remote(self):
         """
         **[Required]** Gets the ons_port_remote of this CreateDistributedAutonomousDatabaseDetails.
-        Ons remote port number.
+        Ons remote port number for Globally distributed autonomous database. The onsPortRemote has to be unique for
+        a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for
+        any other distributed autonomous database.
 
 
         :return: The ons_port_remote of this CreateDistributedAutonomousDatabaseDetails.
@@ -566,7 +593,9 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def ons_port_remote(self, ons_port_remote):
         """
         Sets the ons_port_remote of this CreateDistributedAutonomousDatabaseDetails.
-        Ons remote port number.
+        Ons remote port number for Globally distributed autonomous database. The onsPortRemote has to be unique for
+        a customer tenancy across all distributed autonomous databases. Same port number should not be re-used for
+        any other distributed autonomous database.
 
 
         :param ons_port_remote: The ons_port_remote of this CreateDistributedAutonomousDatabaseDetails.
@@ -578,8 +607,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def replication_method(self):
         """
         Gets the replication_method of this CreateDistributedAutonomousDatabaseDetails.
-        The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for
-        DataGuard. If replicationMethod is not provided, it defaults to DG.
+        The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication.
+        With RAFT replication, shards cannot have peers details set on them. In case shards need to
+        have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+        without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 
         Allowed values for this property are: "RAFT", "DG"
 
@@ -593,8 +624,10 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def replication_method(self, replication_method):
         """
         Sets the replication_method of this CreateDistributedAutonomousDatabaseDetails.
-        The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for
-        DataGuard. If replicationMethod is not provided, it defaults to DG.
+        The Replication method for Globally distributed autonomous database. Use RAFT for Raft based replication.
+        With RAFT replication, shards cannot have peers details set on them. In case shards need to
+        have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+        without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 
 
         :param replication_method: The replication_method of this CreateDistributedAutonomousDatabaseDetails.
@@ -635,7 +668,8 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def replication_unit(self):
         """
         Gets the replication_unit of this CreateDistributedAutonomousDatabaseDetails.
-        For RAFT replication based Globally distributed autonomous database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
+        Globally distributed autonomous database, the value should be at least twice the number of shards.
 
 
         :return: The replication_unit of this CreateDistributedAutonomousDatabaseDetails.
@@ -647,7 +681,8 @@ class CreateDistributedAutonomousDatabaseDetails(object):
     def replication_unit(self, replication_unit):
         """
         Sets the replication_unit of this CreateDistributedAutonomousDatabaseDetails.
-        For RAFT replication based Globally distributed autonomous database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
+        Globally distributed autonomous database, the value should be at least twice the number of shards.
 
 
         :param replication_unit: The replication_unit of this CreateDistributedAutonomousDatabaseDetails.
@@ -733,6 +768,26 @@ class CreateDistributedAutonomousDatabaseDetails(object):
         :type: list[oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogDetails]
         """
         self._catalog_details = catalog_details
+
+    @property
+    def db_backup_config(self):
+        """
+        Gets the db_backup_config of this CreateDistributedAutonomousDatabaseDetails.
+
+        :return: The db_backup_config of this CreateDistributedAutonomousDatabaseDetails.
+        :rtype: oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+        """
+        return self._db_backup_config
+
+    @db_backup_config.setter
+    def db_backup_config(self, db_backup_config):
+        """
+        Sets the db_backup_config of this CreateDistributedAutonomousDatabaseDetails.
+
+        :param db_backup_config: The db_backup_config of this CreateDistributedAutonomousDatabaseDetails.
+        :type: oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+        """
+        self._db_backup_config = db_backup_config
 
     @property
     def freeform_tags(self):

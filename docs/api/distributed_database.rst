@@ -29,11 +29,14 @@ Distributed Database
     oci.distributed_database.models.CatalogPeerWithDedicatedInfra
     oci.distributed_database.models.CatalogPeerWithExadbXs
     oci.distributed_database.models.ChangeDistributedAutonomousDatabaseCompartmentDetails
+    oci.distributed_database.models.ChangeDistributedAutonomousDbBackupConfigDetails
     oci.distributed_database.models.ChangeDistributedDatabaseCompartmentDetails
     oci.distributed_database.models.ChangeDistributedDatabasePrivateEndpointCompartmentDetails
     oci.distributed_database.models.ChangeDistributedDbBackupConfigDetails
     oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseGsmsDetails
     oci.distributed_database.models.ConfigureDistributedDatabaseGsmsDetails
+    oci.distributed_database.models.CreateCatalogPeerWithDedicatedInfraDetails
+    oci.distributed_database.models.CreateCatalogPeerWithExadbXsDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseDetails
@@ -45,6 +48,8 @@ Distributed Database
     oci.distributed_database.models.CreateDistributedDatabasePrivateEndpointDetails
     oci.distributed_database.models.CreateDistributedDatabaseShardDetails
     oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsDetails
+    oci.distributed_database.models.CreateShardPeerWithDedicatedInfraDetails
+    oci.distributed_database.models.CreateShardPeerWithExadbXsDetails
     oci.distributed_database.models.DistributedAutonomousDatabase
     oci.distributed_database.models.DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint
     oci.distributed_database.models.DistributedAutonomousDatabaseCatalog
@@ -56,6 +61,8 @@ Distributed Database
     oci.distributed_database.models.DistributedAutonomousDatabaseShard
     oci.distributed_database.models.DistributedAutonomousDatabaseShardWithDedicatedInfra
     oci.distributed_database.models.DistributedAutonomousDatabaseSummary
+    oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+    oci.distributed_database.models.DistributedAutonomousDbBackupDestination
     oci.distributed_database.models.DistributedAutonomousDbMetadata
     oci.distributed_database.models.DistributedDatabase
     oci.distributed_database.models.DistributedDatabaseAssociatedWithPrivateEndpoint

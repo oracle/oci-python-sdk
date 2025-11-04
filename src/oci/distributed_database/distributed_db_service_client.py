@@ -1722,7 +1722,7 @@ class DistributedDbServiceClient(object):
 
     def rotate_distributed_database_passwords(self, distributed_database_id, **kwargs):
         """
-        Rotate passwords for different components of the Globally distributed database.
+        Rotate the gsmuser and gsmcatuser passwords for shards and catalog of the Globally distributed database.  This operation will also remove GdsCtlNodes if present.
 
 
         :param str distributed_database_id: (required)

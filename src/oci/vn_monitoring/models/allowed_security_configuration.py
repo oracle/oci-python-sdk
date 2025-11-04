@@ -39,13 +39,23 @@ class AllowedSecurityConfiguration(object):
     #: This constant has a value of "STATEFUL_EGRESS_SECURITY_LIST"
     TYPE_STATEFUL_EGRESS_SECURITY_LIST = "STATEFUL_EGRESS_SECURITY_LIST"
 
+    #: A constant which can be used with the type property of a AllowedSecurityConfiguration.
+    #: This constant has a value of "ZPR"
+    TYPE_ZPR = "ZPR"
+
+    #: A constant which can be used with the type property of a AllowedSecurityConfiguration.
+    #: This constant has a value of "STATEFUL_ZPR"
+    TYPE_STATEFUL_ZPR = "STATEFUL_ZPR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AllowedSecurityConfiguration object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.vn_monitoring.models.StatefulEgressSecurityListConfiguration`
+        * :class:`~oci.vn_monitoring.models.StatefulZprConfiguration`
         * :class:`~oci.vn_monitoring.models.NsgConfiguration`
+        * :class:`~oci.vn_monitoring.models.ZprConfiguration`
         * :class:`~oci.vn_monitoring.models.IngressSecurityListConfiguration`
         * :class:`~oci.vn_monitoring.models.StatefulIngressSecurityListConfiguration`
         * :class:`~oci.vn_monitoring.models.EgressSecurityListConfiguration`
@@ -55,7 +65,7 @@ class AllowedSecurityConfiguration(object):
 
         :param type:
             The value to assign to the type property of this AllowedSecurityConfiguration.
-            Allowed values for this property are: "NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST", "ZPR", "STATEFUL_ZPR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -79,8 +89,14 @@ class AllowedSecurityConfiguration(object):
         if type == 'STATEFUL_EGRESS_SECURITY_LIST':
             return 'StatefulEgressSecurityListConfiguration'
 
+        if type == 'STATEFUL_ZPR':
+            return 'StatefulZprConfiguration'
+
         if type == 'NSG':
             return 'NsgConfiguration'
+
+        if type == 'ZPR':
+            return 'ZprConfiguration'
 
         if type == 'INGRESS_SECURITY_LIST':
             return 'IngressSecurityListConfiguration'
@@ -102,7 +118,7 @@ class AllowedSecurityConfiguration(object):
         **[Required]** Gets the type of this AllowedSecurityConfiguration.
         The type of the allowed security configuration.
 
-        Allowed values for this property are: "NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST", "ZPR", "STATEFUL_ZPR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -121,7 +137,7 @@ class AllowedSecurityConfiguration(object):
         :param type: The type of this AllowedSecurityConfiguration.
         :type: str
         """
-        allowed_values = ["NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST"]
+        allowed_values = ["NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST", "ZPR", "STATEFUL_ZPR"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

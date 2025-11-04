@@ -414,12 +414,16 @@ Core Services
     oci.core.models.InstancePool
     oci.core.models.InstancePoolInstance
     oci.core.models.InstancePoolInstanceLoadBalancerBackend
+    oci.core.models.InstancePoolLifecycleActionsDetails
+    oci.core.models.InstancePoolLifecycleManagementDetails
     oci.core.models.InstancePoolLoadBalancerAttachment
     oci.core.models.InstancePoolPlacementConfiguration
     oci.core.models.InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
     oci.core.models.InstancePoolPlacementPrimarySubnet
     oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
     oci.core.models.InstancePoolPlacementSubnetDetails
+    oci.core.models.InstancePoolPreTerminationActionDetails
+    oci.core.models.InstancePoolPreTerminationActionHandleTimeoutDetails
     oci.core.models.InstancePoolSummary
     oci.core.models.InstancePowerActionDetails
     oci.core.models.InstanceReservationConfig
@@ -546,6 +550,7 @@ Core Services
     oci.core.models.SubnetTopology
     oci.core.models.TcpOptions
     oci.core.models.TerminatePreemptionAction
+    oci.core.models.TerminationProceedInstancePoolInstanceDetails
     oci.core.models.Topology
     oci.core.models.TopologyAssociatedWithEntityRelationship
     oci.core.models.TopologyAssociatedWithRelationshipDetails

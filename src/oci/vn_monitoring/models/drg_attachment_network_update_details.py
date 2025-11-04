@@ -19,18 +19,33 @@ class DrgAttachmentNetworkUpdateDetails(object):
     #: This constant has a value of "VCN"
     TYPE_VCN = "VCN"
 
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkUpdateDetails.
+    #: This constant has a value of "VIRTUAL_CIRCUIT"
+    TYPE_VIRTUAL_CIRCUIT = "VIRTUAL_CIRCUIT"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkUpdateDetails.
+    #: This constant has a value of "LOOPBACK"
+    TYPE_LOOPBACK = "LOOPBACK"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkUpdateDetails.
+    #: This constant has a value of "INTERNET"
+    TYPE_INTERNET = "INTERNET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrgAttachmentNetworkUpdateDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.vn_monitoring.models.InternetDrgAttachmentNetworkUpdateDetails`
+        * :class:`~oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkUpdateDetails`
+        * :class:`~oci.vn_monitoring.models.LoopbackDrgAttachmentNetworkUpdateDetails`
         * :class:`~oci.vn_monitoring.models.VcnDrgAttachmentNetworkUpdateDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this DrgAttachmentNetworkUpdateDetails.
-            Allowed values for this property are: "VCN"
+            Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "LOOPBACK", "INTERNET"
         :type type: str
 
         """
@@ -50,6 +65,15 @@ class DrgAttachmentNetworkUpdateDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'INTERNET':
+            return 'InternetDrgAttachmentNetworkUpdateDetails'
+
+        if type == 'VIRTUAL_CIRCUIT':
+            return 'VirtualCircuitDrgAttachmentNetworkUpdateDetails'
+
+        if type == 'LOOPBACK':
+            return 'LoopbackDrgAttachmentNetworkUpdateDetails'
+
         if type == 'VCN':
             return 'VcnDrgAttachmentNetworkUpdateDetails'
         else:
@@ -59,7 +83,7 @@ class DrgAttachmentNetworkUpdateDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrgAttachmentNetworkUpdateDetails.
-        Allowed values for this property are: "VCN"
+        Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "LOOPBACK", "INTERNET"
 
 
         :return: The type of this DrgAttachmentNetworkUpdateDetails.
@@ -75,7 +99,7 @@ class DrgAttachmentNetworkUpdateDetails(object):
         :param type: The type of this DrgAttachmentNetworkUpdateDetails.
         :type: str
         """
-        allowed_values = ["VCN"]
+        allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "LOOPBACK", "INTERNET"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

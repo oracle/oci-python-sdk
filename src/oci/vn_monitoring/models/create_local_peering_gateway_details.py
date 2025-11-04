@@ -36,10 +36,6 @@ class CreateLocalPeeringGatewayDetails(object):
             The value to assign to the freeform_tags property of this CreateLocalPeeringGatewayDetails.
         :type freeform_tags: dict(str, str)
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this CreateLocalPeeringGatewayDetails.
-        :type route_table_id: str
-
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateLocalPeeringGatewayDetails.
         :type vcn_id: str
@@ -50,7 +46,6 @@ class CreateLocalPeeringGatewayDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'route_table_id': 'str',
             'vcn_id': 'str'
         }
         self.attribute_map = {
@@ -58,14 +53,12 @@ class CreateLocalPeeringGatewayDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId'
         }
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
-        self._route_table_id = None
         self._vcn_id = None
 
     @property
@@ -173,50 +166,6 @@ class CreateLocalPeeringGatewayDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
-
-    @property
-    def route_table_id(self):
-        """
-        Gets the route_table_id of this CreateLocalPeeringGatewayDetails.
-        The `OCID`__ of the route table the LPG will use.
-
-        If you don't specify a route table here, the LPG is created without an associated route
-        table. The Networking service does NOT automatically associate the attached VCN's default route table
-        with the LPG.
-
-        For information about why you would associate a route table with an LPG, see
-        `Transit Routing: Access to Multiple VCNs in Same Region`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
-
-
-        :return: The route_table_id of this CreateLocalPeeringGatewayDetails.
-        :rtype: str
-        """
-        return self._route_table_id
-
-    @route_table_id.setter
-    def route_table_id(self, route_table_id):
-        """
-        Sets the route_table_id of this CreateLocalPeeringGatewayDetails.
-        The `OCID`__ of the route table the LPG will use.
-
-        If you don't specify a route table here, the LPG is created without an associated route
-        table. The Networking service does NOT automatically associate the attached VCN's default route table
-        with the LPG.
-
-        For information about why you would associate a route table with an LPG, see
-        `Transit Routing: Access to Multiple VCNs in Same Region`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
-
-
-        :param route_table_id: The route_table_id of this CreateLocalPeeringGatewayDetails.
-        :type: str
-        """
-        self._route_table_id = route_table_id
 
     @property
     def vcn_id(self):

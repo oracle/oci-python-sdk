@@ -24,6 +24,7 @@ Database
     oci.database.models.ActionParamValuesCollection
     oci.database.models.ActionParamValuesSummary
     oci.database.models.ActivateExadataInfrastructureDetails
+    oci.database.models.AddDbnodeSnapshotsForExadbVmClusterDetails
     oci.database.models.AddStandbyAutonomousContainerDatabaseDetails
     oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
@@ -282,6 +283,9 @@ Database
     oci.database.models.DbSystemUpgradeHistoryEntrySummary
     oci.database.models.DbSystemUpgradeSummary
     oci.database.models.DbVersionSummary
+    oci.database.models.DbnodeSnapshot
+    oci.database.models.DbnodeSnapshotSummary
+    oci.database.models.DbnodeSnapshots
     oci.database.models.DefinedFileSystemConfiguration
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.DisasterRecoveryConfiguration
@@ -380,6 +384,8 @@ Database
     oci.database.models.ModifyDatabaseManagementDetails
     oci.database.models.ModifyPluggableDatabaseManagementDetails
     oci.database.models.Month
+    oci.database.models.MountDbnodeSnapshotDetails
+    oci.database.models.MountPointDetails
     oci.database.models.MountTypeDetails
     oci.database.models.MoveExecutionActionMemberDetails
     oci.database.models.NetworkBondingModeDetails
@@ -464,6 +470,7 @@ Database
     oci.database.models.SystemVersionMinorVersionSummary
     oci.database.models.SystemVersionSummary
     oci.database.models.UndeleteAutonomousDatabaseDetails
+    oci.database.models.UnmountDbnodeSnapshotDetails
     oci.database.models.UnregisterCloudVmClusterPkcsDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -526,5 +533,6 @@ Database
     oci.database.models.VmClusterUpdateHistoryEntrySummary
     oci.database.models.VmClusterUpdateSummary
     oci.database.models.VmNetworkDetails
+    oci.database.models.VolumeDetails
     oci.database.models.WindowPreferenceDetail
     oci.database.models.WorkloadType

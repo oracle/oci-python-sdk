@@ -53,10 +53,6 @@ class CreatePublicIpDetails(object):
             The value to assign to the private_ip_id property of this CreatePublicIpDetails.
         :type private_ip_id: str
 
-        :param public_ip_pool_id:
-            The value to assign to the public_ip_pool_id property of this CreatePublicIpDetails.
-        :type public_ip_pool_id: str
-
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -64,8 +60,7 @@ class CreatePublicIpDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'lifetime': 'str',
-            'private_ip_id': 'str',
-            'public_ip_pool_id': 'str'
+            'private_ip_id': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -73,8 +68,7 @@ class CreatePublicIpDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'lifetime': 'lifetime',
-            'private_ip_id': 'privateIpId',
-            'public_ip_pool_id': 'publicIpPoolId'
+            'private_ip_id': 'privateIpId'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -82,7 +76,6 @@ class CreatePublicIpDetails(object):
         self._freeform_tags = None
         self._lifetime = None
         self._private_ip_id = None
-        self._public_ip_pool_id = None
 
     @property
     def compartment_id(self):
@@ -274,34 +267,6 @@ class CreatePublicIpDetails(object):
         :type: str
         """
         self._private_ip_id = private_ip_id
-
-    @property
-    def public_ip_pool_id(self):
-        """
-        Gets the public_ip_pool_id of this CreatePublicIpDetails.
-        The `OCID`__ of the public IP pool.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The public_ip_pool_id of this CreatePublicIpDetails.
-        :rtype: str
-        """
-        return self._public_ip_pool_id
-
-    @public_ip_pool_id.setter
-    def public_ip_pool_id(self, public_ip_pool_id):
-        """
-        Sets the public_ip_pool_id of this CreatePublicIpDetails.
-        The `OCID`__ of the public IP pool.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param public_ip_pool_id: The public_ip_pool_id of this CreatePublicIpDetails.
-        :type: str
-        """
-        self._public_ip_pool_id = public_ip_pool_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

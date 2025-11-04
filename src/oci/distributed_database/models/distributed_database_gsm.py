@@ -258,7 +258,7 @@ class DistributedDatabaseGsm(object):
     def status(self):
         """
         **[Required]** Gets the status of this DistributedDatabaseGsm.
-        Status of the gsm for the Globally ditributed database.
+        Status of the gsm.
 
         Allowed values for this property are: "FAILED", "DELETING", "DELETED", "UPDATING", "CREATING", "CREATED", "READY_FOR_CONFIGURATION", "CONFIGURED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -273,7 +273,7 @@ class DistributedDatabaseGsm(object):
     def status(self, status):
         """
         Sets the status of this DistributedDatabaseGsm.
-        Status of the gsm for the Globally ditributed database.
+        Status of the gsm.
 
 
         :param status: The status of this DistributedDatabaseGsm.

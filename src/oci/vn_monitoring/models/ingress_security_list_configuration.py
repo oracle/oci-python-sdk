@@ -23,7 +23,7 @@ class IngressSecurityListConfiguration(AllowedSecurityConfiguration):
 
         :param type:
             The value to assign to the type property of this IngressSecurityListConfiguration.
-            Allowed values for this property are: "NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST"
+            Allowed values for this property are: "NSG", "STATEFUL_NSG", "INGRESS_SECURITY_LIST", "STATEFUL_INGRESS_SECURITY_LIST", "EGRESS_SECURITY_LIST", "STATEFUL_EGRESS_SECURITY_LIST", "ZPR", "STATEFUL_ZPR"
         :type type: str
 
         :param security_list_id:

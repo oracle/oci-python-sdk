@@ -322,9 +322,7 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
     def peer_cloud_autonomous_vm_cluster_ids(self):
         """
         Gets the peer_cloud_autonomous_vm_cluster_ids of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
-        The collection of `OCID`__ of the peer cloudAutonomousVmClusters.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        This field is deprecated. For catalog peer details please refer peerDetails attribute.
 
 
         :return: The peer_cloud_autonomous_vm_cluster_ids of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
@@ -336,9 +334,7 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
     def peer_cloud_autonomous_vm_cluster_ids(self, peer_cloud_autonomous_vm_cluster_ids):
         """
         Sets the peer_cloud_autonomous_vm_cluster_ids of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
-        The collection of `OCID`__ of the peer cloudAutonomousVmClusters.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        This field is deprecated. For catalog peer details please refer peerDetails attribute.
 
 
         :param peer_cloud_autonomous_vm_cluster_ids: The peer_cloud_autonomous_vm_cluster_ids of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.

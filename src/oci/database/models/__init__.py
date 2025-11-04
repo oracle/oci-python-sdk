@@ -12,6 +12,7 @@ from .action_order_details import ActionOrderDetails
 from .action_param_values_collection import ActionParamValuesCollection
 from .action_param_values_summary import ActionParamValuesSummary
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
+from .add_dbnode_snapshots_for_exadb_vm_cluster_details import AddDbnodeSnapshotsForExadbVmClusterDetails
 from .add_standby_autonomous_container_database_details import AddStandbyAutonomousContainerDatabaseDetails
 from .add_virtual_machine_to_cloud_vm_cluster_details import AddVirtualMachineToCloudVmClusterDetails
 from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
@@ -270,6 +271,9 @@ from .db_system_upgrade_history_entry import DbSystemUpgradeHistoryEntry
 from .db_system_upgrade_history_entry_summary import DbSystemUpgradeHistoryEntrySummary
 from .db_system_upgrade_summary import DbSystemUpgradeSummary
 from .db_version_summary import DbVersionSummary
+from .dbnode_snapshot import DbnodeSnapshot
+from .dbnode_snapshot_summary import DbnodeSnapshotSummary
+from .dbnode_snapshots import DbnodeSnapshots
 from .defined_file_system_configuration import DefinedFileSystemConfiguration
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .disaster_recovery_configuration import DisasterRecoveryConfiguration
@@ -368,6 +372,8 @@ from .migrate_vault_key_details import MigrateVaultKeyDetails
 from .modify_database_management_details import ModifyDatabaseManagementDetails
 from .modify_pluggable_database_management_details import ModifyPluggableDatabaseManagementDetails
 from .month import Month
+from .mount_dbnode_snapshot_details import MountDbnodeSnapshotDetails
+from .mount_point_details import MountPointDetails
 from .mount_type_details import MountTypeDetails
 from .move_execution_action_member_details import MoveExecutionActionMemberDetails
 from .network_bonding_mode_details import NetworkBondingModeDetails
@@ -452,6 +458,7 @@ from .system_version_minor_version_collection import SystemVersionMinorVersionCo
 from .system_version_minor_version_summary import SystemVersionMinorVersionSummary
 from .system_version_summary import SystemVersionSummary
 from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDetails
+from .unmount_dbnode_snapshot_details import UnmountDbnodeSnapshotDetails
 from .unregister_cloud_vm_cluster_pkcs_details import UnregisterCloudVmClusterPkcsDetails
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -514,6 +521,7 @@ from .vm_cluster_update_history_entry import VmClusterUpdateHistoryEntry
 from .vm_cluster_update_history_entry_summary import VmClusterUpdateHistoryEntrySummary
 from .vm_cluster_update_summary import VmClusterUpdateSummary
 from .vm_network_details import VmNetworkDetails
+from .volume_details import VolumeDetails
 from .window_preference_detail import WindowPreferenceDetail
 from .workload_type import WorkloadType
 
@@ -525,6 +533,7 @@ database_type_mapping = {
     "ActionParamValuesCollection": ActionParamValuesCollection,
     "ActionParamValuesSummary": ActionParamValuesSummary,
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
+    "AddDbnodeSnapshotsForExadbVmClusterDetails": AddDbnodeSnapshotsForExadbVmClusterDetails,
     "AddStandbyAutonomousContainerDatabaseDetails": AddStandbyAutonomousContainerDatabaseDetails,
     "AddVirtualMachineToCloudVmClusterDetails": AddVirtualMachineToCloudVmClusterDetails,
     "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
@@ -783,6 +792,9 @@ database_type_mapping = {
     "DbSystemUpgradeHistoryEntrySummary": DbSystemUpgradeHistoryEntrySummary,
     "DbSystemUpgradeSummary": DbSystemUpgradeSummary,
     "DbVersionSummary": DbVersionSummary,
+    "DbnodeSnapshot": DbnodeSnapshot,
+    "DbnodeSnapshotSummary": DbnodeSnapshotSummary,
+    "DbnodeSnapshots": DbnodeSnapshots,
     "DefinedFileSystemConfiguration": DefinedFileSystemConfiguration,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "DisasterRecoveryConfiguration": DisasterRecoveryConfiguration,
@@ -881,6 +893,8 @@ database_type_mapping = {
     "ModifyDatabaseManagementDetails": ModifyDatabaseManagementDetails,
     "ModifyPluggableDatabaseManagementDetails": ModifyPluggableDatabaseManagementDetails,
     "Month": Month,
+    "MountDbnodeSnapshotDetails": MountDbnodeSnapshotDetails,
+    "MountPointDetails": MountPointDetails,
     "MountTypeDetails": MountTypeDetails,
     "MoveExecutionActionMemberDetails": MoveExecutionActionMemberDetails,
     "NetworkBondingModeDetails": NetworkBondingModeDetails,
@@ -965,6 +979,7 @@ database_type_mapping = {
     "SystemVersionMinorVersionSummary": SystemVersionMinorVersionSummary,
     "SystemVersionSummary": SystemVersionSummary,
     "UndeleteAutonomousDatabaseDetails": UndeleteAutonomousDatabaseDetails,
+    "UnmountDbnodeSnapshotDetails": UnmountDbnodeSnapshotDetails,
     "UnregisterCloudVmClusterPkcsDetails": UnregisterCloudVmClusterPkcsDetails,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
@@ -1027,6 +1042,7 @@ database_type_mapping = {
     "VmClusterUpdateHistoryEntrySummary": VmClusterUpdateHistoryEntrySummary,
     "VmClusterUpdateSummary": VmClusterUpdateSummary,
     "VmNetworkDetails": VmNetworkDetails,
+    "VolumeDetails": VolumeDetails,
     "WindowPreferenceDetail": WindowPreferenceDetail,
     "WorkloadType": WorkloadType
 }

@@ -423,8 +423,10 @@ class CreateDistributedDatabaseDetails(object):
     def chunks(self):
         """
         Gets the chunks of this CreateDistributedDatabaseDetails.
-        The default number of unique chunks in a shardspace. The value of chunks must be
-        greater than 2 times the size of the largest shardgroup in any shardspace.
+        Number of chunks in a shardspace. The value of chunks must be
+        greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is
+        required to be provided for distributed databases being created with
+        SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 
 
         :return: The chunks of this CreateDistributedDatabaseDetails.
@@ -436,8 +438,10 @@ class CreateDistributedDatabaseDetails(object):
     def chunks(self, chunks):
         """
         Sets the chunks of this CreateDistributedDatabaseDetails.
-        The default number of unique chunks in a shardspace. The value of chunks must be
-        greater than 2 times the size of the largest shardgroup in any shardspace.
+        Number of chunks in a shardspace. The value of chunks must be
+        greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is
+        required to be provided for distributed databases being created with
+        SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
 
 
         :param chunks: The chunks of this CreateDistributedDatabaseDetails.
@@ -449,7 +453,9 @@ class CreateDistributedDatabaseDetails(object):
     def listener_port(self):
         """
         **[Required]** Gets the listener_port of this CreateDistributedDatabaseDetails.
-        The listener port number for the Globally distributed database.
+        The listener port number for the Globally distributed database. The listener port number
+        has to be unique for a customer tenancy across all distributed databases. Same port number should
+        not be re-used for any other distributed database.
 
 
         :return: The listener_port of this CreateDistributedDatabaseDetails.
@@ -461,7 +467,9 @@ class CreateDistributedDatabaseDetails(object):
     def listener_port(self, listener_port):
         """
         Sets the listener_port of this CreateDistributedDatabaseDetails.
-        The listener port number for the Globally distributed database.
+        The listener port number for the Globally distributed database. The listener port number
+        has to be unique for a customer tenancy across all distributed databases. Same port number should
+        not be re-used for any other distributed database.
 
 
         :param listener_port: The listener_port of this CreateDistributedDatabaseDetails.
@@ -473,7 +481,10 @@ class CreateDistributedDatabaseDetails(object):
     def listener_port_tls(self):
         """
         Gets the listener_port_tls of this CreateDistributedDatabaseDetails.
-        The TLS listener port number for Globally distributed database.
+        The TLS listener port number for the Globally distributed database. The TLS listener port number
+        has to be unique for a customer tenancy across all distributed databases. Same port number should
+        not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases,
+        tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
 
 
         :return: The listener_port_tls of this CreateDistributedDatabaseDetails.
@@ -485,7 +496,10 @@ class CreateDistributedDatabaseDetails(object):
     def listener_port_tls(self, listener_port_tls):
         """
         Sets the listener_port_tls of this CreateDistributedDatabaseDetails.
-        The TLS listener port number for Globally distributed database.
+        The TLS listener port number for the Globally distributed database. The TLS listener port number
+        has to be unique for a customer tenancy across all distributed databases. Same port number should
+        not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases,
+        tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
 
 
         :param listener_port_tls: The listener_port_tls of this CreateDistributedDatabaseDetails.
@@ -497,7 +511,9 @@ class CreateDistributedDatabaseDetails(object):
     def ons_port_local(self):
         """
         **[Required]** Gets the ons_port_local of this CreateDistributedDatabaseDetails.
-        Ons local port number.
+        The ons local port number for the Globally distributed database. The onsPortLocal has to be
+        unique for a customer tenancy across all distributed databases. Same port number should not be
+        re-used for any other distributed database.
 
 
         :return: The ons_port_local of this CreateDistributedDatabaseDetails.
@@ -509,7 +525,9 @@ class CreateDistributedDatabaseDetails(object):
     def ons_port_local(self, ons_port_local):
         """
         Sets the ons_port_local of this CreateDistributedDatabaseDetails.
-        Ons local port number.
+        The ons local port number for the Globally distributed database. The onsPortLocal has to be
+        unique for a customer tenancy across all distributed databases. Same port number should not be
+        re-used for any other distributed database.
 
 
         :param ons_port_local: The ons_port_local of this CreateDistributedDatabaseDetails.
@@ -521,7 +539,9 @@ class CreateDistributedDatabaseDetails(object):
     def ons_port_remote(self):
         """
         **[Required]** Gets the ons_port_remote of this CreateDistributedDatabaseDetails.
-        Ons remote port number.
+        The ons remote port number for the Globally distributed database. The onsPortRemote has to be
+        unique for a customer tenancy across all distributed databases. Same port number should not be
+        re-used for any other distributed database.
 
 
         :return: The ons_port_remote of this CreateDistributedDatabaseDetails.
@@ -533,7 +553,9 @@ class CreateDistributedDatabaseDetails(object):
     def ons_port_remote(self, ons_port_remote):
         """
         Sets the ons_port_remote of this CreateDistributedDatabaseDetails.
-        Ons remote port number.
+        The ons remote port number for the Globally distributed database. The onsPortRemote has to be
+        unique for a customer tenancy across all distributed databases. Same port number should not be
+        re-used for any other distributed database.
 
 
         :param ons_port_remote: The ons_port_remote of this CreateDistributedDatabaseDetails.
@@ -545,8 +567,10 @@ class CreateDistributedDatabaseDetails(object):
     def replication_method(self):
         """
         Gets the replication_method of this CreateDistributedDatabaseDetails.
-        The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-        DataGuard. If replicationMethod is not provided, it defaults to DG.
+        The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+        With RAFT replication, shards cannot have peers details set on them. In case shards need to
+        have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+        without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 
         Allowed values for this property are: "RAFT", "DG"
 
@@ -560,8 +584,10 @@ class CreateDistributedDatabaseDetails(object):
     def replication_method(self, replication_method):
         """
         Sets the replication_method of this CreateDistributedDatabaseDetails.
-        The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-        DataGuard. If replicationMethod is not provided, it defaults to DG.
+        The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+        With RAFT replication, shards cannot have peers details set on them. In case shards need to
+        have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+        without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
 
 
         :param replication_method: The replication_method of this CreateDistributedDatabaseDetails.
@@ -602,7 +628,8 @@ class CreateDistributedDatabaseDetails(object):
     def replication_unit(self):
         """
         Gets the replication_unit of this CreateDistributedDatabaseDetails.
-        For RAFT replication based Globally distributed database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed database. For RAFT replication based
+        Globally distributed database, the value should be at least twice the number of shards.
 
 
         :return: The replication_unit of this CreateDistributedDatabaseDetails.
@@ -614,7 +641,8 @@ class CreateDistributedDatabaseDetails(object):
     def replication_unit(self, replication_unit):
         """
         Sets the replication_unit of this CreateDistributedDatabaseDetails.
-        For RAFT replication based Globally distributed database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed database. For RAFT replication based
+        Globally distributed database, the value should be at least twice the number of shards.
 
 
         :param replication_unit: The replication_unit of this CreateDistributedDatabaseDetails.

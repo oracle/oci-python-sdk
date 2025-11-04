@@ -36,10 +36,6 @@ class CreateServiceGatewayDetails(object):
             The value to assign to the freeform_tags property of this CreateServiceGatewayDetails.
         :type freeform_tags: dict(str, str)
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this CreateServiceGatewayDetails.
-        :type route_table_id: str
-
         :param services:
             The value to assign to the services property of this CreateServiceGatewayDetails.
         :type services: list[oci.vn_monitoring.models.ServiceIdRequestDetails]
@@ -54,7 +50,6 @@ class CreateServiceGatewayDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'route_table_id': 'str',
             'services': 'list[ServiceIdRequestDetails]',
             'vcn_id': 'str'
         }
@@ -63,7 +58,6 @@ class CreateServiceGatewayDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'route_table_id': 'routeTableId',
             'services': 'services',
             'vcn_id': 'vcnId'
         }
@@ -71,7 +65,6 @@ class CreateServiceGatewayDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
-        self._route_table_id = None
         self._services = None
         self._vcn_id = None
 
@@ -79,7 +72,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__ of the compartment to contain the service gateway.
+        The `OCID`__ of the compartment to contain the service gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -93,7 +86,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__ of the compartment to contain the service gateway.
+        The `OCID`__ of the compartment to contain the service gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -180,50 +173,6 @@ class CreateServiceGatewayDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
-
-    @property
-    def route_table_id(self):
-        """
-        Gets the route_table_id of this CreateServiceGatewayDetails.
-        The `OCID`__ of the route table the service gateway will use.
-
-        If you don't specify a route table here, the service gateway is created without an associated route
-        table. The Networking service does NOT automatically associate the attached VCN's default route table
-        with the service gateway.
-
-        For information about why you would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-
-
-        :return: The route_table_id of this CreateServiceGatewayDetails.
-        :rtype: str
-        """
-        return self._route_table_id
-
-    @route_table_id.setter
-    def route_table_id(self, route_table_id):
-        """
-        Sets the route_table_id of this CreateServiceGatewayDetails.
-        The `OCID`__ of the route table the service gateway will use.
-
-        If you don't specify a route table here, the service gateway is created without an associated route
-        table. The Networking service does NOT automatically associate the attached VCN's default route table
-        with the service gateway.
-
-        For information about why you would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-
-
-        :param route_table_id: The route_table_id of this CreateServiceGatewayDetails.
-        :type: str
-        """
-        self._route_table_id = route_table_id
 
     @property
     def services(self):

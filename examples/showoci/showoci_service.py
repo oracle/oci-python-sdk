@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.08.26"
+    version = "25.09.30"
     oci_compatible_version = "2.148.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -289,6 +289,8 @@ class ShowOCIService(object):
     # Exclude Services
     ##########################################################################
     EXCLUDE_NETWORK = 'NETWORK'
+    EXCLUDE_FILESTORAGE = 'FILESTORAGE'
+    EXCLUDE_OBJECTSTORAGE = 'OBJECTSTORAGE'
     EXCLUDE_LIMITS = 'LIMITS'
     EXCLUDE_QUOTAS = 'QUOTAS'
     EXCLUDE_CERTIFICATES = 'CERTIFICATES'
@@ -321,6 +323,10 @@ class ShowOCIService(object):
     EXCLUDE_LOGGING = 'LOGGING'
     EXCLUDE_BASTION = 'BASTION'
     EXCLUDE_FSDR = 'FSDR'
+    EXCLUDE_DNS = 'DNS'
+    EXCLUDE_NETWORKFIREWALL = 'NETWORKFIREWALL'
+    EXCLUDE_LOADBALANCER = 'LOADBALANCER'
+    EXCLUDE_NETLOADBALANCER = 'NETLOADBALANCER'
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -2799,10 +2805,10 @@ class ShowOCIService(object):
             section_start_time = time.time()
 
             virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
-            dns_client = self.__create_client(oci.dns.DnsClient)
-            nwf_client = self.__create_client(oci.network_firewall.NetworkFirewallClient)
-            load_balancer = self.__create_client(oci.load_balancer.LoadBalancerClient)
-            network_load_balancer = self.__create_client(oci.network_load_balancer.NetworkLoadBalancerClient)
+            dns_client = self.__create_client(oci.dns.DnsClient, key=self.EXCLUDE_DNS)
+            nwf_client = self.__create_client(oci.network_firewall.NetworkFirewallClient, key=self.EXCLUDE_NETWORKFIREWALL)
+            load_balancer = self.__create_client(oci.load_balancer.LoadBalancerClient, key=self.EXCLUDE_LOADBALANCER)
+            network_load_balancer = self.__create_client(oci.network_load_balancer.NetworkLoadBalancerClient, key=self.EXCLUDE_NETLOADBALANCER)
 
             # reference to compartments
             compartments = self.get_compartments()
@@ -4908,6 +4914,10 @@ class ShowOCIService(object):
             header = "Network Firewalls"
             self.__load_print_status_with_threads(header)
 
+            if not network_firewall_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -4957,6 +4967,10 @@ class ShowOCIService(object):
                         'time_created': self.get_date(arr.time_created),
                         'time_updated': self.get_date(arr.time_updated),
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
+                        'nat_must_enable_private_nat': self.get_value(arr.nat_configuration.must_enable_private_nat) if arr.nat_configuration else "",
+                        'nat_nat_ip_address_list': arr.nat_configuration.nat_ip_address_list if arr.nat_configuration else [],
+                        'nsg_ids': [],
+                        'nsg_names': [],
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -4964,6 +4978,19 @@ class ShowOCIService(object):
                         'compartment_id': str(compartment['id']),
                         'region_name': str(self.config['region'])
                     }
+
+                    # get the network firewall for more info (required read privs)
+                    # oci.network_firewall.models.NetworkFirewall
+                    try:
+                        arro = network_firewall_client.get_network_firewall(
+                            arr.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+                        if arro:
+                            val['nsg_ids'] = self.get_values(arro.network_security_group_ids)
+
+                    except Exception:
+                        pass
 
                     # get name of the policy
                     nwfpolicy = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_FIREWALL_POLICY, 'id', arr.network_firewall_policy_id)
@@ -5002,6 +5029,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Network Firewalls Policies"
             self.__load_print_status_with_threads(header)
+
+            if not network_firewall_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -5511,6 +5542,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "DNS Resolvers"
             self.__load_print_status_with_threads(header)
+
+            if not dns_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -7614,6 +7649,10 @@ class ShowOCIService(object):
             header = "Load Balancers"
             self.__load_print_status_with_threads(header)
 
+            if not load_balancer:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -7796,6 +7835,10 @@ class ShowOCIService(object):
             header = "Network Load Balancers"
             self.__load_print_status_with_threads(header)
 
+            if not network_load_balancer:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -7970,6 +8013,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Load Balancer Backend Sets"
             self.__load_print_status_with_threads(header)
+
+            if not load_balancer:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # get the load balancers for this regions
             region_name = str(self.config['region'])
@@ -8165,6 +8212,10 @@ class ShowOCIService(object):
             header = "Network LB Backend Sets"
             self.__load_print_status_with_threads(header)
 
+            if not network_load_balancer:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # get the load balancers for this regions
             region_name = str(self.config['region'])
             load_balancers = self.search_multi_items(self.C_LB, self.C_LB_NETWORK_LOAD_BALANCERS, 'region_name', region_name)
@@ -8305,8 +8356,8 @@ class ShowOCIService(object):
         try:
             print("Object and File Storage...")
 
-            file_storage = self.__create_client(oci.file_storage.FileStorageClient)
-            object_storage = self.__create_client(oci.object_storage.ObjectStorageClient)
+            file_storage = self.__create_client(oci.file_storage.FileStorageClient, key=self.EXCLUDE_FILESTORAGE)
+            object_storage = self.__create_client(oci.object_storage.ObjectStorageClient, key=self.EXCLUDE_OBJECTSTORAGE)
             virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
 
             # reference to compartments
@@ -8365,6 +8416,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Object Storage Buckets"
             self.__load_print_status_with_threads(header)
+
+            if not object_storage:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -8524,6 +8579,10 @@ class ShowOCIService(object):
             header = "File Storage"
             self.__load_print_status_with_threads(header)
 
+            if not file_storage:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # get availability domains
             availability_domains = self.get_availability_domains(self.config['region'])
 
@@ -8538,7 +8597,8 @@ class ShowOCIService(object):
                     try:
                         file_systems = oci.pagination.list_call_get_all_results(
                             file_storage.list_file_systems,
-                            compartment['id'], ad['name'],
+                            compartment['id'],
+                            ad['name'],
                             lifecycle_state=oci.file_storage.models.FileSystemSummary.LIFECYCLE_STATE_ACTIVE,
                             sort_by="DISPLAYNAME",
                             retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
@@ -8562,20 +8622,22 @@ class ShowOCIService(object):
                     # query the stacks
                     # fs = oci.file_storage.models.FileSystemSummary.
                     for fs in file_systems:
-                        val = {'id': str(fs.id),
-                               'display_name': str(fs.display_name),
-                               'time_created': self.get_date(fs.time_created),
-                               'availability_domain': self.get_value(fs.availability_domain),
-                               'size_gb': str(round(int(fs.metered_bytes) / 1024 / 1024 / 1024, 1)),
-                               'metered_bytes': self.get_value(fs.metered_bytes),
-                               'snapshots': [],
-                               'defined_tags': [] if fs.defined_tags is None else fs.defined_tags,
-                               'freeform_tags': [] if fs.freeform_tags is None else fs.freeform_tags,
-                               'compartment_name': str(compartment['name']),
-                               'compartment_id': str(compartment['id']),
-                               'compartment_path': str(compartment['path']),
-                               'kms_key_id': str(fs.kms_key_id),
-                               'region_name': str(self.config['region'])}
+                        val = {
+                            'id': str(fs.id),
+                            'display_name': str(fs.display_name),
+                            'time_created': self.get_date(fs.time_created),
+                            'availability_domain': self.get_value(fs.availability_domain),
+                            'size_gb': str(round(int(fs.metered_bytes) / 1024 / 1024 / 1024, 1)),
+                            'metered_bytes': self.get_value(fs.metered_bytes),
+                            'snapshots': [],
+                            'defined_tags': [] if fs.defined_tags is None else fs.defined_tags,
+                            'freeform_tags': [] if fs.freeform_tags is None else fs.freeform_tags,
+                            'compartment_name': str(compartment['name']),
+                            'compartment_id': str(compartment['id']),
+                            'compartment_path': str(compartment['path']),
+                            'kms_key_id': str(fs.kms_key_id),
+                            'region_name': str(self.config['region'])
+                        }
 
                         # add snapshots to the file systems
                         try:
@@ -8589,6 +8651,7 @@ class ShowOCIService(object):
                             for snap in snapshots:
                                 sval = {'id': str(snap.id), 'name': str(snap.name), 'time_created': str(snap.time_created)}
                                 val['snapshots'].append(sval)
+
                         except oci.exceptions.ServiceError as e:
                             if self.__check_service_error(e, compartment):
                                 pass
@@ -8626,6 +8689,10 @@ class ShowOCIService(object):
             header = "File Storage Mounts"
             self.__load_print_status_with_threads(header)
 
+            if not file_storage:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
                 if self.flags.skip_threads:
@@ -8639,7 +8706,8 @@ class ShowOCIService(object):
                     try:
                         mount_targets = oci.pagination.list_call_get_all_results(
                             file_storage.list_mount_targets,
-                            compartment['id'], ad['name'],
+                            compartment['id'],
+                            ad['name'],
                             lifecycle_state=oci.file_storage.models.MountTargetSummary.LIFECYCLE_STATE_ACTIVE,
                             sort_by="DISPLAYNAME",
                             retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
@@ -8663,17 +8731,19 @@ class ShowOCIService(object):
                     # query the stacks
                     # mt = oci.file_storage.models.MountTargetSummary
                     for mt in mount_targets:
-                        val = {'id': str(mt.id),
-                               'display_name': self.get_value(mt.display_name),
-                               'export_set_id': self.get_value(mt.export_set_id),
-                               'time_created': self.get_date(mt.time_created),
-                               'availability_domain': self.get_value(mt.availability_domain),
-                               'private_ip_ids': [],
-                               'subnet_id': self.get_value(mt.subnet_id),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'region_name': str(self.config['region'])}
+                        val = {
+                            'id': str(mt.id),
+                            'display_name': self.get_value(mt.display_name),
+                            'export_set_id': self.get_value(mt.export_set_id),
+                            'time_created': self.get_date(mt.time_created),
+                            'availability_domain': self.get_value(mt.availability_domain),
+                            'private_ip_ids': [],
+                            'subnet_id': self.get_value(mt.subnet_id),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
 
                         # get private ips
                         for e in mt.private_ip_ids:
@@ -8712,6 +8782,10 @@ class ShowOCIService(object):
             header = "File Storage Exports"
             self.__load_print_status_with_threads(header)
 
+            if not file_storage:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
                 if self.flags.skip_threads:
@@ -8745,26 +8819,32 @@ class ShowOCIService(object):
                 # query the export
                 # es = oci.file_storage.models.ExportSummary
                 for es in exports:
-                    val = {'id': str(es.id),
-                           'export_set_id': self.get_value(es.export_set_id),
-                           'file_system_id': self.get_value(es.file_system_id),
-                           'path': self.get_value(es.path),
-                           'time_created': self.get_date(es.time_created),
-                           'export_set': []}
+                    val = {
+                        'id': str(es.id),
+                        'export_set_id': self.get_value(es.export_set_id),
+                        'file_system_id': self.get_value(es.file_system_id),
+                        'path': self.get_value(es.path),
+                        'time_created': self.get_date(es.time_created),
+                        'export_set': []
+                    }
 
                     # export set
                     try:
                         exp = file_storage.get_export_set(es.export_set_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                         if exp:
-                            valexp = {'id': str(exp.id), 'compartment_id': str(exp.compartment_id),
-                                      'availability_domain': str(exp.availability_domain),
-                                      'display_name': self.get_value(exp.display_name),
-                                      'lifecycle_state': self.get_value(exp.lifecycle_state),
-                                      'max_fs_stat_bytes': self.get_value(exp.max_fs_stat_bytes),
-                                      'max_fs_stat_files': self.get_value(exp.max_fs_stat_files),
-                                      'time_created': str(exp.time_created),
-                                      'vcn_id': self.get_value(exp.vcn_id),
-                                      'options': []}
+                            valexp = {
+                                'id': str(exp.id), 'compartment_id': str(exp.compartment_id),
+                                'availability_domain': str(exp.availability_domain),
+                                'display_name': self.get_value(exp.display_name),
+                                'lifecycle_state': self.get_value(exp.lifecycle_state),
+                                'max_fs_stat_bytes': self.get_value(exp.max_fs_stat_bytes),
+                                'max_fs_stat_files': self.get_value(exp.max_fs_stat_files),
+                                'time_created': str(exp.time_created),
+                                'vcn_id': self.get_value(exp.vcn_id),
+                                'options': []
+                            }
+
+                            # list exports based on export set, could be in different compartment
                             exp_summary = file_storage.list_exports(export_set_id=exp.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                             for e in exp_summary:
                                 xport = file_storage.get_export(e.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data

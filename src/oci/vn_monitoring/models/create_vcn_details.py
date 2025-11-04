@@ -24,25 +24,13 @@ class CreateVcnDetails(object):
             The value to assign to the cidr_block property of this CreateVcnDetails.
         :type cidr_block: str
 
-        :param cidr_blocks:
-            The value to assign to the cidr_blocks property of this CreateVcnDetails.
-        :type cidr_blocks: list[str]
-
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateVcnDetails.
         :type compartment_id: str
 
-        :param ipv6_private_cidr_blocks:
-            The value to assign to the ipv6_private_cidr_blocks property of this CreateVcnDetails.
-        :type ipv6_private_cidr_blocks: list[str]
-
-        :param is_oracle_gua_allocation_enabled:
-            The value to assign to the is_oracle_gua_allocation_enabled property of this CreateVcnDetails.
-        :type is_oracle_gua_allocation_enabled: bool
-
-        :param byoipv6_cidr_details:
-            The value to assign to the byoipv6_cidr_details property of this CreateVcnDetails.
-        :type byoipv6_cidr_details: list[oci.vn_monitoring.models.Byoipv6CidrDetails]
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this CreateVcnDetails.
+        :type ipv6_cidr_block: str
 
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateVcnDetails.
@@ -67,11 +55,8 @@ class CreateVcnDetails(object):
         """
         self.swagger_types = {
             'cidr_block': 'str',
-            'cidr_blocks': 'list[str]',
             'compartment_id': 'str',
-            'ipv6_private_cidr_blocks': 'list[str]',
-            'is_oracle_gua_allocation_enabled': 'bool',
-            'byoipv6_cidr_details': 'list[Byoipv6CidrDetails]',
+            'ipv6_cidr_block': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'dns_label': 'str',
@@ -80,11 +65,8 @@ class CreateVcnDetails(object):
         }
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
-            'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
-            'ipv6_private_cidr_blocks': 'ipv6PrivateCidrBlocks',
-            'is_oracle_gua_allocation_enabled': 'isOracleGuaAllocationEnabled',
-            'byoipv6_cidr_details': 'byoipv6CidrDetails',
+            'ipv6_cidr_block': 'ipv6CidrBlock',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
@@ -92,11 +74,8 @@ class CreateVcnDetails(object):
             'is_ipv6_enabled': 'isIpv6Enabled'
         }
         self._cidr_block = None
-        self._cidr_blocks = None
         self._compartment_id = None
-        self._ipv6_private_cidr_blocks = None
-        self._is_oracle_gua_allocation_enabled = None
-        self._byoipv6_cidr_details = None
+        self._ipv6_cidr_block = None
         self._defined_tags = None
         self._display_name = None
         self._dns_label = None
@@ -106,8 +85,8 @@ class CreateVcnDetails(object):
     @property
     def cidr_block(self):
         """
-        Gets the cidr_block of this CreateVcnDetails.
-        **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead.
+        **[Required]** Gets the cidr_block of this CreateVcnDetails.
+        The CIDR IP address block of the VCN.
         Example: `10.0.0.0/16`
 
 
@@ -120,7 +99,7 @@ class CreateVcnDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this CreateVcnDetails.
-        **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead.
+        The CIDR IP address block of the VCN.
         Example: `10.0.0.0/16`
 
 
@@ -128,40 +107,6 @@ class CreateVcnDetails(object):
         :type: str
         """
         self._cidr_block = cidr_block
-
-    @property
-    def cidr_blocks(self):
-        """
-        Gets the cidr_blocks of this CreateVcnDetails.
-        The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
-        - The CIDR blocks must be valid.
-        - They must not overlap with each other or with the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
-
-        **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
-
-
-        :return: The cidr_blocks of this CreateVcnDetails.
-        :rtype: list[str]
-        """
-        return self._cidr_blocks
-
-    @cidr_blocks.setter
-    def cidr_blocks(self, cidr_blocks):
-        """
-        Sets the cidr_blocks of this CreateVcnDetails.
-        The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
-        - The CIDR blocks must be valid.
-        - They must not overlap with each other or with the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN.
-
-        **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
-
-
-        :param cidr_blocks: The cidr_blocks of this CreateVcnDetails.
-        :type: list[str]
-        """
-        self._cidr_blocks = cidr_blocks
 
     @property
     def compartment_id(self):
@@ -192,88 +137,72 @@ class CreateVcnDetails(object):
         self._compartment_id = compartment_id
 
     @property
-    def ipv6_private_cidr_blocks(self):
+    def ipv6_cidr_block(self):
         """
-        Gets the ipv6_private_cidr_blocks of this CreateVcnDetails.
-        The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
-        - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        Gets the ipv6_cidr_block of this CreateVcnDetails.
+        If you enable IPv6 for the VCN (see `isIpv6Enabled`), you may optionally provide an IPv6
+        /56 prefix from the supported ranges (see `IPv6 Addresses`__.
+        The addresses in this block will be considered private and cannot be accessed
+        from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
 
-        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 prefix.
+
+        Regardless of whether you or Oracle assigns the `ipv6CidrBlock`,
+        Oracle *also* assigns the VCN an IPv6 prefix for the VCN's public IP address space
+        (see the `ipv6PublicCidrBlock` of the :class:`Vcn` object). If you do
+        not assign a custom prefix, Oracle uses the *same* Oracle-assigned prefix for both the private
+        IP address space (`ipv6CidrBlock` in the `Vcn` object) and the public IP addreses space
+        (`ipv6PublicCidrBlock` in the `Vcn` object). This means that a given VNIC might use the same
+        IPv6 IP address for both private and public (internet) communication. You control whether
+        an IPv6 address can be used for internet communication by using the `isInternetAccessAllowed`
+        attribute in the :class:`Ipv6` object.
+
+        For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
+
+        Example: `2001:0db8:0123::/48`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
-        :return: The ipv6_private_cidr_blocks of this CreateVcnDetails.
-        :rtype: list[str]
+        :return: The ipv6_cidr_block of this CreateVcnDetails.
+        :rtype: str
         """
-        return self._ipv6_private_cidr_blocks
+        return self._ipv6_cidr_block
 
-    @ipv6_private_cidr_blocks.setter
-    def ipv6_private_cidr_blocks(self, ipv6_private_cidr_blocks):
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
         """
-        Sets the ipv6_private_cidr_blocks of this CreateVcnDetails.
-        The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
-        - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        Sets the ipv6_cidr_block of this CreateVcnDetails.
+        If you enable IPv6 for the VCN (see `isIpv6Enabled`), you may optionally provide an IPv6
+        /56 prefix from the supported ranges (see `IPv6 Addresses`__.
+        The addresses in this block will be considered private and cannot be accessed
+        from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
 
-        **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
+        If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 prefix.
+
+        Regardless of whether you or Oracle assigns the `ipv6CidrBlock`,
+        Oracle *also* assigns the VCN an IPv6 prefix for the VCN's public IP address space
+        (see the `ipv6PublicCidrBlock` of the :class:`Vcn` object). If you do
+        not assign a custom prefix, Oracle uses the *same* Oracle-assigned prefix for both the private
+        IP address space (`ipv6CidrBlock` in the `Vcn` object) and the public IP addreses space
+        (`ipv6PublicCidrBlock` in the `Vcn` object). This means that a given VNIC might use the same
+        IPv6 IP address for both private and public (internet) communication. You control whether
+        an IPv6 address can be used for internet communication by using the `isInternetAccessAllowed`
+        attribute in the :class:`Ipv6` object.
+
+        For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
+
+        Example: `2001:0db8:0123::/48`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
-        :param ipv6_private_cidr_blocks: The ipv6_private_cidr_blocks of this CreateVcnDetails.
-        :type: list[str]
+        :param ipv6_cidr_block: The ipv6_cidr_block of this CreateVcnDetails.
+        :type: str
         """
-        self._ipv6_private_cidr_blocks = ipv6_private_cidr_blocks
-
-    @property
-    def is_oracle_gua_allocation_enabled(self):
-        """
-        Gets the is_oracle_gua_allocation_enabled of this CreateVcnDetails.
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56
-        size for an IPv6 enabled VCN.
-
-
-        :return: The is_oracle_gua_allocation_enabled of this CreateVcnDetails.
-        :rtype: bool
-        """
-        return self._is_oracle_gua_allocation_enabled
-
-    @is_oracle_gua_allocation_enabled.setter
-    def is_oracle_gua_allocation_enabled(self, is_oracle_gua_allocation_enabled):
-        """
-        Sets the is_oracle_gua_allocation_enabled of this CreateVcnDetails.
-        Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56
-        size for an IPv6 enabled VCN.
-
-
-        :param is_oracle_gua_allocation_enabled: The is_oracle_gua_allocation_enabled of this CreateVcnDetails.
-        :type: bool
-        """
-        self._is_oracle_gua_allocation_enabled = is_oracle_gua_allocation_enabled
-
-    @property
-    def byoipv6_cidr_details(self):
-        """
-        Gets the byoipv6_cidr_details of this CreateVcnDetails.
-        The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
-
-
-        :return: The byoipv6_cidr_details of this CreateVcnDetails.
-        :rtype: list[oci.vn_monitoring.models.Byoipv6CidrDetails]
-        """
-        return self._byoipv6_cidr_details
-
-    @byoipv6_cidr_details.setter
-    def byoipv6_cidr_details(self, byoipv6_cidr_details):
-        """
-        Sets the byoipv6_cidr_details of this CreateVcnDetails.
-        The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
-
-
-        :param byoipv6_cidr_details: The byoipv6_cidr_details of this CreateVcnDetails.
-        :type: list[oci.vn_monitoring.models.Byoipv6CidrDetails]
-        """
-        self._byoipv6_cidr_details = byoipv6_cidr_details
+        self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
     def defined_tags(self):
@@ -415,7 +344,6 @@ class CreateVcnDetails(object):
         Gets the is_ipv6_enabled of this CreateVcnDetails.
         Whether IPv6 is enabled for the VCN. Default is `false`.
         If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-        You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
         Example: `true`
@@ -434,7 +362,6 @@ class CreateVcnDetails(object):
         Sets the is_ipv6_enabled of this CreateVcnDetails.
         Whether IPv6 is enabled for the VCN. Default is `false`.
         If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-        You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
         Example: `true`

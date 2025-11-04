@@ -55,6 +55,10 @@ class Endpoint(object):
     #: This constant has a value of "ON_PREM"
     TYPE_ON_PREM = "ON_PREM"
 
+    #: A constant which can be used with the type property of a Endpoint.
+    #: This constant has a value of "PRIVATE_SERVICE_ACCESS"
+    TYPE_PRIVATE_SERVICE_ACCESS = "PRIVATE_SERVICE_ACCESS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Endpoint object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -64,6 +68,7 @@ class Endpoint(object):
         * :class:`~oci.vn_monitoring.models.ComputeInstanceEndpoint`
         * :class:`~oci.vn_monitoring.models.NetworkLoadBalancerEndpoint`
         * :class:`~oci.vn_monitoring.models.OnPremEndpoint`
+        * :class:`~oci.vn_monitoring.models.PrivateServiceAccessEndpoint`
         * :class:`~oci.vn_monitoring.models.LoadBalancerEndpoint`
         * :class:`~oci.vn_monitoring.models.VnicEndpoint`
         * :class:`~oci.vn_monitoring.models.IpAddressEndpoint`
@@ -75,7 +80,7 @@ class Endpoint(object):
 
         :param type:
             The value to assign to the type property of this Endpoint.
-            Allowed values for this property are: "IP_ADDRESS", "SUBNET", "COMPUTE_INSTANCE", "VNIC", "LOAD_BALANCER", "LOAD_BALANCER_LISTENER", "NETWORK_LOAD_BALANCER", "NETWORK_LOAD_BALANCER_LISTENER", "VLAN", "ON_PREM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IP_ADDRESS", "SUBNET", "COMPUTE_INSTANCE", "VNIC", "LOAD_BALANCER", "LOAD_BALANCER_LISTENER", "NETWORK_LOAD_BALANCER", "NETWORK_LOAD_BALANCER_LISTENER", "VLAN", "ON_PREM", "PRIVATE_SERVICE_ACCESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -108,6 +113,9 @@ class Endpoint(object):
         if type == 'ON_PREM':
             return 'OnPremEndpoint'
 
+        if type == 'PRIVATE_SERVICE_ACCESS':
+            return 'PrivateServiceAccessEndpoint'
+
         if type == 'LOAD_BALANCER':
             return 'LoadBalancerEndpoint'
 
@@ -134,7 +142,7 @@ class Endpoint(object):
         **[Required]** Gets the type of this Endpoint.
         The type of the `Endpoint`.
 
-        Allowed values for this property are: "IP_ADDRESS", "SUBNET", "COMPUTE_INSTANCE", "VNIC", "LOAD_BALANCER", "LOAD_BALANCER_LISTENER", "NETWORK_LOAD_BALANCER", "NETWORK_LOAD_BALANCER_LISTENER", "VLAN", "ON_PREM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IP_ADDRESS", "SUBNET", "COMPUTE_INSTANCE", "VNIC", "LOAD_BALANCER", "LOAD_BALANCER_LISTENER", "NETWORK_LOAD_BALANCER", "NETWORK_LOAD_BALANCER_LISTENER", "VLAN", "ON_PREM", "PRIVATE_SERVICE_ACCESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -153,7 +161,7 @@ class Endpoint(object):
         :param type: The type of this Endpoint.
         :type: str
         """
-        allowed_values = ["IP_ADDRESS", "SUBNET", "COMPUTE_INSTANCE", "VNIC", "LOAD_BALANCER", "LOAD_BALANCER_LISTENER", "NETWORK_LOAD_BALANCER", "NETWORK_LOAD_BALANCER_LISTENER", "VLAN", "ON_PREM"]
+        allowed_values = ["IP_ADDRESS", "SUBNET", "COMPUTE_INSTANCE", "VNIC", "LOAD_BALANCER", "LOAD_BALANCER_LISTENER", "NETWORK_LOAD_BALANCER", "NETWORK_LOAD_BALANCER_LISTENER", "VLAN", "ON_PREM", "PRIVATE_SERVICE_ACCESS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

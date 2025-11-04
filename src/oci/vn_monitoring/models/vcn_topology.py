@@ -13,6 +13,10 @@ from oci.decorators import init_model_state_from_kwargs
 class VcnTopology(Topology):
     """
     Defines the representation of a virtual network topology for a VCN.
+    See `Network Visualizer Documentation`__ for more information, including
+    conventions and pictures of symbols.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/network_visualizer.htm
     """
 
     def __init__(self, **kwargs):

@@ -24,66 +24,22 @@ Vn Monitoring
     oci.vn_monitoring.models.AddDrgRouteRuleDetails
     oci.vn_monitoring.models.AddDrgRouteRulesDetails
     oci.vn_monitoring.models.AddNetworkSecurityGroupSecurityRulesDetails
-    oci.vn_monitoring.models.AddPublicIpPoolCapacityDetails
     oci.vn_monitoring.models.AddSecurityRuleDetails
-    oci.vn_monitoring.models.AddSubnetIpv6CidrDetails
-    oci.vn_monitoring.models.AddVcnCidrDetails
-    oci.vn_monitoring.models.AddVcnIpv6CidrDetails
     oci.vn_monitoring.models.AddedNetworkSecurityGroupSecurityRules
     oci.vn_monitoring.models.AdhocGetPathAnalysisDetails
-    oci.vn_monitoring.models.AllowedIkeIPSecParameters
-    oci.vn_monitoring.models.AllowedPhaseOneParameters
-    oci.vn_monitoring.models.AllowedPhaseTwoParameters
     oci.vn_monitoring.models.AllowedSecurityAction
     oci.vn_monitoring.models.AllowedSecurityActionDetails
     oci.vn_monitoring.models.AllowedSecurityConfiguration
-    oci.vn_monitoring.models.BgpSessionInfo
     oci.vn_monitoring.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.vn_monitoring.models.BulkDeleteVirtualCircuitPublicPrefixesDetails
-    oci.vn_monitoring.models.ByoipAllocatedRangeCollection
-    oci.vn_monitoring.models.ByoipAllocatedRangeSummary
-    oci.vn_monitoring.models.ByoipRange
-    oci.vn_monitoring.models.ByoipRangeCollection
-    oci.vn_monitoring.models.ByoipRangeSummary
-    oci.vn_monitoring.models.ByoipRangeVcnIpv6AllocationSummary
-    oci.vn_monitoring.models.Byoipv6CidrDetails
-    oci.vn_monitoring.models.CaptureFilter
-    oci.vn_monitoring.models.ChangeByoipRangeCompartmentDetails
-    oci.vn_monitoring.models.ChangeCaptureFilterCompartmentDetails
-    oci.vn_monitoring.models.ChangeCpeCompartmentDetails
-    oci.vn_monitoring.models.ChangeCrossConnectCompartmentDetails
-    oci.vn_monitoring.models.ChangeCrossConnectGroupCompartmentDetails
-    oci.vn_monitoring.models.ChangeDhcpOptionsCompartmentDetails
-    oci.vn_monitoring.models.ChangeDrgCompartmentDetails
-    oci.vn_monitoring.models.ChangeIPSecConnectionCompartmentDetails
-    oci.vn_monitoring.models.ChangeInternetGatewayCompartmentDetails
-    oci.vn_monitoring.models.ChangeLocalPeeringGatewayCompartmentDetails
-    oci.vn_monitoring.models.ChangeNatGatewayCompartmentDetails
-    oci.vn_monitoring.models.ChangeNetworkSecurityGroupCompartmentDetails
+    oci.vn_monitoring.models.ChangeDrgAttachmentCompartmentDetails
+    oci.vn_monitoring.models.ChangeFlexTunnelCompartmentDetails
     oci.vn_monitoring.models.ChangePathAnalyzerTestCompartmentDetails
-    oci.vn_monitoring.models.ChangePublicIpCompartmentDetails
-    oci.vn_monitoring.models.ChangePublicIpPoolCompartmentDetails
-    oci.vn_monitoring.models.ChangeRemotePeeringConnectionCompartmentDetails
-    oci.vn_monitoring.models.ChangeRouteTableCompartmentDetails
-    oci.vn_monitoring.models.ChangeSecurityListCompartmentDetails
-    oci.vn_monitoring.models.ChangeServiceGatewayCompartmentDetails
-    oci.vn_monitoring.models.ChangeSubnetCompartmentDetails
-    oci.vn_monitoring.models.ChangeVcnCompartmentDetails
-    oci.vn_monitoring.models.ChangeVirtualCircuitCompartmentDetails
-    oci.vn_monitoring.models.ChangeVlanCompartmentDetails
-    oci.vn_monitoring.models.ChangeVtapCompartmentDetails
     oci.vn_monitoring.models.CompartmentInternal
     oci.vn_monitoring.models.ComputeInstanceEndpoint
     oci.vn_monitoring.models.ConnectLocalPeeringGatewaysDetails
     oci.vn_monitoring.models.ConnectRemotePeeringConnectionsDetails
     oci.vn_monitoring.models.Cpe
-    oci.vn_monitoring.models.CpeDeviceConfigAnswer
-    oci.vn_monitoring.models.CpeDeviceConfigQuestion
-    oci.vn_monitoring.models.CpeDeviceInfo
-    oci.vn_monitoring.models.CpeDeviceShapeDetail
-    oci.vn_monitoring.models.CpeDeviceShapeSummary
-    oci.vn_monitoring.models.CreateByoipRangeDetails
-    oci.vn_monitoring.models.CreateCaptureFilterDetails
     oci.vn_monitoring.models.CreateCpeDetails
     oci.vn_monitoring.models.CreateCrossConnectDetails
     oci.vn_monitoring.models.CreateCrossConnectGroupDetails
@@ -92,21 +48,18 @@ Vn Monitoring
     oci.vn_monitoring.models.CreateDrgDetails
     oci.vn_monitoring.models.CreateDrgRouteDistributionDetails
     oci.vn_monitoring.models.CreateDrgRouteTableDetails
+    oci.vn_monitoring.models.CreateFlexTunnelBgpSessionDetails
+    oci.vn_monitoring.models.CreateFlexTunnelConfigurationDetails
+    oci.vn_monitoring.models.CreateFlexTunnelDetails
+    oci.vn_monitoring.models.CreateGreFlexTunnelConfigurationDetails
     oci.vn_monitoring.models.CreateIPSecConnectionDetails
-    oci.vn_monitoring.models.CreateIPSecConnectionTunnelDetails
-    oci.vn_monitoring.models.CreateIPSecTunnelBgpSessionDetails
-    oci.vn_monitoring.models.CreateIPSecTunnelEncryptionDomainDetails
     oci.vn_monitoring.models.CreateInternetGatewayDetails
     oci.vn_monitoring.models.CreateIpv6Details
     oci.vn_monitoring.models.CreateLocalPeeringGatewayDetails
-    oci.vn_monitoring.models.CreateMacsecKey
-    oci.vn_monitoring.models.CreateMacsecProperties
-    oci.vn_monitoring.models.CreateNatGatewayDetails
     oci.vn_monitoring.models.CreateNetworkSecurityGroupDetails
     oci.vn_monitoring.models.CreatePathAnalyzerTestDetails
     oci.vn_monitoring.models.CreatePrivateIpDetails
     oci.vn_monitoring.models.CreatePublicIpDetails
-    oci.vn_monitoring.models.CreatePublicIpPoolDetails
     oci.vn_monitoring.models.CreateRemotePeeringConnectionDetails
     oci.vn_monitoring.models.CreateRouteTableDetails
     oci.vn_monitoring.models.CreateSecurityListDetails
@@ -115,20 +68,13 @@ Vn Monitoring
     oci.vn_monitoring.models.CreateVcnDetails
     oci.vn_monitoring.models.CreateVirtualCircuitDetails
     oci.vn_monitoring.models.CreateVirtualCircuitPublicPrefixDetails
-    oci.vn_monitoring.models.CreateVlanDetails
-    oci.vn_monitoring.models.CreateVnicDetails
-    oci.vn_monitoring.models.CreateVtapDetails
     oci.vn_monitoring.models.CrossConnect
     oci.vn_monitoring.models.CrossConnectGroup
     oci.vn_monitoring.models.CrossConnectLocation
     oci.vn_monitoring.models.CrossConnectMapping
-    oci.vn_monitoring.models.CrossConnectMappingDetails
-    oci.vn_monitoring.models.CrossConnectMappingDetailsCollection
     oci.vn_monitoring.models.CrossConnectPortSpeedShape
     oci.vn_monitoring.models.CrossConnectStatus
     oci.vn_monitoring.models.DefaultDrgRouteTables
-    oci.vn_monitoring.models.DefaultPhaseOneParameters
-    oci.vn_monitoring.models.DefaultPhaseTwoParameters
     oci.vn_monitoring.models.DeleteVirtualCircuitPublicPrefixDetails
     oci.vn_monitoring.models.DeniedSecurityAction
     oci.vn_monitoring.models.DeniedSecurityActionDetails
@@ -136,17 +82,17 @@ Vn Monitoring
     oci.vn_monitoring.models.DhcpOption
     oci.vn_monitoring.models.DhcpOptions
     oci.vn_monitoring.models.DhcpSearchDomainOption
-    oci.vn_monitoring.models.DpdConfig
     oci.vn_monitoring.models.Drg
     oci.vn_monitoring.models.DrgAttachment
     oci.vn_monitoring.models.DrgAttachmentIdDrgRouteDistributionMatchCriteria
     oci.vn_monitoring.models.DrgAttachmentInfo
-    oci.vn_monitoring.models.DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria
     oci.vn_monitoring.models.DrgAttachmentNetworkCreateDetails
     oci.vn_monitoring.models.DrgAttachmentNetworkDetails
     oci.vn_monitoring.models.DrgAttachmentNetworkUpdateDetails
     oci.vn_monitoring.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria
-    oci.vn_monitoring.models.DrgRedundancyStatus
+    oci.vn_monitoring.models.DrgCustomer
+    oci.vn_monitoring.models.DrgCustomerResource
+    oci.vn_monitoring.models.DrgPromotionStatusResponse
     oci.vn_monitoring.models.DrgRouteDistribution
     oci.vn_monitoring.models.DrgRouteDistributionMatchCriteria
     oci.vn_monitoring.models.DrgRouteDistributionStatement
@@ -156,42 +102,48 @@ Vn Monitoring
     oci.vn_monitoring.models.EgressSecurityListConfiguration
     oci.vn_monitoring.models.EgressSecurityRule
     oci.vn_monitoring.models.EgressTrafficSpec
-    oci.vn_monitoring.models.EncryptionDomainConfig
     oci.vn_monitoring.models.Endpoint
     oci.vn_monitoring.models.FastConnectProviderService
-    oci.vn_monitoring.models.FastConnectProviderServiceKey
-    oci.vn_monitoring.models.FlowLogCaptureFilterRuleDetails
+    oci.vn_monitoring.models.FlexTunnel
+    oci.vn_monitoring.models.FlexTunnelBgpSession
+    oci.vn_monitoring.models.FlexTunnelBgpStatus
+    oci.vn_monitoring.models.FlexTunnelCollection
+    oci.vn_monitoring.models.FlexTunnelConfiguration
+    oci.vn_monitoring.models.FlexTunnelDrgAttachmentNetworkCreateDetails
+    oci.vn_monitoring.models.FlexTunnelDrgAttachmentNetworkDetails
+    oci.vn_monitoring.models.FlexTunnelRouteSummary
+    oci.vn_monitoring.models.FlexTunnelSummary
     oci.vn_monitoring.models.ForwardedRoutingAction
     oci.vn_monitoring.models.ForwardedRoutingActionDetails
     oci.vn_monitoring.models.ForwardedRoutingConfiguration
     oci.vn_monitoring.models.GetPathAnalysisDetails
     oci.vn_monitoring.models.GetPublicIpByIpAddressDetails
     oci.vn_monitoring.models.GetPublicIpByPrivateIpIdDetails
+    oci.vn_monitoring.models.GreFlexTunnelConfiguration
     oci.vn_monitoring.models.IPSecConnection
     oci.vn_monitoring.models.IPSecConnectionDeviceConfig
     oci.vn_monitoring.models.IPSecConnectionDeviceStatus
-    oci.vn_monitoring.models.IPSecConnectionTunnel
-    oci.vn_monitoring.models.IPSecConnectionTunnelErrorDetails
-    oci.vn_monitoring.models.IPSecConnectionTunnelSharedSecret
     oci.vn_monitoring.models.IcmpOptions
     oci.vn_monitoring.models.IcmpProtocolParameters
     oci.vn_monitoring.models.IcmpTrafficProtocolParameters
     oci.vn_monitoring.models.IndeterminateRoutingAction
     oci.vn_monitoring.models.IngressSecurityListConfiguration
     oci.vn_monitoring.models.IngressSecurityRule
+    oci.vn_monitoring.models.InternetDrgAttachmentNetworkCreateDetails
+    oci.vn_monitoring.models.InternetDrgAttachmentNetworkDetails
+    oci.vn_monitoring.models.InternetDrgAttachmentNetworkUpdateDetails
     oci.vn_monitoring.models.InternetGateway
     oci.vn_monitoring.models.IpAddressEndpoint
+    oci.vn_monitoring.models.IpsecTunnelDrgAttachmentNetworkCreateDetails
     oci.vn_monitoring.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.vn_monitoring.models.Ipv6
     oci.vn_monitoring.models.LetterOfAuthority
     oci.vn_monitoring.models.LoadBalancerEndpoint
     oci.vn_monitoring.models.LoadBalancerListenerEndpoint
     oci.vn_monitoring.models.LocalPeeringGateway
+    oci.vn_monitoring.models.LoopBackDrgAttachmentNetworkCreateDetails
     oci.vn_monitoring.models.LoopBackDrgAttachmentNetworkDetails
-    oci.vn_monitoring.models.MacsecKey
-    oci.vn_monitoring.models.MacsecProperties
-    oci.vn_monitoring.models.ModifyVcnCidrDetails
-    oci.vn_monitoring.models.NatGateway
+    oci.vn_monitoring.models.LoopbackDrgAttachmentNetworkUpdateDetails
     oci.vn_monitoring.models.NetworkLoadBalancerEndpoint
     oci.vn_monitoring.models.NetworkLoadBalancerListenerEndpoint
     oci.vn_monitoring.models.NetworkSecurityGroup
@@ -208,25 +160,18 @@ Vn Monitoring
     oci.vn_monitoring.models.PathAnalyzerTestSummary
     oci.vn_monitoring.models.PathTopology
     oci.vn_monitoring.models.PersistedGetPathAnalysisDetails
-    oci.vn_monitoring.models.PhaseOneConfigDetails
-    oci.vn_monitoring.models.PhaseTwoConfigDetails
     oci.vn_monitoring.models.PortRange
     oci.vn_monitoring.models.PrivateIp
+    oci.vn_monitoring.models.PrivateServiceAccessEndpoint
     oci.vn_monitoring.models.ProtocolParameters
     oci.vn_monitoring.models.PublicIp
-    oci.vn_monitoring.models.PublicIpPool
-    oci.vn_monitoring.models.PublicIpPoolCollection
-    oci.vn_monitoring.models.PublicIpPoolSummary
     oci.vn_monitoring.models.QueryOptions
     oci.vn_monitoring.models.RemotePeeringConnection
+    oci.vn_monitoring.models.RemotePeeringConnectionDrgAttachmentNetworkCreateDetails
     oci.vn_monitoring.models.RemotePeeringConnectionDrgAttachmentNetworkDetails
     oci.vn_monitoring.models.RemoveDrgRouteDistributionStatementsDetails
     oci.vn_monitoring.models.RemoveDrgRouteRulesDetails
     oci.vn_monitoring.models.RemoveNetworkSecurityGroupSecurityRulesDetails
-    oci.vn_monitoring.models.RemovePublicIpPoolCapacityDetails
-    oci.vn_monitoring.models.RemoveSubnetIpv6CidrDetails
-    oci.vn_monitoring.models.RemoveVcnCidrDetails
-    oci.vn_monitoring.models.RemoveVcnIpv6CidrDetails
     oci.vn_monitoring.models.RouteRule
     oci.vn_monitoring.models.RouteTable
     oci.vn_monitoring.models.RoutingAction
@@ -237,9 +182,11 @@ Vn Monitoring
     oci.vn_monitoring.models.ServiceGateway
     oci.vn_monitoring.models.ServiceIdRequestDetails
     oci.vn_monitoring.models.ServiceIdResponseDetails
+    oci.vn_monitoring.models.SetDrgPeeringConnectionDetails
     oci.vn_monitoring.models.StatefulEgressSecurityListConfiguration
     oci.vn_monitoring.models.StatefulIngressSecurityListConfiguration
     oci.vn_monitoring.models.StatefulNsgConfiguration
+    oci.vn_monitoring.models.StatefulZprConfiguration
     oci.vn_monitoring.models.Subnet
     oci.vn_monitoring.models.SubnetEndpoint
     oci.vn_monitoring.models.SubnetTopology
@@ -257,17 +204,10 @@ Vn Monitoring
     oci.vn_monitoring.models.TrafficProtocolParameters
     oci.vn_monitoring.models.TrafficRoute
     oci.vn_monitoring.models.TunnelConfig
-    oci.vn_monitoring.models.TunnelCpeDeviceConfig
-    oci.vn_monitoring.models.TunnelPhaseOneDetails
-    oci.vn_monitoring.models.TunnelPhaseTwoDetails
-    oci.vn_monitoring.models.TunnelRouteSummary
-    oci.vn_monitoring.models.TunnelSecurityAssociationSummary
     oci.vn_monitoring.models.TunnelStatus
     oci.vn_monitoring.models.UdpOptions
     oci.vn_monitoring.models.UdpProtocolParameters
     oci.vn_monitoring.models.UdpTrafficProtocolParameters
-    oci.vn_monitoring.models.UpdateByoipRangeDetails
-    oci.vn_monitoring.models.UpdateCaptureFilterDetails
     oci.vn_monitoring.models.UpdateCpeDetails
     oci.vn_monitoring.models.UpdateCrossConnectDetails
     oci.vn_monitoring.models.UpdateCrossConnectGroupDetails
@@ -280,39 +220,31 @@ Vn Monitoring
     oci.vn_monitoring.models.UpdateDrgRouteRuleDetails
     oci.vn_monitoring.models.UpdateDrgRouteRulesDetails
     oci.vn_monitoring.models.UpdateDrgRouteTableDetails
+    oci.vn_monitoring.models.UpdateFlexTunnelBgpSessionDetails
+    oci.vn_monitoring.models.UpdateFlexTunnelConfigurationDetails
+    oci.vn_monitoring.models.UpdateFlexTunnelDetails
+    oci.vn_monitoring.models.UpdateGreFlexTunnelConfigurationDetails
     oci.vn_monitoring.models.UpdateIPSecConnectionDetails
-    oci.vn_monitoring.models.UpdateIPSecConnectionTunnelDetails
-    oci.vn_monitoring.models.UpdateIPSecConnectionTunnelSharedSecretDetails
-    oci.vn_monitoring.models.UpdateIPSecTunnelBgpSessionDetails
-    oci.vn_monitoring.models.UpdateIPSecTunnelEncryptionDomainDetails
     oci.vn_monitoring.models.UpdateInternetGatewayDetails
     oci.vn_monitoring.models.UpdateIpv6Details
     oci.vn_monitoring.models.UpdateLocalPeeringGatewayDetails
-    oci.vn_monitoring.models.UpdateMacsecKey
-    oci.vn_monitoring.models.UpdateMacsecProperties
-    oci.vn_monitoring.models.UpdateNatGatewayDetails
     oci.vn_monitoring.models.UpdateNetworkSecurityGroupDetails
     oci.vn_monitoring.models.UpdateNetworkSecurityGroupSecurityRulesDetails
     oci.vn_monitoring.models.UpdatePathAnalyzerTestDetails
     oci.vn_monitoring.models.UpdatePrivateIpDetails
     oci.vn_monitoring.models.UpdatePublicIpDetails
-    oci.vn_monitoring.models.UpdatePublicIpPoolDetails
     oci.vn_monitoring.models.UpdateRemotePeeringConnectionDetails
     oci.vn_monitoring.models.UpdateRouteTableDetails
     oci.vn_monitoring.models.UpdateSecurityListDetails
     oci.vn_monitoring.models.UpdateSecurityRuleDetails
     oci.vn_monitoring.models.UpdateServiceGatewayDetails
     oci.vn_monitoring.models.UpdateSubnetDetails
-    oci.vn_monitoring.models.UpdateTunnelCpeDeviceConfigDetails
     oci.vn_monitoring.models.UpdateVcnDetails
     oci.vn_monitoring.models.UpdateVirtualCircuitDetails
-    oci.vn_monitoring.models.UpdateVlanDetails
     oci.vn_monitoring.models.UpdateVnicDetails
-    oci.vn_monitoring.models.UpdateVtapDetails
     oci.vn_monitoring.models.UpdatedNetworkSecurityGroupSecurityRules
     oci.vn_monitoring.models.UpgradeStatus
     oci.vn_monitoring.models.Vcn
-    oci.vn_monitoring.models.VcnDnsResolverAssociation
     oci.vn_monitoring.models.VcnDrgAttachmentNetworkCreateDetails
     oci.vn_monitoring.models.VcnDrgAttachmentNetworkDetails
     oci.vn_monitoring.models.VcnDrgAttachmentNetworkUpdateDetails
@@ -321,15 +253,14 @@ Vn Monitoring
     oci.vn_monitoring.models.VirtualCircuit
     oci.vn_monitoring.models.VirtualCircuitAssociatedTunnelDetails
     oci.vn_monitoring.models.VirtualCircuitBandwidthShape
+    oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkCreateDetails
     oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkDetails
+    oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkUpdateDetails
     oci.vn_monitoring.models.VirtualCircuitPublicPrefix
     oci.vn_monitoring.models.VisibleTrafficNode
-    oci.vn_monitoring.models.Vlan
     oci.vn_monitoring.models.VlanEndpoint
     oci.vn_monitoring.models.Vnic
     oci.vn_monitoring.models.VnicEndpoint
-    oci.vn_monitoring.models.Vtap
-    oci.vn_monitoring.models.VtapCaptureFilterRuleDetails
     oci.vn_monitoring.models.WorkRequest
     oci.vn_monitoring.models.WorkRequestError
     oci.vn_monitoring.models.WorkRequestErrorCollection
@@ -340,3 +271,16 @@ Vn Monitoring
     oci.vn_monitoring.models.WorkRequestResultCollection
     oci.vn_monitoring.models.WorkRequestSummary
     oci.vn_monitoring.models.WorkRequestSummaryCollection
+    oci.vn_monitoring.models.ZprAllowedSecurityAction
+    oci.vn_monitoring.models.ZprAllowedSecurityActionDetails
+    oci.vn_monitoring.models.ZprCidrUnsupportedSecurityAction
+    oci.vn_monitoring.models.ZprCidrUnsupportedSecurityActionDetails
+    oci.vn_monitoring.models.ZprConfiguration
+    oci.vn_monitoring.models.ZprDeniedSecurityAction
+    oci.vn_monitoring.models.ZprDeniedSecurityActionDetails
+    oci.vn_monitoring.models.ZprMissingPolicySecurityAction
+    oci.vn_monitoring.models.ZprNsgUnsupportedSecurityAction
+    oci.vn_monitoring.models.ZprNsgUnsupportedSecurityActionDetails
+    oci.vn_monitoring.models.ZprPolicy
+    oci.vn_monitoring.models.ZprPolicyNotEvaluatedMissingRouteSecurityAction
+    oci.vn_monitoring.models.ZprPolicyNotEvaluatedSlNsgDeniedSecurityAction

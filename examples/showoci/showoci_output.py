@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.08.26"
+    version = "25.09.30"
 
     ##########################################################################
     # spaces for align
@@ -898,6 +898,7 @@ class ShowOCIOutput(object):
             for arr in nfws:
                 print(self.taba + arr['name'] + " - " + arr['availability_domain'] + " - " + arr['ipv4_address'] + " - " + arr['lifecycle_state'])
                 print(self.tabs + "Subnet: " + arr['subnet_name'])
+                print(self.tabs + "NSGs  : " + arr['nsg_names'])
                 print(self.tabs + "Policy: " + arr['network_firewall_policy_name'])
 
         except Exception as e:
@@ -6382,6 +6383,10 @@ class ShowOCICSV(object):
                     'ipv6_address': arr['ipv6_address'],
                     'network_firewall_policy_id': arr['network_firewall_policy_id'],
                     'network_firewall_policy_name': arr['network_firewall_policy_name'],
+                    'nat_must_enable_private_nat': arr['nat_must_enable_private_nat'],
+                    'nat_nat_ip_address_list': self.__csv_list_to_str(arr['nat_nat_ip_address_list']),
+                    'nsg_ids': self.__csv_list_to_str(arr['nsg_ids']),
+                    'nsg_names': arr['nsg_names'],
                     'time_created': arr['time_created'],
                     'time_updated': arr['time_updated'],
                     'lifecycle_state': arr['lifecycle_state'],
