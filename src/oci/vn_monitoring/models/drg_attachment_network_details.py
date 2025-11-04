@@ -31,22 +31,36 @@ class DrgAttachmentNetworkDetails(object):
     #: This constant has a value of "REMOTE_PEERING_CONNECTION"
     TYPE_REMOTE_PEERING_CONNECTION = "REMOTE_PEERING_CONNECTION"
 
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkDetails.
+    #: This constant has a value of "FLEX_TUNNEL"
+    TYPE_FLEX_TUNNEL = "FLEX_TUNNEL"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkDetails.
+    #: This constant has a value of "LOOPBACK"
+    TYPE_LOOPBACK = "LOOPBACK"
+
+    #: A constant which can be used with the type property of a DrgAttachmentNetworkDetails.
+    #: This constant has a value of "INTERNET"
+    TYPE_INTERNET = "INTERNET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrgAttachmentNetworkDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.vn_monitoring.models.VcnDrgAttachmentNetworkDetails`
+        * :class:`~oci.vn_monitoring.models.InternetDrgAttachmentNetworkDetails`
         * :class:`~oci.vn_monitoring.models.LoopBackDrgAttachmentNetworkDetails`
         * :class:`~oci.vn_monitoring.models.IpsecTunnelDrgAttachmentNetworkDetails`
         * :class:`~oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkDetails`
+        * :class:`~oci.vn_monitoring.models.FlexTunnelDrgAttachmentNetworkDetails`
         * :class:`~oci.vn_monitoring.models.RemotePeeringConnectionDrgAttachmentNetworkDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this DrgAttachmentNetworkDetails.
-            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION"
+            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "FLEX_TUNNEL", "LOOPBACK", "INTERNET"
         :type type: str
 
         :param id:
@@ -76,6 +90,9 @@ class DrgAttachmentNetworkDetails(object):
         if type == 'VCN':
             return 'VcnDrgAttachmentNetworkDetails'
 
+        if type == 'INTERNET':
+            return 'InternetDrgAttachmentNetworkDetails'
+
         if type == 'LOOPBACK':
             return 'LoopBackDrgAttachmentNetworkDetails'
 
@@ -84,6 +101,9 @@ class DrgAttachmentNetworkDetails(object):
 
         if type == 'VIRTUAL_CIRCUIT':
             return 'VirtualCircuitDrgAttachmentNetworkDetails'
+
+        if type == 'FLEX_TUNNEL':
+            return 'FlexTunnelDrgAttachmentNetworkDetails'
 
         if type == 'REMOTE_PEERING_CONNECTION':
             return 'RemotePeeringConnectionDrgAttachmentNetworkDetails'
@@ -94,7 +114,7 @@ class DrgAttachmentNetworkDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrgAttachmentNetworkDetails.
-        Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION"
+        Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "FLEX_TUNNEL", "LOOPBACK", "INTERNET"
 
 
         :return: The type of this DrgAttachmentNetworkDetails.
@@ -110,7 +130,7 @@ class DrgAttachmentNetworkDetails(object):
         :param type: The type of this DrgAttachmentNetworkDetails.
         :type: str
         """
-        allowed_values = ["VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION"]
+        allowed_values = ["VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "FLEX_TUNNEL", "LOOPBACK", "INTERNET"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

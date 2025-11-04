@@ -55,10 +55,6 @@ class Cpe(object):
             The value to assign to the ip_address property of this Cpe.
         :type ip_address: str
 
-        :param cpe_device_shape_id:
-            The value to assign to the cpe_device_shape_id property of this Cpe.
-        :type cpe_device_shape_id: str
-
         :param time_created:
             The value to assign to the time_created property of this Cpe.
         :type time_created: datetime
@@ -75,7 +71,6 @@ class Cpe(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'ip_address': 'str',
-            'cpe_device_shape_id': 'str',
             'time_created': 'datetime',
             'is_private': 'bool'
         }
@@ -86,7 +81,6 @@ class Cpe(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'ip_address': 'ipAddress',
-            'cpe_device_shape_id': 'cpeDeviceShapeId',
             'time_created': 'timeCreated',
             'is_private': 'isPrivate'
         }
@@ -96,7 +90,6 @@ class Cpe(object):
         self._freeform_tags = None
         self._id = None
         self._ip_address = None
-        self._cpe_device_shape_id = None
         self._time_created = None
         self._is_private = None
 
@@ -253,62 +246,6 @@ class Cpe(object):
         :type: str
         """
         self._ip_address = ip_address
-
-    @property
-    def cpe_device_shape_id(self):
-        """
-        Gets the cpe_device_shape_id of this Cpe.
-        The `OCID`__ of the CPE's device type.
-        The Networking service maintains a general list of CPE device types (for example,
-        Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-        a network engineer configure the CPE. The `OCID`__ uniquely identifies the type of
-        device. To get the OCIDs for the device types on the list, see
-        :func:`list_cpe_device_shapes`.
-
-        For information about how to generate CPE configuration content for a
-        CPE device type, see:
-
-          * :func:`get_cpe_device_config_content`
-          * :func:`get_ipsec_cpe_device_config_content`
-          * :func:`get_tunnel_cpe_device_config_content`
-          * :func:`get_tunnel_cpe_device_config`
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The cpe_device_shape_id of this Cpe.
-        :rtype: str
-        """
-        return self._cpe_device_shape_id
-
-    @cpe_device_shape_id.setter
-    def cpe_device_shape_id(self, cpe_device_shape_id):
-        """
-        Sets the cpe_device_shape_id of this Cpe.
-        The `OCID`__ of the CPE's device type.
-        The Networking service maintains a general list of CPE device types (for example,
-        Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-        a network engineer configure the CPE. The `OCID`__ uniquely identifies the type of
-        device. To get the OCIDs for the device types on the list, see
-        :func:`list_cpe_device_shapes`.
-
-        For information about how to generate CPE configuration content for a
-        CPE device type, see:
-
-          * :func:`get_cpe_device_config_content`
-          * :func:`get_ipsec_cpe_device_config_content`
-          * :func:`get_tunnel_cpe_device_config_content`
-          * :func:`get_tunnel_cpe_device_config`
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param cpe_device_shape_id: The cpe_device_shape_id of this Cpe.
-        :type: str
-        """
-        self._cpe_device_shape_id = cpe_device_shape_id
 
     @property
     def time_created(self):

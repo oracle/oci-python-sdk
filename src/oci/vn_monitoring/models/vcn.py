@@ -39,30 +39,14 @@ class Vcn(object):
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
-    #: A constant which can be used with the lifecycle_state property of a Vcn.
-    #: This constant has a value of "UPDATING"
-    LIFECYCLE_STATE_UPDATING = "UPDATING"
-
     def __init__(self, **kwargs):
         """
         Initializes a new Vcn object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param byoipv6_cidr_blocks:
-            The value to assign to the byoipv6_cidr_blocks property of this Vcn.
-        :type byoipv6_cidr_blocks: list[str]
-
-        :param ipv6_private_cidr_blocks:
-            The value to assign to the ipv6_private_cidr_blocks property of this Vcn.
-        :type ipv6_private_cidr_blocks: list[str]
-
         :param cidr_block:
             The value to assign to the cidr_block property of this Vcn.
         :type cidr_block: str
-
-        :param cidr_blocks:
-            The value to assign to the cidr_blocks property of this Vcn.
-        :type cidr_blocks: list[str]
 
         :param compartment_id:
             The value to assign to the compartment_id property of this Vcn.
@@ -100,13 +84,17 @@ class Vcn(object):
             The value to assign to the id property of this Vcn.
         :type id: str
 
-        :param ipv6_cidr_blocks:
-            The value to assign to the ipv6_cidr_blocks property of this Vcn.
-        :type ipv6_cidr_blocks: list[str]
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this Vcn.
+        :type ipv6_cidr_block: str
+
+        :param ipv6_public_cidr_block:
+            The value to assign to the ipv6_public_cidr_block property of this Vcn.
+        :type ipv6_public_cidr_block: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Vcn.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
         :type lifecycle_state: str
 
         :param time_created:
@@ -119,10 +107,7 @@ class Vcn(object):
 
         """
         self.swagger_types = {
-            'byoipv6_cidr_blocks': 'list[str]',
-            'ipv6_private_cidr_blocks': 'list[str]',
             'cidr_block': 'str',
-            'cidr_blocks': 'list[str]',
             'compartment_id': 'str',
             'default_dhcp_options_id': 'str',
             'default_route_table_id': 'str',
@@ -132,16 +117,14 @@ class Vcn(object):
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
-            'ipv6_cidr_blocks': 'list[str]',
+            'ipv6_cidr_block': 'str',
+            'ipv6_public_cidr_block': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'vcn_domain_name': 'str'
         }
         self.attribute_map = {
-            'byoipv6_cidr_blocks': 'byoipv6CidrBlocks',
-            'ipv6_private_cidr_blocks': 'ipv6PrivateCidrBlocks',
             'cidr_block': 'cidrBlock',
-            'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
             'default_dhcp_options_id': 'defaultDhcpOptionsId',
             'default_route_table_id': 'defaultRouteTableId',
@@ -151,15 +134,13 @@ class Vcn(object):
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
             'id': 'id',
-            'ipv6_cidr_blocks': 'ipv6CidrBlocks',
+            'ipv6_cidr_block': 'ipv6CidrBlock',
+            'ipv6_public_cidr_block': 'ipv6PublicCidrBlock',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'vcn_domain_name': 'vcnDomainName'
         }
-        self._byoipv6_cidr_blocks = None
-        self._ipv6_private_cidr_blocks = None
         self._cidr_block = None
-        self._cidr_blocks = None
         self._compartment_id = None
         self._default_dhcp_options_id = None
         self._default_route_table_id = None
@@ -169,64 +150,17 @@ class Vcn(object):
         self._dns_label = None
         self._freeform_tags = None
         self._id = None
-        self._ipv6_cidr_blocks = None
+        self._ipv6_cidr_block = None
+        self._ipv6_public_cidr_block = None
         self._lifecycle_state = None
         self._time_created = None
         self._vcn_domain_name = None
 
     @property
-    def byoipv6_cidr_blocks(self):
-        """
-        Gets the byoipv6_cidr_blocks of this Vcn.
-        The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
-
-
-        :return: The byoipv6_cidr_blocks of this Vcn.
-        :rtype: list[str]
-        """
-        return self._byoipv6_cidr_blocks
-
-    @byoipv6_cidr_blocks.setter
-    def byoipv6_cidr_blocks(self, byoipv6_cidr_blocks):
-        """
-        Sets the byoipv6_cidr_blocks of this Vcn.
-        The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
-
-
-        :param byoipv6_cidr_blocks: The byoipv6_cidr_blocks of this Vcn.
-        :type: list[str]
-        """
-        self._byoipv6_cidr_blocks = byoipv6_cidr_blocks
-
-    @property
-    def ipv6_private_cidr_blocks(self):
-        """
-        Gets the ipv6_private_cidr_blocks of this Vcn.
-        For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
-
-
-        :return: The ipv6_private_cidr_blocks of this Vcn.
-        :rtype: list[str]
-        """
-        return self._ipv6_private_cidr_blocks
-
-    @ipv6_private_cidr_blocks.setter
-    def ipv6_private_cidr_blocks(self, ipv6_private_cidr_blocks):
-        """
-        Sets the ipv6_private_cidr_blocks of this Vcn.
-        For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
-
-
-        :param ipv6_private_cidr_blocks: The ipv6_private_cidr_blocks of this Vcn.
-        :type: list[str]
-        """
-        self._ipv6_private_cidr_blocks = ipv6_private_cidr_blocks
-
-    @property
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this Vcn.
-        Deprecated. The first CIDR IP address from cidrBlocks.
+        The CIDR block IP address of the VCN.
 
         Example: `172.16.0.0/16`
 
@@ -240,7 +174,7 @@ class Vcn(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this Vcn.
-        Deprecated. The first CIDR IP address from cidrBlocks.
+        The CIDR block IP address of the VCN.
 
         Example: `172.16.0.0/16`
 
@@ -249,30 +183,6 @@ class Vcn(object):
         :type: str
         """
         self._cidr_block = cidr_block
-
-    @property
-    def cidr_blocks(self):
-        """
-        **[Required]** Gets the cidr_blocks of this Vcn.
-        The list of IPv4 CIDR blocks the VCN will use.
-
-
-        :return: The cidr_blocks of this Vcn.
-        :rtype: list[str]
-        """
-        return self._cidr_blocks
-
-    @cidr_blocks.setter
-    def cidr_blocks(self, cidr_blocks):
-        """
-        Sets the cidr_blocks of this Vcn.
-        The list of IPv4 CIDR blocks the VCN will use.
-
-
-        :param cidr_blocks: The cidr_blocks of this Vcn.
-        :type: list[str]
-        """
-        self._cidr_blocks = cidr_blocks
 
     @property
     def compartment_id(self):
@@ -545,30 +455,78 @@ class Vcn(object):
         self._id = id
 
     @property
-    def ipv6_cidr_blocks(self):
+    def ipv6_cidr_block(self):
         """
-        Gets the ipv6_cidr_blocks of this Vcn.
-        For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-        The CIDRs are provided by Oracle and the sizes are always /56.
+        Gets the ipv6_cidr_block of this Vcn.
+        For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's private IP address space.
+        The VCN size is always /56. Oracle
+        provides the IPv6 prefix to use as the *same* CIDR for the `ipv6PublicCidrBlock`.
+        When creating a subnet, specify the last 8 bits, 00 to FF.
+        See `IPv6 Addresses`__.
+        Example: `2001:0db8:0123::/56`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
-        :return: The ipv6_cidr_blocks of this Vcn.
-        :rtype: list[str]
+        :return: The ipv6_cidr_block of this Vcn.
+        :rtype: str
         """
-        return self._ipv6_cidr_blocks
+        return self._ipv6_cidr_block
 
-    @ipv6_cidr_blocks.setter
-    def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
         """
-        Sets the ipv6_cidr_blocks of this Vcn.
-        For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-        The CIDRs are provided by Oracle and the sizes are always /56.
+        Sets the ipv6_cidr_block of this Vcn.
+        For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's private IP address space.
+        The VCN size is always /56. Oracle
+        provides the IPv6 prefix to use as the *same* CIDR for the `ipv6PublicCidrBlock`.
+        When creating a subnet, specify the last 8 bits, 00 to FF.
+        See `IPv6 Addresses`__.
+        Example: `2001:0db8:0123::/56`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
-        :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this Vcn.
-        :type: list[str]
+        :param ipv6_cidr_block: The ipv6_cidr_block of this Vcn.
+        :type: str
         """
-        self._ipv6_cidr_blocks = ipv6_cidr_blocks
+        self._ipv6_cidr_block = ipv6_cidr_block
+
+    @property
+    def ipv6_public_cidr_block(self):
+        """
+        Gets the ipv6_public_cidr_block of this Vcn.
+        For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's public IP address space.
+        The VCN size is always /56. This prefix is always provided by Oracle. If you don't provide a
+        custom prefix for the `ipv6CidrBlock` when creating the VCN, Oracle assigns that value and also
+        uses it for `ipv6PublicCidrBlock`. Oracle uses addresses from this block for the `publicIpAddress`
+        attribute of an :class:`Ipv6` that has internet access allowed.
+
+        Example: `2001:0db8:0123::/48`
+
+
+        :return: The ipv6_public_cidr_block of this Vcn.
+        :rtype: str
+        """
+        return self._ipv6_public_cidr_block
+
+    @ipv6_public_cidr_block.setter
+    def ipv6_public_cidr_block(self, ipv6_public_cidr_block):
+        """
+        Sets the ipv6_public_cidr_block of this Vcn.
+        For an IPv6-enabled VCN, this is the IPv6 prefix for the VCN's public IP address space.
+        The VCN size is always /56. This prefix is always provided by Oracle. If you don't provide a
+        custom prefix for the `ipv6CidrBlock` when creating the VCN, Oracle assigns that value and also
+        uses it for `ipv6PublicCidrBlock`. Oracle uses addresses from this block for the `publicIpAddress`
+        attribute of an :class:`Ipv6` that has internet access allowed.
+
+        Example: `2001:0db8:0123::/48`
+
+
+        :param ipv6_public_cidr_block: The ipv6_public_cidr_block of this Vcn.
+        :type: str
+        """
+        self._ipv6_public_cidr_block = ipv6_public_cidr_block
 
     @property
     def lifecycle_state(self):
@@ -576,7 +534,7 @@ class Vcn(object):
         **[Required]** Gets the lifecycle_state of this Vcn.
         The VCN's current state.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
 
 
         :return: The lifecycle_state of this Vcn.
@@ -594,7 +552,7 @@ class Vcn(object):
         :param lifecycle_state: The lifecycle_state of this Vcn.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
                 f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"

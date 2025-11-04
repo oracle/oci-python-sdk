@@ -12,8 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IPSecConnectionDeviceStatus(object):
     """
-    Deprecated. For tunnel information, instead see
-    :class:`IPSecConnectionTunnel`.
+    Status of the IPSec connection.
     """
 
     def __init__(self, **kwargs):

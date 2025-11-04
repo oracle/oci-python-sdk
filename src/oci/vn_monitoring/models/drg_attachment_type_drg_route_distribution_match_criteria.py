@@ -32,6 +32,14 @@ class DrgAttachmentTypeDrgRouteDistributionMatchCriteria(DrgRouteDistributionMat
     #: This constant has a value of "IPSEC_TUNNEL"
     ATTACHMENT_TYPE_IPSEC_TUNNEL = "IPSEC_TUNNEL"
 
+    #: A constant which can be used with the attachment_type property of a DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
+    #: This constant has a value of "FLEX_TUNNEL"
+    ATTACHMENT_TYPE_FLEX_TUNNEL = "FLEX_TUNNEL"
+
+    #: A constant which can be used with the attachment_type property of a DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
+    #: This constant has a value of "LOOPBACK"
+    ATTACHMENT_TYPE_LOOPBACK = "LOOPBACK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrgAttachmentTypeDrgRouteDistributionMatchCriteria object with values from keyword arguments. The default value of the :py:attr:`~oci.vn_monitoring.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria.match_type` attribute
@@ -40,12 +48,12 @@ class DrgAttachmentTypeDrgRouteDistributionMatchCriteria(DrgRouteDistributionMat
 
         :param match_type:
             The value to assign to the match_type property of this DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
-            Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID", "MATCH_ALL"
+            Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID"
         :type match_type: str
 
         :param attachment_type:
             The value to assign to the attachment_type property of this DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
-            Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL"
+            Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "FLEX_TUNNEL", "LOOPBACK"
         :type attachment_type: str
 
         """
@@ -68,7 +76,7 @@ class DrgAttachmentTypeDrgRouteDistributionMatchCriteria(DrgRouteDistributionMat
         The type of the network resource to be included in this match. A match for a network type implies that all
         DRG attachments of that type insert routes into the table.
 
-        Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL"
+        Allowed values for this property are: "VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "FLEX_TUNNEL", "LOOPBACK"
 
 
         :return: The attachment_type of this DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
@@ -87,7 +95,7 @@ class DrgAttachmentTypeDrgRouteDistributionMatchCriteria(DrgRouteDistributionMat
         :param attachment_type: The attachment_type of this DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
         :type: str
         """
-        allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL"]
+        allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "FLEX_TUNNEL", "LOOPBACK"]
         if not value_allowed_none_or_none_sentinel(attachment_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `attachment_type`, must be None or one of {allowed_values}"

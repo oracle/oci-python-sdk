@@ -51,6 +51,30 @@ class ShardPeerWithExadbXs(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the protection_mode property of a ShardPeerWithExadbXs.
+    #: This constant has a value of "MAXIMUM_AVAILABILITY"
+    PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
+
+    #: A constant which can be used with the protection_mode property of a ShardPeerWithExadbXs.
+    #: This constant has a value of "MAXIMUM_PERFORMANCE"
+    PROTECTION_MODE_MAXIMUM_PERFORMANCE = "MAXIMUM_PERFORMANCE"
+
+    #: A constant which can be used with the protection_mode property of a ShardPeerWithExadbXs.
+    #: This constant has a value of "MAXIMUM_PROTECTION"
+    PROTECTION_MODE_MAXIMUM_PROTECTION = "MAXIMUM_PROTECTION"
+
+    #: A constant which can be used with the transport_type property of a ShardPeerWithExadbXs.
+    #: This constant has a value of "SYNC"
+    TRANSPORT_TYPE_SYNC = "SYNC"
+
+    #: A constant which can be used with the transport_type property of a ShardPeerWithExadbXs.
+    #: This constant has a value of "ASYNC"
+    TRANSPORT_TYPE_ASYNC = "ASYNC"
+
+    #: A constant which can be used with the transport_type property of a ShardPeerWithExadbXs.
+    #: This constant has a value of "FASTSYNC"
+    TRANSPORT_TYPE_FASTSYNC = "FASTSYNC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ShardPeerWithExadbXs object with values from keyword arguments.
@@ -86,6 +110,18 @@ class ShardPeerWithExadbXs(object):
             The value to assign to the time_updated property of this ShardPeerWithExadbXs.
         :type time_updated: datetime
 
+        :param protection_mode:
+            The value to assign to the protection_mode property of this ShardPeerWithExadbXs.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type protection_mode: str
+
+        :param transport_type:
+            The value to assign to the transport_type property of this ShardPeerWithExadbXs.
+            Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type transport_type: str
+
         :param metadata:
             The value to assign to the metadata property of this ShardPeerWithExadbXs.
         :type metadata: oci.distributed_database.models.DistributedDbMetadata
@@ -99,6 +135,8 @@ class ShardPeerWithExadbXs(object):
             'container_database_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'protection_mode': 'str',
+            'transport_type': 'str',
             'metadata': 'DistributedDbMetadata'
         }
         self.attribute_map = {
@@ -109,6 +147,8 @@ class ShardPeerWithExadbXs(object):
             'container_database_id': 'containerDatabaseId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'protection_mode': 'protectionMode',
+            'transport_type': 'transportType',
             'metadata': 'metadata'
         }
         self._vm_cluster_id = None
@@ -118,6 +158,8 @@ class ShardPeerWithExadbXs(object):
         self._container_database_id = None
         self._time_created = None
         self._time_updated = None
+        self._protection_mode = None
+        self._transport_type = None
         self._metadata = None
 
     @property
@@ -176,7 +218,7 @@ class ShardPeerWithExadbXs(object):
     def status(self):
         """
         **[Required]** Gets the status of this ShardPeerWithExadbXs.
-        Status of catalog with VmCluster for the Globally ditributed database.
+        Status of EXADB_XS based shard peer.
 
         Allowed values for this property are: "FAILED", "DELETING", "DELETED", "UPDATING", "CREATING", "CREATED", "READY_FOR_CONFIGURATION", "CONFIGURED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -191,7 +233,7 @@ class ShardPeerWithExadbXs(object):
     def status(self, status):
         """
         Sets the status of this ShardPeerWithExadbXs.
-        Status of catalog with VmCluster for the Globally ditributed database.
+        Status of EXADB_XS based shard peer.
 
 
         :param status: The status of this ShardPeerWithExadbXs.
@@ -297,6 +339,66 @@ class ShardPeerWithExadbXs(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this ShardPeerWithExadbXs.
+        The protectionMode for the shard peer.
+
+        Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The protection_mode of this ShardPeerWithExadbXs.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this ShardPeerWithExadbXs.
+        The protectionMode for the shard peer.
+
+
+        :param protection_mode: The protection_mode of this ShardPeerWithExadbXs.
+        :type: str
+        """
+        allowed_values = ["MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            protection_mode = 'UNKNOWN_ENUM_VALUE'
+        self._protection_mode = protection_mode
+
+    @property
+    def transport_type(self):
+        """
+        Gets the transport_type of this ShardPeerWithExadbXs.
+        The redo transport type to use for this Data Guard association.
+
+        Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The transport_type of this ShardPeerWithExadbXs.
+        :rtype: str
+        """
+        return self._transport_type
+
+    @transport_type.setter
+    def transport_type(self, transport_type):
+        """
+        Sets the transport_type of this ShardPeerWithExadbXs.
+        The redo transport type to use for this Data Guard association.
+
+
+        :param transport_type: The transport_type of this ShardPeerWithExadbXs.
+        :type: str
+        """
+        allowed_values = ["SYNC", "ASYNC", "FASTSYNC"]
+        if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
+            transport_type = 'UNKNOWN_ENUM_VALUE'
+        self._transport_type = transport_type
 
     @property
     def metadata(self):

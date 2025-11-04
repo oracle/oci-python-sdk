@@ -23,6 +23,34 @@ class SecurityAction(object):
     #: This constant has a value of "DENIED"
     ACTION_DENIED = "DENIED"
 
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_DENIED"
+    ACTION_ZPR_DENIED = "ZPR_DENIED"
+
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_ALLOWED"
+    ACTION_ZPR_ALLOWED = "ZPR_ALLOWED"
+
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_CIDR_UNSUPPORTED"
+    ACTION_ZPR_CIDR_UNSUPPORTED = "ZPR_CIDR_UNSUPPORTED"
+
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_NSG_UNSUPPORTED"
+    ACTION_ZPR_NSG_UNSUPPORTED = "ZPR_NSG_UNSUPPORTED"
+
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE"
+    ACTION_ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE = "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE"
+
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED"
+    ACTION_ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED = "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED"
+
+    #: A constant which can be used with the action property of a SecurityAction.
+    #: This constant has a value of "ZPR_MISSING_POLICY"
+    ACTION_ZPR_MISSING_POLICY = "ZPR_MISSING_POLICY"
+
     #: A constant which can be used with the action_type property of a SecurityAction.
     #: This constant has a value of "EXPLICIT"
     ACTION_TYPE_EXPLICIT = "EXPLICIT"
@@ -37,13 +65,20 @@ class SecurityAction(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.vn_monitoring.models.AllowedSecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprMissingPolicySecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprDeniedSecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprPolicyNotEvaluatedMissingRouteSecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprNsgUnsupportedSecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprAllowedSecurityAction`
         * :class:`~oci.vn_monitoring.models.DeniedSecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprCidrUnsupportedSecurityAction`
+        * :class:`~oci.vn_monitoring.models.ZprPolicyNotEvaluatedSlNsgDeniedSecurityAction`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param action:
             The value to assign to the action property of this SecurityAction.
-            Allowed values for this property are: "ALLOWED", "DENIED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ALLOWED", "DENIED", "ZPR_DENIED", "ZPR_ALLOWED", "ZPR_CIDR_UNSUPPORTED", "ZPR_NSG_UNSUPPORTED", "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE", "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED", "ZPR_MISSING_POLICY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -76,8 +111,29 @@ class SecurityAction(object):
         if type == 'ALLOWED':
             return 'AllowedSecurityAction'
 
+        if type == 'ZPR_MISSING_POLICY':
+            return 'ZprMissingPolicySecurityAction'
+
+        if type == 'ZPR_DENIED':
+            return 'ZprDeniedSecurityAction'
+
+        if type == 'ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE':
+            return 'ZprPolicyNotEvaluatedMissingRouteSecurityAction'
+
+        if type == 'ZPR_NSG_UNSUPPORTED':
+            return 'ZprNsgUnsupportedSecurityAction'
+
+        if type == 'ZPR_ALLOWED':
+            return 'ZprAllowedSecurityAction'
+
         if type == 'DENIED':
             return 'DeniedSecurityAction'
+
+        if type == 'ZPR_CIDR_UNSUPPORTED':
+            return 'ZprCidrUnsupportedSecurityAction'
+
+        if type == 'ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED':
+            return 'ZprPolicyNotEvaluatedSlNsgDeniedSecurityAction'
         else:
             return 'SecurityAction'
 
@@ -87,7 +143,7 @@ class SecurityAction(object):
         **[Required]** Gets the action of this SecurityAction.
         Action taken on the traffic.
 
-        Allowed values for this property are: "ALLOWED", "DENIED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ALLOWED", "DENIED", "ZPR_DENIED", "ZPR_ALLOWED", "ZPR_CIDR_UNSUPPORTED", "ZPR_NSG_UNSUPPORTED", "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE", "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED", "ZPR_MISSING_POLICY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -106,7 +162,7 @@ class SecurityAction(object):
         :param action: The action of this SecurityAction.
         :type: str
         """
-        allowed_values = ["ALLOWED", "DENIED"]
+        allowed_values = ["ALLOWED", "DENIED", "ZPR_DENIED", "ZPR_ALLOWED", "ZPR_CIDR_UNSUPPORTED", "ZPR_NSG_UNSUPPORTED", "ZPR_POLICY_NOT_EVALUATED_MISSING_ROUTE", "ZPR_POLICY_NOT_EVALUATED_SL_NSG_DENIED", "ZPR_MISSING_POLICY"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action

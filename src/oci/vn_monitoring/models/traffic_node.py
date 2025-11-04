@@ -55,26 +55,40 @@ class TrafficNode(object):
             The value to assign to the ingress_security_action property of this TrafficNode.
         :type ingress_security_action: oci.vn_monitoring.models.SecurityAction
 
+        :param zpr_egress_security_action:
+            The value to assign to the zpr_egress_security_action property of this TrafficNode.
+        :type zpr_egress_security_action: oci.vn_monitoring.models.SecurityAction
+
+        :param zpr_ingress_security_action:
+            The value to assign to the zpr_ingress_security_action property of this TrafficNode.
+        :type zpr_ingress_security_action: oci.vn_monitoring.models.SecurityAction
+
         """
         self.swagger_types = {
             'type': 'str',
             'egress_traffic': 'EgressTrafficSpec',
             'next_hop_routing_action': 'RoutingAction',
             'egress_security_action': 'SecurityAction',
-            'ingress_security_action': 'SecurityAction'
+            'ingress_security_action': 'SecurityAction',
+            'zpr_egress_security_action': 'SecurityAction',
+            'zpr_ingress_security_action': 'SecurityAction'
         }
         self.attribute_map = {
             'type': 'type',
             'egress_traffic': 'egressTraffic',
             'next_hop_routing_action': 'nextHopRoutingAction',
             'egress_security_action': 'egressSecurityAction',
-            'ingress_security_action': 'ingressSecurityAction'
+            'ingress_security_action': 'ingressSecurityAction',
+            'zpr_egress_security_action': 'zprEgressSecurityAction',
+            'zpr_ingress_security_action': 'zprIngressSecurityAction'
         }
         self._type = None
         self._egress_traffic = None
         self._next_hop_routing_action = None
         self._egress_security_action = None
         self._ingress_security_action = None
+        self._zpr_egress_security_action = None
+        self._zpr_ingress_security_action = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -201,6 +215,46 @@ class TrafficNode(object):
         :type: oci.vn_monitoring.models.SecurityAction
         """
         self._ingress_security_action = ingress_security_action
+
+    @property
+    def zpr_egress_security_action(self):
+        """
+        Gets the zpr_egress_security_action of this TrafficNode.
+
+        :return: The zpr_egress_security_action of this TrafficNode.
+        :rtype: oci.vn_monitoring.models.SecurityAction
+        """
+        return self._zpr_egress_security_action
+
+    @zpr_egress_security_action.setter
+    def zpr_egress_security_action(self, zpr_egress_security_action):
+        """
+        Sets the zpr_egress_security_action of this TrafficNode.
+
+        :param zpr_egress_security_action: The zpr_egress_security_action of this TrafficNode.
+        :type: oci.vn_monitoring.models.SecurityAction
+        """
+        self._zpr_egress_security_action = zpr_egress_security_action
+
+    @property
+    def zpr_ingress_security_action(self):
+        """
+        Gets the zpr_ingress_security_action of this TrafficNode.
+
+        :return: The zpr_ingress_security_action of this TrafficNode.
+        :rtype: oci.vn_monitoring.models.SecurityAction
+        """
+        return self._zpr_ingress_security_action
+
+    @zpr_ingress_security_action.setter
+    def zpr_ingress_security_action(self, zpr_ingress_security_action):
+        """
+        Sets the zpr_ingress_security_action of this TrafficNode.
+
+        :param zpr_ingress_security_action: The zpr_ingress_security_action of this TrafficNode.
+        :type: oci.vn_monitoring.models.SecurityAction
+        """
+        self._zpr_ingress_security_action = zpr_ingress_security_action
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,25 +23,246 @@ class RemotePeeringConnectionDrgAttachmentNetworkDetails(DrgAttachmentNetworkDet
 
         :param type:
             The value to assign to the type property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
-            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION"
+            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "FLEX_TUNNEL", "LOOPBACK", "INTERNET"
         :type type: str
 
         :param id:
             The value to assign to the id property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
         :type id: str
 
+        :param peer_region_name:
+            The value to assign to the peer_region_name property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type peer_region_name: str
+
+        :param peer_attachment_route_target:
+            The value to assign to the peer_attachment_route_target property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type peer_attachment_route_target: str
+
+        :param import_route_target:
+            The value to assign to the import_route_target property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type import_route_target: str
+
+        :param export_route_target:
+            The value to assign to the export_route_target property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type export_route_target: str
+
+        :param mpls_label:
+            The value to assign to the mpls_label property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type mpls_label: int
+
+        :param regional_oci_asn:
+            The value to assign to the regional_oci_asn property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type regional_oci_asn: str
+
+        :param ingress_vip:
+            The value to assign to the ingress_vip property of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type ingress_vip: str
+
         """
         self.swagger_types = {
             'type': 'str',
-            'id': 'str'
+            'id': 'str',
+            'peer_region_name': 'str',
+            'peer_attachment_route_target': 'str',
+            'import_route_target': 'str',
+            'export_route_target': 'str',
+            'mpls_label': 'int',
+            'regional_oci_asn': 'str',
+            'ingress_vip': 'str'
         }
         self.attribute_map = {
             'type': 'type',
-            'id': 'id'
+            'id': 'id',
+            'peer_region_name': 'peerRegionName',
+            'peer_attachment_route_target': 'peerAttachmentRouteTarget',
+            'import_route_target': 'importRouteTarget',
+            'export_route_target': 'exportRouteTarget',
+            'mpls_label': 'mplsLabel',
+            'regional_oci_asn': 'regionalOciAsn',
+            'ingress_vip': 'ingressVip'
         }
         self._type = None
         self._id = None
+        self._peer_region_name = None
+        self._peer_attachment_route_target = None
+        self._import_route_target = None
+        self._export_route_target = None
+        self._mpls_label = None
+        self._regional_oci_asn = None
+        self._ingress_vip = None
         self._type = 'REMOTE_PEERING_CONNECTION'
+
+    @property
+    def peer_region_name(self):
+        """
+        Gets the peer_region_name of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The remote Oracle Cloud Infrastructure region name.
+
+
+        :return: The peer_region_name of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._peer_region_name
+
+    @peer_region_name.setter
+    def peer_region_name(self, peer_region_name):
+        """
+        Sets the peer_region_name of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The remote Oracle Cloud Infrastructure region name.
+
+
+        :param peer_region_name: The peer_region_name of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._peer_region_name = peer_region_name
+
+    @property
+    def peer_attachment_route_target(self):
+        """
+        Gets the peer_attachment_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The attachment route target.
+
+
+        :return: The peer_attachment_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._peer_attachment_route_target
+
+    @peer_attachment_route_target.setter
+    def peer_attachment_route_target(self, peer_attachment_route_target):
+        """
+        Sets the peer_attachment_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The attachment route target.
+
+
+        :param peer_attachment_route_target: The peer_attachment_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._peer_attachment_route_target = peer_attachment_route_target
+
+    @property
+    def import_route_target(self):
+        """
+        Gets the import_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+        tagged with the attachment's import route target.
+
+
+        :return: The import_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._import_route_target
+
+    @import_route_target.setter
+    def import_route_target(self, import_route_target):
+        """
+        Sets the import_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+        tagged with the attachment's import route target.
+
+
+        :param import_route_target: The import_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._import_route_target = import_route_target
+
+    @property
+    def export_route_target(self):
+        """
+        Gets the export_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        Routes which are exported to the attachment are exported to the route reflectors
+        with the route target set to the value of the attachment's export route target.
+
+
+        :return: The export_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._export_route_target
+
+    @export_route_target.setter
+    def export_route_target(self, export_route_target):
+        """
+        Sets the export_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        Routes which are exported to the attachment are exported to the route reflectors
+        with the route target set to the value of the attachment's export route target.
+
+
+        :param export_route_target: The export_route_target of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._export_route_target = export_route_target
+
+    @property
+    def mpls_label(self):
+        """
+        Gets the mpls_label of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The MPLS label of the DRG attachment.
+
+
+        :return: The mpls_label of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: int
+        """
+        return self._mpls_label
+
+    @mpls_label.setter
+    def mpls_label(self, mpls_label):
+        """
+        Sets the mpls_label of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The MPLS label of the DRG attachment.
+
+
+        :param mpls_label: The mpls_label of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: int
+        """
+        self._mpls_label = mpls_label
+
+    @property
+    def regional_oci_asn(self):
+        """
+        Gets the regional_oci_asn of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The BGP ASN to use for the IPSec connection's route target.
+
+
+        :return: The regional_oci_asn of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._regional_oci_asn
+
+    @regional_oci_asn.setter
+    def regional_oci_asn(self, regional_oci_asn):
+        """
+        Sets the regional_oci_asn of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        The BGP ASN to use for the IPSec connection's route target.
+
+
+        :param regional_oci_asn: The regional_oci_asn of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._regional_oci_asn = regional_oci_asn
+
+    @property
+    def ingress_vip(self):
+        """
+        Gets the ingress_vip of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        IPv4 address used to encapsulate ingress traffic to the DRG through this attachment
+
+
+        :return: The ingress_vip of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._ingress_vip
+
+    @ingress_vip.setter
+    def ingress_vip(self, ingress_vip):
+        """
+        Sets the ingress_vip of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        IPv4 address used to encapsulate ingress traffic to the DRG through this attachment
+
+
+        :param ingress_vip: The ingress_vip of this RemotePeeringConnectionDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._ingress_vip = ingress_vip
 
     def __repr__(self):
         return formatted_flat_dict(self)

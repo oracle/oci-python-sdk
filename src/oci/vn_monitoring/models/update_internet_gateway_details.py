@@ -36,30 +36,23 @@ class UpdateInternetGatewayDetails(object):
             The value to assign to the is_enabled property of this UpdateInternetGatewayDetails.
         :type is_enabled: bool
 
-        :param route_table_id:
-            The value to assign to the route_table_id property of this UpdateInternetGatewayDetails.
-        :type route_table_id: str
-
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'is_enabled': 'bool',
-            'route_table_id': 'str'
+            'is_enabled': 'bool'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'is_enabled': 'isEnabled',
-            'route_table_id': 'routeTableId'
+            'is_enabled': 'isEnabled'
         }
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._is_enabled = None
-        self._route_table_id = None
 
     @property
     def defined_tags(self):
@@ -162,34 +155,6 @@ class UpdateInternetGatewayDetails(object):
         :type: bool
         """
         self._is_enabled = is_enabled
-
-    @property
-    def route_table_id(self):
-        """
-        Gets the route_table_id of this UpdateInternetGatewayDetails.
-        The `OCID`__ of the route table the Internet Gateway is using.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The route_table_id of this UpdateInternetGatewayDetails.
-        :rtype: str
-        """
-        return self._route_table_id
-
-    @route_table_id.setter
-    def route_table_id(self, route_table_id):
-        """
-        Sets the route_table_id of this UpdateInternetGatewayDetails.
-        The `OCID`__ of the route table the Internet Gateway is using.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param route_table_id: The route_table_id of this UpdateInternetGatewayDetails.
-        :type: str
-        """
-        self._route_table_id = route_table_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -60,6 +60,10 @@ class CreateInstancePoolDetails(object):
             The value to assign to the instance_hostname_formatter property of this CreateInstancePoolDetails.
         :type instance_hostname_formatter: str
 
+        :param lifecycle_management:
+            The value to assign to the lifecycle_management property of this CreateInstancePoolDetails.
+        :type lifecycle_management: oci.core.models.InstancePoolLifecycleManagementDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -71,7 +75,8 @@ class CreateInstancePoolDetails(object):
             'size': 'int',
             'load_balancers': 'list[AttachLoadBalancerDetails]',
             'instance_display_name_formatter': 'str',
-            'instance_hostname_formatter': 'str'
+            'instance_hostname_formatter': 'str',
+            'lifecycle_management': 'InstancePoolLifecycleManagementDetails'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -83,7 +88,8 @@ class CreateInstancePoolDetails(object):
             'size': 'size',
             'load_balancers': 'loadBalancers',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
-            'instance_hostname_formatter': 'instanceHostnameFormatter'
+            'instance_hostname_formatter': 'instanceHostnameFormatter',
+            'lifecycle_management': 'lifecycleManagement'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -95,6 +101,7 @@ class CreateInstancePoolDetails(object):
         self._load_balancers = None
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
+        self._lifecycle_management = None
 
     @property
     def compartment_id(self):
@@ -381,6 +388,26 @@ class CreateInstancePoolDetails(object):
         :type: str
         """
         self._instance_hostname_formatter = instance_hostname_formatter
+
+    @property
+    def lifecycle_management(self):
+        """
+        Gets the lifecycle_management of this CreateInstancePoolDetails.
+
+        :return: The lifecycle_management of this CreateInstancePoolDetails.
+        :rtype: oci.core.models.InstancePoolLifecycleManagementDetails
+        """
+        return self._lifecycle_management
+
+    @lifecycle_management.setter
+    def lifecycle_management(self, lifecycle_management):
+        """
+        Sets the lifecycle_management of this CreateInstancePoolDetails.
+
+        :param lifecycle_management: The lifecycle_management of this CreateInstancePoolDetails.
+        :type: oci.core.models.InstancePoolLifecycleManagementDetails
+        """
+        self._lifecycle_management = lifecycle_management
 
     def __repr__(self):
         return formatted_flat_dict(self)

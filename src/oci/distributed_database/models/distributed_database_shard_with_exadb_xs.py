@@ -368,7 +368,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
     def status(self):
         """
         **[Required]** Gets the status of this DistributedDatabaseShardWithExadbXs.
-        Status of shard based on exadbxs for the Globally ditributed database.
+        Status of EXADB_XS based shard.
 
         Allowed values for this property are: "FAILED", "DELETING", "DELETED", "UPDATING", "CREATING", "CREATED", "READY_FOR_CONFIGURATION", "CONFIGURED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -383,7 +383,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
     def status(self, status):
         """
         Sets the status of this DistributedDatabaseShardWithExadbXs.
-        Status of shard based on exadbxs for the Globally ditributed database.
+        Status of EXADB_XS based shard.
 
 
         :param status: The status of this DistributedDatabaseShardWithExadbXs.

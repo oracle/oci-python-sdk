@@ -28,10 +28,6 @@ class CreateCrossConnectDetails(object):
             The value to assign to the cross_connect_group_id property of this CreateCrossConnectDetails.
         :type cross_connect_group_id: str
 
-        :param defined_tags:
-            The value to assign to the defined_tags property of this CreateCrossConnectDetails.
-        :type defined_tags: dict(str, dict(str, object))
-
         :param display_name:
             The value to assign to the display_name property of this CreateCrossConnectDetails.
         :type display_name: str
@@ -39,10 +35,6 @@ class CreateCrossConnectDetails(object):
         :param far_cross_connect_or_cross_connect_group_id:
             The value to assign to the far_cross_connect_or_cross_connect_group_id property of this CreateCrossConnectDetails.
         :type far_cross_connect_or_cross_connect_group_id: str
-
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateCrossConnectDetails.
-        :type freeform_tags: dict(str, str)
 
         :param location_name:
             The value to assign to the location_name property of this CreateCrossConnectDetails.
@@ -56,52 +48,32 @@ class CreateCrossConnectDetails(object):
             The value to assign to the port_speed_shape_name property of this CreateCrossConnectDetails.
         :type port_speed_shape_name: str
 
-        :param customer_reference_name:
-            The value to assign to the customer_reference_name property of this CreateCrossConnectDetails.
-        :type customer_reference_name: str
-
-        :param macsec_properties:
-            The value to assign to the macsec_properties property of this CreateCrossConnectDetails.
-        :type macsec_properties: oci.vn_monitoring.models.CreateMacsecProperties
-
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'cross_connect_group_id': 'str',
-            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'far_cross_connect_or_cross_connect_group_id': 'str',
-            'freeform_tags': 'dict(str, str)',
             'location_name': 'str',
             'near_cross_connect_or_cross_connect_group_id': 'str',
-            'port_speed_shape_name': 'str',
-            'customer_reference_name': 'str',
-            'macsec_properties': 'CreateMacsecProperties'
+            'port_speed_shape_name': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cross_connect_group_id': 'crossConnectGroupId',
-            'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'far_cross_connect_or_cross_connect_group_id': 'farCrossConnectOrCrossConnectGroupId',
-            'freeform_tags': 'freeformTags',
             'location_name': 'locationName',
             'near_cross_connect_or_cross_connect_group_id': 'nearCrossConnectOrCrossConnectGroupId',
-            'port_speed_shape_name': 'portSpeedShapeName',
-            'customer_reference_name': 'customerReferenceName',
-            'macsec_properties': 'macsecProperties'
+            'port_speed_shape_name': 'portSpeedShapeName'
         }
         self._compartment_id = None
         self._cross_connect_group_id = None
-        self._defined_tags = None
         self._display_name = None
         self._far_cross_connect_or_cross_connect_group_id = None
-        self._freeform_tags = None
         self._location_name = None
         self._near_cross_connect_or_cross_connect_group_id = None
         self._port_speed_shape_name = None
-        self._customer_reference_name = None
-        self._macsec_properties = None
 
     @property
     def compartment_id(self):
@@ -158,32 +130,6 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._cross_connect_group_id = cross_connect_group_id
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this CreateCrossConnectDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-
-
-        :return: The defined_tags of this CreateCrossConnectDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this CreateCrossConnectDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-
-
-        :param defined_tags: The defined_tags of this CreateCrossConnectDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -244,32 +190,6 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._far_cross_connect_or_cross_connect_group_id = far_cross_connect_or_cross_connect_group_id
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this CreateCrossConnectDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
-
-
-        :return: The freeform_tags of this CreateCrossConnectDetails.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this CreateCrossConnectDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
-
-
-        :param freeform_tags: The freeform_tags of this CreateCrossConnectDetails.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
 
     @property
     def location_name(self):
@@ -364,52 +284,6 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._port_speed_shape_name = port_speed_shape_name
-
-    @property
-    def customer_reference_name(self):
-        """
-        Gets the customer_reference_name of this CreateCrossConnectDetails.
-        A reference name or identifier for the physical fiber connection that this cross-connect
-        uses.
-
-
-        :return: The customer_reference_name of this CreateCrossConnectDetails.
-        :rtype: str
-        """
-        return self._customer_reference_name
-
-    @customer_reference_name.setter
-    def customer_reference_name(self, customer_reference_name):
-        """
-        Sets the customer_reference_name of this CreateCrossConnectDetails.
-        A reference name or identifier for the physical fiber connection that this cross-connect
-        uses.
-
-
-        :param customer_reference_name: The customer_reference_name of this CreateCrossConnectDetails.
-        :type: str
-        """
-        self._customer_reference_name = customer_reference_name
-
-    @property
-    def macsec_properties(self):
-        """
-        Gets the macsec_properties of this CreateCrossConnectDetails.
-
-        :return: The macsec_properties of this CreateCrossConnectDetails.
-        :rtype: oci.vn_monitoring.models.CreateMacsecProperties
-        """
-        return self._macsec_properties
-
-    @macsec_properties.setter
-    def macsec_properties(self, macsec_properties):
-        """
-        Sets the macsec_properties of this CreateCrossConnectDetails.
-
-        :param macsec_properties: The macsec_properties of this CreateCrossConnectDetails.
-        :type: oci.vn_monitoring.models.CreateMacsecProperties
-        """
-        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

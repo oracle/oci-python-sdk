@@ -335,7 +335,7 @@ class DistributedDatabaseCatalogWithExadbXs(DistributedDatabaseCatalog):
     def status(self):
         """
         **[Required]** Gets the status of this DistributedDatabaseCatalogWithExadbXs.
-        Status of catalog with VmCluster for the Globally ditributed database.
+        Status of EXADB_XS based catalog.
 
         Allowed values for this property are: "FAILED", "DELETING", "DELETED", "UPDATING", "CREATING", "CREATED", "READY_FOR_CONFIGURATION", "CONFIGURED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -350,7 +350,7 @@ class DistributedDatabaseCatalogWithExadbXs(DistributedDatabaseCatalog):
     def status(self, status):
         """
         Sets the status of this DistributedDatabaseCatalogWithExadbXs.
-        Status of catalog with VmCluster for the Globally ditributed database.
+        Status of EXADB_XS based catalog.
 
 
         :param status: The status of this DistributedDatabaseCatalogWithExadbXs.

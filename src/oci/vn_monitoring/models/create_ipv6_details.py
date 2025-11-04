@@ -36,13 +36,13 @@ class CreateIpv6Details(object):
             The value to assign to the ip_address property of this CreateIpv6Details.
         :type ip_address: str
 
+        :param is_internet_access_allowed:
+            The value to assign to the is_internet_access_allowed property of this CreateIpv6Details.
+        :type is_internet_access_allowed: bool
+
         :param vnic_id:
             The value to assign to the vnic_id property of this CreateIpv6Details.
         :type vnic_id: str
-
-        :param ipv6_subnet_cidr:
-            The value to assign to the ipv6_subnet_cidr property of this CreateIpv6Details.
-        :type ipv6_subnet_cidr: str
 
         """
         self.swagger_types = {
@@ -50,23 +50,23 @@ class CreateIpv6Details(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'ip_address': 'str',
-            'vnic_id': 'str',
-            'ipv6_subnet_cidr': 'str'
+            'is_internet_access_allowed': 'bool',
+            'vnic_id': 'str'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'ip_address': 'ipAddress',
-            'vnic_id': 'vnicId',
-            'ipv6_subnet_cidr': 'ipv6SubnetCidr'
+            'is_internet_access_allowed': 'isInternetAccessAllowed',
+            'vnic_id': 'vnicId'
         }
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._ip_address = None
+        self._is_internet_access_allowed = None
         self._vnic_id = None
-        self._ipv6_subnet_cidr = None
 
     @property
     def defined_tags(self):
@@ -181,6 +181,44 @@ class CreateIpv6Details(object):
         self._ip_address = ip_address
 
     @property
+    def is_internet_access_allowed(self):
+        """
+        Gets the is_internet_access_allowed of this CreateIpv6Details.
+        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
+        IPv6 uses its public IP address for internet communication.
+
+        If `isInternetAccessAllowed` is set to `false`, the resulting `publicIpAddress` attribute
+        for the `Ipv6` is null.
+
+        Example: `true`
+
+
+        :return: The is_internet_access_allowed of this CreateIpv6Details.
+        :rtype: bool
+        """
+        return self._is_internet_access_allowed
+
+    @is_internet_access_allowed.setter
+    def is_internet_access_allowed(self, is_internet_access_allowed):
+        """
+        Sets the is_internet_access_allowed of this CreateIpv6Details.
+        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
+        IPv6 uses its public IP address for internet communication.
+
+        If `isInternetAccessAllowed` is set to `false`, the resulting `publicIpAddress` attribute
+        for the `Ipv6` is null.
+
+        Example: `true`
+
+
+        :param is_internet_access_allowed: The is_internet_access_allowed of this CreateIpv6Details.
+        :type: bool
+        """
+        self._is_internet_access_allowed = is_internet_access_allowed
+
+    @property
     def vnic_id(self):
         """
         **[Required]** Gets the vnic_id of this CreateIpv6Details.
@@ -209,30 +247,6 @@ class CreateIpv6Details(object):
         :type: str
         """
         self._vnic_id = vnic_id
-
-    @property
-    def ipv6_subnet_cidr(self):
-        """
-        Gets the ipv6_subnet_cidr of this CreateIpv6Details.
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
-
-
-        :return: The ipv6_subnet_cidr of this CreateIpv6Details.
-        :rtype: str
-        """
-        return self._ipv6_subnet_cidr
-
-    @ipv6_subnet_cidr.setter
-    def ipv6_subnet_cidr(self, ipv6_subnet_cidr):
-        """
-        Sets the ipv6_subnet_cidr of this CreateIpv6Details.
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
-
-
-        :param ipv6_subnet_cidr: The ipv6_subnet_cidr of this CreateIpv6Details.
-        :type: str
-        """
-        self._ipv6_subnet_cidr = ipv6_subnet_cidr
 
     def __repr__(self):
         return formatted_flat_dict(self)

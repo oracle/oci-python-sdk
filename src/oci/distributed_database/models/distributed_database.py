@@ -877,7 +877,8 @@ class DistributedDatabase(object):
     def replication_unit(self):
         """
         Gets the replication_unit of this DistributedDatabase.
-        For RAFT replication based Globally distributed database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed database. For RAFT replication based
+        Globally distributed database, the value should be at least twice the number of shards.
 
 
         :return: The replication_unit of this DistributedDatabase.
@@ -889,7 +890,8 @@ class DistributedDatabase(object):
     def replication_unit(self, replication_unit):
         """
         Sets the replication_unit of this DistributedDatabase.
-        For RAFT replication based Globally distributed database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed database. For RAFT replication based
+        Globally distributed database, the value should be at least twice the number of shards.
 
 
         :param replication_unit: The replication_unit of this DistributedDatabase.

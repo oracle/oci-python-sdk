@@ -213,6 +213,7 @@ API Reference
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
 * :doc:`Postgresql <psql/client/oci.psql.PostgresqlClient>`
+* :doc:`Private Service Access <psa/client/oci.psa.PrivateServiceAccessClient>`
 * :doc:`Privileged Api Control <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiControlClient>`
 * :doc:`Privileged Api Requests <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiRequestsClient>`
 * :doc:`Privileged Api Work Request <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiWorkRequestClient>`
@@ -252,6 +253,7 @@ API Reference
 * :doc:`Sharded Database Service <globally_distributed_database/client/oci.globally_distributed_database.ShardedDatabaseServiceClient>`
 * :doc:`Software Source <os_management_hub/client/oci.os_management_hub.SoftwareSourceClient>`
 * :doc:`Sql Tuning <database_management/client/oci.database_management.SqlTuningClient>`
+* :doc:`Stack <dif/client/oci.dif.StackClient>`
 * :doc:`Stack Monitoring <stack_monitoring/client/oci.stack_monitoring.StackMonitoringClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
@@ -364,6 +366,7 @@ API Reference
     demand_signal
     desktops
     devops
+    dif
     disaster_recovery
     distributed_database
     dns
@@ -436,6 +439,7 @@ API Reference
     osub_organization_subscription
     osub_subscription
     osub_usage
+    psa
     psql
     queue
     recovery

@@ -42,26 +42,40 @@ class AccessDeniedTrafficNode(TrafficNode):
             The value to assign to the ingress_security_action property of this AccessDeniedTrafficNode.
         :type ingress_security_action: oci.vn_monitoring.models.SecurityAction
 
+        :param zpr_egress_security_action:
+            The value to assign to the zpr_egress_security_action property of this AccessDeniedTrafficNode.
+        :type zpr_egress_security_action: oci.vn_monitoring.models.SecurityAction
+
+        :param zpr_ingress_security_action:
+            The value to assign to the zpr_ingress_security_action property of this AccessDeniedTrafficNode.
+        :type zpr_ingress_security_action: oci.vn_monitoring.models.SecurityAction
+
         """
         self.swagger_types = {
             'type': 'str',
             'egress_traffic': 'EgressTrafficSpec',
             'next_hop_routing_action': 'RoutingAction',
             'egress_security_action': 'SecurityAction',
-            'ingress_security_action': 'SecurityAction'
+            'ingress_security_action': 'SecurityAction',
+            'zpr_egress_security_action': 'SecurityAction',
+            'zpr_ingress_security_action': 'SecurityAction'
         }
         self.attribute_map = {
             'type': 'type',
             'egress_traffic': 'egressTraffic',
             'next_hop_routing_action': 'nextHopRoutingAction',
             'egress_security_action': 'egressSecurityAction',
-            'ingress_security_action': 'ingressSecurityAction'
+            'ingress_security_action': 'ingressSecurityAction',
+            'zpr_egress_security_action': 'zprEgressSecurityAction',
+            'zpr_ingress_security_action': 'zprIngressSecurityAction'
         }
         self._type = None
         self._egress_traffic = None
         self._next_hop_routing_action = None
         self._egress_security_action = None
         self._ingress_security_action = None
+        self._zpr_egress_security_action = None
+        self._zpr_ingress_security_action = None
         self._type = 'ACCESS_DENIED'
 
     def __repr__(self):

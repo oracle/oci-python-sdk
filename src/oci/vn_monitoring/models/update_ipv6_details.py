@@ -32,6 +32,10 @@ class UpdateIpv6Details(object):
             The value to assign to the freeform_tags property of this UpdateIpv6Details.
         :type freeform_tags: dict(str, str)
 
+        :param is_internet_access_allowed:
+            The value to assign to the is_internet_access_allowed property of this UpdateIpv6Details.
+        :type is_internet_access_allowed: bool
+
         :param vnic_id:
             The value to assign to the vnic_id property of this UpdateIpv6Details.
         :type vnic_id: str
@@ -41,17 +45,20 @@ class UpdateIpv6Details(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'is_internet_access_allowed': 'bool',
             'vnic_id': 'str'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'is_internet_access_allowed': 'isInternetAccessAllowed',
             'vnic_id': 'vnicId'
         }
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._is_internet_access_allowed = None
         self._vnic_id = None
 
     @property
@@ -131,6 +138,44 @@ class UpdateIpv6Details(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def is_internet_access_allowed(self):
+        """
+        Gets the is_internet_access_allowed of this UpdateIpv6Details.
+        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
+        IPv6 uses its public IP address for internet communication.
+
+        If you switch this from `true` to `false`, the `publicIpAddress` attribute for the IPv6
+        becomes null.
+
+        Example: `false`
+
+
+        :return: The is_internet_access_allowed of this UpdateIpv6Details.
+        :rtype: bool
+        """
+        return self._is_internet_access_allowed
+
+    @is_internet_access_allowed.setter
+    def is_internet_access_allowed(self, is_internet_access_allowed):
+        """
+        Sets the is_internet_access_allowed of this UpdateIpv6Details.
+        Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
+        a public subnet. Never allowed for an IPv6 in a private subnet. If the value is `true`, the
+        IPv6 uses its public IP address for internet communication.
+
+        If you switch this from `true` to `false`, the `publicIpAddress` attribute for the IPv6
+        becomes null.
+
+        Example: `false`
+
+
+        :param is_internet_access_allowed: The is_internet_access_allowed of this UpdateIpv6Details.
+        :type: bool
+        """
+        self._is_internet_access_allowed = is_internet_access_allowed
 
     @property
     def vnic_id(self):

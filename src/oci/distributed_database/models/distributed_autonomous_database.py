@@ -202,6 +202,10 @@ class DistributedAutonomousDatabase(object):
             The value to assign to the gsm_details property of this DistributedAutonomousDatabase.
         :type gsm_details: list[oci.distributed_database.models.DistributedAutonomousDatabaseGsm]
 
+        :param db_backup_config:
+            The value to assign to the db_backup_config property of this DistributedAutonomousDatabase.
+        :type db_backup_config: oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+
         :param metadata:
             The value to assign to the metadata property of this DistributedAutonomousDatabase.
         :type metadata: oci.distributed_database.models.DistributedAutonomousDbMetadata
@@ -248,6 +252,7 @@ class DistributedAutonomousDatabase(object):
             'shard_details': 'list[DistributedAutonomousDatabaseShard]',
             'catalog_details': 'list[DistributedAutonomousDatabaseCatalog]',
             'gsm_details': 'list[DistributedAutonomousDatabaseGsm]',
+            'db_backup_config': 'DistributedAutonomousDbBackupConfig',
             'metadata': 'DistributedAutonomousDbMetadata',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -282,6 +287,7 @@ class DistributedAutonomousDatabase(object):
             'shard_details': 'shardDetails',
             'catalog_details': 'catalogDetails',
             'gsm_details': 'gsmDetails',
+            'db_backup_config': 'dbBackupConfig',
             'metadata': 'metadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -315,6 +321,7 @@ class DistributedAutonomousDatabase(object):
         self._shard_details = None
         self._catalog_details = None
         self._gsm_details = None
+        self._db_backup_config = None
         self._metadata = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -634,7 +641,7 @@ class DistributedAutonomousDatabase(object):
     def db_workload(self):
         """
         **[Required]** Gets the db_workload of this DistributedAutonomousDatabase.
-        Possible workload types.
+        Possible workload types. Currently only OLTP workload type is supported.
 
         Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -649,7 +656,7 @@ class DistributedAutonomousDatabase(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this DistributedAutonomousDatabase.
-        Possible workload types.
+        Possible workload types. Currently only OLTP workload type is supported.
 
 
         :param db_workload: The db_workload of this DistributedAutonomousDatabase.
@@ -890,7 +897,8 @@ class DistributedAutonomousDatabase(object):
     def replication_unit(self):
         """
         Gets the replication_unit of this DistributedAutonomousDatabase.
-        For RAFT replication based Globally distributed autonomous database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
+        Globally distributed autonomous database, the value should be at least twice the number of shards.
 
 
         :return: The replication_unit of this DistributedAutonomousDatabase.
@@ -902,7 +910,8 @@ class DistributedAutonomousDatabase(object):
     def replication_unit(self, replication_unit):
         """
         Sets the replication_unit of this DistributedAutonomousDatabase.
-        For RAFT replication based Globally distributed autonomous database, the value should be atleast twice the number of shards.
+        The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
+        Globally distributed autonomous database, the value should be at least twice the number of shards.
 
 
         :param replication_unit: The replication_unit of this DistributedAutonomousDatabase.
@@ -1031,6 +1040,26 @@ class DistributedAutonomousDatabase(object):
         :type: list[oci.distributed_database.models.DistributedAutonomousDatabaseGsm]
         """
         self._gsm_details = gsm_details
+
+    @property
+    def db_backup_config(self):
+        """
+        Gets the db_backup_config of this DistributedAutonomousDatabase.
+
+        :return: The db_backup_config of this DistributedAutonomousDatabase.
+        :rtype: oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+        """
+        return self._db_backup_config
+
+    @db_backup_config.setter
+    def db_backup_config(self, db_backup_config):
+        """
+        Sets the db_backup_config of this DistributedAutonomousDatabase.
+
+        :param db_backup_config: The db_backup_config of this DistributedAutonomousDatabase.
+        :type: oci.distributed_database.models.DistributedAutonomousDbBackupConfig
+        """
+        self._db_backup_config = db_backup_config
 
     @property
     def metadata(self):

@@ -51,6 +51,14 @@ class ShardPeerWithDedicatedInfra(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the protection_mode property of a ShardPeerWithDedicatedInfra.
+    #: This constant has a value of "MAXIMUM_AVAILABILITY"
+    PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
+
+    #: A constant which can be used with the protection_mode property of a ShardPeerWithDedicatedInfra.
+    #: This constant has a value of "MAXIMUM_PERFORMANCE"
+    PROTECTION_MODE_MAXIMUM_PERFORMANCE = "MAXIMUM_PERFORMANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ShardPeerWithDedicatedInfra object with values from keyword arguments.
@@ -86,6 +94,24 @@ class ShardPeerWithDedicatedInfra(object):
             The value to assign to the time_updated property of this ShardPeerWithDedicatedInfra.
         :type time_updated: datetime
 
+        :param protection_mode:
+            The value to assign to the protection_mode property of this ShardPeerWithDedicatedInfra.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type protection_mode: str
+
+        :param fast_start_fail_over_lag_limit_in_seconds:
+            The value to assign to the fast_start_fail_over_lag_limit_in_seconds property of this ShardPeerWithDedicatedInfra.
+        :type fast_start_fail_over_lag_limit_in_seconds: int
+
+        :param is_automatic_failover_enabled:
+            The value to assign to the is_automatic_failover_enabled property of this ShardPeerWithDedicatedInfra.
+        :type is_automatic_failover_enabled: bool
+
+        :param standby_maintenance_buffer_in_days:
+            The value to assign to the standby_maintenance_buffer_in_days property of this ShardPeerWithDedicatedInfra.
+        :type standby_maintenance_buffer_in_days: int
+
         :param metadata:
             The value to assign to the metadata property of this ShardPeerWithDedicatedInfra.
         :type metadata: oci.distributed_database.models.DistributedAutonomousDbMetadata
@@ -99,6 +125,10 @@ class ShardPeerWithDedicatedInfra(object):
             'container_database_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'protection_mode': 'str',
+            'fast_start_fail_over_lag_limit_in_seconds': 'int',
+            'is_automatic_failover_enabled': 'bool',
+            'standby_maintenance_buffer_in_days': 'int',
             'metadata': 'DistributedAutonomousDbMetadata'
         }
         self.attribute_map = {
@@ -109,6 +139,10 @@ class ShardPeerWithDedicatedInfra(object):
             'container_database_id': 'containerDatabaseId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'protection_mode': 'protectionMode',
+            'fast_start_fail_over_lag_limit_in_seconds': 'fastStartFailOverLagLimitInSeconds',
+            'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
+            'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'metadata': 'metadata'
         }
         self._cloud_autonomous_vm_cluster_id = None
@@ -118,6 +152,10 @@ class ShardPeerWithDedicatedInfra(object):
         self._container_database_id = None
         self._time_created = None
         self._time_updated = None
+        self._protection_mode = None
+        self._fast_start_fail_over_lag_limit_in_seconds = None
+        self._is_automatic_failover_enabled = None
+        self._standby_maintenance_buffer_in_days = None
         self._metadata = None
 
     @property
@@ -297,6 +335,110 @@ class ShardPeerWithDedicatedInfra(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this ShardPeerWithDedicatedInfra.
+        The protectionMode for the shard peer.
+
+        Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The protection_mode of this ShardPeerWithDedicatedInfra.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this ShardPeerWithDedicatedInfra.
+        The protectionMode for the shard peer.
+
+
+        :param protection_mode: The protection_mode of this ShardPeerWithDedicatedInfra.
+        :type: str
+        """
+        allowed_values = ["MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            protection_mode = 'UNKNOWN_ENUM_VALUE'
+        self._protection_mode = protection_mode
+
+    @property
+    def fast_start_fail_over_lag_limit_in_seconds(self):
+        """
+        Gets the fast_start_fail_over_lag_limit_in_seconds of this ShardPeerWithDedicatedInfra.
+        The lag time for my preference based on data loss tolerance in seconds.
+
+
+        :return: The fast_start_fail_over_lag_limit_in_seconds of this ShardPeerWithDedicatedInfra.
+        :rtype: int
+        """
+        return self._fast_start_fail_over_lag_limit_in_seconds
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, fast_start_fail_over_lag_limit_in_seconds):
+        """
+        Sets the fast_start_fail_over_lag_limit_in_seconds of this ShardPeerWithDedicatedInfra.
+        The lag time for my preference based on data loss tolerance in seconds.
+
+
+        :param fast_start_fail_over_lag_limit_in_seconds: The fast_start_fail_over_lag_limit_in_seconds of this ShardPeerWithDedicatedInfra.
+        :type: int
+        """
+        self._fast_start_fail_over_lag_limit_in_seconds = fast_start_fail_over_lag_limit_in_seconds
+
+    @property
+    def is_automatic_failover_enabled(self):
+        """
+        Gets the is_automatic_failover_enabled of this ShardPeerWithDedicatedInfra.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+
+
+        :return: The is_automatic_failover_enabled of this ShardPeerWithDedicatedInfra.
+        :rtype: bool
+        """
+        return self._is_automatic_failover_enabled
+
+    @is_automatic_failover_enabled.setter
+    def is_automatic_failover_enabled(self, is_automatic_failover_enabled):
+        """
+        Sets the is_automatic_failover_enabled of this ShardPeerWithDedicatedInfra.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+
+
+        :param is_automatic_failover_enabled: The is_automatic_failover_enabled of this ShardPeerWithDedicatedInfra.
+        :type: bool
+        """
+        self._is_automatic_failover_enabled = is_automatic_failover_enabled
+
+    @property
+    def standby_maintenance_buffer_in_days(self):
+        """
+        Gets the standby_maintenance_buffer_in_days of this ShardPeerWithDedicatedInfra.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before schedlued maintenance of the primary database.
+
+
+        :return: The standby_maintenance_buffer_in_days of this ShardPeerWithDedicatedInfra.
+        :rtype: int
+        """
+        return self._standby_maintenance_buffer_in_days
+
+    @standby_maintenance_buffer_in_days.setter
+    def standby_maintenance_buffer_in_days(self, standby_maintenance_buffer_in_days):
+        """
+        Sets the standby_maintenance_buffer_in_days of this ShardPeerWithDedicatedInfra.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before schedlued maintenance of the primary database.
+
+
+        :param standby_maintenance_buffer_in_days: The standby_maintenance_buffer_in_days of this ShardPeerWithDedicatedInfra.
+        :type: int
+        """
+        self._standby_maintenance_buffer_in_days = standby_maintenance_buffer_in_days
 
     @property
     def metadata(self):

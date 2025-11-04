@@ -42,6 +42,14 @@ class VisibleTrafficNode(TrafficNode):
             The value to assign to the ingress_security_action property of this VisibleTrafficNode.
         :type ingress_security_action: oci.vn_monitoring.models.SecurityAction
 
+        :param zpr_egress_security_action:
+            The value to assign to the zpr_egress_security_action property of this VisibleTrafficNode.
+        :type zpr_egress_security_action: oci.vn_monitoring.models.SecurityAction
+
+        :param zpr_ingress_security_action:
+            The value to assign to the zpr_ingress_security_action property of this VisibleTrafficNode.
+        :type zpr_ingress_security_action: oci.vn_monitoring.models.SecurityAction
+
         :param entity_id:
             The value to assign to the entity_id property of this VisibleTrafficNode.
         :type entity_id: str
@@ -57,6 +65,8 @@ class VisibleTrafficNode(TrafficNode):
             'next_hop_routing_action': 'RoutingAction',
             'egress_security_action': 'SecurityAction',
             'ingress_security_action': 'SecurityAction',
+            'zpr_egress_security_action': 'SecurityAction',
+            'zpr_ingress_security_action': 'SecurityAction',
             'entity_id': 'str',
             'transformation_description': 'str'
         }
@@ -66,6 +76,8 @@ class VisibleTrafficNode(TrafficNode):
             'next_hop_routing_action': 'nextHopRoutingAction',
             'egress_security_action': 'egressSecurityAction',
             'ingress_security_action': 'ingressSecurityAction',
+            'zpr_egress_security_action': 'zprEgressSecurityAction',
+            'zpr_ingress_security_action': 'zprIngressSecurityAction',
             'entity_id': 'entityId',
             'transformation_description': 'transformationDescription'
         }
@@ -74,6 +86,8 @@ class VisibleTrafficNode(TrafficNode):
         self._next_hop_routing_action = None
         self._egress_security_action = None
         self._ingress_security_action = None
+        self._zpr_egress_security_action = None
+        self._zpr_ingress_security_action = None
         self._entity_id = None
         self._transformation_description = None
         self._type = 'VISIBLE'

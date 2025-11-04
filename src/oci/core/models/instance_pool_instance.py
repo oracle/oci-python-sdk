@@ -27,6 +27,14 @@ class InstancePoolInstance(object):
     #: This constant has a value of "DETACHING"
     LIFECYCLE_STATE_DETACHING = "DETACHING"
 
+    #: A constant which can be used with the lifecycle_state property of a InstancePoolInstance.
+    #: This constant has a value of "TERMINATION_AWAIT"
+    LIFECYCLE_STATE_TERMINATION_AWAIT = "TERMINATION_AWAIT"
+
+    #: A constant which can be used with the lifecycle_state property of a InstancePoolInstance.
+    #: This constant has a value of "TERMINATION_PROCEED"
+    LIFECYCLE_STATE_TERMINATION_PROCEED = "TERMINATION_PROCEED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstancePoolInstance object with values from keyword arguments.
@@ -46,7 +54,7 @@ class InstancePoolInstance(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this InstancePoolInstance.
-            Allowed values for this property are: "ATTACHING", "ACTIVE", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ATTACHING", "ACTIVE", "DETACHING", "TERMINATION_AWAIT", "TERMINATION_PROCEED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -217,7 +225,7 @@ class InstancePoolInstance(object):
         **[Required]** Gets the lifecycle_state of this InstancePoolInstance.
         The attachment state of the instance in relation to the instance pool.
 
-        Allowed values for this property are: "ATTACHING", "ACTIVE", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ATTACHING", "ACTIVE", "DETACHING", "TERMINATION_AWAIT", "TERMINATION_PROCEED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -236,7 +244,7 @@ class InstancePoolInstance(object):
         :param lifecycle_state: The lifecycle_state of this InstancePoolInstance.
         :type: str
         """
-        allowed_values = ["ATTACHING", "ACTIVE", "DETACHING"]
+        allowed_values = ["ATTACHING", "ACTIVE", "DETACHING", "TERMINATION_AWAIT", "TERMINATION_PROCEED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

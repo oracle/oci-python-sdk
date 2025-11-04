@@ -396,12 +396,16 @@ from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
 from .instance_pool_instance import InstancePoolInstance
 from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
+from .instance_pool_lifecycle_actions_details import InstancePoolLifecycleActionsDetails
+from .instance_pool_lifecycle_management_details import InstancePoolLifecycleManagementDetails
 from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
 from .instance_pool_placement_ipv6_address_ipv6_subnet_cidr_details import InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
 from .instance_pool_placement_primary_subnet import InstancePoolPlacementPrimarySubnet
 from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
 from .instance_pool_placement_subnet_details import InstancePoolPlacementSubnetDetails
+from .instance_pool_pre_termination_action_details import InstancePoolPreTerminationActionDetails
+from .instance_pool_pre_termination_action_handle_timeout_details import InstancePoolPreTerminationActionHandleTimeoutDetails
 from .instance_pool_summary import InstancePoolSummary
 from .instance_power_action_details import InstancePowerActionDetails
 from .instance_reservation_config import InstanceReservationConfig
@@ -528,6 +532,7 @@ from .subnet import Subnet
 from .subnet_topology import SubnetTopology
 from .tcp_options import TcpOptions
 from .terminate_preemption_action import TerminatePreemptionAction
+from .termination_proceed_instance_pool_instance_details import TerminationProceedInstancePoolInstanceDetails
 from .topology import Topology
 from .topology_associated_with_entity_relationship import TopologyAssociatedWithEntityRelationship
 from .topology_associated_with_relationship_details import TopologyAssociatedWithRelationshipDetails
@@ -1061,12 +1066,16 @@ core_type_mapping = {
     "InstancePool": InstancePool,
     "InstancePoolInstance": InstancePoolInstance,
     "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
+    "InstancePoolLifecycleActionsDetails": InstancePoolLifecycleActionsDetails,
+    "InstancePoolLifecycleManagementDetails": InstancePoolLifecycleManagementDetails,
     "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
     "InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails": InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails,
     "InstancePoolPlacementPrimarySubnet": InstancePoolPlacementPrimarySubnet,
     "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
     "InstancePoolPlacementSubnetDetails": InstancePoolPlacementSubnetDetails,
+    "InstancePoolPreTerminationActionDetails": InstancePoolPreTerminationActionDetails,
+    "InstancePoolPreTerminationActionHandleTimeoutDetails": InstancePoolPreTerminationActionHandleTimeoutDetails,
     "InstancePoolSummary": InstancePoolSummary,
     "InstancePowerActionDetails": InstancePowerActionDetails,
     "InstanceReservationConfig": InstanceReservationConfig,
@@ -1193,6 +1202,7 @@ core_type_mapping = {
     "SubnetTopology": SubnetTopology,
     "TcpOptions": TcpOptions,
     "TerminatePreemptionAction": TerminatePreemptionAction,
+    "TerminationProceedInstancePoolInstanceDetails": TerminationProceedInstancePoolInstanceDetails,
     "Topology": Topology,
     "TopologyAssociatedWithEntityRelationship": TopologyAssociatedWithEntityRelationship,
     "TopologyAssociatedWithRelationshipDetails": TopologyAssociatedWithRelationshipDetails,

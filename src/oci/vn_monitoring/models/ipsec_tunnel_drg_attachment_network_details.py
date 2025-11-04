@@ -23,7 +23,7 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
 
         :param type:
             The value to assign to the type property of this IpsecTunnelDrgAttachmentNetworkDetails.
-            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION"
+            Allowed values for this property are: "VCN", "IPSEC_TUNNEL", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "FLEX_TUNNEL", "LOOPBACK", "INTERNET"
         :type type: str
 
         :param id:
@@ -34,6 +34,42 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             The value to assign to the ipsec_connection_id property of this IpsecTunnelDrgAttachmentNetworkDetails.
         :type ipsec_connection_id: str
 
+        :param import_route_target:
+            The value to assign to the import_route_target property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type import_route_target: str
+
+        :param export_route_target:
+            The value to assign to the export_route_target property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type export_route_target: str
+
+        :param mpls_label:
+            The value to assign to the mpls_label property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type mpls_label: int
+
+        :param regional_oci_asn:
+            The value to assign to the regional_oci_asn property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type regional_oci_asn: str
+
+        :param ingress_vip:
+            The value to assign to the ingress_vip property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type ingress_vip: str
+
+        :param is_gamma_drg:
+            The value to assign to the is_gamma_drg property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type is_gamma_drg: bool
+
+        :param common_export_rt:
+            The value to assign to the common_export_rt property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type common_export_rt: str
+
+        :param common_import_rt:
+            The value to assign to the common_import_rt property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type common_import_rt: str
+
+        :param is_route_unification_enabled:
+            The value to assign to the is_route_unification_enabled property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type is_route_unification_enabled: bool
+
         :param transport_attachment_id:
             The value to assign to the transport_attachment_id property of this IpsecTunnelDrgAttachmentNetworkDetails.
         :type transport_attachment_id: str
@@ -43,17 +79,44 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             'type': 'str',
             'id': 'str',
             'ipsec_connection_id': 'str',
+            'import_route_target': 'str',
+            'export_route_target': 'str',
+            'mpls_label': 'int',
+            'regional_oci_asn': 'str',
+            'ingress_vip': 'str',
+            'is_gamma_drg': 'bool',
+            'common_export_rt': 'str',
+            'common_import_rt': 'str',
+            'is_route_unification_enabled': 'bool',
             'transport_attachment_id': 'str'
         }
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
             'ipsec_connection_id': 'ipsecConnectionId',
+            'import_route_target': 'importRouteTarget',
+            'export_route_target': 'exportRouteTarget',
+            'mpls_label': 'mplsLabel',
+            'regional_oci_asn': 'regionalOciAsn',
+            'ingress_vip': 'ingressVip',
+            'is_gamma_drg': 'isGammaDrg',
+            'common_export_rt': 'commonExportRT',
+            'common_import_rt': 'commonImportRT',
+            'is_route_unification_enabled': 'isRouteUnificationEnabled',
             'transport_attachment_id': 'transportAttachmentId'
         }
         self._type = None
         self._id = None
         self._ipsec_connection_id = None
+        self._import_route_target = None
+        self._export_route_target = None
+        self._mpls_label = None
+        self._regional_oci_asn = None
+        self._ingress_vip = None
+        self._is_gamma_drg = None
+        self._common_export_rt = None
+        self._common_import_rt = None
+        self._is_route_unification_enabled = None
         self._transport_attachment_id = None
         self._type = 'IPSEC_TUNNEL'
 
@@ -80,6 +143,238 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         :type: str
         """
         self._ipsec_connection_id = ipsec_connection_id
+
+    @property
+    def import_route_target(self):
+        """
+        Gets the import_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+        tagged with the attachment's import route target.
+
+
+        :return: The import_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._import_route_target
+
+    @import_route_target.setter
+    def import_route_target(self, import_route_target):
+        """
+        Sets the import_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Routes which may be imported from the attachment (subject to import policy) appear in the route reflectors
+        tagged with the attachment's import route target.
+
+
+        :param import_route_target: The import_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._import_route_target = import_route_target
+
+    @property
+    def export_route_target(self):
+        """
+        Gets the export_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Routes which are exported to the attachment are exported to the route reflectors
+        with the route target set to the value of the attachment's export route target.
+
+
+        :return: The export_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._export_route_target
+
+    @export_route_target.setter
+    def export_route_target(self, export_route_target):
+        """
+        Sets the export_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Routes which are exported to the attachment are exported to the route reflectors
+        with the route target set to the value of the attachment's export route target.
+
+
+        :param export_route_target: The export_route_target of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._export_route_target = export_route_target
+
+    @property
+    def mpls_label(self):
+        """
+        Gets the mpls_label of this IpsecTunnelDrgAttachmentNetworkDetails.
+        The MPLS label of the DRG attachment.
+
+
+        :return: The mpls_label of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: int
+        """
+        return self._mpls_label
+
+    @mpls_label.setter
+    def mpls_label(self, mpls_label):
+        """
+        Sets the mpls_label of this IpsecTunnelDrgAttachmentNetworkDetails.
+        The MPLS label of the DRG attachment.
+
+
+        :param mpls_label: The mpls_label of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: int
+        """
+        self._mpls_label = mpls_label
+
+    @property
+    def regional_oci_asn(self):
+        """
+        Gets the regional_oci_asn of this IpsecTunnelDrgAttachmentNetworkDetails.
+        The BGP ASN to use for the IPSec connection's route target.
+
+
+        :return: The regional_oci_asn of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._regional_oci_asn
+
+    @regional_oci_asn.setter
+    def regional_oci_asn(self, regional_oci_asn):
+        """
+        Sets the regional_oci_asn of this IpsecTunnelDrgAttachmentNetworkDetails.
+        The BGP ASN to use for the IPSec connection's route target.
+
+
+        :param regional_oci_asn: The regional_oci_asn of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._regional_oci_asn = regional_oci_asn
+
+    @property
+    def ingress_vip(self):
+        """
+        Gets the ingress_vip of this IpsecTunnelDrgAttachmentNetworkDetails.
+        IPv4 address used to encapsulate ingress traffic to the DRG through this attachment
+
+
+        :return: The ingress_vip of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._ingress_vip
+
+    @ingress_vip.setter
+    def ingress_vip(self, ingress_vip):
+        """
+        Sets the ingress_vip of this IpsecTunnelDrgAttachmentNetworkDetails.
+        IPv4 address used to encapsulate ingress traffic to the DRG through this attachment
+
+
+        :param ingress_vip: The ingress_vip of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._ingress_vip = ingress_vip
+
+    @property
+    def is_gamma_drg(self):
+        """
+        Gets the is_gamma_drg of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Whether traffic from this network is forwarded to the El Paso Gamma VIPs (or not)
+
+
+        :return: The is_gamma_drg of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: bool
+        """
+        return self._is_gamma_drg
+
+    @is_gamma_drg.setter
+    def is_gamma_drg(self, is_gamma_drg):
+        """
+        Sets the is_gamma_drg of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Whether traffic from this network is forwarded to the El Paso Gamma VIPs (or not)
+
+
+        :param is_gamma_drg: The is_gamma_drg of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: bool
+        """
+        self._is_gamma_drg = is_gamma_drg
+
+    @property
+    def common_export_rt(self):
+        """
+        Gets the common_export_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Common Export route target to use for the DRG Attachment instead of per-attachment route target.
+        This is applicable to DRG attachments that are assigned to a DRG route table which is whitelisted for
+        route unification.
+
+
+        :return: The common_export_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._common_export_rt
+
+    @common_export_rt.setter
+    def common_export_rt(self, common_export_rt):
+        """
+        Sets the common_export_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Common Export route target to use for the DRG Attachment instead of per-attachment route target.
+        This is applicable to DRG attachments that are assigned to a DRG route table which is whitelisted for
+        route unification.
+
+
+        :param common_export_rt: The common_export_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._common_export_rt = common_export_rt
+
+    @property
+    def common_import_rt(self):
+        """
+        Gets the common_import_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Common Import route target to use for the DRG attachment instead of per-attachment import route target.
+        This is applicable to DRG attachments that are assigned to a DRG route table which is whitelisted for
+        route unification.
+
+
+        :return: The common_import_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._common_import_rt
+
+    @common_import_rt.setter
+    def common_import_rt(self, common_import_rt):
+        """
+        Sets the common_import_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        Common Import route target to use for the DRG attachment instead of per-attachment import route target.
+        This is applicable to DRG attachments that are assigned to a DRG route table which is whitelisted for
+        route unification.
+
+
+        :param common_import_rt: The common_import_rt of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._common_import_rt = common_import_rt
+
+    @property
+    def is_route_unification_enabled(self):
+        """
+        Gets the is_route_unification_enabled of this IpsecTunnelDrgAttachmentNetworkDetails.
+        This indicates whether the DRG route table associated with the DRG attachment is whitelisted for route unification.
+
+        Example: `true`
+
+
+        :return: The is_route_unification_enabled of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: bool
+        """
+        return self._is_route_unification_enabled
+
+    @is_route_unification_enabled.setter
+    def is_route_unification_enabled(self, is_route_unification_enabled):
+        """
+        Sets the is_route_unification_enabled of this IpsecTunnelDrgAttachmentNetworkDetails.
+        This indicates whether the DRG route table associated with the DRG attachment is whitelisted for route unification.
+
+        Example: `true`
+
+
+        :param is_route_unification_enabled: The is_route_unification_enabled of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: bool
+        """
+        self._is_route_unification_enabled = is_route_unification_enabled
 
     @property
     def transport_attachment_id(self):
