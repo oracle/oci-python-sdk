@@ -506,7 +506,7 @@ class Runbook(object):
     def latest_version(self):
         """
         Gets the latest_version of this Runbook.
-        Latest runbook version
+        Latest runbook version.
 
 
         :return: The latest_version of this Runbook.
@@ -518,7 +518,7 @@ class Runbook(object):
     def latest_version(self, latest_version):
         """
         Sets the latest_version of this Runbook.
-        Latest runbook version
+        Latest runbook version.
 
 
         :param latest_version: The latest_version of this Runbook.

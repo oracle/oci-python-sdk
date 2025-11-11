@@ -236,6 +236,7 @@ class CreateFleetDetails(object):
         """
         Gets the products of this CreateFleetDetails.
         Products associated with the Fleet.
+        Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 
 
         :return: The products of this CreateFleetDetails.
@@ -248,6 +249,7 @@ class CreateFleetDetails(object):
         """
         Sets the products of this CreateFleetDetails.
         Products associated with the Fleet.
+        Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 
 
         :param products: The products of this CreateFleetDetails.

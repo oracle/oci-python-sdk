@@ -28,17 +28,24 @@ class DedicatedVmHostShapeSummary(object):
             The value to assign to the dedicated_vm_host_shape property of this DedicatedVmHostShapeSummary.
         :type dedicated_vm_host_shape: str
 
+        :param capacity_configs:
+            The value to assign to the capacity_configs property of this DedicatedVmHostShapeSummary.
+        :type capacity_configs: list[oci.core.models.CapacityConfig]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
-            'dedicated_vm_host_shape': 'str'
+            'dedicated_vm_host_shape': 'str',
+            'capacity_configs': 'list[CapacityConfig]'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
-            'dedicated_vm_host_shape': 'dedicatedVmHostShape'
+            'dedicated_vm_host_shape': 'dedicatedVmHostShape',
+            'capacity_configs': 'capacityConfigs'
         }
         self._availability_domain = None
         self._dedicated_vm_host_shape = None
+        self._capacity_configs = None
 
     @property
     def availability_domain(self):
@@ -69,7 +76,7 @@ class DedicatedVmHostShapeSummary(object):
         """
         **[Required]** Gets the dedicated_vm_host_shape of this DedicatedVmHostShapeSummary.
         The name of the dedicated VM host shape. You can enumerate all available shapes by calling
-        :class:`DedicatedVmHostShapes`.
+        :func:`list_dedicated_vm_host_shapes`.
 
 
         :return: The dedicated_vm_host_shape of this DedicatedVmHostShapeSummary.
@@ -82,13 +89,37 @@ class DedicatedVmHostShapeSummary(object):
         """
         Sets the dedicated_vm_host_shape of this DedicatedVmHostShapeSummary.
         The name of the dedicated VM host shape. You can enumerate all available shapes by calling
-        :class:`DedicatedVmHostShapes`.
+        :func:`list_dedicated_vm_host_shapes`.
 
 
         :param dedicated_vm_host_shape: The dedicated_vm_host_shape of this DedicatedVmHostShapeSummary.
         :type: str
         """
         self._dedicated_vm_host_shape = dedicated_vm_host_shape
+
+    @property
+    def capacity_configs(self):
+        """
+        Gets the capacity_configs of this DedicatedVmHostShapeSummary.
+        A list of capacity configs that are supported by this dedicated VM host shape.
+
+
+        :return: The capacity_configs of this DedicatedVmHostShapeSummary.
+        :rtype: list[oci.core.models.CapacityConfig]
+        """
+        return self._capacity_configs
+
+    @capacity_configs.setter
+    def capacity_configs(self, capacity_configs):
+        """
+        Sets the capacity_configs of this DedicatedVmHostShapeSummary.
+        A list of capacity configs that are supported by this dedicated VM host shape.
+
+
+        :param capacity_configs: The capacity_configs of this DedicatedVmHostShapeSummary.
+        :type: list[oci.core.models.CapacityConfig]
+        """
+        self._capacity_configs = capacity_configs
 
     def __repr__(self):
         return formatted_flat_dict(self)

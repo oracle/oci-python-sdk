@@ -88,6 +88,10 @@ class CatalogItemSummary(object):
             The value to assign to the time_released property of this CatalogItemSummary.
         :type time_released: datetime
 
+        :param is_item_locked:
+            The value to assign to the is_item_locked property of this CatalogItemSummary.
+        :type is_item_locked: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CatalogItemSummary.
         :type freeform_tags: dict(str, str)
@@ -119,6 +123,7 @@ class CatalogItemSummary(object):
             'version_description': 'str',
             'short_description': 'str',
             'time_released': 'datetime',
+            'is_item_locked': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -141,6 +146,7 @@ class CatalogItemSummary(object):
             'version_description': 'versionDescription',
             'short_description': 'shortDescription',
             'time_released': 'timeReleased',
+            'is_item_locked': 'isItemLocked',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -162,6 +168,7 @@ class CatalogItemSummary(object):
         self._version_description = None
         self._short_description = None
         self._time_released = None
+        self._is_item_locked = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -597,6 +604,30 @@ class CatalogItemSummary(object):
         :type: datetime
         """
         self._time_released = time_released
+
+    @property
+    def is_item_locked(self):
+        """
+        Gets the is_item_locked of this CatalogItemSummary.
+        Indicates if the CatalogItem is immutable or not.
+
+
+        :return: The is_item_locked of this CatalogItemSummary.
+        :rtype: bool
+        """
+        return self._is_item_locked
+
+    @is_item_locked.setter
+    def is_item_locked(self, is_item_locked):
+        """
+        Sets the is_item_locked of this CatalogItemSummary.
+        Indicates if the CatalogItem is immutable or not.
+
+
+        :param is_item_locked: The is_item_locked of this CatalogItemSummary.
+        :type: bool
+        """
+        self._is_item_locked = is_item_locked
 
     @property
     def freeform_tags(self):

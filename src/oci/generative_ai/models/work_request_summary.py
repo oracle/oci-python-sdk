@@ -60,6 +60,18 @@ class WorkRequestSummary(object):
     OPERATION_TYPE_MOVE_ENDPOINT = "MOVE_ENDPOINT"
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_IMPORTED_MODEL"
+    OPERATION_TYPE_CREATE_IMPORTED_MODEL = "CREATE_IMPORTED_MODEL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_IMPORTED_MODEL"
+    OPERATION_TYPE_UPDATE_IMPORTED_MODEL = "UPDATE_IMPORTED_MODEL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_IMPORTED_MODEL"
+    OPERATION_TYPE_DELETE_IMPORTED_MODEL = "DELETE_IMPORTED_MODEL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "CREATE_PRIVATE_ENDPOINT"
     OPERATION_TYPE_CREATE_PRIVATE_ENDPOINT = "CREATE_PRIVATE_ENDPOINT"
 
@@ -110,7 +122,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -187,7 +199,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -206,7 +218,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT"]
+        allowed_values = ["CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

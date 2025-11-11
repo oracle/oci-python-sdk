@@ -11482,6 +11482,9 @@ class ComputeClient(object):
 
             Example: `Uocm:PHX-AD-1`
 
+        :param bool is_memory_encryption_enabled: (optional)
+            A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
@@ -11550,6 +11553,7 @@ class ComputeClient(object):
             "allow_control_chars",
             "retry_strategy",
             "availability_domain",
+            "is_memory_encryption_enabled",
             "limit",
             "page",
             "opc_request_id",
@@ -11588,6 +11592,7 @@ class ComputeClient(object):
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": compartment_id,
+            "isMemoryEncryptionEnabled": kwargs.get("is_memory_encryption_enabled", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -11835,6 +11840,9 @@ class ComputeClient(object):
         :param float remaining_ocpus_greater_than_or_equal_to: (optional)
             The available OCPUs of the dedicated VM host.
 
+        :param bool is_memory_encryption_enabled: (optional)
+            A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11874,7 +11882,8 @@ class ComputeClient(object):
             "sort_by",
             "sort_order",
             "remaining_memory_in_gbs_greater_than_or_equal_to",
-            "remaining_ocpus_greater_than_or_equal_to"
+            "remaining_ocpus_greater_than_or_equal_to",
+            "is_memory_encryption_enabled"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11913,7 +11922,8 @@ class ComputeClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "remainingMemoryInGBsGreaterThanOrEqualTo": kwargs.get("remaining_memory_in_gbs_greater_than_or_equal_to", missing),
-            "remainingOcpusGreaterThanOrEqualTo": kwargs.get("remaining_ocpus_greater_than_or_equal_to", missing)
+            "remainingOcpusGreaterThanOrEqualTo": kwargs.get("remaining_ocpus_greater_than_or_equal_to", missing),
+            "isMemoryEncryptionEnabled": kwargs.get("is_memory_encryption_enabled", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -22,8 +22,13 @@ missing = Sentinel("Missing")
 
 class ArtifactsClient(object):
     """
-    API covering the Artifacts and [Registry](/iaas/Content/Registry/Concepts/registryoverview.htm) services.
-    Use this API to manage resources such as generic artifacts and container images.
+    Use the Artifacts and Container Images API to manage container images and non-container generic artifacts.
+
+    - For container images such as Docker images, use the [ContainerImage](#/en/registry/latest/ContainerImage/) resource. Save the images in a [container repository](#/en/registry/latest/ContainerRepository).
+
+    - For non-container generic artifacts or blobs, use the [GenericArtifact](#/en/registry/latest/GenericArtifact/) resource. Save the artifacts in an [artifact repository](#/en/registry/latest/Repository).
+    - To upload and download non-container generic artifacts, instead of the Artifacts and Container Images API, use the Generic Artifacts Content API.
+    For more information, see the user guides for [Container Registry](/iaas/Content/Registry/home.htm) and [Artifact Registry](/iaas/Content/artifacts/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -2329,6 +2334,11 @@ class ArtifactsClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state name exactly.
 
+        :param str image_digest: (optional)
+            The digest of the container image.
+
+            Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
+
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
@@ -2404,6 +2414,7 @@ class ArtifactsClient(object):
             "repository_name",
             "version",
             "lifecycle_state",
+            "image_digest",
             "limit",
             "page",
             "opc_request_id",
@@ -2439,6 +2450,7 @@ class ArtifactsClient(object):
             "repositoryName": kwargs.get("repository_name", missing),
             "version": kwargs.get("version", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "imageDigest": kwargs.get("image_digest", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -3021,6 +3033,95 @@ class ArtifactsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="RepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def lookup_container_image_by_uri(self, lookup_container_image_by_uri_details, **kwargs):
+        """
+        Get container image metadata by URI.
+
+
+        :param oci.artifacts.models.LookupContainerImageByUriDetails lookup_container_image_by_uri_details: (required)
+            Get container image metadata by URI.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.artifacts.models.ContainerImage`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/lookup_container_image_by_uri.py.html>`__ to see an example of how to use lookup_container_image_by_uri API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/container/images/actions/lookupImageByUri"
+        method = "POST"
+        operation_name = "lookup_container_image_by_uri"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/LookupContainerImageByUri"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"lookup_container_image_by_uri got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=lookup_container_image_by_uri_details,
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=lookup_container_image_by_uri_details,
+                response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

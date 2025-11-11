@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateRunbookVersionDetails(object):
     """
     The information to be updated.
+    Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
     """
 
     def __init__(self, **kwargs):
@@ -82,7 +83,7 @@ class UpdateRunbookVersionDetails(object):
     def groups(self):
         """
         Gets the groups of this UpdateRunbookVersionDetails.
-        The groups of the runbook.
+        The groups of the runbook version.
 
 
         :return: The groups of this UpdateRunbookVersionDetails.
@@ -94,7 +95,7 @@ class UpdateRunbookVersionDetails(object):
     def groups(self, groups):
         """
         Sets the groups of this UpdateRunbookVersionDetails.
-        The groups of the runbook.
+        The groups of the runbook version.
 
 
         :param groups: The groups of this UpdateRunbookVersionDetails.

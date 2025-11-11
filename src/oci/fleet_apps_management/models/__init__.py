@@ -13,6 +13,8 @@ from .activity_resource_target import ActivityResourceTarget
 from .announcement_collection import AnnouncementCollection
 from .announcement_summary import AnnouncementSummary
 from .api_based_execution_details import ApiBasedExecutionDetails
+from .apm_domain_variable import ApmDomainVariable
+from .array_variable import ArrayVariable
 from .artifact_details import ArtifactDetails
 from .associated_fleet_credential_details import AssociatedFleetCredentialDetails
 from .associated_fleet_property_details import AssociatedFleetPropertyDetails
@@ -21,12 +23,26 @@ from .associated_local_task_details import AssociatedLocalTaskDetails
 from .associated_scheduler_definition import AssociatedSchedulerDefinition
 from .associated_shared_task_details import AssociatedSharedTaskDetails
 from .associated_task_details import AssociatedTaskDetails
+from .association import Association
+from .autonomous_container_db_variable import AutonomousContainerDbVariable
+from .autonomous_container_db_variable_depends_on import AutonomousContainerDbVariableDependsOn
+from .autonomous_data_base_variable import AutonomousDataBaseVariable
+from .autonomous_data_base_variable_depends_on import AutonomousDataBaseVariableDependsOn
+from .autonomous_database_version_variable import AutonomousDatabaseVersionVariable
+from .autonomous_database_version_variable_depends_on import AutonomousDatabaseVersionVariableDependsOn
+from .availability_domain_variable import AvailabilityDomainVariable
+from .availability_domain_variable_depends_on import AvailabilityDomainVariableDependsOn
+from .base_output import BaseOutput
+from .base_variable import BaseVariable
+from .bool_output import BoolOutput
+from .boolean_variable import BooleanVariable
 from .catalog_content_details import CatalogContentDetails
 from .catalog_git_result_config import CatalogGitResultConfig
 from .catalog_git_source_config import CatalogGitSourceConfig
 from .catalog_item import CatalogItem
 from .catalog_item_collection import CatalogItemCollection
 from .catalog_item_summary import CatalogItemSummary
+from .catalog_item_variables_definition import CatalogItemVariablesDefinition
 from .catalog_marketplace_source_config import CatalogMarketplaceSourceConfig
 from .catalog_par_result_config import CatalogParResultConfig
 from .catalog_par_source_config import CatalogParSourceConfig
@@ -43,7 +59,12 @@ from .change_provision_compartment_details import ChangeProvisionCompartmentDeta
 from .change_runbook_compartment_details import ChangeRunbookCompartmentDetails
 from .change_task_record_compartment_details import ChangeTaskRecordCompartmentDetails
 from .check_resource_tagging_details import CheckResourceTaggingDetails
+from .choice import Choice
 from .clone_catalog_item_details import CloneCatalogItemDetails
+from .cloud_vm_cluster_id import CloudVmClusterId
+from .column_metadata import ColumnMetadata
+from .compartment_variable import CompartmentVariable
+from .compliance import Compliance
 from .compliance_detail_policy import ComplianceDetailPolicy
 from .compliance_detail_product import ComplianceDetailProduct
 from .compliance_detail_resource import ComplianceDetailResource
@@ -71,8 +92,12 @@ from .condition import Condition
 from .config_association_details import ConfigAssociationDetails
 from .config_category_details import ConfigCategoryDetails
 from .config_file_details import ConfigFileDetails
+from .configure_catalog_item_details import ConfigureCatalogItemDetails
 from .confirm_targets_details import ConfirmTargetsDetails
+from .container_cluster_variable import ContainerClusterVariable
+from .container_cluster_variable_depends_on import ContainerClusterVariableDependsOn
 from .content_details import ContentDetails
+from .copyable_string_output import CopyableStringOutput
 from .create_catalog_item_details import CreateCatalogItemDetails
 from .create_compliance_policy_rule_details import CreateCompliancePolicyRuleDetails
 from .create_fleet_credential_details import CreateFleetCredentialDetails
@@ -92,14 +117,32 @@ from .create_task_record_details import CreateTaskRecordDetails
 from .credential_config_category_details import CredentialConfigCategoryDetails
 from .credential_details import CredentialDetails
 from .credential_entity_specific_details import CredentialEntitySpecificDetails
+from .csv_output import CsvOutput
 from .custom_schedule import CustomSchedule
+from .data_base_variable import DataBaseVariable
+from .data_base_variable_depends_on import DataBaseVariableDependsOn
+from .database_cdb_id import DatabaseCdbId
+from .database_data_guard_id import DatabaseDataGuardId
+from .database_dataguard_association_id import DatabaseDataguardAssociationId
+from .database_db_node_id import DatabaseDbNodeId
+from .database_exadata_id import DatabaseExadataId
+from .datetime_variable import DatetimeVariable
+from .db_home_variable import DbHomeVariable
+from .db_home_variable_depends_on import DbHomeVariableDependsOn
+from .db_home_version_variable import DbHomeVersionVariable
+from .db_home_version_variable_depends_on import DbHomeVersionVariableDependsOn
+from .db_system_variable import DbSystemVariable
+from .db_system_variable_depends_on import DbSystemVariableDependsOn
 from .dependent_patch_details import DependentPatchDetails
 from .deployed_resource_details import DeployedResourceDetails
 from .details import Details
 from .discovered_target import DiscoveredTarget
+from .dynamic_groups_variable import DynamicGroupsVariable
+from .dynamic_groups_variable_depends_on import DynamicGroupsVariableDependsOn
 from .dynamic_resource_selection import DynamicResourceSelection
 from .enable_latest_policy_details import EnableLatestPolicyDetails
 from .entity_execution_details import EntityExecutionDetails
+from .enum_variable import EnumVariable
 from .environment_config_category_details import EnvironmentConfigCategoryDetails
 from .environment_fleet_details import EnvironmentFleetDetails
 from .execution import Execution
@@ -108,8 +151,19 @@ from .execution_details import ExecutionDetails
 from .execution_summary import ExecutionSummary
 from .execution_workflow_details import ExecutionWorkflowDetails
 from .export_compliance_report_details import ExportComplianceReportDetails
+from .export_runbook_details import ExportRunbookDetails
+from .export_runbook_version_details import ExportRunbookVersionDetails
+from .fault_domain_variable import FaultDomainVariable
+from .fault_domain_variable_depends_on import FaultDomainVariableDependsOn
 from .file_input_argument import FileInputArgument
+from .file_storage_export_set_id import FileStorageExportSetId
+from .file_storage_filesystem_id import FileStorageFilesystemId
+from .file_storage_mount_target_id import FileStorageMountTargetId
 from .file_task_argument import FileTaskArgument
+from .file_variable import FileVariable
+from .filter import Filter
+from .find_runbook_export_dependency_details import FindRunbookExportDependencyDetails
+from .find_runbook_import_dependency_details import FindRunbookImportDependencyDetails
 from .fleet import Fleet
 from .fleet_based_action_group import FleetBasedActionGroup
 from .fleet_based_action_group_details import FleetBasedActionGroupDetails
@@ -137,11 +191,30 @@ from .generic_artifact_details import GenericArtifactDetails
 from .generic_fleet_details import GenericFleetDetails
 from .group import Group
 from .group_fleet_details import GroupFleetDetails
+from .groups_variable import GroupsVariable
+from .groups_variable_depends_on import GroupsVariableDependsOn
+from .identity_domain_variable import IdentityDomainVariable
+from .identity_domain_variable_depends_on import IdentityDomainVariableDependsOn
+from .image_variable import ImageVariable
+from .image_variable_depends_on import ImageVariableDependsOn
+from .import_runbook_details import ImportRunbookDetails
+from .import_runbook_precheck_details import ImportRunbookPrecheckDetails
+from .import_runbook_precheck_required_value import ImportRunbookPrecheckRequiredValue
+from .import_runbook_version_details import ImportRunbookVersionDetails
 from .input_argument import InputArgument
 from .input_file_content_details import InputFileContentDetails
 from .input_file_object_storage_bucket_content_details import InputFileObjectStorageBucketContentDetails
 from .input_parameter import InputParameter
+from .installed_patch_collection import InstalledPatchCollection
+from .installed_patch_summary import InstalledPatchSummary
+from .instance_shape_variable import InstanceShapeVariable
+from .instance_shape_variable_depends_on import InstanceShapeVariableDependsOn
+from .instance_shape_variable_with_flex import InstanceShapeVariableWithFlex
+from .instance_shape_variable_with_flex_depends_on import InstanceShapeVariableWithFlexDependsOn
 from .instance_summary import InstanceSummary
+from .instance_variable import InstanceVariable
+from .instance_variable_depends_on import InstanceVariableDependsOn
+from .integer_variable import IntegerVariable
 from .inventory_record import InventoryRecord
 from .inventory_record_collection import InventoryRecordCollection
 from .inventory_record_component import InventoryRecordComponent
@@ -152,8 +225,32 @@ from .inventory_resource_collection import InventoryResourceCollection
 from .inventory_resource_summary import InventoryResourceSummary
 from .job_activity import JobActivity
 from .job_execution_details import JobExecutionDetails
+from .json_output import JsonOutput
 from .key_encryption_credential_details import KeyEncryptionCredentialDetails
+from .key_value_property import KeyValueProperty
+from .kms_key_variable import KmsKeyVariable
+from .kms_key_variable_depends_on import KmsKeyVariableDependsOn
+from .kms_secret_variable import KmsSecretVariable
+from .kms_secret_variable_depends_on import KmsSecretVariableDependsOn
+from .kms_vault_variable import KmsVaultVariable
+from .kms_vault_variable_depends_on import KmsVaultVariableDependsOn
+from .kubernetes_versions_variable import KubernetesVersionsVariable
+from .kubernetes_versions_variable_depends_on import KubernetesVersionsVariableDependsOn
 from .lifecycle_operation_config_category_details import LifecycleOperationConfigCategoryDetails
+from .link_output import LinkOutput
+from .list_output import ListOutput
+from .load_balancer_reserved_ips import LoadBalancerReservedIps
+from .load_balancer_variable import LoadBalancerVariable
+from .load_balancer_variable_depends_on import LoadBalancerVariableDependsOn
+from .log_analytics_entity_types import LogAnalyticsEntityTypes
+from .log_analytics_log_entities import LogAnalyticsLogEntities
+from .log_analytics_log_entities_depends_on import LogAnalyticsLogEntitiesDependsOn
+from .log_analytics_log_group import LogAnalyticsLogGroup
+from .log_analytics_log_group_depends_on import LogAnalyticsLogGroupDependsOn
+from .log_analytics_scheduled_tasks import LogAnalyticsScheduledTasks
+from .log_analytics_scheduled_tasks_depends_on import LogAnalyticsScheduledTasksDependsOn
+from .log_analytics_sources import LogAnalyticsSources
+from .log_analytics_sources_depends_on import LogAnalyticsSourcesDependsOn
 from .maintenance_window import MaintenanceWindow
 from .maintenance_window_collection import MaintenanceWindowCollection
 from .maintenance_window_schedule import MaintenanceWindowSchedule
@@ -163,21 +260,44 @@ from .manage_settings_details import ManageSettingsDetails
 from .managed_entity_aggregation import ManagedEntityAggregation
 from .managed_entity_aggregation_collection import ManagedEntityAggregationCollection
 from .managed_entity_dimension import ManagedEntityDimension
+from .management_agent_depends_on import ManagementAgentDependsOn
+from .management_agents import ManagementAgents
 from .manual_resource_selection import ManualResourceSelection
+from .map_output import MapOutput
 from .model_property import ModelProperty
+from .mount_targets_variable import MountTargetsVariable
+from .mount_targets_variable_depends_on import MountTargetsVariableDependsOn
+from .multi_value_filter import MultiValueFilter
+from .multiline_variable import MultilineVariable
+from .mysql_configuration_id import MysqlConfigurationId
+from .mysql_shape_id import MysqlShapeId
+from .nat_gateway_variable import NatGatewayVariable
+from .nat_gateway_variable_depends_on import NatGatewayVariableDependsOn
+from .network_load_balancer_id import NetworkLoadBalancerId
 from .notification_preference import NotificationPreference
+from .nsg_variable import NsgVariable
+from .nsg_variable_depends_on import NsgVariableDependsOn
+from .number_output import NumberOutput
+from .number_variable import NumberVariable
 from .object_storage_bucket_config_file_details import ObjectStorageBucketConfigFileDetails
 from .object_storage_bucket_content_details import ObjectStorageBucketContentDetails
+from .object_storage_bucket_name import ObjectStorageBucketName
+from .ocid_output import OcidOutput
+from .ods_project_variable import OdsProjectVariable
+from .ods_project_variable_depends_on import OdsProjectVariableDependsOn
 from .onboarding import Onboarding
 from .onboarding_collection import OnboardingCollection
 from .onboarding_policy_collection import OnboardingPolicyCollection
 from .onboarding_policy_summary import OnboardingPolicySummary
 from .onboarding_summary import OnboardingSummary
 from .operation_runbook import OperationRunbook
+from .order_clause import OrderClause
 from .outcome import Outcome
+from .output_group import OutputGroup
 from .output_variable_details import OutputVariableDetails
 from .output_variable_input_argument import OutputVariableInputArgument
 from .output_variable_mapping import OutputVariableMapping
+from .password_variable import PasswordVariable
 from .patch import Patch
 from .patch_collection import PatchCollection
 from .patch_file_content_details import PatchFileContentDetails
@@ -191,6 +311,7 @@ from .patch_summary import PatchSummary
 from .patch_type import PatchType
 from .patch_type_config_category_details import PatchTypeConfigCategoryDetails
 from .pause_details import PauseDetails
+from .placeholder import Placeholder
 from .plain_text_credential_details import PlainTextCredentialDetails
 from .platform_configuration import PlatformConfiguration
 from .platform_configuration_collection import PlatformConfigurationCollection
@@ -200,6 +321,8 @@ from .platform_specific_artifact_details import PlatformSpecificArtifactDetails
 from .preferences import Preferences
 from .previous_task_instance_details import PreviousTaskInstanceDetails
 from .previous_task_instance_run_on_details import PreviousTaskInstanceRunOnDetails
+from .private_endpoint_variable import PrivateEndpointVariable
+from .private_endpoint_variable_depends_on import PrivateEndpointVariableDependsOn
 from .product_config_category_details import ProductConfigCategoryDetails
 from .product_fleet_details import ProductFleetDetails
 from .product_stack_as_product_sub_category_details import ProductStackAsProductSubCategoryDetails
@@ -207,6 +330,7 @@ from .product_stack_config_category_details import ProductStackConfigCategoryDet
 from .product_stack_generic_sub_category_details import ProductStackGenericSubCategoryDetails
 from .product_stack_sub_category_details import ProductStackSubCategoryDetails
 from .product_version_details import ProductVersionDetails
+from .prompt import Prompt
 from .properties import Properties
 from .property_collection import PropertyCollection
 from .property_summary import PropertySummary
@@ -214,8 +338,19 @@ from .provision import Provision
 from .provision_collection import ProvisionCollection
 from .provision_summary import ProvisionSummary
 from .publish_runbook_details import PublishRunbookDetails
+from .recommended_patch_collection import RecommendedPatchCollection
+from .recommended_patch_summary import RecommendedPatchSummary
+from .region_variable import RegionVariable
+from .report_collection import ReportCollection
+from .report_details import ReportDetails
+from .report_filter import ReportFilter
+from .report_metadata_collection import ReportMetadataCollection
+from .report_metadata_summary import ReportMetadataSummary
+from .report_summary import ReportSummary
+from .report_time_range import ReportTimeRange
 from .request_resource_validation_details import RequestResourceValidationDetails
 from .request_target_discovery_details import RequestTargetDiscoveryDetails
+from .required_value import RequiredValue
 from .resource_collection import ResourceCollection
 from .resource_credential_entity_specific_details import ResourceCredentialEntitySpecificDetails
 from .resource_selection import ResourceSelection
@@ -227,12 +362,28 @@ from .rule import Rule
 from .run_on_details import RunOnDetails
 from .runbook import Runbook
 from .runbook_collection import RunbookCollection
+from .runbook_export import RunbookExport
+from .runbook_export_dependency_collection import RunbookExportDependencyCollection
+from .runbook_export_status_collection import RunbookExportStatusCollection
+from .runbook_export_status_summary import RunbookExportStatusSummary
+from .runbook_import import RunbookImport
+from .runbook_import_as import RunbookImportAs
+from .runbook_import_as_runbook import RunbookImportAsRunbook
+from .runbook_import_as_version import RunbookImportAsVersion
+from .runbook_import_dependency_collection import RunbookImportDependencyCollection
+from .runbook_import_dependency_finder_required_value import RunbookImportDependencyFinderRequiredValue
+from .runbook_import_required_value import RunbookImportRequiredValue
+from .runbook_import_status_collection import RunbookImportStatusCollection
+from .runbook_import_status_summary import RunbookImportStatusSummary
 from .runbook_summary import RunbookSummary
+from .runbook_transfer_dependency import RunbookTransferDependency
+from .runbook_transfer_dependency_summary import RunbookTransferDependencySummary
 from .runbook_version import RunbookVersion
 from .runbook_version_collection import RunbookVersionCollection
 from .runbook_version_summary import RunbookVersionSummary
 from .schedule import Schedule
 from .schedule_instance_run_on_details import ScheduleInstanceRunOnDetails
+from .schedule_instance_target_run_on_details import ScheduleInstanceTargetRunOnDetails
 from .scheduled_fleet_collection import ScheduledFleetCollection
 from .scheduled_fleet_summary import ScheduledFleetSummary
 from .scheduler_definition import SchedulerDefinition
@@ -246,17 +397,33 @@ from .scheduler_job_aggregation_collection import SchedulerJobAggregationCollect
 from .scheduler_job_collection import SchedulerJobCollection
 from .scheduler_job_dimension import SchedulerJobDimension
 from .scheduler_job_summary import SchedulerJobSummary
+from .schema_document import SchemaDocument
 from .script_based_execution_details import ScriptBasedExecutionDetails
 from .selection_criteria import SelectionCriteria
 from .self_hosted_instance_config_category_details import SelfHostedInstanceConfigCategoryDetails
 from .self_hosted_instance_run_on_details import SelfHostedInstanceRunOnDetails
+from .service_gateway_variable import ServiceGatewayVariable
+from .service_gateway_variable_depends_on import ServiceGatewayVariableDependsOn
 from .set_default_runbook_details import SetDefaultRunbookDetails
+from .single_value_filter import SingleValueFilter
+from .ssh_public_key_variable import SshPublicKeyVariable
+from .stack_source import StackSource
 from .step_based_user_action_details import StepBasedUserActionDetails
 from .step_collection import StepCollection
 from .step_summary import StepSummary
 from .string_input_argument import StringInputArgument
+from .string_output import StringOutput
 from .string_task_argument import StringTaskArgument
+from .string_variable import StringVariable
+from .subnet_variable import SubnetVariable
+from .subnet_variable_depends_on import SubnetVariableDependsOn
+from .tag_variable import TagVariable
+from .tag_variable_depends_on import TagVariableDependsOn
+from .target_component_collection import TargetComponentCollection
+from .target_component_summary import TargetComponentSummary
 from .target_credential_entity_specific_details import TargetCredentialEntitySpecificDetails
+from .target_property_collection import TargetPropertyCollection
+from .target_property_summary import TargetPropertySummary
 from .target_resource import TargetResource
 from .task import Task
 from .task_argument import TaskArgument
@@ -267,6 +434,9 @@ from .task_record_summary import TaskRecordSummary
 from .task_variable import TaskVariable
 from .terraform_based_execution_details import TerraformBasedExecutionDetails
 from .time_based_pause_details import TimeBasedPauseDetails
+from .transfer_runbook_content_details import TransferRunbookContentDetails
+from .transfer_runbook_object_storage_bucket_content_details import TransferRunbookObjectStorageBucketContentDetails
+from .transfer_runbook_par_url_content_details import TransferRunbookParUrlContentDetails
 from .upcoming_schedule import UpcomingSchedule
 from .update_catalog_item_details import UpdateCatalogItemDetails
 from .update_compliance_policy_rule_details import UpdateCompliancePolicyRuleDetails
@@ -288,8 +458,17 @@ from .update_task_record_details import UpdateTaskRecordDetails
 from .user_action_based_pause_details import UserActionBasedPauseDetails
 from .user_action_details import UserActionDetails
 from .variable import Variable
+from .variable_group import VariableGroup
+from .variable_groups import VariableGroups
 from .vault_secret_credential_details import VaultSecretCredentialDetails
+from .vcn_network_security_group_id import VcnNetworkSecurityGroupId
+from .vcn_sec_list_id import VcnSecListId
+from .vcn_variable import VcnVariable
+from .vcn_variable_depends_on import VcnVariableDependsOn
 from .version import Version
+from .volume_backup_policies_variable import VolumeBackupPoliciesVariable
+from .volume_backup_policies_variable_depends_on import VolumeBackupPoliciesVariableDependsOn
+from .volume_id import VolumeId
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -312,6 +491,8 @@ fleet_apps_management_type_mapping = {
     "AnnouncementCollection": AnnouncementCollection,
     "AnnouncementSummary": AnnouncementSummary,
     "ApiBasedExecutionDetails": ApiBasedExecutionDetails,
+    "ApmDomainVariable": ApmDomainVariable,
+    "ArrayVariable": ArrayVariable,
     "ArtifactDetails": ArtifactDetails,
     "AssociatedFleetCredentialDetails": AssociatedFleetCredentialDetails,
     "AssociatedFleetPropertyDetails": AssociatedFleetPropertyDetails,
@@ -320,12 +501,26 @@ fleet_apps_management_type_mapping = {
     "AssociatedSchedulerDefinition": AssociatedSchedulerDefinition,
     "AssociatedSharedTaskDetails": AssociatedSharedTaskDetails,
     "AssociatedTaskDetails": AssociatedTaskDetails,
+    "Association": Association,
+    "AutonomousContainerDbVariable": AutonomousContainerDbVariable,
+    "AutonomousContainerDbVariableDependsOn": AutonomousContainerDbVariableDependsOn,
+    "AutonomousDataBaseVariable": AutonomousDataBaseVariable,
+    "AutonomousDataBaseVariableDependsOn": AutonomousDataBaseVariableDependsOn,
+    "AutonomousDatabaseVersionVariable": AutonomousDatabaseVersionVariable,
+    "AutonomousDatabaseVersionVariableDependsOn": AutonomousDatabaseVersionVariableDependsOn,
+    "AvailabilityDomainVariable": AvailabilityDomainVariable,
+    "AvailabilityDomainVariableDependsOn": AvailabilityDomainVariableDependsOn,
+    "BaseOutput": BaseOutput,
+    "BaseVariable": BaseVariable,
+    "BoolOutput": BoolOutput,
+    "BooleanVariable": BooleanVariable,
     "CatalogContentDetails": CatalogContentDetails,
     "CatalogGitResultConfig": CatalogGitResultConfig,
     "CatalogGitSourceConfig": CatalogGitSourceConfig,
     "CatalogItem": CatalogItem,
     "CatalogItemCollection": CatalogItemCollection,
     "CatalogItemSummary": CatalogItemSummary,
+    "CatalogItemVariablesDefinition": CatalogItemVariablesDefinition,
     "CatalogMarketplaceSourceConfig": CatalogMarketplaceSourceConfig,
     "CatalogParResultConfig": CatalogParResultConfig,
     "CatalogParSourceConfig": CatalogParSourceConfig,
@@ -342,7 +537,12 @@ fleet_apps_management_type_mapping = {
     "ChangeRunbookCompartmentDetails": ChangeRunbookCompartmentDetails,
     "ChangeTaskRecordCompartmentDetails": ChangeTaskRecordCompartmentDetails,
     "CheckResourceTaggingDetails": CheckResourceTaggingDetails,
+    "Choice": Choice,
     "CloneCatalogItemDetails": CloneCatalogItemDetails,
+    "CloudVmClusterId": CloudVmClusterId,
+    "ColumnMetadata": ColumnMetadata,
+    "CompartmentVariable": CompartmentVariable,
+    "Compliance": Compliance,
     "ComplianceDetailPolicy": ComplianceDetailPolicy,
     "ComplianceDetailProduct": ComplianceDetailProduct,
     "ComplianceDetailResource": ComplianceDetailResource,
@@ -370,8 +570,12 @@ fleet_apps_management_type_mapping = {
     "ConfigAssociationDetails": ConfigAssociationDetails,
     "ConfigCategoryDetails": ConfigCategoryDetails,
     "ConfigFileDetails": ConfigFileDetails,
+    "ConfigureCatalogItemDetails": ConfigureCatalogItemDetails,
     "ConfirmTargetsDetails": ConfirmTargetsDetails,
+    "ContainerClusterVariable": ContainerClusterVariable,
+    "ContainerClusterVariableDependsOn": ContainerClusterVariableDependsOn,
     "ContentDetails": ContentDetails,
+    "CopyableStringOutput": CopyableStringOutput,
     "CreateCatalogItemDetails": CreateCatalogItemDetails,
     "CreateCompliancePolicyRuleDetails": CreateCompliancePolicyRuleDetails,
     "CreateFleetCredentialDetails": CreateFleetCredentialDetails,
@@ -391,14 +595,32 @@ fleet_apps_management_type_mapping = {
     "CredentialConfigCategoryDetails": CredentialConfigCategoryDetails,
     "CredentialDetails": CredentialDetails,
     "CredentialEntitySpecificDetails": CredentialEntitySpecificDetails,
+    "CsvOutput": CsvOutput,
     "CustomSchedule": CustomSchedule,
+    "DataBaseVariable": DataBaseVariable,
+    "DataBaseVariableDependsOn": DataBaseVariableDependsOn,
+    "DatabaseCdbId": DatabaseCdbId,
+    "DatabaseDataGuardId": DatabaseDataGuardId,
+    "DatabaseDataguardAssociationId": DatabaseDataguardAssociationId,
+    "DatabaseDbNodeId": DatabaseDbNodeId,
+    "DatabaseExadataId": DatabaseExadataId,
+    "DatetimeVariable": DatetimeVariable,
+    "DbHomeVariable": DbHomeVariable,
+    "DbHomeVariableDependsOn": DbHomeVariableDependsOn,
+    "DbHomeVersionVariable": DbHomeVersionVariable,
+    "DbHomeVersionVariableDependsOn": DbHomeVersionVariableDependsOn,
+    "DbSystemVariable": DbSystemVariable,
+    "DbSystemVariableDependsOn": DbSystemVariableDependsOn,
     "DependentPatchDetails": DependentPatchDetails,
     "DeployedResourceDetails": DeployedResourceDetails,
     "Details": Details,
     "DiscoveredTarget": DiscoveredTarget,
+    "DynamicGroupsVariable": DynamicGroupsVariable,
+    "DynamicGroupsVariableDependsOn": DynamicGroupsVariableDependsOn,
     "DynamicResourceSelection": DynamicResourceSelection,
     "EnableLatestPolicyDetails": EnableLatestPolicyDetails,
     "EntityExecutionDetails": EntityExecutionDetails,
+    "EnumVariable": EnumVariable,
     "EnvironmentConfigCategoryDetails": EnvironmentConfigCategoryDetails,
     "EnvironmentFleetDetails": EnvironmentFleetDetails,
     "Execution": Execution,
@@ -407,8 +629,19 @@ fleet_apps_management_type_mapping = {
     "ExecutionSummary": ExecutionSummary,
     "ExecutionWorkflowDetails": ExecutionWorkflowDetails,
     "ExportComplianceReportDetails": ExportComplianceReportDetails,
+    "ExportRunbookDetails": ExportRunbookDetails,
+    "ExportRunbookVersionDetails": ExportRunbookVersionDetails,
+    "FaultDomainVariable": FaultDomainVariable,
+    "FaultDomainVariableDependsOn": FaultDomainVariableDependsOn,
     "FileInputArgument": FileInputArgument,
+    "FileStorageExportSetId": FileStorageExportSetId,
+    "FileStorageFilesystemId": FileStorageFilesystemId,
+    "FileStorageMountTargetId": FileStorageMountTargetId,
     "FileTaskArgument": FileTaskArgument,
+    "FileVariable": FileVariable,
+    "Filter": Filter,
+    "FindRunbookExportDependencyDetails": FindRunbookExportDependencyDetails,
+    "FindRunbookImportDependencyDetails": FindRunbookImportDependencyDetails,
     "Fleet": Fleet,
     "FleetBasedActionGroup": FleetBasedActionGroup,
     "FleetBasedActionGroupDetails": FleetBasedActionGroupDetails,
@@ -436,11 +669,30 @@ fleet_apps_management_type_mapping = {
     "GenericFleetDetails": GenericFleetDetails,
     "Group": Group,
     "GroupFleetDetails": GroupFleetDetails,
+    "GroupsVariable": GroupsVariable,
+    "GroupsVariableDependsOn": GroupsVariableDependsOn,
+    "IdentityDomainVariable": IdentityDomainVariable,
+    "IdentityDomainVariableDependsOn": IdentityDomainVariableDependsOn,
+    "ImageVariable": ImageVariable,
+    "ImageVariableDependsOn": ImageVariableDependsOn,
+    "ImportRunbookDetails": ImportRunbookDetails,
+    "ImportRunbookPrecheckDetails": ImportRunbookPrecheckDetails,
+    "ImportRunbookPrecheckRequiredValue": ImportRunbookPrecheckRequiredValue,
+    "ImportRunbookVersionDetails": ImportRunbookVersionDetails,
     "InputArgument": InputArgument,
     "InputFileContentDetails": InputFileContentDetails,
     "InputFileObjectStorageBucketContentDetails": InputFileObjectStorageBucketContentDetails,
     "InputParameter": InputParameter,
+    "InstalledPatchCollection": InstalledPatchCollection,
+    "InstalledPatchSummary": InstalledPatchSummary,
+    "InstanceShapeVariable": InstanceShapeVariable,
+    "InstanceShapeVariableDependsOn": InstanceShapeVariableDependsOn,
+    "InstanceShapeVariableWithFlex": InstanceShapeVariableWithFlex,
+    "InstanceShapeVariableWithFlexDependsOn": InstanceShapeVariableWithFlexDependsOn,
     "InstanceSummary": InstanceSummary,
+    "InstanceVariable": InstanceVariable,
+    "InstanceVariableDependsOn": InstanceVariableDependsOn,
+    "IntegerVariable": IntegerVariable,
     "InventoryRecord": InventoryRecord,
     "InventoryRecordCollection": InventoryRecordCollection,
     "InventoryRecordComponent": InventoryRecordComponent,
@@ -451,8 +703,32 @@ fleet_apps_management_type_mapping = {
     "InventoryResourceSummary": InventoryResourceSummary,
     "JobActivity": JobActivity,
     "JobExecutionDetails": JobExecutionDetails,
+    "JsonOutput": JsonOutput,
     "KeyEncryptionCredentialDetails": KeyEncryptionCredentialDetails,
+    "KeyValueProperty": KeyValueProperty,
+    "KmsKeyVariable": KmsKeyVariable,
+    "KmsKeyVariableDependsOn": KmsKeyVariableDependsOn,
+    "KmsSecretVariable": KmsSecretVariable,
+    "KmsSecretVariableDependsOn": KmsSecretVariableDependsOn,
+    "KmsVaultVariable": KmsVaultVariable,
+    "KmsVaultVariableDependsOn": KmsVaultVariableDependsOn,
+    "KubernetesVersionsVariable": KubernetesVersionsVariable,
+    "KubernetesVersionsVariableDependsOn": KubernetesVersionsVariableDependsOn,
     "LifecycleOperationConfigCategoryDetails": LifecycleOperationConfigCategoryDetails,
+    "LinkOutput": LinkOutput,
+    "ListOutput": ListOutput,
+    "LoadBalancerReservedIps": LoadBalancerReservedIps,
+    "LoadBalancerVariable": LoadBalancerVariable,
+    "LoadBalancerVariableDependsOn": LoadBalancerVariableDependsOn,
+    "LogAnalyticsEntityTypes": LogAnalyticsEntityTypes,
+    "LogAnalyticsLogEntities": LogAnalyticsLogEntities,
+    "LogAnalyticsLogEntitiesDependsOn": LogAnalyticsLogEntitiesDependsOn,
+    "LogAnalyticsLogGroup": LogAnalyticsLogGroup,
+    "LogAnalyticsLogGroupDependsOn": LogAnalyticsLogGroupDependsOn,
+    "LogAnalyticsScheduledTasks": LogAnalyticsScheduledTasks,
+    "LogAnalyticsScheduledTasksDependsOn": LogAnalyticsScheduledTasksDependsOn,
+    "LogAnalyticsSources": LogAnalyticsSources,
+    "LogAnalyticsSourcesDependsOn": LogAnalyticsSourcesDependsOn,
     "MaintenanceWindow": MaintenanceWindow,
     "MaintenanceWindowCollection": MaintenanceWindowCollection,
     "MaintenanceWindowSchedule": MaintenanceWindowSchedule,
@@ -462,21 +738,44 @@ fleet_apps_management_type_mapping = {
     "ManagedEntityAggregation": ManagedEntityAggregation,
     "ManagedEntityAggregationCollection": ManagedEntityAggregationCollection,
     "ManagedEntityDimension": ManagedEntityDimension,
+    "ManagementAgentDependsOn": ManagementAgentDependsOn,
+    "ManagementAgents": ManagementAgents,
     "ManualResourceSelection": ManualResourceSelection,
+    "MapOutput": MapOutput,
     "ModelProperty": ModelProperty,
+    "MountTargetsVariable": MountTargetsVariable,
+    "MountTargetsVariableDependsOn": MountTargetsVariableDependsOn,
+    "MultiValueFilter": MultiValueFilter,
+    "MultilineVariable": MultilineVariable,
+    "MysqlConfigurationId": MysqlConfigurationId,
+    "MysqlShapeId": MysqlShapeId,
+    "NatGatewayVariable": NatGatewayVariable,
+    "NatGatewayVariableDependsOn": NatGatewayVariableDependsOn,
+    "NetworkLoadBalancerId": NetworkLoadBalancerId,
     "NotificationPreference": NotificationPreference,
+    "NsgVariable": NsgVariable,
+    "NsgVariableDependsOn": NsgVariableDependsOn,
+    "NumberOutput": NumberOutput,
+    "NumberVariable": NumberVariable,
     "ObjectStorageBucketConfigFileDetails": ObjectStorageBucketConfigFileDetails,
     "ObjectStorageBucketContentDetails": ObjectStorageBucketContentDetails,
+    "ObjectStorageBucketName": ObjectStorageBucketName,
+    "OcidOutput": OcidOutput,
+    "OdsProjectVariable": OdsProjectVariable,
+    "OdsProjectVariableDependsOn": OdsProjectVariableDependsOn,
     "Onboarding": Onboarding,
     "OnboardingCollection": OnboardingCollection,
     "OnboardingPolicyCollection": OnboardingPolicyCollection,
     "OnboardingPolicySummary": OnboardingPolicySummary,
     "OnboardingSummary": OnboardingSummary,
     "OperationRunbook": OperationRunbook,
+    "OrderClause": OrderClause,
     "Outcome": Outcome,
+    "OutputGroup": OutputGroup,
     "OutputVariableDetails": OutputVariableDetails,
     "OutputVariableInputArgument": OutputVariableInputArgument,
     "OutputVariableMapping": OutputVariableMapping,
+    "PasswordVariable": PasswordVariable,
     "Patch": Patch,
     "PatchCollection": PatchCollection,
     "PatchFileContentDetails": PatchFileContentDetails,
@@ -490,6 +789,7 @@ fleet_apps_management_type_mapping = {
     "PatchType": PatchType,
     "PatchTypeConfigCategoryDetails": PatchTypeConfigCategoryDetails,
     "PauseDetails": PauseDetails,
+    "Placeholder": Placeholder,
     "PlainTextCredentialDetails": PlainTextCredentialDetails,
     "PlatformConfiguration": PlatformConfiguration,
     "PlatformConfigurationCollection": PlatformConfigurationCollection,
@@ -499,6 +799,8 @@ fleet_apps_management_type_mapping = {
     "Preferences": Preferences,
     "PreviousTaskInstanceDetails": PreviousTaskInstanceDetails,
     "PreviousTaskInstanceRunOnDetails": PreviousTaskInstanceRunOnDetails,
+    "PrivateEndpointVariable": PrivateEndpointVariable,
+    "PrivateEndpointVariableDependsOn": PrivateEndpointVariableDependsOn,
     "ProductConfigCategoryDetails": ProductConfigCategoryDetails,
     "ProductFleetDetails": ProductFleetDetails,
     "ProductStackAsProductSubCategoryDetails": ProductStackAsProductSubCategoryDetails,
@@ -506,6 +808,7 @@ fleet_apps_management_type_mapping = {
     "ProductStackGenericSubCategoryDetails": ProductStackGenericSubCategoryDetails,
     "ProductStackSubCategoryDetails": ProductStackSubCategoryDetails,
     "ProductVersionDetails": ProductVersionDetails,
+    "Prompt": Prompt,
     "Properties": Properties,
     "PropertyCollection": PropertyCollection,
     "PropertySummary": PropertySummary,
@@ -513,8 +816,19 @@ fleet_apps_management_type_mapping = {
     "ProvisionCollection": ProvisionCollection,
     "ProvisionSummary": ProvisionSummary,
     "PublishRunbookDetails": PublishRunbookDetails,
+    "RecommendedPatchCollection": RecommendedPatchCollection,
+    "RecommendedPatchSummary": RecommendedPatchSummary,
+    "RegionVariable": RegionVariable,
+    "ReportCollection": ReportCollection,
+    "ReportDetails": ReportDetails,
+    "ReportFilter": ReportFilter,
+    "ReportMetadataCollection": ReportMetadataCollection,
+    "ReportMetadataSummary": ReportMetadataSummary,
+    "ReportSummary": ReportSummary,
+    "ReportTimeRange": ReportTimeRange,
     "RequestResourceValidationDetails": RequestResourceValidationDetails,
     "RequestTargetDiscoveryDetails": RequestTargetDiscoveryDetails,
+    "RequiredValue": RequiredValue,
     "ResourceCollection": ResourceCollection,
     "ResourceCredentialEntitySpecificDetails": ResourceCredentialEntitySpecificDetails,
     "ResourceSelection": ResourceSelection,
@@ -526,12 +840,28 @@ fleet_apps_management_type_mapping = {
     "RunOnDetails": RunOnDetails,
     "Runbook": Runbook,
     "RunbookCollection": RunbookCollection,
+    "RunbookExport": RunbookExport,
+    "RunbookExportDependencyCollection": RunbookExportDependencyCollection,
+    "RunbookExportStatusCollection": RunbookExportStatusCollection,
+    "RunbookExportStatusSummary": RunbookExportStatusSummary,
+    "RunbookImport": RunbookImport,
+    "RunbookImportAs": RunbookImportAs,
+    "RunbookImportAsRunbook": RunbookImportAsRunbook,
+    "RunbookImportAsVersion": RunbookImportAsVersion,
+    "RunbookImportDependencyCollection": RunbookImportDependencyCollection,
+    "RunbookImportDependencyFinderRequiredValue": RunbookImportDependencyFinderRequiredValue,
+    "RunbookImportRequiredValue": RunbookImportRequiredValue,
+    "RunbookImportStatusCollection": RunbookImportStatusCollection,
+    "RunbookImportStatusSummary": RunbookImportStatusSummary,
     "RunbookSummary": RunbookSummary,
+    "RunbookTransferDependency": RunbookTransferDependency,
+    "RunbookTransferDependencySummary": RunbookTransferDependencySummary,
     "RunbookVersion": RunbookVersion,
     "RunbookVersionCollection": RunbookVersionCollection,
     "RunbookVersionSummary": RunbookVersionSummary,
     "Schedule": Schedule,
     "ScheduleInstanceRunOnDetails": ScheduleInstanceRunOnDetails,
+    "ScheduleInstanceTargetRunOnDetails": ScheduleInstanceTargetRunOnDetails,
     "ScheduledFleetCollection": ScheduledFleetCollection,
     "ScheduledFleetSummary": ScheduledFleetSummary,
     "SchedulerDefinition": SchedulerDefinition,
@@ -545,17 +875,33 @@ fleet_apps_management_type_mapping = {
     "SchedulerJobCollection": SchedulerJobCollection,
     "SchedulerJobDimension": SchedulerJobDimension,
     "SchedulerJobSummary": SchedulerJobSummary,
+    "SchemaDocument": SchemaDocument,
     "ScriptBasedExecutionDetails": ScriptBasedExecutionDetails,
     "SelectionCriteria": SelectionCriteria,
     "SelfHostedInstanceConfigCategoryDetails": SelfHostedInstanceConfigCategoryDetails,
     "SelfHostedInstanceRunOnDetails": SelfHostedInstanceRunOnDetails,
+    "ServiceGatewayVariable": ServiceGatewayVariable,
+    "ServiceGatewayVariableDependsOn": ServiceGatewayVariableDependsOn,
     "SetDefaultRunbookDetails": SetDefaultRunbookDetails,
+    "SingleValueFilter": SingleValueFilter,
+    "SshPublicKeyVariable": SshPublicKeyVariable,
+    "StackSource": StackSource,
     "StepBasedUserActionDetails": StepBasedUserActionDetails,
     "StepCollection": StepCollection,
     "StepSummary": StepSummary,
     "StringInputArgument": StringInputArgument,
+    "StringOutput": StringOutput,
     "StringTaskArgument": StringTaskArgument,
+    "StringVariable": StringVariable,
+    "SubnetVariable": SubnetVariable,
+    "SubnetVariableDependsOn": SubnetVariableDependsOn,
+    "TagVariable": TagVariable,
+    "TagVariableDependsOn": TagVariableDependsOn,
+    "TargetComponentCollection": TargetComponentCollection,
+    "TargetComponentSummary": TargetComponentSummary,
     "TargetCredentialEntitySpecificDetails": TargetCredentialEntitySpecificDetails,
+    "TargetPropertyCollection": TargetPropertyCollection,
+    "TargetPropertySummary": TargetPropertySummary,
     "TargetResource": TargetResource,
     "Task": Task,
     "TaskArgument": TaskArgument,
@@ -566,6 +912,9 @@ fleet_apps_management_type_mapping = {
     "TaskVariable": TaskVariable,
     "TerraformBasedExecutionDetails": TerraformBasedExecutionDetails,
     "TimeBasedPauseDetails": TimeBasedPauseDetails,
+    "TransferRunbookContentDetails": TransferRunbookContentDetails,
+    "TransferRunbookObjectStorageBucketContentDetails": TransferRunbookObjectStorageBucketContentDetails,
+    "TransferRunbookParUrlContentDetails": TransferRunbookParUrlContentDetails,
     "UpcomingSchedule": UpcomingSchedule,
     "UpdateCatalogItemDetails": UpdateCatalogItemDetails,
     "UpdateCompliancePolicyRuleDetails": UpdateCompliancePolicyRuleDetails,
@@ -587,8 +936,17 @@ fleet_apps_management_type_mapping = {
     "UserActionBasedPauseDetails": UserActionBasedPauseDetails,
     "UserActionDetails": UserActionDetails,
     "Variable": Variable,
+    "VariableGroup": VariableGroup,
+    "VariableGroups": VariableGroups,
     "VaultSecretCredentialDetails": VaultSecretCredentialDetails,
+    "VcnNetworkSecurityGroupId": VcnNetworkSecurityGroupId,
+    "VcnSecListId": VcnSecListId,
+    "VcnVariable": VcnVariable,
+    "VcnVariableDependsOn": VcnVariableDependsOn,
     "Version": Version,
+    "VolumeBackupPoliciesVariable": VolumeBackupPoliciesVariable,
+    "VolumeBackupPoliciesVariableDependsOn": VolumeBackupPoliciesVariableDependsOn,
+    "VolumeId": VolumeId,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

@@ -42,26 +42,33 @@ class TerraformBasedExecutionDetails(ExecutionDetails):
             The value to assign to the is_read_output_variable_enabled property of this TerraformBasedExecutionDetails.
         :type is_read_output_variable_enabled: bool
 
+        :param system_variables:
+            The value to assign to the system_variables property of this TerraformBasedExecutionDetails.
+        :type system_variables: list[str]
+
         """
         self.swagger_types = {
             'execution_type': 'str',
             'catalog_id': 'str',
             'config_file': 'str',
             'target_compartment_id': 'str',
-            'is_read_output_variable_enabled': 'bool'
+            'is_read_output_variable_enabled': 'bool',
+            'system_variables': 'list[str]'
         }
         self.attribute_map = {
             'execution_type': 'executionType',
             'catalog_id': 'catalogId',
             'config_file': 'configFile',
             'target_compartment_id': 'targetCompartmentId',
-            'is_read_output_variable_enabled': 'isReadOutputVariableEnabled'
+            'is_read_output_variable_enabled': 'isReadOutputVariableEnabled',
+            'system_variables': 'systemVariables'
         }
         self._execution_type = None
         self._catalog_id = None
         self._config_file = None
         self._target_compartment_id = None
         self._is_read_output_variable_enabled = None
+        self._system_variables = None
         self._execution_type = 'TERRAFORM'
 
     @property
@@ -159,6 +166,30 @@ class TerraformBasedExecutionDetails(ExecutionDetails):
         :type: bool
         """
         self._is_read_output_variable_enabled = is_read_output_variable_enabled
+
+    @property
+    def system_variables(self):
+        """
+        Gets the system_variables of this TerraformBasedExecutionDetails.
+        The list of system variables.
+
+
+        :return: The system_variables of this TerraformBasedExecutionDetails.
+        :rtype: list[str]
+        """
+        return self._system_variables
+
+    @system_variables.setter
+    def system_variables(self, system_variables):
+        """
+        Sets the system_variables of this TerraformBasedExecutionDetails.
+        The list of system variables.
+
+
+        :param system_variables: The system_variables of this TerraformBasedExecutionDetails.
+        :type: list[str]
+        """
+        self._system_variables = system_variables
 
     def __repr__(self):
         return formatted_flat_dict(self)

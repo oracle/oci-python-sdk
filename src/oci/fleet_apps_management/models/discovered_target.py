@@ -15,6 +15,14 @@ class DiscoveredTarget(object):
     A target that is discovered by the Software discovery process.
     """
 
+    #: A constant which can be used with the operation property of a DiscoveredTarget.
+    #: This constant has a value of "ADD"
+    OPERATION_ADD = "ADD"
+
+    #: A constant which can be used with the operation property of a DiscoveredTarget.
+    #: This constant has a value of "REMOVE"
+    OPERATION_REMOVE = "REMOVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DiscoveredTarget object with values from keyword arguments.
@@ -40,26 +48,34 @@ class DiscoveredTarget(object):
             The value to assign to the version property of this DiscoveredTarget.
         :type version: str
 
+        :param operation:
+            The value to assign to the operation property of this DiscoveredTarget.
+            Allowed values for this property are: "ADD", "REMOVE"
+        :type operation: str
+
         """
         self.swagger_types = {
             'target_id': 'str',
             'target_name': 'str',
             'product': 'str',
             'resource_id': 'str',
-            'version': 'str'
+            'version': 'str',
+            'operation': 'str'
         }
         self.attribute_map = {
             'target_id': 'targetId',
             'target_name': 'targetName',
             'product': 'product',
             'resource_id': 'resourceId',
-            'version': 'version'
+            'version': 'version',
+            'operation': 'operation'
         }
         self._target_id = None
         self._target_name = None
         self._product = None
         self._resource_id = None
         self._version = None
+        self._operation = None
 
     @property
     def target_id(self):
@@ -180,6 +196,41 @@ class DiscoveredTarget(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def operation(self):
+        """
+        Gets the operation of this DiscoveredTarget.
+        Type of operation to be done against given target.
+        ADD - Add target.
+        REMOVE - Delete target.
+
+        Allowed values for this property are: "ADD", "REMOVE"
+
+
+        :return: The operation of this DiscoveredTarget.
+        :rtype: str
+        """
+        return self._operation
+
+    @operation.setter
+    def operation(self, operation):
+        """
+        Sets the operation of this DiscoveredTarget.
+        Type of operation to be done against given target.
+        ADD - Add target.
+        REMOVE - Delete target.
+
+
+        :param operation: The operation of this DiscoveredTarget.
+        :type: str
+        """
+        allowed_values = ["ADD", "REMOVE"]
+        if not value_allowed_none_or_none_sentinel(operation, allowed_values):
+            raise ValueError(
+                f"Invalid value for `operation`, must be None or one of {allowed_values}"
+            )
+        self._operation = operation
 
     def __repr__(self):
         return formatted_flat_dict(self)

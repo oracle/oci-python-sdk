@@ -48,6 +48,10 @@ class SchedulerExecutionSummary(object):
             The value to assign to the compartment_id property of this SchedulerExecutionSummary.
         :type compartment_id: str
 
+        :param compartment_name:
+            The value to assign to the compartment_name property of this SchedulerExecutionSummary.
+        :type compartment_name: str
+
         :param time_created:
             The value to assign to the time_created property of this SchedulerExecutionSummary.
         :type time_created: datetime
@@ -131,6 +135,7 @@ class SchedulerExecutionSummary(object):
             'id': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
+            'compartment_name': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_scheduled': 'datetime',
@@ -155,6 +160,7 @@ class SchedulerExecutionSummary(object):
             'id': 'id',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
+            'compartment_name': 'compartmentName',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_scheduled': 'timeScheduled',
@@ -178,6 +184,7 @@ class SchedulerExecutionSummary(object):
         self._id = None
         self._display_name = None
         self._compartment_id = None
+        self._compartment_name = None
         self._time_created = None
         self._time_updated = None
         self._time_scheduled = None
@@ -275,6 +282,30 @@ class SchedulerExecutionSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def compartment_name(self):
+        """
+        Gets the compartment_name of this SchedulerExecutionSummary.
+        Name of the compartment in which resource exist.
+
+
+        :return: The compartment_name of this SchedulerExecutionSummary.
+        :rtype: str
+        """
+        return self._compartment_name
+
+    @compartment_name.setter
+    def compartment_name(self, compartment_name):
+        """
+        Sets the compartment_name of this SchedulerExecutionSummary.
+        Name of the compartment in which resource exist.
+
+
+        :param compartment_name: The compartment_name of this SchedulerExecutionSummary.
+        :type: str
+        """
+        self._compartment_name = compartment_name
 
     @property
     def time_created(self):
@@ -376,7 +407,7 @@ class SchedulerExecutionSummary(object):
     def resource_id(self):
         """
         Gets the resource_id of this SchedulerExecutionSummary.
-        ResourceId associated with the Schedule.
+        FleetId associated with the Schedule.
 
 
         :return: The resource_id of this SchedulerExecutionSummary.
@@ -388,7 +419,7 @@ class SchedulerExecutionSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this SchedulerExecutionSummary.
-        ResourceId associated with the Schedule.
+        FleetId associated with the Schedule.
 
 
         :param resource_id: The resource_id of this SchedulerExecutionSummary.
@@ -400,7 +431,7 @@ class SchedulerExecutionSummary(object):
     def scheduler_job_id(self):
         """
         Gets the scheduler_job_id of this SchedulerExecutionSummary.
-        jobId associated with the Schedule.
+        SchedulerJobId associated with the Schedule.
 
 
         :return: The scheduler_job_id of this SchedulerExecutionSummary.
@@ -412,7 +443,7 @@ class SchedulerExecutionSummary(object):
     def scheduler_job_id(self, scheduler_job_id):
         """
         Sets the scheduler_job_id of this SchedulerExecutionSummary.
-        jobId associated with the Schedule.
+        SchedulerJobId associated with the Schedule.
 
 
         :param scheduler_job_id: The scheduler_job_id of this SchedulerExecutionSummary.
@@ -424,7 +455,7 @@ class SchedulerExecutionSummary(object):
     def resource_display_name(self):
         """
         Gets the resource_display_name of this SchedulerExecutionSummary.
-        Resource DsiplayName associated with the Schedule.
+        Display Name of the Fleet associated with the Schedule.
 
 
         :return: The resource_display_name of this SchedulerExecutionSummary.
@@ -436,7 +467,7 @@ class SchedulerExecutionSummary(object):
     def resource_display_name(self, resource_display_name):
         """
         Sets the resource_display_name of this SchedulerExecutionSummary.
-        Resource DsiplayName associated with the Schedule.
+        Display Name of the Fleet associated with the Schedule.
 
 
         :param resource_display_name: The resource_display_name of this SchedulerExecutionSummary.
@@ -496,7 +527,7 @@ class SchedulerExecutionSummary(object):
     def runbook_display_name(self):
         """
         Gets the runbook_display_name of this SchedulerExecutionSummary.
-        DsiplayName of Runbook associated with the Schedule.
+        Display name of Runbook associated with the Schedule.
 
 
         :return: The runbook_display_name of this SchedulerExecutionSummary.
@@ -508,7 +539,7 @@ class SchedulerExecutionSummary(object):
     def runbook_display_name(self, runbook_display_name):
         """
         Sets the runbook_display_name of this SchedulerExecutionSummary.
-        DsiplayName of Runbook associated with the Schedule.
+        Display name of Runbook associated with the Schedule.
 
 
         :param runbook_display_name: The runbook_display_name of this SchedulerExecutionSummary.
@@ -691,7 +722,7 @@ class SchedulerExecutionSummary(object):
     @property
     def defined_tags(self):
         """
-        **[Required]** Gets the defined_tags of this SchedulerExecutionSummary.
+        Gets the defined_tags of this SchedulerExecutionSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 

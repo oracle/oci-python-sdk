@@ -52,6 +52,10 @@ class UpdateFleetDetails(object):
             The value to assign to the defined_tags property of this UpdateFleetDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this UpdateFleetDetails.
+        :type environment_type: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -61,7 +65,8 @@ class UpdateFleetDetails(object):
             'resource_selection': 'ResourceSelection',
             'products': 'list[str]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -71,7 +76,8 @@ class UpdateFleetDetails(object):
             'resource_selection': 'resourceSelection',
             'products': 'products',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'environment_type': 'environmentType'
         }
         self._display_name = None
         self._description = None
@@ -81,6 +87,7 @@ class UpdateFleetDetails(object):
         self._products = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._environment_type = None
 
     @property
     def display_name(self):
@@ -215,6 +222,7 @@ class UpdateFleetDetails(object):
         """
         Gets the products of this UpdateFleetDetails.
         Products associated with the Fleet.
+        Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 
 
         :return: The products of this UpdateFleetDetails.
@@ -227,6 +235,7 @@ class UpdateFleetDetails(object):
         """
         Sets the products of this UpdateFleetDetails.
         Products associated with the Fleet.
+        Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
 
 
         :param products: The products of this UpdateFleetDetails.
@@ -285,6 +294,32 @@ class UpdateFleetDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this UpdateFleetDetails.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
+
+
+        :return: The environment_type of this UpdateFleetDetails.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this UpdateFleetDetails.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
+
+
+        :param environment_type: The environment_type of this UpdateFleetDetails.
+        :type: str
+        """
+        self._environment_type = environment_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

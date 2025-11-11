@@ -68,6 +68,10 @@ class DedicatedVmHostSummary(object):
             The value to assign to the id property of this DedicatedVmHostSummary.
         :type id: str
 
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this DedicatedVmHostSummary.
+        :type is_memory_encryption_enabled: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DedicatedVmHostSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -102,6 +106,7 @@ class DedicatedVmHostSummary(object):
             'display_name': 'str',
             'fault_domain': 'str',
             'id': 'str',
+            'is_memory_encryption_enabled': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'remaining_ocpus': 'float',
@@ -116,6 +121,7 @@ class DedicatedVmHostSummary(object):
             'display_name': 'displayName',
             'fault_domain': 'faultDomain',
             'id': 'id',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'remaining_ocpus': 'remainingOcpus',
@@ -129,6 +135,7 @@ class DedicatedVmHostSummary(object):
         self._display_name = None
         self._fault_domain = None
         self._id = None
+        self._is_memory_encryption_enabled = None
         self._lifecycle_state = None
         self._time_created = None
         self._remaining_ocpus = None
@@ -305,6 +312,30 @@ class DedicatedVmHostSummary(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def is_memory_encryption_enabled(self):
+        """
+        Gets the is_memory_encryption_enabled of this DedicatedVmHostSummary.
+        Specifies if the Dedicated Virtual Machine Host is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+
+
+        :return: The is_memory_encryption_enabled of this DedicatedVmHostSummary.
+        :rtype: bool
+        """
+        return self._is_memory_encryption_enabled
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, is_memory_encryption_enabled):
+        """
+        Sets the is_memory_encryption_enabled of this DedicatedVmHostSummary.
+        Specifies if the Dedicated Virtual Machine Host is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+
+
+        :param is_memory_encryption_enabled: The is_memory_encryption_enabled of this DedicatedVmHostSummary.
+        :type: bool
+        """
+        self._is_memory_encryption_enabled = is_memory_encryption_enabled
 
     @property
     def lifecycle_state(self):

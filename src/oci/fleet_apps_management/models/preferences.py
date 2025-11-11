@@ -52,6 +52,22 @@ class Preferences(object):
             The value to assign to the on_runbook_newer_version property of this Preferences.
         :type on_runbook_newer_version: bool
 
+        :param on_job_success:
+            The value to assign to the on_job_success property of this Preferences.
+        :type on_job_success: bool
+
+        :param on_job_start:
+            The value to assign to the on_job_start property of this Preferences.
+        :type on_job_start: bool
+
+        :param on_job_canceled:
+            The value to assign to the on_job_canceled property of this Preferences.
+        :type on_job_canceled: bool
+
+        :param on_job_schedule_change:
+            The value to assign to the on_job_schedule_change property of this Preferences.
+        :type on_job_schedule_change: bool
+
         """
         self.swagger_types = {
             'upcoming_schedule': 'UpcomingSchedule',
@@ -61,7 +77,11 @@ class Preferences(object):
             'on_task_failure': 'bool',
             'on_task_success': 'bool',
             'on_resource_non_compliance': 'bool',
-            'on_runbook_newer_version': 'bool'
+            'on_runbook_newer_version': 'bool',
+            'on_job_success': 'bool',
+            'on_job_start': 'bool',
+            'on_job_canceled': 'bool',
+            'on_job_schedule_change': 'bool'
         }
         self.attribute_map = {
             'upcoming_schedule': 'upcomingSchedule',
@@ -71,7 +91,11 @@ class Preferences(object):
             'on_task_failure': 'onTaskFailure',
             'on_task_success': 'onTaskSuccess',
             'on_resource_non_compliance': 'onResourceNonCompliance',
-            'on_runbook_newer_version': 'onRunbookNewerVersion'
+            'on_runbook_newer_version': 'onRunbookNewerVersion',
+            'on_job_success': 'onJobSuccess',
+            'on_job_start': 'onJobStart',
+            'on_job_canceled': 'onJobCanceled',
+            'on_job_schedule_change': 'onJobScheduleChange'
         }
         self._upcoming_schedule = None
         self._on_job_failure = None
@@ -81,6 +105,10 @@ class Preferences(object):
         self._on_task_success = None
         self._on_resource_non_compliance = None
         self._on_runbook_newer_version = None
+        self._on_job_success = None
+        self._on_job_start = None
+        self._on_job_canceled = None
+        self._on_job_schedule_change = None
 
     @property
     def upcoming_schedule(self):
@@ -269,6 +297,102 @@ class Preferences(object):
         :type: bool
         """
         self._on_runbook_newer_version = on_runbook_newer_version
+
+    @property
+    def on_job_success(self):
+        """
+        Gets the on_job_success of this Preferences.
+        Enables or disables notification on job success.
+
+
+        :return: The on_job_success of this Preferences.
+        :rtype: bool
+        """
+        return self._on_job_success
+
+    @on_job_success.setter
+    def on_job_success(self, on_job_success):
+        """
+        Sets the on_job_success of this Preferences.
+        Enables or disables notification on job success.
+
+
+        :param on_job_success: The on_job_success of this Preferences.
+        :type: bool
+        """
+        self._on_job_success = on_job_success
+
+    @property
+    def on_job_start(self):
+        """
+        Gets the on_job_start of this Preferences.
+        Enables or disables notification on job start.
+
+
+        :return: The on_job_start of this Preferences.
+        :rtype: bool
+        """
+        return self._on_job_start
+
+    @on_job_start.setter
+    def on_job_start(self, on_job_start):
+        """
+        Sets the on_job_start of this Preferences.
+        Enables or disables notification on job start.
+
+
+        :param on_job_start: The on_job_start of this Preferences.
+        :type: bool
+        """
+        self._on_job_start = on_job_start
+
+    @property
+    def on_job_canceled(self):
+        """
+        Gets the on_job_canceled of this Preferences.
+        Enables or disables notification on job canceled.
+
+
+        :return: The on_job_canceled of this Preferences.
+        :rtype: bool
+        """
+        return self._on_job_canceled
+
+    @on_job_canceled.setter
+    def on_job_canceled(self, on_job_canceled):
+        """
+        Sets the on_job_canceled of this Preferences.
+        Enables or disables notification on job canceled.
+
+
+        :param on_job_canceled: The on_job_canceled of this Preferences.
+        :type: bool
+        """
+        self._on_job_canceled = on_job_canceled
+
+    @property
+    def on_job_schedule_change(self):
+        """
+        Gets the on_job_schedule_change of this Preferences.
+        Enables or disables notification on job schedule change.
+
+
+        :return: The on_job_schedule_change of this Preferences.
+        :rtype: bool
+        """
+        return self._on_job_schedule_change
+
+    @on_job_schedule_change.setter
+    def on_job_schedule_change(self, on_job_schedule_change):
+        """
+        Sets the on_job_schedule_change of this Preferences.
+        Enables or disables notification on job schedule change.
+
+
+        :param on_job_schedule_change: The on_job_schedule_change of this Preferences.
+        :type: bool
+        """
+        self._on_job_schedule_change = on_job_schedule_change
 
     def __repr__(self):
         return formatted_flat_dict(self)

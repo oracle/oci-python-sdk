@@ -36,6 +36,10 @@ class UpdateCatalogItemDetails(object):
             The value to assign to the display_name property of this UpdateCatalogItemDetails.
         :type display_name: str
 
+        :param is_item_locked:
+            The value to assign to the is_item_locked property of this UpdateCatalogItemDetails.
+        :type is_item_locked: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateCatalogItemDetails.
         :type freeform_tags: dict(str, str)
@@ -50,6 +54,7 @@ class UpdateCatalogItemDetails(object):
             'version_description': 'str',
             'short_description': 'str',
             'display_name': 'str',
+            'is_item_locked': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -58,6 +63,7 @@ class UpdateCatalogItemDetails(object):
             'version_description': 'versionDescription',
             'short_description': 'shortDescription',
             'display_name': 'displayName',
+            'is_item_locked': 'isItemLocked',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class UpdateCatalogItemDetails(object):
         self._version_description = None
         self._short_description = None
         self._display_name = None
+        self._is_item_locked = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -163,6 +170,30 @@ class UpdateCatalogItemDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_item_locked(self):
+        """
+        Gets the is_item_locked of this UpdateCatalogItemDetails.
+        Indicates if the CatalogItem is immutable or not.
+
+
+        :return: The is_item_locked of this UpdateCatalogItemDetails.
+        :rtype: bool
+        """
+        return self._is_item_locked
+
+    @is_item_locked.setter
+    def is_item_locked(self, is_item_locked):
+        """
+        Sets the is_item_locked of this UpdateCatalogItemDetails.
+        Indicates if the CatalogItem is immutable or not.
+
+
+        :param is_item_locked: The is_item_locked of this UpdateCatalogItemDetails.
+        :type: bool
+        """
+        self._is_item_locked = is_item_locked
 
     @property
     def freeform_tags(self):

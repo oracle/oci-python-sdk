@@ -36,23 +36,37 @@ class CreatePlatformConfigurationDetails(object):
             The value to assign to the config_category_details property of this CreatePlatformConfigurationDetails.
         :type config_category_details: oci.fleet_apps_management.models.ConfigCategoryDetails
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreatePlatformConfigurationDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreatePlatformConfigurationDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
-            'config_category_details': 'ConfigCategoryDetails'
+            'config_category_details': 'ConfigCategoryDetails',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
-            'config_category_details': 'configCategoryDetails'
+            'config_category_details': 'configCategoryDetails',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._compartment_id = None
         self._display_name = None
         self._description = None
         self._config_category_details = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def compartment_id(self):
@@ -153,6 +167,58 @@ class CreatePlatformConfigurationDetails(object):
         :type: oci.fleet_apps_management.models.ConfigCategoryDetails
         """
         self._config_category_details = config_category_details
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreatePlatformConfigurationDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this CreatePlatformConfigurationDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreatePlatformConfigurationDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this CreatePlatformConfigurationDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreatePlatformConfigurationDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this CreatePlatformConfigurationDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreatePlatformConfigurationDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this CreatePlatformConfigurationDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -42,6 +42,7 @@ Artifacts
     oci.artifacts.models.GenericArtifactSummary
     oci.artifacts.models.GenericRepository
     oci.artifacts.models.GenericRepositorySummary
+    oci.artifacts.models.LookupContainerImageByUriDetails
     oci.artifacts.models.RemoveContainerVersionDetails
     oci.artifacts.models.Repository
     oci.artifacts.models.RepositoryCollection

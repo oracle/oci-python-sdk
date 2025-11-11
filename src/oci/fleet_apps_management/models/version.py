@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class Version(object):
     """
     Version for the runbook.
+    Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
     """
 
     def __init__(self, **kwargs):

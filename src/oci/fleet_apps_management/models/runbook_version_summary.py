@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RunbookVersionSummary(object):
     """
-    Summary of the FleetResource.
+    Summary of the runbook version.
     """
 
     def __init__(self, **kwargs):
@@ -350,7 +350,7 @@ class RunbookVersionSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this RunbookVersionSummary.
-        The current state of the Runbook.
+        The current state of the Runbook version.
 
 
         :return: The lifecycle_state of this RunbookVersionSummary.
@@ -362,7 +362,7 @@ class RunbookVersionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this RunbookVersionSummary.
-        The current state of the Runbook.
+        The current state of the Runbook version.
 
 
         :param lifecycle_state: The lifecycle_state of this RunbookVersionSummary.

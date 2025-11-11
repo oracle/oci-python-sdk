@@ -47,6 +47,10 @@ class PlatformConfiguration(object):
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
 
+    #: A constant which can be used with the lifecycle_state property of a PlatformConfiguration.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PlatformConfiguration object with values from keyword arguments.
@@ -92,7 +96,7 @@ class PlatformConfiguration(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this PlatformConfiguration.
-            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -392,7 +396,7 @@ class PlatformConfiguration(object):
         **[Required]** Gets the lifecycle_state of this PlatformConfiguration.
         The current state of the PlatformConfiguration.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -411,7 +415,7 @@ class PlatformConfiguration(object):
         :param lifecycle_state: The lifecycle_state of this PlatformConfiguration.
         :type: str
         """
-        allowed_values = ["ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING"]
+        allowed_values = ["ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

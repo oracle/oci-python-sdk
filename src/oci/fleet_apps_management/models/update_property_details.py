@@ -58,23 +58,37 @@ class UpdatePropertyDetails(object):
             The value to assign to the values property of this UpdatePropertyDetails.
         :type values: list[str]
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdatePropertyDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdatePropertyDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'selection': 'str',
             'value_type': 'str',
-            'values': 'list[str]'
+            'values': 'list[str]',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'selection': 'selection',
             'value_type': 'valueType',
-            'values': 'values'
+            'values': 'values',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._selection = None
         self._value_type = None
         self._values = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def display_name(self):
@@ -191,6 +205,58 @@ class UpdatePropertyDetails(object):
         :type: list[str]
         """
         self._values = values
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdatePropertyDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this UpdatePropertyDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdatePropertyDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this UpdatePropertyDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdatePropertyDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this UpdatePropertyDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdatePropertyDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this UpdatePropertyDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

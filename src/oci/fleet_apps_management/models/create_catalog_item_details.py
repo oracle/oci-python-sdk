@@ -64,6 +64,10 @@ class CreateCatalogItemDetails(object):
             The value to assign to the package_type property of this CreateCatalogItemDetails.
         :type package_type: str
 
+        :param is_item_locked:
+            The value to assign to the is_item_locked property of this CreateCatalogItemDetails.
+        :type is_item_locked: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateCatalogItemDetails.
         :type freeform_tags: dict(str, str)
@@ -85,6 +89,7 @@ class CreateCatalogItemDetails(object):
             'listing_id': 'str',
             'listing_version': 'str',
             'package_type': 'str',
+            'is_item_locked': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -100,6 +105,7 @@ class CreateCatalogItemDetails(object):
             'listing_id': 'listingId',
             'listing_version': 'listingVersion',
             'package_type': 'packageType',
+            'is_item_locked': 'isItemLocked',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -114,6 +120,7 @@ class CreateCatalogItemDetails(object):
         self._listing_id = None
         self._listing_version = None
         self._package_type = None
+        self._is_item_locked = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -386,6 +393,30 @@ class CreateCatalogItemDetails(object):
         :type: str
         """
         self._package_type = package_type
+
+    @property
+    def is_item_locked(self):
+        """
+        Gets the is_item_locked of this CreateCatalogItemDetails.
+        Indicates if the CatalogItem is immutable or not.
+
+
+        :return: The is_item_locked of this CreateCatalogItemDetails.
+        :rtype: bool
+        """
+        return self._is_item_locked
+
+    @is_item_locked.setter
+    def is_item_locked(self, is_item_locked):
+        """
+        Sets the is_item_locked of this CreateCatalogItemDetails.
+        Indicates if the CatalogItem is immutable or not.
+
+
+        :param is_item_locked: The is_item_locked of this CreateCatalogItemDetails.
+        :type: bool
+        """
+        self._is_item_locked = is_item_locked
 
     @property
     def freeform_tags(self):

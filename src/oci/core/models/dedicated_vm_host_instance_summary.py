@@ -32,6 +32,10 @@ class DedicatedVmHostInstanceSummary(object):
             The value to assign to the instance_id property of this DedicatedVmHostInstanceSummary.
         :type instance_id: str
 
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this DedicatedVmHostInstanceSummary.
+        :type is_memory_encryption_enabled: bool
+
         :param shape:
             The value to assign to the shape property of this DedicatedVmHostInstanceSummary.
         :type shape: str
@@ -45,6 +49,7 @@ class DedicatedVmHostInstanceSummary(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'instance_id': 'str',
+            'is_memory_encryption_enabled': 'bool',
             'shape': 'str',
             'time_created': 'datetime'
         }
@@ -52,12 +57,14 @@ class DedicatedVmHostInstanceSummary(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'instance_id': 'instanceId',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
             'shape': 'shape',
             'time_created': 'timeCreated'
         }
         self._availability_domain = None
         self._compartment_id = None
         self._instance_id = None
+        self._is_memory_encryption_enabled = None
         self._shape = None
         self._time_created = None
 
@@ -136,6 +143,30 @@ class DedicatedVmHostInstanceSummary(object):
         :type: str
         """
         self._instance_id = instance_id
+
+    @property
+    def is_memory_encryption_enabled(self):
+        """
+        Gets the is_memory_encryption_enabled of this DedicatedVmHostInstanceSummary.
+        Specifies whether the VM instance is confidential.
+
+
+        :return: The is_memory_encryption_enabled of this DedicatedVmHostInstanceSummary.
+        :rtype: bool
+        """
+        return self._is_memory_encryption_enabled
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, is_memory_encryption_enabled):
+        """
+        Sets the is_memory_encryption_enabled of this DedicatedVmHostInstanceSummary.
+        Specifies whether the VM instance is confidential.
+
+
+        :param is_memory_encryption_enabled: The is_memory_encryption_enabled of this DedicatedVmHostInstanceSummary.
+        :type: bool
+        """
+        self._is_memory_encryption_enabled = is_memory_encryption_enabled
 
     @property
     def shape(self):

@@ -395,6 +395,7 @@ class Fleet(object):
         """
         Gets the products of this Fleet.
         Products associated with the Fleet.
+        PlatformConfiguration Ids corresponding to the Products.
 
 
         :return: The products of this Fleet.
@@ -407,6 +408,7 @@ class Fleet(object):
         """
         Sets the products of this Fleet.
         Products associated with the Fleet.
+        PlatformConfiguration Ids corresponding to the Products.
 
 
         :param products: The products of this Fleet.

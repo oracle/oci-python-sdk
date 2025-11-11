@@ -108,7 +108,7 @@ class OciVcnIpNativeNodePoolPodNetworkOptionDetails(NodePoolPodNetworkOptionDeta
     @property
     def pod_subnet_ids(self):
         """
-        **[Required]** Gets the pod_subnet_ids of this OciVcnIpNativeNodePoolPodNetworkOptionDetails.
+        Gets the pod_subnet_ids of this OciVcnIpNativeNodePoolPodNetworkOptionDetails.
         The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
 
 

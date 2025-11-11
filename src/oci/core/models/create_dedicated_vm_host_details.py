@@ -52,6 +52,14 @@ class CreateDedicatedVmHostDetails(object):
             The value to assign to the placement_constraint_details property of this CreateDedicatedVmHostDetails.
         :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
 
+        :param capacity_config:
+            The value to assign to the capacity_config property of this CreateDedicatedVmHostDetails.
+        :type capacity_config: str
+
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this CreateDedicatedVmHostDetails.
+        :type is_memory_encryption_enabled: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -61,7 +69,9 @@ class CreateDedicatedVmHostDetails(object):
             'display_name': 'str',
             'fault_domain': 'str',
             'freeform_tags': 'dict(str, str)',
-            'placement_constraint_details': 'PlacementConstraintDetails'
+            'placement_constraint_details': 'PlacementConstraintDetails',
+            'capacity_config': 'str',
+            'is_memory_encryption_enabled': 'bool'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -71,7 +81,9 @@ class CreateDedicatedVmHostDetails(object):
             'display_name': 'displayName',
             'fault_domain': 'faultDomain',
             'freeform_tags': 'freeformTags',
-            'placement_constraint_details': 'placementConstraintDetails'
+            'placement_constraint_details': 'placementConstraintDetails',
+            'capacity_config': 'capacityConfig',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -81,6 +93,8 @@ class CreateDedicatedVmHostDetails(object):
         self._fault_domain = None
         self._freeform_tags = None
         self._placement_constraint_details = None
+        self._capacity_config = None
+        self._is_memory_encryption_enabled = None
 
     @property
     def availability_domain(self):
@@ -319,6 +333,56 @@ class CreateDedicatedVmHostDetails(object):
         :type: oci.core.models.PlacementConstraintDetails
         """
         self._placement_constraint_details = placement_constraint_details
+
+    @property
+    def capacity_config(self):
+        """
+        Gets the capacity_config of this CreateDedicatedVmHostDetails.
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+        Run :func:`list_dedicated_vm_host_shapes` API first to see the capacity configuration options.
+
+
+        :return: The capacity_config of this CreateDedicatedVmHostDetails.
+        :rtype: str
+        """
+        return self._capacity_config
+
+    @capacity_config.setter
+    def capacity_config(self, capacity_config):
+        """
+        Sets the capacity_config of this CreateDedicatedVmHostDetails.
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+        Run :func:`list_dedicated_vm_host_shapes` API first to see the capacity configuration options.
+
+
+        :param capacity_config: The capacity_config of this CreateDedicatedVmHostDetails.
+        :type: str
+        """
+        self._capacity_config = capacity_config
+
+    @property
+    def is_memory_encryption_enabled(self):
+        """
+        Gets the is_memory_encryption_enabled of this CreateDedicatedVmHostDetails.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+
+
+        :return: The is_memory_encryption_enabled of this CreateDedicatedVmHostDetails.
+        :rtype: bool
+        """
+        return self._is_memory_encryption_enabled
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, is_memory_encryption_enabled):
+        """
+        Sets the is_memory_encryption_enabled of this CreateDedicatedVmHostDetails.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+
+
+        :param is_memory_encryption_enabled: The is_memory_encryption_enabled of this CreateDedicatedVmHostDetails.
+        :type: bool
+        """
+        self._is_memory_encryption_enabled = is_memory_encryption_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

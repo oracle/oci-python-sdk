@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class RunbookVersion(object):
     """
     Version for the runbook.
+    Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
     """
 
     #: A constant which can be used with the lifecycle_state property of a RunbookVersion.
@@ -353,7 +354,7 @@ class RunbookVersion(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this RunbookVersion.
-        The current state of the FleetResource.
+        The current state of the runbook version.
 
         Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "NEEDS_ATTENTION", "INACTIVE", "CREATING", "DELETING", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -368,7 +369,7 @@ class RunbookVersion(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this RunbookVersion.
-        The current state of the FleetResource.
+        The current state of the runbook version.
 
 
         :param lifecycle_state: The lifecycle_state of this RunbookVersion.

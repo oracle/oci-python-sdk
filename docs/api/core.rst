@@ -101,6 +101,8 @@ Core Services
     oci.core.models.ByoipRangeVcnIpv6AllocationSummary
     oci.core.models.Byoipv6CidrDetails
     oci.core.models.CapacityBin
+    oci.core.models.CapacityBinPreview
+    oci.core.models.CapacityConfig
     oci.core.models.CapacityReportInstanceShapeConfig
     oci.core.models.CapacityReportShapeAvailability
     oci.core.models.CapacityReservationInstanceSummary
@@ -548,6 +550,7 @@ Core Services
     oci.core.models.SoftResetActionDetails
     oci.core.models.Subnet
     oci.core.models.SubnetTopology
+    oci.core.models.SupportedCapabilities
     oci.core.models.TcpOptions
     oci.core.models.TerminatePreemptionAction
     oci.core.models.TerminationProceedInstancePoolInstanceDetails
