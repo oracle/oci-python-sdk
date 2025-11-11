@@ -27,6 +27,10 @@ class RunOnDetails(object):
     #: This constant has a value of "PREVIOUS_TASK_INSTANCES"
     KIND_PREVIOUS_TASK_INSTANCES = "PREVIOUS_TASK_INSTANCES"
 
+    #: A constant which can be used with the kind property of a RunOnDetails.
+    #: This constant has a value of "SCHEDULE_INSTANCE_TARGETS"
+    KIND_SCHEDULE_INSTANCE_TARGETS = "SCHEDULE_INSTANCE_TARGETS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RunOnDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,12 +39,13 @@ class RunOnDetails(object):
         * :class:`~oci.fleet_apps_management.models.SelfHostedInstanceRunOnDetails`
         * :class:`~oci.fleet_apps_management.models.ScheduleInstanceRunOnDetails`
         * :class:`~oci.fleet_apps_management.models.PreviousTaskInstanceRunOnDetails`
+        * :class:`~oci.fleet_apps_management.models.ScheduleInstanceTargetRunOnDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param kind:
             The value to assign to the kind property of this RunOnDetails.
-            Allowed values for this property are: "SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES", "SCHEDULE_INSTANCE_TARGETS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -69,6 +74,9 @@ class RunOnDetails(object):
 
         if type == 'PREVIOUS_TASK_INSTANCES':
             return 'PreviousTaskInstanceRunOnDetails'
+
+        if type == 'SCHEDULE_INSTANCE_TARGETS':
+            return 'ScheduleInstanceTargetRunOnDetails'
         else:
             return 'RunOnDetails'
 
@@ -78,7 +86,7 @@ class RunOnDetails(object):
         **[Required]** Gets the kind of this RunOnDetails.
         Run on based On.
 
-        Allowed values for this property are: "SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES", "SCHEDULE_INSTANCE_TARGETS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +105,7 @@ class RunOnDetails(object):
         :param kind: The kind of this RunOnDetails.
         :type: str
         """
-        allowed_values = ["SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES"]
+        allowed_values = ["SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES", "SCHEDULE_INSTANCE_TARGETS"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

@@ -30,6 +30,7 @@ from .generic_artifact_collection import GenericArtifactCollection
 from .generic_artifact_summary import GenericArtifactSummary
 from .generic_repository import GenericRepository
 from .generic_repository_summary import GenericRepositorySummary
+from .lookup_container_image_by_uri_details import LookupContainerImageByUriDetails
 from .remove_container_version_details import RemoveContainerVersionDetails
 from .repository import Repository
 from .repository_collection import RepositoryCollection
@@ -70,6 +71,7 @@ artifacts_type_mapping = {
     "GenericArtifactSummary": GenericArtifactSummary,
     "GenericRepository": GenericRepository,
     "GenericRepositorySummary": GenericRepositorySummary,
+    "LookupContainerImageByUriDetails": LookupContainerImageByUriDetails,
     "RemoveContainerVersionDetails": RemoveContainerVersionDetails,
     "Repository": Repository,
     "RepositoryCollection": RepositoryCollection,

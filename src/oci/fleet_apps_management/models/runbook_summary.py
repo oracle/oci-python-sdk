@@ -78,6 +78,10 @@ class RunbookSummary(object):
             The value to assign to the has_draft_version property of this RunbookSummary.
         :type has_draft_version: bool
 
+        :param original_version:
+            The value to assign to the original_version property of this RunbookSummary.
+        :type original_version: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this RunbookSummary.
         :type lifecycle_state: str
@@ -127,6 +131,7 @@ class RunbookSummary(object):
             'estimated_time': 'str',
             'latest_version': 'str',
             'has_draft_version': 'bool',
+            'original_version': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -149,6 +154,7 @@ class RunbookSummary(object):
             'estimated_time': 'estimatedTime',
             'latest_version': 'latestVersion',
             'has_draft_version': 'hasDraftVersion',
+            'original_version': 'originalVersion',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -170,6 +176,7 @@ class RunbookSummary(object):
         self._estimated_time = None
         self._latest_version = None
         self._has_draft_version = None
+        self._original_version = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -459,6 +466,30 @@ class RunbookSummary(object):
         :type: bool
         """
         self._has_draft_version = has_draft_version
+
+    @property
+    def original_version(self):
+        """
+        Gets the original_version of this RunbookSummary.
+        Original runbook version. This version belongs to original runbook using which new runbook was exported.
+
+
+        :return: The original_version of this RunbookSummary.
+        :rtype: str
+        """
+        return self._original_version
+
+    @original_version.setter
+    def original_version(self, original_version):
+        """
+        Sets the original_version of this RunbookSummary.
+        Original runbook version. This version belongs to original runbook using which new runbook was exported.
+
+
+        :param original_version: The original_version of this RunbookSummary.
+        :type: str
+        """
+        self._original_version = original_version
 
     @property
     def lifecycle_state(self):

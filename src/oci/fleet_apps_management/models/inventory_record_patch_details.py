@@ -40,26 +40,40 @@ class InventoryRecordPatchDetails(object):
             The value to assign to the patch_type property of this InventoryRecordPatchDetails.
         :type patch_type: str
 
+        :param time_released:
+            The value to assign to the time_released property of this InventoryRecordPatchDetails.
+        :type time_released: datetime
+
+        :param patch_level:
+            The value to assign to the patch_level property of this InventoryRecordPatchDetails.
+        :type patch_level: str
+
         """
         self.swagger_types = {
             'patch_id': 'str',
             'patch_name': 'str',
             'patch_description': 'str',
             'time_applied': 'datetime',
-            'patch_type': 'str'
+            'patch_type': 'str',
+            'time_released': 'datetime',
+            'patch_level': 'str'
         }
         self.attribute_map = {
             'patch_id': 'patchId',
             'patch_name': 'patchName',
             'patch_description': 'patchDescription',
             'time_applied': 'timeApplied',
-            'patch_type': 'patchType'
+            'patch_type': 'patchType',
+            'time_released': 'timeReleased',
+            'patch_level': 'patchLevel'
         }
         self._patch_id = None
         self._patch_name = None
         self._patch_description = None
         self._time_applied = None
         self._patch_type = None
+        self._time_released = None
+        self._patch_level = None
 
     @property
     def patch_id(self):
@@ -180,6 +194,54 @@ class InventoryRecordPatchDetails(object):
         :type: str
         """
         self._patch_type = patch_type
+
+    @property
+    def time_released(self):
+        """
+        Gets the time_released of this InventoryRecordPatchDetails.
+        The date on which patch was released.
+
+
+        :return: The time_released of this InventoryRecordPatchDetails.
+        :rtype: datetime
+        """
+        return self._time_released
+
+    @time_released.setter
+    def time_released(self, time_released):
+        """
+        Sets the time_released of this InventoryRecordPatchDetails.
+        The date on which patch was released.
+
+
+        :param time_released: The time_released of this InventoryRecordPatchDetails.
+        :type: datetime
+        """
+        self._time_released = time_released
+
+    @property
+    def patch_level(self):
+        """
+        Gets the patch_level of this InventoryRecordPatchDetails.
+        Patch Level.
+
+
+        :return: The patch_level of this InventoryRecordPatchDetails.
+        :rtype: str
+        """
+        return self._patch_level
+
+    @patch_level.setter
+    def patch_level(self, patch_level):
+        """
+        Sets the patch_level of this InventoryRecordPatchDetails.
+        Patch Level.
+
+
+        :param patch_level: The patch_level of this InventoryRecordPatchDetails.
+        :type: str
+        """
+        self._patch_level = patch_level
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -21,12 +21,14 @@ Generative Ai
     oci.generative_ai.models.ChangeDedicatedAiClusterCompartmentDetails
     oci.generative_ai.models.ChangeEndpointCompartmentDetails
     oci.generative_ai.models.ChangeGenerativeAiPrivateEndpointCompartmentDetails
+    oci.generative_ai.models.ChangeImportedModelCompartmentDetails
     oci.generative_ai.models.ChangeModelCompartmentDetails
     oci.generative_ai.models.ChatModelMetrics
     oci.generative_ai.models.ContentModerationConfig
     oci.generative_ai.models.CreateDedicatedAiClusterDetails
     oci.generative_ai.models.CreateEndpointDetails
     oci.generative_ai.models.CreateGenerativeAiPrivateEndpointDetails
+    oci.generative_ai.models.CreateImportedModelDetails
     oci.generative_ai.models.CreateModelDetails
     oci.generative_ai.models.Dataset
     oci.generative_ai.models.DedicatedAiCluster
@@ -41,18 +43,25 @@ Generative Ai
     oci.generative_ai.models.GenerativeAiPrivateEndpoint
     oci.generative_ai.models.GenerativeAiPrivateEndpointCollection
     oci.generative_ai.models.GenerativeAiPrivateEndpointSummary
+    oci.generative_ai.models.HuggingFaceModel
+    oci.generative_ai.models.ImportedModel
+    oci.generative_ai.models.ImportedModelCollection
+    oci.generative_ai.models.ImportedModelSummary
     oci.generative_ai.models.LoraTrainingConfig
     oci.generative_ai.models.Model
     oci.generative_ai.models.ModelCollection
+    oci.generative_ai.models.ModelDataSource
     oci.generative_ai.models.ModelMetrics
     oci.generative_ai.models.ModelSummary
     oci.generative_ai.models.ObjectStorageDataset
+    oci.generative_ai.models.ObjectStorageObject
     oci.generative_ai.models.TFewTrainingConfig
     oci.generative_ai.models.TextGenerationModelMetrics
     oci.generative_ai.models.TrainingConfig
     oci.generative_ai.models.UpdateDedicatedAiClusterDetails
     oci.generative_ai.models.UpdateEndpointDetails
     oci.generative_ai.models.UpdateGenerativeAiPrivateEndpointDetails
+    oci.generative_ai.models.UpdateImportedModelDetails
     oci.generative_ai.models.UpdateModelDetails
     oci.generative_ai.models.VanillaTrainingConfig
     oci.generative_ai.models.WorkRequest

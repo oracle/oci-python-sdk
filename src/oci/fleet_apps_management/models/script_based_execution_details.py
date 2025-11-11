@@ -50,6 +50,10 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
             The value to assign to the is_executable_content property of this ScriptBasedExecutionDetails.
         :type is_executable_content: bool
 
+        :param system_variables:
+            The value to assign to the system_variables property of this ScriptBasedExecutionDetails.
+        :type system_variables: list[str]
+
         """
         self.swagger_types = {
             'execution_type': 'str',
@@ -58,7 +62,8 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
             'command': 'str',
             'credentials': 'list[ConfigAssociationDetails]',
             'is_locked': 'bool',
-            'is_executable_content': 'bool'
+            'is_executable_content': 'bool',
+            'system_variables': 'list[str]'
         }
         self.attribute_map = {
             'execution_type': 'executionType',
@@ -67,7 +72,8 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
             'command': 'command',
             'credentials': 'credentials',
             'is_locked': 'isLocked',
-            'is_executable_content': 'isExecutableContent'
+            'is_executable_content': 'isExecutableContent',
+            'system_variables': 'systemVariables'
         }
         self._execution_type = None
         self._variables = None
@@ -76,6 +82,7 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
         self._credentials = None
         self._is_locked = None
         self._is_executable_content = None
+        self._system_variables = None
         self._execution_type = 'SCRIPT'
 
     @property
@@ -215,6 +222,30 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
         :type: bool
         """
         self._is_executable_content = is_executable_content
+
+    @property
+    def system_variables(self):
+        """
+        Gets the system_variables of this ScriptBasedExecutionDetails.
+        The list of system variables.
+
+
+        :return: The system_variables of this ScriptBasedExecutionDetails.
+        :rtype: list[str]
+        """
+        return self._system_variables
+
+    @system_variables.setter
+    def system_variables(self, system_variables):
+        """
+        Sets the system_variables of this ScriptBasedExecutionDetails.
+        The list of system variables.
+
+
+        :param system_variables: The system_variables of this ScriptBasedExecutionDetails.
+        :type: list[str]
+        """
+        self._system_variables = system_variables
 
     def __repr__(self):
         return formatted_flat_dict(self)

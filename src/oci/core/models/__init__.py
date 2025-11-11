@@ -83,6 +83,8 @@ from .byoip_range_summary import ByoipRangeSummary
 from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
 from .byoipv6_cidr_details import Byoipv6CidrDetails
 from .capacity_bin import CapacityBin
+from .capacity_bin_preview import CapacityBinPreview
+from .capacity_config import CapacityConfig
 from .capacity_report_instance_shape_config import CapacityReportInstanceShapeConfig
 from .capacity_report_shape_availability import CapacityReportShapeAvailability
 from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
@@ -530,6 +532,7 @@ from .shape_virtual_instructions_enabled_platform_options import ShapeVirtualIns
 from .soft_reset_action_details import SoftResetActionDetails
 from .subnet import Subnet
 from .subnet_topology import SubnetTopology
+from .supported_capabilities import SupportedCapabilities
 from .tcp_options import TcpOptions
 from .terminate_preemption_action import TerminatePreemptionAction
 from .termination_proceed_instance_pool_instance_details import TerminationProceedInstancePoolInstanceDetails
@@ -753,6 +756,8 @@ core_type_mapping = {
     "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
     "Byoipv6CidrDetails": Byoipv6CidrDetails,
     "CapacityBin": CapacityBin,
+    "CapacityBinPreview": CapacityBinPreview,
+    "CapacityConfig": CapacityConfig,
     "CapacityReportInstanceShapeConfig": CapacityReportInstanceShapeConfig,
     "CapacityReportShapeAvailability": CapacityReportShapeAvailability,
     "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,
@@ -1200,6 +1205,7 @@ core_type_mapping = {
     "SoftResetActionDetails": SoftResetActionDetails,
     "Subnet": Subnet,
     "SubnetTopology": SubnetTopology,
+    "SupportedCapabilities": SupportedCapabilities,
     "TcpOptions": TcpOptions,
     "TerminatePreemptionAction": TerminatePreemptionAction,
     "TerminationProceedInstancePoolInstanceDetails": TerminationProceedInstancePoolInstanceDetails,

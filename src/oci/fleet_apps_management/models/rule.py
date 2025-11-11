@@ -15,6 +15,14 @@ class Rule(object):
     Rule for DYNAMIC selection.
     """
 
+    #: A constant which can be used with the match_condition property of a Rule.
+    #: This constant has a value of "MATCH_ALL"
+    MATCH_CONDITION_MATCH_ALL = "MATCH_ALL"
+
+    #: A constant which can be used with the match_condition property of a Rule.
+    #: This constant has a value of "ANY"
+    MATCH_CONDITION_ANY = "ANY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Rule object with values from keyword arguments.
@@ -36,23 +44,39 @@ class Rule(object):
             The value to assign to the conditions property of this Rule.
         :type conditions: list[oci.fleet_apps_management.models.Condition]
 
+        :param match_condition:
+            The value to assign to the match_condition property of this Rule.
+            Allowed values for this property are: "MATCH_ALL", "ANY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type match_condition: str
+
+        :param compartment_id_in_subtree:
+            The value to assign to the compartment_id_in_subtree property of this Rule.
+        :type compartment_id_in_subtree: bool
+
         """
         self.swagger_types = {
             'basis': 'str',
             'compartment_id': 'str',
             'resource_compartment_id': 'str',
-            'conditions': 'list[Condition]'
+            'conditions': 'list[Condition]',
+            'match_condition': 'str',
+            'compartment_id_in_subtree': 'bool'
         }
         self.attribute_map = {
             'basis': 'basis',
             'compartment_id': 'compartmentId',
             'resource_compartment_id': 'resourceCompartmentId',
-            'conditions': 'conditions'
+            'conditions': 'conditions',
+            'match_condition': 'matchCondition',
+            'compartment_id_in_subtree': 'compartmentIdInSubtree'
         }
         self._basis = None
         self._compartment_id = None
         self._resource_compartment_id = None
         self._conditions = None
+        self._match_condition = None
+        self._compartment_id_in_subtree = None
 
     @property
     def basis(self):
@@ -157,6 +181,68 @@ class Rule(object):
         :type: list[oci.fleet_apps_management.models.Condition]
         """
         self._conditions = conditions
+
+    @property
+    def match_condition(self):
+        """
+        Gets the match_condition of this Rule.
+        Match condition for the rule selection.
+        Include resources that match all rules or any of the rules.
+        Default value for `matchCondition` is ANY
+
+        Allowed values for this property are: "MATCH_ALL", "ANY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The match_condition of this Rule.
+        :rtype: str
+        """
+        return self._match_condition
+
+    @match_condition.setter
+    def match_condition(self, match_condition):
+        """
+        Sets the match_condition of this Rule.
+        Match condition for the rule selection.
+        Include resources that match all rules or any of the rules.
+        Default value for `matchCondition` is ANY
+
+
+        :param match_condition: The match_condition of this Rule.
+        :type: str
+        """
+        allowed_values = ["MATCH_ALL", "ANY"]
+        if not value_allowed_none_or_none_sentinel(match_condition, allowed_values):
+            match_condition = 'UNKNOWN_ENUM_VALUE'
+        self._match_condition = match_condition
+
+    @property
+    def compartment_id_in_subtree(self):
+        """
+        Gets the compartment_id_in_subtree of this Rule.
+        If set to true, resources will be returned for not only the provided compartment, but all compartments which
+        descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        Default value for `compartmentIdInSubtree` is false
+
+
+        :return: The compartment_id_in_subtree of this Rule.
+        :rtype: bool
+        """
+        return self._compartment_id_in_subtree
+
+    @compartment_id_in_subtree.setter
+    def compartment_id_in_subtree(self, compartment_id_in_subtree):
+        """
+        Sets the compartment_id_in_subtree of this Rule.
+        If set to true, resources will be returned for not only the provided compartment, but all compartments which
+        descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        Default value for `compartmentIdInSubtree` is false
+
+
+        :param compartment_id_in_subtree: The compartment_id_in_subtree of this Rule.
+        :type: bool
+        """
+        self._compartment_id_in_subtree = compartment_id_in_subtree
 
     def __repr__(self):
         return formatted_flat_dict(self)

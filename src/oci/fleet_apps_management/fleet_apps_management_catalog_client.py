@@ -370,6 +370,130 @@ class FleetAppsManagementCatalogClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def configure_catalog_item(self, catalog_item_id, configure_catalog_item_details, **kwargs):
+        """
+        Configures a CatalogItem. Creating new Catalog Item.
+
+
+        :param str catalog_item_id: (required)
+            The `OCID`__ of the CatalogItem.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.fleet_apps_management.models.ConfigureCatalogItemDetails configure_catalog_item_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.fleet_apps_management.models.CatalogItem`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fleetappsmanagement/configure_catalog_item.py.html>`__ to see an example of how to use configure_catalog_item API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogItemId']
+        resource_path = "/catalogItems/{catalogItemId}/actions/configure"
+        method = "POST"
+        operation_name = "configure_catalog_item"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CatalogItem/ConfigureCatalogItem"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"configure_catalog_item got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "catalogItemId": catalog_item_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=configure_catalog_item_details,
+                response_type="CatalogItem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=configure_catalog_item_details,
+                response_type="CatalogItem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_catalog_item(self, create_catalog_item_details, **kwargs):
         """
         Creates a CatalogItem.
@@ -675,6 +799,106 @@ class FleetAppsManagementCatalogClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_catalog_item_variables_definition(self, catalog_item_id, **kwargs):
+        """
+        Gets information about a CatalogItem Variables.
+
+
+        :param str catalog_item_id: (required)
+            The `OCID`__ of the CatalogItem.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.fleet_apps_management.models.CatalogItemVariablesDefinition`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fleetappsmanagement/get_catalog_item_variables_definition.py.html>`__ to see an example of how to use get_catalog_item_variables_definition API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogItemId']
+        resource_path = "/catalogItems/{catalogItemId}/variablesDefinitions"
+        method = "GET"
+        operation_name = "get_catalog_item_variables_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20250228/CatalogItemVariablesDefinition/GetCatalogItemVariablesDefinition"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_catalog_item_variables_definition got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "catalogItemId": catalog_item_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CatalogItemVariablesDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CatalogItemVariablesDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_catalog_items(self, compartment_id, **kwargs):
         """
         Gets a list of Catalog Items in a compartment.
@@ -725,6 +949,12 @@ class FleetAppsManagementCatalogClient(object):
 
             Allowed values are: "LIST_ALL_VERSIONS", "LIST_EARLIEST_VERSION_ONLY", "LIST_LATEST_VERSION_ONLY"
 
+        :param str package_type: (optional)
+            A filter to return only resources that match the given package type. The
+            state value is case-insensitive.
+
+            Allowed values are: "TF_PACKAGE", "NON_TF_PACKAGE", "CONFIG_FILE"
+
         :param bool should_list_public_items: (optional)
             The indicator to append Public Items from the root compartment to any query, when set to TRUE.
 
@@ -767,6 +997,7 @@ class FleetAppsManagementCatalogClient(object):
             "opc_request_id",
             "catalog_listing_id",
             "catalog_listing_version_criteria",
+            "package_type",
             "should_list_public_items"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -802,6 +1033,13 @@ class FleetAppsManagementCatalogClient(object):
                     f"Invalid value for `catalog_listing_version_criteria`, must be one of { catalog_listing_version_criteria_allowed_values }"
                 )
 
+        if 'package_type' in kwargs:
+            package_type_allowed_values = ["TF_PACKAGE", "NON_TF_PACKAGE", "CONFIG_FILE"]
+            if kwargs['package_type'] not in package_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `package_type`, must be one of { package_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "configSourceType": kwargs.get("config_source_type", missing),
@@ -813,6 +1051,7 @@ class FleetAppsManagementCatalogClient(object):
             "page": kwargs.get("page", missing),
             "catalogListingId": kwargs.get("catalog_listing_id", missing),
             "catalogListingVersionCriteria": kwargs.get("catalog_listing_version_criteria", missing),
+            "packageType": kwargs.get("package_type", missing),
             "shouldListPublicItems": kwargs.get("should_list_public_items", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

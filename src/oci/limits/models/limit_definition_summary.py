@@ -70,6 +70,10 @@ class LimitDefinitionSummary(object):
             The value to assign to the is_dynamic property of this LimitDefinitionSummary.
         :type is_dynamic: bool
 
+        :param external_location_supported_subscriptions:
+            The value to assign to the external_location_supported_subscriptions property of this LimitDefinitionSummary.
+        :type external_location_supported_subscriptions: list[str]
+
         :param supported_subscriptions:
             The value to assign to the supported_subscriptions property of this LimitDefinitionSummary.
         :type supported_subscriptions: list[str]
@@ -89,6 +93,7 @@ class LimitDefinitionSummary(object):
             'is_deprecated': 'bool',
             'is_eligible_for_limit_increase': 'bool',
             'is_dynamic': 'bool',
+            'external_location_supported_subscriptions': 'list[str]',
             'supported_subscriptions': 'list[str]',
             'supported_quota_families': 'list[str]'
         }
@@ -102,6 +107,7 @@ class LimitDefinitionSummary(object):
             'is_deprecated': 'isDeprecated',
             'is_eligible_for_limit_increase': 'isEligibleForLimitIncrease',
             'is_dynamic': 'isDynamic',
+            'external_location_supported_subscriptions': 'externalLocationSupportedSubscriptions',
             'supported_subscriptions': 'supportedSubscriptions',
             'supported_quota_families': 'supportedQuotaFamilies'
         }
@@ -114,6 +120,7 @@ class LimitDefinitionSummary(object):
         self._is_deprecated = None
         self._is_eligible_for_limit_increase = None
         self._is_dynamic = None
+        self._external_location_supported_subscriptions = None
         self._supported_subscriptions = None
         self._supported_quota_families = None
 
@@ -342,10 +349,34 @@ class LimitDefinitionSummary(object):
         self._is_dynamic = is_dynamic
 
     @property
+    def external_location_supported_subscriptions(self):
+        """
+        Gets the external_location_supported_subscriptions of this LimitDefinitionSummary.
+        An array of subscription types that support ExternalLocations.
+
+
+        :return: The external_location_supported_subscriptions of this LimitDefinitionSummary.
+        :rtype: list[str]
+        """
+        return self._external_location_supported_subscriptions
+
+    @external_location_supported_subscriptions.setter
+    def external_location_supported_subscriptions(self, external_location_supported_subscriptions):
+        """
+        Sets the external_location_supported_subscriptions of this LimitDefinitionSummary.
+        An array of subscription types that support ExternalLocations.
+
+
+        :param external_location_supported_subscriptions: The external_location_supported_subscriptions of this LimitDefinitionSummary.
+        :type: list[str]
+        """
+        self._external_location_supported_subscriptions = external_location_supported_subscriptions
+
+    @property
     def supported_subscriptions(self):
         """
         Gets the supported_subscriptions of this LimitDefinitionSummary.
-        An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
 
 
         :return: The supported_subscriptions of this LimitDefinitionSummary.
@@ -357,7 +388,7 @@ class LimitDefinitionSummary(object):
     def supported_subscriptions(self, supported_subscriptions):
         """
         Sets the supported_subscriptions of this LimitDefinitionSummary.
-        An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        An array of subscription types supported by the limit. For example, the type of subscription, such as SAAS, ERP, or CRM.
 
 
         :param supported_subscriptions: The supported_subscriptions of this LimitDefinitionSummary.

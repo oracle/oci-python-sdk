@@ -2428,7 +2428,7 @@ class FleetAppsManagementAdminClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
 
-            Allowed values are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING"
+            Allowed values are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", "INACTIVE"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -2518,7 +2518,7 @@ class FleetAppsManagementAdminClient(object):
                 f"list_platform_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING"]
+            lifecycle_state_allowed_values = ["ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "CREATING", "INACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"

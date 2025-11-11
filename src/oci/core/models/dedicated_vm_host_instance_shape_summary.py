@@ -28,17 +28,24 @@ class DedicatedVmHostInstanceShapeSummary(object):
             The value to assign to the instance_shape_name property of this DedicatedVmHostInstanceShapeSummary.
         :type instance_shape_name: str
 
+        :param supported_capabilities:
+            The value to assign to the supported_capabilities property of this DedicatedVmHostInstanceShapeSummary.
+        :type supported_capabilities: oci.core.models.SupportedCapabilities
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
-            'instance_shape_name': 'str'
+            'instance_shape_name': 'str',
+            'supported_capabilities': 'SupportedCapabilities'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
-            'instance_shape_name': 'instanceShapeName'
+            'instance_shape_name': 'instanceShapeName',
+            'supported_capabilities': 'supportedCapabilities'
         }
         self._availability_domain = None
         self._instance_shape_name = None
+        self._supported_capabilities = None
 
     @property
     def availability_domain(self):
@@ -87,6 +94,26 @@ class DedicatedVmHostInstanceShapeSummary(object):
         :type: str
         """
         self._instance_shape_name = instance_shape_name
+
+    @property
+    def supported_capabilities(self):
+        """
+        Gets the supported_capabilities of this DedicatedVmHostInstanceShapeSummary.
+
+        :return: The supported_capabilities of this DedicatedVmHostInstanceShapeSummary.
+        :rtype: oci.core.models.SupportedCapabilities
+        """
+        return self._supported_capabilities
+
+    @supported_capabilities.setter
+    def supported_capabilities(self, supported_capabilities):
+        """
+        Sets the supported_capabilities of this DedicatedVmHostInstanceShapeSummary.
+
+        :param supported_capabilities: The supported_capabilities of this DedicatedVmHostInstanceShapeSummary.
+        :type: oci.core.models.SupportedCapabilities
+        """
+        self._supported_capabilities = supported_capabilities
 
     def __repr__(self):
         return formatted_flat_dict(self)

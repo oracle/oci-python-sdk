@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.163.1 - 2025-11-11
+====================
+
+Added 
+----- 
+* Support for image lookup by URI in OCI Registry in the Generic Artifacts service 
+* Support for allocating limits by partner clouds in the Limits service 
+* Support for additional parameters for filtering node pool options in the Kubernetes Engine service 
+* Support for configuration governance in provisioning through catalog items in the Fleet Application Management service 
+* Support for curated reports in the Fleet Application Management service 
+* Support for runbook import and export in the Fleet Application Management service  
+* Support for resource inventory with patch details in the Fleet Application Management service 
+* Support for multiple capacity bucket configurations in dedicated VM Hosts in the Compute service 
+* Support for project flash APIs in the Generative AI service  
+
+====================
 2.163.0 - 2025-11-04
 ====================
 

@@ -142,7 +142,7 @@ class InventoryRecordSummary(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this InventoryRecordSummary.
-        The OCID of the Inventory target.
+        The id of the Inventory target.
 
 
         :return: The target_id of this InventoryRecordSummary.
@@ -154,7 +154,7 @@ class InventoryRecordSummary(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this InventoryRecordSummary.
-        The OCID of the Inventory target.
+        The id of the Inventory target.
 
 
         :param target_id: The target_id of this InventoryRecordSummary.

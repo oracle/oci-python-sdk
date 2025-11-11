@@ -23,7 +23,7 @@ class SelfHostedInstanceRunOnDetails(RunOnDetails):
 
         :param kind:
             The value to assign to the kind property of this SelfHostedInstanceRunOnDetails.
-            Allowed values for this property are: "SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES"
+            Allowed values for this property are: "SCHEDULED_INSTANCES", "SELF_HOSTED_INSTANCES", "PREVIOUS_TASK_INSTANCES", "SCHEDULE_INSTANCE_TARGETS"
         :type kind: str
 
         :param host:

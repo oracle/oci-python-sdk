@@ -99,7 +99,7 @@ class ServiceSummary(object):
     def supported_subscriptions(self):
         """
         Gets the supported_subscriptions of this ServiceSummary.
-        An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
 
 
         :return: The supported_subscriptions of this ServiceSummary.
@@ -111,7 +111,7 @@ class ServiceSummary(object):
     def supported_subscriptions(self, supported_subscriptions):
         """
         Sets the supported_subscriptions of this ServiceSummary.
-        An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+        An array of subscription types supported by the service. For example, the type of subscription, such as SAAS, ERP, or CRM.
 
 
         :param supported_subscriptions: The supported_subscriptions of this ServiceSummary.

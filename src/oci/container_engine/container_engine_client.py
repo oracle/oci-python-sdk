@@ -1967,6 +1967,9 @@ class ContainerEngineClient(object):
         :param str compartment_id: (optional)
             The OCID of the compartment.
 
+        :param bool should_list_all_patch_versions: (optional)
+            Option to show all kubernetes patch versions
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -2001,6 +2004,7 @@ class ContainerEngineClient(object):
             "allow_control_chars",
             "retry_strategy",
             "compartment_id",
+            "should_list_all_patch_versions",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2019,7 +2023,8 @@ class ContainerEngineClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "shouldListAllPatchVersions": kwargs.get("should_list_all_patch_versions", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2275,6 +2280,22 @@ class ContainerEngineClient(object):
         :param str compartment_id: (optional)
             The OCID of the compartment.
 
+        :param bool should_list_all_patch_versions: (optional)
+            Option to show all kubernetes patch versions
+
+        :param str node_pool_os_type: (optional)
+            Filter node pool options by OS type.
+
+            Allowed values are: "OL7", "OL8", "UBUNTU"
+
+        :param str node_pool_os_arch: (optional)
+            Filter node pool options by OS architecture.
+
+            Allowed values are: "X86_64", "AARCH64"
+
+        :param str node_pool_k8s_version: (optional)
+            Filter node pool options by Kubernetes version.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -2309,6 +2330,10 @@ class ContainerEngineClient(object):
             "allow_control_chars",
             "retry_strategy",
             "compartment_id",
+            "should_list_all_patch_versions",
+            "node_pool_os_type",
+            "node_pool_os_arch",
+            "node_pool_k8s_version",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2326,8 +2351,26 @@ class ContainerEngineClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
+        if 'node_pool_os_type' in kwargs:
+            node_pool_os_type_allowed_values = ["OL7", "OL8", "UBUNTU"]
+            if kwargs['node_pool_os_type'] not in node_pool_os_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `node_pool_os_type`, must be one of { node_pool_os_type_allowed_values }"
+                )
+
+        if 'node_pool_os_arch' in kwargs:
+            node_pool_os_arch_allowed_values = ["X86_64", "AARCH64"]
+            if kwargs['node_pool_os_arch'] not in node_pool_os_arch_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `node_pool_os_arch`, must be one of { node_pool_os_arch_allowed_values }"
+                )
+
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "shouldListAllPatchVersions": kwargs.get("should_list_all_patch_versions", missing),
+            "nodePoolOsType": kwargs.get("node_pool_os_type", missing),
+            "nodePoolOsArch": kwargs.get("node_pool_os_arch", missing),
+            "nodePoolK8sVersion": kwargs.get("node_pool_k8s_version", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2933,7 +2976,8 @@ class ContainerEngineClient(object):
             Allowed values are: "NAME", "TIME_CREATED"
 
         :param bool should_show_all_versions: (optional)
-            Whether to show all add-on versions
+            Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers.
+            Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

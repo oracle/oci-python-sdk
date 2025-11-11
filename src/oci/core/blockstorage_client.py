@@ -6605,6 +6605,10 @@ class BlockstorageClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
+        :param str opc_parent_resource_principal_token_url: (optional)
+            The endpoint that will be used to get the resource principal token
+            of the parent resource.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6634,7 +6638,8 @@ class BlockstorageClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "if_match"
+            "if_match",
+            "opc_parent_resource_principal_token_url"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6654,7 +6659,8 @@ class BlockstorageClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
+            "if-match": kwargs.get("if_match", missing),
+            "opc-parent-resource-principal-token-url": kwargs.get("opc_parent_resource_principal_token_url", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

@@ -30,17 +30,24 @@ class ApiBasedExecutionDetails(ExecutionDetails):
             The value to assign to the endpoint property of this ApiBasedExecutionDetails.
         :type endpoint: str
 
+        :param system_variables:
+            The value to assign to the system_variables property of this ApiBasedExecutionDetails.
+        :type system_variables: list[str]
+
         """
         self.swagger_types = {
             'execution_type': 'str',
-            'endpoint': 'str'
+            'endpoint': 'str',
+            'system_variables': 'list[str]'
         }
         self.attribute_map = {
             'execution_type': 'executionType',
-            'endpoint': 'endpoint'
+            'endpoint': 'endpoint',
+            'system_variables': 'systemVariables'
         }
         self._execution_type = None
         self._endpoint = None
+        self._system_variables = None
         self._execution_type = 'API'
 
     @property
@@ -66,6 +73,30 @@ class ApiBasedExecutionDetails(ExecutionDetails):
         :type: str
         """
         self._endpoint = endpoint
+
+    @property
+    def system_variables(self):
+        """
+        Gets the system_variables of this ApiBasedExecutionDetails.
+        The list of system variables.
+
+
+        :return: The system_variables of this ApiBasedExecutionDetails.
+        :rtype: list[str]
+        """
+        return self._system_variables
+
+    @system_variables.setter
+    def system_variables(self, system_variables):
+        """
+        Sets the system_variables of this ApiBasedExecutionDetails.
+        The list of system variables.
+
+
+        :param system_variables: The system_variables of this ApiBasedExecutionDetails.
+        :type: list[str]
+        """
+        self._system_variables = system_variables
 
     def __repr__(self):
         return formatted_flat_dict(self)

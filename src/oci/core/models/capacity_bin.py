@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CapacityBin(object):
     """
-    Total and remaining CPU & memory capacity for each capacity bucket.
+    Total and remaining CPU and memory capacity for each capacity bucket.
     """
 
     def __init__(self, **kwargs):

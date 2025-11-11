@@ -39,6 +39,8 @@ Fleet Apps Management
     oci.fleet_apps_management.models.AnnouncementCollection
     oci.fleet_apps_management.models.AnnouncementSummary
     oci.fleet_apps_management.models.ApiBasedExecutionDetails
+    oci.fleet_apps_management.models.ApmDomainVariable
+    oci.fleet_apps_management.models.ArrayVariable
     oci.fleet_apps_management.models.ArtifactDetails
     oci.fleet_apps_management.models.AssociatedFleetCredentialDetails
     oci.fleet_apps_management.models.AssociatedFleetPropertyDetails
@@ -47,12 +49,26 @@ Fleet Apps Management
     oci.fleet_apps_management.models.AssociatedSchedulerDefinition
     oci.fleet_apps_management.models.AssociatedSharedTaskDetails
     oci.fleet_apps_management.models.AssociatedTaskDetails
+    oci.fleet_apps_management.models.Association
+    oci.fleet_apps_management.models.AutonomousContainerDbVariable
+    oci.fleet_apps_management.models.AutonomousContainerDbVariableDependsOn
+    oci.fleet_apps_management.models.AutonomousDataBaseVariable
+    oci.fleet_apps_management.models.AutonomousDataBaseVariableDependsOn
+    oci.fleet_apps_management.models.AutonomousDatabaseVersionVariable
+    oci.fleet_apps_management.models.AutonomousDatabaseVersionVariableDependsOn
+    oci.fleet_apps_management.models.AvailabilityDomainVariable
+    oci.fleet_apps_management.models.AvailabilityDomainVariableDependsOn
+    oci.fleet_apps_management.models.BaseOutput
+    oci.fleet_apps_management.models.BaseVariable
+    oci.fleet_apps_management.models.BoolOutput
+    oci.fleet_apps_management.models.BooleanVariable
     oci.fleet_apps_management.models.CatalogContentDetails
     oci.fleet_apps_management.models.CatalogGitResultConfig
     oci.fleet_apps_management.models.CatalogGitSourceConfig
     oci.fleet_apps_management.models.CatalogItem
     oci.fleet_apps_management.models.CatalogItemCollection
     oci.fleet_apps_management.models.CatalogItemSummary
+    oci.fleet_apps_management.models.CatalogItemVariablesDefinition
     oci.fleet_apps_management.models.CatalogMarketplaceSourceConfig
     oci.fleet_apps_management.models.CatalogParResultConfig
     oci.fleet_apps_management.models.CatalogParSourceConfig
@@ -69,7 +85,12 @@ Fleet Apps Management
     oci.fleet_apps_management.models.ChangeRunbookCompartmentDetails
     oci.fleet_apps_management.models.ChangeTaskRecordCompartmentDetails
     oci.fleet_apps_management.models.CheckResourceTaggingDetails
+    oci.fleet_apps_management.models.Choice
     oci.fleet_apps_management.models.CloneCatalogItemDetails
+    oci.fleet_apps_management.models.CloudVmClusterId
+    oci.fleet_apps_management.models.ColumnMetadata
+    oci.fleet_apps_management.models.CompartmentVariable
+    oci.fleet_apps_management.models.Compliance
     oci.fleet_apps_management.models.ComplianceDetailPolicy
     oci.fleet_apps_management.models.ComplianceDetailProduct
     oci.fleet_apps_management.models.ComplianceDetailResource
@@ -97,8 +118,12 @@ Fleet Apps Management
     oci.fleet_apps_management.models.ConfigAssociationDetails
     oci.fleet_apps_management.models.ConfigCategoryDetails
     oci.fleet_apps_management.models.ConfigFileDetails
+    oci.fleet_apps_management.models.ConfigureCatalogItemDetails
     oci.fleet_apps_management.models.ConfirmTargetsDetails
+    oci.fleet_apps_management.models.ContainerClusterVariable
+    oci.fleet_apps_management.models.ContainerClusterVariableDependsOn
     oci.fleet_apps_management.models.ContentDetails
+    oci.fleet_apps_management.models.CopyableStringOutput
     oci.fleet_apps_management.models.CreateCatalogItemDetails
     oci.fleet_apps_management.models.CreateCompliancePolicyRuleDetails
     oci.fleet_apps_management.models.CreateFleetCredentialDetails
@@ -118,14 +143,32 @@ Fleet Apps Management
     oci.fleet_apps_management.models.CredentialConfigCategoryDetails
     oci.fleet_apps_management.models.CredentialDetails
     oci.fleet_apps_management.models.CredentialEntitySpecificDetails
+    oci.fleet_apps_management.models.CsvOutput
     oci.fleet_apps_management.models.CustomSchedule
+    oci.fleet_apps_management.models.DataBaseVariable
+    oci.fleet_apps_management.models.DataBaseVariableDependsOn
+    oci.fleet_apps_management.models.DatabaseCdbId
+    oci.fleet_apps_management.models.DatabaseDataGuardId
+    oci.fleet_apps_management.models.DatabaseDataguardAssociationId
+    oci.fleet_apps_management.models.DatabaseDbNodeId
+    oci.fleet_apps_management.models.DatabaseExadataId
+    oci.fleet_apps_management.models.DatetimeVariable
+    oci.fleet_apps_management.models.DbHomeVariable
+    oci.fleet_apps_management.models.DbHomeVariableDependsOn
+    oci.fleet_apps_management.models.DbHomeVersionVariable
+    oci.fleet_apps_management.models.DbHomeVersionVariableDependsOn
+    oci.fleet_apps_management.models.DbSystemVariable
+    oci.fleet_apps_management.models.DbSystemVariableDependsOn
     oci.fleet_apps_management.models.DependentPatchDetails
     oci.fleet_apps_management.models.DeployedResourceDetails
     oci.fleet_apps_management.models.Details
     oci.fleet_apps_management.models.DiscoveredTarget
+    oci.fleet_apps_management.models.DynamicGroupsVariable
+    oci.fleet_apps_management.models.DynamicGroupsVariableDependsOn
     oci.fleet_apps_management.models.DynamicResourceSelection
     oci.fleet_apps_management.models.EnableLatestPolicyDetails
     oci.fleet_apps_management.models.EntityExecutionDetails
+    oci.fleet_apps_management.models.EnumVariable
     oci.fleet_apps_management.models.EnvironmentConfigCategoryDetails
     oci.fleet_apps_management.models.EnvironmentFleetDetails
     oci.fleet_apps_management.models.Execution
@@ -134,8 +177,19 @@ Fleet Apps Management
     oci.fleet_apps_management.models.ExecutionSummary
     oci.fleet_apps_management.models.ExecutionWorkflowDetails
     oci.fleet_apps_management.models.ExportComplianceReportDetails
+    oci.fleet_apps_management.models.ExportRunbookDetails
+    oci.fleet_apps_management.models.ExportRunbookVersionDetails
+    oci.fleet_apps_management.models.FaultDomainVariable
+    oci.fleet_apps_management.models.FaultDomainVariableDependsOn
     oci.fleet_apps_management.models.FileInputArgument
+    oci.fleet_apps_management.models.FileStorageExportSetId
+    oci.fleet_apps_management.models.FileStorageFilesystemId
+    oci.fleet_apps_management.models.FileStorageMountTargetId
     oci.fleet_apps_management.models.FileTaskArgument
+    oci.fleet_apps_management.models.FileVariable
+    oci.fleet_apps_management.models.Filter
+    oci.fleet_apps_management.models.FindRunbookExportDependencyDetails
+    oci.fleet_apps_management.models.FindRunbookImportDependencyDetails
     oci.fleet_apps_management.models.Fleet
     oci.fleet_apps_management.models.FleetBasedActionGroup
     oci.fleet_apps_management.models.FleetBasedActionGroupDetails
@@ -163,11 +217,30 @@ Fleet Apps Management
     oci.fleet_apps_management.models.GenericFleetDetails
     oci.fleet_apps_management.models.Group
     oci.fleet_apps_management.models.GroupFleetDetails
+    oci.fleet_apps_management.models.GroupsVariable
+    oci.fleet_apps_management.models.GroupsVariableDependsOn
+    oci.fleet_apps_management.models.IdentityDomainVariable
+    oci.fleet_apps_management.models.IdentityDomainVariableDependsOn
+    oci.fleet_apps_management.models.ImageVariable
+    oci.fleet_apps_management.models.ImageVariableDependsOn
+    oci.fleet_apps_management.models.ImportRunbookDetails
+    oci.fleet_apps_management.models.ImportRunbookPrecheckDetails
+    oci.fleet_apps_management.models.ImportRunbookPrecheckRequiredValue
+    oci.fleet_apps_management.models.ImportRunbookVersionDetails
     oci.fleet_apps_management.models.InputArgument
     oci.fleet_apps_management.models.InputFileContentDetails
     oci.fleet_apps_management.models.InputFileObjectStorageBucketContentDetails
     oci.fleet_apps_management.models.InputParameter
+    oci.fleet_apps_management.models.InstalledPatchCollection
+    oci.fleet_apps_management.models.InstalledPatchSummary
+    oci.fleet_apps_management.models.InstanceShapeVariable
+    oci.fleet_apps_management.models.InstanceShapeVariableDependsOn
+    oci.fleet_apps_management.models.InstanceShapeVariableWithFlex
+    oci.fleet_apps_management.models.InstanceShapeVariableWithFlexDependsOn
     oci.fleet_apps_management.models.InstanceSummary
+    oci.fleet_apps_management.models.InstanceVariable
+    oci.fleet_apps_management.models.InstanceVariableDependsOn
+    oci.fleet_apps_management.models.IntegerVariable
     oci.fleet_apps_management.models.InventoryRecord
     oci.fleet_apps_management.models.InventoryRecordCollection
     oci.fleet_apps_management.models.InventoryRecordComponent
@@ -178,8 +251,32 @@ Fleet Apps Management
     oci.fleet_apps_management.models.InventoryResourceSummary
     oci.fleet_apps_management.models.JobActivity
     oci.fleet_apps_management.models.JobExecutionDetails
+    oci.fleet_apps_management.models.JsonOutput
     oci.fleet_apps_management.models.KeyEncryptionCredentialDetails
+    oci.fleet_apps_management.models.KeyValueProperty
+    oci.fleet_apps_management.models.KmsKeyVariable
+    oci.fleet_apps_management.models.KmsKeyVariableDependsOn
+    oci.fleet_apps_management.models.KmsSecretVariable
+    oci.fleet_apps_management.models.KmsSecretVariableDependsOn
+    oci.fleet_apps_management.models.KmsVaultVariable
+    oci.fleet_apps_management.models.KmsVaultVariableDependsOn
+    oci.fleet_apps_management.models.KubernetesVersionsVariable
+    oci.fleet_apps_management.models.KubernetesVersionsVariableDependsOn
     oci.fleet_apps_management.models.LifecycleOperationConfigCategoryDetails
+    oci.fleet_apps_management.models.LinkOutput
+    oci.fleet_apps_management.models.ListOutput
+    oci.fleet_apps_management.models.LoadBalancerReservedIps
+    oci.fleet_apps_management.models.LoadBalancerVariable
+    oci.fleet_apps_management.models.LoadBalancerVariableDependsOn
+    oci.fleet_apps_management.models.LogAnalyticsEntityTypes
+    oci.fleet_apps_management.models.LogAnalyticsLogEntities
+    oci.fleet_apps_management.models.LogAnalyticsLogEntitiesDependsOn
+    oci.fleet_apps_management.models.LogAnalyticsLogGroup
+    oci.fleet_apps_management.models.LogAnalyticsLogGroupDependsOn
+    oci.fleet_apps_management.models.LogAnalyticsScheduledTasks
+    oci.fleet_apps_management.models.LogAnalyticsScheduledTasksDependsOn
+    oci.fleet_apps_management.models.LogAnalyticsSources
+    oci.fleet_apps_management.models.LogAnalyticsSourcesDependsOn
     oci.fleet_apps_management.models.MaintenanceWindow
     oci.fleet_apps_management.models.MaintenanceWindowCollection
     oci.fleet_apps_management.models.MaintenanceWindowSchedule
@@ -189,21 +286,44 @@ Fleet Apps Management
     oci.fleet_apps_management.models.ManagedEntityAggregation
     oci.fleet_apps_management.models.ManagedEntityAggregationCollection
     oci.fleet_apps_management.models.ManagedEntityDimension
+    oci.fleet_apps_management.models.ManagementAgentDependsOn
+    oci.fleet_apps_management.models.ManagementAgents
     oci.fleet_apps_management.models.ManualResourceSelection
+    oci.fleet_apps_management.models.MapOutput
     oci.fleet_apps_management.models.ModelProperty
+    oci.fleet_apps_management.models.MountTargetsVariable
+    oci.fleet_apps_management.models.MountTargetsVariableDependsOn
+    oci.fleet_apps_management.models.MultiValueFilter
+    oci.fleet_apps_management.models.MultilineVariable
+    oci.fleet_apps_management.models.MysqlConfigurationId
+    oci.fleet_apps_management.models.MysqlShapeId
+    oci.fleet_apps_management.models.NatGatewayVariable
+    oci.fleet_apps_management.models.NatGatewayVariableDependsOn
+    oci.fleet_apps_management.models.NetworkLoadBalancerId
     oci.fleet_apps_management.models.NotificationPreference
+    oci.fleet_apps_management.models.NsgVariable
+    oci.fleet_apps_management.models.NsgVariableDependsOn
+    oci.fleet_apps_management.models.NumberOutput
+    oci.fleet_apps_management.models.NumberVariable
     oci.fleet_apps_management.models.ObjectStorageBucketConfigFileDetails
     oci.fleet_apps_management.models.ObjectStorageBucketContentDetails
+    oci.fleet_apps_management.models.ObjectStorageBucketName
+    oci.fleet_apps_management.models.OcidOutput
+    oci.fleet_apps_management.models.OdsProjectVariable
+    oci.fleet_apps_management.models.OdsProjectVariableDependsOn
     oci.fleet_apps_management.models.Onboarding
     oci.fleet_apps_management.models.OnboardingCollection
     oci.fleet_apps_management.models.OnboardingPolicyCollection
     oci.fleet_apps_management.models.OnboardingPolicySummary
     oci.fleet_apps_management.models.OnboardingSummary
     oci.fleet_apps_management.models.OperationRunbook
+    oci.fleet_apps_management.models.OrderClause
     oci.fleet_apps_management.models.Outcome
+    oci.fleet_apps_management.models.OutputGroup
     oci.fleet_apps_management.models.OutputVariableDetails
     oci.fleet_apps_management.models.OutputVariableInputArgument
     oci.fleet_apps_management.models.OutputVariableMapping
+    oci.fleet_apps_management.models.PasswordVariable
     oci.fleet_apps_management.models.Patch
     oci.fleet_apps_management.models.PatchCollection
     oci.fleet_apps_management.models.PatchFileContentDetails
@@ -217,6 +337,7 @@ Fleet Apps Management
     oci.fleet_apps_management.models.PatchType
     oci.fleet_apps_management.models.PatchTypeConfigCategoryDetails
     oci.fleet_apps_management.models.PauseDetails
+    oci.fleet_apps_management.models.Placeholder
     oci.fleet_apps_management.models.PlainTextCredentialDetails
     oci.fleet_apps_management.models.PlatformConfiguration
     oci.fleet_apps_management.models.PlatformConfigurationCollection
@@ -226,6 +347,8 @@ Fleet Apps Management
     oci.fleet_apps_management.models.Preferences
     oci.fleet_apps_management.models.PreviousTaskInstanceDetails
     oci.fleet_apps_management.models.PreviousTaskInstanceRunOnDetails
+    oci.fleet_apps_management.models.PrivateEndpointVariable
+    oci.fleet_apps_management.models.PrivateEndpointVariableDependsOn
     oci.fleet_apps_management.models.ProductConfigCategoryDetails
     oci.fleet_apps_management.models.ProductFleetDetails
     oci.fleet_apps_management.models.ProductStackAsProductSubCategoryDetails
@@ -233,6 +356,7 @@ Fleet Apps Management
     oci.fleet_apps_management.models.ProductStackGenericSubCategoryDetails
     oci.fleet_apps_management.models.ProductStackSubCategoryDetails
     oci.fleet_apps_management.models.ProductVersionDetails
+    oci.fleet_apps_management.models.Prompt
     oci.fleet_apps_management.models.Properties
     oci.fleet_apps_management.models.PropertyCollection
     oci.fleet_apps_management.models.PropertySummary
@@ -240,8 +364,19 @@ Fleet Apps Management
     oci.fleet_apps_management.models.ProvisionCollection
     oci.fleet_apps_management.models.ProvisionSummary
     oci.fleet_apps_management.models.PublishRunbookDetails
+    oci.fleet_apps_management.models.RecommendedPatchCollection
+    oci.fleet_apps_management.models.RecommendedPatchSummary
+    oci.fleet_apps_management.models.RegionVariable
+    oci.fleet_apps_management.models.ReportCollection
+    oci.fleet_apps_management.models.ReportDetails
+    oci.fleet_apps_management.models.ReportFilter
+    oci.fleet_apps_management.models.ReportMetadataCollection
+    oci.fleet_apps_management.models.ReportMetadataSummary
+    oci.fleet_apps_management.models.ReportSummary
+    oci.fleet_apps_management.models.ReportTimeRange
     oci.fleet_apps_management.models.RequestResourceValidationDetails
     oci.fleet_apps_management.models.RequestTargetDiscoveryDetails
+    oci.fleet_apps_management.models.RequiredValue
     oci.fleet_apps_management.models.ResourceCollection
     oci.fleet_apps_management.models.ResourceCredentialEntitySpecificDetails
     oci.fleet_apps_management.models.ResourceSelection
@@ -253,12 +388,28 @@ Fleet Apps Management
     oci.fleet_apps_management.models.RunOnDetails
     oci.fleet_apps_management.models.Runbook
     oci.fleet_apps_management.models.RunbookCollection
+    oci.fleet_apps_management.models.RunbookExport
+    oci.fleet_apps_management.models.RunbookExportDependencyCollection
+    oci.fleet_apps_management.models.RunbookExportStatusCollection
+    oci.fleet_apps_management.models.RunbookExportStatusSummary
+    oci.fleet_apps_management.models.RunbookImport
+    oci.fleet_apps_management.models.RunbookImportAs
+    oci.fleet_apps_management.models.RunbookImportAsRunbook
+    oci.fleet_apps_management.models.RunbookImportAsVersion
+    oci.fleet_apps_management.models.RunbookImportDependencyCollection
+    oci.fleet_apps_management.models.RunbookImportDependencyFinderRequiredValue
+    oci.fleet_apps_management.models.RunbookImportRequiredValue
+    oci.fleet_apps_management.models.RunbookImportStatusCollection
+    oci.fleet_apps_management.models.RunbookImportStatusSummary
     oci.fleet_apps_management.models.RunbookSummary
+    oci.fleet_apps_management.models.RunbookTransferDependency
+    oci.fleet_apps_management.models.RunbookTransferDependencySummary
     oci.fleet_apps_management.models.RunbookVersion
     oci.fleet_apps_management.models.RunbookVersionCollection
     oci.fleet_apps_management.models.RunbookVersionSummary
     oci.fleet_apps_management.models.Schedule
     oci.fleet_apps_management.models.ScheduleInstanceRunOnDetails
+    oci.fleet_apps_management.models.ScheduleInstanceTargetRunOnDetails
     oci.fleet_apps_management.models.ScheduledFleetCollection
     oci.fleet_apps_management.models.ScheduledFleetSummary
     oci.fleet_apps_management.models.SchedulerDefinition
@@ -272,17 +423,33 @@ Fleet Apps Management
     oci.fleet_apps_management.models.SchedulerJobCollection
     oci.fleet_apps_management.models.SchedulerJobDimension
     oci.fleet_apps_management.models.SchedulerJobSummary
+    oci.fleet_apps_management.models.SchemaDocument
     oci.fleet_apps_management.models.ScriptBasedExecutionDetails
     oci.fleet_apps_management.models.SelectionCriteria
     oci.fleet_apps_management.models.SelfHostedInstanceConfigCategoryDetails
     oci.fleet_apps_management.models.SelfHostedInstanceRunOnDetails
+    oci.fleet_apps_management.models.ServiceGatewayVariable
+    oci.fleet_apps_management.models.ServiceGatewayVariableDependsOn
     oci.fleet_apps_management.models.SetDefaultRunbookDetails
+    oci.fleet_apps_management.models.SingleValueFilter
+    oci.fleet_apps_management.models.SshPublicKeyVariable
+    oci.fleet_apps_management.models.StackSource
     oci.fleet_apps_management.models.StepBasedUserActionDetails
     oci.fleet_apps_management.models.StepCollection
     oci.fleet_apps_management.models.StepSummary
     oci.fleet_apps_management.models.StringInputArgument
+    oci.fleet_apps_management.models.StringOutput
     oci.fleet_apps_management.models.StringTaskArgument
+    oci.fleet_apps_management.models.StringVariable
+    oci.fleet_apps_management.models.SubnetVariable
+    oci.fleet_apps_management.models.SubnetVariableDependsOn
+    oci.fleet_apps_management.models.TagVariable
+    oci.fleet_apps_management.models.TagVariableDependsOn
+    oci.fleet_apps_management.models.TargetComponentCollection
+    oci.fleet_apps_management.models.TargetComponentSummary
     oci.fleet_apps_management.models.TargetCredentialEntitySpecificDetails
+    oci.fleet_apps_management.models.TargetPropertyCollection
+    oci.fleet_apps_management.models.TargetPropertySummary
     oci.fleet_apps_management.models.TargetResource
     oci.fleet_apps_management.models.Task
     oci.fleet_apps_management.models.TaskArgument
@@ -293,6 +460,9 @@ Fleet Apps Management
     oci.fleet_apps_management.models.TaskVariable
     oci.fleet_apps_management.models.TerraformBasedExecutionDetails
     oci.fleet_apps_management.models.TimeBasedPauseDetails
+    oci.fleet_apps_management.models.TransferRunbookContentDetails
+    oci.fleet_apps_management.models.TransferRunbookObjectStorageBucketContentDetails
+    oci.fleet_apps_management.models.TransferRunbookParUrlContentDetails
     oci.fleet_apps_management.models.UpcomingSchedule
     oci.fleet_apps_management.models.UpdateCatalogItemDetails
     oci.fleet_apps_management.models.UpdateCompliancePolicyRuleDetails
@@ -314,8 +484,17 @@ Fleet Apps Management
     oci.fleet_apps_management.models.UserActionBasedPauseDetails
     oci.fleet_apps_management.models.UserActionDetails
     oci.fleet_apps_management.models.Variable
+    oci.fleet_apps_management.models.VariableGroup
+    oci.fleet_apps_management.models.VariableGroups
     oci.fleet_apps_management.models.VaultSecretCredentialDetails
+    oci.fleet_apps_management.models.VcnNetworkSecurityGroupId
+    oci.fleet_apps_management.models.VcnSecListId
+    oci.fleet_apps_management.models.VcnVariable
+    oci.fleet_apps_management.models.VcnVariableDependsOn
     oci.fleet_apps_management.models.Version
+    oci.fleet_apps_management.models.VolumeBackupPoliciesVariable
+    oci.fleet_apps_management.models.VolumeBackupPoliciesVariableDependsOn
+    oci.fleet_apps_management.models.VolumeId
     oci.fleet_apps_management.models.WorkRequest
     oci.fleet_apps_management.models.WorkRequestError
     oci.fleet_apps_management.models.WorkRequestErrorCollection

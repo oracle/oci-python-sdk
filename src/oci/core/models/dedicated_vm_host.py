@@ -81,6 +81,14 @@ class DedicatedVmHost(object):
             The value to assign to the id property of this DedicatedVmHost.
         :type id: str
 
+        :param capacity_config:
+            The value to assign to the capacity_config property of this DedicatedVmHost.
+        :type capacity_config: str
+
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this DedicatedVmHost.
+        :type is_memory_encryption_enabled: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DedicatedVmHost.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -126,6 +134,8 @@ class DedicatedVmHost(object):
             'freeform_tags': 'dict(str, str)',
             'placement_constraint_details': 'PlacementConstraintDetails',
             'id': 'str',
+            'capacity_config': 'str',
+            'is_memory_encryption_enabled': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'total_ocpus': 'float',
@@ -145,6 +155,8 @@ class DedicatedVmHost(object):
             'freeform_tags': 'freeformTags',
             'placement_constraint_details': 'placementConstraintDetails',
             'id': 'id',
+            'capacity_config': 'capacityConfig',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'total_ocpus': 'totalOcpus',
@@ -163,6 +175,8 @@ class DedicatedVmHost(object):
         self._freeform_tags = None
         self._placement_constraint_details = None
         self._id = None
+        self._capacity_config = None
+        self._is_memory_encryption_enabled = None
         self._lifecycle_state = None
         self._time_created = None
         self._total_ocpus = None
@@ -439,6 +453,56 @@ class DedicatedVmHost(object):
         self._id = id
 
     @property
+    def capacity_config(self):
+        """
+        Gets the capacity_config of this DedicatedVmHost.
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+        Run :func:`list_dedicated_vm_host_shapes` API to see details of this capacity configuration.
+
+
+        :return: The capacity_config of this DedicatedVmHost.
+        :rtype: str
+        """
+        return self._capacity_config
+
+    @capacity_config.setter
+    def capacity_config(self, capacity_config):
+        """
+        Sets the capacity_config of this DedicatedVmHost.
+        The capacity configuration selected to be configured for the Dedicated Virtual Machine host.
+        Run :func:`list_dedicated_vm_host_shapes` API to see details of this capacity configuration.
+
+
+        :param capacity_config: The capacity_config of this DedicatedVmHost.
+        :type: str
+        """
+        self._capacity_config = capacity_config
+
+    @property
+    def is_memory_encryption_enabled(self):
+        """
+        Gets the is_memory_encryption_enabled of this DedicatedVmHost.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+
+
+        :return: The is_memory_encryption_enabled of this DedicatedVmHost.
+        :rtype: bool
+        """
+        return self._is_memory_encryption_enabled
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, is_memory_encryption_enabled):
+        """
+        Sets the is_memory_encryption_enabled of this DedicatedVmHost.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
+
+
+        :param is_memory_encryption_enabled: The is_memory_encryption_enabled of this DedicatedVmHost.
+        :type: bool
+        """
+        self._is_memory_encryption_enabled = is_memory_encryption_enabled
+
+    @property
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DedicatedVmHost.
@@ -600,7 +664,7 @@ class DedicatedVmHost(object):
     def capacity_bins(self):
         """
         Gets the capacity_bins of this DedicatedVmHost.
-        A list of total and remaining CPU & memory per capacity bucket.
+        A list of total and remaining CPU and memory per capacity bucket.
 
 
         :return: The capacity_bins of this DedicatedVmHost.
@@ -612,7 +676,7 @@ class DedicatedVmHost(object):
     def capacity_bins(self, capacity_bins):
         """
         Sets the capacity_bins of this DedicatedVmHost.
-        A list of total and remaining CPU & memory per capacity bucket.
+        A list of total and remaining CPU and memory per capacity bucket.
 
 
         :param capacity_bins: The capacity_bins of this DedicatedVmHost.
