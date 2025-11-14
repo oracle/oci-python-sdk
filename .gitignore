@@ -25,3 +25,5 @@ tests/temp
 .vscode/
 .wercker/
 temp
+githubconf/
+ocibuild.conf
