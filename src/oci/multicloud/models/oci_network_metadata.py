@@ -121,17 +121,7 @@ class OciNetworkMetadata(object):
     def network_anchor_connection_status(self):
         """
         **[Required]** Gets the network_anchor_connection_status of this OciNetworkMetadata.
-        This can be merge to lifecycleState
-        CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned.
-        DISCONNECTED - Only partner cloud information is assigned.
-        CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources.
-        ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet.
-        ERROR - DRG attach fails during connection.
-        FAILED - Network anchor creation failed
-        NEEDS_ATTENTION - Network anchor is in temporary bad state
-        UPDATING - Network anchor is getting updated.
-        DELETING - Network anchor is getting deleted
-        DELETED - A connected network anchor is deleted.
+        Defines status of the Network Anchor.
 
         Allowed values for this property are: "CONNECTED", "DISCONNECTED", "CONNECTING", "ACTIVE", "ERROR", "UPDATING", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -146,17 +136,7 @@ class OciNetworkMetadata(object):
     def network_anchor_connection_status(self, network_anchor_connection_status):
         """
         Sets the network_anchor_connection_status of this OciNetworkMetadata.
-        This can be merge to lifecycleState
-        CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned.
-        DISCONNECTED - Only partner cloud information is assigned.
-        CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources.
-        ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet.
-        ERROR - DRG attach fails during connection.
-        FAILED - Network anchor creation failed
-        NEEDS_ATTENTION - Network anchor is in temporary bad state
-        UPDATING - Network anchor is getting updated.
-        DELETING - Network anchor is getting deleted
-        DELETED - A connected network anchor is deleted.
+        Defines status of the Network Anchor.
 
 
         :param network_anchor_connection_status: The network_anchor_connection_status of this OciNetworkMetadata.

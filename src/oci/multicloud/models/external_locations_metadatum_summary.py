@@ -52,6 +52,22 @@ class ExternalLocationsMetadatumSummary(object):
             The value to assign to the cpg_id property of this ExternalLocationsMetadatumSummary.
         :type cpg_id: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this ExternalLocationsMetadatumSummary.
+        :type cluster_placement_group_id: str
+
+        :param partner_cloud_name:
+            The value to assign to the partner_cloud_name property of this ExternalLocationsMetadatumSummary.
+        :type partner_cloud_name: str
+
+        :param partner_cloud_account_name:
+            The value to assign to the partner_cloud_account_name property of this ExternalLocationsMetadatumSummary.
+        :type partner_cloud_account_name: str
+
+        :param partner_cloud_account_url:
+            The value to assign to the partner_cloud_account_url property of this ExternalLocationsMetadatumSummary.
+        :type partner_cloud_account_url: str
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
@@ -61,7 +77,11 @@ class ExternalLocationsMetadatumSummary(object):
             'oci_physical_ad': 'str',
             'oci_logical_ad': 'str',
             'oci_region': 'str',
-            'cpg_id': 'str'
+            'cpg_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'partner_cloud_name': 'str',
+            'partner_cloud_account_name': 'str',
+            'partner_cloud_account_url': 'str'
         }
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
@@ -71,7 +91,11 @@ class ExternalLocationsMetadatumSummary(object):
             'oci_physical_ad': 'ociPhysicalAd',
             'oci_logical_ad': 'ociLogicalAd',
             'oci_region': 'ociRegion',
-            'cpg_id': 'cpgId'
+            'cpg_id': 'cpgId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'partner_cloud_name': 'partnerCloudName',
+            'partner_cloud_account_name': 'partnerCloudAccountName',
+            'partner_cloud_account_url': 'partnerCloudAccountUrl'
         }
         self._freeform_tags = None
         self._defined_tags = None
@@ -81,6 +105,10 @@ class ExternalLocationsMetadatumSummary(object):
         self._oci_logical_ad = None
         self._oci_region = None
         self._cpg_id = None
+        self._cluster_placement_group_id = None
+        self._partner_cloud_name = None
+        self._partner_cloud_account_name = None
+        self._partner_cloud_account_url = None
 
     @property
     def freeform_tags(self):
@@ -274,7 +302,7 @@ class ExternalLocationsMetadatumSummary(object):
     def cpg_id(self):
         """
         **[Required]** Gets the cpg_id of this ExternalLocationsMetadatumSummary.
-        Cluster Placement Group OCID
+        Cluster Placement Group OCID (deprecated representation)
 
 
         :return: The cpg_id of this ExternalLocationsMetadatumSummary.
@@ -286,13 +314,109 @@ class ExternalLocationsMetadatumSummary(object):
     def cpg_id(self, cpg_id):
         """
         Sets the cpg_id of this ExternalLocationsMetadatumSummary.
-        Cluster Placement Group OCID
+        Cluster Placement Group OCID (deprecated representation)
 
 
         :param cpg_id: The cpg_id of this ExternalLocationsMetadatumSummary.
         :type: str
         """
         self._cpg_id = cpg_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        **[Required]** Gets the cluster_placement_group_id of this ExternalLocationsMetadatumSummary.
+        Cluster Placement Group OCID
+
+
+        :return: The cluster_placement_group_id of this ExternalLocationsMetadatumSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this ExternalLocationsMetadatumSummary.
+        Cluster Placement Group OCID
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this ExternalLocationsMetadatumSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def partner_cloud_name(self):
+        """
+        Gets the partner_cloud_name of this ExternalLocationsMetadatumSummary.
+        Partner Cloud Name based on service name
+
+
+        :return: The partner_cloud_name of this ExternalLocationsMetadatumSummary.
+        :rtype: str
+        """
+        return self._partner_cloud_name
+
+    @partner_cloud_name.setter
+    def partner_cloud_name(self, partner_cloud_name):
+        """
+        Sets the partner_cloud_name of this ExternalLocationsMetadatumSummary.
+        Partner Cloud Name based on service name
+
+
+        :param partner_cloud_name: The partner_cloud_name of this ExternalLocationsMetadatumSummary.
+        :type: str
+        """
+        self._partner_cloud_name = partner_cloud_name
+
+    @property
+    def partner_cloud_account_name(self):
+        """
+        Gets the partner_cloud_account_name of this ExternalLocationsMetadatumSummary.
+        User friendly name of account name for customer's subscription
+
+
+        :return: The partner_cloud_account_name of this ExternalLocationsMetadatumSummary.
+        :rtype: str
+        """
+        return self._partner_cloud_account_name
+
+    @partner_cloud_account_name.setter
+    def partner_cloud_account_name(self, partner_cloud_account_name):
+        """
+        Sets the partner_cloud_account_name of this ExternalLocationsMetadatumSummary.
+        User friendly name of account name for customer's subscription
+
+
+        :param partner_cloud_account_name: The partner_cloud_account_name of this ExternalLocationsMetadatumSummary.
+        :type: str
+        """
+        self._partner_cloud_account_name = partner_cloud_account_name
+
+    @property
+    def partner_cloud_account_url(self):
+        """
+        Gets the partner_cloud_account_url of this ExternalLocationsMetadatumSummary.
+        Direct URL to partner cloud for customer's account
+
+
+        :return: The partner_cloud_account_url of this ExternalLocationsMetadatumSummary.
+        :rtype: str
+        """
+        return self._partner_cloud_account_url
+
+    @partner_cloud_account_url.setter
+    def partner_cloud_account_url(self, partner_cloud_account_url):
+        """
+        Sets the partner_cloud_account_url of this ExternalLocationsMetadatumSummary.
+        Direct URL to partner cloud for customer's account
+
+
+        :param partner_cloud_account_url: The partner_cloud_account_url of this ExternalLocationsMetadatumSummary.
+        :type: str
+        """
+        self._partner_cloud_account_url = partner_cloud_account_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

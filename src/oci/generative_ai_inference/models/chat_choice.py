@@ -44,6 +44,10 @@ class ChatChoice(object):
             The value to assign to the grounding_metadata property of this ChatChoice.
         :type grounding_metadata: oci.generative_ai_inference.models.GroundingMetadata
 
+        :param service_tier:
+            The value to assign to the service_tier property of this ChatChoice.
+        :type service_tier: str
+
         """
         self.swagger_types = {
             'index': 'int',
@@ -51,7 +55,8 @@ class ChatChoice(object):
             'finish_reason': 'str',
             'logprobs': 'Logprobs',
             'usage': 'Usage',
-            'grounding_metadata': 'GroundingMetadata'
+            'grounding_metadata': 'GroundingMetadata',
+            'service_tier': 'str'
         }
         self.attribute_map = {
             'index': 'index',
@@ -59,7 +64,8 @@ class ChatChoice(object):
             'finish_reason': 'finishReason',
             'logprobs': 'logprobs',
             'usage': 'usage',
-            'grounding_metadata': 'groundingMetadata'
+            'grounding_metadata': 'groundingMetadata',
+            'service_tier': 'serviceTier'
         }
         self._index = None
         self._message = None
@@ -67,6 +73,7 @@ class ChatChoice(object):
         self._logprobs = None
         self._usage = None
         self._grounding_metadata = None
+        self._service_tier = None
 
     @property
     def index(self):
@@ -199,6 +206,30 @@ class ChatChoice(object):
         :type: oci.generative_ai_inference.models.GroundingMetadata
         """
         self._grounding_metadata = grounding_metadata
+
+    @property
+    def service_tier(self):
+        """
+        Gets the service_tier of this ChatChoice.
+        Specifies the processing type used for serving the request.
+
+
+        :return: The service_tier of this ChatChoice.
+        :rtype: str
+        """
+        return self._service_tier
+
+    @service_tier.setter
+    def service_tier(self, service_tier):
+        """
+        Sets the service_tier of this ChatChoice.
+        Specifies the processing type used for serving the request.
+
+
+        :param service_tier: The service_tier of this ChatChoice.
+        :type: str
+        """
+        self._service_tier = service_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

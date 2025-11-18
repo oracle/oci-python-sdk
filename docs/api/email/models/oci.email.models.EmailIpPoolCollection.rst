@@ -1,0 +1,11 @@
+EmailIpPoolCollection
+=====================
+
+.. currentmodule:: oci.email.models
+
+.. autoclass:: EmailIpPoolCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

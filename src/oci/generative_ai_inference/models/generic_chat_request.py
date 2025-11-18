@@ -43,6 +43,18 @@ class GenericChatRequest(BaseChatRequest):
     #: This constant has a value of "HIGH"
     VERBOSITY_HIGH = "HIGH"
 
+    #: A constant which can be used with the service_tier property of a GenericChatRequest.
+    #: This constant has a value of "AUTO"
+    SERVICE_TIER_AUTO = "AUTO"
+
+    #: A constant which can be used with the service_tier property of a GenericChatRequest.
+    #: This constant has a value of "DEFAULT"
+    SERVICE_TIER_DEFAULT = "DEFAULT"
+
+    #: A constant which can be used with the service_tier property of a GenericChatRequest.
+    #: This constant has a value of "PRIORITY"
+    SERVICE_TIER_PRIORITY = "PRIORITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GenericChatRequest object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_inference.models.GenericChatRequest.api_format` attribute
@@ -156,6 +168,11 @@ class GenericChatRequest(BaseChatRequest):
             The value to assign to the web_search_options property of this GenericChatRequest.
         :type web_search_options: oci.generative_ai_inference.models.WebSearchOptions
 
+        :param service_tier:
+            The value to assign to the service_tier property of this GenericChatRequest.
+            Allowed values for this property are: "AUTO", "DEFAULT", "PRIORITY"
+        :type service_tier: str
+
         """
         self.swagger_types = {
             'api_format': 'str',
@@ -183,7 +200,8 @@ class GenericChatRequest(BaseChatRequest):
             'tool_choice': 'ToolChoice',
             'is_parallel_tool_calls': 'bool',
             'tools': 'list[ToolDefinition]',
-            'web_search_options': 'WebSearchOptions'
+            'web_search_options': 'WebSearchOptions',
+            'service_tier': 'str'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
@@ -211,7 +229,8 @@ class GenericChatRequest(BaseChatRequest):
             'tool_choice': 'toolChoice',
             'is_parallel_tool_calls': 'isParallelToolCalls',
             'tools': 'tools',
-            'web_search_options': 'webSearchOptions'
+            'web_search_options': 'webSearchOptions',
+            'service_tier': 'serviceTier'
         }
         self._api_format = None
         self._messages = None
@@ -239,6 +258,7 @@ class GenericChatRequest(BaseChatRequest):
         self._is_parallel_tool_calls = None
         self._tools = None
         self._web_search_options = None
+        self._service_tier = None
         self._api_format = 'GENERIC'
 
     @property
@@ -862,6 +882,37 @@ class GenericChatRequest(BaseChatRequest):
         :type: oci.generative_ai_inference.models.WebSearchOptions
         """
         self._web_search_options = web_search_options
+
+    @property
+    def service_tier(self):
+        """
+        Gets the service_tier of this GenericChatRequest.
+        Specifies the processing type used for serving the request.
+
+        Allowed values for this property are: "AUTO", "DEFAULT", "PRIORITY"
+
+
+        :return: The service_tier of this GenericChatRequest.
+        :rtype: str
+        """
+        return self._service_tier
+
+    @service_tier.setter
+    def service_tier(self, service_tier):
+        """
+        Sets the service_tier of this GenericChatRequest.
+        Specifies the processing type used for serving the request.
+
+
+        :param service_tier: The service_tier of this GenericChatRequest.
+        :type: str
+        """
+        allowed_values = ["AUTO", "DEFAULT", "PRIORITY"]
+        if not value_allowed_none_or_none_sentinel(service_tier, allowed_values):
+            raise ValueError(
+                f"Invalid value for `service_tier`, must be None or one of {allowed_values}"
+            )
+        self._service_tier = service_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

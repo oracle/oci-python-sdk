@@ -74,6 +74,7 @@ from .autonomous_vm_cluster_resource_usage import AutonomousVmClusterResourceUsa
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .autonomous_vm_resource_usage import AutonomousVmResourceUsage
 from .avm_acd_resource_stats import AvmAcdResourceStats
+from .aws_encryption_key_details import AwsEncryptionKeyDetails
 from .aws_key_details import AwsKeyDetails
 from .azure_encryption_key_details import AzureEncryptionKeyDetails
 from .azure_key_details import AzureKeyDetails
@@ -595,6 +596,7 @@ database_type_mapping = {
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "AutonomousVmResourceUsage": AutonomousVmResourceUsage,
     "AvmAcdResourceStats": AvmAcdResourceStats,
+    "AwsEncryptionKeyDetails": AwsEncryptionKeyDetails,
     "AwsKeyDetails": AwsKeyDetails,
     "AzureEncryptionKeyDetails": AzureEncryptionKeyDetails,
     "AzureKeyDetails": AzureKeyDetails,

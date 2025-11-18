@@ -19,6 +19,10 @@ class PrivateApplicationSummary(object):
     #: This constant has a value of "STACK"
     PACKAGE_TYPE_STACK = "STACK"
 
+    #: A constant which can be used with the package_type property of a PrivateApplicationSummary.
+    #: This constant has a value of "IMAGE"
+    PACKAGE_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PrivateApplicationSummary object with values from keyword arguments.
@@ -50,13 +54,25 @@ class PrivateApplicationSummary(object):
 
         :param package_type:
             The value to assign to the package_type property of this PrivateApplicationSummary.
-            Allowed values for this property are: "STACK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STACK", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
         :param time_created:
             The value to assign to the time_created property of this PrivateApplicationSummary.
         :type time_created: datetime
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this PrivateApplicationSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this PrivateApplicationSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param system_tags:
+            The value to assign to the system_tags property of this PrivateApplicationSummary.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -67,7 +83,10 @@ class PrivateApplicationSummary(object):
             'short_description': 'str',
             'logo': 'UploadData',
             'package_type': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
@@ -77,7 +96,10 @@ class PrivateApplicationSummary(object):
             'short_description': 'shortDescription',
             'logo': 'logo',
             'package_type': 'packageType',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags'
         }
         self._lifecycle_state = None
         self._compartment_id = None
@@ -87,6 +109,9 @@ class PrivateApplicationSummary(object):
         self._logo = None
         self._package_type = None
         self._time_created = None
+        self._defined_tags = None
+        self._freeform_tags = None
+        self._system_tags = None
 
     @property
     def lifecycle_state(self):
@@ -242,7 +267,7 @@ class PrivateApplicationSummary(object):
         **[Required]** Gets the package_type of this PrivateApplicationSummary.
         Type of the packages, which are hosted by the private application.
 
-        Allowed values for this property are: "STACK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STACK", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -261,7 +286,7 @@ class PrivateApplicationSummary(object):
         :param package_type: The package_type of this PrivateApplicationSummary.
         :type: str
         """
-        allowed_values = ["STACK"]
+        allowed_values = ["STACK", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type
@@ -299,6 +324,84 @@ class PrivateApplicationSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this PrivateApplicationSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this PrivateApplicationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this PrivateApplicationSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this PrivateApplicationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this PrivateApplicationSummary.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this PrivateApplicationSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this PrivateApplicationSummary.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this PrivateApplicationSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this PrivateApplicationSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this PrivateApplicationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this PrivateApplicationSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this PrivateApplicationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

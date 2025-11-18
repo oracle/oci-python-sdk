@@ -23,6 +23,7 @@ Service Catalog
     oci.service_catalog.models.BulkReplaceServiceCatalogAssociationsDetails
     oci.service_catalog.models.ChangePrivateApplicationCompartmentDetails
     oci.service_catalog.models.ChangeServiceCatalogCompartmentDetails
+    oci.service_catalog.models.Configuration
     oci.service_catalog.models.CreatePrivateApplicationDetails
     oci.service_catalog.models.CreatePrivateApplicationPackage
     oci.service_catalog.models.CreatePrivateApplicationStackPackage

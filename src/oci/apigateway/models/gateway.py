@@ -50,6 +50,18 @@ class Gateway(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the ip_mode property of a Gateway.
+    #: This constant has a value of "IPV4"
+    IP_MODE_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_mode property of a Gateway.
+    #: This constant has a value of "IPV6"
+    IP_MODE_IPV6 = "IPV6"
+
+    #: A constant which can be used with the ip_mode property of a Gateway.
+    #: This constant has a value of "DUAL_STACK"
+    IP_MODE_DUAL_STACK = "DUAL_STACK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Gateway object with values from keyword arguments.
@@ -135,6 +147,20 @@ class Gateway(object):
             The value to assign to the ca_bundles property of this Gateway.
         :type ca_bundles: list[oci.apigateway.models.CaBundle]
 
+        :param ip_mode:
+            The value to assign to the ip_mode property of this Gateway.
+            Allowed values for this property are: "IPV4", "IPV6", "DUAL_STACK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_mode: str
+
+        :param ipv6_address_configuration:
+            The value to assign to the ipv6_address_configuration property of this Gateway.
+        :type ipv6_address_configuration: oci.apigateway.models.Ipv6AddressConfiguration
+
+        :param ipv4_address_configuration:
+            The value to assign to the ipv4_address_configuration property of this Gateway.
+        :type ipv4_address_configuration: oci.apigateway.models.Ipv4AddressConfiguration
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -155,7 +181,10 @@ class Gateway(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'ca_bundles': 'list[CaBundle]'
+            'ca_bundles': 'list[CaBundle]',
+            'ip_mode': 'str',
+            'ipv6_address_configuration': 'Ipv6AddressConfiguration',
+            'ipv4_address_configuration': 'Ipv4AddressConfiguration'
         }
         self.attribute_map = {
             'id': 'id',
@@ -176,7 +205,10 @@ class Gateway(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'ca_bundles': 'caBundles'
+            'ca_bundles': 'caBundles',
+            'ip_mode': 'ipMode',
+            'ipv6_address_configuration': 'ipv6AddressConfiguration',
+            'ipv4_address_configuration': 'ipv4AddressConfiguration'
         }
         self._id = None
         self._display_name = None
@@ -197,6 +229,9 @@ class Gateway(object):
         self._defined_tags = None
         self._system_tags = None
         self._ca_bundles = None
+        self._ip_mode = None
+        self._ipv6_address_configuration = None
+        self._ipv4_address_configuration = None
 
     @property
     def id(self):
@@ -723,6 +758,84 @@ class Gateway(object):
         :type: list[oci.apigateway.models.CaBundle]
         """
         self._ca_bundles = ca_bundles
+
+    @property
+    def ip_mode(self):
+        """
+        Gets the ip_mode of this Gateway.
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+        `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will
+        only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6
+        address assigned to it.
+        Example: `IPV4` or `IPV6` or `DUAL_STACK`
+
+        Allowed values for this property are: "IPV4", "IPV6", "DUAL_STACK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_mode of this Gateway.
+        :rtype: str
+        """
+        return self._ip_mode
+
+    @ip_mode.setter
+    def ip_mode(self, ip_mode):
+        """
+        Sets the ip_mode of this Gateway.
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+        `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will
+        only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6
+        address assigned to it.
+        Example: `IPV4` or `IPV6` or `DUAL_STACK`
+
+
+        :param ip_mode: The ip_mode of this Gateway.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6", "DUAL_STACK"]
+        if not value_allowed_none_or_none_sentinel(ip_mode, allowed_values):
+            ip_mode = 'UNKNOWN_ENUM_VALUE'
+        self._ip_mode = ip_mode
+
+    @property
+    def ipv6_address_configuration(self):
+        """
+        Gets the ipv6_address_configuration of this Gateway.
+
+        :return: The ipv6_address_configuration of this Gateway.
+        :rtype: oci.apigateway.models.Ipv6AddressConfiguration
+        """
+        return self._ipv6_address_configuration
+
+    @ipv6_address_configuration.setter
+    def ipv6_address_configuration(self, ipv6_address_configuration):
+        """
+        Sets the ipv6_address_configuration of this Gateway.
+
+        :param ipv6_address_configuration: The ipv6_address_configuration of this Gateway.
+        :type: oci.apigateway.models.Ipv6AddressConfiguration
+        """
+        self._ipv6_address_configuration = ipv6_address_configuration
+
+    @property
+    def ipv4_address_configuration(self):
+        """
+        Gets the ipv4_address_configuration of this Gateway.
+
+        :return: The ipv4_address_configuration of this Gateway.
+        :rtype: oci.apigateway.models.Ipv4AddressConfiguration
+        """
+        return self._ipv4_address_configuration
+
+    @ipv4_address_configuration.setter
+    def ipv4_address_configuration(self, ipv4_address_configuration):
+        """
+        Sets the ipv4_address_configuration of this Gateway.
+
+        :param ipv4_address_configuration: The ipv4_address_configuration of this Gateway.
+        :type: oci.apigateway.models.Ipv4AddressConfiguration
+        """
+        self._ipv4_address_configuration = ipv4_address_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

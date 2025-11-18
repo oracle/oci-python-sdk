@@ -38,23 +38,30 @@ class GenericChatResponse(BaseChatResponse):
             The value to assign to the usage property of this GenericChatResponse.
         :type usage: oci.generative_ai_inference.models.Usage
 
+        :param service_tier:
+            The value to assign to the service_tier property of this GenericChatResponse.
+        :type service_tier: str
+
         """
         self.swagger_types = {
             'api_format': 'str',
             'time_created': 'datetime',
             'choices': 'list[ChatChoice]',
-            'usage': 'Usage'
+            'usage': 'Usage',
+            'service_tier': 'str'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
             'time_created': 'timeCreated',
             'choices': 'choices',
-            'usage': 'usage'
+            'usage': 'usage',
+            'service_tier': 'serviceTier'
         }
         self._api_format = None
         self._time_created = None
         self._choices = None
         self._usage = None
+        self._service_tier = None
         self._api_format = 'GENERIC'
 
     @property
@@ -124,6 +131,30 @@ class GenericChatResponse(BaseChatResponse):
         :type: oci.generative_ai_inference.models.Usage
         """
         self._usage = usage
+
+    @property
+    def service_tier(self):
+        """
+        Gets the service_tier of this GenericChatResponse.
+        Specifies the processing type used for serving the request.
+
+
+        :return: The service_tier of this GenericChatResponse.
+        :rtype: str
+        """
+        return self._service_tier
+
+    @service_tier.setter
+    def service_tier(self, service_tier):
+        """
+        Sets the service_tier of this GenericChatResponse.
+        Specifies the processing type used for serving the request.
+
+
+        :param service_tier: The service_tier of this GenericChatResponse.
+        :type: str
+        """
+        self._service_tier = service_tier
 
     def __repr__(self):
         return formatted_flat_dict(self)

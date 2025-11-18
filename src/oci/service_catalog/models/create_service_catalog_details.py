@@ -15,6 +15,14 @@ class CreateServiceCatalogDetails(object):
     The model for parameter needed to create service catalog.
     """
 
+    #: A constant which can be used with the status property of a CreateServiceCatalogDetails.
+    #: This constant has a value of "ACTIVE"
+    STATUS_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the status property of a CreateServiceCatalogDetails.
+    #: This constant has a value of "INACTIVE"
+    STATUS_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateServiceCatalogDetails object with values from keyword arguments.
@@ -28,6 +36,11 @@ class CreateServiceCatalogDetails(object):
             The value to assign to the display_name property of this CreateServiceCatalogDetails.
         :type display_name: str
 
+        :param status:
+            The value to assign to the status property of this CreateServiceCatalogDetails.
+            Allowed values for this property are: "ACTIVE", "INACTIVE"
+        :type status: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateServiceCatalogDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -40,17 +53,20 @@ class CreateServiceCatalogDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
+            'status': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'status': 'status',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
         self._compartment_id = None
         self._display_name = None
+        self._status = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -101,6 +117,37 @@ class CreateServiceCatalogDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def status(self):
+        """
+        Gets the status of this CreateServiceCatalogDetails.
+        The status of a service catalog.
+
+        Allowed values for this property are: "ACTIVE", "INACTIVE"
+
+
+        :return: The status of this CreateServiceCatalogDetails.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this CreateServiceCatalogDetails.
+        The status of a service catalog.
+
+
+        :param status: The status of this CreateServiceCatalogDetails.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "INACTIVE"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            raise ValueError(
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
+            )
+        self._status = status
 
     @property
     def defined_tags(self):

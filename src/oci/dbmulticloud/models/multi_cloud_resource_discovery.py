@@ -27,6 +27,10 @@ class MultiCloudResourceDiscovery(object):
     #: This constant has a value of "GCP_KEY_RINGS"
     RESOURCE_TYPE_GCP_KEY_RINGS = "GCP_KEY_RINGS"
 
+    #: A constant which can be used with the resource_type property of a MultiCloudResourceDiscovery.
+    #: This constant has a value of "AWS_KEYS"
+    RESOURCE_TYPE_AWS_KEYS = "AWS_KEYS"
+
     #: A constant which can be used with the lifecycle_state property of a MultiCloudResourceDiscovery.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -94,7 +98,7 @@ class MultiCloudResourceDiscovery(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this MultiCloudResourceDiscovery.
-            Allowed values for this property are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", "AWS_KEYS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -361,7 +365,7 @@ class MultiCloudResourceDiscovery(object):
         **[Required]** Gets the resource_type of this MultiCloudResourceDiscovery.
         Resource Type to discover.
 
-        Allowed values for this property are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", "AWS_KEYS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -380,7 +384,7 @@ class MultiCloudResourceDiscovery(object):
         :param resource_type: The resource_type of this MultiCloudResourceDiscovery.
         :type: str
         """
-        allowed_values = ["VAULTS", "STORAGE", "GCP_KEY_RINGS"]
+        allowed_values = ["VAULTS", "STORAGE", "GCP_KEY_RINGS", "AWS_KEYS"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

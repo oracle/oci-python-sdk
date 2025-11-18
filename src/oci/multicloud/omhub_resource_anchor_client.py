@@ -129,12 +129,12 @@ class OmhubResourceAnchorClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
-            The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+            The subscription service name of the Cloud Service Provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str subscription_id: (required)
-            The `OCID`__ of the subscription in which to list resources.
+            The `OCID`__ of the Multicloud subscription in which to list resources.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -143,6 +143,9 @@ class OmhubResourceAnchorClient(object):
             Oracle about a particular request, please provide the request ID.
             The only valid characters for request IDs are letters, numbers,
             underscore, and dash.
+
+        :param bool should_fetch_compartment_name: (optional)
+            Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -173,7 +176,8 @@ class OmhubResourceAnchorClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "should_fetch_compartment_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -198,7 +202,8 @@ class OmhubResourceAnchorClient(object):
 
         query_params = {
             "subscriptionServiceName": subscription_service_name,
-            "subscriptionId": subscription_id
+            "subscriptionId": subscription_id,
+            "shouldFetchCompartmentName": kwargs.get("should_fetch_compartment_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -245,28 +250,19 @@ class OmhubResourceAnchorClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_resource_anchors(self, subscription_service_name, subscription_id, **kwargs):
+    def list_resource_anchors(self, **kwargs):
         """
         Gets a list of ResourceAnchors.
 
 
-        :param str subscription_service_name: (required)
-            The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-
-            Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
-
-        :param str subscription_id: (required)
-            The `OCID`__ of the subscription in which to list resources.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
         :param str compartment_id: (optional)
-            The `OCID`__ of the compartment in which to list resources.
+            The `OCID`__ of the Multicloud base compartment or sub-compartment in which to list resources.
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str linked_compartment_id: (optional)
-            The `OCID`__ of the compartment in which linked to Resource.
+            The `OCID`__ of the compartment linked to the resource.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -312,6 +308,19 @@ class OmhubResourceAnchorClient(object):
         :param bool is_compartment_id_in_subtree: (optional)
             Check the sub-compartments of a given compartmentId
 
+        :param bool should_fetch_compartment_name: (optional)
+            Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+
+        :param str subscription_service_name: (optional)
+            The subscription service name of the Cloud Service Provider.
+
+            Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
+
+        :param str subscription_id: (optional)
+            The `OCID`__ of the Multicloud subscription in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -337,7 +346,7 @@ class OmhubResourceAnchorClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/multicloud/list_resource_anchors.py.html>`__ to see an example of how to use list_resource_anchors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['subscriptionServiceName', 'subscriptionId']
+        required_arguments = []
         resource_path = "/resourceAnchors"
         method = "GET"
         operation_name = "list_resource_anchors"
@@ -357,6 +366,9 @@ class OmhubResourceAnchorClient(object):
             "sort_order",
             "sort_by",
             "is_compartment_id_in_subtree",
+            "should_fetch_compartment_name",
+            "subscription_service_name",
+            "subscription_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -385,11 +397,12 @@ class OmhubResourceAnchorClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
-        subscription_service_name_allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
-        if subscription_service_name not in subscription_service_name_allowed_values:
-            raise ValueError(
-                f"Invalid value for `subscription_service_name`, must be one of { subscription_service_name_allowed_values }"
-            )
+        if 'subscription_service_name' in kwargs:
+            subscription_service_name_allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
+            if kwargs['subscription_service_name'] not in subscription_service_name_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `subscription_service_name`, must be one of { subscription_service_name_allowed_values }"
+                )
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -402,8 +415,9 @@ class OmhubResourceAnchorClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "isCompartmentIdInSubtree": kwargs.get("is_compartment_id_in_subtree", missing),
-            "subscriptionServiceName": subscription_service_name,
-            "subscriptionId": subscription_id
+            "shouldFetchCompartmentName": kwargs.get("should_fetch_compartment_name", missing),
+            "subscriptionServiceName": kwargs.get("subscription_service_name", missing),
+            "subscriptionId": kwargs.get("subscription_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -468,6 +468,7 @@ from .measured_boot_entry import MeasuredBootEntry
 from .measured_boot_report import MeasuredBootReport
 from .measured_boot_report_measurements import MeasuredBootReportMeasurements
 from .member_replica import MemberReplica
+from .memory_fabric_preferences_descriptor import MemoryFabricPreferencesDescriptor
 from .modify_ipv4_subnet_cidr_details import ModifyIpv4SubnetCidrDetails
 from .modify_vcn_cidr_details import ModifyVcnCidrDetails
 from .multipath_device import MultipathDevice
@@ -1141,6 +1142,7 @@ core_type_mapping = {
     "MeasuredBootReport": MeasuredBootReport,
     "MeasuredBootReportMeasurements": MeasuredBootReportMeasurements,
     "MemberReplica": MemberReplica,
+    "MemoryFabricPreferencesDescriptor": MemoryFabricPreferencesDescriptor,
     "ModifyIpv4SubnetCidrDetails": ModifyIpv4SubnetCidrDetails,
     "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
     "MultipathDevice": MultipathDevice,

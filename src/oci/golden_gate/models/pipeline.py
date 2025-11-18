@@ -55,6 +55,10 @@ class Pipeline(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a Pipeline.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
     #: This constant has a value of "STARTING"
     LIFECYCLE_SUB_STATE_STARTING = "STARTING"
@@ -74,6 +78,26 @@ class Pipeline(object):
     #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
     #: This constant has a value of "RUNNING"
     LIFECYCLE_SUB_STATE_RUNNING = "RUNNING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
+    #: This constant has a value of "PAUSING"
+    LIFECYCLE_SUB_STATE_PAUSING = "PAUSING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
+    #: This constant has a value of "PAUSED"
+    LIFECYCLE_SUB_STATE_PAUSED = "PAUSED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
+    #: This constant has a value of "START_FAILED"
+    LIFECYCLE_SUB_STATE_START_FAILED = "START_FAILED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
+    #: This constant has a value of "STOP_FAILED"
+    LIFECYCLE_SUB_STATE_STOP_FAILED = "STOP_FAILED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Pipeline.
+    #: This constant has a value of "PAUSE_FAILED"
+    LIFECYCLE_SUB_STATE_PAUSE_FAILED = "PAUSE_FAILED"
 
     def __init__(self, **kwargs):
         """
@@ -150,13 +174,13 @@ class Pipeline(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Pipeline.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this Pipeline.
-            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -171,6 +195,14 @@ class Pipeline(object):
         :param time_updated:
             The value to assign to the time_updated property of this Pipeline.
         :type time_updated: datetime
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this Pipeline.
+        :type subnet_id: str
+
+        :param ingress_ips:
+            The value to assign to the ingress_ips property of this Pipeline.
+        :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
 
         """
         self.swagger_types = {
@@ -193,7 +225,9 @@ class Pipeline(object):
             'lifecycle_sub_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'subnet_id': 'str',
+            'ingress_ips': 'list[IngressIpDetails]'
         }
         self.attribute_map = {
             'recipe_type': 'recipeType',
@@ -215,7 +249,9 @@ class Pipeline(object):
             'lifecycle_sub_state': 'lifecycleSubState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'subnet_id': 'subnetId',
+            'ingress_ips': 'ingressIps'
         }
         self._recipe_type = None
         self._id = None
@@ -237,6 +273,8 @@ class Pipeline(object):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._subnet_id = None
+        self._ingress_ips = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -647,7 +685,7 @@ class Pipeline(object):
         **[Required]** Gets the lifecycle_state of this Pipeline.
         Lifecycle state of the pipeline.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -666,7 +704,7 @@ class Pipeline(object):
         :param lifecycle_state: The lifecycle_state of this Pipeline.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -677,7 +715,7 @@ class Pipeline(object):
         Gets the lifecycle_sub_state of this Pipeline.
         Possible lifecycle substates when retrieving a pipeline.
 
-        Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -696,7 +734,7 @@ class Pipeline(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this Pipeline.
         :type: str
         """
-        allowed_values = ["STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING"]
+        allowed_values = ["STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state
@@ -786,6 +824,62 @@ class Pipeline(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this Pipeline.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this Pipeline.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this Pipeline.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this Pipeline.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def ingress_ips(self):
+        """
+        Gets the ingress_ips of this Pipeline.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+
+
+        :return: The ingress_ips of this Pipeline.
+        :rtype: list[oci.golden_gate.models.IngressIpDetails]
+        """
+        return self._ingress_ips
+
+    @ingress_ips.setter
+    def ingress_ips(self, ingress_ips):
+        """
+        Sets the ingress_ips of this Pipeline.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+
+
+        :param ingress_ips: The ingress_ips of this Pipeline.
+        :type: list[oci.golden_gate.models.IngressIpDetails]
+        """
+        self._ingress_ips = ingress_ips
 
     def __repr__(self):
         return formatted_flat_dict(self)

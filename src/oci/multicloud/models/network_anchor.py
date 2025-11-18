@@ -21,29 +21,29 @@ class NetworkAnchor(object):
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkAnchor.
+    #: A constant which can be used with the network_anchor_lifecycle_state property of a NetworkAnchor.
     #: This constant has a value of "CREATING"
-    LIFECYCLE_STATE_CREATING = "CREATING"
+    NETWORK_ANCHOR_LIFECYCLE_STATE_CREATING = "CREATING"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkAnchor.
+    #: A constant which can be used with the network_anchor_lifecycle_state property of a NetworkAnchor.
     #: This constant has a value of "UPDATING"
-    LIFECYCLE_STATE_UPDATING = "UPDATING"
+    NETWORK_ANCHOR_LIFECYCLE_STATE_UPDATING = "UPDATING"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkAnchor.
+    #: A constant which can be used with the network_anchor_lifecycle_state property of a NetworkAnchor.
     #: This constant has a value of "ACTIVE"
-    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+    NETWORK_ANCHOR_LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkAnchor.
+    #: A constant which can be used with the network_anchor_lifecycle_state property of a NetworkAnchor.
     #: This constant has a value of "DELETING"
-    LIFECYCLE_STATE_DELETING = "DELETING"
+    NETWORK_ANCHOR_LIFECYCLE_STATE_DELETING = "DELETING"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkAnchor.
+    #: A constant which can be used with the network_anchor_lifecycle_state property of a NetworkAnchor.
     #: This constant has a value of "DELETED"
-    LIFECYCLE_STATE_DELETED = "DELETED"
+    NETWORK_ANCHOR_LIFECYCLE_STATE_DELETED = "DELETED"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkAnchor.
+    #: A constant which can be used with the network_anchor_lifecycle_state property of a NetworkAnchor.
     #: This constant has a value of "FAILED"
-    LIFECYCLE_STATE_FAILED = "FAILED"
+    NETWORK_ANCHOR_LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the setup_mode property of a NetworkAnchor.
     #: This constant has a value of "AUTO_BIND"
@@ -52,6 +52,18 @@ class NetworkAnchor(object):
     #: A constant which can be used with the setup_mode property of a NetworkAnchor.
     #: This constant has a value of "NO_AUTO_BIND"
     SETUP_MODE_NO_AUTO_BIND = "NO_AUTO_BIND"
+
+    #: A constant which can be used with the subscription_type property of a NetworkAnchor.
+    #: This constant has a value of "ORACLEDBATAZURE"
+    SUBSCRIPTION_TYPE_ORACLEDBATAZURE = "ORACLEDBATAZURE"
+
+    #: A constant which can be used with the subscription_type property of a NetworkAnchor.
+    #: This constant has a value of "ORACLEDBATGOOGLE"
+    SUBSCRIPTION_TYPE_ORACLEDBATGOOGLE = "ORACLEDBATGOOGLE"
+
+    #: A constant which can be used with the subscription_type property of a NetworkAnchor.
+    #: This constant has a value of "ORACLEDBATAWS"
+    SUBSCRIPTION_TYPE_ORACLEDBATAWS = "ORACLEDBATAWS"
 
     def __init__(self, **kwargs):
         """
@@ -82,11 +94,11 @@ class NetworkAnchor(object):
             The value to assign to the time_updated property of this NetworkAnchor.
         :type time_updated: datetime
 
-        :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this NetworkAnchor.
+        :param network_anchor_lifecycle_state:
+            The value to assign to the network_anchor_lifecycle_state property of this NetworkAnchor.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type lifecycle_state: str
+        :type network_anchor_lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this NetworkAnchor.
@@ -122,6 +134,12 @@ class NetworkAnchor(object):
             The value to assign to the cloud_service_provider_metadata_item property of this NetworkAnchor.
         :type cloud_service_provider_metadata_item: oci.multicloud.models.CloudServiceProviderNetworkMetadataItem
 
+        :param subscription_type:
+            The value to assign to the subscription_type property of this NetworkAnchor.
+            Allowed values for this property are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type subscription_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -130,7 +148,7 @@ class NetworkAnchor(object):
             'resource_anchor_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'lifecycle_state': 'str',
+            'network_anchor_lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -138,7 +156,8 @@ class NetworkAnchor(object):
             'setup_mode': 'str',
             'cluster_placement_group_id': 'str',
             'oci_metadata_item': 'OciNetworkMetadata',
-            'cloud_service_provider_metadata_item': 'CloudServiceProviderNetworkMetadataItem'
+            'cloud_service_provider_metadata_item': 'CloudServiceProviderNetworkMetadataItem',
+            'subscription_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -147,7 +166,7 @@ class NetworkAnchor(object):
             'resource_anchor_id': 'resourceAnchorId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'lifecycle_state': 'lifecycleState',
+            'network_anchor_lifecycle_state': 'networkAnchorLifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -155,7 +174,8 @@ class NetworkAnchor(object):
             'setup_mode': 'setupMode',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'oci_metadata_item': 'ociMetadataItem',
-            'cloud_service_provider_metadata_item': 'cloudServiceProviderMetadataItem'
+            'cloud_service_provider_metadata_item': 'cloudServiceProviderMetadataItem',
+            'subscription_type': 'subscriptionType'
         }
         self._id = None
         self._display_name = None
@@ -163,7 +183,7 @@ class NetworkAnchor(object):
         self._resource_anchor_id = None
         self._time_created = None
         self._time_updated = None
-        self._lifecycle_state = None
+        self._network_anchor_lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -172,6 +192,7 @@ class NetworkAnchor(object):
         self._cluster_placement_group_id = None
         self._oci_metadata_item = None
         self._cloud_service_provider_metadata_item = None
+        self._subscription_type = None
 
     @property
     def id(self):
@@ -342,34 +363,34 @@ class NetworkAnchor(object):
         self._time_updated = time_updated
 
     @property
-    def lifecycle_state(self):
+    def network_anchor_lifecycle_state(self):
         """
-        **[Required]** Gets the lifecycle_state of this NetworkAnchor.
+        **[Required]** Gets the network_anchor_lifecycle_state of this NetworkAnchor.
         The current state of the NetworkAnchor.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The lifecycle_state of this NetworkAnchor.
+        :return: The network_anchor_lifecycle_state of this NetworkAnchor.
         :rtype: str
         """
-        return self._lifecycle_state
+        return self._network_anchor_lifecycle_state
 
-    @lifecycle_state.setter
-    def lifecycle_state(self, lifecycle_state):
+    @network_anchor_lifecycle_state.setter
+    def network_anchor_lifecycle_state(self, network_anchor_lifecycle_state):
         """
-        Sets the lifecycle_state of this NetworkAnchor.
+        Sets the network_anchor_lifecycle_state of this NetworkAnchor.
         The current state of the NetworkAnchor.
 
 
-        :param lifecycle_state: The lifecycle_state of this NetworkAnchor.
+        :param network_anchor_lifecycle_state: The network_anchor_lifecycle_state of this NetworkAnchor.
         :type: str
         """
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
-        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
-        self._lifecycle_state = lifecycle_state
+        if not value_allowed_none_or_none_sentinel(network_anchor_lifecycle_state, allowed_values):
+            network_anchor_lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._network_anchor_lifecycle_state = network_anchor_lifecycle_state
 
     @property
     def lifecycle_details(self):
@@ -590,6 +611,36 @@ class NetworkAnchor(object):
         :type: oci.multicloud.models.CloudServiceProviderNetworkMetadataItem
         """
         self._cloud_service_provider_metadata_item = cloud_service_provider_metadata_item
+
+    @property
+    def subscription_type(self):
+        """
+        Gets the subscription_type of this NetworkAnchor.
+        Oracle Cloud Infrastructure Subscription Type.
+
+        Allowed values for this property are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The subscription_type of this NetworkAnchor.
+        :rtype: str
+        """
+        return self._subscription_type
+
+    @subscription_type.setter
+    def subscription_type(self, subscription_type):
+        """
+        Sets the subscription_type of this NetworkAnchor.
+        Oracle Cloud Infrastructure Subscription Type.
+
+
+        :param subscription_type: The subscription_type of this NetworkAnchor.
+        :type: str
+        """
+        allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
+        if not value_allowed_none_or_none_sentinel(subscription_type, allowed_values):
+            subscription_type = 'UNKNOWN_ENUM_VALUE'
+        self._subscription_type = subscription_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

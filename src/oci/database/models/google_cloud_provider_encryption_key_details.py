@@ -23,7 +23,7 @@ class GoogleCloudProviderEncryptionKeyDetails(EncryptionKeyLocationDetails):
 
         :param provider_type:
             The value to assign to the provider_type property of this GoogleCloudProviderEncryptionKeyDetails.
-            Allowed values for this property are: "EXTERNAL", "AZURE", "GCP"
+            Allowed values for this property are: "EXTERNAL", "AZURE", "GCP", "AWS"
         :type provider_type: str
 
         :param google_cloud_provider_encryption_key_id:

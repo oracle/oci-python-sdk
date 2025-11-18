@@ -110,6 +110,10 @@ class CatalogPrivateEndpoint(object):
             The value to assign to the locks property of this CatalogPrivateEndpoint.
         :type locks: list[oci.data_catalog.models.ResourceLock]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CatalogPrivateEndpoint.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -125,7 +129,8 @@ class CatalogPrivateEndpoint(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'attached_catalogs': 'list[str]',
-            'locks': 'list[ResourceLock]'
+            'locks': 'list[ResourceLock]',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -141,7 +146,8 @@ class CatalogPrivateEndpoint(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'attached_catalogs': 'attachedCatalogs',
-            'locks': 'locks'
+            'locks': 'locks',
+            'security_attributes': 'securityAttributes'
         }
         self._id = None
         self._compartment_id = None
@@ -157,6 +163,7 @@ class CatalogPrivateEndpoint(object):
         self._lifecycle_details = None
         self._attached_catalogs = None
         self._locks = None
+        self._security_attributes = None
 
     @property
     def id(self):
@@ -525,6 +532,40 @@ class CatalogPrivateEndpoint(object):
         :type: list[oci.data_catalog.models.ResourceLock]
         """
         self._locks = locks
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CatalogPrivateEndpoint.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CatalogPrivateEndpoint.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CatalogPrivateEndpoint.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CatalogPrivateEndpoint.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

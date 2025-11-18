@@ -23,7 +23,7 @@ class ExternalHsmEncryptionDetails(EncryptionKeyLocationDetails):
 
         :param provider_type:
             The value to assign to the provider_type property of this ExternalHsmEncryptionDetails.
-            Allowed values for this property are: "EXTERNAL", "AZURE", "GCP"
+            Allowed values for this property are: "EXTERNAL", "AZURE", "GCP", "AWS"
         :type provider_type: str
 
         :param hsm_password:

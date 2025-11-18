@@ -39,7 +39,7 @@ class PrivateApplicationStackPackage(PrivateApplicationPackage):
 
         :param package_type:
             The value to assign to the package_type property of this PrivateApplicationStackPackage.
-            Allowed values for this property are: "STACK"
+            Allowed values for this property are: "STACK", "IMAGE"
         :type package_type: str
 
         :param time_created:

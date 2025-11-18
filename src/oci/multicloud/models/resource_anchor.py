@@ -86,6 +86,10 @@ class ResourceAnchor(object):
             The value to assign to the compartment_id property of this ResourceAnchor.
         :type compartment_id: str
 
+        :param compartment_name:
+            The value to assign to the compartment_name property of this ResourceAnchor.
+        :type compartment_name: str
+
         :param time_created:
             The value to assign to the time_created property of this ResourceAnchor.
         :type time_created: datetime
@@ -126,6 +130,10 @@ class ResourceAnchor(object):
             The value to assign to the linked_compartment_id property of this ResourceAnchor.
         :type linked_compartment_id: str
 
+        :param linked_compartment_name:
+            The value to assign to the linked_compartment_name property of this ResourceAnchor.
+        :type linked_compartment_name: str
+
         :param subscription_type:
             The value to assign to the subscription_type property of this ResourceAnchor.
             Allowed values for this property are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS", 'UNKNOWN_ENUM_VALUE'.
@@ -146,6 +154,7 @@ class ResourceAnchor(object):
             'display_name': 'str',
             'region': 'str',
             'compartment_id': 'str',
+            'compartment_name': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -155,6 +164,7 @@ class ResourceAnchor(object):
             'system_tags': 'dict(str, dict(str, object))',
             'setup_mode': 'str',
             'linked_compartment_id': 'str',
+            'linked_compartment_name': 'str',
             'subscription_type': 'str',
             'subscription_id': 'str',
             'cloud_service_provider_metadata_item': 'CloudServiceProviderMetadataItem'
@@ -164,6 +174,7 @@ class ResourceAnchor(object):
             'display_name': 'displayName',
             'region': 'region',
             'compartment_id': 'compartmentId',
+            'compartment_name': 'compartmentName',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -173,6 +184,7 @@ class ResourceAnchor(object):
             'system_tags': 'systemTags',
             'setup_mode': 'setupMode',
             'linked_compartment_id': 'linkedCompartmentId',
+            'linked_compartment_name': 'linkedCompartmentName',
             'subscription_type': 'subscriptionType',
             'subscription_id': 'subscriptionId',
             'cloud_service_provider_metadata_item': 'cloudServiceProviderMetadataItem'
@@ -181,6 +193,7 @@ class ResourceAnchor(object):
         self._display_name = None
         self._region = None
         self._compartment_id = None
+        self._compartment_name = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -190,6 +203,7 @@ class ResourceAnchor(object):
         self._system_tags = None
         self._setup_mode = None
         self._linked_compartment_id = None
+        self._linked_compartment_name = None
         self._subscription_type = None
         self._subscription_id = None
         self._cloud_service_provider_metadata_item = None
@@ -297,6 +311,30 @@ class ResourceAnchor(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def compartment_name(self):
+        """
+        Gets the compartment_name of this ResourceAnchor.
+        The name assigned to the compartment during creation.
+
+
+        :return: The compartment_name of this ResourceAnchor.
+        :rtype: str
+        """
+        return self._compartment_name
+
+    @compartment_name.setter
+    def compartment_name(self, compartment_name):
+        """
+        Sets the compartment_name of this ResourceAnchor.
+        The name assigned to the compartment during creation.
+
+
+        :param compartment_name: The compartment_name of this ResourceAnchor.
+        :type: str
+        """
+        self._compartment_name = compartment_name
 
     @property
     def time_created(self):
@@ -573,6 +611,30 @@ class ResourceAnchor(object):
         :type: str
         """
         self._linked_compartment_id = linked_compartment_id
+
+    @property
+    def linked_compartment_name(self):
+        """
+        Gets the linked_compartment_name of this ResourceAnchor.
+        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+
+
+        :return: The linked_compartment_name of this ResourceAnchor.
+        :rtype: str
+        """
+        return self._linked_compartment_name
+
+    @linked_compartment_name.setter
+    def linked_compartment_name(self, linked_compartment_name):
+        """
+        Sets the linked_compartment_name of this ResourceAnchor.
+        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+
+
+        :param linked_compartment_name: The linked_compartment_name of this ResourceAnchor.
+        :type: str
+        """
+        self._linked_compartment_name = linked_compartment_name
 
     @property
     def subscription_type(self):

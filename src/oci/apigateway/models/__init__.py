@@ -83,6 +83,8 @@ from .header_transformation_policy import HeaderTransformationPolicy
 from .header_validation_item import HeaderValidationItem
 from .header_validation_request_policy import HeaderValidationRequestPolicy
 from .ip_address import IpAddress
+from .ipv4_address_configuration import Ipv4AddressConfiguration
+from .ipv6_address_configuration import Ipv6AddressConfiguration
 from .json_web_key import JsonWebKey
 from .json_web_token_claim import JsonWebTokenClaim
 from .jwt_authentication_policy import JwtAuthenticationPolicy
@@ -245,6 +247,8 @@ apigateway_type_mapping = {
     "HeaderValidationItem": HeaderValidationItem,
     "HeaderValidationRequestPolicy": HeaderValidationRequestPolicy,
     "IpAddress": IpAddress,
+    "Ipv4AddressConfiguration": Ipv4AddressConfiguration,
+    "Ipv6AddressConfiguration": Ipv6AddressConfiguration,
     "JsonWebKey": JsonWebKey,
     "JsonWebTokenClaim": JsonWebTokenClaim,
     "JwtAuthenticationPolicy": JwtAuthenticationPolicy,

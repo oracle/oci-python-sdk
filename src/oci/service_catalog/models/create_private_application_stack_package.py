@@ -23,7 +23,7 @@ class CreatePrivateApplicationStackPackage(CreatePrivateApplicationPackage):
 
         :param package_type:
             The value to assign to the package_type property of this CreatePrivateApplicationStackPackage.
-            Allowed values for this property are: "STACK"
+            Allowed values for this property are: "STACK", "IMAGE"
         :type package_type: str
 
         :param version:
@@ -53,7 +53,7 @@ class CreatePrivateApplicationStackPackage(CreatePrivateApplicationPackage):
     @property
     def zip_file_base64_encoded(self):
         """
-        Gets the zip_file_base64_encoded of this CreatePrivateApplicationStackPackage.
+        **[Required]** Gets the zip_file_base64_encoded of this CreatePrivateApplicationStackPackage.
         Base-64 payload of the Terraform zip package.
 
 

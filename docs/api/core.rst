@@ -486,6 +486,7 @@ Core Services
     oci.core.models.MeasuredBootReport
     oci.core.models.MeasuredBootReportMeasurements
     oci.core.models.MemberReplica
+    oci.core.models.MemoryFabricPreferencesDescriptor
     oci.core.models.ModifyIpv4SubnetCidrDetails
     oci.core.models.ModifyVcnCidrDetails
     oci.core.models.MultipathDevice

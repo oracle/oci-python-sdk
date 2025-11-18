@@ -86,6 +86,7 @@ Database
     oci.database.models.AutonomousVmClusterSummary
     oci.database.models.AutonomousVmResourceUsage
     oci.database.models.AvmAcdResourceStats
+    oci.database.models.AwsEncryptionKeyDetails
     oci.database.models.AwsKeyDetails
     oci.database.models.AzureEncryptionKeyDetails
     oci.database.models.AzureKeyDetails

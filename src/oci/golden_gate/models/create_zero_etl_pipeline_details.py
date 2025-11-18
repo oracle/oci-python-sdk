@@ -63,6 +63,10 @@ class CreateZeroEtlPipelineDetails(CreatePipelineDetails):
             The value to assign to the target_connection_details property of this CreateZeroEtlPipelineDetails.
         :type target_connection_details: oci.golden_gate.models.TargetPipelineConnectionDetails
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreateZeroEtlPipelineDetails.
+        :type subnet_id: str
+
         :param process_options:
             The value to assign to the process_options property of this CreateZeroEtlPipelineDetails.
         :type process_options: oci.golden_gate.models.ProcessOptions
@@ -79,6 +83,7 @@ class CreateZeroEtlPipelineDetails(CreatePipelineDetails):
             'locks': 'list[ResourceLock]',
             'source_connection_details': 'SourcePipelineConnectionDetails',
             'target_connection_details': 'TargetPipelineConnectionDetails',
+            'subnet_id': 'str',
             'process_options': 'ProcessOptions'
         }
         self.attribute_map = {
@@ -92,6 +97,7 @@ class CreateZeroEtlPipelineDetails(CreatePipelineDetails):
             'locks': 'locks',
             'source_connection_details': 'sourceConnectionDetails',
             'target_connection_details': 'targetConnectionDetails',
+            'subnet_id': 'subnetId',
             'process_options': 'processOptions'
         }
         self._recipe_type = None
@@ -104,6 +110,7 @@ class CreateZeroEtlPipelineDetails(CreatePipelineDetails):
         self._locks = None
         self._source_connection_details = None
         self._target_connection_details = None
+        self._subnet_id = None
         self._process_options = None
         self._recipe_type = 'ZERO_ETL'
 

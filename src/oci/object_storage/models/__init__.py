@@ -7,6 +7,9 @@
 from __future__ import absolute_import
 
 from .access_target_details import AccessTargetDetails
+from .batch_delete_object_identifier import BatchDeleteObjectIdentifier
+from .batch_delete_objects_details import BatchDeleteObjectsDetails
+from .batch_delete_objects_result import BatchDeleteObjectsResult
 from .bucket import Bucket
 from .bucket_summary import BucketSummary
 from .commit_multipart_upload_details import CommitMultipartUploadDetails
@@ -18,7 +21,9 @@ from .create_preauthenticated_request_details import CreatePreauthenticatedReque
 from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_replication_policy_details import CreateReplicationPolicyDetails
 from .create_retention_rule_details import CreateRetentionRuleDetails
+from .deleted_object_result import DeletedObjectResult
 from .duration import Duration
+from .failed_object_result import FailedObjectResult
 from .fqdns import Fqdns
 from .list_objects import ListObjects
 from .multipart_upload import MultipartUpload
@@ -62,6 +67,9 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
     "AccessTargetDetails": AccessTargetDetails,
+    "BatchDeleteObjectIdentifier": BatchDeleteObjectIdentifier,
+    "BatchDeleteObjectsDetails": BatchDeleteObjectsDetails,
+    "BatchDeleteObjectsResult": BatchDeleteObjectsResult,
     "Bucket": Bucket,
     "BucketSummary": BucketSummary,
     "CommitMultipartUploadDetails": CommitMultipartUploadDetails,
@@ -73,7 +81,9 @@ object_storage_type_mapping = {
     "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateReplicationPolicyDetails": CreateReplicationPolicyDetails,
     "CreateRetentionRuleDetails": CreateRetentionRuleDetails,
+    "DeletedObjectResult": DeletedObjectResult,
     "Duration": Duration,
+    "FailedObjectResult": FailedObjectResult,
     "Fqdns": Fqdns,
     "ListObjects": ListObjects,
     "MultipartUpload": MultipartUpload,

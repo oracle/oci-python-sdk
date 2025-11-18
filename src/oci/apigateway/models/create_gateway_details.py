@@ -64,6 +64,18 @@ class CreateGatewayDetails(object):
             The value to assign to the ca_bundles property of this CreateGatewayDetails.
         :type ca_bundles: list[oci.apigateway.models.CaBundle]
 
+        :param ip_mode:
+            The value to assign to the ip_mode property of this CreateGatewayDetails.
+        :type ip_mode: str
+
+        :param ipv6_address_configuration:
+            The value to assign to the ipv6_address_configuration property of this CreateGatewayDetails.
+        :type ipv6_address_configuration: oci.apigateway.models.Ipv6AddressConfiguration
+
+        :param ipv4_address_configuration:
+            The value to assign to the ipv4_address_configuration property of this CreateGatewayDetails.
+        :type ipv4_address_configuration: oci.apigateway.models.Ipv4AddressConfiguration
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -76,7 +88,10 @@ class CreateGatewayDetails(object):
             'locks': 'list[AddResourceLockDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'ca_bundles': 'list[CaBundle]'
+            'ca_bundles': 'list[CaBundle]',
+            'ip_mode': 'str',
+            'ipv6_address_configuration': 'Ipv6AddressConfiguration',
+            'ipv4_address_configuration': 'Ipv4AddressConfiguration'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -89,7 +104,10 @@ class CreateGatewayDetails(object):
             'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'ca_bundles': 'caBundles'
+            'ca_bundles': 'caBundles',
+            'ip_mode': 'ipMode',
+            'ipv6_address_configuration': 'ipv6AddressConfiguration',
+            'ipv4_address_configuration': 'ipv4AddressConfiguration'
         }
         self._display_name = None
         self._compartment_id = None
@@ -102,6 +120,9 @@ class CreateGatewayDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._ca_bundles = None
+        self._ip_mode = None
+        self._ipv6_address_configuration = None
+        self._ipv4_address_configuration = None
 
     @property
     def display_name(self):
@@ -416,6 +437,78 @@ class CreateGatewayDetails(object):
         :type: list[oci.apigateway.models.CaBundle]
         """
         self._ca_bundles = ca_bundles
+
+    @property
+    def ip_mode(self):
+        """
+        Gets the ip_mode of this CreateGatewayDetails.
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+        `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will
+        only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6
+        address assigned to it.
+        Example: `IPV4` or `IPV6` or `DUAL_STACK`
+
+
+        :return: The ip_mode of this CreateGatewayDetails.
+        :rtype: str
+        """
+        return self._ip_mode
+
+    @ip_mode.setter
+    def ip_mode(self, ip_mode):
+        """
+        Sets the ip_mode of this CreateGatewayDetails.
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+        `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will
+        only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6
+        address assigned to it.
+        Example: `IPV4` or `IPV6` or `DUAL_STACK`
+
+
+        :param ip_mode: The ip_mode of this CreateGatewayDetails.
+        :type: str
+        """
+        self._ip_mode = ip_mode
+
+    @property
+    def ipv6_address_configuration(self):
+        """
+        Gets the ipv6_address_configuration of this CreateGatewayDetails.
+
+        :return: The ipv6_address_configuration of this CreateGatewayDetails.
+        :rtype: oci.apigateway.models.Ipv6AddressConfiguration
+        """
+        return self._ipv6_address_configuration
+
+    @ipv6_address_configuration.setter
+    def ipv6_address_configuration(self, ipv6_address_configuration):
+        """
+        Sets the ipv6_address_configuration of this CreateGatewayDetails.
+
+        :param ipv6_address_configuration: The ipv6_address_configuration of this CreateGatewayDetails.
+        :type: oci.apigateway.models.Ipv6AddressConfiguration
+        """
+        self._ipv6_address_configuration = ipv6_address_configuration
+
+    @property
+    def ipv4_address_configuration(self):
+        """
+        Gets the ipv4_address_configuration of this CreateGatewayDetails.
+
+        :return: The ipv4_address_configuration of this CreateGatewayDetails.
+        :rtype: oci.apigateway.models.Ipv4AddressConfiguration
+        """
+        return self._ipv4_address_configuration
+
+    @ipv4_address_configuration.setter
+    def ipv4_address_configuration(self, ipv4_address_configuration):
+        """
+        Sets the ipv4_address_configuration of this CreateGatewayDetails.
+
+        :param ipv4_address_configuration: The ipv4_address_configuration of this CreateGatewayDetails.
+        :type: oci.apigateway.models.Ipv4AddressConfiguration
+        """
+        self._ipv4_address_configuration = ipv4_address_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

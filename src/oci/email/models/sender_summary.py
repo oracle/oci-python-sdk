@@ -32,6 +32,10 @@ class SenderSummary(object):
             The value to assign to the id property of this SenderSummary.
         :type id: str
 
+        :param email_ip_pool_id:
+            The value to assign to the email_ip_pool_id property of this SenderSummary.
+        :type email_ip_pool_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SenderSummary.
         :type lifecycle_state: str
@@ -61,6 +65,7 @@ class SenderSummary(object):
             'compartment_id': 'str',
             'email_address': 'str',
             'id': 'str',
+            'email_ip_pool_id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -72,6 +77,7 @@ class SenderSummary(object):
             'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
             'id': 'id',
+            'email_ip_pool_id': 'emailIpPoolId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
@@ -82,6 +88,7 @@ class SenderSummary(object):
         self._compartment_id = None
         self._email_address = None
         self._id = None
+        self._email_ip_pool_id = None
         self._lifecycle_state = None
         self._time_created = None
         self._freeform_tags = None
@@ -160,6 +167,34 @@ class SenderSummary(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def email_ip_pool_id(self):
+        """
+        Gets the email_ip_pool_id of this SenderSummary.
+        The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The email_ip_pool_id of this SenderSummary.
+        :rtype: str
+        """
+        return self._email_ip_pool_id
+
+    @email_ip_pool_id.setter
+    def email_ip_pool_id(self, email_ip_pool_id):
+        """
+        Sets the email_ip_pool_id of this SenderSummary.
+        The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param email_ip_pool_id: The email_ip_pool_id of this SenderSummary.
+        :type: str
+        """
+        self._email_ip_pool_id = email_ip_pool_id
 
     @property
     def lifecycle_state(self):

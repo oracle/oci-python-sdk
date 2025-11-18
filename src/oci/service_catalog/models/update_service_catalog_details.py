@@ -15,6 +15,14 @@ class UpdateServiceCatalogDetails(object):
     The model for the parameters needed to update a service catalog.
     """
 
+    #: A constant which can be used with the status property of a UpdateServiceCatalogDetails.
+    #: This constant has a value of "ACTIVE"
+    STATUS_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the status property of a UpdateServiceCatalogDetails.
+    #: This constant has a value of "INACTIVE"
+    STATUS_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateServiceCatalogDetails object with values from keyword arguments.
@@ -23,6 +31,11 @@ class UpdateServiceCatalogDetails(object):
         :param display_name:
             The value to assign to the display_name property of this UpdateServiceCatalogDetails.
         :type display_name: str
+
+        :param status:
+            The value to assign to the status property of this UpdateServiceCatalogDetails.
+            Allowed values for this property are: "ACTIVE", "INACTIVE"
+        :type status: str
 
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateServiceCatalogDetails.
@@ -35,15 +48,18 @@ class UpdateServiceCatalogDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'status': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
         self.attribute_map = {
             'display_name': 'displayName',
+            'status': 'status',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
         self._display_name = None
+        self._status = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -70,6 +86,37 @@ class UpdateServiceCatalogDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def status(self):
+        """
+        **[Required]** Gets the status of this UpdateServiceCatalogDetails.
+        The status of a service catalog.
+
+        Allowed values for this property are: "ACTIVE", "INACTIVE"
+
+
+        :return: The status of this UpdateServiceCatalogDetails.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this UpdateServiceCatalogDetails.
+        The status of a service catalog.
+
+
+        :param status: The status of this UpdateServiceCatalogDetails.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "INACTIVE"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            raise ValueError(
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
+            )
+        self._status = status
 
     @property
     def defined_tags(self):

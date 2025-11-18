@@ -78,6 +78,10 @@ class CreatePipelineDetails(object):
             The value to assign to the target_connection_details property of this CreatePipelineDetails.
         :type target_connection_details: oci.golden_gate.models.TargetPipelineConnectionDetails
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreatePipelineDetails.
+        :type subnet_id: str
+
         """
         self.swagger_types = {
             'recipe_type': 'str',
@@ -89,7 +93,8 @@ class CreatePipelineDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]',
             'source_connection_details': 'SourcePipelineConnectionDetails',
-            'target_connection_details': 'TargetPipelineConnectionDetails'
+            'target_connection_details': 'TargetPipelineConnectionDetails',
+            'subnet_id': 'str'
         }
         self.attribute_map = {
             'recipe_type': 'recipeType',
@@ -101,7 +106,8 @@ class CreatePipelineDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks',
             'source_connection_details': 'sourceConnectionDetails',
-            'target_connection_details': 'targetConnectionDetails'
+            'target_connection_details': 'targetConnectionDetails',
+            'subnet_id': 'subnetId'
         }
         self._recipe_type = None
         self._display_name = None
@@ -113,6 +119,7 @@ class CreatePipelineDetails(object):
         self._locks = None
         self._source_connection_details = None
         self._target_connection_details = None
+        self._subnet_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -386,6 +393,36 @@ class CreatePipelineDetails(object):
         :type: oci.golden_gate.models.TargetPipelineConnectionDetails
         """
         self._target_connection_details = target_connection_details
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this CreatePipelineDetails.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this CreatePipelineDetails.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this CreatePipelineDetails.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this CreatePipelineDetails.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

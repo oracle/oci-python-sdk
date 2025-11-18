@@ -67,6 +67,7 @@ Iot
     oci.iot.models.UpdateDigitalTwinRelationshipDetails
     oci.iot.models.UpdateIotDomainDetails
     oci.iot.models.UpdateIotDomainGroupDetails
+    oci.iot.models.Vcn
     oci.iot.models.WorkRequest
     oci.iot.models.WorkRequestError
     oci.iot.models.WorkRequestErrorCollection

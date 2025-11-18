@@ -84,6 +84,10 @@ class GatewaySummary(object):
             The value to assign to the system_tags property of this GatewaySummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param ip_mode:
+            The value to assign to the ip_mode property of this GatewaySummary.
+        :type ip_mode: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -101,7 +105,8 @@ class GatewaySummary(object):
             'certificate_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'ip_mode': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -119,7 +124,8 @@ class GatewaySummary(object):
             'certificate_id': 'certificateId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'ip_mode': 'ipMode'
         }
         self._id = None
         self._display_name = None
@@ -137,6 +143,7 @@ class GatewaySummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._ip_mode = None
 
     @property
     def id(self):
@@ -583,6 +590,38 @@ class GatewaySummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def ip_mode(self):
+        """
+        Gets the ip_mode of this GatewaySummary.
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+        `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will
+        only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6
+        address assigned to it.
+        Example: `IPV4` or `IPV6` or `DUAL_STACK`
+
+
+        :return: The ip_mode of this GatewaySummary.
+        :rtype: str
+        """
+        return self._ip_mode
+
+    @ip_mode.setter
+    def ip_mode(self, ip_mode):
+        """
+        Sets the ip_mode of this GatewaySummary.
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both.
+        `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will
+        only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6
+        address assigned to it.
+        Example: `IPV4` or `IPV6` or `DUAL_STACK`
+
+
+        :param ip_mode: The ip_mode of this GatewaySummary.
+        :type: str
+        """
+        self._ip_mode = ip_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -48,9 +48,21 @@ class CloudServiceProviderMetadataItem(object):
             The value to assign to the resource_anchor_name property of this CloudServiceProviderMetadataItem.
         :type resource_anchor_name: str
 
+        :param csp_resource_anchor_id:
+            The value to assign to the csp_resource_anchor_id property of this CloudServiceProviderMetadataItem.
+        :type csp_resource_anchor_id: str
+
+        :param csp_resource_anchor_name:
+            The value to assign to the csp_resource_anchor_name property of this CloudServiceProviderMetadataItem.
+        :type csp_resource_anchor_name: str
+
         :param resource_anchor_uri:
             The value to assign to the resource_anchor_uri property of this CloudServiceProviderMetadataItem.
         :type resource_anchor_uri: str
+
+        :param csp_additional_properties:
+            The value to assign to the csp_additional_properties property of this CloudServiceProviderMetadataItem.
+        :type csp_additional_properties: dict(str, str)
 
         :param subscription_type:
             The value to assign to the subscription_type property of this CloudServiceProviderMetadataItem.
@@ -62,18 +74,27 @@ class CloudServiceProviderMetadataItem(object):
         self.swagger_types = {
             'region': 'str',
             'resource_anchor_name': 'str',
+            'csp_resource_anchor_id': 'str',
+            'csp_resource_anchor_name': 'str',
             'resource_anchor_uri': 'str',
+            'csp_additional_properties': 'dict(str, str)',
             'subscription_type': 'str'
         }
         self.attribute_map = {
             'region': 'region',
             'resource_anchor_name': 'resourceAnchorName',
+            'csp_resource_anchor_id': 'cspResourceAnchorId',
+            'csp_resource_anchor_name': 'cspResourceAnchorName',
             'resource_anchor_uri': 'resourceAnchorUri',
+            'csp_additional_properties': 'cspAdditionalProperties',
             'subscription_type': 'subscriptionType'
         }
         self._region = None
         self._resource_anchor_name = None
+        self._csp_resource_anchor_id = None
+        self._csp_resource_anchor_name = None
         self._resource_anchor_uri = None
+        self._csp_additional_properties = None
         self._subscription_type = None
 
     @staticmethod
@@ -123,7 +144,7 @@ class CloudServiceProviderMetadataItem(object):
     def resource_anchor_name(self):
         """
         **[Required]** Gets the resource_anchor_name of this CloudServiceProviderMetadataItem.
-        CSP resource anchor ID or name.
+        OCI resource anchor name.
 
 
         :return: The resource_anchor_name of this CloudServiceProviderMetadataItem.
@@ -135,13 +156,61 @@ class CloudServiceProviderMetadataItem(object):
     def resource_anchor_name(self, resource_anchor_name):
         """
         Sets the resource_anchor_name of this CloudServiceProviderMetadataItem.
-        CSP resource anchor ID or name.
+        OCI resource anchor name.
 
 
         :param resource_anchor_name: The resource_anchor_name of this CloudServiceProviderMetadataItem.
         :type: str
         """
         self._resource_anchor_name = resource_anchor_name
+
+    @property
+    def csp_resource_anchor_id(self):
+        """
+        Gets the csp_resource_anchor_id of this CloudServiceProviderMetadataItem.
+        CSP resource anchor ID.
+
+
+        :return: The csp_resource_anchor_id of this CloudServiceProviderMetadataItem.
+        :rtype: str
+        """
+        return self._csp_resource_anchor_id
+
+    @csp_resource_anchor_id.setter
+    def csp_resource_anchor_id(self, csp_resource_anchor_id):
+        """
+        Sets the csp_resource_anchor_id of this CloudServiceProviderMetadataItem.
+        CSP resource anchor ID.
+
+
+        :param csp_resource_anchor_id: The csp_resource_anchor_id of this CloudServiceProviderMetadataItem.
+        :type: str
+        """
+        self._csp_resource_anchor_id = csp_resource_anchor_id
+
+    @property
+    def csp_resource_anchor_name(self):
+        """
+        Gets the csp_resource_anchor_name of this CloudServiceProviderMetadataItem.
+        CSP resource anchor name.
+
+
+        :return: The csp_resource_anchor_name of this CloudServiceProviderMetadataItem.
+        :rtype: str
+        """
+        return self._csp_resource_anchor_name
+
+    @csp_resource_anchor_name.setter
+    def csp_resource_anchor_name(self, csp_resource_anchor_name):
+        """
+        Sets the csp_resource_anchor_name of this CloudServiceProviderMetadataItem.
+        CSP resource anchor name.
+
+
+        :param csp_resource_anchor_name: The csp_resource_anchor_name of this CloudServiceProviderMetadataItem.
+        :type: str
+        """
+        self._csp_resource_anchor_name = csp_resource_anchor_name
 
     @property
     def resource_anchor_uri(self):
@@ -166,6 +235,30 @@ class CloudServiceProviderMetadataItem(object):
         :type: str
         """
         self._resource_anchor_uri = resource_anchor_uri
+
+    @property
+    def csp_additional_properties(self):
+        """
+        Gets the csp_additional_properties of this CloudServiceProviderMetadataItem.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :return: The csp_additional_properties of this CloudServiceProviderMetadataItem.
+        :rtype: dict(str, str)
+        """
+        return self._csp_additional_properties
+
+    @csp_additional_properties.setter
+    def csp_additional_properties(self, csp_additional_properties):
+        """
+        Sets the csp_additional_properties of this CloudServiceProviderMetadataItem.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :param csp_additional_properties: The csp_additional_properties of this CloudServiceProviderMetadataItem.
+        :type: dict(str, str)
+        """
+        self._csp_additional_properties = csp_additional_properties
 
     @property
     def subscription_type(self):

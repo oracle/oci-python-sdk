@@ -118,129 +118,18 @@ class MetadataClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
-    def list_external_location_details_metadata(self, subscription_id, compartment_id, subscription_service_name, **kwargs):
+    def list_external_location_details_metadata(self, subscription_id, subscription_service_name, **kwargs):
         """
         List externalLocationDetail metadata from OCI to Cloud  Service Provider for regions, Availability Zones, and Cluster Placement Group ID.
-        examples:
-          application-json: |
-            [
-              {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US\",
-                    \"cspPhysicalAz\": \"az1-xyz\",
-                    \"cspPhysicalAzDisplayName\": \"(US) East US 2\",
-                    \"cspLogicalAz\": \"az1\",
-                    \"serviceName\": \"ORACLEDBATAZURE\",
-                    \"cspZoneKeyReferenceId\": {
-                      \"keyName\": \"AzureSubscriptionId or AwsAccountId, GcpProjectName\",
-                      \"keyValue\": \"azure-subscriptionId-1 or aws-account-id-1, gcp-project-id-1\"
-                    }
-                  },
-                  \"ociPhysicalAd\": \"ad1-xyb\",
-                  \"ociLogicalAd\": \"ad2\",
-                  \"ociRegion\": \"us-ashburn-1\",
-                  \"cpgId\": \"cpg-1\"
-              },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US\",
-                    \"cspPhysicalAz\": \"az2-abc\",
-                    \"cspPhysicalAzDisplayName\": \"(US) East US 2\",
-                    \"cspLogicalAz\": \"az2\",
-                    \"serviceName\": \"ORACLEDBATAZURE\",
-                    \"cspZoneKeyReferenceId\": {
-                      \"keyName\": \"AzureSubscriptionId or AwsAccountId, GcpProjectName\",
-                      \"keyValue\": \"azure-subscriptionId-2 or aws-account-id-2, gcp-project-id-2\"
-                    }
-                  },
-                  \"ociPhysicalAd\": \"ad2-xby\",
-                  \"ociLogicalAd\": \"ad1\",
-                  \"ociRegion\": \"us-ashburn-1\",
-                  \"cpgId\": \"cpg-2\"
-                },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US\",
-                    \"cspPhysicalAz\": \"az3-abz\",
-                    \"cspPhysicalAzDisplayName\": \"(US) East US 2\",
-                    \"cspLogicalAz\": \"az3\",
-                    \"serviceName\": \"ORACLEDBATAZURE\",
-                    \"cspZoneKeyReferenceId\": {
-                      \"keyName\": \"AzureSubscriptionId or AwsAccountId, GcpProjectName\",
-                      \"keyValue\": \"azure-subscriptionId-3 or aws-account-id-3, gcp-project-id-3\"
-                    }
-                  },
-                  \"ociPhysicalAd\": \"ad3-cde\",
-                  \"ociLogicalAd\": \"ad3\",
-                  \"ociRegion\": \"us-ashburn-1\",
-                  \"cpgId\": \"cpg-3\"
-                },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US 2\",
-                    \"cspPhysicalAz\": \"az1-def\",
-                    \"cspPhysicalAzDisplayName\": \"(US) East US 2\",
-                    \"cspLogicalAz\": \"az1\",
-                    \"serviceName\": \"ORACLEDBATAZURE\",
-                    \"cspZoneKeyReferenceId\": {
-                      \"keyName\": \"AzureSubscriptionId or AwsAccountId, GcpProjectName\",
-                      \"keyValue\": \"azure-subscriptionId-4 or aws-account-id-4, gcp-project-id-4\"
-                    }
-                  },
-                  \"ociPhysicalAd\": \"ad1-bce\",
-                  \"ociLogicalAd\": \"ad2\",
-                  \"ociRegion\": \"us-ashburn-1\",
-                  \"cpgId\": \"cpg-4\"
-                },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US 2\",
-                    \"cspPhysicalAz\": \"az2-uvw\",
-                    \"cspPhysicalAzDisplayName\": \"(US) East US 2\",
-                    \"cspLogicalAz\": \"az2\",
-                    \"serviceName\": \"ORACLEDBATAZURE\",
-                    \"cspZoneKeyReferenceId\": {
-                      \"keyName\": \"AzureSubscriptionId or AwsAccountId, GcpProjectName\",
-                      \"keyValue\": \"azure-subscriptionId-3 or aws-account-id-3, gcp-project-id-3\"
-                    }
-                  },
-                  \"ociPhysicalAd\": \"ad2-ftc\",
-                  \"ociLogicalAd\": \"ad1\",
-                  \"ociRegion\": \"us-ashburn-1\",
-                  \"cpgId\": \"cpg-5\"
-                },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US 2\",
-                    \"cspPhysicalAz\": \"az3-uvw\",
-                    \"cspPhysicalAzDisplayName\": \"(US) East US 2\",
-                    \"cspLogicalAz\": \"az3\",
-                    \"serviceName\": \"ORACLEDBATAZURE\",
-                    \"cspZoneKeyReferenceId\": {
-                      \"keyName\": \"AzureSubscriptionId or AwsAccountId, GcpProjectName\",
-                      \"keyValue\": \"azure-subscriptionId-3 or aws-account-id-3, gcp-project-id-3\"
-                    }
-                  },
-                  \"ociPhysicalAd\": \"ad3-stc\",
-                  \"ociLogicalAd\": \"ad3\",
-                  \"ociRegion\": \"us-ashburn-1\",
-                  \"cpgId\": \"cpg-6\"
-                }
-              ]
 
 
         :param str subscription_id: (required)
-            The `OCID`__ of the subscription in which to list resources.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-        :param str compartment_id: (required)
-            The `OCID`__ of the compartment in which to list resources.
+            The `OCID`__ of the Multicloud subscription in which to list resources.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
-            The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+            The subscription service name of the Cloud Service Provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
@@ -249,8 +138,25 @@ class MetadataClient(object):
 
             Allowed values are: "dbsystem"
 
+        :param str compartment_id: (optional)
+            The `OCID`__ of the Multicloud base compartment in which to list resources.
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str linked_compartment_id: (optional)
-            The `OCID`__ of the compartment in which linked to Resource.
+            The `OCID`__ of the compartment linked to the resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str external_location: (optional)
+            The Cloud Service Provider region.
+
+        :param str logical_zone: (optional)
+            OCI Logical AD to filter the response.
+
+        :param str cluster_placement_group_id: (optional)
+            The `OCID`__ of the Cluster Placement Group.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -304,7 +210,7 @@ class MetadataClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/multicloud/list_external_location_details_metadata.py.html>`__ to see an example of how to use list_external_location_details_metadata API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['subscriptionId', 'compartmentId', 'subscriptionServiceName']
+        required_arguments = ['subscriptionId', 'subscriptionServiceName']
         resource_path = "/externalLocationsMetadata"
         method = "GET"
         operation_name = "list_external_location_details_metadata"
@@ -315,7 +221,11 @@ class MetadataClient(object):
             "allow_control_chars",
             "retry_strategy",
             "entity_type",
+            "compartment_id",
             "linked_compartment_id",
+            "external_location",
+            "logical_zone",
+            "cluster_placement_group_id",
             "limit",
             "page",
             "sort_order",
@@ -357,9 +267,12 @@ class MetadataClient(object):
         query_params = {
             "subscriptionId": subscription_id,
             "entityType": kwargs.get("entity_type", missing),
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "linkedCompartmentId": kwargs.get("linked_compartment_id", missing),
             "subscriptionServiceName": subscription_service_name,
+            "externalLocation": kwargs.get("external_location", missing),
+            "logicalZone": kwargs.get("logical_zone", missing),
+            "clusterPlacementGroupId": kwargs.get("cluster_placement_group_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -411,68 +324,21 @@ class MetadataClient(object):
     def list_external_location_mapping_metadata(self, subscription_service_name, compartment_id, **kwargs):
         """
         List externalLocation metadata from OCI to the Cloud Service Provider for regions, Physical Availability Zones.
-        examples:
-          application-json: |
-            [
-              {
-                \"externalLocation\": {
-                  \"cspRegion\": \"eastus\",
-                  \"cspPhysicalAz\": \"eastus-az1\",
-                  \"cspPhysicalAzDisplayName\": \"(US) East US 1\",
-                  \"serviceName\": \"ORACLEDBATAZURE\"
-                },
-                \"ociPhysicalAd\": \"iad-ad-1\",
-                \"ociLogicalAd\": \"ad1\",
-                \"ociRegion\": \"us-ashburn-1\"
-            },
-              {
-                \"externalLocation\": {
-                  \"cspRegion\": \"eastus\",
-                  \"cspPhysicalAz\": \"eastus-az1\",
-                  \"cspPhysicalAzDisplayName\": \"(US) East US 1\",
-                  \"serviceName\": \"ORACLEDBATAZURE\"
-                },
-                \"ociPhysicalAd\": \"iad-ad-1\",
-                \"ociLogicalAd\": \"ad1\",
-                \"ociRegion\": \"us-ashburn-1\"
-              },
-              {
-                \"externalLocation\": {
-                  \"cspRegion\": \"eastus2\",
-                  \"cspPhysicalAz\": \"eastus2-az3\",
-                  \"cspPhysicalAzDisplayName\": \"(US) East US 1\",
-                  \"serviceName\": \"ORACLEDBATAZURE\"
-                },
-                \"ociPhysicalAd\": \"iad-ad-2\",
-                \"ociLogicalAd\": \"ad1\",
-                \"ociRegion\": \"us-ashburn-1\"
-              },
-              {
-                \"externalLocation\": {
-                  \"cspRegion\": \"eastus\",
-                  \"cspPhysicalAz\": \"eastus-az3\"
-                  \"cspPhysicalAzDisplayName\": \"(US) East US 1\",
-                  \"serviceName\": \"ORACLEDBATAZURE\"
-                },
-                \"ociPhysicalAd\": \"iad-ad-333\",
-                \"ociLogicalAd\": \"ad1\",
-                \"ociRegion\": \"us-ashburn-1\"
-              }
-            ]
 
 
         :param oci.multicloud.models.list[str] subscription_service_name: (required)
-            The subscription type values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+            The subscription type of the Cloud Service Provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str compartment_id: (required)
-            The `OCID`__ of the compartment in which to list resources.
+            The `OCID`__ of the Multicloud base compartment in which to list resources.
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_id: (optional)
-            The `OCID`__ of the subscription in which to list resources.
+            The `OCID`__ of the Multicloud subscription in which to list resources.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -624,42 +490,21 @@ class MetadataClient(object):
     def list_external_location_summaries_metadata(self, subscription_service_name, compartment_id, **kwargs):
         """
         List externalLocationSummary metadata from OCI Region to the Cloud Service Provider region across all regions.
-        examples:
-          application-json: |
-            [
-              {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US\"
-                  },
-                  \"ociRegion\": \"us-ashburn-1\"
-              },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"East US 2\"
-                  },
-                  \"ociRegion\": \"us-ashburn-1\"
-                },
-                {
-                  \"externalLocation\": {
-                    \"cspRegion\": \"Germany West Central\"
-                  },
-                  \"ociRegion\": \"eu-frankfurt-1\",
-                }
-              ]
 
 
         :param str subscription_service_name: (required)
-            The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+            The subscription service name of the Cloud Service Provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str compartment_id: (required)
-            The `OCID`__ of the compartment in which to list resources.
+            The `OCID`__ of the Multicloud base compartment in which to list resources.
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_id: (optional)
-            The `OCID`__ of the subscription in which to list resources.
+            The `OCID`__ of the Multicloud subscription in which to list resources.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
