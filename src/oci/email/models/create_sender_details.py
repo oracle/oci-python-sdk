@@ -28,6 +28,10 @@ class CreateSenderDetails(object):
             The value to assign to the email_address property of this CreateSenderDetails.
         :type email_address: str
 
+        :param email_ip_pool_id:
+            The value to assign to the email_ip_pool_id property of this CreateSenderDetails.
+        :type email_ip_pool_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSenderDetails.
         :type freeform_tags: dict(str, str)
@@ -40,17 +44,20 @@ class CreateSenderDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'email_address': 'str',
+            'email_ip_pool_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
+            'email_ip_pool_id': 'emailIpPoolId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._compartment_id = None
         self._email_address = None
+        self._email_ip_pool_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -101,6 +108,34 @@ class CreateSenderDetails(object):
         :type: str
         """
         self._email_address = email_address
+
+    @property
+    def email_ip_pool_id(self):
+        """
+        Gets the email_ip_pool_id of this CreateSenderDetails.
+        An optional field. The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The email_ip_pool_id of this CreateSenderDetails.
+        :rtype: str
+        """
+        return self._email_ip_pool_id
+
+    @email_ip_pool_id.setter
+    def email_ip_pool_id(self, email_ip_pool_id):
+        """
+        Sets the email_ip_pool_id of this CreateSenderDetails.
+        An optional field. The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param email_ip_pool_id: The email_ip_pool_id of this CreateSenderDetails.
+        :type: str
+        """
+        self._email_ip_pool_id = email_ip_pool_id
 
     @property
     def freeform_tags(self):

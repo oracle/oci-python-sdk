@@ -197,7 +197,7 @@ class UpdateVcnDetails(object):
     def is_zpr_only(self):
         """
         Gets the is_zpr_only of this UpdateVcnDetails.
-        Indicates whether Zpr Only Mode is enforced.
+        Indicates whether ZPR Only mode is enforced.
 
 
         :return: The is_zpr_only of this UpdateVcnDetails.
@@ -209,7 +209,7 @@ class UpdateVcnDetails(object):
     def is_zpr_only(self, is_zpr_only):
         """
         Sets the is_zpr_only of this UpdateVcnDetails.
-        Indicates whether Zpr Only Mode is enforced.
+        Indicates whether ZPR Only mode is enforced.
 
 
         :param is_zpr_only: The is_zpr_only of this UpdateVcnDetails.

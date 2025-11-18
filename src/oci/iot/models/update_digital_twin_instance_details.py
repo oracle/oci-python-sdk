@@ -40,6 +40,14 @@ class UpdateDigitalTwinInstanceDetails(object):
             The value to assign to the digital_twin_adapter_id property of this UpdateDigitalTwinInstanceDetails.
         :type digital_twin_adapter_id: str
 
+        :param digital_twin_model_id:
+            The value to assign to the digital_twin_model_id property of this UpdateDigitalTwinInstanceDetails.
+        :type digital_twin_model_id: str
+
+        :param digital_twin_model_spec_uri:
+            The value to assign to the digital_twin_model_spec_uri property of this UpdateDigitalTwinInstanceDetails.
+        :type digital_twin_model_spec_uri: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDigitalTwinInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -55,6 +63,8 @@ class UpdateDigitalTwinInstanceDetails(object):
             'display_name': 'str',
             'description': 'str',
             'digital_twin_adapter_id': 'str',
+            'digital_twin_model_id': 'str',
+            'digital_twin_model_spec_uri': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -64,6 +74,8 @@ class UpdateDigitalTwinInstanceDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'digital_twin_adapter_id': 'digitalTwinAdapterId',
+            'digital_twin_model_id': 'digitalTwinModelId',
+            'digital_twin_model_spec_uri': 'digitalTwinModelSpecUri',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -72,6 +84,8 @@ class UpdateDigitalTwinInstanceDetails(object):
         self._display_name = None
         self._description = None
         self._digital_twin_adapter_id = None
+        self._digital_twin_model_id = None
+        self._digital_twin_model_spec_uri = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -206,6 +220,58 @@ class UpdateDigitalTwinInstanceDetails(object):
         :type: str
         """
         self._digital_twin_adapter_id = digital_twin_adapter_id
+
+    @property
+    def digital_twin_model_id(self):
+        """
+        Gets the digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
+        The `OCID`__ of the digital twin model.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
+        :rtype: str
+        """
+        return self._digital_twin_model_id
+
+    @digital_twin_model_id.setter
+    def digital_twin_model_id(self, digital_twin_model_id):
+        """
+        Sets the digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
+        The `OCID`__ of the digital twin model.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param digital_twin_model_id: The digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
+        :type: str
+        """
+        self._digital_twin_model_id = digital_twin_model_id
+
+    @property
+    def digital_twin_model_spec_uri(self):
+        """
+        Gets the digital_twin_model_spec_uri of this UpdateDigitalTwinInstanceDetails.
+        The URI of the digital twin model specification.
+
+
+        :return: The digital_twin_model_spec_uri of this UpdateDigitalTwinInstanceDetails.
+        :rtype: str
+        """
+        return self._digital_twin_model_spec_uri
+
+    @digital_twin_model_spec_uri.setter
+    def digital_twin_model_spec_uri(self, digital_twin_model_spec_uri):
+        """
+        Sets the digital_twin_model_spec_uri of this UpdateDigitalTwinInstanceDetails.
+        The URI of the digital twin model specification.
+
+
+        :param digital_twin_model_spec_uri: The digital_twin_model_spec_uri of this UpdateDigitalTwinInstanceDetails.
+        :type: str
+        """
+        self._digital_twin_model_spec_uri = digital_twin_model_spec_uri
 
     @property
     def freeform_tags(self):

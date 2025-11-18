@@ -48,6 +48,7 @@ REGIONS_SHORT_NAMES = {
     'orf': 'eu-madrid-3',
     'des': 'ap-chennai-1',
     'vkz': 'us-columbus-1',
+    'nrq': 'eu-turin-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -132,6 +133,7 @@ REGION_REALMS = {
     'eu-madrid-3': 'oc1',
     'ap-chennai-1': 'oc1',
     'us-columbus-1': 'oc1',
+    'eu-turin-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -255,6 +257,7 @@ REGIONS = [
     'eu-madrid-3',
     'ap-chennai-1',
     'us-columbus-1',
+    'eu-turin-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',

@@ -129,12 +129,12 @@ class OmhubNetworkAnchorClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
-            The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+            The subscription service name of the Cloud Service Provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str subscription_id: (required)
-            The `OCID`__ of the subscription in which to list resources.
+            The `OCID`__ of the Multicloud subscription in which to list resources.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -145,7 +145,10 @@ class OmhubNetworkAnchorClient(object):
             underscore, and dash.
 
         :param str external_location: (optional)
-            OMHub Control Plane must know underlying CSP CP Region External Location Name.
+            The Cloud Service Provider region.
+
+        :param bool should_fetch_vcn_name: (optional)
+            Whether to fetch and include the vcn display name, which may introduce additional latency.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -177,7 +180,8 @@ class OmhubNetworkAnchorClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "external_location"
+            "external_location",
+            "should_fetch_vcn_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -203,7 +207,8 @@ class OmhubNetworkAnchorClient(object):
         query_params = {
             "subscriptionServiceName": subscription_service_name,
             "subscriptionId": subscription_id,
-            "externalLocation": kwargs.get("external_location", missing)
+            "externalLocation": kwargs.get("external_location", missing),
+            "shouldFetchVcnName": kwargs.get("should_fetch_vcn_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -250,30 +255,28 @@ class OmhubNetworkAnchorClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_network_anchors(self, subscription_id, subscription_service_name, external_location, **kwargs):
+    def list_network_anchors(self, **kwargs):
         """
         Gets a list of NetworkAnchors.
 
 
-        :param str subscription_id: (required)
-            The `OCID`__ of the subscription in which to list resources.
+        :param str compartment_id: (optional)
+            The `OCID`__ of the Multicloud base compartment or sub-compartment in which to list resources.
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param str subscription_service_name: (required)
-            The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        :param str subscription_id: (optional)
+            The `OCID`__ of the Multicloud subscription in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str subscription_service_name: (optional)
+            The subscription service name of the Cloud Service Provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
-        :param str external_location: (required)
-            OMHub Control Plane must know underlying CSP CP Region External Location Name.
-
-        :param str compartment_id: (optional)
-            The `OCID`__ of the compartment in which to list resources.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-        :param str lifecycle_state: (optional)
+        :param str network_anchor_lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
             state value is case-insensitive.
 
@@ -282,8 +285,14 @@ class OmhubNetworkAnchorClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
 
+        :param str external_location: (optional)
+            The Cloud Service Provider region.
+
         :param str network_anchor_oci_subnet_id: (optional)
             A filter to return only NetworkAnchor resources that match the given OCI subnet Id.
+
+        :param bool compartment_id_in_subtree: (optional)
+            If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
 
         :param str network_anchor_oci_vcn_id: (optional)
             A filter to return only NetworkAnchor resources that match the given OCI Vcn Id.
@@ -306,6 +315,9 @@ class OmhubNetworkAnchorClient(object):
             `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param bool should_fetch_vcn_name: (optional)
+            Whether to fetch and include the vcn display name, which may introduce additional latency.
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -343,7 +355,7 @@ class OmhubNetworkAnchorClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/multicloud/list_network_anchors.py.html>`__ to see an example of how to use list_network_anchors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['subscriptionId', 'subscriptionServiceName', 'externalLocation']
+        required_arguments = []
         resource_path = "/networkAnchors"
         method = "GET"
         operation_name = "list_network_anchors"
@@ -354,13 +366,18 @@ class OmhubNetworkAnchorClient(object):
             "allow_control_chars",
             "retry_strategy",
             "compartment_id",
-            "lifecycle_state",
+            "subscription_id",
+            "subscription_service_name",
+            "network_anchor_lifecycle_state",
             "display_name",
+            "external_location",
             "network_anchor_oci_subnet_id",
+            "compartment_id_in_subtree",
             "network_anchor_oci_vcn_id",
             "id",
             "limit",
             "page",
+            "should_fetch_vcn_name",
             "sort_order",
             "sort_by",
             "opc_request_id"
@@ -370,17 +387,18 @@ class OmhubNetworkAnchorClient(object):
             raise ValueError(
                 f"list_network_anchors got unknown kwargs: {extra_kwargs!r}")
 
-        subscription_service_name_allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
-        if subscription_service_name not in subscription_service_name_allowed_values:
-            raise ValueError(
-                f"Invalid value for `subscription_service_name`, must be one of { subscription_service_name_allowed_values }"
-            )
-
-        if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
-            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+        if 'subscription_service_name' in kwargs:
+            subscription_service_name_allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
+            if kwargs['subscription_service_name'] not in subscription_service_name_allowed_values:
                 raise ValueError(
-                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                    f"Invalid value for `subscription_service_name`, must be one of { subscription_service_name_allowed_values }"
+                )
+
+        if 'network_anchor_lifecycle_state' in kwargs:
+            network_anchor_lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            if kwargs['network_anchor_lifecycle_state'] not in network_anchor_lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `network_anchor_lifecycle_state`, must be one of { network_anchor_lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
@@ -399,16 +417,18 @@ class OmhubNetworkAnchorClient(object):
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
-            "subscriptionId": subscription_id,
-            "subscriptionServiceName": subscription_service_name,
-            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "subscriptionId": kwargs.get("subscription_id", missing),
+            "subscriptionServiceName": kwargs.get("subscription_service_name", missing),
+            "networkAnchorLifecycleState": kwargs.get("network_anchor_lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
-            "externalLocation": external_location,
+            "externalLocation": kwargs.get("external_location", missing),
             "networkAnchorOciSubnetId": kwargs.get("network_anchor_oci_subnet_id", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "networkAnchorOciVcnId": kwargs.get("network_anchor_oci_vcn_id", missing),
             "id": kwargs.get("id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
+            "shouldFetchVcnName": kwargs.get("should_fetch_vcn_name", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }

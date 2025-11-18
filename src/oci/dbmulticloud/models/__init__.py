@@ -7,7 +7,10 @@
 from __future__ import absolute_import
 
 from .arc_agent_nodes import ArcAgentNodes
+from .aws_nodes import AwsNodes
 from .change_multi_cloud_resource_discovery_compartment_details import ChangeMultiCloudResourceDiscoveryCompartmentDetails
+from .change_oracle_db_aws_identity_connector_compartment_details import ChangeOracleDbAwsIdentityConnectorCompartmentDetails
+from .change_oracle_db_aws_key_compartment_details import ChangeOracleDbAwsKeyCompartmentDetails
 from .change_oracle_db_azure_blob_container_compartment_details import ChangeOracleDbAzureBlobContainerCompartmentDetails
 from .change_oracle_db_azure_blob_mount_compartment_details import ChangeOracleDbAzureBlobMountCompartmentDetails
 from .change_oracle_db_azure_connector_compartment_details import ChangeOracleDbAzureConnectorCompartmentDetails
@@ -16,6 +19,8 @@ from .change_oracle_db_azure_vault_compartment_details import ChangeOracleDbAzur
 from .change_oracle_db_gcp_identity_connector_compartment_details import ChangeOracleDbGcpIdentityConnectorCompartmentDetails
 from .change_oracle_db_gcp_key_ring_compartment_details import ChangeOracleDbGcpKeyRingCompartmentDetails
 from .create_multi_cloud_resource_discovery_details import CreateMultiCloudResourceDiscoveryDetails
+from .create_oracle_db_aws_identity_connector_details import CreateOracleDbAwsIdentityConnectorDetails
+from .create_oracle_db_aws_key_details import CreateOracleDbAwsKeyDetails
 from .create_oracle_db_azure_blob_container_details import CreateOracleDbAzureBlobContainerDetails
 from .create_oracle_db_azure_blob_mount_details import CreateOracleDbAzureBlobMountDetails
 from .create_oracle_db_azure_connector_details import CreateOracleDbAzureConnectorDetails
@@ -27,6 +32,12 @@ from .gcp_nodes import GcpNodes
 from .multi_cloud_resource_discovery import MultiCloudResourceDiscovery
 from .multi_cloud_resource_discovery_summary import MultiCloudResourceDiscoverySummary
 from .multi_cloud_resource_discovery_summary_collection import MultiCloudResourceDiscoverySummaryCollection
+from .oracle_db_aws_identity_connector import OracleDbAwsIdentityConnector
+from .oracle_db_aws_identity_connector_summary import OracleDbAwsIdentityConnectorSummary
+from .oracle_db_aws_identity_connector_summary_collection import OracleDbAwsIdentityConnectorSummaryCollection
+from .oracle_db_aws_key import OracleDbAwsKey
+from .oracle_db_aws_key_summary import OracleDbAwsKeySummary
+from .oracle_db_aws_key_summary_collection import OracleDbAwsKeySummaryCollection
 from .oracle_db_azure_blob_container import OracleDbAzureBlobContainer
 from .oracle_db_azure_blob_container_summary import OracleDbAzureBlobContainerSummary
 from .oracle_db_azure_blob_container_summary_collection import OracleDbAzureBlobContainerSummaryCollection
@@ -55,10 +66,15 @@ from .oracle_db_gcp_key_ring_summary_collection import OracleDbGcpKeyRingSummary
 from .oracle_db_gcp_key_summary import OracleDbGcpKeySummary
 from .oracle_db_gcp_key_summary_collection import OracleDbGcpKeySummaryCollection
 from .patch_oracle_db_azure_connector_details import PatchOracleDbAzureConnectorDetails
+from .refresh_oracle_db_aws_key_details import RefreshOracleDbAwsKeyDetails
 from .refresh_oracle_db_azure_vault_details import RefreshOracleDbAzureVaultDetails
 from .refresh_oracle_db_gcp_key_ring_details import RefreshOracleDbGcpKeyRingDetails
 from .resources import Resources
+from .service_role_detail import ServiceRoleDetail
+from .service_role_details import ServiceRoleDetails
 from .update_multi_cloud_resource_discovery_details import UpdateMultiCloudResourceDiscoveryDetails
+from .update_oracle_db_aws_identity_connector_details import UpdateOracleDbAwsIdentityConnectorDetails
+from .update_oracle_db_aws_key_details import UpdateOracleDbAwsKeyDetails
 from .update_oracle_db_azure_blob_container_details import UpdateOracleDbAzureBlobContainerDetails
 from .update_oracle_db_azure_blob_mount_details import UpdateOracleDbAzureBlobMountDetails
 from .update_oracle_db_azure_connector_details import UpdateOracleDbAzureConnectorDetails
@@ -78,7 +94,10 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for dbmulticloud services.
 dbmulticloud_type_mapping = {
     "ArcAgentNodes": ArcAgentNodes,
+    "AwsNodes": AwsNodes,
     "ChangeMultiCloudResourceDiscoveryCompartmentDetails": ChangeMultiCloudResourceDiscoveryCompartmentDetails,
+    "ChangeOracleDbAwsIdentityConnectorCompartmentDetails": ChangeOracleDbAwsIdentityConnectorCompartmentDetails,
+    "ChangeOracleDbAwsKeyCompartmentDetails": ChangeOracleDbAwsKeyCompartmentDetails,
     "ChangeOracleDbAzureBlobContainerCompartmentDetails": ChangeOracleDbAzureBlobContainerCompartmentDetails,
     "ChangeOracleDbAzureBlobMountCompartmentDetails": ChangeOracleDbAzureBlobMountCompartmentDetails,
     "ChangeOracleDbAzureConnectorCompartmentDetails": ChangeOracleDbAzureConnectorCompartmentDetails,
@@ -87,6 +106,8 @@ dbmulticloud_type_mapping = {
     "ChangeOracleDbGcpIdentityConnectorCompartmentDetails": ChangeOracleDbGcpIdentityConnectorCompartmentDetails,
     "ChangeOracleDbGcpKeyRingCompartmentDetails": ChangeOracleDbGcpKeyRingCompartmentDetails,
     "CreateMultiCloudResourceDiscoveryDetails": CreateMultiCloudResourceDiscoveryDetails,
+    "CreateOracleDbAwsIdentityConnectorDetails": CreateOracleDbAwsIdentityConnectorDetails,
+    "CreateOracleDbAwsKeyDetails": CreateOracleDbAwsKeyDetails,
     "CreateOracleDbAzureBlobContainerDetails": CreateOracleDbAzureBlobContainerDetails,
     "CreateOracleDbAzureBlobMountDetails": CreateOracleDbAzureBlobMountDetails,
     "CreateOracleDbAzureConnectorDetails": CreateOracleDbAzureConnectorDetails,
@@ -98,6 +119,12 @@ dbmulticloud_type_mapping = {
     "MultiCloudResourceDiscovery": MultiCloudResourceDiscovery,
     "MultiCloudResourceDiscoverySummary": MultiCloudResourceDiscoverySummary,
     "MultiCloudResourceDiscoverySummaryCollection": MultiCloudResourceDiscoverySummaryCollection,
+    "OracleDbAwsIdentityConnector": OracleDbAwsIdentityConnector,
+    "OracleDbAwsIdentityConnectorSummary": OracleDbAwsIdentityConnectorSummary,
+    "OracleDbAwsIdentityConnectorSummaryCollection": OracleDbAwsIdentityConnectorSummaryCollection,
+    "OracleDbAwsKey": OracleDbAwsKey,
+    "OracleDbAwsKeySummary": OracleDbAwsKeySummary,
+    "OracleDbAwsKeySummaryCollection": OracleDbAwsKeySummaryCollection,
     "OracleDbAzureBlobContainer": OracleDbAzureBlobContainer,
     "OracleDbAzureBlobContainerSummary": OracleDbAzureBlobContainerSummary,
     "OracleDbAzureBlobContainerSummaryCollection": OracleDbAzureBlobContainerSummaryCollection,
@@ -126,10 +153,15 @@ dbmulticloud_type_mapping = {
     "OracleDbGcpKeySummary": OracleDbGcpKeySummary,
     "OracleDbGcpKeySummaryCollection": OracleDbGcpKeySummaryCollection,
     "PatchOracleDbAzureConnectorDetails": PatchOracleDbAzureConnectorDetails,
+    "RefreshOracleDbAwsKeyDetails": RefreshOracleDbAwsKeyDetails,
     "RefreshOracleDbAzureVaultDetails": RefreshOracleDbAzureVaultDetails,
     "RefreshOracleDbGcpKeyRingDetails": RefreshOracleDbGcpKeyRingDetails,
     "Resources": Resources,
+    "ServiceRoleDetail": ServiceRoleDetail,
+    "ServiceRoleDetails": ServiceRoleDetails,
     "UpdateMultiCloudResourceDiscoveryDetails": UpdateMultiCloudResourceDiscoveryDetails,
+    "UpdateOracleDbAwsIdentityConnectorDetails": UpdateOracleDbAwsIdentityConnectorDetails,
+    "UpdateOracleDbAwsKeyDetails": UpdateOracleDbAwsKeyDetails,
     "UpdateOracleDbAzureBlobContainerDetails": UpdateOracleDbAzureBlobContainerDetails,
     "UpdateOracleDbAzureBlobMountDetails": UpdateOracleDbAzureBlobMountDetails,
     "UpdateOracleDbAzureConnectorDetails": UpdateOracleDbAzureConnectorDetails,

@@ -105,6 +105,8 @@ Apigateway
     oci.apigateway.models.HeaderValidationItem
     oci.apigateway.models.HeaderValidationRequestPolicy
     oci.apigateway.models.IpAddress
+    oci.apigateway.models.Ipv4AddressConfiguration
+    oci.apigateway.models.Ipv6AddressConfiguration
     oci.apigateway.models.JsonWebKey
     oci.apigateway.models.JsonWebTokenClaim
     oci.apigateway.models.JwtAuthenticationPolicy

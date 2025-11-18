@@ -120,7 +120,8 @@ class MultiCloudsMetadataClient(object):
 
     def get_multi_cloud_metadata(self, compartment_id, subscription_id, **kwargs):
         """
-        Gets information about multicloud base compartment
+        Gets information about the Multicloud base compartment for a given tenancy Id.
+        A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
 
         :param str compartment_id: (required)
@@ -235,7 +236,8 @@ class MultiCloudsMetadataClient(object):
 
     def list_multi_cloud_metadata(self, compartment_id, **kwargs):
         """
-        Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
+        Gets a list of multicloud metadata with pairs of Multicloud base compartment and subscription across Cloud Service Providers from a tenancy Id.
+        A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
 
         :param str compartment_id: (required)

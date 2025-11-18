@@ -15,6 +15,18 @@ class ComputeGpuMemoryFabricSummary(object):
     Summary information for a compute GPU memory fabric.
     """
 
+    #: A constant which can be used with the firmware_update_state property of a ComputeGpuMemoryFabricSummary.
+    #: This constant has a value of "WILL_UPDATE"
+    FIRMWARE_UPDATE_STATE_WILL_UPDATE = "WILL_UPDATE"
+
+    #: A constant which can be used with the firmware_update_state property of a ComputeGpuMemoryFabricSummary.
+    #: This constant has a value of "NO_UPDATE"
+    FIRMWARE_UPDATE_STATE_NO_UPDATE = "NO_UPDATE"
+
+    #: A constant which can be used with the firmware_update_state property of a ComputeGpuMemoryFabricSummary.
+    #: This constant has a value of "SKIP_RECYCLE_ENABLED"
+    FIRMWARE_UPDATE_STATE_SKIP_RECYCLE_ENABLED = "SKIP_RECYCLE_ENABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ComputeGpuMemoryFabricSummary object with values from keyword arguments.
@@ -60,6 +72,32 @@ class ComputeGpuMemoryFabricSummary(object):
             The value to assign to the healthy_host_count property of this ComputeGpuMemoryFabricSummary.
         :type healthy_host_count: int
 
+        :param host_platform_name:
+            The value to assign to the host_platform_name property of this ComputeGpuMemoryFabricSummary.
+        :type host_platform_name: str
+
+        :param switch_platform_name:
+            The value to assign to the switch_platform_name property of this ComputeGpuMemoryFabricSummary.
+        :type switch_platform_name: str
+
+        :param current_firmware_bundle_id:
+            The value to assign to the current_firmware_bundle_id property of this ComputeGpuMemoryFabricSummary.
+        :type current_firmware_bundle_id: str
+
+        :param target_firmware_bundle_id:
+            The value to assign to the target_firmware_bundle_id property of this ComputeGpuMemoryFabricSummary.
+        :type target_firmware_bundle_id: str
+
+        :param firmware_update_state:
+            The value to assign to the firmware_update_state property of this ComputeGpuMemoryFabricSummary.
+            Allowed values for this property are: "WILL_UPDATE", "NO_UPDATE", "SKIP_RECYCLE_ENABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type firmware_update_state: str
+
+        :param memory_fabric_preferences:
+            The value to assign to the memory_fabric_preferences property of this ComputeGpuMemoryFabricSummary.
+        :type memory_fabric_preferences: oci.core.models.MemoryFabricPreferencesDescriptor
+
         :param time_created:
             The value to assign to the time_created property of this ComputeGpuMemoryFabricSummary.
         :type time_created: datetime
@@ -92,6 +130,12 @@ class ComputeGpuMemoryFabricSummary(object):
             'total_host_count': 'int',
             'available_host_count': 'int',
             'healthy_host_count': 'int',
+            'host_platform_name': 'str',
+            'switch_platform_name': 'str',
+            'current_firmware_bundle_id': 'str',
+            'target_firmware_bundle_id': 'str',
+            'firmware_update_state': 'str',
+            'memory_fabric_preferences': 'MemoryFabricPreferencesDescriptor',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
@@ -109,6 +153,12 @@ class ComputeGpuMemoryFabricSummary(object):
             'total_host_count': 'totalHostCount',
             'available_host_count': 'availableHostCount',
             'healthy_host_count': 'healthyHostCount',
+            'host_platform_name': 'hostPlatformName',
+            'switch_platform_name': 'switchPlatformName',
+            'current_firmware_bundle_id': 'currentFirmwareBundleId',
+            'target_firmware_bundle_id': 'targetFirmwareBundleId',
+            'firmware_update_state': 'firmwareUpdateState',
+            'memory_fabric_preferences': 'memoryFabricPreferences',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
@@ -125,6 +175,12 @@ class ComputeGpuMemoryFabricSummary(object):
         self._total_host_count = None
         self._available_host_count = None
         self._healthy_host_count = None
+        self._host_platform_name = None
+        self._switch_platform_name = None
+        self._current_firmware_bundle_id = None
+        self._target_firmware_bundle_id = None
+        self._firmware_update_state = None
+        self._memory_fabric_preferences = None
         self._time_created = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -392,6 +448,160 @@ class ComputeGpuMemoryFabricSummary(object):
         :type: int
         """
         self._healthy_host_count = healthy_host_count
+
+    @property
+    def host_platform_name(self):
+        """
+        Gets the host_platform_name of this ComputeGpuMemoryFabricSummary.
+        The host platform identifier used for bundle queries
+
+
+        :return: The host_platform_name of this ComputeGpuMemoryFabricSummary.
+        :rtype: str
+        """
+        return self._host_platform_name
+
+    @host_platform_name.setter
+    def host_platform_name(self, host_platform_name):
+        """
+        Sets the host_platform_name of this ComputeGpuMemoryFabricSummary.
+        The host platform identifier used for bundle queries
+
+
+        :param host_platform_name: The host_platform_name of this ComputeGpuMemoryFabricSummary.
+        :type: str
+        """
+        self._host_platform_name = host_platform_name
+
+    @property
+    def switch_platform_name(self):
+        """
+        Gets the switch_platform_name of this ComputeGpuMemoryFabricSummary.
+        The switch platform identifier used for bundle queries
+
+
+        :return: The switch_platform_name of this ComputeGpuMemoryFabricSummary.
+        :rtype: str
+        """
+        return self._switch_platform_name
+
+    @switch_platform_name.setter
+    def switch_platform_name(self, switch_platform_name):
+        """
+        Sets the switch_platform_name of this ComputeGpuMemoryFabricSummary.
+        The switch platform identifier used for bundle queries
+
+
+        :param switch_platform_name: The switch_platform_name of this ComputeGpuMemoryFabricSummary.
+        :type: str
+        """
+        self._switch_platform_name = switch_platform_name
+
+    @property
+    def current_firmware_bundle_id(self):
+        """
+        Gets the current_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        The `OCID`__ for current firmware bundle
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The current_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        :rtype: str
+        """
+        return self._current_firmware_bundle_id
+
+    @current_firmware_bundle_id.setter
+    def current_firmware_bundle_id(self, current_firmware_bundle_id):
+        """
+        Sets the current_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        The `OCID`__ for current firmware bundle
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param current_firmware_bundle_id: The current_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        :type: str
+        """
+        self._current_firmware_bundle_id = current_firmware_bundle_id
+
+    @property
+    def target_firmware_bundle_id(self):
+        """
+        Gets the target_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        The `OCID`__ for targeted firmware bundle
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The target_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        :rtype: str
+        """
+        return self._target_firmware_bundle_id
+
+    @target_firmware_bundle_id.setter
+    def target_firmware_bundle_id(self, target_firmware_bundle_id):
+        """
+        Sets the target_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        The `OCID`__ for targeted firmware bundle
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param target_firmware_bundle_id: The target_firmware_bundle_id of this ComputeGpuMemoryFabricSummary.
+        :type: str
+        """
+        self._target_firmware_bundle_id = target_firmware_bundle_id
+
+    @property
+    def firmware_update_state(self):
+        """
+        Gets the firmware_update_state of this ComputeGpuMemoryFabricSummary.
+        The state of Memory Fabric Firmware update
+
+        Allowed values for this property are: "WILL_UPDATE", "NO_UPDATE", "SKIP_RECYCLE_ENABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The firmware_update_state of this ComputeGpuMemoryFabricSummary.
+        :rtype: str
+        """
+        return self._firmware_update_state
+
+    @firmware_update_state.setter
+    def firmware_update_state(self, firmware_update_state):
+        """
+        Sets the firmware_update_state of this ComputeGpuMemoryFabricSummary.
+        The state of Memory Fabric Firmware update
+
+
+        :param firmware_update_state: The firmware_update_state of this ComputeGpuMemoryFabricSummary.
+        :type: str
+        """
+        allowed_values = ["WILL_UPDATE", "NO_UPDATE", "SKIP_RECYCLE_ENABLED"]
+        if not value_allowed_none_or_none_sentinel(firmware_update_state, allowed_values):
+            firmware_update_state = 'UNKNOWN_ENUM_VALUE'
+        self._firmware_update_state = firmware_update_state
+
+    @property
+    def memory_fabric_preferences(self):
+        """
+        Gets the memory_fabric_preferences of this ComputeGpuMemoryFabricSummary.
+
+        :return: The memory_fabric_preferences of this ComputeGpuMemoryFabricSummary.
+        :rtype: oci.core.models.MemoryFabricPreferencesDescriptor
+        """
+        return self._memory_fabric_preferences
+
+    @memory_fabric_preferences.setter
+    def memory_fabric_preferences(self, memory_fabric_preferences):
+        """
+        Sets the memory_fabric_preferences of this ComputeGpuMemoryFabricSummary.
+
+        :param memory_fabric_preferences: The memory_fabric_preferences of this ComputeGpuMemoryFabricSummary.
+        :type: oci.core.models.MemoryFabricPreferencesDescriptor
+        """
+        self._memory_fabric_preferences = memory_fabric_preferences
 
     @property
     def time_created(self):

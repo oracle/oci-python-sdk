@@ -85,12 +85,12 @@ class ZeroEtlPipeline(Pipeline):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ZeroEtlPipeline.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", "INACTIVE"
         :type lifecycle_state: str
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this ZeroEtlPipeline.
-            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING"
+            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED"
         :type lifecycle_sub_state: str
 
         :param lifecycle_details:
@@ -104,6 +104,14 @@ class ZeroEtlPipeline(Pipeline):
         :param time_updated:
             The value to assign to the time_updated property of this ZeroEtlPipeline.
         :type time_updated: datetime
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this ZeroEtlPipeline.
+        :type subnet_id: str
+
+        :param ingress_ips:
+            The value to assign to the ingress_ips property of this ZeroEtlPipeline.
+        :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
 
         :param mapping_rules:
             The value to assign to the mapping_rules property of this ZeroEtlPipeline.
@@ -139,6 +147,8 @@ class ZeroEtlPipeline(Pipeline):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'subnet_id': 'str',
+            'ingress_ips': 'list[IngressIpDetails]',
             'mapping_rules': 'list[MappingRule]',
             'process_options': 'ProcessOptions',
             'time_last_recorded': 'datetime'
@@ -164,6 +174,8 @@ class ZeroEtlPipeline(Pipeline):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'subnet_id': 'subnetId',
+            'ingress_ips': 'ingressIps',
             'mapping_rules': 'mappingRules',
             'process_options': 'processOptions',
             'time_last_recorded': 'timeLastRecorded'
@@ -188,6 +200,8 @@ class ZeroEtlPipeline(Pipeline):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._subnet_id = None
+        self._ingress_ips = None
         self._mapping_rules = None
         self._process_options = None
         self._time_last_recorded = None

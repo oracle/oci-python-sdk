@@ -38,6 +38,10 @@ class CloudServiceProviderNetworkMetadataItem(object):
             The value to assign to the network_anchor_uri property of this CloudServiceProviderNetworkMetadataItem.
         :type network_anchor_uri: str
 
+        :param csp_additional_properties:
+            The value to assign to the csp_additional_properties property of this CloudServiceProviderNetworkMetadataItem.
+        :type csp_additional_properties: dict(str, str)
+
         :param dns_forwarding_config:
             The value to assign to the dns_forwarding_config property of this CloudServiceProviderNetworkMetadataItem.
         :type dns_forwarding_config: list[dict(str, str)]
@@ -48,6 +52,7 @@ class CloudServiceProviderNetworkMetadataItem(object):
             'odb_network_id': 'str',
             'cidr_blocks': 'list[str]',
             'network_anchor_uri': 'str',
+            'csp_additional_properties': 'dict(str, str)',
             'dns_forwarding_config': 'list[dict(str, str)]'
         }
         self.attribute_map = {
@@ -55,12 +60,14 @@ class CloudServiceProviderNetworkMetadataItem(object):
             'odb_network_id': 'odbNetworkId',
             'cidr_blocks': 'cidrBlocks',
             'network_anchor_uri': 'networkAnchorUri',
+            'csp_additional_properties': 'cspAdditionalProperties',
             'dns_forwarding_config': 'dnsForwardingConfig'
         }
         self._region = None
         self._odb_network_id = None
         self._cidr_blocks = None
         self._network_anchor_uri = None
+        self._csp_additional_properties = None
         self._dns_forwarding_config = None
 
     @property
@@ -158,6 +165,30 @@ class CloudServiceProviderNetworkMetadataItem(object):
         :type: str
         """
         self._network_anchor_uri = network_anchor_uri
+
+    @property
+    def csp_additional_properties(self):
+        """
+        Gets the csp_additional_properties of this CloudServiceProviderNetworkMetadataItem.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :return: The csp_additional_properties of this CloudServiceProviderNetworkMetadataItem.
+        :rtype: dict(str, str)
+        """
+        return self._csp_additional_properties
+
+    @csp_additional_properties.setter
+    def csp_additional_properties(self, csp_additional_properties):
+        """
+        Sets the csp_additional_properties of this CloudServiceProviderNetworkMetadataItem.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :param csp_additional_properties: The csp_additional_properties of this CloudServiceProviderNetworkMetadataItem.
+        :type: dict(str, str)
+        """
+        self._csp_additional_properties = csp_additional_properties
 
     @property
     def dns_forwarding_config(self):

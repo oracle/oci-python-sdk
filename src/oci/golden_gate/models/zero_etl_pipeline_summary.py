@@ -85,7 +85,7 @@ class ZeroEtlPipelineSummary(PipelineSummary):
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this ZeroEtlPipelineSummary.
-            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING"
+            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED"
         :type lifecycle_sub_state: str
 
         :param lifecycle_details:
@@ -99,6 +99,10 @@ class ZeroEtlPipelineSummary(PipelineSummary):
         :param time_updated:
             The value to assign to the time_updated property of this ZeroEtlPipelineSummary.
         :type time_updated: datetime
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this ZeroEtlPipelineSummary.
+        :type subnet_id: str
 
         :param process_options:
             The value to assign to the process_options property of this ZeroEtlPipelineSummary.
@@ -129,6 +133,7 @@ class ZeroEtlPipelineSummary(PipelineSummary):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'subnet_id': 'str',
             'process_options': 'ProcessOptions',
             'time_last_recorded': 'datetime'
         }
@@ -152,6 +157,7 @@ class ZeroEtlPipelineSummary(PipelineSummary):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'subnet_id': 'subnetId',
             'process_options': 'processOptions',
             'time_last_recorded': 'timeLastRecorded'
         }
@@ -174,6 +180,7 @@ class ZeroEtlPipelineSummary(PipelineSummary):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._subnet_id = None
         self._process_options = None
         self._time_last_recorded = None
         self._recipe_type = 'ZERO_ETL'

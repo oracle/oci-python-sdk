@@ -43,6 +43,10 @@ class Sender(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a Sender.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Sender object with values from keyword arguments.
@@ -66,7 +70,7 @@ class Sender(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Sender.
-            Allowed values for this property are: "CREATING", "ACTIVE", "NEEDS_ATTENTION", "INACTIVE", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "NEEDS_ATTENTION", "INACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -77,6 +81,10 @@ class Sender(object):
         :param email_domain_id:
             The value to assign to the email_domain_id property of this Sender.
         :type email_domain_id: str
+
+        :param email_ip_pool_id:
+            The value to assign to the email_ip_pool_id property of this Sender.
+        :type email_ip_pool_id: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Sender.
@@ -103,6 +111,7 @@ class Sender(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'email_domain_id': 'str',
+            'email_ip_pool_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -116,6 +125,7 @@ class Sender(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'email_domain_id': 'emailDomainId',
+            'email_ip_pool_id': 'emailIpPoolId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -128,6 +138,7 @@ class Sender(object):
         self._lifecycle_state = None
         self._time_created = None
         self._email_domain_id = None
+        self._email_ip_pool_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -241,7 +252,7 @@ class Sender(object):
         Gets the lifecycle_state of this Sender.
         The sender's current lifecycle state.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "NEEDS_ATTENTION", "INACTIVE", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "NEEDS_ATTENTION", "INACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -260,7 +271,7 @@ class Sender(object):
         :param lifecycle_state: The lifecycle_state of this Sender.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "NEEDS_ATTENTION", "INACTIVE", "FAILED", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "ACTIVE", "NEEDS_ATTENTION", "INACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -318,6 +329,34 @@ class Sender(object):
         :type: str
         """
         self._email_domain_id = email_domain_id
+
+    @property
+    def email_ip_pool_id(self):
+        """
+        Gets the email_ip_pool_id of this Sender.
+        The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The email_ip_pool_id of this Sender.
+        :rtype: str
+        """
+        return self._email_ip_pool_id
+
+    @email_ip_pool_id.setter
+    def email_ip_pool_id(self, email_ip_pool_id):
+        """
+        Sets the email_ip_pool_id of this Sender.
+        The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param email_ip_pool_id: The email_ip_pool_id of this Sender.
+        :type: str
+        """
+        self._email_ip_pool_id = email_ip_pool_id
 
     @property
     def freeform_tags(self):

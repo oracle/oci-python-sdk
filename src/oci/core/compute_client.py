@@ -14046,7 +14046,8 @@ class ComputeClient(object):
 
     def update_compute_gpu_memory_fabric(self, compute_gpu_memory_fabric_id, update_compute_gpu_memory_fabric_details, **kwargs):
         """
-        Customer can update displayName, tags and for compute GPU memory fabric record
+        Customer can update displayName, tags and  desired firmware bundle, recycle level for
+        compute GPU memory fabric record
 
 
         :param str compute_gpu_memory_fabric_id: (required)

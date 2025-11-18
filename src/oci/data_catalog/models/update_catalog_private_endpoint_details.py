@@ -36,23 +36,30 @@ class UpdateCatalogPrivateEndpointDetails(object):
             The value to assign to the display_name property of this UpdateCatalogPrivateEndpointDetails.
         :type display_name: str
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateCatalogPrivateEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'dns_zones': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'display_name': 'str'
+            'display_name': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'dns_zones': 'dnsZones',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'security_attributes': 'securityAttributes'
         }
         self._dns_zones = None
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None
+        self._security_attributes = None
 
     @property
     def dns_zones(self):
@@ -155,6 +162,40 @@ class UpdateCatalogPrivateEndpointDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateCatalogPrivateEndpointDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateCatalogPrivateEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateCatalogPrivateEndpointDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateCatalogPrivateEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

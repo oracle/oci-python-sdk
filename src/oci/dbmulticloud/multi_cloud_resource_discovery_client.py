@@ -51,6 +51,12 @@ class MultiCloudResourceDiscoveryClient(object):
     <b>Google Key Rings Resource:</b>&nbsp;&nbsp;The Google Key Rings Resource is used to register and manage Google Cloud Key Rings within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata Database Service on Dedicated Infrastructure.
 
     <b>Google Key Resource:</b>&nbsp;&nbsp;The Google Key Resource is used to register and manage a Google Cloud Key within Oracle Cloud Infrastructure (OCI) under an associated Google Key Ring.
+    <br>
+
+    <b>AWS</b>:<br>
+    <b>Oracle AWS Connector Resource:</b>&nbsp;&nbsp;The Oracle AWS Connector Resource is used to install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+
+    <b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and manage a AWS Key within Oracle Cloud Infrastructure (OCI).
     """
 
     def __init__(self, config, **kwargs):
@@ -643,7 +649,7 @@ class MultiCloudResourceDiscoveryClient(object):
         :param str resource_type: (optional)
             The type of Multicloud Resource.
 
-            Allowed values are: "VAULTS", "STORAGE", "GCP_KEY_RINGS"
+            Allowed values are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", "AWS_KEYS"
 
         :param list[str] resources_filter: (optional)
             Specifies the type(s) of resources to discover in the target cloud provider.
@@ -721,7 +727,7 @@ class MultiCloudResourceDiscoveryClient(object):
                 )
 
         if 'resource_type' in kwargs:
-            resource_type_allowed_values = ["VAULTS", "STORAGE", "GCP_KEY_RINGS"]
+            resource_type_allowed_values = ["VAULTS", "STORAGE", "GCP_KEY_RINGS", "AWS_KEYS"]
             if kwargs['resource_type'] not in resource_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `resource_type`, must be one of { resource_type_allowed_values }"

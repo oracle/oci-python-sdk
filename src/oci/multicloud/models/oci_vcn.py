@@ -24,6 +24,10 @@ class OciVcn(object):
             The value to assign to the vcn_id property of this OciVcn.
         :type vcn_id: str
 
+        :param vcn_name:
+            The value to assign to the vcn_name property of this OciVcn.
+        :type vcn_name: str
+
         :param cidr_blocks:
             The value to assign to the cidr_blocks property of this OciVcn.
         :type cidr_blocks: list[str]
@@ -39,17 +43,20 @@ class OciVcn(object):
         """
         self.swagger_types = {
             'vcn_id': 'str',
+            'vcn_name': 'str',
             'cidr_blocks': 'list[str]',
             'backup_cidr_blocks': 'list[str]',
             'dns_label': 'str'
         }
         self.attribute_map = {
             'vcn_id': 'vcnId',
+            'vcn_name': 'vcnName',
             'cidr_blocks': 'cidrBlocks',
             'backup_cidr_blocks': 'backupCidrBlocks',
             'dns_label': 'dnsLabel'
         }
         self._vcn_id = None
+        self._vcn_name = None
         self._cidr_blocks = None
         self._backup_cidr_blocks = None
         self._dns_label = None
@@ -77,6 +84,30 @@ class OciVcn(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def vcn_name(self):
+        """
+        Gets the vcn_name of this OciVcn.
+        Name of the VCN associated to the Network Anchor.
+
+
+        :return: The vcn_name of this OciVcn.
+        :rtype: str
+        """
+        return self._vcn_name
+
+    @vcn_name.setter
+    def vcn_name(self, vcn_name):
+        """
+        Sets the vcn_name of this OciVcn.
+        Name of the VCN associated to the Network Anchor.
+
+
+        :param vcn_name: The vcn_name of this OciVcn.
+        :type: str
+        """
+        self._vcn_name = vcn_name
 
     @property
     def cidr_blocks(self):

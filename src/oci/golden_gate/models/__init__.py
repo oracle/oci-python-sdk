@@ -108,6 +108,7 @@ from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBac
 from .default_cancel_deployment_upgrade_details import DefaultCancelDeploymentUpgradeDetails
 from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
 from .default_deployment_wallet_exists_details import DefaultDeploymentWalletExistsDetails
+from .default_pause_pipeline_details import DefaultPausePipelineDetails
 from .default_refresh_connection_details import DefaultRefreshConnectionDetails
 from .default_restore_deployment_details import DefaultRestoreDeploymentDetails
 from .default_rollback_deployment_upgrade_details import DefaultRollbackDeploymentUpgradeDetails
@@ -209,6 +210,7 @@ from .oracle_connection import OracleConnection
 from .oracle_connection_summary import OracleConnectionSummary
 from .oracle_nosql_connection import OracleNosqlConnection
 from .oracle_nosql_connection_summary import OracleNosqlConnectionSummary
+from .pause_pipeline_details import PausePipelineDetails
 from .pipeline import Pipeline
 from .pipeline_collection import PipelineCollection
 from .pipeline_diagnostic_data import PipelineDiagnosticData
@@ -427,6 +429,7 @@ golden_gate_type_mapping = {
     "DefaultCancelDeploymentUpgradeDetails": DefaultCancelDeploymentUpgradeDetails,
     "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
     "DefaultDeploymentWalletExistsDetails": DefaultDeploymentWalletExistsDetails,
+    "DefaultPausePipelineDetails": DefaultPausePipelineDetails,
     "DefaultRefreshConnectionDetails": DefaultRefreshConnectionDetails,
     "DefaultRestoreDeploymentDetails": DefaultRestoreDeploymentDetails,
     "DefaultRollbackDeploymentUpgradeDetails": DefaultRollbackDeploymentUpgradeDetails,
@@ -528,6 +531,7 @@ golden_gate_type_mapping = {
     "OracleConnectionSummary": OracleConnectionSummary,
     "OracleNosqlConnection": OracleNosqlConnection,
     "OracleNosqlConnectionSummary": OracleNosqlConnectionSummary,
+    "PausePipelineDetails": PausePipelineDetails,
     "Pipeline": Pipeline,
     "PipelineCollection": PipelineCollection,
     "PipelineDiagnosticData": PipelineDiagnosticData,

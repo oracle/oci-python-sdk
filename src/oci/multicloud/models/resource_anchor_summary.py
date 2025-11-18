@@ -32,6 +32,26 @@ class ResourceAnchorSummary(object):
             The value to assign to the compartment_id property of this ResourceAnchorSummary.
         :type compartment_id: str
 
+        :param compartment_name:
+            The value to assign to the compartment_name property of this ResourceAnchorSummary.
+        :type compartment_name: str
+
+        :param partner_cloud_account_identifier:
+            The value to assign to the partner_cloud_account_identifier property of this ResourceAnchorSummary.
+        :type partner_cloud_account_identifier: str
+
+        :param csp_resource_anchor_id:
+            The value to assign to the csp_resource_anchor_id property of this ResourceAnchorSummary.
+        :type csp_resource_anchor_id: str
+
+        :param csp_resource_anchor_name:
+            The value to assign to the csp_resource_anchor_name property of this ResourceAnchorSummary.
+        :type csp_resource_anchor_name: str
+
+        :param csp_additional_properties:
+            The value to assign to the csp_additional_properties property of this ResourceAnchorSummary.
+        :type csp_additional_properties: dict(str, str)
+
         :param time_created:
             The value to assign to the time_created property of this ResourceAnchorSummary.
         :type time_created: datetime
@@ -64,11 +84,24 @@ class ResourceAnchorSummary(object):
             The value to assign to the system_tags property of this ResourceAnchorSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param linked_compartment_id:
+            The value to assign to the linked_compartment_id property of this ResourceAnchorSummary.
+        :type linked_compartment_id: str
+
+        :param linked_compartment_name:
+            The value to assign to the linked_compartment_name property of this ResourceAnchorSummary.
+        :type linked_compartment_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
+            'compartment_name': 'str',
+            'partner_cloud_account_identifier': 'str',
+            'csp_resource_anchor_id': 'str',
+            'csp_resource_anchor_name': 'str',
+            'csp_additional_properties': 'dict(str, str)',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -76,12 +109,19 @@ class ResourceAnchorSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'subscription_id': 'str',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'linked_compartment_id': 'str',
+            'linked_compartment_name': 'str'
         }
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
+            'compartment_name': 'compartmentName',
+            'partner_cloud_account_identifier': 'partnerCloudAccountIdentifier',
+            'csp_resource_anchor_id': 'cspResourceAnchorId',
+            'csp_resource_anchor_name': 'cspResourceAnchorName',
+            'csp_additional_properties': 'cspAdditionalProperties',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -89,11 +129,18 @@ class ResourceAnchorSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'subscription_id': 'subscriptionId',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'linked_compartment_id': 'linkedCompartmentId',
+            'linked_compartment_name': 'linkedCompartmentName'
         }
         self._id = None
         self._display_name = None
         self._compartment_id = None
+        self._compartment_name = None
+        self._partner_cloud_account_identifier = None
+        self._csp_resource_anchor_id = None
+        self._csp_resource_anchor_name = None
+        self._csp_additional_properties = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -102,6 +149,8 @@ class ResourceAnchorSummary(object):
         self._defined_tags = None
         self._subscription_id = None
         self._system_tags = None
+        self._linked_compartment_id = None
+        self._linked_compartment_name = None
 
     @property
     def id(self):
@@ -182,6 +231,126 @@ class ResourceAnchorSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def compartment_name(self):
+        """
+        Gets the compartment_name of this ResourceAnchorSummary.
+        The name assigned to the compartment during creation.
+
+
+        :return: The compartment_name of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._compartment_name
+
+    @compartment_name.setter
+    def compartment_name(self, compartment_name):
+        """
+        Sets the compartment_name of this ResourceAnchorSummary.
+        The name assigned to the compartment during creation.
+
+
+        :param compartment_name: The compartment_name of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._compartment_name = compartment_name
+
+    @property
+    def partner_cloud_account_identifier(self):
+        """
+        Gets the partner_cloud_account_identifier of this ResourceAnchorSummary.
+        Partner Cloud Account Identifier of the Cloud Service Provider.
+
+
+        :return: The partner_cloud_account_identifier of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._partner_cloud_account_identifier
+
+    @partner_cloud_account_identifier.setter
+    def partner_cloud_account_identifier(self, partner_cloud_account_identifier):
+        """
+        Sets the partner_cloud_account_identifier of this ResourceAnchorSummary.
+        Partner Cloud Account Identifier of the Cloud Service Provider.
+
+
+        :param partner_cloud_account_identifier: The partner_cloud_account_identifier of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._partner_cloud_account_identifier = partner_cloud_account_identifier
+
+    @property
+    def csp_resource_anchor_id(self):
+        """
+        Gets the csp_resource_anchor_id of this ResourceAnchorSummary.
+        Resource Anchor Id in the Cloud Service Provider.
+
+
+        :return: The csp_resource_anchor_id of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._csp_resource_anchor_id
+
+    @csp_resource_anchor_id.setter
+    def csp_resource_anchor_id(self, csp_resource_anchor_id):
+        """
+        Sets the csp_resource_anchor_id of this ResourceAnchorSummary.
+        Resource Anchor Id in the Cloud Service Provider.
+
+
+        :param csp_resource_anchor_id: The csp_resource_anchor_id of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._csp_resource_anchor_id = csp_resource_anchor_id
+
+    @property
+    def csp_resource_anchor_name(self):
+        """
+        Gets the csp_resource_anchor_name of this ResourceAnchorSummary.
+        Resource Anchor Name in the Cloud Service Provider.
+
+
+        :return: The csp_resource_anchor_name of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._csp_resource_anchor_name
+
+    @csp_resource_anchor_name.setter
+    def csp_resource_anchor_name(self, csp_resource_anchor_name):
+        """
+        Sets the csp_resource_anchor_name of this ResourceAnchorSummary.
+        Resource Anchor Name in the Cloud Service Provider.
+
+
+        :param csp_resource_anchor_name: The csp_resource_anchor_name of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._csp_resource_anchor_name = csp_resource_anchor_name
+
+    @property
+    def csp_additional_properties(self):
+        """
+        Gets the csp_additional_properties of this ResourceAnchorSummary.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :return: The csp_additional_properties of this ResourceAnchorSummary.
+        :rtype: dict(str, str)
+        """
+        return self._csp_additional_properties
+
+    @csp_additional_properties.setter
+    def csp_additional_properties(self, csp_additional_properties):
+        """
+        Sets the csp_additional_properties of this ResourceAnchorSummary.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :param csp_additional_properties: The csp_additional_properties of this ResourceAnchorSummary.
+        :type: dict(str, str)
+        """
+        self._csp_additional_properties = csp_additional_properties
 
     @property
     def time_created(self):
@@ -416,6 +585,56 @@ class ResourceAnchorSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def linked_compartment_id(self):
+        """
+        Gets the linked_compartment_id of this ResourceAnchorSummary.
+        Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
+        This compartmentId is different from where resource Anchor live.
+
+
+        :return: The linked_compartment_id of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._linked_compartment_id
+
+    @linked_compartment_id.setter
+    def linked_compartment_id(self, linked_compartment_id):
+        """
+        Sets the linked_compartment_id of this ResourceAnchorSummary.
+        Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
+        This compartmentId is different from where resource Anchor live.
+
+
+        :param linked_compartment_id: The linked_compartment_id of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._linked_compartment_id = linked_compartment_id
+
+    @property
+    def linked_compartment_name(self):
+        """
+        Gets the linked_compartment_name of this ResourceAnchorSummary.
+        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+
+
+        :return: The linked_compartment_name of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._linked_compartment_name
+
+    @linked_compartment_name.setter
+    def linked_compartment_name(self, linked_compartment_name):
+        """
+        Sets the linked_compartment_name of this ResourceAnchorSummary.
+        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+
+
+        :param linked_compartment_name: The linked_compartment_name of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._linked_compartment_name = linked_compartment_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

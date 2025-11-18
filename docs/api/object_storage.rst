@@ -19,6 +19,9 @@ Object Storage
     :template: autosummary/model_class.rst
 
     oci.object_storage.models.AccessTargetDetails
+    oci.object_storage.models.BatchDeleteObjectIdentifier
+    oci.object_storage.models.BatchDeleteObjectsDetails
+    oci.object_storage.models.BatchDeleteObjectsResult
     oci.object_storage.models.Bucket
     oci.object_storage.models.BucketSummary
     oci.object_storage.models.CommitMultipartUploadDetails
@@ -30,7 +33,9 @@ Object Storage
     oci.object_storage.models.CreatePrivateEndpointDetails
     oci.object_storage.models.CreateReplicationPolicyDetails
     oci.object_storage.models.CreateRetentionRuleDetails
+    oci.object_storage.models.DeletedObjectResult
     oci.object_storage.models.Duration
+    oci.object_storage.models.FailedObjectResult
     oci.object_storage.models.Fqdns
     oci.object_storage.models.ListObjects
     oci.object_storage.models.MultipartUpload

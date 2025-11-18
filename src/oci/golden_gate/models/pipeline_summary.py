@@ -47,6 +47,26 @@ class PipelineSummary(object):
     #: This constant has a value of "RUNNING"
     LIFECYCLE_SUB_STATE_RUNNING = "RUNNING"
 
+    #: A constant which can be used with the lifecycle_sub_state property of a PipelineSummary.
+    #: This constant has a value of "PAUSING"
+    LIFECYCLE_SUB_STATE_PAUSING = "PAUSING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a PipelineSummary.
+    #: This constant has a value of "PAUSED"
+    LIFECYCLE_SUB_STATE_PAUSED = "PAUSED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a PipelineSummary.
+    #: This constant has a value of "START_FAILED"
+    LIFECYCLE_SUB_STATE_START_FAILED = "START_FAILED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a PipelineSummary.
+    #: This constant has a value of "STOP_FAILED"
+    LIFECYCLE_SUB_STATE_STOP_FAILED = "STOP_FAILED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a PipelineSummary.
+    #: This constant has a value of "PAUSE_FAILED"
+    LIFECYCLE_SUB_STATE_PAUSE_FAILED = "PAUSE_FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PipelineSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -122,7 +142,7 @@ class PipelineSummary(object):
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this PipelineSummary.
-            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -137,6 +157,10 @@ class PipelineSummary(object):
         :param time_updated:
             The value to assign to the time_updated property of this PipelineSummary.
         :type time_updated: datetime
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this PipelineSummary.
+        :type subnet_id: str
 
         """
         self.swagger_types = {
@@ -158,7 +182,8 @@ class PipelineSummary(object):
             'lifecycle_sub_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'subnet_id': 'str'
         }
         self.attribute_map = {
             'recipe_type': 'recipeType',
@@ -179,7 +204,8 @@ class PipelineSummary(object):
             'lifecycle_sub_state': 'lifecycleSubState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'subnet_id': 'subnetId'
         }
         self._recipe_type = None
         self._id = None
@@ -200,6 +226,7 @@ class PipelineSummary(object):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._subnet_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -614,7 +641,7 @@ class PipelineSummary(object):
         Gets the lifecycle_sub_state of this PipelineSummary.
         Possible lifecycle substates when retrieving a pipeline.
 
-        Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -633,7 +660,7 @@ class PipelineSummary(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this PipelineSummary.
         :type: str
         """
-        allowed_values = ["STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING"]
+        allowed_values = ["STARTING", "STOPPING", "STOPPED", "MOVING", "RUNNING", "PAUSING", "PAUSED", "START_FAILED", "STOP_FAILED", "PAUSE_FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state
@@ -723,6 +750,36 @@ class PipelineSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this PipelineSummary.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this PipelineSummary.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this PipelineSummary.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this PipelineSummary.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

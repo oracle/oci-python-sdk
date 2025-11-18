@@ -51,6 +51,12 @@ class DbMulticloudGCPProviderClient(object):
     <b>Google Key Rings Resource:</b>&nbsp;&nbsp;The Google Key Rings Resource is used to register and manage Google Cloud Key Rings within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata Database Service on Dedicated Infrastructure.
 
     <b>Google Key Resource:</b>&nbsp;&nbsp;The Google Key Resource is used to register and manage a Google Cloud Key within Oracle Cloud Infrastructure (OCI) under an associated Google Key Ring.
+    <br>
+
+    <b>AWS</b>:<br>
+    <b>Oracle AWS Connector Resource:</b>&nbsp;&nbsp;The Oracle AWS Connector Resource is used to install the AWS Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+
+    <b>Google AWS Key Resource:</b>&nbsp;&nbsp;The Oracle AWS Key Resource is used to register and manage a AWS Key within Oracle Cloud Infrastructure (OCI).
     """
 
     def __init__(self, config, **kwargs):
@@ -1159,7 +1165,7 @@ class DbMulticloudGCPProviderClient(object):
             A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
 
         :param str resource_id: (optional)
-            A filter to return Oracle DB GCP Identity Connector resource that match the given resource `OCID`__.
+            A filter to return Oracle DB Identity Connector resource that match the given resource `OCID`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

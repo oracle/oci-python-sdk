@@ -48,6 +48,10 @@ class ExternalLocationDetail(object):
             The value to assign to the csp_physical_az_display_name property of this ExternalLocationDetail.
         :type csp_physical_az_display_name: str
 
+        :param csp_logical_az_display_name:
+            The value to assign to the csp_logical_az_display_name property of this ExternalLocationDetail.
+        :type csp_logical_az_display_name: str
+
         :param csp_zone_key_reference_id:
             The value to assign to the csp_zone_key_reference_id property of this ExternalLocationDetail.
         :type csp_zone_key_reference_id: oci.multicloud.models.CspZoneKeyReferenceId
@@ -68,6 +72,7 @@ class ExternalLocationDetail(object):
             'csp_region_display_name': 'str',
             'csp_physical_az': 'str',
             'csp_physical_az_display_name': 'str',
+            'csp_logical_az_display_name': 'str',
             'csp_zone_key_reference_id': 'CspZoneKeyReferenceId',
             'csp_logical_az': 'str',
             'service_name': 'str'
@@ -77,6 +82,7 @@ class ExternalLocationDetail(object):
             'csp_region_display_name': 'cspRegionDisplayName',
             'csp_physical_az': 'cspPhysicalAz',
             'csp_physical_az_display_name': 'cspPhysicalAzDisplayName',
+            'csp_logical_az_display_name': 'cspLogicalAzDisplayName',
             'csp_zone_key_reference_id': 'cspZoneKeyReferenceId',
             'csp_logical_az': 'cspLogicalAz',
             'service_name': 'serviceName'
@@ -85,6 +91,7 @@ class ExternalLocationDetail(object):
         self._csp_region_display_name = None
         self._csp_physical_az = None
         self._csp_physical_az_display_name = None
+        self._csp_logical_az_display_name = None
         self._csp_zone_key_reference_id = None
         self._csp_logical_az = None
         self._service_name = None
@@ -184,6 +191,30 @@ class ExternalLocationDetail(object):
         :type: str
         """
         self._csp_physical_az_display_name = csp_physical_az_display_name
+
+    @property
+    def csp_logical_az_display_name(self):
+        """
+        Gets the csp_logical_az_display_name of this ExternalLocationDetail.
+        User friendly display name for cspLogicalAZ
+
+
+        :return: The csp_logical_az_display_name of this ExternalLocationDetail.
+        :rtype: str
+        """
+        return self._csp_logical_az_display_name
+
+    @csp_logical_az_display_name.setter
+    def csp_logical_az_display_name(self, csp_logical_az_display_name):
+        """
+        Sets the csp_logical_az_display_name of this ExternalLocationDetail.
+        User friendly display name for cspLogicalAZ
+
+
+        :param csp_logical_az_display_name: The csp_logical_az_display_name of this ExternalLocationDetail.
+        :type: str
+        """
+        self._csp_logical_az_display_name = csp_logical_az_display_name
 
     @property
     def csp_zone_key_reference_id(self):

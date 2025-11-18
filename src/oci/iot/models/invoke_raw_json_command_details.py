@@ -106,7 +106,7 @@ class InvokeRawJsonCommandDetails(InvokeRawCommandDetails):
     def request_data(self):
         """
         Gets the request_data of this InvokeRawJsonCommandDetails.
-        request data
+        request data, maximum 256k
 
 
         :return: The request_data of this InvokeRawJsonCommandDetails.
@@ -118,7 +118,7 @@ class InvokeRawJsonCommandDetails(InvokeRawCommandDetails):
     def request_data(self, request_data):
         """
         Sets the request_data of this InvokeRawJsonCommandDetails.
-        request data
+        request data, maximum 256k
 
 
         :param request_data: The request_data of this InvokeRawJsonCommandDetails.

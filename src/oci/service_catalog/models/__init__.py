@@ -11,6 +11,7 @@ from .application_summary import ApplicationSummary
 from .bulk_replace_service_catalog_associations_details import BulkReplaceServiceCatalogAssociationsDetails
 from .change_private_application_compartment_details import ChangePrivateApplicationCompartmentDetails
 from .change_service_catalog_compartment_details import ChangeServiceCatalogCompartmentDetails
+from .configuration import Configuration
 from .create_private_application_details import CreatePrivateApplicationDetails
 from .create_private_application_package import CreatePrivateApplicationPackage
 from .create_private_application_stack_package import CreatePrivateApplicationStackPackage
@@ -50,6 +51,7 @@ service_catalog_type_mapping = {
     "BulkReplaceServiceCatalogAssociationsDetails": BulkReplaceServiceCatalogAssociationsDetails,
     "ChangePrivateApplicationCompartmentDetails": ChangePrivateApplicationCompartmentDetails,
     "ChangeServiceCatalogCompartmentDetails": ChangeServiceCatalogCompartmentDetails,
+    "Configuration": Configuration,
     "CreatePrivateApplicationDetails": CreatePrivateApplicationDetails,
     "CreatePrivateApplicationPackage": CreatePrivateApplicationPackage,
     "CreatePrivateApplicationStackPackage": CreatePrivateApplicationStackPackage,

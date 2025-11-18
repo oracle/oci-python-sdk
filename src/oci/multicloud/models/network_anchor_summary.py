@@ -15,6 +15,58 @@ class NetworkAnchorSummary(object):
     Summary information about a NetworkAnchor.
     """
 
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "CONNECTED"
+    NETWORK_ANCHOR_CONNECTION_STATUS_CONNECTED = "CONNECTED"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "DISCONNECTED"
+    NETWORK_ANCHOR_CONNECTION_STATUS_DISCONNECTED = "DISCONNECTED"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "CONNECTING"
+    NETWORK_ANCHOR_CONNECTION_STATUS_CONNECTING = "CONNECTING"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "ACTIVE"
+    NETWORK_ANCHOR_CONNECTION_STATUS_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "ERROR"
+    NETWORK_ANCHOR_CONNECTION_STATUS_ERROR = "ERROR"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "UPDATING"
+    NETWORK_ANCHOR_CONNECTION_STATUS_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    NETWORK_ANCHOR_CONNECTION_STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "FAILED"
+    NETWORK_ANCHOR_CONNECTION_STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "DELETING"
+    NETWORK_ANCHOR_CONNECTION_STATUS_DELETING = "DELETING"
+
+    #: A constant which can be used with the network_anchor_connection_status property of a NetworkAnchorSummary.
+    #: This constant has a value of "DELETED"
+    NETWORK_ANCHOR_CONNECTION_STATUS_DELETED = "DELETED"
+
+    #: A constant which can be used with the subscription_type property of a NetworkAnchorSummary.
+    #: This constant has a value of "ORACLEDBATAZURE"
+    SUBSCRIPTION_TYPE_ORACLEDBATAZURE = "ORACLEDBATAZURE"
+
+    #: A constant which can be used with the subscription_type property of a NetworkAnchorSummary.
+    #: This constant has a value of "ORACLEDBATGOOGLE"
+    SUBSCRIPTION_TYPE_ORACLEDBATGOOGLE = "ORACLEDBATGOOGLE"
+
+    #: A constant which can be used with the subscription_type property of a NetworkAnchorSummary.
+    #: This constant has a value of "ORACLEDBATAWS"
+    SUBSCRIPTION_TYPE_ORACLEDBATAWS = "ORACLEDBATAWS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkAnchorSummary object with values from keyword arguments.
@@ -40,6 +92,16 @@ class NetworkAnchorSummary(object):
             The value to assign to the vcn_id property of this NetworkAnchorSummary.
         :type vcn_id: str
 
+        :param vcn_name:
+            The value to assign to the vcn_name property of this NetworkAnchorSummary.
+        :type vcn_name: str
+
+        :param network_anchor_connection_status:
+            The value to assign to the network_anchor_connection_status property of this NetworkAnchorSummary.
+            Allowed values for this property are: "CONNECTED", "DISCONNECTED", "CONNECTING", "ACTIVE", "ERROR", "UPDATING", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type network_anchor_connection_status: str
+
         :param cluster_placement_group_id:
             The value to assign to the cluster_placement_group_id property of this NetworkAnchorSummary.
         :type cluster_placement_group_id: str
@@ -52,9 +114,21 @@ class NetworkAnchorSummary(object):
             The value to assign to the time_updated property of this NetworkAnchorSummary.
         :type time_updated: datetime
 
-        :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this NetworkAnchorSummary.
-        :type lifecycle_state: str
+        :param csp_additional_properties:
+            The value to assign to the csp_additional_properties property of this NetworkAnchorSummary.
+        :type csp_additional_properties: dict(str, str)
+
+        :param csp_network_anchor_id:
+            The value to assign to the csp_network_anchor_id property of this NetworkAnchorSummary.
+        :type csp_network_anchor_id: str
+
+        :param network_anchor_uri:
+            The value to assign to the network_anchor_uri property of this NetworkAnchorSummary.
+        :type network_anchor_uri: str
+
+        :param network_anchor_lifecycle_state:
+            The value to assign to the network_anchor_lifecycle_state property of this NetworkAnchorSummary.
+        :type network_anchor_lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this NetworkAnchorSummary.
@@ -72,6 +146,12 @@ class NetworkAnchorSummary(object):
             The value to assign to the system_tags property of this NetworkAnchorSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param subscription_type:
+            The value to assign to the subscription_type property of this NetworkAnchorSummary.
+            Allowed values for this property are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type subscription_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -79,14 +159,20 @@ class NetworkAnchorSummary(object):
             'compartment_id': 'str',
             'resource_anchor_id': 'str',
             'vcn_id': 'str',
+            'vcn_name': 'str',
+            'network_anchor_connection_status': 'str',
             'cluster_placement_group_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'lifecycle_state': 'str',
+            'csp_additional_properties': 'dict(str, str)',
+            'csp_network_anchor_id': 'str',
+            'network_anchor_uri': 'str',
+            'network_anchor_lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'subscription_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -94,28 +180,40 @@ class NetworkAnchorSummary(object):
             'compartment_id': 'compartmentId',
             'resource_anchor_id': 'resourceAnchorId',
             'vcn_id': 'vcnId',
+            'vcn_name': 'vcnName',
+            'network_anchor_connection_status': 'networkAnchorConnectionStatus',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'lifecycle_state': 'lifecycleState',
+            'csp_additional_properties': 'cspAdditionalProperties',
+            'csp_network_anchor_id': 'cspNetworkAnchorId',
+            'network_anchor_uri': 'networkAnchorUri',
+            'network_anchor_lifecycle_state': 'networkAnchorLifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'subscription_type': 'subscriptionType'
         }
         self._id = None
         self._display_name = None
         self._compartment_id = None
         self._resource_anchor_id = None
         self._vcn_id = None
+        self._vcn_name = None
+        self._network_anchor_connection_status = None
         self._cluster_placement_group_id = None
         self._time_created = None
         self._time_updated = None
-        self._lifecycle_state = None
+        self._csp_additional_properties = None
+        self._csp_network_anchor_id = None
+        self._network_anchor_uri = None
+        self._network_anchor_lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._subscription_type = None
 
     @property
     def id(self):
@@ -246,6 +344,60 @@ class NetworkAnchorSummary(object):
         self._vcn_id = vcn_id
 
     @property
+    def vcn_name(self):
+        """
+        Gets the vcn_name of this NetworkAnchorSummary.
+        Name of the VCN associated to the Network Anchor.
+
+
+        :return: The vcn_name of this NetworkAnchorSummary.
+        :rtype: str
+        """
+        return self._vcn_name
+
+    @vcn_name.setter
+    def vcn_name(self, vcn_name):
+        """
+        Sets the vcn_name of this NetworkAnchorSummary.
+        Name of the VCN associated to the Network Anchor.
+
+
+        :param vcn_name: The vcn_name of this NetworkAnchorSummary.
+        :type: str
+        """
+        self._vcn_name = vcn_name
+
+    @property
+    def network_anchor_connection_status(self):
+        """
+        **[Required]** Gets the network_anchor_connection_status of this NetworkAnchorSummary.
+        Defines status of the Network Anchor.
+
+        Allowed values for this property are: "CONNECTED", "DISCONNECTED", "CONNECTING", "ACTIVE", "ERROR", "UPDATING", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The network_anchor_connection_status of this NetworkAnchorSummary.
+        :rtype: str
+        """
+        return self._network_anchor_connection_status
+
+    @network_anchor_connection_status.setter
+    def network_anchor_connection_status(self, network_anchor_connection_status):
+        """
+        Sets the network_anchor_connection_status of this NetworkAnchorSummary.
+        Defines status of the Network Anchor.
+
+
+        :param network_anchor_connection_status: The network_anchor_connection_status of this NetworkAnchorSummary.
+        :type: str
+        """
+        allowed_values = ["CONNECTED", "DISCONNECTED", "CONNECTING", "ACTIVE", "ERROR", "UPDATING", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"]
+        if not value_allowed_none_or_none_sentinel(network_anchor_connection_status, allowed_values):
+            network_anchor_connection_status = 'UNKNOWN_ENUM_VALUE'
+        self._network_anchor_connection_status = network_anchor_connection_status
+
+    @property
     def cluster_placement_group_id(self):
         """
         Gets the cluster_placement_group_id of this NetworkAnchorSummary.
@@ -334,28 +486,100 @@ class NetworkAnchorSummary(object):
         self._time_updated = time_updated
 
     @property
-    def lifecycle_state(self):
+    def csp_additional_properties(self):
         """
-        **[Required]** Gets the lifecycle_state of this NetworkAnchorSummary.
-        The current state of the NetworkAnchor.
+        Gets the csp_additional_properties of this NetworkAnchorSummary.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
 
 
-        :return: The lifecycle_state of this NetworkAnchorSummary.
+        :return: The csp_additional_properties of this NetworkAnchorSummary.
+        :rtype: dict(str, str)
+        """
+        return self._csp_additional_properties
+
+    @csp_additional_properties.setter
+    def csp_additional_properties(self, csp_additional_properties):
+        """
+        Sets the csp_additional_properties of this NetworkAnchorSummary.
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+
+
+        :param csp_additional_properties: The csp_additional_properties of this NetworkAnchorSummary.
+        :type: dict(str, str)
+        """
+        self._csp_additional_properties = csp_additional_properties
+
+    @property
+    def csp_network_anchor_id(self):
+        """
+        Gets the csp_network_anchor_id of this NetworkAnchorSummary.
+        Network Anchor Id in the Cloud Service Provider.
+
+
+        :return: The csp_network_anchor_id of this NetworkAnchorSummary.
         :rtype: str
         """
-        return self._lifecycle_state
+        return self._csp_network_anchor_id
 
-    @lifecycle_state.setter
-    def lifecycle_state(self, lifecycle_state):
+    @csp_network_anchor_id.setter
+    def csp_network_anchor_id(self, csp_network_anchor_id):
         """
-        Sets the lifecycle_state of this NetworkAnchorSummary.
+        Sets the csp_network_anchor_id of this NetworkAnchorSummary.
+        Network Anchor Id in the Cloud Service Provider.
+
+
+        :param csp_network_anchor_id: The csp_network_anchor_id of this NetworkAnchorSummary.
+        :type: str
+        """
+        self._csp_network_anchor_id = csp_network_anchor_id
+
+    @property
+    def network_anchor_uri(self):
+        """
+        Gets the network_anchor_uri of this NetworkAnchorSummary.
+        CSP network anchor Uri
+
+
+        :return: The network_anchor_uri of this NetworkAnchorSummary.
+        :rtype: str
+        """
+        return self._network_anchor_uri
+
+    @network_anchor_uri.setter
+    def network_anchor_uri(self, network_anchor_uri):
+        """
+        Sets the network_anchor_uri of this NetworkAnchorSummary.
+        CSP network anchor Uri
+
+
+        :param network_anchor_uri: The network_anchor_uri of this NetworkAnchorSummary.
+        :type: str
+        """
+        self._network_anchor_uri = network_anchor_uri
+
+    @property
+    def network_anchor_lifecycle_state(self):
+        """
+        **[Required]** Gets the network_anchor_lifecycle_state of this NetworkAnchorSummary.
         The current state of the NetworkAnchor.
 
 
-        :param lifecycle_state: The lifecycle_state of this NetworkAnchorSummary.
+        :return: The network_anchor_lifecycle_state of this NetworkAnchorSummary.
+        :rtype: str
+        """
+        return self._network_anchor_lifecycle_state
+
+    @network_anchor_lifecycle_state.setter
+    def network_anchor_lifecycle_state(self, network_anchor_lifecycle_state):
+        """
+        Sets the network_anchor_lifecycle_state of this NetworkAnchorSummary.
+        The current state of the NetworkAnchor.
+
+
+        :param network_anchor_lifecycle_state: The network_anchor_lifecycle_state of this NetworkAnchorSummary.
         :type: str
         """
-        self._lifecycle_state = lifecycle_state
+        self._network_anchor_lifecycle_state = network_anchor_lifecycle_state
 
     @property
     def lifecycle_details(self):
@@ -478,6 +702,36 @@ class NetworkAnchorSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def subscription_type(self):
+        """
+        Gets the subscription_type of this NetworkAnchorSummary.
+        Oracle Cloud Infrastructure Subscription Type.
+
+        Allowed values for this property are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The subscription_type of this NetworkAnchorSummary.
+        :rtype: str
+        """
+        return self._subscription_type
+
+    @subscription_type.setter
+    def subscription_type(self, subscription_type):
+        """
+        Sets the subscription_type of this NetworkAnchorSummary.
+        Oracle Cloud Infrastructure Subscription Type.
+
+
+        :param subscription_type: The subscription_type of this NetworkAnchorSummary.
+        :type: str
+        """
+        allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
+        if not value_allowed_none_or_none_sentinel(subscription_type, allowed_values):
+            subscription_type = 'UNKNOWN_ENUM_VALUE'
+        self._subscription_type = subscription_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

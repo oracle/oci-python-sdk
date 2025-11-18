@@ -7,6 +7,8 @@
 from __future__ import absolute_import
 
 
+from .db_multicloud_aws_provider_client import DbMulticloudAwsProviderClient
+from .db_multicloud_aws_provider_client_composite_operations import DbMulticloudAwsProviderClientCompositeOperations
 from .db_multicloud_gcp_provider_client import DbMulticloudGCPProviderClient
 from .db_multicloud_gcp_provider_client_composite_operations import DbMulticloudGCPProviderClientCompositeOperations
 from .multi_cloud_resource_discovery_client import MultiCloudResourceDiscoveryClient
@@ -27,4 +29,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["DbMulticloudGCPProviderClient", "DbMulticloudGCPProviderClientCompositeOperations", "MultiCloudResourceDiscoveryClient", "MultiCloudResourceDiscoveryClientCompositeOperations", "OracleDBAzureBlobContainerClient", "OracleDBAzureBlobContainerClientCompositeOperations", "OracleDBAzureBlobMountClient", "OracleDBAzureBlobMountClientCompositeOperations", "OracleDBAzureConnectorClient", "OracleDBAzureConnectorClientCompositeOperations", "OracleDbAzureKeyClient", "OracleDbAzureKeyClientCompositeOperations", "OracleDbAzureVaultClient", "OracleDbAzureVaultClientCompositeOperations", "OracleDbAzureVaultAssociationClient", "OracleDbAzureVaultAssociationClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["DbMulticloudAwsProviderClient", "DbMulticloudAwsProviderClientCompositeOperations", "DbMulticloudGCPProviderClient", "DbMulticloudGCPProviderClientCompositeOperations", "MultiCloudResourceDiscoveryClient", "MultiCloudResourceDiscoveryClientCompositeOperations", "OracleDBAzureBlobContainerClient", "OracleDBAzureBlobContainerClientCompositeOperations", "OracleDBAzureBlobMountClient", "OracleDBAzureBlobMountClientCompositeOperations", "OracleDBAzureConnectorClient", "OracleDBAzureConnectorClientCompositeOperations", "OracleDbAzureKeyClient", "OracleDbAzureKeyClientCompositeOperations", "OracleDbAzureVaultClient", "OracleDbAzureVaultClientCompositeOperations", "OracleDbAzureVaultAssociationClient", "OracleDbAzureVaultAssociationClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

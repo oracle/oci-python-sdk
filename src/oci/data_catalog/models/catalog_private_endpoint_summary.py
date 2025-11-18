@@ -96,6 +96,10 @@ class CatalogPrivateEndpointSummary(object):
             The value to assign to the defined_tags property of this CatalogPrivateEndpointSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CatalogPrivateEndpointSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CatalogPrivateEndpointSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
@@ -123,6 +127,7 @@ class CatalogPrivateEndpointSummary(object):
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
             'attached_catalogs': 'list[str]',
             'locks': 'list[ResourceLock]'
@@ -139,6 +144,7 @@ class CatalogPrivateEndpointSummary(object):
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'lifecycle_state': 'lifecycleState',
             'attached_catalogs': 'attachedCatalogs',
             'locks': 'locks'
@@ -154,6 +160,7 @@ class CatalogPrivateEndpointSummary(object):
         self._freeform_tags = None
         self._system_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._lifecycle_state = None
         self._attached_catalogs = None
         self._locks = None
@@ -447,6 +454,40 @@ class CatalogPrivateEndpointSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CatalogPrivateEndpointSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CatalogPrivateEndpointSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CatalogPrivateEndpointSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CatalogPrivateEndpointSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def lifecycle_state(self):

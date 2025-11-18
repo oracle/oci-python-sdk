@@ -77,6 +77,7 @@ API Reference
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
 * :doc:`Db Life Cycle Management <dblm/client/oci.dblm.DbLifeCycleManagementClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
+* :doc:`Db Multicloud Aws Provider <dbmulticloud/client/oci.dbmulticloud.DbMulticloudAwsProviderClient>`
 * :doc:`Db Multicloud Gcp Provider <dbmulticloud/client/oci.dbmulticloud.DbMulticloudGCPProviderClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Delegate Access Control <delegate_access_control/client/oci.delegate_access_control.DelegateAccessControlClient>`
@@ -170,6 +171,8 @@ API Reference
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Multi Cloud Resource Discovery <dbmulticloud/client/oci.dbmulticloud.MultiCloudResourceDiscoveryClient>`
 * :doc:`Multi Clouds Metadata <multicloud/client/oci.multicloud.MultiCloudsMetadataClient>`
+* :doc:`Multicloud Resources <multicloud/client/oci.multicloud.MulticloudResourcesClient>`
+* :doc:`Multicloudsubscriptions <multicloud/client/oci.multicloud.MulticloudsubscriptionsClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`

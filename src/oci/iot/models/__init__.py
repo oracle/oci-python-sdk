@@ -55,6 +55,7 @@ from .update_digital_twin_model_details import UpdateDigitalTwinModelDetails
 from .update_digital_twin_relationship_details import UpdateDigitalTwinRelationshipDetails
 from .update_iot_domain_details import UpdateIotDomainDetails
 from .update_iot_domain_group_details import UpdateIotDomainGroupDetails
+from .vcn import Vcn
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -115,6 +116,7 @@ iot_type_mapping = {
     "UpdateDigitalTwinRelationshipDetails": UpdateDigitalTwinRelationshipDetails,
     "UpdateIotDomainDetails": UpdateIotDomainDetails,
     "UpdateIotDomainGroupDetails": UpdateIotDomainGroupDetails,
+    "Vcn": Vcn,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

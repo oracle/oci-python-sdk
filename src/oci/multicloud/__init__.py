@@ -11,10 +11,14 @@ from .metadata_client import MetadataClient
 from .metadata_client_composite_operations import MetadataClientCompositeOperations
 from .multi_clouds_metadata_client import MultiCloudsMetadataClient
 from .multi_clouds_metadata_client_composite_operations import MultiCloudsMetadataClientCompositeOperations
+from .multicloud_resources_client import MulticloudResourcesClient
+from .multicloud_resources_client_composite_operations import MulticloudResourcesClientCompositeOperations
+from .multicloudsubscriptions_client import MulticloudsubscriptionsClient
+from .multicloudsubscriptions_client_composite_operations import MulticloudsubscriptionsClientCompositeOperations
 from .omhub_network_anchor_client import OmhubNetworkAnchorClient
 from .omhub_network_anchor_client_composite_operations import OmhubNetworkAnchorClientCompositeOperations
 from .omhub_resource_anchor_client import OmhubResourceAnchorClient
 from .omhub_resource_anchor_client_composite_operations import OmhubResourceAnchorClientCompositeOperations
 from . import models
 
-__all__ = ["MetadataClient", "MetadataClientCompositeOperations", "MultiCloudsMetadataClient", "MultiCloudsMetadataClientCompositeOperations", "OmhubNetworkAnchorClient", "OmhubNetworkAnchorClientCompositeOperations", "OmhubResourceAnchorClient", "OmhubResourceAnchorClientCompositeOperations", "models"]
+__all__ = ["MetadataClient", "MetadataClientCompositeOperations", "MultiCloudsMetadataClient", "MultiCloudsMetadataClientCompositeOperations", "MulticloudResourcesClient", "MulticloudResourcesClientCompositeOperations", "MulticloudsubscriptionsClient", "MulticloudsubscriptionsClientCompositeOperations", "OmhubNetworkAnchorClient", "OmhubNetworkAnchorClientCompositeOperations", "OmhubResourceAnchorClient", "OmhubResourceAnchorClientCompositeOperations", "models"]

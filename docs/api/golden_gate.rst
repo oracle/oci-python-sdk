@@ -120,6 +120,7 @@ Golden Gate
     oci.golden_gate.models.DefaultCancelDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultCancelSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultDeploymentWalletExistsDetails
+    oci.golden_gate.models.DefaultPausePipelineDetails
     oci.golden_gate.models.DefaultRefreshConnectionDetails
     oci.golden_gate.models.DefaultRestoreDeploymentDetails
     oci.golden_gate.models.DefaultRollbackDeploymentUpgradeDetails
@@ -221,6 +222,7 @@ Golden Gate
     oci.golden_gate.models.OracleConnectionSummary
     oci.golden_gate.models.OracleNosqlConnection
     oci.golden_gate.models.OracleNosqlConnectionSummary
+    oci.golden_gate.models.PausePipelineDetails
     oci.golden_gate.models.Pipeline
     oci.golden_gate.models.PipelineCollection
     oci.golden_gate.models.PipelineDiagnosticData

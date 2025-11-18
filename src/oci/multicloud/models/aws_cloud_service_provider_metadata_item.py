@@ -29,9 +29,21 @@ class AwsCloudServiceProviderMetadataItem(CloudServiceProviderMetadataItem):
             The value to assign to the resource_anchor_name property of this AwsCloudServiceProviderMetadataItem.
         :type resource_anchor_name: str
 
+        :param csp_resource_anchor_id:
+            The value to assign to the csp_resource_anchor_id property of this AwsCloudServiceProviderMetadataItem.
+        :type csp_resource_anchor_id: str
+
+        :param csp_resource_anchor_name:
+            The value to assign to the csp_resource_anchor_name property of this AwsCloudServiceProviderMetadataItem.
+        :type csp_resource_anchor_name: str
+
         :param resource_anchor_uri:
             The value to assign to the resource_anchor_uri property of this AwsCloudServiceProviderMetadataItem.
         :type resource_anchor_uri: str
+
+        :param csp_additional_properties:
+            The value to assign to the csp_additional_properties property of this AwsCloudServiceProviderMetadataItem.
+        :type csp_additional_properties: dict(str, str)
 
         :param subscription_type:
             The value to assign to the subscription_type property of this AwsCloudServiceProviderMetadataItem.
@@ -46,20 +58,29 @@ class AwsCloudServiceProviderMetadataItem(CloudServiceProviderMetadataItem):
         self.swagger_types = {
             'region': 'str',
             'resource_anchor_name': 'str',
+            'csp_resource_anchor_id': 'str',
+            'csp_resource_anchor_name': 'str',
             'resource_anchor_uri': 'str',
+            'csp_additional_properties': 'dict(str, str)',
             'subscription_type': 'str',
             'account_id': 'str'
         }
         self.attribute_map = {
             'region': 'region',
             'resource_anchor_name': 'resourceAnchorName',
+            'csp_resource_anchor_id': 'cspResourceAnchorId',
+            'csp_resource_anchor_name': 'cspResourceAnchorName',
             'resource_anchor_uri': 'resourceAnchorUri',
+            'csp_additional_properties': 'cspAdditionalProperties',
             'subscription_type': 'subscriptionType',
             'account_id': 'accountId'
         }
         self._region = None
         self._resource_anchor_name = None
+        self._csp_resource_anchor_id = None
+        self._csp_resource_anchor_name = None
         self._resource_anchor_uri = None
+        self._csp_additional_properties = None
         self._subscription_type = None
         self._account_id = None
         self._subscription_type = 'ORACLEDBATAWS'

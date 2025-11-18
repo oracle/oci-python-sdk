@@ -47,6 +47,10 @@ class UpdateZeroEtlPipelineDetails(UpdatePipelineDetails):
             The value to assign to the defined_tags property of this UpdateZeroEtlPipelineDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateZeroEtlPipelineDetails.
+        :type subnet_id: str
+
         :param process_options:
             The value to assign to the process_options property of this UpdateZeroEtlPipelineDetails.
         :type process_options: oci.golden_gate.models.ProcessOptions
@@ -63,6 +67,7 @@ class UpdateZeroEtlPipelineDetails(UpdatePipelineDetails):
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'subnet_id': 'str',
             'process_options': 'ProcessOptions',
             'mapping_rules': 'list[MappingRule]'
         }
@@ -73,6 +78,7 @@ class UpdateZeroEtlPipelineDetails(UpdatePipelineDetails):
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'subnet_id': 'subnetId',
             'process_options': 'processOptions',
             'mapping_rules': 'mappingRules'
         }
@@ -82,6 +88,7 @@ class UpdateZeroEtlPipelineDetails(UpdatePipelineDetails):
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._subnet_id = None
         self._process_options = None
         self._mapping_rules = None
         self._recipe_type = 'ZERO_ETL'

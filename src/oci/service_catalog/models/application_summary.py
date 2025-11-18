@@ -31,6 +31,10 @@ class ApplicationSummary(object):
     #: This constant has a value of "STACK"
     PACKAGE_TYPE_STACK = "STACK"
 
+    #: A constant which can be used with the package_type property of a ApplicationSummary.
+    #: This constant has a value of "IMAGE"
+    PACKAGE_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ApplicationSummary object with values from keyword arguments.
@@ -72,9 +76,17 @@ class ApplicationSummary(object):
 
         :param package_type:
             The value to assign to the package_type property of this ApplicationSummary.
-            Allowed values for this property are: "STACK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STACK", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
+
+        :param categories:
+            The value to assign to the categories property of this ApplicationSummary.
+        :type categories: list[str]
+
+        :param system_tags:
+            The value to assign to the system_tags property of this ApplicationSummary.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -86,7 +98,9 @@ class ApplicationSummary(object):
             'short_description': 'str',
             'logo': 'UploadData',
             'pricing_type': 'str',
-            'package_type': 'str'
+            'package_type': 'str',
+            'categories': 'list[str]',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'entity_id': 'entityId',
@@ -97,7 +111,9 @@ class ApplicationSummary(object):
             'short_description': 'shortDescription',
             'logo': 'logo',
             'pricing_type': 'pricingType',
-            'package_type': 'packageType'
+            'package_type': 'packageType',
+            'categories': 'categories',
+            'system_tags': 'systemTags'
         }
         self._entity_id = None
         self._entity_type = None
@@ -108,6 +124,8 @@ class ApplicationSummary(object):
         self._logo = None
         self._pricing_type = None
         self._package_type = None
+        self._categories = None
+        self._system_tags = None
 
     @property
     def entity_id(self):
@@ -305,7 +323,7 @@ class ApplicationSummary(object):
         Gets the package_type of this ApplicationSummary.
         The type of the packages withing the application.
 
-        Allowed values for this property are: "STACK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STACK", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -324,10 +342,60 @@ class ApplicationSummary(object):
         :param package_type: The package_type of this ApplicationSummary.
         :type: str
         """
-        allowed_values = ["STACK"]
+        allowed_values = ["STACK", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this ApplicationSummary.
+        Product categories that the application belongs to.
+
+
+        :return: The categories of this ApplicationSummary.
+        :rtype: list[str]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this ApplicationSummary.
+        Product categories that the application belongs to.
+
+
+        :param categories: The categories of this ApplicationSummary.
+        :type: list[str]
+        """
+        self._categories = categories
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ApplicationSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this ApplicationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ApplicationSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this ApplicationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

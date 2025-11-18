@@ -43,6 +43,30 @@ class DataGuardGroupMember(object):
     #: This constant has a value of "FASTSYNC"
     TRANSPORT_TYPE_FASTSYNC = "FASTSYNC"
 
+    #: A constant which can be used with the switchover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "HEALTHY"
+    SWITCHOVER_READINESS_HEALTHY = "HEALTHY"
+
+    #: A constant which can be used with the switchover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "WARNING"
+    SWITCHOVER_READINESS_WARNING = "WARNING"
+
+    #: A constant which can be used with the switchover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "CRITICAL"
+    SWITCHOVER_READINESS_CRITICAL = "CRITICAL"
+
+    #: A constant which can be used with the failover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "HEALTHY"
+    FAILOVER_READINESS_HEALTHY = "HEALTHY"
+
+    #: A constant which can be used with the failover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "WARNING"
+    FAILOVER_READINESS_WARNING = "WARNING"
+
+    #: A constant which can be used with the failover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "CRITICAL"
+    FAILOVER_READINESS_CRITICAL = "CRITICAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataGuardGroupMember object with values from keyword arguments.
@@ -88,6 +112,34 @@ class DataGuardGroupMember(object):
             The value to assign to the is_active_data_guard_enabled property of this DataGuardGroupMember.
         :type is_active_data_guard_enabled: bool
 
+        :param switchover_readiness:
+            The value to assign to the switchover_readiness property of this DataGuardGroupMember.
+            Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type switchover_readiness: str
+
+        :param switchover_readiness_message:
+            The value to assign to the switchover_readiness_message property of this DataGuardGroupMember.
+        :type switchover_readiness_message: str
+
+        :param failover_readiness:
+            The value to assign to the failover_readiness property of this DataGuardGroupMember.
+            Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type failover_readiness: str
+
+        :param failover_readiness_message:
+            The value to assign to the failover_readiness_message property of this DataGuardGroupMember.
+        :type failover_readiness_message: str
+
+        :param data_loss_exposure:
+            The value to assign to the data_loss_exposure property of this DataGuardGroupMember.
+        :type data_loss_exposure: str
+
+        :param time_updated:
+            The value to assign to the time_updated property of this DataGuardGroupMember.
+        :type time_updated: datetime
+
         """
         self.swagger_types = {
             'db_system_id': 'str',
@@ -98,7 +150,13 @@ class DataGuardGroupMember(object):
             'transport_lag': 'str',
             'transport_lag_refresh': 'str',
             'transport_type': 'str',
-            'is_active_data_guard_enabled': 'bool'
+            'is_active_data_guard_enabled': 'bool',
+            'switchover_readiness': 'str',
+            'switchover_readiness_message': 'str',
+            'failover_readiness': 'str',
+            'failover_readiness_message': 'str',
+            'data_loss_exposure': 'str',
+            'time_updated': 'datetime'
         }
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
@@ -109,7 +167,13 @@ class DataGuardGroupMember(object):
             'transport_lag': 'transportLag',
             'transport_lag_refresh': 'transportLagRefresh',
             'transport_type': 'transportType',
-            'is_active_data_guard_enabled': 'isActiveDataGuardEnabled'
+            'is_active_data_guard_enabled': 'isActiveDataGuardEnabled',
+            'switchover_readiness': 'switchoverReadiness',
+            'switchover_readiness_message': 'switchoverReadinessMessage',
+            'failover_readiness': 'failoverReadiness',
+            'failover_readiness_message': 'failoverReadinessMessage',
+            'data_loss_exposure': 'dataLossExposure',
+            'time_updated': 'timeUpdated'
         }
         self._db_system_id = None
         self._database_id = None
@@ -120,6 +184,12 @@ class DataGuardGroupMember(object):
         self._transport_lag_refresh = None
         self._transport_type = None
         self._is_active_data_guard_enabled = None
+        self._switchover_readiness = None
+        self._switchover_readiness_message = None
+        self._failover_readiness = None
+        self._failover_readiness_message = None
+        self._data_loss_exposure = None
+        self._time_updated = None
 
     @property
     def db_system_id(self):
@@ -394,6 +464,170 @@ class DataGuardGroupMember(object):
         :type: bool
         """
         self._is_active_data_guard_enabled = is_active_data_guard_enabled
+
+    @property
+    def switchover_readiness(self):
+        """
+        Gets the switchover_readiness of this DataGuardGroupMember.
+        The switchover readiness status of the Data Guard member.
+
+        Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The switchover_readiness of this DataGuardGroupMember.
+        :rtype: str
+        """
+        return self._switchover_readiness
+
+    @switchover_readiness.setter
+    def switchover_readiness(self, switchover_readiness):
+        """
+        Sets the switchover_readiness of this DataGuardGroupMember.
+        The switchover readiness status of the Data Guard member.
+
+
+        :param switchover_readiness: The switchover_readiness of this DataGuardGroupMember.
+        :type: str
+        """
+        allowed_values = ["HEALTHY", "WARNING", "CRITICAL"]
+        if not value_allowed_none_or_none_sentinel(switchover_readiness, allowed_values):
+            switchover_readiness = 'UNKNOWN_ENUM_VALUE'
+        self._switchover_readiness = switchover_readiness
+
+    @property
+    def switchover_readiness_message(self):
+        """
+        Gets the switchover_readiness_message of this DataGuardGroupMember.
+        The message explaining switchover readiness status.
+        Example: `Address failed checks to avoid extended downtime.`
+
+
+        :return: The switchover_readiness_message of this DataGuardGroupMember.
+        :rtype: str
+        """
+        return self._switchover_readiness_message
+
+    @switchover_readiness_message.setter
+    def switchover_readiness_message(self, switchover_readiness_message):
+        """
+        Sets the switchover_readiness_message of this DataGuardGroupMember.
+        The message explaining switchover readiness status.
+        Example: `Address failed checks to avoid extended downtime.`
+
+
+        :param switchover_readiness_message: The switchover_readiness_message of this DataGuardGroupMember.
+        :type: str
+        """
+        self._switchover_readiness_message = switchover_readiness_message
+
+    @property
+    def failover_readiness(self):
+        """
+        Gets the failover_readiness of this DataGuardGroupMember.
+        The failover readiness status of the Data Guard member.
+
+        Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The failover_readiness of this DataGuardGroupMember.
+        :rtype: str
+        """
+        return self._failover_readiness
+
+    @failover_readiness.setter
+    def failover_readiness(self, failover_readiness):
+        """
+        Sets the failover_readiness of this DataGuardGroupMember.
+        The failover readiness status of the Data Guard member.
+
+
+        :param failover_readiness: The failover_readiness of this DataGuardGroupMember.
+        :type: str
+        """
+        allowed_values = ["HEALTHY", "WARNING", "CRITICAL"]
+        if not value_allowed_none_or_none_sentinel(failover_readiness, allowed_values):
+            failover_readiness = 'UNKNOWN_ENUM_VALUE'
+        self._failover_readiness = failover_readiness
+
+    @property
+    def failover_readiness_message(self):
+        """
+        Gets the failover_readiness_message of this DataGuardGroupMember.
+        The message explaining failover readiness status.
+        Example: `This standby database is not failover ready.`
+
+
+        :return: The failover_readiness_message of this DataGuardGroupMember.
+        :rtype: str
+        """
+        return self._failover_readiness_message
+
+    @failover_readiness_message.setter
+    def failover_readiness_message(self, failover_readiness_message):
+        """
+        Sets the failover_readiness_message of this DataGuardGroupMember.
+        The message explaining failover readiness status.
+        Example: `This standby database is not failover ready.`
+
+
+        :param failover_readiness_message: The failover_readiness_message of this DataGuardGroupMember.
+        :type: str
+        """
+        self._failover_readiness_message = failover_readiness_message
+
+    @property
+    def data_loss_exposure(self):
+        """
+        Gets the data_loss_exposure of this DataGuardGroupMember.
+        The Data loss exposure is the redo transport lag between the primary and standby databases.
+
+        Example: `2 seconds`
+
+
+        :return: The data_loss_exposure of this DataGuardGroupMember.
+        :rtype: str
+        """
+        return self._data_loss_exposure
+
+    @data_loss_exposure.setter
+    def data_loss_exposure(self, data_loss_exposure):
+        """
+        Sets the data_loss_exposure of this DataGuardGroupMember.
+        The Data loss exposure is the redo transport lag between the primary and standby databases.
+
+        Example: `2 seconds`
+
+
+        :param data_loss_exposure: The data_loss_exposure of this DataGuardGroupMember.
+        :type: str
+        """
+        self._data_loss_exposure = data_loss_exposure
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this DataGuardGroupMember.
+        The date and time when the last successful Data Guard refresh occurred.
+
+
+        :return: The time_updated of this DataGuardGroupMember.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this DataGuardGroupMember.
+        The date and time when the last successful Data Guard refresh occurred.
+
+
+        :param time_updated: The time_updated of this DataGuardGroupMember.
+        :type: datetime
+        """
+        self._time_updated = time_updated
 
     def __repr__(self):
         return formatted_flat_dict(self)

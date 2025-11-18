@@ -24,6 +24,10 @@ from .gcp_cloud_service_provider_metadata_item import GcpCloudServiceProviderMet
 from .multi_cloud_metadata import MultiCloudMetadata
 from .multi_cloud_metadata_collection import MultiCloudMetadataCollection
 from .multi_cloud_metadata_summary import MultiCloudMetadataSummary
+from .multicloud_resource_collection import MulticloudResourceCollection
+from .multicloud_resource_summary import MulticloudResourceSummary
+from .multicloud_subscription_collection import MulticloudSubscriptionCollection
+from .multicloud_subscription_summary import MulticloudSubscriptionSummary
 from .network_anchor import NetworkAnchor
 from .network_anchor_collection import NetworkAnchorCollection
 from .network_anchor_summary import NetworkAnchorSummary
@@ -57,6 +61,10 @@ multicloud_type_mapping = {
     "MultiCloudMetadata": MultiCloudMetadata,
     "MultiCloudMetadataCollection": MultiCloudMetadataCollection,
     "MultiCloudMetadataSummary": MultiCloudMetadataSummary,
+    "MulticloudResourceCollection": MulticloudResourceCollection,
+    "MulticloudResourceSummary": MulticloudResourceSummary,
+    "MulticloudSubscriptionCollection": MulticloudSubscriptionCollection,
+    "MulticloudSubscriptionSummary": MulticloudSubscriptionSummary,
     "NetworkAnchor": NetworkAnchor,
     "NetworkAnchorCollection": NetworkAnchorCollection,
     "NetworkAnchorSummary": NetworkAnchorSummary,

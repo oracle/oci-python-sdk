@@ -15,6 +15,14 @@ class ServiceCatalog(object):
     The model for an Oracle Cloud Infrastructure Service Catalog.
     """
 
+    #: A constant which can be used with the status property of a ServiceCatalog.
+    #: This constant has a value of "ACTIVE"
+    STATUS_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the status property of a ServiceCatalog.
+    #: This constant has a value of "INACTIVE"
+    STATUS_INACTIVE = "INACTIVE"
+
     #: A constant which can be used with the lifecycle_state property of a ServiceCatalog.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -40,6 +48,12 @@ class ServiceCatalog(object):
             The value to assign to the display_name property of this ServiceCatalog.
         :type display_name: str
 
+        :param status:
+            The value to assign to the status property of this ServiceCatalog.
+            Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type status: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ServiceCatalog.
             Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -62,35 +76,45 @@ class ServiceCatalog(object):
             The value to assign to the freeform_tags property of this ServiceCatalog.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ServiceCatalog.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'status': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'status': 'status',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._compartment_id = None
         self._display_name = None
+        self._status = None
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -163,6 +187,36 @@ class ServiceCatalog(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def status(self):
+        """
+        Gets the status of this ServiceCatalog.
+        The status of a service catalog.
+
+        Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The status of this ServiceCatalog.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this ServiceCatalog.
+        The status of a service catalog.
+
+
+        :param status: The status of this ServiceCatalog.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "INACTIVE"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            status = 'UNKNOWN_ENUM_VALUE'
+        self._status = status
 
     @property
     def lifecycle_state(self):
@@ -313,6 +367,32 @@ class ServiceCatalog(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ServiceCatalog.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this ServiceCatalog.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ServiceCatalog.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this ServiceCatalog.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

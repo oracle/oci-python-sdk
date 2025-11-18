@@ -62,6 +62,10 @@ class UpdatePipelineDetails(object):
             The value to assign to the defined_tags property of this UpdatePipelineDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdatePipelineDetails.
+        :type subnet_id: str
+
         """
         self.swagger_types = {
             'recipe_type': 'str',
@@ -69,7 +73,8 @@ class UpdatePipelineDetails(object):
             'description': 'str',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'subnet_id': 'str'
         }
         self.attribute_map = {
             'recipe_type': 'recipeType',
@@ -77,7 +82,8 @@ class UpdatePipelineDetails(object):
             'description': 'description',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'subnet_id': 'subnetId'
         }
         self._recipe_type = None
         self._display_name = None
@@ -85,6 +91,7 @@ class UpdatePipelineDetails(object):
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._subnet_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -266,6 +273,36 @@ class UpdatePipelineDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this UpdatePipelineDetails.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this UpdatePipelineDetails.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this UpdatePipelineDetails.
+        The `OCID`__ of the subnet of the pipeline's private endpoint.
+        The subnet must be a private subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this UpdatePipelineDetails.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

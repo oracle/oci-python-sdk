@@ -73,6 +73,10 @@ class CreateBastionDetails(object):
             The value to assign to the defined_tags property of this CreateBastionDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateBastionDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'bastion_type': 'str',
@@ -85,7 +89,8 @@ class CreateBastionDetails(object):
             'max_session_ttl_in_seconds': 'int',
             'dns_proxy_status': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'bastion_type': 'bastionType',
@@ -98,7 +103,8 @@ class CreateBastionDetails(object):
             'max_session_ttl_in_seconds': 'maxSessionTtlInSeconds',
             'dns_proxy_status': 'dnsProxyStatus',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes'
         }
         self._bastion_type = None
         self._name = None
@@ -111,6 +117,7 @@ class CreateBastionDetails(object):
         self._dns_proxy_status = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
 
     @property
     def bastion_type(self):
@@ -386,6 +393,38 @@ class CreateBastionDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateBastionDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateBastionDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateBastionDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateBastionDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

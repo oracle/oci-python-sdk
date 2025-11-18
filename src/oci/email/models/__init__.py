@@ -6,12 +6,15 @@
 
 from __future__ import absolute_import
 
+from .add_email_outbound_ip_details import AddEmailOutboundIpDetails
 from .add_lock_details import AddLockDetails
 from .change_email_domain_compartment_details import ChangeEmailDomainCompartmentDetails
+from .change_email_ip_pool_compartment_details import ChangeEmailIpPoolCompartmentDetails
 from .change_sender_compartment_details import ChangeSenderCompartmentDetails
 from .configuration import Configuration
 from .create_dkim_details import CreateDkimDetails
 from .create_email_domain_details import CreateEmailDomainDetails
+from .create_email_ip_pool_details import CreateEmailIpPoolDetails
 from .create_email_return_path_details import CreateEmailReturnPathDetails
 from .create_sender_details import CreateSenderDetails
 from .create_suppression_details import CreateSuppressionDetails
@@ -21,9 +24,15 @@ from .dkim_summary import DkimSummary
 from .email_domain import EmailDomain
 from .email_domain_collection import EmailDomainCollection
 from .email_domain_summary import EmailDomainSummary
+from .email_ip_pool import EmailIpPool
+from .email_ip_pool_collection import EmailIpPoolCollection
+from .email_ip_pool_summary import EmailIpPoolSummary
+from .email_outbound_ip_collection import EmailOutboundIpCollection
+from .email_outbound_ip_summary import EmailOutboundIpSummary
 from .email_return_path import EmailReturnPath
 from .email_return_path_collection import EmailReturnPathCollection
 from .email_return_path_summary import EmailReturnPathSummary
+from .remove_email_outbound_ip_details import RemoveEmailOutboundIpDetails
 from .remove_lock_details import RemoveLockDetails
 from .resource_lock import ResourceLock
 from .sender import Sender
@@ -32,6 +41,7 @@ from .suppression import Suppression
 from .suppression_summary import SuppressionSummary
 from .update_dkim_details import UpdateDkimDetails
 from .update_email_domain_details import UpdateEmailDomainDetails
+from .update_email_ip_pool_details import UpdateEmailIpPoolDetails
 from .update_email_return_path_details import UpdateEmailReturnPathDetails
 from .update_sender_details import UpdateSenderDetails
 from .work_request import WorkRequest
@@ -45,12 +55,15 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for email services.
 email_type_mapping = {
+    "AddEmailOutboundIpDetails": AddEmailOutboundIpDetails,
     "AddLockDetails": AddLockDetails,
     "ChangeEmailDomainCompartmentDetails": ChangeEmailDomainCompartmentDetails,
+    "ChangeEmailIpPoolCompartmentDetails": ChangeEmailIpPoolCompartmentDetails,
     "ChangeSenderCompartmentDetails": ChangeSenderCompartmentDetails,
     "Configuration": Configuration,
     "CreateDkimDetails": CreateDkimDetails,
     "CreateEmailDomainDetails": CreateEmailDomainDetails,
+    "CreateEmailIpPoolDetails": CreateEmailIpPoolDetails,
     "CreateEmailReturnPathDetails": CreateEmailReturnPathDetails,
     "CreateSenderDetails": CreateSenderDetails,
     "CreateSuppressionDetails": CreateSuppressionDetails,
@@ -60,9 +73,15 @@ email_type_mapping = {
     "EmailDomain": EmailDomain,
     "EmailDomainCollection": EmailDomainCollection,
     "EmailDomainSummary": EmailDomainSummary,
+    "EmailIpPool": EmailIpPool,
+    "EmailIpPoolCollection": EmailIpPoolCollection,
+    "EmailIpPoolSummary": EmailIpPoolSummary,
+    "EmailOutboundIpCollection": EmailOutboundIpCollection,
+    "EmailOutboundIpSummary": EmailOutboundIpSummary,
     "EmailReturnPath": EmailReturnPath,
     "EmailReturnPathCollection": EmailReturnPathCollection,
     "EmailReturnPathSummary": EmailReturnPathSummary,
+    "RemoveEmailOutboundIpDetails": RemoveEmailOutboundIpDetails,
     "RemoveLockDetails": RemoveLockDetails,
     "ResourceLock": ResourceLock,
     "Sender": Sender,
@@ -71,6 +90,7 @@ email_type_mapping = {
     "SuppressionSummary": SuppressionSummary,
     "UpdateDkimDetails": UpdateDkimDetails,
     "UpdateEmailDomainDetails": UpdateEmailDomainDetails,
+    "UpdateEmailIpPoolDetails": UpdateEmailIpPoolDetails,
     "UpdateEmailReturnPathDetails": UpdateEmailReturnPathDetails,
     "UpdateSenderDetails": UpdateSenderDetails,
     "WorkRequest": WorkRequest,

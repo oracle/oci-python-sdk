@@ -19,6 +19,10 @@ class PrivateApplicationPackageSummary(object):
     #: This constant has a value of "STACK"
     PACKAGE_TYPE_STACK = "STACK"
 
+    #: A constant which can be used with the package_type property of a PrivateApplicationPackageSummary.
+    #: This constant has a value of "IMAGE"
+    PACKAGE_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PrivateApplicationPackageSummary object with values from keyword arguments.
@@ -42,13 +46,17 @@ class PrivateApplicationPackageSummary(object):
 
         :param package_type:
             The value to assign to the package_type property of this PrivateApplicationPackageSummary.
-            Allowed values for this property are: "STACK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STACK", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
         :param time_created:
             The value to assign to the time_created property of this PrivateApplicationPackageSummary.
         :type time_created: datetime
+
+        :param system_tags:
+            The value to assign to the system_tags property of this PrivateApplicationPackageSummary.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -57,7 +65,8 @@ class PrivateApplicationPackageSummary(object):
             'display_name': 'str',
             'version': 'str',
             'package_type': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -65,7 +74,8 @@ class PrivateApplicationPackageSummary(object):
             'display_name': 'displayName',
             'version': 'version',
             'package_type': 'packageType',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._private_application_id = None
@@ -73,6 +83,7 @@ class PrivateApplicationPackageSummary(object):
         self._version = None
         self._package_type = None
         self._time_created = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -184,7 +195,7 @@ class PrivateApplicationPackageSummary(object):
         **[Required]** Gets the package_type of this PrivateApplicationPackageSummary.
         The type of the package.
 
-        Allowed values for this property are: "STACK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STACK", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -203,7 +214,7 @@ class PrivateApplicationPackageSummary(object):
         :param package_type: The package_type of this PrivateApplicationPackageSummary.
         :type: str
         """
-        allowed_values = ["STACK"]
+        allowed_values = ["STACK", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type
@@ -241,6 +252,32 @@ class PrivateApplicationPackageSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this PrivateApplicationPackageSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this PrivateApplicationPackageSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this PrivateApplicationPackageSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this PrivateApplicationPackageSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

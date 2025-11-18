@@ -32,20 +32,27 @@ class UpdateComputeGpuMemoryFabricDetails(object):
             The value to assign to the display_name property of this UpdateComputeGpuMemoryFabricDetails.
         :type display_name: str
 
+        :param memory_fabric_preferences:
+            The value to assign to the memory_fabric_preferences property of this UpdateComputeGpuMemoryFabricDetails.
+        :type memory_fabric_preferences: oci.core.models.MemoryFabricPreferencesDescriptor
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'display_name': 'str'
+            'display_name': 'str',
+            'memory_fabric_preferences': 'MemoryFabricPreferencesDescriptor'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'memory_fabric_preferences': 'memoryFabricPreferences'
         }
         self._defined_tags = None
         self._freeform_tags = None
         self._display_name = None
+        self._memory_fabric_preferences = None
 
     @property
     def defined_tags(self):
@@ -140,6 +147,26 @@ class UpdateComputeGpuMemoryFabricDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def memory_fabric_preferences(self):
+        """
+        Gets the memory_fabric_preferences of this UpdateComputeGpuMemoryFabricDetails.
+
+        :return: The memory_fabric_preferences of this UpdateComputeGpuMemoryFabricDetails.
+        :rtype: oci.core.models.MemoryFabricPreferencesDescriptor
+        """
+        return self._memory_fabric_preferences
+
+    @memory_fabric_preferences.setter
+    def memory_fabric_preferences(self, memory_fabric_preferences):
+        """
+        Sets the memory_fabric_preferences of this UpdateComputeGpuMemoryFabricDetails.
+
+        :param memory_fabric_preferences: The memory_fabric_preferences of this UpdateComputeGpuMemoryFabricDetails.
+        :type: oci.core.models.MemoryFabricPreferencesDescriptor
+        """
+        self._memory_fabric_preferences = memory_fabric_preferences
 
     def __repr__(self):
         return formatted_flat_dict(self)

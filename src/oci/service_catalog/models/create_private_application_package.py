@@ -19,6 +19,10 @@ class CreatePrivateApplicationPackage(object):
     #: This constant has a value of "STACK"
     PACKAGE_TYPE_STACK = "STACK"
 
+    #: A constant which can be used with the package_type property of a CreatePrivateApplicationPackage.
+    #: This constant has a value of "IMAGE"
+    PACKAGE_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreatePrivateApplicationPackage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -30,7 +34,7 @@ class CreatePrivateApplicationPackage(object):
 
         :param package_type:
             The value to assign to the package_type property of this CreatePrivateApplicationPackage.
-            Allowed values for this property are: "STACK"
+            Allowed values for this property are: "STACK", "IMAGE"
         :type package_type: str
 
         :param version:
@@ -68,7 +72,7 @@ class CreatePrivateApplicationPackage(object):
         **[Required]** Gets the package_type of this CreatePrivateApplicationPackage.
         The package's type.
 
-        Allowed values for this property are: "STACK"
+        Allowed values for this property are: "STACK", "IMAGE"
 
 
         :return: The package_type of this CreatePrivateApplicationPackage.
@@ -86,7 +90,7 @@ class CreatePrivateApplicationPackage(object):
         :param package_type: The package_type of this CreatePrivateApplicationPackage.
         :type: str
         """
-        allowed_values = ["STACK"]
+        allowed_values = ["STACK", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `package_type`, must be None or one of {allowed_values}"

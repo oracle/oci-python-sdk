@@ -20,6 +20,10 @@ class UpdateSenderDetails(object):
         Initializes a new UpdateSenderDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param email_ip_pool_id:
+            The value to assign to the email_ip_pool_id property of this UpdateSenderDetails.
+        :type email_ip_pool_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateSenderDetails.
         :type freeform_tags: dict(str, str)
@@ -30,15 +34,46 @@ class UpdateSenderDetails(object):
 
         """
         self.swagger_types = {
+            'email_ip_pool_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'email_ip_pool_id': 'emailIpPoolId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
+        self._email_ip_pool_id = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def email_ip_pool_id(self):
+        """
+        Gets the email_ip_pool_id of this UpdateSenderDetails.
+        The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The email_ip_pool_id of this UpdateSenderDetails.
+        :rtype: str
+        """
+        return self._email_ip_pool_id
+
+    @email_ip_pool_id.setter
+    def email_ip_pool_id(self, email_ip_pool_id):
+        """
+        Sets the email_ip_pool_id of this UpdateSenderDetails.
+        The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param email_ip_pool_id: The email_ip_pool_id of this UpdateSenderDetails.
+        :type: str
+        """
+        self._email_ip_pool_id = email_ip_pool_id
 
     @property
     def freeform_tags(self):
