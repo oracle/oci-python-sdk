@@ -12,7 +12,6 @@ import resource
 from contextlib import contextmanager
 from oci._vendor.requests.exceptions import Timeout
 from oci._vendor.requests.exceptions import ConnectionError
-from oci._vendor import six
 from . import test_config_container
 
 try:
@@ -194,7 +193,7 @@ def camelize(to_camelize, uppercase_first_letter=False):
 # ignore_for_parent_keys will not convert the sub-nodes of that key in dictionary
 # such as for defineTag the key is defined by user, we don't want to covert it to camel case
 def make_dict_keys_camel_case(original_obj, ignore_for_parent_keys=None):
-    if isinstance(original_obj, six.string_types):
+    if isinstance(original_obj, str):
         return original_obj
 
     if not isinstance(original_obj, abc.Mapping) and not isinstance(original_obj, abc.Iterable):
@@ -204,7 +203,7 @@ def make_dict_keys_camel_case(original_obj, ignore_for_parent_keys=None):
 
     if isinstance(original_obj, abc.Mapping):
         new_dict = {}
-        for key, value in six.iteritems(original_obj):
+        for key, value in original_obj.items():
             camelized_key = camelize(key)
 
             if ignore_for_parent_keys is not None and camelized_key in ignore_for_parent_keys:
