@@ -24,7 +24,7 @@ from ._vendor import requests, six, urllib3, sseclient
 from dateutil.parser import parse
 from dateutil import tz
 import functools
-from six.moves.http_client import HTTPResponse
+from ._vendor.six.moves.http_client import HTTPResponse
 
 from . import constants, exceptions, regions, retry
 from .auth import signers
