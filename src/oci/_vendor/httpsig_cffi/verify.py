@@ -33,9 +33,9 @@ class Verifier(Signer):
         `signature` is a base64-encoded signature to verify against `data`
         """
 
-        if isinstance(data, six.string_types):
+        if isinstance(data, str):
             data = data.encode("ascii")
-        if isinstance(signature, six.string_types):
+        if isinstance(signature, str):
             signature = signature.encode("ascii")
 
         if self.sign_algorithm == 'rsa':

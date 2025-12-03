@@ -187,7 +187,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -300,7 +300,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -419,7 +419,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -534,7 +534,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -650,7 +650,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -769,7 +769,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -895,7 +895,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -1022,7 +1022,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         attribute_allowed_values = ["ORIGINAL", "ORIGINAL_WITH_ADJUSTED_COST", "USING_SQL_PROFILE", "USING_NEW_INDICES", "USING_PARALLEL_EXECUTION"]
@@ -1167,7 +1167,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'search_period' in kwargs:
@@ -1344,7 +1344,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'search_period' in kwargs:
@@ -1529,7 +1529,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -1697,7 +1697,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'status' in kwargs:
@@ -1864,7 +1864,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -2004,7 +2004,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2123,7 +2123,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2238,7 +2238,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2355,7 +2355,7 @@ class SqlTuningClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {

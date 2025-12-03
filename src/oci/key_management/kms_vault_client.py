@@ -198,7 +198,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -326,7 +326,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -457,7 +457,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -694,7 +694,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -820,7 +820,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -926,7 +926,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1024,7 +1024,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1167,7 +1167,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -1490,7 +1490,7 @@ class KmsVaultClient(object):
             restore_vault_from_file_details = kwargs.get("restore_vault_from_file_details", missing)
 
         if restore_vault_from_file_details is not missing and restore_vault_from_file_details is not None:
-            if (not isinstance(restore_vault_from_file_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(restore_vault_from_file_details, (bytes, str)) and
                     not hasattr(restore_vault_from_file_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1745,7 +1745,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1866,7 +1866,7 @@ class KmsVaultClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {

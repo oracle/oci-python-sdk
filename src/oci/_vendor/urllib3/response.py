@@ -245,7 +245,7 @@ class HTTPResponse(io.IOBase):
         self.msg = msg
         self._request_url = request_url
 
-        if body and isinstance(body, (six.string_types, bytes)):
+        if body and isinstance(body, (str, bytes)):
             self._body = body
 
         self._pool = pool

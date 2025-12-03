@@ -183,7 +183,7 @@ class GenericArtifactsContentClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -300,7 +300,7 @@ class GenericArtifactsContentClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -432,7 +432,7 @@ class GenericArtifactsContentClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -449,7 +449,7 @@ class GenericArtifactsContentClient(object):
             generic_artifact_content_body = kwargs.get("generic_artifact_content_body", missing)
 
         if generic_artifact_content_body is not missing and generic_artifact_content_body is not None:
-            if (not isinstance(generic_artifact_content_body, (six.binary_type, six.string_types)) and
+            if (not isinstance(generic_artifact_content_body, (bytes, str)) and
                     not hasattr(generic_artifact_content_body, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 

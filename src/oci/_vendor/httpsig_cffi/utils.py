@@ -62,7 +62,7 @@ def generate_message(required_headers, headers, host=None, method=None, path=Non
 
 
 def parse_authorization_header(header):
-    if not isinstance(header, six.string_types):
+    if not isinstance(header, str):
         header = header.decode("ascii")  # HTTP headers cannot be Unicode.
 
     auth = header.split(" ", 1)

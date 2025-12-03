@@ -206,7 +206,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -349,7 +349,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -492,7 +492,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -637,7 +637,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -787,7 +787,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -922,7 +922,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -1686,7 +1686,7 @@ class DnsClient(object):
             create_zone_from_zone_file_details = kwargs.get("create_zone_from_zone_file_details", missing)
 
         if create_zone_from_zone_file_details is not missing and create_zone_from_zone_file_details is not None:
-            if (not isinstance(create_zone_from_zone_file_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(create_zone_from_zone_file_details, (bytes, str)) and
                     not hasattr(create_zone_from_zone_file_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1829,7 +1829,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -1975,7 +1975,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -2130,7 +2130,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -2272,7 +2272,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -2407,7 +2407,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -2541,7 +2541,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -2680,7 +2680,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -2828,7 +2828,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3011,7 +3011,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3172,7 +3172,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3315,7 +3315,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3484,7 +3484,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3625,7 +3625,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3761,7 +3761,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -3897,7 +3897,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -4037,7 +4037,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -4186,7 +4186,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -4328,7 +4328,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -4523,7 +4523,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -4702,7 +4702,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -6173,7 +6173,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -6339,7 +6339,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -6499,7 +6499,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -6664,7 +6664,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -6822,7 +6822,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -6984,7 +6984,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -7129,7 +7129,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -7276,7 +7276,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -7440,7 +7440,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -7585,7 +7585,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -7728,7 +7728,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -7871,7 +7871,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -8014,7 +8014,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -8174,7 +8174,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
@@ -8335,7 +8335,7 @@ class DnsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:

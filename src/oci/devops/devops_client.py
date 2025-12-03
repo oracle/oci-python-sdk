@@ -184,7 +184,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -298,7 +298,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -412,7 +412,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -523,7 +523,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -633,7 +633,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1596,7 +1596,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1710,7 +1710,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2019,7 +2019,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2037,7 +2037,7 @@ class DevopsClient(object):
             create_pull_request_attachment_body = kwargs.get("create_pull_request_attachment_body", missing)
 
         if create_pull_request_attachment_body is not missing and create_pull_request_attachment_body is not None:
-            if (not isinstance(create_pull_request_attachment_body, (six.binary_type, six.string_types)) and
+            if (not isinstance(create_pull_request_attachment_body, (bytes, str)) and
                     not hasattr(create_pull_request_attachment_body, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -2149,7 +2149,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2443,7 +2443,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2546,7 +2546,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2647,7 +2647,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2748,7 +2748,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2849,7 +2849,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2950,7 +2950,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3051,7 +3051,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3152,7 +3152,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3260,7 +3260,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3365,7 +3365,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3470,7 +3470,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3580,7 +3580,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3685,7 +3685,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3790,7 +3790,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3895,7 +3895,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4004,7 +4004,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4107,7 +4107,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4212,7 +4212,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4315,7 +4315,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4412,7 +4412,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4510,7 +4510,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4608,7 +4608,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4710,7 +4710,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4823,7 +4823,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -4931,7 +4931,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5029,7 +5029,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5127,7 +5127,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5225,7 +5225,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5323,7 +5323,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5421,7 +5421,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5533,7 +5533,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -5648,7 +5648,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5754,7 +5754,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -5868,7 +5868,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -5973,7 +5973,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6075,7 +6075,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6173,7 +6173,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6271,7 +6271,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6373,7 +6373,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6475,7 +6475,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6573,7 +6573,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6675,7 +6675,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6777,7 +6777,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6879,7 +6879,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6991,7 +6991,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -7114,7 +7114,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -7228,7 +7228,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
@@ -7349,7 +7349,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -7470,7 +7470,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -7581,7 +7581,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7679,7 +7679,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7777,7 +7777,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7875,7 +7875,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7981,7 +7981,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8098,7 +8098,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -8567,7 +8567,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -8880,7 +8880,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -9026,7 +9026,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -10145,7 +10145,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -10265,7 +10265,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -10416,7 +10416,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -10562,7 +10562,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -10863,7 +10863,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -11006,7 +11006,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'activity_type' in kwargs:
@@ -11156,7 +11156,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -11294,7 +11294,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -11444,7 +11444,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -11578,7 +11578,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -11696,7 +11696,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -12037,7 +12037,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'ref_type' in kwargs:
@@ -12350,7 +12350,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -12653,7 +12653,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -12795,7 +12795,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -13088,7 +13088,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13195,7 +13195,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13299,7 +13299,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13415,7 +13415,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13522,7 +13522,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13629,7 +13629,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13736,7 +13736,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13846,7 +13846,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -13957,7 +13957,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -14067,7 +14067,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -14186,7 +14186,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -14311,7 +14311,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         sync_merge_strategy_allowed_values = ["FETCH_AND_MERGE", "DISCARD"]
@@ -14527,7 +14527,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -14633,7 +14633,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
@@ -14746,7 +14746,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -14854,7 +14854,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -14962,7 +14962,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15070,7 +15070,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15178,7 +15178,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15286,7 +15286,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15394,7 +15394,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15502,7 +15502,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15610,7 +15610,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15718,7 +15718,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15830,7 +15830,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -15942,7 +15942,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16052,7 +16052,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16164,7 +16164,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16276,7 +16276,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16384,7 +16384,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16496,7 +16496,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16608,7 +16608,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16718,7 +16718,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -16827,7 +16827,7 @@ class DevopsClient(object):
         path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
         for (k, v) in path_params.items():
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {

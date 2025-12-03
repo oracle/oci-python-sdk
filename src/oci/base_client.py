@@ -51,7 +51,7 @@ DUAL_STACK_OPTION = "{dualStack"
 # Expect header is enabled by default
 enable_expect_header = True
 expect_header_env_var = os.environ.get('OCI_PYSDK_USING_EXPECT_HEADER', True)
-if isinstance(expect_header_env_var, six.string_types) and expect_header_env_var.lower() == "false":
+if isinstance(expect_header_env_var, str) and expect_header_env_var.lower() == "false":
     enable_expect_header = False
 oke_workload_refresh_enabled = os.environ.get('OCI_OKE_WORKLOAD_REFRESH_ENABLED', "True").lower() == "true"
 
@@ -844,10 +844,10 @@ class BaseClient(object):
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
-        types = (six.string_types, six.integer_types, float, bool, type(None))
+        types = (str, six.integer_types, float, bool, type(None))
 
         declared_swagger_type_to_acceptable_python_types = {
-            'str': six.string_types,
+            'str': str,
             'bool': bool,
             'int': (float, six.integer_types),
             'float': (float, six.integer_types)

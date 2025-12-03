@@ -11,7 +11,7 @@ import json
 
 
 def convert_to_bytes(data):
-    if isinstance(data, six.string_types) and not isinstance(data, bytes):
+    if isinstance(data, str) and not isinstance(data, bytes):
         return data.encode(DEFAULT_ENCODING)
     return data
 
@@ -30,7 +30,7 @@ def convert_bytes_to_base64_encoded_string(data):
 
 
 def convert_base64_encoded_string_to_bytes(data):
-    if not isinstance(data, six.string_types) or isinstance(data, bytes):
+    if not isinstance(data, str) or isinstance(data, bytes):
         raise TypeError("Cannot convert non string like object")
 
     return base64.b64decode(data)

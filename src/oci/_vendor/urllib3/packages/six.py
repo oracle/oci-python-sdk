@@ -976,7 +976,7 @@ def add_metaclass(metaclass):
 
 
 def ensure_binary(s, encoding="utf-8", errors="strict"):
-    """Coerce **s** to six.binary_type.
+    """Coerce **s** to bytes.
 
     For Python 2:
       - `unicode` -> encoded to `str`

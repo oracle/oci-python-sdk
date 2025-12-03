@@ -70,12 +70,12 @@ def _validate_encryption_context(encryption_context):
     for key, value in six.iteritems(encryption_context):
         # keys and values must be str and not bytes
         # in python 2 'bytes' is just an alias for 'str' so it is okay
-        if (str != bytes and isinstance(key, bytes)) or not isinstance(key, six.string_types):
+        if (str != bytes and isinstance(key, bytes)) or not isinstance(key, str):
             invalid_keys.append(key)
         elif key.startswith("oci-"):
             invalid_prefix_keys.append(key)
 
-        if (str != bytes and isinstance(value, bytes)) or not isinstance(value, six.string_types):
+        if (str != bytes and isinstance(value, bytes)) or not isinstance(value, str):
             invalid_values.append(value)
 
     if invalid_keys or invalid_values:

@@ -105,7 +105,7 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
             body = request.body or ""
             m = hashlib.sha256()
             # Handle String types
-            if isinstance(body, six.string_types):
+            if isinstance(body, str):
                 body = body.encode("utf-8")
                 request.headers.setdefault("content-length", str(len(body)))
                 m.update(body)

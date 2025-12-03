@@ -269,7 +269,7 @@ class HTTPConnection(_HTTPConnection, object):
         self.endheaders()
 
         if body is not None:
-            stringish_types = six.string_types + (bytes,)
+            stringish_types = str + (bytes,)
             if isinstance(body, stringish_types):
                 body = (body,)
             for chunk in body:

@@ -54,7 +54,7 @@ def to_dict(obj):
       are converted into ISO8601 UTC strings
     """
     # Shortcut strings so they don't count as Iterables
-    if isinstance(obj, six.string_types):
+    if isinstance(obj, str):
         return obj
     elif obj is NONE_SENTINEL:
         return None

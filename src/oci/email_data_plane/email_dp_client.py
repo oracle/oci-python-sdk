@@ -301,7 +301,7 @@ class EmailDPClient(object):
             raw_message = kwargs.get("raw_message", missing)
 
         if raw_message is not missing and raw_message is not None:
-            if (not isinstance(raw_message, (six.binary_type, six.string_types)) and
+            if (not isinstance(raw_message, (bytes, str)) and
                     not hasattr(raw_message, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
