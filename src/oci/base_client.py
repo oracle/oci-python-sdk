@@ -24,7 +24,8 @@ from ._vendor import requests, six, urllib3, sseclient
 from dateutil.parser import parse
 from dateutil import tz
 import functools
-from six.moves.http_client import HTTPResponse
+from http.client import HTTPResponse, HTTPConnection
+import urllib.parse
 
 from . import constants, exceptions, regions, retry
 from .auth import signers
@@ -83,9 +84,9 @@ def utc_now():
 
 def is_http_log_enabled(is_enabled):
     if is_enabled:
-        six.moves.http_client.HTTPConnection.debuglevel = 1
+        HTTPConnection.debuglevel = 1
     else:
-        six.moves.http_client.HTTPConnection.debuglevel = 0
+        HTTPConnection.debuglevel = 0
 
 
 def _sanitize_headers_for_requests(headers):
@@ -93,8 +94,8 @@ def _sanitize_headers_for_requests(headers):
     # Convert int, float and bool to string
     # Bools are automatically handled with this as bool is a subclass of int
     # Convert a list of strings to csv string
-    for header_name, header_value in six.iteritems(headers):
-        if isinstance(header_value, six.integer_types) or isinstance(header_value, float):
+    for header_name, header_value in headers.items():
+        if isinstance(header_value, int) or isinstance(header_value, float):
             headers[header_name] = str(header_value)
         if isinstance(header_value, list) and all(isinstance(item, str) for item in header_value):
             headers[header_name] = ",".join(header_value)
@@ -134,7 +135,7 @@ def _read_all_headers(fp):
 def _to_bytes(input_buffer):
     bytes_buffer = []
     for chunk in input_buffer:
-        if isinstance(chunk, six.text_type):
+        if isinstance(chunk, str):
             bytes_buffer.append(chunk.encode('utf-8'))
         else:
             bytes_buffer.append(chunk)
@@ -263,7 +264,7 @@ class BaseClient(object):
     primitive_type_map = {
         'int': int,
         'float': float,
-        'str': six.u,
+        'str': str,
         'bool': bool,
         'date': date,
         'datetime': datetime,
@@ -546,9 +547,9 @@ class BaseClient(object):
             path_params = self.sanitize_for_serialization(path_params)
             for k, v in path_params.items():
                 if should_enable_strict_url_encoding:
-                    replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)), safe='')
+                    replacement = urllib.parse.quote(str(self.to_path_value(v)), safe='')
                 else:
-                    replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)))
+                    replacement = urllib.parse.quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
 
@@ -844,13 +845,13 @@ class BaseClient(object):
         :param obj: The data to serialize.
         :return: The serialized form of data.
         """
-        types = (str, six.integer_types, float, bool, type(None))
+        types = (str, int, float, bool, type(None))
 
         declared_swagger_type_to_acceptable_python_types = {
             'str': str,
             'bool': bool,
-            'int': (float, six.integer_types),
-            'float': (float, six.integer_types)
+            'int': (float, int),
+            'float': (float, int)
         }
 
         # if there is a declared type for this obj, then validate that obj is of that type. None types (either None or the NONE_SENTINEL) are not validated but
@@ -903,10 +904,10 @@ class BaseClient(object):
                             for attr, _ in obj.swagger_types.items()
                             if getattr(obj, attr) is not None}
 
-                keys_to_types_and_field_name = {obj.attribute_map[attr]: (swagger_type, attr) for attr, swagger_type in six.iteritems(obj.swagger_types)}
+                keys_to_types_and_field_name = {obj.attribute_map[attr]: (swagger_type, attr) for attr, swagger_type in obj.swagger_types.items()}
 
             sanitized_dict = {}
-            for key, val in six.iteritems(obj_dict):
+            for key, val in obj_dict.items():
                 value_declared_type = None
                 inner_field_name = key
                 if keys_to_types_and_field_name:
@@ -1008,7 +1009,7 @@ class BaseClient(object):
             # Taking the inverse result because strict=True means we do not allow control characters.
             json_response = json.loads(response_data, strict=not should_allow_control_chars)
             # Load everything as JSON and then verify that the object returned
-            # is a string (six.text_type) if the response type is a string.
+            # is a string if the response type is a string.
             # This is matches the previous behavior, which happens to strip
             # the embedded quotes in the get_namespace response.
             # There is the potential that an API will declare that it returns
@@ -1016,7 +1017,7 @@ class BaseClient(object):
             # we do not update the response_data with the json_response.
             # If we do later steps will fail because they are expecting the
             # response_data to be a string.
-            if response_type != "str" or type(json_response) == six.text_type:
+            if response_type != "str" or type(json_response) == str:
                 response_data = json_response
         except ValueError:
             pass
@@ -1063,7 +1064,7 @@ class BaseClient(object):
             cls = cls.get_subtype(data)  # get_subtype returns a str
             cls = self.type_mappings[cls]
 
-        if cls in [int, float, six.u, bool]:
+        if cls in [int, float, str, bool]:
             return self.__deserialize_primitive(data, cls)
         elif cls == object:
             return data
@@ -1086,7 +1087,7 @@ class BaseClient(object):
         try:
             value = cls(data)
         except UnicodeEncodeError:
-            value = six.u(data)
+            value = str(data)
         except TypeError:
             value = data
         return value

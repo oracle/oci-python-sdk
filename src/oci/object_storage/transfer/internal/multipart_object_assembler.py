@@ -18,7 +18,7 @@ from ... import models
 from ....exceptions import ServiceError, MultipartUploadError
 from oci.exceptions import RequestException, ConnectTimeout
 from oci._vendor.requests.exceptions import Timeout, ConnectionError
-from oci._vendor.six.moves.queue import Queue
+from queue import Queue
 from threading import Semaphore
 from oci._vendor import six
 from oci.fips import is_fips_mode
@@ -405,7 +405,7 @@ class MultipartObjectAssembler:
         if self.metadata:
             # TODO: look into moving this into codegen for create_multipart_upload like it is for put_object
             processed_metadata = {}
-            for key, value in six.iteritems(self.metadata):
+            for key, value in self.metadata.items():
                 if not key.startswith('opc-meta-'):
                     processed_metadata["opc-meta-" + key] = value
                 else:
@@ -638,10 +638,8 @@ class MultipartObjectAssembler:
         # We pull data from the stream until there is no more
         keep_reading = True
         while keep_reading:
-            if six.PY3 and hasattr(stream_ref, 'buffer'):
+            if hasattr(stream_ref, 'buffer'):
                 read_bytes = stream_ref.buffer.read(self.part_size)
-            else:
-                read_bytes = stream_ref.read(self.part_size)
 
             semaphore.acquire()
 

@@ -43,8 +43,7 @@ class CryptoResult(object):
         return self._encryption_context
 
 
-@six.add_metaclass(abc.ABCMeta)
-class CryptoResultStream(object):
+class CryptoResultStream(object, metaclass=abc.ABCMeta):
     """
     The result of an SDK stream encryption or decryption operation.
     """

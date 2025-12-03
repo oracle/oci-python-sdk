@@ -10,6 +10,7 @@ import hashlib
 import io
 import functools
 import os
+import urllib.parse
 
 from oci._vendor import six
 from oci.util import record_body_position_for_rewind, rewind_body, back_up_body_calculate_stream_content_length, read_stream_for_signing
@@ -41,9 +42,9 @@ def load_private_key(secret, pass_phrase):
     - provided pass_phrase but didn't need one
     - provided a public key
     """
-    if isinstance(secret, six.text_type):
+    if isinstance(secret, str):
         secret = secret.encode("ascii")
-    if isinstance(pass_phrase, six.text_type):
+    if isinstance(pass_phrase, str):
         pass_phrase = pass_phrase.encode("ascii")
 
     backend = default_backend()
@@ -92,7 +93,7 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
         "date", email.utils.formatdate(usegmt=True))
 
     request.headers.setdefault(
-        "host", six.moves.urllib.parse.urlparse(request.url).netloc)
+        "host", urllib.parse.urlparse(request.url).netloc)
 
     if hasattr(request.body, "buffer") or hasattr(request.body, "read"):
         request.headers.setdefault("content-type", "application/octet-stream")
@@ -205,7 +206,7 @@ class AbstractBaseSigner(requests.auth.AuthBase):
         inject_missing_headers(request, sign_body, enforce_content_headers)
         signed_headers = signer.sign(
             request.headers,
-            host=six.moves.urllib.parse.urlparse(request.url).netloc,
+            host=urllib.parse.urlparse(request.url).netloc,
             method=request.method,
             path=request.path_url)
         request.headers.update(signed_headers)

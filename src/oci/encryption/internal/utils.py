@@ -69,8 +69,4 @@ def verify_crc32_checksum(input_bytes, checksum):
 
 
 def raise_runtime_error_from(runtime_exc_message, orig_exc):
-    if six.PY2:
-        # python 2 does not support exception chaining so we append the inner exception to the message
-        raise RuntimeError("{} Caused by exception: {}".format(runtime_exc_message, str(orig_exc)))
-    else:
-        six.raise_from(RuntimeError(runtime_exc_message), orig_exc)
+    raise RuntimeError(runtime_exc_message) from orig_exc

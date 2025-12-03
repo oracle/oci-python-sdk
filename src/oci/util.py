@@ -70,7 +70,7 @@ def to_dict(obj):
         # datetime.date doesn't have a timezone
         return obj.isoformat()
     elif isinstance(obj, abc.Mapping):
-        return {k: to_dict(v) for k, v in six.iteritems(obj)}
+        return {k: to_dict(v) for k, v in obj.items()}
     elif isinstance(obj, abc.Iterable):
         return [to_dict(v) for v in obj]
     # Not a string, datetime, dict, list, or model - return directly
@@ -79,7 +79,7 @@ def to_dict(obj):
 
     # Collect attrs from obj according to swagger_types into a dict
     as_dict = {}
-    for key in six.iterkeys(obj.swagger_types):
+    for key in obj.swagger_types.keys():
         value = getattr(obj, key, missing_attr)
         if value is not missing_attr:
             as_dict[key] = to_dict(value)

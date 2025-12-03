@@ -218,7 +218,7 @@ def _reset_region_info():
 
 def _add_region_information_to_override(region_metadata):
     if _check_valid_schema(region_metadata):
-        region_metadata = {k: v.lower() for k, v in six.iteritems(region_metadata)}
+        region_metadata = {k: v.lower() for k, v in region_metadata.items()}
         REGIONS_SHORT_NAMES[region_metadata[REGION_KEY_PROPERTY_NAME]] = region_metadata[
             REGION_IDENTIFIER_PROPERTY_NAME]
         REGION_REALMS[region_metadata[REGION_IDENTIFIER_PROPERTY_NAME]] = region_metadata[REALM_KEY_PROPERTY_NAME]
@@ -422,7 +422,7 @@ def _check_valid_schema(region_metadata):
 def _add_region_information_to_lookup(region_metadata, region=None):
     # Check if the region metadata has information about the requested region
     # Add the region information from region_metadata to the existing lookups
-    region_metadata = {k: v.lower() for k, v in six.iteritems(region_metadata)}
+    region_metadata = {k: v.lower() for k, v in region_metadata.items()}
     if region_metadata[REGION_KEY_PROPERTY_NAME] not in REGIONS_SHORT_NAMES:
         REGIONS_SHORT_NAMES[region_metadata[REGION_KEY_PROPERTY_NAME]] = region_metadata[REGION_IDENTIFIER_PROPERTY_NAME]
 

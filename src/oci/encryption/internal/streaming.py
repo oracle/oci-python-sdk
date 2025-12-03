@@ -67,7 +67,7 @@ def _validate_encryption_context(encryption_context):
     invalid_keys = []
     invalid_values = []
     invalid_prefix_keys = []
-    for key, value in six.iteritems(encryption_context):
+    for key, value in encryption_context.items():
         # keys and values must be str and not bytes
         # in python 2 'bytes' is just an alias for 'str' so it is okay
         if (str != bytes and isinstance(key, bytes)) or not isinstance(key, str):

@@ -18,8 +18,7 @@ from oci.encryption.internal.utils import (
 )
 
 
-@six.add_metaclass(abc.ABCMeta)
-class MasterKeyProvider(object):
+class MasterKeyProvider(object, metaclass=abc.ABCMeta):
     """
     An abstract base class defining methods to vend MasterKeys
     for use in encryption and decryption.
@@ -116,8 +115,7 @@ class KMSMasterKeyProvider(MasterKeyProvider):
         return kms_master_key
 
 
-@six.add_metaclass(abc.ABCMeta)
-class MasterKey(object):
+class MasterKey(object, metaclass=abc.ABCMeta):
     """
     An abstract base class representing a MasterKey resource to be used in
     encryption and decryption operations.

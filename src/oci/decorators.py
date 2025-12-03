@@ -16,7 +16,7 @@ def wrap_init_to_set_state_from_kwargs(init_fn):
     @functools.wraps(init_fn)
     def init(self, **kwargs):
         init_fn(self)
-        for attr_name in six.iterkeys(self.swagger_types):
+        for attr_name in self.swagger_types.keys():
             value = kwargs.pop(attr_name, missing)
             if value is not missing:
                 setattr(self, attr_name, value)

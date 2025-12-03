@@ -5816,7 +5816,7 @@ class ObjectStorageClient(object):
             "storage-tier": kwargs.get("storage_tier", missing),
 
         }
-        for key, value in six.iteritems(kwargs.get("opc_meta", {})):
+        for key, value in kwargs.get("opc_meta", {}).items():
             header_params[f"opc-meta-{key}"] = value
         header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
         # Set default value for expect header if user has not overridden it
