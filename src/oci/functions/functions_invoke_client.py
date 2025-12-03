@@ -7,7 +7,6 @@
 from __future__ import absolute_import
 
 from oci._vendor import requests  # noqa: F401
-from oci._vendor import six
 
 from oci import retry, circuit_breaker  # noqa: F401
 from oci.base_client import BaseClient
@@ -194,7 +193,7 @@ class FunctionsInvokeClient(object):
             "opc_request_id",
             "is_dry_run"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"invoke_function got unknown kwargs: {extra_kwargs!r}")
@@ -203,10 +202,10 @@ class FunctionsInvokeClient(object):
             "functionId": function_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -216,7 +215,7 @@ class FunctionsInvokeClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "is-dry-run": kwargs.get("is_dry_run", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -225,7 +224,7 @@ class FunctionsInvokeClient(object):
             invoke_function_body = kwargs.get("invoke_function_body", missing)
 
         if invoke_function_body is not missing and invoke_function_body is not None:
-            if (not isinstance(invoke_function_body, (six.binary_type, six.string_types)) and
+            if (not isinstance(invoke_function_body, (bytes, str)) and
                     not hasattr(invoke_function_body, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 

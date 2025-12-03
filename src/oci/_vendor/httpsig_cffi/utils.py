@@ -8,7 +8,6 @@ import re
 import struct
 import hashlib
 import base64
-from oci._vendor import six
 
 try:
     # Python 3
@@ -62,7 +61,7 @@ def generate_message(required_headers, headers, host=None, method=None, path=Non
 
 
 def parse_authorization_header(header):
-    if not isinstance(header, six.string_types):
+    if not isinstance(header, str):
         header = header.decode("ascii")  # HTTP headers cannot be Unicode.
 
     auth = header.split(" ", 1)
@@ -140,7 +139,7 @@ class CaseInsensitiveDict(dict):
     def __init__(self, d=None, **kwargs):
         super(CaseInsensitiveDict, self).__init__(**kwargs)
         if d:
-            self.update((k.lower(), v) for k, v in six.iteritems(d))
+            self.update((k.lower(), v) for k, v in d.items())
 
     def __setitem__(self, key, value):
         super(CaseInsensitiveDict, self).__setitem__(key.lower(), value)

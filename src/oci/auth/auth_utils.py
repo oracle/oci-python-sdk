@@ -4,7 +4,6 @@
 
 import random
 import warnings
-from oci._vendor import six
 
 
 def get_tenancy_id_from_certificate(cert):
@@ -24,10 +23,7 @@ def get_tenancy_id_from_certificate(cert):
 
 
 def sanitize_certificate_string(cert_string):
-    if six.PY3:
-        string_to_replace = cert_string.decode('ascii')
-    else:
-        string_to_replace = cert_string
+    string_to_replace = cert_string.decode('ascii')
 
     return string_to_replace \
         .replace('-----BEGIN CERTIFICATE-----', '') \

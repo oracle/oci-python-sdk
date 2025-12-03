@@ -7,7 +7,6 @@
 """
 Module to assist in verifying a signed header.
 """
-from oci._vendor import six
 
 from cryptography.hazmat.backends import default_backend  # noqa: 401
 from cryptography.hazmat.primitives import hashes, hmac, serialization  # noqa: 401
@@ -33,9 +32,9 @@ class Verifier(Signer):
         `signature` is a base64-encoded signature to verify against `data`
         """
 
-        if isinstance(data, six.string_types):
+        if isinstance(data, str):
             data = data.encode("ascii")
-        if isinstance(signature, six.string_types):
+        if isinstance(signature, str):
             signature = signature.encode("ascii")
 
         if self.sign_algorithm == 'rsa':

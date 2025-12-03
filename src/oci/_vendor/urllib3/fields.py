@@ -42,7 +42,7 @@ def format_header_param_rfc2231(name, value):
     :ret:
         An RFC-2231-formatted unicode string.
     """
-    if isinstance(value, six.binary_type):
+    if isinstance(value, bytes):
         value = value.decode("utf-8")
 
     if not any(ch in value for ch in '"\\\r\n'):
@@ -116,7 +116,7 @@ def format_header_param_html5(name, value):
     :ret:
         A unicode string, stripped of troublesome characters.
     """
-    if isinstance(value, six.binary_type):
+    if isinstance(value, bytes):
         value = value.decode("utf-8")
 
     value = _replace_multiple(value, _HTML5_REPLACEMENTS)

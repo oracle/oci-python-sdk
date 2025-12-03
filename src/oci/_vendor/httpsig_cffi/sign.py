@@ -5,7 +5,6 @@
 # Original Work: Copyright (c) 2012 Adam T. Lindsay (original author)
 
 import base64
-from oci._vendor import six
 
 from cryptography.hazmat.backends import default_backend  # noqa: F401
 from cryptography.hazmat.primitives import hashes, hmac, serialization  # noqa: F401
@@ -29,7 +28,7 @@ class Signer(object):
             algorithm = DEFAULT_SIGN_ALGORITHM
 
         assert algorithm in ALGORITHMS, "Unknown algorithm"  # noqa: F405
-        if isinstance(secret, six.string_types):
+        if isinstance(secret, str):
             secret = secret.encode("ascii")
 
         self._rsa_public = None
@@ -66,19 +65,19 @@ class Signer(object):
         return '%s-%s' % (self.sign_algorithm, self.hash_algorithm)
 
     def _sign_rsa(self, data):
-        if isinstance(data, six.string_types):
+        if isinstance(data, str):
             data = data.encode("ascii")
         return self._rsa_private.sign(data, padding.PKCS1v15(), self._rsahash())
 
     def _sign_hmac(self, data):
-        if isinstance(data, six.string_types):
+        if isinstance(data, str):
             data = data.encode("ascii")
         hmac = self._hash.copy()
         hmac.update(data)
         return hmac.finalize()
 
     def _sign(self, data):
-        if isinstance(data, six.string_types):
+        if isinstance(data, str):
             data = data.encode("ascii")
 
         signed = None

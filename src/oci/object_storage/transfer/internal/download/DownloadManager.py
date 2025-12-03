@@ -3,7 +3,6 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import io
-import six
 import math
 import time
 import warnings
@@ -163,7 +162,7 @@ class DownloadManager(object):
             "http_response_content_encoding",
             "http_response_expires"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -255,7 +254,7 @@ class DownloadManager(object):
             "http_response_content_encoding",
             "http_response_expires"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -325,7 +324,7 @@ class DownloadManager(object):
             "http_response_content_encoding",
             "http_response_expires"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -485,7 +484,7 @@ class DownloadManager(object):
             "http_response_content_encoding",
             "http_response_expires"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -533,7 +532,7 @@ class DownloadManager(object):
             "http_response_content_encoding",
             "http_response_expires"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -705,7 +704,7 @@ class DownloadManager(object):
             "http_response_expires"
         ]
 
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -803,7 +802,7 @@ class DownloadManager(object):
             "http_response_expires"
         ]
 
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
@@ -857,7 +856,7 @@ class DownloadManager(object):
             "http_response_expires"
         ]
 
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
