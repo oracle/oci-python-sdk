@@ -20,7 +20,7 @@ import copy
 import _strptime  # noqa: F401
 from datetime import date, datetime, timezone
 from timeit import default_timer as timer
-from ._vendor import requests, six, urllib3, sseclient
+from ._vendor import requests, urllib3, sseclient
 from dateutil.parser import parse
 from dateutil import tz
 import functools
