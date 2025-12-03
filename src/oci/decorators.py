@@ -22,7 +22,7 @@ def wrap_init_to_set_state_from_kwargs(init_fn):
                 setattr(self, attr_name, value)
 
         if kwargs:
-            raise TypeError('Unrecognized keyword arguments: {}'.format(', '.join(six.iterkeys(kwargs))))
+            raise TypeError('Unrecognized keyword arguments: {}'.format(', '.join(kwargs.keys())))
 
     return init
 

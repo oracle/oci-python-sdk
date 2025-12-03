@@ -180,7 +180,7 @@ class DownloadThread(object):
             "http_response_content_encoding",
             "http_response_expires"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
