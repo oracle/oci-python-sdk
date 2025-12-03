@@ -29,7 +29,6 @@ import configparser
 import os
 import re
 import logging
-from oci._vendor import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig, InvalidKeyFilePath
 from .auth import signers

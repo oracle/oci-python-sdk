@@ -12,7 +12,6 @@ import functools
 import os
 import urllib.parse
 
-from oci._vendor import six
 from oci.util import record_body_position_for_rewind, rewind_body, back_up_body_calculate_stream_content_length, read_stream_for_signing
 
 from ._vendor import httpsig_cffi, requests

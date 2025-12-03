@@ -11,7 +11,6 @@ from enum import Enum
 from . import regions_definitions
 from . import service_endpoints
 from oci.exceptions import InvalidAlloyConfig
-from oci._vendor import six
 from oci._vendor import requests
 from oci._vendor.requests.exceptions import HTTPError, ConnectionError, RetryError
 from oci._vendor.requests.adapters import HTTPAdapter

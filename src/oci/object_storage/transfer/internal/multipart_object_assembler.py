@@ -20,7 +20,6 @@ from oci.exceptions import RequestException, ConnectTimeout
 from oci._vendor.requests.exceptions import Timeout, ConnectionError
 from queue import Queue
 from threading import Semaphore
-from oci._vendor import six
 from oci.fips import is_fips_mode
 from ....version import __version__
 

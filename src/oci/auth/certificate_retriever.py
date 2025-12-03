@@ -11,7 +11,6 @@ from oci.exceptions import ServiceError
 import io
 import oci.retry
 import os.path
-from oci._vendor import six
 import threading
 import logging
 import pprint

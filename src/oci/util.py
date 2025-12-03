@@ -13,7 +13,6 @@ import os.path
 
 import pytz
 
-from oci._vendor import six
 import oci.exceptions
 
 try:

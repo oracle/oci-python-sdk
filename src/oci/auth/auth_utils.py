@@ -4,7 +4,6 @@
 
 import random
 import warnings
-from oci._vendor import six
 
 
 def get_tenancy_id_from_certificate(cert):

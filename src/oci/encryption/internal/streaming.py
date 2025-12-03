@@ -6,7 +6,6 @@ import os
 import base64
 import math
 import json
-from oci._vendor import six
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, modes
 from threading import Lock

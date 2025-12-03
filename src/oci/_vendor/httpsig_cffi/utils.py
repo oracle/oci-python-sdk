@@ -8,7 +8,6 @@ import re
 import struct
 import hashlib
 import base64
-from oci._vendor import six
 
 try:
     # Python 3

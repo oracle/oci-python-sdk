@@ -7,7 +7,6 @@
 """
 Module to assist in verifying a signed header.
 """
-from oci._vendor import six
 
 from cryptography.hazmat.backends import default_backend  # noqa: 401
 from cryptography.hazmat.primitives import hashes, hmac, serialization  # noqa: 401
