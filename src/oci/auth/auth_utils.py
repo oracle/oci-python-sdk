@@ -4,7 +4,10 @@
 
 import random
 import warnings
-from oci._vendor import six
+import oci
+from oci._vendor import six, requests
+from oci._vendor.requests import HTTPError
+from oci.regions import GET_REGION_URL, METADATA_AUTH_HEADERS
 
 
 def get_tenancy_id_from_certificate(cert):
@@ -50,3 +53,21 @@ def generate_unique_id():
     b = [random.randrange(256) for i in range(16)]
     hex_string = ''.join(format(x, '02x') for x in b)
     return hex_string
+
+
+def get_region_data_from_imds():
+    """
+    Response is of format
+    {
+        "realmdomaincomponent": "oraclecloud.com",
+        "realmkey": "oc1",
+        "regionidentifier": "us-phoenix-1",
+        "regionkey": "phx"
+    }
+    """
+    response = requests.get(GET_REGION_URL, timeout=(10, 60), headers=METADATA_AUTH_HEADERS)
+    try:
+        response.raise_for_status()
+    except HTTPError as e:
+        raise oci.exceptions.ServiceError(e.response.status_code, e.errno, e.response.headers, str(e))
+    return response.json()

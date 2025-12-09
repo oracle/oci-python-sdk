@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.164.1 - 2025-12-09
+====================
+
+Added 
+----- 
+* Support for listing elastic pool cost savings in the Database service 
+* Support for OpenAI GPT-OSS model in the Generative AI Inference service 
+* Support for distributed tracing via opc-request-id 
+
+====================
 2.164.0 - 2025-11-18
 ====================
 

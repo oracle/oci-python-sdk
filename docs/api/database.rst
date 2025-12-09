@@ -308,6 +308,8 @@ Database
     oci.database.models.EnableExternalPluggableDatabaseStackMonitoringDetails
     oci.database.models.EnablePluggableDatabaseManagementDetails
     oci.database.models.EncryptionKeyLocationDetails
+    oci.database.models.EstimateCostSavingSummary
+    oci.database.models.EstimateCostSavingsSummaryCollection
     oci.database.models.EstimatedPatchingTime
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary

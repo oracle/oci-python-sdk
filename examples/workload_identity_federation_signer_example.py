@@ -11,10 +11,10 @@ import requests
 
 # -----------------------------------------------------------------------------
 # Script usage:
-#   python workload_identity_federation_signer_example.py <region> <resource_ocid> <oci_domain_id> <oci_client_id> <oci_client_secret>
+#   python workload_identity_federation_signer_example.py <region> <resource_ocid> <oci_domain_url> <oci_client_id> <oci_client_secret>
 #
 # Example:
-#   python workload_identity_federation_signer_example.py us-ashburn-1 ocid1.vaultsecret.oc1.iad.xxxxx domain_id client_id client_secret
+#   python workload_identity_federation_signer_example.py us-ashburn-1 ocid1.vaultsecret.oc1.iad.xxxxx https://idcs-xxxxx.identity.oraclecloud.com client_id client_secret
 #
 # Notes:
 # - The second argument (<resource_ocid>) is shown as a secret OCID in the example,
@@ -24,12 +24,12 @@ import requests
 
 if len(sys.argv) != 6:
     raise RuntimeError(
-        "Usage: python workload_identity_federation_signer_example.py <region> <resource_ocid> <oci_domain_id> <oci_client_id> <oci_client_secret>"
+        "Usage: python workload_identity_federation_signer_example.py <region> <resource_ocid> <oci_domain_url> <oci_client_id> <oci_client_secret>"
     )
 
 region = sys.argv[1]
 resource_ocid = sys.argv[2]  # Can be secret_id, bucket_id, etc.
-oci_domain_id = sys.argv[3]
+oci_domain_url = sys.argv[3]
 oci_client_id = sys.argv[4]
 oci_client_secret = sys.argv[5]
 
@@ -62,7 +62,7 @@ def get_jwt():
 # -----------------------------------------------------------------------------
 # TokenExchangeSigner
 # -----------------------------------------------------------------------------
-signer = oci.auth.signers.TokenExchangeSigner(get_jwt, oci_domain_id, oci_client_id, oci_client_secret)
+signer = oci.auth.signers.TokenExchangeSigner(get_jwt, oci_domain_url, oci_client_id, oci_client_secret)
 
 # -----------------------------------------------------------------------------
 # Example: Use the resource OCID with SecretsClient
