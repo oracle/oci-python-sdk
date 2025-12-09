@@ -296,6 +296,8 @@ from .enable_external_pluggable_database_operations_insights_details import Enab
 from .enable_external_pluggable_database_stack_monitoring_details import EnableExternalPluggableDatabaseStackMonitoringDetails
 from .enable_pluggable_database_management_details import EnablePluggableDatabaseManagementDetails
 from .encryption_key_location_details import EncryptionKeyLocationDetails
+from .estimate_cost_saving_summary import EstimateCostSavingSummary
+from .estimate_cost_savings_summary_collection import EstimateCostSavingsSummaryCollection
 from .estimated_patching_time import EstimatedPatchingTime
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
@@ -818,6 +820,8 @@ database_type_mapping = {
     "EnableExternalPluggableDatabaseStackMonitoringDetails": EnableExternalPluggableDatabaseStackMonitoringDetails,
     "EnablePluggableDatabaseManagementDetails": EnablePluggableDatabaseManagementDetails,
     "EncryptionKeyLocationDetails": EncryptionKeyLocationDetails,
+    "EstimateCostSavingSummary": EstimateCostSavingSummary,
+    "EstimateCostSavingsSummaryCollection": EstimateCostSavingsSummaryCollection,
     "EstimatedPatchingTime": EstimatedPatchingTime,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,

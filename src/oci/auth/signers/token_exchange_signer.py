@@ -20,7 +20,7 @@ class TokenExchangeSigner(SecurityTokenSigner):
     Automatically refreshes tokens as needed, suitable for use with OCI SDK clients.
     """
 
-    def __init__(self, jwt_or_func, oci_domain_id, client_id, client_secret, region=None, **kwargs):
+    def __init__(self, jwt_or_func, oci_domain_url, client_id, client_secret, region=None, **kwargs):
         # Initialize per-instance logger
         self.logger = logging.getLogger(f"{__name__}.{id(self)}")
         self.logger.addHandler(logging.NullHandler())
@@ -47,14 +47,14 @@ class TokenExchangeSigner(SecurityTokenSigner):
 
         self.client_id = client_id
         self.client_secret = client_secret
-        self.oci_domain_id = oci_domain_id
+        self.oci_domain_url = oci_domain_url
         self.region = region
 
         self._reset_signers_lock = threading.Lock()
         self.requests_session = requests.Session()
         self.session_key_supplier = SessionKeySupplier()
 
-        self.logger.debug("Initializing TokenExchangeSigner for domain: %s", oci_domain_id)
+        self.logger.debug("Initializing TokenExchangeSigner for domain: %s", oci_domain_url)
 
         token = self._get_new_token()
         self.security_token_container = SecurityTokenContainer(self.session_key_supplier, token)
@@ -106,6 +106,7 @@ class TokenExchangeSigner(SecurityTokenSigner):
     def _get_new_token(self):
         """
         Requests a new UPST token from the token exchange endpoint.
+        Supports both oci_domain_url (preferred) and oci_domain_id (deprecated).
         """
         try:
             jwt = self._get_jwt()
@@ -115,7 +116,6 @@ class TokenExchangeSigner(SecurityTokenSigner):
                 encoding=Encoding.PEM,
                 format=PublicFormat.SubjectPublicKeyInfo
             ).decode("utf-8").replace("\n", "").replace("-----BEGIN PUBLIC KEY-----", "").replace("-----END PUBLIC KEY-----", "")
-
             encoded_auth = base64.b64encode(f"{self.client_id}:{self.client_secret}".encode("utf-8")).decode("utf-8")
             headers = {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -130,7 +130,24 @@ class TokenExchangeSigner(SecurityTokenSigner):
                 "public_key": public_key_pem
             }
 
-            full_token_url = f"https://{self.oci_domain_id}.identity.oraclecloud.com/oauth2/v1/token"
+            # Determine token endpoint based on whether user provided full URL or domain ID
+            if self.oci_domain_url:
+                if self.oci_domain_url.startswith("http://") or self.oci_domain_url.startswith("https://"):
+                    domain_base = self.oci_domain_url.rstrip('/')
+                    full_token_url = f"{domain_base}/oauth2/v1/token"
+                else:
+                    # User passed domain ID, backward compatibility
+                    self.logger.warning(
+                        "Passing oci_domain_id instead of full URL is deprecated."
+                        "Please migrate to using oci_domain_url in the format"
+                        "'https://<domain>.identity.oraclecloud.com'."
+                    )
+                    full_token_url = f"https://{self.oci_domain_url}.identity.oraclecloud.com/oauth2/v1/token"
+            else:
+                raise ValueError(
+                    "Missing oci_domain_url. Either provide the full URL or domain ID."
+                )
+
             self.logger.debug("Requesting UPST token from: %s", full_token_url)
 
             response = self.requests_session.post(full_token_url, headers=headers, data=data)

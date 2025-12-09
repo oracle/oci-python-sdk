@@ -14,4 +14,5 @@ from .oke_workload_identity_resource_principal_signer import OkeWorkloadIdentity
 from .ephemeral_resource_principals_v21_signer import EphemeralResourcePrincipalV21Signer  # noqa: F401
 from .key_pair_signer import KeyPairSigner  # noqa: F401
 from .nested_resource_principals_signer import NestedResourcePrincipals  # noqa: F401
+from .oauth_exhange_token_signer import OauthExchangeTokenSigner  # noqa: F401
 from .token_exchange_signer import TokenExchangeSigner  # noqa: F401

@@ -37,8 +37,11 @@ from .version import __version__
 from .util import NONE_SENTINEL, Sentinel, extract_service_endpoint
 missing = Sentinel("Missing")
 APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
+PROPAGATION_ENABLED_ENV_VAR_NAME = "PROPAGATION_ENABLED"
+OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME = "OPC_INCOMING_REQUEST_ID"
 OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED = "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
+PROPAGATION_ENABLED = False
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
 DICT_VALUE_TYPE_REGEX = re.compile(r'dict\(str, (.+?)\)$')  # noqa: W605
@@ -282,6 +285,9 @@ class BaseClient(object):
         # clients we require an endpoint
         self.regional_client = kwargs.get('regional_client', True)
 
+        self.custom_opc_request_id = None
+        self.PROPAGATION_ENABLED = os.environ.get(PROPAGATION_ENABLED_ENV_VAR_NAME)
+        self.PROPAGATION_ENABLED = False if self.PROPAGATION_ENABLED is None else self.get_bool_env_var(self.PROPAGATION_ENABLED)
         self._endpoint = None
         self._base_path = kwargs.get('base_path')
         self.service_endpoint_template = kwargs.get('service_endpoint_template')
@@ -479,7 +485,8 @@ class BaseClient(object):
                 isinstance(self.signer, signers.EphemeralResourcePrincipalSigner) or
                 isinstance(self.signer, signers.EphemeralResourcePrincipalV21Signer) or
                 isinstance(self.signer, signers.NestedResourcePrincipals) or
-                (isinstance(self.signer, signers.OkeWorkloadIdentityResourcePrincipalSigner) and oke_workload_refresh_enabled)):
+                (isinstance(self.signer, signers.OkeWorkloadIdentityResourcePrincipalSigner) and oke_workload_refresh_enabled) or
+                isinstance(self.signer, signers.OauthExchangeTokenSigner)):
             return True
         else:
             return False
@@ -533,8 +540,24 @@ class BaseClient(object):
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
 
-        if header_params.get(constants.HEADER_REQUEST_ID, missing) is missing:
+        self.get_downstream_request_id()
+
+        # Set custom opc-request-id header, if specified in the client
+        if self.custom_opc_request_id is None and self.PROPAGATION_ENABLED in [False, "False", None, "None"] and header_params.get(constants.HEADER_REQUEST_ID, missing) is missing:
             header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+            self.logger.debug(f"No propagation: {str(header_params[constants.HEADER_REQUEST_ID])}")
+        elif self.custom_opc_request_id is None and self.PROPAGATION_ENABLED in [False, "False", None, "None"] and header_params.get(constants.HEADER_REQUEST_ID):
+            self.logger.debug(f"No propagation: {str(header_params[constants.HEADER_REQUEST_ID])}")
+        elif self.PROPAGATION_ENABLED in [False, "False", None, "None"] and header_params.get(constants.HEADER_REQUEST_ID, missing) is missing:
+            header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+            self.logger.debug(f"Propagation disabled with no other values received from SDK or CLI: {str(header_params[constants.HEADER_REQUEST_ID])}")
+        elif self.PROPAGATION_ENABLED in [True, "True"] and header_params.get(constants.HEADER_REQUEST_ID, missing) is missing and self.custom_opc_request_id is None:
+            clientId = self.build_request_id()
+            header_params[constants.HEADER_REQUEST_ID] = self.use_custom_opc_request_id(clientId)
+            self.logger.debug(f"Propagation enabled with no other values received:{self.PROPAGATION_ENABLED} and {str(header_params[constants.HEADER_REQUEST_ID])} and {self.custom_opc_request_id}")
+        elif self.PROPAGATION_ENABLED in [True, "True"] and header_params.get(constants.HEADER_REQUEST_ID, missing) is missing and self.custom_opc_request_id is not None:
+            header_params[constants.HEADER_REQUEST_ID] = self.custom_opc_request_id
+            self.logger.debug(f"Propagation enabled with no other values received from SDK but CLI: {str(header_params[constants.HEADER_REQUEST_ID])}")
 
         # This allows for testing with "fake" database resources.
         opc_host_serial = os.environ.get('OCI_DB_OPC_HOST_SERIAL')
@@ -590,6 +613,53 @@ class BaseClient(object):
             end = timer()
             self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
             return response
+
+    def get_bool_env_var(envVar: str, default=False) -> bool:
+        if envVar is None:
+            return False
+        envVar = str(envVar).strip().lower()
+        if envVar in ('True', 'true', 'TRUE'):
+            return True
+        elif envVar in ('False', 'false', 'FALSE'):
+            return False
+        return default
+
+    def use_default_opc_request_id(self):
+        self.PROPAGATION_ENABLED = False
+        self.custom_opc_request_id = None
+        if os.environ.get(PROPAGATION_ENABLED_ENV_VAR_NAME):
+            os.environ.pop(PROPAGATION_ENABLED_ENV_VAR_NAME)
+        if os.environ.get(OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME):
+            os.environ.pop(OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME)
+
+    def get_downstream_request_id(self):
+        request_id = os.environ.get(OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME)
+        if self.PROPAGATION_ENABLED and request_id:
+            self.logger.debug(f"Downstream requestID: {str(request_id)}")
+            self.custom_opc_request_id = request_id
+            return request_id
+
+    def use_custom_opc_request_id(self, rid: str = None):
+        self.custom_opc_request_id = None
+        if self.PROPAGATION_ENABLED:
+            rid = self.get_downstream_request_id()
+        if rid is not None and rid != "":
+            self.PROPAGATION_ENABLED = True
+        if self.PROPAGATION_ENABLED:
+            segments = rid.split('/')
+            if len(segments) == 1:
+                stackId = self.build_request_id()
+                self.custom_opc_request_id = segments[0] + "/" + stackId
+                self.logger.debug(f"Generated stackId: {str(stackId)}")
+            elif len(segments) >= 2:
+                if len(segments[1]) == 0:
+                    stackId = self.build_request_id()
+                    self.logger.debug(f"Generated stackId: {str(stackId)}")
+                else:
+                    stackId = segments[1]
+                self.custom_opc_request_id = segments[0] + "/" + stackId
+                self.logger.debug(f"Truncated request ID to: {str(self.custom_opc_request_id)}")
+        return self.custom_opc_request_id
 
     def map_service_params_to_values(self, service_params_url, path_params, query_params, required_arguments):
         service_params_map = {}
@@ -742,6 +812,9 @@ class BaseClient(object):
                 self.logger.debug(utc_now() + 'time elapsed for request {}: {}'.format(request.header_params[constants.HEADER_REQUEST_ID], str(end - start)))
             if response and hasattr(response, 'elapsed'):
                 self.logger.debug(utc_now() + "time elapsed in response: " + str(response.elapsed))
+            if self.PROPAGATION_ENABLED in [True, "True"] and response.headers[constants.HEADER_REQUEST_ID]:
+                os.environ[OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME] = response.headers[constants.HEADER_REQUEST_ID]
+                self.logger.debug(f"Response opc-request-id: {response.headers[constants.HEADER_REQUEST_ID]}")
         except requests.exceptions.ConnectTimeout as e:
             if not e.args:
                 e.args = ('',)
@@ -806,6 +879,27 @@ class BaseClient(object):
     # Builds the client info string to be sent with each request.
     def build_request_id(self):
         return str(uuid.uuid4()).replace('-', '').upper()
+
+    def is_valid_opc_request_id(self, rid: str):
+        """
+        Validate the OPC request ID.
+        Args:
+        rid (str): The OPC request ID to be validated.
+        Raises:
+        ValueError: If the OPC request ID is invalid.
+        """
+        self.logger.info(f"custom opc-request-id: {rid}")
+        if rid is None or rid == "":
+            raise ValueError("custom opc-request-id cannot be empty")
+        segments = rid.split("/")
+        if len(segments) > 3:
+            raise ValueError("custom opc-request-id cannot contain more than 3 segments")
+        # pattern = re.compile("^[a-zA-Z0-9_-]{0,32}$")
+        # TODO Change once regex is confirmed to be removed as objectstoarge request id has special character
+        pattern = re.compile("^[a-zA-Z0-9_:-;]{0,32}$")
+        for segment in segments:
+            if not pattern.match(segment):
+                raise ValueError("custom opc-request-id segments must contain only ASCII alphanumerics plus underscore and dash, and be at most 32 characters")
 
     def add_opc_retry_token_if_needed(self, header_params, retry_token_length=30):
         if 'opc-retry-token' not in header_params:
