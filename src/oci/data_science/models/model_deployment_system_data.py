@@ -19,6 +19,10 @@ class ModelDeploymentSystemData(object):
     #: This constant has a value of "INSTANCE_POOL"
     SYSTEM_INFRA_TYPE_INSTANCE_POOL = "INSTANCE_POOL"
 
+    #: A constant which can be used with the model_type property of a ModelDeploymentSystemData.
+    #: This constant has a value of "MANAGED_MODEL"
+    MODEL_TYPE_MANAGED_MODEL = "MANAGED_MODEL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelDeploymentSystemData object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -34,14 +38,23 @@ class ModelDeploymentSystemData(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type system_infra_type: str
 
+        :param model_type:
+            The value to assign to the model_type property of this ModelDeploymentSystemData.
+            Allowed values for this property are: "MANAGED_MODEL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type model_type: str
+
         """
         self.swagger_types = {
-            'system_infra_type': 'str'
+            'system_infra_type': 'str',
+            'model_type': 'str'
         }
         self.attribute_map = {
-            'system_infra_type': 'systemInfraType'
+            'system_infra_type': 'systemInfraType',
+            'model_type': 'modelType'
         }
         self._system_infra_type = None
+        self._model_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -85,6 +98,36 @@ class ModelDeploymentSystemData(object):
         if not value_allowed_none_or_none_sentinel(system_infra_type, allowed_values):
             system_infra_type = 'UNKNOWN_ENUM_VALUE'
         self._system_infra_type = system_infra_type
+
+    @property
+    def model_type(self):
+        """
+        Gets the model_type of this ModelDeploymentSystemData.
+        The type of the deployed model.
+
+        Allowed values for this property are: "MANAGED_MODEL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The model_type of this ModelDeploymentSystemData.
+        :rtype: str
+        """
+        return self._model_type
+
+    @model_type.setter
+    def model_type(self, model_type):
+        """
+        Sets the model_type of this ModelDeploymentSystemData.
+        The type of the deployed model.
+
+
+        :param model_type: The model_type of this ModelDeploymentSystemData.
+        :type: str
+        """
+        allowed_values = ["MANAGED_MODEL"]
+        if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
+            model_type = 'UNKNOWN_ENUM_VALUE'
+        self._model_type = model_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -67,6 +67,10 @@ class DrProtectionGroupMember(object):
     #: This constant has a value of "MYSQL_DB_SYSTEM"
     MEMBER_TYPE_MYSQL_DB_SYSTEM = "MYSQL_DB_SYSTEM"
 
+    #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
+    #: This constant has a value of "INTEGRATION_INSTANCE"
+    MEMBER_TYPE_INTEGRATION_INSTANCE = "INTEGRATION_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrProtectionGroupMember object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -81,6 +85,7 @@ class DrProtectionGroupMember(object):
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberOkeCluster`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberNetworkLoadBalancer`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberObjectStorageBucket`
+        * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberIntegrationInstance`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceMovable`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberLoadBalancer`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceNonMovable`
@@ -94,7 +99,7 @@ class DrProtectionGroupMember(object):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMember.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type member_type: str
 
@@ -145,6 +150,9 @@ class DrProtectionGroupMember(object):
         if type == 'OBJECT_STORAGE_BUCKET':
             return 'DrProtectionGroupMemberObjectStorageBucket'
 
+        if type == 'INTEGRATION_INSTANCE':
+            return 'DrProtectionGroupMemberIntegrationInstance'
+
         if type == 'COMPUTE_INSTANCE_MOVABLE':
             return 'DrProtectionGroupMemberComputeInstanceMovable'
 
@@ -193,7 +201,7 @@ class DrProtectionGroupMember(object):
         **[Required]** Gets the member_type of this DrProtectionGroupMember.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -212,7 +220,7 @@ class DrProtectionGroupMember(object):
         :param member_type: The member_type of this DrProtectionGroupMember.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             member_type = 'UNKNOWN_ENUM_VALUE'
         self._member_type = member_type

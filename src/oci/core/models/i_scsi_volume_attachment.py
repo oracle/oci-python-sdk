@@ -109,6 +109,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
             The value to assign to the ipv4 property of this IScsiVolumeAttachment.
         :type ipv4: str
 
+        :param ipv6:
+            The value to assign to the ipv6 property of this IScsiVolumeAttachment.
+        :type ipv6: str
+
         :param iqn:
             The value to assign to the iqn property of this IScsiVolumeAttachment.
         :type iqn: str
@@ -152,6 +156,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'chap_secret': 'str',
             'chap_username': 'str',
             'ipv4': 'str',
+            'ipv6': 'str',
             'iqn': 'str',
             'port': 'int',
             'multipath_devices': 'list[MultipathDevice]',
@@ -178,6 +183,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'chap_secret': 'chapSecret',
             'chap_username': 'chapUsername',
             'ipv4': 'ipv4',
+            'ipv6': 'ipv6',
             'iqn': 'iqn',
             'port': 'port',
             'multipath_devices': 'multipathDevices',
@@ -203,6 +209,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._chap_secret = None
         self._chap_username = None
         self._ipv4 = None
+        self._ipv6 = None
         self._iqn = None
         self._port = None
         self._multipath_devices = None
@@ -299,6 +306,34 @@ class IScsiVolumeAttachment(VolumeAttachment):
         :type: str
         """
         self._ipv4 = ipv4
+
+    @property
+    def ipv6(self):
+        """
+        Gets the ipv6 of this IScsiVolumeAttachment.
+        The volume's iSCSI IPv6 address.
+
+        Example: `2001:db8::1/64`
+
+
+        :return: The ipv6 of this IScsiVolumeAttachment.
+        :rtype: str
+        """
+        return self._ipv6
+
+    @ipv6.setter
+    def ipv6(self, ipv6):
+        """
+        Sets the ipv6 of this IScsiVolumeAttachment.
+        The volume's iSCSI IPv6 address.
+
+        Example: `2001:db8::1/64`
+
+
+        :param ipv6: The ipv6 of this IScsiVolumeAttachment.
+        :type: str
+        """
+        self._ipv6 = ipv6
 
     @property
     def iqn(self):

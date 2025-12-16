@@ -53,6 +53,7 @@ from .create_dr_protection_group_member_compute_instance_non_movable_details imp
 from .create_dr_protection_group_member_database_details import CreateDrProtectionGroupMemberDatabaseDetails
 from .create_dr_protection_group_member_details import CreateDrProtectionGroupMemberDetails
 from .create_dr_protection_group_member_file_system_details import CreateDrProtectionGroupMemberFileSystemDetails
+from .create_dr_protection_group_member_integration_instance_details import CreateDrProtectionGroupMemberIntegrationInstanceDetails
 from .create_dr_protection_group_member_load_balancer_details import CreateDrProtectionGroupMemberLoadBalancerDetails
 from .create_dr_protection_group_member_my_sql_db_system_details import CreateDrProtectionGroupMemberMySqlDbSystemDetails
 from .create_dr_protection_group_member_network_load_balancer_details import CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
@@ -69,6 +70,7 @@ from .create_oke_cluster_backup_config_details import CreateOkeClusterBackupConf
 from .create_oke_cluster_load_balancer_mapping_details import CreateOkeClusterLoadBalancerMappingDetails
 from .create_oke_cluster_managed_node_pool_configuration_details import CreateOkeClusterManagedNodePoolConfigurationDetails
 from .create_oke_cluster_network_load_balancer_mapping_details import CreateOkeClusterNetworkLoadBalancerMappingDetails
+from .create_oke_cluster_resource_modifier_mapping_details import CreateOkeClusterResourceModifierMappingDetails
 from .create_oke_cluster_vault_mapping_details import CreateOkeClusterVaultMappingDetails
 from .create_oke_cluster_virtual_node_pool_configuration_details import CreateOkeClusterVirtualNodePoolConfigurationDetails
 from .create_source_volume_to_destination_encryption_key_mapping_details import CreateSourceVolumeToDestinationEncryptionKeyMappingDetails
@@ -80,9 +82,15 @@ from .dr_plan_collection import DrPlanCollection
 from .dr_plan_execution import DrPlanExecution
 from .dr_plan_execution_collection import DrPlanExecutionCollection
 from .dr_plan_execution_control_details import DrPlanExecutionControlDetails
+from .dr_plan_execution_failed_step_status_counts import DrPlanExecutionFailedStepStatusCounts
 from .dr_plan_execution_option_details import DrPlanExecutionOptionDetails
 from .dr_plan_execution_options import DrPlanExecutionOptions
+from .dr_plan_execution_remaining_step_status_counts import DrPlanExecutionRemainingStepStatusCounts
+from .dr_plan_execution_skipped_step_status_counts import DrPlanExecutionSkippedStepStatusCounts
+from .dr_plan_execution_step_status_counts import DrPlanExecutionStepStatusCounts
+from .dr_plan_execution_successful_step_status_counts import DrPlanExecutionSuccessfulStepStatusCounts
 from .dr_plan_execution_summary import DrPlanExecutionSummary
+from .dr_plan_execution_warning_step_status_counts import DrPlanExecutionWarningStepStatusCounts
 from .dr_plan_group import DrPlanGroup
 from .dr_plan_group_execution import DrPlanGroupExecution
 from .dr_plan_step import DrPlanStep
@@ -99,6 +107,7 @@ from .dr_protection_group_member_compute_instance_movable import DrProtectionGro
 from .dr_protection_group_member_compute_instance_non_movable import DrProtectionGroupMemberComputeInstanceNonMovable
 from .dr_protection_group_member_database import DrProtectionGroupMemberDatabase
 from .dr_protection_group_member_file_system import DrProtectionGroupMemberFileSystem
+from .dr_protection_group_member_integration_instance import DrProtectionGroupMemberIntegrationInstance
 from .dr_protection_group_member_load_balancer import DrProtectionGroupMemberLoadBalancer
 from .dr_protection_group_member_my_sql_db_system import DrProtectionGroupMemberMySqlDbSystem
 from .dr_protection_group_member_network_load_balancer import DrProtectionGroupMemberNetworkLoadBalancer
@@ -133,6 +142,7 @@ from .oke_cluster_backup_config import OkeClusterBackupConfig
 from .oke_cluster_load_balancer_mapping import OkeClusterLoadBalancerMapping
 from .oke_cluster_managed_node_pool_configuration import OkeClusterManagedNodePoolConfiguration
 from .oke_cluster_network_load_balancer_mapping import OkeClusterNetworkLoadBalancerMapping
+from .oke_cluster_resource_modifier_mapping import OkeClusterResourceModifierMapping
 from .oke_cluster_vault_mapping import OkeClusterVaultMapping
 from .oke_cluster_virtual_node_pool_configuration import OkeClusterVirtualNodePoolConfiguration
 from .pause_dr_plan_execution_details import PauseDrPlanExecutionDetails
@@ -184,6 +194,7 @@ from .update_dr_protection_group_member_compute_instance_non_movable_details imp
 from .update_dr_protection_group_member_database_details import UpdateDrProtectionGroupMemberDatabaseDetails
 from .update_dr_protection_group_member_details import UpdateDrProtectionGroupMemberDetails
 from .update_dr_protection_group_member_file_system_details import UpdateDrProtectionGroupMemberFileSystemDetails
+from .update_dr_protection_group_member_integration_instance_details import UpdateDrProtectionGroupMemberIntegrationInstanceDetails
 from .update_dr_protection_group_member_load_balancer_details import UpdateDrProtectionGroupMemberLoadBalancerDetails
 from .update_dr_protection_group_member_my_sql_db_system_details import UpdateDrProtectionGroupMemberMySqlDbSystemDetails
 from .update_dr_protection_group_member_network_load_balancer_details import UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
@@ -207,6 +218,7 @@ from .update_oke_cluster_backup_config_details import UpdateOkeClusterBackupConf
 from .update_oke_cluster_load_balancer_mapping_details import UpdateOkeClusterLoadBalancerMappingDetails
 from .update_oke_cluster_managed_node_pool_configuration_details import UpdateOkeClusterManagedNodePoolConfigurationDetails
 from .update_oke_cluster_network_load_balancer_mapping_details import UpdateOkeClusterNetworkLoadBalancerMappingDetails
+from .update_oke_cluster_resource_modifier_mapping_details import UpdateOkeClusterResourceModifierMappingDetails
 from .update_oke_cluster_vault_mapping_details import UpdateOkeClusterVaultMappingDetails
 from .update_oke_cluster_virtual_node_pool_configuration_details import UpdateOkeClusterVirtualNodePoolConfigurationDetails
 from .update_run_local_script_user_defined_custom_precheck_step_details import UpdateRunLocalScriptUserDefinedCustomPrecheckStepDetails
@@ -276,6 +288,7 @@ disaster_recovery_type_mapping = {
     "CreateDrProtectionGroupMemberDatabaseDetails": CreateDrProtectionGroupMemberDatabaseDetails,
     "CreateDrProtectionGroupMemberDetails": CreateDrProtectionGroupMemberDetails,
     "CreateDrProtectionGroupMemberFileSystemDetails": CreateDrProtectionGroupMemberFileSystemDetails,
+    "CreateDrProtectionGroupMemberIntegrationInstanceDetails": CreateDrProtectionGroupMemberIntegrationInstanceDetails,
     "CreateDrProtectionGroupMemberLoadBalancerDetails": CreateDrProtectionGroupMemberLoadBalancerDetails,
     "CreateDrProtectionGroupMemberMySqlDbSystemDetails": CreateDrProtectionGroupMemberMySqlDbSystemDetails,
     "CreateDrProtectionGroupMemberNetworkLoadBalancerDetails": CreateDrProtectionGroupMemberNetworkLoadBalancerDetails,
@@ -292,6 +305,7 @@ disaster_recovery_type_mapping = {
     "CreateOkeClusterLoadBalancerMappingDetails": CreateOkeClusterLoadBalancerMappingDetails,
     "CreateOkeClusterManagedNodePoolConfigurationDetails": CreateOkeClusterManagedNodePoolConfigurationDetails,
     "CreateOkeClusterNetworkLoadBalancerMappingDetails": CreateOkeClusterNetworkLoadBalancerMappingDetails,
+    "CreateOkeClusterResourceModifierMappingDetails": CreateOkeClusterResourceModifierMappingDetails,
     "CreateOkeClusterVaultMappingDetails": CreateOkeClusterVaultMappingDetails,
     "CreateOkeClusterVirtualNodePoolConfigurationDetails": CreateOkeClusterVirtualNodePoolConfigurationDetails,
     "CreateSourceVolumeToDestinationEncryptionKeyMappingDetails": CreateSourceVolumeToDestinationEncryptionKeyMappingDetails,
@@ -303,9 +317,15 @@ disaster_recovery_type_mapping = {
     "DrPlanExecution": DrPlanExecution,
     "DrPlanExecutionCollection": DrPlanExecutionCollection,
     "DrPlanExecutionControlDetails": DrPlanExecutionControlDetails,
+    "DrPlanExecutionFailedStepStatusCounts": DrPlanExecutionFailedStepStatusCounts,
     "DrPlanExecutionOptionDetails": DrPlanExecutionOptionDetails,
     "DrPlanExecutionOptions": DrPlanExecutionOptions,
+    "DrPlanExecutionRemainingStepStatusCounts": DrPlanExecutionRemainingStepStatusCounts,
+    "DrPlanExecutionSkippedStepStatusCounts": DrPlanExecutionSkippedStepStatusCounts,
+    "DrPlanExecutionStepStatusCounts": DrPlanExecutionStepStatusCounts,
+    "DrPlanExecutionSuccessfulStepStatusCounts": DrPlanExecutionSuccessfulStepStatusCounts,
     "DrPlanExecutionSummary": DrPlanExecutionSummary,
+    "DrPlanExecutionWarningStepStatusCounts": DrPlanExecutionWarningStepStatusCounts,
     "DrPlanGroup": DrPlanGroup,
     "DrPlanGroupExecution": DrPlanGroupExecution,
     "DrPlanStep": DrPlanStep,
@@ -322,6 +342,7 @@ disaster_recovery_type_mapping = {
     "DrProtectionGroupMemberComputeInstanceNonMovable": DrProtectionGroupMemberComputeInstanceNonMovable,
     "DrProtectionGroupMemberDatabase": DrProtectionGroupMemberDatabase,
     "DrProtectionGroupMemberFileSystem": DrProtectionGroupMemberFileSystem,
+    "DrProtectionGroupMemberIntegrationInstance": DrProtectionGroupMemberIntegrationInstance,
     "DrProtectionGroupMemberLoadBalancer": DrProtectionGroupMemberLoadBalancer,
     "DrProtectionGroupMemberMySqlDbSystem": DrProtectionGroupMemberMySqlDbSystem,
     "DrProtectionGroupMemberNetworkLoadBalancer": DrProtectionGroupMemberNetworkLoadBalancer,
@@ -356,6 +377,7 @@ disaster_recovery_type_mapping = {
     "OkeClusterLoadBalancerMapping": OkeClusterLoadBalancerMapping,
     "OkeClusterManagedNodePoolConfiguration": OkeClusterManagedNodePoolConfiguration,
     "OkeClusterNetworkLoadBalancerMapping": OkeClusterNetworkLoadBalancerMapping,
+    "OkeClusterResourceModifierMapping": OkeClusterResourceModifierMapping,
     "OkeClusterVaultMapping": OkeClusterVaultMapping,
     "OkeClusterVirtualNodePoolConfiguration": OkeClusterVirtualNodePoolConfiguration,
     "PauseDrPlanExecutionDetails": PauseDrPlanExecutionDetails,
@@ -407,6 +429,7 @@ disaster_recovery_type_mapping = {
     "UpdateDrProtectionGroupMemberDatabaseDetails": UpdateDrProtectionGroupMemberDatabaseDetails,
     "UpdateDrProtectionGroupMemberDetails": UpdateDrProtectionGroupMemberDetails,
     "UpdateDrProtectionGroupMemberFileSystemDetails": UpdateDrProtectionGroupMemberFileSystemDetails,
+    "UpdateDrProtectionGroupMemberIntegrationInstanceDetails": UpdateDrProtectionGroupMemberIntegrationInstanceDetails,
     "UpdateDrProtectionGroupMemberLoadBalancerDetails": UpdateDrProtectionGroupMemberLoadBalancerDetails,
     "UpdateDrProtectionGroupMemberMySqlDbSystemDetails": UpdateDrProtectionGroupMemberMySqlDbSystemDetails,
     "UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails": UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails,
@@ -430,6 +453,7 @@ disaster_recovery_type_mapping = {
     "UpdateOkeClusterLoadBalancerMappingDetails": UpdateOkeClusterLoadBalancerMappingDetails,
     "UpdateOkeClusterManagedNodePoolConfigurationDetails": UpdateOkeClusterManagedNodePoolConfigurationDetails,
     "UpdateOkeClusterNetworkLoadBalancerMappingDetails": UpdateOkeClusterNetworkLoadBalancerMappingDetails,
+    "UpdateOkeClusterResourceModifierMappingDetails": UpdateOkeClusterResourceModifierMappingDetails,
     "UpdateOkeClusterVaultMappingDetails": UpdateOkeClusterVaultMappingDetails,
     "UpdateOkeClusterVirtualNodePoolConfigurationDetails": UpdateOkeClusterVirtualNodePoolConfigurationDetails,
     "UpdateRunLocalScriptUserDefinedCustomPrecheckStepDetails": UpdateRunLocalScriptUserDefinedCustomPrecheckStepDetails,

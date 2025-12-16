@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.164.2 - 2025-12-16
+====================
+
+Added 
+----- 
+* Support for OCI Batch service 
+* Support for fetching mapped attributes in the Identity Domains service 
+* Support for Oracle Integration Cloud (OIC) resource as a member in the Disaster Recovery service 
+* Support for model explorer for model deployments in the Data Science service 
+* Support for configuring backend network security groups at cluster level in the Kubernetes Engine service 
+* Support for IPv6 for iSCSI volume attachment in the Compute service 
+* Support for firmware pinning using host groups in the Compute service 
+* Support for creating Access Control Lists (ACLs) for Oracle Integration Cloud (OIC) Design Time in the Integration Cloud service  
+* Support for disabling and deleting existing Oracle Process Automation (OPA) instances attached to a Gen3 Integration instance in the Integration Cloud service 
+* Support for sending Oracle Integration Cloud (OIC) activity streams to OCI Logging Analytics in the Integration Cloud service 
+* Support for enabling disaster recovery of existing instances in the Integration Cloud service  
+
+====================
 2.164.1 - 2025-12-09
 ====================
 

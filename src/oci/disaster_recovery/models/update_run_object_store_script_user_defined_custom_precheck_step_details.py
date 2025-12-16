@@ -34,20 +34,34 @@ class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails(UpdateDrPla
             The value to assign to the object_storage_script_location property of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
         :type object_storage_script_location: oci.disaster_recovery.models.UpdateObjectStorageScriptLocationDetails
 
+        :param script_command:
+            The value to assign to the script_command property of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        :type script_command: str
+
+        :param run_as_user:
+            The value to assign to the run_as_user property of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        :type run_as_user: str
+
         """
         self.swagger_types = {
             'step_type': 'str',
             'run_on_instance_id': 'str',
-            'object_storage_script_location': 'UpdateObjectStorageScriptLocationDetails'
+            'object_storage_script_location': 'UpdateObjectStorageScriptLocationDetails',
+            'script_command': 'str',
+            'run_as_user': 'str'
         }
         self.attribute_map = {
             'step_type': 'stepType',
             'run_on_instance_id': 'runOnInstanceId',
-            'object_storage_script_location': 'objectStorageScriptLocation'
+            'object_storage_script_location': 'objectStorageScriptLocation',
+            'script_command': 'scriptCommand',
+            'run_as_user': 'runAsUser'
         }
         self._step_type = None
         self._run_on_instance_id = None
         self._object_storage_script_location = None
+        self._script_command = None
+        self._run_as_user = None
         self._step_type = 'RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK'
 
     @property
@@ -107,6 +121,58 @@ class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails(UpdateDrPla
         :type: oci.disaster_recovery.models.UpdateObjectStorageScriptLocationDetails
         """
         self._object_storage_script_location = object_storage_script_location
+
+    @property
+    def script_command(self):
+        """
+        Gets the script_command of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.
+        Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env \"production\" --max-connections 200 --log-level \"INFO\"`
+
+
+        :return: The script_command of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        :rtype: str
+        """
+        return self._script_command
+
+    @script_command.setter
+    def script_command(self, script_command):
+        """
+        Sets the script_command of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.
+        Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env \"production\" --max-connections 200 --log-level \"INFO\"`
+
+
+        :param script_command: The script_command of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        :type: str
+        """
+        self._script_command = script_command
+
+    @property
+    def run_as_user(self):
+        """
+        Gets the run_as_user of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.
+        Example: `opc`
+
+
+        :return: The run_as_user of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        :rtype: str
+        """
+        return self._run_as_user
+
+    @run_as_user.setter
+    def run_as_user(self, run_as_user):
+        """
+        Sets the run_as_user of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.
+        Example: `opc`
+
+
+        :param run_as_user: The run_as_user of this UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails.
+        :type: str
+        """
+        self._run_as_user = run_as_user
 
     def __repr__(self):
         return formatted_flat_dict(self)

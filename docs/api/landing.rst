@@ -30,6 +30,7 @@ API Reference
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Bastion <bastion/client/oci.bastion.BastionClient>`
+* :doc:`Batch Computing <batch/client/oci.batch.BatchComputingClient>`
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
 * :doc:`Billing Schedule <osub_billing_schedule/client/oci.osub_billing_schedule.BillingScheduleClient>`
 * :doc:`Billing Schedule <osub_billing_schedule/client/oci.osub_billing_schedule.BillingScheduleClient>`
@@ -335,6 +336,7 @@ API Reference
     audit
     autoscaling
     bastion
+    batch
     bds
     blockchain
     budget

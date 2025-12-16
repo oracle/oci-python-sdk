@@ -26,6 +26,11 @@ class InstancePoolModelDeploymentSystemData(ModelDeploymentSystemData):
             Allowed values for this property are: "INSTANCE_POOL"
         :type system_infra_type: str
 
+        :param model_type:
+            The value to assign to the model_type property of this InstancePoolModelDeploymentSystemData.
+            Allowed values for this property are: "MANAGED_MODEL"
+        :type model_type: str
+
         :param current_instance_count:
             The value to assign to the current_instance_count property of this InstancePoolModelDeploymentSystemData.
         :type current_instance_count: int
@@ -33,13 +38,16 @@ class InstancePoolModelDeploymentSystemData(ModelDeploymentSystemData):
         """
         self.swagger_types = {
             'system_infra_type': 'str',
+            'model_type': 'str',
             'current_instance_count': 'int'
         }
         self.attribute_map = {
             'system_infra_type': 'systemInfraType',
+            'model_type': 'modelType',
             'current_instance_count': 'currentInstanceCount'
         }
         self._system_infra_type = None
+        self._model_type = None
         self._current_instance_count = None
         self._system_infra_type = 'INSTANCE_POOL'
 

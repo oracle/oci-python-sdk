@@ -169,6 +169,10 @@ class Shape(object):
             The value to assign to the recommended_alternatives property of this Shape.
         :type recommended_alternatives: list[oci.core.models.ShapeAlternativeObject]
 
+        :param platform_names:
+            The value to assign to the platform_names property of this Shape.
+        :type platform_names: list[str]
+
         """
         self.swagger_types = {
             'baseline_ocpu_utilizations': 'list[str]',
@@ -199,7 +203,8 @@ class Shape(object):
             'is_subcore': 'bool',
             'is_flexible': 'bool',
             'resize_compatible_shapes': 'list[str]',
-            'recommended_alternatives': 'list[ShapeAlternativeObject]'
+            'recommended_alternatives': 'list[ShapeAlternativeObject]',
+            'platform_names': 'list[str]'
         }
         self.attribute_map = {
             'baseline_ocpu_utilizations': 'baselineOcpuUtilizations',
@@ -230,7 +235,8 @@ class Shape(object):
             'is_subcore': 'isSubcore',
             'is_flexible': 'isFlexible',
             'resize_compatible_shapes': 'resizeCompatibleShapes',
-            'recommended_alternatives': 'recommendedAlternatives'
+            'recommended_alternatives': 'recommendedAlternatives',
+            'platform_names': 'platformNames'
         }
         self._baseline_ocpu_utilizations = None
         self._min_total_baseline_ocpus_required = None
@@ -261,6 +267,7 @@ class Shape(object):
         self._is_flexible = None
         self._resize_compatible_shapes = None
         self._recommended_alternatives = None
+        self._platform_names = None
 
     @property
     def baseline_ocpu_utilizations(self):
@@ -991,6 +998,30 @@ class Shape(object):
         :type: list[oci.core.models.ShapeAlternativeObject]
         """
         self._recommended_alternatives = recommended_alternatives
+
+    @property
+    def platform_names(self):
+        """
+        Gets the platform_names of this Shape.
+        The list of platform names that can be used for this shapes
+
+
+        :return: The platform_names of this Shape.
+        :rtype: list[str]
+        """
+        return self._platform_names
+
+    @platform_names.setter
+    def platform_names(self, platform_names):
+        """
+        Sets the platform_names of this Shape.
+        The list of platform names that can be used for this shapes
+
+
+        :param platform_names: The platform_names of this Shape.
+        :type: list[str]
+        """
+        self._platform_names = platform_names
 
     def __repr__(self):
         return formatted_flat_dict(self)

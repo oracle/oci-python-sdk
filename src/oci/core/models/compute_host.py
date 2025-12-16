@@ -114,6 +114,14 @@ class ComputeHost(object):
             The value to assign to the recycle_details property of this ComputeHost.
         :type recycle_details: oci.core.models.RecycleDetails
 
+        :param firmware_bundle_id:
+            The value to assign to the firmware_bundle_id property of this ComputeHost.
+        :type firmware_bundle_id: str
+
+        :param platform:
+            The value to assign to the platform property of this ComputeHost.
+        :type platform: str
+
         :param network_block_id:
             The value to assign to the network_block_id property of this ComputeHost.
         :type network_block_id: str
@@ -194,6 +202,8 @@ class ComputeHost(object):
             'time_configuration_check': 'datetime',
             'configuration_data': 'ComputeHostConfigurationData',
             'recycle_details': 'RecycleDetails',
+            'firmware_bundle_id': 'str',
+            'platform': 'str',
             'network_block_id': 'str',
             'local_block_id': 'str',
             'gpu_memory_fabric_id': 'str',
@@ -222,6 +232,8 @@ class ComputeHost(object):
             'time_configuration_check': 'timeConfigurationCheck',
             'configuration_data': 'configurationData',
             'recycle_details': 'recycleDetails',
+            'firmware_bundle_id': 'firmwareBundleId',
+            'platform': 'platform',
             'network_block_id': 'networkBlockId',
             'local_block_id': 'localBlockId',
             'gpu_memory_fabric_id': 'gpuMemoryFabricId',
@@ -249,6 +261,8 @@ class ComputeHost(object):
         self._time_configuration_check = None
         self._configuration_data = None
         self._recycle_details = None
+        self._firmware_bundle_id = None
+        self._platform = None
         self._network_block_id = None
         self._local_block_id = None
         self._gpu_memory_fabric_id = None
@@ -545,6 +559,58 @@ class ComputeHost(object):
         :type: oci.core.models.RecycleDetails
         """
         self._recycle_details = recycle_details
+
+    @property
+    def firmware_bundle_id(self):
+        """
+        Gets the firmware_bundle_id of this ComputeHost.
+        The `OCID`__ for the Customer-unique firmware bundle associated with the Host.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The firmware_bundle_id of this ComputeHost.
+        :rtype: str
+        """
+        return self._firmware_bundle_id
+
+    @firmware_bundle_id.setter
+    def firmware_bundle_id(self, firmware_bundle_id):
+        """
+        Sets the firmware_bundle_id of this ComputeHost.
+        The `OCID`__ for the Customer-unique firmware bundle associated with the Host.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param firmware_bundle_id: The firmware_bundle_id of this ComputeHost.
+        :type: str
+        """
+        self._firmware_bundle_id = firmware_bundle_id
+
+    @property
+    def platform(self):
+        """
+        Gets the platform of this ComputeHost.
+        The platform of the host
+
+
+        :return: The platform of this ComputeHost.
+        :rtype: str
+        """
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform):
+        """
+        Sets the platform of this ComputeHost.
+        The platform of the host
+
+
+        :param platform: The platform of this ComputeHost.
+        :type: str
+        """
+        self._platform = platform
 
     @property
     def network_block_id(self):

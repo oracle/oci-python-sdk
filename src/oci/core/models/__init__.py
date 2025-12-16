@@ -141,6 +141,7 @@ from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
 from .compartment_internal import CompartmentInternal
+from .component_version import ComponentVersion
 from .compute_bare_metal_host import ComputeBareMetalHost
 from .compute_bare_metal_host_collection import ComputeBareMetalHostCollection
 from .compute_bare_metal_host_placement_constraint_details import ComputeBareMetalHostPlacementConstraintDetails
@@ -318,6 +319,10 @@ from .export_image_via_object_storage_tuple_details import ExportImageViaObjectS
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
 from .fast_connect_provider_service_key import FastConnectProviderServiceKey
+from .firmware_bundle import FirmwareBundle
+from .firmware_bundle_summary import FirmwareBundleSummary
+from .firmware_bundle_transitions import FirmwareBundleTransitions
+from .firmware_bundles_collection import FirmwareBundlesCollection
 from .flow_log_capture_filter_rule_details import FlowLogCaptureFilterRuleDetails
 from .generic_bm_launch_instance_platform_config import GenericBmLaunchInstancePlatformConfig
 from .generic_bm_platform_config import GenericBmPlatformConfig
@@ -484,6 +489,7 @@ from .phase_one_config_details import PhaseOneConfigDetails
 from .phase_two_config_details import PhaseTwoConfigDetails
 from .placement_constraint_details import PlacementConstraintDetails
 from .platform_config import PlatformConfig
+from .platform_versions import PlatformVersions
 from .port_range import PortRange
 from .preemptible_instance_config_details import PreemptibleInstanceConfigDetails
 from .preemption_action import PreemptionAction
@@ -815,6 +821,7 @@ core_type_mapping = {
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
     "CompartmentInternal": CompartmentInternal,
+    "ComponentVersion": ComponentVersion,
     "ComputeBareMetalHost": ComputeBareMetalHost,
     "ComputeBareMetalHostCollection": ComputeBareMetalHostCollection,
     "ComputeBareMetalHostPlacementConstraintDetails": ComputeBareMetalHostPlacementConstraintDetails,
@@ -992,6 +999,10 @@ core_type_mapping = {
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
     "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
+    "FirmwareBundle": FirmwareBundle,
+    "FirmwareBundleSummary": FirmwareBundleSummary,
+    "FirmwareBundleTransitions": FirmwareBundleTransitions,
+    "FirmwareBundlesCollection": FirmwareBundlesCollection,
     "FlowLogCaptureFilterRuleDetails": FlowLogCaptureFilterRuleDetails,
     "GenericBmLaunchInstancePlatformConfig": GenericBmLaunchInstancePlatformConfig,
     "GenericBmPlatformConfig": GenericBmPlatformConfig,
@@ -1158,6 +1169,7 @@ core_type_mapping = {
     "PhaseTwoConfigDetails": PhaseTwoConfigDetails,
     "PlacementConstraintDetails": PlacementConstraintDetails,
     "PlatformConfig": PlatformConfig,
+    "PlatformVersions": PlatformVersions,
     "PortRange": PortRange,
     "PreemptibleInstanceConfigDetails": PreemptibleInstanceConfigDetails,
     "PreemptionAction": PreemptionAction,

@@ -54,6 +54,10 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
             The value to assign to the environment_variables property of this OcirModelDeploymentEnvironmentConfigurationDetails.
         :type environment_variables: dict(str, str)
 
+        :param default_environment_variables:
+            The value to assign to the default_environment_variables property of this OcirModelDeploymentEnvironmentConfigurationDetails.
+        :type default_environment_variables: dict(str, str)
+
         """
         self.swagger_types = {
             'environment_configuration_type': 'str',
@@ -63,7 +67,8 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
             'entrypoint': 'list[str]',
             'server_port': 'int',
             'health_check_port': 'int',
-            'environment_variables': 'dict(str, str)'
+            'environment_variables': 'dict(str, str)',
+            'default_environment_variables': 'dict(str, str)'
         }
         self.attribute_map = {
             'environment_configuration_type': 'environmentConfigurationType',
@@ -73,7 +78,8 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
             'entrypoint': 'entrypoint',
             'server_port': 'serverPort',
             'health_check_port': 'healthCheckPort',
-            'environment_variables': 'environmentVariables'
+            'environment_variables': 'environmentVariables',
+            'default_environment_variables': 'defaultEnvironmentVariables'
         }
         self._environment_configuration_type = None
         self._image = None
@@ -83,13 +89,15 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
         self._server_port = None
         self._health_check_port = None
         self._environment_variables = None
+        self._default_environment_variables = None
         self._environment_configuration_type = 'OCIR_CONTAINER'
 
     @property
     def image(self):
         """
-        **[Required]** Gets the image of this OcirModelDeploymentEnvironmentConfigurationDetails.
+        Gets the image of this OcirModelDeploymentEnvironmentConfigurationDetails.
         The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        The container image is optional while using service managed open source foundation model.
         Acceptable format:
         `<region>.ocir.io/<registry>/<image>:<tag>`
         `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -105,6 +113,7 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
         """
         Sets the image of this OcirModelDeploymentEnvironmentConfigurationDetails.
         The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        The container image is optional while using service managed open source foundation model.
         Acceptable format:
         `<region>.ocir.io/<registry>/<image>:<tag>`
         `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -306,6 +315,30 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
         :type: dict(str, str)
         """
         self._environment_variables = environment_variables
+
+    @property
+    def default_environment_variables(self):
+        """
+        Gets the default_environment_variables of this OcirModelDeploymentEnvironmentConfigurationDetails.
+        Service injected Environment variables set for the web server container and can not be set or modified by user.
+
+
+        :return: The default_environment_variables of this OcirModelDeploymentEnvironmentConfigurationDetails.
+        :rtype: dict(str, str)
+        """
+        return self._default_environment_variables
+
+    @default_environment_variables.setter
+    def default_environment_variables(self, default_environment_variables):
+        """
+        Sets the default_environment_variables of this OcirModelDeploymentEnvironmentConfigurationDetails.
+        Service injected Environment variables set for the web server container and can not be set or modified by user.
+
+
+        :param default_environment_variables: The default_environment_variables of this OcirModelDeploymentEnvironmentConfigurationDetails.
+        :type: dict(str, str)
+        """
+        self._default_environment_variables = default_environment_variables
 
     def __repr__(self):
         return formatted_flat_dict(self)

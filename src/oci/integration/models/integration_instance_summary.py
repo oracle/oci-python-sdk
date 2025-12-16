@@ -218,6 +218,10 @@ class IntegrationInstanceSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_retention_period: str
 
+        :param log_group_id:
+            The value to assign to the log_group_id property of this IntegrationInstanceSummary.
+        :type log_group_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -246,7 +250,8 @@ class IntegrationInstanceSummary(object):
             'shape': 'str',
             'private_endpoint_outbound_connection': 'OutboundConnection',
             'is_disaster_recovery_enabled': 'bool',
-            'data_retention_period': 'str'
+            'data_retention_period': 'str',
+            'log_group_id': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -275,7 +280,8 @@ class IntegrationInstanceSummary(object):
             'shape': 'shape',
             'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection',
             'is_disaster_recovery_enabled': 'isDisasterRecoveryEnabled',
-            'data_retention_period': 'dataRetentionPeriod'
+            'data_retention_period': 'dataRetentionPeriod',
+            'log_group_id': 'logGroupId'
         }
         self._id = None
         self._display_name = None
@@ -304,6 +310,7 @@ class IntegrationInstanceSummary(object):
         self._private_endpoint_outbound_connection = None
         self._is_disaster_recovery_enabled = None
         self._data_retention_period = None
+        self._log_group_id = None
 
     @property
     def id(self):
@@ -994,6 +1001,30 @@ class IntegrationInstanceSummary(object):
         if not value_allowed_none_or_none_sentinel(data_retention_period, allowed_values):
             data_retention_period = 'UNKNOWN_ENUM_VALUE'
         self._data_retention_period = data_retention_period
+
+    @property
+    def log_group_id(self):
+        """
+        Gets the log_group_id of this IntegrationInstanceSummary.
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+
+
+        :return: The log_group_id of this IntegrationInstanceSummary.
+        :rtype: str
+        """
+        return self._log_group_id
+
+    @log_group_id.setter
+    def log_group_id(self, log_group_id):
+        """
+        Sets the log_group_id of this IntegrationInstanceSummary.
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+
+
+        :param log_group_id: The log_group_id of this IntegrationInstanceSummary.
+        :type: str
+        """
+        self._log_group_id = log_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

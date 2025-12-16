@@ -13264,6 +13264,9 @@ class DataScienceClient(object):
         :param str ml_application_implementation_id: (optional)
             unique MlApplicationImplementation identifier
 
+        :param str ml_application_instance_id: (optional)
+            unique MlApplicationInstance identifier
+
         :param str lifecycle_state: (optional)
             A filter to return only resources matching the given lifecycleState.
 
@@ -13332,6 +13335,7 @@ class DataScienceClient(object):
             "display_name",
             "ml_application_id",
             "ml_application_implementation_id",
+            "ml_application_instance_id",
             "lifecycle_state",
             "limit",
             "page",
@@ -13370,6 +13374,7 @@ class DataScienceClient(object):
             "displayName": kwargs.get("display_name", missing),
             "mlApplicationId": kwargs.get("ml_application_id", missing),
             "mlApplicationImplementationId": kwargs.get("ml_application_implementation_id", missing),
+            "mlApplicationInstanceId": kwargs.get("ml_application_instance_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),

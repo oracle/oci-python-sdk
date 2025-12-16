@@ -47,6 +47,18 @@ class AutomaticDrConfiguration(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_sub_state property of a AutomaticDrConfiguration.
+    #: This constant has a value of "RESOURCE_PRINCIPAL_VALIDATION_FAILED"
+    LIFECYCLE_SUB_STATE_RESOURCE_PRINCIPAL_VALIDATION_FAILED = "RESOURCE_PRINCIPAL_VALIDATION_FAILED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a AutomaticDrConfiguration.
+    #: This constant has a value of "DR_PLAN_NEEDS_ATTENTION"
+    LIFECYCLE_SUB_STATE_DR_PLAN_NEEDS_ATTENTION = "DR_PLAN_NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a AutomaticDrConfiguration.
+    #: This constant has a value of "DR_PLAN_INACTIVE"
+    LIFECYCLE_SUB_STATE_DR_PLAN_INACTIVE = "DR_PLAN_INACTIVE"
+
     #: A constant which can be used with the last_automatic_dr_execution_submit_status property of a AutomaticDrConfiguration.
     #: This constant has a value of "AUTOMATIC_DR_EXECUTION_STARTED_SUCCESSFULLY"
     LAST_AUTOMATIC_DR_EXECUTION_SUBMIT_STATUS_AUTOMATIC_DR_EXECUTION_STARTED_SUCCESSFULLY = "AUTOMATIC_DR_EXECUTION_STARTED_SUCCESSFULLY"
@@ -102,6 +114,12 @@ class AutomaticDrConfiguration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_sub_state:
+            The value to assign to the lifecycle_sub_state property of this AutomaticDrConfiguration.
+            Allowed values for this property are: "RESOURCE_PRINCIPAL_VALIDATION_FAILED", "DR_PLAN_NEEDS_ATTENTION", "DR_PLAN_INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_sub_state: str
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this AutomaticDrConfiguration.
         :type lifecycle_details: str
@@ -144,6 +162,7 @@ class AutomaticDrConfiguration(object):
             'default_switchover_dr_plan_id': 'str',
             'default_failover_dr_plan_id': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_sub_state': 'str',
             'lifecycle_details': 'str',
             'last_automatic_dr_execution_submit_status': 'str',
             'last_automatic_dr_execution_submit_details': 'str',
@@ -163,6 +182,7 @@ class AutomaticDrConfiguration(object):
             'default_switchover_dr_plan_id': 'defaultSwitchoverDrPlanId',
             'default_failover_dr_plan_id': 'defaultFailoverDrPlanId',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_sub_state': 'lifecycleSubState',
             'lifecycle_details': 'lifecycleDetails',
             'last_automatic_dr_execution_submit_status': 'lastAutomaticDrExecutionSubmitStatus',
             'last_automatic_dr_execution_submit_details': 'lastAutomaticDrExecutionSubmitDetails',
@@ -181,6 +201,7 @@ class AutomaticDrConfiguration(object):
         self._default_switchover_dr_plan_id = None
         self._default_failover_dr_plan_id = None
         self._lifecycle_state = None
+        self._lifecycle_sub_state = None
         self._lifecycle_details = None
         self._last_automatic_dr_execution_submit_status = None
         self._last_automatic_dr_execution_submit_details = None
@@ -462,6 +483,36 @@ class AutomaticDrConfiguration(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_sub_state(self):
+        """
+        Gets the lifecycle_sub_state of this AutomaticDrConfiguration.
+        The current sub-state of the Automatic DR configuration.
+
+        Allowed values for this property are: "RESOURCE_PRINCIPAL_VALIDATION_FAILED", "DR_PLAN_NEEDS_ATTENTION", "DR_PLAN_INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_sub_state of this AutomaticDrConfiguration.
+        :rtype: str
+        """
+        return self._lifecycle_sub_state
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, lifecycle_sub_state):
+        """
+        Sets the lifecycle_sub_state of this AutomaticDrConfiguration.
+        The current sub-state of the Automatic DR configuration.
+
+
+        :param lifecycle_sub_state: The lifecycle_sub_state of this AutomaticDrConfiguration.
+        :type: str
+        """
+        allowed_values = ["RESOURCE_PRINCIPAL_VALIDATION_FAILED", "DR_PLAN_NEEDS_ATTENTION", "DR_PLAN_INACTIVE"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
+            lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_sub_state = lifecycle_sub_state
 
     @property
     def lifecycle_details(self):

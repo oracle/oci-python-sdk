@@ -305,7 +305,7 @@ class CreateVirtualNodePoolDetails(object):
     @property
     def pod_configuration(self):
         """
-        Gets the pod_configuration of this CreateVirtualNodePoolDetails.
+        **[Required]** Gets the pod_configuration of this CreateVirtualNodePoolDetails.
         The pod configuration for pods run on virtual nodes of this virtual node pool.
 
 
