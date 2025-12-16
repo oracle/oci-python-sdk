@@ -6,11 +6,14 @@
 
 from __future__ import absolute_import
 
+from .add_log_analytics_log_group_details import AddLogAnalyticsLogGroupDetails
 from .add_oracle_managed_custom_endpoint_details import AddOracleManagedCustomEndpointDetails
 from .attachment_details import AttachmentDetails
 from .change_integration_instance_compartment_details import ChangeIntegrationInstanceCompartmentDetails
 from .change_integration_instance_network_endpoint_details import ChangeIntegrationInstanceNetworkEndpointDetails
 from .change_private_endpoint_outbound_connection_details import ChangePrivateEndpointOutboundConnectionDetails
+from .component_allow_list_details import ComponentAllowListDetails
+from .convert_instance_details import ConvertInstanceDetails
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_integration_instance_details import CreateIntegrationInstanceDetails
 from .cross_region_integration_instance_details import CrossRegionIntegrationInstanceDetails
@@ -36,11 +39,14 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for integration services.
 integration_type_mapping = {
+    "AddLogAnalyticsLogGroupDetails": AddLogAnalyticsLogGroupDetails,
     "AddOracleManagedCustomEndpointDetails": AddOracleManagedCustomEndpointDetails,
     "AttachmentDetails": AttachmentDetails,
     "ChangeIntegrationInstanceCompartmentDetails": ChangeIntegrationInstanceCompartmentDetails,
     "ChangeIntegrationInstanceNetworkEndpointDetails": ChangeIntegrationInstanceNetworkEndpointDetails,
     "ChangePrivateEndpointOutboundConnectionDetails": ChangePrivateEndpointOutboundConnectionDetails,
+    "ComponentAllowListDetails": ComponentAllowListDetails,
+    "ConvertInstanceDetails": ConvertInstanceDetails,
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateIntegrationInstanceDetails": CreateIntegrationInstanceDetails,
     "CrossRegionIntegrationInstanceDetails": CrossRegionIntegrationInstanceDetails,

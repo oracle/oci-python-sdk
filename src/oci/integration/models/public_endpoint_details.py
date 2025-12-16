@@ -34,6 +34,14 @@ class PublicEndpointDetails(NetworkEndpointDetails):
             The value to assign to the allowlisted_http_vcns property of this PublicEndpointDetails.
         :type allowlisted_http_vcns: list[oci.integration.models.VirtualCloudNetwork]
 
+        :param runtime:
+            The value to assign to the runtime property of this PublicEndpointDetails.
+        :type runtime: oci.integration.models.ComponentAllowListDetails
+
+        :param design_time:
+            The value to assign to the design_time property of this PublicEndpointDetails.
+        :type design_time: oci.integration.models.ComponentAllowListDetails
+
         :param is_integration_vcn_allowlisted:
             The value to assign to the is_integration_vcn_allowlisted property of this PublicEndpointDetails.
         :type is_integration_vcn_allowlisted: bool
@@ -43,17 +51,23 @@ class PublicEndpointDetails(NetworkEndpointDetails):
             'network_endpoint_type': 'str',
             'allowlisted_http_ips': 'list[str]',
             'allowlisted_http_vcns': 'list[VirtualCloudNetwork]',
+            'runtime': 'ComponentAllowListDetails',
+            'design_time': 'ComponentAllowListDetails',
             'is_integration_vcn_allowlisted': 'bool'
         }
         self.attribute_map = {
             'network_endpoint_type': 'networkEndpointType',
             'allowlisted_http_ips': 'allowlistedHttpIps',
             'allowlisted_http_vcns': 'allowlistedHttpVcns',
+            'runtime': 'runtime',
+            'design_time': 'designTime',
             'is_integration_vcn_allowlisted': 'isIntegrationVcnAllowlisted'
         }
         self._network_endpoint_type = None
         self._allowlisted_http_ips = None
         self._allowlisted_http_vcns = None
+        self._runtime = None
+        self._design_time = None
         self._is_integration_vcn_allowlisted = None
         self._network_endpoint_type = 'PUBLIC'
 
@@ -106,6 +120,46 @@ class PublicEndpointDetails(NetworkEndpointDetails):
         :type: list[oci.integration.models.VirtualCloudNetwork]
         """
         self._allowlisted_http_vcns = allowlisted_http_vcns
+
+    @property
+    def runtime(self):
+        """
+        Gets the runtime of this PublicEndpointDetails.
+
+        :return: The runtime of this PublicEndpointDetails.
+        :rtype: oci.integration.models.ComponentAllowListDetails
+        """
+        return self._runtime
+
+    @runtime.setter
+    def runtime(self, runtime):
+        """
+        Sets the runtime of this PublicEndpointDetails.
+
+        :param runtime: The runtime of this PublicEndpointDetails.
+        :type: oci.integration.models.ComponentAllowListDetails
+        """
+        self._runtime = runtime
+
+    @property
+    def design_time(self):
+        """
+        Gets the design_time of this PublicEndpointDetails.
+
+        :return: The design_time of this PublicEndpointDetails.
+        :rtype: oci.integration.models.ComponentAllowListDetails
+        """
+        return self._design_time
+
+    @design_time.setter
+    def design_time(self, design_time):
+        """
+        Sets the design_time of this PublicEndpointDetails.
+
+        :param design_time: The design_time of this PublicEndpointDetails.
+        :type: oci.integration.models.ComponentAllowListDetails
+        """
+        self._design_time = design_time
 
     @property
     def is_integration_vcn_allowlisted(self):

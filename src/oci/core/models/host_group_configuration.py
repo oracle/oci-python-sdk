@@ -23,6 +23,14 @@ class HostGroupConfiguration(object):
     #: This constant has a value of "FULL_RECYCLE"
     RECYCLE_LEVEL_FULL_RECYCLE = "FULL_RECYCLE"
 
+    #: A constant which can be used with the state property of a HostGroupConfiguration.
+    #: This constant has a value of "VALID"
+    STATE_VALID = "VALID"
+
+    #: A constant which can be used with the state property of a HostGroupConfiguration.
+    #: This constant has a value of "INVALID"
+    STATE_INVALID = "INVALID"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HostGroupConfiguration object with values from keyword arguments.
@@ -42,20 +50,29 @@ class HostGroupConfiguration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type recycle_level: str
 
+        :param state:
+            The value to assign to the state property of this HostGroupConfiguration.
+            Allowed values for this property are: "VALID", "INVALID", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type state: str
+
         """
         self.swagger_types = {
             'target': 'str',
             'firmware_bundle_id': 'str',
-            'recycle_level': 'str'
+            'recycle_level': 'str',
+            'state': 'str'
         }
         self.attribute_map = {
             'target': 'target',
             'firmware_bundle_id': 'firmwareBundleId',
-            'recycle_level': 'recycleLevel'
+            'recycle_level': 'recycleLevel',
+            'state': 'state'
         }
         self._target = None
         self._firmware_bundle_id = None
         self._recycle_level = None
+        self._state = None
 
     @property
     def target(self):
@@ -138,6 +155,36 @@ class HostGroupConfiguration(object):
         if not value_allowed_none_or_none_sentinel(recycle_level, allowed_values):
             recycle_level = 'UNKNOWN_ENUM_VALUE'
         self._recycle_level = recycle_level
+
+    @property
+    def state(self):
+        """
+        Gets the state of this HostGroupConfiguration.
+        The state of the host group configuration.
+
+        Allowed values for this property are: "VALID", "INVALID", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The state of this HostGroupConfiguration.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this HostGroupConfiguration.
+        The state of the host group configuration.
+
+
+        :param state: The state of this HostGroupConfiguration.
+        :type: str
+        """
+        allowed_values = ["VALID", "INVALID"]
+        if not value_allowed_none_or_none_sentinel(state, allowed_values):
+            state = 'UNKNOWN_ENUM_VALUE'
+        self._state = state
 
     def __repr__(self):
         return formatted_flat_dict(self)

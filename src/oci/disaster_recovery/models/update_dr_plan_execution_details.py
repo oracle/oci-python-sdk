@@ -51,7 +51,7 @@ class UpdateDrPlanExecutionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDrPlanExecutionDetails.
-        The display name of the DR plan execution to update.
+        The display name of the DR protection group to update.
 
         Example: `EBS IAD Group`
 
@@ -65,7 +65,7 @@ class UpdateDrPlanExecutionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDrPlanExecutionDetails.
-        The display name of the DR plan execution to update.
+        The display name of the DR protection group to update.
 
         Example: `EBS IAD Group`
 

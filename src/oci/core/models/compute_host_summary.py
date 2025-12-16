@@ -68,6 +68,10 @@ class ComputeHostSummary(object):
             The value to assign to the shape property of this ComputeHostSummary.
         :type shape: str
 
+        :param platform:
+            The value to assign to the platform property of this ComputeHostSummary.
+        :type platform: str
+
         :param health:
             The value to assign to the health property of this ComputeHostSummary.
         :type health: str
@@ -118,6 +122,7 @@ class ComputeHostSummary(object):
             'gpu_memory_fabric_id': 'str',
             'instance_id': 'str',
             'shape': 'str',
+            'platform': 'str',
             'health': 'str',
             'lifecycle_state': 'str',
             'capacity_reservation_id': 'str',
@@ -141,6 +146,7 @@ class ComputeHostSummary(object):
             'gpu_memory_fabric_id': 'gpuMemoryFabricId',
             'instance_id': 'instanceId',
             'shape': 'shape',
+            'platform': 'platform',
             'health': 'health',
             'lifecycle_state': 'lifecycleState',
             'capacity_reservation_id': 'capacityReservationId',
@@ -163,6 +169,7 @@ class ComputeHostSummary(object):
         self._gpu_memory_fabric_id = None
         self._instance_id = None
         self._shape = None
+        self._platform = None
         self._health = None
         self._lifecycle_state = None
         self._capacity_reservation_id = None
@@ -506,6 +513,30 @@ class ComputeHostSummary(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def platform(self):
+        """
+        Gets the platform of this ComputeHostSummary.
+        The platform of the host
+
+
+        :return: The platform of this ComputeHostSummary.
+        :rtype: str
+        """
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform):
+        """
+        Sets the platform of this ComputeHostSummary.
+        The platform of the host
+
+
+        :param platform: The platform of this ComputeHostSummary.
+        :type: str
+        """
+        self._platform = platform
 
     @property
     def health(self):

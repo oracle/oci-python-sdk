@@ -67,11 +67,16 @@ class CreateDrProtectionGroupMemberDetails(object):
     #: This constant has a value of "MYSQL_DB_SYSTEM"
     MEMBER_TYPE_MYSQL_DB_SYSTEM = "MYSQL_DB_SYSTEM"
 
+    #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "INTEGRATION_INSTANCE"
+    MEMBER_TYPE_INTEGRATION_INSTANCE = "INTEGRATION_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDrProtectionGroupMemberDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberIntegrationInstanceDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberAutonomousDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails`
@@ -94,7 +99,7 @@ class CreateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this CreateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
         :type member_type: str
 
         """
@@ -116,6 +121,9 @@ class CreateDrProtectionGroupMemberDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['memberType']
+
+        if type == 'INTEGRATION_INSTANCE':
+            return 'CreateDrProtectionGroupMemberIntegrationInstanceDetails'
 
         if type == 'DATABASE':
             return 'CreateDrProtectionGroupMemberDatabaseDetails'
@@ -192,7 +200,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this CreateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
 
 
         :return: The member_type of this CreateDrProtectionGroupMemberDetails.
@@ -210,7 +218,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this CreateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

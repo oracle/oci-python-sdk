@@ -59,6 +59,7 @@ class InstanceConfiguration(object):
         """
         **[Required]** Gets the instance_shape_name of this InstanceConfiguration.
         The shape used to launch the model deployment instances.
+        When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 
 
         :return: The instance_shape_name of this InstanceConfiguration.
@@ -71,6 +72,7 @@ class InstanceConfiguration(object):
         """
         Sets the instance_shape_name of this InstanceConfiguration.
         The shape used to launch the model deployment instances.
+        When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 
 
         :param instance_shape_name: The instance_shape_name of this InstanceConfiguration.

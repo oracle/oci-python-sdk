@@ -233,6 +233,10 @@ from .identity_settings_tokens import IdentitySettingsTokens
 from .kmsi_setting import KmsiSetting
 from .kmsi_settings import KmsiSettings
 from .kmsi_settings_search_request import KmsiSettingsSearchRequest
+from .mapped_attribute import MappedAttribute
+from .mapped_attribute_attribute_mappings import MappedAttributeAttributeMappings
+from .mapped_attribute_search_request import MappedAttributeSearchRequest
+from .mapped_attributes import MappedAttributes
 from .me import Me
 from .me_emails import MeEmails
 from .me_entitlements import MeEntitlements
@@ -700,6 +704,10 @@ identity_domains_type_mapping = {
     "KmsiSetting": KmsiSetting,
     "KmsiSettings": KmsiSettings,
     "KmsiSettingsSearchRequest": KmsiSettingsSearchRequest,
+    "MappedAttribute": MappedAttribute,
+    "MappedAttributeAttributeMappings": MappedAttributeAttributeMappings,
+    "MappedAttributeSearchRequest": MappedAttributeSearchRequest,
+    "MappedAttributes": MappedAttributes,
     "Me": Me,
     "MeEmails": MeEmails,
     "MeEntitlements": MeEntitlements,

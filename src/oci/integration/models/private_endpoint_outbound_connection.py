@@ -34,20 +34,27 @@ class PrivateEndpointOutboundConnection(OutboundConnection):
             The value to assign to the nsg_ids property of this PrivateEndpointOutboundConnection.
         :type nsg_ids: list[str]
 
+        :param is_all_outbound_traffic_private:
+            The value to assign to the is_all_outbound_traffic_private property of this PrivateEndpointOutboundConnection.
+        :type is_all_outbound_traffic_private: bool
+
         """
         self.swagger_types = {
             'outbound_connection_type': 'str',
             'subnet_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'is_all_outbound_traffic_private': 'bool'
         }
         self.attribute_map = {
             'outbound_connection_type': 'outboundConnectionType',
             'subnet_id': 'subnetId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'is_all_outbound_traffic_private': 'isAllOutboundTrafficPrivate'
         }
         self._outbound_connection_type = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._is_all_outbound_traffic_private = None
         self._outbound_connection_type = 'PRIVATE_ENDPOINT'
 
     @property
@@ -97,6 +104,30 @@ class PrivateEndpointOutboundConnection(OutboundConnection):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def is_all_outbound_traffic_private(self):
+        """
+        Gets the is_all_outbound_traffic_private of this PrivateEndpointOutboundConnection.
+        Indicates if all traffic should go through configured outbound connection
+
+
+        :return: The is_all_outbound_traffic_private of this PrivateEndpointOutboundConnection.
+        :rtype: bool
+        """
+        return self._is_all_outbound_traffic_private
+
+    @is_all_outbound_traffic_private.setter
+    def is_all_outbound_traffic_private(self, is_all_outbound_traffic_private):
+        """
+        Sets the is_all_outbound_traffic_private of this PrivateEndpointOutboundConnection.
+        Indicates if all traffic should go through configured outbound connection
+
+
+        :param is_all_outbound_traffic_private: The is_all_outbound_traffic_private of this PrivateEndpointOutboundConnection.
+        :type: bool
+        """
+        self._is_all_outbound_traffic_private = is_all_outbound_traffic_private
 
     def __repr__(self):
         return formatted_flat_dict(self)

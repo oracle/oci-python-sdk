@@ -27,7 +27,7 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
 
         :param member_type:
             The value to assign to the member_type property of this CreateDrProtectionGroupMemberOkeClusterDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
         :type member_type: str
 
         :param peer_cluster_id:
@@ -66,6 +66,10 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
             The value to assign to the virtual_node_pool_configs property of this CreateDrProtectionGroupMemberOkeClusterDetails.
         :type virtual_node_pool_configs: list[oci.disaster_recovery.models.CreateOkeClusterVirtualNodePoolConfigurationDetails]
 
+        :param resource_modifier_mappings:
+            The value to assign to the resource_modifier_mappings property of this CreateDrProtectionGroupMemberOkeClusterDetails.
+        :type resource_modifier_mappings: list[oci.disaster_recovery.models.CreateOkeClusterResourceModifierMappingDetails]
+
         """
         self.swagger_types = {
             'member_id': 'str',
@@ -78,7 +82,8 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
             'network_load_balancer_mappings': 'list[CreateOkeClusterNetworkLoadBalancerMappingDetails]',
             'vault_mappings': 'list[CreateOkeClusterVaultMappingDetails]',
             'managed_node_pool_configs': 'list[CreateOkeClusterManagedNodePoolConfigurationDetails]',
-            'virtual_node_pool_configs': 'list[CreateOkeClusterVirtualNodePoolConfigurationDetails]'
+            'virtual_node_pool_configs': 'list[CreateOkeClusterVirtualNodePoolConfigurationDetails]',
+            'resource_modifier_mappings': 'list[CreateOkeClusterResourceModifierMappingDetails]'
         }
         self.attribute_map = {
             'member_id': 'memberId',
@@ -91,7 +96,8 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
             'network_load_balancer_mappings': 'networkLoadBalancerMappings',
             'vault_mappings': 'vaultMappings',
             'managed_node_pool_configs': 'managedNodePoolConfigs',
-            'virtual_node_pool_configs': 'virtualNodePoolConfigs'
+            'virtual_node_pool_configs': 'virtualNodePoolConfigs',
+            'resource_modifier_mappings': 'resourceModifierMappings'
         }
         self._member_id = None
         self._member_type = None
@@ -104,6 +110,7 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
         self._vault_mappings = None
         self._managed_node_pool_configs = None
         self._virtual_node_pool_configs = None
+        self._resource_modifier_mappings = None
         self._member_type = 'OKE_CLUSTER'
 
     @property
@@ -335,6 +342,32 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
         :type: list[oci.disaster_recovery.models.CreateOkeClusterVirtualNodePoolConfigurationDetails]
         """
         self._virtual_node_pool_configs = virtual_node_pool_configs
+
+    @property
+    def resource_modifier_mappings(self):
+        """
+        Gets the resource_modifier_mappings of this CreateDrProtectionGroupMemberOkeClusterDetails.
+        The list of config maps along with their corresponding namespaces.
+        This property applies to the OKE cluster member in primary region.
+
+
+        :return: The resource_modifier_mappings of this CreateDrProtectionGroupMemberOkeClusterDetails.
+        :rtype: list[oci.disaster_recovery.models.CreateOkeClusterResourceModifierMappingDetails]
+        """
+        return self._resource_modifier_mappings
+
+    @resource_modifier_mappings.setter
+    def resource_modifier_mappings(self, resource_modifier_mappings):
+        """
+        Sets the resource_modifier_mappings of this CreateDrProtectionGroupMemberOkeClusterDetails.
+        The list of config maps along with their corresponding namespaces.
+        This property applies to the OKE cluster member in primary region.
+
+
+        :param resource_modifier_mappings: The resource_modifier_mappings of this CreateDrProtectionGroupMemberOkeClusterDetails.
+        :type: list[oci.disaster_recovery.models.CreateOkeClusterResourceModifierMappingDetails]
+        """
+        self._resource_modifier_mappings = resource_modifier_mappings
 
     def __repr__(self):
         return formatted_flat_dict(self)

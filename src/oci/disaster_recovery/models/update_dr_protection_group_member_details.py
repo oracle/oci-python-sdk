@@ -67,6 +67,10 @@ class UpdateDrProtectionGroupMemberDetails(object):
     #: This constant has a value of "MYSQL_DB_SYSTEM"
     MEMBER_TYPE_MYSQL_DB_SYSTEM = "MYSQL_DB_SYSTEM"
 
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "INTEGRATION_INSTANCE"
+    MEMBER_TYPE_INTEGRATION_INSTANCE = "INTEGRATION_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDrProtectionGroupMemberDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -76,6 +80,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberMySqlDbSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberIntegrationInstanceDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails`
@@ -94,7 +99,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
         :type member_type: str
 
         """
@@ -128,6 +133,9 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         if type == 'AUTONOMOUS_DATABASE':
             return 'UpdateDrProtectionGroupMemberAutonomousDatabaseDetails'
+
+        if type == 'INTEGRATION_INSTANCE':
+            return 'UpdateDrProtectionGroupMemberIntegrationInstanceDetails'
 
         if type == 'FILE_SYSTEM':
             return 'UpdateDrProtectionGroupMemberFileSystemDetails'
@@ -192,7 +200,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this UpdateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
 
 
         :return: The member_type of this UpdateDrProtectionGroupMemberDetails.
@@ -210,7 +218,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this UpdateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

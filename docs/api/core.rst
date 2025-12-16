@@ -159,6 +159,7 @@ Core Services
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
     oci.core.models.CompartmentInternal
+    oci.core.models.ComponentVersion
     oci.core.models.ComputeBareMetalHost
     oci.core.models.ComputeBareMetalHostCollection
     oci.core.models.ComputeBareMetalHostPlacementConstraintDetails
@@ -336,6 +337,10 @@ Core Services
     oci.core.models.ExportImageViaObjectStorageUriDetails
     oci.core.models.FastConnectProviderService
     oci.core.models.FastConnectProviderServiceKey
+    oci.core.models.FirmwareBundle
+    oci.core.models.FirmwareBundleSummary
+    oci.core.models.FirmwareBundleTransitions
+    oci.core.models.FirmwareBundlesCollection
     oci.core.models.FlowLogCaptureFilterRuleDetails
     oci.core.models.GenericBmLaunchInstancePlatformConfig
     oci.core.models.GenericBmPlatformConfig
@@ -502,6 +507,7 @@ Core Services
     oci.core.models.PhaseTwoConfigDetails
     oci.core.models.PlacementConstraintDetails
     oci.core.models.PlatformConfig
+    oci.core.models.PlatformVersions
     oci.core.models.PortRange
     oci.core.models.PreemptibleInstanceConfigDetails
     oci.core.models.PreemptionAction

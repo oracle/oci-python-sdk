@@ -65,6 +65,7 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberDatabaseDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberFileSystemDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberIntegrationInstanceDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberLoadBalancerDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberMySqlDbSystemDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
@@ -81,6 +82,7 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateOkeClusterLoadBalancerMappingDetails
     oci.disaster_recovery.models.CreateOkeClusterManagedNodePoolConfigurationDetails
     oci.disaster_recovery.models.CreateOkeClusterNetworkLoadBalancerMappingDetails
+    oci.disaster_recovery.models.CreateOkeClusterResourceModifierMappingDetails
     oci.disaster_recovery.models.CreateOkeClusterVaultMappingDetails
     oci.disaster_recovery.models.CreateOkeClusterVirtualNodePoolConfigurationDetails
     oci.disaster_recovery.models.CreateSourceVolumeToDestinationEncryptionKeyMappingDetails
@@ -92,9 +94,15 @@ Disaster Recovery
     oci.disaster_recovery.models.DrPlanExecution
     oci.disaster_recovery.models.DrPlanExecutionCollection
     oci.disaster_recovery.models.DrPlanExecutionControlDetails
+    oci.disaster_recovery.models.DrPlanExecutionFailedStepStatusCounts
     oci.disaster_recovery.models.DrPlanExecutionOptionDetails
     oci.disaster_recovery.models.DrPlanExecutionOptions
+    oci.disaster_recovery.models.DrPlanExecutionRemainingStepStatusCounts
+    oci.disaster_recovery.models.DrPlanExecutionSkippedStepStatusCounts
+    oci.disaster_recovery.models.DrPlanExecutionStepStatusCounts
+    oci.disaster_recovery.models.DrPlanExecutionSuccessfulStepStatusCounts
     oci.disaster_recovery.models.DrPlanExecutionSummary
+    oci.disaster_recovery.models.DrPlanExecutionWarningStepStatusCounts
     oci.disaster_recovery.models.DrPlanGroup
     oci.disaster_recovery.models.DrPlanGroupExecution
     oci.disaster_recovery.models.DrPlanStep
@@ -111,6 +119,7 @@ Disaster Recovery
     oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceNonMovable
     oci.disaster_recovery.models.DrProtectionGroupMemberDatabase
     oci.disaster_recovery.models.DrProtectionGroupMemberFileSystem
+    oci.disaster_recovery.models.DrProtectionGroupMemberIntegrationInstance
     oci.disaster_recovery.models.DrProtectionGroupMemberLoadBalancer
     oci.disaster_recovery.models.DrProtectionGroupMemberMySqlDbSystem
     oci.disaster_recovery.models.DrProtectionGroupMemberNetworkLoadBalancer
@@ -145,6 +154,7 @@ Disaster Recovery
     oci.disaster_recovery.models.OkeClusterLoadBalancerMapping
     oci.disaster_recovery.models.OkeClusterManagedNodePoolConfiguration
     oci.disaster_recovery.models.OkeClusterNetworkLoadBalancerMapping
+    oci.disaster_recovery.models.OkeClusterResourceModifierMapping
     oci.disaster_recovery.models.OkeClusterVaultMapping
     oci.disaster_recovery.models.OkeClusterVirtualNodePoolConfiguration
     oci.disaster_recovery.models.PauseDrPlanExecutionDetails
@@ -196,6 +206,7 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberIntegrationInstanceDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberMySqlDbSystemDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
@@ -219,6 +230,7 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateOkeClusterLoadBalancerMappingDetails
     oci.disaster_recovery.models.UpdateOkeClusterManagedNodePoolConfigurationDetails
     oci.disaster_recovery.models.UpdateOkeClusterNetworkLoadBalancerMappingDetails
+    oci.disaster_recovery.models.UpdateOkeClusterResourceModifierMappingDetails
     oci.disaster_recovery.models.UpdateOkeClusterVaultMappingDetails
     oci.disaster_recovery.models.UpdateOkeClusterVirtualNodePoolConfigurationDetails
     oci.disaster_recovery.models.UpdateRunLocalScriptUserDefinedCustomPrecheckStepDetails

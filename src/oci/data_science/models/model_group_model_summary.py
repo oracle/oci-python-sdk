@@ -52,6 +52,10 @@ class ModelGroupModelSummary(object):
             The value to assign to the model_id property of this ModelGroupModelSummary.
         :type model_id: str
 
+        :param inference_key:
+            The value to assign to the inference_key property of this ModelGroupModelSummary.
+        :type inference_key: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ModelGroupModelSummary.
         :type compartment_id: str
@@ -112,6 +116,7 @@ class ModelGroupModelSummary(object):
         self.swagger_types = {
             'id': 'str',
             'model_id': 'str',
+            'inference_key': 'str',
             'compartment_id': 'str',
             'project_id': 'str',
             'display_name': 'str',
@@ -129,6 +134,7 @@ class ModelGroupModelSummary(object):
         self.attribute_map = {
             'id': 'id',
             'model_id': 'modelId',
+            'inference_key': 'inferenceKey',
             'compartment_id': 'compartmentId',
             'project_id': 'projectId',
             'display_name': 'displayName',
@@ -145,6 +151,7 @@ class ModelGroupModelSummary(object):
         }
         self._id = None
         self._model_id = None
+        self._inference_key = None
         self._compartment_id = None
         self._project_id = None
         self._display_name = None
@@ -214,6 +221,30 @@ class ModelGroupModelSummary(object):
         :type: str
         """
         self._model_id = model_id
+
+    @property
+    def inference_key(self):
+        """
+        Gets the inference_key of this ModelGroupModelSummary.
+        SaaS friendly name of the model.
+
+
+        :return: The inference_key of this ModelGroupModelSummary.
+        :rtype: str
+        """
+        return self._inference_key
+
+    @inference_key.setter
+    def inference_key(self, inference_key):
+        """
+        Sets the inference_key of this ModelGroupModelSummary.
+        SaaS friendly name of the model.
+
+
+        :param inference_key: The inference_key of this ModelGroupModelSummary.
+        :type: str
+        """
+        self._inference_key = inference_key
 
     @property
     def compartment_id(self):

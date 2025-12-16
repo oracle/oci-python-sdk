@@ -166,6 +166,10 @@ class DrPlanExecution(object):
             The value to assign to the group_executions property of this DrPlanExecution.
         :type group_executions: list[oci.disaster_recovery.models.DrPlanGroupExecution]
 
+        :param step_status_counts:
+            The value to assign to the step_status_counts property of this DrPlanExecution.
+        :type step_status_counts: oci.disaster_recovery.models.DrPlanExecutionStepStatusCounts
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DrPlanExecution.
             Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "CANCELING", "CANCELED", "SUCCEEDED", "FAILED", "DELETING", "DELETED", "PAUSING", "PAUSED", "RESUMING", 'UNKNOWN_ENUM_VALUE'.
@@ -214,6 +218,7 @@ class DrPlanExecution(object):
             'time_ended': 'datetime',
             'execution_duration_in_sec': 'int',
             'group_executions': 'list[DrPlanGroupExecution]',
+            'step_status_counts': 'DrPlanExecutionStepStatusCounts',
             'lifecycle_state': 'str',
             'life_cycle_details': 'str',
             'is_automatic': 'bool',
@@ -239,6 +244,7 @@ class DrPlanExecution(object):
             'time_ended': 'timeEnded',
             'execution_duration_in_sec': 'executionDurationInSec',
             'group_executions': 'groupExecutions',
+            'step_status_counts': 'stepStatusCounts',
             'lifecycle_state': 'lifecycleState',
             'life_cycle_details': 'lifeCycleDetails',
             'is_automatic': 'isAutomatic',
@@ -263,6 +269,7 @@ class DrPlanExecution(object):
         self._time_ended = None
         self._execution_duration_in_sec = None
         self._group_executions = None
+        self._step_status_counts = None
         self._lifecycle_state = None
         self._life_cycle_details = None
         self._is_automatic = None
@@ -706,6 +713,26 @@ class DrPlanExecution(object):
         :type: list[oci.disaster_recovery.models.DrPlanGroupExecution]
         """
         self._group_executions = group_executions
+
+    @property
+    def step_status_counts(self):
+        """
+        **[Required]** Gets the step_status_counts of this DrPlanExecution.
+
+        :return: The step_status_counts of this DrPlanExecution.
+        :rtype: oci.disaster_recovery.models.DrPlanExecutionStepStatusCounts
+        """
+        return self._step_status_counts
+
+    @step_status_counts.setter
+    def step_status_counts(self, step_status_counts):
+        """
+        Sets the step_status_counts of this DrPlanExecution.
+
+        :param step_status_counts: The step_status_counts of this DrPlanExecution.
+        :type: oci.disaster_recovery.models.DrPlanExecutionStepStatusCounts
+        """
+        self._step_status_counts = step_status_counts
 
     @property
     def lifecycle_state(self):

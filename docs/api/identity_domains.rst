@@ -245,6 +245,10 @@ Identity Domains
     oci.identity_domains.models.KmsiSetting
     oci.identity_domains.models.KmsiSettings
     oci.identity_domains.models.KmsiSettingsSearchRequest
+    oci.identity_domains.models.MappedAttribute
+    oci.identity_domains.models.MappedAttributeAttributeMappings
+    oci.identity_domains.models.MappedAttributeSearchRequest
+    oci.identity_domains.models.MappedAttributes
     oci.identity_domains.models.Me
     oci.identity_domains.models.MeEmails
     oci.identity_domains.models.MeEntitlements

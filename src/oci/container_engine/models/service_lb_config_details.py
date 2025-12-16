@@ -28,17 +28,24 @@ class ServiceLbConfigDetails(object):
             The value to assign to the defined_tags property of this ServiceLbConfigDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param backend_nsg_ids:
+            The value to assign to the backend_nsg_ids property of this ServiceLbConfigDetails.
+        :type backend_nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'backend_nsg_ids': 'list[str]'
         }
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'backend_nsg_ids': 'backendNsgIds'
         }
         self._freeform_tags = None
         self._defined_tags = None
+        self._backend_nsg_ids = None
 
     @property
     def freeform_tags(self):
@@ -103,6 +110,30 @@ class ServiceLbConfigDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def backend_nsg_ids(self):
+        """
+        Gets the backend_nsg_ids of this ServiceLbConfigDetails.
+        A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see :class:`NetworkSecurityGroup`.
+
+
+        :return: The backend_nsg_ids of this ServiceLbConfigDetails.
+        :rtype: list[str]
+        """
+        return self._backend_nsg_ids
+
+    @backend_nsg_ids.setter
+    def backend_nsg_ids(self, backend_nsg_ids):
+        """
+        Sets the backend_nsg_ids of this ServiceLbConfigDetails.
+        A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see :class:`NetworkSecurityGroup`.
+
+
+        :param backend_nsg_ids: The backend_nsg_ids of this ServiceLbConfigDetails.
+        :type: list[str]
+        """
+        self._backend_nsg_ids = backend_nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)
