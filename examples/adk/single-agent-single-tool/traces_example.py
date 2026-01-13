@@ -1,5 +1,6 @@
+# flake8: noqa
 # coding: utf-8
-# Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 """
@@ -51,23 +52,23 @@ def main():
             usage = trace.usage
 
         elif isinstance(trace, ToolInvocationTrace):
-            tool_id = trace.tool_id  # noqa: F841
-            tool_name = trace.tool_name  # noqa: F841
-            invocation_details = trace.invocation_details  # noqa: F841
+            tool_id = trace.tool_id
+            tool_name = trace.tool_name
+            invocation_details = trace.invocation_details
 
         elif isinstance(trace, RetrievalTrace):
             input = trace.retrieval_input
             citations = trace.citations
             for citation in citations:
-                source_text = citation.source_text  # noqa: F841
-                source_location_type = citation.source_location.source_location_type  # noqa: F841
-                source_location_url = citation.source_location.url  # noqa: F841
+                source_text = citation.source_text
+                source_location_type = citation.source_location.source_location_type
+                source_location_url = citation.source_location.url
             usage = trace.usage
 
         elif isinstance(trace, GenerationTrace):
             input = trace.input
-            output = trace.generation  # noqa: F841
-            usage = trace.usage  # noqa: F841
+            output = trace.generation
+            usage = trace.usage
 
     # Print Response Traces
     response.pretty_print_traces()

@@ -57,7 +57,6 @@ API Reference
 * :doc:`Connector Plugins <sch/client/oci.sch.ConnectorPluginsClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
-* :doc:`Cost Ad <budget/client/oci.budget.CostAdClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Dashboard <dashboard_service/client/oci.dashboard_service.DashboardClient>`
 * :doc:`Dashboard Group <dashboard_service/client/oci.dashboard_service.DashboardGroupClient>`

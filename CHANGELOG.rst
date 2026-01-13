@@ -5,24 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.165.0 - 2026-01-13
-====================
-
-Added 
------ 
-* Support for Point-In-Time Recovery (PITR) as iRestore using timestamps in the Database service 
-* Support for selecting a maintenance window when enabling dedicated storage on a Resource Pool leader in the Database service 
-* Support for pausing and resuming maintenance patching in the Database service 
-* Support for providing the OCID of the standby local ADG Resource Pool leader when enabling local ADG on a Resource Pool with dedicated storage in the Database service 
-* Support for Security Attributes in the DevOps Deploy Service 
-* Support for platform configuration soft links with new optional parameters in the Fleet Application Management service 
-* Support for Database Console operations in the MySQL HeatWave service  
-
-Breaking 
--------- 
-* The models `PullRequestChangeSummaryMetrics`,`PullRequestFileChangeCollection` and `PullRequestFileChangeSummary` were removed from the DevOps Service.  
-
-====================
 2.164.2 - 2025-12-16
 ====================
 

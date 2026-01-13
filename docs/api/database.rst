@@ -61,7 +61,6 @@ Database
     oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry
     oci.database.models.AutonomousDatabaseInBackup
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
-    oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
     oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabasePeerCollection
     oci.database.models.AutonomousDatabasePeerSummary
@@ -187,7 +186,6 @@ Database
     oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
     oci.database.models.CreateDatabaseFromBackup
     oci.database.models.CreateDatabaseFromBackupDetails
-    oci.database.models.CreateDatabaseFromDatabase
     oci.database.models.CreateDatabaseFromDbSystemDetails
     oci.database.models.CreateDatabaseSoftwareImageDetails
     oci.database.models.CreateDbHomeBase
@@ -200,7 +198,6 @@ Database
     oci.database.models.CreateDbHomeWithDbSystemIdFromDatabaseDetails
     oci.database.models.CreateDbHomeWithVmClusterIdDetails
     oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
-    oci.database.models.CreateDbHomeWithVmClusterIdFromDatabaseDetails
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExadbVmClusterDetails
     oci.database.models.CreateExascaleDbStorageVaultDetails

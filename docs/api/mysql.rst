@@ -58,7 +58,6 @@ Mysql
     oci.mysql.models.CreateChannelTargetDetails
     oci.mysql.models.CreateChannelTargetFromDbSystemDetails
     oci.mysql.models.CreateConfigurationDetails
-    oci.mysql.models.CreateDatabaseConsoleDetails
     oci.mysql.models.CreateDbSystemDetails
     oci.mysql.models.CreateDbSystemSourceDetails
     oci.mysql.models.CreateDbSystemSourceFromBackupDetails
@@ -73,7 +72,6 @@ Mysql
     oci.mysql.models.CustomerContact
     oci.mysql.models.DataStorage
     oci.mysql.models.DataStorageDetails
-    oci.mysql.models.DatabaseConsoleDetails
     oci.mysql.models.DbSystem
     oci.mysql.models.DbSystemEndpoint
     oci.mysql.models.DbSystemPlacement
@@ -117,7 +115,6 @@ Mysql
     oci.mysql.models.UpdateChannelTargetDetails
     oci.mysql.models.UpdateChannelTargetFromDbSystemDetails
     oci.mysql.models.UpdateConfigurationDetails
-    oci.mysql.models.UpdateDatabaseConsoleDetails
     oci.mysql.models.UpdateDbSystemDetails
     oci.mysql.models.UpdateDeletionPolicyDetails
     oci.mysql.models.UpdateHeatWaveClusterDetails

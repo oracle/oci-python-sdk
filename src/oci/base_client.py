@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -21,7 +21,6 @@ import _strptime  # noqa: F401
 from datetime import date, datetime, timezone
 from timeit import default_timer as timer
 from ._vendor import requests, six, urllib3, sseclient
-from ._vendor.urllib3.exceptions import HeaderParsingError
 from dateutil.parser import parse
 from dateutil import tz
 import functools
@@ -41,7 +40,6 @@ APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
 PROPAGATION_ENABLED_ENV_VAR_NAME = "PROPAGATION_ENABLED"
 OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME = "OPC_INCOMING_REQUEST_ID"
 OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED = "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED"
-OCI_HEADER_PARSING_ERROR_MAX_RETRIES = "OCI_HEADER_PARSING_ERROR_MAX_RETRIES"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
 PROPAGATION_ENABLED = False
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
@@ -777,30 +775,6 @@ class BaseClient(object):
 
         return processed_query_params
 
-    def _reset_session(self, response=None, reason="connection issue"):
-        """
-        Reset the session to clear any connection pool issues.
-        This is typically called when HeaderParsingError occurs or when specific
-        error status codes indicate connection reuse problems.
-        :param response: The response object (if available) to ensure it's fully consumed
-        :param reason: Reason for resetting the session (for logging purposes)
-        """
-        self.logger.warning(f"Resetting session due to {reason}")
-        if response is not None:
-            try:
-                # Read the response content to ensure the socket is fully drained
-                _ = response.content
-                response.close()
-            except Exception as e:
-                self.logger.warning(f"Error while closing response during session reset: {e}")
-        # Create a new session and close the old one
-        new_session = copy.copy(self.session)
-        try:
-            self.session.close()
-        except Exception as e:
-            self.logger.error(f"Error while closing old session: {e}")
-        self.session = new_session
-
     def request(self, request, allow_control_chars=None, operation_name=None, api_reference_link=None):
         self.logger.info(utc_now() + "Request: %s %s" % (str(request.method), request.url))
 
@@ -822,63 +796,35 @@ class BaseClient(object):
         if SSE_RESPONSE_HEADER_VALUE in request.header_params.get("accept", "empty"):
             stream = True
 
-        # Attempt the request with retry logic for HeaderParsingError
-        # Can be configured via OCI_HEADER_PARSING_ERROR_MAX_RETRIES environment variable
-        max_header_error_retries = int(os.environ.get(OCI_HEADER_PARSING_ERROR_MAX_RETRIES, 2))
-        if max_header_error_retries < 0:
-            raise ValueError("max_header_error_retries must be a positive integer.")
-        total_attempts = max_header_error_retries + 1
-        response = None
-        for attempt in range(total_attempts):
-            try:
-                start = timer()
-                response = self.session.request(
-                    request.method,
-                    request.url,
-                    auth=signer,
-                    params=request.query_params,
-                    headers=request.header_params,
-                    data=request.body,
-                    stream=stream,
-                    timeout=self.timeout)
-                end = timer()
-                if request.header_params[constants.HEADER_REQUEST_ID]:
-                    self.logger.debug(
-                        f"{utc_now()} time elapsed for request {request.header_params[constants.HEADER_REQUEST_ID]}: {str(end - start)}")
-                if response and hasattr(response, 'elapsed'):
-                    self.logger.debug(f"{utc_now()} time elapsed in response: {str(response.elapsed)}")
-                if self.PROPAGATION_ENABLED in [True, "True"] and response.headers[constants.HEADER_REQUEST_ID]:
-                    os.environ[OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME] = response.headers[constants.HEADER_REQUEST_ID]
-                    self.logger.debug(f"Response opc-request-id: {response.headers[constants.HEADER_REQUEST_ID]}")
-                break  # Request succeeded, exit retry loop
-            except HeaderParsingError as e:
-                self.logger.warning(
-                    f"HeaderParsingError encountered on attempt {attempt + 1}/{total_attempts}: {str(e)}")
-                # Reset the session to clear the connection pool
-                self._reset_session(reason=f"HeaderParsingError ({str(e)[:100]})")
-                if attempt >= max_header_error_retries:
-                    # Last attempt failed, re-raise as RequestException
-                    if not e.args:
-                        e.args = ('',)
-                    e.args = e.args + (
-                        f"Request Endpoint: {request.method} {request.url}. "
-                        f"HeaderParsingError indicates connection reuse issue. "
-                        f"See {TROUBLESHOOT_URL} for help troubleshooting this error, or contact support and provide this full error message.",)
-                    raise exceptions.RequestException(e)
-                # Otherwise, retry with the new session
-                self.logger.info(
-                    f"Retrying request after session reset (attempt {attempt + 1}/{max_header_error_retries})")
-                continue
-            except requests.exceptions.ConnectTimeout as e:
-                if not e.args:
-                    e.args = ('',)
-                e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
-                raise exceptions.ConnectTimeout(e)
-            except requests.exceptions.RequestException as e:
-                if not e.args:
-                    e.args = ('',)
-                e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
-                raise exceptions.RequestException(e)
+        try:
+            start = timer()
+            response = self.session.request(
+                request.method,
+                request.url,
+                auth=signer,
+                params=request.query_params,
+                headers=request.header_params,
+                data=request.body,
+                stream=stream,
+                timeout=self.timeout)
+            end = timer()
+            if request.header_params[constants.HEADER_REQUEST_ID]:
+                self.logger.debug(utc_now() + 'time elapsed for request {}: {}'.format(request.header_params[constants.HEADER_REQUEST_ID], str(end - start)))
+            if response and hasattr(response, 'elapsed'):
+                self.logger.debug(utc_now() + "time elapsed in response: " + str(response.elapsed))
+            if self.PROPAGATION_ENABLED in [True, "True"] and response.headers[constants.HEADER_REQUEST_ID]:
+                os.environ[OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME] = response.headers[constants.HEADER_REQUEST_ID]
+                self.logger.debug(f"Response opc-request-id: {response.headers[constants.HEADER_REQUEST_ID]}")
+        except requests.exceptions.ConnectTimeout as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
+            raise exceptions.ConnectTimeout(e)
+        except requests.exceptions.RequestException as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
+            raise exceptions.RequestException(e)
 
         response_type = request.response_type
         self.logger.debug(utc_now() + "Response status: %s" % str(response.status_code))
