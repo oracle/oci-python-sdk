@@ -82,7 +82,7 @@ class Agent:
         self.name = name
         self.description = description
 
-        # variables not set up user
+        # variables not set by user
         self._agent_details: Dict[str, Any] = {}
         self._local_handler_functions: List[FunctionTool] = (
             self._process_function_tools()

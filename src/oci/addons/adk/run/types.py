@@ -131,7 +131,7 @@ class RawResponse(BaseModel):
 
 
 class InputLocationType(str, Enum):
-    """Represents teh type of input location."""
+    """Represents the type of input location."""
 
     INLINE = "INLINE"
     OBJECT_STORAGE_PREFIX = "OBJECT_STORAGE_PREFIX"

@@ -500,7 +500,7 @@ class AgentClient:
 
         add_tool_response: Response = self._invoke(
             method=self._mgmt_client.create_tool,
-            success_message="Add sql tool successful",
+            success_message="SQL tool addition succeeded",
             error_message="Failed to add sql tool",
             debug=self.debug,
             create_tool_details=create_tool_details,
@@ -633,7 +633,7 @@ class AgentClient:
         )
         self._invoke(
             method=self._mgmt_client.update_tool,
-            success_message="Update sql tool successful",
+            success_message="SQL tool update succeeded",
             error_message="Failed to update sql tool",
             debug=self.debug,
             tool_id=tool_id,
