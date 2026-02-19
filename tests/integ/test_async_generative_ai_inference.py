@@ -26,6 +26,7 @@ from oci.generative_ai_inference.models import (
     UserMessage,
     TextContent,
     EmbedTextDetails,
+    FunctionDefinition,
 )
 from oci.response import Response
 
@@ -374,3 +375,63 @@ class TestAsyncGenerativeAiInference:
 
             # Should have multiple chunks for longer response
             assert len(chunks) > 1
+
+    # =========================================================================
+    # Tool calling tests
+    # =========================================================================
+
+    @pytest.mark.asyncio
+    async def test_chat_with_tool_calling(self, config):
+        """Test chat with function/tool calling."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            # Define a simple tool
+            tools = [
+                FunctionDefinition(
+                    name="get_weather",
+                    description="Get the current weather for a location",
+                    parameters={
+                        "type": "object",
+                        "properties": {
+                            "location": {
+                                "type": "string",
+                                "description": "The city and country, e.g. 'Paris, France'"
+                            }
+                        },
+                        "required": ["location"]
+                    }
+                )
+            ]
+
+            chat_details = ChatDetails(
+                compartment_id=COMPARTMENT_ID,
+                serving_mode=OnDemandServingMode(model_id=MODEL_ID),
+                chat_request=GenericChatRequest(
+                    messages=[UserMessage(content=[TextContent(text="What's the weather in Tokyo?")])],
+                    tools=tools,
+                    max_tokens=100,
+                    temperature=0.1,
+                ),
+            )
+
+            response = await client.chat(chat_details)
+
+            assert isinstance(response, Response)
+            assert response.status == 200
+
+            choice = response.data.chat_response.choices[0]
+
+            # Model should decide to call the tool
+            assert choice.finish_reason == "tool_calls"
+            assert hasattr(choice.message, 'tool_calls')
+            assert choice.message.tool_calls is not None
+            assert len(choice.message.tool_calls) > 0
+
+            # Verify tool call structure
+            tool_call = choice.message.tool_calls[0]
+            assert tool_call.type == "FUNCTION"
+            assert tool_call.name == "get_weather"
+            assert tool_call.id is not None
+            assert "tokyo" in tool_call.arguments.lower() or "Tokyo" in tool_call.arguments
