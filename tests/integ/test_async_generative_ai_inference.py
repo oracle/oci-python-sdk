@@ -25,6 +25,7 @@ from oci.generative_ai_inference.models import (
     GenericChatRequest,
     UserMessage,
     TextContent,
+    EmbedTextDetails,
 )
 from oci.response import Response
 
@@ -35,6 +36,7 @@ from . import util
 COMPARTMENT_ID = util.COMPARTMENT_ID
 MODEL_ID = util.GENAI_MODEL_ID
 GENAI_REGION = util.GENAI_REGION
+EMBED_MODEL_ID = "cohere.embed-english-v3.0"
 
 
 def get_service_endpoint():
@@ -42,17 +44,27 @@ def get_service_endpoint():
     return f"https://inference.generativeai.{GENAI_REGION}.oci.oraclecloud.com"
 
 
-def make_chat_details(prompt: str, stream: bool = False) -> ChatDetails:
+def make_chat_details(prompt: str, stream: bool = False, model_id: str = None) -> ChatDetails:
     """Create ChatDetails for testing."""
     return ChatDetails(
         compartment_id=COMPARTMENT_ID,
-        serving_mode=OnDemandServingMode(model_id=MODEL_ID),
+        serving_mode=OnDemandServingMode(model_id=model_id or MODEL_ID),
         chat_request=GenericChatRequest(
             messages=[UserMessage(content=[TextContent(text=prompt)])],
             max_tokens=50,
             temperature=0.1,
             is_stream=stream,
         ),
+    )
+
+
+def make_embed_details(inputs: list, input_type: str = "SEARCH_DOCUMENT") -> EmbedTextDetails:
+    """Create EmbedTextDetails for testing."""
+    return EmbedTextDetails(
+        compartment_id=COMPARTMENT_ID,
+        serving_mode=OnDemandServingMode(model_id=EMBED_MODEL_ID),
+        inputs=inputs,
+        input_type=input_type,
     )
 
 
@@ -230,3 +242,135 @@ class TestAsyncGenerativeAiInference:
                 assert response is not None
                 assert isinstance(response, Response)
                 assert response.data is not None
+
+    # =========================================================================
+    # embed_text tests
+    # =========================================================================
+
+    @pytest.mark.asyncio
+    async def test_embed_text(self, config):
+        """Test basic embed_text returns valid Response with embeddings."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            response = await client.embed_text(
+                make_embed_details(["Hello world", "Test embedding"])
+            )
+
+            assert isinstance(response, Response)
+            assert response.status == 200
+            assert response.data is not None
+            assert hasattr(response.data, 'embeddings')
+            assert len(response.data.embeddings) == 2
+            # Each embedding should be a list of floats
+            assert isinstance(response.data.embeddings[0], list)
+            assert len(response.data.embeddings[0]) > 0
+            assert isinstance(response.data.embeddings[0][0], float)
+
+    @pytest.mark.asyncio
+    async def test_embed_multilingual(self, config):
+        """Test embed_text with multilingual inputs."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            response = await client.embed_text(
+                make_embed_details([
+                    "Hello world",
+                    "Hola mundo",
+                    "Bonjour le monde",
+                ])
+            )
+
+            assert isinstance(response, Response)
+            assert response.status == 200
+            assert len(response.data.embeddings) == 3
+
+    @pytest.mark.asyncio
+    async def test_embed_concurrent(self, config):
+        """Test concurrent embed_text requests."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            results = await asyncio.gather(
+                client.embed_text(make_embed_details(["Text 1"])),
+                client.embed_text(make_embed_details(["Text 2"])),
+                client.embed_text(make_embed_details(["Text 3"])),
+            )
+
+            assert len(results) == 3
+            for result in results:
+                assert isinstance(result, Response)
+                assert result.status == 200
+                assert len(result.data.embeddings) == 1
+
+    @pytest.mark.asyncio
+    async def test_embed_with_input_type(self, config):
+        """Test embed_text with different input types."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            # Test SEARCH_QUERY input type
+            response = await client.embed_text(
+                make_embed_details(["What is machine learning?"], input_type="SEARCH_QUERY")
+            )
+
+            assert isinstance(response, Response)
+            assert response.status == 200
+            assert len(response.data.embeddings) == 1
+
+    # =========================================================================
+    # Additional chat_stream tests
+    # =========================================================================
+
+    @pytest.mark.asyncio
+    async def test_chat_stream_content_extraction(self, config):
+        """Test that streaming response content can be extracted and assembled."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            chat_details = make_chat_details("Say 'hello world'", stream=True)
+            full_text = ""
+
+            async for event in client.chat_stream(chat_details):
+                # Extract text from streaming event
+                if "chatResponse" in event:
+                    choices = event.get("chatResponse", {}).get("choices", [])
+                    if choices:
+                        message = choices[0].get("message", {})
+                        content = message.get("content", [])
+                        if content and "text" in content[0]:
+                            full_text += content[0]["text"]
+
+            # Should have accumulated some text
+            assert len(full_text) > 0
+            assert "hello" in full_text.lower()
+
+    @pytest.mark.asyncio
+    async def test_chat_stream_long_response(self, config):
+        """Test streaming with a longer response."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            chat_details = ChatDetails(
+                compartment_id=COMPARTMENT_ID,
+                serving_mode=OnDemandServingMode(model_id=MODEL_ID),
+                chat_request=GenericChatRequest(
+                    messages=[UserMessage(content=[TextContent(text="Count from 1 to 10")])],
+                    max_tokens=200,
+                    temperature=0.1,
+                    is_stream=True,
+                ),
+            )
+            chunks = []
+
+            async for event in client.chat_stream(chat_details):
+                chunks.append(event)
+
+            # Should have multiple chunks for longer response
+            assert len(chunks) > 1
