@@ -338,13 +338,13 @@ class TestAsyncGenerativeAiInference:
 
             async for event in client.chat_stream(chat_details):
                 # Extract text from streaming event
-                if "chatResponse" in event:
-                    choices = event.get("chatResponse", {}).get("choices", [])
-                    if choices:
-                        message = choices[0].get("message", {})
-                        content = message.get("content", [])
-                        if content and "text" in content[0]:
-                            full_text += content[0]["text"]
+                # Streaming events have message.content directly (not wrapped in chatResponse)
+                message = event.get("message", {})
+                content = message.get("content", [])
+                if content and isinstance(content, list) and len(content) > 0:
+                    text = content[0].get("text", "")
+                    if text:
+                        full_text += text
 
             # Should have accumulated some text
             assert len(full_text) > 0
