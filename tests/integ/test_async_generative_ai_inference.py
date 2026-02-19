@@ -382,12 +382,12 @@ class TestAsyncGenerativeAiInference:
 
     @pytest.mark.asyncio
     async def test_chat_with_tool_calling(self, config):
-        """Test chat with function/tool calling."""
+        """Test chat with function/tool calling using multiple tools."""
         async with AsyncGenerativeAiInferenceClient(
             config,
             service_endpoint=get_service_endpoint(),
         ) as client:
-            # Define a simple tool
+            # Define two tools to test multiple tool serialization
             tools = [
                 FunctionDefinition(
                     name="get_weather",
@@ -401,6 +401,20 @@ class TestAsyncGenerativeAiInference:
                             }
                         },
                         "required": ["location"]
+                    }
+                ),
+                FunctionDefinition(
+                    name="get_stock_price",
+                    description="Get the current stock price for a ticker symbol",
+                    parameters={
+                        "type": "object",
+                        "properties": {
+                            "ticker": {
+                                "type": "string",
+                                "description": "The stock ticker symbol, e.g. 'AAPL'"
+                            }
+                        },
+                        "required": ["ticker"]
                     }
                 )
             ]
@@ -423,13 +437,13 @@ class TestAsyncGenerativeAiInference:
 
             choice = response.data.chat_response.choices[0]
 
-            # Model should decide to call the tool
+            # Model should decide to call the weather tool (not stock)
             assert choice.finish_reason == "tool_calls"
             assert hasattr(choice.message, 'tool_calls')
             assert choice.message.tool_calls is not None
             assert len(choice.message.tool_calls) > 0
 
-            # Verify tool call structure
+            # Verify tool call structure - should pick get_weather
             tool_call = choice.message.tool_calls[0]
             assert tool_call.type == "FUNCTION"
             assert tool_call.name == "get_weather"
