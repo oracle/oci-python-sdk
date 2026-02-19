@@ -26,6 +26,7 @@ from oci.generative_ai_inference.models import (
     UserMessage,
     TextContent,
 )
+from oci.response import Response
 
 from . import util
 
@@ -75,7 +76,7 @@ class TestAsyncGenerativeAiInference:
 
     @pytest.mark.asyncio
     async def test_single_chat_request(self, config):
-        """Test single async chat request returns valid response."""
+        """Test single async chat request returns valid Response with ChatResult."""
         async with AsyncGenerativeAiInferenceClient(
             config,
             service_endpoint=get_service_endpoint(),
@@ -84,14 +85,39 @@ class TestAsyncGenerativeAiInference:
                 make_chat_details("Say 'hello' and nothing else")
             )
 
-            assert response is not None
-            assert "chatResponse" in response
-            choices = response["chatResponse"]["choices"]
-            assert len(choices) > 0
-            content = choices[0]["message"]["content"]
-            assert len(content) > 0
-            text = content[0]["text"].lower()
+            # Response should be an OCI Response object
+            assert isinstance(response, Response)
+            assert response.status == 200
+
+            # data should be a ChatResult model object
+            chat_result = response.data
+            assert chat_result is not None
+            assert hasattr(chat_result, 'chat_response')
+
+            # Verify chat response content
+            chat_response = chat_result.chat_response
+            assert hasattr(chat_response, 'choices')
+            assert len(chat_response.choices) > 0
+
+            choice = chat_response.choices[0]
+            assert hasattr(choice, 'message')
+            assert hasattr(choice.message, 'content')
+            assert len(choice.message.content) > 0
+
+            text = choice.message.content[0].text.lower()
             assert "hello" in text
+
+    @pytest.mark.asyncio
+    async def test_response_has_request_id(self, config):
+        """Test that response includes opc-request-id."""
+        async with AsyncGenerativeAiInferenceClient(
+            config,
+            service_endpoint=get_service_endpoint(),
+        ) as client:
+            response = await client.chat(make_chat_details("Say hello"))
+
+            assert response.request_id is not None
+            assert len(response.request_id) > 0
 
     @pytest.mark.asyncio
     async def test_concurrent_requests(self, config):
@@ -112,8 +138,11 @@ class TestAsyncGenerativeAiInference:
 
             assert len(results) == 3
             for result in results:
-                assert "chatResponse" in result
-                assert len(result["chatResponse"]["choices"]) > 0
+                assert isinstance(result, Response)
+                assert result.status == 200
+                assert result.data is not None
+                assert hasattr(result.data, 'chat_response')
+                assert len(result.data.chat_response.choices) > 0
 
     @pytest.mark.asyncio
     async def test_streaming_response(self, config):
@@ -128,7 +157,9 @@ class TestAsyncGenerativeAiInference:
             async for event in client.chat_stream(chat_details):
                 chunks.append(event)
 
+            # Streaming still returns raw dicts
             assert len(chunks) > 0
+            assert isinstance(chunks[0], dict)
 
     @pytest.mark.asyncio
     async def test_concurrent_faster_than_sequential(self, config):
@@ -171,6 +202,7 @@ class TestAsyncGenerativeAiInference:
         ) as client:
             response = await client.chat(make_chat_details("Say hello"))
             assert response is not None
+            assert isinstance(response, Response)
 
     @pytest.mark.asyncio
     async def test_explicit_close(self, config):
@@ -182,6 +214,7 @@ class TestAsyncGenerativeAiInference:
         try:
             response = await client.chat(make_chat_details("Say hello"))
             assert response is not None
+            assert isinstance(response, Response)
         finally:
             await client.close()
 
@@ -195,4 +228,5 @@ class TestAsyncGenerativeAiInference:
             for i in range(3):
                 response = await client.chat(make_chat_details(f"Say {i}"))
                 assert response is not None
-                assert "chatResponse" in response
+                assert isinstance(response, Response)
+                assert response.data is not None
