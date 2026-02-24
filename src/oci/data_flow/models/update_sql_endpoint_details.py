@@ -15,6 +15,18 @@ class UpdateSqlEndpointDetails(object):
     The information about all updatable parameters of a SQL Endpoint.
     """
 
+    #: A constant which can be used with the log_operation property of a UpdateSqlEndpointDetails.
+    #: This constant has a value of "ENABLE"
+    LOG_OPERATION_ENABLE = "ENABLE"
+
+    #: A constant which can be used with the log_operation property of a UpdateSqlEndpointDetails.
+    #: This constant has a value of "DISABLE"
+    LOG_OPERATION_DISABLE = "DISABLE"
+
+    #: A constant which can be used with the log_operation property of a UpdateSqlEndpointDetails.
+    #: This constant has a value of "DELETE"
+    LOG_OPERATION_DELETE = "DELETE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateSqlEndpointDetails object with values from keyword arguments.
@@ -68,6 +80,27 @@ class UpdateSqlEndpointDetails(object):
             The value to assign to the lake_id property of this UpdateSqlEndpointDetails.
         :type lake_id: str
 
+        :param log_group_id:
+            The value to assign to the log_group_id property of this UpdateSqlEndpointDetails.
+        :type log_group_id: str
+
+        :param log_compartment_id:
+            The value to assign to the log_compartment_id property of this UpdateSqlEndpointDetails.
+        :type log_compartment_id: str
+
+        :param log_display_name:
+            The value to assign to the log_display_name property of this UpdateSqlEndpointDetails.
+        :type log_display_name: str
+
+        :param log_retention_duration:
+            The value to assign to the log_retention_duration property of this UpdateSqlEndpointDetails.
+        :type log_retention_duration: int
+
+        :param log_operation:
+            The value to assign to the log_operation property of this UpdateSqlEndpointDetails.
+            Allowed values for this property are: "ENABLE", "DISABLE", "DELETE"
+        :type log_operation: str
+
         :param spark_advanced_configurations:
             The value to assign to the spark_advanced_configurations property of this UpdateSqlEndpointDetails.
         :type spark_advanced_configurations: dict(str, str)
@@ -86,6 +119,11 @@ class UpdateSqlEndpointDetails(object):
             'max_executor_count': 'int',
             'metastore_id': 'str',
             'lake_id': 'str',
+            'log_group_id': 'str',
+            'log_compartment_id': 'str',
+            'log_display_name': 'str',
+            'log_retention_duration': 'int',
+            'log_operation': 'str',
             'spark_advanced_configurations': 'dict(str, str)'
         }
         self.attribute_map = {
@@ -101,6 +139,11 @@ class UpdateSqlEndpointDetails(object):
             'max_executor_count': 'maxExecutorCount',
             'metastore_id': 'metastoreId',
             'lake_id': 'lakeId',
+            'log_group_id': 'logGroupId',
+            'log_compartment_id': 'logCompartmentId',
+            'log_display_name': 'logDisplayName',
+            'log_retention_duration': 'logRetentionDuration',
+            'log_operation': 'logOperation',
             'spark_advanced_configurations': 'sparkAdvancedConfigurations'
         }
         self._defined_tags = None
@@ -115,6 +158,11 @@ class UpdateSqlEndpointDetails(object):
         self._max_executor_count = None
         self._metastore_id = None
         self._lake_id = None
+        self._log_group_id = None
+        self._log_compartment_id = None
+        self._log_display_name = None
+        self._log_retention_duration = None
+        self._log_operation = None
         self._spark_advanced_configurations = None
 
     @property
@@ -410,6 +458,133 @@ class UpdateSqlEndpointDetails(object):
         :type: str
         """
         self._lake_id = lake_id
+
+    @property
+    def log_group_id(self):
+        """
+        Gets the log_group_id of this UpdateSqlEndpointDetails.
+        The identifier of the log group used with the SQL Endpoint.
+
+
+        :return: The log_group_id of this UpdateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_group_id
+
+    @log_group_id.setter
+    def log_group_id(self, log_group_id):
+        """
+        Sets the log_group_id of this UpdateSqlEndpointDetails.
+        The identifier of the log group used with the SQL Endpoint.
+
+
+        :param log_group_id: The log_group_id of this UpdateSqlEndpointDetails.
+        :type: str
+        """
+        self._log_group_id = log_group_id
+
+    @property
+    def log_compartment_id(self):
+        """
+        Gets the log_compartment_id of this UpdateSqlEndpointDetails.
+        The identifier of the log group compartment used with the SQL Endpoint.
+
+
+        :return: The log_compartment_id of this UpdateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_compartment_id
+
+    @log_compartment_id.setter
+    def log_compartment_id(self, log_compartment_id):
+        """
+        Sets the log_compartment_id of this UpdateSqlEndpointDetails.
+        The identifier of the log group compartment used with the SQL Endpoint.
+
+
+        :param log_compartment_id: The log_compartment_id of this UpdateSqlEndpointDetails.
+        :type: str
+        """
+        self._log_compartment_id = log_compartment_id
+
+    @property
+    def log_display_name(self):
+        """
+        Gets the log_display_name of this UpdateSqlEndpointDetails.
+        The friendly name of the log object used with the SQL Endpoint.
+
+
+        :return: The log_display_name of this UpdateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_display_name
+
+    @log_display_name.setter
+    def log_display_name(self, log_display_name):
+        """
+        Sets the log_display_name of this UpdateSqlEndpointDetails.
+        The friendly name of the log object used with the SQL Endpoint.
+
+
+        :param log_display_name: The log_display_name of this UpdateSqlEndpointDetails.
+        :type: str
+        """
+        self._log_display_name = log_display_name
+
+    @property
+    def log_retention_duration(self):
+        """
+        Gets the log_retention_duration of this UpdateSqlEndpointDetails.
+        Log retention duration in days
+
+
+        :return: The log_retention_duration of this UpdateSqlEndpointDetails.
+        :rtype: int
+        """
+        return self._log_retention_duration
+
+    @log_retention_duration.setter
+    def log_retention_duration(self, log_retention_duration):
+        """
+        Sets the log_retention_duration of this UpdateSqlEndpointDetails.
+        Log retention duration in days
+
+
+        :param log_retention_duration: The log_retention_duration of this UpdateSqlEndpointDetails.
+        :type: int
+        """
+        self._log_retention_duration = log_retention_duration
+
+    @property
+    def log_operation(self):
+        """
+        Gets the log_operation of this UpdateSqlEndpointDetails.
+        The log operation will be performed for the Sql Endpoint.
+
+        Allowed values for this property are: "ENABLE", "DISABLE", "DELETE"
+
+
+        :return: The log_operation of this UpdateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_operation
+
+    @log_operation.setter
+    def log_operation(self, log_operation):
+        """
+        Sets the log_operation of this UpdateSqlEndpointDetails.
+        The log operation will be performed for the Sql Endpoint.
+
+
+        :param log_operation: The log_operation of this UpdateSqlEndpointDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLE", "DISABLE", "DELETE"]
+        if not value_allowed_none_or_none_sentinel(log_operation, allowed_values):
+            raise ValueError(
+                f"Invalid value for `log_operation`, must be None or one of {allowed_values}"
+            )
+        self._log_operation = log_operation
 
     @property
     def spark_advanced_configurations(self):

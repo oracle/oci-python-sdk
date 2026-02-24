@@ -1172,6 +1172,8 @@ class DnsClient(object):
         For the purposes of access control, the attachment is automatically placed
         into the same compartment as the domain's zone.
 
+        Attachments cannot be created for private zones.
+
 
         :param oci.dns.models.CreateSteeringPolicyAttachmentDetails create_steering_policy_attachment_details: (required)
             Details for creating a new steering policy attachment.
@@ -1558,6 +1560,14 @@ class DnsClient(object):
             to contact Oracle about a particular request, please provide
             the request ID.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
 
@@ -1606,6 +1616,7 @@ class DnsClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
+            "opc_retry_token",
             "compartment_id",
             "scope",
             "view_id"
@@ -1632,7 +1643,8 @@ class DnsClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1643,6 +1655,7 @@ class DnsClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -1687,6 +1700,14 @@ class DnsClient(object):
             Unique Oracle-assigned identifier for the request. If you need
             to contact Oracle about a particular request, please provide
             the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
 
         :param str scope: (optional)
             Specifies to operate only on resources that have a matching DNS scope.
@@ -1740,6 +1761,7 @@ class DnsClient(object):
             "retry_strategy",
             "buffer_limit",
             "opc_request_id",
+            "opc_retry_token",
             "scope",
             "view_id"
         ]
@@ -1764,7 +1786,8 @@ class DnsClient(object):
 
         header_params = {
             "accept": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1796,6 +1819,7 @@ class DnsClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(

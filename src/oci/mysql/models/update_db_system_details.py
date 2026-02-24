@@ -174,6 +174,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the read_endpoint property of this UpdateDbSystemDetails.
         :type read_endpoint: oci.mysql.models.UpdateReadEndpointDetails
 
+        :param telemetry_configuration:
+            The value to assign to the telemetry_configuration property of this UpdateDbSystemDetails.
+        :type telemetry_configuration: oci.mysql.models.UpdateTelemetryConfigurationDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -209,7 +213,8 @@ class UpdateDbSystemDetails(object):
             'secure_connections': 'SecureConnectionDetails',
             'encrypt_data': 'EncryptDataDetails',
             'customer_contacts': 'list[CustomerContact]',
-            'read_endpoint': 'UpdateReadEndpointDetails'
+            'read_endpoint': 'UpdateReadEndpointDetails',
+            'telemetry_configuration': 'UpdateTelemetryConfigurationDetails'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -245,7 +250,8 @@ class UpdateDbSystemDetails(object):
             'secure_connections': 'secureConnections',
             'encrypt_data': 'encryptData',
             'customer_contacts': 'customerContacts',
-            'read_endpoint': 'readEndpoint'
+            'read_endpoint': 'readEndpoint',
+            'telemetry_configuration': 'telemetryConfiguration'
         }
         self._display_name = None
         self._description = None
@@ -281,6 +287,7 @@ class UpdateDbSystemDetails(object):
         self._encrypt_data = None
         self._customer_contacts = None
         self._read_endpoint = None
+        self._telemetry_configuration = None
 
     @property
     def display_name(self):
@@ -1197,6 +1204,26 @@ class UpdateDbSystemDetails(object):
         :type: oci.mysql.models.UpdateReadEndpointDetails
         """
         self._read_endpoint = read_endpoint
+
+    @property
+    def telemetry_configuration(self):
+        """
+        Gets the telemetry_configuration of this UpdateDbSystemDetails.
+
+        :return: The telemetry_configuration of this UpdateDbSystemDetails.
+        :rtype: oci.mysql.models.UpdateTelemetryConfigurationDetails
+        """
+        return self._telemetry_configuration
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, telemetry_configuration):
+        """
+        Sets the telemetry_configuration of this UpdateDbSystemDetails.
+
+        :param telemetry_configuration: The telemetry_configuration of this UpdateDbSystemDetails.
+        :type: oci.mysql.models.UpdateTelemetryConfigurationDetails
+        """
+        self._telemetry_configuration = telemetry_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

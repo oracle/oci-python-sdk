@@ -43,26 +43,33 @@ class ReplicaOverrides(object):
             The value to assign to the security_attributes property of this ReplicaOverrides.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param telemetry_configuration:
+            The value to assign to the telemetry_configuration property of this ReplicaOverrides.
+        :type telemetry_configuration: oci.mysql.models.TelemetryConfigurationDetails
+
         """
         self.swagger_types = {
             'mysql_version': 'str',
             'shape_name': 'str',
             'configuration_id': 'str',
             'nsg_ids': 'list[str]',
-            'security_attributes': 'dict(str, dict(str, object))'
+            'security_attributes': 'dict(str, dict(str, object))',
+            'telemetry_configuration': 'TelemetryConfigurationDetails'
         }
         self.attribute_map = {
             'mysql_version': 'mysqlVersion',
             'shape_name': 'shapeName',
             'configuration_id': 'configurationId',
             'nsg_ids': 'nsgIds',
-            'security_attributes': 'securityAttributes'
+            'security_attributes': 'securityAttributes',
+            'telemetry_configuration': 'telemetryConfiguration'
         }
         self._mysql_version = None
         self._shape_name = None
         self._configuration_id = None
         self._nsg_ids = None
         self._security_attributes = None
+        self._telemetry_configuration = None
 
     @property
     def mysql_version(self):
@@ -195,6 +202,26 @@ class ReplicaOverrides(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def telemetry_configuration(self):
+        """
+        Gets the telemetry_configuration of this ReplicaOverrides.
+
+        :return: The telemetry_configuration of this ReplicaOverrides.
+        :rtype: oci.mysql.models.TelemetryConfigurationDetails
+        """
+        return self._telemetry_configuration
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, telemetry_configuration):
+        """
+        Sets the telemetry_configuration of this ReplicaOverrides.
+
+        :param telemetry_configuration: The telemetry_configuration of this ReplicaOverrides.
+        :type: oci.mysql.models.TelemetryConfigurationDetails
+        """
+        self._telemetry_configuration = telemetry_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

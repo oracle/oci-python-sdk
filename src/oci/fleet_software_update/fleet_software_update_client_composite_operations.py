@@ -392,6 +392,45 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_fsu_readiness_check_and_wait_for_state(self, create_fsu_readiness_check_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.create_fsu_readiness_check` and waits for the :py:class:`~oci.fleet_software_update.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.fleet_software_update.models.CreateFsuReadinessCheckDetails create_fsu_readiness_check_details: (required)
+            Details for the new Exadata Fleet Update Readiness Check.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_software_update.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.create_fsu_readiness_check`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_fsu_readiness_check(create_fsu_readiness_check_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_fsu_action_and_wait_for_state(self, fsu_action_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.delete_fsu_action` and waits for the :py:class:`~oci.fleet_software_update.models.WorkRequest`
@@ -689,6 +728,53 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_fsu_readiness_check_and_wait_for_state(self, fsu_readiness_check_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.delete_fsu_readiness_check` and waits for the :py:class:`~oci.fleet_software_update.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fsu_readiness_check_id: (required)
+            Unique Exadata Fleet Update Readiness Check identifier.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_software_update.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.delete_fsu_readiness_check`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_fsu_readiness_check(fsu_readiness_check_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def remove_fsu_collection_targets_and_wait_for_state(self, fsu_collection_id, remove_fsu_collection_targets_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.remove_fsu_collection_targets` and waits for the :py:class:`~oci.fleet_software_update.models.WorkRequest`
@@ -888,6 +974,51 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_fsu_job(fsu_job_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_fsu_readiness_check_and_wait_for_state(self, fsu_readiness_check_id, update_fsu_readiness_check_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.update_fsu_readiness_check` and waits for the :py:class:`~oci.fleet_software_update.models.FsuReadinessCheck` acted upon
+        to enter the given state(s).
+
+        :param str fsu_readiness_check_id: (required)
+            Unique Exadata Fleet Update Readiness Check identifier.
+
+        :param oci.fleet_software_update.models.UpdateFsuReadinessCheckDetails update_fsu_readiness_check_details: (required)
+            The Exadata Fleet Update Readiness Check details to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_software_update.models.FsuReadinessCheck.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fleet_software_update.FleetSoftwareUpdateClient.update_fsu_readiness_check`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_fsu_readiness_check(fsu_readiness_check_id, update_fsu_readiness_check_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        fsu_readiness_check_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_fsu_readiness_check(fsu_readiness_check_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

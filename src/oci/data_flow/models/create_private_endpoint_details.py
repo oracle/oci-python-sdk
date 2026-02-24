@@ -60,6 +60,10 @@ class CreatePrivateEndpointDetails(object):
             The value to assign to the subnet_id property of this CreatePrivateEndpointDetails.
         :type subnet_id: str
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreatePrivateEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -71,7 +75,8 @@ class CreatePrivateEndpointDetails(object):
             'max_host_count': 'int',
             'nsg_ids': 'list[str]',
             'scan_details': 'list[Scan]',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -83,7 +88,8 @@ class CreatePrivateEndpointDetails(object):
             'max_host_count': 'maxHostCount',
             'nsg_ids': 'nsgIds',
             'scan_details': 'scanDetails',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'security_attributes': 'securityAttributes'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -95,6 +101,7 @@ class CreatePrivateEndpointDetails(object):
         self._nsg_ids = None
         self._scan_details = None
         self._subnet_id = None
+        self._security_attributes = None
 
     @property
     def compartment_id(self):
@@ -359,6 +366,40 @@ class CreatePrivateEndpointDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreatePrivateEndpointDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreatePrivateEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreatePrivateEndpointDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreatePrivateEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

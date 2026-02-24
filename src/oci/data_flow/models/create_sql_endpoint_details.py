@@ -88,6 +88,22 @@ class CreateSqlEndpointDetails(object):
             The value to assign to the network_configuration property of this CreateSqlEndpointDetails.
         :type network_configuration: oci.data_flow.models.SqlEndpointNetworkConfiguration
 
+        :param log_group_id:
+            The value to assign to the log_group_id property of this CreateSqlEndpointDetails.
+        :type log_group_id: str
+
+        :param log_compartment_id:
+            The value to assign to the log_compartment_id property of this CreateSqlEndpointDetails.
+        :type log_compartment_id: str
+
+        :param log_display_name:
+            The value to assign to the log_display_name property of this CreateSqlEndpointDetails.
+        :type log_display_name: str
+
+        :param log_retention_duration:
+            The value to assign to the log_retention_duration property of this CreateSqlEndpointDetails.
+        :type log_retention_duration: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -106,7 +122,11 @@ class CreateSqlEndpointDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'spark_advanced_configurations': 'dict(str, str)',
-            'network_configuration': 'SqlEndpointNetworkConfiguration'
+            'network_configuration': 'SqlEndpointNetworkConfiguration',
+            'log_group_id': 'str',
+            'log_compartment_id': 'str',
+            'log_display_name': 'str',
+            'log_retention_duration': 'int'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -125,7 +145,11 @@ class CreateSqlEndpointDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'spark_advanced_configurations': 'sparkAdvancedConfigurations',
-            'network_configuration': 'networkConfiguration'
+            'network_configuration': 'networkConfiguration',
+            'log_group_id': 'logGroupId',
+            'log_compartment_id': 'logCompartmentId',
+            'log_display_name': 'logDisplayName',
+            'log_retention_duration': 'logRetentionDuration'
         }
         self._compartment_id = None
         self._display_name = None
@@ -144,6 +168,10 @@ class CreateSqlEndpointDetails(object):
         self._defined_tags = None
         self._spark_advanced_configurations = None
         self._network_configuration = None
+        self._log_group_id = None
+        self._log_compartment_id = None
+        self._log_display_name = None
+        self._log_retention_duration = None
 
     @property
     def compartment_id(self):
@@ -562,6 +590,102 @@ class CreateSqlEndpointDetails(object):
         :type: oci.data_flow.models.SqlEndpointNetworkConfiguration
         """
         self._network_configuration = network_configuration
+
+    @property
+    def log_group_id(self):
+        """
+        Gets the log_group_id of this CreateSqlEndpointDetails.
+        The identifier of the log group used with the SQL Endpoint.
+
+
+        :return: The log_group_id of this CreateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_group_id
+
+    @log_group_id.setter
+    def log_group_id(self, log_group_id):
+        """
+        Sets the log_group_id of this CreateSqlEndpointDetails.
+        The identifier of the log group used with the SQL Endpoint.
+
+
+        :param log_group_id: The log_group_id of this CreateSqlEndpointDetails.
+        :type: str
+        """
+        self._log_group_id = log_group_id
+
+    @property
+    def log_compartment_id(self):
+        """
+        Gets the log_compartment_id of this CreateSqlEndpointDetails.
+        The identifier of the log group compartment used with the SQL Endpoint.
+
+
+        :return: The log_compartment_id of this CreateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_compartment_id
+
+    @log_compartment_id.setter
+    def log_compartment_id(self, log_compartment_id):
+        """
+        Sets the log_compartment_id of this CreateSqlEndpointDetails.
+        The identifier of the log group compartment used with the SQL Endpoint.
+
+
+        :param log_compartment_id: The log_compartment_id of this CreateSqlEndpointDetails.
+        :type: str
+        """
+        self._log_compartment_id = log_compartment_id
+
+    @property
+    def log_display_name(self):
+        """
+        Gets the log_display_name of this CreateSqlEndpointDetails.
+        The friendly name of the log object used with the SQL Endpoint.
+
+
+        :return: The log_display_name of this CreateSqlEndpointDetails.
+        :rtype: str
+        """
+        return self._log_display_name
+
+    @log_display_name.setter
+    def log_display_name(self, log_display_name):
+        """
+        Sets the log_display_name of this CreateSqlEndpointDetails.
+        The friendly name of the log object used with the SQL Endpoint.
+
+
+        :param log_display_name: The log_display_name of this CreateSqlEndpointDetails.
+        :type: str
+        """
+        self._log_display_name = log_display_name
+
+    @property
+    def log_retention_duration(self):
+        """
+        Gets the log_retention_duration of this CreateSqlEndpointDetails.
+        Log retention duration in days
+
+
+        :return: The log_retention_duration of this CreateSqlEndpointDetails.
+        :rtype: int
+        """
+        return self._log_retention_duration
+
+    @log_retention_duration.setter
+    def log_retention_duration(self, log_retention_duration):
+        """
+        Sets the log_retention_duration of this CreateSqlEndpointDetails.
+        Log retention duration in days
+
+
+        :param log_retention_duration: The log_retention_duration of this CreateSqlEndpointDetails.
+        :type: int
+        """
+        self._log_retention_duration = log_retention_duration
 
     def __repr__(self):
         return formatted_flat_dict(self)

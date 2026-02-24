@@ -143,7 +143,7 @@ class SteeringPolicyAttachment(object):
     def zone_id(self):
         """
         **[Required]** Gets the zone_id of this SteeringPolicyAttachment.
-        The OCID of the attached zone.
+        The OCID of the attached zone. Must be a public zone.
 
 
         :return: The zone_id of this SteeringPolicyAttachment.
@@ -155,7 +155,7 @@ class SteeringPolicyAttachment(object):
     def zone_id(self, zone_id):
         """
         Sets the zone_id of this SteeringPolicyAttachment.
-        The OCID of the attached zone.
+        The OCID of the attached zone. Must be a public zone.
 
 
         :param zone_id: The zone_id of this SteeringPolicyAttachment.

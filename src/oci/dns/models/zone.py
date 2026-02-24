@@ -33,6 +33,18 @@ class Zone(object):
     #: This constant has a value of "PRIVATE"
     SCOPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the resolution_mode property of a Zone.
+    #: This constant has a value of "STATIC"
+    RESOLUTION_MODE_STATIC = "STATIC"
+
+    #: A constant which can be used with the resolution_mode property of a Zone.
+    #: This constant has a value of "TRANSPARENT"
+    RESOLUTION_MODE_TRANSPARENT = "TRANSPARENT"
+
+    #: A constant which can be used with the resolution_mode property of a Zone.
+    #: This constant has a value of "RTYPE_TRANSPARENT"
+    RESOLUTION_MODE_RTYPE_TRANSPARENT = "RTYPE_TRANSPARENT"
+
     #: A constant which can be used with the dnssec_state property of a Zone.
     #: This constant has a value of "ENABLED"
     DNSSEC_STATE_ENABLED = "ENABLED"
@@ -102,6 +114,12 @@ class Zone(object):
             The value to assign to the defined_tags property of this Zone.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param resolution_mode:
+            The value to assign to the resolution_mode property of this Zone.
+            Allowed values for this property are: "STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resolution_mode: str
+
         :param dnssec_state:
             The value to assign to the dnssec_state property of this Zone.
             Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
@@ -167,6 +185,7 @@ class Zone(object):
             'scope': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'resolution_mode': 'str',
             'dnssec_state': 'str',
             'external_masters': 'list[ExternalMaster]',
             'external_downstreams': 'list[ExternalDownstream]',
@@ -189,6 +208,7 @@ class Zone(object):
             'scope': 'scope',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'resolution_mode': 'resolutionMode',
             'dnssec_state': 'dnssecState',
             'external_masters': 'externalMasters',
             'external_downstreams': 'externalDownstreams',
@@ -210,6 +230,7 @@ class Zone(object):
         self._scope = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._resolution_mode = None
         self._dnssec_state = None
         self._external_masters = None
         self._external_downstreams = None
@@ -431,6 +452,36 @@ class Zone(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def resolution_mode(self):
+        """
+        **[Required]** Gets the resolution_mode of this Zone.
+        The resolution mode of a zone defines behavior related to how query responses can be handled.
+
+        Allowed values for this property are: "STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resolution_mode of this Zone.
+        :rtype: str
+        """
+        return self._resolution_mode
+
+    @resolution_mode.setter
+    def resolution_mode(self, resolution_mode):
+        """
+        Sets the resolution_mode of this Zone.
+        The resolution mode of a zone defines behavior related to how query responses can be handled.
+
+
+        :param resolution_mode: The resolution_mode of this Zone.
+        :type: str
+        """
+        allowed_values = ["STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT"]
+        if not value_allowed_none_or_none_sentinel(resolution_mode, allowed_values):
+            resolution_mode = 'UNKNOWN_ENUM_VALUE'
+        self._resolution_mode = resolution_mode
 
     @property
     def dnssec_state(self):

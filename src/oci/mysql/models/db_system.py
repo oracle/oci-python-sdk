@@ -274,6 +274,10 @@ class DbSystem(object):
             The value to assign to the read_endpoint property of this DbSystem.
         :type read_endpoint: oci.mysql.models.ReadEndpointDetails
 
+        :param telemetry_configuration:
+            The value to assign to the telemetry_configuration property of this DbSystem.
+        :type telemetry_configuration: oci.mysql.models.TelemetryConfigurationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -321,7 +325,8 @@ class DbSystem(object):
             'database_mode': 'str',
             'access_mode': 'str',
             'customer_contacts': 'list[CustomerContact]',
-            'read_endpoint': 'ReadEndpointDetails'
+            'read_endpoint': 'ReadEndpointDetails',
+            'telemetry_configuration': 'TelemetryConfigurationDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -369,7 +374,8 @@ class DbSystem(object):
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
             'customer_contacts': 'customerContacts',
-            'read_endpoint': 'readEndpoint'
+            'read_endpoint': 'readEndpoint',
+            'telemetry_configuration': 'telemetryConfiguration'
         }
         self._id = None
         self._display_name = None
@@ -417,6 +423,7 @@ class DbSystem(object):
         self._access_mode = None
         self._customer_contacts = None
         self._read_endpoint = None
+        self._telemetry_configuration = None
 
     @property
     def id(self):
@@ -1587,6 +1594,26 @@ class DbSystem(object):
         :type: oci.mysql.models.ReadEndpointDetails
         """
         self._read_endpoint = read_endpoint
+
+    @property
+    def telemetry_configuration(self):
+        """
+        Gets the telemetry_configuration of this DbSystem.
+
+        :return: The telemetry_configuration of this DbSystem.
+        :rtype: oci.mysql.models.TelemetryConfigurationDetails
+        """
+        return self._telemetry_configuration
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, telemetry_configuration):
+        """
+        Sets the telemetry_configuration of this DbSystem.
+
+        :param telemetry_configuration: The telemetry_configuration of this DbSystem.
+        :type: oci.mysql.models.TelemetryConfigurationDetails
+        """
+        self._telemetry_configuration = telemetry_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

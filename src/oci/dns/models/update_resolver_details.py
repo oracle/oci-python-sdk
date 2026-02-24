@@ -187,7 +187,8 @@ class UpdateResolverDetails(object):
     def rules(self):
         """
         Gets the rules of this UpdateResolverDetails.
-        Rules for the resolver. Rules are evaluated in order.
+        Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action
+        applied.
 
 
         :return: The rules of this UpdateResolverDetails.
@@ -199,7 +200,8 @@ class UpdateResolverDetails(object):
     def rules(self, rules):
         """
         Sets the rules of this UpdateResolverDetails.
-        Rules for the resolver. Rules are evaluated in order.
+        Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action
+        applied.
 
 
         :param rules: The rules of this UpdateResolverDetails.

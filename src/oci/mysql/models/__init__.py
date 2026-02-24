@@ -20,6 +20,8 @@ from .channel import Channel
 from .channel_filter import ChannelFilter
 from .channel_source import ChannelSource
 from .channel_source_mysql import ChannelSourceMysql
+from .channel_status import ChannelStatus
+from .channel_status_result import ChannelStatusResult
 from .channel_summary import ChannelSummary
 from .channel_target import ChannelTarget
 from .channel_target_db_system import ChannelTargetDbSystem
@@ -49,6 +51,7 @@ from .create_maintenance_details import CreateMaintenanceDetails
 from .create_read_endpoint_details import CreateReadEndpointDetails
 from .create_replica_details import CreateReplicaDetails
 from .create_rest_details import CreateRestDetails
+from .create_telemetry_configuration_details import CreateTelemetryConfigurationDetails
 from .customer_contact import CustomerContact
 from .data_storage import DataStorage
 from .data_storage_details import DataStorageDetails
@@ -63,12 +66,16 @@ from .db_system_source_from_backup import DbSystemSourceFromBackup
 from .db_system_source_from_none import DbSystemSourceFromNone
 from .db_system_source_from_pitr import DbSystemSourceFromPitr
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
+from .db_system_status import DbSystemStatus
+from .db_system_status_result import DbSystemStatusResult
 from .db_system_summary import DbSystemSummary
 from .deletion_policy_details import DeletionPolicyDetails
+from .destination_configuration import DestinationConfiguration
 from .encrypt_data_details import EncryptDataDetails
 from .error_on_anonymous_handling import ErrorOnAnonymousHandling
 from .export_backup_details import ExportBackupDetails
 from .export_options import ExportOptions
+from .generate_db_system_status_details import GenerateDbSystemStatusDetails
 from .heat_wave_cluster import HeatWaveCluster
 from .heat_wave_cluster_memory_estimate import HeatWaveClusterMemoryEstimate
 from .heat_wave_cluster_schema_memory_estimate import HeatWaveClusterSchemaMemoryEstimate
@@ -76,6 +83,7 @@ from .heat_wave_cluster_summary import HeatWaveClusterSummary
 from .heat_wave_cluster_table_memory_estimate import HeatWaveClusterTableMemoryEstimate
 from .heat_wave_node import HeatWaveNode
 from .initialization_variables import InitializationVariables
+from .logging_destination_configuration import LoggingDestinationConfiguration
 from .maintenance_details import MaintenanceDetails
 from .maintenance_disabled_window import MaintenanceDisabledWindow
 from .maintenance_event import MaintenanceEvent
@@ -93,6 +101,7 @@ from .restart_db_system_details import RestartDbSystemDetails
 from .secure_connection_details import SecureConnectionDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
+from .telemetry_configuration_details import TelemetryConfigurationDetails
 from .update_backup_details import UpdateBackupDetails
 from .update_backup_policy_details import UpdateBackupPolicyDetails
 from .update_channel_details import UpdateChannelDetails
@@ -109,6 +118,7 @@ from .update_maintenance_details import UpdateMaintenanceDetails
 from .update_read_endpoint_details import UpdateReadEndpointDetails
 from .update_replica_details import UpdateReplicaDetails
 from .update_rest_details import UpdateRestDetails
+from .update_telemetry_configuration_details import UpdateTelemetryConfigurationDetails
 from .validate_backup_details import ValidateBackupDetails
 from .version import Version
 from .version_summary import VersionSummary
@@ -134,6 +144,8 @@ mysql_type_mapping = {
     "ChannelFilter": ChannelFilter,
     "ChannelSource": ChannelSource,
     "ChannelSourceMysql": ChannelSourceMysql,
+    "ChannelStatus": ChannelStatus,
+    "ChannelStatusResult": ChannelStatusResult,
     "ChannelSummary": ChannelSummary,
     "ChannelTarget": ChannelTarget,
     "ChannelTargetDbSystem": ChannelTargetDbSystem,
@@ -163,6 +175,7 @@ mysql_type_mapping = {
     "CreateReadEndpointDetails": CreateReadEndpointDetails,
     "CreateReplicaDetails": CreateReplicaDetails,
     "CreateRestDetails": CreateRestDetails,
+    "CreateTelemetryConfigurationDetails": CreateTelemetryConfigurationDetails,
     "CustomerContact": CustomerContact,
     "DataStorage": DataStorage,
     "DataStorageDetails": DataStorageDetails,
@@ -177,12 +190,16 @@ mysql_type_mapping = {
     "DbSystemSourceFromNone": DbSystemSourceFromNone,
     "DbSystemSourceFromPitr": DbSystemSourceFromPitr,
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,
+    "DbSystemStatus": DbSystemStatus,
+    "DbSystemStatusResult": DbSystemStatusResult,
     "DbSystemSummary": DbSystemSummary,
     "DeletionPolicyDetails": DeletionPolicyDetails,
+    "DestinationConfiguration": DestinationConfiguration,
     "EncryptDataDetails": EncryptDataDetails,
     "ErrorOnAnonymousHandling": ErrorOnAnonymousHandling,
     "ExportBackupDetails": ExportBackupDetails,
     "ExportOptions": ExportOptions,
+    "GenerateDbSystemStatusDetails": GenerateDbSystemStatusDetails,
     "HeatWaveCluster": HeatWaveCluster,
     "HeatWaveClusterMemoryEstimate": HeatWaveClusterMemoryEstimate,
     "HeatWaveClusterSchemaMemoryEstimate": HeatWaveClusterSchemaMemoryEstimate,
@@ -190,6 +207,7 @@ mysql_type_mapping = {
     "HeatWaveClusterTableMemoryEstimate": HeatWaveClusterTableMemoryEstimate,
     "HeatWaveNode": HeatWaveNode,
     "InitializationVariables": InitializationVariables,
+    "LoggingDestinationConfiguration": LoggingDestinationConfiguration,
     "MaintenanceDetails": MaintenanceDetails,
     "MaintenanceDisabledWindow": MaintenanceDisabledWindow,
     "MaintenanceEvent": MaintenanceEvent,
@@ -207,6 +225,7 @@ mysql_type_mapping = {
     "SecureConnectionDetails": SecureConnectionDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,
+    "TelemetryConfigurationDetails": TelemetryConfigurationDetails,
     "UpdateBackupDetails": UpdateBackupDetails,
     "UpdateBackupPolicyDetails": UpdateBackupPolicyDetails,
     "UpdateChannelDetails": UpdateChannelDetails,
@@ -223,6 +242,7 @@ mysql_type_mapping = {
     "UpdateReadEndpointDetails": UpdateReadEndpointDetails,
     "UpdateReplicaDetails": UpdateReplicaDetails,
     "UpdateRestDetails": UpdateRestDetails,
+    "UpdateTelemetryConfigurationDetails": UpdateTelemetryConfigurationDetails,
     "ValidateBackupDetails": ValidateBackupDetails,
     "Version": Version,
     "VersionSummary": VersionSummary,

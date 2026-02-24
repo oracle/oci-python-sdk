@@ -17,6 +17,7 @@ from .change_fsu_action_compartment_details import ChangeFsuActionCompartmentDet
 from .change_fsu_collection_compartment_details import ChangeFsuCollectionCompartmentDetails
 from .change_fsu_cycle_compartment_details import ChangeFsuCycleCompartmentDetails
 from .change_fsu_discovery_compartment_details import ChangeFsuDiscoveryCompartmentDetails
+from .change_fsu_readiness_check_compartment_details import ChangeFsuReadinessCheckCompartmentDetails
 from .cleanup_action import CleanupAction
 from .cleanup_action_summary import CleanupActionSummary
 from .cleanup_fsu_job import CleanupFsuJob
@@ -33,6 +34,7 @@ from .create_fsu_action_details import CreateFsuActionDetails
 from .create_fsu_collection_details import CreateFsuCollectionDetails
 from .create_fsu_cycle_details import CreateFsuCycleDetails
 from .create_fsu_discovery_details import CreateFsuDiscoveryDetails
+from .create_fsu_readiness_check_details import CreateFsuReadinessCheckDetails
 from .create_gi_fsu_collection_details import CreateGiFsuCollectionDetails
 from .create_gi_software_component_details import CreateGiSoftwareComponentDetails
 from .create_guest_os_fsu_collection_details import CreateGuestOsFsuCollectionDetails
@@ -48,6 +50,7 @@ from .create_service_availability_factor_batching_strategy_details import Create
 from .create_software_component_details import CreateSoftwareComponentDetails
 from .create_stage_action_details import CreateStageActionDetails
 from .create_start_time_schedule_details import CreateStartTimeScheduleDetails
+from .create_target_fsu_readiness_check_details import CreateTargetFsuReadinessCheckDetails
 from .create_upgrade_fsu_cycle import CreateUpgradeFsuCycle
 from .custom_gi_goal_version_details import CustomGiGoalVersionDetails
 from .database_target_summary import DatabaseTargetSummary
@@ -100,6 +103,9 @@ from .fsu_job_collection import FsuJobCollection
 from .fsu_job_output_summary import FsuJobOutputSummary
 from .fsu_job_output_summary_collection import FsuJobOutputSummaryCollection
 from .fsu_job_summary import FsuJobSummary
+from .fsu_readiness_check import FsuReadinessCheck
+from .fsu_readiness_check_collection import FsuReadinessCheckCollection
+from .fsu_readiness_check_summary import FsuReadinessCheckSummary
 from .gi_collection import GiCollection
 from .gi_compartment_id_filter import GiCompartmentIdFilter
 from .gi_defined_tags_filter import GiDefinedTagsFilter
@@ -152,10 +158,12 @@ from .none_schedule_details import NoneScheduleDetails
 from .oracle_gi_goal_version_details import OracleGiGoalVersionDetails
 from .oracle_guest_os_goal_version_details import OracleGuestOsGoalVersionDetails
 from .patch_fsu_cycle import PatchFsuCycle
+from .patching_issue_entry import PatchingIssueEntry
 from .precheck_action import PrecheckAction
 from .precheck_action_summary import PrecheckActionSummary
 from .precheck_fsu_job import PrecheckFsuJob
 from .precheck_fsu_job_summary import PrecheckFsuJobSummary
+from .readiness_check_target_entry import ReadinessCheckTargetEntry
 from .remove_fsu_collection_targets_details import RemoveFsuCollectionTargetsDetails
 from .rollback_action import RollbackAction
 from .rollback_action_summary import RollbackActionSummary
@@ -179,6 +187,7 @@ from .stage_fsu_job_summary import StageFsuJobSummary
 from .start_time_schedule_details import StartTimeScheduleDetails
 from .target_details import TargetDetails
 from .target_entry import TargetEntry
+from .target_fsu_readiness_check import TargetFsuReadinessCheck
 from .target_ids_remove_targets_details import TargetIdsRemoveTargetsDetails
 from .target_progress_summary import TargetProgressSummary
 from .target_summary import TargetSummary
@@ -192,6 +201,7 @@ from .update_fsu_collection_details import UpdateFsuCollectionDetails
 from .update_fsu_cycle_details import UpdateFsuCycleDetails
 from .update_fsu_discovery_details import UpdateFsuDiscoveryDetails
 from .update_fsu_job_details import UpdateFsuJobDetails
+from .update_fsu_readiness_check_details import UpdateFsuReadinessCheckDetails
 from .update_non_rolling_batching_strategy_details import UpdateNonRollingBatchingStrategyDetails
 from .update_patch_fsu_cycle import UpdatePatchFsuCycle
 from .update_precheck_action_details import UpdatePrecheckActionDetails
@@ -231,6 +241,7 @@ fleet_software_update_type_mapping = {
     "ChangeFsuCollectionCompartmentDetails": ChangeFsuCollectionCompartmentDetails,
     "ChangeFsuCycleCompartmentDetails": ChangeFsuCycleCompartmentDetails,
     "ChangeFsuDiscoveryCompartmentDetails": ChangeFsuDiscoveryCompartmentDetails,
+    "ChangeFsuReadinessCheckCompartmentDetails": ChangeFsuReadinessCheckCompartmentDetails,
     "CleanupAction": CleanupAction,
     "CleanupActionSummary": CleanupActionSummary,
     "CleanupFsuJob": CleanupFsuJob,
@@ -247,6 +258,7 @@ fleet_software_update_type_mapping = {
     "CreateFsuCollectionDetails": CreateFsuCollectionDetails,
     "CreateFsuCycleDetails": CreateFsuCycleDetails,
     "CreateFsuDiscoveryDetails": CreateFsuDiscoveryDetails,
+    "CreateFsuReadinessCheckDetails": CreateFsuReadinessCheckDetails,
     "CreateGiFsuCollectionDetails": CreateGiFsuCollectionDetails,
     "CreateGiSoftwareComponentDetails": CreateGiSoftwareComponentDetails,
     "CreateGuestOsFsuCollectionDetails": CreateGuestOsFsuCollectionDetails,
@@ -262,6 +274,7 @@ fleet_software_update_type_mapping = {
     "CreateSoftwareComponentDetails": CreateSoftwareComponentDetails,
     "CreateStageActionDetails": CreateStageActionDetails,
     "CreateStartTimeScheduleDetails": CreateStartTimeScheduleDetails,
+    "CreateTargetFsuReadinessCheckDetails": CreateTargetFsuReadinessCheckDetails,
     "CreateUpgradeFsuCycle": CreateUpgradeFsuCycle,
     "CustomGiGoalVersionDetails": CustomGiGoalVersionDetails,
     "DatabaseTargetSummary": DatabaseTargetSummary,
@@ -314,6 +327,9 @@ fleet_software_update_type_mapping = {
     "FsuJobOutputSummary": FsuJobOutputSummary,
     "FsuJobOutputSummaryCollection": FsuJobOutputSummaryCollection,
     "FsuJobSummary": FsuJobSummary,
+    "FsuReadinessCheck": FsuReadinessCheck,
+    "FsuReadinessCheckCollection": FsuReadinessCheckCollection,
+    "FsuReadinessCheckSummary": FsuReadinessCheckSummary,
     "GiCollection": GiCollection,
     "GiCompartmentIdFilter": GiCompartmentIdFilter,
     "GiDefinedTagsFilter": GiDefinedTagsFilter,
@@ -366,10 +382,12 @@ fleet_software_update_type_mapping = {
     "OracleGiGoalVersionDetails": OracleGiGoalVersionDetails,
     "OracleGuestOsGoalVersionDetails": OracleGuestOsGoalVersionDetails,
     "PatchFsuCycle": PatchFsuCycle,
+    "PatchingIssueEntry": PatchingIssueEntry,
     "PrecheckAction": PrecheckAction,
     "PrecheckActionSummary": PrecheckActionSummary,
     "PrecheckFsuJob": PrecheckFsuJob,
     "PrecheckFsuJobSummary": PrecheckFsuJobSummary,
+    "ReadinessCheckTargetEntry": ReadinessCheckTargetEntry,
     "RemoveFsuCollectionTargetsDetails": RemoveFsuCollectionTargetsDetails,
     "RollbackAction": RollbackAction,
     "RollbackActionSummary": RollbackActionSummary,
@@ -393,6 +411,7 @@ fleet_software_update_type_mapping = {
     "StartTimeScheduleDetails": StartTimeScheduleDetails,
     "TargetDetails": TargetDetails,
     "TargetEntry": TargetEntry,
+    "TargetFsuReadinessCheck": TargetFsuReadinessCheck,
     "TargetIdsRemoveTargetsDetails": TargetIdsRemoveTargetsDetails,
     "TargetProgressSummary": TargetProgressSummary,
     "TargetSummary": TargetSummary,
@@ -406,6 +425,7 @@ fleet_software_update_type_mapping = {
     "UpdateFsuCycleDetails": UpdateFsuCycleDetails,
     "UpdateFsuDiscoveryDetails": UpdateFsuDiscoveryDetails,
     "UpdateFsuJobDetails": UpdateFsuJobDetails,
+    "UpdateFsuReadinessCheckDetails": UpdateFsuReadinessCheckDetails,
     "UpdateNonRollingBatchingStrategyDetails": UpdateNonRollingBatchingStrategyDetails,
     "UpdatePatchFsuCycle": UpdatePatchFsuCycle,
     "UpdatePrecheckActionDetails": UpdatePrecheckActionDetails,

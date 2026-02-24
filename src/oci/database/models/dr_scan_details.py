@@ -32,20 +32,27 @@ class DrScanDetails(object):
             The value to assign to the ips property of this DrScanDetails.
         :type ips: list[str]
 
+        :param scan_listener_port_tcp_ssl:
+            The value to assign to the scan_listener_port_tcp_ssl property of this DrScanDetails.
+        :type scan_listener_port_tcp_ssl: int
+
         """
         self.swagger_types = {
             'hostname': 'str',
             'scan_listener_port_tcp': 'int',
-            'ips': 'list[str]'
+            'ips': 'list[str]',
+            'scan_listener_port_tcp_ssl': 'int'
         }
         self.attribute_map = {
             'hostname': 'hostname',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
-            'ips': 'ips'
+            'ips': 'ips',
+            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl'
         }
         self._hostname = None
         self._scan_listener_port_tcp = None
         self._ips = None
+        self._scan_listener_port_tcp_ssl = None
 
     @property
     def hostname(self):
@@ -118,6 +125,30 @@ class DrScanDetails(object):
         :type: list[str]
         """
         self._ips = ips
+
+    @property
+    def scan_listener_port_tcp_ssl(self):
+        """
+        Gets the scan_listener_port_tcp_ssl of this DrScanDetails.
+        The DR SCAN TCPIP SSL port. Default is 2484.
+
+
+        :return: The scan_listener_port_tcp_ssl of this DrScanDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp_ssl
+
+    @scan_listener_port_tcp_ssl.setter
+    def scan_listener_port_tcp_ssl(self, scan_listener_port_tcp_ssl):
+        """
+        Sets the scan_listener_port_tcp_ssl of this DrScanDetails.
+        The DR SCAN TCPIP SSL port. Default is 2484.
+
+
+        :param scan_listener_port_tcp_ssl: The scan_listener_port_tcp_ssl of this DrScanDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
 
     def __repr__(self):
         return formatted_flat_dict(self)
