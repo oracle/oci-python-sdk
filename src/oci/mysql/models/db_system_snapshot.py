@@ -176,6 +176,10 @@ class DbSystemSnapshot(object):
             The value to assign to the read_endpoint property of this DbSystemSnapshot.
         :type read_endpoint: oci.mysql.models.ReadEndpointDetails
 
+        :param telemetry_configuration:
+            The value to assign to the telemetry_configuration property of this DbSystemSnapshot.
+        :type telemetry_configuration: oci.mysql.models.TelemetryConfigurationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -211,7 +215,8 @@ class DbSystemSnapshot(object):
             'secure_connections': 'SecureConnectionDetails',
             'encrypt_data': 'EncryptDataDetails',
             'region': 'str',
-            'read_endpoint': 'ReadEndpointDetails'
+            'read_endpoint': 'ReadEndpointDetails',
+            'telemetry_configuration': 'TelemetryConfigurationDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -247,7 +252,8 @@ class DbSystemSnapshot(object):
             'secure_connections': 'secureConnections',
             'encrypt_data': 'encryptData',
             'region': 'region',
-            'read_endpoint': 'readEndpoint'
+            'read_endpoint': 'readEndpoint',
+            'telemetry_configuration': 'telemetryConfiguration'
         }
         self._id = None
         self._display_name = None
@@ -283,6 +289,7 @@ class DbSystemSnapshot(object):
         self._encrypt_data = None
         self._region = None
         self._read_endpoint = None
+        self._telemetry_configuration = None
 
     @property
     def id(self):
@@ -1117,6 +1124,26 @@ class DbSystemSnapshot(object):
         :type: oci.mysql.models.ReadEndpointDetails
         """
         self._read_endpoint = read_endpoint
+
+    @property
+    def telemetry_configuration(self):
+        """
+        Gets the telemetry_configuration of this DbSystemSnapshot.
+
+        :return: The telemetry_configuration of this DbSystemSnapshot.
+        :rtype: oci.mysql.models.TelemetryConfigurationDetails
+        """
+        return self._telemetry_configuration
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, telemetry_configuration):
+        """
+        Sets the telemetry_configuration of this DbSystemSnapshot.
+
+        :param telemetry_configuration: The telemetry_configuration of this DbSystemSnapshot.
+        :type: oci.mysql.models.TelemetryConfigurationDetails
+        """
+        self._telemetry_configuration = telemetry_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

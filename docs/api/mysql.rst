@@ -42,6 +42,8 @@ Mysql
     oci.mysql.models.ChannelFilter
     oci.mysql.models.ChannelSource
     oci.mysql.models.ChannelSourceMysql
+    oci.mysql.models.ChannelStatus
+    oci.mysql.models.ChannelStatusResult
     oci.mysql.models.ChannelSummary
     oci.mysql.models.ChannelTarget
     oci.mysql.models.ChannelTargetDbSystem
@@ -71,6 +73,7 @@ Mysql
     oci.mysql.models.CreateReadEndpointDetails
     oci.mysql.models.CreateReplicaDetails
     oci.mysql.models.CreateRestDetails
+    oci.mysql.models.CreateTelemetryConfigurationDetails
     oci.mysql.models.CustomerContact
     oci.mysql.models.DataStorage
     oci.mysql.models.DataStorageDetails
@@ -85,12 +88,16 @@ Mysql
     oci.mysql.models.DbSystemSourceFromNone
     oci.mysql.models.DbSystemSourceFromPitr
     oci.mysql.models.DbSystemSourceImportFromUrl
+    oci.mysql.models.DbSystemStatus
+    oci.mysql.models.DbSystemStatusResult
     oci.mysql.models.DbSystemSummary
     oci.mysql.models.DeletionPolicyDetails
+    oci.mysql.models.DestinationConfiguration
     oci.mysql.models.EncryptDataDetails
     oci.mysql.models.ErrorOnAnonymousHandling
     oci.mysql.models.ExportBackupDetails
     oci.mysql.models.ExportOptions
+    oci.mysql.models.GenerateDbSystemStatusDetails
     oci.mysql.models.HeatWaveCluster
     oci.mysql.models.HeatWaveClusterMemoryEstimate
     oci.mysql.models.HeatWaveClusterSchemaMemoryEstimate
@@ -98,6 +105,7 @@ Mysql
     oci.mysql.models.HeatWaveClusterTableMemoryEstimate
     oci.mysql.models.HeatWaveNode
     oci.mysql.models.InitializationVariables
+    oci.mysql.models.LoggingDestinationConfiguration
     oci.mysql.models.MaintenanceDetails
     oci.mysql.models.MaintenanceDisabledWindow
     oci.mysql.models.MaintenanceEvent
@@ -115,6 +123,7 @@ Mysql
     oci.mysql.models.SecureConnectionDetails
     oci.mysql.models.ShapeSummary
     oci.mysql.models.StopDbSystemDetails
+    oci.mysql.models.TelemetryConfigurationDetails
     oci.mysql.models.UpdateBackupDetails
     oci.mysql.models.UpdateBackupPolicyDetails
     oci.mysql.models.UpdateChannelDetails
@@ -131,6 +140,7 @@ Mysql
     oci.mysql.models.UpdateReadEndpointDetails
     oci.mysql.models.UpdateReplicaDetails
     oci.mysql.models.UpdateRestDetails
+    oci.mysql.models.UpdateTelemetryConfigurationDetails
     oci.mysql.models.ValidateBackupDetails
     oci.mysql.models.Version
     oci.mysql.models.VersionSummary

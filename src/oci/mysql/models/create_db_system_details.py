@@ -182,6 +182,10 @@ class CreateDbSystemDetails(object):
             The value to assign to the read_endpoint property of this CreateDbSystemDetails.
         :type read_endpoint: oci.mysql.models.CreateReadEndpointDetails
 
+        :param telemetry_configuration:
+            The value to assign to the telemetry_configuration property of this CreateDbSystemDetails.
+        :type telemetry_configuration: oci.mysql.models.CreateTelemetryConfigurationDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -219,7 +223,8 @@ class CreateDbSystemDetails(object):
             'database_mode': 'str',
             'access_mode': 'str',
             'customer_contacts': 'list[CustomerContact]',
-            'read_endpoint': 'CreateReadEndpointDetails'
+            'read_endpoint': 'CreateReadEndpointDetails',
+            'telemetry_configuration': 'CreateTelemetryConfigurationDetails'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -257,7 +262,8 @@ class CreateDbSystemDetails(object):
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
             'customer_contacts': 'customerContacts',
-            'read_endpoint': 'readEndpoint'
+            'read_endpoint': 'readEndpoint',
+            'telemetry_configuration': 'telemetryConfiguration'
         }
         self._display_name = None
         self._description = None
@@ -295,6 +301,7 @@ class CreateDbSystemDetails(object):
         self._access_mode = None
         self._customer_contacts = None
         self._read_endpoint = None
+        self._telemetry_configuration = None
 
     @property
     def display_name(self):
@@ -1241,6 +1248,26 @@ class CreateDbSystemDetails(object):
         :type: oci.mysql.models.CreateReadEndpointDetails
         """
         self._read_endpoint = read_endpoint
+
+    @property
+    def telemetry_configuration(self):
+        """
+        Gets the telemetry_configuration of this CreateDbSystemDetails.
+
+        :return: The telemetry_configuration of this CreateDbSystemDetails.
+        :rtype: oci.mysql.models.CreateTelemetryConfigurationDetails
+        """
+        return self._telemetry_configuration
+
+    @telemetry_configuration.setter
+    def telemetry_configuration(self, telemetry_configuration):
+        """
+        Sets the telemetry_configuration of this CreateDbSystemDetails.
+
+        :param telemetry_configuration: The telemetry_configuration of this CreateDbSystemDetails.
+        :type: oci.mysql.models.CreateTelemetryConfigurationDetails
+        """
+        self._telemetry_configuration = telemetry_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

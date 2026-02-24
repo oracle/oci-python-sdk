@@ -52,6 +52,10 @@ class UpdatePrivateEndpointDetails(object):
             The value to assign to the scan_details property of this UpdatePrivateEndpointDetails.
         :type scan_details: list[oci.data_flow.models.Scan]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdatePrivateEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -61,7 +65,8 @@ class UpdatePrivateEndpointDetails(object):
             'freeform_tags': 'dict(str, str)',
             'max_host_count': 'int',
             'nsg_ids': 'list[str]',
-            'scan_details': 'list[Scan]'
+            'scan_details': 'list[Scan]',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
@@ -71,7 +76,8 @@ class UpdatePrivateEndpointDetails(object):
             'freeform_tags': 'freeformTags',
             'max_host_count': 'maxHostCount',
             'nsg_ids': 'nsgIds',
-            'scan_details': 'scanDetails'
+            'scan_details': 'scanDetails',
+            'security_attributes': 'securityAttributes'
         }
         self._defined_tags = None
         self._description = None
@@ -81,6 +87,7 @@ class UpdatePrivateEndpointDetails(object):
         self._max_host_count = None
         self._nsg_ids = None
         self._scan_details = None
+        self._security_attributes = None
 
     @property
     def defined_tags(self):
@@ -297,6 +304,40 @@ class UpdatePrivateEndpointDetails(object):
         :type: list[oci.data_flow.models.Scan]
         """
         self._scan_details = scan_details
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdatePrivateEndpointDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdatePrivateEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdatePrivateEndpointDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdatePrivateEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

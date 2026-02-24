@@ -33,6 +33,18 @@ class CreateZoneDetails(CreateZoneBaseDetails):
     #: This constant has a value of "PRIVATE"
     SCOPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the resolution_mode property of a CreateZoneDetails.
+    #: This constant has a value of "STATIC"
+    RESOLUTION_MODE_STATIC = "STATIC"
+
+    #: A constant which can be used with the resolution_mode property of a CreateZoneDetails.
+    #: This constant has a value of "TRANSPARENT"
+    RESOLUTION_MODE_TRANSPARENT = "TRANSPARENT"
+
+    #: A constant which can be used with the resolution_mode property of a CreateZoneDetails.
+    #: This constant has a value of "RTYPE_TRANSPARENT"
+    RESOLUTION_MODE_RTYPE_TRANSPARENT = "RTYPE_TRANSPARENT"
+
     #: A constant which can be used with the dnssec_state property of a CreateZoneDetails.
     #: This constant has a value of "ENABLED"
     DNSSEC_STATE_ENABLED = "ENABLED"
@@ -90,6 +102,11 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             The value to assign to the external_downstreams property of this CreateZoneDetails.
         :type external_downstreams: list[oci.dns.models.ExternalDownstream]
 
+        :param resolution_mode:
+            The value to assign to the resolution_mode property of this CreateZoneDetails.
+            Allowed values for this property are: "STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT"
+        :type resolution_mode: str
+
         :param dnssec_state:
             The value to assign to the dnssec_state property of this CreateZoneDetails.
             Allowed values for this property are: "ENABLED", "DISABLED"
@@ -107,6 +124,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'scope': 'str',
             'external_masters': 'list[ExternalMaster]',
             'external_downstreams': 'list[ExternalDownstream]',
+            'resolution_mode': 'str',
             'dnssec_state': 'str'
         }
         self.attribute_map = {
@@ -120,6 +138,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'scope': 'scope',
             'external_masters': 'externalMasters',
             'external_downstreams': 'externalDownstreams',
+            'resolution_mode': 'resolutionMode',
             'dnssec_state': 'dnssecState'
         }
         self._migration_source = None
@@ -132,6 +151,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         self._scope = None
         self._external_masters = None
         self._external_downstreams = None
+        self._resolution_mode = None
         self._dnssec_state = None
         self._migration_source = 'NONE'
 
@@ -274,6 +294,37 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         :type: list[oci.dns.models.ExternalDownstream]
         """
         self._external_downstreams = external_downstreams
+
+    @property
+    def resolution_mode(self):
+        """
+        Gets the resolution_mode of this CreateZoneDetails.
+        The resolution mode of a zone defines behavior related to how query responses can be handled.
+
+        Allowed values for this property are: "STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT"
+
+
+        :return: The resolution_mode of this CreateZoneDetails.
+        :rtype: str
+        """
+        return self._resolution_mode
+
+    @resolution_mode.setter
+    def resolution_mode(self, resolution_mode):
+        """
+        Sets the resolution_mode of this CreateZoneDetails.
+        The resolution mode of a zone defines behavior related to how query responses can be handled.
+
+
+        :param resolution_mode: The resolution_mode of this CreateZoneDetails.
+        :type: str
+        """
+        allowed_values = ["STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT"]
+        if not value_allowed_none_or_none_sentinel(resolution_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `resolution_mode`, must be None or one of {allowed_values}"
+            )
+        self._resolution_mode = resolution_mode
 
     @property
     def dnssec_state(self):

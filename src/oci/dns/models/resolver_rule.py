@@ -76,8 +76,8 @@ class ResolverRule(object):
     def client_address_conditions(self):
         """
         **[Required]** Gets the client_address_conditions of this ResolverRule.
-        A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action
-        to apply.
+        A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of
+        the CIDR blocks.
 
 
         :return: The client_address_conditions of this ResolverRule.
@@ -89,8 +89,8 @@ class ResolverRule(object):
     def client_address_conditions(self, client_address_conditions):
         """
         Sets the client_address_conditions of this ResolverRule.
-        A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action
-        to apply.
+        A list of CIDR blocks. In order for the rule action to apply, the query must come from a client within one of
+        the CIDR blocks.
 
 
         :param client_address_conditions: The client_address_conditions of this ResolverRule.
@@ -102,7 +102,8 @@ class ResolverRule(object):
     def qname_cover_conditions(self):
         """
         **[Required]** Gets the qname_cover_conditions of this ResolverRule.
-        A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain
+        of one of the listed domains.
 
 
         :return: The qname_cover_conditions of this ResolverRule.
@@ -114,7 +115,8 @@ class ResolverRule(object):
     def qname_cover_conditions(self, qname_cover_conditions):
         """
         Sets the qname_cover_conditions of this ResolverRule.
-        A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+        A list of domain names. In order for the rule action to apply, the query must either match or be a subdomain
+        of one of the listed domains.
 
 
         :param qname_cover_conditions: The qname_cover_conditions of this ResolverRule.
