@@ -567,7 +567,7 @@ class Agent:
     def _sync_function_tools_to_remote(self) -> None:
         """
         Synchronize local and remote function tools.
-
+        Only remote tools that have ADK freeform tags are considered (tools created by ADK).
         """
         logger.info("Checking synchronization of local and remote function tools...")
         local_func_tools = self._local_handler_functions
@@ -575,11 +575,13 @@ class Agent:
             compartment_id=self.agent_details["compartment_id"],
             agent_id=self.agent_details["agent_id"],
         )
+        # Filter for active function tools with ADK tags
         remote_func_tools = [
             tool
             for tool in remote_func_tools
-            if tool.get("lifecycle_state") == "ACTIVE" and tool.get("tool_config", {})
-            .get("tool_config_type") == "FUNCTION_CALLING_TOOL_CONFIG"
+            if (tool.get("lifecycle_state") == "ACTIVE"
+                and set(FREEFORM_TAGS.keys()).issubset(tool.get("freeform_tags", {}).keys())
+                and tool.get("tool_config", {}).get("tool_config_type") == "FUNCTION_CALLING_TOOL_CONFIG")
         ]
         self._log_tool_counts(local_func_tools, remote_func_tools)
         self._sync_local_and_remote_tools(local_func_tools, remote_func_tools)
