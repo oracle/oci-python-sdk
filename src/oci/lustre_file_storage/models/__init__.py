@@ -6,19 +6,26 @@
 
 from __future__ import absolute_import
 
+from .available_maintenance_schedule_start_time_collection import AvailableMaintenanceScheduleStartTimeCollection
+from .available_maintenance_schedule_start_time_summary import AvailableMaintenanceScheduleStartTimeSummary
+from .available_override_maintenance_start_time_collection import AvailableOverrideMaintenanceStartTimeCollection
+from .available_override_maintenance_start_time_summary import AvailableOverrideMaintenanceStartTimeSummary
 from .change_lustre_file_system_compartment_details import ChangeLustreFileSystemCompartmentDetails
 from .change_object_storage_link_compartment_details import ChangeObjectStorageLinkCompartmentDetails
 from .cluster_placement_group import ClusterPlacementGroup
 from .create_lustre_file_system_details import CreateLustreFileSystemDetails
 from .create_object_storage_link_details import CreateObjectStorageLinkDetails
+from .date_and_time import DateAndTime
 from .lustre_file_system import LustreFileSystem
 from .lustre_file_system_collection import LustreFileSystemCollection
 from .lustre_file_system_summary import LustreFileSystemSummary
 from .maintenance_window import MaintenanceWindow
+from .maintenance_window_metadata_details import MaintenanceWindowMetadataDetails
 from .network_security_group import NetworkSecurityGroup
 from .object_storage_link import ObjectStorageLink
 from .object_storage_link_collection import ObjectStorageLinkCollection
 from .object_storage_link_summary import ObjectStorageLinkSummary
+from .override_maintenance_details import OverrideMaintenanceDetails
 from .root_squash_configuration import RootSquashConfiguration
 from .subnet import Subnet
 from .sync_job import SyncJob
@@ -37,19 +44,26 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for lustre_file_storage services.
 lustre_file_storage_type_mapping = {
+    "AvailableMaintenanceScheduleStartTimeCollection": AvailableMaintenanceScheduleStartTimeCollection,
+    "AvailableMaintenanceScheduleStartTimeSummary": AvailableMaintenanceScheduleStartTimeSummary,
+    "AvailableOverrideMaintenanceStartTimeCollection": AvailableOverrideMaintenanceStartTimeCollection,
+    "AvailableOverrideMaintenanceStartTimeSummary": AvailableOverrideMaintenanceStartTimeSummary,
     "ChangeLustreFileSystemCompartmentDetails": ChangeLustreFileSystemCompartmentDetails,
     "ChangeObjectStorageLinkCompartmentDetails": ChangeObjectStorageLinkCompartmentDetails,
     "ClusterPlacementGroup": ClusterPlacementGroup,
     "CreateLustreFileSystemDetails": CreateLustreFileSystemDetails,
     "CreateObjectStorageLinkDetails": CreateObjectStorageLinkDetails,
+    "DateAndTime": DateAndTime,
     "LustreFileSystem": LustreFileSystem,
     "LustreFileSystemCollection": LustreFileSystemCollection,
     "LustreFileSystemSummary": LustreFileSystemSummary,
     "MaintenanceWindow": MaintenanceWindow,
+    "MaintenanceWindowMetadataDetails": MaintenanceWindowMetadataDetails,
     "NetworkSecurityGroup": NetworkSecurityGroup,
     "ObjectStorageLink": ObjectStorageLink,
     "ObjectStorageLinkCollection": ObjectStorageLinkCollection,
     "ObjectStorageLinkSummary": ObjectStorageLinkSummary,
+    "OverrideMaintenanceDetails": OverrideMaintenanceDetails,
     "RootSquashConfiguration": RootSquashConfiguration,
     "Subnet": Subnet,
     "SyncJob": SyncJob,

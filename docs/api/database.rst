@@ -190,6 +190,7 @@ Database
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
     oci.database.models.CreateDatabaseBase
     oci.database.models.CreateDatabaseDetails
+    oci.database.models.CreateDatabaseForStandbyDbSystemDetails
     oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
     oci.database.models.CreateDatabaseFromBackup
     oci.database.models.CreateDatabaseFromBackupDetails
@@ -199,6 +200,7 @@ Database
     oci.database.models.CreateDbConnectionBundleDetails
     oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails
+    oci.database.models.CreateDbHomeForStandbyDbSystem
     oci.database.models.CreateDbHomeFromBackupDetails
     oci.database.models.CreateDbHomeFromDatabaseDetails
     oci.database.models.CreateDbHomeFromDbSystemDetails
@@ -290,6 +292,11 @@ Database
     oci.database.models.DbSystem
     oci.database.models.DbSystemComputePerformanceSummary
     oci.database.models.DbSystemOptions
+    oci.database.models.DbSystemOsPatchDetailsCollection
+    oci.database.models.DbSystemOsPatchDetailsSummary
+    oci.database.models.DbSystemOsPatchHistoryEntry
+    oci.database.models.DbSystemOsPatchHistoryEntryCollection
+    oci.database.models.DbSystemOsPatchHistoryEntrySummary
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemStoragePerformanceSummary
     oci.database.models.DbSystemSummary
@@ -345,6 +352,7 @@ Database
     oci.database.models.ExascaleDbStorageInputDetails
     oci.database.models.ExascaleDbStorageVault
     oci.database.models.ExascaleDbStorageVaultSummary
+    oci.database.models.ExecuteDbSystemOsPatchDetails
     oci.database.models.ExecutionAction
     oci.database.models.ExecutionActionMember
     oci.database.models.ExecutionActionSummary
@@ -391,6 +399,7 @@ Database
     oci.database.models.LaunchDbSystemFromBackupDetails
     oci.database.models.LaunchDbSystemFromDatabaseDetails
     oci.database.models.LaunchDbSystemFromDbSystemDetails
+    oci.database.models.LaunchStandbyDbSystemDetails
     oci.database.models.LocalClonePluggableDatabaseDetails
     oci.database.models.LongTermBackUpScheduleDetails
     oci.database.models.MaintenanceRun

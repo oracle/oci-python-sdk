@@ -64,6 +64,14 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
             The value to assign to the vmcluster_details property of this ExadataExaccConfigurationSummary.
         :type vmcluster_details: list[oci.opsi.models.VmClusterSummary]
 
+        :param exadata_shape:
+            The value to assign to the exadata_shape property of this ExadataExaccConfigurationSummary.
+        :type exadata_shape: str
+
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this ExadataExaccConfigurationSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param management_agent_id:
             The value to assign to the management_agent_id property of this ExadataExaccConfigurationSummary.
         :type management_agent_id: str
@@ -84,6 +92,8 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'vmcluster_details': 'list[VmClusterSummary]',
+            'exadata_shape': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'management_agent_id': 'str',
             'parent_id': 'str'
         }
@@ -98,6 +108,8 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'vmcluster_details': 'vmclusterDetails',
+            'exadata_shape': 'exadataShape',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'management_agent_id': 'managementAgentId',
             'parent_id': 'parentId'
         }
@@ -111,6 +123,8 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
         self._defined_tags = None
         self._freeform_tags = None
         self._vmcluster_details = None
+        self._exadata_shape = None
+        self._chargeback_plan_details = None
         self._management_agent_id = None
         self._parent_id = None
         self._entity_source = 'MACS_MANAGED_CLOUD_EXADATA'

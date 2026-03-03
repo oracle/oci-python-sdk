@@ -93,6 +93,10 @@ class DatabaseConfigurationSummary(object):
             The value to assign to the database_version property of this DatabaseConfigurationSummary.
         :type database_version: str
 
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this DatabaseConfigurationSummary.
+        :type is_advanced_features_enabled: bool
+
         :param cdb_name:
             The value to assign to the cdb_name property of this DatabaseConfigurationSummary.
         :type cdb_name: str
@@ -118,6 +122,7 @@ class DatabaseConfigurationSummary(object):
             'database_display_name': 'str',
             'database_type': 'str',
             'database_version': 'str',
+            'is_advanced_features_enabled': 'bool',
             'cdb_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
@@ -131,6 +136,7 @@ class DatabaseConfigurationSummary(object):
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
             'database_version': 'databaseVersion',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
             'cdb_name': 'cdbName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
@@ -143,6 +149,7 @@ class DatabaseConfigurationSummary(object):
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+        self._is_advanced_features_enabled = None
         self._cdb_name = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -363,6 +370,30 @@ class DatabaseConfigurationSummary(object):
         :type: str
         """
         self._database_version = database_version
+
+    @property
+    def is_advanced_features_enabled(self):
+        """
+        **[Required]** Gets the is_advanced_features_enabled of this DatabaseConfigurationSummary.
+        Flag is to identify if advanced features for autonomous database is enabled or not
+
+
+        :return: The is_advanced_features_enabled of this DatabaseConfigurationSummary.
+        :rtype: bool
+        """
+        return self._is_advanced_features_enabled
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, is_advanced_features_enabled):
+        """
+        Sets the is_advanced_features_enabled of this DatabaseConfigurationSummary.
+        Flag is to identify if advanced features for autonomous database is enabled or not
+
+
+        :param is_advanced_features_enabled: The is_advanced_features_enabled of this DatabaseConfigurationSummary.
+        :type: bool
+        """
+        self._is_advanced_features_enabled = is_advanced_features_enabled
 
     @property
     def cdb_name(self):

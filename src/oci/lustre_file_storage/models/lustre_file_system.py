@@ -172,6 +172,10 @@ class LustreFileSystem(object):
             The value to assign to the maintenance_window property of this LustreFileSystem.
         :type maintenance_window: oci.lustre_file_storage.models.MaintenanceWindow
 
+        :param maintenance_window_metadata:
+            The value to assign to the maintenance_window_metadata property of this LustreFileSystem.
+        :type maintenance_window_metadata: oci.lustre_file_storage.models.MaintenanceWindowMetadataDetails
+
         :param root_squash_configuration:
             The value to assign to the root_squash_configuration property of this LustreFileSystem.
         :type root_squash_configuration: oci.lustre_file_storage.models.RootSquashConfiguration
@@ -202,6 +206,7 @@ class LustreFileSystem(object):
             'cluster_placement_group_id': 'str',
             'time_billing_cycle_end': 'datetime',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_window_metadata': 'MaintenanceWindowMetadataDetails',
             'root_squash_configuration': 'RootSquashConfiguration'
         }
         self.attribute_map = {
@@ -229,6 +234,7 @@ class LustreFileSystem(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'time_billing_cycle_end': 'timeBillingCycleEnd',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_window_metadata': 'maintenanceWindowMetadata',
             'root_squash_configuration': 'rootSquashConfiguration'
         }
         self._id = None
@@ -255,6 +261,7 @@ class LustreFileSystem(object):
         self._cluster_placement_group_id = None
         self._time_billing_cycle_end = None
         self._maintenance_window = None
+        self._maintenance_window_metadata = None
         self._root_squash_configuration = None
 
     @property
@@ -952,6 +959,26 @@ class LustreFileSystem(object):
         :type: oci.lustre_file_storage.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_window_metadata(self):
+        """
+        Gets the maintenance_window_metadata of this LustreFileSystem.
+
+        :return: The maintenance_window_metadata of this LustreFileSystem.
+        :rtype: oci.lustre_file_storage.models.MaintenanceWindowMetadataDetails
+        """
+        return self._maintenance_window_metadata
+
+    @maintenance_window_metadata.setter
+    def maintenance_window_metadata(self, maintenance_window_metadata):
+        """
+        Sets the maintenance_window_metadata of this LustreFileSystem.
+
+        :param maintenance_window_metadata: The maintenance_window_metadata of this LustreFileSystem.
+        :type: oci.lustre_file_storage.models.MaintenanceWindowMetadataDetails
+        """
+        self._maintenance_window_metadata = maintenance_window_metadata
 
     @property
     def root_squash_configuration(self):

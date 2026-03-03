@@ -8,11 +8,13 @@ Redis
 
     oci.redis.OciCacheConfigSetClient
     oci.redis.OciCacheDefaultConfigSetClient
+    oci.redis.OciCacheEngineOptionsClient
     oci.redis.OciCacheUserClient
     oci.redis.RedisClusterClient
     oci.redis.RedisIdentityClient
     oci.redis.OciCacheConfigSetClientCompositeOperations
     oci.redis.OciCacheDefaultConfigSetClientCompositeOperations
+    oci.redis.OciCacheEngineOptionsClientCompositeOperations
     oci.redis.OciCacheUserClientCompositeOperations
     oci.redis.RedisClusterClientCompositeOperations
     oci.redis.RedisIdentityClientCompositeOperations
@@ -44,6 +46,7 @@ Redis
     oci.redis.models.DefaultConfigurationDetails
     oci.redis.models.DefaultConfigurationInfo
     oci.redis.models.DetachOciCacheUsersDetails
+    oci.redis.models.EngineVersion
     oci.redis.models.IamAuthenticationMode
     oci.redis.models.IdentityTokenDetailsResponse
     oci.redis.models.Node
@@ -55,6 +58,8 @@ Redis
     oci.redis.models.OciCacheDefaultConfigSet
     oci.redis.models.OciCacheDefaultConfigSetCollection
     oci.redis.models.OciCacheDefaultConfigSetSummary
+    oci.redis.models.OciCacheEngineOptionSummary
+    oci.redis.models.OciCacheEngineOptionsCollection
     oci.redis.models.OciCacheUser
     oci.redis.models.OciCacheUserCollection
     oci.redis.models.OciCacheUserSummary

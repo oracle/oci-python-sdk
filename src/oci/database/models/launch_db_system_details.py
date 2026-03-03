@@ -164,7 +164,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
 
         :param source:
             The value to assign to the source property of this LaunchDbSystemDetails.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM", "DATAGUARD"
         :type source: str
 
         :param private_ip:

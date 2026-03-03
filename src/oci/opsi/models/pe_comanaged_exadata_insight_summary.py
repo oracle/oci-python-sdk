@@ -81,6 +81,10 @@ class PeComanagedExadataInsightSummary(ExadataInsightSummary):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this PeComanagedExadataInsightSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param time_created:
             The value to assign to the time_created property of this PeComanagedExadataInsightSummary.
         :type time_created: datetime
@@ -91,13 +95,17 @@ class PeComanagedExadataInsightSummary(ExadataInsightSummary):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this PeComanagedExadataInsightSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this PeComanagedExadataInsightSummary.
         :type lifecycle_details: str
+
+        :param status_details:
+            The value to assign to the status_details property of this PeComanagedExadataInsightSummary.
+        :type status_details: str
 
         :param exadata_infra_id:
             The value to assign to the exadata_infra_id property of this PeComanagedExadataInsightSummary.
@@ -126,10 +134,12 @@ class PeComanagedExadataInsightSummary(ExadataInsightSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'status': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'status_details': 'str',
             'exadata_infra_id': 'str',
             'exadata_infra_resource_type': 'str',
             'exadata_shape': 'str'
@@ -146,10 +156,12 @@ class PeComanagedExadataInsightSummary(ExadataInsightSummary):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'status': 'status',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'status_details': 'statusDetails',
             'exadata_infra_id': 'exadataInfraId',
             'exadata_infra_resource_type': 'exadataInfraResourceType',
             'exadata_shape': 'exadataShape'
@@ -165,10 +177,12 @@ class PeComanagedExadataInsightSummary(ExadataInsightSummary):
         self._defined_tags = None
         self._system_tags = None
         self._status = None
+        self._chargeback_plan_details = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._status_details = None
         self._exadata_infra_id = None
         self._exadata_infra_resource_type = None
         self._exadata_shape = None

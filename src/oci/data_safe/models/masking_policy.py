@@ -129,6 +129,10 @@ class MaskingPolicy(object):
             The value to assign to the column_source property of this MaskingPolicy.
         :type column_source: oci.data_safe.models.ColumnSourceDetails
 
+        :param are_target_credentials_required:
+            The value to assign to the are_target_credentials_required property of this MaskingPolicy.
+        :type are_target_credentials_required: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MaskingPolicy.
         :type freeform_tags: dict(str, str)
@@ -154,6 +158,7 @@ class MaskingPolicy(object):
             'pre_masking_script': 'str',
             'post_masking_script': 'str',
             'column_source': 'ColumnSourceDetails',
+            'are_target_credentials_required': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -173,6 +178,7 @@ class MaskingPolicy(object):
             'pre_masking_script': 'preMaskingScript',
             'post_masking_script': 'postMaskingScript',
             'column_source': 'columnSource',
+            'are_target_credentials_required': 'areTargetCredentialsRequired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -191,6 +197,7 @@ class MaskingPolicy(object):
         self._pre_masking_script = None
         self._post_masking_script = None
         self._column_source = None
+        self._are_target_credentials_required = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -603,6 +610,30 @@ class MaskingPolicy(object):
         :type: oci.data_safe.models.ColumnSourceDetails
         """
         self._column_source = column_source
+
+    @property
+    def are_target_credentials_required(self):
+        """
+        Gets the are_target_credentials_required of this MaskingPolicy.
+        Specifies whether target database credentials are required to perform masking with this policy
+
+
+        :return: The are_target_credentials_required of this MaskingPolicy.
+        :rtype: bool
+        """
+        return self._are_target_credentials_required
+
+    @are_target_credentials_required.setter
+    def are_target_credentials_required(self, are_target_credentials_required):
+        """
+        Sets the are_target_credentials_required of this MaskingPolicy.
+        Specifies whether target database credentials are required to perform masking with this policy
+
+
+        :param are_target_credentials_required: The are_target_credentials_required of this MaskingPolicy.
+        :type: bool
+        """
+        self._are_target_credentials_required = are_target_credentials_required
 
     @property
     def freeform_tags(self):

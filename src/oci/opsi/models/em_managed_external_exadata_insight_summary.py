@@ -69,6 +69,10 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
             Allowed values for this property are: "DISABLED", "ENABLED", "TERMINATED"
         :type status: str
 
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this EmManagedExternalExadataInsightSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param time_created:
             The value to assign to the time_created property of this EmManagedExternalExadataInsightSummary.
         :type time_created: datetime
@@ -79,12 +83,16 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this EmManagedExternalExadataInsightSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this EmManagedExternalExadataInsightSummary.
         :type lifecycle_details: str
+
+        :param status_details:
+            The value to assign to the status_details property of this EmManagedExternalExadataInsightSummary.
+        :type status_details: str
 
         :param enterprise_manager_identifier:
             The value to assign to the enterprise_manager_identifier property of this EmManagedExternalExadataInsightSummary.
@@ -123,10 +131,12 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'status': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'status_details': 'str',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_entity_name': 'str',
             'enterprise_manager_entity_type': 'str',
@@ -146,10 +156,12 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'status': 'status',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'status_details': 'statusDetails',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_entity_name': 'enterpriseManagerEntityName',
             'enterprise_manager_entity_type': 'enterpriseManagerEntityType',
@@ -168,10 +180,12 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
         self._defined_tags = None
         self._system_tags = None
         self._status = None
+        self._chargeback_plan_details = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._status_details = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_entity_name = None
         self._enterprise_manager_entity_type = None

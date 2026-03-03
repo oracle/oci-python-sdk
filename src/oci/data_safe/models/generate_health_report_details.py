@@ -49,6 +49,10 @@ class GenerateHealthReportDetails(object):
             The value to assign to the defined_tags property of this GenerateHealthReportDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param target_credentials:
+            The value to assign to the target_credentials property of this GenerateHealthReportDetails.
+        :type target_credentials: oci.data_safe.models.Credentials
+
         """
         self.swagger_types = {
             'check_type': 'str',
@@ -56,7 +60,8 @@ class GenerateHealthReportDetails(object):
             'compartment_id': 'str',
             'tablespace': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'target_credentials': 'Credentials'
         }
         self.attribute_map = {
             'check_type': 'checkType',
@@ -64,7 +69,8 @@ class GenerateHealthReportDetails(object):
             'compartment_id': 'compartmentId',
             'tablespace': 'tablespace',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'target_credentials': 'targetCredentials'
         }
         self._check_type = None
         self._target_id = None
@@ -72,6 +78,7 @@ class GenerateHealthReportDetails(object):
         self._tablespace = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._target_credentials = None
 
     @property
     def check_type(self):
@@ -243,6 +250,26 @@ class GenerateHealthReportDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def target_credentials(self):
+        """
+        Gets the target_credentials of this GenerateHealthReportDetails.
+
+        :return: The target_credentials of this GenerateHealthReportDetails.
+        :rtype: oci.data_safe.models.Credentials
+        """
+        return self._target_credentials
+
+    @target_credentials.setter
+    def target_credentials(self, target_credentials):
+        """
+        Sets the target_credentials of this GenerateHealthReportDetails.
+
+        :param target_credentials: The target_credentials of this GenerateHealthReportDetails.
+        :type: oci.data_safe.models.Credentials
+        """
+        self._target_credentials = target_credentials
 
     def __repr__(self):
         return formatted_flat_dict(self)

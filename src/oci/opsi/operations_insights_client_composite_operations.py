@@ -151,6 +151,50 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_chargeback_plan_compartment_and_wait_for_state(self, chargebackplan_id, change_chargeback_plan_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.change_chargeback_plan_compartment` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str chargebackplan_id: (required)
+            The `OCID`__ of the Ops Insights chargeback plan.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.ChangeChargebackPlanCompartmentDetails change_chargeback_plan_compartment_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.change_chargeback_plan_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_chargeback_plan_compartment(chargebackplan_id, change_chargeback_plan_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_database_insight_compartment_and_wait_for_state(self, database_insight_id, change_database_insight_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.change_database_insight_compartment` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
@@ -737,6 +781,91 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_chargeback_plan_and_wait_for_state(self, create_chargeback_plan_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.create_chargeback_plan` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.opsi.models.CreateChargebackPlanDetails create_chargeback_plan_details: (required)
+            Details to create a new chargeback plan resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.create_chargeback_plan`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_chargeback_plan(create_chargeback_plan_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_chargeback_plan_report_and_wait_for_state(self, create_chargeback_plan_report_details, id, resource_type, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.create_chargeback_plan_report` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.opsi.models.CreateChargebackPlanReportDetails create_chargeback_plan_report_details: (required)
+            Details for the chargeback plan report to be created in Ops Insights.
+
+        :param str id: (required)
+            Unique Ops insight identifier
+
+        :param str resource_type: (required)
+            Filter by resource type.
+            Supported values are EXADATA_INSIGHT , HOST_INSIGHT, DATABASE_INSIGHT.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.create_chargeback_plan_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_chargeback_plan_report(create_chargeback_plan_report_details, id, resource_type, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_database_insight_and_wait_for_state(self, create_database_insight_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.create_database_insight` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
@@ -1156,6 +1285,111 @@ class OperationsInsightsClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_awr_hub_source(awr_hub_source_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_chargeback_plan_and_wait_for_state(self, chargebackplan_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.delete_chargeback_plan` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str chargebackplan_id: (required)
+            The `OCID`__ of the Ops Insights chargeback plan.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.delete_chargeback_plan`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_chargeback_plan(chargebackplan_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_chargeback_plan_report_and_wait_for_state(self, chargeback_plan_report_id, id, resource_type, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.delete_chargeback_plan_report` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str chargeback_plan_report_id: (required)
+            The `OCID`__ of the Ops Insights chargeback plan report
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str id: (required)
+            Unique Ops insight identifier
+
+        :param str resource_type: (required)
+            Filter by resource type.
+            Supported values are EXADATA_INSIGHT , HOST_INSIGHT, DATABASE_INSIGHT.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.delete_chargeback_plan_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_chargeback_plan_report(chargeback_plan_report_id, id, resource_type, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -1804,6 +2038,45 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def disable_plan_exadata_insight_and_wait_for_state(self, exadata_insight_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.disable_plan_exadata_insight` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.disable_plan_exadata_insight`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.disable_plan_exadata_insight(exadata_insight_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def enable_autonomous_database_insight_advanced_features_and_wait_for_state(self, enable_autonomous_database_insight_advanced_features_details, database_insight_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.enable_autonomous_database_insight_advanced_features` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
@@ -2011,6 +2284,48 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def enable_plan_exadata_insight_and_wait_for_state(self, enable_plan_exadata_insight_details, exadata_insight_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.enable_plan_exadata_insight` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.opsi.models.EnablePlanExadataInsightDetails enable_plan_exadata_insight_details: (required)
+            Details for the Exadata system to be enabled in Operations Insights.
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.enable_plan_exadata_insight`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.enable_plan_exadata_insight(enable_plan_exadata_insight_details, exadata_insight_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def rotate_operations_insights_warehouse_wallet_and_wait_for_state(self, operations_insights_warehouse_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.rotate_operations_insights_warehouse_wallet` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
@@ -2050,15 +2365,10 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
-    def synchronize_autonomous_database_to_exadata_and_wait_for_state(self, compartment_id, synchronize_autonomous_database_to_exadata_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+    def synchronize_autonomous_database_to_exadata_and_wait_for_state(self, synchronize_autonomous_database_to_exadata_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.synchronize_autonomous_database_to_exadata` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
         to enter the given state(s).
-
-        :param str compartment_id: (required)
-            The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.SynchronizeAutonomousDatabaseToExadataDetails synchronize_autonomous_database_to_exadata_details: (required)
             The information to be updated.
@@ -2073,7 +2383,7 @@ class OperationsInsightsClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        operation_result = self.client.synchronize_autonomous_database_to_exadata(compartment_id, synchronize_autonomous_database_to_exadata_details, **operation_kwargs)
+        operation_result = self.client.synchronize_autonomous_database_to_exadata(synchronize_autonomous_database_to_exadata_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -2236,6 +2546,101 @@ class OperationsInsightsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_awr_hub_source(update_awr_hub_source_details, awr_hub_source_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_chargeback_plan_and_wait_for_state(self, chargebackplan_id, update_chargeback_plan_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.update_chargeback_plan` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str chargebackplan_id: (required)
+            The `OCID`__ of the Ops Insights chargeback plan.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.UpdateChargebackPlanDetails update_chargeback_plan_details: (required)
+            The details used to update a chargeback plan.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.update_chargeback_plan`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_chargeback_plan(chargebackplan_id, update_chargeback_plan_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_chargeback_plan_report_and_wait_for_state(self, chargeback_plan_report_id, id, resource_type, update_chargeback_plan_report_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.update_chargeback_plan_report` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str chargeback_plan_report_id: (required)
+            The `OCID`__ of the Ops Insights chargeback plan report
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str id: (required)
+            Unique Ops insight identifier
+
+        :param str resource_type: (required)
+            Filter by resource type.
+            Supported values are EXADATA_INSIGHT , HOST_INSIGHT, DATABASE_INSIGHT.
+
+        :param oci.opsi.models.UpdateChargebackPlanReportDetails update_chargeback_plan_report_details: (required)
+            The details used to update a chargeback plan report.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.update_chargeback_plan_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_chargeback_plan_report(chargeback_plan_report_id, id, resource_type, update_chargeback_plan_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

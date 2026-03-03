@@ -92,8 +92,20 @@ class MaskingPolicyHealthReportLogSummary(object):
     HEALTH_CHECK_TYPE_TIME_TRAVEL_CHECK = "TIME_TRAVEL_CHECK"
 
     #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "SYSTEM_OBJECTS_CHECK"
+    HEALTH_CHECK_TYPE_SYSTEM_OBJECTS_CHECK = "SYSTEM_OBJECTS_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
     #: This constant has a value of "INVALID_PACKAGE_CHECK"
     HEALTH_CHECK_TYPE_INVALID_PACKAGE_CHECK = "INVALID_PACKAGE_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "AUDIT_POLICY_CHECK"
+    HEALTH_CHECK_TYPE_AUDIT_POLICY_CHECK = "AUDIT_POLICY_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "USER_CREDENTIALS_CHECK"
+    HEALTH_CHECK_TYPE_USER_CREDENTIALS_CHECK = "USER_CREDENTIALS_CHECK"
 
     def __init__(self, **kwargs):
         """
@@ -124,7 +136,7 @@ class MaskingPolicyHealthReportLogSummary(object):
 
         :param health_check_type:
             The value to assign to the health_check_type property of this MaskingPolicyHealthReportLogSummary.
-            Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "INVALID_PACKAGE_CHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "SYSTEM_OBJECTS_CHECK", "INVALID_PACKAGE_CHECK", "AUDIT_POLICY_CHECK", "USER_CREDENTIALS_CHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type health_check_type: str
 
@@ -301,9 +313,12 @@ class MaskingPolicyHealthReportLogSummary(object):
         DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
         COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
         TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+        SYSTEM_OBJECTS_CHECK checks if the masking tables have dependent objects present in SYS schema.
         INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
+        AUDIT_POLICY_CHECK checks if the masking tables have Audit policies enabled.
+        USER_CREDENTIALS_CHECK checks if target database user credentials are required to run masking using the policy
 
-        Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "INVALID_PACKAGE_CHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "SYSTEM_OBJECTS_CHECK", "INVALID_PACKAGE_CHECK", "AUDIT_POLICY_CHECK", "USER_CREDENTIALS_CHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -331,13 +346,16 @@ class MaskingPolicyHealthReportLogSummary(object):
         DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
         COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
         TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+        SYSTEM_OBJECTS_CHECK checks if the masking tables have dependent objects present in SYS schema.
         INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
+        AUDIT_POLICY_CHECK checks if the masking tables have Audit policies enabled.
+        USER_CREDENTIALS_CHECK checks if target database user credentials are required to run masking using the policy
 
 
         :param health_check_type: The health_check_type of this MaskingPolicyHealthReportLogSummary.
         :type: str
         """
-        allowed_values = ["INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "INVALID_PACKAGE_CHECK"]
+        allowed_values = ["INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "SYSTEM_OBJECTS_CHECK", "INVALID_PACKAGE_CHECK", "AUDIT_POLICY_CHECK", "USER_CREDENTIALS_CHECK"]
         if not value_allowed_none_or_none_sentinel(health_check_type, allowed_values):
             health_check_type = 'UNKNOWN_ENUM_VALUE'
         self._health_check_type = health_check_type

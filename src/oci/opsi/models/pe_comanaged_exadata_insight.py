@@ -73,6 +73,10 @@ class PeComanagedExadataInsight(ExadataInsight):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this PeComanagedExadataInsight.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this PeComanagedExadataInsight.
         :type freeform_tags: dict(str, str)
@@ -95,13 +99,17 @@ class PeComanagedExadataInsight(ExadataInsight):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this PeComanagedExadataInsight.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this PeComanagedExadataInsight.
         :type lifecycle_details: str
+
+        :param status_details:
+            The value to assign to the status_details property of this PeComanagedExadataInsight.
+        :type status_details: str
 
         :param exadata_infra_id:
             The value to assign to the exadata_infra_id property of this PeComanagedExadataInsight.
@@ -128,6 +136,7 @@ class PeComanagedExadataInsight(ExadataInsight):
             'exadata_rack_type': 'str',
             'is_virtualized_exadata': 'bool',
             'status': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -135,6 +144,7 @@ class PeComanagedExadataInsight(ExadataInsight):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'status_details': 'str',
             'exadata_infra_id': 'str',
             'exadata_infra_resource_type': 'str',
             'exadata_shape': 'str'
@@ -149,6 +159,7 @@ class PeComanagedExadataInsight(ExadataInsight):
             'exadata_rack_type': 'exadataRackType',
             'is_virtualized_exadata': 'isVirtualizedExadata',
             'status': 'status',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -156,6 +167,7 @@ class PeComanagedExadataInsight(ExadataInsight):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'status_details': 'statusDetails',
             'exadata_infra_id': 'exadataInfraId',
             'exadata_infra_resource_type': 'exadataInfraResourceType',
             'exadata_shape': 'exadataShape'
@@ -169,6 +181,7 @@ class PeComanagedExadataInsight(ExadataInsight):
         self._exadata_rack_type = None
         self._is_virtualized_exadata = None
         self._status = None
+        self._chargeback_plan_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -176,6 +189,7 @@ class PeComanagedExadataInsight(ExadataInsight):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._status_details = None
         self._exadata_infra_id = None
         self._exadata_infra_resource_type = None
         self._exadata_shape = None

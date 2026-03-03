@@ -52,6 +52,10 @@ class UpdateLustreFileSystemDetails(object):
             The value to assign to the root_squash_configuration property of this UpdateLustreFileSystemDetails.
         :type root_squash_configuration: oci.lustre_file_storage.models.RootSquashConfiguration
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this UpdateLustreFileSystemDetails.
+        :type maintenance_window: oci.lustre_file_storage.models.MaintenanceWindow
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -61,7 +65,8 @@ class UpdateLustreFileSystemDetails(object):
             'nsg_ids': 'list[str]',
             'kms_key_id': 'str',
             'capacity_in_gbs': 'int',
-            'root_squash_configuration': 'RootSquashConfiguration'
+            'root_squash_configuration': 'RootSquashConfiguration',
+            'maintenance_window': 'MaintenanceWindow'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -71,7 +76,8 @@ class UpdateLustreFileSystemDetails(object):
             'nsg_ids': 'nsgIds',
             'kms_key_id': 'kmsKeyId',
             'capacity_in_gbs': 'capacityInGBs',
-            'root_squash_configuration': 'rootSquashConfiguration'
+            'root_squash_configuration': 'rootSquashConfiguration',
+            'maintenance_window': 'maintenanceWindow'
         }
         self._display_name = None
         self._file_system_description = None
@@ -81,6 +87,7 @@ class UpdateLustreFileSystemDetails(object):
         self._kms_key_id = None
         self._capacity_in_gbs = None
         self._root_squash_configuration = None
+        self._maintenance_window = None
 
     @property
     def display_name(self):
@@ -313,6 +320,26 @@ class UpdateLustreFileSystemDetails(object):
         :type: oci.lustre_file_storage.models.RootSquashConfiguration
         """
         self._root_squash_configuration = root_squash_configuration
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this UpdateLustreFileSystemDetails.
+
+        :return: The maintenance_window of this UpdateLustreFileSystemDetails.
+        :rtype: oci.lustre_file_storage.models.MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this UpdateLustreFileSystemDetails.
+
+        :param maintenance_window: The maintenance_window of this UpdateLustreFileSystemDetails.
+        :type: oci.lustre_file_storage.models.MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     def __repr__(self):
         return formatted_flat_dict(self)

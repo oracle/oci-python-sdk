@@ -61,6 +61,10 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             Allowed values for this property are: "DISABLED", "ENABLED", "TERMINATED"
         :type status: str
 
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this EmManagedExternalExadataInsight.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EmManagedExternalExadataInsight.
         :type freeform_tags: dict(str, str)
@@ -83,12 +87,16 @@ class EmManagedExternalExadataInsight(ExadataInsight):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this EmManagedExternalExadataInsight.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this EmManagedExternalExadataInsight.
         :type lifecycle_details: str
+
+        :param status_details:
+            The value to assign to the status_details property of this EmManagedExternalExadataInsight.
+        :type status_details: str
 
         :param enterprise_manager_identifier:
             The value to assign to the enterprise_manager_identifier property of this EmManagedExternalExadataInsight.
@@ -129,6 +137,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             'exadata_rack_type': 'str',
             'is_virtualized_exadata': 'bool',
             'status': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -136,6 +145,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'status_details': 'str',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_entity_name': 'str',
             'enterprise_manager_entity_type': 'str',
@@ -154,6 +164,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             'exadata_rack_type': 'exadataRackType',
             'is_virtualized_exadata': 'isVirtualizedExadata',
             'status': 'status',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -161,6 +172,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'status_details': 'statusDetails',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_entity_name': 'enterpriseManagerEntityName',
             'enterprise_manager_entity_type': 'enterpriseManagerEntityType',
@@ -178,6 +190,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
         self._exadata_rack_type = None
         self._is_virtualized_exadata = None
         self._status = None
+        self._chargeback_plan_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -185,6 +198,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._status_details = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_entity_name = None
         self._enterprise_manager_entity_type = None

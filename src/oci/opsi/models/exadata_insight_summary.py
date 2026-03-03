@@ -115,6 +115,10 @@ class ExadataInsightSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a ExadataInsightSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataInsightSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -178,6 +182,10 @@ class ExadataInsightSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this ExadataInsightSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param time_created:
             The value to assign to the time_created property of this ExadataInsightSummary.
         :type time_created: datetime
@@ -188,13 +196,17 @@ class ExadataInsightSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExadataInsightSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this ExadataInsightSummary.
         :type lifecycle_details: str
+
+        :param status_details:
+            The value to assign to the status_details property of this ExadataInsightSummary.
+        :type status_details: str
 
         """
         self.swagger_types = {
@@ -209,10 +221,12 @@ class ExadataInsightSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'status': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'status_details': 'str'
         }
         self.attribute_map = {
             'entity_source': 'entitySource',
@@ -226,10 +240,12 @@ class ExadataInsightSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'status': 'status',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'status_details': 'statusDetails'
         }
         self._entity_source = None
         self._id = None
@@ -242,10 +258,12 @@ class ExadataInsightSummary(object):
         self._defined_tags = None
         self._system_tags = None
         self._status = None
+        self._chargeback_plan_details = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._status_details = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -569,6 +587,26 @@ class ExadataInsightSummary(object):
         self._status = status
 
     @property
+    def chargeback_plan_details(self):
+        """
+        Gets the chargeback_plan_details of this ExadataInsightSummary.
+
+        :return: The chargeback_plan_details of this ExadataInsightSummary.
+        :rtype: oci.opsi.models.ChargebackPlanDetails
+        """
+        return self._chargeback_plan_details
+
+    @chargeback_plan_details.setter
+    def chargeback_plan_details(self, chargeback_plan_details):
+        """
+        Sets the chargeback_plan_details of this ExadataInsightSummary.
+
+        :param chargeback_plan_details: The chargeback_plan_details of this ExadataInsightSummary.
+        :type: oci.opsi.models.ChargebackPlanDetails
+        """
+        self._chargeback_plan_details = chargeback_plan_details
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ExadataInsightSummary.
@@ -622,7 +660,7 @@ class ExadataInsightSummary(object):
         **[Required]** Gets the lifecycle_state of this ExadataInsightSummary.
         The current state of the Exadata insight.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -641,7 +679,7 @@ class ExadataInsightSummary(object):
         :param lifecycle_state: The lifecycle_state of this ExadataInsightSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -669,6 +707,30 @@ class ExadataInsightSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def status_details(self):
+        """
+        Gets the status_details of this ExadataInsightSummary.
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+
+
+        :return: The status_details of this ExadataInsightSummary.
+        :rtype: str
+        """
+        return self._status_details
+
+    @status_details.setter
+    def status_details(self, status_details):
+        """
+        Sets the status_details of this ExadataInsightSummary.
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+
+
+        :param status_details: The status_details of this ExadataInsightSummary.
+        :type: str
+        """
+        self._status_details = status_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

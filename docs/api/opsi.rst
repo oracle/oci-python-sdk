@@ -92,6 +92,7 @@ Opsi
     oci.opsi.models.BasicConfigurationItemSummary
     oci.opsi.models.ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails
     oci.opsi.models.ChangeAwrHubSourceCompartmentDetails
+    oci.opsi.models.ChangeChargebackPlanCompartmentDetails
     oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
@@ -104,6 +105,13 @@ Opsi
     oci.opsi.models.ChangeOperationsInsightsWarehouseCompartmentDetails
     oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails
     oci.opsi.models.ChangePeComanagedDatabaseInsightDetails
+    oci.opsi.models.ChargebackPlan
+    oci.opsi.models.ChargebackPlanCollection
+    oci.opsi.models.ChargebackPlanDetails
+    oci.opsi.models.ChargebackPlanReport
+    oci.opsi.models.ChargebackPlanReportCollection
+    oci.opsi.models.ChargebackPlanReportSummary
+    oci.opsi.models.ChargebackPlanSummary
     oci.opsi.models.CloudImportableComputeEntitySummary
     oci.opsi.models.ConfigurationItemAllowedValueDetails
     oci.opsi.models.ConfigurationItemFreeTextAllowedValueDetails
@@ -118,6 +126,9 @@ Opsi
     oci.opsi.models.CreateAwrHubDetails
     oci.opsi.models.CreateAwrHubSourceDetails
     oci.opsi.models.CreateBasicConfigurationItemDetails
+    oci.opsi.models.CreateChargebackPlanDetails
+    oci.opsi.models.CreateChargebackPlanExadataDetails
+    oci.opsi.models.CreateChargebackPlanReportDetails
     oci.opsi.models.CreateConfigurationItemDetails
     oci.opsi.models.CreateDatabaseInsightDetails
     oci.opsi.models.CreateEmManagedExternalDatabaseInsightDetails
@@ -145,6 +156,7 @@ Opsi
     oci.opsi.models.CreatePeComanagedDatabaseInsightDetails
     oci.opsi.models.CreatePeComanagedExadataInsightDetails
     oci.opsi.models.CreatePeComanagedExadataVmclusterDetails
+    oci.opsi.models.CreatePlanCustomItemDetails
     oci.opsi.models.CredentialByIam
     oci.opsi.models.CredentialByNamedCredentials
     oci.opsi.models.CredentialByVault
@@ -210,6 +222,7 @@ Opsi
     oci.opsi.models.EnableMdsMySqlDatabaseInsightDetails
     oci.opsi.models.EnablePeComanagedDatabaseInsightDetails
     oci.opsi.models.EnablePeComanagedExadataInsightDetails
+    oci.opsi.models.EnablePlanExadataInsightDetails
     oci.opsi.models.EnterpriseManagerBridge
     oci.opsi.models.EnterpriseManagerBridgeCollection
     oci.opsi.models.EnterpriseManagerBridgeSummary
@@ -380,6 +393,7 @@ Opsi
     oci.opsi.models.OpsiDataObjectTypeOpsiDataObjectDetailsInQuery
     oci.opsi.models.OpsiDataObjects
     oci.opsi.models.OpsiDataObjectsCollection
+    oci.opsi.models.OpsiDataStores
     oci.opsi.models.OpsiUxConfiguration
     oci.opsi.models.OpsiUxConfigurationSummary
     oci.opsi.models.OpsiWarehouseDataObjects
@@ -400,6 +414,8 @@ Opsi
     oci.opsi.models.QueryOpsiDataObjectDataDetails
     oci.opsi.models.QueryWarehouseDataObjectDataDetails
     oci.opsi.models.RelatedObjectTypeDetails
+    oci.opsi.models.ReportGroupingDetails
+    oci.opsi.models.ReportPropertyDetails
     oci.opsi.models.ResourceCapacityTrendAggregation
     oci.opsi.models.ResourceFilters
     oci.opsi.models.ResourceInsightCurrentUtilization
@@ -484,6 +500,8 @@ Opsi
     oci.opsi.models.UpdateAwrHubDetails
     oci.opsi.models.UpdateAwrHubSourceDetails
     oci.opsi.models.UpdateBasicConfigurationItemDetails
+    oci.opsi.models.UpdateChargebackPlanDetails
+    oci.opsi.models.UpdateChargebackPlanReportDetails
     oci.opsi.models.UpdateConfigurationItemDetails
     oci.opsi.models.UpdateDatabaseInsightDetails
     oci.opsi.models.UpdateEmManagedExternalDatabaseInsightDetails

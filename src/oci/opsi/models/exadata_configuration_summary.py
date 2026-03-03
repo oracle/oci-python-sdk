@@ -136,6 +136,14 @@ class ExadataConfigurationSummary(object):
             The value to assign to the vmcluster_details property of this ExadataConfigurationSummary.
         :type vmcluster_details: list[oci.opsi.models.VmClusterSummary]
 
+        :param exadata_shape:
+            The value to assign to the exadata_shape property of this ExadataConfigurationSummary.
+        :type exadata_shape: str
+
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this ExadataConfigurationSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
@@ -147,7 +155,9 @@ class ExadataConfigurationSummary(object):
             'exadata_rack_type': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'vmcluster_details': 'list[VmClusterSummary]'
+            'vmcluster_details': 'list[VmClusterSummary]',
+            'exadata_shape': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails'
         }
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
@@ -159,7 +169,9 @@ class ExadataConfigurationSummary(object):
             'exadata_rack_type': 'exadataRackType',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'vmcluster_details': 'vmclusterDetails'
+            'vmcluster_details': 'vmclusterDetails',
+            'exadata_shape': 'exadataShape',
+            'chargeback_plan_details': 'chargebackPlanDetails'
         }
         self._exadata_insight_id = None
         self._entity_source = None
@@ -171,6 +183,8 @@ class ExadataConfigurationSummary(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._vmcluster_details = None
+        self._exadata_shape = None
+        self._chargeback_plan_details = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -460,6 +474,50 @@ class ExadataConfigurationSummary(object):
         :type: list[oci.opsi.models.VmClusterSummary]
         """
         self._vmcluster_details = vmcluster_details
+
+    @property
+    def exadata_shape(self):
+        """
+        **[Required]** Gets the exadata_shape of this ExadataConfigurationSummary.
+        The shape of the Exadata Infrastructure.
+
+
+        :return: The exadata_shape of this ExadataConfigurationSummary.
+        :rtype: str
+        """
+        return self._exadata_shape
+
+    @exadata_shape.setter
+    def exadata_shape(self, exadata_shape):
+        """
+        Sets the exadata_shape of this ExadataConfigurationSummary.
+        The shape of the Exadata Infrastructure.
+
+
+        :param exadata_shape: The exadata_shape of this ExadataConfigurationSummary.
+        :type: str
+        """
+        self._exadata_shape = exadata_shape
+
+    @property
+    def chargeback_plan_details(self):
+        """
+        **[Required]** Gets the chargeback_plan_details of this ExadataConfigurationSummary.
+
+        :return: The chargeback_plan_details of this ExadataConfigurationSummary.
+        :rtype: oci.opsi.models.ChargebackPlanDetails
+        """
+        return self._chargeback_plan_details
+
+    @chargeback_plan_details.setter
+    def chargeback_plan_details(self, chargeback_plan_details):
+        """
+        Sets the chargeback_plan_details of this ExadataConfigurationSummary.
+
+        :param chargeback_plan_details: The chargeback_plan_details of this ExadataConfigurationSummary.
+        :type: oci.opsi.models.ChargebackPlanDetails
+        """
+        self._chargeback_plan_details = chargeback_plan_details
 
     def __repr__(self):
         return formatted_flat_dict(self)
