@@ -9,6 +9,12 @@ from __future__ import absolute_import
 
 from .generative_ai_inference_client import GenerativeAiInferenceClient
 from .generative_ai_inference_client_composite_operations import GenerativeAiInferenceClientCompositeOperations
+from .async_generative_ai_inference_client import AsyncGenerativeAiInferenceClient
 from . import models
 
-__all__ = ["GenerativeAiInferenceClient", "GenerativeAiInferenceClientCompositeOperations", "models"]
+__all__ = [
+    "GenerativeAiInferenceClient",
+    "GenerativeAiInferenceClientCompositeOperations",
+    "AsyncGenerativeAiInferenceClient",
+    "models",
+]
