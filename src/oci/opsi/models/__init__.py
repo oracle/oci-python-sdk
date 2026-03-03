@@ -80,6 +80,7 @@ from .basic_configuration_item_metadata import BasicConfigurationItemMetadata
 from .basic_configuration_item_summary import BasicConfigurationItemSummary
 from .change_autonomous_database_insight_advanced_features_details import ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails
 from .change_awr_hub_source_compartment_details import ChangeAwrHubSourceCompartmentDetails
+from .change_chargeback_plan_compartment_details import ChangeChargebackPlanCompartmentDetails
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
@@ -92,6 +93,13 @@ from .change_operations_insights_private_endpoint_compartment_details import Cha
 from .change_operations_insights_warehouse_compartment_details import ChangeOperationsInsightsWarehouseCompartmentDetails
 from .change_opsi_configuration_compartment_details import ChangeOpsiConfigurationCompartmentDetails
 from .change_pe_comanaged_database_insight_details import ChangePeComanagedDatabaseInsightDetails
+from .chargeback_plan import ChargebackPlan
+from .chargeback_plan_collection import ChargebackPlanCollection
+from .chargeback_plan_details import ChargebackPlanDetails
+from .chargeback_plan_report import ChargebackPlanReport
+from .chargeback_plan_report_collection import ChargebackPlanReportCollection
+from .chargeback_plan_report_summary import ChargebackPlanReportSummary
+from .chargeback_plan_summary import ChargebackPlanSummary
 from .cloud_importable_compute_entity_summary import CloudImportableComputeEntitySummary
 from .configuration_item_allowed_value_details import ConfigurationItemAllowedValueDetails
 from .configuration_item_free_text_allowed_value_details import ConfigurationItemFreeTextAllowedValueDetails
@@ -106,6 +114,9 @@ from .create_autonomous_database_insight_details import CreateAutonomousDatabase
 from .create_awr_hub_details import CreateAwrHubDetails
 from .create_awr_hub_source_details import CreateAwrHubSourceDetails
 from .create_basic_configuration_item_details import CreateBasicConfigurationItemDetails
+from .create_chargeback_plan_details import CreateChargebackPlanDetails
+from .create_chargeback_plan_exadata_details import CreateChargebackPlanExadataDetails
+from .create_chargeback_plan_report_details import CreateChargebackPlanReportDetails
 from .create_configuration_item_details import CreateConfigurationItemDetails
 from .create_database_insight_details import CreateDatabaseInsightDetails
 from .create_em_managed_external_database_insight_details import CreateEmManagedExternalDatabaseInsightDetails
@@ -133,6 +144,7 @@ from .create_opsi_ux_configuration_details import CreateOpsiUxConfigurationDetai
 from .create_pe_comanaged_database_insight_details import CreatePeComanagedDatabaseInsightDetails
 from .create_pe_comanaged_exadata_insight_details import CreatePeComanagedExadataInsightDetails
 from .create_pe_comanaged_exadata_vmcluster_details import CreatePeComanagedExadataVmclusterDetails
+from .create_plan_custom_item_details import CreatePlanCustomItemDetails
 from .credential_by_iam import CredentialByIam
 from .credential_by_named_credentials import CredentialByNamedCredentials
 from .credential_by_vault import CredentialByVault
@@ -198,6 +210,7 @@ from .enable_macs_managed_external_host_insight_details import EnableMacsManaged
 from .enable_mds_my_sql_database_insight_details import EnableMdsMySqlDatabaseInsightDetails
 from .enable_pe_comanaged_database_insight_details import EnablePeComanagedDatabaseInsightDetails
 from .enable_pe_comanaged_exadata_insight_details import EnablePeComanagedExadataInsightDetails
+from .enable_plan_exadata_insight_details import EnablePlanExadataInsightDetails
 from .enterprise_manager_bridge import EnterpriseManagerBridge
 from .enterprise_manager_bridge_collection import EnterpriseManagerBridgeCollection
 from .enterprise_manager_bridge_summary import EnterpriseManagerBridgeSummary
@@ -368,6 +381,7 @@ from .opsi_data_object_supported_query_param import OpsiDataObjectSupportedQuery
 from .opsi_data_object_type_opsi_data_object_details_in_query import OpsiDataObjectTypeOpsiDataObjectDetailsInQuery
 from .opsi_data_objects import OpsiDataObjects
 from .opsi_data_objects_collection import OpsiDataObjectsCollection
+from .opsi_data_stores import OpsiDataStores
 from .opsi_ux_configuration import OpsiUxConfiguration
 from .opsi_ux_configuration_summary import OpsiUxConfigurationSummary
 from .opsi_warehouse_data_objects import OpsiWarehouseDataObjects
@@ -388,6 +402,8 @@ from .query_data_object_result_set_rows_collection import QueryDataObjectResultS
 from .query_opsi_data_object_data_details import QueryOpsiDataObjectDataDetails
 from .query_warehouse_data_object_data_details import QueryWarehouseDataObjectDataDetails
 from .related_object_type_details import RelatedObjectTypeDetails
+from .report_grouping_details import ReportGroupingDetails
+from .report_property_details import ReportPropertyDetails
 from .resource_capacity_trend_aggregation import ResourceCapacityTrendAggregation
 from .resource_filters import ResourceFilters
 from .resource_insight_current_utilization import ResourceInsightCurrentUtilization
@@ -472,6 +488,8 @@ from .update_autonomous_database_insight_details import UpdateAutonomousDatabase
 from .update_awr_hub_details import UpdateAwrHubDetails
 from .update_awr_hub_source_details import UpdateAwrHubSourceDetails
 from .update_basic_configuration_item_details import UpdateBasicConfigurationItemDetails
+from .update_chargeback_plan_details import UpdateChargebackPlanDetails
+from .update_chargeback_plan_report_details import UpdateChargebackPlanReportDetails
 from .update_configuration_item_details import UpdateConfigurationItemDetails
 from .update_database_insight_details import UpdateDatabaseInsightDetails
 from .update_em_managed_external_database_insight_details import UpdateEmManagedExternalDatabaseInsightDetails
@@ -590,6 +608,7 @@ opsi_type_mapping = {
     "BasicConfigurationItemSummary": BasicConfigurationItemSummary,
     "ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails": ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails,
     "ChangeAwrHubSourceCompartmentDetails": ChangeAwrHubSourceCompartmentDetails,
+    "ChangeChargebackPlanCompartmentDetails": ChangeChargebackPlanCompartmentDetails,
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
@@ -602,6 +621,13 @@ opsi_type_mapping = {
     "ChangeOperationsInsightsWarehouseCompartmentDetails": ChangeOperationsInsightsWarehouseCompartmentDetails,
     "ChangeOpsiConfigurationCompartmentDetails": ChangeOpsiConfigurationCompartmentDetails,
     "ChangePeComanagedDatabaseInsightDetails": ChangePeComanagedDatabaseInsightDetails,
+    "ChargebackPlan": ChargebackPlan,
+    "ChargebackPlanCollection": ChargebackPlanCollection,
+    "ChargebackPlanDetails": ChargebackPlanDetails,
+    "ChargebackPlanReport": ChargebackPlanReport,
+    "ChargebackPlanReportCollection": ChargebackPlanReportCollection,
+    "ChargebackPlanReportSummary": ChargebackPlanReportSummary,
+    "ChargebackPlanSummary": ChargebackPlanSummary,
     "CloudImportableComputeEntitySummary": CloudImportableComputeEntitySummary,
     "ConfigurationItemAllowedValueDetails": ConfigurationItemAllowedValueDetails,
     "ConfigurationItemFreeTextAllowedValueDetails": ConfigurationItemFreeTextAllowedValueDetails,
@@ -616,6 +642,9 @@ opsi_type_mapping = {
     "CreateAwrHubDetails": CreateAwrHubDetails,
     "CreateAwrHubSourceDetails": CreateAwrHubSourceDetails,
     "CreateBasicConfigurationItemDetails": CreateBasicConfigurationItemDetails,
+    "CreateChargebackPlanDetails": CreateChargebackPlanDetails,
+    "CreateChargebackPlanExadataDetails": CreateChargebackPlanExadataDetails,
+    "CreateChargebackPlanReportDetails": CreateChargebackPlanReportDetails,
     "CreateConfigurationItemDetails": CreateConfigurationItemDetails,
     "CreateDatabaseInsightDetails": CreateDatabaseInsightDetails,
     "CreateEmManagedExternalDatabaseInsightDetails": CreateEmManagedExternalDatabaseInsightDetails,
@@ -643,6 +672,7 @@ opsi_type_mapping = {
     "CreatePeComanagedDatabaseInsightDetails": CreatePeComanagedDatabaseInsightDetails,
     "CreatePeComanagedExadataInsightDetails": CreatePeComanagedExadataInsightDetails,
     "CreatePeComanagedExadataVmclusterDetails": CreatePeComanagedExadataVmclusterDetails,
+    "CreatePlanCustomItemDetails": CreatePlanCustomItemDetails,
     "CredentialByIam": CredentialByIam,
     "CredentialByNamedCredentials": CredentialByNamedCredentials,
     "CredentialByVault": CredentialByVault,
@@ -708,6 +738,7 @@ opsi_type_mapping = {
     "EnableMdsMySqlDatabaseInsightDetails": EnableMdsMySqlDatabaseInsightDetails,
     "EnablePeComanagedDatabaseInsightDetails": EnablePeComanagedDatabaseInsightDetails,
     "EnablePeComanagedExadataInsightDetails": EnablePeComanagedExadataInsightDetails,
+    "EnablePlanExadataInsightDetails": EnablePlanExadataInsightDetails,
     "EnterpriseManagerBridge": EnterpriseManagerBridge,
     "EnterpriseManagerBridgeCollection": EnterpriseManagerBridgeCollection,
     "EnterpriseManagerBridgeSummary": EnterpriseManagerBridgeSummary,
@@ -878,6 +909,7 @@ opsi_type_mapping = {
     "OpsiDataObjectTypeOpsiDataObjectDetailsInQuery": OpsiDataObjectTypeOpsiDataObjectDetailsInQuery,
     "OpsiDataObjects": OpsiDataObjects,
     "OpsiDataObjectsCollection": OpsiDataObjectsCollection,
+    "OpsiDataStores": OpsiDataStores,
     "OpsiUxConfiguration": OpsiUxConfiguration,
     "OpsiUxConfigurationSummary": OpsiUxConfigurationSummary,
     "OpsiWarehouseDataObjects": OpsiWarehouseDataObjects,
@@ -898,6 +930,8 @@ opsi_type_mapping = {
     "QueryOpsiDataObjectDataDetails": QueryOpsiDataObjectDataDetails,
     "QueryWarehouseDataObjectDataDetails": QueryWarehouseDataObjectDataDetails,
     "RelatedObjectTypeDetails": RelatedObjectTypeDetails,
+    "ReportGroupingDetails": ReportGroupingDetails,
+    "ReportPropertyDetails": ReportPropertyDetails,
     "ResourceCapacityTrendAggregation": ResourceCapacityTrendAggregation,
     "ResourceFilters": ResourceFilters,
     "ResourceInsightCurrentUtilization": ResourceInsightCurrentUtilization,
@@ -982,6 +1016,8 @@ opsi_type_mapping = {
     "UpdateAwrHubDetails": UpdateAwrHubDetails,
     "UpdateAwrHubSourceDetails": UpdateAwrHubSourceDetails,
     "UpdateBasicConfigurationItemDetails": UpdateBasicConfigurationItemDetails,
+    "UpdateChargebackPlanDetails": UpdateChargebackPlanDetails,
+    "UpdateChargebackPlanReportDetails": UpdateChargebackPlanReportDetails,
     "UpdateConfigurationItemDetails": UpdateConfigurationItemDetails,
     "UpdateDatabaseInsightDetails": UpdateDatabaseInsightDetails,
     "UpdateEmManagedExternalDatabaseInsightDetails": UpdateEmManagedExternalDatabaseInsightDetails,

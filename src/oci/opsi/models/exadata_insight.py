@@ -115,6 +115,10 @@ class ExadataInsight(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a ExadataInsight.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataInsight object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -170,6 +174,10 @@ class ExadataInsight(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this ExadataInsight.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInsight.
         :type freeform_tags: dict(str, str)
@@ -192,13 +200,17 @@ class ExadataInsight(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExadataInsight.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this ExadataInsight.
         :type lifecycle_details: str
+
+        :param status_details:
+            The value to assign to the status_details property of this ExadataInsight.
+        :type status_details: str
 
         """
         self.swagger_types = {
@@ -211,13 +223,15 @@ class ExadataInsight(object):
             'exadata_rack_type': 'str',
             'is_virtualized_exadata': 'bool',
             'status': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'status_details': 'str'
         }
         self.attribute_map = {
             'entity_source': 'entitySource',
@@ -229,13 +243,15 @@ class ExadataInsight(object):
             'exadata_rack_type': 'exadataRackType',
             'is_virtualized_exadata': 'isVirtualizedExadata',
             'status': 'status',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'status_details': 'statusDetails'
         }
         self._entity_source = None
         self._id = None
@@ -246,6 +262,7 @@ class ExadataInsight(object):
         self._exadata_rack_type = None
         self._is_virtualized_exadata = None
         self._status = None
+        self._chargeback_plan_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -253,6 +270,7 @@ class ExadataInsight(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._status_details = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -514,6 +532,26 @@ class ExadataInsight(object):
         self._status = status
 
     @property
+    def chargeback_plan_details(self):
+        """
+        Gets the chargeback_plan_details of this ExadataInsight.
+
+        :return: The chargeback_plan_details of this ExadataInsight.
+        :rtype: oci.opsi.models.ChargebackPlanDetails
+        """
+        return self._chargeback_plan_details
+
+    @chargeback_plan_details.setter
+    def chargeback_plan_details(self, chargeback_plan_details):
+        """
+        Sets the chargeback_plan_details of this ExadataInsight.
+
+        :param chargeback_plan_details: The chargeback_plan_details of this ExadataInsight.
+        :type: oci.opsi.models.ChargebackPlanDetails
+        """
+        self._chargeback_plan_details = chargeback_plan_details
+
+    @property
     def freeform_tags(self):
         """
         **[Required]** Gets the freeform_tags of this ExadataInsight.
@@ -645,7 +683,7 @@ class ExadataInsight(object):
         **[Required]** Gets the lifecycle_state of this ExadataInsight.
         The current state of the Exadata insight.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -664,7 +702,7 @@ class ExadataInsight(object):
         :param lifecycle_state: The lifecycle_state of this ExadataInsight.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -692,6 +730,30 @@ class ExadataInsight(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def status_details(self):
+        """
+        Gets the status_details of this ExadataInsight.
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+
+
+        :return: The status_details of this ExadataInsight.
+        :rtype: str
+        """
+        return self._status_details
+
+    @status_details.setter
+    def status_details(self, status_details):
+        """
+        Sets the status_details of this ExadataInsight.
+        A message describing the status of the Exadata Resource. For example, it can be used to provide actionable information about the policies needed to access the Exadata Resource.
+
+
+        :param status_details: The status_details of this ExadataInsight.
+        :type: str
+        """
+        self._status_details = status_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -89,6 +89,10 @@ class MaskDataDetails(object):
             The value to assign to the recompile property of this MaskDataDetails.
         :type recompile: str
 
+        :param target_credentials:
+            The value to assign to the target_credentials property of this MaskDataDetails.
+        :type target_credentials: oci.data_safe.models.Credentials
+
         """
         self.swagger_types = {
             'target_id': 'str',
@@ -105,7 +109,8 @@ class MaskDataDetails(object):
             'is_redo_logging_enabled': 'bool',
             'is_refresh_stats_enabled': 'bool',
             'parallel_degree': 'str',
-            'recompile': 'str'
+            'recompile': 'str',
+            'target_credentials': 'Credentials'
         }
         self.attribute_map = {
             'target_id': 'targetId',
@@ -122,7 +127,8 @@ class MaskDataDetails(object):
             'is_redo_logging_enabled': 'isRedoLoggingEnabled',
             'is_refresh_stats_enabled': 'isRefreshStatsEnabled',
             'parallel_degree': 'parallelDegree',
-            'recompile': 'recompile'
+            'recompile': 'recompile',
+            'target_credentials': 'targetCredentials'
         }
         self._target_id = None
         self._is_decrypt = None
@@ -139,6 +145,7 @@ class MaskDataDetails(object):
         self._is_refresh_stats_enabled = None
         self._parallel_degree = None
         self._recompile = None
+        self._target_credentials = None
 
     @property
     def target_id(self):
@@ -576,6 +583,26 @@ class MaskDataDetails(object):
         :type: str
         """
         self._recompile = recompile
+
+    @property
+    def target_credentials(self):
+        """
+        Gets the target_credentials of this MaskDataDetails.
+
+        :return: The target_credentials of this MaskDataDetails.
+        :rtype: oci.data_safe.models.Credentials
+        """
+        return self._target_credentials
+
+    @target_credentials.setter
+    def target_credentials(self, target_credentials):
+        """
+        Sets the target_credentials of this MaskDataDetails.
+
+        :param target_credentials: The target_credentials of this MaskDataDetails.
+        :type: oci.data_safe.models.Credentials
+        """
+        self._target_credentials = target_credentials
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -189,6 +189,7 @@ API Reference
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oci Cache Config Set <redis/client/oci.redis.OciCacheConfigSetClient>`
 * :doc:`Oci Cache Default Config Set <redis/client/oci.redis.OciCacheDefaultConfigSetClient>`
+* :doc:`Oci Cache Engine Options <redis/client/oci.redis.OciCacheEngineOptionsClient>`
 * :doc:`Oci Cache User <redis/client/oci.redis.OciCacheUserClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`

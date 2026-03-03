@@ -24,6 +24,7 @@ from .create_redis_cluster_details import CreateRedisClusterDetails
 from .default_configuration_details import DefaultConfigurationDetails
 from .default_configuration_info import DefaultConfigurationInfo
 from .detach_oci_cache_users_details import DetachOciCacheUsersDetails
+from .engine_version import EngineVersion
 from .iam_authentication_mode import IamAuthenticationMode
 from .identity_token_details_response import IdentityTokenDetailsResponse
 from .node import Node
@@ -35,6 +36,8 @@ from .oci_cache_config_set_summary import OciCacheConfigSetSummary
 from .oci_cache_default_config_set import OciCacheDefaultConfigSet
 from .oci_cache_default_config_set_collection import OciCacheDefaultConfigSetCollection
 from .oci_cache_default_config_set_summary import OciCacheDefaultConfigSetSummary
+from .oci_cache_engine_option_summary import OciCacheEngineOptionSummary
+from .oci_cache_engine_options_collection import OciCacheEngineOptionsCollection
 from .oci_cache_user import OciCacheUser
 from .oci_cache_user_collection import OciCacheUserCollection
 from .oci_cache_user_summary import OciCacheUserSummary
@@ -75,6 +78,7 @@ redis_type_mapping = {
     "DefaultConfigurationDetails": DefaultConfigurationDetails,
     "DefaultConfigurationInfo": DefaultConfigurationInfo,
     "DetachOciCacheUsersDetails": DetachOciCacheUsersDetails,
+    "EngineVersion": EngineVersion,
     "IamAuthenticationMode": IamAuthenticationMode,
     "IdentityTokenDetailsResponse": IdentityTokenDetailsResponse,
     "Node": Node,
@@ -86,6 +90,8 @@ redis_type_mapping = {
     "OciCacheDefaultConfigSet": OciCacheDefaultConfigSet,
     "OciCacheDefaultConfigSetCollection": OciCacheDefaultConfigSetCollection,
     "OciCacheDefaultConfigSetSummary": OciCacheDefaultConfigSetSummary,
+    "OciCacheEngineOptionSummary": OciCacheEngineOptionSummary,
+    "OciCacheEngineOptionsCollection": OciCacheEngineOptionsCollection,
     "OciCacheUser": OciCacheUser,
     "OciCacheUserCollection": OciCacheUserCollection,
     "OciCacheUserSummary": OciCacheUserSummary,

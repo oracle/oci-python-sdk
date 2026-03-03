@@ -64,6 +64,14 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
             The value to assign to the vmcluster_details property of this ExadataExacsConfigurationSummary.
         :type vmcluster_details: list[oci.opsi.models.VmClusterSummary]
 
+        :param exadata_shape:
+            The value to assign to the exadata_shape property of this ExadataExacsConfigurationSummary.
+        :type exadata_shape: str
+
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this ExadataExacsConfigurationSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param opsi_private_endpoint_id:
             The value to assign to the opsi_private_endpoint_id property of this ExadataExacsConfigurationSummary.
         :type opsi_private_endpoint_id: str
@@ -84,6 +92,8 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'vmcluster_details': 'list[VmClusterSummary]',
+            'exadata_shape': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'opsi_private_endpoint_id': 'str',
             'parent_id': 'str'
         }
@@ -98,6 +108,8 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'vmcluster_details': 'vmclusterDetails',
+            'exadata_shape': 'exadataShape',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'parent_id': 'parentId'
         }
@@ -111,6 +123,8 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
         self._defined_tags = None
         self._freeform_tags = None
         self._vmcluster_details = None
+        self._exadata_shape = None
+        self._chargeback_plan_details = None
         self._opsi_private_endpoint_id = None
         self._parent_id = None
         self._entity_source = 'PE_COMANAGED_EXADATA'

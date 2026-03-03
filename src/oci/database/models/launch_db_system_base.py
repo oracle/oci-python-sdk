@@ -41,6 +41,10 @@ class LaunchDbSystemBase(object):
     #: This constant has a value of "DB_SYSTEM"
     SOURCE_DB_SYSTEM = "DB_SYSTEM"
 
+    #: A constant which can be used with the source property of a LaunchDbSystemBase.
+    #: This constant has a value of "DATAGUARD"
+    SOURCE_DATAGUARD = "DATAGUARD"
+
     #: A constant which can be used with the compute_model property of a LaunchDbSystemBase.
     #: This constant has a value of "ECPU"
     COMPUTE_MODEL_ECPU = "ECPU"
@@ -55,6 +59,7 @@ class LaunchDbSystemBase(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.LaunchDbSystemDetails`
+        * :class:`~oci.database.models.LaunchStandbyDbSystemDetails`
         * :class:`~oci.database.models.LaunchDbSystemFromDbSystemDetails`
         * :class:`~oci.database.models.LaunchDbSystemFromDatabaseDetails`
         * :class:`~oci.database.models.LaunchDbSystemFromBackupDetails`
@@ -168,7 +173,7 @@ class LaunchDbSystemBase(object):
 
         :param source:
             The value to assign to the source property of this LaunchDbSystemBase.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM", "DATAGUARD"
         :type source: str
 
         :param private_ip:
@@ -318,6 +323,9 @@ class LaunchDbSystemBase(object):
 
         if type == 'NONE':
             return 'LaunchDbSystemDetails'
+
+        if type == 'DATAGUARD':
+            return 'LaunchStandbyDbSystemDetails'
 
         if type == 'DB_SYSTEM':
             return 'LaunchDbSystemFromDbSystemDetails'
@@ -1137,7 +1145,7 @@ class LaunchDbSystemBase(object):
         Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating
         a new database from an existing database, including archive redo log data. The default is `NONE`.
 
-        Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
+        Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM", "DATAGUARD"
 
 
         :return: The source of this LaunchDbSystemBase.
@@ -1157,7 +1165,7 @@ class LaunchDbSystemBase(object):
         :param source: The source of this LaunchDbSystemBase.
         :type: str
         """
-        allowed_values = ["NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"]
+        allowed_values = ["NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM", "DATAGUARD"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

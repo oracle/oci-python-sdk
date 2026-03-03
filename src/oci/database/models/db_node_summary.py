@@ -204,6 +204,10 @@ class DbNodeSummary(object):
             The value to assign to the compute_count property of this DbNodeSummary.
         :type compute_count: int
 
+        :param is_os_patch_reboot_required:
+            The value to assign to the is_os_patch_reboot_required property of this DbNodeSummary.
+        :type is_os_patch_reboot_required: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -235,7 +239,8 @@ class DbNodeSummary(object):
             'total_cpu_core_count': 'int',
             'db_server_id': 'str',
             'compute_model': 'str',
-            'compute_count': 'int'
+            'compute_count': 'int',
+            'is_os_patch_reboot_required': 'bool'
         }
         self.attribute_map = {
             'id': 'id',
@@ -267,7 +272,8 @@ class DbNodeSummary(object):
             'total_cpu_core_count': 'totalCpuCoreCount',
             'db_server_id': 'dbServerId',
             'compute_model': 'computeModel',
-            'compute_count': 'computeCount'
+            'compute_count': 'computeCount',
+            'is_os_patch_reboot_required': 'isOsPatchRebootRequired'
         }
         self._id = None
         self._db_system_id = None
@@ -299,6 +305,7 @@ class DbNodeSummary(object):
         self._db_server_id = None
         self._compute_model = None
         self._compute_count = None
+        self._is_os_patch_reboot_required = None
 
     @property
     def id(self):
@@ -1139,6 +1146,32 @@ class DbNodeSummary(object):
         :type: int
         """
         self._compute_count = compute_count
+
+    @property
+    def is_os_patch_reboot_required(self):
+        """
+        Gets the is_os_patch_reboot_required of this DbNodeSummary.
+        Indicates whether the database node must be rebooted after applying Operating System patches.
+        This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+
+
+        :return: The is_os_patch_reboot_required of this DbNodeSummary.
+        :rtype: bool
+        """
+        return self._is_os_patch_reboot_required
+
+    @is_os_patch_reboot_required.setter
+    def is_os_patch_reboot_required(self, is_os_patch_reboot_required):
+        """
+        Sets the is_os_patch_reboot_required of this DbNodeSummary.
+        Indicates whether the database node must be rebooted after applying Operating System patches.
+        This flag becomes true after operations such as OS/kernel updates to indicate that a reboot of the node is required. After a successful reboot, this value is expected to return to false.
+
+
+        :param is_os_patch_reboot_required: The is_os_patch_reboot_required of this DbNodeSummary.
+        :type: bool
+        """
+        self._is_os_patch_reboot_required = is_os_patch_reboot_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

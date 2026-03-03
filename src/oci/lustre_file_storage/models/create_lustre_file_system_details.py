@@ -93,6 +93,10 @@ class CreateLustreFileSystemDetails(object):
             The value to assign to the root_squash_configuration property of this CreateLustreFileSystemDetails.
         :type root_squash_configuration: oci.lustre_file_storage.models.RootSquashConfiguration
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this CreateLustreFileSystemDetails.
+        :type maintenance_window: oci.lustre_file_storage.models.MaintenanceWindow
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -108,7 +112,8 @@ class CreateLustreFileSystemDetails(object):
             'subnet_id': 'str',
             'performance_tier': 'str',
             'cluster_placement_group_id': 'str',
-            'root_squash_configuration': 'RootSquashConfiguration'
+            'root_squash_configuration': 'RootSquashConfiguration',
+            'maintenance_window': 'MaintenanceWindow'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -124,7 +129,8 @@ class CreateLustreFileSystemDetails(object):
             'subnet_id': 'subnetId',
             'performance_tier': 'performanceTier',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'root_squash_configuration': 'rootSquashConfiguration'
+            'root_squash_configuration': 'rootSquashConfiguration',
+            'maintenance_window': 'maintenanceWindow'
         }
         self._compartment_id = None
         self._availability_domain = None
@@ -140,6 +146,7 @@ class CreateLustreFileSystemDetails(object):
         self._performance_tier = None
         self._cluster_placement_group_id = None
         self._root_squash_configuration = None
+        self._maintenance_window = None
 
     @property
     def compartment_id(self):
@@ -545,6 +552,26 @@ class CreateLustreFileSystemDetails(object):
         :type: oci.lustre_file_storage.models.RootSquashConfiguration
         """
         self._root_squash_configuration = root_squash_configuration
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this CreateLustreFileSystemDetails.
+
+        :return: The maintenance_window of this CreateLustreFileSystemDetails.
+        :rtype: oci.lustre_file_storage.models.MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this CreateLustreFileSystemDetails.
+
+        :param maintenance_window: The maintenance_window of this CreateLustreFileSystemDetails.
+        :type: oci.lustre_file_storage.models.MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     def __repr__(self):
         return formatted_flat_dict(self)

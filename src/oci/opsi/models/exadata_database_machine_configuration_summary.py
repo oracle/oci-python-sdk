@@ -64,6 +64,14 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             The value to assign to the vmcluster_details property of this ExadataDatabaseMachineConfigurationSummary.
         :type vmcluster_details: list[oci.opsi.models.VmClusterSummary]
 
+        :param exadata_shape:
+            The value to assign to the exadata_shape property of this ExadataDatabaseMachineConfigurationSummary.
+        :type exadata_shape: str
+
+        :param chargeback_plan_details:
+            The value to assign to the chargeback_plan_details property of this ExadataDatabaseMachineConfigurationSummary.
+        :type chargeback_plan_details: oci.opsi.models.ChargebackPlanDetails
+
         :param enterprise_manager_identifier:
             The value to assign to the enterprise_manager_identifier property of this ExadataDatabaseMachineConfigurationSummary.
         :type enterprise_manager_identifier: str
@@ -108,6 +116,8 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'vmcluster_details': 'list[VmClusterSummary]',
+            'exadata_shape': 'str',
+            'chargeback_plan_details': 'ChargebackPlanDetails',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_bridge_id': 'str',
             'enterprise_manager_entity_identifier': 'str',
@@ -128,6 +138,8 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'vmcluster_details': 'vmclusterDetails',
+            'exadata_shape': 'exadataShape',
+            'chargeback_plan_details': 'chargebackPlanDetails',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
             'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
@@ -147,6 +159,8 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         self._defined_tags = None
         self._freeform_tags = None
         self._vmcluster_details = None
+        self._exadata_shape = None
+        self._chargeback_plan_details = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_bridge_id = None
         self._enterprise_manager_entity_identifier = None

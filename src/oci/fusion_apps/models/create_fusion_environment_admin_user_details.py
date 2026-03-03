@@ -24,10 +24,6 @@ class CreateFusionEnvironmentAdminUserDetails(object):
             The value to assign to the username property of this CreateFusionEnvironmentAdminUserDetails.
         :type username: str
 
-        :param password:
-            The value to assign to the password property of this CreateFusionEnvironmentAdminUserDetails.
-        :type password: str
-
         :param email_address:
             The value to assign to the email_address property of this CreateFusionEnvironmentAdminUserDetails.
         :type email_address: str
@@ -43,20 +39,17 @@ class CreateFusionEnvironmentAdminUserDetails(object):
         """
         self.swagger_types = {
             'username': 'str',
-            'password': 'str',
             'email_address': 'str',
             'first_name': 'str',
             'last_name': 'str'
         }
         self.attribute_map = {
             'username': 'username',
-            'password': 'password',
             'email_address': 'emailAddress',
             'first_name': 'firstName',
             'last_name': 'lastName'
         }
         self._username = None
-        self._password = None
         self._email_address = None
         self._first_name = None
         self._last_name = None
@@ -84,30 +77,6 @@ class CreateFusionEnvironmentAdminUserDetails(object):
         :type: str
         """
         self._username = username
-
-    @property
-    def password(self):
-        """
-        Gets the password of this CreateFusionEnvironmentAdminUserDetails.
-        The password for the administrator.
-
-
-        :return: The password of this CreateFusionEnvironmentAdminUserDetails.
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """
-        Sets the password of this CreateFusionEnvironmentAdminUserDetails.
-        The password for the administrator.
-
-
-        :param password: The password of this CreateFusionEnvironmentAdminUserDetails.
-        :type: str
-        """
-        self._password = password
 
     @property
     def email_address(self):

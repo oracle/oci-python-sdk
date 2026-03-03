@@ -5,11 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.168.0 - 2026-03-03
+====================
+
+Added  
+-----  
+* Support for the User Managed Maintenance Window Feature in the Lustre File service 
+* Support for multiple standby databases across AD and Regions in a Data Guard environment for BaseDB in the Database service 
+* Support for OS Patching in BaseDB in the Database service 
+* Support for Valkey 8.1 in the Redis service 
+* Support for Exadata Cost Management in the Ops Insights service 
+* Support for accepting target database user credentials for masking and generating health reports in the Data Safe service  
+
+Breaking  
+-------- 
+*  Property `password` is removed from models `CreateFusionEnvironmentAdminUserDetails` in the Fusion Applications service  
+
+====================
 2.167.3 - 2026-02-24
 ====================
 
 Added 
 ----- 
+* Support for calling Oracle Cloud Infrastructure services in the af-casablanca-1 region
 * Support for specifying TCP and SSL scan listener ports for Disaster Recovery Networks in the Database service 
 * Support for readiness check in the Exadata Fleet Update service 
 * Support for zone transparency in the DNS service 

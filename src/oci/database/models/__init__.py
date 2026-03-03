@@ -178,6 +178,7 @@ from .create_data_guard_association_to_existing_vm_cluster_details import Create
 from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
 from .create_database_base import CreateDatabaseBase
 from .create_database_details import CreateDatabaseDetails
+from .create_database_for_standby_db_system_details import CreateDatabaseForStandbyDbSystemDetails
 from .create_database_from_another_database_details import CreateDatabaseFromAnotherDatabaseDetails
 from .create_database_from_backup import CreateDatabaseFromBackup
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
@@ -187,6 +188,7 @@ from .create_database_software_image_details import CreateDatabaseSoftwareImageD
 from .create_db_connection_bundle_details import CreateDbConnectionBundleDetails
 from .create_db_home_base import CreateDbHomeBase
 from .create_db_home_details import CreateDbHomeDetails
+from .create_db_home_for_standby_db_system import CreateDbHomeForStandbyDbSystem
 from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
 from .create_db_home_from_database_details import CreateDbHomeFromDatabaseDetails
 from .create_db_home_from_db_system_details import CreateDbHomeFromDbSystemDetails
@@ -278,6 +280,11 @@ from .db_server_summary import DbServerSummary
 from .db_system import DbSystem
 from .db_system_compute_performance_summary import DbSystemComputePerformanceSummary
 from .db_system_options import DbSystemOptions
+from .db_system_os_patch_details_collection import DbSystemOsPatchDetailsCollection
+from .db_system_os_patch_details_summary import DbSystemOsPatchDetailsSummary
+from .db_system_os_patch_history_entry import DbSystemOsPatchHistoryEntry
+from .db_system_os_patch_history_entry_collection import DbSystemOsPatchHistoryEntryCollection
+from .db_system_os_patch_history_entry_summary import DbSystemOsPatchHistoryEntrySummary
 from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_storage_performance_summary import DbSystemStoragePerformanceSummary
 from .db_system_summary import DbSystemSummary
@@ -333,6 +340,7 @@ from .exascale_db_storage_details import ExascaleDbStorageDetails
 from .exascale_db_storage_input_details import ExascaleDbStorageInputDetails
 from .exascale_db_storage_vault import ExascaleDbStorageVault
 from .exascale_db_storage_vault_summary import ExascaleDbStorageVaultSummary
+from .execute_db_system_os_patch_details import ExecuteDbSystemOsPatchDetails
 from .execution_action import ExecutionAction
 from .execution_action_member import ExecutionActionMember
 from .execution_action_summary import ExecutionActionSummary
@@ -379,6 +387,7 @@ from .launch_db_system_details import LaunchDbSystemDetails
 from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetails
 from .launch_db_system_from_database_details import LaunchDbSystemFromDatabaseDetails
 from .launch_db_system_from_db_system_details import LaunchDbSystemFromDbSystemDetails
+from .launch_standby_db_system_details import LaunchStandbyDbSystemDetails
 from .local_clone_pluggable_database_details import LocalClonePluggableDatabaseDetails
 from .long_term_back_up_schedule_details import LongTermBackUpScheduleDetails
 from .maintenance_run import MaintenanceRun
@@ -723,6 +732,7 @@ database_type_mapping = {
     "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,
     "CreateDatabaseBase": CreateDatabaseBase,
     "CreateDatabaseDetails": CreateDatabaseDetails,
+    "CreateDatabaseForStandbyDbSystemDetails": CreateDatabaseForStandbyDbSystemDetails,
     "CreateDatabaseFromAnotherDatabaseDetails": CreateDatabaseFromAnotherDatabaseDetails,
     "CreateDatabaseFromBackup": CreateDatabaseFromBackup,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
@@ -732,6 +742,7 @@ database_type_mapping = {
     "CreateDbConnectionBundleDetails": CreateDbConnectionBundleDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
     "CreateDbHomeDetails": CreateDbHomeDetails,
+    "CreateDbHomeForStandbyDbSystem": CreateDbHomeForStandbyDbSystem,
     "CreateDbHomeFromBackupDetails": CreateDbHomeFromBackupDetails,
     "CreateDbHomeFromDatabaseDetails": CreateDbHomeFromDatabaseDetails,
     "CreateDbHomeFromDbSystemDetails": CreateDbHomeFromDbSystemDetails,
@@ -823,6 +834,11 @@ database_type_mapping = {
     "DbSystem": DbSystem,
     "DbSystemComputePerformanceSummary": DbSystemComputePerformanceSummary,
     "DbSystemOptions": DbSystemOptions,
+    "DbSystemOsPatchDetailsCollection": DbSystemOsPatchDetailsCollection,
+    "DbSystemOsPatchDetailsSummary": DbSystemOsPatchDetailsSummary,
+    "DbSystemOsPatchHistoryEntry": DbSystemOsPatchHistoryEntry,
+    "DbSystemOsPatchHistoryEntryCollection": DbSystemOsPatchHistoryEntryCollection,
+    "DbSystemOsPatchHistoryEntrySummary": DbSystemOsPatchHistoryEntrySummary,
     "DbSystemShapeSummary": DbSystemShapeSummary,
     "DbSystemStoragePerformanceSummary": DbSystemStoragePerformanceSummary,
     "DbSystemSummary": DbSystemSummary,
@@ -878,6 +894,7 @@ database_type_mapping = {
     "ExascaleDbStorageInputDetails": ExascaleDbStorageInputDetails,
     "ExascaleDbStorageVault": ExascaleDbStorageVault,
     "ExascaleDbStorageVaultSummary": ExascaleDbStorageVaultSummary,
+    "ExecuteDbSystemOsPatchDetails": ExecuteDbSystemOsPatchDetails,
     "ExecutionAction": ExecutionAction,
     "ExecutionActionMember": ExecutionActionMember,
     "ExecutionActionSummary": ExecutionActionSummary,
@@ -924,6 +941,7 @@ database_type_mapping = {
     "LaunchDbSystemFromBackupDetails": LaunchDbSystemFromBackupDetails,
     "LaunchDbSystemFromDatabaseDetails": LaunchDbSystemFromDatabaseDetails,
     "LaunchDbSystemFromDbSystemDetails": LaunchDbSystemFromDbSystemDetails,
+    "LaunchStandbyDbSystemDetails": LaunchStandbyDbSystemDetails,
     "LocalClonePluggableDatabaseDetails": LocalClonePluggableDatabaseDetails,
     "LongTermBackUpScheduleDetails": LongTermBackUpScheduleDetails,
     "MaintenanceRun": MaintenanceRun,

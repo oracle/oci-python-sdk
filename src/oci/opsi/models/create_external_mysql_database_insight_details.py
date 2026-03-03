@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
     """
+    MySQL support within the OCI Ops Insights service has been deprecated as of January 29, 2026.
     The information about database to be analyzed.
     """
 

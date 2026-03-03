@@ -50,6 +50,10 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             The value to assign to the database_version property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
         :type database_version: str
 
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type is_advanced_features_enabled: bool
+
         :param cdb_name:
             The value to assign to the cdb_name property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
         :type cdb_name: str
@@ -95,6 +99,7 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'database_display_name': 'str',
             'database_type': 'str',
             'database_version': 'str',
+            'is_advanced_features_enabled': 'bool',
             'cdb_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
@@ -113,6 +118,7 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
             'database_version': 'databaseVersion',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
             'cdb_name': 'cdbName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
@@ -130,6 +136,7 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+        self._is_advanced_features_enabled = None
         self._cdb_name = None
         self._defined_tags = None
         self._freeform_tags = None
