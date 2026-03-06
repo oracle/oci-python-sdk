@@ -3,7 +3,6 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import io
-import six
 import math
 import time
 import warnings
@@ -11,6 +10,7 @@ from multiprocessing.dummy import Pool
 from oci.object_storage.transfer.internal.download.DownloadThread import (ParallelDownloader, SequentialDownloader,
                                                                           DownloadState)
 from oci.exceptions import (ResumableDownloadException, DownloadTerminated, DownloadFailedIncorrectDownloadSize)
+from oci._vendor import six
 
 
 class DownloadManager(object):
