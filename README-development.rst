@@ -46,8 +46,9 @@ Specifying a config file
 ------------------------
 
 By default, the tests will look for a config file, 'config' in 'tests/resources'.
-If 'tests/resources' does not exist, the tests will try attempt to use
-'tests/configuration/config'.
+If 'tests/resources' does not exist, the tests will try attempt to use the
+configuration defined at this location `config template`_
+
 The default profile is ``DEFAULT``.  You can change this with the
 ``--config-file`` and ``--config-profile`` options.
 
@@ -59,7 +60,7 @@ The default profile is ``DEFAULT``.  You can change this with the
     # Using a different profile in the default config file
     tox -- --config-profile IAD_PROFILE
 
-A sample config file is provided 'tests/configuration/config.sample'
+Here is the location of a `config template`_.
 
 Specifying environment variables
 --------------------------------
@@ -104,3 +105,8 @@ The SDK is packaged as a wheel. In order to generate the wheel you can run:
     python setup.py sdist bdist_wheel
 
 This wheel can then be installed via `pip`.
+
+
+
+.. _config template:
+  tests/configuration/config.sample
