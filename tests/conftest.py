@@ -164,6 +164,37 @@ def search_client(config):
     return client
 
 
+@pytest.fixture
+def generative_ai_inference_client(config):
+    """Sync GenerativeAI Inference client fixture."""
+    import os
+    region = os.environ.get("OCI_GENAI_REGION", "us-chicago-1")
+    service_endpoint = f"https://inference.generativeai.{region}.oci.oraclecloud.com"
+    client = oci.generative_ai_inference.GenerativeAiInferenceClient(
+        config,
+        service_endpoint=service_endpoint,
+    )
+    add_retries_to_service_operations(client)
+    return client
+
+
+@pytest.fixture
+def async_generative_ai_inference_client(config):
+    """Async GenerativeAI Inference client fixture.
+
+    Note: This fixture yields the client for use with async context manager
+    in async tests. The client should be used with 'async with' or explicitly closed.
+    """
+    import os
+    from oci.generative_ai_inference import AsyncGenerativeAiInferenceClient
+    region = os.environ.get("OCI_GENAI_REGION", "us-chicago-1")
+    service_endpoint = f"https://inference.generativeai.{region}.oci.oraclecloud.com"
+    return AsyncGenerativeAiInferenceClient(
+        config,
+        service_endpoint=service_endpoint,
+    )
+
+
 def add_retries_to_service_operations(client_obj):
     client_obj.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
 
