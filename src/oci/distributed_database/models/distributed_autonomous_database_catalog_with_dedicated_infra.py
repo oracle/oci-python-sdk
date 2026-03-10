@@ -129,6 +129,14 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
             The value to assign to the peer_details property of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
         :type peer_details: list[oci.distributed_database.models.CatalogPeerWithDedicatedInfra]
 
+        :param okv_key_store_id:
+            The value to assign to the okv_key_store_id property of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        :type okv_key_store_id: str
+
+        :param okv_end_point_group:
+            The value to assign to the okv_end_point_group property of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        :type okv_end_point_group: str
+
         :param metadata:
             The value to assign to the metadata property of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
         :type metadata: oci.distributed_database.models.DistributedAutonomousDbMetadata
@@ -152,6 +160,8 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
             'supporting_resource_id': 'str',
             'container_database_id': 'str',
             'peer_details': 'list[CatalogPeerWithDedicatedInfra]',
+            'okv_key_store_id': 'str',
+            'okv_end_point_group': 'str',
             'metadata': 'DistributedAutonomousDbMetadata'
         }
         self.attribute_map = {
@@ -172,6 +182,8 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
             'supporting_resource_id': 'supportingResourceId',
             'container_database_id': 'containerDatabaseId',
             'peer_details': 'peerDetails',
+            'okv_key_store_id': 'okvKeyStoreId',
+            'okv_end_point_group': 'okvEndPointGroup',
             'metadata': 'metadata'
         }
         self._source = None
@@ -191,6 +203,8 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
         self._supporting_resource_id = None
         self._container_database_id = None
         self._peer_details = None
+        self._okv_key_store_id = None
+        self._okv_end_point_group = None
         self._metadata = None
         self._source = 'ADB_D'
 
@@ -521,6 +535,58 @@ class DistributedAutonomousDatabaseCatalogWithDedicatedInfra(DistributedAutonomo
         :type: list[oci.distributed_database.models.CatalogPeerWithDedicatedInfra]
         """
         self._peer_details = peer_details
+
+    @property
+    def okv_key_store_id(self):
+        """
+        Gets the okv_key_store_id of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        The `OCID`__ of the key store used to create the shard.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The okv_key_store_id of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        :rtype: str
+        """
+        return self._okv_key_store_id
+
+    @okv_key_store_id.setter
+    def okv_key_store_id(self, okv_key_store_id):
+        """
+        Sets the okv_key_store_id of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        The `OCID`__ of the key store used to create the shard.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param okv_key_store_id: The okv_key_store_id of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        :type: str
+        """
+        self._okv_key_store_id = okv_key_store_id
+
+    @property
+    def okv_end_point_group(self):
+        """
+        Gets the okv_end_point_group of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        The OKV endpoint name.
+
+
+        :return: The okv_end_point_group of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        :rtype: str
+        """
+        return self._okv_end_point_group
+
+    @okv_end_point_group.setter
+    def okv_end_point_group(self, okv_end_point_group):
+        """
+        Sets the okv_end_point_group of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        The OKV endpoint name.
+
+
+        :param okv_end_point_group: The okv_end_point_group of this DistributedAutonomousDatabaseCatalogWithDedicatedInfra.
+        :type: str
+        """
+        self._okv_end_point_group = okv_end_point_group
 
     @property
     def metadata(self):

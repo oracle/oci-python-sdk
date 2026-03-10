@@ -64,23 +64,30 @@ class EmailOutboundIpSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type assignment_state: str
 
+        :param time_unassigned:
+            The value to assign to the time_unassigned property of this EmailOutboundIpSummary.
+        :type time_unassigned: datetime
+
         """
         self.swagger_types = {
             'outbound_ip': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'assignment_state': 'str'
+            'assignment_state': 'str',
+            'time_unassigned': 'datetime'
         }
         self.attribute_map = {
             'outbound_ip': 'outboundIp',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'assignment_state': 'assignmentState'
+            'assignment_state': 'assignmentState',
+            'time_unassigned': 'timeUnassigned'
         }
         self._outbound_ip = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._assignment_state = None
+        self._time_unassigned = None
 
     @property
     def outbound_ip(self):
@@ -191,6 +198,40 @@ class EmailOutboundIpSummary(object):
         if not value_allowed_none_or_none_sentinel(assignment_state, allowed_values):
             assignment_state = 'UNKNOWN_ENUM_VALUE'
         self._assignment_state = assignment_state
+
+    @property
+    def time_unassigned(self):
+        """
+        Gets the time_unassigned of this EmailOutboundIpSummary.
+        The time IP was removed from IP Pool.
+        Times are expressed in `RFC 3339`__
+        timestamp format, \"YYYY-MM-ddThh:mmZ\".
+        Example: `2021-02-12T22:47:12.613Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_unassigned of this EmailOutboundIpSummary.
+        :rtype: datetime
+        """
+        return self._time_unassigned
+
+    @time_unassigned.setter
+    def time_unassigned(self, time_unassigned):
+        """
+        Sets the time_unassigned of this EmailOutboundIpSummary.
+        The time IP was removed from IP Pool.
+        Times are expressed in `RFC 3339`__
+        timestamp format, \"YYYY-MM-ddThh:mmZ\".
+        Example: `2021-02-12T22:47:12.613Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_unassigned: The time_unassigned of this EmailOutboundIpSummary.
+        :type: datetime
+        """
+        self._time_unassigned = time_unassigned
 
     def __repr__(self):
         return formatted_flat_dict(self)

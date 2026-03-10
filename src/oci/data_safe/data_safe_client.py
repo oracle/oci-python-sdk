@@ -15,8 +15,8 @@ from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
 from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import data_safe_type_mapping
 missing = Sentinel("Missing")
 
@@ -31,7 +31,7 @@ class DataSafeClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -50,7 +50,7 @@ class DataSafeClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -82,7 +82,7 @@ class DataSafeClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("data_safe"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -172,7 +172,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/activate_target_database.py.html>`__ to see an example of how to use activate_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/activate_target_database.py.html>`__ to see an example of how to use activate_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -292,7 +292,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/add_masking_columns_from_sdm.py.html>`__ to see an example of how to use add_masking_columns_from_sdm API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/add_masking_columns_from_sdm.py.html>`__ to see an example of how to use add_masking_columns_from_sdm API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -422,7 +422,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/alerts_update.py.html>`__ to see an example of how to use alerts_update API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/alerts_update.py.html>`__ to see an example of how to use alerts_update API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -550,7 +550,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_discovery_job_results.py.html>`__ to see an example of how to use apply_discovery_job_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_discovery_job_results.py.html>`__ to see an example of how to use apply_discovery_job_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -678,7 +678,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_sdm_masking_policy_difference.py.html>`__ to see an example of how to use apply_sdm_masking_policy_difference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_sdm_masking_policy_difference.py.html>`__ to see an example of how to use apply_sdm_masking_policy_difference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -804,7 +804,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_security_assessment_template.py.html>`__ to see an example of how to use apply_security_assessment_template API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_security_assessment_template.py.html>`__ to see an example of how to use apply_security_assessment_template API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -925,7 +925,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_create_sensitive_types.py.html>`__ to see an example of how to use bulk_create_sensitive_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_create_sensitive_types.py.html>`__ to see an example of how to use bulk_create_sensitive_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1046,7 +1046,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_create_sql_firewall_allowed_sqls.py.html>`__ to see an example of how to use bulk_create_sql_firewall_allowed_sqls API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_create_sql_firewall_allowed_sqls.py.html>`__ to see an example of how to use bulk_create_sql_firewall_allowed_sqls API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1148,7 +1148,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_create_unified_audit_policy.py.html>`__ to see an example of how to use bulk_create_unified_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_create_unified_audit_policy.py.html>`__ to see an example of how to use bulk_create_unified_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1244,7 +1244,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_delete_sql_firewall_allowed_sqls.py.html>`__ to see an example of how to use bulk_delete_sql_firewall_allowed_sqls API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/bulk_delete_sql_firewall_allowed_sqls.py.html>`__ to see an example of how to use bulk_delete_sql_firewall_allowed_sqls API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1353,7 +1353,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/calculate_audit_volume_available.py.html>`__ to see an example of how to use calculate_audit_volume_available API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/calculate_audit_volume_available.py.html>`__ to see an example of how to use calculate_audit_volume_available API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -1479,7 +1479,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/calculate_audit_volume_collected.py.html>`__ to see an example of how to use calculate_audit_volume_collected API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/calculate_audit_volume_collected.py.html>`__ to see an example of how to use calculate_audit_volume_collected API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -1596,7 +1596,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -1717,7 +1717,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_alert_compartment.py.html>`__ to see an example of how to use change_alert_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_alert_compartment.py.html>`__ to see an example of how to use change_alert_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertId']
@@ -1843,7 +1843,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_alert_policy_compartment.py.html>`__ to see an example of how to use change_alert_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_alert_policy_compartment.py.html>`__ to see an example of how to use change_alert_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId']
@@ -1969,7 +1969,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_attribute_set_compartment.py.html>`__ to see an example of how to use change_attribute_set_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_attribute_set_compartment.py.html>`__ to see an example of how to use change_attribute_set_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['attributeSetId']
@@ -2095,7 +2095,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_archive_retrieval_compartment.py.html>`__ to see an example of how to use change_audit_archive_retrieval_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_archive_retrieval_compartment.py.html>`__ to see an example of how to use change_audit_archive_retrieval_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditArchiveRetrievalId']
@@ -2221,7 +2221,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_policy_compartment.py.html>`__ to see an example of how to use change_audit_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_policy_compartment.py.html>`__ to see an example of how to use change_audit_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditPolicyId']
@@ -2347,7 +2347,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_profile_compartment.py.html>`__ to see an example of how to use change_audit_profile_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_profile_compartment.py.html>`__ to see an example of how to use change_audit_profile_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -2467,7 +2467,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_data_safe_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_safe_private_endpoint_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_data_safe_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_safe_private_endpoint_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSafePrivateEndpointId']
@@ -2590,7 +2590,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_database_security_config_compartment.py.html>`__ to see an example of how to use change_database_security_config_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_database_security_config_compartment.py.html>`__ to see an example of how to use change_database_security_config_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseSecurityConfigId']
@@ -2716,7 +2716,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_discovery_job_compartment.py.html>`__ to see an example of how to use change_discovery_job_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_discovery_job_compartment.py.html>`__ to see an example of how to use change_discovery_job_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId']
@@ -2842,7 +2842,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_library_masking_format_compartment.py.html>`__ to see an example of how to use change_library_masking_format_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_library_masking_format_compartment.py.html>`__ to see an example of how to use change_library_masking_format_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['libraryMaskingFormatId']
@@ -2968,7 +2968,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_masking_policy_compartment.py.html>`__ to see an example of how to use change_masking_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_masking_policy_compartment.py.html>`__ to see an example of how to use change_masking_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -3094,7 +3094,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_masking_policy_health_report_compartment.py.html>`__ to see an example of how to use change_masking_policy_health_report_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_masking_policy_health_report_compartment.py.html>`__ to see an example of how to use change_masking_policy_health_report_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyHealthReportId']
@@ -3220,7 +3220,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_on_prem_connector_compartment.py.html>`__ to see an example of how to use change_on_prem_connector_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_on_prem_connector_compartment.py.html>`__ to see an example of how to use change_on_prem_connector_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['onPremConnectorId']
@@ -3346,7 +3346,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_report_compartment.py.html>`__ to see an example of how to use change_report_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_report_compartment.py.html>`__ to see an example of how to use change_report_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportId']
@@ -3472,7 +3472,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_report_definition_compartment.py.html>`__ to see an example of how to use change_report_definition_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_report_definition_compartment.py.html>`__ to see an example of how to use change_report_definition_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -3598,7 +3598,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_retention.py.html>`__ to see an example of how to use change_retention API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_retention.py.html>`__ to see an example of how to use change_retention API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -3724,7 +3724,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sdm_masking_policy_difference_compartment.py.html>`__ to see an example of how to use change_sdm_masking_policy_difference_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sdm_masking_policy_difference_compartment.py.html>`__ to see an example of how to use change_sdm_masking_policy_difference_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId']
@@ -3854,7 +3854,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_assessment_compartment.py.html>`__ to see an example of how to use change_security_assessment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_assessment_compartment.py.html>`__ to see an example of how to use change_security_assessment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -3980,7 +3980,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_policy_compartment.py.html>`__ to see an example of how to use change_security_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_policy_compartment.py.html>`__ to see an example of how to use change_security_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyId']
@@ -4106,7 +4106,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_policy_config_compartment.py.html>`__ to see an example of how to use change_security_policy_config_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_policy_config_compartment.py.html>`__ to see an example of how to use change_security_policy_config_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyConfigId']
@@ -4232,7 +4232,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_policy_deployment_compartment.py.html>`__ to see an example of how to use change_security_policy_deployment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_policy_deployment_compartment.py.html>`__ to see an example of how to use change_security_policy_deployment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -4358,7 +4358,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_data_model_compartment.py.html>`__ to see an example of how to use change_sensitive_data_model_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_data_model_compartment.py.html>`__ to see an example of how to use change_sensitive_data_model_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -4484,7 +4484,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_type_compartment.py.html>`__ to see an example of how to use change_sensitive_type_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_type_compartment.py.html>`__ to see an example of how to use change_sensitive_type_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeId']
@@ -4610,7 +4610,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_type_group_compartment.py.html>`__ to see an example of how to use change_sensitive_type_group_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_type_group_compartment.py.html>`__ to see an example of how to use change_sensitive_type_group_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeGroupId']
@@ -4736,7 +4736,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_types_export_compartment.py.html>`__ to see an example of how to use change_sensitive_types_export_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_types_export_compartment.py.html>`__ to see an example of how to use change_sensitive_types_export_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypesExportId']
@@ -4862,7 +4862,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sql_collection_compartment.py.html>`__ to see an example of how to use change_sql_collection_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sql_collection_compartment.py.html>`__ to see an example of how to use change_sql_collection_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -4988,7 +4988,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sql_firewall_policy_compartment.py.html>`__ to see an example of how to use change_sql_firewall_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sql_firewall_policy_compartment.py.html>`__ to see an example of how to use change_sql_firewall_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlFirewallPolicyId']
@@ -5114,7 +5114,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_alert_policy_association_compartment.py.html>`__ to see an example of how to use change_target_alert_policy_association_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_alert_policy_association_compartment.py.html>`__ to see an example of how to use change_target_alert_policy_association_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetAlertPolicyAssociationId']
@@ -5240,7 +5240,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_database_compartment.py.html>`__ to see an example of how to use change_target_database_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_database_compartment.py.html>`__ to see an example of how to use change_target_database_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -5366,7 +5366,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_database_group_compartment.py.html>`__ to see an example of how to use change_target_database_group_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_database_group_compartment.py.html>`__ to see an example of how to use change_target_database_group_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseGroupId']
@@ -5492,7 +5492,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_unified_audit_policy_compartment.py.html>`__ to see an example of how to use change_unified_audit_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_unified_audit_policy_compartment.py.html>`__ to see an example of how to use change_unified_audit_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyId']
@@ -5618,7 +5618,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_unified_audit_policy_definition_compartment.py.html>`__ to see an example of how to use change_unified_audit_policy_definition_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_unified_audit_policy_definition_compartment.py.html>`__ to see an example of how to use change_unified_audit_policy_definition_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyDefinitionId']
@@ -5748,7 +5748,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_user_assessment_compartment.py.html>`__ to see an example of how to use change_user_assessment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_user_assessment_compartment.py.html>`__ to see an example of how to use change_user_assessment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -5875,7 +5875,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_security_assessment.py.html>`__ to see an example of how to use compare_security_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_security_assessment.py.html>`__ to see an example of how to use compare_security_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -6001,7 +6001,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_to_template_baseline.py.html>`__ to see an example of how to use compare_to_template_baseline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_to_template_baseline.py.html>`__ to see an example of how to use compare_to_template_baseline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -6128,7 +6128,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_user_assessment.py.html>`__ to see an example of how to use compare_user_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_user_assessment.py.html>`__ to see an example of how to use compare_user_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -6244,7 +6244,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_alert_policy.py.html>`__ to see an example of how to use create_alert_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_alert_policy.py.html>`__ to see an example of how to use create_alert_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6351,7 +6351,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_alert_policy_rule.py.html>`__ to see an example of how to use create_alert_policy_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_alert_policy_rule.py.html>`__ to see an example of how to use create_alert_policy_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId']
@@ -6467,7 +6467,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_attribute_set.py.html>`__ to see an example of how to use create_attribute_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_attribute_set.py.html>`__ to see an example of how to use create_attribute_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6573,7 +6573,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_audit_archive_retrieval.py.html>`__ to see an example of how to use create_audit_archive_retrieval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_audit_archive_retrieval.py.html>`__ to see an example of how to use create_audit_archive_retrieval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6677,7 +6677,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_audit_profile.py.html>`__ to see an example of how to use create_audit_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_audit_profile.py.html>`__ to see an example of how to use create_audit_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6781,7 +6781,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_data_safe_private_endpoint.py.html>`__ to see an example of how to use create_data_safe_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_data_safe_private_endpoint.py.html>`__ to see an example of how to use create_data_safe_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6889,7 +6889,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_discovery_job.py.html>`__ to see an example of how to use create_discovery_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_discovery_job.py.html>`__ to see an example of how to use create_discovery_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6997,7 +6997,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_library_masking_format.py.html>`__ to see an example of how to use create_library_masking_format API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_library_masking_format.py.html>`__ to see an example of how to use create_library_masking_format API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7123,7 +7123,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_masking_column.py.html>`__ to see an example of how to use create_masking_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_masking_column.py.html>`__ to see an example of how to use create_masking_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -7253,7 +7253,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_masking_policy.py.html>`__ to see an example of how to use create_masking_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_masking_policy.py.html>`__ to see an example of how to use create_masking_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7357,7 +7357,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_on_prem_connector.py.html>`__ to see an example of how to use create_on_prem_connector API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_on_prem_connector.py.html>`__ to see an example of how to use create_on_prem_connector API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7471,7 +7471,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_peer_target_database.py.html>`__ to see an example of how to use create_peer_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_peer_target_database.py.html>`__ to see an example of how to use create_peer_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -7592,7 +7592,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_referential_relation.py.html>`__ to see an example of how to use create_referential_relation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_referential_relation.py.html>`__ to see an example of how to use create_referential_relation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -7706,7 +7706,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_report_definition.py.html>`__ to see an example of how to use create_report_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_report_definition.py.html>`__ to see an example of how to use create_report_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7814,7 +7814,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sdm_masking_policy_difference.py.html>`__ to see an example of how to use create_sdm_masking_policy_difference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sdm_masking_policy_difference.py.html>`__ to see an example of how to use create_sdm_masking_policy_difference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7922,7 +7922,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_assessment.py.html>`__ to see an example of how to use create_security_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_assessment.py.html>`__ to see an example of how to use create_security_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8026,7 +8026,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_policy.py.html>`__ to see an example of how to use create_security_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_policy.py.html>`__ to see an example of how to use create_security_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8130,7 +8130,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_policy_config.py.html>`__ to see an example of how to use create_security_policy_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_policy_config.py.html>`__ to see an example of how to use create_security_policy_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8234,7 +8234,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_policy_deployment.py.html>`__ to see an example of how to use create_security_policy_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_policy_deployment.py.html>`__ to see an example of how to use create_security_policy_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8341,7 +8341,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_column.py.html>`__ to see an example of how to use create_sensitive_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_column.py.html>`__ to see an example of how to use create_sensitive_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -8457,7 +8457,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_data_model.py.html>`__ to see an example of how to use create_sensitive_data_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_data_model.py.html>`__ to see an example of how to use create_sensitive_data_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8563,7 +8563,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_type.py.html>`__ to see an example of how to use create_sensitive_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_type.py.html>`__ to see an example of how to use create_sensitive_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8667,7 +8667,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_type_group.py.html>`__ to see an example of how to use create_sensitive_type_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_type_group.py.html>`__ to see an example of how to use create_sensitive_type_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8773,7 +8773,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_types_export.py.html>`__ to see an example of how to use create_sensitive_types_export API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_types_export.py.html>`__ to see an example of how to use create_sensitive_types_export API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8877,7 +8877,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sql_collection.py.html>`__ to see an example of how to use create_sql_collection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sql_collection.py.html>`__ to see an example of how to use create_sql_collection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8981,7 +8981,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_alert_policy_association.py.html>`__ to see an example of how to use create_target_alert_policy_association API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_alert_policy_association.py.html>`__ to see an example of how to use create_target_alert_policy_association API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9085,7 +9085,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_database.py.html>`__ to see an example of how to use create_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_database.py.html>`__ to see an example of how to use create_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9189,7 +9189,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_database_group.py.html>`__ to see an example of how to use create_target_database_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_database_group.py.html>`__ to see an example of how to use create_target_database_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9293,7 +9293,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_unified_audit_policy.py.html>`__ to see an example of how to use create_unified_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_unified_audit_policy.py.html>`__ to see an example of how to use create_unified_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9401,7 +9401,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_user_assessment.py.html>`__ to see an example of how to use create_user_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_user_assessment.py.html>`__ to see an example of how to use create_user_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9512,7 +9512,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/deactivate_target_database.py.html>`__ to see an example of how to use deactivate_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/deactivate_target_database.py.html>`__ to see an example of how to use deactivate_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -9627,7 +9627,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_alert_policy.py.html>`__ to see an example of how to use delete_alert_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_alert_policy.py.html>`__ to see an example of how to use delete_alert_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId']
@@ -9742,7 +9742,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_alert_policy_rule.py.html>`__ to see an example of how to use delete_alert_policy_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_alert_policy_rule.py.html>`__ to see an example of how to use delete_alert_policy_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId', 'ruleKey']
@@ -9855,7 +9855,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_attribute_set.py.html>`__ to see an example of how to use delete_attribute_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_attribute_set.py.html>`__ to see an example of how to use delete_attribute_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['attributeSetId']
@@ -9968,7 +9968,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_archive_retrieval.py.html>`__ to see an example of how to use delete_audit_archive_retrieval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_archive_retrieval.py.html>`__ to see an example of how to use delete_audit_archive_retrieval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditArchiveRetrievalId']
@@ -10081,7 +10081,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_profile.py.html>`__ to see an example of how to use delete_audit_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_profile.py.html>`__ to see an example of how to use delete_audit_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -10193,7 +10193,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_trail.py.html>`__ to see an example of how to use delete_audit_trail API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_trail.py.html>`__ to see an example of how to use delete_audit_trail API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditTrailId']
@@ -10305,7 +10305,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_data_safe_private_endpoint.py.html>`__ to see an example of how to use delete_data_safe_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_data_safe_private_endpoint.py.html>`__ to see an example of how to use delete_data_safe_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSafePrivateEndpointId']
@@ -10417,7 +10417,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_discovery_job.py.html>`__ to see an example of how to use delete_discovery_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_discovery_job.py.html>`__ to see an example of how to use delete_discovery_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId']
@@ -10532,7 +10532,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_discovery_job_result.py.html>`__ to see an example of how to use delete_discovery_job_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_discovery_job_result.py.html>`__ to see an example of how to use delete_discovery_job_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId', 'resultKey']
@@ -10645,7 +10645,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_library_masking_format.py.html>`__ to see an example of how to use delete_library_masking_format API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_library_masking_format.py.html>`__ to see an example of how to use delete_library_masking_format API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['libraryMaskingFormatId']
@@ -10760,7 +10760,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_column.py.html>`__ to see an example of how to use delete_masking_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_column.py.html>`__ to see an example of how to use delete_masking_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingColumnKey', 'maskingPolicyId']
@@ -10873,7 +10873,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_policy.py.html>`__ to see an example of how to use delete_masking_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_policy.py.html>`__ to see an example of how to use delete_masking_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -10985,7 +10985,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_policy_health_report.py.html>`__ to see an example of how to use delete_masking_policy_health_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_policy_health_report.py.html>`__ to see an example of how to use delete_masking_policy_health_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyHealthReportId']
@@ -11097,7 +11097,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_report.py.html>`__ to see an example of how to use delete_masking_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_report.py.html>`__ to see an example of how to use delete_masking_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingReportId']
@@ -11209,7 +11209,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_on_prem_connector.py.html>`__ to see an example of how to use delete_on_prem_connector API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_on_prem_connector.py.html>`__ to see an example of how to use delete_on_prem_connector API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['onPremConnectorId']
@@ -11324,7 +11324,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_peer_target_database.py.html>`__ to see an example of how to use delete_peer_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_peer_target_database.py.html>`__ to see an example of how to use delete_peer_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId', 'peerTargetDatabaseId']
@@ -11440,7 +11440,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_referential_relation.py.html>`__ to see an example of how to use delete_referential_relation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_referential_relation.py.html>`__ to see an example of how to use delete_referential_relation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId', 'referentialRelationKey']
@@ -11553,7 +11553,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_report_definition.py.html>`__ to see an example of how to use delete_report_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_report_definition.py.html>`__ to see an example of how to use delete_report_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -11665,7 +11665,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sdm_masking_policy_difference.py.html>`__ to see an example of how to use delete_sdm_masking_policy_difference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sdm_masking_policy_difference.py.html>`__ to see an example of how to use delete_sdm_masking_policy_difference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId']
@@ -11780,7 +11780,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_assessment.py.html>`__ to see an example of how to use delete_security_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_assessment.py.html>`__ to see an example of how to use delete_security_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -11892,7 +11892,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_policy.py.html>`__ to see an example of how to use delete_security_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_policy.py.html>`__ to see an example of how to use delete_security_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyId']
@@ -12004,7 +12004,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_policy_config.py.html>`__ to see an example of how to use delete_security_policy_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_policy_config.py.html>`__ to see an example of how to use delete_security_policy_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyConfigId']
@@ -12116,7 +12116,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_policy_deployment.py.html>`__ to see an example of how to use delete_security_policy_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_policy_deployment.py.html>`__ to see an example of how to use delete_security_policy_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -12231,7 +12231,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_column.py.html>`__ to see an example of how to use delete_sensitive_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_column.py.html>`__ to see an example of how to use delete_sensitive_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId', 'sensitiveColumnKey']
@@ -12344,7 +12344,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_data_model.py.html>`__ to see an example of how to use delete_sensitive_data_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_data_model.py.html>`__ to see an example of how to use delete_sensitive_data_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -12456,7 +12456,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_type.py.html>`__ to see an example of how to use delete_sensitive_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_type.py.html>`__ to see an example of how to use delete_sensitive_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeId']
@@ -12568,7 +12568,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_type_group.py.html>`__ to see an example of how to use delete_sensitive_type_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_type_group.py.html>`__ to see an example of how to use delete_sensitive_type_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeGroupId']
@@ -12680,7 +12680,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_types_export.py.html>`__ to see an example of how to use delete_sensitive_types_export API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_types_export.py.html>`__ to see an example of how to use delete_sensitive_types_export API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypesExportId']
@@ -12792,7 +12792,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sql_collection.py.html>`__ to see an example of how to use delete_sql_collection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sql_collection.py.html>`__ to see an example of how to use delete_sql_collection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -12904,7 +12904,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sql_firewall_allowed_sql.py.html>`__ to see an example of how to use delete_sql_firewall_allowed_sql API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sql_firewall_allowed_sql.py.html>`__ to see an example of how to use delete_sql_firewall_allowed_sql API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlFirewallAllowedSqlId']
@@ -13016,7 +13016,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sql_firewall_policy.py.html>`__ to see an example of how to use delete_sql_firewall_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sql_firewall_policy.py.html>`__ to see an example of how to use delete_sql_firewall_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlFirewallPolicyId']
@@ -13128,7 +13128,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_alert_policy_association.py.html>`__ to see an example of how to use delete_target_alert_policy_association API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_alert_policy_association.py.html>`__ to see an example of how to use delete_target_alert_policy_association API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetAlertPolicyAssociationId']
@@ -13240,7 +13240,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_database.py.html>`__ to see an example of how to use delete_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_database.py.html>`__ to see an example of how to use delete_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -13352,7 +13352,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_database_group.py.html>`__ to see an example of how to use delete_target_database_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_database_group.py.html>`__ to see an example of how to use delete_target_database_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseGroupId']
@@ -13464,7 +13464,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_unified_audit_policy.py.html>`__ to see an example of how to use delete_unified_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_unified_audit_policy.py.html>`__ to see an example of how to use delete_unified_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyId']
@@ -13576,7 +13576,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_unified_audit_policy_definition.py.html>`__ to see an example of how to use delete_unified_audit_policy_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_unified_audit_policy_definition.py.html>`__ to see an example of how to use delete_unified_audit_policy_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyDefinitionId']
@@ -13691,7 +13691,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_user_assessment.py.html>`__ to see an example of how to use delete_user_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_user_assessment.py.html>`__ to see an example of how to use delete_user_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -13809,7 +13809,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/deploy_security_policy_deployment.py.html>`__ to see an example of how to use deploy_security_policy_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/deploy_security_policy_deployment.py.html>`__ to see an example of how to use deploy_security_policy_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -13933,7 +13933,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/discover_audit_trails.py.html>`__ to see an example of how to use discover_audit_trails API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/discover_audit_trails.py.html>`__ to see an example of how to use discover_audit_trails API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -14047,7 +14047,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_discovery_report.py.html>`__ to see an example of how to use download_discovery_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_discovery_report.py.html>`__ to see an example of how to use download_discovery_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -14157,7 +14157,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_log.py.html>`__ to see an example of how to use download_masking_log API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_log.py.html>`__ to see an example of how to use download_masking_log API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -14270,7 +14270,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_policy.py.html>`__ to see an example of how to use download_masking_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_policy.py.html>`__ to see an example of how to use download_masking_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -14382,7 +14382,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_report.py.html>`__ to see an example of how to use download_masking_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_report.py.html>`__ to see an example of how to use download_masking_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -14499,7 +14499,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_privilege_script.py.html>`__ to see an example of how to use download_privilege_script API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_privilege_script.py.html>`__ to see an example of how to use download_privilege_script API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -14614,7 +14614,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_security_assessment_report.py.html>`__ to see an example of how to use download_security_assessment_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_security_assessment_report.py.html>`__ to see an example of how to use download_security_assessment_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -14732,7 +14732,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_sensitive_data_model.py.html>`__ to see an example of how to use download_sensitive_data_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_sensitive_data_model.py.html>`__ to see an example of how to use download_sensitive_data_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -14844,7 +14844,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_sensitive_types_export.py.html>`__ to see an example of how to use download_sensitive_types_export API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_sensitive_types_export.py.html>`__ to see an example of how to use download_sensitive_types_export API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypesExportId']
@@ -14968,7 +14968,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_user_assessment_report.py.html>`__ to see an example of how to use download_user_assessment_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_user_assessment_report.py.html>`__ to see an example of how to use download_user_assessment_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -15090,7 +15090,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/enable_data_safe_configuration.py.html>`__ to see an example of how to use enable_data_safe_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/enable_data_safe_configuration.py.html>`__ to see an example of how to use enable_data_safe_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -15199,7 +15199,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_discovery_report_for_download.py.html>`__ to see an example of how to use generate_discovery_report_for_download API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_discovery_report_for_download.py.html>`__ to see an example of how to use generate_discovery_report_for_download API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -15313,7 +15313,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_health_report.py.html>`__ to see an example of how to use generate_health_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_health_report.py.html>`__ to see an example of how to use generate_health_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -15428,7 +15428,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_masking_policy_for_download.py.html>`__ to see an example of how to use generate_masking_policy_for_download API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_masking_policy_for_download.py.html>`__ to see an example of how to use generate_masking_policy_for_download API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -15539,7 +15539,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_masking_report_for_download.py.html>`__ to see an example of how to use generate_masking_report_for_download API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_masking_report_for_download.py.html>`__ to see an example of how to use generate_masking_report_for_download API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -15660,7 +15660,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_on_prem_connector_configuration.py.html>`__ to see an example of how to use generate_on_prem_connector_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_on_prem_connector_configuration.py.html>`__ to see an example of how to use generate_on_prem_connector_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['onPremConnectorId']
@@ -15799,7 +15799,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_report.py.html>`__ to see an example of how to use generate_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_report.py.html>`__ to see an example of how to use generate_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -15934,7 +15934,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_security_assessment_report.py.html>`__ to see an example of how to use generate_security_assessment_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_security_assessment_report.py.html>`__ to see an example of how to use generate_security_assessment_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -16050,7 +16050,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_sensitive_data_model_for_download.py.html>`__ to see an example of how to use generate_sensitive_data_model_for_download API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_sensitive_data_model_for_download.py.html>`__ to see an example of how to use generate_sensitive_data_model_for_download API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -16168,7 +16168,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_sql_firewall_policy.py.html>`__ to see an example of how to use generate_sql_firewall_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_sql_firewall_policy.py.html>`__ to see an example of how to use generate_sql_firewall_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -16293,7 +16293,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_user_assessment_report.py.html>`__ to see an example of how to use generate_user_assessment_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_user_assessment_report.py.html>`__ to see an example of how to use generate_user_assessment_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -16403,7 +16403,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert.py.html>`__ to see an example of how to use get_alert API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert.py.html>`__ to see an example of how to use get_alert API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertId']
@@ -16508,7 +16508,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert_policy.py.html>`__ to see an example of how to use get_alert_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert_policy.py.html>`__ to see an example of how to use get_alert_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId']
@@ -16616,7 +16616,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert_policy_rule.py.html>`__ to see an example of how to use get_alert_policy_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert_policy_rule.py.html>`__ to see an example of how to use get_alert_policy_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId', 'ruleKey']
@@ -16729,7 +16729,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_attribute_set.py.html>`__ to see an example of how to use get_attribute_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_attribute_set.py.html>`__ to see an example of how to use get_attribute_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['attributeSetId']
@@ -16843,7 +16843,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_archive_retrieval.py.html>`__ to see an example of how to use get_audit_archive_retrieval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_archive_retrieval.py.html>`__ to see an example of how to use get_audit_archive_retrieval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditArchiveRetrievalId']
@@ -16950,7 +16950,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_policy.py.html>`__ to see an example of how to use get_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_policy.py.html>`__ to see an example of how to use get_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditPolicyId']
@@ -17055,7 +17055,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_profile.py.html>`__ to see an example of how to use get_audit_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_profile.py.html>`__ to see an example of how to use get_audit_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -17160,7 +17160,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_trail.py.html>`__ to see an example of how to use get_audit_trail API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_trail.py.html>`__ to see an example of how to use get_audit_trail API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditTrailId']
@@ -17278,7 +17278,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_compatible_formats_for_data_types.py.html>`__ to see an example of how to use get_compatible_formats_for_data_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_compatible_formats_for_data_types.py.html>`__ to see an example of how to use get_compatible_formats_for_data_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -17406,7 +17406,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_compatible_formats_for_sensitive_types.py.html>`__ to see an example of how to use get_compatible_formats_for_sensitive_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_compatible_formats_for_sensitive_types.py.html>`__ to see an example of how to use get_compatible_formats_for_sensitive_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17521,7 +17521,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_configuration.py.html>`__ to see an example of how to use get_data_safe_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_configuration.py.html>`__ to see an example of how to use get_data_safe_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -17622,7 +17622,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_private_endpoint.py.html>`__ to see an example of how to use get_data_safe_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_private_endpoint.py.html>`__ to see an example of how to use get_data_safe_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSafePrivateEndpointId']
@@ -17727,7 +17727,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_database_security_config.py.html>`__ to see an example of how to use get_database_security_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_database_security_config.py.html>`__ to see an example of how to use get_database_security_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseSecurityConfigId']
@@ -17835,7 +17835,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_database_table_access_entry.py.html>`__ to see an example of how to use get_database_table_access_entry API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_database_table_access_entry.py.html>`__ to see an example of how to use get_database_table_access_entry API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyReportId', 'databaseTableAccessEntryKey']
@@ -17944,7 +17944,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_database_view_access_entry.py.html>`__ to see an example of how to use get_database_view_access_entry API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_database_view_access_entry.py.html>`__ to see an example of how to use get_database_view_access_entry API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyReportId', 'databaseViewAccessEntryKey']
@@ -18053,7 +18053,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_difference_column.py.html>`__ to see an example of how to use get_difference_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_difference_column.py.html>`__ to see an example of how to use get_difference_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId', 'differenceColumnKey']
@@ -18159,7 +18159,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_discovery_job.py.html>`__ to see an example of how to use get_discovery_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_discovery_job.py.html>`__ to see an example of how to use get_discovery_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId']
@@ -18267,7 +18267,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_discovery_job_result.py.html>`__ to see an example of how to use get_discovery_job_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_discovery_job_result.py.html>`__ to see an example of how to use get_discovery_job_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId', 'resultKey']
@@ -18386,7 +18386,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_group_members.py.html>`__ to see an example of how to use get_group_members API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_group_members.py.html>`__ to see an example of how to use get_group_members API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseGroupId']
@@ -18503,7 +18503,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_library_masking_format.py.html>`__ to see an example of how to use get_library_masking_format API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_library_masking_format.py.html>`__ to see an example of how to use get_library_masking_format API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['libraryMaskingFormatId']
@@ -18611,7 +18611,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_column.py.html>`__ to see an example of how to use get_masking_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_column.py.html>`__ to see an example of how to use get_masking_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId', 'maskingColumnKey']
@@ -18717,7 +18717,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_policy.py.html>`__ to see an example of how to use get_masking_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_policy.py.html>`__ to see an example of how to use get_masking_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -18822,7 +18822,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_policy_health_report.py.html>`__ to see an example of how to use get_masking_policy_health_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_policy_health_report.py.html>`__ to see an example of how to use get_masking_policy_health_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyHealthReportId']
@@ -18927,7 +18927,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_report.py.html>`__ to see an example of how to use get_masking_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_report.py.html>`__ to see an example of how to use get_masking_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingReportId']
@@ -19032,7 +19032,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_on_prem_connector.py.html>`__ to see an example of how to use get_on_prem_connector API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_on_prem_connector.py.html>`__ to see an example of how to use get_on_prem_connector API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['onPremConnectorId']
@@ -19140,7 +19140,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_peer_target_database.py.html>`__ to see an example of how to use get_peer_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_peer_target_database.py.html>`__ to see an example of how to use get_peer_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId', 'peerTargetDatabaseId']
@@ -19252,7 +19252,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_profile.py.html>`__ to see an example of how to use get_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_profile.py.html>`__ to see an example of how to use get_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId', 'profileName']
@@ -19361,7 +19361,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_referential_relation.py.html>`__ to see an example of how to use get_referential_relation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_referential_relation.py.html>`__ to see an example of how to use get_referential_relation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId', 'referentialRelationKey']
@@ -19467,7 +19467,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report.py.html>`__ to see an example of how to use get_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report.py.html>`__ to see an example of how to use get_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportId']
@@ -19572,7 +19572,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report_content.py.html>`__ to see an example of how to use get_report_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report_content.py.html>`__ to see an example of how to use get_report_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportId']
@@ -19677,7 +19677,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report_definition.py.html>`__ to see an example of how to use get_report_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report_definition.py.html>`__ to see an example of how to use get_report_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -19782,7 +19782,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sdm_masking_policy_difference.py.html>`__ to see an example of how to use get_sdm_masking_policy_difference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sdm_masking_policy_difference.py.html>`__ to see an example of how to use get_sdm_masking_policy_difference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId']
@@ -19887,7 +19887,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_assessment.py.html>`__ to see an example of how to use get_security_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_assessment.py.html>`__ to see an example of how to use get_security_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -19995,7 +19995,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_assessment_comparison.py.html>`__ to see an example of how to use get_security_assessment_comparison API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_assessment_comparison.py.html>`__ to see an example of how to use get_security_assessment_comparison API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId', 'comparisonSecurityAssessmentId']
@@ -20101,7 +20101,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy.py.html>`__ to see an example of how to use get_security_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy.py.html>`__ to see an example of how to use get_security_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyId']
@@ -20206,7 +20206,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_config.py.html>`__ to see an example of how to use get_security_policy_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_config.py.html>`__ to see an example of how to use get_security_policy_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyConfigId']
@@ -20311,7 +20311,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_deployment.py.html>`__ to see an example of how to use get_security_policy_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_deployment.py.html>`__ to see an example of how to use get_security_policy_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -20422,7 +20422,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_entry_state.py.html>`__ to see an example of how to use get_security_policy_entry_state API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_entry_state.py.html>`__ to see an example of how to use get_security_policy_entry_state API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId', 'securityPolicyEntryStateId']
@@ -20528,7 +20528,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_report.py.html>`__ to see an example of how to use get_security_policy_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_policy_report.py.html>`__ to see an example of how to use get_security_policy_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyReportId']
@@ -20636,7 +20636,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_column.py.html>`__ to see an example of how to use get_sensitive_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_column.py.html>`__ to see an example of how to use get_sensitive_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId', 'sensitiveColumnKey']
@@ -20742,7 +20742,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_data_model.py.html>`__ to see an example of how to use get_sensitive_data_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_data_model.py.html>`__ to see an example of how to use get_sensitive_data_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -20847,7 +20847,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_type.py.html>`__ to see an example of how to use get_sensitive_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_type.py.html>`__ to see an example of how to use get_sensitive_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeId']
@@ -20952,7 +20952,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_type_group.py.html>`__ to see an example of how to use get_sensitive_type_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_type_group.py.html>`__ to see an example of how to use get_sensitive_type_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeGroupId']
@@ -21057,7 +21057,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_types_export.py.html>`__ to see an example of how to use get_sensitive_types_export API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_types_export.py.html>`__ to see an example of how to use get_sensitive_types_export API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypesExportId']
@@ -21162,7 +21162,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sql_collection.py.html>`__ to see an example of how to use get_sql_collection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sql_collection.py.html>`__ to see an example of how to use get_sql_collection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -21267,7 +21267,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sql_firewall_allowed_sql.py.html>`__ to see an example of how to use get_sql_firewall_allowed_sql API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sql_firewall_allowed_sql.py.html>`__ to see an example of how to use get_sql_firewall_allowed_sql API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlFirewallAllowedSqlId']
@@ -21372,7 +21372,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sql_firewall_policy.py.html>`__ to see an example of how to use get_sql_firewall_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sql_firewall_policy.py.html>`__ to see an example of how to use get_sql_firewall_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlFirewallPolicyId']
@@ -21477,7 +21477,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_alert_policy_association.py.html>`__ to see an example of how to use get_target_alert_policy_association API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_alert_policy_association.py.html>`__ to see an example of how to use get_target_alert_policy_association API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetAlertPolicyAssociationId']
@@ -21582,7 +21582,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_database.py.html>`__ to see an example of how to use get_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_database.py.html>`__ to see an example of how to use get_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -21687,7 +21687,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_database_group.py.html>`__ to see an example of how to use get_target_database_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_database_group.py.html>`__ to see an example of how to use get_target_database_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseGroupId']
@@ -21804,7 +21804,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_template_baseline_comparison.py.html>`__ to see an example of how to use get_template_baseline_comparison API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_template_baseline_comparison.py.html>`__ to see an example of how to use get_template_baseline_comparison API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId', 'comparisonSecurityAssessmentId']
@@ -21922,7 +21922,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_unified_audit_policy.py.html>`__ to see an example of how to use get_unified_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_unified_audit_policy.py.html>`__ to see an example of how to use get_unified_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyId']
@@ -22027,7 +22027,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_unified_audit_policy_definition.py.html>`__ to see an example of how to use get_unified_audit_policy_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_unified_audit_policy_definition.py.html>`__ to see an example of how to use get_unified_audit_policy_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyDefinitionId']
@@ -22132,7 +22132,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_user_assessment.py.html>`__ to see an example of how to use get_user_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_user_assessment.py.html>`__ to see an example of how to use get_user_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -22240,7 +22240,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_user_assessment_comparison.py.html>`__ to see an example of how to use get_user_assessment_comparison API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_user_assessment_comparison.py.html>`__ to see an example of how to use get_user_assessment_comparison API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId', 'comparisonUserAssessmentId']
@@ -22346,7 +22346,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -22548,7 +22548,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_analytics.py.html>`__ to see an example of how to use list_alert_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_analytics.py.html>`__ to see an example of how to use list_alert_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -22782,7 +22782,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_policies.py.html>`__ to see an example of how to use list_alert_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_policies.py.html>`__ to see an example of how to use list_alert_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -22954,7 +22954,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_policy_rules.py.html>`__ to see an example of how to use list_alert_policy_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_policy_rules.py.html>`__ to see an example of how to use list_alert_policy_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId']
@@ -23135,7 +23135,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alerts.py.html>`__ to see an example of how to use list_alerts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alerts.py.html>`__ to see an example of how to use list_alerts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -23313,7 +23313,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_associated_resources.py.html>`__ to see an example of how to use list_associated_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_associated_resources.py.html>`__ to see an example of how to use list_associated_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['attributeSetId']
@@ -23515,7 +23515,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_attribute_sets.py.html>`__ to see an example of how to use list_attribute_sets API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_attribute_sets.py.html>`__ to see an example of how to use list_attribute_sets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -23735,7 +23735,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_archive_retrievals.py.html>`__ to see an example of how to use list_audit_archive_retrievals API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_archive_retrievals.py.html>`__ to see an example of how to use list_audit_archive_retrievals API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -23986,7 +23986,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_event_analytics.py.html>`__ to see an example of how to use list_audit_event_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_event_analytics.py.html>`__ to see an example of how to use list_audit_event_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -24212,7 +24212,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_events.py.html>`__ to see an example of how to use list_audit_events API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_events.py.html>`__ to see an example of how to use list_audit_events API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -24412,7 +24412,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policies.py.html>`__ to see an example of how to use list_audit_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policies.py.html>`__ to see an example of how to use list_audit_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -24625,7 +24625,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policy_analytics.py.html>`__ to see an example of how to use list_audit_policy_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policy_analytics.py.html>`__ to see an example of how to use list_audit_policy_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -24818,7 +24818,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_profile_analytics.py.html>`__ to see an example of how to use list_audit_profile_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_profile_analytics.py.html>`__ to see an example of how to use list_audit_profile_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -25034,7 +25034,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_profiles.py.html>`__ to see an example of how to use list_audit_profiles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_profiles.py.html>`__ to see an example of how to use list_audit_profiles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -25259,7 +25259,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_trail_analytics.py.html>`__ to see an example of how to use list_audit_trail_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_trail_analytics.py.html>`__ to see an example of how to use list_audit_trail_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -25463,7 +25463,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_trails.py.html>`__ to see an example of how to use list_audit_trails API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_trails.py.html>`__ to see an example of how to use list_audit_trails API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -25668,7 +25668,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_available_audit_volumes.py.html>`__ to see an example of how to use list_available_audit_volumes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_available_audit_volumes.py.html>`__ to see an example of how to use list_available_audit_volumes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId', 'workRequestId']
@@ -25859,7 +25859,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_checks.py.html>`__ to see an example of how to use list_checks API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_checks.py.html>`__ to see an example of how to use list_checks API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -26077,7 +26077,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_collected_audit_volumes.py.html>`__ to see an example of how to use list_collected_audit_volumes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_collected_audit_volumes.py.html>`__ to see an example of how to use list_collected_audit_volumes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId', 'workRequestId']
@@ -26256,7 +26256,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_columns.py.html>`__ to see an example of how to use list_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_columns.py.html>`__ to see an example of how to use list_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -26448,7 +26448,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_data_safe_private_endpoints.py.html>`__ to see an example of how to use list_data_safe_private_endpoints API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_data_safe_private_endpoints.py.html>`__ to see an example of how to use list_data_safe_private_endpoints API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -26675,7 +26675,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_database_security_configs.py.html>`__ to see an example of how to use list_database_security_configs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_database_security_configs.py.html>`__ to see an example of how to use list_database_security_configs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -26862,7 +26862,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_database_table_access_entries.py.html>`__ to see an example of how to use list_database_table_access_entries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_database_table_access_entries.py.html>`__ to see an example of how to use list_database_table_access_entries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyReportId']
@@ -27033,7 +27033,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_database_view_access_entries.py.html>`__ to see an example of how to use list_database_view_access_entries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_database_view_access_entries.py.html>`__ to see an example of how to use list_database_view_access_entries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyReportId']
@@ -27215,7 +27215,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_difference_columns.py.html>`__ to see an example of how to use list_difference_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_difference_columns.py.html>`__ to see an example of how to use list_difference_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId']
@@ -27431,7 +27431,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_analytics.py.html>`__ to see an example of how to use list_discovery_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_analytics.py.html>`__ to see an example of how to use list_discovery_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -27626,7 +27626,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_job_results.py.html>`__ to see an example of how to use list_discovery_job_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_job_results.py.html>`__ to see an example of how to use list_discovery_job_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId']
@@ -27845,7 +27845,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_jobs.py.html>`__ to see an example of how to use list_discovery_jobs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_jobs.py.html>`__ to see an example of how to use list_discovery_jobs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -28085,7 +28085,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_finding_analytics.py.html>`__ to see an example of how to use list_finding_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_finding_analytics.py.html>`__ to see an example of how to use list_finding_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -28367,7 +28367,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_findings.py.html>`__ to see an example of how to use list_findings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_findings.py.html>`__ to see an example of how to use list_findings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -28653,7 +28653,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_findings_change_audit_logs.py.html>`__ to see an example of how to use list_findings_change_audit_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_findings_change_audit_logs.py.html>`__ to see an example of how to use list_findings_change_audit_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -28858,7 +28858,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_grants.py.html>`__ to see an example of how to use list_grants API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_grants.py.html>`__ to see an example of how to use list_grants API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId', 'userKey']
@@ -29019,7 +29019,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_grouped_sensitive_types.py.html>`__ to see an example of how to use list_grouped_sensitive_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_grouped_sensitive_types.py.html>`__ to see an example of how to use list_grouped_sensitive_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeGroupId']
@@ -29202,7 +29202,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_library_masking_formats.py.html>`__ to see an example of how to use list_library_masking_formats API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_library_masking_formats.py.html>`__ to see an example of how to use list_library_masking_formats API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -29401,7 +29401,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masked_columns.py.html>`__ to see an example of how to use list_masked_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masked_columns.py.html>`__ to see an example of how to use list_masked_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingReportId']
@@ -29597,7 +29597,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_analytics.py.html>`__ to see an example of how to use list_masking_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_analytics.py.html>`__ to see an example of how to use list_masking_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -29830,7 +29830,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_columns.py.html>`__ to see an example of how to use list_masking_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_columns.py.html>`__ to see an example of how to use list_masking_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -30039,7 +30039,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_errors.py.html>`__ to see an example of how to use list_masking_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_errors.py.html>`__ to see an example of how to use list_masking_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingReportId']
@@ -30213,7 +30213,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_objects.py.html>`__ to see an example of how to use list_masking_objects API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_objects.py.html>`__ to see an example of how to use list_masking_objects API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -30427,7 +30427,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policies.py.html>`__ to see an example of how to use list_masking_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policies.py.html>`__ to see an example of how to use list_masking_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -30606,7 +30606,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policy_health_report_logs.py.html>`__ to see an example of how to use list_masking_policy_health_report_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policy_health_report_logs.py.html>`__ to see an example of how to use list_masking_policy_health_report_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyHealthReportId']
@@ -30797,7 +30797,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policy_health_reports.py.html>`__ to see an example of how to use list_masking_policy_health_reports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policy_health_reports.py.html>`__ to see an example of how to use list_masking_policy_health_reports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -30985,7 +30985,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policy_referential_relations.py.html>`__ to see an example of how to use list_masking_policy_referential_relations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policy_referential_relations.py.html>`__ to see an example of how to use list_masking_policy_referential_relations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -31175,7 +31175,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_reports.py.html>`__ to see an example of how to use list_masking_reports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_reports.py.html>`__ to see an example of how to use list_masking_reports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -31338,7 +31338,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_schemas.py.html>`__ to see an example of how to use list_masking_schemas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_schemas.py.html>`__ to see an example of how to use list_masking_schemas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -31518,7 +31518,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_on_prem_connectors.py.html>`__ to see an example of how to use list_on_prem_connectors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_on_prem_connectors.py.html>`__ to see an example of how to use list_on_prem_connectors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -31695,7 +31695,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_password_expiry_date_analytics.py.html>`__ to see an example of how to use list_password_expiry_date_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_password_expiry_date_analytics.py.html>`__ to see an example of how to use list_password_expiry_date_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -31844,7 +31844,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_peer_target_databases.py.html>`__ to see an example of how to use list_peer_target_databases API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_peer_target_databases.py.html>`__ to see an example of how to use list_peer_target_databases API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -32021,7 +32021,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_analytics.py.html>`__ to see an example of how to use list_profile_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_analytics.py.html>`__ to see an example of how to use list_profile_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId', 'compartmentId']
@@ -32269,7 +32269,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_summaries.py.html>`__ to see an example of how to use list_profile_summaries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_summaries.py.html>`__ to see an example of how to use list_profile_summaries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId', 'compartmentId']
@@ -32484,7 +32484,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_referential_relations.py.html>`__ to see an example of how to use list_referential_relations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_referential_relations.py.html>`__ to see an example of how to use list_referential_relations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -32692,7 +32692,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_report_definitions.py.html>`__ to see an example of how to use list_report_definitions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_report_definitions.py.html>`__ to see an example of how to use list_report_definitions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -32931,7 +32931,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_reports.py.html>`__ to see an example of how to use list_reports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_reports.py.html>`__ to see an example of how to use list_reports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -33126,7 +33126,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_role_grant_paths.py.html>`__ to see an example of how to use list_role_grant_paths API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_role_grant_paths.py.html>`__ to see an example of how to use list_role_grant_paths API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyReportId', 'grantee', 'grantedRole']
@@ -33275,7 +33275,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_roles.py.html>`__ to see an example of how to use list_roles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_roles.py.html>`__ to see an example of how to use list_roles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -33445,7 +33445,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -33631,7 +33631,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sdm_masking_policy_differences.py.html>`__ to see an example of how to use list_sdm_masking_policy_differences API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sdm_masking_policy_differences.py.html>`__ to see an example of how to use list_sdm_masking_policy_differences API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -33883,7 +33883,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_assessments.py.html>`__ to see an example of how to use list_security_assessments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_assessments.py.html>`__ to see an example of how to use list_security_assessments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -34095,7 +34095,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_feature_analytics.py.html>`__ to see an example of how to use list_security_feature_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_feature_analytics.py.html>`__ to see an example of how to use list_security_feature_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -34293,7 +34293,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_features.py.html>`__ to see an example of how to use list_security_features API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_features.py.html>`__ to see an example of how to use list_security_features API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -34574,7 +34574,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policies.py.html>`__ to see an example of how to use list_security_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policies.py.html>`__ to see an example of how to use list_security_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -34807,7 +34807,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_configs.py.html>`__ to see an example of how to use list_security_policy_configs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_configs.py.html>`__ to see an example of how to use list_security_policy_configs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -35028,7 +35028,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_deployments.py.html>`__ to see an example of how to use list_security_policy_deployments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_deployments.py.html>`__ to see an example of how to use list_security_policy_deployments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -35215,7 +35215,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_entry_states.py.html>`__ to see an example of how to use list_security_policy_entry_states API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_entry_states.py.html>`__ to see an example of how to use list_security_policy_entry_states API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -35413,7 +35413,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_reports.py.html>`__ to see an example of how to use list_security_policy_reports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_policy_reports.py.html>`__ to see an example of how to use list_security_policy_reports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -35621,7 +35621,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_column_analytics.py.html>`__ to see an example of how to use list_sensitive_column_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_column_analytics.py.html>`__ to see an example of how to use list_sensitive_column_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -35876,7 +35876,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_columns.py.html>`__ to see an example of how to use list_sensitive_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_columns.py.html>`__ to see an example of how to use list_sensitive_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -36115,7 +36115,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_data_model_sensitive_types.py.html>`__ to see an example of how to use list_sensitive_data_model_sensitive_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_data_model_sensitive_types.py.html>`__ to see an example of how to use list_sensitive_data_model_sensitive_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -36314,7 +36314,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_data_models.py.html>`__ to see an example of how to use list_sensitive_data_models API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_data_models.py.html>`__ to see an example of how to use list_sensitive_data_models API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -36498,7 +36498,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_objects.py.html>`__ to see an example of how to use list_sensitive_objects API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_objects.py.html>`__ to see an example of how to use list_sensitive_objects API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -36669,7 +36669,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_schemas.py.html>`__ to see an example of how to use list_sensitive_schemas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_schemas.py.html>`__ to see an example of how to use list_sensitive_schemas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -36865,7 +36865,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_type_groups.py.html>`__ to see an example of how to use list_sensitive_type_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_type_groups.py.html>`__ to see an example of how to use list_sensitive_type_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -37096,7 +37096,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_types.py.html>`__ to see an example of how to use list_sensitive_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_types.py.html>`__ to see an example of how to use list_sensitive_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -37333,7 +37333,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_types_exports.py.html>`__ to see an example of how to use list_sensitive_types_exports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_types_exports.py.html>`__ to see an example of how to use list_sensitive_types_exports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -37546,7 +37546,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_collection_analytics.py.html>`__ to see an example of how to use list_sql_collection_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_collection_analytics.py.html>`__ to see an example of how to use list_sql_collection_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -37715,7 +37715,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_collection_log_insights.py.html>`__ to see an example of how to use list_sql_collection_log_insights API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_collection_log_insights.py.html>`__ to see an example of how to use list_sql_collection_log_insights API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId', 'timeStarted', 'timeEnded']
@@ -37924,7 +37924,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_collections.py.html>`__ to see an example of how to use list_sql_collections API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_collections.py.html>`__ to see an example of how to use list_sql_collections API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -38131,7 +38131,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_allowed_sql_analytics.py.html>`__ to see an example of how to use list_sql_firewall_allowed_sql_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_allowed_sql_analytics.py.html>`__ to see an example of how to use list_sql_firewall_allowed_sql_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -38314,7 +38314,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_allowed_sqls.py.html>`__ to see an example of how to use list_sql_firewall_allowed_sqls API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_allowed_sqls.py.html>`__ to see an example of how to use list_sql_firewall_allowed_sqls API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -38535,7 +38535,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_policies.py.html>`__ to see an example of how to use list_sql_firewall_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_policies.py.html>`__ to see an example of how to use list_sql_firewall_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -38756,7 +38756,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_policy_analytics.py.html>`__ to see an example of how to use list_sql_firewall_policy_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_policy_analytics.py.html>`__ to see an example of how to use list_sql_firewall_policy_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -38971,7 +38971,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_violation_analytics.py.html>`__ to see an example of how to use list_sql_firewall_violation_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_violation_analytics.py.html>`__ to see an example of how to use list_sql_firewall_violation_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -39178,7 +39178,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_violations.py.html>`__ to see an example of how to use list_sql_firewall_violations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sql_firewall_violations.py.html>`__ to see an example of how to use list_sql_firewall_violations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -39345,7 +39345,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_tables.py.html>`__ to see an example of how to use list_tables API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_tables.py.html>`__ to see an example of how to use list_tables API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -39549,7 +39549,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_alert_policy_associations.py.html>`__ to see an example of how to use list_target_alert_policy_associations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_alert_policy_associations.py.html>`__ to see an example of how to use list_target_alert_policy_associations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -39771,7 +39771,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_database_groups.py.html>`__ to see an example of how to use list_target_database_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_database_groups.py.html>`__ to see an example of how to use list_target_database_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -39981,7 +39981,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_databases.py.html>`__ to see an example of how to use list_target_databases API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_databases.py.html>`__ to see an example of how to use list_target_databases API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -40172,7 +40172,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_overrides.py.html>`__ to see an example of how to use list_target_overrides API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_overrides.py.html>`__ to see an example of how to use list_target_overrides API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -40363,7 +40363,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_template_analytics.py.html>`__ to see an example of how to use list_template_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_template_analytics.py.html>`__ to see an example of how to use list_template_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -40540,7 +40540,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_template_association_analytics.py.html>`__ to see an example of how to use list_template_association_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_template_association_analytics.py.html>`__ to see an example of how to use list_template_association_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -40747,7 +40747,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_unified_audit_policies.py.html>`__ to see an example of how to use list_unified_audit_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_unified_audit_policies.py.html>`__ to see an example of how to use list_unified_audit_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -40972,7 +40972,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_unified_audit_policy_definitions.py.html>`__ to see an example of how to use list_unified_audit_policy_definitions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_unified_audit_policy_definitions.py.html>`__ to see an example of how to use list_unified_audit_policy_definitions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -41151,7 +41151,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_access_analytics.py.html>`__ to see an example of how to use list_user_access_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_access_analytics.py.html>`__ to see an example of how to use list_user_access_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -41399,7 +41399,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_analytics.py.html>`__ to see an example of how to use list_user_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_analytics.py.html>`__ to see an example of how to use list_user_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -41672,7 +41672,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_assessments.py.html>`__ to see an example of how to use list_user_assessments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_assessments.py.html>`__ to see an example of how to use list_user_assessments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -41982,7 +41982,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_users.py.html>`__ to see an example of how to use list_users API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_users.py.html>`__ to see an example of how to use list_users API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -42174,7 +42174,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -42299,7 +42299,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -42456,7 +42456,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -42604,7 +42604,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/mask_data.py.html>`__ to see an example of how to use mask_data API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/mask_data.py.html>`__ to see an example of how to use mask_data API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -42728,7 +42728,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/modify_global_settings.py.html>`__ to see an example of how to use modify_global_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/modify_global_settings.py.html>`__ to see an example of how to use modify_global_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -42857,7 +42857,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_alerts.py.html>`__ to see an example of how to use patch_alerts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_alerts.py.html>`__ to see an example of how to use patch_alerts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42980,7 +42980,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_checks.py.html>`__ to see an example of how to use patch_checks API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_checks.py.html>`__ to see an example of how to use patch_checks API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -43098,7 +43098,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_discovery_job_results.py.html>`__ to see an example of how to use patch_discovery_job_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_discovery_job_results.py.html>`__ to see an example of how to use patch_discovery_job_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['discoveryJobId']
@@ -43215,7 +43215,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_findings.py.html>`__ to see an example of how to use patch_findings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_findings.py.html>`__ to see an example of how to use patch_findings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -43333,7 +43333,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_grouped_sensitive_types.py.html>`__ to see an example of how to use patch_grouped_sensitive_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_grouped_sensitive_types.py.html>`__ to see an example of how to use patch_grouped_sensitive_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeGroupId']
@@ -43452,7 +43452,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_masking_columns.py.html>`__ to see an example of how to use patch_masking_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_masking_columns.py.html>`__ to see an example of how to use patch_masking_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -43570,7 +43570,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sdm_masking_policy_difference_columns.py.html>`__ to see an example of how to use patch_sdm_masking_policy_difference_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sdm_masking_policy_difference_columns.py.html>`__ to see an example of how to use patch_sdm_masking_policy_difference_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId']
@@ -43689,7 +43689,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sensitive_columns.py.html>`__ to see an example of how to use patch_sensitive_columns API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sensitive_columns.py.html>`__ to see an example of how to use patch_sensitive_columns API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -43804,7 +43804,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sql_firewall_allowed_sql.py.html>`__ to see an example of how to use patch_sql_firewall_allowed_sql API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sql_firewall_allowed_sql.py.html>`__ to see an example of how to use patch_sql_firewall_allowed_sql API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43906,7 +43906,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_target_alert_policy_association.py.html>`__ to see an example of how to use patch_target_alert_policy_association API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_target_alert_policy_association.py.html>`__ to see an example of how to use patch_target_alert_policy_association API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44017,7 +44017,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/provision_audit_policy.py.html>`__ to see an example of how to use provision_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/provision_audit_policy.py.html>`__ to see an example of how to use provision_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditPolicyId']
@@ -44140,7 +44140,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/purge_sql_collection_logs.py.html>`__ to see an example of how to use purge_sql_collection_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/purge_sql_collection_logs.py.html>`__ to see an example of how to use purge_sql_collection_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -44261,7 +44261,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_database_security_configuration.py.html>`__ to see an example of how to use refresh_database_security_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_database_security_configuration.py.html>`__ to see an example of how to use refresh_database_security_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseSecurityConfigId']
@@ -44386,7 +44386,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_security_assessment.py.html>`__ to see an example of how to use refresh_security_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_security_assessment.py.html>`__ to see an example of how to use refresh_security_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -44509,7 +44509,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_security_policy_deployment.py.html>`__ to see an example of how to use refresh_security_policy_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_security_policy_deployment.py.html>`__ to see an example of how to use refresh_security_policy_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -44630,7 +44630,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_sql_collection_log_insights.py.html>`__ to see an example of how to use refresh_sql_collection_log_insights API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_sql_collection_log_insights.py.html>`__ to see an example of how to use refresh_sql_collection_log_insights API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -44751,7 +44751,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_target_database.py.html>`__ to see an example of how to use refresh_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_target_database.py.html>`__ to see an example of how to use refresh_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -44877,7 +44877,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_user_assessment.py.html>`__ to see an example of how to use refresh_user_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_user_assessment.py.html>`__ to see an example of how to use refresh_user_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -45000,7 +45000,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/remove_schedule_report.py.html>`__ to see an example of how to use remove_schedule_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/remove_schedule_report.py.html>`__ to see an example of how to use remove_schedule_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -45121,7 +45121,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/remove_security_assessment_template.py.html>`__ to see an example of how to use remove_security_assessment_template API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/remove_security_assessment_template.py.html>`__ to see an example of how to use remove_security_assessment_template API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -45236,7 +45236,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/resume_audit_trail.py.html>`__ to see an example of how to use resume_audit_trail API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/resume_audit_trail.py.html>`__ to see an example of how to use resume_audit_trail API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditTrailId']
@@ -45354,7 +45354,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/resume_work_request.py.html>`__ to see an example of how to use resume_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/resume_work_request.py.html>`__ to see an example of how to use resume_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -45475,7 +45475,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/retrieve_audit_policies.py.html>`__ to see an example of how to use retrieve_audit_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/retrieve_audit_policies.py.html>`__ to see an example of how to use retrieve_audit_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditPolicyId']
@@ -45599,7 +45599,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/schedule_report.py.html>`__ to see an example of how to use schedule_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/schedule_report.py.html>`__ to see an example of how to use schedule_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -45725,7 +45725,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/set_security_assessment_baseline.py.html>`__ to see an example of how to use set_security_assessment_baseline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/set_security_assessment_baseline.py.html>`__ to see an example of how to use set_security_assessment_baseline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -45852,7 +45852,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/set_user_assessment_baseline.py.html>`__ to see an example of how to use set_user_assessment_baseline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/set_user_assessment_baseline.py.html>`__ to see an example of how to use set_user_assessment_baseline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -45979,7 +45979,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/start_audit_trail.py.html>`__ to see an example of how to use start_audit_trail API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/start_audit_trail.py.html>`__ to see an example of how to use start_audit_trail API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditTrailId']
@@ -46102,7 +46102,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/start_sql_collection.py.html>`__ to see an example of how to use start_sql_collection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/start_sql_collection.py.html>`__ to see an example of how to use start_sql_collection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -46217,7 +46217,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/stop_audit_trail.py.html>`__ to see an example of how to use stop_audit_trail API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/stop_audit_trail.py.html>`__ to see an example of how to use stop_audit_trail API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditTrailId']
@@ -46335,7 +46335,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/stop_sql_collection.py.html>`__ to see an example of how to use stop_sql_collection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/stop_sql_collection.py.html>`__ to see an example of how to use stop_sql_collection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -46456,7 +46456,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/suspend_work_request.py.html>`__ to see an example of how to use suspend_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/suspend_work_request.py.html>`__ to see an example of how to use suspend_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -46582,7 +46582,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/unset_security_assessment_baseline.py.html>`__ to see an example of how to use unset_security_assessment_baseline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/unset_security_assessment_baseline.py.html>`__ to see an example of how to use unset_security_assessment_baseline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -46711,7 +46711,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/unset_user_assessment_baseline.py.html>`__ to see an example of how to use unset_user_assessment_baseline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/unset_user_assessment_baseline.py.html>`__ to see an example of how to use unset_user_assessment_baseline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -46832,7 +46832,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert.py.html>`__ to see an example of how to use update_alert API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert.py.html>`__ to see an example of how to use update_alert API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertId']
@@ -46951,7 +46951,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert_policy.py.html>`__ to see an example of how to use update_alert_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert_policy.py.html>`__ to see an example of how to use update_alert_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId']
@@ -47071,7 +47071,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert_policy_rule.py.html>`__ to see an example of how to use update_alert_policy_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert_policy_rule.py.html>`__ to see an example of how to use update_alert_policy_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['alertPolicyId', 'ruleKey']
@@ -47189,7 +47189,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_attribute_set.py.html>`__ to see an example of how to use update_attribute_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_attribute_set.py.html>`__ to see an example of how to use update_attribute_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['attributeSetId']
@@ -47306,7 +47306,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_archive_retrieval.py.html>`__ to see an example of how to use update_audit_archive_retrieval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_archive_retrieval.py.html>`__ to see an example of how to use update_audit_archive_retrieval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditArchiveRetrievalId']
@@ -47423,7 +47423,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_policy.py.html>`__ to see an example of how to use update_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_policy.py.html>`__ to see an example of how to use update_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditPolicyId']
@@ -47540,7 +47540,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_profile.py.html>`__ to see an example of how to use update_audit_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_profile.py.html>`__ to see an example of how to use update_audit_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditProfileId']
@@ -47657,7 +47657,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_trail.py.html>`__ to see an example of how to use update_audit_trail API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_trail.py.html>`__ to see an example of how to use update_audit_trail API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['auditTrailId']
@@ -47774,7 +47774,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_data_safe_private_endpoint.py.html>`__ to see an example of how to use update_data_safe_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_data_safe_private_endpoint.py.html>`__ to see an example of how to use update_data_safe_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSafePrivateEndpointId']
@@ -47891,7 +47891,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_database_security_config.py.html>`__ to see an example of how to use update_database_security_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_database_security_config.py.html>`__ to see an example of how to use update_database_security_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseSecurityConfigId']
@@ -48017,7 +48017,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_finding.py.html>`__ to see an example of how to use update_finding API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_finding.py.html>`__ to see an example of how to use update_finding API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId', 'findingKey']
@@ -48138,7 +48138,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_library_masking_format.py.html>`__ to see an example of how to use update_library_masking_format API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_library_masking_format.py.html>`__ to see an example of how to use update_library_masking_format API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['libraryMaskingFormatId']
@@ -48259,7 +48259,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_masking_column.py.html>`__ to see an example of how to use update_masking_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_masking_column.py.html>`__ to see an example of how to use update_masking_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingColumnKey', 'maskingPolicyId']
@@ -48377,7 +48377,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_masking_policy.py.html>`__ to see an example of how to use update_masking_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_masking_policy.py.html>`__ to see an example of how to use update_masking_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -48494,7 +48494,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector.py.html>`__ to see an example of how to use update_on_prem_connector API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector.py.html>`__ to see an example of how to use update_on_prem_connector API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['onPremConnectorId']
@@ -48617,7 +48617,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector_wallet.py.html>`__ to see an example of how to use update_on_prem_connector_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector_wallet.py.html>`__ to see an example of how to use update_on_prem_connector_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['onPremConnectorId']
@@ -48746,7 +48746,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_peer_target_database.py.html>`__ to see an example of how to use update_peer_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_peer_target_database.py.html>`__ to see an example of how to use update_peer_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId', 'peerTargetDatabaseId']
@@ -48873,7 +48873,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_report.py.html>`__ to see an example of how to use update_report API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_report.py.html>`__ to see an example of how to use update_report API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportId']
@@ -48999,7 +48999,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_report_definition.py.html>`__ to see an example of how to use update_report_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_report_definition.py.html>`__ to see an example of how to use update_report_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportDefinitionId']
@@ -49119,7 +49119,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sdm_masking_policy_difference.py.html>`__ to see an example of how to use update_sdm_masking_policy_difference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sdm_masking_policy_difference.py.html>`__ to see an example of how to use update_sdm_masking_policy_difference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdmMaskingPolicyDifferenceId']
@@ -49236,7 +49236,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_assessment.py.html>`__ to see an example of how to use update_security_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_assessment.py.html>`__ to see an example of how to use update_security_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityAssessmentId']
@@ -49353,7 +49353,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_policy.py.html>`__ to see an example of how to use update_security_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_policy.py.html>`__ to see an example of how to use update_security_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyId']
@@ -49470,7 +49470,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_policy_config.py.html>`__ to see an example of how to use update_security_policy_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_policy_config.py.html>`__ to see an example of how to use update_security_policy_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyConfigId']
@@ -49587,7 +49587,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_policy_deployment.py.html>`__ to see an example of how to use update_security_policy_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_policy_deployment.py.html>`__ to see an example of how to use update_security_policy_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyDeploymentId']
@@ -49707,7 +49707,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_column.py.html>`__ to see an example of how to use update_sensitive_column API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_column.py.html>`__ to see an example of how to use update_sensitive_column API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId', 'sensitiveColumnKey']
@@ -49826,7 +49826,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_data_model.py.html>`__ to see an example of how to use update_sensitive_data_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_data_model.py.html>`__ to see an example of how to use update_sensitive_data_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']
@@ -49943,7 +49943,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_type.py.html>`__ to see an example of how to use update_sensitive_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_type.py.html>`__ to see an example of how to use update_sensitive_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeId']
@@ -50060,7 +50060,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_type_group.py.html>`__ to see an example of how to use update_sensitive_type_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_type_group.py.html>`__ to see an example of how to use update_sensitive_type_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypeGroupId']
@@ -50177,7 +50177,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_types_export.py.html>`__ to see an example of how to use update_sensitive_types_export API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_types_export.py.html>`__ to see an example of how to use update_sensitive_types_export API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveTypesExportId']
@@ -50294,7 +50294,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sql_collection.py.html>`__ to see an example of how to use update_sql_collection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sql_collection.py.html>`__ to see an example of how to use update_sql_collection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlCollectionId']
@@ -50411,7 +50411,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sql_firewall_policy.py.html>`__ to see an example of how to use update_sql_firewall_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sql_firewall_policy.py.html>`__ to see an example of how to use update_sql_firewall_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sqlFirewallPolicyId']
@@ -50528,7 +50528,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_alert_policy_association.py.html>`__ to see an example of how to use update_target_alert_policy_association API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_alert_policy_association.py.html>`__ to see an example of how to use update_target_alert_policy_association API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetAlertPolicyAssociationId']
@@ -50651,7 +50651,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_database.py.html>`__ to see an example of how to use update_target_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_database.py.html>`__ to see an example of how to use update_target_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseId']
@@ -50777,7 +50777,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_database_group.py.html>`__ to see an example of how to use update_target_database_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_database_group.py.html>`__ to see an example of how to use update_target_database_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetDatabaseGroupId']
@@ -50897,7 +50897,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_unified_audit_policy.py.html>`__ to see an example of how to use update_unified_audit_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_unified_audit_policy.py.html>`__ to see an example of how to use update_unified_audit_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyId']
@@ -51014,7 +51014,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_unified_audit_policy_definition.py.html>`__ to see an example of how to use update_unified_audit_policy_definition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_unified_audit_policy_definition.py.html>`__ to see an example of how to use update_unified_audit_policy_definition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['unifiedAuditPolicyDefinitionId']
@@ -51131,7 +51131,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_user_assessment.py.html>`__ to see an example of how to use update_user_assessment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_user_assessment.py.html>`__ to see an example of how to use update_user_assessment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAssessmentId']
@@ -51260,7 +51260,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/upload_masking_policy.py.html>`__ to see an example of how to use upload_masking_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/upload_masking_policy.py.html>`__ to see an example of how to use upload_masking_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['maskingPolicyId']
@@ -51409,7 +51409,7 @@ class DataSafeClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/upload_sensitive_data_model.py.html>`__ to see an example of how to use upload_sensitive_data_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/upload_sensitive_data_model.py.html>`__ to see an example of how to use upload_sensitive_data_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sensitiveDataModelId']

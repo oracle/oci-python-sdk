@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import ai_document_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class AIServiceDocumentClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class AIServiceDocumentClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class AIServiceDocumentClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("ai_document"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -175,7 +175,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/add_model_lock.py.html>`__ to see an example of how to use add_model_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/add_model_lock.py.html>`__ to see an example of how to use add_model_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -315,7 +315,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/add_project_lock.py.html>`__ to see an example of how to use add_project_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/add_project_lock.py.html>`__ to see an example of how to use add_project_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -442,7 +442,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/analyze_document.py.html>`__ to see an example of how to use analyze_document API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/analyze_document.py.html>`__ to see an example of how to use analyze_document API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -546,7 +546,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/cancel_processor_job.py.html>`__ to see an example of how to use cancel_processor_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/cancel_processor_job.py.html>`__ to see an example of how to use cancel_processor_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['processorJobId']
@@ -656,7 +656,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -772,7 +772,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -898,7 +898,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -1018,7 +1018,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/create_model.py.html>`__ to see an example of how to use create_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/create_model.py.html>`__ to see an example of how to use create_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1123,7 +1123,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/create_processor_job.py.html>`__ to see an example of how to use create_processor_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/create_processor_job.py.html>`__ to see an example of how to use create_processor_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1228,7 +1228,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/create_project.py.html>`__ to see an example of how to use create_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/create_project.py.html>`__ to see an example of how to use create_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1336,7 +1336,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/delete_model.py.html>`__ to see an example of how to use delete_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/delete_model.py.html>`__ to see an example of how to use delete_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -1457,7 +1457,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/delete_project.py.html>`__ to see an example of how to use delete_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -1568,7 +1568,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_model.py.html>`__ to see an example of how to use get_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_model.py.html>`__ to see an example of how to use get_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -1679,7 +1679,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_model_type.py.html>`__ to see an example of how to use get_model_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_model_type.py.html>`__ to see an example of how to use get_model_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelType']
@@ -1794,7 +1794,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_processor_job.py.html>`__ to see an example of how to use get_processor_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_processor_job.py.html>`__ to see an example of how to use get_processor_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['processorJobId']
@@ -1899,7 +1899,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_project.py.html>`__ to see an example of how to use get_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_project.py.html>`__ to see an example of how to use get_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -2004,7 +2004,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -2139,7 +2139,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_models.py.html>`__ to see an example of how to use list_models API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_models.py.html>`__ to see an example of how to use list_models API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2304,7 +2304,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_projects.py.html>`__ to see an example of how to use list_projects API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2456,7 +2456,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -2605,7 +2605,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -2765,7 +2765,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2911,7 +2911,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/patch_model.py.html>`__ to see an example of how to use patch_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/patch_model.py.html>`__ to see an example of how to use patch_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -3038,7 +3038,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/remove_model_lock.py.html>`__ to see an example of how to use remove_model_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/remove_model_lock.py.html>`__ to see an example of how to use remove_model_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -3178,7 +3178,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/remove_project_lock.py.html>`__ to see an example of how to use remove_project_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/remove_project_lock.py.html>`__ to see an example of how to use remove_project_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -3311,7 +3311,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/update_model.py.html>`__ to see an example of how to use update_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/update_model.py.html>`__ to see an example of how to use update_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -3437,7 +3437,7 @@ class AIServiceDocumentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/update_project.py.html>`__ to see an example of how to use update_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aidocument/update_project.py.html>`__ to see an example of how to use update_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']

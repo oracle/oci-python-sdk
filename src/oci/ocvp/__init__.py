@@ -7,6 +7,10 @@
 from __future__ import absolute_import
 
 
+from .byol_client import ByolClient
+from .byol_client_composite_operations import ByolClientCompositeOperations
+from .byol_allocation_client import ByolAllocationClient
+from .byol_allocation_client_composite_operations import ByolAllocationClientCompositeOperations
 from .cluster_client import ClusterClient
 from .cluster_client_composite_operations import ClusterClientCompositeOperations
 from .datastore_client import DatastoreClient
@@ -23,4 +27,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["ClusterClient", "ClusterClientCompositeOperations", "DatastoreClient", "DatastoreClientCompositeOperations", "DatastoreClusterClient", "DatastoreClusterClientCompositeOperations", "EsxiHostClient", "EsxiHostClientCompositeOperations", "ManagementApplianceClient", "ManagementApplianceClientCompositeOperations", "SddcClient", "SddcClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["ByolClient", "ByolClientCompositeOperations", "ByolAllocationClient", "ByolAllocationClientCompositeOperations", "ClusterClient", "ClusterClientCompositeOperations", "DatastoreClient", "DatastoreClientCompositeOperations", "DatastoreClusterClient", "DatastoreClusterClientCompositeOperations", "EsxiHostClient", "EsxiHostClientCompositeOperations", "ManagementApplianceClient", "ManagementApplianceClientCompositeOperations", "SddcClient", "SddcClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

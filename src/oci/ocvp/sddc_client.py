@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import ocvp_type_mapping
 missing = Sentinel("Missing")
 
@@ -31,7 +31,7 @@ class SddcClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -50,7 +50,7 @@ class SddcClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -82,7 +82,7 @@ class SddcClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("ocvp"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -173,7 +173,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/cancel_downgrade_hcx.py.html>`__ to see an example of how to use cancel_downgrade_hcx API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/cancel_downgrade_hcx.py.html>`__ to see an example of how to use cancel_downgrade_hcx API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -305,7 +305,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/change_sddc_compartment.py.html>`__ to see an example of how to use change_sddc_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/change_sddc_compartment.py.html>`__ to see an example of how to use change_sddc_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -430,7 +430,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/create_sddc.py.html>`__ to see an example of how to use create_sddc API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/create_sddc.py.html>`__ to see an example of how to use create_sddc API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -541,7 +541,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/delete_sddc.py.html>`__ to see an example of how to use delete_sddc API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/delete_sddc.py.html>`__ to see an example of how to use delete_sddc API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -670,7 +670,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/downgrade_hcx.py.html>`__ to see an example of how to use downgrade_hcx API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/downgrade_hcx.py.html>`__ to see an example of how to use downgrade_hcx API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -783,7 +783,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/get_sddc.py.html>`__ to see an example of how to use get_sddc API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/get_sddc.py.html>`__ to see an example of how to use get_sddc API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -937,7 +937,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_sddcs.py.html>`__ to see an example of how to use list_sddcs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_sddcs.py.html>`__ to see an example of how to use list_sddcs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1092,7 +1092,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_commitments.py.html>`__ to see an example of how to use list_supported_commitments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_commitments.py.html>`__ to see an example of how to use list_supported_commitments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1224,7 +1224,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_host_shapes.py.html>`__ to see an example of how to use list_supported_host_shapes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_host_shapes.py.html>`__ to see an example of how to use list_supported_host_shapes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1361,7 +1361,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_vmware_software_versions.py.html>`__ to see an example of how to use list_supported_vmware_software_versions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_vmware_software_versions.py.html>`__ to see an example of how to use list_supported_vmware_software_versions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1488,7 +1488,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/refresh_hcx_license_status.py.html>`__ to see an example of how to use refresh_hcx_license_status API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/refresh_hcx_license_status.py.html>`__ to see an example of how to use refresh_hcx_license_status API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -1618,7 +1618,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/retrieve_password.py.html>`__ to see an example of how to use retrieve_password API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/retrieve_password.py.html>`__ to see an example of how to use retrieve_password API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId', 'type']
@@ -1759,7 +1759,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/update_sddc.py.html>`__ to see an example of how to use update_sddc API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/update_sddc.py.html>`__ to see an example of how to use update_sddc API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']
@@ -1885,7 +1885,7 @@ class SddcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/upgrade_hcx.py.html>`__ to see an example of how to use upgrade_hcx API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/upgrade_hcx.py.html>`__ to see an example of how to use upgrade_hcx API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sddcId']

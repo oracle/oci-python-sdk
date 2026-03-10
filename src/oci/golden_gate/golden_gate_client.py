@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import golden_gate_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class GoldenGateClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class GoldenGateClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class GoldenGateClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("golden_gate"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -166,7 +166,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_connection_lock.py.html>`__ to see an example of how to use add_connection_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_connection_lock.py.html>`__ to see an example of how to use add_connection_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -284,7 +284,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_backup_lock.py.html>`__ to see an example of how to use add_deployment_backup_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_backup_lock.py.html>`__ to see an example of how to use add_deployment_backup_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -408,7 +408,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_local_peer.py.html>`__ to see an example of how to use add_deployment_local_peer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_local_peer.py.html>`__ to see an example of how to use add_deployment_local_peer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -527,7 +527,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_lock.py.html>`__ to see an example of how to use add_deployment_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_lock.py.html>`__ to see an example of how to use add_deployment_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -654,7 +654,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_deployment_backup.py.html>`__ to see an example of how to use cancel_deployment_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_deployment_backup.py.html>`__ to see an example of how to use cancel_deployment_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -787,7 +787,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_deployment_upgrade.py.html>`__ to see an example of how to use cancel_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_deployment_upgrade.py.html>`__ to see an example of how to use cancel_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']
@@ -914,7 +914,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_snooze_deployment_upgrade.py.html>`__ to see an example of how to use cancel_snooze_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_snooze_deployment_upgrade.py.html>`__ to see an example of how to use cancel_snooze_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']
@@ -1043,7 +1043,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_connection_compartment.py.html>`__ to see an example of how to use change_connection_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_connection_compartment.py.html>`__ to see an example of how to use change_connection_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -1175,7 +1175,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_connection_subscription.py.html>`__ to see an example of how to use change_connection_subscription API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_connection_subscription.py.html>`__ to see an example of how to use change_connection_subscription API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -1306,7 +1306,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_database_registration_compartment.py.html>`__ to see an example of how to use change_database_registration_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_database_registration_compartment.py.html>`__ to see an example of how to use change_database_registration_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseRegistrationId']
@@ -1439,7 +1439,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_backup_compartment.py.html>`__ to see an example of how to use change_deployment_backup_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_backup_compartment.py.html>`__ to see an example of how to use change_deployment_backup_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -1580,7 +1580,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_compartment.py.html>`__ to see an example of how to use change_deployment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_compartment.py.html>`__ to see an example of how to use change_deployment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -1713,7 +1713,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_subscription.py.html>`__ to see an example of how to use change_deployment_subscription API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_subscription.py.html>`__ to see an example of how to use change_deployment_subscription API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -1848,7 +1848,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_pipeline_compartment.py.html>`__ to see an example of how to use change_pipeline_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_pipeline_compartment.py.html>`__ to see an example of how to use change_pipeline_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -1981,7 +1981,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/collect_deployment_diagnostic.py.html>`__ to see an example of how to use collect_deployment_diagnostic API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/collect_deployment_diagnostic.py.html>`__ to see an example of how to use collect_deployment_diagnostic API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -2108,7 +2108,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/collect_pipeline_diagnostic.py.html>`__ to see an example of how to use collect_pipeline_diagnostic API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/collect_pipeline_diagnostic.py.html>`__ to see an example of how to use collect_pipeline_diagnostic API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -2233,7 +2233,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/copy_deployment_backup.py.html>`__ to see an example of how to use copy_deployment_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/copy_deployment_backup.py.html>`__ to see an example of how to use copy_deployment_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -2357,7 +2357,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -2479,7 +2479,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_connection.py.html>`__ to see an example of how to use create_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2586,7 +2586,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_connection_assignment.py.html>`__ to see an example of how to use create_connection_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_connection_assignment.py.html>`__ to see an example of how to use create_connection_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2699,7 +2699,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_database_registration.py.html>`__ to see an example of how to use create_database_registration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_database_registration.py.html>`__ to see an example of how to use create_database_registration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2803,7 +2803,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2907,7 +2907,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_deployment_backup.py.html>`__ to see an example of how to use create_deployment_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_deployment_backup.py.html>`__ to see an example of how to use create_deployment_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3011,7 +3011,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_pipeline.py.html>`__ to see an example of how to use create_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_pipeline.py.html>`__ to see an example of how to use create_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3121,7 +3121,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId', 'certificateKey']
@@ -3246,7 +3246,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -3370,7 +3370,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_connection_assignment.py.html>`__ to see an example of how to use delete_connection_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_connection_assignment.py.html>`__ to see an example of how to use delete_connection_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionAssignmentId']
@@ -3490,7 +3490,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_database_registration.py.html>`__ to see an example of how to use delete_database_registration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_database_registration.py.html>`__ to see an example of how to use delete_database_registration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseRegistrationId']
@@ -3604,7 +3604,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_deployment.py.html>`__ to see an example of how to use delete_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_deployment.py.html>`__ to see an example of how to use delete_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -3726,7 +3726,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_deployment_backup.py.html>`__ to see an example of how to use delete_deployment_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_deployment_backup.py.html>`__ to see an example of how to use delete_deployment_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -3850,7 +3850,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_pipeline.py.html>`__ to see an example of how to use delete_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_pipeline.py.html>`__ to see an example of how to use delete_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -3978,7 +3978,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/deployment_wallet_exists.py.html>`__ to see an example of how to use deployment_wallet_exists API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/deployment_wallet_exists.py.html>`__ to see an example of how to use deployment_wallet_exists API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -4105,7 +4105,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/export_deployment_wallet.py.html>`__ to see an example of how to use export_deployment_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/export_deployment_wallet.py.html>`__ to see an example of how to use export_deployment_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -4230,7 +4230,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/generate_library_url.py.html>`__ to see an example of how to use generate_library_url API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/generate_library_url.py.html>`__ to see an example of how to use generate_library_url API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -4345,7 +4345,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId', 'certificateKey']
@@ -4458,7 +4458,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_connection.py.html>`__ to see an example of how to use get_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -4580,7 +4580,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_connection_assignment.py.html>`__ to see an example of how to use get_connection_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_connection_assignment.py.html>`__ to see an example of how to use get_connection_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionAssignmentId']
@@ -4686,7 +4686,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_database_registration.py.html>`__ to see an example of how to use get_database_registration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_database_registration.py.html>`__ to see an example of how to use get_database_registration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseRegistrationId']
@@ -4791,7 +4791,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -4896,7 +4896,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_backup.py.html>`__ to see an example of how to use get_deployment_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_backup.py.html>`__ to see an example of how to use get_deployment_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -5001,7 +5001,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_upgrade.py.html>`__ to see an example of how to use get_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_upgrade.py.html>`__ to see an example of how to use get_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']
@@ -5108,7 +5108,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_pipeline.py.html>`__ to see an example of how to use get_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_pipeline.py.html>`__ to see an example of how to use get_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -5215,7 +5215,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -5338,7 +5338,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/import_deployment_wallet.py.html>`__ to see an example of how to use import_deployment_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/import_deployment_wallet.py.html>`__ to see an example of how to use import_deployment_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -5480,7 +5480,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -5662,7 +5662,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_connection_assignments.py.html>`__ to see an example of how to use list_connection_assignments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_connection_assignments.py.html>`__ to see an example of how to use list_connection_assignments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -5850,7 +5850,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_connections.py.html>`__ to see an example of how to use list_connections API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -6047,7 +6047,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_database_registrations.py.html>`__ to see an example of how to use list_database_registrations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_database_registrations.py.html>`__ to see an example of how to use list_database_registrations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -6215,7 +6215,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_backups.py.html>`__ to see an example of how to use list_deployment_backups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_backups.py.html>`__ to see an example of how to use list_deployment_backups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -6372,7 +6372,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_environments.py.html>`__ to see an example of how to use list_deployment_environments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_environments.py.html>`__ to see an example of how to use list_deployment_environments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -6521,7 +6521,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_peers.py.html>`__ to see an example of how to use list_deployment_peers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_peers.py.html>`__ to see an example of how to use list_deployment_peers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -6698,7 +6698,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_types.py.html>`__ to see an example of how to use list_deployment_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_types.py.html>`__ to see an example of how to use list_deployment_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -6868,7 +6868,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_upgrades.py.html>`__ to see an example of how to use list_deployment_upgrades API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_upgrades.py.html>`__ to see an example of how to use list_deployment_upgrades API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -7035,7 +7035,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_versions.py.html>`__ to see an example of how to use list_deployment_versions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_versions.py.html>`__ to see an example of how to use list_deployment_versions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -7189,7 +7189,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_wallets_operations.py.html>`__ to see an example of how to use list_deployment_wallets_operations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_wallets_operations.py.html>`__ to see an example of how to use list_deployment_wallets_operations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -7378,7 +7378,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -7551,7 +7551,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_messages.py.html>`__ to see an example of how to use list_messages API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_messages.py.html>`__ to see an example of how to use list_messages API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -7657,7 +7657,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_initialization_steps.py.html>`__ to see an example of how to use list_pipeline_initialization_steps API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_initialization_steps.py.html>`__ to see an example of how to use list_pipeline_initialization_steps API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -7783,7 +7783,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_running_processes.py.html>`__ to see an example of how to use list_pipeline_running_processes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_running_processes.py.html>`__ to see an example of how to use list_pipeline_running_processes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -7946,7 +7946,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_schema_tables.py.html>`__ to see an example of how to use list_pipeline_schema_tables API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_schema_tables.py.html>`__ to see an example of how to use list_pipeline_schema_tables API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId', 'sourceSchemaName', 'targetSchemaName']
@@ -8107,7 +8107,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_schemas.py.html>`__ to see an example of how to use list_pipeline_schemas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipeline_schemas.py.html>`__ to see an example of how to use list_pipeline_schemas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -8277,7 +8277,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipelines.py.html>`__ to see an example of how to use list_pipelines API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_pipelines.py.html>`__ to see an example of how to use list_pipelines API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -8449,7 +8449,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_recipes.py.html>`__ to see an example of how to use list_recipes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_recipes.py.html>`__ to see an example of how to use list_recipes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -8608,7 +8608,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_trail_files.py.html>`__ to see an example of how to use list_trail_files API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_trail_files.py.html>`__ to see an example of how to use list_trail_files API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -8763,7 +8763,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_trail_sequences.py.html>`__ to see an example of how to use list_trail_sequences API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_trail_sequences.py.html>`__ to see an example of how to use list_trail_sequences API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId', 'trailFileId']
@@ -8899,7 +8899,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -9023,7 +9023,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -9153,7 +9153,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -9279,7 +9279,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/pause_pipeline.py.html>`__ to see an example of how to use pause_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/pause_pipeline.py.html>`__ to see an example of how to use pause_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -9411,7 +9411,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/refresh_connection.py.html>`__ to see an example of how to use refresh_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/refresh_connection.py.html>`__ to see an example of how to use refresh_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -9537,7 +9537,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_connection_lock.py.html>`__ to see an example of how to use remove_connection_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_connection_lock.py.html>`__ to see an example of how to use remove_connection_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -9655,7 +9655,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_backup_lock.py.html>`__ to see an example of how to use remove_deployment_backup_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_backup_lock.py.html>`__ to see an example of how to use remove_deployment_backup_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -9779,7 +9779,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_local_peer.py.html>`__ to see an example of how to use remove_deployment_local_peer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_local_peer.py.html>`__ to see an example of how to use remove_deployment_local_peer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -9898,7 +9898,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_lock.py.html>`__ to see an example of how to use remove_deployment_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_lock.py.html>`__ to see an example of how to use remove_deployment_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -10022,7 +10022,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/reschedule_deployment_upgrade.py.html>`__ to see an example of how to use reschedule_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/reschedule_deployment_upgrade.py.html>`__ to see an example of how to use reschedule_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']
@@ -10152,7 +10152,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/restore_deployment.py.html>`__ to see an example of how to use restore_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/restore_deployment.py.html>`__ to see an example of how to use restore_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -10288,7 +10288,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/rollback_deployment_upgrade.py.html>`__ to see an example of how to use rollback_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/rollback_deployment_upgrade.py.html>`__ to see an example of how to use rollback_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']
@@ -10421,7 +10421,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/snooze_deployment_upgrade.py.html>`__ to see an example of how to use snooze_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/snooze_deployment_upgrade.py.html>`__ to see an example of how to use snooze_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']
@@ -10549,7 +10549,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/start_deployment.py.html>`__ to see an example of how to use start_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/start_deployment.py.html>`__ to see an example of how to use start_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -10687,7 +10687,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/start_pipeline.py.html>`__ to see an example of how to use start_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/start_pipeline.py.html>`__ to see an example of how to use start_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -10823,7 +10823,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/stop_deployment.py.html>`__ to see an example of how to use stop_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/stop_deployment.py.html>`__ to see an example of how to use stop_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -10961,7 +10961,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/stop_pipeline.py.html>`__ to see an example of how to use stop_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/stop_pipeline.py.html>`__ to see an example of how to use stop_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -11094,7 +11094,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/switchover_deployment_peer.py.html>`__ to see an example of how to use switchover_deployment_peer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/switchover_deployment_peer.py.html>`__ to see an example of how to use switchover_deployment_peer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -11222,7 +11222,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/test_connection_assignment.py.html>`__ to see an example of how to use test_connection_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/test_connection_assignment.py.html>`__ to see an example of how to use test_connection_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionAssignmentId']
@@ -11352,7 +11352,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/test_pipeline_connection.py.html>`__ to see an example of how to use test_pipeline_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/test_pipeline_connection.py.html>`__ to see an example of how to use test_pipeline_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -11478,7 +11478,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_connection.py.html>`__ to see an example of how to use update_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -11603,7 +11603,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_database_registration.py.html>`__ to see an example of how to use update_database_registration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_database_registration.py.html>`__ to see an example of how to use update_database_registration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['databaseRegistrationId']
@@ -11722,7 +11722,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -11849,7 +11849,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_deployment_backup.py.html>`__ to see an example of how to use update_deployment_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_deployment_backup.py.html>`__ to see an example of how to use update_deployment_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentBackupId']
@@ -11980,7 +11980,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_pipeline.py.html>`__ to see an example of how to use update_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_pipeline.py.html>`__ to see an example of how to use update_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -12113,7 +12113,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/upgrade_deployment.py.html>`__ to see an example of how to use upgrade_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/upgrade_deployment.py.html>`__ to see an example of how to use upgrade_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -12249,7 +12249,7 @@ class GoldenGateClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/upgrade_deployment_upgrade.py.html>`__ to see an example of how to use upgrade_deployment_upgrade API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/upgrade_deployment_upgrade.py.html>`__ to see an example of how to use upgrade_deployment_upgrade API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentUpgradeId']

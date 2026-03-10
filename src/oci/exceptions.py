@@ -104,8 +104,8 @@ class InvalidConfig(ClientError):
         return str(self.errors)
 
 
-class InvalidAlloyConfig(ClientError):
-    """Alloy config is invalid, or is blocking a service"""
+class InvalidDeveloperToolConfiguration(ClientError):
+    """Developer Tool Configuration is invalid, or is blocking a service"""
 
 
 class InvalidResourcePrincipalArguments(ClientError):

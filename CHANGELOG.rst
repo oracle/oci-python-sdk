@@ -5,14 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.168.1 - 2026-03-10
+====================
+
+Added 
+----- 
+* Support for the Guarded Data Pipelines (GDP) service 
+* Support for the Limits Increase service 
+* Support for VMware Bring-Your-Own-License with VCF5.2 in the Oracle Cloud VMware Provisioning service 
+* Support for Identity Verification in the Identity Domains service 
+* Support for OKV-based keys, moving replication units and recreating failed resources based on Exascale and Autonomous infrastructure in the  
+* Globally Distributed Database service 
+* Support for setting the last IP drain period for email IP pools in the Email Delivery service. 
+* Support for additional filters when listing work requests in the Email Delivery service 
+* Support for the VCNIP IP Lifetime feature in the Compute service  
+
+====================
 2.168.0 - 2026-03-03
 ====================
 
 Added  
 -----  
 * Support for the User Managed Maintenance Window Feature in the Lustre File service 
-* Support for multiple standby databases across AD and Regions in a Data Guard environment for BaseDB in the Database service 
-* Support for OS Patching in BaseDB in the Database service 
+* Support for multiple standby databases across AD and Regions in a Data Guard environment for Base Database in the Database service
+* Support for OS Patching in Base Database in the Database service
 * Support for Valkey 8.1 in the Redis service 
 * Support for Exadata Cost Management in the Ops Insights service 
 * Support for accepting target database user credentials for masking and generating health reports in the Data Safe service  

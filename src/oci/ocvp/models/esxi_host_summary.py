@@ -186,6 +186,18 @@ class EsxiHostSummary(object):
             The value to assign to the datastore_cluster_ids property of this EsxiHostSummary.
         :type datastore_cluster_ids: list[str]
 
+        :param primary_vnic_mac_address:
+            The value to assign to the primary_vnic_mac_address property of this EsxiHostSummary.
+        :type primary_vnic_mac_address: str
+
+        :param vcf_byol_allocation_id:
+            The value to assign to the vcf_byol_allocation_id property of this EsxiHostSummary.
+        :type vcf_byol_allocation_id: str
+
+        :param is_vsan_byol_enabled:
+            The value to assign to the is_vsan_byol_enabled property of this EsxiHostSummary.
+        :type is_vsan_byol_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHostSummary.
         :type freeform_tags: dict(str, str)
@@ -226,6 +238,9 @@ class EsxiHostSummary(object):
             'is_billing_continuation_in_progress': 'bool',
             'is_billing_swapping_in_progress': 'bool',
             'datastore_cluster_ids': 'list[str]',
+            'primary_vnic_mac_address': 'str',
+            'vcf_byol_allocation_id': 'str',
+            'is_vsan_byol_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -257,6 +272,9 @@ class EsxiHostSummary(object):
             'is_billing_continuation_in_progress': 'isBillingContinuationInProgress',
             'is_billing_swapping_in_progress': 'isBillingSwappingInProgress',
             'datastore_cluster_ids': 'datastoreClusterIds',
+            'primary_vnic_mac_address': 'primaryVnicMacAddress',
+            'vcf_byol_allocation_id': 'vcfByolAllocationId',
+            'is_vsan_byol_enabled': 'isVsanByolEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -287,6 +305,9 @@ class EsxiHostSummary(object):
         self._is_billing_continuation_in_progress = None
         self._is_billing_swapping_in_progress = None
         self._datastore_cluster_ids = None
+        self._primary_vnic_mac_address = None
+        self._vcf_byol_allocation_id = None
+        self._is_vsan_byol_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -1030,6 +1051,82 @@ class EsxiHostSummary(object):
         :type: list[str]
         """
         self._datastore_cluster_ids = datastore_cluster_ids
+
+    @property
+    def primary_vnic_mac_address(self):
+        """
+        Gets the primary_vnic_mac_address of this EsxiHostSummary.
+        MAC address of ESXi host's compute instance primary VNIC.
+
+
+        :return: The primary_vnic_mac_address of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._primary_vnic_mac_address
+
+    @primary_vnic_mac_address.setter
+    def primary_vnic_mac_address(self, primary_vnic_mac_address):
+        """
+        Sets the primary_vnic_mac_address of this EsxiHostSummary.
+        MAC address of ESXi host's compute instance primary VNIC.
+
+
+        :param primary_vnic_mac_address: The primary_vnic_mac_address of this EsxiHostSummary.
+        :type: str
+        """
+        self._primary_vnic_mac_address = primary_vnic_mac_address
+
+    @property
+    def vcf_byol_allocation_id(self):
+        """
+        Gets the vcf_byol_allocation_id of this EsxiHostSummary.
+        The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vcf_byol_allocation_id of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._vcf_byol_allocation_id
+
+    @vcf_byol_allocation_id.setter
+    def vcf_byol_allocation_id(self, vcf_byol_allocation_id):
+        """
+        Sets the vcf_byol_allocation_id of this EsxiHostSummary.
+        The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vcf_byol_allocation_id: The vcf_byol_allocation_id of this EsxiHostSummary.
+        :type: str
+        """
+        self._vcf_byol_allocation_id = vcf_byol_allocation_id
+
+    @property
+    def is_vsan_byol_enabled(self):
+        """
+        Gets the is_vsan_byol_enabled of this EsxiHostSummary.
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+
+
+        :return: The is_vsan_byol_enabled of this EsxiHostSummary.
+        :rtype: bool
+        """
+        return self._is_vsan_byol_enabled
+
+    @is_vsan_byol_enabled.setter
+    def is_vsan_byol_enabled(self, is_vsan_byol_enabled):
+        """
+        Sets the is_vsan_byol_enabled of this EsxiHostSummary.
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+
+
+        :param is_vsan_byol_enabled: The is_vsan_byol_enabled of this EsxiHostSummary.
+        :type: bool
+        """
+        self._is_vsan_byol_enabled = is_vsan_byol_enabled
 
     @property
     def freeform_tags(self):

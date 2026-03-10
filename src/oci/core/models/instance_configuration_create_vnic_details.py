@@ -71,6 +71,10 @@ class InstanceConfigurationCreateVnicDetails(object):
             The value to assign to the private_ip property of this InstanceConfigurationCreateVnicDetails.
         :type private_ip: str
 
+        :param private_ip_id:
+            The value to assign to the private_ip_id property of this InstanceConfigurationCreateVnicDetails.
+        :type private_ip_id: str
+
         :param skip_source_dest_check:
             The value to assign to the skip_source_dest_check property of this InstanceConfigurationCreateVnicDetails.
         :type skip_source_dest_check: bool
@@ -93,6 +97,7 @@ class InstanceConfigurationCreateVnicDetails(object):
             'nsg_ids': 'list[str]',
             'subnet_cidr': 'str',
             'private_ip': 'str',
+            'private_ip_id': 'str',
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str'
         }
@@ -109,6 +114,7 @@ class InstanceConfigurationCreateVnicDetails(object):
             'nsg_ids': 'nsgIds',
             'subnet_cidr': 'subnetCidr',
             'private_ip': 'privateIp',
+            'private_ip_id': 'privateIpId',
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId'
         }
@@ -124,6 +130,7 @@ class InstanceConfigurationCreateVnicDetails(object):
         self._nsg_ids = None
         self._subnet_cidr = None
         self._private_ip = None
+        self._private_ip_id = None
         self._skip_source_dest_check = None
         self._subnet_id = None
 
@@ -488,6 +495,36 @@ class InstanceConfigurationCreateVnicDetails(object):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def private_ip_id(self):
+        """
+        Gets the private_ip_id of this InstanceConfigurationCreateVnicDetails.
+        An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
+        See the `privateIpId` attribute of :class:`CreateVnicDetails` for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_ip_id of this InstanceConfigurationCreateVnicDetails.
+        :rtype: str
+        """
+        return self._private_ip_id
+
+    @private_ip_id.setter
+    def private_ip_id(self, private_ip_id):
+        """
+        Sets the private_ip_id of this InstanceConfigurationCreateVnicDetails.
+        An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
+        See the `privateIpId` attribute of :class:`CreateVnicDetails` for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param private_ip_id: The private_ip_id of this InstanceConfigurationCreateVnicDetails.
+        :type: str
+        """
+        self._private_ip_id = private_ip_id
 
     @property
     def skip_source_dest_check(self):

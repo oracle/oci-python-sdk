@@ -19,18 +19,27 @@ class CreateDistributedDatabaseShardDetails(object):
     #: This constant has a value of "EXADB_XS"
     SOURCE_EXADB_XS = "EXADB_XS"
 
+    #: A constant which can be used with the source property of a CreateDistributedDatabaseShardDetails.
+    #: This constant has a value of "NEW_VAULT_AND_CLUSTER"
+    SOURCE_NEW_VAULT_AND_CLUSTER = "NEW_VAULT_AND_CLUSTER"
+
+    #: A constant which can be used with the source property of a CreateDistributedDatabaseShardDetails.
+    #: This constant has a value of "EXISTING_CLUSTER"
+    SOURCE_EXISTING_CLUSTER = "EXISTING_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDistributedDatabaseShardDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDetails`
         * :class:`~oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param source:
             The value to assign to the source property of this CreateDistributedDatabaseShardDetails.
-            Allowed values for this property are: "EXADB_XS"
+            Allowed values for this property are: "EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER"
         :type source: str
 
         """
@@ -50,6 +59,9 @@ class CreateDistributedDatabaseShardDetails(object):
         """
         type = object_dictionary['source']
 
+        if type == 'NEW_VAULT_AND_CLUSTER':
+            return 'CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDetails'
+
         if type == 'EXADB_XS':
             return 'CreateDistributedDatabaseShardWithExadbXsDetails'
         else:
@@ -59,9 +71,12 @@ class CreateDistributedDatabaseShardDetails(object):
     def source(self):
         """
         **[Required]** Gets the source of this CreateDistributedDatabaseShardDetails.
-        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        Type of Globally distributed database Shard or Catalog.
+        Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch.
+        Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters.
+        EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
 
-        Allowed values for this property are: "EXADB_XS"
+        Allowed values for this property are: "EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER"
 
 
         :return: The source of this CreateDistributedDatabaseShardDetails.
@@ -73,13 +88,16 @@ class CreateDistributedDatabaseShardDetails(object):
     def source(self, source):
         """
         Sets the source of this CreateDistributedDatabaseShardDetails.
-        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        Type of Globally distributed database Shard or Catalog.
+        Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch.
+        Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters.
+        EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
 
 
         :param source: The source of this CreateDistributedDatabaseShardDetails.
         :type: str
         """
-        allowed_values = ["EXADB_XS"]
+        allowed_values = ["EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

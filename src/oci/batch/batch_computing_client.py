@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import batch_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class BatchComputingClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class BatchComputingClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class BatchComputingClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("batch"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -166,7 +166,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/cancel_batch_job.py.html>`__ to see an example of how to use cancel_batch_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/cancel_batch_job.py.html>`__ to see an example of how to use cancel_batch_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -287,7 +287,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_context_compartment.py.html>`__ to see an example of how to use change_batch_context_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_context_compartment.py.html>`__ to see an example of how to use change_batch_context_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchContextId']
@@ -410,7 +410,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_job_compartment.py.html>`__ to see an example of how to use change_batch_job_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_job_compartment.py.html>`__ to see an example of how to use change_batch_job_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -533,7 +533,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_job_pool_compartment.py.html>`__ to see an example of how to use change_batch_job_pool_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_job_pool_compartment.py.html>`__ to see an example of how to use change_batch_job_pool_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobPoolId']
@@ -656,7 +656,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_task_environment_compartment.py.html>`__ to see an example of how to use change_batch_task_environment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_task_environment_compartment.py.html>`__ to see an example of how to use change_batch_task_environment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskEnvironmentId']
@@ -779,7 +779,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_task_profile_compartment.py.html>`__ to see an example of how to use change_batch_task_profile_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/change_batch_task_profile_compartment.py.html>`__ to see an example of how to use change_batch_task_profile_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskProfileId']
@@ -896,7 +896,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_context.py.html>`__ to see an example of how to use create_batch_context API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_context.py.html>`__ to see an example of how to use create_batch_context API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1004,7 +1004,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_job.py.html>`__ to see an example of how to use create_batch_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_job.py.html>`__ to see an example of how to use create_batch_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1112,7 +1112,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_job_pool.py.html>`__ to see an example of how to use create_batch_job_pool API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_job_pool.py.html>`__ to see an example of how to use create_batch_job_pool API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1220,7 +1220,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_task_environment.py.html>`__ to see an example of how to use create_batch_task_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_task_environment.py.html>`__ to see an example of how to use create_batch_task_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1328,7 +1328,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_task_profile.py.html>`__ to see an example of how to use create_batch_task_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/create_batch_task_profile.py.html>`__ to see an example of how to use create_batch_task_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1437,7 +1437,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_context.py.html>`__ to see an example of how to use delete_batch_context API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_context.py.html>`__ to see an example of how to use delete_batch_context API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchContextId']
@@ -1553,7 +1553,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_job_pool.py.html>`__ to see an example of how to use delete_batch_job_pool API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_job_pool.py.html>`__ to see an example of how to use delete_batch_job_pool API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobPoolId']
@@ -1669,7 +1669,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_task_environment.py.html>`__ to see an example of how to use delete_batch_task_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_task_environment.py.html>`__ to see an example of how to use delete_batch_task_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskEnvironmentId']
@@ -1785,7 +1785,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_task_profile.py.html>`__ to see an example of how to use delete_batch_task_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/delete_batch_task_profile.py.html>`__ to see an example of how to use delete_batch_task_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskProfileId']
@@ -1895,7 +1895,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_context.py.html>`__ to see an example of how to use get_batch_context API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_context.py.html>`__ to see an example of how to use get_batch_context API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchContextId']
@@ -2005,7 +2005,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_job.py.html>`__ to see an example of how to use get_batch_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_job.py.html>`__ to see an example of how to use get_batch_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -2115,7 +2115,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_job_pool.py.html>`__ to see an example of how to use get_batch_job_pool API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_job_pool.py.html>`__ to see an example of how to use get_batch_job_pool API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobPoolId']
@@ -2228,7 +2228,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_task.py.html>`__ to see an example of how to use get_batch_task API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_task.py.html>`__ to see an example of how to use get_batch_task API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId', 'taskName']
@@ -2339,7 +2339,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_task_environment.py.html>`__ to see an example of how to use get_batch_task_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_task_environment.py.html>`__ to see an example of how to use get_batch_task_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskEnvironmentId']
@@ -2449,7 +2449,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_task_profile.py.html>`__ to see an example of how to use get_batch_task_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_batch_task_profile.py.html>`__ to see an example of how to use get_batch_task_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskProfileId']
@@ -2559,7 +2559,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -2686,7 +2686,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_context_shapes.py.html>`__ to see an example of how to use list_batch_context_shapes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_context_shapes.py.html>`__ to see an example of how to use list_batch_context_shapes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2838,7 +2838,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_contexts.py.html>`__ to see an example of how to use list_batch_contexts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_contexts.py.html>`__ to see an example of how to use list_batch_contexts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3025,7 +3025,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_job_pools.py.html>`__ to see an example of how to use list_batch_job_pools API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_job_pools.py.html>`__ to see an example of how to use list_batch_job_pools API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3204,7 +3204,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_job_tasks.py.html>`__ to see an example of how to use list_batch_job_tasks API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_job_tasks.py.html>`__ to see an example of how to use list_batch_job_tasks API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -3399,7 +3399,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_jobs.py.html>`__ to see an example of how to use list_batch_jobs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_jobs.py.html>`__ to see an example of how to use list_batch_jobs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3583,7 +3583,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_task_environments.py.html>`__ to see an example of how to use list_batch_task_environments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_task_environments.py.html>`__ to see an example of how to use list_batch_task_environments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3765,7 +3765,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_task_profiles.py.html>`__ to see an example of how to use list_batch_task_profiles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_task_profiles.py.html>`__ to see an example of how to use list_batch_task_profiles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3944,7 +3944,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_tasks.py.html>`__ to see an example of how to use list_batch_tasks API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_batch_tasks.py.html>`__ to see an example of how to use list_batch_tasks API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4109,7 +4109,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -4271,7 +4271,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -4448,7 +4448,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4598,7 +4598,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/pause_batch_job.py.html>`__ to see an example of how to use pause_batch_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/pause_batch_job.py.html>`__ to see an example of how to use pause_batch_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -4719,7 +4719,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/start_batch_context.py.html>`__ to see an example of how to use start_batch_context API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/start_batch_context.py.html>`__ to see an example of how to use start_batch_context API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchContextId']
@@ -4840,7 +4840,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/start_batch_job_pool.py.html>`__ to see an example of how to use start_batch_job_pool API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/start_batch_job_pool.py.html>`__ to see an example of how to use start_batch_job_pool API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobPoolId']
@@ -4961,7 +4961,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/stop_batch_context.py.html>`__ to see an example of how to use stop_batch_context API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/stop_batch_context.py.html>`__ to see an example of how to use stop_batch_context API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchContextId']
@@ -5082,7 +5082,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/stop_batch_job_pool.py.html>`__ to see an example of how to use stop_batch_job_pool API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/stop_batch_job_pool.py.html>`__ to see an example of how to use stop_batch_job_pool API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobPoolId']
@@ -5203,7 +5203,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/unpause_batch_job.py.html>`__ to see an example of how to use unpause_batch_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/unpause_batch_job.py.html>`__ to see an example of how to use unpause_batch_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -5324,7 +5324,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_context.py.html>`__ to see an example of how to use update_batch_context API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_context.py.html>`__ to see an example of how to use update_batch_context API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchContextId']
@@ -5445,7 +5445,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_job.py.html>`__ to see an example of how to use update_batch_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_job.py.html>`__ to see an example of how to use update_batch_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobId']
@@ -5566,7 +5566,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_job_pool.py.html>`__ to see an example of how to use update_batch_job_pool API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_job_pool.py.html>`__ to see an example of how to use update_batch_job_pool API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchJobPoolId']
@@ -5687,7 +5687,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_task_environment.py.html>`__ to see an example of how to use update_batch_task_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_task_environment.py.html>`__ to see an example of how to use update_batch_task_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskEnvironmentId']
@@ -5810,7 +5810,7 @@ class BatchComputingClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_task_profile.py.html>`__ to see an example of how to use update_batch_task_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/batch/update_batch_task_profile.py.html>`__ to see an example of how to use update_batch_task_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['batchTaskProfileId']

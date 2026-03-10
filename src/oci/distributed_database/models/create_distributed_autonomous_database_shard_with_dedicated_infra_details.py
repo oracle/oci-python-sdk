@@ -70,6 +70,14 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
             The value to assign to the kms_key_version_id property of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
         :type kms_key_version_id: str
 
+        :param okv_key_store_id:
+            The value to assign to the okv_key_store_id property of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :type okv_key_store_id: str
+
+        :param okv_end_point_group:
+            The value to assign to the okv_end_point_group property of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :type okv_end_point_group: str
+
         """
         self.swagger_types = {
             'source': 'str',
@@ -83,7 +91,9 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
             'peer_details': 'list[CreateShardPeerWithDedicatedInfraDetails]',
             'vault_id': 'str',
             'kms_key_id': 'str',
-            'kms_key_version_id': 'str'
+            'kms_key_version_id': 'str',
+            'okv_key_store_id': 'str',
+            'okv_end_point_group': 'str'
         }
         self.attribute_map = {
             'source': 'source',
@@ -97,7 +107,9 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
             'peer_details': 'peerDetails',
             'vault_id': 'vaultId',
             'kms_key_id': 'kmsKeyId',
-            'kms_key_version_id': 'kmsKeyVersionId'
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'okv_key_store_id': 'okvKeyStoreId',
+            'okv_end_point_group': 'okvEndPointGroup'
         }
         self._source = None
         self._admin_password = None
@@ -111,6 +123,8 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
         self._vault_id = None
         self._kms_key_id = None
         self._kms_key_version_id = None
+        self._okv_key_store_id = None
+        self._okv_end_point_group = None
         self._source = 'ADB_D'
 
     @property
@@ -392,6 +406,58 @@ class CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails(CreateDi
         :type: str
         """
         self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def okv_key_store_id(self):
+        """
+        Gets the okv_key_store_id of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        The `OCID`__ of the key store used to create the shard.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The okv_key_store_id of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :rtype: str
+        """
+        return self._okv_key_store_id
+
+    @okv_key_store_id.setter
+    def okv_key_store_id(self, okv_key_store_id):
+        """
+        Sets the okv_key_store_id of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        The `OCID`__ of the key store used to create the shard.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param okv_key_store_id: The okv_key_store_id of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :type: str
+        """
+        self._okv_key_store_id = okv_key_store_id
+
+    @property
+    def okv_end_point_group(self):
+        """
+        Gets the okv_end_point_group of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        The OKV endpoint name.
+
+
+        :return: The okv_end_point_group of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :rtype: str
+        """
+        return self._okv_end_point_group
+
+    @okv_end_point_group.setter
+    def okv_end_point_group(self, okv_end_point_group):
+        """
+        Sets the okv_end_point_group of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        The OKV endpoint name.
+
+
+        :param okv_end_point_group: The okv_end_point_group of this CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails.
+        :type: str
+        """
+        self._okv_end_point_group = okv_end_point_group
 
     def __repr__(self):
         return formatted_flat_dict(self)

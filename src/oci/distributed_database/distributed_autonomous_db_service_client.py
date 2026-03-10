@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import distributed_database_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class DistributedAutonomousDbServiceClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class DistributedAutonomousDbServiceClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class DistributedAutonomousDbServiceClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("distributed_database"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -172,7 +172,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/add_distributed_autonomous_database_gds_control_node.py.html>`__ to see an example of how to use add_distributed_autonomous_database_gds_control_node API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/add_distributed_autonomous_database_gds_control_node.py.html>`__ to see an example of how to use add_distributed_autonomous_database_gds_control_node API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -299,7 +299,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_autonomous_database_compartment.py.html>`__ to see an example of how to use change_distributed_autonomous_database_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_autonomous_database_compartment.py.html>`__ to see an example of how to use change_distributed_autonomous_database_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -426,7 +426,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_autonomous_db_backup_config.py.html>`__ to see an example of how to use change_distributed_autonomous_db_backup_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_autonomous_db_backup_config.py.html>`__ to see an example of how to use change_distributed_autonomous_db_backup_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -505,6 +505,133 @@ class DistributedAutonomousDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def configure_distributed_autonomous_database_gsm_wallet(self, configure_distributed_autonomous_database_gsm_wallet_details, distributed_autonomous_database_id, **kwargs):
+        """
+        Configure wallets on Global Service Manager(GSM) instances for a Globally distributed autonomous database.
+
+
+        :param oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseGsmWalletDetails configure_distributed_autonomous_database_gsm_wallet_details: (required)
+            Details to configure wallets on GSM instances for the distributed autonomous database.
+
+        :param str distributed_autonomous_database_id: (required)
+            Globally distributed autonomous database identifier
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_autonomous_database_gsm_wallet.py.html>`__ to see an example of how to use configure_distributed_autonomous_database_gsm_wallet API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedAutonomousDatabaseId']
+        resource_path = "/distributedAutonomousDatabases/{distributedAutonomousDatabaseId}/actions/configureGsmWallet"
+        method = "POST"
+        operation_name = "configure_distributed_autonomous_database_gsm_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsmWallet"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"configure_distributed_autonomous_database_gsm_wallet got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedAutonomousDatabaseId": distributed_autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=configure_distributed_autonomous_database_gsm_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=configure_distributed_autonomous_database_gsm_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def configure_distributed_autonomous_database_gsms(self, configure_distributed_autonomous_database_gsms_details, distributed_autonomous_database_id, **kwargs):
         """
         Configure new Global Service Manager(GSM aka shard manager) instances for the Globally distributed autonomous database.
@@ -553,7 +680,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_autonomous_database_gsms.py.html>`__ to see an example of how to use configure_distributed_autonomous_database_gsms API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_autonomous_database_gsms.py.html>`__ to see an example of how to use configure_distributed_autonomous_database_gsms API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -634,7 +761,7 @@ class DistributedAutonomousDbServiceClient(object):
 
     def configure_distributed_autonomous_database_sharding(self, distributed_autonomous_database_id, **kwargs):
         """
-        Once all components of Globally distributed autonomous database are provisioned, and signed GSM certificates are successfully uploaded, this
+        Once all components of Globally distributed autonomous database are provisioned, this
         api shall be invoked to configure sharding on the Globally distributed autonomous database. Note that this 'ConfigureSharding' API also needs to be
         invoked after successfully adding a new shard to the Globally distributed autonomous database using PATCH api. If this API is not
         invoked after successfully adding a new shard, then that new shard will not be a participant in sharding topology of
@@ -647,6 +774,12 @@ class DistributedAutonomousDbServiceClient(object):
         :param bool is_rebalance_required: (optional)
             The flag to indicate whether chunks need to be re-balanced. This flag is not applicable for USER-defined
             sharding type.
+
+        :param str certificate_id: (optional)
+            The ID of the cluster certificate.
+
+        :param str ca_bundle_id: (optional)
+            The ID of the Ca Bundle.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -685,7 +818,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_autonomous_database_sharding.py.html>`__ to see an example of how to use configure_distributed_autonomous_database_sharding API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_autonomous_database_sharding.py.html>`__ to see an example of how to use configure_distributed_autonomous_database_sharding API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -700,6 +833,8 @@ class DistributedAutonomousDbServiceClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "is_rebalance_required",
+            "certificate_id",
+            "ca_bundle_id",
             "opc_retry_token",
             "opc_request_id",
             "if_match"
@@ -720,7 +855,9 @@ class DistributedAutonomousDbServiceClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "isRebalanceRequired": kwargs.get("is_rebalance_required", missing)
+            "isRebalanceRequired": kwargs.get("is_rebalance_required", missing),
+            "certificateId": kwargs.get("certificate_id", missing),
+            "caBundleId": kwargs.get("ca_bundle_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -808,7 +945,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/create_distributed_autonomous_database.py.html>`__ to see an example of how to use create_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/create_distributed_autonomous_database.py.html>`__ to see an example of how to use create_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -920,7 +1057,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/delete_distributed_autonomous_database.py.html>`__ to see an example of how to use delete_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/delete_distributed_autonomous_database.py.html>`__ to see an example of how to use delete_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -1045,7 +1182,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/download_distributed_autonomous_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use download_distributed_autonomous_database_gsm_certificate_signing_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/download_distributed_autonomous_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use download_distributed_autonomous_database_gsm_certificate_signing_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -1124,7 +1261,7 @@ class DistributedAutonomousDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def generate_distributed_autonomous_database_gsm_certificate_signing_request(self, distributed_autonomous_database_id, ca_bundle_id, **kwargs):
+    def generate_distributed_autonomous_database_gsm_certificate_signing_request(self, distributed_autonomous_database_id, **kwargs):
         """
         Generate the certificate signing request for GSM instances of the Globally distributed autonomous database. Once certificate signing
         request is generated, then customers can download the certificate signing request using
@@ -1133,9 +1270,6 @@ class DistributedAutonomousDbServiceClient(object):
 
         :param str distributed_autonomous_database_id: (required)
             Globally distributed autonomous database identifier
-
-        :param str ca_bundle_id: (required)
-            The ID of the Ca Bundle.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1153,6 +1287,9 @@ class DistributedAutonomousDbServiceClient(object):
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
+
+        :param str ca_bundle_id: (optional)
+            The ID of the Ca Bundle.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1174,10 +1311,10 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_autonomous_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use generate_distributed_autonomous_database_gsm_certificate_signing_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_autonomous_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use generate_distributed_autonomous_database_gsm_certificate_signing_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['distributedAutonomousDatabaseId', 'caBundleId']
+        required_arguments = ['distributedAutonomousDatabaseId']
         resource_path = "/distributedAutonomousDatabases/{distributedAutonomousDatabaseId}/actions/generateGsmCertificateSigningRequest"
         method = "POST"
         operation_name = "generate_distributed_autonomous_database_gsm_certificate_signing_request"
@@ -1190,7 +1327,8 @@ class DistributedAutonomousDbServiceClient(object):
             "retry_strategy",
             "opc_request_id",
             "if_match",
-            "opc_retry_token"
+            "opc_retry_token",
+            "ca_bundle_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1208,7 +1346,7 @@ class DistributedAutonomousDbServiceClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "caBundleId": ca_bundle_id
+            "caBundleId": kwargs.get("ca_bundle_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1306,7 +1444,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_autonomous_database_wallet.py.html>`__ to see an example of how to use generate_distributed_autonomous_database_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_autonomous_database_wallet.py.html>`__ to see an example of how to use generate_distributed_autonomous_database_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -1428,7 +1566,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/get_distributed_autonomous_database.py.html>`__ to see an example of how to use get_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/get_distributed_autonomous_database.py.html>`__ to see an example of how to use get_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -1512,6 +1650,112 @@ class DistributedAutonomousDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_distributed_autonomous_database_raft_metric(self, distributed_autonomous_database_id, **kwargs):
+        """
+        Operation to retrieve RAFT metrics for the Globally distributed autonomous database. If the Globally distributed
+        autonomous database is not RAFT based then empty response is returned from the API.
+
+
+        :param str distributed_autonomous_database_id: (required)
+            Globally distributed autonomous database identifier
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.distributed_database.models.DistributedAutonomousDatabaseRaftMetric`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/get_distributed_autonomous_database_raft_metric.py.html>`__ to see an example of how to use get_distributed_autonomous_database_raft_metric API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedAutonomousDatabaseId']
+        resource_path = "/distributedAutonomousDatabases/{distributedAutonomousDatabaseId}/raftMetrics"
+        method = "GET"
+        operation_name = "get_distributed_autonomous_database_raft_metric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedAutonomousDatabaseRaftMetric"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_distributed_autonomous_database_raft_metric got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedAutonomousDatabaseId": distributed_autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DistributedAutonomousDatabaseRaftMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DistributedAutonomousDatabaseRaftMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_distributed_autonomous_databases(self, compartment_id, **kwargs):
         """
         List of Globally distributed autonomous databases.
@@ -1519,6 +1763,9 @@ class DistributedAutonomousDbServiceClient(object):
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
+
+        :param str private_endpoint_id: (optional)
+            A filter to return only resources that are associated with the given privateEndpointId.
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1575,7 +1822,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/list_distributed_autonomous_databases.py.html>`__ to see an example of how to use list_distributed_autonomous_databases API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/list_distributed_autonomous_databases.py.html>`__ to see an example of how to use list_distributed_autonomous_databases API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1589,6 +1836,7 @@ class DistributedAutonomousDbServiceClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "private_endpoint_id",
             "lifecycle_state",
             "limit",
             "page",
@@ -1634,6 +1882,7 @@ class DistributedAutonomousDbServiceClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "privateEndpointId": kwargs.get("private_endpoint_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -1682,6 +1931,133 @@ class DistributedAutonomousDbServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="DistributedAutonomousDatabaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def move_distributed_autonomous_database_replication_unit(self, distributed_autonomous_database_id, move_distributed_autonomous_database_replication_unit_details, **kwargs):
+        """
+        Move the replication units for RAFT based globally distributed autonomous database from source shard to destination shard.
+
+
+        :param str distributed_autonomous_database_id: (required)
+            Globally distributed autonomous database identifier
+
+        :param oci.distributed_database.models.MoveDistributedAutonomousDatabaseReplicationUnitDetails move_distributed_autonomous_database_replication_unit_details: (required)
+            Details required to move the replication units from the source shard to destination shard.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/move_distributed_autonomous_database_replication_unit.py.html>`__ to see an example of how to use move_distributed_autonomous_database_replication_unit API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedAutonomousDatabaseId']
+        resource_path = "/distributedAutonomousDatabases/{distributedAutonomousDatabaseId}/actions/moveReplicationUnit"
+        method = "POST"
+        operation_name = "move_distributed_autonomous_database_replication_unit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/MoveDistributedAutonomousDatabaseReplicationUnit"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"move_distributed_autonomous_database_replication_unit got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedAutonomousDatabaseId": distributed_autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=move_distributed_autonomous_database_replication_unit_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=move_distributed_autonomous_database_replication_unit_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -1738,7 +2114,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/patch_distributed_autonomous_database.py.html>`__ to see an example of how to use patch_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/patch_distributed_autonomous_database.py.html>`__ to see an example of how to use patch_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -1817,6 +2193,143 @@ class DistributedAutonomousDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def recreate_failed_distributed_autonomous_database_resource(self, distributed_autonomous_database_id, resource_name, **kwargs):
+        """
+        Recreate the failed resource for the Globally Distributed Autonomous Database.
+
+
+        :param str distributed_autonomous_database_id: (required)
+            Globally distributed autonomous database identifier
+
+        :param str resource_name: (required)
+            Specify the name of Shard, Catalog or GSM.
+
+        :param str shard_group: (optional)
+            The shardGroup name example Shardgroupa, Shardgroupb.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/recreate_failed_distributed_autonomous_database_resource.py.html>`__ to see an example of how to use recreate_failed_distributed_autonomous_database_resource API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedAutonomousDatabaseId', 'resourceName']
+        resource_path = "/distributedAutonomousDatabases/{distributedAutonomousDatabaseId}/actions/recreateFailedResource"
+        method = "POST"
+        operation_name = "recreate_failed_distributed_autonomous_database_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/RecreateFailedDistributedAutonomousDatabaseResource"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "shard_group",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"recreate_failed_distributed_autonomous_database_resource got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedAutonomousDatabaseId": distributed_autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "resourceName": resource_name,
+            "shardGroup": kwargs.get("shard_group", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def rotate_distributed_autonomous_database_passwords(self, distributed_autonomous_database_id, **kwargs):
         """
         Rotate the gsmuser and gsmcatuser passwords for shards and catalog of the Globally distributed autonomous database. This operation will also remove GdsCtlNodes if present.
@@ -1862,7 +2375,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/rotate_distributed_autonomous_database_passwords.py.html>`__ to see an example of how to use rotate_distributed_autonomous_database_passwords API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/rotate_distributed_autonomous_database_passwords.py.html>`__ to see an example of how to use rotate_distributed_autonomous_database_passwords API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -1984,7 +2497,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/start_distributed_autonomous_database.py.html>`__ to see an example of how to use start_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/start_distributed_autonomous_database.py.html>`__ to see an example of how to use start_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -2106,7 +2619,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/stop_distributed_autonomous_database.py.html>`__ to see an example of how to use stop_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/stop_distributed_autonomous_database.py.html>`__ to see an example of how to use stop_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -2224,7 +2737,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/update_distributed_autonomous_database.py.html>`__ to see an example of how to use update_distributed_autonomous_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/update_distributed_autonomous_database.py.html>`__ to see an example of how to use update_distributed_autonomous_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -2353,7 +2866,7 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/upload_distributed_autonomous_database_signed_certificate_and_generate_wallet.py.html>`__ to see an example of how to use upload_distributed_autonomous_database_signed_certificate_and_generate_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/upload_distributed_autonomous_database_signed_certificate_and_generate_wallet.py.html>`__ to see an example of how to use upload_distributed_autonomous_database_signed_certificate_and_generate_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']
@@ -2432,22 +2945,13 @@ class DistributedAutonomousDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def validate_distributed_autonomous_database_network(self, distributed_autonomous_database_id, **kwargs):
+    def validate_distributed_autonomous_database_ca_bundle(self, distributed_autonomous_database_id, **kwargs):
         """
-        Validate the network connectivity between components of the globally distributed autonomous database.
+        Validate the CA Bundles consistency of the globally distributed autonomous database.
 
 
         :param str distributed_autonomous_database_id: (required)
             Globally distributed autonomous database identifier
-
-        :param bool is_surrogate: (optional)
-            Determines the surrogates check. Default is true.
-
-        :param str resource_name: (optional)
-            Specify the name of shard or catalog.
-
-        :param str shard_group: (optional)
-            The shardGroup name example ShardGroupA, ShardGroupB.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2486,7 +2990,138 @@ class DistributedAutonomousDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/validate_distributed_autonomous_database_network.py.html>`__ to see an example of how to use validate_distributed_autonomous_database_network API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/validate_distributed_autonomous_database_ca_bundle.py.html>`__ to see an example of how to use validate_distributed_autonomous_database_ca_bundle API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedAutonomousDatabaseId']
+        resource_path = "/distributedAutonomousDatabases/{distributedAutonomousDatabaseId}/actions/validateCaBundle"
+        method = "POST"
+        operation_name = "validate_distributed_autonomous_database_ca_bundle"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseCaBundle"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"validate_distributed_autonomous_database_ca_bundle got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedAutonomousDatabaseId": distributed_autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def validate_distributed_autonomous_database_network(self, distributed_autonomous_database_id, **kwargs):
+        """
+        Validate the network connectivity between components of the globally distributed autonomous database.
+
+
+        :param str distributed_autonomous_database_id: (required)
+            Globally distributed autonomous database identifier
+
+        :param bool is_surrogate: (optional)
+            Determines the surrogates check. Default is true.
+
+        :param str resource_name: (optional)
+            Specify the name of shard or catalog.
+
+        :param str shard_group: (optional)
+            The shardGroup name example Shardgroupa, Shardgroupb.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/validate_distributed_autonomous_database_network.py.html>`__ to see an example of how to use validate_distributed_autonomous_database_network API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedAutonomousDatabaseId']

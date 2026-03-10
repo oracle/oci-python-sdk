@@ -378,7 +378,7 @@ class DistributedDatabasePrivateEndpoint(object):
     def globally_distributed_databases(self):
         """
         Gets the globally_distributed_databases of this DistributedDatabasePrivateEndpoint.
-        The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 
 
         :return: The globally_distributed_databases of this DistributedDatabasePrivateEndpoint.
@@ -390,7 +390,7 @@ class DistributedDatabasePrivateEndpoint(object):
     def globally_distributed_databases(self, globally_distributed_databases):
         """
         Sets the globally_distributed_databases of this DistributedDatabasePrivateEndpoint.
-        The details of the non-deleted Globally distributed databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 
 
         :param globally_distributed_databases: The globally_distributed_databases of this DistributedDatabasePrivateEndpoint.
@@ -402,7 +402,7 @@ class DistributedDatabasePrivateEndpoint(object):
     def globally_distributed_autonomous_databases(self):
         """
         Gets the globally_distributed_autonomous_databases of this DistributedDatabasePrivateEndpoint.
-        The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 
 
         :return: The globally_distributed_autonomous_databases of this DistributedDatabasePrivateEndpoint.
@@ -414,7 +414,7 @@ class DistributedDatabasePrivateEndpoint(object):
     def globally_distributed_autonomous_databases(self, globally_distributed_autonomous_databases):
         """
         Sets the globally_distributed_autonomous_databases of this DistributedDatabasePrivateEndpoint.
-        The details of the non-deleted Globally distributed autonomous databases that consumes the given private endpoint.
+        This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
 
 
         :param globally_distributed_autonomous_databases: The globally_distributed_autonomous_databases of this DistributedDatabasePrivateEndpoint.

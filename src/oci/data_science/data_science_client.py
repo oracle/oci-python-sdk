@@ -15,8 +15,8 @@ from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
 from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import data_science_type_mapping
 missing = Sentinel("Missing")
 
@@ -31,7 +31,7 @@ class DataScienceClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -50,7 +50,7 @@ class DataScienceClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -82,7 +82,7 @@ class DataScienceClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("data_science"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -165,7 +165,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model.py.html>`__ to see an example of how to use activate_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model.py.html>`__ to see an example of how to use activate_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -281,7 +281,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model_deployment.py.html>`__ to see an example of how to use activate_model_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model_deployment.py.html>`__ to see an example of how to use activate_model_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId']
@@ -393,7 +393,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model_group.py.html>`__ to see an example of how to use activate_model_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_model_group.py.html>`__ to see an example of how to use activate_model_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -509,7 +509,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_notebook_session.py.html>`__ to see an example of how to use activate_notebook_session API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_notebook_session.py.html>`__ to see an example of how to use activate_notebook_session API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notebookSessionId']
@@ -622,7 +622,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_schedule.py.html>`__ to see an example of how to use activate_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/activate_schedule.py.html>`__ to see an example of how to use activate_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -739,7 +739,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_job_run.py.html>`__ to see an example of how to use cancel_job_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_job_run.py.html>`__ to see an example of how to use cancel_job_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobRunId']
@@ -859,7 +859,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_pipeline_run.py.html>`__ to see an example of how to use cancel_pipeline_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_pipeline_run.py.html>`__ to see an example of how to use cancel_pipeline_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineRunId']
@@ -984,7 +984,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -1100,7 +1100,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_data_science_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_science_private_endpoint_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_data_science_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_science_private_endpoint_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSciencePrivateEndpointId']
@@ -1222,7 +1222,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_job_compartment.py.html>`__ to see an example of how to use change_job_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_job_compartment.py.html>`__ to see an example of how to use change_job_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -1339,7 +1339,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_job_run_compartment.py.html>`__ to see an example of how to use change_job_run_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_job_run_compartment.py.html>`__ to see an example of how to use change_job_run_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobRunId']
@@ -1457,7 +1457,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_compartment.py.html>`__ to see an example of how to use change_ml_application_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_compartment.py.html>`__ to see an example of how to use change_ml_application_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationId']
@@ -1580,7 +1580,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_implementation_compartment.py.html>`__ to see an example of how to use change_ml_application_implementation_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_implementation_compartment.py.html>`__ to see an example of how to use change_ml_application_implementation_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -1703,7 +1703,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_instance_compartment.py.html>`__ to see an example of how to use change_ml_application_instance_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_instance_compartment.py.html>`__ to see an example of how to use change_ml_application_instance_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceId']
@@ -1826,7 +1826,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_instance_view_compartment.py.html>`__ to see an example of how to use change_ml_application_instance_view_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_ml_application_instance_view_compartment.py.html>`__ to see an example of how to use change_ml_application_instance_view_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -1951,7 +1951,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -2074,7 +2074,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_deployment_compartment.py.html>`__ to see an example of how to use change_model_deployment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_deployment_compartment.py.html>`__ to see an example of how to use change_model_deployment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId']
@@ -2197,7 +2197,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_group_compartment.py.html>`__ to see an example of how to use change_model_group_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_group_compartment.py.html>`__ to see an example of how to use change_model_group_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -2322,7 +2322,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_group_version_history_compartment.py.html>`__ to see an example of how to use change_model_group_version_history_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_group_version_history_compartment.py.html>`__ to see an example of how to use change_model_group_version_history_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupVersionHistoryId']
@@ -2447,7 +2447,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_version_set_compartment.py.html>`__ to see an example of how to use change_model_version_set_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_model_version_set_compartment.py.html>`__ to see an example of how to use change_model_version_set_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelVersionSetId']
@@ -2570,7 +2570,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_notebook_session_compartment.py.html>`__ to see an example of how to use change_notebook_session_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_notebook_session_compartment.py.html>`__ to see an example of how to use change_notebook_session_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notebookSessionId']
@@ -2690,7 +2690,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_pipeline_compartment.py.html>`__ to see an example of how to use change_pipeline_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_pipeline_compartment.py.html>`__ to see an example of how to use change_pipeline_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -2807,7 +2807,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_pipeline_run_compartment.py.html>`__ to see an example of how to use change_pipeline_run_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_pipeline_run_compartment.py.html>`__ to see an example of how to use change_pipeline_run_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineRunId']
@@ -2927,7 +2927,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -3048,7 +3048,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_schedule_compartment.py.html>`__ to see an example of how to use change_schedule_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/change_schedule_compartment.py.html>`__ to see an example of how to use change_schedule_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -3161,7 +3161,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_data_science_private_endpoint.py.html>`__ to see an example of how to use create_data_science_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_data_science_private_endpoint.py.html>`__ to see an example of how to use create_data_science_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3262,7 +3262,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_job.py.html>`__ to see an example of how to use create_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_job.py.html>`__ to see an example of how to use create_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3383,7 +3383,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_job_artifact.py.html>`__ to see an example of how to use create_job_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_job_artifact.py.html>`__ to see an example of how to use create_job_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -3522,7 +3522,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_job_run.py.html>`__ to see an example of how to use create_job_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_job_run.py.html>`__ to see an example of how to use create_job_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3625,7 +3625,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_ml_application.py.html>`__ to see an example of how to use create_ml_application API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_ml_application.py.html>`__ to see an example of how to use create_ml_application API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3726,7 +3726,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_ml_application_implementation.py.html>`__ to see an example of how to use create_ml_application_implementation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_ml_application_implementation.py.html>`__ to see an example of how to use create_ml_application_implementation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3827,7 +3827,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_ml_application_instance.py.html>`__ to see an example of how to use create_ml_application_instance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_ml_application_instance.py.html>`__ to see an example of how to use create_ml_application_instance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3928,7 +3928,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model.py.html>`__ to see an example of how to use create_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model.py.html>`__ to see an example of how to use create_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4061,7 +4061,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_artifact.py.html>`__ to see an example of how to use create_model_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_artifact.py.html>`__ to see an example of how to use create_model_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -4233,7 +4233,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use create_model_custom_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use create_model_custom_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -4401,7 +4401,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use create_model_defined_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use create_model_defined_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -4540,7 +4540,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_deployment.py.html>`__ to see an example of how to use create_model_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_deployment.py.html>`__ to see an example of how to use create_model_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4643,7 +4643,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_group.py.html>`__ to see an example of how to use create_model_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_group.py.html>`__ to see an example of how to use create_model_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4776,7 +4776,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_group_artifact.py.html>`__ to see an example of how to use create_model_group_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_group_artifact.py.html>`__ to see an example of how to use create_model_group_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -4916,7 +4916,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_group_version_history.py.html>`__ to see an example of how to use create_model_group_version_history API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_group_version_history.py.html>`__ to see an example of how to use create_model_group_version_history API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5022,7 +5022,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_provenance.py.html>`__ to see an example of how to use create_model_provenance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_provenance.py.html>`__ to see an example of how to use create_model_provenance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -5135,7 +5135,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_version_set.py.html>`__ to see an example of how to use create_model_version_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_model_version_set.py.html>`__ to see an example of how to use create_model_version_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5236,7 +5236,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_notebook_session.py.html>`__ to see an example of how to use create_notebook_session API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_notebook_session.py.html>`__ to see an example of how to use create_notebook_session API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5337,7 +5337,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_pipeline.py.html>`__ to see an example of how to use create_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_pipeline.py.html>`__ to see an example of how to use create_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5441,7 +5441,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_pipeline_run.py.html>`__ to see an example of how to use create_pipeline_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_pipeline_run.py.html>`__ to see an example of how to use create_pipeline_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5544,7 +5544,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_project.py.html>`__ to see an example of how to use create_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_project.py.html>`__ to see an example of how to use create_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5645,7 +5645,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_schedule.py.html>`__ to see an example of how to use create_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_schedule.py.html>`__ to see an example of how to use create_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5774,7 +5774,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_step_artifact.py.html>`__ to see an example of how to use create_step_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/create_step_artifact.py.html>`__ to see an example of how to use create_step_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId', 'stepName']
@@ -5917,7 +5917,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model.py.html>`__ to see an example of how to use deactivate_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model.py.html>`__ to see an example of how to use deactivate_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -6033,7 +6033,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model_deployment.py.html>`__ to see an example of how to use deactivate_model_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model_deployment.py.html>`__ to see an example of how to use deactivate_model_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId']
@@ -6145,7 +6145,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model_group.py.html>`__ to see an example of how to use deactivate_model_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_model_group.py.html>`__ to see an example of how to use deactivate_model_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -6261,7 +6261,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_notebook_session.py.html>`__ to see an example of how to use deactivate_notebook_session API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_notebook_session.py.html>`__ to see an example of how to use deactivate_notebook_session API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notebookSessionId']
@@ -6374,7 +6374,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_schedule.py.html>`__ to see an example of how to use deactivate_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/deactivate_schedule.py.html>`__ to see an example of how to use deactivate_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -6489,7 +6489,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_data_science_private_endpoint.py.html>`__ to see an example of how to use delete_data_science_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_data_science_private_endpoint.py.html>`__ to see an example of how to use delete_data_science_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSciencePrivateEndpointId']
@@ -6604,7 +6604,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_job.py.html>`__ to see an example of how to use delete_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_job.py.html>`__ to see an example of how to use delete_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -6726,7 +6726,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_job_run.py.html>`__ to see an example of how to use delete_job_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_job_run.py.html>`__ to see an example of how to use delete_job_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobRunId']
@@ -6838,7 +6838,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_ml_application.py.html>`__ to see an example of how to use delete_ml_application API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_ml_application.py.html>`__ to see an example of how to use delete_ml_application API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationId']
@@ -6950,7 +6950,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_ml_application_implementation.py.html>`__ to see an example of how to use delete_ml_application_implementation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_ml_application_implementation.py.html>`__ to see an example of how to use delete_ml_application_implementation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -7062,7 +7062,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_ml_application_instance.py.html>`__ to see an example of how to use delete_ml_application_instance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_ml_application_instance.py.html>`__ to see an example of how to use delete_ml_application_instance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceId']
@@ -7176,7 +7176,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model.py.html>`__ to see an example of how to use delete_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model.py.html>`__ to see an example of how to use delete_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -7293,7 +7293,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use delete_model_custom_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use delete_model_custom_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -7411,7 +7411,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use delete_model_defined_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use delete_model_defined_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -7526,7 +7526,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_deployment.py.html>`__ to see an example of how to use delete_model_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_deployment.py.html>`__ to see an example of how to use delete_model_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId']
@@ -7640,7 +7640,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_group.py.html>`__ to see an example of how to use delete_model_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_group.py.html>`__ to see an example of how to use delete_model_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -7752,7 +7752,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_group_version_history.py.html>`__ to see an example of how to use delete_model_group_version_history API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_group_version_history.py.html>`__ to see an example of how to use delete_model_group_version_history API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupVersionHistoryId']
@@ -7868,7 +7868,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_version_set.py.html>`__ to see an example of how to use delete_model_version_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_model_version_set.py.html>`__ to see an example of how to use delete_model_version_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelVersionSetId']
@@ -7990,7 +7990,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_notebook_session.py.html>`__ to see an example of how to use delete_notebook_session API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_notebook_session.py.html>`__ to see an example of how to use delete_notebook_session API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notebookSessionId']
@@ -8110,7 +8110,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_pipeline.py.html>`__ to see an example of how to use delete_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_pipeline.py.html>`__ to see an example of how to use delete_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -8235,7 +8235,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_pipeline_run.py.html>`__ to see an example of how to use delete_pipeline_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_pipeline_run.py.html>`__ to see an example of how to use delete_pipeline_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineRunId']
@@ -8355,7 +8355,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_project.py.html>`__ to see an example of how to use delete_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -8467,7 +8467,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_schedule.py.html>`__ to see an example of how to use delete_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/delete_schedule.py.html>`__ to see an example of how to use delete_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -8583,7 +8583,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/disable_ml_application_instance_view_trigger.py.html>`__ to see an example of how to use disable_ml_application_instance_view_trigger API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/disable_ml_application_instance_view_trigger.py.html>`__ to see an example of how to use disable_ml_application_instance_view_trigger API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -8708,7 +8708,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/enable_ml_application_instance_view_trigger.py.html>`__ to see an example of how to use enable_ml_application_instance_view_trigger API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/enable_ml_application_instance_view_trigger.py.html>`__ to see an example of how to use enable_ml_application_instance_view_trigger API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -8835,7 +8835,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/export_model_artifact.py.html>`__ to see an example of how to use export_model_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/export_model_artifact.py.html>`__ to see an example of how to use export_model_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -8945,7 +8945,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_data_science_private_endpoint.py.html>`__ to see an example of how to use get_data_science_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_data_science_private_endpoint.py.html>`__ to see an example of how to use get_data_science_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSciencePrivateEndpointId']
@@ -9052,7 +9052,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_job.py.html>`__ to see an example of how to use get_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_job.py.html>`__ to see an example of how to use get_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -9165,7 +9165,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_job_artifact_content.py.html>`__ to see an example of how to use get_job_artifact_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_job_artifact_content.py.html>`__ to see an example of how to use get_job_artifact_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -9274,7 +9274,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_job_run.py.html>`__ to see an example of how to use get_job_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_job_run.py.html>`__ to see an example of how to use get_job_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobRunId']
@@ -9379,7 +9379,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application.py.html>`__ to see an example of how to use get_ml_application API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application.py.html>`__ to see an example of how to use get_ml_application API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationId']
@@ -9484,7 +9484,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_historical_package_content.py.html>`__ to see an example of how to use get_ml_application_historical_package_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_historical_package_content.py.html>`__ to see an example of how to use get_ml_application_historical_package_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationVersionId']
@@ -9589,7 +9589,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_implementation.py.html>`__ to see an example of how to use get_ml_application_implementation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_implementation.py.html>`__ to see an example of how to use get_ml_application_implementation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -9694,7 +9694,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_implementation_version.py.html>`__ to see an example of how to use get_ml_application_implementation_version API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_implementation_version.py.html>`__ to see an example of how to use get_ml_application_implementation_version API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationVersionId']
@@ -9799,7 +9799,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_instance.py.html>`__ to see an example of how to use get_ml_application_instance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_instance.py.html>`__ to see an example of how to use get_ml_application_instance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceId']
@@ -9904,7 +9904,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_instance_view.py.html>`__ to see an example of how to use get_ml_application_instance_view API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_instance_view.py.html>`__ to see an example of how to use get_ml_application_instance_view API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -10009,7 +10009,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_package_content.py.html>`__ to see an example of how to use get_ml_application_package_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_ml_application_package_content.py.html>`__ to see an example of how to use get_ml_application_package_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -10116,7 +10116,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model.py.html>`__ to see an example of how to use get_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model.py.html>`__ to see an example of how to use get_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -10229,7 +10229,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_artifact_content.py.html>`__ to see an example of how to use get_model_artifact_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_artifact_content.py.html>`__ to see an example of how to use get_model_artifact_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -10347,7 +10347,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_custom_metadatum_artifact_content.py.html>`__ to see an example of how to use get_model_custom_metadatum_artifact_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_custom_metadatum_artifact_content.py.html>`__ to see an example of how to use get_model_custom_metadatum_artifact_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -10466,7 +10466,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_defined_metadatum_artifact_content.py.html>`__ to see an example of how to use get_model_defined_metadatum_artifact_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_defined_metadatum_artifact_content.py.html>`__ to see an example of how to use get_model_defined_metadatum_artifact_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -10576,7 +10576,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_deployment.py.html>`__ to see an example of how to use get_model_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_deployment.py.html>`__ to see an example of how to use get_model_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId']
@@ -10683,7 +10683,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_group.py.html>`__ to see an example of how to use get_model_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_group.py.html>`__ to see an example of how to use get_model_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -10796,7 +10796,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_group_artifact_content.py.html>`__ to see an example of how to use get_model_group_artifact_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_group_artifact_content.py.html>`__ to see an example of how to use get_model_group_artifact_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -10905,7 +10905,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_group_version_history.py.html>`__ to see an example of how to use get_model_group_version_history API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_group_version_history.py.html>`__ to see an example of how to use get_model_group_version_history API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupVersionHistoryId']
@@ -11012,7 +11012,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_provenance.py.html>`__ to see an example of how to use get_model_provenance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_provenance.py.html>`__ to see an example of how to use get_model_provenance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -11119,7 +11119,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_version_set.py.html>`__ to see an example of how to use get_model_version_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_model_version_set.py.html>`__ to see an example of how to use get_model_version_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelVersionSetId']
@@ -11226,7 +11226,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_notebook_session.py.html>`__ to see an example of how to use get_notebook_session API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_notebook_session.py.html>`__ to see an example of how to use get_notebook_session API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notebookSessionId']
@@ -11333,7 +11333,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_pipeline.py.html>`__ to see an example of how to use get_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_pipeline.py.html>`__ to see an example of how to use get_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -11440,7 +11440,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_pipeline_run.py.html>`__ to see an example of how to use get_pipeline_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_pipeline_run.py.html>`__ to see an example of how to use get_pipeline_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineRunId']
@@ -11547,7 +11547,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_project.py.html>`__ to see an example of how to use get_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_project.py.html>`__ to see an example of how to use get_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -11652,7 +11652,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_schedule.py.html>`__ to see an example of how to use get_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_schedule.py.html>`__ to see an example of how to use get_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -11768,7 +11768,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_step_artifact_content.py.html>`__ to see an example of how to use get_step_artifact_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_step_artifact_content.py.html>`__ to see an example of how to use get_step_artifact_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId', 'stepName']
@@ -11880,7 +11880,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -11987,7 +11987,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_job_artifact.py.html>`__ to see an example of how to use head_job_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_job_artifact.py.html>`__ to see an example of how to use head_job_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -12092,7 +12092,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_artifact.py.html>`__ to see an example of how to use head_model_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_artifact.py.html>`__ to see an example of how to use head_model_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -12200,7 +12200,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use head_model_custom_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use head_model_custom_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -12309,7 +12309,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use head_model_defined_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use head_model_defined_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -12415,7 +12415,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_group_artifact.py.html>`__ to see an example of how to use head_model_group_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_model_group_artifact.py.html>`__ to see an example of how to use head_model_group_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -12523,7 +12523,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_step_artifact.py.html>`__ to see an example of how to use head_step_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/head_step_artifact.py.html>`__ to see an example of how to use head_step_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId', 'stepName']
@@ -12639,7 +12639,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/import_model_artifact.py.html>`__ to see an example of how to use import_model_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/import_model_artifact.py.html>`__ to see an example of how to use import_model_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -12787,7 +12787,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_containers.py.html>`__ to see an example of how to use list_containers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_containers.py.html>`__ to see an example of how to use list_containers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -12973,7 +12973,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_data_science_private_endpoints.py.html>`__ to see an example of how to use list_data_science_private_endpoints API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_data_science_private_endpoints.py.html>`__ to see an example of how to use list_data_science_private_endpoints API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13137,7 +13137,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_fast_launch_job_configs.py.html>`__ to see an example of how to use list_fast_launch_job_configs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_fast_launch_job_configs.py.html>`__ to see an example of how to use list_fast_launch_job_configs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13298,7 +13298,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_job_runs.py.html>`__ to see an example of how to use list_job_runs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_job_runs.py.html>`__ to see an example of how to use list_job_runs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13457,7 +13457,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_job_shapes.py.html>`__ to see an example of how to use list_job_shapes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_job_shapes.py.html>`__ to see an example of how to use list_job_shapes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13618,7 +13618,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13790,7 +13790,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_implementation_versions.py.html>`__ to see an example of how to use list_ml_application_implementation_versions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_implementation_versions.py.html>`__ to see an example of how to use list_ml_application_implementation_versions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -13968,7 +13968,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_implementations.py.html>`__ to see an example of how to use list_ml_application_implementations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_implementations.py.html>`__ to see an example of how to use list_ml_application_implementations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14154,7 +14154,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_instance_views.py.html>`__ to see an example of how to use list_ml_application_instance_views API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_instance_views.py.html>`__ to see an example of how to use list_ml_application_instance_views API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14334,7 +14334,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_instances.py.html>`__ to see an example of how to use list_ml_application_instances API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_application_instances.py.html>`__ to see an example of how to use list_ml_application_instances API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14513,7 +14513,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_applications.py.html>`__ to see an example of how to use list_ml_applications API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_ml_applications.py.html>`__ to see an example of how to use list_ml_applications API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14705,7 +14705,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployment_model_states.py.html>`__ to see an example of how to use list_model_deployment_model_states API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployment_model_states.py.html>`__ to see an example of how to use list_model_deployment_model_states API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId', 'compartmentId']
@@ -14870,7 +14870,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployment_shapes.py.html>`__ to see an example of how to use list_model_deployment_shapes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployment_shapes.py.html>`__ to see an example of how to use list_model_deployment_shapes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15031,7 +15031,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployments.py.html>`__ to see an example of how to use list_model_deployments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_deployments.py.html>`__ to see an example of how to use list_model_deployments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15226,7 +15226,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_group_models.py.html>`__ to see an example of how to use list_model_group_models API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_group_models.py.html>`__ to see an example of how to use list_model_group_models API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId', 'compartmentId']
@@ -15430,7 +15430,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_group_version_histories.py.html>`__ to see an example of how to use list_model_group_version_histories API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_group_version_histories.py.html>`__ to see an example of how to use list_model_group_version_histories API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15629,7 +15629,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_groups.py.html>`__ to see an example of how to use list_model_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_groups.py.html>`__ to see an example of how to use list_model_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15830,7 +15830,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_version_sets.py.html>`__ to see an example of how to use list_model_version_sets API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_model_version_sets.py.html>`__ to see an example of how to use list_model_version_sets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16045,7 +16045,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_models.py.html>`__ to see an example of how to use list_models API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_models.py.html>`__ to see an example of how to use list_models API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16217,7 +16217,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_notebook_session_shapes.py.html>`__ to see an example of how to use list_notebook_session_shapes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_notebook_session_shapes.py.html>`__ to see an example of how to use list_notebook_session_shapes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16378,7 +16378,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_notebook_sessions.py.html>`__ to see an example of how to use list_notebook_sessions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_notebook_sessions.py.html>`__ to see an example of how to use list_notebook_sessions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16573,7 +16573,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_pipeline_runs.py.html>`__ to see an example of how to use list_pipeline_runs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_pipeline_runs.py.html>`__ to see an example of how to use list_pipeline_runs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16768,7 +16768,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_pipelines.py.html>`__ to see an example of how to use list_pipelines API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_pipelines.py.html>`__ to see an example of how to use list_pipelines API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16959,7 +16959,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_projects.py.html>`__ to see an example of how to use list_projects API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17142,7 +17142,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_schedules.py.html>`__ to see an example of how to use list_schedules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_schedules.py.html>`__ to see an example of how to use list_schedules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17299,7 +17299,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -17434,7 +17434,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -17594,7 +17594,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17765,7 +17765,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/put_ml_application_package.py.html>`__ to see an example of how to use put_ml_application_package API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/put_ml_application_package.py.html>`__ to see an example of how to use put_ml_application_package API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -17911,7 +17911,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/recover_ml_application_instance_view.py.html>`__ to see an example of how to use recover_ml_application_instance_view API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/recover_ml_application_instance_view.py.html>`__ to see an example of how to use recover_ml_application_instance_view API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -18034,7 +18034,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/register_model_artifact_reference.py.html>`__ to see an example of how to use register_model_artifact_reference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/register_model_artifact_reference.py.html>`__ to see an example of how to use register_model_artifact_reference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -18159,7 +18159,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/restore_archived_model_artifact.py.html>`__ to see an example of how to use restore_archived_model_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/restore_archived_model_artifact.py.html>`__ to see an example of how to use restore_archived_model_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -18281,7 +18281,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/trigger_ml_application_instance_flow.py.html>`__ to see an example of how to use trigger_ml_application_instance_flow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/trigger_ml_application_instance_flow.py.html>`__ to see an example of how to use trigger_ml_application_instance_flow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceId']
@@ -18395,7 +18395,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/trigger_ml_application_instance_view_flow.py.html>`__ to see an example of how to use trigger_ml_application_instance_view_flow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/trigger_ml_application_instance_view_flow.py.html>`__ to see an example of how to use trigger_ml_application_instance_view_flow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -18515,7 +18515,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_data_science_private_endpoint.py.html>`__ to see an example of how to use update_data_science_private_endpoint API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_data_science_private_endpoint.py.html>`__ to see an example of how to use update_data_science_private_endpoint API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSciencePrivateEndpointId']
@@ -18634,7 +18634,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_job.py.html>`__ to see an example of how to use update_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_job.py.html>`__ to see an example of how to use update_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobId']
@@ -18755,7 +18755,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_job_run.py.html>`__ to see an example of how to use update_job_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_job_run.py.html>`__ to see an example of how to use update_job_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jobRunId']
@@ -18874,7 +18874,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application.py.html>`__ to see an example of how to use update_ml_application API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application.py.html>`__ to see an example of how to use update_ml_application API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationId']
@@ -18993,7 +18993,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_implementation.py.html>`__ to see an example of how to use update_ml_application_implementation API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_implementation.py.html>`__ to see an example of how to use update_ml_application_implementation API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationId']
@@ -19110,7 +19110,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_implementation_version.py.html>`__ to see an example of how to use update_ml_application_implementation_version API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_implementation_version.py.html>`__ to see an example of how to use update_ml_application_implementation_version API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationImplementationVersionId']
@@ -19229,7 +19229,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_instance.py.html>`__ to see an example of how to use update_ml_application_instance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_instance.py.html>`__ to see an example of how to use update_ml_application_instance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceId']
@@ -19346,7 +19346,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_instance_view.py.html>`__ to see an example of how to use update_ml_application_instance_view API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_ml_application_instance_view.py.html>`__ to see an example of how to use update_ml_application_instance_view API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mlApplicationInstanceViewId']
@@ -19465,7 +19465,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model.py.html>`__ to see an example of how to use update_model API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model.py.html>`__ to see an example of how to use update_model API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -19609,7 +19609,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use update_model_custom_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_custom_metadatum_artifact.py.html>`__ to see an example of how to use update_model_custom_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -19779,7 +19779,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use update_model_defined_metadatum_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_defined_metadatum_artifact.py.html>`__ to see an example of how to use update_model_defined_metadatum_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId', 'metadatumKeyName']
@@ -19932,7 +19932,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_deployment.py.html>`__ to see an example of how to use update_model_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_deployment.py.html>`__ to see an example of how to use update_model_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelDeploymentId']
@@ -20051,7 +20051,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_group.py.html>`__ to see an example of how to use update_model_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_group.py.html>`__ to see an example of how to use update_model_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupId']
@@ -20170,7 +20170,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_group_version_history.py.html>`__ to see an example of how to use update_model_group_version_history API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_group_version_history.py.html>`__ to see an example of how to use update_model_group_version_history API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelGroupVersionHistoryId']
@@ -20289,7 +20289,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_provenance.py.html>`__ to see an example of how to use update_model_provenance API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_provenance.py.html>`__ to see an example of how to use update_model_provenance API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelId']
@@ -20410,7 +20410,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_version_set.py.html>`__ to see an example of how to use update_model_version_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_model_version_set.py.html>`__ to see an example of how to use update_model_version_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['modelVersionSetId']
@@ -20534,7 +20534,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_notebook_session.py.html>`__ to see an example of how to use update_notebook_session API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_notebook_session.py.html>`__ to see an example of how to use update_notebook_session API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notebookSessionId']
@@ -20655,7 +20655,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_pipeline.py.html>`__ to see an example of how to use update_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_pipeline.py.html>`__ to see an example of how to use update_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineId']
@@ -20774,7 +20774,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_pipeline_run.py.html>`__ to see an example of how to use update_pipeline_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_pipeline_run.py.html>`__ to see an example of how to use update_pipeline_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pipelineRunId']
@@ -20893,7 +20893,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_project.py.html>`__ to see an example of how to use update_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_project.py.html>`__ to see an example of how to use update_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -21012,7 +21012,7 @@ class DataScienceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_schedule.py.html>`__ to see an example of how to use update_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datascience/update_schedule.py.html>`__ to see an example of how to use update_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']

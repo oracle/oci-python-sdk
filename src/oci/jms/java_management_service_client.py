@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import jms_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class JavaManagementServiceClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class JavaManagementServiceClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class JavaManagementServiceClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("jms"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -174,7 +174,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/add_fleet_installation_sites.py.html>`__ to see an example of how to use add_fleet_installation_sites API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/add_fleet_installation_sites.py.html>`__ to see an example of how to use add_fleet_installation_sites API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -293,7 +293,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -417,7 +417,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/change_fleet_compartment.py.html>`__ to see an example of how to use change_fleet_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/change_fleet_compartment.py.html>`__ to see an example of how to use change_fleet_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -539,7 +539,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_blocklist.py.html>`__ to see an example of how to use create_blocklist API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_blocklist.py.html>`__ to see an example of how to use create_blocklist API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -668,7 +668,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_drs_file.py.html>`__ to see an example of how to use create_drs_file API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_drs_file.py.html>`__ to see an example of how to use create_drs_file API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -793,7 +793,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_fleet.py.html>`__ to see an example of how to use create_fleet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_fleet.py.html>`__ to see an example of how to use create_fleet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -898,7 +898,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_jms_plugin.py.html>`__ to see an example of how to use create_jms_plugin API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_jms_plugin.py.html>`__ to see an example of how to use create_jms_plugin API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1003,7 +1003,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_task_schedule.py.html>`__ to see an example of how to use create_task_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_task_schedule.py.html>`__ to see an example of how to use create_task_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1113,7 +1113,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_blocklist.py.html>`__ to see an example of how to use delete_blocklist API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_blocklist.py.html>`__ to see an example of how to use delete_blocklist API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'blocklistKey']
@@ -1231,7 +1231,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_crypto_analysis_result.py.html>`__ to see an example of how to use delete_crypto_analysis_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_crypto_analysis_result.py.html>`__ to see an example of how to use delete_crypto_analysis_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'cryptoAnalysisResultId']
@@ -1349,7 +1349,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_drs_file.py.html>`__ to see an example of how to use delete_drs_file API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_drs_file.py.html>`__ to see an example of how to use delete_drs_file API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'drsFileKey']
@@ -1464,7 +1464,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_fleet.py.html>`__ to see an example of how to use delete_fleet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_fleet.py.html>`__ to see an example of how to use delete_fleet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -1581,7 +1581,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_java_migration_analysis_result.py.html>`__ to see an example of how to use delete_java_migration_analysis_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_java_migration_analysis_result.py.html>`__ to see an example of how to use delete_java_migration_analysis_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'javaMigrationAnalysisResultId']
@@ -1697,7 +1697,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_jms_plugin.py.html>`__ to see an example of how to use delete_jms_plugin API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_jms_plugin.py.html>`__ to see an example of how to use delete_jms_plugin API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jmsPluginId']
@@ -1814,7 +1814,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_performance_tuning_analysis_result.py.html>`__ to see an example of how to use delete_performance_tuning_analysis_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_performance_tuning_analysis_result.py.html>`__ to see an example of how to use delete_performance_tuning_analysis_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'performanceTuningAnalysisResultId']
@@ -1932,7 +1932,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_task_schedule.py.html>`__ to see an example of how to use delete_task_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_task_schedule.py.html>`__ to see an example of how to use delete_task_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['taskScheduleId']
@@ -2064,7 +2064,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/disable_drs.py.html>`__ to see an example of how to use disable_drs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/disable_drs.py.html>`__ to see an example of how to use disable_drs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -2193,7 +2193,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/enable_drs.py.html>`__ to see an example of how to use enable_drs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/enable_drs.py.html>`__ to see an example of how to use enable_drs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -2308,7 +2308,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_agent_deploy_script.py.html>`__ to see an example of how to use generate_agent_deploy_script API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_agent_deploy_script.py.html>`__ to see an example of how to use generate_agent_deploy_script API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -2415,7 +2415,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_agent_installer_configuration.py.html>`__ to see an example of how to use generate_agent_installer_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_agent_installer_configuration.py.html>`__ to see an example of how to use generate_agent_installer_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2515,7 +2515,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_load_pipeline_script.py.html>`__ to see an example of how to use generate_load_pipeline_script API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_load_pipeline_script.py.html>`__ to see an example of how to use generate_load_pipeline_script API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -2627,7 +2627,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_crypto_analysis_result.py.html>`__ to see an example of how to use get_crypto_analysis_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_crypto_analysis_result.py.html>`__ to see an example of how to use get_crypto_analysis_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'cryptoAnalysisResultId']
@@ -2741,7 +2741,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_drs_file.py.html>`__ to see an example of how to use get_drs_file API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_drs_file.py.html>`__ to see an example of how to use get_drs_file API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'drsFileKey']
@@ -2857,7 +2857,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_export_setting.py.html>`__ to see an example of how to use get_export_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_export_setting.py.html>`__ to see an example of how to use get_export_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -2964,7 +2964,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_export_status.py.html>`__ to see an example of how to use get_export_status API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_export_status.py.html>`__ to see an example of how to use get_export_status API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -3071,7 +3071,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet.py.html>`__ to see an example of how to use get_fleet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet.py.html>`__ to see an example of how to use get_fleet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -3185,7 +3185,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet_advanced_feature_configuration.py.html>`__ to see an example of how to use get_fleet_advanced_feature_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet_advanced_feature_configuration.py.html>`__ to see an example of how to use get_fleet_advanced_feature_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -3294,7 +3294,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet_agent_configuration.py.html>`__ to see an example of how to use get_fleet_agent_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet_agent_configuration.py.html>`__ to see an example of how to use get_fleet_agent_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -3399,7 +3399,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_family.py.html>`__ to see an example of how to use get_java_family API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_family.py.html>`__ to see an example of how to use get_java_family API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['familyVersion']
@@ -3509,7 +3509,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_migration_analysis_result.py.html>`__ to see an example of how to use get_java_migration_analysis_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_migration_analysis_result.py.html>`__ to see an example of how to use get_java_migration_analysis_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'javaMigrationAnalysisResultId']
@@ -3615,7 +3615,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_release.py.html>`__ to see an example of how to use get_java_release API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_release.py.html>`__ to see an example of how to use get_java_release API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['releaseVersion']
@@ -3722,7 +3722,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_jms_plugin.py.html>`__ to see an example of how to use get_jms_plugin API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_jms_plugin.py.html>`__ to see an example of how to use get_jms_plugin API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jmsPluginId']
@@ -3832,7 +3832,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_performance_tuning_analysis_result.py.html>`__ to see an example of how to use get_performance_tuning_analysis_result API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_performance_tuning_analysis_result.py.html>`__ to see an example of how to use get_performance_tuning_analysis_result API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'performanceTuningAnalysisResultId']
@@ -3943,7 +3943,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_task_schedule.py.html>`__ to see an example of how to use get_task_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_task_schedule.py.html>`__ to see an example of how to use get_task_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['taskScheduleId']
@@ -4058,7 +4058,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -4196,7 +4196,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_agent_installers.py.html>`__ to see an example of how to use list_agent_installers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_agent_installers.py.html>`__ to see an example of how to use list_agent_installers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4366,7 +4366,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_announcements.py.html>`__ to see an example of how to use list_announcements API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_announcements.py.html>`__ to see an example of how to use list_announcements API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4521,7 +4521,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_blocklists.py.html>`__ to see an example of how to use list_blocklists API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_blocklists.py.html>`__ to see an example of how to use list_blocklists API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -4709,7 +4709,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_containers.py.html>`__ to see an example of how to use list_containers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_containers.py.html>`__ to see an example of how to use list_containers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -4919,7 +4919,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_crypto_analysis_results.py.html>`__ to see an example of how to use list_crypto_analysis_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_crypto_analysis_results.py.html>`__ to see an example of how to use list_crypto_analysis_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -5097,7 +5097,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_drs_files.py.html>`__ to see an example of how to use list_drs_files API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_drs_files.py.html>`__ to see an example of how to use list_drs_files API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -5238,7 +5238,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleet_diagnoses.py.html>`__ to see an example of how to use list_fleet_diagnoses API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleet_diagnoses.py.html>`__ to see an example of how to use list_fleet_diagnoses API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -5391,7 +5391,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleet_errors.py.html>`__ to see an example of how to use list_fleet_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleet_errors.py.html>`__ to see an example of how to use list_fleet_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5563,7 +5563,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleets.py.html>`__ to see an example of how to use list_fleets API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleets.py.html>`__ to see an example of how to use list_fleets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5763,7 +5763,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_installation_sites.py.html>`__ to see an example of how to use list_installation_sites API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_installation_sites.py.html>`__ to see an example of how to use list_installation_sites API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -5956,7 +5956,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_families.py.html>`__ to see an example of how to use list_java_families API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_families.py.html>`__ to see an example of how to use list_java_families API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6124,7 +6124,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_migration_analysis_results.py.html>`__ to see an example of how to use list_java_migration_analysis_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_migration_analysis_results.py.html>`__ to see an example of how to use list_java_migration_analysis_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -6301,7 +6301,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_releases.py.html>`__ to see an example of how to use list_java_releases API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_releases.py.html>`__ to see an example of how to use list_java_releases API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6518,7 +6518,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_jms_plugins.py.html>`__ to see an example of how to use list_jms_plugins API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_jms_plugins.py.html>`__ to see an example of how to use list_jms_plugins API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6726,7 +6726,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_jre_usage.py.html>`__ to see an example of how to use list_jre_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_jre_usage.py.html>`__ to see an example of how to use list_jre_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6903,7 +6903,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_library_application_usage.py.html>`__ to see an example of how to use list_library_application_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_library_application_usage.py.html>`__ to see an example of how to use list_library_application_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'libraryKey']
@@ -7095,7 +7095,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_library_managed_instance_usage.py.html>`__ to see an example of how to use list_library_managed_instance_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_library_managed_instance_usage.py.html>`__ to see an example of how to use list_library_managed_instance_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'libraryKey']
@@ -7286,7 +7286,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_performance_tuning_analysis_results.py.html>`__ to see an example of how to use list_performance_tuning_analysis_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_performance_tuning_analysis_results.py.html>`__ to see an example of how to use list_performance_tuning_analysis_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -7469,7 +7469,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_plugin_errors.py.html>`__ to see an example of how to use list_plugin_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_plugin_errors.py.html>`__ to see an example of how to use list_plugin_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7636,7 +7636,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_task_schedules.py.html>`__ to see an example of how to use list_task_schedules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_task_schedules.py.html>`__ to see an example of how to use list_task_schedules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -7805,7 +7805,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_uncorrelated_package_application_usage.py.html>`__ to see an example of how to use list_uncorrelated_package_application_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_uncorrelated_package_application_usage.py.html>`__ to see an example of how to use list_uncorrelated_package_application_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'packageName']
@@ -7985,7 +7985,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_uncorrelated_package_managed_instance_usage.py.html>`__ to see an example of how to use list_uncorrelated_package_managed_instance_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_uncorrelated_package_managed_instance_usage.py.html>`__ to see an example of how to use list_uncorrelated_package_managed_instance_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'packageName']
@@ -8165,7 +8165,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_uncorrelated_package_usage.py.html>`__ to see an example of how to use list_uncorrelated_package_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_uncorrelated_package_usage.py.html>`__ to see an example of how to use list_uncorrelated_package_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -8316,7 +8316,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_items.py.html>`__ to see an example of how to use list_work_items API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_items.py.html>`__ to see an example of how to use list_work_items API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -8439,7 +8439,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -8562,7 +8562,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -8706,7 +8706,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8855,7 +8855,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/remove_fleet_installation_sites.py.html>`__ to see an example of how to use remove_fleet_installation_sites API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/remove_fleet_installation_sites.py.html>`__ to see an example of how to use remove_fleet_installation_sites API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -8970,7 +8970,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_crypto_analyses.py.html>`__ to see an example of how to use request_crypto_analyses API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_crypto_analyses.py.html>`__ to see an example of how to use request_crypto_analyses API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9081,7 +9081,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_deployed_application_migration_analyses.py.html>`__ to see an example of how to use request_deployed_application_migration_analyses API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_deployed_application_migration_analyses.py.html>`__ to see an example of how to use request_deployed_application_migration_analyses API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9192,7 +9192,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_java_migration_analyses.py.html>`__ to see an example of how to use request_java_migration_analyses API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_java_migration_analyses.py.html>`__ to see an example of how to use request_java_migration_analyses API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9302,7 +9302,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_jfr_recordings.py.html>`__ to see an example of how to use request_jfr_recordings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_jfr_recordings.py.html>`__ to see an example of how to use request_jfr_recordings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9413,7 +9413,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_performance_tuning_analyses.py.html>`__ to see an example of how to use request_performance_tuning_analyses API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_performance_tuning_analyses.py.html>`__ to see an example of how to use request_performance_tuning_analyses API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9537,7 +9537,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/scan_java_server_usage.py.html>`__ to see an example of how to use scan_java_server_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/scan_java_server_usage.py.html>`__ to see an example of how to use scan_java_server_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9666,7 +9666,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/scan_library_usage.py.html>`__ to see an example of how to use scan_library_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/scan_library_usage.py.html>`__ to see an example of how to use scan_library_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -9849,7 +9849,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_application_installation_usage.py.html>`__ to see an example of how to use summarize_application_installation_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_application_installation_usage.py.html>`__ to see an example of how to use summarize_application_installation_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -10094,7 +10094,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_application_usage.py.html>`__ to see an example of how to use summarize_application_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_application_usage.py.html>`__ to see an example of how to use summarize_application_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -10327,7 +10327,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_deployed_application_installation_usage.py.html>`__ to see an example of how to use summarize_deployed_application_installation_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_deployed_application_installation_usage.py.html>`__ to see an example of how to use summarize_deployed_application_installation_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -10532,7 +10532,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_deployed_application_usage.py.html>`__ to see an example of how to use summarize_deployed_application_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_deployed_application_usage.py.html>`__ to see an example of how to use summarize_deployed_application_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -10694,7 +10694,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_fleet_errors.py.html>`__ to see an example of how to use summarize_fleet_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_fleet_errors.py.html>`__ to see an example of how to use summarize_fleet_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -10865,7 +10865,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_installation_usage.py.html>`__ to see an example of how to use summarize_installation_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_installation_usage.py.html>`__ to see an example of how to use summarize_installation_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -11086,7 +11086,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_java_server_instance_usage.py.html>`__ to see an example of how to use summarize_java_server_instance_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_java_server_instance_usage.py.html>`__ to see an example of how to use summarize_java_server_instance_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -11278,7 +11278,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_java_server_usage.py.html>`__ to see an example of how to use summarize_java_server_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_java_server_usage.py.html>`__ to see an example of how to use summarize_java_server_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -11491,7 +11491,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_jre_usage.py.html>`__ to see an example of how to use summarize_jre_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_jre_usage.py.html>`__ to see an example of how to use summarize_jre_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -11687,7 +11687,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_library_inventory.py.html>`__ to see an example of how to use summarize_library_inventory API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_library_inventory.py.html>`__ to see an example of how to use summarize_library_inventory API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -11859,7 +11859,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_library_usage.py.html>`__ to see an example of how to use summarize_library_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_library_usage.py.html>`__ to see an example of how to use summarize_library_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -12085,7 +12085,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_managed_instance_usage.py.html>`__ to see an example of how to use summarize_managed_instance_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_managed_instance_usage.py.html>`__ to see an example of how to use summarize_managed_instance_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -12278,7 +12278,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_plugin_errors.py.html>`__ to see an example of how to use summarize_plugin_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_plugin_errors.py.html>`__ to see an example of how to use summarize_plugin_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -12400,7 +12400,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_resource_inventory.py.html>`__ to see an example of how to use summarize_resource_inventory API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_resource_inventory.py.html>`__ to see an example of how to use summarize_resource_inventory API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -12529,7 +12529,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_drs_file.py.html>`__ to see an example of how to use update_drs_file API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_drs_file.py.html>`__ to see an example of how to use update_drs_file API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId', 'drsFileKey']
@@ -12652,7 +12652,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_export_setting.py.html>`__ to see an example of how to use update_export_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_export_setting.py.html>`__ to see an example of how to use update_export_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -12773,7 +12773,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet.py.html>`__ to see an example of how to use update_fleet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet.py.html>`__ to see an example of how to use update_fleet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -12900,7 +12900,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet_advanced_feature_configuration.py.html>`__ to see an example of how to use update_fleet_advanced_feature_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet_advanced_feature_configuration.py.html>`__ to see an example of how to use update_fleet_advanced_feature_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -13024,7 +13024,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet_agent_configuration.py.html>`__ to see an example of how to use update_fleet_agent_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet_agent_configuration.py.html>`__ to see an example of how to use update_fleet_agent_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['fleetId']
@@ -13143,7 +13143,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_jms_plugin.py.html>`__ to see an example of how to use update_jms_plugin API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_jms_plugin.py.html>`__ to see an example of how to use update_jms_plugin API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['jmsPluginId']
@@ -13271,7 +13271,7 @@ class JavaManagementServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_task_schedule.py.html>`__ to see an example of how to use update_task_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_task_schedule.py.html>`__ to see an example of how to use update_task_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['taskScheduleId']

@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import marketplace_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class MarketplaceClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class MarketplaceClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class MarketplaceClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("marketplace"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -170,7 +170,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/change_publication_compartment.py.html>`__ to see an example of how to use change_publication_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/change_publication_compartment.py.html>`__ to see an example of how to use change_publication_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['publicationId']
@@ -288,7 +288,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_accepted_agreement.py.html>`__ to see an example of how to use create_accepted_agreement API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_accepted_agreement.py.html>`__ to see an example of how to use create_accepted_agreement API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -393,7 +393,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_marketplace_external_attested_metadata.py.html>`__ to see an example of how to use create_marketplace_external_attested_metadata API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_marketplace_external_attested_metadata.py.html>`__ to see an example of how to use create_marketplace_external_attested_metadata API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -498,7 +498,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_publication.py.html>`__ to see an example of how to use create_publication API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_publication.py.html>`__ to see an example of how to use create_publication API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -607,7 +607,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_accepted_agreement.py.html>`__ to see an example of how to use delete_accepted_agreement API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_accepted_agreement.py.html>`__ to see an example of how to use delete_accepted_agreement API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['acceptedAgreementId']
@@ -726,7 +726,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_publication.py.html>`__ to see an example of how to use delete_publication API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_publication.py.html>`__ to see an example of how to use delete_publication API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['publicationId']
@@ -844,7 +844,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/export_listing.py.html>`__ to see an example of how to use export_listing API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/export_listing.py.html>`__ to see an example of how to use export_listing API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId', 'packageVersion']
@@ -956,7 +956,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_accepted_agreement.py.html>`__ to see an example of how to use get_accepted_agreement API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_accepted_agreement.py.html>`__ to see an example of how to use get_accepted_agreement API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['acceptedAgreementId']
@@ -1072,7 +1072,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_agreement.py.html>`__ to see an example of how to use get_agreement API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_agreement.py.html>`__ to see an example of how to use get_agreement API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId', 'packageVersion', 'agreementId']
@@ -1211,7 +1211,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_listing.py.html>`__ to see an example of how to use get_listing API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_listing.py.html>`__ to see an example of how to use get_listing API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId']
@@ -1350,7 +1350,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_package.py.html>`__ to see an example of how to use get_package API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_package.py.html>`__ to see an example of how to use get_package API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId', 'packageVersion']
@@ -1465,7 +1465,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication.py.html>`__ to see an example of how to use get_publication API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication.py.html>`__ to see an example of how to use get_publication API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['publicationId']
@@ -1574,7 +1574,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication_package.py.html>`__ to see an example of how to use get_publication_package API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication_package.py.html>`__ to see an example of how to use get_publication_package API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['publicationId', 'packageVersion']
@@ -1681,7 +1681,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -1818,7 +1818,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_accepted_agreements.py.html>`__ to see an example of how to use list_accepted_agreements API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_accepted_agreements.py.html>`__ to see an example of how to use list_accepted_agreements API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1961,7 +1961,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_agreements.py.html>`__ to see an example of how to use list_agreements API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_agreements.py.html>`__ to see an example of how to use list_agreements API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId', 'packageVersion']
@@ -2087,7 +2087,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_categories.py.html>`__ to see an example of how to use list_categories API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_categories.py.html>`__ to see an example of how to use list_categories API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2267,7 +2267,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_listings.py.html>`__ to see an example of how to use list_listings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_listings.py.html>`__ to see an example of how to use list_listings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2443,7 +2443,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_marketplace_metadata_public_keys.py.html>`__ to see an example of how to use list_marketplace_metadata_public_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_marketplace_metadata_public_keys.py.html>`__ to see an example of how to use list_marketplace_metadata_public_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2613,7 +2613,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_packages.py.html>`__ to see an example of how to use list_packages API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_packages.py.html>`__ to see an example of how to use list_packages API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId']
@@ -2777,7 +2777,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publication_packages.py.html>`__ to see an example of how to use list_publication_packages API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publication_packages.py.html>`__ to see an example of how to use list_publication_packages API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['publicationId']
@@ -2947,7 +2947,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publications.py.html>`__ to see an example of how to use list_publications API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publications.py.html>`__ to see an example of how to use list_publications API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId', 'listingType']
@@ -3092,7 +3092,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publishers.py.html>`__ to see an example of how to use list_publishers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publishers.py.html>`__ to see an example of how to use list_publishers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3203,7 +3203,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_report_types.py.html>`__ to see an example of how to use list_report_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_report_types.py.html>`__ to see an example of how to use list_report_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -3317,7 +3317,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_reports.py.html>`__ to see an example of how to use list_reports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_reports.py.html>`__ to see an example of how to use list_reports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['reportType', 'date', 'compartmentId']
@@ -3425,7 +3425,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_taxes.py.html>`__ to see an example of how to use list_taxes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_taxes.py.html>`__ to see an example of how to use list_taxes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listingId']
@@ -3555,7 +3555,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -3705,7 +3705,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -3863,7 +3863,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -4004,7 +4004,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/search_listings.py.html>`__ to see an example of how to use search_listings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/search_listings.py.html>`__ to see an example of how to use search_listings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4124,7 +4124,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_accepted_agreement.py.html>`__ to see an example of how to use update_accepted_agreement API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_accepted_agreement.py.html>`__ to see an example of how to use update_accepted_agreement API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['acceptedAgreementId']
@@ -4251,7 +4251,7 @@ class MarketplaceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_publication.py.html>`__ to see an example of how to use update_publication API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_publication.py.html>`__ to see an example of how to use update_publication API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['publicationId']

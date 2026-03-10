@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import distributed_database_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class DistributedDbServiceClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class DistributedDbServiceClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class DistributedDbServiceClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("distributed_database"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -172,7 +172,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/add_distributed_database_gds_control_node.py.html>`__ to see an example of how to use add_distributed_database_gds_control_node API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/add_distributed_database_gds_control_node.py.html>`__ to see an example of how to use add_distributed_database_gds_control_node API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -299,7 +299,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_database_compartment.py.html>`__ to see an example of how to use change_distributed_database_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_database_compartment.py.html>`__ to see an example of how to use change_distributed_database_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -426,7 +426,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_db_backup_config.py.html>`__ to see an example of how to use change_distributed_db_backup_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/change_distributed_db_backup_config.py.html>`__ to see an example of how to use change_distributed_db_backup_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -553,7 +553,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_database_gsms.py.html>`__ to see an example of how to use configure_distributed_database_gsms API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_database_gsms.py.html>`__ to see an example of how to use configure_distributed_database_gsms API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -685,7 +685,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_database_sharding.py.html>`__ to see an example of how to use configure_distributed_database_sharding API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/configure_distributed_database_sharding.py.html>`__ to see an example of how to use configure_distributed_database_sharding API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -808,7 +808,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/create_distributed_database.py.html>`__ to see an example of how to use create_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/create_distributed_database.py.html>`__ to see an example of how to use create_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -878,10 +878,15 @@ class DistributedDbServiceClient(object):
     def delete_distributed_database(self, distributed_database_id, **kwargs):
         """
         Terminate the given Globally distributed databases.
+        For an EXADB_XS based distributed database, if the parameter mustDeleteInfra is set to true,
+        then the VmCluster and DbStorageVault associated with each shard and catalog will also be deleted.
 
 
         :param str distributed_database_id: (required)
             Globally distributed database identifier
+
+        :param bool must_delete_infra: (optional)
+            The flag to indicate if infra like VmCluster & DbStorageVault associated with the resource should be deleted.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -920,7 +925,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/delete_distributed_database.py.html>`__ to see an example of how to use delete_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/delete_distributed_database.py.html>`__ to see an example of how to use delete_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -934,6 +939,7 @@ class DistributedDbServiceClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "must_delete_infra",
             "opc_request_id",
             "opc_retry_token",
             "if_match"
@@ -952,6 +958,11 @@ class DistributedDbServiceClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "mustDeleteInfra": kwargs.get("must_delete_infra", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -979,6 +990,7 @@ class DistributedDbServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
@@ -990,6 +1002,7 @@ class DistributedDbServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
@@ -1045,7 +1058,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/download_distributed_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use download_distributed_database_gsm_certificate_signing_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/download_distributed_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use download_distributed_database_gsm_certificate_signing_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -1174,7 +1187,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use generate_distributed_database_gsm_certificate_signing_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_database_gsm_certificate_signing_request.py.html>`__ to see an example of how to use generate_distributed_database_gsm_certificate_signing_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId', 'caBundleId']
@@ -1306,7 +1319,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_database_wallet.py.html>`__ to see an example of how to use generate_distributed_database_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/generate_distributed_database_wallet.py.html>`__ to see an example of how to use generate_distributed_database_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -1428,7 +1441,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/get_distributed_database.py.html>`__ to see an example of how to use get_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/get_distributed_database.py.html>`__ to see an example of how to use get_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -1512,6 +1525,112 @@ class DistributedDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_distributed_database_raft_metric(self, distributed_database_id, **kwargs):
+        """
+        Operation to retrieve RAFT metrics for the Globally distributed database. If the Globally distributed database is not
+        RAFT based then empty response is returned from the API.
+
+
+        :param str distributed_database_id: (required)
+            Globally distributed database identifier
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.distributed_database.models.DistributedDatabaseRaftMetric`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/get_distributed_database_raft_metric.py.html>`__ to see an example of how to use get_distributed_database_raft_metric API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedDatabaseId']
+        resource_path = "/distributedDatabases/{distributedDatabaseId}/raftMetrics"
+        method = "GET"
+        operation_name = "get_distributed_database_raft_metric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedDatabaseRaftMetric"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_distributed_database_raft_metric got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedDatabaseId": distributed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DistributedDatabaseRaftMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DistributedDatabaseRaftMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_distributed_databases(self, compartment_id, **kwargs):
         """
         List of Globally distributed databases.
@@ -1519,6 +1638,9 @@ class DistributedDbServiceClient(object):
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
+
+        :param str private_endpoint_id: (optional)
+            A filter to return only resources that are associated with the given privateEndpointId.
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1575,7 +1697,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/list_distributed_databases.py.html>`__ to see an example of how to use list_distributed_databases API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/list_distributed_databases.py.html>`__ to see an example of how to use list_distributed_databases API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1589,6 +1711,7 @@ class DistributedDbServiceClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "private_endpoint_id",
             "lifecycle_state",
             "limit",
             "page",
@@ -1634,6 +1757,7 @@ class DistributedDbServiceClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "privateEndpointId": kwargs.get("private_endpoint_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -1688,11 +1812,140 @@ class DistributedDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def move_distributed_database_replication_unit(self, distributed_database_id, move_distributed_database_replication_unit_details, **kwargs):
+        """
+        Move the replication units for RAFT based globally distributed database from source shard to destination shard.
+
+
+        :param str distributed_database_id: (required)
+            Globally distributed database identifier
+
+        :param oci.distributed_database.models.MoveDistributedDatabaseReplicationUnitDetails move_distributed_database_replication_unit_details: (required)
+            Details required to move the replication units from source shard to destination shard.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/move_distributed_database_replication_unit.py.html>`__ to see an example of how to use move_distributed_database_replication_unit API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedDatabaseId']
+        resource_path = "/distributedDatabases/{distributedDatabaseId}/actions/moveReplicationUnit"
+        method = "POST"
+        operation_name = "move_distributed_database_replication_unit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/MoveDistributedDatabaseReplicationUnit"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"move_distributed_database_replication_unit got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedDatabaseId": distributed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=move_distributed_database_replication_unit_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=move_distributed_database_replication_unit_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_distributed_database(self, distributed_database_id, patch_distributed_database_details, **kwargs):
         """
         Patch operation to add, remove or update shards to the Globally distributed database topology. In single patch
         operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
         and remove in single operation is not allowed.
+        For an EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set to true
+        will also delete the associated VmCluster and DbStorageVault.
 
 
         :param str distributed_database_id: (required)
@@ -1738,7 +1991,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/patch_distributed_database.py.html>`__ to see an example of how to use patch_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/patch_distributed_database.py.html>`__ to see an example of how to use patch_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -1817,6 +2070,143 @@ class DistributedDbServiceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def recreate_failed_distributed_database_resource(self, distributed_database_id, resource_name, **kwargs):
+        """
+        Recreate the failed resource for the Globally Distributed Database.
+
+
+        :param str distributed_database_id: (required)
+            Globally distributed database identifier
+
+        :param str resource_name: (required)
+            Specify the name of Shard, Catalog or GSM.
+
+        :param str shard_group: (optional)
+            The shardGroup name example Shardgroupa, Shardgroupb.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/recreate_failed_distributed_database_resource.py.html>`__ to see an example of how to use recreate_failed_distributed_database_resource API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributedDatabaseId', 'resourceName']
+        resource_path = "/distributedDatabases/{distributedDatabaseId}/actions/recreateFailedResource"
+        method = "POST"
+        operation_name = "recreate_failed_distributed_database_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/RecreateFailedDistributedDatabaseResource"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "shard_group",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"recreate_failed_distributed_database_resource got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "distributedDatabaseId": distributed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "resourceName": resource_name,
+            "shardGroup": kwargs.get("shard_group", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def rotate_distributed_database_passwords(self, distributed_database_id, **kwargs):
         """
         Rotate the gsmuser and gsmcatuser passwords for shards and catalog of the Globally distributed database.  This operation will also remove GdsCtlNodes if present.
@@ -1862,7 +2252,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/rotate_distributed_database_passwords.py.html>`__ to see an example of how to use rotate_distributed_database_passwords API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/rotate_distributed_database_passwords.py.html>`__ to see an example of how to use rotate_distributed_database_passwords API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -1984,7 +2374,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/start_distributed_database.py.html>`__ to see an example of how to use start_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/start_distributed_database.py.html>`__ to see an example of how to use start_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -2106,7 +2496,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/stop_distributed_database.py.html>`__ to see an example of how to use stop_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/stop_distributed_database.py.html>`__ to see an example of how to use stop_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -2224,7 +2614,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/update_distributed_database.py.html>`__ to see an example of how to use update_distributed_database API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/update_distributed_database.py.html>`__ to see an example of how to use update_distributed_database API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -2353,7 +2743,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/upload_distributed_database_signed_certificate_and_generate_wallet.py.html>`__ to see an example of how to use upload_distributed_database_signed_certificate_and_generate_wallet API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/upload_distributed_database_signed_certificate_and_generate_wallet.py.html>`__ to see an example of how to use upload_distributed_database_signed_certificate_and_generate_wallet API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']
@@ -2447,7 +2837,7 @@ class DistributedDbServiceClient(object):
             Specify the name of shard or catalog.
 
         :param str shard_group: (optional)
-            The shardGroup name example ShardGroupA, ShardGroupB.
+            The shardGroup name example Shardgroupa, Shardgroupb.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2486,7 +2876,7 @@ class DistributedDbServiceClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/validate_distributed_database_network.py.html>`__ to see an example of how to use validate_distributed_database_network API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/distributeddatabase/validate_distributed_database_network.py.html>`__ to see an example of how to use validate_distributed_database_network API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributedDatabaseId']

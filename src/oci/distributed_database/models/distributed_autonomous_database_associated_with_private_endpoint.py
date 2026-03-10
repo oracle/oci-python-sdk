@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint(object):
     """
-    The details of distributed autonomous database associated with the private endpoint.
+    This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027 00:00:00 GMT.
     """
 
     def __init__(self, **kwargs):

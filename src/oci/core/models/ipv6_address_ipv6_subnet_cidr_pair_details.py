@@ -20,6 +20,10 @@ class Ipv6AddressIpv6SubnetCidrPairDetails(object):
         Initializes a new Ipv6AddressIpv6SubnetCidrPairDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param ipv6_id:
+            The value to assign to the ipv6_id property of this Ipv6AddressIpv6SubnetCidrPairDetails.
+        :type ipv6_id: str
+
         :param ipv6_subnet_cidr:
             The value to assign to the ipv6_subnet_cidr property of this Ipv6AddressIpv6SubnetCidrPairDetails.
         :type ipv6_subnet_cidr: str
@@ -30,15 +34,46 @@ class Ipv6AddressIpv6SubnetCidrPairDetails(object):
 
         """
         self.swagger_types = {
+            'ipv6_id': 'str',
             'ipv6_subnet_cidr': 'str',
             'ipv6_address': 'str'
         }
         self.attribute_map = {
+            'ipv6_id': 'ipv6Id',
             'ipv6_subnet_cidr': 'ipv6SubnetCidr',
             'ipv6_address': 'ipv6Address'
         }
+        self._ipv6_id = None
         self._ipv6_subnet_cidr = None
         self._ipv6_address = None
+
+    @property
+    def ipv6_id(self):
+        """
+        Gets the ipv6_id of this Ipv6AddressIpv6SubnetCidrPairDetails.
+        An `OCID`__ that specifies a previously-reserved ipv6 to use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ipv6_id of this Ipv6AddressIpv6SubnetCidrPairDetails.
+        :rtype: str
+        """
+        return self._ipv6_id
+
+    @ipv6_id.setter
+    def ipv6_id(self, ipv6_id):
+        """
+        Sets the ipv6_id of this Ipv6AddressIpv6SubnetCidrPairDetails.
+        An `OCID`__ that specifies a previously-reserved ipv6 to use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param ipv6_id: The ipv6_id of this Ipv6AddressIpv6SubnetCidrPairDetails.
+        :type: str
+        """
+        self._ipv6_id = ipv6_id
 
     @property
     def ipv6_subnet_cidr(self):

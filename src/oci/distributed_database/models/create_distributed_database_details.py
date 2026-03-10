@@ -93,6 +93,10 @@ class CreateDistributedDatabaseDetails(object):
             The value to assign to the ons_port_remote property of this CreateDistributedDatabaseDetails.
         :type ons_port_remote: int
 
+        :param scan_listener_port:
+            The value to assign to the scan_listener_port property of this CreateDistributedDatabaseDetails.
+        :type scan_listener_port: int
+
         :param replication_method:
             The value to assign to the replication_method property of this CreateDistributedDatabaseDetails.
             Allowed values for this property are: "RAFT", "DG"
@@ -150,6 +154,7 @@ class CreateDistributedDatabaseDetails(object):
             'listener_port_tls': 'int',
             'ons_port_local': 'int',
             'ons_port_remote': 'int',
+            'scan_listener_port': 'int',
             'replication_method': 'str',
             'replication_factor': 'int',
             'replication_unit': 'int',
@@ -175,6 +180,7 @@ class CreateDistributedDatabaseDetails(object):
             'listener_port_tls': 'listenerPortTls',
             'ons_port_local': 'onsPortLocal',
             'ons_port_remote': 'onsPortRemote',
+            'scan_listener_port': 'scanListenerPort',
             'replication_method': 'replicationMethod',
             'replication_factor': 'replicationFactor',
             'replication_unit': 'replicationUnit',
@@ -199,6 +205,7 @@ class CreateDistributedDatabaseDetails(object):
         self._listener_port_tls = None
         self._ons_port_local = None
         self._ons_port_remote = None
+        self._scan_listener_port = None
         self._replication_method = None
         self._replication_factor = None
         self._replication_unit = None
@@ -562,6 +569,36 @@ class CreateDistributedDatabaseDetails(object):
         :type: int
         """
         self._ons_port_remote = ons_port_remote
+
+    @property
+    def scan_listener_port(self):
+        """
+        Gets the scan_listener_port of this CreateDistributedDatabaseDetails.
+        The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database.
+        The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER.
+        If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the
+        scanListenerPort will default to value 1521.
+
+
+        :return: The scan_listener_port of this CreateDistributedDatabaseDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port
+
+    @scan_listener_port.setter
+    def scan_listener_port(self, scan_listener_port):
+        """
+        Sets the scan_listener_port of this CreateDistributedDatabaseDetails.
+        The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database.
+        The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER.
+        If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the
+        scanListenerPort will default to value 1521.
+
+
+        :param scan_listener_port: The scan_listener_port of this CreateDistributedDatabaseDetails.
+        :type: int
+        """
+        self._scan_listener_port = scan_listener_port
 
     @property
     def replication_method(self):

@@ -28,17 +28,24 @@ class InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails(object):
             The value to assign to the ipv6_address property of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
         :type ipv6_address: str
 
+        :param ipv6_id:
+            The value to assign to the ipv6_id property of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
+        :type ipv6_id: str
+
         """
         self.swagger_types = {
             'ipv6_subnet_cidr': 'str',
-            'ipv6_address': 'str'
+            'ipv6_address': 'str',
+            'ipv6_id': 'str'
         }
         self.attribute_map = {
             'ipv6_subnet_cidr': 'ipv6SubnetCidr',
-            'ipv6_address': 'ipv6Address'
+            'ipv6_address': 'ipv6Address',
+            'ipv6_id': 'ipv6Id'
         }
         self._ipv6_subnet_cidr = None
         self._ipv6_address = None
+        self._ipv6_id = None
 
     @property
     def ipv6_subnet_cidr(self):
@@ -87,6 +94,34 @@ class InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails(object):
         :type: str
         """
         self._ipv6_address = ipv6_address
+
+    @property
+    def ipv6_id(self):
+        """
+        Gets the ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
+        An `OCID`__ that specifies a previously-reserved ipv6 to use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
+        :rtype: str
+        """
+        return self._ipv6_id
+
+    @ipv6_id.setter
+    def ipv6_id(self, ipv6_id):
+        """
+        Sets the ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
+        An `OCID`__ that specifies a previously-reserved ipv6 to use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param ipv6_id: The ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
+        :type: str
+        """
+        self._ipv6_id = ipv6_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

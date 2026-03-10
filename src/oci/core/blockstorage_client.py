@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import core_type_mapping
 missing = Sentinel("Missing")
 
@@ -36,7 +36,7 @@ class BlockstorageClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -55,7 +55,7 @@ class BlockstorageClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -87,7 +87,7 @@ class BlockstorageClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("core"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -171,7 +171,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_backup_compartment.py.html>`__ to see an example of how to use change_boot_volume_backup_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_backup_compartment.py.html>`__ to see an example of how to use change_boot_volume_backup_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeBackupId']
@@ -282,7 +282,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_compartment.py.html>`__ to see an example of how to use change_boot_volume_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_compartment.py.html>`__ to see an example of how to use change_boot_volume_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -393,7 +393,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_backup_compartment.py.html>`__ to see an example of how to use change_volume_backup_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_backup_compartment.py.html>`__ to see an example of how to use change_volume_backup_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeBackupId']
@@ -504,7 +504,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_compartment.py.html>`__ to see an example of how to use change_volume_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_compartment.py.html>`__ to see an example of how to use change_volume_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']
@@ -615,7 +615,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_backup_compartment.py.html>`__ to see an example of how to use change_volume_group_backup_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_backup_compartment.py.html>`__ to see an example of how to use change_volume_group_backup_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupBackupId']
@@ -726,7 +726,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_compartment.py.html>`__ to see an example of how to use change_volume_group_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_compartment.py.html>`__ to see an example of how to use change_volume_group_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupId']
@@ -843,7 +843,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_boot_volume_backup.py.html>`__ to see an example of how to use copy_boot_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_boot_volume_backup.py.html>`__ to see an example of how to use copy_boot_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeBackupId']
@@ -965,7 +965,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_backup.py.html>`__ to see an example of how to use copy_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_backup.py.html>`__ to see an example of how to use copy_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeBackupId']
@@ -1087,7 +1087,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_group_backup.py.html>`__ to see an example of how to use copy_volume_group_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_group_backup.py.html>`__ to see an example of how to use copy_volume_group_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupBackupId']
@@ -1204,7 +1204,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume.py.html>`__ to see an example of how to use create_boot_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume.py.html>`__ to see an example of how to use create_boot_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1309,7 +1309,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume_backup.py.html>`__ to see an example of how to use create_boot_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume_backup.py.html>`__ to see an example of how to use create_boot_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1424,7 +1424,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume.py.html>`__ to see an example of how to use create_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume.py.html>`__ to see an example of how to use create_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1529,7 +1529,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup.py.html>`__ to see an example of how to use create_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup.py.html>`__ to see an example of how to use create_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1636,7 +1636,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy.py.html>`__ to see an example of how to use create_volume_backup_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy.py.html>`__ to see an example of how to use create_volume_backup_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1731,7 +1731,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy_assignment.py.html>`__ to see an example of how to use create_volume_backup_policy_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy_assignment.py.html>`__ to see an example of how to use create_volume_backup_policy_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1828,7 +1828,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group.py.html>`__ to see an example of how to use create_volume_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group.py.html>`__ to see an example of how to use create_volume_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1929,7 +1929,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group_backup.py.html>`__ to see an example of how to use create_volume_group_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group_backup.py.html>`__ to see an example of how to use create_volume_group_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2030,7 +2030,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume.py.html>`__ to see an example of how to use delete_boot_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume.py.html>`__ to see an example of how to use delete_boot_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -2133,7 +2133,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_backup.py.html>`__ to see an example of how to use delete_boot_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_backup.py.html>`__ to see an example of how to use delete_boot_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeBackupId']
@@ -2236,7 +2236,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_kms_key.py.html>`__ to see an example of how to use delete_boot_volume_kms_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_kms_key.py.html>`__ to see an example of how to use delete_boot_volume_kms_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -2344,7 +2344,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume.py.html>`__ to see an example of how to use delete_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume.py.html>`__ to see an example of how to use delete_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']
@@ -2447,7 +2447,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup.py.html>`__ to see an example of how to use delete_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup.py.html>`__ to see an example of how to use delete_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeBackupId']
@@ -2560,7 +2560,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy.py.html>`__ to see an example of how to use delete_volume_backup_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy.py.html>`__ to see an example of how to use delete_volume_backup_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -2665,7 +2665,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy_assignment.py.html>`__ to see an example of how to use delete_volume_backup_policy_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy_assignment.py.html>`__ to see an example of how to use delete_volume_backup_policy_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyAssignmentId']
@@ -2771,7 +2771,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group.py.html>`__ to see an example of how to use delete_volume_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group.py.html>`__ to see an example of how to use delete_volume_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupId']
@@ -2877,7 +2877,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group_backup.py.html>`__ to see an example of how to use delete_volume_group_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group_backup.py.html>`__ to see an example of how to use delete_volume_group_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupBackupId']
@@ -2980,7 +2980,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_kms_key.py.html>`__ to see an example of how to use delete_volume_kms_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_kms_key.py.html>`__ to see an example of how to use delete_volume_kms_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']
@@ -3078,7 +3078,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_block_volume_replica.py.html>`__ to see an example of how to use get_block_volume_replica API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_block_volume_replica.py.html>`__ to see an example of how to use get_block_volume_replica API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['blockVolumeReplicaId']
@@ -3170,7 +3170,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume.py.html>`__ to see an example of how to use get_boot_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume.py.html>`__ to see an example of how to use get_boot_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -3262,7 +3262,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_backup.py.html>`__ to see an example of how to use get_boot_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_backup.py.html>`__ to see an example of how to use get_boot_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeBackupId']
@@ -3359,7 +3359,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_kms_key.py.html>`__ to see an example of how to use get_boot_volume_kms_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_kms_key.py.html>`__ to see an example of how to use get_boot_volume_kms_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -3459,7 +3459,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_replica.py.html>`__ to see an example of how to use get_boot_volume_replica API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_replica.py.html>`__ to see an example of how to use get_boot_volume_replica API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeReplicaId']
@@ -3551,7 +3551,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume.py.html>`__ to see an example of how to use get_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume.py.html>`__ to see an example of how to use get_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']
@@ -3643,7 +3643,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup.py.html>`__ to see an example of how to use get_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup.py.html>`__ to see an example of how to use get_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeBackupId']
@@ -3735,7 +3735,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy.py.html>`__ to see an example of how to use get_volume_backup_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy.py.html>`__ to see an example of how to use get_volume_backup_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -3845,7 +3845,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_asset_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_asset_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_asset_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_asset_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['assetId']
@@ -3941,7 +3941,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyAssignmentId']
@@ -4035,7 +4035,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group.py.html>`__ to see an example of how to use get_volume_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group.py.html>`__ to see an example of how to use get_volume_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupId']
@@ -4129,7 +4129,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_backup.py.html>`__ to see an example of how to use get_volume_group_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_backup.py.html>`__ to see an example of how to use get_volume_group_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupBackupId']
@@ -4221,7 +4221,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_replica.py.html>`__ to see an example of how to use get_volume_group_replica API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_replica.py.html>`__ to see an example of how to use get_volume_group_replica API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupReplicaId']
@@ -4318,7 +4318,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_kms_key.py.html>`__ to see an example of how to use get_volume_kms_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_kms_key.py.html>`__ to see an example of how to use get_volume_kms_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']
@@ -4470,7 +4470,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_block_volume_replicas.py.html>`__ to see an example of how to use list_block_volume_replicas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_block_volume_replicas.py.html>`__ to see an example of how to use list_block_volume_replicas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4651,7 +4651,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_backups.py.html>`__ to see an example of how to use list_boot_volume_backups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_backups.py.html>`__ to see an example of how to use list_boot_volume_backups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -4832,7 +4832,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_replicas.py.html>`__ to see an example of how to use list_boot_volume_replicas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_replicas.py.html>`__ to see an example of how to use list_boot_volume_replicas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4988,7 +4988,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volumes.py.html>`__ to see an example of how to use list_boot_volumes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volumes.py.html>`__ to see an example of how to use list_boot_volumes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5111,7 +5111,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backup_policies.py.html>`__ to see an example of how to use list_volume_backup_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backup_policies.py.html>`__ to see an example of how to use list_volume_backup_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5259,7 +5259,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backups.py.html>`__ to see an example of how to use list_volume_backups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backups.py.html>`__ to see an example of how to use list_volume_backups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -5433,7 +5433,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_backups.py.html>`__ to see an example of how to use list_volume_group_backups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_backups.py.html>`__ to see an example of how to use list_volume_group_backups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -5603,7 +5603,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_replicas.py.html>`__ to see an example of how to use list_volume_group_replicas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_replicas.py.html>`__ to see an example of how to use list_volume_group_replicas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['availabilityDomain', 'compartmentId']
@@ -5782,7 +5782,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_groups.py.html>`__ to see an example of how to use list_volume_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_groups.py.html>`__ to see an example of how to use list_volume_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -5965,7 +5965,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volumes.py.html>`__ to see an example of how to use list_volumes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volumes.py.html>`__ to see an example of how to use list_volumes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6105,7 +6105,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume.py.html>`__ to see an example of how to use update_boot_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume.py.html>`__ to see an example of how to use update_boot_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -6216,7 +6216,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_backup.py.html>`__ to see an example of how to use update_boot_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_backup.py.html>`__ to see an example of how to use update_boot_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeBackupId']
@@ -6326,7 +6326,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_kms_key.py.html>`__ to see an example of how to use update_boot_volume_kms_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_kms_key.py.html>`__ to see an example of how to use update_boot_volume_kms_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bootVolumeId']
@@ -6437,7 +6437,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume.py.html>`__ to see an example of how to use update_volume API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume.py.html>`__ to see an example of how to use update_volume API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']
@@ -6548,7 +6548,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup.py.html>`__ to see an example of how to use update_volume_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup.py.html>`__ to see an example of how to use update_volume_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeBackupId']
@@ -6675,7 +6675,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup_policy.py.html>`__ to see an example of how to use update_volume_backup_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup_policy.py.html>`__ to see an example of how to use update_volume_backup_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -6802,7 +6802,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group.py.html>`__ to see an example of how to use update_volume_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group.py.html>`__ to see an example of how to use update_volume_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupId']
@@ -6922,7 +6922,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group_backup.py.html>`__ to see an example of how to use update_volume_group_backup API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group_backup.py.html>`__ to see an example of how to use update_volume_group_backup API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeGroupBackupId']
@@ -7032,7 +7032,7 @@ class BlockstorageClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_kms_key.py.html>`__ to see an example of how to use update_volume_kms_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_kms_key.py.html>`__ to see an example of how to use update_volume_kms_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['volumeId']

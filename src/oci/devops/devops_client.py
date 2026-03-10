@@ -15,8 +15,8 @@ from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
 from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import devops_type_mapping
 missing = Sentinel("Missing")
 
@@ -31,7 +31,7 @@ class DevopsClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -50,7 +50,7 @@ class DevopsClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -82,7 +82,7 @@ class DevopsClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("devops"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -165,7 +165,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/approve_deployment.py.html>`__ to see an example of how to use approve_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/approve_deployment.py.html>`__ to see an example of how to use approve_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -286,7 +286,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_build_run.py.html>`__ to see an example of how to use cancel_build_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_build_run.py.html>`__ to see an example of how to use cancel_build_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildRunId']
@@ -407,7 +407,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_deployment.py.html>`__ to see an example of how to use cancel_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_deployment.py.html>`__ to see an example of how to use cancel_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -525,7 +525,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_scheduled_cascading_project_deletion.py.html>`__ to see an example of how to use cancel_scheduled_cascading_project_deletion API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_scheduled_cascading_project_deletion.py.html>`__ to see an example of how to use cancel_scheduled_cascading_project_deletion API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -642,7 +642,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -755,7 +755,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_pipeline.py.html>`__ to see an example of how to use create_build_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_pipeline.py.html>`__ to see an example of how to use create_build_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -856,7 +856,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_pipeline_stage.py.html>`__ to see an example of how to use create_build_pipeline_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_pipeline_stage.py.html>`__ to see an example of how to use create_build_pipeline_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -960,7 +960,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_run.py.html>`__ to see an example of how to use create_build_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_run.py.html>`__ to see an example of how to use create_build_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1063,7 +1063,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_connection.py.html>`__ to see an example of how to use create_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1164,7 +1164,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_artifact.py.html>`__ to see an example of how to use create_deploy_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_artifact.py.html>`__ to see an example of how to use create_deploy_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1265,7 +1265,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_environment.py.html>`__ to see an example of how to use create_deploy_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_environment.py.html>`__ to see an example of how to use create_deploy_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1366,7 +1366,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_pipeline.py.html>`__ to see an example of how to use create_deploy_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_pipeline.py.html>`__ to see an example of how to use create_deploy_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1467,7 +1467,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_stage.py.html>`__ to see an example of how to use create_deploy_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_stage.py.html>`__ to see an example of how to use create_deploy_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1568,7 +1568,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1675,7 +1675,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_or_update_git_ref.py.html>`__ to see an example of how to use create_or_update_git_ref API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_or_update_git_ref.py.html>`__ to see an example of how to use create_or_update_git_ref API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -1796,7 +1796,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_or_update_protected_branch.py.html>`__ to see an example of how to use create_or_update_protected_branch API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_or_update_protected_branch.py.html>`__ to see an example of how to use create_or_update_protected_branch API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -1911,7 +1911,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_project.py.html>`__ to see an example of how to use create_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_project.py.html>`__ to see an example of how to use create_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2012,7 +2012,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_pull_request.py.html>`__ to see an example of how to use create_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_pull_request.py.html>`__ to see an example of how to use create_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2127,7 +2127,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_pull_request_attachment.py.html>`__ to see an example of how to use create_pull_request_attachment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_pull_request_attachment.py.html>`__ to see an example of how to use create_pull_request_attachment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -2265,7 +2265,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_pull_request_comment.py.html>`__ to see an example of how to use create_pull_request_comment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_pull_request_comment.py.html>`__ to see an example of how to use create_pull_request_comment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -2378,7 +2378,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_repository.py.html>`__ to see an example of how to use create_repository API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_repository.py.html>`__ to see an example of how to use create_repository API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2479,7 +2479,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_trigger.py.html>`__ to see an example of how to use create_trigger API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_trigger.py.html>`__ to see an example of how to use create_trigger API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2580,7 +2580,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/decline_pull_request.py.html>`__ to see an example of how to use decline_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/decline_pull_request.py.html>`__ to see an example of how to use decline_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -2690,7 +2690,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_build_pipeline.py.html>`__ to see an example of how to use delete_build_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_build_pipeline.py.html>`__ to see an example of how to use delete_build_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildPipelineId']
@@ -2798,7 +2798,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_build_pipeline_stage.py.html>`__ to see an example of how to use delete_build_pipeline_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_build_pipeline_stage.py.html>`__ to see an example of how to use delete_build_pipeline_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildPipelineStageId']
@@ -2906,7 +2906,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -3014,7 +3014,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_artifact.py.html>`__ to see an example of how to use delete_deploy_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_artifact.py.html>`__ to see an example of how to use delete_deploy_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployArtifactId']
@@ -3122,7 +3122,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_environment.py.html>`__ to see an example of how to use delete_deploy_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_environment.py.html>`__ to see an example of how to use delete_deploy_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployEnvironmentId']
@@ -3230,7 +3230,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_pipeline.py.html>`__ to see an example of how to use delete_deploy_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_pipeline.py.html>`__ to see an example of how to use delete_deploy_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployPipelineId']
@@ -3338,7 +3338,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_stage.py.html>`__ to see an example of how to use delete_deploy_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_stage.py.html>`__ to see an example of how to use delete_deploy_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployStageId']
@@ -3452,7 +3452,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_git_ref.py.html>`__ to see an example of how to use delete_git_ref API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_git_ref.py.html>`__ to see an example of how to use delete_git_ref API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -3565,7 +3565,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_project.py.html>`__ to see an example of how to use delete_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -3676,7 +3676,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_project_repository_settings.py.html>`__ to see an example of how to use delete_project_repository_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_project_repository_settings.py.html>`__ to see an example of how to use delete_project_repository_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -3793,7 +3793,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_protected_branch.py.html>`__ to see an example of how to use delete_protected_branch API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_protected_branch.py.html>`__ to see an example of how to use delete_protected_branch API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -3906,7 +3906,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_pull_request.py.html>`__ to see an example of how to use delete_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_pull_request.py.html>`__ to see an example of how to use delete_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -4017,7 +4017,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_pull_request_attachment.py.html>`__ to see an example of how to use delete_pull_request_attachment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_pull_request_attachment.py.html>`__ to see an example of how to use delete_pull_request_attachment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'attachmentId']
@@ -4129,7 +4129,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_pull_request_comment.py.html>`__ to see an example of how to use delete_pull_request_comment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_pull_request_comment.py.html>`__ to see an example of how to use delete_pull_request_comment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'commentId']
@@ -4244,7 +4244,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_ref.py.html>`__ to see an example of how to use delete_ref API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_ref.py.html>`__ to see an example of how to use delete_ref API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'refName']
@@ -4356,7 +4356,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_repository.py.html>`__ to see an example of how to use delete_repository API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_repository.py.html>`__ to see an example of how to use delete_repository API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -4467,7 +4467,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_repository_settings.py.html>`__ to see an example of how to use delete_repository_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_repository_settings.py.html>`__ to see an example of how to use delete_repository_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -4578,7 +4578,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_trigger.py.html>`__ to see an example of how to use delete_trigger API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_trigger.py.html>`__ to see an example of how to use delete_trigger API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['triggerId']
@@ -4683,7 +4683,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_pipeline.py.html>`__ to see an example of how to use get_build_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_pipeline.py.html>`__ to see an example of how to use get_build_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildPipelineId']
@@ -4788,7 +4788,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_pipeline_stage.py.html>`__ to see an example of how to use get_build_pipeline_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_pipeline_stage.py.html>`__ to see an example of how to use get_build_pipeline_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildPipelineStageId']
@@ -4893,7 +4893,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_run.py.html>`__ to see an example of how to use get_build_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_run.py.html>`__ to see an example of how to use get_build_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildRunId']
@@ -5001,7 +5001,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_commit.py.html>`__ to see an example of how to use get_commit API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_commit.py.html>`__ to see an example of how to use get_commit API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'commitId']
@@ -5119,7 +5119,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_commit_diff.py.html>`__ to see an example of how to use get_commit_diff API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_commit_diff.py.html>`__ to see an example of how to use get_commit_diff API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'targetVersion']
@@ -5237,7 +5237,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_connection.py.html>`__ to see an example of how to use get_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -5342,7 +5342,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_artifact.py.html>`__ to see an example of how to use get_deploy_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_artifact.py.html>`__ to see an example of how to use get_deploy_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployArtifactId']
@@ -5447,7 +5447,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_environment.py.html>`__ to see an example of how to use get_deploy_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_environment.py.html>`__ to see an example of how to use get_deploy_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployEnvironmentId']
@@ -5552,7 +5552,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_pipeline.py.html>`__ to see an example of how to use get_deploy_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_pipeline.py.html>`__ to see an example of how to use get_deploy_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployPipelineId']
@@ -5657,7 +5657,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_stage.py.html>`__ to see an example of how to use get_deploy_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_stage.py.html>`__ to see an example of how to use get_deploy_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployStageId']
@@ -5762,7 +5762,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -5879,7 +5879,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_file_diff.py.html>`__ to see an example of how to use get_file_diff API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_file_diff.py.html>`__ to see an example of how to use get_file_diff API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'filePath', 'baseVersion', 'targetVersion']
@@ -6002,7 +6002,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_mirror_record.py.html>`__ to see an example of how to use get_mirror_record API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_mirror_record.py.html>`__ to see an example of how to use get_mirror_record API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'mirrorRecordType']
@@ -6114,7 +6114,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_object.py.html>`__ to see an example of how to use get_object API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_object.py.html>`__ to see an example of how to use get_object API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -6235,7 +6235,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_object_content.py.html>`__ to see an example of how to use get_object_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_object_content.py.html>`__ to see an example of how to use get_object_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'sha']
@@ -6349,7 +6349,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project.py.html>`__ to see an example of how to use get_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project.py.html>`__ to see an example of how to use get_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -6457,7 +6457,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project_notification_preference.py.html>`__ to see an example of how to use get_project_notification_preference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project_notification_preference.py.html>`__ to see an example of how to use get_project_notification_preference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId', 'principalId']
@@ -6563,7 +6563,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project_repository_settings.py.html>`__ to see an example of how to use get_project_repository_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project_repository_settings.py.html>`__ to see an example of how to use get_project_repository_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -6668,7 +6668,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request.py.html>`__ to see an example of how to use get_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request.py.html>`__ to see an example of how to use get_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -6776,7 +6776,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_attachment.py.html>`__ to see an example of how to use get_pull_request_attachment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_attachment.py.html>`__ to see an example of how to use get_pull_request_attachment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'attachmentId']
@@ -6885,7 +6885,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_attachment_content.py.html>`__ to see an example of how to use get_pull_request_attachment_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_attachment_content.py.html>`__ to see an example of how to use get_pull_request_attachment_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'attachmentId']
@@ -6994,7 +6994,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_comment.py.html>`__ to see an example of how to use get_pull_request_comment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_comment.py.html>`__ to see an example of how to use get_pull_request_comment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'commentId']
@@ -7103,7 +7103,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_notification_preference.py.html>`__ to see an example of how to use get_pull_request_notification_preference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_pull_request_notification_preference.py.html>`__ to see an example of how to use get_pull_request_notification_preference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'principalId']
@@ -7212,7 +7212,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_ref.py.html>`__ to see an example of how to use get_ref API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_ref.py.html>`__ to see an example of how to use get_ref API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'refName']
@@ -7330,7 +7330,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_diff.py.html>`__ to see an example of how to use get_repo_file_diff API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_diff.py.html>`__ to see an example of how to use get_repo_file_diff API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'baseVersion', 'targetVersion']
@@ -7459,7 +7459,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_lines.py.html>`__ to see an example of how to use get_repo_file_lines API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_lines.py.html>`__ to see an example of how to use get_repo_file_lines API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'revision']
@@ -7582,7 +7582,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository.py.html>`__ to see an example of how to use get_repository API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository.py.html>`__ to see an example of how to use get_repository API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -7709,7 +7709,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_archive_content.py.html>`__ to see an example of how to use get_repository_archive_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_archive_content.py.html>`__ to see an example of how to use get_repository_archive_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -7836,7 +7836,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_file_lines.py.html>`__ to see an example of how to use get_repository_file_lines API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_file_lines.py.html>`__ to see an example of how to use get_repository_file_lines API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'filePath', 'revision']
@@ -7956,7 +7956,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_notification_preference.py.html>`__ to see an example of how to use get_repository_notification_preference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_notification_preference.py.html>`__ to see an example of how to use get_repository_notification_preference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'principalId']
@@ -8062,7 +8062,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_settings.py.html>`__ to see an example of how to use get_repository_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_settings.py.html>`__ to see an example of how to use get_repository_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -8167,7 +8167,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_trigger.py.html>`__ to see an example of how to use get_trigger API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_trigger.py.html>`__ to see an example of how to use get_trigger API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['triggerId']
@@ -8272,7 +8272,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -8383,7 +8383,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/like_pull_request_comment.py.html>`__ to see an example of how to use like_pull_request_comment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/like_pull_request_comment.py.html>`__ to see an example of how to use like_pull_request_comment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'commentId']
@@ -8505,7 +8505,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_authors.py.html>`__ to see an example of how to use list_authors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_authors.py.html>`__ to see an example of how to use list_authors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -8661,7 +8661,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_pipeline_stages.py.html>`__ to see an example of how to use list_build_pipeline_stages API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_pipeline_stages.py.html>`__ to see an example of how to use list_build_pipeline_stages API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8829,7 +8829,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_pipelines.py.html>`__ to see an example of how to use list_build_pipelines API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_pipelines.py.html>`__ to see an example of how to use list_build_pipelines API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -8992,7 +8992,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_run_snapshots.py.html>`__ to see an example of how to use list_build_run_snapshots API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_run_snapshots.py.html>`__ to see an example of how to use list_build_run_snapshots API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -9164,7 +9164,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_runs.py.html>`__ to see an example of how to use list_build_runs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_runs.py.html>`__ to see an example of how to use list_build_runs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9322,7 +9322,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_commit_diffs.py.html>`__ to see an example of how to use list_commit_diffs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_commit_diffs.py.html>`__ to see an example of how to use list_commit_diffs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'baseVersion', 'targetVersion']
@@ -9470,7 +9470,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_commits.py.html>`__ to see an example of how to use list_commits API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_commits.py.html>`__ to see an example of how to use list_commits API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -9634,7 +9634,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_connections.py.html>`__ to see an example of how to use list_connections API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9811,7 +9811,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_artifacts.py.html>`__ to see an example of how to use list_deploy_artifacts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_artifacts.py.html>`__ to see an example of how to use list_deploy_artifacts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9979,7 +9979,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_environments.py.html>`__ to see an example of how to use list_deploy_environments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_environments.py.html>`__ to see an example of how to use list_deploy_environments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -10147,7 +10147,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_pipelines.py.html>`__ to see an example of how to use list_deploy_pipelines API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_pipelines.py.html>`__ to see an example of how to use list_deploy_pipelines API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -10315,7 +10315,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_stages.py.html>`__ to see an example of how to use list_deploy_stages API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_stages.py.html>`__ to see an example of how to use list_deploy_stages API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -10496,7 +10496,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -10646,7 +10646,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_fork_sync_statuses.py.html>`__ to see an example of how to use list_fork_sync_statuses API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_fork_sync_statuses.py.html>`__ to see an example of how to use list_fork_sync_statuses API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'branchNameQueryParam']
@@ -10771,7 +10771,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_mirror_records.py.html>`__ to see an example of how to use list_mirror_records API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_mirror_records.py.html>`__ to see an example of how to use list_mirror_records API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -10924,7 +10924,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_paths.py.html>`__ to see an example of how to use list_paths API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_paths.py.html>`__ to see an example of how to use list_paths API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -11081,7 +11081,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_project_commit_analytics_authors.py.html>`__ to see an example of how to use list_project_commit_analytics_authors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_project_commit_analytics_authors.py.html>`__ to see an example of how to use list_project_commit_analytics_authors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -11241,7 +11241,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_projects.py.html>`__ to see an example of how to use list_projects API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -11395,7 +11395,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_protected_branches.py.html>`__ to see an example of how to use list_protected_branches API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_protected_branches.py.html>`__ to see an example of how to use list_protected_branches API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -11546,7 +11546,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_activities.py.html>`__ to see an example of how to use list_pull_request_activities API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_activities.py.html>`__ to see an example of how to use list_pull_request_activities API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -11701,7 +11701,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_attachments.py.html>`__ to see an example of how to use list_pull_request_attachments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_attachments.py.html>`__ to see an example of how to use list_pull_request_attachments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -11849,7 +11849,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_authors.py.html>`__ to see an example of how to use list_pull_request_authors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_authors.py.html>`__ to see an example of how to use list_pull_request_authors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -12001,7 +12001,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_comments.py.html>`__ to see an example of how to use list_pull_request_comments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_request_comments.py.html>`__ to see an example of how to use list_pull_request_comments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -12192,7 +12192,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_requests.py.html>`__ to see an example of how to use list_pull_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_pull_requests.py.html>`__ to see an example of how to use list_pull_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -12376,7 +12376,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_refs.py.html>`__ to see an example of how to use list_refs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_refs.py.html>`__ to see an example of how to use list_refs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -12552,7 +12552,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_repositories.py.html>`__ to see an example of how to use list_repositories API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_repositories.py.html>`__ to see an example of how to use list_repositories API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -12706,7 +12706,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_repository_commit_analytics_authors.py.html>`__ to see an example of how to use list_repository_commit_analytics_authors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_repository_commit_analytics_authors.py.html>`__ to see an example of how to use list_repository_commit_analytics_authors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -12869,7 +12869,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_triggers.py.html>`__ to see an example of how to use list_triggers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_triggers.py.html>`__ to see an example of how to use list_triggers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -13023,7 +13023,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -13172,7 +13172,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -13335,7 +13335,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13481,7 +13481,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/merge_pull_request.py.html>`__ to see an example of how to use merge_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/merge_pull_request.py.html>`__ to see an example of how to use merge_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -13596,7 +13596,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/mirror_repository.py.html>`__ to see an example of how to use mirror_repository API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/mirror_repository.py.html>`__ to see an example of how to use mirror_repository API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -13707,7 +13707,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/patch_pull_request.py.html>`__ to see an example of how to use patch_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/patch_pull_request.py.html>`__ to see an example of how to use patch_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -13828,7 +13828,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/put_repository_ref.py.html>`__ to see an example of how to use put_repository_ref API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/put_repository_ref.py.html>`__ to see an example of how to use put_repository_ref API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'refName']
@@ -13944,7 +13944,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/reopen_pull_request.py.html>`__ to see an example of how to use reopen_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/reopen_pull_request.py.html>`__ to see an example of how to use reopen_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -14060,7 +14060,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/review_pull_request.py.html>`__ to see an example of how to use review_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/review_pull_request.py.html>`__ to see an example of how to use review_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -14178,7 +14178,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/schedule_cascading_project_deletion.py.html>`__ to see an example of how to use schedule_cascading_project_deletion API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/schedule_cascading_project_deletion.py.html>`__ to see an example of how to use schedule_cascading_project_deletion API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -14295,7 +14295,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/summarize_project_repository_analytics.py.html>`__ to see an example of how to use summarize_project_repository_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/summarize_project_repository_analytics.py.html>`__ to see an example of how to use summarize_project_repository_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -14421,7 +14421,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/summarize_repository_analytics.py.html>`__ to see an example of how to use summarize_repository_analytics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/summarize_repository_analytics.py.html>`__ to see an example of how to use summarize_repository_analytics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -14553,7 +14553,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/sync_repository.py.html>`__ to see an example of how to use sync_repository API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/sync_repository.py.html>`__ to see an example of how to use sync_repository API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'syncMergeStrategy']
@@ -14679,7 +14679,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/trigger_deployment_dry_run.py.html>`__ to see an example of how to use trigger_deployment_dry_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/trigger_deployment_dry_run.py.html>`__ to see an example of how to use trigger_deployment_dry_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -14783,7 +14783,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/unlike_pull_request_comment.py.html>`__ to see an example of how to use unlike_pull_request_comment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/unlike_pull_request_comment.py.html>`__ to see an example of how to use unlike_pull_request_comment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'commentId']
@@ -14897,7 +14897,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/unsubscribe_pull_request.py.html>`__ to see an example of how to use unsubscribe_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/unsubscribe_pull_request.py.html>`__ to see an example of how to use unsubscribe_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'token']
@@ -15017,7 +15017,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_pipeline.py.html>`__ to see an example of how to use update_build_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_pipeline.py.html>`__ to see an example of how to use update_build_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildPipelineId']
@@ -15132,7 +15132,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_pipeline_stage.py.html>`__ to see an example of how to use update_build_pipeline_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_pipeline_stage.py.html>`__ to see an example of how to use update_build_pipeline_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildPipelineStageId']
@@ -15247,7 +15247,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_run.py.html>`__ to see an example of how to use update_build_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_run.py.html>`__ to see an example of how to use update_build_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['buildRunId']
@@ -15362,7 +15362,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_connection.py.html>`__ to see an example of how to use update_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']
@@ -15477,7 +15477,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_artifact.py.html>`__ to see an example of how to use update_deploy_artifact API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_artifact.py.html>`__ to see an example of how to use update_deploy_artifact API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployArtifactId']
@@ -15592,7 +15592,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_environment.py.html>`__ to see an example of how to use update_deploy_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_environment.py.html>`__ to see an example of how to use update_deploy_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployEnvironmentId']
@@ -15707,7 +15707,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_pipeline.py.html>`__ to see an example of how to use update_deploy_pipeline API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_pipeline.py.html>`__ to see an example of how to use update_deploy_pipeline API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployPipelineId']
@@ -15822,7 +15822,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_stage.py.html>`__ to see an example of how to use update_deploy_stage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_stage.py.html>`__ to see an example of how to use update_deploy_stage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deployStageId']
@@ -15937,7 +15937,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['deploymentId']
@@ -16052,7 +16052,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project.py.html>`__ to see an example of how to use update_project API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project.py.html>`__ to see an example of how to use update_project API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -16170,7 +16170,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project_notification_preference.py.html>`__ to see an example of how to use update_project_notification_preference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project_notification_preference.py.html>`__ to see an example of how to use update_project_notification_preference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId', 'principalId']
@@ -16289,7 +16289,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project_repository_settings.py.html>`__ to see an example of how to use update_project_repository_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project_repository_settings.py.html>`__ to see an example of how to use update_project_repository_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['projectId']
@@ -16407,7 +16407,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_pull_request.py.html>`__ to see an example of how to use update_pull_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_pull_request.py.html>`__ to see an example of how to use update_pull_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId']
@@ -16525,7 +16525,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_pull_request_comment.py.html>`__ to see an example of how to use update_pull_request_comment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_pull_request_comment.py.html>`__ to see an example of how to use update_pull_request_comment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'commentId']
@@ -16644,7 +16644,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_pull_request_notification_preference.py.html>`__ to see an example of how to use update_pull_request_notification_preference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_pull_request_notification_preference.py.html>`__ to see an example of how to use update_pull_request_notification_preference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['pullRequestId', 'principalId']
@@ -16760,7 +16760,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository.py.html>`__ to see an example of how to use update_repository API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository.py.html>`__ to see an example of how to use update_repository API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -16878,7 +16878,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository_notification_preference.py.html>`__ to see an example of how to use update_repository_notification_preference API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository_notification_preference.py.html>`__ to see an example of how to use update_repository_notification_preference API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId', 'principalId']
@@ -16997,7 +16997,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository_settings.py.html>`__ to see an example of how to use update_repository_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository_settings.py.html>`__ to see an example of how to use update_repository_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['repositoryId']
@@ -17115,7 +17115,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_trigger.py.html>`__ to see an example of how to use update_trigger API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_trigger.py.html>`__ to see an example of how to use update_trigger API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['triggerId']
@@ -17230,7 +17230,7 @@ class DevopsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/validate_connection.py.html>`__ to see an example of how to use validate_connection API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/validate_connection.py.html>`__ to see an example of how to use validate_connection API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['connectionId']

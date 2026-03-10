@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import management_agent_type_mapping
 missing = Sentinel("Missing")
 
@@ -31,7 +31,7 @@ class ManagementAgentClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -50,7 +50,7 @@ class ManagementAgentClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -82,7 +82,7 @@ class ManagementAgentClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("management_agent"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -173,7 +173,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_data_source.py.html>`__ to see an example of how to use create_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_data_source.py.html>`__ to see an example of how to use create_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -288,7 +288,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_management_agent_install_key.py.html>`__ to see an example of how to use create_management_agent_install_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_management_agent_install_key.py.html>`__ to see an example of how to use create_management_agent_install_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -398,7 +398,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_named_credential.py.html>`__ to see an example of how to use create_named_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_named_credential.py.html>`__ to see an example of how to use create_named_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -506,7 +506,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_data_source.py.html>`__ to see an example of how to use delete_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_data_source.py.html>`__ to see an example of how to use delete_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId', 'dataSourceKey']
@@ -617,7 +617,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_management_agent.py.html>`__ to see an example of how to use delete_management_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_management_agent.py.html>`__ to see an example of how to use delete_management_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -727,7 +727,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_management_agent_install_key.py.html>`__ to see an example of how to use delete_management_agent_install_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_management_agent_install_key.py.html>`__ to see an example of how to use delete_management_agent_install_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentInstallKeyId']
@@ -837,7 +837,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_named_credential.py.html>`__ to see an example of how to use delete_named_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_named_credential.py.html>`__ to see an example of how to use delete_named_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['namedCredentialId']
@@ -947,7 +947,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -1057,7 +1057,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/deploy_plugins.py.html>`__ to see an example of how to use deploy_plugins API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/deploy_plugins.py.html>`__ to see an example of how to use deploy_plugins API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1152,7 +1152,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_auto_upgradable_config.py.html>`__ to see an example of how to use get_auto_upgradable_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_auto_upgradable_config.py.html>`__ to see an example of how to use get_auto_upgradable_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1260,7 +1260,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_data_source.py.html>`__ to see an example of how to use get_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_data_source.py.html>`__ to see an example of how to use get_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId', 'dataSourceKey']
@@ -1367,7 +1367,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent.py.html>`__ to see an example of how to use get_management_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent.py.html>`__ to see an example of how to use get_management_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -1470,7 +1470,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent_install_key.py.html>`__ to see an example of how to use get_management_agent_install_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent_install_key.py.html>`__ to see an example of how to use get_management_agent_install_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentInstallKeyId']
@@ -1576,7 +1576,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent_install_key_content.py.html>`__ to see an example of how to use get_management_agent_install_key_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent_install_key_content.py.html>`__ to see an example of how to use get_management_agent_install_key_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentInstallKeyId']
@@ -1694,7 +1694,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_named_credential.py.html>`__ to see an example of how to use get_named_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_named_credential.py.html>`__ to see an example of how to use get_named_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['namedCredentialId']
@@ -1803,7 +1803,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_named_credentials_metadatum.py.html>`__ to see an example of how to use get_named_credentials_metadatum API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_named_credentials_metadatum.py.html>`__ to see an example of how to use get_named_credentials_metadatum API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1903,7 +1903,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -2036,7 +2036,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_availability_histories.py.html>`__ to see an example of how to use list_availability_histories API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_availability_histories.py.html>`__ to see an example of how to use list_availability_histories API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -2190,7 +2190,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_data_sources.py.html>`__ to see an example of how to use list_data_sources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_data_sources.py.html>`__ to see an example of how to use list_data_sources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -2359,7 +2359,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_images.py.html>`__ to see an example of how to use list_management_agent_images API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_images.py.html>`__ to see an example of how to use list_management_agent_images API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2529,7 +2529,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_install_keys.py.html>`__ to see an example of how to use list_management_agent_install_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_install_keys.py.html>`__ to see an example of how to use list_management_agent_install_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2694,7 +2694,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_plugins.py.html>`__ to see an example of how to use list_management_agent_plugins API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_plugins.py.html>`__ to see an example of how to use list_management_agent_plugins API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2907,7 +2907,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agents.py.html>`__ to see an example of how to use list_management_agents API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agents.py.html>`__ to see an example of how to use list_management_agents API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -3119,7 +3119,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_named_credentials.py.html>`__ to see an example of how to use list_named_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_named_credentials.py.html>`__ to see an example of how to use list_named_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -3263,7 +3263,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -3410,7 +3410,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -3575,7 +3575,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -3726,7 +3726,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/set_auto_upgradable_config.py.html>`__ to see an example of how to use set_auto_upgradable_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/set_auto_upgradable_config.py.html>`__ to see an example of how to use set_auto_upgradable_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3842,7 +3842,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_counts.py.html>`__ to see an example of how to use summarize_management_agent_counts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_counts.py.html>`__ to see an example of how to use summarize_management_agent_counts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId', 'groupBy']
@@ -3975,7 +3975,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_plugin_counts.py.html>`__ to see an example of how to use summarize_management_agent_plugin_counts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_plugin_counts.py.html>`__ to see an example of how to use summarize_management_agent_plugin_counts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId', 'groupBy']
@@ -4104,7 +4104,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_data_source.py.html>`__ to see an example of how to use update_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_data_source.py.html>`__ to see an example of how to use update_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId', 'dataSourceKey']
@@ -4230,7 +4230,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_management_agent.py.html>`__ to see an example of how to use update_management_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_management_agent.py.html>`__ to see an example of how to use update_management_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentId']
@@ -4357,7 +4357,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_management_agent_install_key.py.html>`__ to see an example of how to use update_management_agent_install_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_management_agent_install_key.py.html>`__ to see an example of how to use update_management_agent_install_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managementAgentInstallKeyId']
@@ -4484,7 +4484,7 @@ class ManagementAgentClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_named_credential.py.html>`__ to see an example of how to use update_named_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_named_credential.py.html>`__ to see an example of how to use update_named_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['namedCredentialId']

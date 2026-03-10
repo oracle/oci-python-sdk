@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import cloud_guard_type_mapping
 missing = Sentinel("Missing")
 
@@ -32,7 +32,7 @@ class CloudGuardClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -51,7 +51,7 @@ class CloudGuardClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -83,7 +83,7 @@ class CloudGuardClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("cloud_guard"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -178,7 +178,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/add_compartment.py.html>`__ to see an example of how to use add_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/add_compartment.py.html>`__ to see an example of how to use add_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityZoneId']
@@ -295,7 +295,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -417,7 +417,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_data_source_compartment.py.html>`__ to see an example of how to use change_data_source_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_data_source_compartment.py.html>`__ to see an example of how to use change_data_source_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSourceId']
@@ -545,7 +545,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_detector_recipe_compartment.py.html>`__ to see an example of how to use change_detector_recipe_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_detector_recipe_compartment.py.html>`__ to see an example of how to use change_detector_recipe_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId']
@@ -670,7 +670,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_managed_list_compartment.py.html>`__ to see an example of how to use change_managed_list_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_managed_list_compartment.py.html>`__ to see an example of how to use change_managed_list_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managedListId']
@@ -797,7 +797,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_responder_recipe_compartment.py.html>`__ to see an example of how to use change_responder_recipe_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_responder_recipe_compartment.py.html>`__ to see an example of how to use change_responder_recipe_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId']
@@ -922,7 +922,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_saved_query_compartment.py.html>`__ to see an example of how to use change_saved_query_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_saved_query_compartment.py.html>`__ to see an example of how to use change_saved_query_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['savedQueryId']
@@ -1049,7 +1049,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_security_recipe_compartment.py.html>`__ to see an example of how to use change_security_recipe_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_security_recipe_compartment.py.html>`__ to see an example of how to use change_security_recipe_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityRecipeId']
@@ -1176,7 +1176,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_security_zone_compartment.py.html>`__ to see an example of how to use change_security_zone_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_security_zone_compartment.py.html>`__ to see an example of how to use change_security_zone_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityZoneId']
@@ -1291,7 +1291,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_adhoc_query.py.html>`__ to see an example of how to use create_adhoc_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_adhoc_query.py.html>`__ to see an example of how to use create_adhoc_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1394,7 +1394,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_data_mask_rule.py.html>`__ to see an example of how to use create_data_mask_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_data_mask_rule.py.html>`__ to see an example of how to use create_data_mask_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1498,7 +1498,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_data_source.py.html>`__ to see an example of how to use create_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_data_source.py.html>`__ to see an example of how to use create_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1599,7 +1599,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe.py.html>`__ to see an example of how to use create_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe.py.html>`__ to see an example of how to use create_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1705,7 +1705,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe_detector_rule.py.html>`__ to see an example of how to use create_detector_recipe_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe_detector_rule.py.html>`__ to see an example of how to use create_detector_recipe_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId']
@@ -1820,7 +1820,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_managed_list.py.html>`__ to see an example of how to use create_managed_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_managed_list.py.html>`__ to see an example of how to use create_managed_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1924,7 +1924,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_responder_recipe.py.html>`__ to see an example of how to use create_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_responder_recipe.py.html>`__ to see an example of how to use create_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2027,7 +2027,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_saved_query.py.html>`__ to see an example of how to use create_saved_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_saved_query.py.html>`__ to see an example of how to use create_saved_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2131,7 +2131,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_security_recipe.py.html>`__ to see an example of how to use create_security_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_security_recipe.py.html>`__ to see an example of how to use create_security_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2235,7 +2235,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_security_zone.py.html>`__ to see an example of how to use create_security_zone API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_security_zone.py.html>`__ to see an example of how to use create_security_zone API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2338,7 +2338,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target.py.html>`__ to see an example of how to use create_target API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target.py.html>`__ to see an example of how to use create_target API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2446,7 +2446,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_detector_recipe.py.html>`__ to see an example of how to use create_target_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_detector_recipe.py.html>`__ to see an example of how to use create_target_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId']
@@ -2564,7 +2564,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_responder_recipe.py.html>`__ to see an example of how to use create_target_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_responder_recipe.py.html>`__ to see an example of how to use create_target_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId']
@@ -2680,7 +2680,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_wlp_agent.py.html>`__ to see an example of how to use create_wlp_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_wlp_agent.py.html>`__ to see an example of how to use create_wlp_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2790,7 +2790,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_adhoc_query.py.html>`__ to see an example of how to use delete_adhoc_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_adhoc_query.py.html>`__ to see an example of how to use delete_adhoc_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['adhocQueryId']
@@ -2903,7 +2903,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_data_mask_rule.py.html>`__ to see an example of how to use delete_data_mask_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_data_mask_rule.py.html>`__ to see an example of how to use delete_data_mask_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataMaskRuleId']
@@ -3020,7 +3020,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_data_source.py.html>`__ to see an example of how to use delete_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_data_source.py.html>`__ to see an example of how to use delete_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSourceId']
@@ -3140,7 +3140,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe.py.html>`__ to see an example of how to use delete_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe.py.html>`__ to see an example of how to use delete_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId']
@@ -3256,7 +3256,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe_detector_rule.py.html>`__ to see an example of how to use delete_detector_recipe_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe_detector_rule.py.html>`__ to see an example of how to use delete_detector_recipe_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId', 'detectorRuleId']
@@ -3373,7 +3373,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe_detector_rule_data_source.py.html>`__ to see an example of how to use delete_detector_recipe_detector_rule_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe_detector_rule_data_source.py.html>`__ to see an example of how to use delete_detector_recipe_detector_rule_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId', 'detectorRuleId', 'dataSourceId']
@@ -3492,7 +3492,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_managed_list.py.html>`__ to see an example of how to use delete_managed_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_managed_list.py.html>`__ to see an example of how to use delete_managed_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managedListId']
@@ -3605,7 +3605,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_responder_recipe.py.html>`__ to see an example of how to use delete_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_responder_recipe.py.html>`__ to see an example of how to use delete_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId']
@@ -3722,7 +3722,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_saved_query.py.html>`__ to see an example of how to use delete_saved_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_saved_query.py.html>`__ to see an example of how to use delete_saved_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['savedQueryId']
@@ -3835,7 +3835,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_security_recipe.py.html>`__ to see an example of how to use delete_security_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_security_recipe.py.html>`__ to see an example of how to use delete_security_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityRecipeId']
@@ -3945,7 +3945,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_security_zone.py.html>`__ to see an example of how to use delete_security_zone API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_security_zone.py.html>`__ to see an example of how to use delete_security_zone API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityZoneId']
@@ -4055,7 +4055,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target.py.html>`__ to see an example of how to use delete_target API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target.py.html>`__ to see an example of how to use delete_target API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId']
@@ -4169,7 +4169,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_detector_recipe.py.html>`__ to see an example of how to use delete_target_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_detector_recipe.py.html>`__ to see an example of how to use delete_target_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetDetectorRecipeId']
@@ -4285,7 +4285,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_responder_recipe.py.html>`__ to see an example of how to use delete_target_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_responder_recipe.py.html>`__ to see an example of how to use delete_target_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetResponderRecipeId']
@@ -4435,7 +4435,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_wlp_agent.py.html>`__ to see an example of how to use delete_wlp_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_wlp_agent.py.html>`__ to see an example of how to use delete_wlp_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['wlpAgentId']
@@ -4562,7 +4562,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/execute_responder_execution.py.html>`__ to see an example of how to use execute_responder_execution API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/execute_responder_execution.py.html>`__ to see an example of how to use execute_responder_execution API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderExecutionId', 'compartmentId']
@@ -4678,7 +4678,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_adhoc_query.py.html>`__ to see an example of how to use get_adhoc_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_adhoc_query.py.html>`__ to see an example of how to use get_adhoc_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['adhocQueryId']
@@ -4781,7 +4781,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_adhoc_query_result_content.py.html>`__ to see an example of how to use get_adhoc_query_result_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_adhoc_query_result_content.py.html>`__ to see an example of how to use get_adhoc_query_result_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['adhocQueryId']
@@ -4892,7 +4892,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_condition_metadata_type.py.html>`__ to see an example of how to use get_condition_metadata_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_condition_metadata_type.py.html>`__ to see an example of how to use get_condition_metadata_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['conditionMetadataTypeId']
@@ -5006,7 +5006,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -5104,7 +5104,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_data_mask_rule.py.html>`__ to see an example of how to use get_data_mask_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_data_mask_rule.py.html>`__ to see an example of how to use get_data_mask_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataMaskRuleId']
@@ -5207,7 +5207,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_data_source.py.html>`__ to see an example of how to use get_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_data_source.py.html>`__ to see an example of how to use get_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSourceId']
@@ -5310,7 +5310,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector.py.html>`__ to see an example of how to use get_detector API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector.py.html>`__ to see an example of how to use get_detector API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorId']
@@ -5413,7 +5413,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe.py.html>`__ to see an example of how to use get_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe.py.html>`__ to see an example of how to use get_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId']
@@ -5519,7 +5519,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_detector_recipe_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_detector_recipe_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId', 'detectorRuleId']
@@ -5626,7 +5626,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_rule.py.html>`__ to see an example of how to use get_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_rule.py.html>`__ to see an example of how to use get_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorId', 'detectorRuleId']
@@ -5730,7 +5730,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_managed_list.py.html>`__ to see an example of how to use get_managed_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_managed_list.py.html>`__ to see an example of how to use get_managed_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managedListId']
@@ -5833,7 +5833,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_problem.py.html>`__ to see an example of how to use get_problem API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_problem.py.html>`__ to see an example of how to use get_problem API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -5936,7 +5936,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource.py.html>`__ to see an example of how to use get_resource API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource.py.html>`__ to see an example of how to use get_resource API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceId']
@@ -6039,7 +6039,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_profile.py.html>`__ to see an example of how to use get_resource_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_profile.py.html>`__ to see an example of how to use get_resource_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceProfileId']
@@ -6145,7 +6145,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_vulnerability.py.html>`__ to see an example of how to use get_resource_vulnerability API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_vulnerability.py.html>`__ to see an example of how to use get_resource_vulnerability API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceId', 'vulnerabilityKey']
@@ -6249,7 +6249,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_execution.py.html>`__ to see an example of how to use get_responder_execution API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_execution.py.html>`__ to see an example of how to use get_responder_execution API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderExecutionId']
@@ -6352,7 +6352,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe.py.html>`__ to see an example of how to use get_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe.py.html>`__ to see an example of how to use get_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId']
@@ -6458,7 +6458,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_responder_recipe_responder_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_responder_recipe_responder_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId', 'responderRuleId']
@@ -6562,7 +6562,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_rule.py.html>`__ to see an example of how to use get_responder_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_rule.py.html>`__ to see an example of how to use get_responder_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRuleId']
@@ -6665,7 +6665,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_saved_query.py.html>`__ to see an example of how to use get_saved_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_saved_query.py.html>`__ to see an example of how to use get_saved_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['savedQueryId']
@@ -6770,7 +6770,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_policy.py.html>`__ to see an example of how to use get_security_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_policy.py.html>`__ to see an example of how to use get_security_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityPolicyId']
@@ -6873,7 +6873,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_recipe.py.html>`__ to see an example of how to use get_security_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_recipe.py.html>`__ to see an example of how to use get_security_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityRecipeId']
@@ -6976,7 +6976,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_zone.py.html>`__ to see an example of how to use get_security_zone API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_zone.py.html>`__ to see an example of how to use get_security_zone API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityZoneId']
@@ -7079,7 +7079,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_sighting.py.html>`__ to see an example of how to use get_sighting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_sighting.py.html>`__ to see an example of how to use get_sighting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sightingId']
@@ -7182,7 +7182,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target.py.html>`__ to see an example of how to use get_target API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target.py.html>`__ to see an example of how to use get_target API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId']
@@ -7288,7 +7288,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe.py.html>`__ to see an example of how to use get_target_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe.py.html>`__ to see an example of how to use get_target_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetDetectorRecipeId']
@@ -7398,7 +7398,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_target_detector_recipe_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_target_detector_recipe_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetDetectorRecipeId', 'detectorRuleId']
@@ -7507,7 +7507,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe.py.html>`__ to see an example of how to use get_target_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe.py.html>`__ to see an example of how to use get_target_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetResponderRecipeId']
@@ -7620,7 +7620,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_target_responder_recipe_responder_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_target_responder_recipe_responder_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetResponderRecipeId', 'responderRuleId']
@@ -7725,7 +7725,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_wlp_agent.py.html>`__ to see an example of how to use get_wlp_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_wlp_agent.py.html>`__ to see an example of how to use get_wlp_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['wlpAgentId']
@@ -7828,7 +7828,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -7989,7 +7989,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_adhoc_queries.py.html>`__ to see an example of how to use list_adhoc_queries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_adhoc_queries.py.html>`__ to see an example of how to use list_adhoc_queries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -8152,7 +8152,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_adhoc_query_results.py.html>`__ to see an example of how to use list_adhoc_query_results API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_adhoc_query_results.py.html>`__ to see an example of how to use list_adhoc_query_results API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['adhocQueryId', 'compartmentId']
@@ -8305,7 +8305,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_condition_metadata_types.py.html>`__ to see an example of how to use list_condition_metadata_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_condition_metadata_types.py.html>`__ to see an example of how to use list_condition_metadata_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -8481,7 +8481,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_mask_rules.py.html>`__ to see an example of how to use list_data_mask_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_mask_rules.py.html>`__ to see an example of how to use list_data_mask_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -8657,7 +8657,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_source_events.py.html>`__ to see an example of how to use list_data_source_events API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_source_events.py.html>`__ to see an example of how to use list_data_source_events API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSourceId']
@@ -8855,7 +8855,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_sources.py.html>`__ to see an example of how to use list_data_sources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_sources.py.html>`__ to see an example of how to use list_data_sources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -9042,7 +9042,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_detector_recipe_detector_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_detector_recipe_detector_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId', 'compartmentId']
@@ -9243,7 +9243,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipes.py.html>`__ to see an example of how to use list_detector_recipes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipes.py.html>`__ to see an example of how to use list_detector_recipes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -9414,7 +9414,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_rules.py.html>`__ to see an example of how to use list_detector_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_rules.py.html>`__ to see an example of how to use list_detector_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorId', 'compartmentId']
@@ -9578,7 +9578,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detectors.py.html>`__ to see an example of how to use list_detectors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detectors.py.html>`__ to see an example of how to use list_detectors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -9723,7 +9723,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_impacted_resources.py.html>`__ to see an example of how to use list_impacted_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_impacted_resources.py.html>`__ to see an example of how to use list_impacted_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -9875,7 +9875,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_list_types.py.html>`__ to see an example of how to use list_managed_list_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_list_types.py.html>`__ to see an example of how to use list_managed_list_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10066,7 +10066,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_lists.py.html>`__ to see an example of how to use list_managed_lists API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_lists.py.html>`__ to see an example of how to use list_managed_lists API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10235,7 +10235,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_policies.py.html>`__ to see an example of how to use list_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10371,7 +10371,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_endpoints.py.html>`__ to see an example of how to use list_problem_endpoints API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_endpoints.py.html>`__ to see an example of how to use list_problem_endpoints API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -10518,7 +10518,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_entities.py.html>`__ to see an example of how to use list_problem_entities API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_entities.py.html>`__ to see an example of how to use list_problem_entities API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -10668,7 +10668,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_histories.py.html>`__ to see an example of how to use list_problem_histories API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_histories.py.html>`__ to see an example of how to use list_problem_histories API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId', 'compartmentId']
@@ -10907,7 +10907,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problems.py.html>`__ to see an example of how to use list_problems API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problems.py.html>`__ to see an example of how to use list_problems API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -11147,7 +11147,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -11317,7 +11317,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_ports.py.html>`__ to see an example of how to use list_resource_ports API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_ports.py.html>`__ to see an example of how to use list_resource_ports API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceId']
@@ -11467,7 +11467,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_endpoints.py.html>`__ to see an example of how to use list_resource_profile_endpoints API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_endpoints.py.html>`__ to see an example of how to use list_resource_profile_endpoints API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceProfileId']
@@ -11616,7 +11616,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_impacted_resources.py.html>`__ to see an example of how to use list_resource_profile_impacted_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_impacted_resources.py.html>`__ to see an example of how to use list_resource_profile_impacted_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceProfileId']
@@ -11818,7 +11818,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profiles.py.html>`__ to see an example of how to use list_resource_profiles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profiles.py.html>`__ to see an example of how to use list_resource_profiles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -11994,7 +11994,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -12154,7 +12154,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_vulnerabilities.py.html>`__ to see an example of how to use list_resource_vulnerabilities API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_vulnerabilities.py.html>`__ to see an example of how to use list_resource_vulnerabilities API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['resourceId']
@@ -12369,7 +12369,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resources.py.html>`__ to see an example of how to use list_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resources.py.html>`__ to see an example of how to use list_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -12546,7 +12546,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_activities.py.html>`__ to see an example of how to use list_responder_activities API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_activities.py.html>`__ to see an example of how to use list_responder_activities API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -12745,7 +12745,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_executions.py.html>`__ to see an example of how to use list_responder_executions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_executions.py.html>`__ to see an example of how to use list_responder_executions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -12946,7 +12946,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_responder_recipe_responder_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_responder_recipe_responder_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId', 'compartmentId']
@@ -13147,7 +13147,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipes.py.html>`__ to see an example of how to use list_responder_recipes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipes.py.html>`__ to see an example of how to use list_responder_recipes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13317,7 +13317,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_rules.py.html>`__ to see an example of how to use list_responder_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_rules.py.html>`__ to see an example of how to use list_responder_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13482,7 +13482,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_saved_queries.py.html>`__ to see an example of how to use list_saved_queries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_saved_queries.py.html>`__ to see an example of how to use list_saved_queries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13643,7 +13643,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_policies.py.html>`__ to see an example of how to use list_security_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_policies.py.html>`__ to see an example of how to use list_security_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13804,7 +13804,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_recipes.py.html>`__ to see an example of how to use list_security_recipes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_recipes.py.html>`__ to see an example of how to use list_security_recipes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13971,7 +13971,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_zones.py.html>`__ to see an example of how to use list_security_zones API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_zones.py.html>`__ to see an example of how to use list_security_zones API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14126,7 +14126,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_endpoints.py.html>`__ to see an example of how to use list_sighting_endpoints API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_endpoints.py.html>`__ to see an example of how to use list_sighting_endpoints API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sightingId']
@@ -14274,7 +14274,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_impacted_resources.py.html>`__ to see an example of how to use list_sighting_impacted_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_impacted_resources.py.html>`__ to see an example of how to use list_sighting_impacted_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sightingId']
@@ -14460,7 +14460,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sightings.py.html>`__ to see an example of how to use list_sightings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sightings.py.html>`__ to see an example of how to use list_sightings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14620,7 +14620,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_tactics.py.html>`__ to see an example of how to use list_tactics API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_tactics.py.html>`__ to see an example of how to use list_tactics API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14779,7 +14779,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_target_detector_recipe_detector_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_target_detector_recipe_detector_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetDetectorRecipeId', 'compartmentId']
@@ -14952,7 +14952,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipes.py.html>`__ to see an example of how to use list_target_detector_recipes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipes.py.html>`__ to see an example of how to use list_target_detector_recipes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'compartmentId']
@@ -15128,7 +15128,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_target_responder_recipe_responder_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_target_responder_recipe_responder_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetResponderRecipeId', 'compartmentId']
@@ -15301,7 +15301,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipes.py.html>`__ to see an example of how to use list_target_responder_recipes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipes.py.html>`__ to see an example of how to use list_target_responder_recipes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'compartmentId']
@@ -15502,7 +15502,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_targets.py.html>`__ to see an example of how to use list_targets API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_targets.py.html>`__ to see an example of how to use list_targets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15670,7 +15670,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_techniques.py.html>`__ to see an example of how to use list_techniques API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_techniques.py.html>`__ to see an example of how to use list_techniques API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15817,7 +15817,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_wlp_agents.py.html>`__ to see an example of how to use list_wlp_agents API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_wlp_agents.py.html>`__ to see an example of how to use list_wlp_agents API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15954,7 +15954,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -16102,7 +16102,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -16258,7 +16258,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16409,7 +16409,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/remove_compartment.py.html>`__ to see an example of how to use remove_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/remove_compartment.py.html>`__ to see an example of how to use remove_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityZoneId']
@@ -16526,7 +16526,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_risk_scores.py.html>`__ to see an example of how to use request_risk_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_risk_scores.py.html>`__ to see an example of how to use request_risk_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16641,7 +16641,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_score_summarized_trend.py.html>`__ to see an example of how to use request_security_score_summarized_trend API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_score_summarized_trend.py.html>`__ to see an example of how to use request_security_score_summarized_trend API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16754,7 +16754,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_scores.py.html>`__ to see an example of how to use request_security_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_scores.py.html>`__ to see an example of how to use request_security_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -16896,7 +16896,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_activity_problems.py.html>`__ to see an example of how to use request_summarized_activity_problems API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_activity_problems.py.html>`__ to see an example of how to use request_summarized_activity_problems API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17048,7 +17048,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_problems.py.html>`__ to see an example of how to use request_summarized_problems API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_problems.py.html>`__ to see an example of how to use request_summarized_problems API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['listDimensions', 'compartmentId']
@@ -17218,7 +17218,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_responder_executions.py.html>`__ to see an example of how to use request_summarized_responder_executions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_responder_executions.py.html>`__ to see an example of how to use request_summarized_responder_executions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderExecutionsDimensions', 'compartmentId']
@@ -17365,7 +17365,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_risk_scores.py.html>`__ to see an example of how to use request_summarized_risk_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_risk_scores.py.html>`__ to see an example of how to use request_summarized_risk_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17473,7 +17473,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_security_scores.py.html>`__ to see an example of how to use request_summarized_security_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_security_scores.py.html>`__ to see an example of how to use request_summarized_security_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17612,7 +17612,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_top_trend_resource_profile_risk_scores.py.html>`__ to see an example of how to use request_summarized_top_trend_resource_profile_risk_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_top_trend_resource_profile_risk_scores.py.html>`__ to see an example of how to use request_summarized_top_trend_resource_profile_risk_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17778,7 +17778,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_problems.py.html>`__ to see an example of how to use request_summarized_trend_problems API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_problems.py.html>`__ to see an example of how to use request_summarized_trend_problems API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -17927,7 +17927,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_resource_risk_scores.py.html>`__ to see an example of how to use request_summarized_trend_resource_risk_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_resource_risk_scores.py.html>`__ to see an example of how to use request_summarized_trend_resource_risk_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -18084,7 +18084,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_responder_executions.py.html>`__ to see an example of how to use request_summarized_trend_responder_executions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_responder_executions.py.html>`__ to see an example of how to use request_summarized_trend_responder_executions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -18213,7 +18213,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_security_scores.py.html>`__ to see an example of how to use request_summarized_trend_security_scores API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_security_scores.py.html>`__ to see an example of how to use request_summarized_trend_security_scores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -18319,7 +18319,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_bulk_responder_execution.py.html>`__ to see an example of how to use skip_bulk_responder_execution API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_bulk_responder_execution.py.html>`__ to see an example of how to use skip_bulk_responder_execution API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -18427,7 +18427,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_responder_execution.py.html>`__ to see an example of how to use skip_responder_execution API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_responder_execution.py.html>`__ to see an example of how to use skip_responder_execution API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderExecutionId', 'compartmentId']
@@ -18558,7 +18558,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/trigger_responder.py.html>`__ to see an example of how to use trigger_responder API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/trigger_responder.py.html>`__ to see an example of how to use trigger_responder API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -18666,7 +18666,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_bulk_problem_status.py.html>`__ to see an example of how to use update_bulk_problem_status API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_bulk_problem_status.py.html>`__ to see an example of how to use update_bulk_problem_status API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -18775,7 +18775,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -18890,7 +18890,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_data_mask_rule.py.html>`__ to see an example of how to use update_data_mask_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_data_mask_rule.py.html>`__ to see an example of how to use update_data_mask_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataMaskRuleId']
@@ -19015,7 +19015,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_data_source.py.html>`__ to see an example of how to use update_data_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_data_source.py.html>`__ to see an example of how to use update_data_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dataSourceId']
@@ -19140,7 +19140,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe.py.html>`__ to see an example of how to use update_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe.py.html>`__ to see an example of how to use update_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId']
@@ -19263,7 +19263,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_detector_recipe_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_detector_recipe_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['detectorRecipeId', 'detectorRuleId']
@@ -19388,7 +19388,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_managed_list.py.html>`__ to see an example of how to use update_managed_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_managed_list.py.html>`__ to see an example of how to use update_managed_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['managedListId']
@@ -19515,7 +19515,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_problem_status.py.html>`__ to see an example of how to use update_problem_status API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_problem_status.py.html>`__ to see an example of how to use update_problem_status API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['problemId']
@@ -19636,7 +19636,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe.py.html>`__ to see an example of how to use update_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe.py.html>`__ to see an example of how to use update_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId']
@@ -19757,7 +19757,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_responder_recipe_responder_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_responder_recipe_responder_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['responderRecipeId', 'responderRuleId']
@@ -19882,7 +19882,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_saved_query.py.html>`__ to see an example of how to use update_saved_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_saved_query.py.html>`__ to see an example of how to use update_saved_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['savedQueryId']
@@ -20003,7 +20003,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_security_recipe.py.html>`__ to see an example of how to use update_security_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_security_recipe.py.html>`__ to see an example of how to use update_security_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityRecipeId']
@@ -20121,7 +20121,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_security_zone.py.html>`__ to see an example of how to use update_security_zone API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_security_zone.py.html>`__ to see an example of how to use update_security_zone API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityZoneId']
@@ -20239,7 +20239,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target.py.html>`__ to see an example of how to use update_target API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target.py.html>`__ to see an example of how to use update_target API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId']
@@ -20360,7 +20360,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe.py.html>`__ to see an example of how to use update_target_detector_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe.py.html>`__ to see an example of how to use update_target_detector_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetDetectorRecipeId']
@@ -20484,7 +20484,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_target_detector_recipe_detector_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_target_detector_recipe_detector_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetDetectorRecipeId', 'detectorRuleId']
@@ -20609,7 +20609,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe.py.html>`__ to see an example of how to use update_target_responder_recipe API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe.py.html>`__ to see an example of how to use update_target_responder_recipe API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetResponderRecipeId']
@@ -20737,7 +20737,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_target_responder_recipe_responder_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_target_responder_recipe_responder_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['targetId', 'targetResponderRecipeId', 'responderRuleId']
@@ -20863,7 +20863,7 @@ class CloudGuardClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_wlp_agent.py.html>`__ to see an example of how to use update_wlp_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_wlp_agent.py.html>`__ to see an example of how to use update_wlp_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['wlpAgentId']

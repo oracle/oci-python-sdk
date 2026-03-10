@@ -174,6 +174,10 @@ class Sddc(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param sddc_byol_allocation_details:
+            The value to assign to the sddc_byol_allocation_details property of this Sddc.
+        :type sddc_byol_allocation_details: oci.ocvp.models.SddcByolAllocationDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Sddc.
         :type freeform_tags: dict(str, str)
@@ -214,6 +218,7 @@ class Sddc(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'sddc_byol_allocation_details': 'SddcByolAllocationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -245,6 +250,7 @@ class Sddc(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'sddc_byol_allocation_details': 'sddcByolAllocationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -275,6 +281,7 @@ class Sddc(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._sddc_byol_allocation_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -1086,6 +1093,26 @@ class Sddc(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def sddc_byol_allocation_details(self):
+        """
+        Gets the sddc_byol_allocation_details of this Sddc.
+
+        :return: The sddc_byol_allocation_details of this Sddc.
+        :rtype: oci.ocvp.models.SddcByolAllocationDetails
+        """
+        return self._sddc_byol_allocation_details
+
+    @sddc_byol_allocation_details.setter
+    def sddc_byol_allocation_details(self, sddc_byol_allocation_details):
+        """
+        Sets the sddc_byol_allocation_details of this Sddc.
+
+        :param sddc_byol_allocation_details: The sddc_byol_allocation_details of this Sddc.
+        :type: oci.ocvp.models.SddcByolAllocationDetails
+        """
+        self._sddc_byol_allocation_details = sddc_byol_allocation_details
 
     @property
     def freeform_tags(self):

@@ -59,7 +59,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
 
         :param source:
             The value to assign to the source property of this DistributedDatabaseShardWithExadbXs.
-            Allowed values for this property are: "EXADB_XS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source: str
 

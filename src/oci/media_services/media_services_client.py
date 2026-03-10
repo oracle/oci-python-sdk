@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import media_services_type_mapping
 missing = Sentinel("Missing")
 
@@ -32,7 +32,7 @@ class MediaServicesClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -51,7 +51,7 @@ class MediaServicesClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -83,7 +83,7 @@ class MediaServicesClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("media_services"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -174,7 +174,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_asset_lock.py.html>`__ to see an example of how to use add_media_asset_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_asset_lock.py.html>`__ to see an example of how to use add_media_asset_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -303,7 +303,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_configuration_lock.py.html>`__ to see an example of how to use add_media_workflow_configuration_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_configuration_lock.py.html>`__ to see an example of how to use add_media_workflow_configuration_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowConfigurationId']
@@ -432,7 +432,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_job_lock.py.html>`__ to see an example of how to use add_media_workflow_job_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_job_lock.py.html>`__ to see an example of how to use add_media_workflow_job_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowJobId']
@@ -561,7 +561,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_lock.py.html>`__ to see an example of how to use add_media_workflow_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_lock.py.html>`__ to see an example of how to use add_media_workflow_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowId']
@@ -690,7 +690,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_cdn_config_lock.py.html>`__ to see an example of how to use add_stream_cdn_config_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_cdn_config_lock.py.html>`__ to see an example of how to use add_stream_cdn_config_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamCdnConfigId']
@@ -819,7 +819,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_distribution_channel_lock.py.html>`__ to see an example of how to use add_stream_distribution_channel_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_distribution_channel_lock.py.html>`__ to see an example of how to use add_stream_distribution_channel_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -948,7 +948,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_packaging_config_lock.py.html>`__ to see an example of how to use add_stream_packaging_config_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_packaging_config_lock.py.html>`__ to see an example of how to use add_stream_packaging_config_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamPackagingConfigId']
@@ -1080,7 +1080,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_asset_compartment.py.html>`__ to see an example of how to use change_media_asset_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_asset_compartment.py.html>`__ to see an example of how to use change_media_asset_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -1218,7 +1218,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_compartment.py.html>`__ to see an example of how to use change_media_workflow_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_compartment.py.html>`__ to see an example of how to use change_media_workflow_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowId']
@@ -1356,7 +1356,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_configuration_compartment.py.html>`__ to see an example of how to use change_media_workflow_configuration_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_configuration_compartment.py.html>`__ to see an example of how to use change_media_workflow_configuration_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowConfigurationId']
@@ -1494,7 +1494,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_job_compartment.py.html>`__ to see an example of how to use change_media_workflow_job_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_job_compartment.py.html>`__ to see an example of how to use change_media_workflow_job_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowJobId']
@@ -1632,7 +1632,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_stream_distribution_channel_compartment.py.html>`__ to see an example of how to use change_stream_distribution_channel_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_stream_distribution_channel_compartment.py.html>`__ to see an example of how to use change_stream_distribution_channel_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -1757,7 +1757,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_asset.py.html>`__ to see an example of how to use create_media_asset API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_asset.py.html>`__ to see an example of how to use create_media_asset API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1862,7 +1862,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow.py.html>`__ to see an example of how to use create_media_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow.py.html>`__ to see an example of how to use create_media_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1967,7 +1967,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow_configuration.py.html>`__ to see an example of how to use create_media_workflow_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow_configuration.py.html>`__ to see an example of how to use create_media_workflow_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2072,7 +2072,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow_job.py.html>`__ to see an example of how to use create_media_workflow_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow_job.py.html>`__ to see an example of how to use create_media_workflow_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2177,7 +2177,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_cdn_config.py.html>`__ to see an example of how to use create_stream_cdn_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_cdn_config.py.html>`__ to see an example of how to use create_stream_cdn_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2282,7 +2282,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_distribution_channel.py.html>`__ to see an example of how to use create_stream_distribution_channel API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_distribution_channel.py.html>`__ to see an example of how to use create_stream_distribution_channel API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2387,7 +2387,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_packaging_config.py.html>`__ to see an example of how to use create_stream_packaging_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_packaging_config.py.html>`__ to see an example of how to use create_stream_packaging_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2500,7 +2500,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_asset.py.html>`__ to see an example of how to use delete_media_asset API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_asset.py.html>`__ to see an example of how to use delete_media_asset API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -2638,7 +2638,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_asset_distribution_channel_attachment.py.html>`__ to see an example of how to use delete_media_asset_distribution_channel_attachment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_asset_distribution_channel_attachment.py.html>`__ to see an example of how to use delete_media_asset_distribution_channel_attachment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId', 'distributionChannelId']
@@ -2764,7 +2764,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow.py.html>`__ to see an example of how to use delete_media_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow.py.html>`__ to see an example of how to use delete_media_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowId']
@@ -2887,7 +2887,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow_configuration.py.html>`__ to see an example of how to use delete_media_workflow_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow_configuration.py.html>`__ to see an example of how to use delete_media_workflow_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowConfigurationId']
@@ -3010,7 +3010,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow_job.py.html>`__ to see an example of how to use delete_media_workflow_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow_job.py.html>`__ to see an example of how to use delete_media_workflow_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowJobId']
@@ -3133,7 +3133,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_cdn_config.py.html>`__ to see an example of how to use delete_stream_cdn_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_cdn_config.py.html>`__ to see an example of how to use delete_stream_cdn_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamCdnConfigId']
@@ -3256,7 +3256,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_distribution_channel.py.html>`__ to see an example of how to use delete_stream_distribution_channel API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_distribution_channel.py.html>`__ to see an example of how to use delete_stream_distribution_channel API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -3379,7 +3379,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_packaging_config.py.html>`__ to see an example of how to use delete_stream_packaging_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_packaging_config.py.html>`__ to see an example of how to use delete_stream_packaging_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamPackagingConfigId']
@@ -3492,7 +3492,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_asset.py.html>`__ to see an example of how to use get_media_asset API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_asset.py.html>`__ to see an example of how to use get_media_asset API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -3603,7 +3603,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_asset_distribution_channel_attachment.py.html>`__ to see an example of how to use get_media_asset_distribution_channel_attachment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_asset_distribution_channel_attachment.py.html>`__ to see an example of how to use get_media_asset_distribution_channel_attachment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId', 'distributionChannelId']
@@ -3717,7 +3717,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow.py.html>`__ to see an example of how to use get_media_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow.py.html>`__ to see an example of how to use get_media_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowId']
@@ -3822,7 +3822,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_configuration.py.html>`__ to see an example of how to use get_media_workflow_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_configuration.py.html>`__ to see an example of how to use get_media_workflow_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowConfigurationId']
@@ -3927,7 +3927,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_job.py.html>`__ to see an example of how to use get_media_workflow_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_job.py.html>`__ to see an example of how to use get_media_workflow_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowJobId']
@@ -4032,7 +4032,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_cdn_config.py.html>`__ to see an example of how to use get_stream_cdn_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_cdn_config.py.html>`__ to see an example of how to use get_stream_cdn_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamCdnConfigId']
@@ -4137,7 +4137,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_distribution_channel.py.html>`__ to see an example of how to use get_stream_distribution_channel API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_distribution_channel.py.html>`__ to see an example of how to use get_stream_distribution_channel API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -4242,7 +4242,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_packaging_config.py.html>`__ to see an example of how to use get_stream_packaging_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_packaging_config.py.html>`__ to see an example of how to use get_stream_packaging_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamPackagingConfigId']
@@ -4357,7 +4357,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/ingest_stream_distribution_channel.py.html>`__ to see an example of how to use ingest_stream_distribution_channel API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/ingest_stream_distribution_channel.py.html>`__ to see an example of how to use ingest_stream_distribution_channel API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -4490,7 +4490,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_asset_distribution_channel_attachments.py.html>`__ to see an example of how to use list_media_asset_distribution_channel_attachments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_asset_distribution_channel_attachments.py.html>`__ to see an example of how to use list_media_asset_distribution_channel_attachments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -4681,7 +4681,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_assets.py.html>`__ to see an example of how to use list_media_assets API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_assets.py.html>`__ to see an example of how to use list_media_assets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4869,7 +4869,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_configurations.py.html>`__ to see an example of how to use list_media_workflow_configurations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_configurations.py.html>`__ to see an example of how to use list_media_workflow_configurations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5036,7 +5036,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_jobs.py.html>`__ to see an example of how to use list_media_workflow_jobs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_jobs.py.html>`__ to see an example of how to use list_media_workflow_jobs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5200,7 +5200,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_task_declarations.py.html>`__ to see an example of how to use list_media_workflow_task_declarations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_task_declarations.py.html>`__ to see an example of how to use list_media_workflow_task_declarations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5358,7 +5358,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflows.py.html>`__ to see an example of how to use list_media_workflows API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflows.py.html>`__ to see an example of how to use list_media_workflows API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5523,7 +5523,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_cdn_configs.py.html>`__ to see an example of how to use list_stream_cdn_configs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_cdn_configs.py.html>`__ to see an example of how to use list_stream_cdn_configs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributionChannelId']
@@ -5687,7 +5687,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_distribution_channels.py.html>`__ to see an example of how to use list_stream_distribution_channels API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_distribution_channels.py.html>`__ to see an example of how to use list_stream_distribution_channels API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5852,7 +5852,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_packaging_configs.py.html>`__ to see an example of how to use list_stream_packaging_configs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_packaging_configs.py.html>`__ to see an example of how to use list_stream_packaging_configs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['distributionChannelId']
@@ -6002,7 +6002,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_system_media_workflows.py.html>`__ to see an example of how to use list_system_media_workflows API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_system_media_workflows.py.html>`__ to see an example of how to use list_system_media_workflows API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6135,7 +6135,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_asset_lock.py.html>`__ to see an example of how to use remove_media_asset_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_asset_lock.py.html>`__ to see an example of how to use remove_media_asset_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -6264,7 +6264,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_configuration_lock.py.html>`__ to see an example of how to use remove_media_workflow_configuration_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_configuration_lock.py.html>`__ to see an example of how to use remove_media_workflow_configuration_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowConfigurationId']
@@ -6393,7 +6393,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_job_lock.py.html>`__ to see an example of how to use remove_media_workflow_job_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_job_lock.py.html>`__ to see an example of how to use remove_media_workflow_job_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowJobId']
@@ -6522,7 +6522,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_lock.py.html>`__ to see an example of how to use remove_media_workflow_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_lock.py.html>`__ to see an example of how to use remove_media_workflow_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowId']
@@ -6651,7 +6651,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_cdn_config_lock.py.html>`__ to see an example of how to use remove_stream_cdn_config_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_cdn_config_lock.py.html>`__ to see an example of how to use remove_stream_cdn_config_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamCdnConfigId']
@@ -6780,7 +6780,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_distribution_channel_lock.py.html>`__ to see an example of how to use remove_stream_distribution_channel_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_distribution_channel_lock.py.html>`__ to see an example of how to use remove_stream_distribution_channel_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -6909,7 +6909,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_packaging_config_lock.py.html>`__ to see an example of how to use remove_stream_packaging_config_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_packaging_config_lock.py.html>`__ to see an example of how to use remove_stream_packaging_config_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamPackagingConfigId']
@@ -7034,7 +7034,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_asset.py.html>`__ to see an example of how to use update_media_asset API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_asset.py.html>`__ to see an example of how to use update_media_asset API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaAssetId']
@@ -7164,7 +7164,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow.py.html>`__ to see an example of how to use update_media_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow.py.html>`__ to see an example of how to use update_media_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowId']
@@ -7294,7 +7294,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow_configuration.py.html>`__ to see an example of how to use update_media_workflow_configuration API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow_configuration.py.html>`__ to see an example of how to use update_media_workflow_configuration API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowConfigurationId']
@@ -7424,7 +7424,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow_job.py.html>`__ to see an example of how to use update_media_workflow_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow_job.py.html>`__ to see an example of how to use update_media_workflow_job API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mediaWorkflowJobId']
@@ -7554,7 +7554,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_cdn_config.py.html>`__ to see an example of how to use update_stream_cdn_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_cdn_config.py.html>`__ to see an example of how to use update_stream_cdn_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamCdnConfigId']
@@ -7684,7 +7684,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_distribution_channel.py.html>`__ to see an example of how to use update_stream_distribution_channel API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_distribution_channel.py.html>`__ to see an example of how to use update_stream_distribution_channel API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamDistributionChannelId']
@@ -7814,7 +7814,7 @@ class MediaServicesClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_packaging_config.py.html>`__ to see an example of how to use update_stream_packaging_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_packaging_config.py.html>`__ to see an example of how to use update_stream_packaging_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['streamPackagingConfigId']

@@ -19,18 +19,27 @@ class DistributedDatabaseCatalog(object):
     #: This constant has a value of "EXADB_XS"
     SOURCE_EXADB_XS = "EXADB_XS"
 
+    #: A constant which can be used with the source property of a DistributedDatabaseCatalog.
+    #: This constant has a value of "NEW_VAULT_AND_CLUSTER"
+    SOURCE_NEW_VAULT_AND_CLUSTER = "NEW_VAULT_AND_CLUSTER"
+
+    #: A constant which can be used with the source property of a DistributedDatabaseCatalog.
+    #: This constant has a value of "EXISTING_CLUSTER"
+    SOURCE_EXISTING_CLUSTER = "EXISTING_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DistributedDatabaseCatalog object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.distributed_database.models.DistributedDatabaseCatalogWithExadbXs`
+        * :class:`~oci.distributed_database.models.DistributedDatabaseCatalogWithExadbXsNewVaultAndCluster`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param source:
             The value to assign to the source property of this DistributedDatabaseCatalog.
-            Allowed values for this property are: "EXADB_XS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source: str
 
@@ -74,6 +83,9 @@ class DistributedDatabaseCatalog(object):
 
         if type == 'EXADB_XS':
             return 'DistributedDatabaseCatalogWithExadbXs'
+
+        if type == 'NEW_VAULT_AND_CLUSTER':
+            return 'DistributedDatabaseCatalogWithExadbXsNewVaultAndCluster'
         else:
             return 'DistributedDatabaseCatalog'
 
@@ -81,9 +93,12 @@ class DistributedDatabaseCatalog(object):
     def source(self):
         """
         **[Required]** Gets the source of this DistributedDatabaseCatalog.
-        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        Type of Globally distributed database Shard or Catalog.
+        Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch.
+        Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters.
+        EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
 
-        Allowed values for this property are: "EXADB_XS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -96,13 +111,16 @@ class DistributedDatabaseCatalog(object):
     def source(self, source):
         """
         Sets the source of this DistributedDatabaseCatalog.
-        The source of Globally distributed database type: Use EXADB_XS for the Globally distributed database with Exascale based distributed database.
+        Type of Globally distributed database Shard or Catalog.
+        Use NEW_VAULT_AND_CLUSTER for a Globally distributed database on Exascale with new vaults and clusters created from scratch.
+        Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing clusters.
+        EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the deprecation cycle.
 
 
         :param source: The source of this DistributedDatabaseCatalog.
         :type: str
         """
-        allowed_values = ["EXADB_XS"]
+        allowed_values = ["EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             source = 'UNKNOWN_ENUM_VALUE'
         self._source = source

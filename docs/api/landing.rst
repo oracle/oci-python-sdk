@@ -37,6 +37,8 @@ API Reference
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Blockchain Platform <blockchain/client/oci.blockchain.BlockchainPlatformClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
+* :doc:`Byol <ocvp/client/oci.ocvp.ByolClient>`
+* :doc:`Byol Allocation <ocvp/client/oci.ocvp.ByolAllocationClient>`
 * :doc:`Capacity Management <capacity_management/client/oci.capacity_management.CapacityManagementClient>`
 * :doc:`Certificates <certificates/client/oci.certificates.CertificatesClient>`
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
@@ -125,6 +127,7 @@ API Reference
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.GovernanceClient>`
 * :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
+* :doc:`Guarded Data Pipeline <gdp/client/oci.gdp.GuardedDataPipelineClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Identity Domains <identity_domains/client/oci.identity_domains.IdentityDomainsClient>`
@@ -146,6 +149,7 @@ API Reference
 * :doc:`License Manager <license_manager/client/oci.license_manager.LicenseManagerClient>`
 * :doc:`Lifecycle Environment <os_management_hub/client/oci.os_management_hub.LifecycleEnvironmentClient>`
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
+* :doc:`Limits Increase <limits_increase/client/oci.limits_increase.LimitsIncreaseClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Lockbox <lockbox/client/oci.lockbox.LockboxClient>`
@@ -386,6 +390,7 @@ API Reference
     fleet_software_update
     functions
     fusion_apps
+    gdp
     generative_ai
     generative_ai_agent
     generative_ai_agent_runtime
@@ -405,6 +410,7 @@ API Reference
     key_management
     license_manager
     limits
+    limits_increase
     load_balancer
     lockbox
     log_analytics

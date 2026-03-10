@@ -104,6 +104,14 @@ class InitialClusterConfiguration(object):
             The value to assign to the datastore_cluster_ids property of this InitialClusterConfiguration.
         :type datastore_cluster_ids: list[str]
 
+        :param cluster_byol_allocation_details:
+            The value to assign to the cluster_byol_allocation_details property of this InitialClusterConfiguration.
+        :type cluster_byol_allocation_details: oci.ocvp.models.ClusterByolAllocationDetails
+
+        :param initial_vcf_byol_allocation_id:
+            The value to assign to the initial_vcf_byol_allocation_id property of this InitialClusterConfiguration.
+        :type initial_vcf_byol_allocation_id: str
+
         """
         self.swagger_types = {
             'vsphere_type': 'str',
@@ -119,7 +127,9 @@ class InitialClusterConfiguration(object):
             'is_shielded_instance_enabled': 'bool',
             'capacity_reservation_id': 'str',
             'datastores': 'list[DatastoreInfo]',
-            'datastore_cluster_ids': 'list[str]'
+            'datastore_cluster_ids': 'list[str]',
+            'cluster_byol_allocation_details': 'ClusterByolAllocationDetails',
+            'initial_vcf_byol_allocation_id': 'str'
         }
         self.attribute_map = {
             'vsphere_type': 'vsphereType',
@@ -135,7 +145,9 @@ class InitialClusterConfiguration(object):
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'capacity_reservation_id': 'capacityReservationId',
             'datastores': 'datastores',
-            'datastore_cluster_ids': 'datastoreClusterIds'
+            'datastore_cluster_ids': 'datastoreClusterIds',
+            'cluster_byol_allocation_details': 'clusterByolAllocationDetails',
+            'initial_vcf_byol_allocation_id': 'initialVcfByolAllocationId'
         }
         self._vsphere_type = None
         self._compute_availability_domain = None
@@ -151,6 +163,8 @@ class InitialClusterConfiguration(object):
         self._capacity_reservation_id = None
         self._datastores = None
         self._datastore_cluster_ids = None
+        self._cluster_byol_allocation_details = None
+        self._initial_vcf_byol_allocation_id = None
 
     @property
     def vsphere_type(self):
@@ -533,6 +547,54 @@ class InitialClusterConfiguration(object):
         :type: list[str]
         """
         self._datastore_cluster_ids = datastore_cluster_ids
+
+    @property
+    def cluster_byol_allocation_details(self):
+        """
+        Gets the cluster_byol_allocation_details of this InitialClusterConfiguration.
+
+        :return: The cluster_byol_allocation_details of this InitialClusterConfiguration.
+        :rtype: oci.ocvp.models.ClusterByolAllocationDetails
+        """
+        return self._cluster_byol_allocation_details
+
+    @cluster_byol_allocation_details.setter
+    def cluster_byol_allocation_details(self, cluster_byol_allocation_details):
+        """
+        Sets the cluster_byol_allocation_details of this InitialClusterConfiguration.
+
+        :param cluster_byol_allocation_details: The cluster_byol_allocation_details of this InitialClusterConfiguration.
+        :type: oci.ocvp.models.ClusterByolAllocationDetails
+        """
+        self._cluster_byol_allocation_details = cluster_byol_allocation_details
+
+    @property
+    def initial_vcf_byol_allocation_id(self):
+        """
+        Gets the initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
+        The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
+        :rtype: str
+        """
+        return self._initial_vcf_byol_allocation_id
+
+    @initial_vcf_byol_allocation_id.setter
+    def initial_vcf_byol_allocation_id(self, initial_vcf_byol_allocation_id):
+        """
+        Sets the initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
+        The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param initial_vcf_byol_allocation_id: The initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
+        :type: str
+        """
+        self._initial_vcf_byol_allocation_id = initial_vcf_byol_allocation_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
