@@ -23,7 +23,7 @@ class CreateDistributedDatabaseCatalogWithExadbXsDetails(CreateDistributedDataba
 
         :param source:
             The value to assign to the source property of this CreateDistributedDatabaseCatalogWithExadbXsDetails.
-            Allowed values for this property are: "EXADB_XS"
+            Allowed values for this property are: "EXADB_XS", "NEW_VAULT_AND_CLUSTER", "EXISTING_CLUSTER"
         :type source: str
 
         :param vm_cluster_id:

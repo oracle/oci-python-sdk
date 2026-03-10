@@ -10,7 +10,7 @@ from enum import Enum
 
 from . import regions_definitions
 from . import service_endpoints
-from oci.exceptions import InvalidAlloyConfig
+from oci.exceptions import InvalidDeveloperToolConfiguration
 from oci._vendor import six
 from oci._vendor import requests
 from oci._vendor.requests.exceptions import HTTPError, ConnectionError, RetryError
@@ -66,12 +66,12 @@ _has_been_read_external_sources = {
     ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK: False
 }
 
-# Alloy config
-_IS_ALLOY_MODE = False
-OCI_ALLOY_REGION_COEXIST_ENV_VAR_NAME = "OCI_ALLOY_REGION_COEXIST"
-_IS_ALLOY_REGION_COEXIST = False
+# Developer Tool Configuration
+_IS_DEVELOPER_TOOL_CONFIGURATION_MODE = False
+OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS_ENV_VAR_NAME = "OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS"
+_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS = False
 
-ALLOY_PROVIDER_NAME = None
+DEVELOPER_TOOL_CONFIGURATION_PROVIDER_NAME = None
 
 logger = logging.getLogger(__name__)
 
@@ -155,9 +155,9 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
 
      If the region still cannot be resolved, we fall back to OC1 realm.
 
-     If alloy mode is enabled, and OCI_ALLOY_REGION_COEXIST is not set, only the alloy regions are available. If you want
-     to access OCI and alloy regions at the same time, please set OCI_ALLOY_REGION_COEXIST to True. Fallback to OC1 realm
-     is not available when OCI_ALLOY_REGION_COEXIST is not set.
+     If developer tool configuration mode is enabled, and OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS is not set, only the configuration-driven regions are available. If you want
+     to access OCI and configuration-driven regions at the same time, please set OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS to True. Fallback to OC1 realm
+     is not available when OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS is not set.
 
     """
     if not (endpoint or region):
@@ -184,19 +184,19 @@ def enable_instance_metadata_service():
     _set_source_has_been_read(ExternalSources.IMDS, False)
 
 
-def add_region_schema_for_alloy(region_metadata):
+def add_region_schema_for_developer_tool_configuration(region_metadata):
     """
-    This method is called from the alloy_config.py file to register an alloy region.
+    This method is called from the developer_tool_configuration.py file to register a configuration-driven region.
     Args:
         region_metadata: dict
     """
-    # If we are here, then alloy-config.json has already been processed by _process_region_metadata_from_alloy_config,
-    # since that method is called while initialization. It also processes _IS_ALLOY_REGION_COEXIST and resets region info
-    # and external sources accordingly, except for regions added through alloy-config.json file. Check coexists and
+    # If we are here, then developer-tool-configuration.json has already been processed by _process_region_metadata_from_developer_tool_configuration_file,
+    # since that method is called while initialization. It also processes _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS and resets region info
+    # and external sources accordingly, except for regions added through developer-tool-configuration.json file. Check coexists and
     # reset accordingly
-    if not _IS_ALLOY_REGION_COEXIST:
+    if not _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS:
         _reset_region_info()
-    _add_alloy_regions(region_metadata)
+    _add_developer_tool_configuration_regions(region_metadata)
 
 
 def _set_source_has_been_read(source, value=True):
@@ -226,37 +226,37 @@ def _add_region_information_to_override(region_metadata):
         REGIONS.append(region_metadata[REGION_IDENTIFIER_PROPERTY_NAME])
 
 
-def _add_alloy_regions(alloy_regions):
-    logger.debug("Adding alloy regions from {}".format(alloy_regions))
-    if isinstance(alloy_regions, list):
-        for region_metadata in alloy_regions:
+def _add_developer_tool_configuration_regions(config_regions):
+    logger.debug("Adding developer tool configuration regions from {}".format(config_regions))
+    if isinstance(config_regions, list):
+        for region_metadata in config_regions:
             _add_region_information_to_override(region_metadata)
-    elif isinstance(alloy_regions, dict):
-        _add_region_information_to_override(alloy_regions)
+    elif isinstance(config_regions, dict):
+        _add_region_information_to_override(config_regions)
     else:
-        raise TypeError("Invalid type for alloy regions. Please use a dictionary or a list of dictionaries")
+        raise TypeError("Invalid type for configuration-driven regions. Please use a dictionary or a list of dictionaries")
 
 
-def _process_region_metadata_from_alloy_config(alloy_regions_list):
-    global _IS_ALLOY_REGION_COEXIST
-    _IS_ALLOY_REGION_COEXIST = os.getenv(OCI_ALLOY_REGION_COEXIST_ENV_VAR_NAME)
-    if _IS_ALLOY_REGION_COEXIST and _IS_ALLOY_REGION_COEXIST.lower() in ["true", "1"]:
-        _IS_ALLOY_REGION_COEXIST = True
+def _process_region_metadata_from_developer_tool_configuration_file(config_regions_list):
+    global _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS
+    _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS = os.getenv(OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS_ENV_VAR_NAME)
+    if _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS and _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS.lower() in ["true", "1"]:
+        _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS = True
     else:
-        _IS_ALLOY_REGION_COEXIST = False
+        _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS = False
 
-    # If IS_ALLOY_REGION_COEXIST is false and alloy is true then set all sources except OCI_DEFAULT_REALM has been read,
-    # reset regions data structures, add alloy regions
-    if _IS_ALLOY_MODE and not _IS_ALLOY_REGION_COEXIST:
+    # If _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS is false and developer tool configuration mode is enabled then set all sources except OCI_DEFAULT_REALM has been read,
+    # reset regions data structures, add configuration-driven regions
+    if _IS_DEVELOPER_TOOL_CONFIGURATION_MODE and not _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS:
         _reset_region_info()
         for source in _has_been_read_external_sources:
             _set_source_has_been_read(source)
         _set_source_has_been_read(ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK, False)
-        _add_alloy_regions(alloy_regions_list)
+        _add_developer_tool_configuration_regions(config_regions_list)
 
-    # If coexist is true and alloy is true, add alloy regions and override existing regions with alloy config
-    if _IS_ALLOY_MODE and _IS_ALLOY_REGION_COEXIST:
-        _add_alloy_regions(alloy_regions_list)
+    # If allow-only is true and developer tool configuration mode is enabled, add configuration-driven regions and override existing regions with developer tool configuration file
+    if _IS_DEVELOPER_TOOL_CONFIGURATION_MODE and _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS:
+        _add_developer_tool_configuration_regions(config_regions_list)
 
 
 def _check_and_add_region_metadata(region):
@@ -281,11 +281,11 @@ def _check_and_add_region_metadata(region):
     elif second_level_domain_fallback:
         logger.debug("Unknown regionId '{}', default realm is defined, will fallback to '{}'".format(region, second_level_domain_fallback))
         return False
-    elif _IS_ALLOY_MODE and not _IS_ALLOY_REGION_COEXIST:
-        logger.debug("You're using the {provider} Alloy configuration file, the region you're targeting is not declared"
+    elif _IS_DEVELOPER_TOOL_CONFIGURATION_MODE and not _ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS:
+        logger.debug("You're using the {provider} developer tool configuration file, the region you're targeting is not declared"
                      " in this config file. Please check if this is the correct region you're targeting or contact the {provider} "
                      "cloud provider for help. If you want to target both OCI regions and {provider} regions, please set the "
-                     "OCI_ALLOY_REGION_COEXIST env var to True.".format(provider=ALLOY_PROVIDER_NAME))
+                     "OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS env var to True.".format(provider=DEVELOPER_TOOL_CONFIGURATION_PROVIDER_NAME))
 
     else:
         logger.debug("Unknown regionId '{}', will assume it's in Realm OC1".format(region))
@@ -487,9 +487,11 @@ def _second_level_domain(region):
     else:
         # default realm to OC1 when available
         if 'oc1' not in REALMS:
-            raise InvalidAlloyConfig("Fallback to default OCI region is blocked. This is likely happening if you are "
-                                     "trying to access an alloy region not defined in the alloy region sources, and "
-                                     "the env var OCI_ALLOY_REGION_COEXIST is not set to True.")
+            raise InvalidDeveloperToolConfiguration(
+                "Fallback to default OCI region is blocked. This is likely happening if you are "
+                "trying to access a configuration-driven region not defined in the configuration-driven region sources, and "
+                "the env var OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS is not set to True."
+            )
         realm = 'oc1'
     return REALMS[realm]
 

@@ -42,6 +42,10 @@ class UpdateSddcDetails(object):
             The value to assign to the ssh_authorized_keys property of this UpdateSddcDetails.
         :type ssh_authorized_keys: str
 
+        :param sddc_byol_allocation_details:
+            The value to assign to the sddc_byol_allocation_details property of this UpdateSddcDetails.
+        :type sddc_byol_allocation_details: oci.ocvp.models.SddcByolAllocationDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateSddcDetails.
         :type freeform_tags: dict(str, str)
@@ -56,6 +60,7 @@ class UpdateSddcDetails(object):
             'vmware_software_version': 'str',
             'esxi_software_version': 'str',
             'ssh_authorized_keys': 'str',
+            'sddc_byol_allocation_details': 'SddcByolAllocationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -64,6 +69,7 @@ class UpdateSddcDetails(object):
             'vmware_software_version': 'vmwareSoftwareVersion',
             'esxi_software_version': 'esxiSoftwareVersion',
             'ssh_authorized_keys': 'sshAuthorizedKeys',
+            'sddc_byol_allocation_details': 'sddcByolAllocationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -71,6 +77,7 @@ class UpdateSddcDetails(object):
         self._vmware_software_version = None
         self._esxi_software_version = None
         self._ssh_authorized_keys = None
+        self._sddc_byol_allocation_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -197,6 +204,26 @@ class UpdateSddcDetails(object):
         :type: str
         """
         self._ssh_authorized_keys = ssh_authorized_keys
+
+    @property
+    def sddc_byol_allocation_details(self):
+        """
+        Gets the sddc_byol_allocation_details of this UpdateSddcDetails.
+
+        :return: The sddc_byol_allocation_details of this UpdateSddcDetails.
+        :rtype: oci.ocvp.models.SddcByolAllocationDetails
+        """
+        return self._sddc_byol_allocation_details
+
+    @sddc_byol_allocation_details.setter
+    def sddc_byol_allocation_details(self, sddc_byol_allocation_details):
+        """
+        Sets the sddc_byol_allocation_details of this UpdateSddcDetails.
+
+        :param sddc_byol_allocation_details: The sddc_byol_allocation_details of this UpdateSddcDetails.
+        :type: oci.ocvp.models.SddcByolAllocationDetails
+        """
+        self._sddc_byol_allocation_details = sddc_byol_allocation_details
 
     @property
     def freeform_tags(self):

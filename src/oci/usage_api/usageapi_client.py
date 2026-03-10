@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import usage_api_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class UsageapiClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class UsageapiClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class UsageapiClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("usage_api"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -163,7 +163,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_custom_table.py.html>`__ to see an example of how to use create_custom_table API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_custom_table.py.html>`__ to see an example of how to use create_custom_table API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -270,7 +270,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_email_recipients_group.py.html>`__ to see an example of how to use create_email_recipients_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_email_recipients_group.py.html>`__ to see an example of how to use create_email_recipients_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['subscriptionId']
@@ -386,7 +386,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_query.py.html>`__ to see an example of how to use create_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_query.py.html>`__ to see an example of how to use create_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -490,7 +490,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_schedule.py.html>`__ to see an example of how to use create_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_schedule.py.html>`__ to see an example of how to use create_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -594,7 +594,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_usage_carbon_emissions_query.py.html>`__ to see an example of how to use create_usage_carbon_emissions_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_usage_carbon_emissions_query.py.html>`__ to see an example of how to use create_usage_carbon_emissions_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -698,7 +698,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_custom_table.py.html>`__ to see an example of how to use delete_custom_table API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_custom_table.py.html>`__ to see an example of how to use delete_custom_table API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customTableId']
@@ -815,7 +815,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_email_recipients_group.py.html>`__ to see an example of how to use delete_email_recipients_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_email_recipients_group.py.html>`__ to see an example of how to use delete_email_recipients_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['emailRecipientsGroupId', 'subscriptionId', 'compartmentId']
@@ -934,7 +934,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_query.py.html>`__ to see an example of how to use delete_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_query.py.html>`__ to see an example of how to use delete_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['queryId']
@@ -1045,7 +1045,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_schedule.py.html>`__ to see an example of how to use delete_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_schedule.py.html>`__ to see an example of how to use delete_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -1156,7 +1156,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_usage_carbon_emissions_query.py.html>`__ to see an example of how to use delete_usage_carbon_emissions_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_usage_carbon_emissions_query.py.html>`__ to see an example of how to use delete_usage_carbon_emissions_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['usageCarbonEmissionsQueryId']
@@ -1260,7 +1260,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_custom_table.py.html>`__ to see an example of how to use get_custom_table API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_custom_table.py.html>`__ to see an example of how to use get_custom_table API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customTableId']
@@ -1370,7 +1370,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_email_recipients_group.py.html>`__ to see an example of how to use get_email_recipients_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_email_recipients_group.py.html>`__ to see an example of how to use get_email_recipients_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['emailRecipientsGroupId', 'subscriptionId', 'compartmentId']
@@ -1482,7 +1482,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_query.py.html>`__ to see an example of how to use get_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_query.py.html>`__ to see an example of how to use get_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['queryId']
@@ -1586,7 +1586,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_schedule.py.html>`__ to see an example of how to use get_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_schedule.py.html>`__ to see an example of how to use get_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -1690,7 +1690,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_scheduled_run.py.html>`__ to see an example of how to use get_scheduled_run API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_scheduled_run.py.html>`__ to see an example of how to use get_scheduled_run API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduledRunId']
@@ -1794,7 +1794,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_usage_carbon_emissions_query.py.html>`__ to see an example of how to use get_usage_carbon_emissions_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_usage_carbon_emissions_query.py.html>`__ to see an example of how to use get_usage_carbon_emissions_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['usageCarbonEmissionsQueryId']
@@ -1918,7 +1918,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_custom_tables.py.html>`__ to see an example of how to use list_custom_tables API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_custom_tables.py.html>`__ to see an example of how to use list_custom_tables API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId', 'savedReportId']
@@ -2067,7 +2067,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_email_recipients_groups.py.html>`__ to see an example of how to use list_email_recipients_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_email_recipients_groups.py.html>`__ to see an example of how to use list_email_recipients_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['subscriptionId', 'compartmentId']
@@ -2220,7 +2220,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_queries.py.html>`__ to see an example of how to use list_queries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_queries.py.html>`__ to see an example of how to use list_queries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2358,7 +2358,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_scheduled_runs.py.html>`__ to see an example of how to use list_scheduled_runs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_scheduled_runs.py.html>`__ to see an example of how to use list_scheduled_runs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -2499,7 +2499,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_schedules.py.html>`__ to see an example of how to use list_schedules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_schedules.py.html>`__ to see an example of how to use list_schedules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2639,7 +2639,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_usage_carbon_emissions_queries.py.html>`__ to see an example of how to use list_usage_carbon_emissions_queries API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_usage_carbon_emissions_queries.py.html>`__ to see an example of how to use list_usage_carbon_emissions_queries API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2760,7 +2760,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_average_carbon_emission.py.html>`__ to see an example of how to use request_average_carbon_emission API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_average_carbon_emission.py.html>`__ to see an example of how to use request_average_carbon_emission API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['skuPartNumber']
@@ -2867,7 +2867,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_clean_energy_usage.py.html>`__ to see an example of how to use request_clean_energy_usage API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_clean_energy_usage.py.html>`__ to see an example of how to use request_clean_energy_usage API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['region']
@@ -2979,7 +2979,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_configurations.py.html>`__ to see an example of how to use request_summarized_configurations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_configurations.py.html>`__ to see an example of how to use request_summarized_configurations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tenantId']
@@ -3085,7 +3085,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_usages.py.html>`__ to see an example of how to use request_summarized_usages API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_usages.py.html>`__ to see an example of how to use request_summarized_usages API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3189,7 +3189,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_usage_carbon_emission_config.py.html>`__ to see an example of how to use request_usage_carbon_emission_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_usage_carbon_emission_config.py.html>`__ to see an example of how to use request_usage_carbon_emission_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tenantId']
@@ -3295,7 +3295,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_usage_carbon_emissions.py.html>`__ to see an example of how to use request_usage_carbon_emissions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_usage_carbon_emissions.py.html>`__ to see an example of how to use request_usage_carbon_emissions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3409,7 +3409,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_custom_table.py.html>`__ to see an example of how to use update_custom_table API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_custom_table.py.html>`__ to see an example of how to use update_custom_table API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customTableId']
@@ -3533,7 +3533,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_email_recipients_group.py.html>`__ to see an example of how to use update_email_recipients_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_email_recipients_group.py.html>`__ to see an example of how to use update_email_recipients_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['emailRecipientsGroupId', 'subscriptionId', 'compartmentId']
@@ -3659,7 +3659,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_query.py.html>`__ to see an example of how to use update_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_query.py.html>`__ to see an example of how to use update_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['queryId']
@@ -3777,7 +3777,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_schedule.py.html>`__ to see an example of how to use update_schedule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_schedule.py.html>`__ to see an example of how to use update_schedule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['scheduleId']
@@ -3895,7 +3895,7 @@ class UsageapiClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_usage_carbon_emissions_query.py.html>`__ to see an example of how to use update_usage_carbon_emissions_query API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_usage_carbon_emissions_query.py.html>`__ to see an example of how to use update_usage_carbon_emissions_query API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['usageCarbonEmissionsQueryId']

@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import identity_domains_type_mapping
 missing = Sentinel("Missing")
 
@@ -32,7 +32,7 @@ class IdentityDomainsClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class IdentityDomainsClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class IdentityDomainsClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("identity_domains"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -181,7 +181,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_api_key.py.html>`__ to see an example of how to use create_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_api_key.py.html>`__ to see an example of how to use create_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -324,7 +324,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_app.py.html>`__ to see an example of how to use create_app API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_app.py.html>`__ to see an example of how to use create_app API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -467,7 +467,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_app_role.py.html>`__ to see an example of how to use create_app_role API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_app_role.py.html>`__ to see an example of how to use create_app_role API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -610,7 +610,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_approval_workflow.py.html>`__ to see an example of how to use create_approval_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_approval_workflow.py.html>`__ to see an example of how to use create_approval_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -753,7 +753,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_approval_workflow_assignment.py.html>`__ to see an example of how to use create_approval_workflow_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_approval_workflow_assignment.py.html>`__ to see an example of how to use create_approval_workflow_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -896,7 +896,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_approval_workflow_step.py.html>`__ to see an example of how to use create_approval_workflow_step API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_approval_workflow_step.py.html>`__ to see an example of how to use create_approval_workflow_step API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1039,7 +1039,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1174,7 +1174,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_authentication_factors_remover.py.html>`__ to see an example of how to use create_authentication_factors_remover API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_authentication_factors_remover.py.html>`__ to see an example of how to use create_authentication_factors_remover API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1299,7 +1299,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_cloud_gate.py.html>`__ to see an example of how to use create_cloud_gate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_cloud_gate.py.html>`__ to see an example of how to use create_cloud_gate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1442,7 +1442,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_cloud_gate_mapping.py.html>`__ to see an example of how to use create_cloud_gate_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_cloud_gate_mapping.py.html>`__ to see an example of how to use create_cloud_gate_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1585,7 +1585,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_cloud_gate_server.py.html>`__ to see an example of how to use create_cloud_gate_server API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_cloud_gate_server.py.html>`__ to see an example of how to use create_cloud_gate_server API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1730,7 +1730,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_condition.py.html>`__ to see an example of how to use create_condition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_condition.py.html>`__ to see an example of how to use create_condition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1873,7 +1873,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2016,7 +2016,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_dynamic_resource_group.py.html>`__ to see an example of how to use create_dynamic_resource_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_dynamic_resource_group.py.html>`__ to see an example of how to use create_dynamic_resource_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2159,7 +2159,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_grant.py.html>`__ to see an example of how to use create_grant API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_grant.py.html>`__ to see an example of how to use create_grant API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2302,7 +2302,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_group.py.html>`__ to see an example of how to use create_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_group.py.html>`__ to see an example of how to use create_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2388,6 +2388,296 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_identity_proofing_provider(self, **kwargs):
+        """
+        Create an IdentityProofingProvider.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.IdentityProofingProvider identity_proofing_provider: (optional)
+            IdentityProofingProvider schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProvider`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_identity_proofing_provider.py.html>`__ to see an example of how to use create_identity_proofing_provider API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentityProofingProviders"
+        method = "POST"
+        operation_name = "create_identity_proofing_provider"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "identity_proofing_provider",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_identity_proofing_provider got unknown kwargs: {extra_kwargs!r}")
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider'),
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider'),
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_identity_proofing_provider_template(self, **kwargs):
+        """
+        Create an Identity Proofing Provider Configuration template.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.IdentityProofingProviderTemplate identity_proofing_provider_template: (optional)
+            IdentityProofingProviderTemplate schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviderTemplate`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_identity_proofing_provider_template.py.html>`__ to see an example of how to use create_identity_proofing_provider_template API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentityProofingProviderTemplates"
+        method = "POST"
+        operation_name = "create_identity_proofing_provider_template"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "identity_proofing_provider_template",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_identity_proofing_provider_template got unknown kwargs: {extra_kwargs!r}")
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider_template'),
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider_template'),
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_identity_propagation_trust(self, **kwargs):
         """
         Register a new Identity Propagation Trust configuration.
@@ -2447,7 +2737,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_identity_propagation_trust.py.html>`__ to see an example of how to use create_identity_propagation_trust API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_identity_propagation_trust.py.html>`__ to see an example of how to use create_identity_propagation_trust API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2590,7 +2880,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2733,7 +3023,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_me.py.html>`__ to see an example of how to use create_me API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_me.py.html>`__ to see an example of how to use create_me API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2868,7 +3158,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_api_key.py.html>`__ to see an example of how to use create_my_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_api_key.py.html>`__ to see an example of how to use create_my_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2985,7 +3275,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_auth_token.py.html>`__ to see an example of how to use create_my_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_auth_token.py.html>`__ to see an example of how to use create_my_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3102,7 +3392,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_authentication_factor_initiator.py.html>`__ to see an example of how to use create_my_authentication_factor_initiator API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_authentication_factor_initiator.py.html>`__ to see an example of how to use create_my_authentication_factor_initiator API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3219,7 +3509,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_authentication_factor_validator.py.html>`__ to see an example of how to use create_my_authentication_factor_validator API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_authentication_factor_validator.py.html>`__ to see an example of how to use create_my_authentication_factor_validator API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3336,7 +3626,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_authentication_factors_remover.py.html>`__ to see an example of how to use create_my_authentication_factors_remover API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_authentication_factors_remover.py.html>`__ to see an example of how to use create_my_authentication_factors_remover API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3453,7 +3743,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_customer_secret_key.py.html>`__ to see an example of how to use create_my_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_customer_secret_key.py.html>`__ to see an example of how to use create_my_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3570,7 +3860,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_o_auth2_client_credential.py.html>`__ to see an example of how to use create_my_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_o_auth2_client_credential.py.html>`__ to see an example of how to use create_my_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3695,7 +3985,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_request.py.html>`__ to see an example of how to use create_my_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_request.py.html>`__ to see an example of how to use create_my_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3830,7 +4120,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_smtp_credential.py.html>`__ to see an example of how to use create_my_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_smtp_credential.py.html>`__ to see an example of how to use create_my_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3947,7 +4237,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_support_account.py.html>`__ to see an example of how to use create_my_support_account API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_support_account.py.html>`__ to see an example of how to use create_my_support_account API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4064,7 +4354,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_user_db_credential.py.html>`__ to see an example of how to use create_my_user_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_user_db_credential.py.html>`__ to see an example of how to use create_my_user_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4189,7 +4479,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_network_perimeter.py.html>`__ to see an example of how to use create_network_perimeter API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_network_perimeter.py.html>`__ to see an example of how to use create_network_perimeter API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4332,7 +4622,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_o_auth2_client_credential.py.html>`__ to see an example of how to use create_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_o_auth2_client_credential.py.html>`__ to see an example of how to use create_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4467,7 +4757,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_o_auth_client_certificate.py.html>`__ to see an example of how to use create_o_auth_client_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_o_auth_client_certificate.py.html>`__ to see an example of how to use create_o_auth_client_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4584,7 +4874,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_o_auth_partner_certificate.py.html>`__ to see an example of how to use create_o_auth_partner_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_o_auth_partner_certificate.py.html>`__ to see an example of how to use create_o_auth_partner_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4709,7 +4999,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_password_policy.py.html>`__ to see an example of how to use create_password_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_password_policy.py.html>`__ to see an example of how to use create_password_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4854,7 +5144,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_policy.py.html>`__ to see an example of how to use create_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_policy.py.html>`__ to see an example of how to use create_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4991,7 +5281,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_restore_oci_console_policy.py.html>`__ to see an example of how to use create_restore_oci_console_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_restore_oci_console_policy.py.html>`__ to see an example of how to use create_restore_oci_console_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5118,7 +5408,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_rule.py.html>`__ to see an example of how to use create_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_rule.py.html>`__ to see an example of how to use create_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5261,7 +5551,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_security_question.py.html>`__ to see an example of how to use create_security_question API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_security_question.py.html>`__ to see an example of how to use create_security_question API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5404,7 +5694,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_self_registration_profile.py.html>`__ to see an example of how to use create_self_registration_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_self_registration_profile.py.html>`__ to see an example of how to use create_self_registration_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5547,7 +5837,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5684,7 +5974,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_social_identity_provider.py.html>`__ to see an example of how to use create_social_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_social_identity_provider.py.html>`__ to see an example of how to use create_social_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5809,7 +6099,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_user.py.html>`__ to see an example of how to use create_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_user.py.html>`__ to see an example of how to use create_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -5952,7 +6242,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_user_db_credential.py.html>`__ to see an example of how to use create_user_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_user_db_credential.py.html>`__ to see an example of how to use create_user_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -6038,6 +6328,125 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_verification_claim(self, **kwargs):
+        """
+        Create Verification Claims of IdentityProofingProvider.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.VerificationClaim verification_claim: (optional)
+            VerificationClaim schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.VerificationClaim`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_verification_claim.py.html>`__ to see an example of how to use create_verification_claim API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/VerificationClaims"
+        method = "POST"
+        operation_name = "create_verification_claim"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "verification_claim",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_verification_claim got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=kwargs.get('verification_claim'),
+                response_type="VerificationClaim",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=kwargs.get('verification_claim'),
+                response_type="VerificationClaim",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_api_key(self, api_key_id, **kwargs):
         """
         Delete a user's API key.
@@ -6081,7 +6490,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiKeyId']
@@ -6209,7 +6618,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_app.py.html>`__ to see an example of how to use delete_app API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_app.py.html>`__ to see an example of how to use delete_app API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appId']
@@ -6337,7 +6746,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_app_role.py.html>`__ to see an example of how to use delete_app_role API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_app_role.py.html>`__ to see an example of how to use delete_app_role API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appRoleId']
@@ -6465,7 +6874,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_approval_workflow.py.html>`__ to see an example of how to use delete_approval_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_approval_workflow.py.html>`__ to see an example of how to use delete_approval_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowId']
@@ -6593,7 +7002,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_approval_workflow_assignment.py.html>`__ to see an example of how to use delete_approval_workflow_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_approval_workflow_assignment.py.html>`__ to see an example of how to use delete_approval_workflow_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowAssignmentId']
@@ -6721,7 +7130,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_approval_workflow_step.py.html>`__ to see an example of how to use delete_approval_workflow_step API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_approval_workflow_step.py.html>`__ to see an example of how to use delete_approval_workflow_step API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowStepId']
@@ -6849,7 +7258,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authTokenId']
@@ -6977,7 +7386,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_cloud_gate.py.html>`__ to see an example of how to use delete_cloud_gate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_cloud_gate.py.html>`__ to see an example of how to use delete_cloud_gate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateId']
@@ -7105,7 +7514,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_cloud_gate_mapping.py.html>`__ to see an example of how to use delete_cloud_gate_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_cloud_gate_mapping.py.html>`__ to see an example of how to use delete_cloud_gate_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateMappingId']
@@ -7233,7 +7642,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_cloud_gate_server.py.html>`__ to see an example of how to use delete_cloud_gate_server API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_cloud_gate_server.py.html>`__ to see an example of how to use delete_cloud_gate_server API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateServerId']
@@ -7361,7 +7770,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_condition.py.html>`__ to see an example of how to use delete_condition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_condition.py.html>`__ to see an example of how to use delete_condition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['conditionId']
@@ -7489,7 +7898,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customerSecretKeyId']
@@ -7617,7 +8026,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_dynamic_resource_group.py.html>`__ to see an example of how to use delete_dynamic_resource_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_dynamic_resource_group.py.html>`__ to see an example of how to use delete_dynamic_resource_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
@@ -7745,7 +8154,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_grant.py.html>`__ to see an example of how to use delete_grant API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_grant.py.html>`__ to see an example of how to use delete_grant API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['grantId']
@@ -7873,7 +8282,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_group.py.html>`__ to see an example of how to use delete_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_group.py.html>`__ to see an example of how to use delete_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -7900,6 +8309,262 @@ class IdentityDomainsClient(object):
 
         path_params = {
             "groupId": group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "forceDelete": kwargs.get("force_delete", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_identity_proofing_provider(self, identity_proofing_provider_id, **kwargs):
+        """
+        Delete an IdentityProofingProvider.
+
+
+        :param str identity_proofing_provider_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param bool force_delete: (optional)
+            To force delete the resource and all its references (if any).
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_identity_proofing_provider.py.html>`__ to see an example of how to use delete_identity_proofing_provider API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderId']
+        resource_path = "/admin/v1/IdentityProofingProviders/{identityProofingProviderId}"
+        method = "DELETE"
+        operation_name = "delete_identity_proofing_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/DeleteIdentityProofingProvider"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "force_delete",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_identity_proofing_provider got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderId": identity_proofing_provider_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "forceDelete": kwargs.get("force_delete", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_identity_proofing_provider_template(self, identity_proofing_provider_template_id, **kwargs):
+        """
+        Delete an IdentityProofingProvider.
+
+
+        :param str identity_proofing_provider_template_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param bool force_delete: (optional)
+            To force delete the resource and all its references (if any).
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_identity_proofing_provider_template.py.html>`__ to see an example of how to use delete_identity_proofing_provider_template API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderTemplateId']
+        resource_path = "/admin/v1/IdentityProofingProviderTemplates/{identityProofingProviderTemplateId}"
+        method = "DELETE"
+        operation_name = "delete_identity_proofing_provider_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/DeleteIdentityProofingProviderTemplate"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "force_delete",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_identity_proofing_provider_template got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderTemplateId": identity_proofing_provider_template_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -8001,7 +8666,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_identity_propagation_trust.py.html>`__ to see an example of how to use delete_identity_propagation_trust API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_identity_propagation_trust.py.html>`__ to see an example of how to use delete_identity_propagation_trust API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityPropagationTrustId']
@@ -8129,7 +8794,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -8257,7 +8922,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_api_key.py.html>`__ to see an example of how to use delete_my_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_api_key.py.html>`__ to see an example of how to use delete_my_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myApiKeyId']
@@ -8385,7 +9050,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_auth_token.py.html>`__ to see an example of how to use delete_my_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_auth_token.py.html>`__ to see an example of how to use delete_my_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myAuthTokenId']
@@ -8513,7 +9178,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_customer_secret_key.py.html>`__ to see an example of how to use delete_my_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_customer_secret_key.py.html>`__ to see an example of how to use delete_my_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCustomerSecretKeyId']
@@ -8641,7 +9306,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_device.py.html>`__ to see an example of how to use delete_my_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_device.py.html>`__ to see an example of how to use delete_my_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myDeviceId']
@@ -8769,7 +9434,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_o_auth2_client_credential.py.html>`__ to see an example of how to use delete_my_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_o_auth2_client_credential.py.html>`__ to see an example of how to use delete_my_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myOAuth2ClientCredentialId']
@@ -8897,7 +9562,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_smtp_credential.py.html>`__ to see an example of how to use delete_my_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_smtp_credential.py.html>`__ to see an example of how to use delete_my_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySmtpCredentialId']
@@ -9025,7 +9690,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_support_account.py.html>`__ to see an example of how to use delete_my_support_account API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_support_account.py.html>`__ to see an example of how to use delete_my_support_account API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySupportAccountId']
@@ -9153,7 +9818,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_trusted_user_agent.py.html>`__ to see an example of how to use delete_my_trusted_user_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_trusted_user_agent.py.html>`__ to see an example of how to use delete_my_trusted_user_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myTrustedUserAgentId']
@@ -9281,7 +9946,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_user_db_credential.py.html>`__ to see an example of how to use delete_my_user_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_my_user_db_credential.py.html>`__ to see an example of how to use delete_my_user_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myUserDbCredentialId']
@@ -9409,7 +10074,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_network_perimeter.py.html>`__ to see an example of how to use delete_network_perimeter API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_network_perimeter.py.html>`__ to see an example of how to use delete_network_perimeter API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkPerimeterId']
@@ -9537,7 +10202,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_o_auth2_client_credential.py.html>`__ to see an example of how to use delete_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_o_auth2_client_credential.py.html>`__ to see an example of how to use delete_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuth2ClientCredentialId']
@@ -9665,7 +10330,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_o_auth_client_certificate.py.html>`__ to see an example of how to use delete_o_auth_client_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_o_auth_client_certificate.py.html>`__ to see an example of how to use delete_o_auth_client_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuthClientCertificateId']
@@ -9793,7 +10458,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_o_auth_partner_certificate.py.html>`__ to see an example of how to use delete_o_auth_partner_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_o_auth_partner_certificate.py.html>`__ to see an example of how to use delete_o_auth_partner_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuthPartnerCertificateId']
@@ -9921,7 +10586,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_password_policy.py.html>`__ to see an example of how to use delete_password_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_password_policy.py.html>`__ to see an example of how to use delete_password_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
@@ -10049,7 +10714,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -10177,7 +10842,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_rule.py.html>`__ to see an example of how to use delete_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_rule.py.html>`__ to see an example of how to use delete_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['ruleId']
@@ -10305,7 +10970,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_security_question.py.html>`__ to see an example of how to use delete_security_question API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_security_question.py.html>`__ to see an example of how to use delete_security_question API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityQuestionId']
@@ -10433,7 +11098,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_self_registration_profile.py.html>`__ to see an example of how to use delete_self_registration_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_self_registration_profile.py.html>`__ to see an example of how to use delete_self_registration_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['selfRegistrationProfileId']
@@ -10561,7 +11226,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['smtpCredentialId']
@@ -10689,7 +11354,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_social_identity_provider.py.html>`__ to see an example of how to use delete_social_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_social_identity_provider.py.html>`__ to see an example of how to use delete_social_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['socialIdentityProviderId']
@@ -10817,7 +11482,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_user.py.html>`__ to see an example of how to use delete_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_user.py.html>`__ to see an example of how to use delete_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -10945,7 +11610,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_user_db_credential.py.html>`__ to see an example of how to use delete_user_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_user_db_credential.py.html>`__ to see an example of how to use delete_user_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userDbCredentialId']
@@ -11075,7 +11740,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_account_mgmt_info.py.html>`__ to see an example of how to use get_account_mgmt_info API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_account_mgmt_info.py.html>`__ to see an example of how to use get_account_mgmt_info API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['accountMgmtInfoId']
@@ -11215,7 +11880,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_account_recovery_setting.py.html>`__ to see an example of how to use get_account_recovery_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_account_recovery_setting.py.html>`__ to see an example of how to use get_account_recovery_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['accountRecoverySettingId']
@@ -11355,7 +12020,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_api_key.py.html>`__ to see an example of how to use get_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_api_key.py.html>`__ to see an example of how to use get_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiKeyId']
@@ -11495,7 +12160,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_app.py.html>`__ to see an example of how to use get_app API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_app.py.html>`__ to see an example of how to use get_app API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appId']
@@ -11635,7 +12300,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_app_role.py.html>`__ to see an example of how to use get_app_role API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_app_role.py.html>`__ to see an example of how to use get_app_role API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appRoleId']
@@ -11775,7 +12440,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_approval_workflow.py.html>`__ to see an example of how to use get_approval_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_approval_workflow.py.html>`__ to see an example of how to use get_approval_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowId']
@@ -11915,7 +12580,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_approval_workflow_assignment.py.html>`__ to see an example of how to use get_approval_workflow_assignment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_approval_workflow_assignment.py.html>`__ to see an example of how to use get_approval_workflow_assignment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowAssignmentId']
@@ -12055,7 +12720,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_approval_workflow_step.py.html>`__ to see an example of how to use get_approval_workflow_step API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_approval_workflow_step.py.html>`__ to see an example of how to use get_approval_workflow_step API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowStepId']
@@ -12195,7 +12860,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_auth_token.py.html>`__ to see an example of how to use get_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_auth_token.py.html>`__ to see an example of how to use get_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authTokenId']
@@ -12335,7 +13000,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_authentication_factor_setting.py.html>`__ to see an example of how to use get_authentication_factor_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_authentication_factor_setting.py.html>`__ to see an example of how to use get_authentication_factor_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authenticationFactorSettingId']
@@ -12475,7 +13140,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_branding_setting.py.html>`__ to see an example of how to use get_branding_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_branding_setting.py.html>`__ to see an example of how to use get_branding_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['brandingSettingId']
@@ -12615,7 +13280,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_cloud_gate.py.html>`__ to see an example of how to use get_cloud_gate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_cloud_gate.py.html>`__ to see an example of how to use get_cloud_gate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateId']
@@ -12755,7 +13420,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_cloud_gate_mapping.py.html>`__ to see an example of how to use get_cloud_gate_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_cloud_gate_mapping.py.html>`__ to see an example of how to use get_cloud_gate_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateMappingId']
@@ -12895,7 +13560,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_cloud_gate_server.py.html>`__ to see an example of how to use get_cloud_gate_server API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_cloud_gate_server.py.html>`__ to see an example of how to use get_cloud_gate_server API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateServerId']
@@ -13035,7 +13700,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_condition.py.html>`__ to see an example of how to use get_condition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_condition.py.html>`__ to see an example of how to use get_condition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['conditionId']
@@ -13175,7 +13840,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_customer_secret_key.py.html>`__ to see an example of how to use get_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_customer_secret_key.py.html>`__ to see an example of how to use get_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customerSecretKeyId']
@@ -13315,7 +13980,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_dynamic_resource_group.py.html>`__ to see an example of how to use get_dynamic_resource_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_dynamic_resource_group.py.html>`__ to see an example of how to use get_dynamic_resource_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
@@ -13455,7 +14120,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_grant.py.html>`__ to see an example of how to use get_grant API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_grant.py.html>`__ to see an example of how to use get_grant API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['grantId']
@@ -13595,7 +14260,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_group.py.html>`__ to see an example of how to use get_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_group.py.html>`__ to see an example of how to use get_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -13690,6 +14355,286 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_identity_proofing_provider(self, identity_proofing_provider_id, **kwargs):
+        """
+        Get an IdentityProofingProvider.
+
+
+        :param str identity_proofing_provider_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProvider`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_proofing_provider.py.html>`__ to see an example of how to use get_identity_proofing_provider API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderId']
+        resource_path = "/admin/v1/IdentityProofingProviders/{identityProofingProviderId}"
+        method = "GET"
+        operation_name = "get_identity_proofing_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/GetIdentityProofingProvider"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_identity_proofing_provider got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderId": identity_proofing_provider_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_identity_proofing_provider_template(self, identity_proofing_provider_template_id, **kwargs):
+        """
+        Get Identity Proofing Provider Configuration template.
+
+
+        :param str identity_proofing_provider_template_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviderTemplate`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_proofing_provider_template.py.html>`__ to see an example of how to use get_identity_proofing_provider_template API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderTemplateId']
+        resource_path = "/admin/v1/IdentityProofingProviderTemplates/{identityProofingProviderTemplateId}"
+        method = "GET"
+        operation_name = "get_identity_proofing_provider_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/GetIdentityProofingProviderTemplate"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_identity_proofing_provider_template got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderTemplateId": identity_proofing_provider_template_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_identity_propagation_trust(self, identity_propagation_trust_id, **kwargs):
         """
         Get an existing Identity Propagation Trust configuration.
@@ -13735,7 +14680,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_propagation_trust.py.html>`__ to see an example of how to use get_identity_propagation_trust API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_propagation_trust.py.html>`__ to see an example of how to use get_identity_propagation_trust API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityPropagationTrustId']
@@ -13875,7 +14820,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -14015,7 +14960,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_setting.py.html>`__ to see an example of how to use get_identity_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_setting.py.html>`__ to see an example of how to use get_identity_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identitySettingId']
@@ -14155,7 +15100,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_kmsi_setting.py.html>`__ to see an example of how to use get_kmsi_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_kmsi_setting.py.html>`__ to see an example of how to use get_kmsi_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['kmsiSettingId']
@@ -14295,7 +15240,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_mapped_attribute.py.html>`__ to see an example of how to use get_mapped_attribute API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_mapped_attribute.py.html>`__ to see an example of how to use get_mapped_attribute API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mappedAttributeId']
@@ -14432,7 +15377,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_me.py.html>`__ to see an example of how to use get_me API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_me.py.html>`__ to see an example of how to use get_me API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -14552,7 +15497,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_api_key.py.html>`__ to see an example of how to use get_my_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_api_key.py.html>`__ to see an example of how to use get_my_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myApiKeyId']
@@ -14666,7 +15611,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_auth_token.py.html>`__ to see an example of how to use get_my_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_auth_token.py.html>`__ to see an example of how to use get_my_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myAuthTokenId']
@@ -14780,7 +15725,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_completed_approval.py.html>`__ to see an example of how to use get_my_completed_approval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_completed_approval.py.html>`__ to see an example of how to use get_my_completed_approval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCompletedApprovalId']
@@ -14894,7 +15839,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_customer_secret_key.py.html>`__ to see an example of how to use get_my_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_customer_secret_key.py.html>`__ to see an example of how to use get_my_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCustomerSecretKeyId']
@@ -15016,7 +15961,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_device.py.html>`__ to see an example of how to use get_my_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_device.py.html>`__ to see an example of how to use get_my_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myDeviceId']
@@ -15148,7 +16093,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_o_auth2_client_credential.py.html>`__ to see an example of how to use get_my_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_o_auth2_client_credential.py.html>`__ to see an example of how to use get_my_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myOAuth2ClientCredentialId']
@@ -15262,7 +16207,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_pending_approval.py.html>`__ to see an example of how to use get_my_pending_approval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_pending_approval.py.html>`__ to see an example of how to use get_my_pending_approval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myPendingApprovalId']
@@ -15384,7 +16329,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_request.py.html>`__ to see an example of how to use get_my_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_request.py.html>`__ to see an example of how to use get_my_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myRequestId']
@@ -15516,7 +16461,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_smtp_credential.py.html>`__ to see an example of how to use get_my_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_smtp_credential.py.html>`__ to see an example of how to use get_my_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySmtpCredentialId']
@@ -15630,7 +16575,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_support_account.py.html>`__ to see an example of how to use get_my_support_account API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_support_account.py.html>`__ to see an example of how to use get_my_support_account API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySupportAccountId']
@@ -15752,7 +16697,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_trusted_user_agent.py.html>`__ to see an example of how to use get_my_trusted_user_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_trusted_user_agent.py.html>`__ to see an example of how to use get_my_trusted_user_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myTrustedUserAgentId']
@@ -15884,7 +16829,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_user_db_credential.py.html>`__ to see an example of how to use get_my_user_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_my_user_db_credential.py.html>`__ to see an example of how to use get_my_user_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myUserDbCredentialId']
@@ -16006,7 +16951,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_network_perimeter.py.html>`__ to see an example of how to use get_network_perimeter API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_network_perimeter.py.html>`__ to see an example of how to use get_network_perimeter API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkPerimeterId']
@@ -16146,7 +17091,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_notification_setting.py.html>`__ to see an example of how to use get_notification_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_notification_setting.py.html>`__ to see an example of how to use get_notification_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notificationSettingId']
@@ -16286,7 +17231,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_o_auth2_client_credential.py.html>`__ to see an example of how to use get_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_o_auth2_client_credential.py.html>`__ to see an example of how to use get_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuth2ClientCredentialId']
@@ -16418,7 +17363,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_o_auth_client_certificate.py.html>`__ to see an example of how to use get_o_auth_client_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_o_auth_client_certificate.py.html>`__ to see an example of how to use get_o_auth_client_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuthClientCertificateId']
@@ -16532,7 +17477,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_o_auth_partner_certificate.py.html>`__ to see an example of how to use get_o_auth_partner_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_o_auth_partner_certificate.py.html>`__ to see an example of how to use get_o_auth_partner_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuthPartnerCertificateId']
@@ -16654,7 +17599,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_oci_console_sign_on_policy_consent.py.html>`__ to see an example of how to use get_oci_console_sign_on_policy_consent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_oci_console_sign_on_policy_consent.py.html>`__ to see an example of how to use get_oci_console_sign_on_policy_consent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['ociConsoleSignOnPolicyConsentId']
@@ -16794,7 +17739,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_password_policy.py.html>`__ to see an example of how to use get_password_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_password_policy.py.html>`__ to see an example of how to use get_password_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
@@ -16934,7 +17879,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_policy.py.html>`__ to see an example of how to use get_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_policy.py.html>`__ to see an example of how to use get_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -17074,7 +18019,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_rule.py.html>`__ to see an example of how to use get_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_rule.py.html>`__ to see an example of how to use get_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['ruleId']
@@ -17206,7 +18151,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_schema.py.html>`__ to see an example of how to use get_schema API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_schema.py.html>`__ to see an example of how to use get_schema API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['schemaId']
@@ -17328,7 +18273,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_security_question.py.html>`__ to see an example of how to use get_security_question API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_security_question.py.html>`__ to see an example of how to use get_security_question API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityQuestionId']
@@ -17468,7 +18413,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_security_question_setting.py.html>`__ to see an example of how to use get_security_question_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_security_question_setting.py.html>`__ to see an example of how to use get_security_question_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityQuestionSettingId']
@@ -17608,7 +18553,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_self_registration_profile.py.html>`__ to see an example of how to use get_self_registration_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_self_registration_profile.py.html>`__ to see an example of how to use get_self_registration_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['selfRegistrationProfileId']
@@ -17748,7 +18693,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_setting.py.html>`__ to see an example of how to use get_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_setting.py.html>`__ to see an example of how to use get_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['settingId']
@@ -17888,7 +18833,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_smtp_credential.py.html>`__ to see an example of how to use get_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_smtp_credential.py.html>`__ to see an example of how to use get_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['smtpCredentialId']
@@ -18020,7 +18965,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_social_identity_provider.py.html>`__ to see an example of how to use get_social_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_social_identity_provider.py.html>`__ to see an example of how to use get_social_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['socialIdentityProviderId']
@@ -18142,7 +19087,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user.py.html>`__ to see an example of how to use get_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user.py.html>`__ to see an example of how to use get_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -18282,7 +19227,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user_attributes_setting.py.html>`__ to see an example of how to use get_user_attributes_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user_attributes_setting.py.html>`__ to see an example of how to use get_user_attributes_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAttributesSettingId']
@@ -18422,7 +19367,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user_db_credential.py.html>`__ to see an example of how to use get_user_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user_db_credential.py.html>`__ to see an example of how to use get_user_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userDbCredentialId']
@@ -18584,7 +19529,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_account_mgmt_infos.py.html>`__ to see an example of how to use list_account_mgmt_infos API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_account_mgmt_infos.py.html>`__ to see an example of how to use list_account_mgmt_infos API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -18736,7 +19681,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_account_recovery_settings.py.html>`__ to see an example of how to use list_account_recovery_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_account_recovery_settings.py.html>`__ to see an example of how to use list_account_recovery_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -18890,7 +19835,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -19061,7 +20006,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_app_roles.py.html>`__ to see an example of how to use list_app_roles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_app_roles.py.html>`__ to see an example of how to use list_app_roles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -19232,7 +20177,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_approval_workflow_assignments.py.html>`__ to see an example of how to use list_approval_workflow_assignments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_approval_workflow_assignments.py.html>`__ to see an example of how to use list_approval_workflow_assignments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -19403,7 +20348,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_approval_workflow_steps.py.html>`__ to see an example of how to use list_approval_workflow_steps API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_approval_workflow_steps.py.html>`__ to see an example of how to use list_approval_workflow_steps API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -19574,7 +20519,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_approval_workflows.py.html>`__ to see an example of how to use list_approval_workflows API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_approval_workflows.py.html>`__ to see an example of how to use list_approval_workflows API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -19745,7 +20690,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_apps.py.html>`__ to see an example of how to use list_apps API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_apps.py.html>`__ to see an example of how to use list_apps API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -19916,7 +20861,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -20068,7 +21013,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_authentication_factor_settings.py.html>`__ to see an example of how to use list_authentication_factor_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_authentication_factor_settings.py.html>`__ to see an example of how to use list_authentication_factor_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -20203,7 +21148,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_branding_settings.py.html>`__ to see an example of how to use list_branding_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_branding_settings.py.html>`__ to see an example of how to use list_branding_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -20357,7 +21302,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_cloud_gate_mappings.py.html>`__ to see an example of how to use list_cloud_gate_mappings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_cloud_gate_mappings.py.html>`__ to see an example of how to use list_cloud_gate_mappings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -20528,7 +21473,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_cloud_gate_servers.py.html>`__ to see an example of how to use list_cloud_gate_servers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_cloud_gate_servers.py.html>`__ to see an example of how to use list_cloud_gate_servers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -20699,7 +21644,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_cloud_gates.py.html>`__ to see an example of how to use list_cloud_gates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_cloud_gates.py.html>`__ to see an example of how to use list_cloud_gates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -20870,7 +21815,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_conditions.py.html>`__ to see an example of how to use list_conditions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_conditions.py.html>`__ to see an example of how to use list_conditions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -21041,7 +21986,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -21212,7 +22157,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_dynamic_resource_groups.py.html>`__ to see an example of how to use list_dynamic_resource_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_dynamic_resource_groups.py.html>`__ to see an example of how to use list_dynamic_resource_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -21383,7 +22328,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_grants.py.html>`__ to see an example of how to use list_grants API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_grants.py.html>`__ to see an example of how to use list_grants API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -21554,7 +22499,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_groups.py.html>`__ to see an example of how to use list_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_groups.py.html>`__ to see an example of how to use list_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -21658,6 +22603,348 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_identity_proofing_provider_templates(self, **kwargs):
+        """
+        Search Identity Proofing Provider Configuration templates..
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviderTemplates`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_proofing_provider_templates.py.html>`__ to see an example of how to use list_identity_proofing_provider_templates API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentityProofingProviderTemplates"
+        method = "GET"
+        operation_name = "list_identity_proofing_provider_templates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/ListIdentityProofingProviderTemplates"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_identity_proofing_provider_templates got unknown kwargs: {extra_kwargs!r}")
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProviderTemplates",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProviderTemplates",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_identity_proofing_providers(self, **kwargs):
+        """
+        Search IdentityProofingProvider.
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviders`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_proofing_providers.py.html>`__ to see an example of how to use list_identity_proofing_providers API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentityProofingProviders"
+        method = "GET"
+        operation_name = "list_identity_proofing_providers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/ListIdentityProofingProviders"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_identity_proofing_providers got unknown kwargs: {extra_kwargs!r}")
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProviders",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentityProofingProviders",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_identity_propagation_trusts(self, **kwargs):
         """
         List the Identity Propagation Trust configurations.
@@ -21725,7 +23012,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_propagation_trusts.py.html>`__ to see an example of how to use list_identity_propagation_trusts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_propagation_trusts.py.html>`__ to see an example of how to use list_identity_propagation_trusts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -21896,7 +23183,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22048,7 +23335,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_settings.py.html>`__ to see an example of how to use list_identity_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_settings.py.html>`__ to see an example of how to use list_identity_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22183,7 +23470,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_kmsi_settings.py.html>`__ to see an example of how to use list_kmsi_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_kmsi_settings.py.html>`__ to see an example of how to use list_kmsi_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22337,7 +23624,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_mapped_attributes.py.html>`__ to see an example of how to use list_mapped_attributes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_mapped_attributes.py.html>`__ to see an example of how to use list_mapped_attributes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22500,7 +23787,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_api_keys.py.html>`__ to see an example of how to use list_my_api_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_api_keys.py.html>`__ to see an example of how to use list_my_api_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22651,7 +23938,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_apps.py.html>`__ to see an example of how to use list_my_apps API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_apps.py.html>`__ to see an example of how to use list_my_apps API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22802,7 +24089,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_auth_tokens.py.html>`__ to see an example of how to use list_my_auth_tokens API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_auth_tokens.py.html>`__ to see an example of how to use list_my_auth_tokens API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -22953,7 +24240,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_completed_approvals.py.html>`__ to see an example of how to use list_my_completed_approvals API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_completed_approvals.py.html>`__ to see an example of how to use list_my_completed_approvals API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -23104,7 +24391,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_customer_secret_keys.py.html>`__ to see an example of how to use list_my_customer_secret_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_customer_secret_keys.py.html>`__ to see an example of how to use list_my_customer_secret_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -23263,7 +24550,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_devices.py.html>`__ to see an example of how to use list_my_devices API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_devices.py.html>`__ to see an example of how to use list_my_devices API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -23434,7 +24721,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_groups.py.html>`__ to see an example of how to use list_my_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_groups.py.html>`__ to see an example of how to use list_my_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -23597,7 +24884,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_o_auth2_client_credentials.py.html>`__ to see an example of how to use list_my_o_auth2_client_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_o_auth2_client_credentials.py.html>`__ to see an example of how to use list_my_o_auth2_client_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -23748,7 +25035,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_pending_approvals.py.html>`__ to see an example of how to use list_my_pending_approvals API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_pending_approvals.py.html>`__ to see an example of how to use list_my_pending_approvals API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -23899,7 +25186,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_requestable_groups.py.html>`__ to see an example of how to use list_my_requestable_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_requestable_groups.py.html>`__ to see an example of how to use list_my_requestable_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -24058,7 +25345,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_requests.py.html>`__ to see an example of how to use list_my_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_requests.py.html>`__ to see an example of how to use list_my_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -24221,7 +25508,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_smtp_credentials.py.html>`__ to see an example of how to use list_my_smtp_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_smtp_credentials.py.html>`__ to see an example of how to use list_my_smtp_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -24372,7 +25659,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_support_accounts.py.html>`__ to see an example of how to use list_my_support_accounts API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_support_accounts.py.html>`__ to see an example of how to use list_my_support_accounts API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -24531,7 +25818,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_trusted_user_agents.py.html>`__ to see an example of how to use list_my_trusted_user_agents API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_trusted_user_agents.py.html>`__ to see an example of how to use list_my_trusted_user_agents API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -24694,7 +25981,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_user_db_credentials.py.html>`__ to see an example of how to use list_my_user_db_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_user_db_credentials.py.html>`__ to see an example of how to use list_my_user_db_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -24853,7 +26140,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_network_perimeters.py.html>`__ to see an example of how to use list_network_perimeters API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_network_perimeters.py.html>`__ to see an example of how to use list_network_perimeters API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25005,7 +26292,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_notification_settings.py.html>`__ to see an example of how to use list_notification_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_notification_settings.py.html>`__ to see an example of how to use list_notification_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25159,7 +26446,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_o_auth2_client_credentials.py.html>`__ to see an example of how to use list_o_auth2_client_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_o_auth2_client_credentials.py.html>`__ to see an example of how to use list_o_auth2_client_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25322,7 +26609,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_o_auth_client_certificates.py.html>`__ to see an example of how to use list_o_auth_client_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_o_auth_client_certificates.py.html>`__ to see an example of how to use list_o_auth_client_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25473,7 +26760,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_o_auth_partner_certificates.py.html>`__ to see an example of how to use list_o_auth_partner_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_o_auth_partner_certificates.py.html>`__ to see an example of how to use list_o_auth_partner_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25632,7 +26919,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_oci_console_sign_on_policy_consents.py.html>`__ to see an example of how to use list_oci_console_sign_on_policy_consents API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_oci_console_sign_on_policy_consents.py.html>`__ to see an example of how to use list_oci_console_sign_on_policy_consents API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25803,7 +27090,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_password_policies.py.html>`__ to see an example of how to use list_password_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_password_policies.py.html>`__ to see an example of how to use list_password_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -25974,7 +27261,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_policies.py.html>`__ to see an example of how to use list_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -26145,7 +27432,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_resource_type_schema_attributes.py.html>`__ to see an example of how to use list_resource_type_schema_attributes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_resource_type_schema_attributes.py.html>`__ to see an example of how to use list_resource_type_schema_attributes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -26316,7 +27603,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_rules.py.html>`__ to see an example of how to use list_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_rules.py.html>`__ to see an example of how to use list_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -26476,7 +27763,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -26614,7 +27901,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_security_question_settings.py.html>`__ to see an example of how to use list_security_question_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_security_question_settings.py.html>`__ to see an example of how to use list_security_question_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -26768,7 +28055,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_security_questions.py.html>`__ to see an example of how to use list_security_questions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_security_questions.py.html>`__ to see an example of how to use list_security_questions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -26939,7 +28226,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_self_registration_profiles.py.html>`__ to see an example of how to use list_self_registration_profiles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_self_registration_profiles.py.html>`__ to see an example of how to use list_self_registration_profiles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -27091,7 +28378,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_settings.py.html>`__ to see an example of how to use list_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_settings.py.html>`__ to see an example of how to use list_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -27245,7 +28532,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -27408,7 +28695,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_social_identity_providers.py.html>`__ to see an example of how to use list_social_identity_providers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_social_identity_providers.py.html>`__ to see an example of how to use list_social_identity_providers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -27548,7 +28835,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_user_attributes_settings.py.html>`__ to see an example of how to use list_user_attributes_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_user_attributes_settings.py.html>`__ to see an example of how to use list_user_attributes_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -27702,7 +28989,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_user_db_credentials.py.html>`__ to see an example of how to use list_user_db_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_user_db_credentials.py.html>`__ to see an example of how to use list_user_db_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -27873,7 +29160,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_users.py.html>`__ to see an example of how to use list_users API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_users.py.html>`__ to see an example of how to use list_users API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -28040,7 +29327,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_account_recovery_setting.py.html>`__ to see an example of how to use patch_account_recovery_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_account_recovery_setting.py.html>`__ to see an example of how to use patch_account_recovery_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['accountRecoverySettingId']
@@ -28203,7 +29490,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_api_key.py.html>`__ to see an example of how to use patch_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_api_key.py.html>`__ to see an example of how to use patch_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiKeyId']
@@ -28366,7 +29653,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_app.py.html>`__ to see an example of how to use patch_app API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_app.py.html>`__ to see an example of how to use patch_app API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appId']
@@ -28529,7 +29816,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_app_role.py.html>`__ to see an example of how to use patch_app_role API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_app_role.py.html>`__ to see an example of how to use patch_app_role API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appRoleId']
@@ -28692,7 +29979,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_approval_workflow.py.html>`__ to see an example of how to use patch_approval_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_approval_workflow.py.html>`__ to see an example of how to use patch_approval_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowId']
@@ -28855,7 +30142,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_approval_workflow_step.py.html>`__ to see an example of how to use patch_approval_workflow_step API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_approval_workflow_step.py.html>`__ to see an example of how to use patch_approval_workflow_step API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowStepId']
@@ -29018,7 +30305,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_auth_token.py.html>`__ to see an example of how to use patch_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_auth_token.py.html>`__ to see an example of how to use patch_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authTokenId']
@@ -29181,7 +30468,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_cloud_gate.py.html>`__ to see an example of how to use patch_cloud_gate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_cloud_gate.py.html>`__ to see an example of how to use patch_cloud_gate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateId']
@@ -29344,7 +30631,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_cloud_gate_mapping.py.html>`__ to see an example of how to use patch_cloud_gate_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_cloud_gate_mapping.py.html>`__ to see an example of how to use patch_cloud_gate_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateMappingId']
@@ -29507,7 +30794,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_cloud_gate_server.py.html>`__ to see an example of how to use patch_cloud_gate_server API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_cloud_gate_server.py.html>`__ to see an example of how to use patch_cloud_gate_server API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateServerId']
@@ -29672,7 +30959,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_condition.py.html>`__ to see an example of how to use patch_condition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_condition.py.html>`__ to see an example of how to use patch_condition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['conditionId']
@@ -29835,7 +31122,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_customer_secret_key.py.html>`__ to see an example of how to use patch_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_customer_secret_key.py.html>`__ to see an example of how to use patch_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customerSecretKeyId']
@@ -29998,7 +31285,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_dynamic_resource_group.py.html>`__ to see an example of how to use patch_dynamic_resource_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_dynamic_resource_group.py.html>`__ to see an example of how to use patch_dynamic_resource_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
@@ -30161,7 +31448,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_grant.py.html>`__ to see an example of how to use patch_grant API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_grant.py.html>`__ to see an example of how to use patch_grant API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['grantId']
@@ -30324,7 +31611,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_group.py.html>`__ to see an example of how to use patch_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_group.py.html>`__ to see an example of how to use patch_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -30424,6 +31711,336 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_identity_proofing_provider(self, identity_proofing_provider_id, **kwargs):
+        """
+        Update an IdentityProofingProvider.
+
+
+        :param str identity_proofing_provider_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the IdentityProofingProvider with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProvider`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_proofing_provider.py.html>`__ to see an example of how to use patch_identity_proofing_provider API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderId']
+        resource_path = "/admin/v1/IdentityProofingProviders/{identityProofingProviderId}"
+        method = "PATCH"
+        operation_name = "patch_identity_proofing_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/PatchIdentityProofingProvider"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"patch_identity_proofing_provider got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderId": identity_proofing_provider_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def patch_identity_proofing_provider_template(self, identity_proofing_provider_template_id, **kwargs):
+        """
+        Update an Identity Proofing Provider Configuration template.
+
+
+        :param str identity_proofing_provider_template_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the IdentityProofingProviderTemplate with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviderTemplate`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_proofing_provider_template.py.html>`__ to see an example of how to use patch_identity_proofing_provider_template API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderTemplateId']
+        resource_path = "/admin/v1/IdentityProofingProviderTemplates/{identityProofingProviderTemplateId}"
+        method = "PATCH"
+        operation_name = "patch_identity_proofing_provider_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/PatchIdentityProofingProviderTemplate"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"patch_identity_proofing_provider_template got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderTemplateId": identity_proofing_provider_template_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_identity_propagation_trust(self, identity_propagation_trust_id, **kwargs):
         """
         Update an existing Identity Propagation Trust configuration.
@@ -30489,7 +32106,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_propagation_trust.py.html>`__ to see an example of how to use patch_identity_propagation_trust API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_propagation_trust.py.html>`__ to see an example of how to use patch_identity_propagation_trust API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityPropagationTrustId']
@@ -30652,7 +32269,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_provider.py.html>`__ to see an example of how to use patch_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_provider.py.html>`__ to see an example of how to use patch_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -30815,7 +32432,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_setting.py.html>`__ to see an example of how to use patch_identity_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_setting.py.html>`__ to see an example of how to use patch_identity_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identitySettingId']
@@ -30978,7 +32595,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_kmsi_setting.py.html>`__ to see an example of how to use patch_kmsi_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_kmsi_setting.py.html>`__ to see an example of how to use patch_kmsi_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['kmsiSettingId']
@@ -31143,7 +32760,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_mapped_attribute.py.html>`__ to see an example of how to use patch_mapped_attribute API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_mapped_attribute.py.html>`__ to see an example of how to use patch_mapped_attribute API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mappedAttributeId']
@@ -31303,7 +32920,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_me.py.html>`__ to see an example of how to use patch_me API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_me.py.html>`__ to see an example of how to use patch_me API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -31446,7 +33063,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_api_key.py.html>`__ to see an example of how to use patch_my_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_api_key.py.html>`__ to see an example of how to use patch_my_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myApiKeyId']
@@ -31583,7 +33200,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_auth_token.py.html>`__ to see an example of how to use patch_my_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_auth_token.py.html>`__ to see an example of how to use patch_my_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myAuthTokenId']
@@ -31720,7 +33337,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_customer_secret_key.py.html>`__ to see an example of how to use patch_my_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_customer_secret_key.py.html>`__ to see an example of how to use patch_my_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCustomerSecretKeyId']
@@ -31865,7 +33482,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_device.py.html>`__ to see an example of how to use patch_my_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_device.py.html>`__ to see an example of how to use patch_my_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myDeviceId']
@@ -32020,7 +33637,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_o_auth2_client_credential.py.html>`__ to see an example of how to use patch_my_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_o_auth2_client_credential.py.html>`__ to see an example of how to use patch_my_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myOAuth2ClientCredentialId']
@@ -32157,7 +33774,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_pending_approval.py.html>`__ to see an example of how to use patch_my_pending_approval API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_pending_approval.py.html>`__ to see an example of how to use patch_my_pending_approval API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myPendingApprovalId']
@@ -32302,7 +33919,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_request.py.html>`__ to see an example of how to use patch_my_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_request.py.html>`__ to see an example of how to use patch_my_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myRequestId']
@@ -32457,7 +34074,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_smtp_credential.py.html>`__ to see an example of how to use patch_my_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_my_smtp_credential.py.html>`__ to see an example of how to use patch_my_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySmtpCredentialId']
@@ -32602,7 +34219,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_network_perimeter.py.html>`__ to see an example of how to use patch_network_perimeter API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_network_perimeter.py.html>`__ to see an example of how to use patch_network_perimeter API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkPerimeterId']
@@ -32765,7 +34382,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_o_auth2_client_credential.py.html>`__ to see an example of how to use patch_o_auth2_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_o_auth2_client_credential.py.html>`__ to see an example of how to use patch_o_auth2_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuth2ClientCredentialId']
@@ -32928,7 +34545,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_password_policy.py.html>`__ to see an example of how to use patch_password_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_password_policy.py.html>`__ to see an example of how to use patch_password_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
@@ -33093,7 +34710,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_policy.py.html>`__ to see an example of how to use patch_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_policy.py.html>`__ to see an example of how to use patch_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -33258,7 +34875,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_rule.py.html>`__ to see an example of how to use patch_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_rule.py.html>`__ to see an example of how to use patch_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['ruleId']
@@ -33413,7 +35030,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_schema.py.html>`__ to see an example of how to use patch_schema API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_schema.py.html>`__ to see an example of how to use patch_schema API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['schemaId']
@@ -33558,7 +35175,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_security_question.py.html>`__ to see an example of how to use patch_security_question API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_security_question.py.html>`__ to see an example of how to use patch_security_question API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityQuestionId']
@@ -33721,7 +35338,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_security_question_setting.py.html>`__ to see an example of how to use patch_security_question_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_security_question_setting.py.html>`__ to see an example of how to use patch_security_question_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityQuestionSettingId']
@@ -33884,7 +35501,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_self_registration_profile.py.html>`__ to see an example of how to use patch_self_registration_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_self_registration_profile.py.html>`__ to see an example of how to use patch_self_registration_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['selfRegistrationProfileId']
@@ -34047,7 +35664,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_setting.py.html>`__ to see an example of how to use patch_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_setting.py.html>`__ to see an example of how to use patch_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['settingId']
@@ -34210,7 +35827,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_smtp_credential.py.html>`__ to see an example of how to use patch_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_smtp_credential.py.html>`__ to see an example of how to use patch_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['smtpCredentialId']
@@ -34367,7 +35984,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_social_identity_provider.py.html>`__ to see an example of how to use patch_social_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_social_identity_provider.py.html>`__ to see an example of how to use patch_social_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['socialIdentityProviderId']
@@ -34512,7 +36129,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_user.py.html>`__ to see an example of how to use patch_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_user.py.html>`__ to see an example of how to use patch_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -34675,7 +36292,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_user_attributes_setting.py.html>`__ to see an example of how to use patch_user_attributes_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_user_attributes_setting.py.html>`__ to see an example of how to use patch_user_attributes_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userAttributesSettingId']
@@ -34838,7 +36455,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_account_recovery_setting.py.html>`__ to see an example of how to use put_account_recovery_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_account_recovery_setting.py.html>`__ to see an example of how to use put_account_recovery_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['accountRecoverySettingId']
@@ -35001,7 +36618,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_app.py.html>`__ to see an example of how to use put_app API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_app.py.html>`__ to see an example of how to use put_app API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appId']
@@ -35164,7 +36781,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_app_status_changer.py.html>`__ to see an example of how to use put_app_status_changer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_app_status_changer.py.html>`__ to see an example of how to use put_app_status_changer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['appStatusChangerId']
@@ -35327,7 +36944,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_approval_workflow.py.html>`__ to see an example of how to use put_approval_workflow API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_approval_workflow.py.html>`__ to see an example of how to use put_approval_workflow API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['approvalWorkflowId']
@@ -35490,7 +37107,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_authentication_factor_setting.py.html>`__ to see an example of how to use put_authentication_factor_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_authentication_factor_setting.py.html>`__ to see an example of how to use put_authentication_factor_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authenticationFactorSettingId']
@@ -35653,7 +37270,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_cloud_gate.py.html>`__ to see an example of how to use put_cloud_gate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_cloud_gate.py.html>`__ to see an example of how to use put_cloud_gate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateId']
@@ -35816,7 +37433,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_cloud_gate_mapping.py.html>`__ to see an example of how to use put_cloud_gate_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_cloud_gate_mapping.py.html>`__ to see an example of how to use put_cloud_gate_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateMappingId']
@@ -35979,7 +37596,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_cloud_gate_server.py.html>`__ to see an example of how to use put_cloud_gate_server API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_cloud_gate_server.py.html>`__ to see an example of how to use put_cloud_gate_server API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['cloudGateServerId']
@@ -36144,7 +37761,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_condition.py.html>`__ to see an example of how to use put_condition API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_condition.py.html>`__ to see an example of how to use put_condition API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['conditionId']
@@ -36307,7 +37924,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_dynamic_resource_group.py.html>`__ to see an example of how to use put_dynamic_resource_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_dynamic_resource_group.py.html>`__ to see an example of how to use put_dynamic_resource_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
@@ -36470,7 +38087,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_group.py.html>`__ to see an example of how to use put_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_group.py.html>`__ to see an example of how to use put_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -36570,6 +38187,336 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def put_identity_proofing_provider(self, identity_proofing_provider_id, **kwargs):
+        """
+        Replace an IdentityProofingProvider.
+
+
+        :param str identity_proofing_provider_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.IdentityProofingProvider identity_proofing_provider: (optional)
+            Replace the current instance of IdentityProofingProvider with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProvider`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_proofing_provider.py.html>`__ to see an example of how to use put_identity_proofing_provider API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderId']
+        resource_path = "/admin/v1/IdentityProofingProviders/{identityProofingProviderId}"
+        method = "PUT"
+        operation_name = "put_identity_proofing_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/PutIdentityProofingProvider"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "identity_proofing_provider",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"put_identity_proofing_provider got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderId": identity_proofing_provider_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider'),
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider'),
+                response_type="IdentityProofingProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def put_identity_proofing_provider_template(self, identity_proofing_provider_template_id, **kwargs):
+        """
+        Replace an Identity Proofing Provider Configuration template.
+
+
+        :param str identity_proofing_provider_template_id: (required)
+            ID of the resource.
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.IdentityProofingProviderTemplate identity_proofing_provider_template: (optional)
+            Replace the current instance of IdentityProofingProviderTemplate with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+
+            - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+              - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+              - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+              - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+
+            - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+              - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+              - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+              - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviderTemplate`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_proofing_provider_template.py.html>`__ to see an example of how to use put_identity_proofing_provider_template API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProofingProviderTemplateId']
+        resource_path = "/admin/v1/IdentityProofingProviderTemplates/{identityProofingProviderTemplateId}"
+        method = "PUT"
+        operation_name = "put_identity_proofing_provider_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProviderTemplate/PutIdentityProofingProviderTemplate"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "identity_proofing_provider_template",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"put_identity_proofing_provider_template got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "identityProofingProviderTemplateId": identity_proofing_provider_template_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider_template'),
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider_template'),
+                response_type="IdentityProofingProviderTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def put_identity_propagation_trust(self, identity_propagation_trust_id, **kwargs):
         """
         Replace an existing Identity Propagation Trust configuration.
@@ -36635,7 +38582,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_propagation_trust.py.html>`__ to see an example of how to use put_identity_propagation_trust API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_propagation_trust.py.html>`__ to see an example of how to use put_identity_propagation_trust API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityPropagationTrustId']
@@ -36798,7 +38745,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_provider.py.html>`__ to see an example of how to use put_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_provider.py.html>`__ to see an example of how to use put_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -36961,7 +38908,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_setting.py.html>`__ to see an example of how to use put_identity_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_setting.py.html>`__ to see an example of how to use put_identity_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identitySettingId']
@@ -37124,7 +39071,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_kmsi_setting.py.html>`__ to see an example of how to use put_kmsi_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_kmsi_setting.py.html>`__ to see an example of how to use put_kmsi_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['kmsiSettingId']
@@ -37289,7 +39236,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_mapped_attribute.py.html>`__ to see an example of how to use put_mapped_attribute API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_mapped_attribute.py.html>`__ to see an example of how to use put_mapped_attribute API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mappedAttributeId']
@@ -37449,7 +39396,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_me.py.html>`__ to see an example of how to use put_me API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_me.py.html>`__ to see an example of how to use put_me API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -37589,7 +39536,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_me_password_changer.py.html>`__ to see an example of how to use put_me_password_changer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_me_password_changer.py.html>`__ to see an example of how to use put_me_password_changer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -37722,7 +39669,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_network_perimeter.py.html>`__ to see an example of how to use put_network_perimeter API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_network_perimeter.py.html>`__ to see an example of how to use put_network_perimeter API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkPerimeterId']
@@ -37885,7 +39832,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_notification_setting.py.html>`__ to see an example of how to use put_notification_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_notification_setting.py.html>`__ to see an example of how to use put_notification_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['notificationSettingId']
@@ -38048,7 +39995,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_password_policy.py.html>`__ to see an example of how to use put_password_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_password_policy.py.html>`__ to see an example of how to use put_password_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
@@ -38213,7 +40160,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_policy.py.html>`__ to see an example of how to use put_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_policy.py.html>`__ to see an example of how to use put_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -38378,7 +40325,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_rule.py.html>`__ to see an example of how to use put_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_rule.py.html>`__ to see an example of how to use put_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['ruleId']
@@ -38533,7 +40480,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_schema.py.html>`__ to see an example of how to use put_schema API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_schema.py.html>`__ to see an example of how to use put_schema API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['schemaId']
@@ -38678,7 +40625,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_security_question_setting.py.html>`__ to see an example of how to use put_security_question_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_security_question_setting.py.html>`__ to see an example of how to use put_security_question_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['securityQuestionSettingId']
@@ -38841,7 +40788,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_self_registration_profile.py.html>`__ to see an example of how to use put_self_registration_profile API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_self_registration_profile.py.html>`__ to see an example of how to use put_self_registration_profile API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['selfRegistrationProfileId']
@@ -39004,7 +40951,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_setting.py.html>`__ to see an example of how to use put_setting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_setting.py.html>`__ to see an example of how to use put_setting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['settingId']
@@ -39161,7 +41108,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_social_identity_provider.py.html>`__ to see an example of how to use put_social_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_social_identity_provider.py.html>`__ to see an example of how to use put_social_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['socialIdentityProviderId']
@@ -39306,7 +41253,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user.py.html>`__ to see an example of how to use put_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user.py.html>`__ to see an example of how to use put_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -39461,7 +41408,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_capabilities_changer.py.html>`__ to see an example of how to use put_user_capabilities_changer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_capabilities_changer.py.html>`__ to see an example of how to use put_user_capabilities_changer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userCapabilitiesChangerId']
@@ -39598,7 +41545,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_password_changer.py.html>`__ to see an example of how to use put_user_password_changer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_password_changer.py.html>`__ to see an example of how to use put_user_password_changer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userPasswordChangerId']
@@ -39735,7 +41682,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_password_resetter.py.html>`__ to see an example of how to use put_user_password_resetter API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_password_resetter.py.html>`__ to see an example of how to use put_user_password_resetter API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userPasswordResetterId']
@@ -39880,7 +41827,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_status_changer.py.html>`__ to see an example of how to use put_user_status_changer API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_user_status_changer.py.html>`__ to see an example of how to use put_user_status_changer API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userStatusChangerId']
@@ -40023,7 +41970,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_account_mgmt_infos.py.html>`__ to see an example of how to use search_account_mgmt_infos API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_account_mgmt_infos.py.html>`__ to see an example of how to use search_account_mgmt_infos API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40144,7 +42091,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_api_keys.py.html>`__ to see an example of how to use search_api_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_api_keys.py.html>`__ to see an example of how to use search_api_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40265,7 +42212,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_app_roles.py.html>`__ to see an example of how to use search_app_roles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_app_roles.py.html>`__ to see an example of how to use search_app_roles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40386,7 +42333,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_apps.py.html>`__ to see an example of how to use search_apps API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_apps.py.html>`__ to see an example of how to use search_apps API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40507,7 +42454,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_auth_tokens.py.html>`__ to see an example of how to use search_auth_tokens API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_auth_tokens.py.html>`__ to see an example of how to use search_auth_tokens API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40628,7 +42575,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_authentication_factor_settings.py.html>`__ to see an example of how to use search_authentication_factor_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_authentication_factor_settings.py.html>`__ to see an example of how to use search_authentication_factor_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40749,7 +42696,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_cloud_gate_mappings.py.html>`__ to see an example of how to use search_cloud_gate_mappings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_cloud_gate_mappings.py.html>`__ to see an example of how to use search_cloud_gate_mappings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40870,7 +42817,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_cloud_gate_servers.py.html>`__ to see an example of how to use search_cloud_gate_servers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_cloud_gate_servers.py.html>`__ to see an example of how to use search_cloud_gate_servers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -40991,7 +42938,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_cloud_gates.py.html>`__ to see an example of how to use search_cloud_gates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_cloud_gates.py.html>`__ to see an example of how to use search_cloud_gates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41112,7 +43059,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_conditions.py.html>`__ to see an example of how to use search_conditions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_conditions.py.html>`__ to see an example of how to use search_conditions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41233,7 +43180,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_customer_secret_keys.py.html>`__ to see an example of how to use search_customer_secret_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_customer_secret_keys.py.html>`__ to see an example of how to use search_customer_secret_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41354,7 +43301,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_dynamic_resource_groups.py.html>`__ to see an example of how to use search_dynamic_resource_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_dynamic_resource_groups.py.html>`__ to see an example of how to use search_dynamic_resource_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41475,7 +43422,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_grants.py.html>`__ to see an example of how to use search_grants API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_grants.py.html>`__ to see an example of how to use search_grants API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41596,7 +43543,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_groups.py.html>`__ to see an example of how to use search_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_groups.py.html>`__ to see an example of how to use search_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41674,6 +43621,127 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_identity_proofing_providers(self, **kwargs):
+        """
+        Search IdentityProofingProvider Using POST.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.IdentityProofingProviderSearchRequest identity_proofing_provider_search_request: (optional)
+            Parameters for searching IdentityProofingProviders.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentityProofingProviders`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_identity_proofing_providers.py.html>`__ to see an example of how to use search_identity_proofing_providers API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentityProofingProviders/.search"
+        method = "POST"
+        operation_name = "search_identity_proofing_providers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProofingProvider/SearchIdentityProofingProviders"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "identity_proofing_provider_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"search_identity_proofing_providers got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider_search_request'),
+                response_type="IdentityProofingProviders",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_proofing_provider_search_request'),
+                response_type="IdentityProofingProviders",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_identity_providers(self, **kwargs):
         """
         Search Identity Providers Using POST
@@ -41717,7 +43785,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_identity_providers.py.html>`__ to see an example of how to use search_identity_providers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_identity_providers.py.html>`__ to see an example of how to use search_identity_providers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41838,7 +43906,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_identity_settings.py.html>`__ to see an example of how to use search_identity_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_identity_settings.py.html>`__ to see an example of how to use search_identity_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -41959,7 +44027,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_kmsi_settings.py.html>`__ to see an example of how to use search_kmsi_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_kmsi_settings.py.html>`__ to see an example of how to use search_kmsi_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42080,7 +44148,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_mapped_attributes.py.html>`__ to see an example of how to use search_mapped_attributes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_mapped_attributes.py.html>`__ to see an example of how to use search_mapped_attributes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42201,7 +44269,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_apps.py.html>`__ to see an example of how to use search_my_apps API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_apps.py.html>`__ to see an example of how to use search_my_apps API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42322,7 +44390,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_groups.py.html>`__ to see an example of how to use search_my_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_groups.py.html>`__ to see an example of how to use search_my_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42443,7 +44511,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_requestable_groups.py.html>`__ to see an example of how to use search_my_requestable_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_requestable_groups.py.html>`__ to see an example of how to use search_my_requestable_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42564,7 +44632,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_requests.py.html>`__ to see an example of how to use search_my_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_requests.py.html>`__ to see an example of how to use search_my_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42685,7 +44753,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_network_perimeters.py.html>`__ to see an example of how to use search_network_perimeters API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_network_perimeters.py.html>`__ to see an example of how to use search_network_perimeters API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42806,7 +44874,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_notification_settings.py.html>`__ to see an example of how to use search_notification_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_notification_settings.py.html>`__ to see an example of how to use search_notification_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -42927,7 +44995,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_o_auth2_client_credentials.py.html>`__ to see an example of how to use search_o_auth2_client_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_o_auth2_client_credentials.py.html>`__ to see an example of how to use search_o_auth2_client_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43048,7 +45116,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_o_auth_client_certificates.py.html>`__ to see an example of how to use search_o_auth_client_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_o_auth_client_certificates.py.html>`__ to see an example of how to use search_o_auth_client_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43169,7 +45237,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_o_auth_partner_certificates.py.html>`__ to see an example of how to use search_o_auth_partner_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_o_auth_partner_certificates.py.html>`__ to see an example of how to use search_o_auth_partner_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43290,7 +45358,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_oci_console_sign_on_policy_consents.py.html>`__ to see an example of how to use search_oci_console_sign_on_policy_consents API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_oci_console_sign_on_policy_consents.py.html>`__ to see an example of how to use search_oci_console_sign_on_policy_consents API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43411,7 +45479,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_password_policies.py.html>`__ to see an example of how to use search_password_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_password_policies.py.html>`__ to see an example of how to use search_password_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43532,7 +45600,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_policies.py.html>`__ to see an example of how to use search_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_policies.py.html>`__ to see an example of how to use search_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43653,7 +45721,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_resource_type_schema_attributes.py.html>`__ to see an example of how to use search_resource_type_schema_attributes API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_resource_type_schema_attributes.py.html>`__ to see an example of how to use search_resource_type_schema_attributes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43774,7 +45842,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_rules.py.html>`__ to see an example of how to use search_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_rules.py.html>`__ to see an example of how to use search_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -43895,7 +45963,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_schemas.py.html>`__ to see an example of how to use search_schemas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_schemas.py.html>`__ to see an example of how to use search_schemas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44016,7 +46084,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_security_question_settings.py.html>`__ to see an example of how to use search_security_question_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_security_question_settings.py.html>`__ to see an example of how to use search_security_question_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44137,7 +46205,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_security_questions.py.html>`__ to see an example of how to use search_security_questions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_security_questions.py.html>`__ to see an example of how to use search_security_questions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44258,7 +46326,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_self_registration_profiles.py.html>`__ to see an example of how to use search_self_registration_profiles API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_self_registration_profiles.py.html>`__ to see an example of how to use search_self_registration_profiles API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44379,7 +46447,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_settings.py.html>`__ to see an example of how to use search_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_settings.py.html>`__ to see an example of how to use search_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44500,7 +46568,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_smtp_credentials.py.html>`__ to see an example of how to use search_smtp_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_smtp_credentials.py.html>`__ to see an example of how to use search_smtp_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44621,7 +46689,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_social_identity_providers.py.html>`__ to see an example of how to use search_social_identity_providers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_social_identity_providers.py.html>`__ to see an example of how to use search_social_identity_providers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44742,7 +46810,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_user_attributes_settings.py.html>`__ to see an example of how to use search_user_attributes_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_user_attributes_settings.py.html>`__ to see an example of how to use search_user_attributes_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44863,7 +46931,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_user_db_credentials.py.html>`__ to see an example of how to use search_user_db_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_user_db_credentials.py.html>`__ to see an example of how to use search_user_db_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -44984,7 +47052,7 @@ class IdentityDomainsClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_users.py.html>`__ to see an example of how to use search_users API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_users.py.html>`__ to see an example of how to use search_users API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []

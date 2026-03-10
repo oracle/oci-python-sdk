@@ -156,6 +156,10 @@ class ManagementApplianceSummary(object):
             The value to assign to the heartbeat_connection_states property of this ManagementApplianceSummary.
         :type heartbeat_connection_states: list[oci.ocvp.models.ManagementApplianceConnectionStatus]
 
+        :param plugin_version:
+            The value to assign to the plugin_version property of this ManagementApplianceSummary.
+        :type plugin_version: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementApplianceSummary.
         :type freeform_tags: dict(str, str)
@@ -185,6 +189,7 @@ class ManagementApplianceSummary(object):
             'time_configuration_updated': 'datetime',
             'time_last_heartbeat': 'datetime',
             'heartbeat_connection_states': 'list[ManagementApplianceConnectionStatus]',
+            'plugin_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -205,6 +210,7 @@ class ManagementApplianceSummary(object):
             'time_configuration_updated': 'timeConfigurationUpdated',
             'time_last_heartbeat': 'timeLastHeartbeat',
             'heartbeat_connection_states': 'heartbeatConnectionStates',
+            'plugin_version': 'pluginVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -224,6 +230,7 @@ class ManagementApplianceSummary(object):
         self._time_configuration_updated = None
         self._time_last_heartbeat = None
         self._heartbeat_connection_states = None
+        self._plugin_version = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -631,6 +638,36 @@ class ManagementApplianceSummary(object):
         :type: list[oci.ocvp.models.ManagementApplianceConnectionStatus]
         """
         self._heartbeat_connection_states = heartbeat_connection_states
+
+    @property
+    def plugin_version(self):
+        """
+        Gets the plugin_version of this ManagementApplianceSummary.
+        Current version of OCVS management plugin installed by Management Agent.
+        As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,
+        the service distributes it to Management Appliances owned by customers.
+        This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+
+
+        :return: The plugin_version of this ManagementApplianceSummary.
+        :rtype: str
+        """
+        return self._plugin_version
+
+    @plugin_version.setter
+    def plugin_version(self, plugin_version):
+        """
+        Sets the plugin_version of this ManagementApplianceSummary.
+        Current version of OCVS management plugin installed by Management Agent.
+        As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,
+        the service distributes it to Management Appliances owned by customers.
+        This field shows which version of the OCVS management plugin is currently installed and running for this customer.
+
+
+        :param plugin_version: The plugin_version of this ManagementApplianceSummary.
+        :type: str
+        """
+        self._plugin_version = plugin_version
 
     @property
     def freeform_tags(self):

@@ -12,12 +12,25 @@ from .attach_datastore_cluster_to_cluster_details import AttachDatastoreClusterT
 from .attach_datastore_cluster_to_esxi_host_details import AttachDatastoreClusterToEsxiHostDetails
 from .block_volume_attachment import BlockVolumeAttachment
 from .block_volume_details import BlockVolumeDetails
+from .byol import Byol
+from .byol_allocation import ByolAllocation
+from .byol_allocation_collection import ByolAllocationCollection
+from .byol_allocation_summary import ByolAllocationSummary
+from .byol_collection import ByolCollection
+from .byol_realm_allocation_collection import ByolRealmAllocationCollection
+from .byol_realm_allocation_summary import ByolRealmAllocationSummary
+from .byol_summary import ByolSummary
+from .change_byol_allocation_compartment_details import ChangeByolAllocationCompartmentDetails
+from .change_byol_compartment_details import ChangeByolCompartmentDetails
 from .change_datastore_cluster_compartment_details import ChangeDatastoreClusterCompartmentDetails
 from .change_datastore_compartment_details import ChangeDatastoreCompartmentDetails
 from .change_sddc_compartment_details import ChangeSddcCompartmentDetails
 from .cluster import Cluster
+from .cluster_byol_allocation_details import ClusterByolAllocationDetails
 from .cluster_collection import ClusterCollection
 from .cluster_summary import ClusterSummary
+from .create_byol_allocation_details import CreateByolAllocationDetails
+from .create_byol_details import CreateByolDetails
 from .create_cluster_details import CreateClusterDetails
 from .create_datastore_cluster_details import CreateDatastoreClusterDetails
 from .create_datastore_details import CreateDatastoreDetails
@@ -51,6 +64,7 @@ from .network_configuration import NetworkConfiguration
 from .remove_datastore_from_datastore_cluster_details import RemoveDatastoreFromDatastoreClusterDetails
 from .replace_host_details import ReplaceHostDetails
 from .sddc import Sddc
+from .sddc_byol_allocation_details import SddcByolAllocationDetails
 from .sddc_collection import SddcCollection
 from .sddc_password import SddcPassword
 from .sddc_summary import SddcSummary
@@ -61,6 +75,8 @@ from .supported_host_shape_collection import SupportedHostShapeCollection
 from .supported_host_shape_summary import SupportedHostShapeSummary
 from .supported_vmware_software_version_collection import SupportedVmwareSoftwareVersionCollection
 from .supported_vmware_software_version_summary import SupportedVmwareSoftwareVersionSummary
+from .update_byol_allocation_details import UpdateByolAllocationDetails
+from .update_byol_details import UpdateByolDetails
 from .update_cluster_details import UpdateClusterDetails
 from .update_datastore_cluster_details import UpdateDatastoreClusterDetails
 from .update_datastore_details import UpdateDatastoreDetails
@@ -85,12 +101,25 @@ ocvp_type_mapping = {
     "AttachDatastoreClusterToEsxiHostDetails": AttachDatastoreClusterToEsxiHostDetails,
     "BlockVolumeAttachment": BlockVolumeAttachment,
     "BlockVolumeDetails": BlockVolumeDetails,
+    "Byol": Byol,
+    "ByolAllocation": ByolAllocation,
+    "ByolAllocationCollection": ByolAllocationCollection,
+    "ByolAllocationSummary": ByolAllocationSummary,
+    "ByolCollection": ByolCollection,
+    "ByolRealmAllocationCollection": ByolRealmAllocationCollection,
+    "ByolRealmAllocationSummary": ByolRealmAllocationSummary,
+    "ByolSummary": ByolSummary,
+    "ChangeByolAllocationCompartmentDetails": ChangeByolAllocationCompartmentDetails,
+    "ChangeByolCompartmentDetails": ChangeByolCompartmentDetails,
     "ChangeDatastoreClusterCompartmentDetails": ChangeDatastoreClusterCompartmentDetails,
     "ChangeDatastoreCompartmentDetails": ChangeDatastoreCompartmentDetails,
     "ChangeSddcCompartmentDetails": ChangeSddcCompartmentDetails,
     "Cluster": Cluster,
+    "ClusterByolAllocationDetails": ClusterByolAllocationDetails,
     "ClusterCollection": ClusterCollection,
     "ClusterSummary": ClusterSummary,
+    "CreateByolAllocationDetails": CreateByolAllocationDetails,
+    "CreateByolDetails": CreateByolDetails,
     "CreateClusterDetails": CreateClusterDetails,
     "CreateDatastoreClusterDetails": CreateDatastoreClusterDetails,
     "CreateDatastoreDetails": CreateDatastoreDetails,
@@ -124,6 +153,7 @@ ocvp_type_mapping = {
     "RemoveDatastoreFromDatastoreClusterDetails": RemoveDatastoreFromDatastoreClusterDetails,
     "ReplaceHostDetails": ReplaceHostDetails,
     "Sddc": Sddc,
+    "SddcByolAllocationDetails": SddcByolAllocationDetails,
     "SddcCollection": SddcCollection,
     "SddcPassword": SddcPassword,
     "SddcSummary": SddcSummary,
@@ -134,6 +164,8 @@ ocvp_type_mapping = {
     "SupportedHostShapeSummary": SupportedHostShapeSummary,
     "SupportedVmwareSoftwareVersionCollection": SupportedVmwareSoftwareVersionCollection,
     "SupportedVmwareSoftwareVersionSummary": SupportedVmwareSoftwareVersionSummary,
+    "UpdateByolAllocationDetails": UpdateByolAllocationDetails,
+    "UpdateByolDetails": UpdateByolDetails,
     "UpdateClusterDetails": UpdateClusterDetails,
     "UpdateDatastoreClusterDetails": UpdateDatastoreClusterDetails,
     "UpdateDatastoreDetails": UpdateDatastoreDetails,

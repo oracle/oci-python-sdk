@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import apigateway_type_mapping
 missing = Sentinel("Missing")
 
@@ -32,7 +32,7 @@ class ApiGatewayClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -51,7 +51,7 @@ class ApiGatewayClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -83,7 +83,7 @@ class ApiGatewayClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("apigateway"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -166,7 +166,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/add_api_lock.py.html>`__ to see an example of how to use add_api_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/add_api_lock.py.html>`__ to see an example of how to use add_api_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -282,7 +282,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/add_certificate_lock.py.html>`__ to see an example of how to use add_certificate_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/add_certificate_lock.py.html>`__ to see an example of how to use add_certificate_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -398,7 +398,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/add_sdk_lock.py.html>`__ to see an example of how to use add_sdk_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/add_sdk_lock.py.html>`__ to see an example of how to use add_sdk_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdkId']
@@ -525,7 +525,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_api_compartment.py.html>`__ to see an example of how to use change_api_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_api_compartment.py.html>`__ to see an example of how to use change_api_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -661,7 +661,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -784,7 +784,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_api.py.html>`__ to see an example of how to use create_api API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_api.py.html>`__ to see an example of how to use create_api API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -889,7 +889,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -994,7 +994,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_sdk.py.html>`__ to see an example of how to use create_sdk API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_sdk.py.html>`__ to see an example of how to use create_sdk API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1102,7 +1102,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_api.py.html>`__ to see an example of how to use delete_api API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_api.py.html>`__ to see an example of how to use delete_api API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -1223,7 +1223,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -1344,7 +1344,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_sdk.py.html>`__ to see an example of how to use delete_sdk API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_sdk.py.html>`__ to see an example of how to use delete_sdk API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdkId']
@@ -1455,7 +1455,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api.py.html>`__ to see an example of how to use get_api API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api.py.html>`__ to see an example of how to use get_api API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -1574,7 +1574,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_content.py.html>`__ to see an example of how to use get_api_content API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_content.py.html>`__ to see an example of how to use get_api_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -1690,7 +1690,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_deployment_specification.py.html>`__ to see an example of how to use get_api_deployment_specification API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_deployment_specification.py.html>`__ to see an example of how to use get_api_deployment_specification API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -1804,7 +1804,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_validations.py.html>`__ to see an example of how to use get_api_validations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_validations.py.html>`__ to see an example of how to use get_api_validations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -1911,7 +1911,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -2016,7 +2016,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_sdk.py.html>`__ to see an example of how to use get_sdk API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_sdk.py.html>`__ to see an example of how to use get_sdk API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdkId']
@@ -2152,7 +2152,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_apis.py.html>`__ to see an example of how to use list_apis API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_apis.py.html>`__ to see an example of how to use list_apis API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2316,7 +2316,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2473,7 +2473,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_sdk_language_types.py.html>`__ to see an example of how to use list_sdk_language_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_sdk_language_types.py.html>`__ to see an example of how to use list_sdk_language_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2631,7 +2631,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_sdks.py.html>`__ to see an example of how to use list_sdks API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_sdks.py.html>`__ to see an example of how to use list_sdks API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2776,7 +2776,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/remove_api_lock.py.html>`__ to see an example of how to use remove_api_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/remove_api_lock.py.html>`__ to see an example of how to use remove_api_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -2892,7 +2892,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/remove_certificate_lock.py.html>`__ to see an example of how to use remove_certificate_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/remove_certificate_lock.py.html>`__ to see an example of how to use remove_certificate_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -3008,7 +3008,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/remove_sdk_lock.py.html>`__ to see an example of how to use remove_sdk_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/remove_sdk_lock.py.html>`__ to see an example of how to use remove_sdk_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdkId']
@@ -3128,7 +3128,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_api.py.html>`__ to see an example of how to use update_api API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_api.py.html>`__ to see an example of how to use update_api API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiId']
@@ -3254,7 +3254,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -3380,7 +3380,7 @@ class ApiGatewayClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_sdk.py.html>`__ to see an example of how to use update_sdk API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_sdk.py.html>`__ to see an example of how to use update_sdk API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['sdkId']

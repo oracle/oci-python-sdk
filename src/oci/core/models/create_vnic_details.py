@@ -73,6 +73,10 @@ class CreateVnicDetails(object):
             The value to assign to the private_ip property of this CreateVnicDetails.
         :type private_ip: str
 
+        :param private_ip_id:
+            The value to assign to the private_ip_id property of this CreateVnicDetails.
+        :type private_ip_id: str
+
         :param skip_source_dest_check:
             The value to assign to the skip_source_dest_check property of this CreateVnicDetails.
         :type skip_source_dest_check: bool
@@ -99,6 +103,7 @@ class CreateVnicDetails(object):
             'subnet_cidr': 'str',
             'nsg_ids': 'list[str]',
             'private_ip': 'str',
+            'private_ip_id': 'str',
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str',
             'vlan_id': 'str'
@@ -116,6 +121,7 @@ class CreateVnicDetails(object):
             'subnet_cidr': 'subnetCidr',
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
+            'private_ip_id': 'privateIpId',
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId',
             'vlan_id': 'vlanId'
@@ -132,6 +138,7 @@ class CreateVnicDetails(object):
         self._subnet_cidr = None
         self._nsg_ids = None
         self._private_ip = None
+        self._private_ip_id = None
         self._skip_source_dest_check = None
         self._subnet_id = None
         self._vlan_id = None
@@ -601,6 +608,8 @@ class CreateVnicDetails(object):
         If you specify a `vlanId`, the `privateIp` cannot be specified.
         See :class:`Vlan`.
 
+        If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+
         Example: `10.0.3.3`
 
 
@@ -626,6 +635,8 @@ class CreateVnicDetails(object):
         If you specify a `vlanId`, the `privateIp` cannot be specified.
         See :class:`Vlan`.
 
+        If you specify a 'privateIpId', the 'privateIp' cannot be specified.
+
         Example: `10.0.3.3`
 
 
@@ -633,6 +644,34 @@ class CreateVnicDetails(object):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def private_ip_id(self):
+        """
+        Gets the private_ip_id of this CreateVnicDetails.
+        An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_ip_id of this CreateVnicDetails.
+        :rtype: str
+        """
+        return self._private_ip_id
+
+    @private_ip_id.setter
+    def private_ip_id(self, private_ip_id):
+        """
+        Sets the private_ip_id of this CreateVnicDetails.
+        An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param private_ip_id: The private_ip_id of this CreateVnicDetails.
+        :type: str
+        """
+        self._private_ip_id = private_ip_id
 
     @property
     def skip_source_dest_check(self):

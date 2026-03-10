@@ -1,0 +1,11 @@
+GdpPipeline
+===========
+
+.. currentmodule:: oci.gdp.models
+
+.. autoclass:: GdpPipeline
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

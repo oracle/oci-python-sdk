@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import cloud_bridge_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class OcbAgentSvcClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class OcbAgentSvcClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class OcbAgentSvcClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("cloud_bridge"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -172,7 +172,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/add_agent_dependency.py.html>`__ to see an example of how to use add_agent_dependency API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/add_agent_dependency.py.html>`__ to see an example of how to use add_agent_dependency API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['environmentId']
@@ -301,7 +301,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_agent_compartment.py.html>`__ to see an example of how to use change_agent_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_agent_compartment.py.html>`__ to see an example of how to use change_agent_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentId']
@@ -428,7 +428,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_agent_dependency_compartment.py.html>`__ to see an example of how to use change_agent_dependency_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_agent_dependency_compartment.py.html>`__ to see an example of how to use change_agent_dependency_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentDependencyId']
@@ -555,7 +555,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_environment_compartment.py.html>`__ to see an example of how to use change_environment_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_environment_compartment.py.html>`__ to see an example of how to use change_environment_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['environmentId']
@@ -672,7 +672,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_agent.py.html>`__ to see an example of how to use create_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_agent.py.html>`__ to see an example of how to use create_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -777,7 +777,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_agent_dependency.py.html>`__ to see an example of how to use create_agent_dependency API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_agent_dependency.py.html>`__ to see an example of how to use create_agent_dependency API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -882,7 +882,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_environment.py.html>`__ to see an example of how to use create_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_environment.py.html>`__ to see an example of how to use create_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -994,7 +994,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_agent.py.html>`__ to see an example of how to use delete_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_agent.py.html>`__ to see an example of how to use delete_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentId']
@@ -1109,7 +1109,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_agent_dependency.py.html>`__ to see an example of how to use delete_agent_dependency API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_agent_dependency.py.html>`__ to see an example of how to use delete_agent_dependency API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentDependencyId']
@@ -1221,7 +1221,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_environment.py.html>`__ to see an example of how to use delete_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_environment.py.html>`__ to see an example of how to use delete_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['environmentId']
@@ -1326,7 +1326,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_agent.py.html>`__ to see an example of how to use get_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_agent.py.html>`__ to see an example of how to use get_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentId']
@@ -1431,7 +1431,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_agent_dependency.py.html>`__ to see an example of how to use get_agent_dependency API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_agent_dependency.py.html>`__ to see an example of how to use get_agent_dependency API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentDependencyId']
@@ -1536,7 +1536,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_environment.py.html>`__ to see an example of how to use get_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_environment.py.html>`__ to see an example of how to use get_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['environmentId']
@@ -1644,7 +1644,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_plugin.py.html>`__ to see an example of how to use get_plugin API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_plugin.py.html>`__ to see an example of how to use get_plugin API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentId', 'pluginName']
@@ -1780,7 +1780,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_agent_dependencies.py.html>`__ to see an example of how to use list_agent_dependencies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_agent_dependencies.py.html>`__ to see an example of how to use list_agent_dependencies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1947,7 +1947,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_agents.py.html>`__ to see an example of how to use list_agents API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_agents.py.html>`__ to see an example of how to use list_agents API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2103,7 +2103,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_appliance_images.py.html>`__ to see an example of how to use list_appliance_images API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_appliance_images.py.html>`__ to see an example of how to use list_appliance_images API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2254,7 +2254,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_environments.py.html>`__ to see an example of how to use list_environments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_environments.py.html>`__ to see an example of how to use list_environments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -2406,7 +2406,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/remove_agent_dependency.py.html>`__ to see an example of how to use remove_agent_dependency API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/remove_agent_dependency.py.html>`__ to see an example of how to use remove_agent_dependency API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['environmentId']
@@ -2535,7 +2535,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_agent.py.html>`__ to see an example of how to use update_agent API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_agent.py.html>`__ to see an example of how to use update_agent API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentId']
@@ -2664,7 +2664,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_agent_dependency.py.html>`__ to see an example of how to use update_agent_dependency API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_agent_dependency.py.html>`__ to see an example of how to use update_agent_dependency API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentDependencyId']
@@ -2791,7 +2791,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_environment.py.html>`__ to see an example of how to use update_environment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_environment.py.html>`__ to see an example of how to use update_environment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['environmentId']
@@ -2916,7 +2916,7 @@ class OcbAgentSvcClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_plugin.py.html>`__ to see an example of how to use update_plugin API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_plugin.py.html>`__ to see an example of how to use update_plugin API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['agentId', 'pluginName']

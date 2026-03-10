@@ -78,6 +78,10 @@ class EmailIpPool(object):
             The value to assign to the outbound_ips property of this EmailIpPool.
         :type outbound_ips: list[oci.email.models.EmailOutboundIpSummary]
 
+        :param last_ip_drain_period_in_hours:
+            The value to assign to the last_ip_drain_period_in_hours property of this EmailIpPool.
+        :type last_ip_drain_period_in_hours: int
+
         :param time_created:
             The value to assign to the time_created property of this EmailIpPool.
         :type time_created: datetime
@@ -111,6 +115,7 @@ class EmailIpPool(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'outbound_ips': 'list[EmailOutboundIpSummary]',
+            'last_ip_drain_period_in_hours': 'int',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -126,6 +131,7 @@ class EmailIpPool(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'outbound_ips': 'outboundIps',
+            'last_ip_drain_period_in_hours': 'lastIpDrainPeriodInHours',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
@@ -140,6 +146,7 @@ class EmailIpPool(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._outbound_ips = None
+        self._last_ip_drain_period_in_hours = None
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
@@ -336,6 +343,30 @@ class EmailIpPool(object):
         :type: list[oci.email.models.EmailOutboundIpSummary]
         """
         self._outbound_ips = outbound_ips
+
+    @property
+    def last_ip_drain_period_in_hours(self):
+        """
+        Gets the last_ip_drain_period_in_hours of this EmailIpPool.
+        Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+
+
+        :return: The last_ip_drain_period_in_hours of this EmailIpPool.
+        :rtype: int
+        """
+        return self._last_ip_drain_period_in_hours
+
+    @last_ip_drain_period_in_hours.setter
+    def last_ip_drain_period_in_hours(self, last_ip_drain_period_in_hours):
+        """
+        Sets the last_ip_drain_period_in_hours of this EmailIpPool.
+        Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
+
+
+        :param last_ip_drain_period_in_hours: The last_ip_drain_period_in_hours of this EmailIpPool.
+        :type: int
+        """
+        self._last_ip_drain_period_in_hours = last_ip_drain_period_in_hours
 
     @property
     def time_created(self):

@@ -222,6 +222,17 @@ Identity Domains
     oci.identity_domains.models.Groups
     oci.identity_domains.models.IdcsCreatedBy
     oci.identity_domains.models.IdcsLastModifiedBy
+    oci.identity_domains.models.IdentityProofingProvider
+    oci.identity_domains.models.IdentityProofingProviderClaimMapping
+    oci.identity_domains.models.IdentityProofingProviderConfiguration
+    oci.identity_domains.models.IdentityProofingProviderIdcsLockedBy
+    oci.identity_domains.models.IdentityProofingProviderRuntimeData
+    oci.identity_domains.models.IdentityProofingProviderSearchRequest
+    oci.identity_domains.models.IdentityProofingProviderTemplate
+    oci.identity_domains.models.IdentityProofingProviderTemplateConfiguration
+    oci.identity_domains.models.IdentityProofingProviderTemplateIdcsLockedBy
+    oci.identity_domains.models.IdentityProofingProviderTemplates
+    oci.identity_domains.models.IdentityProofingProviders
     oci.identity_domains.models.IdentityPropagationTrust
     oci.identity_domains.models.IdentityPropagationTrustImpersonationServiceUsers
     oci.identity_domains.models.IdentityPropagationTrustKeytab
@@ -486,3 +497,5 @@ Identity Domains
     oci.identity_domains.models.UserStatusChanger
     oci.identity_domains.models.UserX509Certificates
     oci.identity_domains.models.Users
+    oci.identity_domains.models.VerificationClaim
+    oci.identity_domains.models.VerificationClaimIdcsLockedBy

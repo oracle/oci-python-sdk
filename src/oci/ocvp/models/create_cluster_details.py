@@ -101,6 +101,14 @@ class CreateClusterDetails(object):
             The value to assign to the esxi_software_version property of this CreateClusterDetails.
         :type esxi_software_version: str
 
+        :param cluster_byol_allocation_details:
+            The value to assign to the cluster_byol_allocation_details property of this CreateClusterDetails.
+        :type cluster_byol_allocation_details: oci.ocvp.models.ClusterByolAllocationDetails
+
+        :param initial_vcf_byol_allocation_id:
+            The value to assign to the initial_vcf_byol_allocation_id property of this CreateClusterDetails.
+        :type initial_vcf_byol_allocation_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -127,6 +135,8 @@ class CreateClusterDetails(object):
             'datastore_cluster_ids': 'list[str]',
             'vmware_software_version': 'str',
             'esxi_software_version': 'str',
+            'cluster_byol_allocation_details': 'ClusterByolAllocationDetails',
+            'initial_vcf_byol_allocation_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -147,6 +157,8 @@ class CreateClusterDetails(object):
             'datastore_cluster_ids': 'datastoreClusterIds',
             'vmware_software_version': 'vmwareSoftwareVersion',
             'esxi_software_version': 'esxiSoftwareVersion',
+            'cluster_byol_allocation_details': 'clusterByolAllocationDetails',
+            'initial_vcf_byol_allocation_id': 'initialVcfByolAllocationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -166,6 +178,8 @@ class CreateClusterDetails(object):
         self._datastore_cluster_ids = None
         self._vmware_software_version = None
         self._esxi_software_version = None
+        self._cluster_byol_allocation_details = None
+        self._initial_vcf_byol_allocation_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -605,6 +619,54 @@ class CreateClusterDetails(object):
         :type: str
         """
         self._esxi_software_version = esxi_software_version
+
+    @property
+    def cluster_byol_allocation_details(self):
+        """
+        Gets the cluster_byol_allocation_details of this CreateClusterDetails.
+
+        :return: The cluster_byol_allocation_details of this CreateClusterDetails.
+        :rtype: oci.ocvp.models.ClusterByolAllocationDetails
+        """
+        return self._cluster_byol_allocation_details
+
+    @cluster_byol_allocation_details.setter
+    def cluster_byol_allocation_details(self, cluster_byol_allocation_details):
+        """
+        Sets the cluster_byol_allocation_details of this CreateClusterDetails.
+
+        :param cluster_byol_allocation_details: The cluster_byol_allocation_details of this CreateClusterDetails.
+        :type: oci.ocvp.models.ClusterByolAllocationDetails
+        """
+        self._cluster_byol_allocation_details = cluster_byol_allocation_details
+
+    @property
+    def initial_vcf_byol_allocation_id(self):
+        """
+        Gets the initial_vcf_byol_allocation_id of this CreateClusterDetails.
+        The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The initial_vcf_byol_allocation_id of this CreateClusterDetails.
+        :rtype: str
+        """
+        return self._initial_vcf_byol_allocation_id
+
+    @initial_vcf_byol_allocation_id.setter
+    def initial_vcf_byol_allocation_id(self, initial_vcf_byol_allocation_id):
+        """
+        Sets the initial_vcf_byol_allocation_id of this CreateClusterDetails.
+        The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param initial_vcf_byol_allocation_id: The initial_vcf_byol_allocation_id of this CreateClusterDetails.
+        :type: str
+        """
+        self._initial_vcf_byol_allocation_id = initial_vcf_byol_allocation_id
 
     @property
     def freeform_tags(self):

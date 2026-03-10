@@ -394,7 +394,7 @@ class CatalogPeerWithDedicatedInfra(object):
     def is_automatic_failover_enabled(self):
         """
         Gets the is_automatic_failover_enabled of this CatalogPeerWithDedicatedInfra.
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
 
 
         :return: The is_automatic_failover_enabled of this CatalogPeerWithDedicatedInfra.
@@ -406,7 +406,7 @@ class CatalogPeerWithDedicatedInfra(object):
     def is_automatic_failover_enabled(self, is_automatic_failover_enabled):
         """
         Sets the is_automatic_failover_enabled of this CatalogPeerWithDedicatedInfra.
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+        This field is deprecated. Support for this field will be removed after one year of deprecation cycle.
 
 
         :param is_automatic_failover_enabled: The is_automatic_failover_enabled of this CatalogPeerWithDedicatedInfra.

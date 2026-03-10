@@ -221,6 +221,14 @@ class EsxiHost(object):
             The value to assign to the primary_vnic_mac_address property of this EsxiHost.
         :type primary_vnic_mac_address: str
 
+        :param vcf_byol_allocation_id:
+            The value to assign to the vcf_byol_allocation_id property of this EsxiHost.
+        :type vcf_byol_allocation_id: str
+
+        :param is_vsan_byol_enabled:
+            The value to assign to the is_vsan_byol_enabled property of this EsxiHost.
+        :type is_vsan_byol_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -255,7 +263,9 @@ class EsxiHost(object):
             'system_tags': 'dict(str, dict(str, object))',
             'datastore_cluster_ids': 'list[str]',
             'datastore_attachments': 'list[DatastoreAttachment]',
-            'primary_vnic_mac_address': 'str'
+            'primary_vnic_mac_address': 'str',
+            'vcf_byol_allocation_id': 'str',
+            'is_vsan_byol_enabled': 'bool'
         }
         self.attribute_map = {
             'id': 'id',
@@ -290,7 +300,9 @@ class EsxiHost(object):
             'system_tags': 'systemTags',
             'datastore_cluster_ids': 'datastoreClusterIds',
             'datastore_attachments': 'datastoreAttachments',
-            'primary_vnic_mac_address': 'primaryVnicMacAddress'
+            'primary_vnic_mac_address': 'primaryVnicMacAddress',
+            'vcf_byol_allocation_id': 'vcfByolAllocationId',
+            'is_vsan_byol_enabled': 'isVsanByolEnabled'
         }
         self._id = None
         self._display_name = None
@@ -325,6 +337,8 @@ class EsxiHost(object):
         self._datastore_cluster_ids = None
         self._datastore_attachments = None
         self._primary_vnic_mac_address = None
+        self._vcf_byol_allocation_id = None
+        self._is_vsan_byol_enabled = None
 
     @property
     def id(self):
@@ -1259,6 +1273,58 @@ class EsxiHost(object):
         :type: str
         """
         self._primary_vnic_mac_address = primary_vnic_mac_address
+
+    @property
+    def vcf_byol_allocation_id(self):
+        """
+        Gets the vcf_byol_allocation_id of this EsxiHost.
+        The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vcf_byol_allocation_id of this EsxiHost.
+        :rtype: str
+        """
+        return self._vcf_byol_allocation_id
+
+    @vcf_byol_allocation_id.setter
+    def vcf_byol_allocation_id(self, vcf_byol_allocation_id):
+        """
+        Sets the vcf_byol_allocation_id of this EsxiHost.
+        The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vcf_byol_allocation_id: The vcf_byol_allocation_id of this EsxiHost.
+        :type: str
+        """
+        self._vcf_byol_allocation_id = vcf_byol_allocation_id
+
+    @property
+    def is_vsan_byol_enabled(self):
+        """
+        Gets the is_vsan_byol_enabled of this EsxiHost.
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+
+
+        :return: The is_vsan_byol_enabled of this EsxiHost.
+        :rtype: bool
+        """
+        return self._is_vsan_byol_enabled
+
+    @is_vsan_byol_enabled.setter
+    def is_vsan_byol_enabled(self, is_vsan_byol_enabled):
+        """
+        Sets the is_vsan_byol_enabled of this EsxiHost.
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+
+
+        :param is_vsan_byol_enabled: The is_vsan_byol_enabled of this EsxiHost.
+        :type: bool
+        """
+        self._is_vsan_byol_enabled = is_vsan_byol_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

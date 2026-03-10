@@ -31,6 +31,10 @@ class ManagementApplianceConnectionStatus(object):
     #: This constant has a value of "NSX"
     TYPE_NSX = "NSX"
 
+    #: A constant which can be used with the type property of a ManagementApplianceConnectionStatus.
+    #: This constant has a value of "EXPORT_METRICS"
+    TYPE_EXPORT_METRICS = "EXPORT_METRICS"
+
     #: A constant which can be used with the state property of a ManagementApplianceConnectionStatus.
     #: This constant has a value of "INACTIVE"
     STATE_INACTIVE = "INACTIVE"
@@ -50,7 +54,7 @@ class ManagementApplianceConnectionStatus(object):
 
         :param type:
             The value to assign to the type property of this ManagementApplianceConnectionStatus.
-            Allowed values for this property are: "VCENTER", "ADMIN_VCENTER", "UI_PLUGIN_REGISTRATION", "NSX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VCENTER", "ADMIN_VCENTER", "UI_PLUGIN_REGISTRATION", "NSX", "EXPORT_METRICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -85,7 +89,7 @@ class ManagementApplianceConnectionStatus(object):
         **[Required]** Gets the type of this ManagementApplianceConnectionStatus.
         Type of connection.
 
-        Allowed values for this property are: "VCENTER", "ADMIN_VCENTER", "UI_PLUGIN_REGISTRATION", "NSX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VCENTER", "ADMIN_VCENTER", "UI_PLUGIN_REGISTRATION", "NSX", "EXPORT_METRICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -104,7 +108,7 @@ class ManagementApplianceConnectionStatus(object):
         :param type: The type of this ManagementApplianceConnectionStatus.
         :type: str
         """
-        allowed_values = ["VCENTER", "ADMIN_VCENTER", "UI_PLUGIN_REGISTRATION", "NSX"]
+        allowed_values = ["VCENTER", "ADMIN_VCENTER", "UI_PLUGIN_REGISTRATION", "NSX", "EXPORT_METRICS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

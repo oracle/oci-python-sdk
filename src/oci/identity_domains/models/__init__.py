@@ -210,6 +210,17 @@ from .group_search_request import GroupSearchRequest
 from .groups import Groups
 from .idcs_created_by import IdcsCreatedBy
 from .idcs_last_modified_by import IdcsLastModifiedBy
+from .identity_proofing_provider import IdentityProofingProvider
+from .identity_proofing_provider_claim_mapping import IdentityProofingProviderClaimMapping
+from .identity_proofing_provider_configuration import IdentityProofingProviderConfiguration
+from .identity_proofing_provider_idcs_locked_by import IdentityProofingProviderIdcsLockedBy
+from .identity_proofing_provider_runtime_data import IdentityProofingProviderRuntimeData
+from .identity_proofing_provider_search_request import IdentityProofingProviderSearchRequest
+from .identity_proofing_provider_template import IdentityProofingProviderTemplate
+from .identity_proofing_provider_template_configuration import IdentityProofingProviderTemplateConfiguration
+from .identity_proofing_provider_template_idcs_locked_by import IdentityProofingProviderTemplateIdcsLockedBy
+from .identity_proofing_provider_templates import IdentityProofingProviderTemplates
+from .identity_proofing_providers import IdentityProofingProviders
 from .identity_propagation_trust import IdentityPropagationTrust
 from .identity_propagation_trust_impersonation_service_users import IdentityPropagationTrustImpersonationServiceUsers
 from .identity_propagation_trust_keytab import IdentityPropagationTrustKeytab
@@ -474,6 +485,8 @@ from .user_search_request import UserSearchRequest
 from .user_status_changer import UserStatusChanger
 from .user_x509_certificates import UserX509Certificates
 from .users import Users
+from .verification_claim import VerificationClaim
+from .verification_claim_idcs_locked_by import VerificationClaimIdcsLockedBy
 
 # Maps type names to classes for identity_domains services.
 identity_domains_type_mapping = {
@@ -681,6 +694,17 @@ identity_domains_type_mapping = {
     "Groups": Groups,
     "IdcsCreatedBy": IdcsCreatedBy,
     "IdcsLastModifiedBy": IdcsLastModifiedBy,
+    "IdentityProofingProvider": IdentityProofingProvider,
+    "IdentityProofingProviderClaimMapping": IdentityProofingProviderClaimMapping,
+    "IdentityProofingProviderConfiguration": IdentityProofingProviderConfiguration,
+    "IdentityProofingProviderIdcsLockedBy": IdentityProofingProviderIdcsLockedBy,
+    "IdentityProofingProviderRuntimeData": IdentityProofingProviderRuntimeData,
+    "IdentityProofingProviderSearchRequest": IdentityProofingProviderSearchRequest,
+    "IdentityProofingProviderTemplate": IdentityProofingProviderTemplate,
+    "IdentityProofingProviderTemplateConfiguration": IdentityProofingProviderTemplateConfiguration,
+    "IdentityProofingProviderTemplateIdcsLockedBy": IdentityProofingProviderTemplateIdcsLockedBy,
+    "IdentityProofingProviderTemplates": IdentityProofingProviderTemplates,
+    "IdentityProofingProviders": IdentityProofingProviders,
     "IdentityPropagationTrust": IdentityPropagationTrust,
     "IdentityPropagationTrustImpersonationServiceUsers": IdentityPropagationTrustImpersonationServiceUsers,
     "IdentityPropagationTrustKeytab": IdentityPropagationTrustKeytab,
@@ -944,5 +968,7 @@ identity_domains_type_mapping = {
     "UserSearchRequest": UserSearchRequest,
     "UserStatusChanger": UserStatusChanger,
     "UserX509Certificates": UserX509Certificates,
-    "Users": Users
+    "Users": Users,
+    "VerificationClaim": VerificationClaim,
+    "VerificationClaimIdcsLockedBy": VerificationClaimIdcsLockedBy
 }

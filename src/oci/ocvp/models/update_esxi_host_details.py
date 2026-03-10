@@ -49,6 +49,14 @@ class UpdateEsxiHostDetails(object):
             The value to assign to the billing_donor_host_id property of this UpdateEsxiHostDetails.
         :type billing_donor_host_id: str
 
+        :param vcf_byol_allocation_id:
+            The value to assign to the vcf_byol_allocation_id property of this UpdateEsxiHostDetails.
+        :type vcf_byol_allocation_id: str
+
+        :param is_vsan_byol_enabled:
+            The value to assign to the is_vsan_byol_enabled property of this UpdateEsxiHostDetails.
+        :type is_vsan_byol_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateEsxiHostDetails.
         :type freeform_tags: dict(str, str)
@@ -62,6 +70,8 @@ class UpdateEsxiHostDetails(object):
             'display_name': 'str',
             'next_commitment': 'str',
             'billing_donor_host_id': 'str',
+            'vcf_byol_allocation_id': 'str',
+            'is_vsan_byol_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -69,12 +79,16 @@ class UpdateEsxiHostDetails(object):
             'display_name': 'displayName',
             'next_commitment': 'nextCommitment',
             'billing_donor_host_id': 'billingDonorHostId',
+            'vcf_byol_allocation_id': 'vcfByolAllocationId',
+            'is_vsan_byol_enabled': 'isVsanByolEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._next_commitment = None
         self._billing_donor_host_id = None
+        self._vcf_byol_allocation_id = None
+        self._is_vsan_byol_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -176,6 +190,58 @@ class UpdateEsxiHostDetails(object):
         :type: str
         """
         self._billing_donor_host_id = billing_donor_host_id
+
+    @property
+    def vcf_byol_allocation_id(self):
+        """
+        Gets the vcf_byol_allocation_id of this UpdateEsxiHostDetails.
+        The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vcf_byol_allocation_id of this UpdateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._vcf_byol_allocation_id
+
+    @vcf_byol_allocation_id.setter
+    def vcf_byol_allocation_id(self, vcf_byol_allocation_id):
+        """
+        Sets the vcf_byol_allocation_id of this UpdateEsxiHostDetails.
+        The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vcf_byol_allocation_id: The vcf_byol_allocation_id of this UpdateEsxiHostDetails.
+        :type: str
+        """
+        self._vcf_byol_allocation_id = vcf_byol_allocation_id
+
+    @property
+    def is_vsan_byol_enabled(self):
+        """
+        Gets the is_vsan_byol_enabled of this UpdateEsxiHostDetails.
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+
+
+        :return: The is_vsan_byol_enabled of this UpdateEsxiHostDetails.
+        :rtype: bool
+        """
+        return self._is_vsan_byol_enabled
+
+    @is_vsan_byol_enabled.setter
+    def is_vsan_byol_enabled(self, is_vsan_byol_enabled):
+        """
+        Sets the is_vsan_byol_enabled of this UpdateEsxiHostDetails.
+        Indicates whether this host embedded VMware vSAN with BYOL Allocation.
+
+
+        :param is_vsan_byol_enabled: The is_vsan_byol_enabled of this UpdateEsxiHostDetails.
+        :type: bool
+        """
+        self._is_vsan_byol_enabled = is_vsan_byol_enabled
 
     @property
     def freeform_tags(self):

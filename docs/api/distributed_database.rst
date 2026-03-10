@@ -28,15 +28,18 @@ Distributed Database
     oci.distributed_database.models.AddDistributedDatabaseGdsControlNodeDetails
     oci.distributed_database.models.CatalogPeerWithDedicatedInfra
     oci.distributed_database.models.CatalogPeerWithExadbXs
+    oci.distributed_database.models.CatalogPeerWithExadbXsNewVaultAndCluster
     oci.distributed_database.models.ChangeDistributedAutonomousDatabaseCompartmentDetails
     oci.distributed_database.models.ChangeDistributedAutonomousDbBackupConfigDetails
     oci.distributed_database.models.ChangeDistributedDatabaseCompartmentDetails
     oci.distributed_database.models.ChangeDistributedDatabasePrivateEndpointCompartmentDetails
     oci.distributed_database.models.ChangeDistributedDbBackupConfigDetails
+    oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseGsmWalletDetails
     oci.distributed_database.models.ConfigureDistributedAutonomousDatabaseGsmsDetails
     oci.distributed_database.models.ConfigureDistributedDatabaseGsmsDetails
     oci.distributed_database.models.CreateCatalogPeerWithDedicatedInfraDetails
     oci.distributed_database.models.CreateCatalogPeerWithExadbXsDetails
+    oci.distributed_database.models.CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseDetails
@@ -44,12 +47,16 @@ Distributed Database
     oci.distributed_database.models.CreateDistributedAutonomousDatabaseShardWithDedicatedInfraDetails
     oci.distributed_database.models.CreateDistributedDatabaseCatalogDetails
     oci.distributed_database.models.CreateDistributedDatabaseCatalogWithExadbXsDetails
+    oci.distributed_database.models.CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails
     oci.distributed_database.models.CreateDistributedDatabaseDetails
     oci.distributed_database.models.CreateDistributedDatabasePrivateEndpointDetails
     oci.distributed_database.models.CreateDistributedDatabaseShardDetails
     oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsDetails
+    oci.distributed_database.models.CreateDistributedDatabaseShardWithExadbXsNewVaultAndClusterDetails
     oci.distributed_database.models.CreateShardPeerWithDedicatedInfraDetails
     oci.distributed_database.models.CreateShardPeerWithExadbXsDetails
+    oci.distributed_database.models.CreateShardPeerWithExadbXsNewVaultAndClusterDetails
+    oci.distributed_database.models.DbStorageVaultDetails
     oci.distributed_database.models.DistributedAutonomousDatabase
     oci.distributed_database.models.DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint
     oci.distributed_database.models.DistributedAutonomousDatabaseCatalog
@@ -58,6 +65,7 @@ Distributed Database
     oci.distributed_database.models.DistributedAutonomousDatabaseConnectionString
     oci.distributed_database.models.DistributedAutonomousDatabaseGsm
     oci.distributed_database.models.DistributedAutonomousDatabaseGsmImage
+    oci.distributed_database.models.DistributedAutonomousDatabaseRaftMetric
     oci.distributed_database.models.DistributedAutonomousDatabaseShard
     oci.distributed_database.models.DistributedAutonomousDatabaseShardWithDedicatedInfra
     oci.distributed_database.models.DistributedAutonomousDatabaseSummary
@@ -68,21 +76,28 @@ Distributed Database
     oci.distributed_database.models.DistributedDatabaseAssociatedWithPrivateEndpoint
     oci.distributed_database.models.DistributedDatabaseCatalog
     oci.distributed_database.models.DistributedDatabaseCatalogWithExadbXs
+    oci.distributed_database.models.DistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
     oci.distributed_database.models.DistributedDatabaseCollection
     oci.distributed_database.models.DistributedDatabaseGsm
     oci.distributed_database.models.DistributedDatabasePrivateEndpoint
     oci.distributed_database.models.DistributedDatabasePrivateEndpointCollection
     oci.distributed_database.models.DistributedDatabasePrivateEndpointSummary
+    oci.distributed_database.models.DistributedDatabaseRaftMetric
     oci.distributed_database.models.DistributedDatabaseShard
     oci.distributed_database.models.DistributedDatabaseShardWithExadbXs
+    oci.distributed_database.models.DistributedDatabaseShardWithExadbXsNewVaultAndCluster
     oci.distributed_database.models.DistributedDatabaseSummary
     oci.distributed_database.models.DistributedDbBackupConfig
     oci.distributed_database.models.DistributedDbBackupDestination
     oci.distributed_database.models.DistributedDbConnectionString
     oci.distributed_database.models.DistributedDbGsmImage
     oci.distributed_database.models.DistributedDbMetadata
+    oci.distributed_database.models.DistributedDbStorageVault
+    oci.distributed_database.models.DistributedDbVmCluster
     oci.distributed_database.models.GenerateDistributedAutonomousDatabaseWalletDetails
     oci.distributed_database.models.GenerateDistributedDatabaseWalletDetails
+    oci.distributed_database.models.MoveDistributedAutonomousDatabaseReplicationUnitDetails
+    oci.distributed_database.models.MoveDistributedDatabaseReplicationUnitDetails
     oci.distributed_database.models.PatchDistributedAutonomousDatabaseDetails
     oci.distributed_database.models.PatchDistributedDatabaseDetails
     oci.distributed_database.models.PatchInsertInstruction
@@ -91,11 +106,13 @@ Distributed Database
     oci.distributed_database.models.PatchRemoveInstruction
     oci.distributed_database.models.ShardPeerWithDedicatedInfra
     oci.distributed_database.models.ShardPeerWithExadbXs
+    oci.distributed_database.models.ShardPeerWithExadbXsNewVaultAndCluster
     oci.distributed_database.models.UpdateDistributedAutonomousDatabaseDetails
     oci.distributed_database.models.UpdateDistributedDatabaseDetails
     oci.distributed_database.models.UpdateDistributedDatabasePrivateEndpointDetails
     oci.distributed_database.models.UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletDetails
     oci.distributed_database.models.UploadDistributedDatabaseSignedCertificateAndGenerateWalletDetails
+    oci.distributed_database.models.VmClusterDetails
     oci.distributed_database.models.WorkRequest
     oci.distributed_database.models.WorkRequestError
     oci.distributed_database.models.WorkRequestErrorCollection

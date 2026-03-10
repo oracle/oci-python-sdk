@@ -339,24 +339,19 @@ class OauthExchangeTokenSigner(SecurityTokenSigner):
         4. If exchange fails and no valid cached token exists, raises the exception
 
         Returns:
-            bool: True if token was successfully refreshed, False if using cached token
-
-        Raises:
-            oci.exceptions.ServiceError: If token refresh fails and no valid cached token available
-            RuntimeError: If token refresh fails and no valid cached token available
+            bool: True if token was successfully refreshed, False if using cached token or if refresh failed without valid token
         """
         self.logger.debug("Refreshing OAuth token")
         try:
             self._session_key_supplier.refresh()
             self._generate_oauth_token_and_set_state()
             return True
-        except (oci.exceptions.ServiceError, RuntimeError) as e:
+        except Exception as e:
             if self._is_security_token_valid():
                 self.logger.info("Fetching OAuth token failed, using token from cache")
-                return False
             else:
-                self.logger.error("Fetching OAuth token failed")
-                raise e
+                self.logger.error(f"Fetching OAuth token failed: {str(e)}")
+            return False
 
     def _is_security_token_valid(self):
         return self._security_token and self._security_token.valid()

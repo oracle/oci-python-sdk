@@ -6,6 +6,8 @@ Ocvp
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.ocvp.ByolAllocationClient
+    oci.ocvp.ByolClient
     oci.ocvp.ClusterClient
     oci.ocvp.DatastoreClient
     oci.ocvp.DatastoreClusterClient
@@ -13,6 +15,8 @@ Ocvp
     oci.ocvp.ManagementApplianceClient
     oci.ocvp.SddcClient
     oci.ocvp.WorkRequestClient
+    oci.ocvp.ByolAllocationClientCompositeOperations
+    oci.ocvp.ByolClientCompositeOperations
     oci.ocvp.ClusterClientCompositeOperations
     oci.ocvp.DatastoreClientCompositeOperations
     oci.ocvp.DatastoreClusterClientCompositeOperations
@@ -36,12 +40,25 @@ Ocvp
     oci.ocvp.models.AttachDatastoreClusterToEsxiHostDetails
     oci.ocvp.models.BlockVolumeAttachment
     oci.ocvp.models.BlockVolumeDetails
+    oci.ocvp.models.Byol
+    oci.ocvp.models.ByolAllocation
+    oci.ocvp.models.ByolAllocationCollection
+    oci.ocvp.models.ByolAllocationSummary
+    oci.ocvp.models.ByolCollection
+    oci.ocvp.models.ByolRealmAllocationCollection
+    oci.ocvp.models.ByolRealmAllocationSummary
+    oci.ocvp.models.ByolSummary
+    oci.ocvp.models.ChangeByolAllocationCompartmentDetails
+    oci.ocvp.models.ChangeByolCompartmentDetails
     oci.ocvp.models.ChangeDatastoreClusterCompartmentDetails
     oci.ocvp.models.ChangeDatastoreCompartmentDetails
     oci.ocvp.models.ChangeSddcCompartmentDetails
     oci.ocvp.models.Cluster
+    oci.ocvp.models.ClusterByolAllocationDetails
     oci.ocvp.models.ClusterCollection
     oci.ocvp.models.ClusterSummary
+    oci.ocvp.models.CreateByolAllocationDetails
+    oci.ocvp.models.CreateByolDetails
     oci.ocvp.models.CreateClusterDetails
     oci.ocvp.models.CreateDatastoreClusterDetails
     oci.ocvp.models.CreateDatastoreDetails
@@ -75,6 +92,7 @@ Ocvp
     oci.ocvp.models.RemoveDatastoreFromDatastoreClusterDetails
     oci.ocvp.models.ReplaceHostDetails
     oci.ocvp.models.Sddc
+    oci.ocvp.models.SddcByolAllocationDetails
     oci.ocvp.models.SddcCollection
     oci.ocvp.models.SddcPassword
     oci.ocvp.models.SddcSummary
@@ -85,6 +103,8 @@ Ocvp
     oci.ocvp.models.SupportedHostShapeSummary
     oci.ocvp.models.SupportedVmwareSoftwareVersionCollection
     oci.ocvp.models.SupportedVmwareSoftwareVersionSummary
+    oci.ocvp.models.UpdateByolAllocationDetails
+    oci.ocvp.models.UpdateByolDetails
     oci.ocvp.models.UpdateClusterDetails
     oci.ocvp.models.UpdateDatastoreClusterDetails
     oci.ocvp.models.UpdateDatastoreDetails

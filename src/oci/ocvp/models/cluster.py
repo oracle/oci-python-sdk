@@ -180,6 +180,14 @@ class Cluster(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vsphere_type: str
 
+        :param cluster_byol_allocation_details:
+            The value to assign to the cluster_byol_allocation_details property of this Cluster.
+        :type cluster_byol_allocation_details: oci.ocvp.models.ClusterByolAllocationDetails
+
+        :param initial_vcf_byol_allocation_id:
+            The value to assign to the initial_vcf_byol_allocation_id property of this Cluster.
+        :type initial_vcf_byol_allocation_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Cluster.
         :type freeform_tags: dict(str, str)
@@ -218,6 +226,8 @@ class Cluster(object):
             'datastores': 'list[DatastoreDetails]',
             'datastore_cluster_ids': 'list[str]',
             'vsphere_type': 'str',
+            'cluster_byol_allocation_details': 'ClusterByolAllocationDetails',
+            'initial_vcf_byol_allocation_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -247,6 +257,8 @@ class Cluster(object):
             'datastores': 'datastores',
             'datastore_cluster_ids': 'datastoreClusterIds',
             'vsphere_type': 'vsphereType',
+            'cluster_byol_allocation_details': 'clusterByolAllocationDetails',
+            'initial_vcf_byol_allocation_id': 'initialVcfByolAllocationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -275,6 +287,8 @@ class Cluster(object):
         self._datastores = None
         self._datastore_cluster_ids = None
         self._vsphere_type = None
+        self._cluster_byol_allocation_details = None
+        self._initial_vcf_byol_allocation_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -980,6 +994,54 @@ class Cluster(object):
         if not value_allowed_none_or_none_sentinel(vsphere_type, allowed_values):
             vsphere_type = 'UNKNOWN_ENUM_VALUE'
         self._vsphere_type = vsphere_type
+
+    @property
+    def cluster_byol_allocation_details(self):
+        """
+        Gets the cluster_byol_allocation_details of this Cluster.
+
+        :return: The cluster_byol_allocation_details of this Cluster.
+        :rtype: oci.ocvp.models.ClusterByolAllocationDetails
+        """
+        return self._cluster_byol_allocation_details
+
+    @cluster_byol_allocation_details.setter
+    def cluster_byol_allocation_details(self, cluster_byol_allocation_details):
+        """
+        Sets the cluster_byol_allocation_details of this Cluster.
+
+        :param cluster_byol_allocation_details: The cluster_byol_allocation_details of this Cluster.
+        :type: oci.ocvp.models.ClusterByolAllocationDetails
+        """
+        self._cluster_byol_allocation_details = cluster_byol_allocation_details
+
+    @property
+    def initial_vcf_byol_allocation_id(self):
+        """
+        Gets the initial_vcf_byol_allocation_id of this Cluster.
+        The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The initial_vcf_byol_allocation_id of this Cluster.
+        :rtype: str
+        """
+        return self._initial_vcf_byol_allocation_id
+
+    @initial_vcf_byol_allocation_id.setter
+    def initial_vcf_byol_allocation_id(self, initial_vcf_byol_allocation_id):
+        """
+        Sets the initial_vcf_byol_allocation_id of this Cluster.
+        The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param initial_vcf_byol_allocation_id: The initial_vcf_byol_allocation_id of this Cluster.
+        :type: str
+        """
+        self._initial_vcf_byol_allocation_id = initial_vcf_byol_allocation_id
 
     @property
     def freeform_tags(self):

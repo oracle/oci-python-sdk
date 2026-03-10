@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import waas_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class WaasClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class WaasClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class WaasClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("waas"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -166,7 +166,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/accept_recommendations.py.html>`__ to see an example of how to use accept_recommendations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/accept_recommendations.py.html>`__ to see an example of how to use accept_recommendations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -280,7 +280,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -401,7 +401,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_address_list_compartment.py.html>`__ to see an example of how to use change_address_list_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_address_list_compartment.py.html>`__ to see an example of how to use change_address_list_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['addressListId']
@@ -523,7 +523,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -644,7 +644,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_custom_protection_rule_compartment.py.html>`__ to see an example of how to use change_custom_protection_rule_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_custom_protection_rule_compartment.py.html>`__ to see an example of how to use change_custom_protection_rule_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customProtectionRuleId']
@@ -766,7 +766,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_waas_policy_compartment.py.html>`__ to see an example of how to use change_waas_policy_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_waas_policy_compartment.py.html>`__ to see an example of how to use change_waas_policy_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -878,7 +878,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_address_list.py.html>`__ to see an example of how to use create_address_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_address_list.py.html>`__ to see an example of how to use create_address_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -982,7 +982,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1087,7 +1087,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_custom_protection_rule.py.html>`__ to see an example of how to use create_custom_protection_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_custom_protection_rule.py.html>`__ to see an example of how to use create_custom_protection_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1202,7 +1202,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_waas_policy.py.html>`__ to see an example of how to use create_waas_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_waas_policy.py.html>`__ to see an example of how to use create_waas_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1305,7 +1305,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_address_list.py.html>`__ to see an example of how to use delete_address_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_address_list.py.html>`__ to see an example of how to use delete_address_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['addressListId']
@@ -1420,7 +1420,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -1535,7 +1535,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_custom_protection_rule.py.html>`__ to see an example of how to use delete_custom_protection_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_custom_protection_rule.py.html>`__ to see an example of how to use delete_custom_protection_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customProtectionRuleId']
@@ -1650,7 +1650,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_waas_policy.py.html>`__ to see an example of how to use delete_waas_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_waas_policy.py.html>`__ to see an example of how to use delete_waas_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -1758,7 +1758,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_address_list.py.html>`__ to see an example of how to use get_address_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_address_list.py.html>`__ to see an example of how to use get_address_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['addressListId']
@@ -1865,7 +1865,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -1972,7 +1972,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_custom_protection_rule.py.html>`__ to see an example of how to use get_custom_protection_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_custom_protection_rule.py.html>`__ to see an example of how to use get_custom_protection_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customProtectionRuleId']
@@ -2079,7 +2079,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_device_fingerprint_challenge.py.html>`__ to see an example of how to use get_device_fingerprint_challenge API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_device_fingerprint_challenge.py.html>`__ to see an example of how to use get_device_fingerprint_challenge API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2186,7 +2186,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_human_interaction_challenge.py.html>`__ to see an example of how to use get_human_interaction_challenge API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_human_interaction_challenge.py.html>`__ to see an example of how to use get_human_interaction_challenge API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2293,7 +2293,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_js_challenge.py.html>`__ to see an example of how to use get_js_challenge API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_js_challenge.py.html>`__ to see an example of how to use get_js_challenge API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2400,7 +2400,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_policy_config.py.html>`__ to see an example of how to use get_policy_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_policy_config.py.html>`__ to see an example of how to use get_policy_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2510,7 +2510,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_rule.py.html>`__ to see an example of how to use get_protection_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_rule.py.html>`__ to see an example of how to use get_protection_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId', 'protectionRuleKey']
@@ -2618,7 +2618,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_settings.py.html>`__ to see an example of how to use get_protection_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_settings.py.html>`__ to see an example of how to use get_protection_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2725,7 +2725,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waas_policy.py.html>`__ to see an example of how to use get_waas_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waas_policy.py.html>`__ to see an example of how to use get_waas_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2832,7 +2832,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_address_rate_limiting.py.html>`__ to see an example of how to use get_waf_address_rate_limiting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_address_rate_limiting.py.html>`__ to see an example of how to use get_waf_address_rate_limiting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -2939,7 +2939,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_config.py.html>`__ to see an example of how to use get_waf_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_config.py.html>`__ to see an example of how to use get_waf_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -3046,7 +3046,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -3160,7 +3160,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_access_rules.py.html>`__ to see an example of how to use list_access_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_access_rules.py.html>`__ to see an example of how to use list_access_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -3310,7 +3310,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_address_lists.py.html>`__ to see an example of how to use list_address_lists API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_address_lists.py.html>`__ to see an example of how to use list_address_lists API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -3459,7 +3459,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_caching_rules.py.html>`__ to see an example of how to use list_caching_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_caching_rules.py.html>`__ to see an example of how to use list_caching_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -3586,7 +3586,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_captchas.py.html>`__ to see an example of how to use list_captchas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_captchas.py.html>`__ to see an example of how to use list_captchas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -3736,7 +3736,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -3911,7 +3911,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_custom_protection_rules.py.html>`__ to see an example of how to use list_custom_protection_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_custom_protection_rules.py.html>`__ to see an example of how to use list_custom_protection_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -4064,7 +4064,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_edge_subnets.py.html>`__ to see an example of how to use list_edge_subnets API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_edge_subnets.py.html>`__ to see an example of how to use list_edge_subnets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4195,7 +4195,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_good_bots.py.html>`__ to see an example of how to use list_good_bots API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_good_bots.py.html>`__ to see an example of how to use list_good_bots API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -4327,7 +4327,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_protection_rules.py.html>`__ to see an example of how to use list_protection_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_protection_rules.py.html>`__ to see an example of how to use list_protection_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -4472,7 +4472,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -4606,7 +4606,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_threat_feeds.py.html>`__ to see an example of how to use list_threat_feeds API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_threat_feeds.py.html>`__ to see an example of how to use list_threat_feeds API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -4756,7 +4756,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policies.py.html>`__ to see an example of how to use list_waas_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policies.py.html>`__ to see an example of how to use list_waas_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -4912,7 +4912,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use list_waas_policy_custom_protection_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use list_waas_policy_custom_protection_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -5058,7 +5058,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_blocked_requests.py.html>`__ to see an example of how to use list_waf_blocked_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_blocked_requests.py.html>`__ to see an example of how to use list_waf_blocked_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -5264,7 +5264,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_logs.py.html>`__ to see an example of how to use list_waf_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_logs.py.html>`__ to see an example of how to use list_waf_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -5457,7 +5457,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_requests.py.html>`__ to see an example of how to use list_waf_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_requests.py.html>`__ to see an example of how to use list_waf_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -5591,7 +5591,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_traffic.py.html>`__ to see an example of how to use list_waf_traffic API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_traffic.py.html>`__ to see an example of how to use list_waf_traffic API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -5718,7 +5718,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_whitelists.py.html>`__ to see an example of how to use list_whitelists API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_whitelists.py.html>`__ to see an example of how to use list_whitelists API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -5856,7 +5856,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId', 'compartmentId']
@@ -5989,7 +5989,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/purge_cache.py.html>`__ to see an example of how to use purge_cache API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/purge_cache.py.html>`__ to see an example of how to use purge_cache API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -6114,7 +6114,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_access_rules.py.html>`__ to see an example of how to use update_access_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_access_rules.py.html>`__ to see an example of how to use update_access_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -6230,7 +6230,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_address_list.py.html>`__ to see an example of how to use update_address_list API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_address_list.py.html>`__ to see an example of how to use update_address_list API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['addressListId']
@@ -6357,7 +6357,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_caching_rules.py.html>`__ to see an example of how to use update_caching_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_caching_rules.py.html>`__ to see an example of how to use update_caching_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -6485,7 +6485,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_captchas.py.html>`__ to see an example of how to use update_captchas API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_captchas.py.html>`__ to see an example of how to use update_captchas API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -6601,7 +6601,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['certificateId']
@@ -6721,7 +6721,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_custom_protection_rule.py.html>`__ to see an example of how to use update_custom_protection_rule API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_custom_protection_rule.py.html>`__ to see an example of how to use update_custom_protection_rule API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customProtectionRuleId']
@@ -6847,7 +6847,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_device_fingerprint_challenge.py.html>`__ to see an example of how to use update_device_fingerprint_challenge API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_device_fingerprint_challenge.py.html>`__ to see an example of how to use update_device_fingerprint_challenge API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -6970,7 +6970,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_good_bots.py.html>`__ to see an example of how to use update_good_bots API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_good_bots.py.html>`__ to see an example of how to use update_good_bots API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7090,7 +7090,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_human_interaction_challenge.py.html>`__ to see an example of how to use update_human_interaction_challenge API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_human_interaction_challenge.py.html>`__ to see an example of how to use update_human_interaction_challenge API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7212,7 +7212,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_js_challenge.py.html>`__ to see an example of how to use update_js_challenge API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_js_challenge.py.html>`__ to see an example of how to use update_js_challenge API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7332,7 +7332,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_policy_config.py.html>`__ to see an example of how to use update_policy_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_policy_config.py.html>`__ to see an example of how to use update_policy_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7451,7 +7451,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_rules.py.html>`__ to see an example of how to use update_protection_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_rules.py.html>`__ to see an example of how to use update_protection_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7568,7 +7568,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_settings.py.html>`__ to see an example of how to use update_protection_settings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_settings.py.html>`__ to see an example of how to use update_protection_settings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7684,7 +7684,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_threat_feeds.py.html>`__ to see an example of how to use update_threat_feeds API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_threat_feeds.py.html>`__ to see an example of how to use update_threat_feeds API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7803,7 +7803,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy.py.html>`__ to see an example of how to use update_waas_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy.py.html>`__ to see an example of how to use update_waas_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -7924,7 +7924,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use update_waas_policy_custom_protection_rules API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use update_waas_policy_custom_protection_rules API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -8044,7 +8044,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_address_rate_limiting.py.html>`__ to see an example of how to use update_waf_address_rate_limiting API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_address_rate_limiting.py.html>`__ to see an example of how to use update_waf_address_rate_limiting API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -8171,7 +8171,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_config.py.html>`__ to see an example of how to use update_waf_config API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_config.py.html>`__ to see an example of how to use update_waf_config API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']
@@ -8298,7 +8298,7 @@ class WaasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_whitelists.py.html>`__ to see an example of how to use update_whitelists API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_whitelists.py.html>`__ to see an example of how to use update_whitelists API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['waasPolicyId']

@@ -14,8 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
-from oci.exceptions import InvalidAlloyConfig
-from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
+from oci.exceptions import InvalidDeveloperToolConfiguration
+from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import identity_type_mapping
 missing = Sentinel("Missing")
 
@@ -30,7 +30,7 @@ class IdentityClient(object):
         Creates a new service client
 
         :param dict config:
-            Configuration keys and values as per `SDK and Tool Configuration <https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm>`__.
+            Configuration keys and values as per `SDK and Tool Configuration <https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm>`__.
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
@@ -49,7 +49,7 @@ class IdentityClient(object):
             The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
             provided in the config parameter.
 
-            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            One use case for this parameter is for `Instance Principals authentication <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
             by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
         :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
 
@@ -81,7 +81,7 @@ class IdentityClient(object):
             By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("identity"):
-            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+            raise InvalidDeveloperToolConfiguration("The Developer Tool Configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration file configured the service you're targeting or contact the cloud provider on the availability of this service")
 
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -174,7 +174,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_domain.py.html>`__ to see an example of how to use activate_domain API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_domain.py.html>`__ to see an example of how to use activate_domain API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -297,7 +297,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_mfa_totp_device.py.html>`__ to see an example of how to use activate_mfa_totp_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_mfa_totp_device.py.html>`__ to see an example of how to use activate_mfa_totp_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'mfaTotpDeviceId']
@@ -424,7 +424,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_tag_default_lock.py.html>`__ to see an example of how to use add_tag_default_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_tag_default_lock.py.html>`__ to see an example of how to use add_tag_default_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagDefaultId']
@@ -552,7 +552,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_tag_namespace_lock.py.html>`__ to see an example of how to use add_tag_namespace_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_tag_namespace_lock.py.html>`__ to see an example of how to use add_tag_namespace_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -671,7 +671,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_user_to_group.py.html>`__ to see an example of how to use add_user_to_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_user_to_group.py.html>`__ to see an example of how to use add_user_to_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -772,7 +772,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/assemble_effective_tag_set.py.html>`__ to see an example of how to use assemble_effective_tag_set API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/assemble_effective_tag_set.py.html>`__ to see an example of how to use assemble_effective_tag_set API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -895,7 +895,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_resources.py.html>`__ to see an example of how to use bulk_delete_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_resources.py.html>`__ to see an example of how to use bulk_delete_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1034,7 +1034,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_tags.py.html>`__ to see an example of how to use bulk_delete_tags API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_tags.py.html>`__ to see an example of how to use bulk_delete_tags API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1159,7 +1159,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_edit_tags.py.html>`__ to see an example of how to use bulk_edit_tags API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_edit_tags.py.html>`__ to see an example of how to use bulk_edit_tags API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -1273,7 +1273,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_move_resources.py.html>`__ to see an example of how to use bulk_move_resources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_move_resources.py.html>`__ to see an example of how to use bulk_move_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -1415,7 +1415,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/cascade_delete_tag_namespace.py.html>`__ to see an example of how to use cascade_delete_tag_namespace API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/cascade_delete_tag_namespace.py.html>`__ to see an example of how to use cascade_delete_tag_namespace API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -1550,7 +1550,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_compartment.py.html>`__ to see an example of how to use change_domain_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_compartment.py.html>`__ to see an example of how to use change_domain_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -1684,7 +1684,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_license_type.py.html>`__ to see an example of how to use change_domain_license_type API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_license_type.py.html>`__ to see an example of how to use change_domain_license_type API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -1811,7 +1811,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_tag_namespace_compartment.py.html>`__ to see an example of how to use change_tag_namespace_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_tag_namespace_compartment.py.html>`__ to see an example of how to use change_tag_namespace_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -1943,7 +1943,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -2074,7 +2074,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_compartment.py.html>`__ to see an example of how to use create_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_compartment.py.html>`__ to see an example of how to use create_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2189,7 +2189,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -2308,7 +2308,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_db_credential.py.html>`__ to see an example of how to use create_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_db_credential.py.html>`__ to see an example of how to use create_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -2433,7 +2433,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_domain.py.html>`__ to see an example of how to use create_domain API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_domain.py.html>`__ to see an example of how to use create_domain API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2553,7 +2553,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_dynamic_group.py.html>`__ to see an example of how to use create_dynamic_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_dynamic_group.py.html>`__ to see an example of how to use create_dynamic_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2676,7 +2676,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_group.py.html>`__ to see an example of how to use create_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_group.py.html>`__ to see an example of how to use create_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2799,7 +2799,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -2907,7 +2907,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_idp_group_mapping.py.html>`__ to see an example of how to use create_idp_group_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_idp_group_mapping.py.html>`__ to see an example of how to use create_idp_group_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -3019,7 +3019,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_mfa_totp_device.py.html>`__ to see an example of how to use create_mfa_totp_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_mfa_totp_device.py.html>`__ to see an example of how to use create_mfa_totp_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -3153,7 +3153,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_network_source.py.html>`__ to see an example of how to use create_network_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_network_source.py.html>`__ to see an example of how to use create_network_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3256,7 +3256,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_o_auth_client_credential.py.html>`__ to see an example of how to use create_o_auth_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_o_auth_client_credential.py.html>`__ to see an example of how to use create_o_auth_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -3384,7 +3384,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_or_reset_ui_password.py.html>`__ to see an example of how to use create_or_reset_ui_password API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_or_reset_ui_password.py.html>`__ to see an example of how to use create_or_reset_ui_password API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -3514,7 +3514,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_policy.py.html>`__ to see an example of how to use create_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_policy.py.html>`__ to see an example of how to use create_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -3617,7 +3617,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_region_subscription.py.html>`__ to see an example of how to use create_region_subscription API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_region_subscription.py.html>`__ to see an example of how to use create_region_subscription API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tenancyId']
@@ -3735,7 +3735,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -3863,7 +3863,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_swift_password.py.html>`__ to see an example of how to use create_swift_password API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_swift_password.py.html>`__ to see an example of how to use create_swift_password API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -4002,7 +4002,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag.py.html>`__ to see an example of how to use create_tag API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag.py.html>`__ to see an example of how to use create_tag API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -4133,7 +4133,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_default.py.html>`__ to see an example of how to use create_tag_default API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_default.py.html>`__ to see an example of how to use create_tag_default API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4248,7 +4248,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_namespace.py.html>`__ to see an example of how to use create_tag_namespace API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_namespace.py.html>`__ to see an example of how to use create_tag_namespace API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4386,7 +4386,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_user.py.html>`__ to see an example of how to use create_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_user.py.html>`__ to see an example of how to use create_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -4503,7 +4503,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/deactivate_domain.py.html>`__ to see an example of how to use deactivate_domain API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/deactivate_domain.py.html>`__ to see an example of how to use deactivate_domain API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -4621,7 +4621,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'fingerprint']
@@ -4730,7 +4730,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'authTokenId']
@@ -4836,7 +4836,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_compartment.py.html>`__ to see an example of how to use delete_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_compartment.py.html>`__ to see an example of how to use delete_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -4944,7 +4944,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'customerSecretKeyId']
@@ -5057,7 +5057,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_db_credential.py.html>`__ to see an example of how to use delete_db_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_db_credential.py.html>`__ to see an example of how to use delete_db_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'dbCredentialId']
@@ -5175,7 +5175,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_domain.py.html>`__ to see an example of how to use delete_domain API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_domain.py.html>`__ to see an example of how to use delete_domain API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -5282,7 +5282,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_dynamic_group.py.html>`__ to see an example of how to use delete_dynamic_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_dynamic_group.py.html>`__ to see an example of how to use delete_dynamic_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicGroupId']
@@ -5387,7 +5387,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_group.py.html>`__ to see an example of how to use delete_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_group.py.html>`__ to see an example of how to use delete_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -5497,7 +5497,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -5609,7 +5609,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_idp_group_mapping.py.html>`__ to see an example of how to use delete_idp_group_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_idp_group_mapping.py.html>`__ to see an example of how to use delete_idp_group_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId', 'mappingId']
@@ -5718,7 +5718,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_mfa_totp_device.py.html>`__ to see an example of how to use delete_mfa_totp_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_mfa_totp_device.py.html>`__ to see an example of how to use delete_mfa_totp_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'mfaTotpDeviceId']
@@ -5824,7 +5824,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_network_source.py.html>`__ to see an example of how to use delete_network_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_network_source.py.html>`__ to see an example of how to use delete_network_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkSourceId']
@@ -5932,7 +5932,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_o_auth_client_credential.py.html>`__ to see an example of how to use delete_o_auth_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_o_auth_client_credential.py.html>`__ to see an example of how to use delete_o_auth_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'oauth2ClientCredentialId']
@@ -6038,7 +6038,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -6146,7 +6146,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'smtpCredentialId']
@@ -6257,7 +6257,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_swift_password.py.html>`__ to see an example of how to use delete_swift_password API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_swift_password.py.html>`__ to see an example of how to use delete_swift_password API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'swiftPasswordId']
@@ -6388,7 +6388,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag.py.html>`__ to see an example of how to use delete_tag API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag.py.html>`__ to see an example of how to use delete_tag API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId', 'tagName']
@@ -6509,7 +6509,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_default.py.html>`__ to see an example of how to use delete_tag_default API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_default.py.html>`__ to see an example of how to use delete_tag_default API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagDefaultId']
@@ -6637,7 +6637,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_namespace.py.html>`__ to see an example of how to use delete_tag_namespace API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_namespace.py.html>`__ to see an example of how to use delete_tag_namespace API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -6752,7 +6752,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_user.py.html>`__ to see an example of how to use delete_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_user.py.html>`__ to see an example of how to use delete_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -6880,7 +6880,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/enable_replication_to_region.py.html>`__ to see an example of how to use enable_replication_to_region API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/enable_replication_to_region.py.html>`__ to see an example of how to use enable_replication_to_region API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -6995,7 +6995,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/generate_totp_seed.py.html>`__ to see an example of how to use generate_totp_seed API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/generate_totp_seed.py.html>`__ to see an example of how to use generate_totp_seed API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'mfaTotpDeviceId']
@@ -7099,7 +7099,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_authentication_policy.py.html>`__ to see an example of how to use get_authentication_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_authentication_policy.py.html>`__ to see an example of how to use get_authentication_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -7200,7 +7200,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_compartment.py.html>`__ to see an example of how to use get_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_compartment.py.html>`__ to see an example of how to use get_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -7298,7 +7298,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_domain.py.html>`__ to see an example of how to use get_domain API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_domain.py.html>`__ to see an example of how to use get_domain API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -7400,7 +7400,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_dynamic_group.py.html>`__ to see an example of how to use get_dynamic_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_dynamic_group.py.html>`__ to see an example of how to use get_dynamic_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicGroupId']
@@ -7498,7 +7498,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_group.py.html>`__ to see an example of how to use get_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_group.py.html>`__ to see an example of how to use get_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -7596,7 +7596,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_iam_work_request.py.html>`__ to see an example of how to use get_iam_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_iam_work_request.py.html>`__ to see an example of how to use get_iam_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['iamWorkRequestId']
@@ -7702,7 +7702,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -7803,7 +7803,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_idp_group_mapping.py.html>`__ to see an example of how to use get_idp_group_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_idp_group_mapping.py.html>`__ to see an example of how to use get_idp_group_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId', 'mappingId']
@@ -7901,7 +7901,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_mfa_totp_device.py.html>`__ to see an example of how to use get_mfa_totp_device API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_mfa_totp_device.py.html>`__ to see an example of how to use get_mfa_totp_device API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'mfaTotpDeviceId']
@@ -7996,7 +7996,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_network_source.py.html>`__ to see an example of how to use get_network_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_network_source.py.html>`__ to see an example of how to use get_network_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkSourceId']
@@ -8090,7 +8090,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_policy.py.html>`__ to see an example of how to use get_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_policy.py.html>`__ to see an example of how to use get_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -8187,7 +8187,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_standard_tag_template.py.html>`__ to see an example of how to use get_standard_tag_template API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_standard_tag_template.py.html>`__ to see an example of how to use get_standard_tag_template API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['standardTagNamespaceName', 'compartmentId']
@@ -8291,7 +8291,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag.py.html>`__ to see an example of how to use get_tag API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag.py.html>`__ to see an example of how to use get_tag API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId', 'tagName']
@@ -8386,7 +8386,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_default.py.html>`__ to see an example of how to use get_tag_default API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_default.py.html>`__ to see an example of how to use get_tag_default API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagDefaultId']
@@ -8480,7 +8480,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_namespace.py.html>`__ to see an example of how to use get_tag_namespace API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_namespace.py.html>`__ to see an example of how to use get_tag_namespace API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -8575,7 +8575,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tagging_work_request.py.html>`__ to see an example of how to use get_tagging_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tagging_work_request.py.html>`__ to see an example of how to use get_tagging_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -8669,7 +8669,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tenancy.py.html>`__ to see an example of how to use get_tenancy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tenancy.py.html>`__ to see an example of how to use get_tenancy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tenancyId']
@@ -8763,7 +8763,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user.py.html>`__ to see an example of how to use get_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user.py.html>`__ to see an example of how to use get_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -8857,7 +8857,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_group_membership.py.html>`__ to see an example of how to use get_user_group_membership API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_group_membership.py.html>`__ to see an example of how to use get_user_group_membership API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userGroupMembershipId']
@@ -8952,7 +8952,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_ui_password_information.py.html>`__ to see an example of how to use get_user_ui_password_information API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_ui_password_information.py.html>`__ to see an example of how to use get_user_ui_password_information API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -9047,7 +9047,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -9153,7 +9153,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/import_standard_tags.py.html>`__ to see an example of how to use import_standard_tags API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/import_standard_tags.py.html>`__ to see an example of how to use import_standard_tags API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9255,7 +9255,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_allowed_domain_license_types.py.html>`__ to see an example of how to use list_allowed_domain_license_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_allowed_domain_license_types.py.html>`__ to see an example of how to use list_allowed_domain_license_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9356,7 +9356,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -9451,7 +9451,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -9551,7 +9551,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_availability_domains.py.html>`__ to see an example of how to use list_availability_domains API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_availability_domains.py.html>`__ to see an example of how to use list_availability_domains API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -9656,7 +9656,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_action_resource_types.py.html>`__ to see an example of how to use list_bulk_action_resource_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_action_resource_types.py.html>`__ to see an example of how to use list_bulk_action_resource_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['bulkActionType']
@@ -9763,7 +9763,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_edit_tags_resource_types.py.html>`__ to see an example of how to use list_bulk_edit_tags_resource_types API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_edit_tags_resource_types.py.html>`__ to see an example of how to use list_bulk_edit_tags_resource_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -9929,7 +9929,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_compartments.py.html>`__ to see an example of how to use list_compartments API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_compartments.py.html>`__ to see an example of how to use list_compartments API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10076,7 +10076,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_cost_tracking_tags.py.html>`__ to see an example of how to use list_cost_tracking_tags API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_cost_tracking_tags.py.html>`__ to see an example of how to use list_cost_tracking_tags API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10175,7 +10175,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -10305,7 +10305,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_db_credentials.py.html>`__ to see an example of how to use list_db_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_db_credentials.py.html>`__ to see an example of how to use list_db_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -10500,7 +10500,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_domains.py.html>`__ to see an example of how to use list_domains API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_domains.py.html>`__ to see an example of how to use list_domains API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10678,7 +10678,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_dynamic_groups.py.html>`__ to see an example of how to use list_dynamic_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_dynamic_groups.py.html>`__ to see an example of how to use list_dynamic_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -10812,7 +10812,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_fault_domains.py.html>`__ to see an example of how to use list_fault_domains API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_fault_domains.py.html>`__ to see an example of how to use list_fault_domains API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId', 'availabilityDomain']
@@ -10938,7 +10938,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_groups.py.html>`__ to see an example of how to use list_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_groups.py.html>`__ to see an example of how to use list_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -11081,7 +11081,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_errors.py.html>`__ to see an example of how to use list_iam_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_errors.py.html>`__ to see an example of how to use list_iam_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['iamWorkRequestId']
@@ -11218,7 +11218,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_logs.py.html>`__ to see an example of how to use list_iam_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_logs.py.html>`__ to see an example of how to use list_iam_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['iamWorkRequestId']
@@ -11352,7 +11352,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_requests.py.html>`__ to see an example of how to use list_iam_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_requests.py.html>`__ to see an example of how to use list_iam_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -11473,7 +11473,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_provider_groups.py.html>`__ to see an example of how to use list_identity_provider_groups API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_provider_groups.py.html>`__ to see an example of how to use list_identity_provider_groups API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -11638,7 +11638,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['protocol', 'compartmentId']
@@ -11776,7 +11776,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_idp_group_mappings.py.html>`__ to see an example of how to use list_idp_group_mappings API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_idp_group_mappings.py.html>`__ to see an example of how to use list_idp_group_mappings API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -11910,7 +11910,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_mfa_totp_devices.py.html>`__ to see an example of how to use list_mfa_totp_devices API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_mfa_totp_devices.py.html>`__ to see an example of how to use list_mfa_totp_devices API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -12073,7 +12073,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_network_sources.py.html>`__ to see an example of how to use list_network_sources API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_network_sources.py.html>`__ to see an example of how to use list_network_sources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -12211,7 +12211,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_o_auth_client_credentials.py.html>`__ to see an example of how to use list_o_auth_client_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_o_auth_client_credentials.py.html>`__ to see an example of how to use list_o_auth_client_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -12367,7 +12367,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_policies.py.html>`__ to see an example of how to use list_policies API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -12494,7 +12494,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_region_subscriptions.py.html>`__ to see an example of how to use list_region_subscriptions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_region_subscriptions.py.html>`__ to see an example of how to use list_region_subscriptions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tenancyId']
@@ -12585,7 +12585,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_regions.py.html>`__ to see an example of how to use list_regions API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_regions.py.html>`__ to see an example of how to use list_regions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -12668,7 +12668,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -12768,7 +12768,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_standard_tag_namespaces.py.html>`__ to see an example of how to use list_standard_tag_namespaces API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_standard_tag_namespaces.py.html>`__ to see an example of how to use list_standard_tag_namespaces API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -12869,7 +12869,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_swift_passwords.py.html>`__ to see an example of how to use list_swift_passwords API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_swift_passwords.py.html>`__ to see an example of how to use list_swift_passwords API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -12980,7 +12980,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_defaults.py.html>`__ to see an example of how to use list_tag_defaults API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_defaults.py.html>`__ to see an example of how to use list_tag_defaults API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
@@ -13107,7 +13107,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_namespaces.py.html>`__ to see an example of how to use list_tag_namespaces API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_namespaces.py.html>`__ to see an example of how to use list_tag_namespaces API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13222,7 +13222,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_errors.py.html>`__ to see an example of how to use list_tagging_work_request_errors API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_errors.py.html>`__ to see an example of how to use list_tagging_work_request_errors API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -13337,7 +13337,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_logs.py.html>`__ to see an example of how to use list_tagging_work_request_logs API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_logs.py.html>`__ to see an example of how to use list_tagging_work_request_logs API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['workRequestId']
@@ -13455,7 +13455,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_requests.py.html>`__ to see an example of how to use list_tagging_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_requests.py.html>`__ to see an example of how to use list_tagging_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13566,7 +13566,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tags.py.html>`__ to see an example of how to use list_tags API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tags.py.html>`__ to see an example of how to use list_tags API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -13707,7 +13707,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_user_group_memberships.py.html>`__ to see an example of how to use list_user_group_memberships API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_user_group_memberships.py.html>`__ to see an example of how to use list_user_group_memberships API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13851,7 +13851,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_users.py.html>`__ to see an example of how to use list_users API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_users.py.html>`__ to see an example of how to use list_users API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -13991,7 +13991,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14119,7 +14119,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/move_compartment.py.html>`__ to see an example of how to use move_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/move_compartment.py.html>`__ to see an example of how to use move_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14235,7 +14235,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/recover_compartment.py.html>`__ to see an example of how to use recover_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/recover_compartment.py.html>`__ to see an example of how to use recover_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -14358,7 +14358,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_tag_default_lock.py.html>`__ to see an example of how to use remove_tag_default_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_tag_default_lock.py.html>`__ to see an example of how to use remove_tag_default_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagDefaultId']
@@ -14486,7 +14486,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_tag_namespace_lock.py.html>`__ to see an example of how to use remove_tag_namespace_lock API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_tag_namespace_lock.py.html>`__ to see an example of how to use remove_tag_namespace_lock API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -14600,7 +14600,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_user_from_group.py.html>`__ to see an example of how to use remove_user_from_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_user_from_group.py.html>`__ to see an example of how to use remove_user_from_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userGroupMembershipId']
@@ -14700,7 +14700,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/reset_idp_scim_client.py.html>`__ to see an example of how to use reset_idp_scim_client API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/reset_idp_scim_client.py.html>`__ to see an example of how to use reset_idp_scim_client API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -14805,7 +14805,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_auth_token.py.html>`__ to see an example of how to use update_auth_token API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_auth_token.py.html>`__ to see an example of how to use update_auth_token API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'authTokenId']
@@ -14918,7 +14918,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_authentication_policy.py.html>`__ to see an example of how to use update_authentication_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_authentication_policy.py.html>`__ to see an example of how to use update_authentication_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15030,7 +15030,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_compartment.py.html>`__ to see an example of how to use update_compartment API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_compartment.py.html>`__ to see an example of how to use update_compartment API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['compartmentId']
@@ -15145,7 +15145,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_customer_secret_key.py.html>`__ to see an example of how to use update_customer_secret_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_customer_secret_key.py.html>`__ to see an example of how to use update_customer_secret_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'customerSecretKeyId']
@@ -15265,7 +15265,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_domain.py.html>`__ to see an example of how to use update_domain API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_domain.py.html>`__ to see an example of how to use update_domain API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['domainId']
@@ -15377,7 +15377,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_dynamic_group.py.html>`__ to see an example of how to use update_dynamic_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_dynamic_group.py.html>`__ to see an example of how to use update_dynamic_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicGroupId']
@@ -15489,7 +15489,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_group.py.html>`__ to see an example of how to use update_group API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_group.py.html>`__ to see an example of how to use update_group API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
@@ -15605,7 +15605,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_identity_provider.py.html>`__ to see an example of how to use update_identity_provider API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_identity_provider.py.html>`__ to see an example of how to use update_identity_provider API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
@@ -15724,7 +15724,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_idp_group_mapping.py.html>`__ to see an example of how to use update_idp_group_mapping API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_idp_group_mapping.py.html>`__ to see an example of how to use update_idp_group_mapping API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId', 'mappingId']
@@ -15837,7 +15837,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_network_source.py.html>`__ to see an example of how to use update_network_source API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_network_source.py.html>`__ to see an example of how to use update_network_source API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['networkSourceId']
@@ -15952,7 +15952,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_o_auth_client_credential.py.html>`__ to see an example of how to use update_o_auth_client_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_o_auth_client_credential.py.html>`__ to see an example of how to use update_o_auth_client_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'oauth2ClientCredentialId']
@@ -16067,7 +16067,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_policy.py.html>`__ to see an example of how to use update_policy API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_policy.py.html>`__ to see an example of how to use update_policy API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['policyId']
@@ -16182,7 +16182,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_smtp_credential.py.html>`__ to see an example of how to use update_smtp_credential API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_smtp_credential.py.html>`__ to see an example of how to use update_smtp_credential API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'smtpCredentialId']
@@ -16300,7 +16300,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_swift_password.py.html>`__ to see an example of how to use update_swift_password API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_swift_password.py.html>`__ to see an example of how to use update_swift_password API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId', 'swiftPasswordId']
@@ -16428,7 +16428,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag.py.html>`__ to see an example of how to use update_tag API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag.py.html>`__ to see an example of how to use update_tag API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId', 'tagName']
@@ -16561,7 +16561,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_default.py.html>`__ to see an example of how to use update_tag_default API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_default.py.html>`__ to see an example of how to use update_tag_default API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagDefaultId']
@@ -16691,7 +16691,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_namespace.py.html>`__ to see an example of how to use update_tag_namespace API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_namespace.py.html>`__ to see an example of how to use update_tag_namespace API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['tagNamespaceId']
@@ -16808,7 +16808,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user.py.html>`__ to see an example of how to use update_user API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user.py.html>`__ to see an example of how to use update_user API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -16920,7 +16920,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_capabilities.py.html>`__ to see an example of how to use update_user_capabilities API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_capabilities.py.html>`__ to see an example of how to use update_user_capabilities API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -17032,7 +17032,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_state.py.html>`__ to see an example of how to use update_user_state API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_state.py.html>`__ to see an example of how to use update_user_state API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
@@ -17160,7 +17160,7 @@ class IdentityClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/upload_api_key.py.html>`__ to see an example of how to use upload_api_key API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/upload_api_key.py.html>`__ to see an example of how to use upload_api_key API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
