@@ -39,7 +39,7 @@ class AddBlockVolumeToDatastoreDetails(object):
         **[Required]** Gets the block_volume_id of this AddBlockVolumeToDatastoreDetails.
         The `OCID`__ of the Block Volume to be added to the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The block_volume_id of this AddBlockVolumeToDatastoreDetails.
@@ -53,7 +53,7 @@ class AddBlockVolumeToDatastoreDetails(object):
         Sets the block_volume_id of this AddBlockVolumeToDatastoreDetails.
         The `OCID`__ of the Block Volume to be added to the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param block_volume_id: The block_volume_id of this AddBlockVolumeToDatastoreDetails.

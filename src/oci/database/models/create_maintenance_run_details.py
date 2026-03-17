@@ -177,7 +177,7 @@ class CreateMaintenanceRunDetails(object):
 
         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
         Allowed values for this property are: "ROLLING", "NONROLLING"
 
@@ -195,7 +195,7 @@ class CreateMaintenanceRunDetails(object):
 
         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
 
         :param patching_mode: The patching_mode of this CreateMaintenanceRunDetails.
@@ -245,7 +245,7 @@ class CreateMaintenanceRunDetails(object):
         Gets the compartment_id of this CreateMaintenanceRunDetails.
         The `OCID`__ of the compartment containing the Maintenance Run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateMaintenanceRunDetails.
@@ -259,7 +259,7 @@ class CreateMaintenanceRunDetails(object):
         Sets the compartment_id of this CreateMaintenanceRunDetails.
         The `OCID`__ of the compartment containing the Maintenance Run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateMaintenanceRunDetails.
@@ -273,7 +273,7 @@ class CreateMaintenanceRunDetails(object):
         Gets the database_software_image_id of this CreateMaintenanceRunDetails.
         The Autonomous AI Database Software Image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this CreateMaintenanceRunDetails.
@@ -287,7 +287,7 @@ class CreateMaintenanceRunDetails(object):
         Sets the database_software_image_id of this CreateMaintenanceRunDetails.
         The Autonomous AI Database Software Image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this CreateMaintenanceRunDetails.

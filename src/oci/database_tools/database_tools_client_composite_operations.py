@@ -33,7 +33,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -80,7 +80,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -127,7 +127,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -174,7 +174,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsConnectionCompartmentDetails change_database_tools_connection_compartment_details: (required)
             Request to change the compartment of the Database Tools connection.
@@ -218,7 +218,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsIdentityCompartmentDetails change_database_tools_identity_compartment_details: (required)
             Request to change the compartment of the Database Tools identity.
@@ -262,7 +262,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsPrivateEndpointCompartmentDetails change_database_tools_private_endpoint_compartment_details: (required)
             Request to change the compartment of the Database Tools private endpoint.
@@ -423,7 +423,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -472,7 +472,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -521,7 +521,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -570,7 +570,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RefreshDatabaseToolsIdentityCredentialDetails refresh_database_tools_identity_credential_details: (required)
             Request to refresh Database Tools identity credential.
@@ -614,7 +614,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -661,7 +661,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -708,7 +708,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -755,7 +755,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.UpdateDatabaseToolsConnectionDetails update_database_tools_connection_details: (required)
             The information to be updated.
@@ -799,7 +799,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.UpdateDatabaseToolsIdentityDetails update_database_tools_identity_details: (required)
             The information to be updated.
@@ -843,7 +843,7 @@ class DatabaseToolsClientCompositeOperations(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.UpdateDatabaseToolsPrivateEndpointDetails update_database_tools_private_endpoint_details: (required)
             The information to be updated.

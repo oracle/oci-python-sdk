@@ -130,7 +130,7 @@ class DataIngestionJobSummary(object):
         **[Required]** Gets the id of this DataIngestionJobSummary.
         The `OCID`__ of the data ingestion job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DataIngestionJobSummary.
@@ -144,7 +144,7 @@ class DataIngestionJobSummary(object):
         Sets the id of this DataIngestionJobSummary.
         The `OCID`__ of the data ingestion job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DataIngestionJobSummary.
@@ -206,7 +206,7 @@ class DataIngestionJobSummary(object):
         **[Required]** Gets the data_source_id of this DataIngestionJobSummary.
         The `OCID`__ of the parent DataSource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The data_source_id of this DataIngestionJobSummary.
@@ -220,7 +220,7 @@ class DataIngestionJobSummary(object):
         Sets the data_source_id of this DataIngestionJobSummary.
         The `OCID`__ of the parent DataSource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param data_source_id: The data_source_id of this DataIngestionJobSummary.
@@ -274,7 +274,7 @@ class DataIngestionJobSummary(object):
         **[Required]** Gets the compartment_id of this DataIngestionJobSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DataIngestionJobSummary.
@@ -288,7 +288,7 @@ class DataIngestionJobSummary(object):
         Sets the compartment_id of this DataIngestionJobSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DataIngestionJobSummary.
@@ -419,7 +419,7 @@ class DataIngestionJobSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DataIngestionJobSummary.
@@ -436,7 +436,7 @@ class DataIngestionJobSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DataIngestionJobSummary.
@@ -453,7 +453,7 @@ class DataIngestionJobSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DataIngestionJobSummary.
@@ -470,7 +470,7 @@ class DataIngestionJobSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DataIngestionJobSummary.

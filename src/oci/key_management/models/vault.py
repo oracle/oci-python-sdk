@@ -233,9 +233,9 @@ class Vault(object):
         `Encrypt`__, `Decrypt`__,
         and `GenerateDataEncryptionKey`__ operations.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/EncryptedData/Encrypt
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/DecryptedData/Decrypt
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The crypto_endpoint of this Vault.
@@ -251,9 +251,9 @@ class Vault(object):
         `Encrypt`__, `Decrypt`__,
         and `GenerateDataEncryptionKey`__ operations.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/EncryptedData/Encrypt
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/DecryptedData/Decrypt
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param crypto_endpoint: The crypto_endpoint of this Vault.
@@ -269,7 +269,7 @@ class Vault(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Vault.
@@ -285,7 +285,7 @@ class Vault(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Vault.
@@ -327,7 +327,7 @@ class Vault(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Vault.
@@ -343,7 +343,7 @@ class Vault(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Vault.

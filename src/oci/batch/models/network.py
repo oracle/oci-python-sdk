@@ -53,7 +53,7 @@ class Network(object):
         **[Required]** Gets the subnet_id of this Network.
         `OCID`__ of associated subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this Network.
@@ -67,7 +67,7 @@ class Network(object):
         Sets the subnet_id of this Network.
         `OCID`__ of associated subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this Network.
@@ -81,7 +81,7 @@ class Network(object):
         **[Required]** Gets the nsg_ids of this Network.
         A list of `OCIDs`__ of associated network security groups.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this Network.
@@ -95,7 +95,7 @@ class Network(object):
         Sets the nsg_ids of this Network.
         A list of `OCIDs`__ of associated network security groups.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this Network.

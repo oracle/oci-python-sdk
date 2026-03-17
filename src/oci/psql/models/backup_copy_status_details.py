@@ -132,7 +132,7 @@ class BackupCopyStatusDetails(object):
         Gets the backup_id of this BackupCopyStatusDetails.
         The `OCID`__ of the backup in the source region
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this BackupCopyStatusDetails.
@@ -146,7 +146,7 @@ class BackupCopyStatusDetails(object):
         Sets the backup_id of this BackupCopyStatusDetails.
         The `OCID`__ of the backup in the source region
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this BackupCopyStatusDetails.

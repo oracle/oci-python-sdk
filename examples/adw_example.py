@@ -5,7 +5,7 @@
 import oci
 
 # Overview of Autonomous Data Warehouse
-# https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adwoverview.htm
+# https://docs.oracle.com/iaas/Content/Database/Concepts/adwoverview.htm
 
 # Load the default configuration
 config = oci.config.from_file()
@@ -17,7 +17,7 @@ compartment_id = config["tenancy"]
 
 def create_adw(db_client):
     # Create the model and populate the values
-    # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adwcreating.htm
+    # See: https://docs.oracle.com/iaas/Content/Database/Tasks/adwcreating.htm
     adw_request = oci.database.models.CreateAutonomousDatabaseDetails()
 
     adw_request.compartment_id = compartment_id

@@ -86,21 +86,21 @@ class DownloadManager(object):
                     The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
                     `Using Your Own Keys for Server-Side Encryption`__.
 
-                    __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+                    __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
                 :param str opc_sse_customer_key: (optional)
                     The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
                     decrypt the data. For more information, see
                     `Using Your Own Keys for Server-Side Encryption`__.
 
-                    __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+                    __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
                 :param str opc_sse_customer_key_sha256: (optional)
                     The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
                     value is used to check the integrity of the encryption key. For more information, see
                     `Using Your Own Keys for Server-Side Encryption`__.
 
-                    __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+                    __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
                 :param str http_response_content_disposition: (optional)
                     Specify this query parameter to override the value of the Content-Disposition response header in the
@@ -409,21 +409,21 @@ class DownloadManager(object):
                     The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
                     `Using Your Own Keys for Server-Side Encryption`__.
 
-                    __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+                    __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
                 :param str opc_sse_customer_key: (optional)
                     The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
                     decrypt the data. For more information, see
                     `Using Your Own Keys for Server-Side Encryption`__.
 
-                    __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+                    __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
                 :param str opc_sse_customer_key_sha256: (optional)
                     The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
                     value is used to check the integrity of the encryption key. For more information, see
                     `Using Your Own Keys for Server-Side Encryption`__.
 
-                    __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+                    __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
                 :param str http_response_content_disposition: (optional)
                     Specify this query parameter to override the value of the Content-Disposition response header in the

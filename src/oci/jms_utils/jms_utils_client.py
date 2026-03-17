@@ -132,7 +132,7 @@ class JmsUtilsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -248,7 +248,7 @@ class JmsUtilsClient(object):
         :param str java_migration_analysis_id: (required)
             The `OCID`__ of the Java Migration Analysis.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -364,7 +364,7 @@ class JmsUtilsClient(object):
         :param str performance_tuning_analysis_id: (required)
             The `OCID`__ of the Performance Tuning Analysis.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -480,7 +480,7 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -586,7 +586,7 @@ class JmsUtilsClient(object):
         :param str java_migration_analysis_id: (required)
             The `OCID`__ of the Java Migration Analysis.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -696,7 +696,7 @@ class JmsUtilsClient(object):
         :param str performance_tuning_analysis_id: (required)
             The `OCID`__ of the Performance Tuning Analysis.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -806,7 +806,7 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -912,7 +912,7 @@ class JmsUtilsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -1022,12 +1022,12 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The `OCID`__ of the Java Migration Analysis.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_project_name: (optional)
             The project name of the Performance Tuning Analysis to query for.
@@ -1178,12 +1178,12 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The `OCID`__ of the Performance Tuning Analysis.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_project_name: (optional)
             The project name of the Performance Tuning Analysis to query for.
@@ -1348,7 +1348,7 @@ class JmsUtilsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -1474,7 +1474,7 @@ class JmsUtilsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -1628,7 +1628,7 @@ class JmsUtilsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -1782,12 +1782,12 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str work_request_id: (optional)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
             A filter to return only the resources that match the given lifecycle state.
@@ -1797,7 +1797,7 @@ class JmsUtilsClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource affected by the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2169,7 +2169,7 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -2288,7 +2288,7 @@ class JmsUtilsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the

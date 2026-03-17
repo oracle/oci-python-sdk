@@ -39,7 +39,7 @@ class BulkDeleteIpv6sItem(object):
         **[Required]** Gets the ipv6_id of this BulkDeleteIpv6sItem.
         The `OCID`__ of the IPv6 to be deleted.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ipv6_id of this BulkDeleteIpv6sItem.
@@ -53,7 +53,7 @@ class BulkDeleteIpv6sItem(object):
         Sets the ipv6_id of this BulkDeleteIpv6sItem.
         The `OCID`__ of the IPv6 to be deleted.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ipv6_id: The ipv6_id of this BulkDeleteIpv6sItem.

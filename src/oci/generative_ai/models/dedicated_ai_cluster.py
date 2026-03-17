@@ -17,8 +17,8 @@ class DedicatedAiCluster(object):
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator who gives OCI resource access to users. See
     `Getting Started with Policies`__ and `Getting Access to Generative AI Resources`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/iam-policies.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.oracle.com/iaas/Content/generative-ai/iam-policies.htm
     """
 
     #: A constant which can be used with the type property of a DedicatedAiCluster.
@@ -376,7 +376,7 @@ class DedicatedAiCluster(object):
         **[Required]** Gets the id of this DedicatedAiCluster.
         The `OCID`__ of the dedicated AI cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DedicatedAiCluster.
@@ -390,7 +390,7 @@ class DedicatedAiCluster(object):
         Sets the id of this DedicatedAiCluster.
         The `OCID`__ of the dedicated AI cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DedicatedAiCluster.
@@ -705,7 +705,7 @@ class DedicatedAiCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DedicatedAiCluster.
@@ -722,7 +722,7 @@ class DedicatedAiCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DedicatedAiCluster.
@@ -739,7 +739,7 @@ class DedicatedAiCluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DedicatedAiCluster.
@@ -756,7 +756,7 @@ class DedicatedAiCluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DedicatedAiCluster.

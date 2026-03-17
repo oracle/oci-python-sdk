@@ -46,7 +46,7 @@ class AssociationDetails(object):
         **[Required]** Gets the source_resource_id of this AssociationDetails.
         Source Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_resource_id of this AssociationDetails.
@@ -60,7 +60,7 @@ class AssociationDetails(object):
         Sets the source_resource_id of this AssociationDetails.
         Source Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_resource_id: The source_resource_id of this AssociationDetails.

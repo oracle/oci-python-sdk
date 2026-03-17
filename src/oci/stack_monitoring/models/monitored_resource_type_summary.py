@@ -243,7 +243,7 @@ class MonitoredResourceTypeSummary(object):
         **[Required]** Gets the id of this MonitoredResourceTypeSummary.
         Monitored resource type identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoredResourceTypeSummary.
@@ -257,7 +257,7 @@ class MonitoredResourceTypeSummary(object):
         Sets the id of this MonitoredResourceTypeSummary.
         Monitored resource type identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoredResourceTypeSummary.
@@ -369,7 +369,7 @@ class MonitoredResourceTypeSummary(object):
         **[Required]** Gets the compartment_id of this MonitoredResourceTypeSummary.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredResourceTypeSummary.
@@ -383,7 +383,7 @@ class MonitoredResourceTypeSummary(object):
         Sets the compartment_id of this MonitoredResourceTypeSummary.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredResourceTypeSummary.

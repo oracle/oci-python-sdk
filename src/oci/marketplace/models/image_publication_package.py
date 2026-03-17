@@ -105,7 +105,7 @@ class ImagePublicationPackage(PublicationPackage):
         Gets the app_catalog_listing_id of this ImagePublicationPackage.
         The ID of the listing resource associated with this publication package. For more information, see `AppCatalogListing`__ in the Core Services API.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/
 
 
         :return: The app_catalog_listing_id of this ImagePublicationPackage.
@@ -119,7 +119,7 @@ class ImagePublicationPackage(PublicationPackage):
         Sets the app_catalog_listing_id of this ImagePublicationPackage.
         The ID of the listing resource associated with this publication package. For more information, see `AppCatalogListing`__ in the Core Services API.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/
 
 
         :param app_catalog_listing_id: The app_catalog_listing_id of this ImagePublicationPackage.

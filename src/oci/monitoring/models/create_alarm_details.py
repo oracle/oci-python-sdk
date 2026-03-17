@@ -254,7 +254,7 @@ class CreateAlarmDetails(object):
         **[Required]** Gets the compartment_id of this CreateAlarmDetails.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAlarmDetails.
@@ -268,7 +268,7 @@ class CreateAlarmDetails(object):
         Sets the compartment_id of this CreateAlarmDetails.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAlarmDetails.
@@ -283,7 +283,7 @@ class CreateAlarmDetails(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The metric_compartment_id of this CreateAlarmDetails.
@@ -298,7 +298,7 @@ class CreateAlarmDetails(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param metric_compartment_id: The metric_compartment_id of this CreateAlarmDetails.
@@ -446,10 +446,10 @@ class CreateAlarmDetails(object):
 
           -----
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this CreateAlarmDetails.
@@ -501,10 +501,10 @@ class CreateAlarmDetails(object):
 
           -----
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this CreateAlarmDetails.
@@ -628,7 +628,7 @@ class CreateAlarmDetails(object):
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The body of this CreateAlarmDetails.
@@ -648,7 +648,7 @@ class CreateAlarmDetails(object):
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param body: The body of this CreateAlarmDetails.
@@ -731,7 +731,7 @@ class CreateAlarmDetails(object):
         Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destinations of this CreateAlarmDetails.
@@ -749,7 +749,7 @@ class CreateAlarmDetails(object):
         Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destinations: The destinations of this CreateAlarmDetails.
@@ -989,8 +989,8 @@ class CreateAlarmDetails(object):
         Optionally include `dynamic variables`__.
         The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The notification_title of this CreateAlarmDetails.
@@ -1006,8 +1006,8 @@ class CreateAlarmDetails(object):
         Optionally include `dynamic variables`__.
         The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param notification_title: The notification_title of this CreateAlarmDetails.
@@ -1025,7 +1025,7 @@ class CreateAlarmDetails(object):
         For more information about the slack period, see
         `About the Internal Reset Period`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
 
 
         :return: The evaluation_slack_duration of this CreateAlarmDetails.
@@ -1043,7 +1043,7 @@ class CreateAlarmDetails(object):
         For more information about the slack period, see
         `About the Internal Reset Period`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
 
 
         :param evaluation_slack_duration: The evaluation_slack_duration of this CreateAlarmDetails.
@@ -1062,8 +1062,8 @@ class CreateAlarmDetails(object):
         :func:`get_alarm_history` and
         :func:`retrieve_dimension_states`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The alarm_summary of this CreateAlarmDetails.
@@ -1082,8 +1082,8 @@ class CreateAlarmDetails(object):
         :func:`get_alarm_history` and
         :func:`retrieve_dimension_states`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param alarm_summary: The alarm_summary of this CreateAlarmDetails.

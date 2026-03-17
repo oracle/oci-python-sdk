@@ -130,7 +130,7 @@ class CreateExternalDbSystemConnectorDetails(object):
         **[Required]** Gets the external_db_system_id of this CreateExternalDbSystemConnectorDetails.
         The `OCID`__ of the external DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_db_system_id of this CreateExternalDbSystemConnectorDetails.
@@ -144,7 +144,7 @@ class CreateExternalDbSystemConnectorDetails(object):
         Sets the external_db_system_id of this CreateExternalDbSystemConnectorDetails.
         The `OCID`__ of the external DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_db_system_id: The external_db_system_id of this CreateExternalDbSystemConnectorDetails.

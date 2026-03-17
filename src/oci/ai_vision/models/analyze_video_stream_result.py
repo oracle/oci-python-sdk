@@ -166,7 +166,7 @@ class AnalyzeVideoStreamResult(object):
         **[Required]** Gets the stream_job_id of this AnalyzeVideoStreamResult.
         `OCID`__ of streamJob.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_job_id of this AnalyzeVideoStreamResult.
@@ -180,7 +180,7 @@ class AnalyzeVideoStreamResult(object):
         Sets the stream_job_id of this AnalyzeVideoStreamResult.
         `OCID`__ of streamJob.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_job_id: The stream_job_id of this AnalyzeVideoStreamResult.
@@ -194,7 +194,7 @@ class AnalyzeVideoStreamResult(object):
         **[Required]** Gets the stream_source_id of this AnalyzeVideoStreamResult.
         `OCID`__ of StreamSource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_source_id of this AnalyzeVideoStreamResult.
@@ -208,7 +208,7 @@ class AnalyzeVideoStreamResult(object):
         Sets the stream_source_id of this AnalyzeVideoStreamResult.
         `OCID`__ of StreamSource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_source_id: The stream_source_id of this AnalyzeVideoStreamResult.

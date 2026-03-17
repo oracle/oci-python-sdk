@@ -95,7 +95,7 @@ class ScanResultSummary(object):
         **[Required]** Gets the wls_domain_id of this ScanResultSummary.
         The `OCID`__ of the WebLogic domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The wls_domain_id of this ScanResultSummary.
@@ -109,7 +109,7 @@ class ScanResultSummary(object):
         Sets the wls_domain_id of this ScanResultSummary.
         The `OCID`__ of the WebLogic domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param wls_domain_id: The wls_domain_id of this ScanResultSummary.

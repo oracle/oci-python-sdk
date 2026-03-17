@@ -163,7 +163,7 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
         Gets the exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
         The `OCID`__ of the Exadata insight.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
@@ -177,7 +177,7 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
         Sets the exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
         The `OCID`__ of the Exadata insight.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_insight_id: The exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.

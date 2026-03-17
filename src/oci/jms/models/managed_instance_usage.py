@@ -200,7 +200,7 @@ class ManagedInstanceUsage(object):
         **[Required]** Gets the managed_instance_id of this ManagedInstanceUsage.
         The `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this ManagedInstanceUsage.
@@ -214,7 +214,7 @@ class ManagedInstanceUsage(object):
         Sets the managed_instance_id of this ManagedInstanceUsage.
         The `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this ManagedInstanceUsage.
@@ -282,7 +282,7 @@ class ManagedInstanceUsage(object):
         Gets the host_id of this ManagedInstanceUsage.
         The host `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The host_id of this ManagedInstanceUsage.
@@ -296,7 +296,7 @@ class ManagedInstanceUsage(object):
         Sets the host_id of this ManagedInstanceUsage.
         The host `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param host_id: The host_id of this ManagedInstanceUsage.

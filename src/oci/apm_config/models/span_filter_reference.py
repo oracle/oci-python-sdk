@@ -87,7 +87,7 @@ class SpanFilterReference(object):
         The `OCID`__ of the configuration item. An OCID is generated
         when the item is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SpanFilterReference.
@@ -102,7 +102,7 @@ class SpanFilterReference(object):
         The `OCID`__ of the configuration item. An OCID is generated
         when the item is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SpanFilterReference.

@@ -39,7 +39,7 @@ class ChangeBatchTaskEnvironmentCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeBatchTaskEnvironmentCompartmentDetails.
         The `OCID`__ of the compartment to move the batch task environment to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeBatchTaskEnvironmentCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeBatchTaskEnvironmentCompartmentDetails(object):
         Sets the compartment_id of this ChangeBatchTaskEnvironmentCompartmentDetails.
         The `OCID`__ of the compartment to move the batch task environment to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeBatchTaskEnvironmentCompartmentDetails.

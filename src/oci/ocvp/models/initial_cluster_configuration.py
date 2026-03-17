@@ -476,7 +476,7 @@ class InitialClusterConfiguration(object):
         Gets the capacity_reservation_id of this InitialClusterConfiguration.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The capacity_reservation_id of this InitialClusterConfiguration.
@@ -490,7 +490,7 @@ class InitialClusterConfiguration(object):
         Sets the capacity_reservation_id of this InitialClusterConfiguration.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this InitialClusterConfiguration.
@@ -574,7 +574,7 @@ class InitialClusterConfiguration(object):
         Gets the initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
         The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
@@ -588,7 +588,7 @@ class InitialClusterConfiguration(object):
         Sets the initial_vcf_byol_allocation_id of this InitialClusterConfiguration.
         The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param initial_vcf_byol_allocation_id: The initial_vcf_byol_allocation_id of this InitialClusterConfiguration.

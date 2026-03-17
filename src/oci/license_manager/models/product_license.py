@@ -225,7 +225,7 @@ class ProductLicense(object):
         **[Required]** Gets the id of this ProductLicense.
         The product license `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ProductLicense.
@@ -239,7 +239,7 @@ class ProductLicense(object):
         Sets the id of this ProductLicense.
         The product license `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ProductLicense.
@@ -253,7 +253,7 @@ class ProductLicense(object):
         **[Required]** Gets the compartment_id of this ProductLicense.
         The compartment `OCID`__ where the product license is created.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ProductLicense.
@@ -267,7 +267,7 @@ class ProductLicense(object):
         Sets the compartment_id of this ProductLicense.
         The compartment `OCID`__ where the product license is created.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ProductLicense.

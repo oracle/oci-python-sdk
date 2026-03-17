@@ -118,7 +118,7 @@ class CreateDeploymentDetails(object):
         **[Required]** Gets the gateway_id of this CreateDeploymentDetails.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this CreateDeploymentDetails.
@@ -132,7 +132,7 @@ class CreateDeploymentDetails(object):
         Sets the gateway_id of this CreateDeploymentDetails.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this CreateDeploymentDetails.
@@ -147,7 +147,7 @@ class CreateDeploymentDetails(object):
         The `OCID`__ of the compartment in which the
         resource is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDeploymentDetails.
@@ -162,7 +162,7 @@ class CreateDeploymentDetails(object):
         The `OCID`__ of the compartment in which the
         resource is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDeploymentDetails.
@@ -179,7 +179,7 @@ class CreateDeploymentDetails(object):
         `Deploying an API on an API Gateway by Creating an API
         Deployment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
+        __ https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
 
 
         :return: The path_prefix of this CreateDeploymentDetails.
@@ -196,7 +196,7 @@ class CreateDeploymentDetails(object):
         `Deploying an API on an API Gateway by Creating an API
         Deployment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
+        __ https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
 
 
         :param path_prefix: The path_prefix of this CreateDeploymentDetails.
@@ -258,7 +258,7 @@ class CreateDeploymentDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDeploymentDetails.
@@ -276,7 +276,7 @@ class CreateDeploymentDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDeploymentDetails.
@@ -294,7 +294,7 @@ class CreateDeploymentDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDeploymentDetails.
@@ -312,7 +312,7 @@ class CreateDeploymentDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDeploymentDetails.

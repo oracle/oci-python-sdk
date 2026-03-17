@@ -348,8 +348,8 @@ class AutonomousExadataInfrastructure(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this AutonomousExadataInfrastructure.
@@ -365,8 +365,8 @@ class AutonomousExadataInfrastructure(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this AutonomousExadataInfrastructure.
@@ -580,7 +580,7 @@ class AutonomousExadataInfrastructure(object):
         Gets the last_maintenance_run_id of this AutonomousExadataInfrastructure.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_maintenance_run_id of this AutonomousExadataInfrastructure.
@@ -594,7 +594,7 @@ class AutonomousExadataInfrastructure(object):
         Sets the last_maintenance_run_id of this AutonomousExadataInfrastructure.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_maintenance_run_id: The last_maintenance_run_id of this AutonomousExadataInfrastructure.
@@ -608,7 +608,7 @@ class AutonomousExadataInfrastructure(object):
         Gets the next_maintenance_run_id of this AutonomousExadataInfrastructure.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_maintenance_run_id of this AutonomousExadataInfrastructure.
@@ -622,7 +622,7 @@ class AutonomousExadataInfrastructure(object):
         Sets the next_maintenance_run_id of this AutonomousExadataInfrastructure.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param next_maintenance_run_id: The next_maintenance_run_id of this AutonomousExadataInfrastructure.
@@ -639,7 +639,7 @@ class AutonomousExadataInfrastructure(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AutonomousExadataInfrastructure.
@@ -656,7 +656,7 @@ class AutonomousExadataInfrastructure(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AutonomousExadataInfrastructure.
@@ -671,7 +671,7 @@ class AutonomousExadataInfrastructure(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AutonomousExadataInfrastructure.
@@ -686,7 +686,7 @@ class AutonomousExadataInfrastructure(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AutonomousExadataInfrastructure.

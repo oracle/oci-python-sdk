@@ -222,7 +222,7 @@ class ExascaleDbStorageVault(object):
         **[Required]** Gets the id of this ExascaleDbStorageVault.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExascaleDbStorageVault.
@@ -236,7 +236,7 @@ class ExascaleDbStorageVault(object):
         Sets the id of this ExascaleDbStorageVault.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExascaleDbStorageVault.
@@ -250,7 +250,7 @@ class ExascaleDbStorageVault(object):
         **[Required]** Gets the compartment_id of this ExascaleDbStorageVault.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExascaleDbStorageVault.
@@ -264,7 +264,7 @@ class ExascaleDbStorageVault(object):
         Sets the compartment_id of this ExascaleDbStorageVault.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExascaleDbStorageVault.
@@ -428,7 +428,7 @@ class ExascaleDbStorageVault(object):
         Gets the time_zone of this ExascaleDbStorageVault.
         The time zone that you want to use for the Exadata Database Storage Vault. For details, see `Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this ExascaleDbStorageVault.
@@ -442,7 +442,7 @@ class ExascaleDbStorageVault(object):
         Sets the time_zone of this ExascaleDbStorageVault.
         The time zone that you want to use for the Exadata Database Storage Vault. For details, see `Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this ExascaleDbStorageVault.
@@ -457,7 +457,7 @@ class ExascaleDbStorageVault(object):
         The List of Exadata VM cluster on Exascale Infrastructure `OCIDs`__
         **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_ids of this ExascaleDbStorageVault.
@@ -472,7 +472,7 @@ class ExascaleDbStorageVault(object):
         The List of Exadata VM cluster on Exascale Infrastructure `OCIDs`__
         **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_ids: The vm_cluster_ids of this ExascaleDbStorageVault.
@@ -513,7 +513,7 @@ class ExascaleDbStorageVault(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExascaleDbStorageVault.
@@ -530,7 +530,7 @@ class ExascaleDbStorageVault(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExascaleDbStorageVault.
@@ -545,7 +545,7 @@ class ExascaleDbStorageVault(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExascaleDbStorageVault.
@@ -560,7 +560,7 @@ class ExascaleDbStorageVault(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExascaleDbStorageVault.
@@ -574,7 +574,7 @@ class ExascaleDbStorageVault(object):
         Gets the exadata_infrastructure_id of this ExascaleDbStorageVault.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this ExascaleDbStorageVault.
@@ -588,7 +588,7 @@ class ExascaleDbStorageVault(object):
         Sets the exadata_infrastructure_id of this ExascaleDbStorageVault.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this ExascaleDbStorageVault.
@@ -603,7 +603,7 @@ class ExascaleDbStorageVault(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExascaleDbStorageVault.
@@ -618,7 +618,7 @@ class ExascaleDbStorageVault(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExascaleDbStorageVault.
@@ -676,7 +676,7 @@ class ExascaleDbStorageVault(object):
         Gets the cluster_placement_group_id of this ExascaleDbStorageVault.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this ExascaleDbStorageVault.
@@ -690,7 +690,7 @@ class ExascaleDbStorageVault(object):
         Sets the cluster_placement_group_id of this ExascaleDbStorageVault.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this ExascaleDbStorageVault.
@@ -704,7 +704,7 @@ class ExascaleDbStorageVault(object):
         Gets the subscription_id of this ExascaleDbStorageVault.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ExascaleDbStorageVault.
@@ -718,7 +718,7 @@ class ExascaleDbStorageVault(object):
         Sets the subscription_id of this ExascaleDbStorageVault.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ExascaleDbStorageVault.

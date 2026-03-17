@@ -40,7 +40,7 @@ class AttachDatastoreClusterToClusterDetails(object):
         The `OCID`__ of the VMware cluster to attach the
         datastore cluster to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this AttachDatastoreClusterToClusterDetails.
@@ -55,7 +55,7 @@ class AttachDatastoreClusterToClusterDetails(object):
         The `OCID`__ of the VMware cluster to attach the
         datastore cluster to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this AttachDatastoreClusterToClusterDetails.

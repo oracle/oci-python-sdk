@@ -120,7 +120,7 @@ class ManagementClientCompositeOperations(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.oda.models.ChangeOdaPrivateEndpointCompartmentDetails change_oda_private_endpoint_compartment_details: (required)
             The compartment to which the Digital Assistant instance should be moved.
@@ -332,7 +332,7 @@ class ManagementClientCompositeOperations(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.oda.models.WorkRequest.status`
@@ -508,7 +508,7 @@ class ManagementClientCompositeOperations(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.oda.models.WorkRequest.status`
@@ -557,7 +557,7 @@ class ManagementClientCompositeOperations(object):
         :param str oda_private_endpoint_attachment_id: (required)
             The `OCID`__ of ODA Private Endpoint Attachment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.oda.models.WorkRequest.status`
@@ -609,7 +609,7 @@ class ManagementClientCompositeOperations(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.oda.models.WorkRequest.status`
@@ -1210,7 +1210,7 @@ class ManagementClientCompositeOperations(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.oda.models.UpdateOdaPrivateEndpointDetails update_oda_private_endpoint_details: (required)
             The information to update.

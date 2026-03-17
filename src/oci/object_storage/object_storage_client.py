@@ -617,7 +617,7 @@ class ObjectStorageClient(object):
         See `Object Names`__
         for object naming requirements.
 
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements
+        __ https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements
 
 
         :param str namespace_name: (required)
@@ -637,35 +637,35 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_source_sse_customer_algorithm: (optional)
             The optional header that specifies \"AES256\" as the encryption algorithm to use to decrypt the source
             object. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_source_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
             the source object. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_source_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
@@ -673,13 +673,13 @@ class ObjectStorageClient(object):
             more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_kms_key_id: (optional)
             The `OCID`__ of a master encryption key used to call the Key
             Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -908,7 +908,7 @@ class ObjectStorageClient(object):
         See `Object Names`__
         for object naming requirements.
 
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements
+        __ https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements
 
 
         :param str namespace_name: (required)
@@ -937,27 +937,27 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_kms_key_id: (optional)
             The `OCID`__ of a master encryption key used to call the Key
             Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_checksum_algorithm: (optional)
             The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
@@ -2519,8 +2519,8 @@ class ObjectStorageClient(object):
             This is an optional field representing either the tenancy `OCID`__ or the compartment
             `OCID`__ within the tenancy whose Object Storage namespace is to be retrieved.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2622,7 +2622,7 @@ class ObjectStorageClient(object):
         to give users access, see
         `Getting Started with Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -2767,21 +2767,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str http_response_content_disposition: (optional)
             Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
@@ -3769,21 +3769,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3909,7 +3909,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -3923,13 +3923,13 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
             Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
@@ -4079,13 +4079,13 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4214,13 +4214,13 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4341,7 +4341,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -4365,7 +4365,7 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
@@ -4393,7 +4393,7 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4525,7 +4525,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -4549,7 +4549,7 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str delimiter: (optional)
             When this parameter is set, only objects whose names do not contain the delimiter character
@@ -4708,13 +4708,13 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4833,7 +4833,7 @@ class ObjectStorageClient(object):
         talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         `Getting Started with Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
 
 
         :param str namespace_name: (required)
@@ -4847,13 +4847,13 @@ class ObjectStorageClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
             PrivateEndpoint summary in list of PrivateEndpoints includes the 'namespace', 'name', 'compartmentId',
@@ -5014,14 +5014,14 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5147,14 +5147,14 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5278,7 +5278,7 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5392,14 +5392,14 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -5520,14 +5520,14 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -5654,14 +5654,14 @@ class ObjectStorageClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5880,8 +5880,8 @@ class ObjectStorageClient(object):
         See `Special Instructions for Object Storage PUT`__
         for request signature requirements.
 
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
+        __ https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
 
         :param str namespace_name: (required)
@@ -5997,27 +5997,27 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_kms_key_id: (optional)
             The `OCID`__ of a master encryption key used to call the Key
             Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str storage_tier: (optional)
             The storage tier that the object should be stored in. If not specified, the object will be stored in
@@ -6597,7 +6597,7 @@ class ObjectStorageClient(object):
         See `Object Names`__
         for object naming requirements.
 
-        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements
+        __ https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements
 
 
         :param str namespace_name: (required)
@@ -6830,7 +6830,7 @@ class ObjectStorageClient(object):
         of the compartment that you want to move the bucket to. For more information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str namespace_name: (required)
@@ -7190,7 +7190,7 @@ class ObjectStorageClient(object):
         This API follows replace semantics (rather than merge semantics). That means if the body provides values for
         parameters and the resource has exisiting ones, this operation will replace those existing values.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str namespace_name: (required)
@@ -7527,27 +7527,27 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
+            __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_kms_key_id: (optional)
             The `OCID`__ of a master encryption key used to call the Key
             Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

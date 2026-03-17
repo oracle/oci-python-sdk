@@ -67,7 +67,7 @@ class MoveExecutionActionMemberDetails(object):
         Gets the source_execution_action_id of this MoveExecutionActionMemberDetails.
         The `OCID`__ of the source execution action resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_execution_action_id of this MoveExecutionActionMemberDetails.
@@ -81,7 +81,7 @@ class MoveExecutionActionMemberDetails(object):
         Sets the source_execution_action_id of this MoveExecutionActionMemberDetails.
         The `OCID`__ of the source execution action resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_execution_action_id: The source_execution_action_id of this MoveExecutionActionMemberDetails.
@@ -95,7 +95,7 @@ class MoveExecutionActionMemberDetails(object):
         Gets the execution_action_member_id of this MoveExecutionActionMemberDetails.
         The `OCID`__ of the execution action member to be moved.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The execution_action_member_id of this MoveExecutionActionMemberDetails.
@@ -109,7 +109,7 @@ class MoveExecutionActionMemberDetails(object):
         Sets the execution_action_member_id of this MoveExecutionActionMemberDetails.
         The `OCID`__ of the execution action member to be moved.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param execution_action_member_id: The execution_action_member_id of this MoveExecutionActionMemberDetails.
@@ -150,7 +150,7 @@ class MoveExecutionActionMemberDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this MoveExecutionActionMemberDetails.
@@ -167,7 +167,7 @@ class MoveExecutionActionMemberDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this MoveExecutionActionMemberDetails.
@@ -182,7 +182,7 @@ class MoveExecutionActionMemberDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this MoveExecutionActionMemberDetails.
@@ -197,7 +197,7 @@ class MoveExecutionActionMemberDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this MoveExecutionActionMemberDetails.

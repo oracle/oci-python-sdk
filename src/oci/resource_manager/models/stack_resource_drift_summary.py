@@ -113,7 +113,7 @@ class StackResourceDriftSummary(object):
         Gets the stack_id of this StackResourceDriftSummary.
         The `OCID`__ of the stack.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_id of this StackResourceDriftSummary.
@@ -127,7 +127,7 @@ class StackResourceDriftSummary(object):
         Sets the stack_id of this StackResourceDriftSummary.
         The `OCID`__ of the stack.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stack_id: The stack_id of this StackResourceDriftSummary.
@@ -141,7 +141,7 @@ class StackResourceDriftSummary(object):
         Gets the compartment_id of this StackResourceDriftSummary.
         The `OCID`__ of the compartment where the stack is located.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this StackResourceDriftSummary.
@@ -155,7 +155,7 @@ class StackResourceDriftSummary(object):
         Sets the compartment_id of this StackResourceDriftSummary.
         The `OCID`__ of the compartment where the stack is located.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this StackResourceDriftSummary.
@@ -193,7 +193,7 @@ class StackResourceDriftSummary(object):
         Gets the resource_id of this StackResourceDriftSummary.
         The `OCID`__ of the resource provisioned by Terraform.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this StackResourceDriftSummary.
@@ -207,7 +207,7 @@ class StackResourceDriftSummary(object):
         Sets the resource_id of this StackResourceDriftSummary.
         The `OCID`__ of the resource provisioned by Terraform.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this StackResourceDriftSummary.

@@ -24,8 +24,8 @@ class BaseTagDefinitionValidator(object):
     To clear the validator call UpdateTag with
     `DefaultTagDefinitionValidator`__.
 
-    __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/taggingoverview.htm#limits
-    __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
+    __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm#limits
+    __ https://docs.oracle.com/en-us/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
     """
 
     #: A constant which can be used with the validator_type property of a BaseTagDefinitionValidator.

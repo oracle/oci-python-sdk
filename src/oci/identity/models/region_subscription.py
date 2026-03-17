@@ -19,8 +19,8 @@ class RegionSubscription(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
     see `Get Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the status property of a RegionSubscription.
@@ -81,7 +81,7 @@ class RegionSubscription(object):
 
         Example: `PHX`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The region_key of this RegionSubscription.
@@ -98,7 +98,7 @@ class RegionSubscription(object):
 
         Example: `PHX`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param region_key: The region_key of this RegionSubscription.
@@ -115,7 +115,7 @@ class RegionSubscription(object):
 
         Example: `us-phoenix-1`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The region_name of this RegionSubscription.
@@ -132,7 +132,7 @@ class RegionSubscription(object):
 
         Example: `us-phoenix-1`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param region_name: The region_name of this RegionSubscription.

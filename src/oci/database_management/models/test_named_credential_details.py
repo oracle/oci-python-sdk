@@ -14,7 +14,7 @@ class TestNamedCredentialDetails(object):
     """
     The The `OCID`__ of the database against which the credential is to be tested.
 
-    __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -41,7 +41,7 @@ class TestNamedCredentialDetails(object):
         Gets the managed_database_id of this TestNamedCredentialDetails.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_id of this TestNamedCredentialDetails.
@@ -55,7 +55,7 @@ class TestNamedCredentialDetails(object):
         Sets the managed_database_id of this TestNamedCredentialDetails.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_id: The managed_database_id of this TestNamedCredentialDetails.

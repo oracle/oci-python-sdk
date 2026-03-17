@@ -194,7 +194,7 @@ class ModelProvenance(object):
         Gets the training_id of this ModelProvenance.
         The `OCID`__ of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The training_id of this ModelProvenance.
@@ -208,7 +208,7 @@ class ModelProvenance(object):
         Sets the training_id of this ModelProvenance.
         The `OCID`__ of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param training_id: The training_id of this ModelProvenance.

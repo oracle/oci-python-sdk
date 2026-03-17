@@ -17,7 +17,7 @@ class UIPassword(object):
 
     For more information about user credentials, see `User Credentials`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a UIPassword.

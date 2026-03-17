@@ -448,7 +448,7 @@ class DeploymentSummary(object):
         **[Required]** Gets the id of this DeploymentSummary.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DeploymentSummary.
@@ -462,7 +462,7 @@ class DeploymentSummary(object):
         Sets the id of this DeploymentSummary.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DeploymentSummary.
@@ -524,7 +524,7 @@ class DeploymentSummary(object):
         **[Required]** Gets the compartment_id of this DeploymentSummary.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DeploymentSummary.
@@ -538,7 +538,7 @@ class DeploymentSummary(object):
         Sets the compartment_id of this DeploymentSummary.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DeploymentSummary.
@@ -758,7 +758,7 @@ class DeploymentSummary(object):
         The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
         after which the private subnet will be enforced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DeploymentSummary.
@@ -774,7 +774,7 @@ class DeploymentSummary(object):
         The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
         after which the private subnet will be enforced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DeploymentSummary.
@@ -790,7 +790,7 @@ class DeploymentSummary(object):
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
         For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_subnet_id of this DeploymentSummary.
@@ -806,7 +806,7 @@ class DeploymentSummary(object):
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
         For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_subnet_id: The load_balancer_subnet_id of this DeploymentSummary.
@@ -821,7 +821,7 @@ class DeploymentSummary(object):
         The `OCID`__ of the loadbalancer in the customer's subnet.
         The loadbalancer of the public deployment created in the customer subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this DeploymentSummary.
@@ -836,7 +836,7 @@ class DeploymentSummary(object):
         The `OCID`__ of the loadbalancer in the customer's subnet.
         The loadbalancer of the public deployment created in the customer subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this DeploymentSummary.
@@ -1168,7 +1168,7 @@ class DeploymentSummary(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this DeploymentSummary.
@@ -1186,7 +1186,7 @@ class DeploymentSummary(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this DeploymentSummary.
@@ -1348,7 +1348,7 @@ class DeploymentSummary(object):
         Gets the subscription_id of this DeploymentSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this DeploymentSummary.
@@ -1362,7 +1362,7 @@ class DeploymentSummary(object):
         Sets the subscription_id of this DeploymentSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this DeploymentSummary.
@@ -1407,7 +1407,7 @@ class DeploymentSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this DeploymentSummary.
@@ -1424,7 +1424,7 @@ class DeploymentSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this DeploymentSummary.

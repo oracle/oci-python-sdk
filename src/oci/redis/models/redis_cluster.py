@@ -14,7 +14,7 @@ class RedisCluster(object):
     """
     An OCI Cache cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+    __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a RedisCluster.
@@ -270,7 +270,7 @@ class RedisCluster(object):
         **[Required]** Gets the id of this RedisCluster.
         The `OCID`__ of the cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The id of this RedisCluster.
@@ -284,7 +284,7 @@ class RedisCluster(object):
         Sets the id of this RedisCluster.
         The `OCID`__ of the cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param id: The id of this RedisCluster.
@@ -322,7 +322,7 @@ class RedisCluster(object):
         **[Required]** Gets the compartment_id of this RedisCluster.
         The `OCID`__ of the compartment that contains the cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The compartment_id of this RedisCluster.
@@ -336,7 +336,7 @@ class RedisCluster(object):
         Sets the compartment_id of this RedisCluster.
         The `OCID`__ of the compartment that contains the cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param compartment_id: The compartment_id of this RedisCluster.
@@ -626,7 +626,7 @@ class RedisCluster(object):
         **[Required]** Gets the subnet_id of this RedisCluster.
         The `OCID`__ of the cluster's subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The subnet_id of this RedisCluster.
@@ -640,7 +640,7 @@ class RedisCluster(object):
         Sets the subnet_id of this RedisCluster.
         The `OCID`__ of the cluster's subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param subnet_id: The subnet_id of this RedisCluster.
@@ -810,8 +810,8 @@ class RedisCluster(object):
         associated with this cluster. For more information,
         see `Using an NSG for Clusters`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
 
 
         :return: The nsg_ids of this RedisCluster.
@@ -827,8 +827,8 @@ class RedisCluster(object):
         associated with this cluster. For more information,
         see `Using an NSG for Clusters`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
 
 
         :param nsg_ids: The nsg_ids of this RedisCluster.
@@ -845,7 +845,7 @@ class RedisCluster(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this RedisCluster.
@@ -862,7 +862,7 @@ class RedisCluster(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this RedisCluster.

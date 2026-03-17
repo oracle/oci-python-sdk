@@ -197,7 +197,7 @@ class PeComanagedHostConfigurationSummary(HostConfigurationSummary):
         **[Required]** Gets the opsi_private_endpoint_id of this PeComanagedHostConfigurationSummary.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this PeComanagedHostConfigurationSummary.
@@ -211,7 +211,7 @@ class PeComanagedHostConfigurationSummary(HostConfigurationSummary):
         Sets the opsi_private_endpoint_id of this PeComanagedHostConfigurationSummary.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this PeComanagedHostConfigurationSummary.
@@ -225,7 +225,7 @@ class PeComanagedHostConfigurationSummary(HostConfigurationSummary):
         **[Required]** Gets the parent_id of this PeComanagedHostConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this PeComanagedHostConfigurationSummary.
@@ -239,7 +239,7 @@ class PeComanagedHostConfigurationSummary(HostConfigurationSummary):
         Sets the parent_id of this PeComanagedHostConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this PeComanagedHostConfigurationSummary.

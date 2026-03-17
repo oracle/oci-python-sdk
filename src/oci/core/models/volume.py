@@ -23,8 +23,8 @@ class Volume(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you
     supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Volume.
@@ -279,7 +279,7 @@ class Volume(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Volume.
@@ -296,7 +296,7 @@ class Volume(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Volume.
@@ -339,7 +339,7 @@ class Volume(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Volume.
@@ -356,7 +356,7 @@ class Volume(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Volume.
@@ -512,7 +512,7 @@ class Volume(object):
 
         For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :return: The vpus_per_gb of this Volume.
@@ -540,7 +540,7 @@ class Volume(object):
 
         For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :param vpus_per_gb: The vpus_per_gb of this Volume.
@@ -799,7 +799,7 @@ class Volume(object):
         When set to true, enables SCSI Persistent Reservation (SCSI PR) for the volume. For more information, see
         `Persistent Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
 
 
         :return: The is_reservations_enabled of this Volume.
@@ -814,7 +814,7 @@ class Volume(object):
         When set to true, enables SCSI Persistent Reservation (SCSI PR) for the volume. For more information, see
         `Persistent Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
 
 
         :param is_reservations_enabled: The is_reservations_enabled of this Volume.

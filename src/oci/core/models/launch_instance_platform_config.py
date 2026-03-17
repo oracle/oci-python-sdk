@@ -27,8 +27,8 @@ class LaunchInstancePlatformConfig(object):
     For more information about BIOS settings for bare metal instances, see
     `BIOS Settings for Bare Metal Instances`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm
+    __ https://docs.oracle.com/iaas/Content/Compute/References/shielded-instances.htm
+    __ https://docs.oracle.com/iaas/Content/Compute/References/bios-settings.htm
     """
 
     #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.

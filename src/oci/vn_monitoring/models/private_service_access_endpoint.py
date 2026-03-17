@@ -49,7 +49,7 @@ class PrivateServiceAccessEndpoint(Endpoint):
         **[Required]** Gets the psa_id of this PrivateServiceAccessEndpoint.
         The `OCID`__ of the PSA.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The psa_id of this PrivateServiceAccessEndpoint.
@@ -63,7 +63,7 @@ class PrivateServiceAccessEndpoint(Endpoint):
         Sets the psa_id of this PrivateServiceAccessEndpoint.
         The `OCID`__ of the PSA.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param psa_id: The psa_id of this PrivateServiceAccessEndpoint.

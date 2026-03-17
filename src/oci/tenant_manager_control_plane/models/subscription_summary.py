@@ -156,7 +156,7 @@ class SubscriptionSummary(object):
         **[Required]** Gets the id of this SubscriptionSummary.
         The Oracle ID (`OCID`__) of the subscription.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SubscriptionSummary.
@@ -170,7 +170,7 @@ class SubscriptionSummary(object):
         Sets the id of this SubscriptionSummary.
         The Oracle ID (`OCID`__) of the subscription.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SubscriptionSummary.
@@ -184,7 +184,7 @@ class SubscriptionSummary(object):
         **[Required]** Gets the compartment_id of this SubscriptionSummary.
         The Oracle ID (`OCID`__) of the owning compartment. Always a tenancy OCID.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this SubscriptionSummary.
@@ -198,7 +198,7 @@ class SubscriptionSummary(object):
         Sets the compartment_id of this SubscriptionSummary.
         The Oracle ID (`OCID`__) of the owning compartment. Always a tenancy OCID.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this SubscriptionSummary.

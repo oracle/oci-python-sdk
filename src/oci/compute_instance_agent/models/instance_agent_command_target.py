@@ -39,7 +39,7 @@ class InstanceAgentCommandTarget(object):
         Gets the instance_id of this InstanceAgentCommandTarget.
         The `OCID`__ of the target instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this InstanceAgentCommandTarget.
@@ -53,7 +53,7 @@ class InstanceAgentCommandTarget(object):
         Sets the instance_id of this InstanceAgentCommandTarget.
         The `OCID`__ of the target instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this InstanceAgentCommandTarget.

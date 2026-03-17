@@ -15,7 +15,7 @@ class RuleSummary(object):
     The summary details of rules for Events. For more information, see
     `Managing Rules for Events`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Events/Task/managingrules.htm
+    __ https://docs.oracle.com/iaas/Content/Events/Task/managingrules.htm
     """
 
     def __init__(self, **kwargs):
@@ -105,7 +105,7 @@ class RuleSummary(object):
         **[Required]** Gets the id of this RuleSummary.
         The `OCID`__ of this rule.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this RuleSummary.
@@ -119,7 +119,7 @@ class RuleSummary(object):
         Sets the id of this RuleSummary.
         The `OCID`__ of this rule.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this RuleSummary.
@@ -231,9 +231,9 @@ class RuleSummary(object):
 
         Example: `\\\"eventType\\\": \\\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\\"`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
+        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
 
 
         :return: The condition of this RuleSummary.
@@ -269,9 +269,9 @@ class RuleSummary(object):
 
         Example: `\\\"eventType\\\": \\\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\\"`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
+        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
 
 
         :param condition: The condition of this RuleSummary.
@@ -285,7 +285,7 @@ class RuleSummary(object):
         **[Required]** Gets the compartment_id of this RuleSummary.
         The `OCID`__ of the compartment to which this rule belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RuleSummary.
@@ -299,7 +299,7 @@ class RuleSummary(object):
         Sets the compartment_id of this RuleSummary.
         The `OCID`__ of the compartment to which this rule belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RuleSummary.
@@ -378,7 +378,7 @@ class RuleSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this RuleSummary.
@@ -395,7 +395,7 @@ class RuleSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this RuleSummary.
@@ -411,7 +411,7 @@ class RuleSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this RuleSummary.
@@ -427,7 +427,7 @@ class RuleSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this RuleSummary.

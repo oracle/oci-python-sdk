@@ -53,7 +53,7 @@ class CreateInclusionCriterionDetails(object):
         **[Required]** Gets the governance_rule_id of this CreateInclusionCriterionDetails.
         The Oracle ID (`OCID`__) of the governance rule. Every inclusion criterion is associated with a governance rule.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The governance_rule_id of this CreateInclusionCriterionDetails.
@@ -67,7 +67,7 @@ class CreateInclusionCriterionDetails(object):
         Sets the governance_rule_id of this CreateInclusionCriterionDetails.
         The Oracle ID (`OCID`__) of the governance rule. Every inclusion criterion is associated with a governance rule.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param governance_rule_id: The governance_rule_id of this CreateInclusionCriterionDetails.

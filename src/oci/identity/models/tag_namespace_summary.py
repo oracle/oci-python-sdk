@@ -200,7 +200,7 @@ class TagNamespaceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this TagNamespaceSummary.
@@ -216,7 +216,7 @@ class TagNamespaceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this TagNamespaceSummary.
@@ -232,7 +232,7 @@ class TagNamespaceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this TagNamespaceSummary.
@@ -248,7 +248,7 @@ class TagNamespaceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this TagNamespaceSummary.
@@ -263,7 +263,7 @@ class TagNamespaceSummary(object):
         Whether the tag namespace is retired.
         For more information, see `Retiring Key Definitions and Namespace Definitions`__.
 
-        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
+        __ https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :return: The is_retired of this TagNamespaceSummary.
@@ -278,7 +278,7 @@ class TagNamespaceSummary(object):
         Whether the tag namespace is retired.
         For more information, see `Retiring Key Definitions and Namespace Definitions`__.
 
-        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
+        __ https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :param is_retired: The is_retired of this TagNamespaceSummary.

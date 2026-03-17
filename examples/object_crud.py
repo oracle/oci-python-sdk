@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 import pytz
 
 import oci
-from oci._vendor import urllib3
+import urllib3
 from oci.object_storage.models import CreateBucketDetails
 from oci.object_storage.models import CreatePreauthenticatedRequestDetails
 

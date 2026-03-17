@@ -33,7 +33,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.Model.lifecycle_state`
@@ -77,7 +77,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -118,7 +118,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.ModelGroup.lifecycle_state`
@@ -162,7 +162,7 @@ class DataScienceClientCompositeOperations(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -410,7 +410,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelVersionSetCompartmentDetails change_model_version_set_compartment_details: (required)
             Details for changing the compartment of a model version set.
@@ -1150,7 +1150,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.Model.lifecycle_state`
@@ -1194,7 +1194,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1235,7 +1235,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.ModelGroup.lifecycle_state`
@@ -1279,7 +1279,7 @@ class DataScienceClientCompositeOperations(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1406,7 +1406,7 @@ class DataScienceClientCompositeOperations(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1455,7 +1455,7 @@ class DataScienceClientCompositeOperations(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.JobRun.lifecycle_state`
@@ -1669,7 +1669,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.Model.lifecycle_state`
@@ -1730,7 +1730,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1779,7 +1779,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1828,7 +1828,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_group_version_history_id: (required)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1877,7 +1877,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1926,7 +1926,7 @@ class DataScienceClientCompositeOperations(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -1975,7 +1975,7 @@ class DataScienceClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -2024,7 +2024,7 @@ class DataScienceClientCompositeOperations(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.PipelineRun.lifecycle_state`
@@ -2085,7 +2085,7 @@ class DataScienceClientCompositeOperations(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -2271,7 +2271,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ExportModelArtifactDetails export_model_artifact_details: (required)
             Model artifact source details for exporting.
@@ -2315,7 +2315,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ImportModelArtifactDetails import_model_artifact_details: (required)
             Model artifact source details for importing.
@@ -2443,7 +2443,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -2484,7 +2484,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
@@ -2651,7 +2651,7 @@ class DataScienceClientCompositeOperations(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateJobDetails update_job_details: (required)
             Details for updating a job.
@@ -2698,7 +2698,7 @@ class DataScienceClientCompositeOperations(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateJobRunDetails update_job_run_details: (required)
             Details for updating a job.
@@ -2964,7 +2964,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelDetails update_model_details: (required)
             Details for updating a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
@@ -3011,7 +3011,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelDeploymentDetails update_model_deployment_details: (required)
             Details for updating a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time
@@ -3058,7 +3058,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelGroupDetails update_model_group_details: (required)
             Details for updating a modelGroup.
@@ -3105,7 +3105,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_group_version_history_id: (required)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelGroupVersionHistoryDetails update_model_group_version_history_details: (required)
             Details for updating a modelGroupVersionHistory.
@@ -3152,7 +3152,7 @@ class DataScienceClientCompositeOperations(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelVersionSetDetails update_model_version_set_details: (required)
             Details for updating a model version set. You can update `description` property only.
@@ -3199,7 +3199,7 @@ class DataScienceClientCompositeOperations(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateNotebookSessionDetails update_notebook_session_details: (required)
             Details for updating a notebook session. `notebookSessionConfigurationDetails` can only be updated while the notebook session is in the `INACTIVE` state.
@@ -3247,7 +3247,7 @@ class DataScienceClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdatePipelineDetails update_pipeline_details: (required)
             The information to be updated.
@@ -3294,7 +3294,7 @@ class DataScienceClientCompositeOperations(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdatePipelineRunDetails update_pipeline_run_details: (required)
             The information to be updated.
@@ -3341,7 +3341,7 @@ class DataScienceClientCompositeOperations(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateProjectDetails update_project_details: (required)
             Details for updating a project. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.

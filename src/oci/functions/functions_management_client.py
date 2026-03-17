@@ -129,13 +129,13 @@ class FunctionsManagementClient(object):
         Moves an application into a different compartment within the same tenancy.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str application_id: (required)
             The `OCID`__ of this application.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.functions.models.ChangeApplicationCompartmentDetails change_application_compartment_details: (required)
             Properties to change the compartment of an application.
@@ -445,7 +445,7 @@ class FunctionsManagementClient(object):
         :param str application_id: (required)
             The `OCID`__ of this application.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -558,7 +558,7 @@ class FunctionsManagementClient(object):
         :param str function_id: (required)
             The `OCID`__ of this function.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -671,7 +671,7 @@ class FunctionsManagementClient(object):
         :param str application_id: (required)
             The `OCID`__ of this application.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -779,7 +779,7 @@ class FunctionsManagementClient(object):
         :param str function_id: (required)
             The `OCID`__ of this function.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1099,7 +1099,7 @@ class FunctionsManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment to which this resource belongs.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return. 1 is the minimum, 50 is the maximum.
@@ -1276,7 +1276,7 @@ class FunctionsManagementClient(object):
         :param str application_id: (required)
             The `OCID`__ of the application to which this function belongs.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return. 1 is the minimum, 50 is the maximum.
@@ -1943,7 +1943,7 @@ class FunctionsManagementClient(object):
         :param str application_id: (required)
             The `OCID`__ of this application.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.functions.models.UpdateApplicationDetails update_application_details: (required)
             The new application spec to apply
@@ -2063,7 +2063,7 @@ class FunctionsManagementClient(object):
         :param str function_id: (required)
             The `OCID`__ of this function.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.functions.models.UpdateFunctionDetails update_function_details: (required)
             The new function spec to apply

@@ -60,7 +60,7 @@ class AlarmDimensionStatesCollection(object):
         **[Required]** Gets the alarm_id of this AlarmDimensionStatesCollection.
         The `OCID`__ of the alarm to retrieve alarm state entries for.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The alarm_id of this AlarmDimensionStatesCollection.
@@ -74,7 +74,7 @@ class AlarmDimensionStatesCollection(object):
         Sets the alarm_id of this AlarmDimensionStatesCollection.
         The `OCID`__ of the alarm to retrieve alarm state entries for.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param alarm_id: The alarm_id of this AlarmDimensionStatesCollection.

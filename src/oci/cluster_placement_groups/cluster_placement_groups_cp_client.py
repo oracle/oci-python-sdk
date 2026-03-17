@@ -367,7 +367,7 @@ class ClusterPlacementGroupsCPClient(object):
 
         When provided, If-Match is checked against ETag values of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str cluster_placement_group_id: (required)
@@ -1056,7 +1056,7 @@ class ClusterPlacementGroupsCPClient(object):
         :param str compartment_id: (optional)
             A filter to return only the resources that match the specified compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
@@ -1529,7 +1529,7 @@ class ClusterPlacementGroupsCPClient(object):
         :param str compartment_id: (optional)
             A filter to return only the resources that match the specified compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str work_request_id: (optional)
             The ID of the asynchronous work request.

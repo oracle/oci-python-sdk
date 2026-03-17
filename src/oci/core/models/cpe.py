@@ -22,8 +22,8 @@ class Cpe(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     def __init__(self, **kwargs):
@@ -106,7 +106,7 @@ class Cpe(object):
         **[Required]** Gets the compartment_id of this Cpe.
         The `OCID`__ of the compartment containing the CPE.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Cpe.
@@ -120,7 +120,7 @@ class Cpe(object):
         Sets the compartment_id of this Cpe.
         The `OCID`__ of the compartment containing the CPE.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Cpe.
@@ -137,7 +137,7 @@ class Cpe(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Cpe.
@@ -154,7 +154,7 @@ class Cpe(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Cpe.
@@ -197,7 +197,7 @@ class Cpe(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Cpe.
@@ -214,7 +214,7 @@ class Cpe(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Cpe.
@@ -289,8 +289,8 @@ class Cpe(object):
           * :func:`get_tunnel_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cpe_device_shape_id of this Cpe.
@@ -317,8 +317,8 @@ class Cpe(object):
           * :func:`get_tunnel_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cpe_device_shape_id: The cpe_device_shape_id of this Cpe.

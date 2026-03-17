@@ -22,7 +22,7 @@ class Sddc(object):
     set of VLANs for various components of the VMware environment (vSphere, vMotion,
     vSAN, and so on). See the Core Services API for information about VCN subnets and VLANs.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
+    __ https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
     """
 
     #: A constant which can be used with the hcx_mode property of a Sddc.
@@ -292,7 +292,7 @@ class Sddc(object):
         **[Required]** Gets the id of this Sddc.
         The `OCID`__ of the SDDC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Sddc.
@@ -306,7 +306,7 @@ class Sddc(object):
         Sets the id of this Sddc.
         The `OCID`__ of the SDDC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Sddc.
@@ -451,7 +451,7 @@ class Sddc(object):
         The `OCID`__ of the compartment that
         contains the SDDC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Sddc.
@@ -466,7 +466,7 @@ class Sddc(object):
         The `OCID`__ of the compartment that
         contains the SDDC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Sddc.
@@ -562,7 +562,7 @@ class Sddc(object):
         the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the
         Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcenter_private_ip_id of this Sddc.
@@ -578,7 +578,7 @@ class Sddc(object):
         the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the
         Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcenter_private_ip_id: The vcenter_private_ip_id of this Sddc.
@@ -594,7 +594,7 @@ class Sddc(object):
         the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the
         Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsx_manager_private_ip_id of this Sddc.
@@ -610,7 +610,7 @@ class Sddc(object):
         the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the
         Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsx_manager_private_ip_id: The nsx_manager_private_ip_id of this Sddc.
@@ -727,7 +727,7 @@ class Sddc(object):
         route table rules when setting up connectivity between the SDDC and other networks.
         For information about `PrivateIp` objects, see the Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsx_edge_uplink_ip_id of this Sddc.
@@ -744,7 +744,7 @@ class Sddc(object):
         route table rules when setting up connectivity between the SDDC and other networks.
         For information about `PrivateIp` objects, see the Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsx_edge_uplink_ip_id: The nsx_edge_uplink_ip_id of this Sddc.
@@ -760,7 +760,7 @@ class Sddc(object):
         the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the
         Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The hcx_private_ip_id of this Sddc.
@@ -776,7 +776,7 @@ class Sddc(object):
         the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the
         Core Services API.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param hcx_private_ip_id: The hcx_private_ip_id of this Sddc.
@@ -1123,7 +1123,7 @@ class Sddc(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Sddc.
@@ -1140,7 +1140,7 @@ class Sddc(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Sddc.
@@ -1157,7 +1157,7 @@ class Sddc(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Sddc.
@@ -1174,7 +1174,7 @@ class Sddc(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Sddc.

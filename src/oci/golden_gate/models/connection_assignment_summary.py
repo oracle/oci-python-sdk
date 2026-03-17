@@ -89,7 +89,7 @@ class ConnectionAssignmentSummary(object):
         The `OCID`__ of the connection assignment being
         referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ConnectionAssignmentSummary.
@@ -104,7 +104,7 @@ class ConnectionAssignmentSummary(object):
         The `OCID`__ of the connection assignment being
         referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ConnectionAssignmentSummary.
@@ -118,7 +118,7 @@ class ConnectionAssignmentSummary(object):
         **[Required]** Gets the compartment_id of this ConnectionAssignmentSummary.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ConnectionAssignmentSummary.
@@ -132,7 +132,7 @@ class ConnectionAssignmentSummary(object):
         Sets the compartment_id of this ConnectionAssignmentSummary.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ConnectionAssignmentSummary.
@@ -147,7 +147,7 @@ class ConnectionAssignmentSummary(object):
         The `OCID`__ of the connection being
         referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connection_id of this ConnectionAssignmentSummary.
@@ -162,7 +162,7 @@ class ConnectionAssignmentSummary(object):
         The `OCID`__ of the connection being
         referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connection_id: The connection_id of this ConnectionAssignmentSummary.
@@ -176,7 +176,7 @@ class ConnectionAssignmentSummary(object):
         **[Required]** Gets the deployment_id of this ConnectionAssignmentSummary.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The deployment_id of this ConnectionAssignmentSummary.
@@ -190,7 +190,7 @@ class ConnectionAssignmentSummary(object):
         Sets the deployment_id of this ConnectionAssignmentSummary.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param deployment_id: The deployment_id of this ConnectionAssignmentSummary.

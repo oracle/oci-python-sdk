@@ -53,7 +53,7 @@ class CreateRefreshActivityDetails(object):
         **[Required]** Gets the source_fusion_environment_id of this CreateRefreshActivityDetails.
         The `OCID`__ of the source environment
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_fusion_environment_id of this CreateRefreshActivityDetails.
@@ -67,7 +67,7 @@ class CreateRefreshActivityDetails(object):
         Sets the source_fusion_environment_id of this CreateRefreshActivityDetails.
         The `OCID`__ of the source environment
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_fusion_environment_id: The source_fusion_environment_id of this CreateRefreshActivityDetails.

@@ -91,7 +91,7 @@ class ExecutionActionMember(object):
         **[Required]** Gets the member_id of this ExecutionActionMember.
         The `OCID`__ of the parent resource the execution action belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The member_id of this ExecutionActionMember.
@@ -105,7 +105,7 @@ class ExecutionActionMember(object):
         Sets the member_id of this ExecutionActionMember.
         The `OCID`__ of the parent resource the execution action belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param member_id: The member_id of this ExecutionActionMember.

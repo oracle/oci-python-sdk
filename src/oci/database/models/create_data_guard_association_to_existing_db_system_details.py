@@ -116,7 +116,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         The `OCID`__ of the DB system in which to create the standby database.
         You must supply this value if creationType is `ExistingDbSystem`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_db_system_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
@@ -131,7 +131,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         The `OCID`__ of the DB system in which to create the standby database.
         You must supply this value if creationType is `ExistingDbSystem`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_db_system_id: The peer_db_system_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
@@ -146,7 +146,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         The `OCID`__ of the DB home in which to create the standby database.
         You must supply this value to create standby database with an existing DB home
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_db_home_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
@@ -161,7 +161,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         The `OCID`__ of the DB home in which to create the standby database.
         You must supply this value to create standby database with an existing DB home
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_db_home_id: The peer_db_home_id of this CreateDataGuardAssociationToExistingDbSystemDetails.

@@ -21,7 +21,7 @@ class SmtpCredential(object):
 
     For more information, see `Managing User Credentials`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm#SMTP
+    __ https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm#SMTP
     """
 
     #: A constant which can be used with the lifecycle_state property of a SmtpCredential.

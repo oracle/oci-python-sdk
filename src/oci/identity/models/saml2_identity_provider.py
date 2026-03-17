@@ -16,7 +16,7 @@ class Saml2IdentityProvider(IdentityProvider):
     supports the SAML 2.0 protocol. For more information, see
     `Identity Providers and Federation`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm
     """
 
     def __init__(self, **kwargs):

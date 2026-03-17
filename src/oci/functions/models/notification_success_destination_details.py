@@ -51,7 +51,7 @@ class NotificationSuccessDestinationDetails(SuccessDestinationDetails):
         **[Required]** Gets the topic_id of this NotificationSuccessDestinationDetails.
         The `OCID`__ of the topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The topic_id of this NotificationSuccessDestinationDetails.
@@ -65,7 +65,7 @@ class NotificationSuccessDestinationDetails(SuccessDestinationDetails):
         Sets the topic_id of this NotificationSuccessDestinationDetails.
         The `OCID`__ of the topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param topic_id: The topic_id of this NotificationSuccessDestinationDetails.

@@ -16,7 +16,7 @@ class TargetTag(object):
     Only defined tags are supported.
     For more information about tagging, see `Tagging Overview`__
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm
+    __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm
     """
 
     #: A constant which can be used with the tag_value_type property of a TargetTag.

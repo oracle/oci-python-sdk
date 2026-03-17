@@ -105,7 +105,7 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
         **[Required]** Gets the lifecycle_stage_id of this CreateLifecycleProfileDetails.
         The `OCID`__ of the lifecycle stage that the instance will be associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lifecycle_stage_id of this CreateLifecycleProfileDetails.
@@ -119,7 +119,7 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
         Sets the lifecycle_stage_id of this CreateLifecycleProfileDetails.
         The `OCID`__ of the lifecycle stage that the instance will be associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lifecycle_stage_id: The lifecycle_stage_id of this CreateLifecycleProfileDetails.

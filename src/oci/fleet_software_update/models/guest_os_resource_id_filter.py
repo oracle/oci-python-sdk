@@ -14,7 +14,7 @@ class GuestOsResourceIdFilter(GuestOsFleetDiscoveryFilter):
     """
     The `OCIDs`__ of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-    __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     #: A constant which can be used with the entity_type property of a GuestOsResourceIdFilter.
@@ -139,7 +139,7 @@ class GuestOsResourceIdFilter(GuestOsFleetDiscoveryFilter):
         Specified resources must match the specified 'entityType'.
         FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifiers of this GuestOsResourceIdFilter.
@@ -155,7 +155,7 @@ class GuestOsResourceIdFilter(GuestOsFleetDiscoveryFilter):
         Specified resources must match the specified 'entityType'.
         FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param identifiers: The identifiers of this GuestOsResourceIdFilter.

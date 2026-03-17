@@ -250,7 +250,7 @@ class ManagedInstanceGroupSummary(object):
         **[Required]** Gets the id of this ManagedInstanceGroupSummary.
         The `OCID`__ of the managed instance group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceGroupSummary.
@@ -264,7 +264,7 @@ class ManagedInstanceGroupSummary(object):
         Sets the id of this ManagedInstanceGroupSummary.
         The `OCID`__ of the managed instance group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceGroupSummary.
@@ -278,7 +278,7 @@ class ManagedInstanceGroupSummary(object):
         **[Required]** Gets the compartment_id of this ManagedInstanceGroupSummary.
         The `OCID`__ of the compartment that contains the managed instance group
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagedInstanceGroupSummary.
@@ -292,7 +292,7 @@ class ManagedInstanceGroupSummary(object):
         Sets the compartment_id of this ManagedInstanceGroupSummary.
         The `OCID`__ of the compartment that contains the managed instance group
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagedInstanceGroupSummary.
@@ -578,7 +578,7 @@ class ManagedInstanceGroupSummary(object):
         Gets the notification_topic_id of this ManagedInstanceGroupSummary.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The notification_topic_id of this ManagedInstanceGroupSummary.
@@ -592,7 +592,7 @@ class ManagedInstanceGroupSummary(object):
         Sets the notification_topic_id of this ManagedInstanceGroupSummary.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param notification_topic_id: The notification_topic_id of this ManagedInstanceGroupSummary.
@@ -652,7 +652,7 @@ class ManagedInstanceGroupSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ManagedInstanceGroupSummary.
@@ -668,7 +668,7 @@ class ManagedInstanceGroupSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ManagedInstanceGroupSummary.
@@ -684,7 +684,7 @@ class ManagedInstanceGroupSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ManagedInstanceGroupSummary.
@@ -700,7 +700,7 @@ class ManagedInstanceGroupSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ManagedInstanceGroupSummary.

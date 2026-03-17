@@ -81,7 +81,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         **[Required]** Gets the storage_server_id of this CreateCloudExadataStorageConnectorDetails.
         The `OCID`__ of the Exadata storage server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The storage_server_id of this CreateCloudExadataStorageConnectorDetails.
@@ -95,7 +95,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         Sets the storage_server_id of this CreateCloudExadataStorageConnectorDetails.
         The `OCID`__ of the Exadata storage server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param storage_server_id: The storage_server_id of this CreateCloudExadataStorageConnectorDetails.
@@ -109,7 +109,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         **[Required]** Gets the agent_id of this CreateCloudExadataStorageConnectorDetails.
         The `OCID`__ of the agent for the Exadata storage server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this CreateCloudExadataStorageConnectorDetails.
@@ -123,7 +123,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         Sets the agent_id of this CreateCloudExadataStorageConnectorDetails.
         The `OCID`__ of the agent for the Exadata storage server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this CreateCloudExadataStorageConnectorDetails.
@@ -207,7 +207,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateCloudExadataStorageConnectorDetails.
@@ -223,7 +223,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateCloudExadataStorageConnectorDetails.
@@ -239,7 +239,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateCloudExadataStorageConnectorDetails.
@@ -255,7 +255,7 @@ class CreateCloudExadataStorageConnectorDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateCloudExadataStorageConnectorDetails.

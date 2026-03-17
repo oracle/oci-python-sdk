@@ -71,7 +71,7 @@ class BulkMoveResourcesDetails(object):
         The `OCID`__ of the destination compartment
         into which to move the resources.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_compartment_id of this BulkMoveResourcesDetails.
@@ -86,7 +86,7 @@ class BulkMoveResourcesDetails(object):
         The `OCID`__ of the destination compartment
         into which to move the resources.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_compartment_id: The target_compartment_id of this BulkMoveResourcesDetails.

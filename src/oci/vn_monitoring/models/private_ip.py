@@ -42,8 +42,8 @@ class PrivateIp(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     def __init__(self, **kwargs):
@@ -175,7 +175,7 @@ class PrivateIp(object):
         Gets the compartment_id of this PrivateIp.
         The `OCID`__ of the compartment containing the private IP.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PrivateIp.
@@ -189,7 +189,7 @@ class PrivateIp(object):
         Sets the compartment_id of this PrivateIp.
         The `OCID`__ of the compartment containing the private IP.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PrivateIp.
@@ -293,7 +293,7 @@ class PrivateIp(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this PrivateIp.
@@ -319,7 +319,7 @@ class PrivateIp(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this PrivateIp.
@@ -333,7 +333,7 @@ class PrivateIp(object):
         Gets the id of this PrivateIp.
         The private IP's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PrivateIp.
@@ -347,7 +347,7 @@ class PrivateIp(object):
         Sets the id of this PrivateIp.
         The private IP's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PrivateIp.
@@ -423,7 +423,7 @@ class PrivateIp(object):
         Gets the subnet_id of this PrivateIp.
         The `OCID`__ of the subnet the VNIC is in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this PrivateIp.
@@ -437,7 +437,7 @@ class PrivateIp(object):
         Sets the subnet_id of this PrivateIp.
         The `OCID`__ of the subnet the VNIC is in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this PrivateIp.
@@ -484,7 +484,7 @@ class PrivateIp(object):
         The `OCID`__ of the VNIC the private IP is assigned to. The VNIC and private IP
         must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this PrivateIp.
@@ -499,7 +499,7 @@ class PrivateIp(object):
         The `OCID`__ of the VNIC the private IP is assigned to. The VNIC and private IP
         must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this PrivateIp.

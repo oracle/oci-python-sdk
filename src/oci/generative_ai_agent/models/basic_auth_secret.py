@@ -49,7 +49,7 @@ class BasicAuthSecret(SecretDetail):
         **[Required]** Gets the vault_secret_id of this BasicAuthSecret.
         The `OCID`__ of the secret for basic authentication.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vault_secret_id of this BasicAuthSecret.
@@ -63,7 +63,7 @@ class BasicAuthSecret(SecretDetail):
         Sets the vault_secret_id of this BasicAuthSecret.
         The `OCID`__ of the secret for basic authentication.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vault_secret_id: The vault_secret_id of this BasicAuthSecret.
