@@ -112,7 +112,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         **[Required]** Gets the id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
         The `OCID`__ of the database insight resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
@@ -126,7 +126,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         Sets the id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
         The `OCID`__ of the database insight resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
@@ -140,7 +140,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         **[Required]** Gets the database_id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
@@ -154,7 +154,7 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
         Sets the database_id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this SqlStatisticsTimeSeriesByPlanAggregationCollection.

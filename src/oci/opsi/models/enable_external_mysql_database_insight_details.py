@@ -50,7 +50,7 @@ class EnableExternalMysqlDatabaseInsightDetails(EnableDatabaseInsightDetails):
         **[Required]** Gets the database_connector_id of this EnableExternalMysqlDatabaseInsightDetails.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :return: The database_connector_id of this EnableExternalMysqlDatabaseInsightDetails.
@@ -64,7 +64,7 @@ class EnableExternalMysqlDatabaseInsightDetails(EnableDatabaseInsightDetails):
         Sets the database_connector_id of this EnableExternalMysqlDatabaseInsightDetails.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :param database_connector_id: The database_connector_id of this EnableExternalMysqlDatabaseInsightDetails.

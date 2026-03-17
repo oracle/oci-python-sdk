@@ -91,7 +91,7 @@ class AssetSourceCredentials(object):
         secretAccessKey in JSON format,
         which is in the form of `{ \"accessKeyId\": \"<AccessKey>\", \"secretAccessKey\": \"<AccessKeyValue>\" }`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this AssetSourceCredentials.
@@ -110,7 +110,7 @@ class AssetSourceCredentials(object):
         secretAccessKey in JSON format,
         which is in the form of `{ \"accessKeyId\": \"<AccessKey>\", \"secretAccessKey\": \"<AccessKeyValue>\" }`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this AssetSourceCredentials.

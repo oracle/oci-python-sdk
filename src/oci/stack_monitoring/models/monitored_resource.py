@@ -287,7 +287,7 @@ class MonitoredResource(object):
         **[Required]** Gets the id of this MonitoredResource.
         Monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoredResource.
@@ -301,7 +301,7 @@ class MonitoredResource(object):
         Sets the id of this MonitoredResource.
         Monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoredResource.
@@ -387,7 +387,7 @@ class MonitoredResource(object):
         **[Required]** Gets the compartment_id of this MonitoredResource.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredResource.
@@ -401,7 +401,7 @@ class MonitoredResource(object):
         Sets the compartment_id of this MonitoredResource.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredResource.
@@ -415,7 +415,7 @@ class MonitoredResource(object):
         **[Required]** Gets the tenant_id of this MonitoredResource.
         Tenancy Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenant_id of this MonitoredResource.
@@ -429,7 +429,7 @@ class MonitoredResource(object):
         Sets the tenant_id of this MonitoredResource.
         Tenancy Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenant_id: The tenant_id of this MonitoredResource.
@@ -470,7 +470,7 @@ class MonitoredResource(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_id of this MonitoredResource.
@@ -487,7 +487,7 @@ class MonitoredResource(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_id: The external_id of this MonitoredResource.
@@ -501,7 +501,7 @@ class MonitoredResource(object):
         Gets the management_agent_id of this MonitoredResource.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MonitoredResource.
@@ -515,7 +515,7 @@ class MonitoredResource(object):
         Sets the management_agent_id of this MonitoredResource.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MonitoredResource.

@@ -216,7 +216,7 @@ class Job(object):
         **[Required]** Gets the id of this Job.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Job.
@@ -230,7 +230,7 @@ class Job(object):
         Sets the id of this Job.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Job.
@@ -244,7 +244,7 @@ class Job(object):
         **[Required]** Gets the compartment_id of this Job.
         The `OCID`__ of the compartment in which the job resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Job.
@@ -258,7 +258,7 @@ class Job(object):
         Sets the compartment_id of this Job.
         The `OCID`__ of the compartment in which the job resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Job.
@@ -320,7 +320,7 @@ class Job(object):
         Gets the managed_database_group_id of this Job.
         The `OCID`__ of the Managed Database Group where the job has to be executed.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_group_id of this Job.
@@ -334,7 +334,7 @@ class Job(object):
         Sets the managed_database_group_id of this Job.
         The `OCID`__ of the Managed Database Group where the job has to be executed.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_group_id: The managed_database_group_id of this Job.
@@ -348,7 +348,7 @@ class Job(object):
         Gets the managed_database_id of this Job.
         The `OCID`__ of the Managed Database where the job has to be executed.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_id of this Job.
@@ -362,7 +362,7 @@ class Job(object):
         Sets the managed_database_id of this Job.
         The `OCID`__ of the Managed Database where the job has to be executed.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_id: The managed_database_id of this Job.

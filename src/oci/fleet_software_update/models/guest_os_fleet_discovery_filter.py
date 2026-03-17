@@ -14,7 +14,7 @@ class GuestOsFleetDiscoveryFilter(object):
     """
     Discover Exadata VM Cluster targets for a 'GUEST_OS' collection by querying `OCI Search Service`__ using specified filters.
 
-    __ https://docs.cloud.oracle.com/Content/Search/Concepts/queryoverview.htm
+    __ https://docs.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm
     """
 
     #: A constant which can be used with the type property of a GuestOsFleetDiscoveryFilter.

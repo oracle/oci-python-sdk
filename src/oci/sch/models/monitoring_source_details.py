@@ -16,7 +16,7 @@ class MonitoringSourceDetails(SourceDetails):
     For configuration instructions, see
     `Creating a Connector with a Monitoring Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-monitoring-source.htm
+    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-monitoring-source.htm
     """
 
     def __init__(self, **kwargs):

@@ -60,7 +60,7 @@ class AssociateMonitoredResourcesDetails(object):
         **[Required]** Gets the compartment_id of this AssociateMonitoredResourcesDetails.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AssociateMonitoredResourcesDetails.
@@ -74,7 +74,7 @@ class AssociateMonitoredResourcesDetails(object):
         Sets the compartment_id of this AssociateMonitoredResourcesDetails.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AssociateMonitoredResourcesDetails.
@@ -112,7 +112,7 @@ class AssociateMonitoredResourcesDetails(object):
         **[Required]** Gets the source_resource_id of this AssociateMonitoredResourcesDetails.
         Source Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_resource_id of this AssociateMonitoredResourcesDetails.
@@ -126,7 +126,7 @@ class AssociateMonitoredResourcesDetails(object):
         Sets the source_resource_id of this AssociateMonitoredResourcesDetails.
         Source Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_resource_id: The source_resource_id of this AssociateMonitoredResourcesDetails.
@@ -140,7 +140,7 @@ class AssociateMonitoredResourcesDetails(object):
         **[Required]** Gets the destination_resource_id of this AssociateMonitoredResourcesDetails.
         Destination Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destination_resource_id of this AssociateMonitoredResourcesDetails.
@@ -154,7 +154,7 @@ class AssociateMonitoredResourcesDetails(object):
         Sets the destination_resource_id of this AssociateMonitoredResourcesDetails.
         Destination Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destination_resource_id: The destination_resource_id of this AssociateMonitoredResourcesDetails.

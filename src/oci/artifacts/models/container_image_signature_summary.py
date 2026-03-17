@@ -202,7 +202,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ContainerImageSignatureSummary.
@@ -218,7 +218,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ContainerImageSignatureSummary.
@@ -234,7 +234,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The image_id of this ContainerImageSignatureSummary.
@@ -250,7 +250,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param image_id: The image_id of this ContainerImageSignatureSummary.
@@ -266,7 +266,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.key.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this ContainerImageSignatureSummary.
@@ -282,7 +282,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.key.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this ContainerImageSignatureSummary.
@@ -298,7 +298,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.keyversion.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_version_id of this ContainerImageSignatureSummary.
@@ -314,7 +314,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `ocid1.keyversion.oc1..exampleuniqueID`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_version_id: The kms_key_version_id of this ContainerImageSignatureSummary.
@@ -457,7 +457,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ContainerImageSignatureSummary.
@@ -474,7 +474,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ContainerImageSignatureSummary.
@@ -491,7 +491,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ContainerImageSignatureSummary.
@@ -508,7 +508,7 @@ class ContainerImageSignatureSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ContainerImageSignatureSummary.

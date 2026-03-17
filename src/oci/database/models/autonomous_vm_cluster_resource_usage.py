@@ -210,7 +210,7 @@ class AutonomousVmClusterResourceUsage(object):
         Gets the id of this AutonomousVmClusterResourceUsage.
         The `OCID`__ of the Autonomous VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousVmClusterResourceUsage.
@@ -224,7 +224,7 @@ class AutonomousVmClusterResourceUsage(object):
         Sets the id of this AutonomousVmClusterResourceUsage.
         The `OCID`__ of the Autonomous VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousVmClusterResourceUsage.

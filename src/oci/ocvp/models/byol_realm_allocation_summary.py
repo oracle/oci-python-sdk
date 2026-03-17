@@ -74,7 +74,7 @@ class ByolRealmAllocationSummary(object):
         **[Required]** Gets the byol_id of this ByolRealmAllocationSummary.
         The `OCID`__ of the BYOL resource from which this BYOL Allocation is derived.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byol_id of this ByolRealmAllocationSummary.
@@ -88,7 +88,7 @@ class ByolRealmAllocationSummary(object):
         Sets the byol_id of this ByolRealmAllocationSummary.
         The `OCID`__ of the BYOL resource from which this BYOL Allocation is derived.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byol_id: The byol_id of this ByolRealmAllocationSummary.
@@ -135,7 +135,7 @@ class ByolRealmAllocationSummary(object):
         The `OCID`__ of the compartment that
         contains the BYOL Allocation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByolRealmAllocationSummary.
@@ -150,7 +150,7 @@ class ByolRealmAllocationSummary(object):
         The `OCID`__ of the compartment that
         contains the BYOL Allocation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByolRealmAllocationSummary.

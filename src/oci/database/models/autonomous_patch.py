@@ -147,7 +147,7 @@ class AutonomousPatch(object):
         **[Required]** Gets the id of this AutonomousPatch.
         The `OCID`__ of the patch.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousPatch.
@@ -161,7 +161,7 @@ class AutonomousPatch(object):
         Sets the id of this AutonomousPatch.
         The `OCID`__ of the patch.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousPatch.

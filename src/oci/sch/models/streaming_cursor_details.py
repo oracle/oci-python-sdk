@@ -16,8 +16,8 @@ class StreamingCursorDetails(object):
     For configuration instructions, see
     `Creating a Connector with a Streaming Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
+    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
+    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
     """
 
     #: A constant which can be used with the kind property of a StreamingCursorDetails.

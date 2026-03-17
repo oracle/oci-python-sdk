@@ -231,7 +231,7 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
         Gets the discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
         The `OCID`__ of the discovery schedule that is going to be assigned to an asset source.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
@@ -245,7 +245,7 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
         Sets the discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
         The `OCID`__ of the discovery schedule that is going to be assigned to an asset source.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param discovery_schedule_id: The discovery_schedule_id of this UpdateVmWareAssetSourceDetails.

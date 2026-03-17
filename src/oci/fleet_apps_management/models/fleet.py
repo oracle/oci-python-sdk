@@ -584,7 +584,7 @@ class Fleet(object):
         Gets the parent_fleet_id of this Fleet.
         The `OCID`__ of the fleet that would be the parent for this fleet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_fleet_id of this Fleet.
@@ -598,7 +598,7 @@ class Fleet(object):
         Sets the parent_fleet_id of this Fleet.
         The `OCID`__ of the fleet that would be the parent for this fleet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_fleet_id: The parent_fleet_id of this Fleet.

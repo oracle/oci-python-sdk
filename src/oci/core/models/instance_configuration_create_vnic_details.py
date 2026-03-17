@@ -15,7 +15,7 @@ class InstanceConfigurationCreateVnicDetails(object):
     Contains the properties of the VNIC for an instance configuration. See :class:`CreateVnicDetails`
     and `Instance Configurations`__ for more information.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config
+    __ https://docs.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config
     """
 
     def __init__(self, **kwargs):
@@ -227,7 +227,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstanceConfigurationCreateVnicDetails.
@@ -244,7 +244,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstanceConfigurationCreateVnicDetails.
@@ -287,7 +287,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstanceConfigurationCreateVnicDetails.
@@ -304,7 +304,7 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstanceConfigurationCreateVnicDetails.
@@ -322,8 +322,8 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this InstanceConfigurationCreateVnicDetails.
@@ -341,8 +341,8 @@ class InstanceConfigurationCreateVnicDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this InstanceConfigurationCreateVnicDetails.
@@ -503,7 +503,7 @@ class InstanceConfigurationCreateVnicDetails(object):
         An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
         See the `privateIpId` attribute of :class:`CreateVnicDetails` for more information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this InstanceConfigurationCreateVnicDetails.
@@ -518,7 +518,7 @@ class InstanceConfigurationCreateVnicDetails(object):
         An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
         See the `privateIpId` attribute of :class:`CreateVnicDetails` for more information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this InstanceConfigurationCreateVnicDetails.

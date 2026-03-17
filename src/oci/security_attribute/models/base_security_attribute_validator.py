@@ -24,8 +24,8 @@ class BaseSecurityAttributeValidator(object):
     To clear the validator call UpdateSecurityAttribute with
     `DefaultSecuirtyAttributeValidator`__.
 
-    __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/overview.htm
-    __ https://docs.cloud.oracle.com/api/#/en/securityattribute/latest/datatypes/DefaultTagDefinitionValidator
+    __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+    __ https://docs.oracle.com/en-us/iaas/api/#/en/securityattribute/latest/datatypes/DefaultTagDefinitionValidator
     """
 
     #: A constant which can be used with the validator_type property of a BaseSecurityAttributeValidator.

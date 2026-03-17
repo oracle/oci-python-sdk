@@ -129,8 +129,8 @@ class UpdateAnnouncementSubscriptionDetails(object):
         Gets the ons_topic_id of this UpdateAnnouncementSubscriptionDetails.
         The `OCID`__ of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see `Details for Notifications`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm
 
 
         :return: The ons_topic_id of this UpdateAnnouncementSubscriptionDetails.
@@ -144,8 +144,8 @@ class UpdateAnnouncementSubscriptionDetails(object):
         Sets the ons_topic_id of this UpdateAnnouncementSubscriptionDetails.
         The `OCID`__ of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see `Details for Notifications`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm
 
 
         :param ons_topic_id: The ons_topic_id of this UpdateAnnouncementSubscriptionDetails.

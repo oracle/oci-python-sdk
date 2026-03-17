@@ -52,7 +52,7 @@ class UpdateNetworkSecurityGroupsDetails(object):
         *  The network security rules of other resources can reference the NSGs associated with the load balancer
            to ensure access.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_security_group_ids of this UpdateNetworkSecurityGroupsDetails.
@@ -76,7 +76,7 @@ class UpdateNetworkSecurityGroupsDetails(object):
         *  The network security rules of other resources can reference the NSGs associated with the load balancer
            to ensure access.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_security_group_ids: The network_security_group_ids of this UpdateNetworkSecurityGroupsDetails.

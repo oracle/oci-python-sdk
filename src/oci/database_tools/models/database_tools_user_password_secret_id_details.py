@@ -49,7 +49,7 @@ class DatabaseToolsUserPasswordSecretIdDetails(DatabaseToolsUserPasswordDetails)
         **[Required]** Gets the secret_id of this DatabaseToolsUserPasswordSecretIdDetails.
         The `OCID`__ of the secret containing the user password.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this DatabaseToolsUserPasswordSecretIdDetails.
@@ -63,7 +63,7 @@ class DatabaseToolsUserPasswordSecretIdDetails(DatabaseToolsUserPasswordDetails)
         Sets the secret_id of this DatabaseToolsUserPasswordSecretIdDetails.
         The `OCID`__ of the secret containing the user password.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this DatabaseToolsUserPasswordSecretIdDetails.

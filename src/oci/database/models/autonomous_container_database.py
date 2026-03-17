@@ -896,7 +896,7 @@ class AutonomousContainerDatabase(object):
         Gets the cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabase.
         The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabase.
@@ -910,7 +910,7 @@ class AutonomousContainerDatabase(object):
         Sets the cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabase.
         The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabase.
@@ -948,8 +948,8 @@ class AutonomousContainerDatabase(object):
         Gets the vault_id of this AutonomousContainerDatabase.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this AutonomousContainerDatabase.
@@ -963,8 +963,8 @@ class AutonomousContainerDatabase(object):
         Sets the vault_id of this AutonomousContainerDatabase.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this AutonomousContainerDatabase.
@@ -1178,7 +1178,7 @@ class AutonomousContainerDatabase(object):
         Gets the patch_id of this AutonomousContainerDatabase.
         The `OCID`__ of the last patch applied on the system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The patch_id of this AutonomousContainerDatabase.
@@ -1192,7 +1192,7 @@ class AutonomousContainerDatabase(object):
         Sets the patch_id of this AutonomousContainerDatabase.
         The `OCID`__ of the last patch applied on the system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param patch_id: The patch_id of this AutonomousContainerDatabase.
@@ -1206,7 +1206,7 @@ class AutonomousContainerDatabase(object):
         Gets the last_maintenance_run_id of this AutonomousContainerDatabase.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_maintenance_run_id of this AutonomousContainerDatabase.
@@ -1220,7 +1220,7 @@ class AutonomousContainerDatabase(object):
         Sets the last_maintenance_run_id of this AutonomousContainerDatabase.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_maintenance_run_id: The last_maintenance_run_id of this AutonomousContainerDatabase.
@@ -1234,7 +1234,7 @@ class AutonomousContainerDatabase(object):
         Gets the next_maintenance_run_id of this AutonomousContainerDatabase.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_maintenance_run_id of this AutonomousContainerDatabase.
@@ -1248,7 +1248,7 @@ class AutonomousContainerDatabase(object):
         Sets the next_maintenance_run_id of this AutonomousContainerDatabase.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param next_maintenance_run_id: The next_maintenance_run_id of this AutonomousContainerDatabase.
@@ -1389,7 +1389,7 @@ class AutonomousContainerDatabase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AutonomousContainerDatabase.
@@ -1406,7 +1406,7 @@ class AutonomousContainerDatabase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AutonomousContainerDatabase.
@@ -1421,7 +1421,7 @@ class AutonomousContainerDatabase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AutonomousContainerDatabase.
@@ -1436,7 +1436,7 @@ class AutonomousContainerDatabase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AutonomousContainerDatabase.
@@ -1451,7 +1451,7 @@ class AutonomousContainerDatabase(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this AutonomousContainerDatabase.
@@ -1466,7 +1466,7 @@ class AutonomousContainerDatabase(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this AutonomousContainerDatabase.
@@ -1646,7 +1646,7 @@ class AutonomousContainerDatabase(object):
         Gets the key_store_id of this AutonomousContainerDatabase.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this AutonomousContainerDatabase.
@@ -1660,7 +1660,7 @@ class AutonomousContainerDatabase(object):
         Sets the key_store_id of this AutonomousContainerDatabase.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this AutonomousContainerDatabase.

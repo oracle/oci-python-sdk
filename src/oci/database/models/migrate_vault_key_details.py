@@ -14,7 +14,7 @@ class MigrateVaultKeyDetails(object):
     """
     Details for replacing existing Oracle-managed keys with customer-managed `Vault service`__ keys and vice-versa is not supported.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+    __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
     """
 
     def __init__(self, **kwargs):
@@ -117,8 +117,8 @@ class MigrateVaultKeyDetails(object):
         Gets the vault_id of this MigrateVaultKeyDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this MigrateVaultKeyDetails.
@@ -132,8 +132,8 @@ class MigrateVaultKeyDetails(object):
         Sets the vault_id of this MigrateVaultKeyDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this MigrateVaultKeyDetails.

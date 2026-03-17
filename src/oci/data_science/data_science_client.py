@@ -133,7 +133,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -249,7 +249,7 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -361,7 +361,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -477,7 +477,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -707,7 +707,7 @@ class DataScienceClient(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -821,7 +821,7 @@ class DataScienceClient(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -952,7 +952,7 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1187,7 +1187,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeJobCompartmentDetails change_job_compartment_details: (required)
             Details for changing the compartment of a job.
@@ -1304,7 +1304,7 @@ class DataScienceClient(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeJobRunCompartmentDetails change_job_run_compartment_details: (required)
             Details for changing the compartment of a job.
@@ -1913,7 +1913,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelCompartmentDetails change_model_compartment_details: (required)
             Details for changing the compartment of a model.
@@ -2036,7 +2036,7 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelDeploymentCompartmentDetails change_model_deployment_compartment_details: (required)
             Details for changing the compartment of a model deployment.
@@ -2159,7 +2159,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelGroupCompartmentDetails change_model_group_compartment_details: (required)
             Details for changing the compartment of a model group.
@@ -2284,7 +2284,7 @@ class DataScienceClient(object):
         :param str model_group_version_history_id: (required)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelGroupVersionHistoryCompartmentDetails change_model_group_version_history_compartment_details: (required)
             Details for changing the compartment of a Model Group Version History.
@@ -2409,7 +2409,7 @@ class DataScienceClient(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeModelVersionSetCompartmentDetails change_model_version_set_compartment_details: (required)
             Details for changing the compartment of a model version set.
@@ -2532,7 +2532,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeNotebookSessionCompartmentDetails change_notebook_session_compartment_details: (required)
             Details for changing the compartment of a notebook session.
@@ -2655,7 +2655,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangePipelineCompartmentDetails change_pipeline_compartment_details: (required)
             Details for the compartment move.
@@ -2772,7 +2772,7 @@ class DataScienceClient(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangePipelineRunCompartmentDetails change_pipeline_run_compartment_details: (required)
             Details for the compartment move.
@@ -2889,7 +2889,7 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ChangeProjectCompartmentDetails change_project_compartment_details: (required)
             Details for changing the compartment of a project.
@@ -3337,7 +3337,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param stream job_artifact: (required)
             The job artifact to upload.
@@ -4003,7 +4003,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param stream model_artifact: (required)
             The model artifact to upload.
@@ -4175,7 +4175,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -4343,7 +4343,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -4718,7 +4718,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param stream model_group_artifact: (required)
             The model group artifact to upload.
@@ -4991,7 +4991,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.CreateModelProvenanceDetails create_model_provenance_details: (required)
             Provenance information for specified model.
@@ -5720,7 +5720,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str step_name: (required)
             Unique Step identifier in a pipeline.
@@ -5885,7 +5885,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6001,7 +6001,7 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6113,7 +6113,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6229,7 +6229,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6569,7 +6569,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6694,7 +6694,7 @@ class DataScienceClient(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -7144,7 +7144,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -7258,7 +7258,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -7376,7 +7376,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -7494,7 +7494,7 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -7608,7 +7608,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -7720,7 +7720,7 @@ class DataScienceClient(object):
         :param str model_group_version_history_id: (required)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -7832,7 +7832,7 @@ class DataScienceClient(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_delete_related_models: (optional)
             By default, this parameter is false. A model version set can only be deleted if all the models associate with it are already in the DELETED state.
@@ -7958,7 +7958,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -8072,7 +8072,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool delete_related_pipeline_runs: (optional)
             A boolean value to specify whether to delete related PipelineRuns or not.
@@ -8200,7 +8200,7 @@ class DataScienceClient(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool delete_related_job_runs: (optional)
             A boolean value to specify whether to delete related jobRuns or not.
@@ -8323,7 +8323,7 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -8797,7 +8797,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ExportModelArtifactDetails export_model_artifact_details: (required)
             Model artifact source details for exporting.
@@ -9027,7 +9027,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -9134,7 +9134,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -9249,7 +9249,7 @@ class DataScienceClient(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10091,7 +10091,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10198,7 +10198,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10313,7 +10313,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -10432,7 +10432,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -10551,7 +10551,7 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10658,7 +10658,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10765,7 +10765,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10880,7 +10880,7 @@ class DataScienceClient(object):
         :param str model_group_version_history_id: (required)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -10987,7 +10987,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11094,7 +11094,7 @@ class DataScienceClient(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11201,7 +11201,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11308,7 +11308,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11415,7 +11415,7 @@ class DataScienceClient(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11522,7 +11522,7 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11734,7 +11734,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str step_name: (required)
             Unique Step identifier in a pipeline.
@@ -11855,7 +11855,7 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -11962,7 +11962,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -12067,7 +12067,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -12172,7 +12172,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -12281,7 +12281,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -12390,7 +12390,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -12495,7 +12495,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str step_name: (required)
             Unique Step identifier in a pipeline.
@@ -12604,7 +12604,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.ImportModelArtifactDetails import_model_artifact_details: (required)
             Model artifact source details for importing.
@@ -12757,7 +12757,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -12765,7 +12765,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -12902,7 +12902,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -12915,7 +12915,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -12923,7 +12923,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The lifecycle state of the private endpoint.
@@ -12946,7 +12946,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_science_resource_type: (optional)
             Resource types in the Data Science service such as notebooks.
@@ -13094,7 +13094,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -13107,7 +13107,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -13115,7 +13115,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13218,22 +13218,22 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str job_id: (optional)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -13249,7 +13249,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -13257,7 +13257,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -13414,7 +13414,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -13427,7 +13427,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -13435,7 +13435,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13538,17 +13538,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -13562,7 +13562,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -13572,7 +13572,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -13580,7 +13580,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -13747,7 +13747,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -13755,7 +13755,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -13898,7 +13898,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str ml_application_implementation_id: (optional)
             unique MlApplicationImplementation identifier
@@ -13925,7 +13925,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -13933,7 +13933,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -14084,7 +14084,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -14111,7 +14111,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -14119,7 +14119,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -14270,7 +14270,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -14291,7 +14291,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -14299,7 +14299,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -14446,7 +14446,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str ml_application_id: (optional)
             unique MlApplication identifier
@@ -14470,7 +14470,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -14478,7 +14478,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -14627,17 +14627,17 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -14659,7 +14659,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -14667,7 +14667,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -14827,7 +14827,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -14840,7 +14840,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -14848,7 +14848,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -14951,17 +14951,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -14975,7 +14975,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -14985,7 +14985,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -14993,7 +14993,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -15147,17 +15147,17 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -15171,7 +15171,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -15181,7 +15181,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -15189,7 +15189,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -15352,17 +15352,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -15375,7 +15375,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -15385,7 +15385,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -15393,7 +15393,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -15546,17 +15546,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -15569,12 +15569,12 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str model_group_version_history_id: (optional)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -15584,7 +15584,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -15592,7 +15592,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -15747,7 +15747,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str category: (optional)
             Specifies the type of model version sets to list. By default, user model version sets are listed.
@@ -15757,12 +15757,12 @@ class DataScienceClient(object):
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             A filter to return only resources that match the entire name given.
@@ -15776,7 +15776,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -15786,7 +15786,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -15794,7 +15794,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -15955,7 +15955,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str model_version_set_name: (optional)
             <b>Filter</b> results by the name of the model version set.
@@ -15971,12 +15971,12 @@ class DataScienceClient(object):
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -15990,7 +15990,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -16000,7 +16000,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -16008,7 +16008,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -16174,7 +16174,7 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -16187,7 +16187,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -16195,7 +16195,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -16298,17 +16298,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -16322,7 +16322,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -16332,7 +16332,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -16340,7 +16340,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -16494,17 +16494,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str pipeline_id: (optional)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -16517,7 +16517,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -16527,7 +16527,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -16535,7 +16535,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -16689,17 +16689,17 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -16712,7 +16712,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -16722,7 +16722,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -16730,7 +16730,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -16884,12 +16884,12 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             <b>Filter</b> results by its user-friendly name.
@@ -16903,7 +16903,7 @@ class DataScienceClient(object):
         :param str created_by: (optional)
             <b>Filter</b> results by the `OCID`__ of the user who created the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -16913,7 +16913,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -16921,7 +16921,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -17073,12 +17073,12 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str project_id: (optional)
             <b>Filter</b> results by the `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -17099,7 +17099,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -17107,7 +17107,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -17256,7 +17256,7 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -17269,7 +17269,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -17277,7 +17277,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -17391,7 +17391,7 @@ class DataScienceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -17404,7 +17404,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -17412,7 +17412,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -17526,12 +17526,12 @@ class DataScienceClient(object):
         :param str compartment_id: (required)
             <b>Filter</b> results by the `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str operation_type: (optional)
             <b>Filter</b> results by the type of the operation associated with the work request.
@@ -17551,7 +17551,7 @@ class DataScienceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response
@@ -17559,7 +17559,7 @@ class DataScienceClient(object):
 
             See `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -17999,7 +17999,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -18121,7 +18121,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int restore_model_for_hours_specified: (optional)
             Duration in hours for which the archived model is available for access.
@@ -18599,7 +18599,7 @@ class DataScienceClient(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateJobDetails update_job_details: (required)
             Details for updating a job.
@@ -18720,7 +18720,7 @@ class DataScienceClient(object):
         :param str job_run_id: (required)
             The `OCID`__ of the job run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateJobRunDetails update_job_run_details: (required)
             Details for updating a job.
@@ -19430,7 +19430,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelDetails update_model_details: (required)
             Details for updating a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
@@ -19551,7 +19551,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -19721,7 +19721,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str metadatum_key_name: (required)
             The name of the model metadatum in the metadata.
@@ -19894,7 +19894,7 @@ class DataScienceClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelDeploymentDetails update_model_deployment_details: (required)
             Details for updating a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time
@@ -20016,7 +20016,7 @@ class DataScienceClient(object):
         :param str model_group_id: (required)
             The `OCID`__ of the modelGroup.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelGroupDetails update_model_group_details: (required)
             Details for updating a modelGroup.
@@ -20135,7 +20135,7 @@ class DataScienceClient(object):
         :param str model_group_version_history_id: (required)
             The `OCID`__ of the modelGroupVersionHistory.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelGroupVersionHistoryDetails update_model_group_version_history_details: (required)
             Details for updating a modelGroupVersionHistory.
@@ -20254,7 +20254,7 @@ class DataScienceClient(object):
         :param str model_id: (required)
             The `OCID`__ of the model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelProvenanceDetails update_model_provenance_details: (required)
             Provenance information for the specified model.
@@ -20375,7 +20375,7 @@ class DataScienceClient(object):
         :param str model_version_set_id: (required)
             The `OCID`__ of the model version set.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateModelVersionSetDetails update_model_version_set_details: (required)
             Details for updating a model version set. You can update `description` property only.
@@ -20498,7 +20498,7 @@ class DataScienceClient(object):
         :param str notebook_session_id: (required)
             The `OCID`__ of the notebook session.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateNotebookSessionDetails update_notebook_session_details: (required)
             Details for updating a notebook session. `notebookSessionConfigurationDetails` can only be updated while the notebook session is in the `INACTIVE` state.
@@ -20620,7 +20620,7 @@ class DataScienceClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdatePipelineDetails update_pipeline_details: (required)
             The information to be updated.
@@ -20739,7 +20739,7 @@ class DataScienceClient(object):
         :param str pipeline_run_id: (required)
             The `OCID`__ of the pipeline run.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdatePipelineRunDetails update_pipeline_run_details: (required)
             The information to be updated.
@@ -20858,7 +20858,7 @@ class DataScienceClient(object):
         :param str project_id: (required)
             The `OCID`__ of the project.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.data_science.models.UpdateProjectDetails update_project_details: (required)
             Details for updating a project. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.

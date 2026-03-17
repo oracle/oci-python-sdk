@@ -114,7 +114,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         The `OCID`__ of the VM Cluster in which to create the standby database.
         You must supply this value if creationType is `ExistingVmCluster`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_vm_cluster_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
@@ -129,7 +129,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         The `OCID`__ of the VM Cluster in which to create the standby database.
         You must supply this value if creationType is `ExistingVmCluster`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_vm_cluster_id: The peer_vm_cluster_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
@@ -144,7 +144,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         The `OCID`__ of the DB home in which to create the standby database.
         You must supply this value to create standby database with an existing DB home
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_db_home_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
@@ -159,7 +159,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         The `OCID`__ of the DB home in which to create the standby database.
         You must supply this value to create standby database with an existing DB home
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_db_home_id: The peer_db_home_id of this CreateDataGuardAssociationToExistingVmClusterDetails.

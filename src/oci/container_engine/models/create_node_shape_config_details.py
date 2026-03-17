@@ -47,7 +47,7 @@ class CreateNodeShapeConfigDetails(object):
         The total number of OCPUs available to each node in the node pool.
         See `here`__ for details.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
 
 
         :return: The ocpus of this CreateNodeShapeConfigDetails.
@@ -62,7 +62,7 @@ class CreateNodeShapeConfigDetails(object):
         The total number of OCPUs available to each node in the node pool.
         See `here`__ for details.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
 
 
         :param ocpus: The ocpus of this CreateNodeShapeConfigDetails.

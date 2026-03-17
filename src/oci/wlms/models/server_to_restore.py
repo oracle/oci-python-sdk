@@ -48,7 +48,7 @@ class ServerToRestore(object):
 
         **Note:** Not an `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The server_id of this ServerToRestore.
@@ -64,7 +64,7 @@ class ServerToRestore(object):
 
         **Note:** Not an `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param server_id: The server_id of this ServerToRestore.
@@ -80,7 +80,7 @@ class ServerToRestore(object):
 
         **Note:** Not `OCIDs`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backups of this ServerToRestore.
@@ -96,7 +96,7 @@ class ServerToRestore(object):
 
         **Note:** Not `OCIDs`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backups: The backups of this ServerToRestore.

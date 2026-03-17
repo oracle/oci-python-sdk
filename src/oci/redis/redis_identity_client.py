@@ -135,7 +135,7 @@ class RedisIdentityClient(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

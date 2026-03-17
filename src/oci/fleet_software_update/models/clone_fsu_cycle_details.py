@@ -105,7 +105,7 @@ class CloneFsuCycleDetails(object):
         Gets the compartment_id of this CloneFsuCycleDetails.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloneFsuCycleDetails.
@@ -119,7 +119,7 @@ class CloneFsuCycleDetails(object):
         Sets the compartment_id of this CloneFsuCycleDetails.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloneFsuCycleDetails.
@@ -134,7 +134,7 @@ class CloneFsuCycleDetails(object):
         The `OCID`__ of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         If not specified, the cloned Exadata Fleet Update Cycle will be assigned to the same Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this CloneFsuCycleDetails.
@@ -149,7 +149,7 @@ class CloneFsuCycleDetails(object):
         The `OCID`__ of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
         If not specified, the cloned Exadata Fleet Update Cycle will be assigned to the same Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this CloneFsuCycleDetails.

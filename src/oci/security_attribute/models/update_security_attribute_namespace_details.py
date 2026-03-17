@@ -85,7 +85,7 @@ class UpdateSecurityAttributeNamespaceDetails(object):
         Indicates whether the security attribute namespace is retired.
         See `Managing Security Attribute Namespaces`__.
 
-        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
 
 
         :return: The is_retired of this UpdateSecurityAttributeNamespaceDetails.
@@ -100,7 +100,7 @@ class UpdateSecurityAttributeNamespaceDetails(object):
         Indicates whether the security attribute namespace is retired.
         See `Managing Security Attribute Namespaces`__.
 
-        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
 
 
         :param is_retired: The is_retired of this UpdateSecurityAttributeNamespaceDetails.
@@ -117,7 +117,7 @@ class UpdateSecurityAttributeNamespaceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateSecurityAttributeNamespaceDetails.
@@ -134,7 +134,7 @@ class UpdateSecurityAttributeNamespaceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateSecurityAttributeNamespaceDetails.
@@ -151,7 +151,7 @@ class UpdateSecurityAttributeNamespaceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateSecurityAttributeNamespaceDetails.
@@ -168,7 +168,7 @@ class UpdateSecurityAttributeNamespaceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateSecurityAttributeNamespaceDetails.

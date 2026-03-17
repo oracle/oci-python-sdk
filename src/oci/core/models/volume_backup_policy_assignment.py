@@ -17,7 +17,7 @@ class VolumeBackupPolicyAssignment(object):
     For more information about Oracle defined backup policies and custom backup policies,
     see `Policy-Based Backups`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+    __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     def __init__(self, **kwargs):
@@ -177,8 +177,8 @@ class VolumeBackupPolicyAssignment(object):
         `Overview of Vault service`__ and
         `Using Keys`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :return: The xrc_kms_key_id of this VolumeBackupPolicyAssignment.
@@ -195,8 +195,8 @@ class VolumeBackupPolicyAssignment(object):
         `Overview of Vault service`__ and
         `Using Keys`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :param xrc_kms_key_id: The xrc_kms_key_id of this VolumeBackupPolicyAssignment.

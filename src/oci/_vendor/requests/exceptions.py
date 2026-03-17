@@ -11,7 +11,7 @@ requests.exceptions
 
 This module contains the set of Requests' exceptions.
 """
-from oci._vendor.urllib3.exceptions import HTTPError as BaseHTTPError
+from urllib3.exceptions import HTTPError as BaseHTTPError
 
 from oci._vendor.requests.compat import JSONDecodeError as CompatJSONDecodeError
 

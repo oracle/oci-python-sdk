@@ -72,7 +72,7 @@ class ApiPlatformClientCompositeOperations(object):
         :param str api_platform_instance_id: (required)
             The `OCID`__ of the instance
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.api_platform.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class ApiPlatformClientCompositeOperations(object):
         :param str api_platform_instance_id: (required)
             The `OCID`__ of the instance
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.api_platform.models.UpdateApiPlatformInstanceDetails update_api_platform_instance_details: (required)
             The information to be updated.

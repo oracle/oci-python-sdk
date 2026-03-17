@@ -16,7 +16,7 @@ class DatastoreCluster(object):
 
     The Datastore Cluster combines multiple datastores into a single datastore cluster.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
+    __ https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
     """
 
     #: A constant which can be used with the datastore_cluster_type property of a DatastoreCluster.
@@ -184,7 +184,7 @@ class DatastoreCluster(object):
         **[Required]** Gets the id of this DatastoreCluster.
         The `OCID`__ of the Datastore cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DatastoreCluster.
@@ -198,7 +198,7 @@ class DatastoreCluster(object):
         Sets the id of this DatastoreCluster.
         The `OCID`__ of the Datastore cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DatastoreCluster.
@@ -212,7 +212,7 @@ class DatastoreCluster(object):
         **[Required]** Gets the datastore_ids of this DatastoreCluster.
         The `OCIDs`__ of the Datastores that belong to the Datastore Cluster
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The datastore_ids of this DatastoreCluster.
@@ -226,7 +226,7 @@ class DatastoreCluster(object):
         Sets the datastore_ids of this DatastoreCluster.
         The `OCIDs`__ of the Datastores that belong to the Datastore Cluster
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param datastore_ids: The datastore_ids of this DatastoreCluster.
@@ -240,7 +240,7 @@ class DatastoreCluster(object):
         Gets the cluster_id of this DatastoreCluster.
         The `OCID`__ of the VMware Cluster that Datastore cluster is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this DatastoreCluster.
@@ -254,7 +254,7 @@ class DatastoreCluster(object):
         Sets the cluster_id of this DatastoreCluster.
         The `OCID`__ of the VMware Cluster that Datastore cluster is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this DatastoreCluster.
@@ -268,7 +268,7 @@ class DatastoreCluster(object):
         Gets the sddc_id of this DatastoreCluster.
         The `OCID`__ of the SDDC that Datastore cluster is associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sddc_id of this DatastoreCluster.
@@ -282,7 +282,7 @@ class DatastoreCluster(object):
         Sets the sddc_id of this DatastoreCluster.
         The `OCID`__ of the SDDC that Datastore cluster is associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sddc_id: The sddc_id of this DatastoreCluster.
@@ -297,7 +297,7 @@ class DatastoreCluster(object):
         The `OCID`__ of the compartment that
         contains the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DatastoreCluster.
@@ -312,7 +312,7 @@ class DatastoreCluster(object):
         The `OCID`__ of the compartment that
         contains the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DatastoreCluster.
@@ -355,7 +355,7 @@ class DatastoreCluster(object):
         The `OCIDs`__ of the ESXi hosts to attach the
         datastore to. All ESXi hosts must belong to the same VMware cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The esxi_host_ids of this DatastoreCluster.
@@ -370,7 +370,7 @@ class DatastoreCluster(object):
         The `OCIDs`__ of the ESXi hosts to attach the
         datastore to. All ESXi hosts must belong to the same VMware cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param esxi_host_ids: The esxi_host_ids of this DatastoreCluster.
@@ -557,7 +557,7 @@ class DatastoreCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DatastoreCluster.
@@ -574,7 +574,7 @@ class DatastoreCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DatastoreCluster.
@@ -591,7 +591,7 @@ class DatastoreCluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DatastoreCluster.
@@ -608,7 +608,7 @@ class DatastoreCluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DatastoreCluster.

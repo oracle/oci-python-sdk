@@ -190,7 +190,7 @@ class VmClusterNetworkSummary(object):
         Gets the id of this VmClusterNetworkSummary.
         The `OCID`__ of the VM cluster network.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this VmClusterNetworkSummary.
@@ -204,7 +204,7 @@ class VmClusterNetworkSummary(object):
         Sets the id of this VmClusterNetworkSummary.
         The `OCID`__ of the VM cluster network.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this VmClusterNetworkSummary.
@@ -218,7 +218,7 @@ class VmClusterNetworkSummary(object):
         Gets the exadata_infrastructure_id of this VmClusterNetworkSummary.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this VmClusterNetworkSummary.
@@ -232,7 +232,7 @@ class VmClusterNetworkSummary(object):
         Sets the exadata_infrastructure_id of this VmClusterNetworkSummary.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this VmClusterNetworkSummary.
@@ -246,7 +246,7 @@ class VmClusterNetworkSummary(object):
         Gets the compartment_id of this VmClusterNetworkSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this VmClusterNetworkSummary.
@@ -260,7 +260,7 @@ class VmClusterNetworkSummary(object):
         Sets the compartment_id of this VmClusterNetworkSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this VmClusterNetworkSummary.
@@ -274,7 +274,7 @@ class VmClusterNetworkSummary(object):
         Gets the vm_cluster_id of this VmClusterNetworkSummary.
         The `OCID`__ of the associated VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this VmClusterNetworkSummary.
@@ -288,7 +288,7 @@ class VmClusterNetworkSummary(object):
         Sets the vm_cluster_id of this VmClusterNetworkSummary.
         The `OCID`__ of the associated VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this VmClusterNetworkSummary.
@@ -551,7 +551,7 @@ class VmClusterNetworkSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this VmClusterNetworkSummary.
@@ -568,7 +568,7 @@ class VmClusterNetworkSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this VmClusterNetworkSummary.
@@ -583,7 +583,7 @@ class VmClusterNetworkSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this VmClusterNetworkSummary.
@@ -598,7 +598,7 @@ class VmClusterNetworkSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this VmClusterNetworkSummary.
@@ -613,7 +613,7 @@ class VmClusterNetworkSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this VmClusterNetworkSummary.
@@ -628,7 +628,7 @@ class VmClusterNetworkSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this VmClusterNetworkSummary.

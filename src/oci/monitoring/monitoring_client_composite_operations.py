@@ -117,7 +117,7 @@ class MonitoringClientCompositeOperations(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.monitoring.models.Alarm.lifecycle_state`
@@ -178,7 +178,7 @@ class MonitoringClientCompositeOperations(object):
         :param str alarm_suppression_id: (required)
             The `OCID`__ of the alarm suppression.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.monitoring.models.AlarmSuppression.lifecycle_state`
@@ -239,7 +239,7 @@ class MonitoringClientCompositeOperations(object):
         :param str alarm_id: (required)
             The `OCID`__ of an alarm.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.monitoring.models.UpdateAlarmDetails update_alarm_details: (required)
             Document for updating an alarm.

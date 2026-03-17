@@ -255,7 +255,7 @@ class EsxiHostClient(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -370,7 +370,7 @@ class EsxiHostClient(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If you need to contact Oracle about a particular
@@ -478,7 +478,7 @@ class EsxiHostClient(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -611,17 +611,17 @@ class EsxiHostClient(object):
         :param str sddc_id: (optional)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cluster_id: (optional)
             The `OCID`__ of the SDDC Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_instance_id: (optional)
             The `OCID`__ of the Compute instance.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -631,14 +631,14 @@ class EsxiHostClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -676,7 +676,7 @@ class EsxiHostClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment as optional parameter.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -819,7 +819,7 @@ class EsxiHostClient(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.ReplaceHostDetails replace_host_details: (required)
             The details for replacing ESXi host
@@ -949,12 +949,12 @@ class EsxiHostClient(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str swap_billing_host_id: (required)
             The `OCID`__ of the active ESXi Host to swap billing with current host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1086,7 +1086,7 @@ class EsxiHostClient(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateEsxiHostDetails update_esxi_host_details: (required)
             The information to be updated.

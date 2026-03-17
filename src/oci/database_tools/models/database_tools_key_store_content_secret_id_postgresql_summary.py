@@ -49,7 +49,7 @@ class DatabaseToolsKeyStoreContentSecretIdPostgresqlSummary(DatabaseToolsKeyStor
         Gets the secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresqlSummary.
         The `OCID`__ of the secret containing the key store.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresqlSummary.
@@ -63,7 +63,7 @@ class DatabaseToolsKeyStoreContentSecretIdPostgresqlSummary(DatabaseToolsKeyStor
         Sets the secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresqlSummary.
         The `OCID`__ of the secret containing the key store.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresqlSummary.

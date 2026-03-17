@@ -92,7 +92,7 @@ class CreateDashboardDetails(object):
         **[Required]** Gets the dashboard_group_id of this CreateDashboardDetails.
         The `OCID`__ of the dashboard group that the dashbaord is associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dashboard_group_id of this CreateDashboardDetails.
@@ -106,7 +106,7 @@ class CreateDashboardDetails(object):
         Sets the dashboard_group_id of this CreateDashboardDetails.
         The `OCID`__ of the dashboard group that the dashbaord is associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dashboard_group_id: The dashboard_group_id of this CreateDashboardDetails.

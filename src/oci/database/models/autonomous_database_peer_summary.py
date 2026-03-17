@@ -46,7 +46,7 @@ class AutonomousDatabasePeerSummary(object):
         **[Required]** Gets the id of this AutonomousDatabasePeerSummary.
         The `OCID`__ of the Autonomous AI Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousDatabasePeerSummary.
@@ -60,7 +60,7 @@ class AutonomousDatabasePeerSummary(object):
         Sets the id of this AutonomousDatabasePeerSummary.
         The `OCID`__ of the Autonomous AI Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousDatabasePeerSummary.

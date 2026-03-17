@@ -157,7 +157,7 @@ class AlarmOverride(object):
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The body of this AlarmOverride.
@@ -177,7 +177,7 @@ class AlarmOverride(object):
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param body: The body of this AlarmOverride.
@@ -253,10 +253,10 @@ class AlarmOverride(object):
 
           -----
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this AlarmOverride.
@@ -308,10 +308,10 @@ class AlarmOverride(object):
 
           -----
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this AlarmOverride.

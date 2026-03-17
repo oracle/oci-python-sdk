@@ -84,7 +84,7 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
         **[Required]** Gets the origin_software_source_id of this CreateVendorSoftwareSourceDetails.
         The `OCID`__ of the vendor software source in the root compartment that is being replicated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The origin_software_source_id of this CreateVendorSoftwareSourceDetails.
@@ -98,7 +98,7 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
         Sets the origin_software_source_id of this CreateVendorSoftwareSourceDetails.
         The `OCID`__ of the vendor software source in the root compartment that is being replicated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param origin_software_source_id: The origin_software_source_id of this CreateVendorSoftwareSourceDetails.

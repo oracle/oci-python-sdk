@@ -153,7 +153,7 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
 
         For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :return: The boot_volume_vpus_per_gb of this InstanceSourceViaImageDetails.
@@ -179,7 +179,7 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
 
         For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :param boot_volume_vpus_per_gb: The boot_volume_vpus_per_gb of this InstanceSourceViaImageDetails.

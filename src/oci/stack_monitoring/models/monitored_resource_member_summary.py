@@ -229,7 +229,7 @@ class MonitoredResourceMemberSummary(object):
         Gets the resource_id of this MonitoredResourceMemberSummary.
         Monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this MonitoredResourceMemberSummary.
@@ -243,7 +243,7 @@ class MonitoredResourceMemberSummary(object):
         Sets the resource_id of this MonitoredResourceMemberSummary.
         Monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this MonitoredResourceMemberSummary.
@@ -356,7 +356,7 @@ class MonitoredResourceMemberSummary(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_id of this MonitoredResourceMemberSummary.
@@ -373,7 +373,7 @@ class MonitoredResourceMemberSummary(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_id: The external_id of this MonitoredResourceMemberSummary.
@@ -387,7 +387,7 @@ class MonitoredResourceMemberSummary(object):
         Gets the compartment_id of this MonitoredResourceMemberSummary.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredResourceMemberSummary.
@@ -401,7 +401,7 @@ class MonitoredResourceMemberSummary(object):
         Sets the compartment_id of this MonitoredResourceMemberSummary.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredResourceMemberSummary.
@@ -415,7 +415,7 @@ class MonitoredResourceMemberSummary(object):
         Gets the parent_id of this MonitoredResourceMemberSummary.
         Parent monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this MonitoredResourceMemberSummary.
@@ -429,7 +429,7 @@ class MonitoredResourceMemberSummary(object):
         Sets the parent_id of this MonitoredResourceMemberSummary.
         Parent monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this MonitoredResourceMemberSummary.

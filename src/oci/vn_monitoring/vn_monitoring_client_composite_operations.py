@@ -75,7 +75,7 @@ class VnMonitoringClientCompositeOperations(object):
         :param str path_analyzer_test_id: (required)
             The `OCID`__ of the `PathAnalyzerTest` resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.vn_monitoring.models.PathAnalyzerTest.lifecycle_state`
@@ -175,7 +175,7 @@ class VnMonitoringClientCompositeOperations(object):
         :param str path_analyzer_test_id: (required)
             The `OCID`__ of the `PathAnalyzerTest` resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.vn_monitoring.models.UpdatePathAnalyzerTestDetails update_path_analyzer_test_details: (required)
             The information to update.

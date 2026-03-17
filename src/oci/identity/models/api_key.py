@@ -23,8 +23,8 @@ class ApiKey(object):
 
     For more information about user credentials, see `User Credentials`__.
 
-    __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm
+    __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/usercredentials.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ApiKey.

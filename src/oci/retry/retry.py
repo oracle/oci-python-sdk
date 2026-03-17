@@ -70,7 +70,7 @@ class RetryStrategyBuilder(object):
             the numeric status is checked for retry purposes.
 
             If we are performing a check on service errors and this value is not provided, then by default we will retry on
-            HTTP 409/IncorrectState, 429's (throttles) without any textual code check.
+            HTTP 409/IncorrectState, 409/LockConflict, 429's (throttles) without any textual code check.
 
         :param Boolean service_error_retry_on_any_5xx (optional):
             If we are checking on service errors, whether to retry on any HTTP 5xx received from the service. If

@@ -33,7 +33,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -299,7 +299,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.ChangeConnectionCompartmentDetails change_connection_compartment_details: (required)
             Properties to change the compartment of a Connection.
@@ -346,7 +346,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
@@ -513,7 +513,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.ChangePipelineCompartmentDetails change_pipeline_compartment_details: (required)
             Properties to change the compartment of a Pipeline.
@@ -599,7 +599,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.CollectPipelineDiagnosticDetails collect_pipeline_diagnostic_details: (required)
             Details for collecting the diagnostic. It includes the object storage information where the diagnostic will be uploaded.
@@ -1011,7 +1011,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
@@ -1060,7 +1060,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_assignment_id: (required)
             The `OCID`__ of the Connection Assignment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
@@ -1250,7 +1250,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
@@ -1383,7 +1383,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.PausePipelineDetails pause_pipeline_details: (required)
             Details to pause the pipeline.
@@ -1427,7 +1427,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.RefreshConnectionDetails refresh_connection_details: (required)
             Details of refresh external Connection attributes.
@@ -1471,7 +1471,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -1821,7 +1821,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.StartPipelineDetails start_pipeline_details: (required)
             Details to start Pipeline.
@@ -1907,7 +1907,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.StopPipelineDetails stop_pipeline_details: (required)
             Details to stop the pipeline.
@@ -1993,7 +1993,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.UpdateConnectionDetails update_connection_details: (required)
             The new Connection specifications to apply.
@@ -2166,7 +2166,7 @@ class GoldenGateClientCompositeOperations(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.UpdatePipelineDetails update_pipeline_details: (required)
             The existing pipeline specifications to apply.

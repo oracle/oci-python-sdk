@@ -84,7 +84,7 @@ class TopUtilizedResourceSummary(object):
         **[Required]** Gets the resource_id of this TopUtilizedResourceSummary.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this TopUtilizedResourceSummary.
@@ -98,7 +98,7 @@ class TopUtilizedResourceSummary(object):
         Sets the resource_id of this TopUtilizedResourceSummary.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this TopUtilizedResourceSummary.
@@ -136,7 +136,7 @@ class TopUtilizedResourceSummary(object):
         **[Required]** Gets the resource_compartment_id of this TopUtilizedResourceSummary.
         The compartment `OCID`__ that contains the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_compartment_id of this TopUtilizedResourceSummary.
@@ -150,7 +150,7 @@ class TopUtilizedResourceSummary(object):
         Sets the resource_compartment_id of this TopUtilizedResourceSummary.
         The compartment `OCID`__ that contains the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_compartment_id: The resource_compartment_id of this TopUtilizedResourceSummary.

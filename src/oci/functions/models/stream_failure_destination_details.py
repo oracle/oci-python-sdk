@@ -51,7 +51,7 @@ class StreamFailureDestinationDetails(FailureDestinationDetails):
         **[Required]** Gets the stream_id of this StreamFailureDestinationDetails.
         The `OCID`__ of the stream.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_id of this StreamFailureDestinationDetails.
@@ -65,7 +65,7 @@ class StreamFailureDestinationDetails(FailureDestinationDetails):
         Sets the stream_id of this StreamFailureDestinationDetails.
         The `OCID`__ of the stream.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_id: The stream_id of this StreamFailureDestinationDetails.

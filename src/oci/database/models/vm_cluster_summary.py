@@ -388,7 +388,7 @@ class VmClusterSummary(object):
         Gets the id of this VmClusterSummary.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this VmClusterSummary.
@@ -402,7 +402,7 @@ class VmClusterSummary(object):
         Sets the id of this VmClusterSummary.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this VmClusterSummary.
@@ -416,7 +416,7 @@ class VmClusterSummary(object):
         Gets the compartment_id of this VmClusterSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this VmClusterSummary.
@@ -430,7 +430,7 @@ class VmClusterSummary(object):
         Sets the compartment_id of this VmClusterSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this VmClusterSummary.
@@ -444,7 +444,7 @@ class VmClusterSummary(object):
         Gets the last_patch_history_entry_id of this VmClusterSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this VmClusterSummary.
@@ -458,7 +458,7 @@ class VmClusterSummary(object):
         Sets the last_patch_history_entry_id of this VmClusterSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this VmClusterSummary.
@@ -574,7 +574,7 @@ class VmClusterSummary(object):
         Gets the time_zone of this VmClusterSummary.
         The time zone of the Exadata infrastructure. For details, see `Exadata Infrastructure Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this VmClusterSummary.
@@ -588,7 +588,7 @@ class VmClusterSummary(object):
         Sets the time_zone of this VmClusterSummary.
         The time zone of the Exadata infrastructure. For details, see `Exadata Infrastructure Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this VmClusterSummary.
@@ -626,7 +626,7 @@ class VmClusterSummary(object):
         Gets the exadata_infrastructure_id of this VmClusterSummary.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this VmClusterSummary.
@@ -640,7 +640,7 @@ class VmClusterSummary(object):
         Sets the exadata_infrastructure_id of this VmClusterSummary.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this VmClusterSummary.
@@ -678,7 +678,7 @@ class VmClusterSummary(object):
         Gets the vm_cluster_network_id of this VmClusterSummary.
         The `OCID`__ of the VM cluster network.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_network_id of this VmClusterSummary.
@@ -692,7 +692,7 @@ class VmClusterSummary(object):
         Sets the vm_cluster_network_id of this VmClusterSummary.
         The `OCID`__ of the VM cluster network.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_network_id: The vm_cluster_network_id of this VmClusterSummary.
@@ -1027,7 +1027,7 @@ class VmClusterSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this VmClusterSummary.
@@ -1044,7 +1044,7 @@ class VmClusterSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this VmClusterSummary.
@@ -1059,7 +1059,7 @@ class VmClusterSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this VmClusterSummary.
@@ -1074,7 +1074,7 @@ class VmClusterSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this VmClusterSummary.
@@ -1089,7 +1089,7 @@ class VmClusterSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this VmClusterSummary.
@@ -1104,7 +1104,7 @@ class VmClusterSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this VmClusterSummary.
@@ -1138,7 +1138,7 @@ class VmClusterSummary(object):
         Gets the gi_software_image_id of this VmClusterSummary.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gi_software_image_id of this VmClusterSummary.
@@ -1152,7 +1152,7 @@ class VmClusterSummary(object):
         Sets the gi_software_image_id of this VmClusterSummary.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gi_software_image_id: The gi_software_image_id of this VmClusterSummary.
@@ -1240,7 +1240,7 @@ class VmClusterSummary(object):
         Gets the exascale_db_storage_vault_id of this VmClusterSummary.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exascale_db_storage_vault_id of this VmClusterSummary.
@@ -1254,7 +1254,7 @@ class VmClusterSummary(object):
         Sets the exascale_db_storage_vault_id of this VmClusterSummary.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exascale_db_storage_vault_id: The exascale_db_storage_vault_id of this VmClusterSummary.

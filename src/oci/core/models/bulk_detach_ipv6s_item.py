@@ -39,7 +39,7 @@ class BulkDetachIpv6sItem(object):
         **[Required]** Gets the ipv6_id of this BulkDetachIpv6sItem.
         The `OCID`__ of the secondary IPv6.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ipv6_id of this BulkDetachIpv6sItem.
@@ -53,7 +53,7 @@ class BulkDetachIpv6sItem(object):
         Sets the ipv6_id of this BulkDetachIpv6sItem.
         The `OCID`__ of the secondary IPv6.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ipv6_id: The ipv6_id of this BulkDetachIpv6sItem.

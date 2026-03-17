@@ -16,7 +16,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
     `Management Agent Cloud Service (MACS)`__
     to connect to an external DB system component.
 
-    __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
+    __ https://docs.oracle.com/iaas/management-agents/index.html
     """
 
     def __init__(self, **kwargs):
@@ -160,7 +160,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
         The `OCID`__ of the management agent
         used for the external DB system connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this ExternalDbSystemMacsConnector.
@@ -175,7 +175,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
         The `OCID`__ of the management agent
         used for the external DB system connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this ExternalDbSystemMacsConnector.
@@ -211,7 +211,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExternalDbSystemMacsConnector.
@@ -227,7 +227,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExternalDbSystemMacsConnector.
@@ -243,7 +243,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExternalDbSystemMacsConnector.
@@ -259,7 +259,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExternalDbSystemMacsConnector.
@@ -277,7 +277,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExternalDbSystemMacsConnector.
@@ -295,7 +295,7 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExternalDbSystemMacsConnector.

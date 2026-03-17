@@ -140,7 +140,7 @@ class CloudListenerServicedDatabase(object):
         **[Required]** Gets the id of this CloudListenerServicedDatabase.
         The `OCID`__ of the cloud database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CloudListenerServicedDatabase.
@@ -154,7 +154,7 @@ class CloudListenerServicedDatabase(object):
         Sets the id of this CloudListenerServicedDatabase.
         The `OCID`__ of the cloud database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CloudListenerServicedDatabase.
@@ -168,7 +168,7 @@ class CloudListenerServicedDatabase(object):
         **[Required]** Gets the dbaas_id of this CloudListenerServicedDatabase.
         The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dbaas_id of this CloudListenerServicedDatabase.
@@ -182,7 +182,7 @@ class CloudListenerServicedDatabase(object):
         Sets the dbaas_id of this CloudListenerServicedDatabase.
         The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dbaas_id: The dbaas_id of this CloudListenerServicedDatabase.
@@ -244,7 +244,7 @@ class CloudListenerServicedDatabase(object):
         Gets the compartment_id of this CloudListenerServicedDatabase.
         The `OCID`__ of the compartment in which the cloud database resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloudListenerServicedDatabase.
@@ -258,7 +258,7 @@ class CloudListenerServicedDatabase(object):
         Sets the compartment_id of this CloudListenerServicedDatabase.
         The `OCID`__ of the compartment in which the cloud database resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloudListenerServicedDatabase.

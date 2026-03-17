@@ -39,7 +39,7 @@ class ChangeOracleDbGcpKeyRingCompartmentDetails(object):
         Gets the compartment_id of this ChangeOracleDbGcpKeyRingCompartmentDetails.
         The compartment `OCID`__ where the Oracle DB GCP Key Ring resource resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeOracleDbGcpKeyRingCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeOracleDbGcpKeyRingCompartmentDetails(object):
         Sets the compartment_id of this ChangeOracleDbGcpKeyRingCompartmentDetails.
         The compartment `OCID`__ where the Oracle DB GCP Key Ring resource resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeOracleDbGcpKeyRingCompartmentDetails.

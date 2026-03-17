@@ -77,7 +77,7 @@ class CustomizationInferenceEntity(object):
         Gets the customization_id of this CustomizationInferenceEntity.
         The `OCID`__ of the customization to use.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The customization_id of this CustomizationInferenceEntity.
@@ -91,7 +91,7 @@ class CustomizationInferenceEntity(object):
         Sets the customization_id of this CustomizationInferenceEntity.
         The `OCID`__ of the customization to use.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param customization_id: The customization_id of this CustomizationInferenceEntity.

@@ -15,7 +15,7 @@ class CreateAccountItemDetails(CreateItemDetails):
     Details about the issue that the account support request relates to. Avoid entering confidential information.
     For information about `ACCOUNT` support requests, see `Creating a Billing Support Request`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
+    __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
     """
 
     def __init__(self, **kwargs):

@@ -15,7 +15,7 @@ class VolumeBackupSchedule(object):
     Defines the backup frequency and retention period for a volume backup policy. For more information,
     see `Policy-Based Backups`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+    __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     #: A constant which can be used with the backup_type property of a VolumeBackupSchedule.

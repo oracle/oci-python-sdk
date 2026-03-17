@@ -46,7 +46,7 @@ class MonitoringSource(object):
         **[Required]** Gets the compartment_id of this MonitoringSource.
         The `OCID`__ of a compartment containing metric namespaces you want to use for the Monitoring source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoringSource.
@@ -60,7 +60,7 @@ class MonitoringSource(object):
         Sets the compartment_id of this MonitoringSource.
         The `OCID`__ of a compartment containing metric namespaces you want to use for the Monitoring source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoringSource.

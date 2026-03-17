@@ -187,7 +187,7 @@ class AlarmConditionSummary(object):
         **[Required]** Gets the id of this AlarmConditionSummary.
         The `OCID`__ of the Alarm Condition
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AlarmConditionSummary.
@@ -201,7 +201,7 @@ class AlarmConditionSummary(object):
         Sets the id of this AlarmConditionSummary.
         The `OCID`__ of the Alarm Condition
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AlarmConditionSummary.
@@ -215,7 +215,7 @@ class AlarmConditionSummary(object):
         **[Required]** Gets the monitoring_template_id of this AlarmConditionSummary.
         The `OCID`__ of the monitoring template.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The monitoring_template_id of this AlarmConditionSummary.
@@ -229,7 +229,7 @@ class AlarmConditionSummary(object):
         Sets the monitoring_template_id of this AlarmConditionSummary.
         The `OCID`__ of the monitoring template.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param monitoring_template_id: The monitoring_template_id of this AlarmConditionSummary.

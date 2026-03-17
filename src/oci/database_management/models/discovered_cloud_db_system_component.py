@@ -338,7 +338,7 @@ class DiscoveredCloudDbSystemComponent(object):
         Gets the resource_id of this DiscoveredCloudDbSystemComponent.
         The `OCID`__ of the existing OCI resource matching the discovered DB system component.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this DiscoveredCloudDbSystemComponent.
@@ -352,7 +352,7 @@ class DiscoveredCloudDbSystemComponent(object):
         Sets the resource_id of this DiscoveredCloudDbSystemComponent.
         The `OCID`__ of the existing OCI resource matching the discovered DB system component.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this DiscoveredCloudDbSystemComponent.
@@ -366,7 +366,7 @@ class DiscoveredCloudDbSystemComponent(object):
         Gets the dbaas_id of this DiscoveredCloudDbSystemComponent.
         The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dbaas_id of this DiscoveredCloudDbSystemComponent.
@@ -380,7 +380,7 @@ class DiscoveredCloudDbSystemComponent(object):
         Sets the dbaas_id of this DiscoveredCloudDbSystemComponent.
         The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dbaas_id: The dbaas_id of this DiscoveredCloudDbSystemComponent.

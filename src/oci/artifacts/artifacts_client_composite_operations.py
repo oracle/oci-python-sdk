@@ -161,7 +161,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.artifacts.models.ContainerImage.lifecycle_state`
@@ -224,7 +224,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containersignature.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.artifacts.models.ContainerImageSignature.lifecycle_state`
@@ -287,7 +287,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.artifacts.models.ContainerRepository.lifecycle_state`
@@ -350,7 +350,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.artifacts.models.GenericArtifact.lifecycle_state`
@@ -413,7 +413,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.artifacts.models.Repository.lifecycle_state`
@@ -476,7 +476,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.RemoveContainerVersionDetails remove_container_version_details: (required)
             Remove version details.
@@ -525,7 +525,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.RestoreContainerImageDetails restore_container_image_details: (required)
             Restore container image details.
@@ -574,7 +574,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerImageDetails update_container_image_details: (required)
             Update container image details.
@@ -623,7 +623,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containersignature.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerImageSignatureDetails update_container_image_signature_details: (required)
             Update container image signature details.
@@ -672,7 +672,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerRepositoryDetails update_container_repository_details: (required)
             Update container repository details.
@@ -721,12 +721,12 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateGenericArtifactDetails update_generic_artifact_details: (required)
             Updates the artifact with the specified `OCID`__. You can only update the tags of an artifact.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.artifacts.models.GenericArtifact.lifecycle_state`
@@ -772,7 +772,7 @@ class ArtifactsClientCompositeOperations(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateRepositoryDetails update_repository_details: (required)
             Updates the properties of a repository.

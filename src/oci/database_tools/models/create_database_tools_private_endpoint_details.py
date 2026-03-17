@@ -109,7 +109,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         **[Required]** Gets the compartment_id of this CreateDatabaseToolsPrivateEndpointDetails.
         The `OCID`__ of the compartment containing the Database Tools private endpoint.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -123,7 +123,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         Sets the compartment_id of this CreateDatabaseToolsPrivateEndpointDetails.
         The `OCID`__ of the compartment containing the Database Tools private endpoint.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -293,7 +293,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         **[Required]** Gets the endpoint_service_id of this CreateDatabaseToolsPrivateEndpointDetails.
         The `OCID`__ of the `DatabaseToolsEndpointService`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The endpoint_service_id of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -307,7 +307,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         Sets the endpoint_service_id of this CreateDatabaseToolsPrivateEndpointDetails.
         The `OCID`__ of the `DatabaseToolsEndpointService`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param endpoint_service_id: The endpoint_service_id of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -321,7 +321,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         **[Required]** Gets the subnet_id of this CreateDatabaseToolsPrivateEndpointDetails.
         The `OCID`__ of the subnet that the private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -335,7 +335,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         Sets the subnet_id of this CreateDatabaseToolsPrivateEndpointDetails.
         The `OCID`__ of the subnet that the private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -375,7 +375,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         that the private endpoint's VNIC belongs to.  For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -391,7 +391,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         that the private endpoint's VNIC belongs to.  For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this CreateDatabaseToolsPrivateEndpointDetails.

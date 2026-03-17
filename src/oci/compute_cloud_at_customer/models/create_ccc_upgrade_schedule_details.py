@@ -104,7 +104,7 @@ class CreateCccUpgradeScheduleDetails(object):
         Compartment `OCID`__ for the
         Compute Cloud@Customer Upgrade Schedule.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCccUpgradeScheduleDetails.
@@ -119,7 +119,7 @@ class CreateCccUpgradeScheduleDetails(object):
         Compartment `OCID`__ for the
         Compute Cloud@Customer Upgrade Schedule.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCccUpgradeScheduleDetails.

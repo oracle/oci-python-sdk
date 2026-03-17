@@ -16,7 +16,7 @@ class ObjectLifecycleRule(object):
     talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the time_unit property of a ObjectLifecycleRule.
@@ -164,7 +164,7 @@ class ObjectLifecycleRule(object):
         Rules using the action 'DELETE' permanently delete objects from buckets.
         Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
 
-        __ https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm
 
 
         :return: The action of this ObjectLifecycleRule.
@@ -185,7 +185,7 @@ class ObjectLifecycleRule(object):
         Rules using the action 'DELETE' permanently delete objects from buckets.
         Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
 
-        __ https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm
 
 
         :param action: The action of this ObjectLifecycleRule.

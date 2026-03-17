@@ -269,7 +269,7 @@ class AutonomousDatabaseBackup(object):
         **[Required]** Gets the id of this AutonomousDatabaseBackup.
         The `OCID`__ of the Autonomous AI Database backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousDatabaseBackup.
@@ -283,7 +283,7 @@ class AutonomousDatabaseBackup(object):
         Sets the id of this AutonomousDatabaseBackup.
         The `OCID`__ of the Autonomous AI Database backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousDatabaseBackup.
@@ -297,7 +297,7 @@ class AutonomousDatabaseBackup(object):
         **[Required]** Gets the compartment_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutonomousDatabaseBackup.
@@ -311,7 +311,7 @@ class AutonomousDatabaseBackup(object):
         Sets the compartment_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutonomousDatabaseBackup.
@@ -325,7 +325,7 @@ class AutonomousDatabaseBackup(object):
         **[Required]** Gets the autonomous_database_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the Autonomous AI Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_database_id of this AutonomousDatabaseBackup.
@@ -339,7 +339,7 @@ class AutonomousDatabaseBackup(object):
         Sets the autonomous_database_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the Autonomous AI Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_database_id: The autonomous_database_id of this AutonomousDatabaseBackup.
@@ -581,7 +581,7 @@ class AutonomousDatabaseBackup(object):
         Gets the key_store_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this AutonomousDatabaseBackup.
@@ -595,7 +595,7 @@ class AutonomousDatabaseBackup(object):
         Sets the key_store_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this AutonomousDatabaseBackup.
@@ -657,8 +657,8 @@ class AutonomousDatabaseBackup(object):
         Gets the vault_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this AutonomousDatabaseBackup.
@@ -672,8 +672,8 @@ class AutonomousDatabaseBackup(object):
         Sets the vault_id of this AutonomousDatabaseBackup.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this AutonomousDatabaseBackup.

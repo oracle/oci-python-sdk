@@ -87,7 +87,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Gets the min_ocpus_per_node of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The min_ocpus_per_node of this MetricBasedVerticalScaleDownConfig.
@@ -101,7 +101,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Sets the min_ocpus_per_node of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param min_ocpus_per_node: The min_ocpus_per_node of this MetricBasedVerticalScaleDownConfig.
@@ -115,7 +115,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Gets the min_memory_per_node of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The min_memory_per_node of this MetricBasedVerticalScaleDownConfig.
@@ -129,7 +129,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Sets the min_memory_per_node of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param min_memory_per_node: The min_memory_per_node of this MetricBasedVerticalScaleDownConfig.
@@ -143,7 +143,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Gets the ocpu_step_size of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The ocpu_step_size of this MetricBasedVerticalScaleDownConfig.
@@ -157,7 +157,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Sets the ocpu_step_size of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param ocpu_step_size: The ocpu_step_size of this MetricBasedVerticalScaleDownConfig.
@@ -171,7 +171,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Gets the memory_step_size of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The memory_step_size of this MetricBasedVerticalScaleDownConfig.
@@ -185,7 +185,7 @@ class MetricBasedVerticalScaleDownConfig(object):
         Sets the memory_step_size of this MetricBasedVerticalScaleDownConfig.
         For nodes with `flexible compute shapes`__, this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param memory_step_size: The memory_step_size of this MetricBasedVerticalScaleDownConfig.

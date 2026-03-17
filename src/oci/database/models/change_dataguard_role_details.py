@@ -114,7 +114,7 @@ class ChangeDataguardRoleDetails(object):
         **[Required]** Gets the autonomous_container_database_dataguard_association_id of this ChangeDataguardRoleDetails.
         The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_container_database_dataguard_association_id of this ChangeDataguardRoleDetails.
@@ -128,7 +128,7 @@ class ChangeDataguardRoleDetails(object):
         Sets the autonomous_container_database_dataguard_association_id of this ChangeDataguardRoleDetails.
         The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_container_database_dataguard_association_id: The autonomous_container_database_dataguard_association_id of this ChangeDataguardRoleDetails.

@@ -21,8 +21,8 @@ class DatabaseUpgradeHistoryEntry(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
     """
 
     #: A constant which can be used with the action property of a DatabaseUpgradeHistoryEntry.
@@ -168,7 +168,7 @@ class DatabaseUpgradeHistoryEntry(object):
         **[Required]** Gets the id of this DatabaseUpgradeHistoryEntry.
         The `OCID`__ of the database upgrade history.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DatabaseUpgradeHistoryEntry.
@@ -182,7 +182,7 @@ class DatabaseUpgradeHistoryEntry(object):
         Sets the id of this DatabaseUpgradeHistoryEntry.
         The `OCID`__ of the database upgrade history.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DatabaseUpgradeHistoryEntry.
@@ -229,7 +229,7 @@ class DatabaseUpgradeHistoryEntry(object):
          - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          - Use `DB_SOFTWARE_IMAGE` to specify a `database software image`__ to upgrade the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
 
         Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -249,7 +249,7 @@ class DatabaseUpgradeHistoryEntry(object):
          - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          - Use `DB_SOFTWARE_IMAGE` to specify a `database software image`__ to upgrade the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
 
 
         :param source: The source of this DatabaseUpgradeHistoryEntry.
@@ -372,7 +372,7 @@ class DatabaseUpgradeHistoryEntry(object):
         Gets the target_db_home_id of this DatabaseUpgradeHistoryEntry.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_db_home_id of this DatabaseUpgradeHistoryEntry.
@@ -386,7 +386,7 @@ class DatabaseUpgradeHistoryEntry(object):
         Sets the target_db_home_id of this DatabaseUpgradeHistoryEntry.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_db_home_id: The target_db_home_id of this DatabaseUpgradeHistoryEntry.
@@ -400,7 +400,7 @@ class DatabaseUpgradeHistoryEntry(object):
         Gets the source_db_home_id of this DatabaseUpgradeHistoryEntry.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_db_home_id of this DatabaseUpgradeHistoryEntry.
@@ -414,7 +414,7 @@ class DatabaseUpgradeHistoryEntry(object):
         Sets the source_db_home_id of this DatabaseUpgradeHistoryEntry.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_db_home_id: The source_db_home_id of this DatabaseUpgradeHistoryEntry.

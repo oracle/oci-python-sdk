@@ -33,7 +33,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.AddFleetInstallationSitesDetails add_fleet_installation_sites_details: (required)
             List of installation sites to be added.
@@ -77,7 +77,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.ChangeFleetCompartmentDetails change_fleet_compartment_details: (required)
             Compartment identifier.
@@ -121,7 +121,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.CreateDrsFileDetails create_drs_file_details: (required)
             Detail information to create DRS
@@ -288,7 +288,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str crypto_analysis_result_id: (required)
             The OCID of the analysis result.
@@ -340,7 +340,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str drs_file_key: (required)
             The unique identifier of the DRS File in Object Storage.
@@ -392,7 +392,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.jms.models.WorkRequest.status`
@@ -441,7 +441,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str java_migration_analysis_result_id: (required)
             The OCID of the analysis result.
@@ -493,7 +493,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str jms_plugin_id: (required)
             The `OCID`__ of the JmsPlugin.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.jms.models.JmsPlugin.lifecycle_state`
@@ -554,7 +554,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str performance_tuning_analysis_result_id: (required)
             The OCID of the performance tuning analysis result.
@@ -606,7 +606,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str task_schedule_id: (required)
             The `OCID`__ to identify this task schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.jms.models.TaskSchedule.lifecycle_state`
@@ -667,7 +667,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.DisableDrsDetails disable_drs_details: (required)
             Detail information to disable DRS
@@ -711,7 +711,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.EnableDrsDetails enable_drs_details: (required)
             Detail information to enable DRS
@@ -755,7 +755,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RemoveFleetInstallationSitesDetails remove_fleet_installation_sites_details: (required)
             List of installation sites to be deleted.
@@ -799,7 +799,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestCryptoAnalysesDetails request_crypto_analyses_details: (required)
             Detail information to start Crypto Analyses
@@ -843,7 +843,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestDeployedApplicationMigrationAnalysesDetails request_deployed_application_migration_analyses_details: (required)
             Detail information that starts the deployed Java migration analyses
@@ -887,7 +887,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestJavaMigrationAnalysesDetails request_java_migration_analyses_details: (required)
             Detail information that starts the Java migration analysis
@@ -931,7 +931,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestJfrRecordingsDetails request_jfr_recordings_details: (required)
             Detail information to start JFR recordings.
@@ -975,7 +975,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestPerformanceTuningAnalysesDetails request_performance_tuning_analyses_details: (required)
             Detail information to start Performance Tuning Analyses
@@ -1019,7 +1019,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.ScanJavaServerUsageDetails scan_java_server_usage_details: (required)
             List of managed instances to be scanned.
@@ -1063,7 +1063,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.ScanLibraryUsageDetails scan_library_usage_details: (required)
             List of managed instances to be scanned.
@@ -1107,7 +1107,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateDrsFileDetails update_drs_file_details: (required)
             Detail information to update DRS
@@ -1154,7 +1154,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateFleetDetails update_fleet_details: (required)
             The new details for the Fleet.
@@ -1198,7 +1198,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateFleetAgentConfigurationDetails update_fleet_agent_configuration_details: (required)
             The new details for the Fleet Agent Configuration.
@@ -1242,7 +1242,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str jms_plugin_id: (required)
             The `OCID`__ of the JmsPlugin.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateJmsPluginDetails update_jms_plugin_details: (required)
             The new details for the JmsPlugin.
@@ -1292,7 +1292,7 @@ class JavaManagementServiceClientCompositeOperations(object):
         :param str task_schedule_id: (required)
             The `OCID`__ to identify this task schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.jms.models.TaskSchedule.lifecycle_state`

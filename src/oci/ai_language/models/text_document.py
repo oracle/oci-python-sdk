@@ -101,7 +101,7 @@ class TextDocument(object):
         Gets the language_code of this TextDocument.
         Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
 
-        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
+        __ https://docs.oracle.com/iaas/language/using/overview.htm
 
 
         :return: The language_code of this TextDocument.
@@ -115,7 +115,7 @@ class TextDocument(object):
         Sets the language_code of this TextDocument.
         Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
 
-        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
+        __ https://docs.oracle.com/iaas/language/using/overview.htm
 
 
         :param language_code: The language_code of this TextDocument.

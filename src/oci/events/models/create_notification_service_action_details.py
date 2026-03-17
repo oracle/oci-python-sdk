@@ -63,7 +63,7 @@ class CreateNotificationServiceActionDetails(ActionDetails):
         Gets the topic_id of this CreateNotificationServiceActionDetails.
         The `OCID`__ of the topic to which messages are delivered.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The topic_id of this CreateNotificationServiceActionDetails.
@@ -77,7 +77,7 @@ class CreateNotificationServiceActionDetails(ActionDetails):
         Sets the topic_id of this CreateNotificationServiceActionDetails.
         The `OCID`__ of the topic to which messages are delivered.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param topic_id: The topic_id of this CreateNotificationServiceActionDetails.

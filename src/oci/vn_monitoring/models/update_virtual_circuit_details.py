@@ -256,7 +256,7 @@ class UpdateVirtualCircuitDetails(object):
 
         To be updated only by the customer who owns the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this UpdateVirtualCircuitDetails.
@@ -273,7 +273,7 @@ class UpdateVirtualCircuitDetails(object):
 
         To be updated only by the customer who owns the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this UpdateVirtualCircuitDetails.
