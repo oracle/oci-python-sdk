@@ -91,7 +91,7 @@ class UpdateManagedInstanceDetails(object):
         Gets the primary_management_station_id of this UpdateManagedInstanceDetails.
         The `OCID`__ of the management station for the instance to use as primary management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_management_station_id of this UpdateManagedInstanceDetails.
@@ -105,7 +105,7 @@ class UpdateManagedInstanceDetails(object):
         Sets the primary_management_station_id of this UpdateManagedInstanceDetails.
         The `OCID`__ of the management station for the instance to use as primary management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_management_station_id: The primary_management_station_id of this UpdateManagedInstanceDetails.
@@ -119,7 +119,7 @@ class UpdateManagedInstanceDetails(object):
         Gets the secondary_management_station_id of this UpdateManagedInstanceDetails.
         The `OCID`__ of the management station for the instance to use as secondary management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secondary_management_station_id of this UpdateManagedInstanceDetails.
@@ -133,7 +133,7 @@ class UpdateManagedInstanceDetails(object):
         Sets the secondary_management_station_id of this UpdateManagedInstanceDetails.
         The `OCID`__ of the management station for the instance to use as secondary management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secondary_management_station_id: The secondary_management_station_id of this UpdateManagedInstanceDetails.
@@ -147,7 +147,7 @@ class UpdateManagedInstanceDetails(object):
         Gets the notification_topic_id of this UpdateManagedInstanceDetails.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The notification_topic_id of this UpdateManagedInstanceDetails.
@@ -161,7 +161,7 @@ class UpdateManagedInstanceDetails(object):
         Sets the notification_topic_id of this UpdateManagedInstanceDetails.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param notification_topic_id: The notification_topic_id of this UpdateManagedInstanceDetails.

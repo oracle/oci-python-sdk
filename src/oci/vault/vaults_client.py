@@ -477,7 +477,7 @@ class VaultsClient(object):
 
         When provided, if-match is checked against the ETag values of the secret.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str secret_id: (required)

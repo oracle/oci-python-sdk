@@ -53,7 +53,7 @@ class ChargebackPlanDetails(object):
         Gets the plan_id of this ChargebackPlanDetails.
         `OCID`__ of OPSI Chargeback plan resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The plan_id of this ChargebackPlanDetails.
@@ -67,7 +67,7 @@ class ChargebackPlanDetails(object):
         Sets the plan_id of this ChargebackPlanDetails.
         `OCID`__ of OPSI Chargeback plan resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param plan_id: The plan_id of this ChargebackPlanDetails.

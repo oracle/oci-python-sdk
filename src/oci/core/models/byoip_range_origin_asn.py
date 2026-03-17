@@ -53,7 +53,7 @@ class ByoipRangeOriginAsn(object):
         Gets the byoasn_id of this ByoipRangeOriginAsn.
         The `OCID`__ of the `Byoasn` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byoasn_id of this ByoipRangeOriginAsn.
@@ -67,7 +67,7 @@ class ByoipRangeOriginAsn(object):
         Sets the byoasn_id of this ByoipRangeOriginAsn.
         The `OCID`__ of the `Byoasn` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byoasn_id: The byoasn_id of this ByoipRangeOriginAsn.

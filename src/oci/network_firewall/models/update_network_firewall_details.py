@@ -105,7 +105,7 @@ class UpdateNetworkFirewallDetails(object):
         Gets the network_firewall_policy_id of this UpdateNetworkFirewallDetails.
         The `OCID`__ of the Network Firewall Policy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_firewall_policy_id of this UpdateNetworkFirewallDetails.
@@ -119,7 +119,7 @@ class UpdateNetworkFirewallDetails(object):
         Sets the network_firewall_policy_id of this UpdateNetworkFirewallDetails.
         The `OCID`__ of the Network Firewall Policy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_firewall_policy_id: The network_firewall_policy_id of this UpdateNetworkFirewallDetails.
@@ -133,7 +133,7 @@ class UpdateNetworkFirewallDetails(object):
         Gets the network_security_group_ids of this UpdateNetworkFirewallDetails.
         An array of network security groups `OCID`__ associated with the Network Firewall.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_security_group_ids of this UpdateNetworkFirewallDetails.
@@ -147,7 +147,7 @@ class UpdateNetworkFirewallDetails(object):
         Sets the network_security_group_ids of this UpdateNetworkFirewallDetails.
         An array of network security groups `OCID`__ associated with the Network Firewall.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_security_group_ids: The network_security_group_ids of this UpdateNetworkFirewallDetails.
@@ -207,7 +207,7 @@ class UpdateNetworkFirewallDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateNetworkFirewallDetails.
@@ -223,7 +223,7 @@ class UpdateNetworkFirewallDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateNetworkFirewallDetails.
@@ -239,7 +239,7 @@ class UpdateNetworkFirewallDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateNetworkFirewallDetails.
@@ -255,7 +255,7 @@ class UpdateNetworkFirewallDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateNetworkFirewallDetails.

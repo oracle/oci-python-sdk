@@ -15,7 +15,7 @@ class OpensearchClusterPipeline(object):
     An OpenSearch cluster Pipeline resource. An cluster is set of instances that provide OpenSearch functionality in OCI Search Service with OpenSearch.
     For more information, see `Cluster Pipelines`__.
 
-    __ https://docs.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearchpipeline.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearchpipeline.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a OpensearchClusterPipeline.

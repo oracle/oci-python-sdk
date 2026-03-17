@@ -109,7 +109,7 @@ class RemediationRecipeSummary(object):
         **[Required]** Gets the id of this RemediationRecipeSummary.
         The Oracle Cloud Identifier (`OCID`__) of the remediation recipe.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this RemediationRecipeSummary.
@@ -123,7 +123,7 @@ class RemediationRecipeSummary(object):
         Sets the id of this RemediationRecipeSummary.
         The Oracle Cloud Identifier (`OCID`__) of the remediation recipe.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this RemediationRecipeSummary.
@@ -217,7 +217,7 @@ class RemediationRecipeSummary(object):
         **[Required]** Gets the compartment_id of this RemediationRecipeSummary.
         The compartment Oracle Cloud Identifier (`OCID`__) of the remediation recipe.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RemediationRecipeSummary.
@@ -231,7 +231,7 @@ class RemediationRecipeSummary(object):
         Sets the compartment_id of this RemediationRecipeSummary.
         The compartment Oracle Cloud Identifier (`OCID`__) of the remediation recipe.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RemediationRecipeSummary.
@@ -269,7 +269,7 @@ class RemediationRecipeSummary(object):
         **[Required]** Gets the knowledge_base_id of this RemediationRecipeSummary.
         The Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The knowledge_base_id of this RemediationRecipeSummary.
@@ -283,7 +283,7 @@ class RemediationRecipeSummary(object):
         Sets the knowledge_base_id of this RemediationRecipeSummary.
         The Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param knowledge_base_id: The knowledge_base_id of this RemediationRecipeSummary.

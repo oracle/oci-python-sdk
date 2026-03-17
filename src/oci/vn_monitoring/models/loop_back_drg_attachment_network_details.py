@@ -77,7 +77,7 @@ class LoopBackDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         Gets the ids of this LoopBackDrgAttachmentNetworkDetails.
         The `OCID`__ of the target IPSec tunnel attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ids of this LoopBackDrgAttachmentNetworkDetails.
@@ -91,7 +91,7 @@ class LoopBackDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         Sets the ids of this LoopBackDrgAttachmentNetworkDetails.
         The `OCID`__ of the target IPSec tunnel attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ids: The ids of this LoopBackDrgAttachmentNetworkDetails.

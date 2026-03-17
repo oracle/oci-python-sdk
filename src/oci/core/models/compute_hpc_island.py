@@ -84,7 +84,7 @@ class ComputeHpcIsland(object):
         **[Required]** Gets the compute_capacity_topology_id of this ComputeHpcIsland.
         The `OCID`__ of the compute capacity topology.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_capacity_topology_id of this ComputeHpcIsland.
@@ -98,7 +98,7 @@ class ComputeHpcIsland(object):
         Sets the compute_capacity_topology_id of this ComputeHpcIsland.
         The `OCID`__ of the compute capacity topology.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_capacity_topology_id: The compute_capacity_topology_id of this ComputeHpcIsland.
@@ -112,7 +112,7 @@ class ComputeHpcIsland(object):
         **[Required]** Gets the id of this ComputeHpcIsland.
         The `OCID`__ of the compute HPC island.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeHpcIsland.
@@ -126,7 +126,7 @@ class ComputeHpcIsland(object):
         Sets the id of this ComputeHpcIsland.
         The `OCID`__ of the compute HPC island.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeHpcIsland.

@@ -136,7 +136,7 @@ class GenericArtifactsContentClient(object):
 
             Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned `request ID`__
@@ -144,7 +144,7 @@ class GenericArtifactsContentClient(object):
             Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx`
             If you contact Oracle about a request, provide this request ID.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -248,7 +248,7 @@ class GenericArtifactsContentClient(object):
 
             Example: `ocid1.repository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str artifact_path: (required)
             A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -266,7 +266,7 @@ class GenericArtifactsContentClient(object):
             Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx`
             If you contact Oracle about a request, provide this request ID.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -372,7 +372,7 @@ class GenericArtifactsContentClient(object):
 
             Example: `ocid1.repository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str artifact_path: (required)
             A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -396,7 +396,7 @@ class GenericArtifactsContentClient(object):
             Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx`
             If you contact Oracle about a request, provide this request ID.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

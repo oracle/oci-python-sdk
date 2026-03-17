@@ -169,7 +169,7 @@ class ContainerSummary(object):
         **[Required]** Gets the managed_instance_id of this ContainerSummary.
         The `OCID`__ of the associated managed instance of type OCMA.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this ContainerSummary.
@@ -183,7 +183,7 @@ class ContainerSummary(object):
         Sets the managed_instance_id of this ContainerSummary.
         The `OCID`__ of the associated managed instance of type OCMA.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this ContainerSummary.

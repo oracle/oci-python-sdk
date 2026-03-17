@@ -151,7 +151,7 @@ class AnnouncementSubscription(object):
         **[Required]** Gets the id of this AnnouncementSubscription.
         The `OCID`__ of the announcement subscription.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AnnouncementSubscription.
@@ -165,7 +165,7 @@ class AnnouncementSubscription(object):
         Sets the id of this AnnouncementSubscription.
         The `OCID`__ of the announcement subscription.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AnnouncementSubscription.

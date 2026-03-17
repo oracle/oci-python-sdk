@@ -138,13 +138,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Canceling a Job`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/cancel-job.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/cancel-job.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -268,13 +268,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Moving a Configuration Source Provider`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-csp.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-csp.htm
 
 
         :param str configuration_source_provider_id: (required)
             The `OCID`__ of the configuration source provider.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails change_configuration_source_provider_compartment_details: (required)
             Defines the properties of changeConfigurationSourceProviderCompartment operation.
@@ -400,13 +400,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Moving a Private Endpoint`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/move-private-endpoints.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/move-private-endpoints.htm
 
 
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.ChangePrivateEndpointCompartmentDetails change_private_endpoint_compartment_details: (required)
             Defines the properties of changePrivateEndpointCompartment operation.
@@ -532,13 +532,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Moving a Stack`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-stack.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-stack.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             Defines the properties of changeStackCompartment operation.
@@ -664,13 +664,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Moving a Private Template`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-template.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/change-compartment-template.htm
 
 
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.ChangeTemplateCompartmentDetails change_template_compartment_details: (required)
             The details for moving a template to a different compartment.
@@ -796,7 +796,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Creating a Configuration Source Provider`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-csp.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-csp.htm
 
 
         :param oci.resource_manager.models.CreateConfigurationSourceProviderDetails create_configuration_source_provider_details: (required)
@@ -906,7 +906,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Creating a Job`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm
 
 
         :param oci.resource_manager.models.CreateJobDetails create_job_details: (required)
@@ -1016,7 +1016,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Creating a Private Endpoint`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-private-endpoints.htm
 
 
         :param oci.resource_manager.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
@@ -1130,7 +1130,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Creating a Stack`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm
 
 
         :param oci.resource_manager.models.CreateStackDetails create_stack_details: (required)
@@ -1240,7 +1240,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Creating a Private Template`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-template.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-template.htm
 
 
         :param oci.resource_manager.models.CreateTemplateDetails create_template_details: (required)
@@ -1350,13 +1350,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Deleting a Configuration Source Provider`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-csp.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/delete-csp.htm
 
 
         :param str configuration_source_provider_id: (required)
             The `OCID`__ of the configuration source provider.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1467,13 +1467,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Deleting a Private Endpoint`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-private-endpoints.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/delete-private-endpoints.htm
 
 
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1584,13 +1584,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Deleting a Stack`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-stack.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/delete-stack.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1701,13 +1701,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Deleting a Private Template`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/delete-template.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/delete-template.htm
 
 
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1818,13 +1818,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Detecting Drift`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/detect-drift.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/detect-drift.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
@@ -1951,13 +1951,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Configuration Source Provider's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-csp.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-csp.htm
 
 
         :param str configuration_source_provider_id: (required)
             The `OCID`__ of the configuration source provider.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2063,13 +2063,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Job's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2177,13 +2177,13 @@ class ResourceManagerClient(object):
         `Getting Detailed Log Content for a Job`__.
 
         __ https://www.terraform.io/docs/internals/debugging.html
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-detailed-log-content.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-detailed-log-content.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2289,13 +2289,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting Logs for a Job`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-logs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-logs.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2318,13 +2318,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param datetime timestamp_greater_than_or_equal_to: (optional)
             Time stamp specifying the lower time limit for which logs are returned in a query.
@@ -2471,13 +2471,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting Logs Content for a Job`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-logs-content.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2584,13 +2584,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Job Terraform Configuration`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-config.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-config.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2696,13 +2696,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting the Terraform Output for a Plan Job`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-plan.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-plan.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2828,13 +2828,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Job Terraform Configuration`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-config.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-job-tf-config.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2940,13 +2940,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Private Endpoint's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm
 
 
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3053,7 +3053,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting the Reachable IP Address for a Private Endpoint`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm
 
 
         :param str private_ip: (required)
@@ -3062,7 +3062,7 @@ class ResourceManagerClient(object):
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3185,13 +3185,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Stack's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3298,13 +3298,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Stack Terraform Configuration`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-config.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-config.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3410,13 +3410,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Stack State File`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack-tf-state.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3522,13 +3522,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Private Template's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-template.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-template.htm
 
 
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3635,13 +3635,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Private Template's Logo`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-template-logo.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-template-logo.htm
 
 
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3748,13 +3748,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Private Template's Terraform Configuration`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-template-tf-config.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-template-tf-config.htm
 
 
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3860,13 +3860,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Getting a Work Request's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/get-work-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-work-request.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3974,7 +3974,7 @@ class ResourceManagerClient(object):
         - For `compartmentId`, lists all configuration source providers in the matching compartment.
         - For `configurationSourceProviderId`, lists the matching configuration source provider.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-csp.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-csp.htm
 
 
         :param str opc_request_id: (optional)
@@ -3984,12 +3984,12 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str configuration_source_provider_id: (optional)
             A filter to return only configuration source providers that match the provided `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -4013,13 +4013,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str config_source_provider_type: (optional)
             A filter to return only configuration source providers of the specified type (GitHub or GitLab).
@@ -4148,13 +4148,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Job Resources`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-job-resources.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-job-resources.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4163,7 +4163,7 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str terraform_resource_type: (optional)
             A filter to return only specified resource types.
@@ -4175,13 +4175,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4297,13 +4297,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Job Outputs`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-job-outputs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-job-outputs.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4312,19 +4312,19 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4442,10 +4442,10 @@ class ResourceManagerClient(object):
         - To list all jobs in a compartment, provide the compartment `OCID`__.
         - To return a specific job, provide the job `OCID`__. (Equivalent to :func:`get_stack`.)
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-jobs.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-jobs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str opc_request_id: (optional)
@@ -4455,17 +4455,17 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str stack_id: (optional)
             The stack `OCID`__ on which to filter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The `OCID`__ on which to query for jobs.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter that returns all resources that match the specified lifecycle state.
@@ -4495,13 +4495,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4638,7 +4638,7 @@ class ResourceManagerClient(object):
         - For `compartmentId`, lists all private endpoints in the matching compartment.
         - For `privateEndpointId`, lists the matching private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm
 
 
         :param str opc_request_id: (optional)
@@ -4648,12 +4648,12 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str private_endpoint_id: (optional)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -4664,7 +4664,7 @@ class ResourceManagerClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to use when sorting returned resources.
@@ -4682,13 +4682,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4815,9 +4815,9 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Resource Discovery Services`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm
         __ https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-discovery-services.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-discovery-services.htm
 
 
         :param str opc_request_id: (optional)
@@ -4827,7 +4827,7 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4925,13 +4925,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Stack Resources`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-stack-resources.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stack-resources.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4946,19 +4946,19 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5078,13 +5078,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Drift Status`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-drift.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-drift.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5093,7 +5093,7 @@ class ResourceManagerClient(object):
         :param str work_request_id: (optional)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[StackResourceDriftSummaryResourceDriftStatus] resource_drift_status: (optional)
             A filter that returns only resources that match the given drift status. The value is case-insensitive.
@@ -5102,13 +5102,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5226,7 +5226,7 @@ class ResourceManagerClient(object):
         - If called using the compartment ID, returns all stacks in the specified compartment.
         - If called using the stack ID, returns the specified stack. (See also :func:`get_stack`.)
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm
 
 
         :param str opc_request_id: (optional)
@@ -5236,12 +5236,12 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The `OCID`__ on which to query for a stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter that returns only those resources that match the specified
@@ -5249,7 +5249,7 @@ class ResourceManagerClient(object):
             For more information about stack lifecycle states, see
             `Key Concepts`__.
 
-            __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
+            __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -5275,13 +5275,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5414,7 +5414,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Template Categories`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-template-categories.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-template-categories.htm
 
 
         :param str opc_request_id: (optional)
@@ -5510,7 +5510,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Templates`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-template.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-template.htm
 
 
         :param str opc_request_id: (optional)
@@ -5520,7 +5520,7 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str template_category_id: (optional)
             Unique identifier for the template category.
@@ -5532,7 +5532,7 @@ class ResourceManagerClient(object):
         :param str template_id: (optional)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5556,13 +5556,13 @@ class ResourceManagerClient(object):
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5688,7 +5688,7 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Terraform Versions`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-tf-versions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-tf-versions.htm
 
 
         :param str opc_request_id: (optional)
@@ -5698,7 +5698,7 @@ class ResourceManagerClient(object):
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5796,30 +5796,30 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Errors for a Work Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request-errors.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request-errors.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
@@ -5951,30 +5951,30 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Logs for a Work Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request-logs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request-logs.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
@@ -6106,30 +6106,30 @@ class ResourceManagerClient(object):
         For more information, see
         `Listing Work Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-work-request.htm
 
 
         :param str compartment_id: (required)
             A filter to return only resources that exist in the compartment, identified by `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_id: (optional)
             The `OCID`__ of the resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the preceding `List` call.
             For information about pagination, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -6236,13 +6236,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Updating a Configuration Source Provider`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-csp.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-csp.htm
 
 
         :param str configuration_source_provider_id: (required)
             The `OCID`__ of the configuration source provider.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateConfigurationSourceProviderDetails update_configuration_source_provider_details: (required)
             Updated information provided for the ConfigurationSourceProvider.
@@ -6360,13 +6360,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Updating a Job`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-job.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-job.htm
 
 
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateJobDetails update_job_details: (required)
             Updates properties for the specified job.
@@ -6484,13 +6484,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Updating a Private Endpoint`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-private-endpoints.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-private-endpoints.htm
 
 
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
             Update details for a private endpoint.
@@ -6610,13 +6610,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Updating a Stack`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm
 
 
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateStackDetails update_stack_details: (required)
             The details for updating a stack.
@@ -6734,13 +6734,13 @@ class ResourceManagerClient(object):
         For more information, see
         `Updating a Private Template`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-template.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-template.htm
 
 
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateTemplateDetails update_template_details: (required)
             The details for updating a template.

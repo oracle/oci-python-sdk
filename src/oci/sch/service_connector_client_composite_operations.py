@@ -33,7 +33,7 @@ class ServiceConnectorClientCompositeOperations(object):
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.sch.models.WorkRequest.status`
@@ -74,7 +74,7 @@ class ServiceConnectorClientCompositeOperations(object):
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.sch.models.ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
             The configuration details for moving a connector to a different compartment.
@@ -157,7 +157,7 @@ class ServiceConnectorClientCompositeOperations(object):
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.sch.models.WorkRequest.status`
@@ -198,7 +198,7 @@ class ServiceConnectorClientCompositeOperations(object):
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.sch.models.WorkRequest.status`
@@ -247,7 +247,7 @@ class ServiceConnectorClientCompositeOperations(object):
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.sch.models.UpdateServiceConnectorDetails update_service_connector_details: (required)
             The information to be updated.

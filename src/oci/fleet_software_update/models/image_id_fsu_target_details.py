@@ -67,7 +67,7 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
         **[Required]** Gets the software_image_id of this ImageIdFsuTargetDetails.
         The `OCID`__ of the goal database software image.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_image_id of this ImageIdFsuTargetDetails.
@@ -81,7 +81,7 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
         Sets the software_image_id of this ImageIdFsuTargetDetails.
         The `OCID`__ of the goal database software image.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param software_image_id: The software_image_id of this ImageIdFsuTargetDetails.

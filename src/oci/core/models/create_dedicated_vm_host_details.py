@@ -183,7 +183,7 @@ class CreateDedicatedVmHostDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDedicatedVmHostDetails.
@@ -200,7 +200,7 @@ class CreateDedicatedVmHostDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDedicatedVmHostDetails.
@@ -248,8 +248,8 @@ class CreateDedicatedVmHostDetails(object):
 
         Example: `FAULT-DOMAIN-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
-        __ https://docs.oracle.com/iaas/api/#/en/identity/20160918/
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/
 
 
         :return: The fault_domain of this CreateDedicatedVmHostDetails.
@@ -271,8 +271,8 @@ class CreateDedicatedVmHostDetails(object):
 
         Example: `FAULT-DOMAIN-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
-        __ https://docs.oracle.com/iaas/api/#/en/identity/20160918/
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/
 
 
         :param fault_domain: The fault_domain of this CreateDedicatedVmHostDetails.
@@ -289,7 +289,7 @@ class CreateDedicatedVmHostDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDedicatedVmHostDetails.
@@ -306,7 +306,7 @@ class CreateDedicatedVmHostDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDedicatedVmHostDetails.

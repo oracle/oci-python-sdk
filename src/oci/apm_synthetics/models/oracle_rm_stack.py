@@ -63,7 +63,7 @@ class OracleRMStack(DvpStackDetails):
         **[Required]** Gets the dvp_stack_id of this OracleRMStack.
         Stack `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The dvp_stack_id of this OracleRMStack.
@@ -77,7 +77,7 @@ class OracleRMStack(DvpStackDetails):
         Sets the dvp_stack_id of this OracleRMStack.
         Stack `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param dvp_stack_id: The dvp_stack_id of this OracleRMStack.
@@ -91,7 +91,7 @@ class OracleRMStack(DvpStackDetails):
         **[Required]** Gets the dvp_stream_id of this OracleRMStack.
         Stream `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The dvp_stream_id of this OracleRMStack.
@@ -105,7 +105,7 @@ class OracleRMStack(DvpStackDetails):
         Sets the dvp_stream_id of this OracleRMStack.
         Stream `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param dvp_stream_id: The dvp_stream_id of this OracleRMStack.

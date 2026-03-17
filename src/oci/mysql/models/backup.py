@@ -21,7 +21,7 @@ class Backup(object):
     `Getting Started with
     Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the soft_delete property of a Backup.

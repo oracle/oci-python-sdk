@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class ManagedInstanceGroupClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -133,12 +133,12 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachManagedInstancesToManagedInstanceGroupDetails attach_managed_instances_to_managed_instance_group_details: (required)
             The managed instances `OCIDs`__ to attach to the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -264,12 +264,12 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceGroupDetails attach_software_sources_to_managed_instance_group_details: (required)
             The software source `OCIDs`__ to attach to the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -391,18 +391,18 @@ class ManagedInstanceGroupClient(object):
         """
         Moves the specified managed instance group to a different compartment within the same tenancy. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ChangeManagedInstanceGroupCompartmentDetails change_managed_instance_group_compartment_details: (required)
             The `OCID`__ of the compartment to move the group to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -633,7 +633,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -747,12 +747,12 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachManagedInstancesFromManagedInstanceGroupDetails detach_managed_instances_from_managed_instance_group_details: (required)
             The managed instance `OCIDs`__ to detach from the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -878,12 +878,12 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceGroupDetails detach_software_sources_from_managed_instance_group_details: (required)
             The software source `OCIDs`__ to detach from the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1009,7 +1009,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceGroupDetails disable_module_stream_on_managed_instance_group_details: (required)
             The details used to disable modules on the managed instance group.
@@ -1138,7 +1138,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.EnableModuleStreamOnManagedInstanceGroupDetails enable_module_stream_on_managed_instance_group_details: (required)
             The details used to enable the module stream on the managed instance group.
@@ -1267,7 +1267,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1374,7 +1374,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceGroupDetails install_module_stream_profile_on_managed_instance_group_details: (required)
             The details used to install module stream profiles on a managed instance gorup.
@@ -1503,7 +1503,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallPackagesOnManagedInstanceGroupDetails install_packages_on_managed_instance_group_details: (required)
             The names of packages to install on the specified managed instance group.
@@ -1632,7 +1632,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceGroupDetails install_windows_updates_on_managed_instance_group_details: (required)
             Provides the details used to install Windows updates on a managed instance group.
@@ -1761,7 +1761,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -1778,7 +1778,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1786,7 +1786,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -1938,7 +1938,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1955,7 +1955,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1963,7 +1963,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2119,7 +2119,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2136,7 +2136,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2144,7 +2144,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2296,7 +2296,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2323,7 +2323,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2331,7 +2331,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2506,7 +2506,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -2526,7 +2526,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2534,7 +2534,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2683,7 +2683,7 @@ class ManagedInstanceGroupClient(object):
         """
         Lists managed instance groups that match the specified compartment or managed instance group `OCID`__. Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (optional)
@@ -2692,12 +2692,12 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (optional)
             The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str software_source_id: (optional)
             The `OCID`__ of the software source. This filter returns resources associated with this software source.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2721,7 +2721,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2729,7 +2729,7 @@ class ManagedInstanceGroupClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only managed instance groups that are in the specified state.
@@ -2940,7 +2940,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ManageModuleStreamsOnManagedInstanceGroupDetails manage_module_streams_on_managed_instance_group_details: (required)
             The set of changes to make to the modules, streams, and profiles on a managed instance group.
@@ -3069,7 +3069,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RebootManagedInstanceGroupDetails reboot_managed_instance_group_details: (required)
             Provides the information used to reboot managed instances in a group.
@@ -3198,7 +3198,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceGroupDetails remove_module_stream_profile_from_managed_instance_group_details: (required)
             The details used to remove profiles from the managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
@@ -3327,7 +3327,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromManagedInstanceGroupDetails remove_packages_from_managed_instance_group_details: (required)
             The names of packages to remove from the specified managed instance group.
@@ -3459,7 +3459,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceGroupDetails switch_module_stream_on_managed_instance_group_details: (required)
             Provides the details used to switch module streams on a managed instance group.
@@ -3588,7 +3588,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateAllPackagesOnManagedInstanceGroupDetails update_all_packages_on_managed_instance_group_details: (required)
             Details for update operation on the managed instance group.
@@ -3717,7 +3717,7 @@ class ManagedInstanceGroupClient(object):
         :param str managed_instance_group_id: (required)
             The `OCID`__ of the managed instance group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateManagedInstanceGroupDetails update_managed_instance_group_details: (required)
             Provides the details used to update the managed instance group.

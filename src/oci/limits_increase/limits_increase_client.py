@@ -132,13 +132,13 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Withdrawing an Item from a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/withdraw-item-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/withdraw-item-request.htm
 
 
         :param str limits_increase_item_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.
@@ -258,13 +258,13 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Withdrawing a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/withdraw-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/withdraw-request.htm
 
 
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.
@@ -384,7 +384,7 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Creating a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/create-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/create-request.htm
 
 
         :param oci.limits_increase.models.CreateLimitsIncreaseRequestDetails create_limits_increase_request_details: (required)
@@ -490,13 +490,13 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Deleting a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/delete-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/delete-request.htm
 
 
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.
@@ -607,13 +607,13 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Getting Details for a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/get-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/get-request.htm
 
 
         :param str limits_increase_item_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.
@@ -718,13 +718,13 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Getting Details for a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/get-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/get-request.htm
 
 
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.
@@ -829,14 +829,14 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Getting Details for a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/get-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/get-request.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the parent compartment.
             Note: The tenancy is the root compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str service: (optional)
             Name of service that owns the limit.
@@ -847,7 +847,7 @@ class LimitsIncreaseClient(object):
         :param str limits_increase_request_id: (optional)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
@@ -994,14 +994,14 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Creating a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/create-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/create-request.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the parent compartment.
             Note: The tenancy is the root compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str service_name: (optional)
             The name of the service.
@@ -1149,14 +1149,14 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Listing Limit Increase Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/list-requests.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/list-requests.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the parent compartment.
             Note: The tenancy is the root compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             Lifecycle state of the limit increase request.
@@ -1304,7 +1304,7 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Adding Comments to a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/comment-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/comment-request.htm
 
 
         :param oci.limits_increase.models.PatchLimitsIncreaseRequestDetails patch_limits_increase_request_details: (required)
@@ -1313,7 +1313,7 @@ class LimitsIncreaseClient(object):
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.
@@ -1428,7 +1428,7 @@ class LimitsIncreaseClient(object):
         For more information, see
         `Updating a Limit Increase Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/service-limits/update-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/update-request.htm
 
 
         :param oci.limits_increase.models.UpdateLimitsIncreaseRequestDetails update_limits_increase_request_details: (required)
@@ -1437,7 +1437,7 @@ class LimitsIncreaseClient(object):
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Override request id for request tracking purposes.

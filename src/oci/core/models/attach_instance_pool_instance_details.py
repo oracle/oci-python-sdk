@@ -39,7 +39,7 @@ class AttachInstancePoolInstanceDetails(object):
         **[Required]** Gets the instance_id of this AttachInstancePoolInstanceDetails.
         The `OCID`__ of the instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this AttachInstancePoolInstanceDetails.
@@ -53,7 +53,7 @@ class AttachInstancePoolInstanceDetails(object):
         Sets the instance_id of this AttachInstancePoolInstanceDetails.
         The `OCID`__ of the instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this AttachInstancePoolInstanceDetails.

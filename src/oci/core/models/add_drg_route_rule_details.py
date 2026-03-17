@@ -128,7 +128,7 @@ class AddDrgRouteRuleDetails(object):
         The `OCID`__ of the next hop DRG attachment. The next hop DRG attachment is responsible
         for reaching the network destination.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_hop_drg_attachment_id of this AddDrgRouteRuleDetails.
@@ -143,7 +143,7 @@ class AddDrgRouteRuleDetails(object):
         The `OCID`__ of the next hop DRG attachment. The next hop DRG attachment is responsible
         for reaching the network destination.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param next_hop_drg_attachment_id: The next_hop_drg_attachment_id of this AddDrgRouteRuleDetails.

@@ -135,7 +135,7 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
         **[Required]** Gets the opsi_private_endpoint_id of this ExadataExacsConfigurationSummary.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this ExadataExacsConfigurationSummary.
@@ -149,7 +149,7 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
         Sets the opsi_private_endpoint_id of this ExadataExacsConfigurationSummary.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this ExadataExacsConfigurationSummary.
@@ -163,7 +163,7 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
         **[Required]** Gets the parent_id of this ExadataExacsConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this ExadataExacsConfigurationSummary.
@@ -177,7 +177,7 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
         Sets the parent_id of this ExadataExacsConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this ExadataExacsConfigurationSummary.

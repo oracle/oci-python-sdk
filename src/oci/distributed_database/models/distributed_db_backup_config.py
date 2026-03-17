@@ -15,7 +15,7 @@ class DistributedDbBackupConfig(object):
     Backup Options
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the auto_backup_window property of a DistributedDbBackupConfig.
@@ -445,7 +445,7 @@ class DistributedDbBackupConfig(object):
         For information about valid region names, see
         `Regions and Availability Domains`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The remote_region of this DistributedDbBackupConfig.
@@ -461,7 +461,7 @@ class DistributedDbBackupConfig(object):
         For information about valid region names, see
         `Regions and Availability Domains`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param remote_region: The remote_region of this DistributedDbBackupConfig.

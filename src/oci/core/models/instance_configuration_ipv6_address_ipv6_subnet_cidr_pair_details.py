@@ -101,7 +101,7 @@ class InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails(object):
         Gets the ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
         An `OCID`__ that specifies a previously-reserved ipv6 to use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
@@ -115,7 +115,7 @@ class InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails(object):
         Sets the ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.
         An `OCID`__ that specifies a previously-reserved ipv6 to use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ipv6_id: The ipv6_id of this InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails.

@@ -94,7 +94,7 @@ class HealthCheckResult(object):
         **[Required]** Gets the subnet_id of this HealthCheckResult.
         The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this HealthCheckResult.
@@ -108,7 +108,7 @@ class HealthCheckResult(object):
         Sets the subnet_id of this HealthCheckResult.
         The `OCID`__ of the subnet hosting the load balancer that reported this health check status.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this HealthCheckResult.

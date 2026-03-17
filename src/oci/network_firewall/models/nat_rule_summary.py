@@ -15,7 +15,7 @@ class NatRuleSummary(object):
     Summary of NAT rules used in the firewall policy.
     A `NAT rule`__ defines which traffic NAT should be applied to by the firewall, and how it should do so.
 
-    __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+    __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
     """
 
     #: A constant which can be used with the type property of a NatRuleSummary.
@@ -199,7 +199,7 @@ class NatRuleSummary(object):
         **[Required]** Gets the parent_resource_id of this NatRuleSummary.
         The `OCID`__ of the Network Firewall Policy this NAT rule belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_resource_id of this NatRuleSummary.
@@ -213,7 +213,7 @@ class NatRuleSummary(object):
         Sets the parent_resource_id of this NatRuleSummary.
         The `OCID`__ of the Network Firewall Policy this NAT rule belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_resource_id: The parent_resource_id of this NatRuleSummary.

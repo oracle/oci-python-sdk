@@ -135,7 +135,7 @@ class WaaClient(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.ChangeWebAppAccelerationCompartmentDetails change_web_app_acceleration_compartment_details: (required)
             The information to be updated.
@@ -251,7 +251,7 @@ class WaaClient(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.ChangeWebAppAccelerationPolicyCompartmentDetails change_web_app_acceleration_policy_compartment_details: (required)
             The information to be updated.
@@ -570,7 +570,7 @@ class WaaClient(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -680,7 +680,7 @@ class WaaClient(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -790,7 +790,7 @@ class WaaClient(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -895,7 +895,7 @@ class WaaClient(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1000,7 +1000,7 @@ class WaaClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[WebAppAccelerationPolicyLifecycleState] lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycleState.
@@ -1011,7 +1011,7 @@ class WaaClient(object):
         :param str id: (optional)
             A filter to return only the WebAppAccelerationPolicy with the given `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1159,18 +1159,18 @@ class WaaClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             A filter to return only the WebAppAcceleration with the given `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str web_app_acceleration_policy_id: (optional)
             A filter to return only the WebAppAcceleration with the given
             `OCID`__ of related WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[WebAppAccelerationLifecycleState] lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycleState.
@@ -1327,7 +1327,7 @@ class WaaClient(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.PurgeWebAppAccelerationCacheDetails purge_web_app_acceleration_cache_details: (required)
             Options for the cache purge.
@@ -1435,7 +1435,7 @@ class WaaClient(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.UpdateWebAppAccelerationDetails update_web_app_acceleration_details: (required)
             The information to be updated.
@@ -1550,7 +1550,7 @@ class WaaClient(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.UpdateWebAppAccelerationPolicyDetails update_web_app_acceleration_policy_details: (required)
             The information to be updated.

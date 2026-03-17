@@ -443,7 +443,7 @@ class UpdateDeploymentDetails(object):
         The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
         after which the private subnet will be enforced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this UpdateDeploymentDetails.
@@ -459,7 +459,7 @@ class UpdateDeploymentDetails(object):
         The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
         after which the private subnet will be enforced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this UpdateDeploymentDetails.
@@ -475,7 +475,7 @@ class UpdateDeploymentDetails(object):
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
         For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_subnet_id of this UpdateDeploymentDetails.
@@ -491,7 +491,7 @@ class UpdateDeploymentDetails(object):
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
         For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_subnet_id: The load_balancer_subnet_id of this UpdateDeploymentDetails.
@@ -628,7 +628,7 @@ class UpdateDeploymentDetails(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this UpdateDeploymentDetails.
@@ -645,7 +645,7 @@ class UpdateDeploymentDetails(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this UpdateDeploymentDetails.

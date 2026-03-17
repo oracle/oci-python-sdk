@@ -115,7 +115,7 @@ class CreateApiPlatformInstanceDetails(object):
         **[Required]** Gets the compartment_id of this CreateApiPlatformInstanceDetails.
         The `OCID`__ of the compartment to create the instance in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateApiPlatformInstanceDetails.
@@ -129,7 +129,7 @@ class CreateApiPlatformInstanceDetails(object):
         Sets the compartment_id of this CreateApiPlatformInstanceDetails.
         The `OCID`__ of the compartment to create the instance in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateApiPlatformInstanceDetails.

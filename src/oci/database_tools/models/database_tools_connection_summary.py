@@ -234,7 +234,7 @@ class DatabaseToolsConnectionSummary(object):
         **[Required]** Gets the id of this DatabaseToolsConnectionSummary.
         The `OCID`__ of the Database Tools connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DatabaseToolsConnectionSummary.
@@ -248,7 +248,7 @@ class DatabaseToolsConnectionSummary(object):
         Sets the id of this DatabaseToolsConnectionSummary.
         The `OCID`__ of the Database Tools connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DatabaseToolsConnectionSummary.
@@ -286,7 +286,7 @@ class DatabaseToolsConnectionSummary(object):
         **[Required]** Gets the compartment_id of this DatabaseToolsConnectionSummary.
         The `OCID`__ of the compartment containing the Database Tools connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DatabaseToolsConnectionSummary.
@@ -300,7 +300,7 @@ class DatabaseToolsConnectionSummary(object):
         Sets the compartment_id of this DatabaseToolsConnectionSummary.
         The `OCID`__ of the compartment containing the Database Tools connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DatabaseToolsConnectionSummary.

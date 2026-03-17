@@ -53,7 +53,7 @@ class AlarmHistoryCollection(object):
         **[Required]** Gets the alarm_id of this AlarmHistoryCollection.
         The `OCID`__ of the alarm to retrieve history for.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The alarm_id of this AlarmHistoryCollection.
@@ -67,7 +67,7 @@ class AlarmHistoryCollection(object):
         Sets the alarm_id of this AlarmHistoryCollection.
         The `OCID`__ of the alarm to retrieve history for.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param alarm_id: The alarm_id of this AlarmHistoryCollection.

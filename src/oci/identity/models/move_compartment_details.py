@@ -40,7 +40,7 @@ class MoveCompartmentDetails(object):
         The `OCID`__ of the destination compartment
         into which to move the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_compartment_id of this MoveCompartmentDetails.
@@ -55,7 +55,7 @@ class MoveCompartmentDetails(object):
         The `OCID`__ of the destination compartment
         into which to move the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param target_compartment_id: The target_compartment_id of this MoveCompartmentDetails.

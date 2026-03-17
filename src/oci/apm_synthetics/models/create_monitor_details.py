@@ -306,7 +306,7 @@ class CreateMonitorDetails(object):
         The `OCID`__ of the script.
         scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The script_id of this CreateMonitorDetails.
@@ -321,7 +321,7 @@ class CreateMonitorDetails(object):
         The `OCID`__ of the script.
         scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param script_id: The script_id of this CreateMonitorDetails.

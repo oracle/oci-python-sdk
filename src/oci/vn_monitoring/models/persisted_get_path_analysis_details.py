@@ -49,7 +49,7 @@ class PersistedGetPathAnalysisDetails(GetPathAnalysisDetails):
         **[Required]** Gets the path_analyzer_test_id of this PersistedGetPathAnalysisDetails.
         The `OCID`__ of the `PathAnalyzerTest` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The path_analyzer_test_id of this PersistedGetPathAnalysisDetails.
@@ -63,7 +63,7 @@ class PersistedGetPathAnalysisDetails(GetPathAnalysisDetails):
         Sets the path_analyzer_test_id of this PersistedGetPathAnalysisDetails.
         The `OCID`__ of the `PathAnalyzerTest` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param path_analyzer_test_id: The path_analyzer_test_id of this PersistedGetPathAnalysisDetails.

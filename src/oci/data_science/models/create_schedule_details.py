@@ -143,7 +143,7 @@ class CreateScheduleDetails(object):
         **[Required]** Gets the project_id of this CreateScheduleDetails.
         The `OCID`__ of the project to associate the schedule with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this CreateScheduleDetails.
@@ -157,7 +157,7 @@ class CreateScheduleDetails(object):
         Sets the project_id of this CreateScheduleDetails.
         The `OCID`__ of the project to associate the schedule with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this CreateScheduleDetails.
@@ -171,7 +171,7 @@ class CreateScheduleDetails(object):
         **[Required]** Gets the compartment_id of this CreateScheduleDetails.
         The `OCID`__ of the compartment that contains the schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateScheduleDetails.
@@ -185,7 +185,7 @@ class CreateScheduleDetails(object):
         Sets the compartment_id of this CreateScheduleDetails.
         The `OCID`__ of the compartment that contains the schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateScheduleDetails.
@@ -260,7 +260,7 @@ class CreateScheduleDetails(object):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateScheduleDetails.
@@ -275,7 +275,7 @@ class CreateScheduleDetails(object):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateScheduleDetails.
@@ -290,7 +290,7 @@ class CreateScheduleDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateScheduleDetails.
@@ -305,7 +305,7 @@ class CreateScheduleDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateScheduleDetails.

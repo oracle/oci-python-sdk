@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class LifecycleEnvironmentClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -133,7 +133,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (required)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachManagedInstancesToLifecycleStageDetails attach_managed_instances_to_lifecycle_stage_details: (required)
             Details for managed instances to attach to the lifecycle stage.
@@ -258,18 +258,18 @@ class LifecycleEnvironmentClient(object):
         """
         Moves a lifecycle environment into a different compartment within the same tenancy. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str lifecycle_environment_id: (required)
             The `OCID`__ of the lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ChangeLifecycleEnvironmentCompartmentDetails change_lifecycle_environment_compartment_details: (required)
             The `OCID`__ of the compartment to move the lifecycle environment into.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -500,7 +500,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_environment_id: (required)
             The `OCID`__ of the lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -614,7 +614,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (required)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachManagedInstancesFromLifecycleStageDetails detach_managed_instances_from_lifecycle_stage_details: (required)
             Details for the managed instance to detach from the lifecycle stage.
@@ -743,7 +743,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_environment_id: (required)
             The `OCID`__ of the lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -850,7 +850,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (required)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -967,7 +967,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_environment_id: (optional)
             The `OCID`__ of the lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str arch_type: (optional)
             A filter to return only profiles that match the given archType.
@@ -995,7 +995,7 @@ class LifecycleEnvironmentClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1003,7 +1003,7 @@ class LifecycleEnvironmentClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the lifecycle environments that match the display name given.
@@ -1198,7 +1198,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (required)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -1215,7 +1215,7 @@ class LifecycleEnvironmentClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1223,7 +1223,7 @@ class LifecycleEnvironmentClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
@@ -1385,7 +1385,7 @@ class LifecycleEnvironmentClient(object):
         """
         Lists lifecycle stages that match the specified compartment or lifecycle stage `OCID`__. Filter the list against
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (optional)
@@ -1400,12 +1400,12 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (optional)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str software_source_id: (optional)
             The `OCID`__ of the software source. This filter returns resources associated with this software source.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str arch_type: (optional)
             A filter to return only profiles that match the given archType.
@@ -1433,7 +1433,7 @@ class LifecycleEnvironmentClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1441,7 +1441,7 @@ class LifecycleEnvironmentClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
@@ -1639,7 +1639,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (required)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.PromoteSoftwareSourceToLifecycleStageDetails promote_software_source_to_lifecycle_stage_details: (required)
             Details for the software source promotion job.
@@ -1647,7 +1647,7 @@ class LifecycleEnvironmentClient(object):
         :param str software_source_id: (optional)
             The `OCID`__ of the software source. This filter returns resources associated with this software source.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1781,7 +1781,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_stage_id: (required)
             The `OCID`__ of the lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RebootLifecycleStageDetails reboot_lifecycle_stage_details: (required)
             Details rebooting managed instances in a lifecycle stage.
@@ -1910,7 +1910,7 @@ class LifecycleEnvironmentClient(object):
         :param str lifecycle_environment_id: (required)
             The `OCID`__ of the lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateLifecycleEnvironmentDetails update_lifecycle_environment_details: (required)
             The information to be updated.

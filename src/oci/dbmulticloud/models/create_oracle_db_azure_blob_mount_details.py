@@ -74,7 +74,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
         **[Required]** Gets the compartment_id of this CreateOracleDbAzureBlobMountDetails.
         TThe `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOracleDbAzureBlobMountDetails.
@@ -88,7 +88,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
         Sets the compartment_id of this CreateOracleDbAzureBlobMountDetails.
         TThe `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOracleDbAzureBlobMountDetails.
@@ -126,7 +126,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
         **[Required]** Gets the oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
         The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
@@ -140,7 +140,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
         Sets the oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
         The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_connector_id: The oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
@@ -154,7 +154,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
         **[Required]** Gets the oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
         The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
@@ -168,7 +168,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
         Sets the oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
         The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_blob_container_id: The oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
@@ -185,7 +185,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateOracleDbAzureBlobMountDetails.
@@ -202,7 +202,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateOracleDbAzureBlobMountDetails.
@@ -219,7 +219,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateOracleDbAzureBlobMountDetails.
@@ -236,7 +236,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateOracleDbAzureBlobMountDetails.

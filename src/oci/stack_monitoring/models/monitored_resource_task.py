@@ -157,7 +157,7 @@ class MonitoredResourceTask(object):
         **[Required]** Gets the id of this MonitoredResourceTask.
         Task identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoredResourceTask.
@@ -171,7 +171,7 @@ class MonitoredResourceTask(object):
         Sets the id of this MonitoredResourceTask.
         Task identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoredResourceTask.
@@ -233,7 +233,7 @@ class MonitoredResourceTask(object):
         **[Required]** Gets the compartment_id of this MonitoredResourceTask.
         The `OCID`__ of the compartment identifier.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredResourceTask.
@@ -247,7 +247,7 @@ class MonitoredResourceTask(object):
         Sets the compartment_id of this MonitoredResourceTask.
         The `OCID`__ of the compartment identifier.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredResourceTask.
@@ -261,7 +261,7 @@ class MonitoredResourceTask(object):
         Gets the tenant_id of this MonitoredResourceTask.
         The `OCID`__ of the tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenant_id of this MonitoredResourceTask.
@@ -275,7 +275,7 @@ class MonitoredResourceTask(object):
         Sets the tenant_id of this MonitoredResourceTask.
         The `OCID`__ of the tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param tenant_id: The tenant_id of this MonitoredResourceTask.
@@ -309,7 +309,7 @@ class MonitoredResourceTask(object):
         Gets the work_request_ids of this MonitoredResourceTask.
         Identifiers `OCID`__ for work requests submitted for this task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_ids of this MonitoredResourceTask.
@@ -323,7 +323,7 @@ class MonitoredResourceTask(object):
         Sets the work_request_ids of this MonitoredResourceTask.
         Identifiers `OCID`__ for work requests submitted for this task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_ids: The work_request_ids of this MonitoredResourceTask.

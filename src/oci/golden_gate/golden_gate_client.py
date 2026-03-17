@@ -132,7 +132,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -1000,13 +1000,13 @@ class GoldenGateClient(object):
         moving resources between compartments, see `Moving Resources Between
         Compartments`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.ChangeConnectionCompartmentDetails change_connection_compartment_details: (required)
             Properties to change the compartment of a Connection.
@@ -1138,7 +1138,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
@@ -1262,7 +1262,7 @@ class GoldenGateClient(object):
         moving resources between compartments, see `Moving Resources Between
         Compartments`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str database_registration_id: (required)
@@ -1392,7 +1392,7 @@ class GoldenGateClient(object):
         resources between compartments, see `Moving Resources Between
         Compartments`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str deployment_backup_id: (required)
@@ -1533,7 +1533,7 @@ class GoldenGateClient(object):
         resources between compartments, see `Moving Resources Between
         Compartments`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str deployment_id: (required)
@@ -1799,13 +1799,13 @@ class GoldenGateClient(object):
         moving resources between compartments, see `Moving Resources Between
         Compartments`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.ChangePipelineCompartmentDetails change_pipeline_compartment_details: (required)
             Properties to change the compartment of a Pipeline.
@@ -2068,7 +2068,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.CollectPipelineDiagnosticDetails collect_pipeline_diagnostic_details: (required)
             Details for collecting the diagnostic. It includes the object storage information where the diagnostic will be uploaded.
@@ -3212,7 +3212,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -3336,7 +3336,7 @@ class GoldenGateClient(object):
         :param str connection_assignment_id: (required)
             The `OCID`__ of the Connection Assignment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -3816,7 +3816,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -4428,7 +4428,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4555,7 +4555,7 @@ class GoldenGateClient(object):
         :param str connection_assignment_id: (required)
             The `OCID`__ of the Connection Assignment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5083,7 +5083,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5190,7 +5190,7 @@ class GoldenGateClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5605,12 +5605,12 @@ class GoldenGateClient(object):
         :param str deployment_id: (optional)
             The `OCID`__ of the deployment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str connection_id: (optional)
             The `OCID`__ of the connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The name of the connection in the assignment (aliasName).
@@ -6163,7 +6163,7 @@ class GoldenGateClient(object):
         :param str deployment_id: (optional)
             The `OCID`__ of the deployment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the 'lifecycleState' given.
@@ -6816,7 +6816,7 @@ class GoldenGateClient(object):
         :param str deployment_id: (optional)
             The `OCID`__ of the deployment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the 'lifecycleState' given.
@@ -6986,7 +6986,7 @@ class GoldenGateClient(object):
         :param str deployment_id: (optional)
             The `OCID`__ of the deployment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str deployment_type: (optional)
             The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
@@ -7632,7 +7632,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7739,7 +7739,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -7893,7 +7893,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str source_schema_name: (required)
             Name of the source schema obtained from get schema endpoint of the created pipeline.
@@ -8060,7 +8060,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only the resources that match the entire 'displayName' given.
@@ -8867,7 +8867,7 @@ class GoldenGateClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8991,7 +8991,7 @@ class GoldenGateClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -9121,7 +9121,7 @@ class GoldenGateClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -9236,7 +9236,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.PausePipelineDetails pause_pipeline_details: (required)
             Details to pause the pipeline.
@@ -9374,7 +9374,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.RefreshConnectionDetails refresh_connection_details: (required)
             Details of refresh external Connection attributes.
@@ -9503,7 +9503,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -10644,7 +10644,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.StartPipelineDetails start_pipeline_details: (required)
             Details to start Pipeline.
@@ -10918,7 +10918,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.StopPipelineDetails stop_pipeline_details: (required)
             Details to stop the pipeline.
@@ -11182,7 +11182,7 @@ class GoldenGateClient(object):
         :param str connection_assignment_id: (required)
             The `OCID`__ of the Connection Assignment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.TestConnectionAssignmentDetails test_connection_assignment_details: (required)
             A placeholder for any additional metadata to describe the requested tests of the assigned connection.
@@ -11312,7 +11312,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.TestPipelineConnectionDetails test_pipeline_connection_details: (required)
             Additional metadata required to test the connection assigned to the pipeline.
@@ -11441,7 +11441,7 @@ class GoldenGateClient(object):
         :param str connection_id: (required)
             The `OCID`__ of a Connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.UpdateConnectionDetails update_connection_details: (required)
             The new Connection specifications to apply.
@@ -11943,7 +11943,7 @@ class GoldenGateClient(object):
         :param str pipeline_id: (required)
             The `OCID`__ of the pipeline created.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.golden_gate.models.UpdatePipelineDetails update_pipeline_details: (required)
             The existing pipeline specifications to apply.

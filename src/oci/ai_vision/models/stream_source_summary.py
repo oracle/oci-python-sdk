@@ -122,7 +122,7 @@ class StreamSourceSummary(object):
         **[Required]** Gets the id of this StreamSourceSummary.
         `OCID`__ of the streamSource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this StreamSourceSummary.
@@ -136,7 +136,7 @@ class StreamSourceSummary(object):
         Sets the id of this StreamSourceSummary.
         `OCID`__ of the streamSource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this StreamSourceSummary.
@@ -150,7 +150,7 @@ class StreamSourceSummary(object):
         **[Required]** Gets the compartment_id of this StreamSourceSummary.
         `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this StreamSourceSummary.
@@ -164,7 +164,7 @@ class StreamSourceSummary(object):
         Sets the compartment_id of this StreamSourceSummary.
         `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this StreamSourceSummary.

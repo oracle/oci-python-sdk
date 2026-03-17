@@ -307,7 +307,7 @@ class DiscoveredExternalDbSystemComponent(object):
         Gets the resource_id of this DiscoveredExternalDbSystemComponent.
         The `OCID`__ of the existing OCI resource matching the discovered DB system component.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this DiscoveredExternalDbSystemComponent.
@@ -321,7 +321,7 @@ class DiscoveredExternalDbSystemComponent(object):
         Sets the resource_id of this DiscoveredExternalDbSystemComponent.
         The `OCID`__ of the existing OCI resource matching the discovered DB system component.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this DiscoveredExternalDbSystemComponent.

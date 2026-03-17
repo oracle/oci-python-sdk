@@ -33,7 +33,7 @@ class ResourceAnalyticsInstanceClientCompositeOperations(object):
         :param str resource_analytics_instance_id: (required)
             The `OCID`__ of the ResourceAnalyticsInstance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_analytics.models.ChangeResourceAnalyticsInstanceCompartmentDetails change_resource_analytics_instance_compartment_details: (required)
             The information to be updated.
@@ -116,7 +116,7 @@ class ResourceAnalyticsInstanceClientCompositeOperations(object):
         :param str resource_analytics_instance_id: (required)
             The `OCID`__ of the ResourceAnalyticsInstance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_analytics.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class ResourceAnalyticsInstanceClientCompositeOperations(object):
         :param str resource_analytics_instance_id: (required)
             The `OCID`__ of the ResourceAnalyticsInstance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_analytics.models.WorkRequest.status`
@@ -206,7 +206,7 @@ class ResourceAnalyticsInstanceClientCompositeOperations(object):
         :param str resource_analytics_instance_id: (required)
             The `OCID`__ of the ResourceAnalyticsInstance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_analytics.models.ResourceAnalyticsInstanceEnableOacDetails resource_analytics_instance_enable_oac_details: (required)
             The information to be updated.
@@ -250,7 +250,7 @@ class ResourceAnalyticsInstanceClientCompositeOperations(object):
         :param str resource_analytics_instance_id: (required)
             The `OCID`__ of the ResourceAnalyticsInstance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_analytics.models.UpdateResourceAnalyticsInstanceDetails update_resource_analytics_instance_details: (required)
             The information to be updated.

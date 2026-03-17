@@ -22,7 +22,7 @@ class AutoScalingPolicy(object):
     - **Schedule-based:** Autoscaling events take place at the specific times that you schedule.
     - **Threshold-based:** An autoscaling action is triggered when a performance metric meets or exceeds a threshold.
 
-    __ https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
     """
 
     def __init__(self, **kwargs):

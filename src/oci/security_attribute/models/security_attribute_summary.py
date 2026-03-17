@@ -273,7 +273,7 @@ class SecurityAttributeSummary(object):
         Whether the security attribute is retired.
         See `Managing Security Attributes`__.
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm
+        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm
 
 
         :return: The is_retired of this SecurityAttributeSummary.
@@ -288,7 +288,7 @@ class SecurityAttributeSummary(object):
         Whether the security attribute is retired.
         See `Managing Security Attributes`__.
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm
+        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm
 
 
         :param is_retired: The is_retired of this SecurityAttributeSummary.

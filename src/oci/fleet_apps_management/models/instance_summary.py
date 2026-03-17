@@ -53,7 +53,7 @@ class InstanceSummary(object):
         **[Required]** Gets the id of this InstanceSummary.
         The `OCID`__ of the instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstanceSummary.
@@ -67,7 +67,7 @@ class InstanceSummary(object):
         Sets the id of this InstanceSummary.
         The `OCID`__ of the instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstanceSummary.
@@ -81,7 +81,7 @@ class InstanceSummary(object):
         **[Required]** Gets the compartment_id of this InstanceSummary.
         The `OCID`__ of the compartment in which instance is deployed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstanceSummary.
@@ -95,7 +95,7 @@ class InstanceSummary(object):
         Sets the compartment_id of this InstanceSummary.
         The `OCID`__ of the compartment in which instance is deployed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstanceSummary.

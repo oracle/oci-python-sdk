@@ -277,7 +277,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         Gets the tenancy_id of this OracleNosqlConnectionSummary.
         The `OCID`__ of the related OCI tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this OracleNosqlConnectionSummary.
@@ -291,7 +291,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         Sets the tenancy_id of this OracleNosqlConnectionSummary.
         The `OCID`__ of the related OCI tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this OracleNosqlConnectionSummary.
@@ -333,7 +333,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         The user must have write access to the table they want to connect to.
         If the user is not provided, backend will default to the user who is calling the API endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The user_id of this OracleNosqlConnectionSummary.
@@ -349,7 +349,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         The user must have write access to the table they want to connect to.
         If the user is not provided, backend will default to the user who is calling the API endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param user_id: The user_id of this OracleNosqlConnectionSummary.
@@ -365,7 +365,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         Note: When provided, 'privateKeyFile' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_key_file_secret_id of this OracleNosqlConnectionSummary.
@@ -381,7 +381,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         Note: When provided, 'privateKeyFile' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_key_file_secret_id: The private_key_file_secret_id of this OracleNosqlConnectionSummary.
@@ -396,7 +396,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret that stores the passphrase of the private key.
         Note: When provided, 'privateKeyPassphrase' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_key_passphrase_secret_id of this OracleNosqlConnectionSummary.
@@ -411,7 +411,7 @@ class OracleNosqlConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret that stores the passphrase of the private key.
         Note: When provided, 'privateKeyPassphrase' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_key_passphrase_secret_id: The private_key_passphrase_secret_id of this OracleNosqlConnectionSummary.

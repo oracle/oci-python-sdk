@@ -16,7 +16,7 @@ class PatchLimitsIncreaseRequestDetails(object):
     For more information, see
     `Adding Comments to a Limit Increase Request`__.
 
-    __ https://docs.oracle.com/iaas/Content/General/service-limits/comment-request.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/comment-request.htm
     """
 
     def __init__(self, **kwargs):

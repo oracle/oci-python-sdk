@@ -95,7 +95,7 @@ class UpdateDigitalTwinInstanceDetails(object):
         Gets the auth_id of this UpdateDigitalTwinInstanceDetails.
         The `OCID`__ of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The auth_id of this UpdateDigitalTwinInstanceDetails.
@@ -109,7 +109,7 @@ class UpdateDigitalTwinInstanceDetails(object):
         Sets the auth_id of this UpdateDigitalTwinInstanceDetails.
         The `OCID`__ of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param auth_id: The auth_id of this UpdateDigitalTwinInstanceDetails.
@@ -199,7 +199,7 @@ class UpdateDigitalTwinInstanceDetails(object):
         Gets the digital_twin_adapter_id of this UpdateDigitalTwinInstanceDetails.
         The `OCID`__ of the digital twin adapter.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The digital_twin_adapter_id of this UpdateDigitalTwinInstanceDetails.
@@ -213,7 +213,7 @@ class UpdateDigitalTwinInstanceDetails(object):
         Sets the digital_twin_adapter_id of this UpdateDigitalTwinInstanceDetails.
         The `OCID`__ of the digital twin adapter.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param digital_twin_adapter_id: The digital_twin_adapter_id of this UpdateDigitalTwinInstanceDetails.
@@ -227,7 +227,7 @@ class UpdateDigitalTwinInstanceDetails(object):
         Gets the digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
         The `OCID`__ of the digital twin model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
@@ -241,7 +241,7 @@ class UpdateDigitalTwinInstanceDetails(object):
         Sets the digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
         The `OCID`__ of the digital twin model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param digital_twin_model_id: The digital_twin_model_id of this UpdateDigitalTwinInstanceDetails.
@@ -282,7 +282,7 @@ class UpdateDigitalTwinInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateDigitalTwinInstanceDetails.
@@ -299,7 +299,7 @@ class UpdateDigitalTwinInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateDigitalTwinInstanceDetails.
@@ -316,7 +316,7 @@ class UpdateDigitalTwinInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateDigitalTwinInstanceDetails.
@@ -333,7 +333,7 @@ class UpdateDigitalTwinInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateDigitalTwinInstanceDetails.

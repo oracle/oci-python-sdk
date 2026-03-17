@@ -105,7 +105,7 @@ class UpdateDrgAttachmentDetails(object):
         You can't remove a DRG route table from a DRG attachment, but you can reassign which
         DRG route table it uses.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_route_table_id of this UpdateDrgAttachmentDetails.
@@ -124,7 +124,7 @@ class UpdateDrgAttachmentDetails(object):
         You can't remove a DRG route table from a DRG attachment, but you can reassign which
         DRG route table it uses.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_route_table_id: The drg_route_table_id of this UpdateDrgAttachmentDetails.
@@ -212,7 +212,7 @@ class UpdateDrgAttachmentDetails(object):
         are advertised out through the attachment.
         If this value is null, no routes are advertised through this attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_drg_route_distribution_id of this UpdateDrgAttachmentDetails.
@@ -228,7 +228,7 @@ class UpdateDrgAttachmentDetails(object):
         are advertised out through the attachment.
         If this value is null, no routes are advertised through this attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param export_drg_route_distribution_id: The export_drg_route_distribution_id of this UpdateDrgAttachmentDetails.

@@ -422,7 +422,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this CreateRedisConnectionDetails.
@@ -440,7 +440,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this CreateRedisConnectionDetails.
@@ -481,7 +481,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the content of the TrustStore file.
         Note: When provided, 'trustStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The trust_store_secret_id of this CreateRedisConnectionDetails.
@@ -496,7 +496,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the content of the TrustStore file.
         Note: When provided, 'trustStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param trust_store_secret_id: The trust_store_secret_id of this CreateRedisConnectionDetails.
@@ -537,7 +537,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret where the Redis TrustStore password is stored.
         Note: When provided, 'trustStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The trust_store_password_secret_id of this CreateRedisConnectionDetails.
@@ -552,7 +552,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret where the Redis TrustStore password is stored.
         Note: When provided, 'trustStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param trust_store_password_secret_id: The trust_store_password_secret_id of this CreateRedisConnectionDetails.
@@ -593,7 +593,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the content of the KeyStore file.
         Note: When provided, 'keyStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_secret_id of this CreateRedisConnectionDetails.
@@ -608,7 +608,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the content of the KeyStore file.
         Note: When provided, 'keyStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_secret_id: The key_store_secret_id of this CreateRedisConnectionDetails.
@@ -649,7 +649,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret where the Redis KeyStore password is stored.
         Note: When provided, 'keyStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_password_secret_id of this CreateRedisConnectionDetails.
@@ -664,7 +664,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret where the Redis KeyStore password is stored.
         Note: When provided, 'keyStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_password_secret_id: The key_store_password_secret_id of this CreateRedisConnectionDetails.
@@ -678,7 +678,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         Gets the redis_cluster_id of this CreateRedisConnectionDetails.
         The `OCID`__ of the Redis cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The redis_cluster_id of this CreateRedisConnectionDetails.
@@ -692,7 +692,7 @@ class CreateRedisConnectionDetails(CreateConnectionDetails):
         Sets the redis_cluster_id of this CreateRedisConnectionDetails.
         The `OCID`__ of the Redis cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param redis_cluster_id: The redis_cluster_id of this CreateRedisConnectionDetails.

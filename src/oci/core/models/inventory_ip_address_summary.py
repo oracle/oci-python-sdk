@@ -84,7 +84,7 @@ class InventoryIpAddressSummary(object):
         Gets the vnic_id of this InventoryIpAddressSummary.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this InventoryIpAddressSummary.
@@ -98,7 +98,7 @@ class InventoryIpAddressSummary(object):
         Sets the vnic_id of this InventoryIpAddressSummary.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this InventoryIpAddressSummary.

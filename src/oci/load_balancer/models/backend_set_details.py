@@ -20,7 +20,7 @@ class BackendSetDetails(object):
     (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
     attributes per backend set.
 
-    __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingbackendsets.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     def __init__(self, **kwargs):

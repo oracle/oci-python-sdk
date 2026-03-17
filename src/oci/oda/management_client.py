@@ -387,7 +387,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.oda.models.ChangeOdaPrivateEndpointCompartmentDetails change_oda_private_endpoint_compartment_details: (required)
             The compartment to which the Digital Assistant instance should be moved.
@@ -1211,7 +1211,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing. This value is included in the opc-request-id response header.
@@ -2048,7 +2048,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control in a PUT or DELETE call for
@@ -2164,7 +2164,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_attachment_id: (required)
             The `OCID`__ of ODA Private Endpoint Attachment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control in a PUT or DELETE call for
@@ -2283,7 +2283,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control in a PUT or DELETE call for
@@ -3446,7 +3446,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing. This value is included in the opc-request-id response header.
@@ -3553,7 +3553,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_attachment_id: (required)
             The `OCID`__ of ODA Private Endpoint Attachment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing. This value is included in the opc-request-id response header.
@@ -3663,7 +3663,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing. This value is included in the opc-request-id response header.
@@ -5060,7 +5060,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             The `OCID`__ of ODA Private Endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             List the ODA Private Endpoint Attachments that belong to this compartment.
@@ -5230,7 +5230,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
@@ -7405,7 +7405,7 @@ class ManagementClient(object):
         :param str oda_private_endpoint_id: (required)
             Unique ODA Private Endpoint identifier which is the `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.oda.models.UpdateOdaPrivateEndpointDetails update_oda_private_endpoint_details: (required)
             The information to update.

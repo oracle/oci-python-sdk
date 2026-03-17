@@ -53,7 +53,7 @@ class EnableAutonomousDatabaseInsightAdvancedFeaturesDetails(object):
         Gets the opsi_private_endpoint_id of this EnableAutonomousDatabaseInsightAdvancedFeaturesDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this EnableAutonomousDatabaseInsightAdvancedFeaturesDetails.
@@ -67,7 +67,7 @@ class EnableAutonomousDatabaseInsightAdvancedFeaturesDetails(object):
         Sets the opsi_private_endpoint_id of this EnableAutonomousDatabaseInsightAdvancedFeaturesDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this EnableAutonomousDatabaseInsightAdvancedFeaturesDetails.

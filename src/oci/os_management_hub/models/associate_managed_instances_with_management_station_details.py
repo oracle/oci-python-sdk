@@ -46,7 +46,7 @@ class AssociateManagedInstancesWithManagementStationDetails(object):
         **[Required]** Gets the managed_instances of this AssociateManagedInstancesWithManagementStationDetails.
         List of managed instance `OCIDs`__ to associate to the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instances of this AssociateManagedInstancesWithManagementStationDetails.
@@ -60,7 +60,7 @@ class AssociateManagedInstancesWithManagementStationDetails(object):
         Sets the managed_instances of this AssociateManagedInstancesWithManagementStationDetails.
         List of managed instance `OCIDs`__ to associate to the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instances: The managed_instances of this AssociateManagedInstancesWithManagementStationDetails.

@@ -146,7 +146,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the identifier of this WorkRequestResource.
         An `OCID`__ or other unique identifier of the resource affected by the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifier of this WorkRequestResource.
@@ -160,7 +160,7 @@ class WorkRequestResource(object):
         Sets the identifier of this WorkRequestResource.
         An `OCID`__ or other unique identifier of the resource affected by the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param identifier: The identifier of this WorkRequestResource.

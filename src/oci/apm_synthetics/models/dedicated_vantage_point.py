@@ -119,7 +119,7 @@ class DedicatedVantagePoint(object):
         **[Required]** Gets the id of this DedicatedVantagePoint.
         The `OCID`__ of the dedicated vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DedicatedVantagePoint.
@@ -133,7 +133,7 @@ class DedicatedVantagePoint(object):
         Sets the id of this DedicatedVantagePoint.
         The `OCID`__ of the dedicated vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DedicatedVantagePoint.

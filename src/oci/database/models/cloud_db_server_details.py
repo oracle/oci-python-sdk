@@ -39,7 +39,7 @@ class CloudDbServerDetails(object):
         **[Required]** Gets the db_server_id of this CloudDbServerDetails.
         The `OCID`__ of ExaDB-D DB server.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_server_id of this CloudDbServerDetails.
@@ -53,7 +53,7 @@ class CloudDbServerDetails(object):
         Sets the db_server_id of this CloudDbServerDetails.
         The `OCID`__ of ExaDB-D DB server.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_server_id: The db_server_id of this CloudDbServerDetails.

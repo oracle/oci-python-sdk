@@ -136,7 +136,7 @@ class ArtifactsClient(object):
         resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str repository_id: (required)
@@ -144,7 +144,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.ChangeContainerRepositoryCompartmentDetails change_container_repository_compartment_details: (required)
             Change container repository compartment details.
@@ -270,7 +270,7 @@ class ArtifactsClient(object):
         resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str repository_id: (required)
@@ -278,7 +278,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.ChangeRepositoryCompartmentDetails change_repository_compartment_details: (required)
             Moves a repository into a different compartment.
@@ -731,7 +731,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -846,7 +846,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containersignature.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -961,7 +961,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1070,7 +1070,7 @@ class ArtifactsClient(object):
         """
         Deletes an artifact with a specified `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str artifact_id: (required)
@@ -1078,7 +1078,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1193,7 +1193,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str artifact_path: (required)
             A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -1320,7 +1320,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1433,7 +1433,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1538,7 +1538,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1648,7 +1648,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containersignature.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1758,7 +1758,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1862,7 +1862,7 @@ class ArtifactsClient(object):
         """
         Gets information about an artifact with a specified `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str artifact_id: (required)
@@ -1870,7 +1870,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1980,7 +1980,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str artifact_path: (required)
             A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -2102,7 +2102,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -2210,7 +2210,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             When set to true, the hierarchy of compartments is traversed
@@ -2243,14 +2243,14 @@ class ArtifactsClient(object):
 
             Example: `ocid1.keyversion.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str kms_key_version_id: (optional)
             The `OCID`__ of the kmsKeyVersionId used to sign the container image.
 
             Example: `ocid1.keyversion.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str signing_algorithm: (optional)
             The algorithm to be used for signing. These are the only supported signing algorithms for container images.
@@ -2264,14 +2264,14 @@ class ArtifactsClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -2439,7 +2439,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             When set to true, the hierarchy of compartments is traversed
@@ -2485,14 +2485,14 @@ class ArtifactsClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -2653,7 +2653,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             When set to true, the hierarchy of compartments is traversed
@@ -2681,14 +2681,14 @@ class ArtifactsClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -2841,7 +2841,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str repository_id: (required)
             A filter to return the artifacts only for the specified repository OCID.
@@ -2871,14 +2871,14 @@ class ArtifactsClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -3034,7 +3034,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             A filter to return the resources for the specified OCID.
@@ -3055,14 +3055,14 @@ class ArtifactsClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -3311,7 +3311,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.RemoveContainerVersionDetails remove_container_version_details: (required)
             Remove version details.
@@ -3443,7 +3443,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.RestoreContainerImageDetails restore_container_image_details: (required)
             Restore container image details.
@@ -3573,7 +3573,7 @@ class ArtifactsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerConfigurationDetails update_container_configuration_details: (required)
             Update container configuration details.
@@ -3690,7 +3690,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerImageDetails update_container_image_details: (required)
             Update container image details.
@@ -3812,7 +3812,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containersignature.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerImageSignatureDetails update_container_image_signature_details: (required)
             Update container image signature details.
@@ -3934,7 +3934,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.containerrepo.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateContainerRepositoryDetails update_container_repository_details: (required)
             Update container repository details.
@@ -4050,7 +4050,7 @@ class ArtifactsClient(object):
         """
         Updates the artifact with the specified `OCID`__. You can only update the tags of an artifact.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str artifact_id: (required)
@@ -4058,12 +4058,12 @@ class ArtifactsClient(object):
 
             Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateGenericArtifactDetails update_generic_artifact_details: (required)
             Updates the artifact with the specified `OCID`__. You can only update the tags of an artifact.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4182,7 +4182,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str artifact_path: (required)
             A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -4316,7 +4316,7 @@ class ArtifactsClient(object):
 
             Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.artifacts.models.UpdateRepositoryDetails update_repository_details: (required)
             Updates the properties of a repository.

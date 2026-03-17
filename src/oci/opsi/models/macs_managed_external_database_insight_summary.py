@@ -215,7 +215,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         Gets the management_agent_id of this MacsManagedExternalDatabaseInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedExternalDatabaseInsightSummary.
@@ -229,7 +229,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the management_agent_id of this MacsManagedExternalDatabaseInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedExternalDatabaseInsightSummary.
@@ -243,7 +243,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         Gets the connector_id of this MacsManagedExternalDatabaseInsightSummary.
         The `OCID`__ of External Database Connector
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this MacsManagedExternalDatabaseInsightSummary.
@@ -257,7 +257,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the connector_id of this MacsManagedExternalDatabaseInsightSummary.
         The `OCID`__ of External Database Connector
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this MacsManagedExternalDatabaseInsightSummary.

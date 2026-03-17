@@ -98,7 +98,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
         **[Required]** Gets the compartment_id of this EnablePeComanagedDatabaseInsightDetails.
         The compartment `OCID`__ of the Private service accessed database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EnablePeComanagedDatabaseInsightDetails.
@@ -112,7 +112,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
         Sets the compartment_id of this EnablePeComanagedDatabaseInsightDetails.
         The compartment `OCID`__ of the Private service accessed database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EnablePeComanagedDatabaseInsightDetails.
@@ -126,7 +126,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
         **[Required]** Gets the opsi_private_endpoint_id of this EnablePeComanagedDatabaseInsightDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this EnablePeComanagedDatabaseInsightDetails.
@@ -140,7 +140,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
         Sets the opsi_private_endpoint_id of this EnablePeComanagedDatabaseInsightDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this EnablePeComanagedDatabaseInsightDetails.

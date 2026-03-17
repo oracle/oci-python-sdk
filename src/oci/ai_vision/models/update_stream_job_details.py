@@ -74,7 +74,7 @@ class UpdateStreamJobDetails(object):
         Gets the stream_source_id of this UpdateStreamJobDetails.
         `OCID`__ of streamSource
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_source_id of this UpdateStreamJobDetails.
@@ -88,7 +88,7 @@ class UpdateStreamJobDetails(object):
         Sets the stream_source_id of this UpdateStreamJobDetails.
         `OCID`__ of streamSource
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param stream_source_id: The stream_source_id of this UpdateStreamJobDetails.

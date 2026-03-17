@@ -56,7 +56,7 @@ class DatabaseUpgradeWithDbHomeDetails(DatabaseUpgradeSourceBase):
         **[Required]** Gets the db_home_id of this DatabaseUpgradeWithDbHomeDetails.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_home_id of this DatabaseUpgradeWithDbHomeDetails.
@@ -70,7 +70,7 @@ class DatabaseUpgradeWithDbHomeDetails(DatabaseUpgradeSourceBase):
         Sets the db_home_id of this DatabaseUpgradeWithDbHomeDetails.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_home_id: The db_home_id of this DatabaseUpgradeWithDbHomeDetails.

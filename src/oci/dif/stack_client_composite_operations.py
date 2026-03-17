@@ -33,7 +33,7 @@ class StackClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the Stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dif.models.AddServiceDetails add_service_details: (required)
             The information to be updated.
@@ -77,7 +77,7 @@ class StackClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the Stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dif.models.ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             The information to be updated.
@@ -160,7 +160,7 @@ class StackClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the Stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dif.models.WorkRequest.status`
@@ -209,7 +209,7 @@ class StackClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the Stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dif.models.DeployArtifactsDetails deploy_artifacts_details: (required)
             The artifact information to be deployed.
@@ -253,7 +253,7 @@ class StackClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the Stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dif.models.UpdateStackDetails update_stack_details: (required)
             The information to be updated.

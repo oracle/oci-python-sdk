@@ -47,8 +47,8 @@ class SourceDetails(object):
         The `OCID`__ of the file system that contains the source snapshot of a cloned file system.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The parent_file_system_id of this SourceDetails.
@@ -63,8 +63,8 @@ class SourceDetails(object):
         The `OCID`__ of the file system that contains the source snapshot of a cloned file system.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param parent_file_system_id: The parent_file_system_id of this SourceDetails.
@@ -79,8 +79,8 @@ class SourceDetails(object):
         The `OCID`__ of the source snapshot used to create a cloned file system.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The source_snapshot_id of this SourceDetails.
@@ -95,8 +95,8 @@ class SourceDetails(object):
         The `OCID`__ of the source snapshot used to create a cloned file system.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param source_snapshot_id: The source_snapshot_id of this SourceDetails.

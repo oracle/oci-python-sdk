@@ -81,7 +81,7 @@ class CreateManagementApplianceDetails(object):
         **[Required]** Gets the sddc_id of this CreateManagementApplianceDetails.
         The `OCID`__ of SDDC in OCI, that this appliance is going to be registered in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The sddc_id of this CreateManagementApplianceDetails.
@@ -95,7 +95,7 @@ class CreateManagementApplianceDetails(object):
         Sets the sddc_id of this CreateManagementApplianceDetails.
         The `OCID`__ of SDDC in OCI, that this appliance is going to be registered in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param sddc_id: The sddc_id of this CreateManagementApplianceDetails.
@@ -206,7 +206,7 @@ class CreateManagementApplianceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateManagementApplianceDetails.
@@ -223,7 +223,7 @@ class CreateManagementApplianceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateManagementApplianceDetails.
@@ -240,7 +240,7 @@ class CreateManagementApplianceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateManagementApplianceDetails.
@@ -257,7 +257,7 @@ class CreateManagementApplianceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateManagementApplianceDetails.

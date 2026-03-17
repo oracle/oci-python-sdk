@@ -348,7 +348,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this CreateSnowflakeConnectionDetails.
@@ -366,7 +366,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this CreateSnowflakeConnectionDetails.
@@ -408,7 +408,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         Note: When provided, 'privateKeyFile' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_key_file_secret_id of this CreateSnowflakeConnectionDetails.
@@ -424,7 +424,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         Note: When provided, 'privateKeyFile' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_key_file_secret_id: The private_key_file_secret_id of this CreateSnowflakeConnectionDetails.
@@ -465,7 +465,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the password for the private key file.
         Note: When provided, 'privateKeyPassphrase' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_key_passphrase_secret_id of this CreateSnowflakeConnectionDetails.
@@ -480,7 +480,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the password for the private key file.
         Note: When provided, 'privateKeyPassphrase' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_key_passphrase_secret_id: The private_key_passphrase_secret_id of this CreateSnowflakeConnectionDetails.

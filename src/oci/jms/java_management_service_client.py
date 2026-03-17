@@ -132,7 +132,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.AddFleetInstallationSitesDetails add_fleet_installation_sites_details: (required)
             List of installation sites to be added.
@@ -261,7 +261,7 @@ class JavaManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -375,7 +375,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.ChangeFleetCompartmentDetails change_fleet_compartment_details: (required)
             Compartment identifier.
@@ -504,7 +504,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.CreateBlocklistDetails create_blocklist_details: (required)
             Details for the new blocklist record.
@@ -626,7 +626,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.CreateDrsFileDetails create_drs_file_details: (required)
             Detail information to create DRS
@@ -1078,7 +1078,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str blocklist_key: (required)
             The unique identifier of the blocklist record.
@@ -1196,7 +1196,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str crypto_analysis_result_id: (required)
             The OCID of the analysis result.
@@ -1314,7 +1314,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str drs_file_key: (required)
             The unique identifier of the DRS File in Object Storage.
@@ -1432,7 +1432,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1546,7 +1546,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str java_migration_analysis_result_id: (required)
             The OCID of the analysis result.
@@ -1665,7 +1665,7 @@ class JavaManagementServiceClient(object):
         :param str jms_plugin_id: (required)
             The `OCID`__ of the JmsPlugin.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1779,7 +1779,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str performance_tuning_analysis_result_id: (required)
             The OCID of the performance tuning analysis result.
@@ -1897,7 +1897,7 @@ class JavaManagementServiceClient(object):
         :param str task_schedule_id: (required)
             The `OCID`__ to identify this task schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str fleet_id: (optional)
             The ID of the Fleet.
@@ -2022,7 +2022,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.DisableDrsDetails disable_drs_details: (required)
             Detail information to disable DRS
@@ -2151,7 +2151,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.EnableDrsDetails enable_drs_details: (required)
             Detail information to enable DRS
@@ -2280,7 +2280,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.GenerateAgentDeployScriptDetails generate_agent_deploy_script_details: (required)
             Attributes to generate the agent deploy script for a Fleet.
@@ -2487,7 +2487,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.GenerateLoadPipelineScriptDetails generate_load_pipeline_script_details: (required)
             Attributes to generate the load pipeline script.
@@ -2599,7 +2599,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str crypto_analysis_result_id: (required)
             The OCID of the analysis result.
@@ -2710,7 +2710,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str drs_file_key: (required)
             The unique identifier of the DRS File in Object Storage.
@@ -2832,7 +2832,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2939,7 +2939,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3046,7 +3046,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3153,7 +3153,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3269,7 +3269,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3481,7 +3481,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str java_migration_analysis_result_id: (required)
             The OCID of the analysis result.
@@ -3697,7 +3697,7 @@ class JavaManagementServiceClient(object):
         :param str jms_plugin_id: (required)
             The `OCID`__ of the JmsPlugin.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3804,7 +3804,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str performance_tuning_analysis_result_id: (required)
             The OCID of the performance tuning analysis result.
@@ -3915,7 +3915,7 @@ class JavaManagementServiceClient(object):
         :param str task_schedule_id: (required)
             The `OCID`__ to identify this task schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str fleet_id: (optional)
             The ID of the Fleet.
@@ -4033,7 +4033,7 @@ class JavaManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4140,7 +4140,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str fleet_id: (optional)
             The ID of the Fleet.
@@ -4470,7 +4470,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str operation: (optional)
             The operation type.
@@ -4642,7 +4642,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the managed instance.
@@ -4840,7 +4840,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str aggregation_mode: (optional)
             The aggregation mode of the crypto event analysis result.
@@ -4853,7 +4853,7 @@ class JavaManagementServiceClient(object):
         :param str host_name: (optional)
             The host `OCID`__ of the managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int non_compliant_finding_count: (optional)
             Non Compliant Finding Count of CryptoAnalysis Report.
@@ -5054,7 +5054,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5207,7 +5207,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -5330,7 +5330,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -5504,7 +5504,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The ID.
@@ -5678,7 +5678,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str jre_vendor: (optional)
             The vendor of the related Java Runtime.
@@ -6060,7 +6060,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the related managed instance.
@@ -6068,7 +6068,7 @@ class JavaManagementServiceClient(object):
         :param str host_name: (optional)
             The host `OCID`__ of the managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str application_name: (optional)
             The name of the application.
@@ -6430,7 +6430,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -6438,7 +6438,7 @@ class JavaManagementServiceClient(object):
         :param str id: (optional)
             The `OCID`__ of the JmsPlugin.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str fleet_id: (optional)
             The ID of the Fleet.
@@ -6447,7 +6447,7 @@ class JavaManagementServiceClient(object):
             The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) `OCID`__
             that identifies the Agent.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             Filter JmsPlugin with its lifecycle state.
@@ -6659,12 +6659,12 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str host_id: (optional)
             The host `OCID`__ of the managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str application_id: (optional)
             The Fleet-unique identifier of the application.
@@ -6836,7 +6836,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str library_key: (required)
             The unique identifier of a Java library.
@@ -7026,7 +7026,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str library_key: (required)
             The unique identifier of a Java library.
@@ -7040,7 +7040,7 @@ class JavaManagementServiceClient(object):
         :param str host_name: (optional)
             The host `OCID`__ of the managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str hostname_contains: (optional)
             Filter the list with hostname contains the given value.
@@ -7218,7 +7218,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the related managed instance.
@@ -7232,7 +7232,7 @@ class JavaManagementServiceClient(object):
         :param str host_name: (optional)
             The host `OCID`__ of the managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param datetime time_start: (optional)
             The start of the time period during which resources are searched (formatted according to `RFC3339`__).
@@ -7408,7 +7408,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -7584,7 +7584,7 @@ class JavaManagementServiceClient(object):
         :param str id: (optional)
             The `OCID`__ to identify this task schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the related managed instance.
@@ -7744,7 +7744,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str package_name: (required)
             The unique identifier of a Java package.
@@ -7924,7 +7924,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str package_name: (required)
             The unique identifier of a Java package.
@@ -8104,7 +8104,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str package_name: (optional)
             The unique identifier of a Java package.
@@ -8285,7 +8285,7 @@ class JavaManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8408,7 +8408,7 @@ class JavaManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8531,7 +8531,7 @@ class JavaManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8654,7 +8654,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The ID of an asynchronous work request.
@@ -8662,7 +8662,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (optional)
             The `OCID`__ of the fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8813,7 +8813,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RemoveFleetInstallationSitesDetails remove_fleet_installation_sites_details: (required)
             List of installation sites to be deleted.
@@ -8942,7 +8942,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestCryptoAnalysesDetails request_crypto_analyses_details: (required)
             Detail information to start Crypto Analyses
@@ -9053,7 +9053,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestDeployedApplicationMigrationAnalysesDetails request_deployed_application_migration_analyses_details: (required)
             Detail information that starts the deployed Java migration analyses
@@ -9164,7 +9164,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestJavaMigrationAnalysesDetails request_java_migration_analyses_details: (required)
             Detail information that starts the Java migration analysis
@@ -9274,7 +9274,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestJfrRecordingsDetails request_jfr_recordings_details: (required)
             Detail information to start JFR recordings.
@@ -9385,7 +9385,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.RequestPerformanceTuningAnalysesDetails request_performance_tuning_analyses_details: (required)
             Detail information to start Performance Tuning Analyses
@@ -9495,7 +9495,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.ScanJavaServerUsageDetails scan_java_server_usage_details: (required)
             List of managed instances to be scanned.
@@ -9624,7 +9624,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.ScanLibraryUsageDetails scan_library_usage_details: (required)
             List of managed instances to be scanned.
@@ -9753,7 +9753,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str application_installation_key: (optional)
             The Fleet-unique identifier of the application installation.
@@ -9997,7 +9997,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str application_id: (optional)
             The Fleet-unique identifier of the application.
@@ -10248,7 +10248,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str server_key: (optional)
             The server key.
@@ -10459,7 +10459,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str server_key: (optional)
             The server key.
@@ -10660,7 +10660,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -10778,7 +10778,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str jre_vendor: (optional)
             The vendor of the related Java Runtime.
@@ -11013,7 +11013,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str server_key: (optional)
             The server key.
@@ -11214,7 +11214,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str server_key: (optional)
             The server key.
@@ -11400,7 +11400,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str jre_id: (optional)
             The Fleet-unique identifier of the related Java Runtime.
@@ -11646,7 +11646,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the managed instance.
@@ -11783,7 +11783,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str server_instance_key: (optional)
             The Java Server instance key.
@@ -11989,7 +11989,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the managed instance.
@@ -12244,7 +12244,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -12362,7 +12362,7 @@ class JavaManagementServiceClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
@@ -12484,7 +12484,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateDrsFileDetails update_drs_file_details: (required)
             Detail information to update DRS
@@ -12617,7 +12617,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateExportSettingDetails update_export_setting_details: (required)
             The new details for the export setting.
@@ -12738,7 +12738,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateFleetDetails update_fleet_details: (required)
             The new details for the Fleet.
@@ -12858,7 +12858,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateFleetAdvancedFeatureConfigurationDetails update_fleet_advanced_feature_configuration_details: (required)
             Update advanced feature configurations with new fields.
@@ -12989,7 +12989,7 @@ class JavaManagementServiceClient(object):
         :param str fleet_id: (required)
             The `OCID`__ of the Fleet.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateFleetAgentConfigurationDetails update_fleet_agent_configuration_details: (required)
             The new details for the Fleet Agent Configuration.
@@ -13108,7 +13108,7 @@ class JavaManagementServiceClient(object):
         :param str jms_plugin_id: (required)
             The `OCID`__ of the JmsPlugin.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.jms.models.UpdateJmsPluginDetails update_jms_plugin_details: (required)
             The new details for the JmsPlugin.
@@ -13232,7 +13232,7 @@ class JavaManagementServiceClient(object):
         :param str task_schedule_id: (required)
             The `OCID`__ to identify this task schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

@@ -84,9 +84,9 @@ class LoadBalancingMethod(object):
 
         - **`STICKY_COOKIE`__:** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
 
-        __ https://docs.oracle.com/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod
-        __ https://docs.oracle.com/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod
-        __ https://docs.oracle.com/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod
 
         Allowed values for this property are: "IP_HASH", "ROUND_ROBIN", "STICKY_COOKIE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -109,9 +109,9 @@ class LoadBalancingMethod(object):
 
         - **`STICKY_COOKIE`__:** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
 
-        __ https://docs.oracle.com/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod
-        __ https://docs.oracle.com/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod
-        __ https://docs.oracle.com/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod
 
 
         :param method: The method of this LoadBalancingMethod.

@@ -88,7 +88,7 @@ class RequestSummarizedMetricExtensionsMetricsDetails(object):
         Gets the metric_extension_id of this RequestSummarizedMetricExtensionsMetricsDetails.
         The `OCID`__ of Metric Extension resource
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The metric_extension_id of this RequestSummarizedMetricExtensionsMetricsDetails.
@@ -102,7 +102,7 @@ class RequestSummarizedMetricExtensionsMetricsDetails(object):
         Sets the metric_extension_id of this RequestSummarizedMetricExtensionsMetricsDetails.
         The `OCID`__ of Metric Extension resource
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param metric_extension_id: The metric_extension_id of this RequestSummarizedMetricExtensionsMetricsDetails.
@@ -140,7 +140,7 @@ class RequestSummarizedMetricExtensionsMetricsDetails(object):
         Gets the compartment_id of this RequestSummarizedMetricExtensionsMetricsDetails.
         Compartment Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RequestSummarizedMetricExtensionsMetricsDetails.
@@ -154,7 +154,7 @@ class RequestSummarizedMetricExtensionsMetricsDetails(object):
         Sets the compartment_id of this RequestSummarizedMetricExtensionsMetricsDetails.
         Compartment Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RequestSummarizedMetricExtensionsMetricsDetails.

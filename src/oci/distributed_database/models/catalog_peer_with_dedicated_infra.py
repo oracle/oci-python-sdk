@@ -164,7 +164,7 @@ class CatalogPeerWithDedicatedInfra(object):
         **[Required]** Gets the cloud_autonomous_vm_cluster_id of this CatalogPeerWithDedicatedInfra.
         The `OCID`__ of the cloudAutonomousVmCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this CatalogPeerWithDedicatedInfra.
@@ -178,7 +178,7 @@ class CatalogPeerWithDedicatedInfra(object):
         Sets the cloud_autonomous_vm_cluster_id of this CatalogPeerWithDedicatedInfra.
         The `OCID`__ of the cloudAutonomousVmCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this CatalogPeerWithDedicatedInfra.

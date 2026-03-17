@@ -90,7 +90,7 @@ class CrossConnectStatus(object):
         **[Required]** Gets the cross_connect_id of this CrossConnectStatus.
         The `OCID`__ of the cross-connect.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_id of this CrossConnectStatus.
@@ -104,7 +104,7 @@ class CrossConnectStatus(object):
         Sets the cross_connect_id of this CrossConnectStatus.
         The `OCID`__ of the cross-connect.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_id: The cross_connect_id of this CrossConnectStatus.

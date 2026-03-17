@@ -297,7 +297,7 @@ class Monitor(object):
         **[Required]** Gets the id of this Monitor.
         The `OCID`__ of the monitor.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Monitor.
@@ -311,7 +311,7 @@ class Monitor(object):
         Sets the id of this Monitor.
         The `OCID`__ of the monitor.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Monitor.
@@ -428,7 +428,7 @@ class Monitor(object):
         The `OCID`__ of the script.
         scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The script_id of this Monitor.
@@ -443,7 +443,7 @@ class Monitor(object):
         The `OCID`__ of the script.
         scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param script_id: The script_id of this Monitor.

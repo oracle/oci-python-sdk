@@ -72,7 +72,7 @@ class ManagementApplianceClientCompositeOperations(object):
         :param str management_appliance_id: (required)
             The `OCID`__ of the management appliance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class ManagementApplianceClientCompositeOperations(object):
         :param str management_appliance_id: (required)
             The `OCID`__ of the management appliance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateManagementApplianceDetails update_management_appliance_details: (required)
             Management appliance information to be updated.

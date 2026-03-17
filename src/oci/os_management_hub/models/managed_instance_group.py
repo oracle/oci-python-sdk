@@ -304,7 +304,7 @@ class ManagedInstanceGroup(object):
         **[Required]** Gets the id of this ManagedInstanceGroup.
         The `OCID`__ of the managed instance group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceGroup.
@@ -318,7 +318,7 @@ class ManagedInstanceGroup(object):
         Sets the id of this ManagedInstanceGroup.
         The `OCID`__ of the managed instance group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceGroup.
@@ -332,7 +332,7 @@ class ManagedInstanceGroup(object):
         **[Required]** Gets the compartment_id of this ManagedInstanceGroup.
         The `OCID`__ of the compartment that contains the managed instance group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagedInstanceGroup.
@@ -346,7 +346,7 @@ class ManagedInstanceGroup(object):
         Sets the compartment_id of this ManagedInstanceGroup.
         The `OCID`__ of the compartment that contains the managed instance group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagedInstanceGroup.
@@ -584,7 +584,7 @@ class ManagedInstanceGroup(object):
         Gets the software_source_ids of this ManagedInstanceGroup.
         The list of software source `OCIDs`__ that the managed instance group will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this ManagedInstanceGroup.
@@ -598,7 +598,7 @@ class ManagedInstanceGroup(object):
         Sets the software_source_ids of this ManagedInstanceGroup.
         The list of software source `OCIDs`__ that the managed instance group will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this ManagedInstanceGroup.
@@ -636,7 +636,7 @@ class ManagedInstanceGroup(object):
         Gets the managed_instance_ids of this ManagedInstanceGroup.
         The list of managed instance `OCIDs`__ attached to the managed instance group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_ids of this ManagedInstanceGroup.
@@ -650,7 +650,7 @@ class ManagedInstanceGroup(object):
         Sets the managed_instance_ids of this ManagedInstanceGroup.
         The list of managed instance `OCIDs`__ attached to the managed instance group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_ids: The managed_instance_ids of this ManagedInstanceGroup.
@@ -742,7 +742,7 @@ class ManagedInstanceGroup(object):
         Gets the notification_topic_id of this ManagedInstanceGroup.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The notification_topic_id of this ManagedInstanceGroup.
@@ -756,7 +756,7 @@ class ManagedInstanceGroup(object):
         Sets the notification_topic_id of this ManagedInstanceGroup.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param notification_topic_id: The notification_topic_id of this ManagedInstanceGroup.
@@ -816,7 +816,7 @@ class ManagedInstanceGroup(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ManagedInstanceGroup.
@@ -832,7 +832,7 @@ class ManagedInstanceGroup(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ManagedInstanceGroup.
@@ -848,7 +848,7 @@ class ManagedInstanceGroup(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ManagedInstanceGroup.
@@ -864,7 +864,7 @@ class ManagedInstanceGroup(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ManagedInstanceGroup.

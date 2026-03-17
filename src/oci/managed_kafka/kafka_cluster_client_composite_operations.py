@@ -33,7 +33,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_id: (required)
             The `OCID`__ of the KafkaCluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.managed_kafka.models.ChangeKafkaClusterCompartmentDetails change_kafka_cluster_compartment_details: (required)
             The information to be updated.
@@ -158,7 +158,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_id: (required)
             The `OCID`__ of the KafkaCluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.managed_kafka.models.WorkRequest.status`
@@ -207,7 +207,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_config_id: (required)
             The `OCID`__ of the KafkaClusterConfig.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.managed_kafka.models.KafkaClusterConfig.lifecycle_state`
@@ -268,7 +268,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_id: (required)
             The `OCID`__ of the KafkaCluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.managed_kafka.models.WorkRequest.status`
@@ -309,7 +309,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_id: (required)
             The `OCID`__ of the KafkaCluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.managed_kafka.models.EnableSuperuserDetails enable_superuser_details: (required)
             The information to be updated.
@@ -353,7 +353,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_id: (required)
             The `OCID`__ of the KafkaCluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.managed_kafka.models.UpdateKafkaClusterDetails update_kafka_cluster_details: (required)
             The information to be updated.
@@ -397,7 +397,7 @@ class KafkaClusterClientCompositeOperations(object):
         :param str kafka_cluster_config_id: (required)
             The `OCID`__ of the KafkaClusterConfig.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.managed_kafka.models.UpdateKafkaClusterConfigDetails update_kafka_cluster_config_details: (required)
             The information to be updated.

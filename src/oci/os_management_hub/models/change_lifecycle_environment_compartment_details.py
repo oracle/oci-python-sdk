@@ -39,7 +39,7 @@ class ChangeLifecycleEnvironmentCompartmentDetails(object):
         Gets the compartment_id of this ChangeLifecycleEnvironmentCompartmentDetails.
         The `OCID`__ of the compartment to move the lifecycle environment to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeLifecycleEnvironmentCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeLifecycleEnvironmentCompartmentDetails(object):
         Sets the compartment_id of this ChangeLifecycleEnvironmentCompartmentDetails.
         The `OCID`__ of the compartment to move the lifecycle environment to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeLifecycleEnvironmentCompartmentDetails.

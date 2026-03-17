@@ -77,7 +77,7 @@ class CloudListenerServiceSummary(object):
         Gets the listener_id of this CloudListenerServiceSummary.
         The `OCID`__ of the cloud listener.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The listener_id of this CloudListenerServiceSummary.
@@ -91,7 +91,7 @@ class CloudListenerServiceSummary(object):
         Sets the listener_id of this CloudListenerServiceSummary.
         The `OCID`__ of the cloud listener.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param listener_id: The listener_id of this CloudListenerServiceSummary.
@@ -105,7 +105,7 @@ class CloudListenerServiceSummary(object):
         Gets the managed_database_id of this CloudListenerServiceSummary.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_id of this CloudListenerServiceSummary.
@@ -119,7 +119,7 @@ class CloudListenerServiceSummary(object):
         Sets the managed_database_id of this CloudListenerServiceSummary.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_id: The managed_database_id of this CloudListenerServiceSummary.

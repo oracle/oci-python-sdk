@@ -150,7 +150,7 @@ class MonitorResult(object):
         Gets the monitor_id of this MonitorResult.
         The `OCID`__ of the monitor.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The monitor_id of this MonitorResult.
@@ -164,7 +164,7 @@ class MonitorResult(object):
         Sets the monitor_id of this MonitorResult.
         The `OCID`__ of the monitor.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param monitor_id: The monitor_id of this MonitorResult.
