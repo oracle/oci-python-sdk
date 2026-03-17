@@ -166,7 +166,7 @@ class OracleDbAzureVaultClient(object):
         :param str oracle_db_azure_vault_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureVaultCompartmentDetails change_oracle_db_azure_vault_compartment_details: (required)
             Moves the DB Azure Vault resource into a different compartment.
@@ -409,7 +409,7 @@ class OracleDbAzureVaultClient(object):
         :param str oracle_db_azure_vault_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -519,13 +519,13 @@ class OracleDbAzureVaultClient(object):
         """
         Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource `OCID`__. This operation returns metadata and configuration details associated with the specified vault resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_vault_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -662,7 +662,7 @@ class OracleDbAzureVaultClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Azure Vault resources that match the specified display name.
@@ -670,7 +670,7 @@ class OracleDbAzureVaultClient(object):
         :param str oracle_db_azure_vault_id: (optional)
             A filter to return Oracle DB Azure Vault resources that match the specified `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -838,7 +838,7 @@ class OracleDbAzureVaultClient(object):
         :param str oracle_db_azure_vault_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.RefreshOracleDbAzureVaultDetails refresh_oracle_db_azure_vault_details: (optional)
             Details for to refresh Oracle DB Azure Vault resource.
@@ -964,13 +964,13 @@ class OracleDbAzureVaultClient(object):
         """
         Modifies the configuration details of an existing Oracle Database Azure Vault resource identified by its unique `OCID`__. This operation updates only the specified fields in the request body.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_vault_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureVaultDetails update_oracle_db_azure_vault_details: (required)
             Details for to update OracleDbAzureVault.

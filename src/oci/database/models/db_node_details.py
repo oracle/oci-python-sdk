@@ -39,7 +39,7 @@ class DbNodeDetails(object):
         **[Required]** Gets the db_node_id of this DbNodeDetails.
         The `OCID`__ of ExaCS Db node.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_node_id of this DbNodeDetails.
@@ -53,7 +53,7 @@ class DbNodeDetails(object):
         Sets the db_node_id of this DbNodeDetails.
         The `OCID`__ of ExaCS Db node.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_node_id: The db_node_id of this DbNodeDetails.

@@ -181,7 +181,7 @@ class Worker(object):
         **[Required]** Gets the id of this Worker.
         The `OCID`__ of the On-premise VP worker.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Worker.
@@ -195,7 +195,7 @@ class Worker(object):
         Sets the id of this Worker.
         The `OCID`__ of the On-premise VP worker.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Worker.
@@ -281,7 +281,7 @@ class Worker(object):
         **[Required]** Gets the opvp_id of this Worker.
         The `OCID`__ of the On-premise vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The opvp_id of this Worker.
@@ -295,7 +295,7 @@ class Worker(object):
         Sets the opvp_id of this Worker.
         The `OCID`__ of the On-premise vantage point.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param opvp_id: The opvp_id of this Worker.

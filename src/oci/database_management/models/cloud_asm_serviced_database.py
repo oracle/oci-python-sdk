@@ -171,7 +171,7 @@ class CloudAsmServicedDatabase(object):
         **[Required]** Gets the id of this CloudAsmServicedDatabase.
         The `OCID`__ of the cloud database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CloudAsmServicedDatabase.
@@ -185,7 +185,7 @@ class CloudAsmServicedDatabase(object):
         Sets the id of this CloudAsmServicedDatabase.
         The `OCID`__ of the cloud database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CloudAsmServicedDatabase.
@@ -199,7 +199,7 @@ class CloudAsmServicedDatabase(object):
         **[Required]** Gets the dbaas_id of this CloudAsmServicedDatabase.
         The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The dbaas_id of this CloudAsmServicedDatabase.
@@ -213,7 +213,7 @@ class CloudAsmServicedDatabase(object):
         Sets the dbaas_id of this CloudAsmServicedDatabase.
         The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param dbaas_id: The dbaas_id of this CloudAsmServicedDatabase.
@@ -275,7 +275,7 @@ class CloudAsmServicedDatabase(object):
         Gets the compartment_id of this CloudAsmServicedDatabase.
         The `OCID`__ of the compartment in which the cloud database resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloudAsmServicedDatabase.
@@ -289,7 +289,7 @@ class CloudAsmServicedDatabase(object):
         Sets the compartment_id of this CloudAsmServicedDatabase.
         The `OCID`__ of the compartment in which the cloud database resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloudAsmServicedDatabase.

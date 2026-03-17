@@ -17,8 +17,8 @@ class Endpoint(object):
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator who gives OCI resource access to users. See
     `Getting Started with Policies`__ and `Getting Access to Generative AI Resources`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
-    __ https://docs.oracle.com/iaas/Content/generative-ai/iam-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/iam-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Endpoint.
@@ -543,7 +543,7 @@ class Endpoint(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Endpoint.
@@ -560,7 +560,7 @@ class Endpoint(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Endpoint.
@@ -577,7 +577,7 @@ class Endpoint(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Endpoint.
@@ -594,7 +594,7 @@ class Endpoint(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Endpoint.

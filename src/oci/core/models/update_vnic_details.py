@@ -91,7 +91,7 @@ class UpdateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateVnicDetails.
@@ -108,7 +108,7 @@ class UpdateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateVnicDetails.
@@ -151,7 +151,7 @@ class UpdateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateVnicDetails.
@@ -168,7 +168,7 @@ class UpdateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateVnicDetails.
@@ -186,8 +186,8 @@ class UpdateVnicDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this UpdateVnicDetails.
@@ -205,8 +205,8 @@ class UpdateVnicDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this UpdateVnicDetails.
@@ -234,7 +234,7 @@ class UpdateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this UpdateVnicDetails.
@@ -262,7 +262,7 @@ class UpdateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this UpdateVnicDetails.
@@ -324,7 +324,7 @@ class UpdateVnicDetails(object):
         This is because the source/destination check is always disabled for VNICs in a VLAN.
         Example: `true`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :return: The skip_source_dest_check of this UpdateVnicDetails.
@@ -346,7 +346,7 @@ class UpdateVnicDetails(object):
         This is because the source/destination check is always disabled for VNICs in a VLAN.
         Example: `true`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param skip_source_dest_check: The skip_source_dest_check of this UpdateVnicDetails.
@@ -361,7 +361,7 @@ class UpdateVnicDetails(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
@@ -377,7 +377,7 @@ class UpdateVnicDetails(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 

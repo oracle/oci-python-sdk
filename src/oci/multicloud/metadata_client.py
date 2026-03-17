@@ -132,7 +132,7 @@ class MetadataClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the Multicloud subscription in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
             The subscription service name of the Cloud Service Provider.
@@ -148,12 +148,12 @@ class MetadataClient(object):
             The `OCID`__ of the Multicloud base compartment in which to list resources.
             A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str linked_compartment_id: (optional)
             The `OCID`__ of the compartment linked to the resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str external_location: (optional)
             The Cloud Service Provider region.
@@ -164,21 +164,21 @@ class MetadataClient(object):
         :param str cluster_placement_group_id: (optional)
             The `OCID`__ of the Cluster Placement Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -348,26 +348,26 @@ class MetadataClient(object):
             The `OCID`__ of the Multicloud base compartment in which to list resources.
             A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_id: (optional)
             The `OCID`__ of the Multicloud subscription in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -521,12 +521,12 @@ class MetadataClient(object):
             The `OCID`__ of the Multicloud base compartment in which to list resources.
             A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_id: (optional)
             The `OCID`__ of the Multicloud subscription in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str entity_type: (optional)
             The resource type query (i.e. dbsystem, instance etc.)
@@ -538,14 +538,14 @@ class MetadataClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).

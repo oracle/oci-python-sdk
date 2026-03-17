@@ -18,7 +18,7 @@ class Suppression(object):
     For information about alarms, see
     `Alarms Overview`__.
 
-    __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
     """
 
     def __init__(self, **kwargs):

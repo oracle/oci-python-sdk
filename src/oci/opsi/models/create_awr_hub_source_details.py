@@ -201,7 +201,7 @@ class CreateAwrHubSourceDetails(object):
         **[Required]** Gets the compartment_id of this CreateAwrHubSourceDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAwrHubSourceDetails.
@@ -215,7 +215,7 @@ class CreateAwrHubSourceDetails(object):
         Sets the compartment_id of this CreateAwrHubSourceDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAwrHubSourceDetails.
@@ -229,7 +229,7 @@ class CreateAwrHubSourceDetails(object):
         Gets the associated_resource_id of this CreateAwrHubSourceDetails.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The associated_resource_id of this CreateAwrHubSourceDetails.
@@ -243,7 +243,7 @@ class CreateAwrHubSourceDetails(object):
         Sets the associated_resource_id of this CreateAwrHubSourceDetails.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param associated_resource_id: The associated_resource_id of this CreateAwrHubSourceDetails.
@@ -257,7 +257,7 @@ class CreateAwrHubSourceDetails(object):
         Gets the associated_opsi_id of this CreateAwrHubSourceDetails.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The associated_opsi_id of this CreateAwrHubSourceDetails.
@@ -271,7 +271,7 @@ class CreateAwrHubSourceDetails(object):
         Sets the associated_opsi_id of this CreateAwrHubSourceDetails.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param associated_opsi_id: The associated_opsi_id of this CreateAwrHubSourceDetails.

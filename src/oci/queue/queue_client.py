@@ -130,7 +130,7 @@ class QueueClient(object):
         You must use the `messages endpoint`__ to delete messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
@@ -252,7 +252,7 @@ class QueueClient(object):
         You must use the `messages endpoint`__ to delete messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
@@ -380,7 +380,7 @@ class QueueClient(object):
         When channelFilter is present, service will return available messages from the channel which ID exactly matched the filter.
         When filter is not specified, messages will be returned from a random non-empty channel within a queue.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
@@ -525,7 +525,7 @@ class QueueClient(object):
         You must use the `messages endpoint`__ to get a queue's statistics.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
@@ -664,12 +664,12 @@ class QueueClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str channel_filter: (optional)
             Optional parameter to filter the channels.
@@ -788,7 +788,7 @@ class QueueClient(object):
         You must use the `messages endpoint`__ to produce messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
@@ -900,7 +900,7 @@ class QueueClient(object):
         You must use the `messages endpoint`__ to update messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
@@ -1029,7 +1029,7 @@ class QueueClient(object):
         You must use the `messages endpoint`__ to update messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
-        __ https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)

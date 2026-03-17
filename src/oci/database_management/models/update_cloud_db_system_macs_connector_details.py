@@ -15,7 +15,7 @@ class UpdateCloudDbSystemMacsConnectorDetails(UpdateCloudDbSystemConnectorDetail
     The details for updating the cloud `Management Agent Cloud Service (MACS)`__
     connector used to connect to a cloud DB system component.
 
-    __ https://docs.oracle.com/iaas/management-agents/index.html
+    __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,7 @@ class UpdateCloudDbSystemMacsConnectorDetails(UpdateCloudDbSystemConnectorDetail
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateCloudDbSystemMacsConnectorDetails.
@@ -104,7 +104,7 @@ class UpdateCloudDbSystemMacsConnectorDetails(UpdateCloudDbSystemConnectorDetail
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateCloudDbSystemMacsConnectorDetails.
@@ -120,7 +120,7 @@ class UpdateCloudDbSystemMacsConnectorDetails(UpdateCloudDbSystemConnectorDetail
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateCloudDbSystemMacsConnectorDetails.
@@ -136,7 +136,7 @@ class UpdateCloudDbSystemMacsConnectorDetails(UpdateCloudDbSystemConnectorDetail
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateCloudDbSystemMacsConnectorDetails.

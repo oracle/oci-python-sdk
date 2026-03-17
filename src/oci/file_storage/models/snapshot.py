@@ -177,7 +177,7 @@ class Snapshot(object):
         The `OCID`__ of the file system from which the snapshot
         was created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this Snapshot.
@@ -192,7 +192,7 @@ class Snapshot(object):
         The `OCID`__ of the file system from which the snapshot
         was created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this Snapshot.
@@ -206,7 +206,7 @@ class Snapshot(object):
         **[Required]** Gets the id of this Snapshot.
         The `OCID`__ of the snapshot.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Snapshot.
@@ -220,7 +220,7 @@ class Snapshot(object):
         Sets the id of this Snapshot.
         The `OCID`__ of the snapshot.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Snapshot.
@@ -407,8 +407,8 @@ class Snapshot(object):
         If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The provenance_id of this Snapshot.
@@ -425,8 +425,8 @@ class Snapshot(object):
         If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param provenance_id: The provenance_id of this Snapshot.
@@ -441,7 +441,7 @@ class Snapshot(object):
         Specifies whether the snapshot has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The is_clone_source of this Snapshot.
@@ -456,7 +456,7 @@ class Snapshot(object):
         Specifies whether the snapshot has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param is_clone_source: The is_clone_source of this Snapshot.
@@ -521,7 +521,7 @@ class Snapshot(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Snapshot.
@@ -538,7 +538,7 @@ class Snapshot(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Snapshot.
@@ -554,7 +554,7 @@ class Snapshot(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Snapshot.
@@ -570,7 +570,7 @@ class Snapshot(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Snapshot.
@@ -634,7 +634,7 @@ class Snapshot(object):
         Gets the filesystem_snapshot_policy_id of this Snapshot.
         The `OCID`__ of the file system snapshot policy that created this snapshot.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The filesystem_snapshot_policy_id of this Snapshot.
@@ -648,7 +648,7 @@ class Snapshot(object):
         Sets the filesystem_snapshot_policy_id of this Snapshot.
         The `OCID`__ of the file system snapshot policy that created this snapshot.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this Snapshot.

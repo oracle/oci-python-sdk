@@ -37,9 +37,7 @@ requires = [
     "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
     "circuitbreaker>=1.3.1,<2.0.0; python_version <= '3.6'",
-    "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'",
-    "urllib3==1.26.2; python_version < '3.10.0'",
-    "urllib3>=2.6.3; python_version >= '3.10.0'"
+    "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'"
 ]
 
 extras_require = {

@@ -133,7 +133,7 @@ class FunctionsInvokeClient(object):
         :param str function_id: (required)
             The `OCID`__ of this function.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param stream invoke_function_body: (optional)
             The body of the function invocation.

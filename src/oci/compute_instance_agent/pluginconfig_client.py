@@ -133,7 +133,7 @@ class PluginconfigClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str os_name: (required)
             The image (OS) for the compute instance.
@@ -159,14 +159,14 @@ class PluginconfigClient(object):
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for

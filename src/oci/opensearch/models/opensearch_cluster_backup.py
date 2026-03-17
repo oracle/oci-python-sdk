@@ -15,7 +15,7 @@ class OpensearchClusterBackup(object):
     An OpenSearch cluster backup resource. An cluster is set of instances that provide OpenSearch functionality in OCI Search Service with OpenSearch.
     For more information, see `Cluster Backups`__.
 
-    __ https://docs.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearchbackups.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearchbackups.htm
     """
 
     #: A constant which can be used with the backup_type property of a OpensearchClusterBackup.

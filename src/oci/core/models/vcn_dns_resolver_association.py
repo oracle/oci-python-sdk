@@ -71,7 +71,7 @@ class VcnDnsResolverAssociation(object):
         **[Required]** Gets the vcn_id of this VcnDnsResolverAssociation.
         The `OCID`__ of the VCN in the association.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this VcnDnsResolverAssociation.
@@ -85,7 +85,7 @@ class VcnDnsResolverAssociation(object):
         Sets the vcn_id of this VcnDnsResolverAssociation.
         The `OCID`__ of the VCN in the association.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this VcnDnsResolverAssociation.
@@ -99,7 +99,7 @@ class VcnDnsResolverAssociation(object):
         Gets the dns_resolver_id of this VcnDnsResolverAssociation.
         The `OCID`__ of the DNS resolver in the association.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dns_resolver_id of this VcnDnsResolverAssociation.
@@ -113,7 +113,7 @@ class VcnDnsResolverAssociation(object):
         Sets the dns_resolver_id of this VcnDnsResolverAssociation.
         The `OCID`__ of the DNS resolver in the association.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dns_resolver_id: The dns_resolver_id of this VcnDnsResolverAssociation.

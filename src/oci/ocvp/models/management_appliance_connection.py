@@ -90,7 +90,7 @@ class ManagementApplianceConnection(object):
         **[Required]** Gets the credentials_secret_id of this ManagementApplianceConnection.
         The `OCID`__ of secret in OCI vault, that is used for storage of username and password in JSON format.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The credentials_secret_id of this ManagementApplianceConnection.
@@ -104,7 +104,7 @@ class ManagementApplianceConnection(object):
         Sets the credentials_secret_id of this ManagementApplianceConnection.
         The `OCID`__ of secret in OCI vault, that is used for storage of username and password in JSON format.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param credentials_secret_id: The credentials_secret_id of this ManagementApplianceConnection.

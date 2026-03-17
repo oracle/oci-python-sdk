@@ -239,7 +239,7 @@ class ComputeGpuMemoryFabric(object):
         **[Required]** Gets the id of this ComputeGpuMemoryFabric.
         The `OCID`__ for the Customer-unique GPU memory fabric
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeGpuMemoryFabric.
@@ -253,7 +253,7 @@ class ComputeGpuMemoryFabric(object):
         Sets the id of this ComputeGpuMemoryFabric.
         The `OCID`__ for the Customer-unique GPU memory fabric
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeGpuMemoryFabric.
@@ -268,7 +268,7 @@ class ComputeGpuMemoryFabric(object):
         The `OCID`__ for the compartment. This should always be the root
         compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ComputeGpuMemoryFabric.
@@ -283,7 +283,7 @@ class ComputeGpuMemoryFabric(object):
         The `OCID`__ for the compartment. This should always be the root
         compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ComputeGpuMemoryFabric.
@@ -297,7 +297,7 @@ class ComputeGpuMemoryFabric(object):
         **[Required]** Gets the compute_hpc_island_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for Customer-unique HPC Island
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_hpc_island_id of this ComputeGpuMemoryFabric.
@@ -311,7 +311,7 @@ class ComputeGpuMemoryFabric(object):
         Sets the compute_hpc_island_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for Customer-unique HPC Island
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_hpc_island_id: The compute_hpc_island_id of this ComputeGpuMemoryFabric.
@@ -325,7 +325,7 @@ class ComputeGpuMemoryFabric(object):
         **[Required]** Gets the compute_network_block_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for Customer-unique Network Block
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_network_block_id of this ComputeGpuMemoryFabric.
@@ -339,7 +339,7 @@ class ComputeGpuMemoryFabric(object):
         Sets the compute_network_block_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for Customer-unique Network Block
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_network_block_id: The compute_network_block_id of this ComputeGpuMemoryFabric.
@@ -353,7 +353,7 @@ class ComputeGpuMemoryFabric(object):
         **[Required]** Gets the compute_local_block_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for Customer-unique Local Block
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_local_block_id of this ComputeGpuMemoryFabric.
@@ -367,7 +367,7 @@ class ComputeGpuMemoryFabric(object):
         Sets the compute_local_block_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for Customer-unique Local Block
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_local_block_id: The compute_local_block_id of this ComputeGpuMemoryFabric.
@@ -585,7 +585,7 @@ class ComputeGpuMemoryFabric(object):
         Gets the current_firmware_bundle_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for current firmware bundle
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The current_firmware_bundle_id of this ComputeGpuMemoryFabric.
@@ -599,7 +599,7 @@ class ComputeGpuMemoryFabric(object):
         Sets the current_firmware_bundle_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for current firmware bundle
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param current_firmware_bundle_id: The current_firmware_bundle_id of this ComputeGpuMemoryFabric.
@@ -613,7 +613,7 @@ class ComputeGpuMemoryFabric(object):
         Gets the target_firmware_bundle_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for targeted firmware bundle
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_firmware_bundle_id of this ComputeGpuMemoryFabric.
@@ -627,7 +627,7 @@ class ComputeGpuMemoryFabric(object):
         Sets the target_firmware_bundle_id of this ComputeGpuMemoryFabric.
         The `OCID`__ for targeted firmware bundle
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_firmware_bundle_id: The target_firmware_bundle_id of this ComputeGpuMemoryFabric.
@@ -748,7 +748,7 @@ class ComputeGpuMemoryFabric(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ComputeGpuMemoryFabric.
@@ -765,7 +765,7 @@ class ComputeGpuMemoryFabric(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ComputeGpuMemoryFabric.
@@ -782,7 +782,7 @@ class ComputeGpuMemoryFabric(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ComputeGpuMemoryFabric.
@@ -799,7 +799,7 @@ class ComputeGpuMemoryFabric(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ComputeGpuMemoryFabric.

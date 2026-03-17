@@ -72,7 +72,7 @@ class ByolAllocationClientCompositeOperations(object):
         :param str byol_allocation_id: (required)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class ByolAllocationClientCompositeOperations(object):
         :param str byol_allocation_id: (required)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateByolAllocationDetails update_byol_allocation_details: (required)
             The information to be updated.

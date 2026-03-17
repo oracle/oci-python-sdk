@@ -46,7 +46,7 @@ class NetworkConfiguration(object):
         **[Required]** Gets the subnet_id of this NetworkConfiguration.
         The Oracle Cloud Identifier (`OCID`__) of the subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this NetworkConfiguration.
@@ -60,7 +60,7 @@ class NetworkConfiguration(object):
         Sets the subnet_id of this NetworkConfiguration.
         The Oracle Cloud Identifier (`OCID`__) of the subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this NetworkConfiguration.
@@ -74,7 +74,7 @@ class NetworkConfiguration(object):
         Gets the nsg_ids of this NetworkConfiguration.
         The list of Oracle Cloud Identifiers (`OCID`__) corresponding to Network Security Groups.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this NetworkConfiguration.
@@ -88,7 +88,7 @@ class NetworkConfiguration(object):
         Sets the nsg_ids of this NetworkConfiguration.
         The list of Oracle Cloud Identifiers (`OCID`__) corresponding to Network Security Groups.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this NetworkConfiguration.

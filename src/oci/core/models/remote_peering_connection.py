@@ -22,8 +22,8 @@ class RemotePeeringConnection(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a RemotePeeringConnection.
@@ -174,7 +174,7 @@ class RemotePeeringConnection(object):
         **[Required]** Gets the compartment_id of this RemotePeeringConnection.
         The `OCID`__ of the compartment that contains the RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RemotePeeringConnection.
@@ -188,7 +188,7 @@ class RemotePeeringConnection(object):
         Sets the compartment_id of this RemotePeeringConnection.
         The `OCID`__ of the compartment that contains the RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RemotePeeringConnection.
@@ -205,7 +205,7 @@ class RemotePeeringConnection(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this RemotePeeringConnection.
@@ -222,7 +222,7 @@ class RemotePeeringConnection(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this RemotePeeringConnection.
@@ -262,7 +262,7 @@ class RemotePeeringConnection(object):
         **[Required]** Gets the drg_id of this RemotePeeringConnection.
         The `OCID`__ of the DRG that this RPC belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this RemotePeeringConnection.
@@ -276,7 +276,7 @@ class RemotePeeringConnection(object):
         Sets the drg_id of this RemotePeeringConnection.
         The `OCID`__ of the DRG that this RPC belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this RemotePeeringConnection.
@@ -293,7 +293,7 @@ class RemotePeeringConnection(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this RemotePeeringConnection.
@@ -310,7 +310,7 @@ class RemotePeeringConnection(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this RemotePeeringConnection.
@@ -324,7 +324,7 @@ class RemotePeeringConnection(object):
         **[Required]** Gets the id of this RemotePeeringConnection.
         The `OCID`__ of the RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this RemotePeeringConnection.
@@ -338,7 +338,7 @@ class RemotePeeringConnection(object):
         Sets the id of this RemotePeeringConnection.
         The `OCID`__ of the RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this RemotePeeringConnection.
@@ -410,7 +410,7 @@ class RemotePeeringConnection(object):
         Gets the peer_id of this RemotePeeringConnection.
         If this RPC is peered, this value is the `OCID`__ of the other RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_id of this RemotePeeringConnection.
@@ -424,7 +424,7 @@ class RemotePeeringConnection(object):
         Sets the peer_id of this RemotePeeringConnection.
         If this RPC is peered, this value is the `OCID`__ of the other RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_id: The peer_id of this RemotePeeringConnection.
@@ -466,7 +466,7 @@ class RemotePeeringConnection(object):
         Gets the peer_tenancy_id of this RemotePeeringConnection.
         If this RPC is peered, this value is the `OCID`__ of the other RPC's tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_tenancy_id of this RemotePeeringConnection.
@@ -480,7 +480,7 @@ class RemotePeeringConnection(object):
         Sets the peer_tenancy_id of this RemotePeeringConnection.
         If this RPC is peered, this value is the `OCID`__ of the other RPC's tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_tenancy_id: The peer_tenancy_id of this RemotePeeringConnection.

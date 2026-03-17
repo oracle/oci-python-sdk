@@ -40,7 +40,7 @@ class ChangeDatastoreCompartmentDetails(object):
         The `OCID`__ of the compartment to move
         the Datastore to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeDatastoreCompartmentDetails.
@@ -55,7 +55,7 @@ class ChangeDatastoreCompartmentDetails(object):
         The `OCID`__ of the compartment to move
         the Datastore to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeDatastoreCompartmentDetails.

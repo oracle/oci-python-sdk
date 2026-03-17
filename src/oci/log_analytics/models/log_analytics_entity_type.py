@@ -188,7 +188,7 @@ class LogAnalyticsEntityType(object):
         Gets the compartment_id of this LogAnalyticsEntityType.
         Compartment Identifier `OCID]`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LogAnalyticsEntityType.
@@ -202,7 +202,7 @@ class LogAnalyticsEntityType(object):
         Sets the compartment_id of this LogAnalyticsEntityType.
         Compartment Identifier `OCID]`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LogAnalyticsEntityType.

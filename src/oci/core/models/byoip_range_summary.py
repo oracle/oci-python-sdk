@@ -157,7 +157,7 @@ class ByoipRangeSummary(object):
         Gets the compartment_id of this ByoipRangeSummary.
         The `OCID`__ of the compartment containing the `ByoipRange` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByoipRangeSummary.
@@ -171,7 +171,7 @@ class ByoipRangeSummary(object):
         Sets the compartment_id of this ByoipRangeSummary.
         The `OCID`__ of the compartment containing the `ByoipRange` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByoipRangeSummary.
@@ -188,7 +188,7 @@ class ByoipRangeSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ByoipRangeSummary.
@@ -205,7 +205,7 @@ class ByoipRangeSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ByoipRangeSummary.
@@ -248,7 +248,7 @@ class ByoipRangeSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ByoipRangeSummary.
@@ -265,7 +265,7 @@ class ByoipRangeSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ByoipRangeSummary.
@@ -279,7 +279,7 @@ class ByoipRangeSummary(object):
         Gets the id of this ByoipRangeSummary.
         The `OCID`__ of the `ByoipRange` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ByoipRangeSummary.
@@ -293,7 +293,7 @@ class ByoipRangeSummary(object):
         Sets the id of this ByoipRangeSummary.
         The `OCID`__ of the `ByoipRange` resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ByoipRangeSummary.

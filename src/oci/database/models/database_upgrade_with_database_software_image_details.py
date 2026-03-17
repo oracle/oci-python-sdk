@@ -56,7 +56,7 @@ class DatabaseUpgradeWithDatabaseSoftwareImageDetails(DatabaseUpgradeSourceBase)
         **[Required]** Gets the database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.
         The database software image `OCID`__ of the image to be used to upgrade a database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.
@@ -70,7 +70,7 @@ class DatabaseUpgradeWithDatabaseSoftwareImageDetails(DatabaseUpgradeSourceBase)
         Sets the database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.
         The database software image `OCID`__ of the image to be used to upgrade a database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this DatabaseUpgradeWithDatabaseSoftwareImageDetails.

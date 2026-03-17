@@ -46,7 +46,7 @@ class PrivateAddresses(object):
         **[Required]** Gets the vcn_id of this PrivateAddresses.
         The `OCID`__ of the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this PrivateAddresses.
@@ -60,7 +60,7 @@ class PrivateAddresses(object):
         Sets the vcn_id of this PrivateAddresses.
         The `OCID`__ of the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this PrivateAddresses.

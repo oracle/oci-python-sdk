@@ -93,7 +93,7 @@ class ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails(object):
         Gets the opsi_private_endpoint_id of this ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails.
@@ -107,7 +107,7 @@ class ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails(object):
         Sets the opsi_private_endpoint_id of this ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails.

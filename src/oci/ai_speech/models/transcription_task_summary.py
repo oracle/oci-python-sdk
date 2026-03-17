@@ -102,7 +102,7 @@ class TranscriptionTaskSummary(object):
         **[Required]** Gets the id of this TranscriptionTaskSummary.
         The `OCID`__ of the task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TranscriptionTaskSummary.
@@ -116,7 +116,7 @@ class TranscriptionTaskSummary(object):
         Sets the id of this TranscriptionTaskSummary.
         The `OCID`__ of the task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TranscriptionTaskSummary.

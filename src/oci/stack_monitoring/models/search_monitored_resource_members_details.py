@@ -46,7 +46,7 @@ class SearchMonitoredResourceMembersDetails(object):
         Gets the destination_resource_id of this SearchMonitoredResourceMembersDetails.
         Destination Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The destination_resource_id of this SearchMonitoredResourceMembersDetails.
@@ -60,7 +60,7 @@ class SearchMonitoredResourceMembersDetails(object):
         Sets the destination_resource_id of this SearchMonitoredResourceMembersDetails.
         Destination Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param destination_resource_id: The destination_resource_id of this SearchMonitoredResourceMembersDetails.

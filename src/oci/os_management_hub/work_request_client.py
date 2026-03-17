@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class WorkRequestClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -133,7 +133,7 @@ class WorkRequestClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -240,7 +240,7 @@ class WorkRequestClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -251,7 +251,7 @@ class WorkRequestClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -259,7 +259,7 @@ class WorkRequestClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
@@ -402,7 +402,7 @@ class WorkRequestClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -413,7 +413,7 @@ class WorkRequestClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -421,7 +421,7 @@ class WorkRequestClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
@@ -568,7 +568,7 @@ class WorkRequestClient(object):
         :param str work_request_id: (optional)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             A filter to return work requests that match the given status.
@@ -578,7 +578,7 @@ class WorkRequestClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource. This filter returns resources associated with the specified resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -589,7 +589,7 @@ class WorkRequestClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -597,7 +597,7 @@ class WorkRequestClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -613,17 +613,17 @@ class WorkRequestClient(object):
         :param str initiator_id: (optional)
             The `OCID`__ of the schedule job that initiated the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str parent_id: (optional)
             The `OCID`__ of the parent work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] parent_resources_not_equal_to: (optional)
             A filter to return the resources whose parent resources are not the same as the given resource `OCIDs`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] operation_type: (optional)
             The asynchronous operation tracked by this work request. The filter returns only resources that match the given OperationType.
@@ -636,12 +636,12 @@ class WorkRequestClient(object):
         :param str retry_of_id: (optional)
             A filter to return the work requests that are a retry of the given work request `OCIDs`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str rerun_of_id: (optional)
             A filter to return the work requests that are a rerun of the given work request `OCIDs`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_created_less_than: (optional)
             A filter to return work requests that were created before the date provided (in `RFC 3339`__ format). Example: '2023-08-25T21:10:29.600Z'
@@ -814,18 +814,18 @@ class WorkRequestClient(object):
         """
         Reruns a failed work for the specified work request `OCID`__. Rerunning restarts the work on failed targets.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RerunWorkRequestDetails rerun_work_request_details: (required)
             The resource `OCIDs`__ to rerun the work requests for. If no OCIDs are provided, rerun will apply to all failed work requests associated with the specified work request id.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

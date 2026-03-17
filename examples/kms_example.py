@@ -24,7 +24,7 @@ from datetime import timedelta
 # * - Generate Data Encryption Key
 # * - Encrypt
 # * - Decrypt
-# Documentation : https://docs.oracle.com/iaas/Content/Streaming/Concepts/streamingoverview.htm
+# Documentation : https://docs.cloud.oracle.com/iaas/Content/Streaming/Concepts/streamingoverview.htm
 
 # Usage : python kms_examples.py <compartment id>
 

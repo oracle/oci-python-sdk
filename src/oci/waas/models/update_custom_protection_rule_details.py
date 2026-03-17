@@ -147,7 +147,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
 
-        __ https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
+        __ https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
         __ https://www.modsecurity.org/CRS/Documentation/index.html
 
@@ -194,7 +194,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
 
-        __ https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
+        __ https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
         __ https://www.modsecurity.org/CRS/Documentation/index.html
 
@@ -213,7 +213,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateCustomProtectionRuleDetails.
@@ -230,7 +230,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateCustomProtectionRuleDetails.
@@ -247,7 +247,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateCustomProtectionRuleDetails.
@@ -264,7 +264,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateCustomProtectionRuleDetails.

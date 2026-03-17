@@ -33,7 +33,7 @@ class EventClientCompositeOperations(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -82,7 +82,7 @@ class EventClientCompositeOperations(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -123,7 +123,7 @@ class EventClientCompositeOperations(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateEventDetails update_event_details: (required)
             Provides the information used to update the event tags.

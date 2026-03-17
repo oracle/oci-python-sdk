@@ -14,7 +14,7 @@ class ConfigureAutonomousDatabaseVaultKeyDetails(object):
     """
     Configuration details for the Autonomous AI Database `vault`__ key.
 
-    __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+    __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
     """
 
     def __init__(self, **kwargs):
@@ -79,8 +79,8 @@ class ConfigureAutonomousDatabaseVaultKeyDetails(object):
         Gets the vault_id of this ConfigureAutonomousDatabaseVaultKeyDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this ConfigureAutonomousDatabaseVaultKeyDetails.
@@ -94,8 +94,8 @@ class ConfigureAutonomousDatabaseVaultKeyDetails(object):
         Sets the vault_id of this ConfigureAutonomousDatabaseVaultKeyDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this ConfigureAutonomousDatabaseVaultKeyDetails.

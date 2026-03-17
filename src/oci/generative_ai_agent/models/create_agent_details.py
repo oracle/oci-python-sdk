@@ -136,7 +136,7 @@ class CreateAgentDetails(object):
         **[Required]** Gets the compartment_id of this CreateAgentDetails.
         The `OCID`__ of the compartment to create the agent in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAgentDetails.
@@ -150,7 +150,7 @@ class CreateAgentDetails(object):
         Sets the compartment_id of this CreateAgentDetails.
         The `OCID`__ of the compartment to create the agent in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAgentDetails.
@@ -164,7 +164,7 @@ class CreateAgentDetails(object):
         Gets the knowledge_base_ids of this CreateAgentDetails.
         List of `OCID`__ of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The knowledge_base_ids of this CreateAgentDetails.
@@ -178,7 +178,7 @@ class CreateAgentDetails(object):
         Sets the knowledge_base_ids of this CreateAgentDetails.
         List of `OCID`__ of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param knowledge_base_ids: The knowledge_base_ids of this CreateAgentDetails.
@@ -239,7 +239,7 @@ class CreateAgentDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateAgentDetails.
@@ -256,7 +256,7 @@ class CreateAgentDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateAgentDetails.
@@ -273,7 +273,7 @@ class CreateAgentDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateAgentDetails.
@@ -290,7 +290,7 @@ class CreateAgentDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateAgentDetails.

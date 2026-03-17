@@ -184,7 +184,7 @@ class UpdateIpv6Details(object):
         The `OCID`__ of the VNIC to reassign the IPv6 to.
         The VNIC must be in the same subnet as the current VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this UpdateIpv6Details.
@@ -199,7 +199,7 @@ class UpdateIpv6Details(object):
         The `OCID`__ of the VNIC to reassign the IPv6 to.
         The VNIC must be in the same subnet as the current VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this UpdateIpv6Details.

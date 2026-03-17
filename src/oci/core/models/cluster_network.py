@@ -23,7 +23,7 @@ class ClusterNetwork(object):
     If you want to manage instances in the RDMA network independently of each other or use different types of instances
     in the network group, use compute clusters instead. For details, see :class:`ComputeCluster`.
 
-    __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ClusterNetwork.
@@ -161,7 +161,7 @@ class ClusterNetwork(object):
         **[Required]** Gets the id of this ClusterNetwork.
         The `OCID`__ of the cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ClusterNetwork.
@@ -175,7 +175,7 @@ class ClusterNetwork(object):
         Sets the id of this ClusterNetwork.
         The `OCID`__ of the cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ClusterNetwork.
@@ -189,7 +189,7 @@ class ClusterNetwork(object):
         **[Required]** Gets the compartment_id of this ClusterNetwork.
         The `OCID`__ of the compartment containing the cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ClusterNetwork.
@@ -203,7 +203,7 @@ class ClusterNetwork(object):
         Sets the compartment_id of this ClusterNetwork.
         The `OCID`__ of the compartment containing the cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ClusterNetwork.
@@ -217,7 +217,7 @@ class ClusterNetwork(object):
         Gets the hpc_island_id of this ClusterNetwork.
         The `OCID`__ of the HPC island used by the cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The hpc_island_id of this ClusterNetwork.
@@ -231,7 +231,7 @@ class ClusterNetwork(object):
         Sets the hpc_island_id of this ClusterNetwork.
         The `OCID`__ of the HPC island used by the cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param hpc_island_id: The hpc_island_id of this ClusterNetwork.
@@ -272,7 +272,7 @@ class ClusterNetwork(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ClusterNetwork.
@@ -289,7 +289,7 @@ class ClusterNetwork(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ClusterNetwork.
@@ -332,7 +332,7 @@ class ClusterNetwork(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ClusterNetwork.
@@ -349,7 +349,7 @@ class ClusterNetwork(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ClusterNetwork.

@@ -39,7 +39,7 @@ class ChangeSchedulingPolicyCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeSchedulingPolicyCompartmentDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeSchedulingPolicyCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeSchedulingPolicyCompartmentDetails(object):
         Sets the compartment_id of this ChangeSchedulingPolicyCompartmentDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeSchedulingPolicyCompartmentDetails.

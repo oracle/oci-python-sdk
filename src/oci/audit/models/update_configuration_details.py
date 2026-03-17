@@ -15,7 +15,7 @@ class UpdateConfigurationDetails(object):
     The configuration details for the retention period setting, specified in days. For more
     information, see `Setting Audit Log Retention Period`__.
 
-    __ https://docs.oracle.com/iaas/Content/Audit/Tasks/settingretentionperiod.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Audit/Tasks/settingretentionperiod.htm
     """
 
     def __init__(self, **kwargs):

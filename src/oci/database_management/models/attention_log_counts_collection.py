@@ -46,7 +46,7 @@ class AttentionLogCountsCollection(object):
         **[Required]** Gets the managed_database_id of this AttentionLogCountsCollection.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_id of this AttentionLogCountsCollection.
@@ -60,7 +60,7 @@ class AttentionLogCountsCollection(object):
         Sets the managed_database_id of this AttentionLogCountsCollection.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_id: The managed_database_id of this AttentionLogCountsCollection.

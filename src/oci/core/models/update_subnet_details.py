@@ -98,7 +98,7 @@ class UpdateSubnetDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateSubnetDetails.
@@ -115,7 +115,7 @@ class UpdateSubnetDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateSubnetDetails.
@@ -129,7 +129,7 @@ class UpdateSubnetDetails(object):
         Gets the dhcp_options_id of this UpdateSubnetDetails.
         The `OCID`__ of the set of DHCP options the subnet will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dhcp_options_id of this UpdateSubnetDetails.
@@ -143,7 +143,7 @@ class UpdateSubnetDetails(object):
         Sets the dhcp_options_id of this UpdateSubnetDetails.
         The `OCID`__ of the set of DHCP options the subnet will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dhcp_options_id: The dhcp_options_id of this UpdateSubnetDetails.
@@ -186,7 +186,7 @@ class UpdateSubnetDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateSubnetDetails.
@@ -203,7 +203,7 @@ class UpdateSubnetDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateSubnetDetails.
@@ -217,7 +217,7 @@ class UpdateSubnetDetails(object):
         Gets the route_table_id of this UpdateSubnetDetails.
         The `OCID`__ of the route table the subnet will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this UpdateSubnetDetails.
@@ -231,7 +231,7 @@ class UpdateSubnetDetails(object):
         Sets the route_table_id of this UpdateSubnetDetails.
         The `OCID`__ of the route table the subnet will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this UpdateSubnetDetails.
@@ -327,7 +327,7 @@ class UpdateSubnetDetails(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this UpdateSubnetDetails.
@@ -349,7 +349,7 @@ class UpdateSubnetDetails(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this UpdateSubnetDetails.

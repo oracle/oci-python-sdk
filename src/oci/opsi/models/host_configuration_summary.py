@@ -257,7 +257,7 @@ class HostConfigurationSummary(object):
         **[Required]** Gets the host_insight_id of this HostConfigurationSummary.
         The `OCID`__ of the host insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The host_insight_id of this HostConfigurationSummary.
@@ -271,7 +271,7 @@ class HostConfigurationSummary(object):
         Sets the host_insight_id of this HostConfigurationSummary.
         The `OCID`__ of the host insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param host_insight_id: The host_insight_id of this HostConfigurationSummary.
@@ -315,7 +315,7 @@ class HostConfigurationSummary(object):
         **[Required]** Gets the compartment_id of this HostConfigurationSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this HostConfigurationSummary.
@@ -329,7 +329,7 @@ class HostConfigurationSummary(object):
         Sets the compartment_id of this HostConfigurationSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this HostConfigurationSummary.

@@ -33,7 +33,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.Job.lifecycle_state`
@@ -94,7 +94,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             Defines the properties of changeStackCompartment operation.
@@ -342,7 +342,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str configuration_source_provider_id: (required)
             The `OCID`__ of the configuration source provider.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.ConfigurationSourceProvider.lifecycle_state`
@@ -403,7 +403,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.WorkRequest.status`
@@ -452,7 +452,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.Stack.lifecycle_state`
@@ -513,7 +513,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.Template.lifecycle_state`
@@ -574,7 +574,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.WorkRequest.status`
@@ -615,7 +615,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str configuration_source_provider_id: (required)
             The `OCID`__ of the configuration source provider.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateConfigurationSourceProviderDetails update_configuration_source_provider_details: (required)
             Updated information provided for the ConfigurationSourceProvider.
@@ -662,7 +662,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str job_id: (required)
             The `OCID`__ of the job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateJobDetails update_job_details: (required)
             Updates properties for the specified job.
@@ -709,7 +709,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str private_endpoint_id: (required)
             The `OCID`__ of the private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
             Update details for a private endpoint.
@@ -753,7 +753,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str stack_id: (required)
             The `OCID`__ of the stack.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateStackDetails update_stack_details: (required)
             The details for updating a stack.
@@ -800,7 +800,7 @@ class ResourceManagerClientCompositeOperations(object):
         :param str template_id: (required)
             The `OCID`__ of the template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateTemplateDetails update_template_details: (required)
             The details for updating a template.

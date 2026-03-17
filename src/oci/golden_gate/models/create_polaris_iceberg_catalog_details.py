@@ -151,7 +151,7 @@ class CreatePolarisIcebergCatalogDetails(CreateIcebergCatalogDetails):
         **[Required]** Gets the client_secret_secret_id of this CreatePolarisIcebergCatalogDetails.
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The client_secret_secret_id of this CreatePolarisIcebergCatalogDetails.
@@ -165,7 +165,7 @@ class CreatePolarisIcebergCatalogDetails(CreateIcebergCatalogDetails):
         Sets the client_secret_secret_id of this CreatePolarisIcebergCatalogDetails.
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param client_secret_secret_id: The client_secret_secret_id of this CreatePolarisIcebergCatalogDetails.

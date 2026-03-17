@@ -39,7 +39,7 @@ class Subnet(object):
         Gets the id of this Subnet.
         The `OCID`__ of the Subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Subnet.
@@ -53,7 +53,7 @@ class Subnet(object):
         Sets the id of this Subnet.
         The `OCID`__ of the Subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Subnet.

@@ -535,7 +535,7 @@ class KmsManagementClient(object):
         throttle this call to reject an otherwise valid request when the total rate of provisioning
         write operations exceeds 10 requests per second for a given tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str key_id: (required)
@@ -782,7 +782,7 @@ class KmsManagementClient(object):
         otherwise valid request when the total rate of management write operations exceeds 10 requests per second
         for a given tenancy.
 
-        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/KeyVersion/
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/
 
 
         :param str key_id: (required)
@@ -1834,7 +1834,7 @@ class KmsManagementClient(object):
         otherwise valid request when the total rate of management read operations exceeds 10 requests per second
         for a given tenancy.
 
-        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/KeyVersion/
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/
 
 
         :param str key_id: (required)

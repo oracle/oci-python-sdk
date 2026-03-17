@@ -128,7 +128,7 @@ class SwitchModuleStreamOnManagedInstanceDetails(object):
         Gets the software_source_id of this SwitchModuleStreamOnManagedInstanceDetails.
         The `OCID`__ of the software source that contains the module stream.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this SwitchModuleStreamOnManagedInstanceDetails.
@@ -142,7 +142,7 @@ class SwitchModuleStreamOnManagedInstanceDetails(object):
         Sets the software_source_id of this SwitchModuleStreamOnManagedInstanceDetails.
         The `OCID`__ of the software source that contains the module stream.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this SwitchModuleStreamOnManagedInstanceDetails.

@@ -14,7 +14,7 @@ class FamilyMaintenancePolicy(object):
     """
     The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see `Understanding Environment Maintenance`__.
 
-    __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance
+    __ https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance
     """
 
     #: A constant which can be used with the concurrent_maintenance property of a FamilyMaintenancePolicy.

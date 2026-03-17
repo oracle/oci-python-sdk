@@ -63,7 +63,7 @@ class CloneCreateFromModelGroupVersionHistoryDetails(ModelGroupCloneSourceDetail
         **[Required]** Gets the source_id of this CloneCreateFromModelGroupVersionHistoryDetails.
         The `OCID`__ of the model group version history.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this CloneCreateFromModelGroupVersionHistoryDetails.
@@ -77,7 +77,7 @@ class CloneCreateFromModelGroupVersionHistoryDetails(ModelGroupCloneSourceDetail
         Sets the source_id of this CloneCreateFromModelGroupVersionHistoryDetails.
         The `OCID`__ of the model group version history.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this CloneCreateFromModelGroupVersionHistoryDetails.

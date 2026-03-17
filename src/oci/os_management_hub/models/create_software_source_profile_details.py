@@ -286,7 +286,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         Gets the software_source_ids of this CreateSoftwareSourceProfileDetails.
         The list of software source `OCIDs`__ that the registration profile will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this CreateSoftwareSourceProfileDetails.
@@ -300,7 +300,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         Sets the software_source_ids of this CreateSoftwareSourceProfileDetails.
         The list of software source `OCIDs`__ that the registration profile will use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this CreateSoftwareSourceProfileDetails.

@@ -131,13 +131,13 @@ class ByolAllocationClient(object):
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str byol_allocation_id: (required)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.ChangeByolAllocationCompartmentDetails change_byol_allocation_compartment_details: (required)
             Request to change the compartment of the specified BYOL Allocation
@@ -364,7 +364,7 @@ class ByolAllocationClient(object):
         :param str byol_allocation_id: (required)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -479,7 +479,7 @@ class ByolAllocationClient(object):
         :param str byol_allocation_id: (required)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If you need to contact Oracle about a particular
@@ -588,12 +588,12 @@ class ByolAllocationClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str byol_allocation_id: (optional)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycle state matches the given value.
@@ -611,7 +611,7 @@ class ByolAllocationClient(object):
         :param str byol_id: (optional)
             The `OCID`__ of the BYOL.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -621,14 +621,14 @@ class ByolAllocationClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -798,7 +798,7 @@ class ByolAllocationClient(object):
         :param str byol_allocation_id: (required)
             The `OCID`__ of the BYOL Allocation.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateByolAllocationDetails update_byol_allocation_details: (required)
             The information to be updated.

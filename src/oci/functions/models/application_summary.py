@@ -144,7 +144,7 @@ class ApplicationSummary(object):
         **[Required]** Gets the id of this ApplicationSummary.
         The `OCID`__ of the application.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ApplicationSummary.
@@ -158,7 +158,7 @@ class ApplicationSummary(object):
         Sets the id of this ApplicationSummary.
         The `OCID`__ of the application.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ApplicationSummary.
@@ -244,7 +244,7 @@ class ApplicationSummary(object):
         Gets the subnet_ids of this ApplicationSummary.
         The `OCID`__s of the subnets in which to run functions in the application.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_ids of this ApplicationSummary.
@@ -258,7 +258,7 @@ class ApplicationSummary(object):
         Sets the subnet_ids of this ApplicationSummary.
         The `OCID`__s of the subnets in which to run functions in the application.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_ids: The subnet_ids of this ApplicationSummary.
@@ -310,7 +310,7 @@ class ApplicationSummary(object):
         Gets the network_security_group_ids of this ApplicationSummary.
         The `OCID`__s of the Network Security Groups to add the application to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_security_group_ids of this ApplicationSummary.
@@ -324,7 +324,7 @@ class ApplicationSummary(object):
         Sets the network_security_group_ids of this ApplicationSummary.
         The `OCID`__s of the Network Security Groups to add the application to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_security_group_ids: The network_security_group_ids of this ApplicationSummary.
@@ -361,7 +361,7 @@ class ApplicationSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ApplicationSummary.
@@ -378,7 +378,7 @@ class ApplicationSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ApplicationSummary.
@@ -394,7 +394,7 @@ class ApplicationSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ApplicationSummary.
@@ -410,7 +410,7 @@ class ApplicationSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ApplicationSummary.
@@ -513,7 +513,7 @@ class ApplicationSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this ApplicationSummary.
@@ -530,7 +530,7 @@ class ApplicationSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this ApplicationSummary.

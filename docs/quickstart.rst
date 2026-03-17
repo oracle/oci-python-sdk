@@ -219,6 +219,6 @@ to explore the available operations for each service, and their parameters. Addi
     `ListApiKeys`_ operation is called with ``IdentityClient.list_api_keys`` and its parameter
     ``userId`` is translated to ``user_id``.
 
-    .. _ListApiKeys: https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/ApiKey/ListApiKeys
+    .. _ListApiKeys: https://docs.cloud.oracle.com/api/#/en/identity/20160918/ApiKey/ListApiKeys
 
-.. _User Guides: https://docs.oracle.com/iaas/Content/services.htm
+.. _User Guides: https://docs.cloud.oracle.com/Content/services.htm

@@ -103,7 +103,7 @@ class StackMonitoringConfig(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_monitoring_connector_id of this StackMonitoringConfig.
@@ -118,7 +118,7 @@ class StackMonitoringConfig(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param stack_monitoring_connector_id: The stack_monitoring_connector_id of this StackMonitoringConfig.

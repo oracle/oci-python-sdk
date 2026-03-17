@@ -133,7 +133,7 @@ class DeployedApplicationUsage(object):
         **[Required]** Gets the fleet_id of this DeployedApplicationUsage.
         The `OCID`__ of the related fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this DeployedApplicationUsage.
@@ -147,7 +147,7 @@ class DeployedApplicationUsage(object):
         Sets the fleet_id of this DeployedApplicationUsage.
         The `OCID`__ of the related fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this DeployedApplicationUsage.

@@ -81,7 +81,7 @@ class SearchSoftwareSourceModulesDetails(object):
         **[Required]** Gets the software_source_ids of this SearchSoftwareSourceModulesDetails.
         List of sofware source `OCIDs`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this SearchSoftwareSourceModulesDetails.
@@ -95,7 +95,7 @@ class SearchSoftwareSourceModulesDetails(object):
         Sets the software_source_ids of this SearchSoftwareSourceModulesDetails.
         List of sofware source `OCIDs`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this SearchSoftwareSourceModulesDetails.

@@ -19,7 +19,7 @@ class DigitalTwinRelationship(object):
     If you are an administrator who needs to create policies to grant users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DigitalTwinRelationship.
@@ -147,7 +147,7 @@ class DigitalTwinRelationship(object):
         **[Required]** Gets the id of this DigitalTwinRelationship.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DigitalTwinRelationship.
@@ -161,7 +161,7 @@ class DigitalTwinRelationship(object):
         Sets the id of this DigitalTwinRelationship.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DigitalTwinRelationship.
@@ -175,7 +175,7 @@ class DigitalTwinRelationship(object):
         **[Required]** Gets the iot_domain_id of this DigitalTwinRelationship.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The iot_domain_id of this DigitalTwinRelationship.
@@ -189,7 +189,7 @@ class DigitalTwinRelationship(object):
         Sets the iot_domain_id of this DigitalTwinRelationship.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param iot_domain_id: The iot_domain_id of this DigitalTwinRelationship.
@@ -275,7 +275,7 @@ class DigitalTwinRelationship(object):
         **[Required]** Gets the source_digital_twin_instance_id of this DigitalTwinRelationship.
         The `OCID`__ of source digital twin instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_digital_twin_instance_id of this DigitalTwinRelationship.
@@ -289,7 +289,7 @@ class DigitalTwinRelationship(object):
         Sets the source_digital_twin_instance_id of this DigitalTwinRelationship.
         The `OCID`__ of source digital twin instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_digital_twin_instance_id: The source_digital_twin_instance_id of this DigitalTwinRelationship.
@@ -303,7 +303,7 @@ class DigitalTwinRelationship(object):
         **[Required]** Gets the target_digital_twin_instance_id of this DigitalTwinRelationship.
         The `OCID`__ of target digital twin instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_digital_twin_instance_id of this DigitalTwinRelationship.
@@ -317,7 +317,7 @@ class DigitalTwinRelationship(object):
         Sets the target_digital_twin_instance_id of this DigitalTwinRelationship.
         The `OCID`__ of target digital twin instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_digital_twin_instance_id: The target_digital_twin_instance_id of this DigitalTwinRelationship.
@@ -388,7 +388,7 @@ class DigitalTwinRelationship(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DigitalTwinRelationship.
@@ -405,7 +405,7 @@ class DigitalTwinRelationship(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DigitalTwinRelationship.
@@ -422,7 +422,7 @@ class DigitalTwinRelationship(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DigitalTwinRelationship.
@@ -439,7 +439,7 @@ class DigitalTwinRelationship(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DigitalTwinRelationship.

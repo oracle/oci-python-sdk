@@ -55,7 +55,7 @@ class MiddlewareBackupPatch(object):
 
         **Note:** Not an `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MiddlewareBackupPatch.
@@ -71,7 +71,7 @@ class MiddlewareBackupPatch(object):
 
         **Note:** Not an `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MiddlewareBackupPatch.

@@ -93,9 +93,9 @@ class UpdateIncident(object):
         For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
 
         Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
 
@@ -117,9 +117,9 @@ class UpdateIncident(object):
         For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
 
 
         :param problem_type: The problem_type of this UpdateIncident.

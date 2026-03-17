@@ -14,7 +14,7 @@ class WorkRequest(object):
     """
     An asynchronous work request. See `Work Requests`__.
 
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/workrequestoverview.htm
+    __ https://docs.cloud.oracle.com/Content/General/Concepts/workrequestoverview.htm
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -297,7 +297,7 @@ class WorkRequest(object):
         **[Required]** Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequest.
@@ -311,7 +311,7 @@ class WorkRequest(object):
         Sets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequest.
@@ -328,7 +328,7 @@ class WorkRequest(object):
         and those resources aren't in the same compartment, it's up to the service team to pick the primary
         resource whose compartment should be used.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -345,7 +345,7 @@ class WorkRequest(object):
         and those resources aren't in the same compartment, it's up to the service team to pick the primary
         resource whose compartment should be used.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

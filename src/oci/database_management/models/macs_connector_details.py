@@ -49,7 +49,7 @@ class MacsConnectorDetails(ConnectorDetails):
         **[Required]** Gets the management_agent_id of this MacsConnectorDetails.
         The `OCID`__ of the management agent.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsConnectorDetails.
@@ -63,7 +63,7 @@ class MacsConnectorDetails(ConnectorDetails):
         Sets the management_agent_id of this MacsConnectorDetails.
         The `OCID`__ of the management agent.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsConnectorDetails.

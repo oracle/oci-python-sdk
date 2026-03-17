@@ -291,7 +291,7 @@ class DedicatedVmHostSummary(object):
         **[Required]** Gets the id of this DedicatedVmHostSummary.
         The `OCID`__ of the dedicated VM host.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DedicatedVmHostSummary.
@@ -305,7 +305,7 @@ class DedicatedVmHostSummary(object):
         Sets the id of this DedicatedVmHostSummary.
         The `OCID`__ of the dedicated VM host.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DedicatedVmHostSummary.

@@ -84,7 +84,7 @@ class CreateRestIcebergCatalogDetails(CreateIcebergCatalogDetails):
         of the configuration file containing additional properties for the REST catalog.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The properties_secret_id of this CreateRestIcebergCatalogDetails.
@@ -100,7 +100,7 @@ class CreateRestIcebergCatalogDetails(CreateIcebergCatalogDetails):
         of the configuration file containing additional properties for the REST catalog.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param properties_secret_id: The properties_secret_id of this CreateRestIcebergCatalogDetails.

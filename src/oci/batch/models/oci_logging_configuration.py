@@ -56,7 +56,7 @@ class OciLoggingConfiguration(LoggingConfiguration):
         **[Required]** Gets the log_group_id of this OciLoggingConfiguration.
         The `OCID`__ of the log group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_group_id of this OciLoggingConfiguration.
@@ -70,7 +70,7 @@ class OciLoggingConfiguration(LoggingConfiguration):
         Sets the log_group_id of this OciLoggingConfiguration.
         The `OCID`__ of the log group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_group_id: The log_group_id of this OciLoggingConfiguration.
@@ -84,7 +84,7 @@ class OciLoggingConfiguration(LoggingConfiguration):
         **[Required]** Gets the log_id of this OciLoggingConfiguration.
         The `OCID`__ of the log.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_id of this OciLoggingConfiguration.
@@ -98,7 +98,7 @@ class OciLoggingConfiguration(LoggingConfiguration):
         Sets the log_id of this OciLoggingConfiguration.
         The `OCID`__ of the log.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_id: The log_id of this OciLoggingConfiguration.

@@ -215,7 +215,7 @@ class CreateDatabaseRegistrationDetails(object):
         **[Required]** Gets the compartment_id of this CreateDatabaseRegistrationDetails.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDatabaseRegistrationDetails.
@@ -229,7 +229,7 @@ class CreateDatabaseRegistrationDetails(object):
         Sets the compartment_id of this CreateDatabaseRegistrationDetails.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDatabaseRegistrationDetails.
@@ -351,7 +351,7 @@ class CreateDatabaseRegistrationDetails(object):
         Gets the subnet_id of this CreateDatabaseRegistrationDetails.
         The `OCID`__ of the target subnet of the dedicated connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateDatabaseRegistrationDetails.
@@ -365,7 +365,7 @@ class CreateDatabaseRegistrationDetails(object):
         Sets the subnet_id of this CreateDatabaseRegistrationDetails.
         The `OCID`__ of the target subnet of the dedicated connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateDatabaseRegistrationDetails.
@@ -379,7 +379,7 @@ class CreateDatabaseRegistrationDetails(object):
         Gets the database_id of this CreateDatabaseRegistrationDetails.
         The `OCID`__ of the database being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this CreateDatabaseRegistrationDetails.
@@ -393,7 +393,7 @@ class CreateDatabaseRegistrationDetails(object):
         Sets the database_id of this CreateDatabaseRegistrationDetails.
         The `OCID`__ of the database being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this CreateDatabaseRegistrationDetails.

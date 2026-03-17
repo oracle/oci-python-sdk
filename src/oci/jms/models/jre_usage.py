@@ -211,7 +211,7 @@ class JreUsage(object):
         Gets the fleet_id of this JreUsage.
         The `OCID`__ of the related fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this JreUsage.
@@ -225,7 +225,7 @@ class JreUsage(object):
         Sets the fleet_id of this JreUsage.
         The `OCID`__ of the related fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this JreUsage.
@@ -239,7 +239,7 @@ class JreUsage(object):
         Gets the managed_instance_id of this JreUsage.
         The `OCID`__ of the related managed instance. This property value is present only for /listJreUsage.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this JreUsage.
@@ -253,7 +253,7 @@ class JreUsage(object):
         Sets the managed_instance_id of this JreUsage.
         The `OCID`__ of the related managed instance. This property value is present only for /listJreUsage.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this JreUsage.

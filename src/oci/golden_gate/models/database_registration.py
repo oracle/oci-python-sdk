@@ -265,7 +265,7 @@ class DatabaseRegistration(object):
         The `OCID`__ of the databaseRegistration being
         referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DatabaseRegistration.
@@ -280,7 +280,7 @@ class DatabaseRegistration(object):
         The `OCID`__ of the databaseRegistration being
         referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DatabaseRegistration.
@@ -342,7 +342,7 @@ class DatabaseRegistration(object):
         **[Required]** Gets the compartment_id of this DatabaseRegistration.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DatabaseRegistration.
@@ -356,7 +356,7 @@ class DatabaseRegistration(object):
         Sets the compartment_id of this DatabaseRegistration.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DatabaseRegistration.
@@ -594,7 +594,7 @@ class DatabaseRegistration(object):
         Gets the subnet_id of this DatabaseRegistration.
         The `OCID`__ of the target subnet of the dedicated connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DatabaseRegistration.
@@ -608,7 +608,7 @@ class DatabaseRegistration(object):
         Sets the subnet_id of this DatabaseRegistration.
         The `OCID`__ of the target subnet of the dedicated connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DatabaseRegistration.
@@ -622,7 +622,7 @@ class DatabaseRegistration(object):
         Gets the database_id of this DatabaseRegistration.
         The `OCID`__ of the database being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this DatabaseRegistration.
@@ -636,7 +636,7 @@ class DatabaseRegistration(object):
         Sets the database_id of this DatabaseRegistration.
         The `OCID`__ of the database being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this DatabaseRegistration.
@@ -684,7 +684,7 @@ class DatabaseRegistration(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this DatabaseRegistration.
@@ -702,7 +702,7 @@ class DatabaseRegistration(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this DatabaseRegistration.

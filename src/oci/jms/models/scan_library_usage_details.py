@@ -53,7 +53,7 @@ class ScanLibraryUsageDetails(object):
         Gets the managed_instance_ids of this ScanLibraryUsageDetails.
         The list of `OCIDs`__ of managed instances to scan.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_ids of this ScanLibraryUsageDetails.
@@ -67,7 +67,7 @@ class ScanLibraryUsageDetails(object):
         Sets the managed_instance_ids of this ScanLibraryUsageDetails.
         The list of `OCIDs`__ of managed instances to scan.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_ids: The managed_instance_ids of this ScanLibraryUsageDetails.

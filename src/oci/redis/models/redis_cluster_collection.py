@@ -14,7 +14,7 @@ class RedisClusterCollection(object):
     """
     A list of clusters that match filter criteria, if any. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-    __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
     """
 
     def __init__(self, **kwargs):

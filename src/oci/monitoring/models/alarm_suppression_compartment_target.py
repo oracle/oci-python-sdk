@@ -58,7 +58,7 @@ class AlarmSuppressionCompartmentTarget(AlarmSuppressionTarget):
         target of the alarm suppression.
         Example: `ocid1.compartment.oc1..exampleuniqueID`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AlarmSuppressionCompartmentTarget.
@@ -74,7 +74,7 @@ class AlarmSuppressionCompartmentTarget(AlarmSuppressionTarget):
         target of the alarm suppression.
         Example: `ocid1.compartment.oc1..exampleuniqueID`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AlarmSuppressionCompartmentTarget.

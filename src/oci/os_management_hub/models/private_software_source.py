@@ -14,7 +14,7 @@ class PrivateSoftwareSource(SoftwareSource):
     """
     The object that defines a private software source. A software source is a collection of packages. For more information, see `Managing Software Sources`__.
 
-    __ https://docs.oracle.com/iaas/osmh/doc/software-sources.htm
+    __ https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm
     """
 
     def __init__(self, **kwargs):

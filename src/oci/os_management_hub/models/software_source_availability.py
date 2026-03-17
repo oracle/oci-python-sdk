@@ -14,7 +14,7 @@ class SoftwareSourceAvailability(object):
     """
     An object that defines the `OCID`__ and the availability of a vendor software source.
 
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     #: A constant which can be used with the availability property of a SoftwareSourceAvailability.
@@ -89,7 +89,7 @@ class SoftwareSourceAvailability(object):
         **[Required]** Gets the software_source_id of this SoftwareSourceAvailability.
         The `OCID`__ of the vendor software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this SoftwareSourceAvailability.
@@ -103,7 +103,7 @@ class SoftwareSourceAvailability(object):
         Sets the software_source_id of this SoftwareSourceAvailability.
         The `OCID`__ of the vendor software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this SoftwareSourceAvailability.

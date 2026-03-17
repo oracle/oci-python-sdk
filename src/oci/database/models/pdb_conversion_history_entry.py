@@ -147,7 +147,7 @@ class PdbConversionHistoryEntry(object):
         **[Required]** Gets the id of this PdbConversionHistoryEntry.
         The `OCID`__ of the database conversion history.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PdbConversionHistoryEntry.
@@ -161,7 +161,7 @@ class PdbConversionHistoryEntry(object):
         Sets the id of this PdbConversionHistoryEntry.
         The `OCID`__ of the database conversion history.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PdbConversionHistoryEntry.
@@ -245,7 +245,7 @@ class PdbConversionHistoryEntry(object):
         **[Required]** Gets the source_database_id of this PdbConversionHistoryEntry.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_database_id of this PdbConversionHistoryEntry.
@@ -259,7 +259,7 @@ class PdbConversionHistoryEntry(object):
         Sets the source_database_id of this PdbConversionHistoryEntry.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_database_id: The source_database_id of this PdbConversionHistoryEntry.
@@ -273,7 +273,7 @@ class PdbConversionHistoryEntry(object):
         Gets the target_database_id of this PdbConversionHistoryEntry.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_database_id of this PdbConversionHistoryEntry.
@@ -287,7 +287,7 @@ class PdbConversionHistoryEntry(object):
         Sets the target_database_id of this PdbConversionHistoryEntry.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param target_database_id: The target_database_id of this PdbConversionHistoryEntry.

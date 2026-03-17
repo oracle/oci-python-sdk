@@ -73,7 +73,6 @@ circuit breakers with ease. The default circuit breaker strategy has the followi
 - failure_statuses_and_codes:
 
   - HTTP 409/IncorrectState
-  - HTTP 409/LockConflict
   - HTTP 429
   - HTTP 500
   - HTTP 502

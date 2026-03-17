@@ -124,7 +124,7 @@ class RouteRule(object):
             setting up a route rule for traffic destined for a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The destination of this RouteRule.
@@ -151,7 +151,7 @@ class RouteRule(object):
             setting up a route rule for traffic destined for a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param destination: The destination of this RouteRule.
@@ -209,8 +209,8 @@ class RouteRule(object):
         targets you can specify, see
         `Route Tables`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
 
 
         :return: The network_entity_id of this RouteRule.
@@ -226,8 +226,8 @@ class RouteRule(object):
         targets you can specify, see
         `Route Tables`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
 
 
         :param network_entity_id: The network_entity_id of this RouteRule.

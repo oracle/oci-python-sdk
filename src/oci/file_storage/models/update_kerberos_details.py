@@ -91,7 +91,7 @@ class UpdateKerberosDetails(object):
         Gets the key_tab_secret_id of this UpdateKerberosDetails.
         The `OCID`__ of the keytab secret in the Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_tab_secret_id of this UpdateKerberosDetails.
@@ -105,7 +105,7 @@ class UpdateKerberosDetails(object):
         Sets the key_tab_secret_id of this UpdateKerberosDetails.
         The `OCID`__ of the keytab secret in the Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_tab_secret_id: The key_tab_secret_id of this UpdateKerberosDetails.

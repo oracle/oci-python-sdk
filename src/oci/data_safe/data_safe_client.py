@@ -17248,12 +17248,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17376,12 +17376,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -18359,12 +18359,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -22435,12 +22435,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22713,12 +22713,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -22927,12 +22927,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -23056,12 +23056,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -23278,12 +23278,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str associated_resource_type: (optional)
             A filter to return attribute set associated resources that matches the specified resource type query param.
@@ -23449,12 +23449,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the specified display name.
@@ -23685,12 +23685,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that matches the specified lifecycle state.
@@ -23889,13 +23889,13 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             It is usually retrieved from a previous \"List\" call. For details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
@@ -24159,13 +24159,13 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             It is usually retrieved from a previous \"List\" call. For details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str scim_query: (optional)
             The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
@@ -24356,12 +24356,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str target_id: (optional)
             A filter to return only items related to a specific target OCID.
@@ -24569,12 +24569,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] group_by: (optional)
             The group by parameter to summarize audit policy aggregation.
@@ -24778,12 +24778,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] group_by: (optional)
             The group by parameter for summarize operation on audit.
@@ -24975,12 +24975,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A optional filter to return only resources that match the specified lifecycle state.
@@ -25203,12 +25203,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] group_by: (optional)
             The group by parameter for summarize operation on audit trail.
@@ -25411,12 +25411,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A optional filter to return only resources that match the specified lifecycle state.
@@ -25628,12 +25628,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -25791,12 +25791,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -26037,12 +26037,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -26198,12 +26198,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] schema_name: (optional)
             A filter to return only items related to specific schema name.
@@ -26394,12 +26394,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -26602,12 +26602,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the database security configuration.
@@ -26811,12 +26811,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str scim_query: (optional)
             The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
@@ -26979,12 +26979,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str scim_query: (optional)
             The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
@@ -27188,12 +27188,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -27394,12 +27394,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27599,12 +27599,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -27818,12 +27818,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -28020,12 +28020,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str target_database_group_id: (optional)
             A filter to return the target database group that matches the specified OCID.
@@ -28273,12 +28273,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str compartment_id: (optional)
             A filter to return only resources that match the specified compartment OCID.
@@ -28579,12 +28579,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -28818,12 +28818,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -28992,12 +28992,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -29134,12 +29134,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle states.
@@ -29341,12 +29341,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -29567,12 +29567,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -29718,12 +29718,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -30004,12 +30004,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -30161,12 +30161,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -30346,12 +30346,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle states.
@@ -30561,12 +30561,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -30731,12 +30731,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -30945,12 +30945,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -31114,12 +31114,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str masking_policy_id: (optional)
             A filter to return only the resources that match the specified masking policy OCID.
@@ -31294,12 +31294,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -31464,12 +31464,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -31817,12 +31817,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -31976,12 +31976,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str profile_name: (optional)
             A filter to return only items that match the specified profile name.
@@ -32182,12 +32182,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str profile_name: (optional)
             A filter to return only items that match the specified profile name.
@@ -32444,12 +32444,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -32632,12 +32632,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -32851,12 +32851,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -33096,12 +33096,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -33226,12 +33226,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] role_name: (optional)
             A filter to return only a specific role based on role name.
@@ -33399,12 +33399,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] schema_name: (optional)
             A filter to return only items related to specific schema name.
@@ -33604,12 +33604,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -33840,12 +33840,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state.
@@ -34263,12 +34263,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str target_database_group_id: (optional)
             A filter to return the target database group that matches the specified OCID.
@@ -34519,12 +34519,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the security policy.
@@ -34765,12 +34765,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -34967,12 +34967,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the security policy deployment.
@@ -35169,12 +35169,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str deployment_status: (optional)
             The current state of the security policy deployment.
@@ -35360,12 +35360,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the security policy report.
@@ -35591,12 +35591,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -35831,12 +35831,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -36085,12 +36085,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -36282,12 +36282,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
@@ -36457,12 +36457,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -36628,12 +36628,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -36799,12 +36799,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
@@ -37060,12 +37060,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
@@ -37266,12 +37266,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
@@ -37488,12 +37488,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the SQL collection.
@@ -37680,12 +37680,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -37849,12 +37849,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the SQL collection.
@@ -38085,12 +38085,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str scim_query: (optional)
             The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
@@ -38263,12 +38263,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str scim_query: (optional)
             The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
@@ -38457,12 +38457,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str security_policy_id: (optional)
             An optional filter to return only resources that match the specified OCID of the security policy resource.
@@ -38701,12 +38701,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] group_by: (optional)
             The group by parameter to summarize SQL Firewall policy aggregation.
@@ -38888,12 +38888,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -39119,12 +39119,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -39296,12 +39296,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] schema_name: (optional)
             A filter to return only items related to specific schema name.
@@ -39480,12 +39480,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -39741,12 +39741,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str target_database_group_id: (optional)
             A filter to return the target database group that matches the specified OCID.
@@ -39927,12 +39927,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
@@ -40127,12 +40127,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the specified display name.
@@ -40336,12 +40336,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -40513,12 +40513,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -40695,12 +40695,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str unified_audit_policy_definition_id: (optional)
             An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
@@ -40926,12 +40926,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
@@ -41121,12 +41121,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -41290,7 +41290,7 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str user_category: (optional)
             A filter to return only items that match the specified user category.
@@ -41364,7 +41364,7 @@ class DataSafeClient(object):
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -41619,12 +41619,12 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             The current state of the user assessment.
@@ -41840,7 +41840,7 @@ class DataSafeClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
@@ -41941,7 +41941,7 @@ class DataSafeClient(object):
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -42147,12 +42147,12 @@ class DataSafeClient(object):
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -42272,12 +42272,12 @@ class DataSafeClient(object):
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -42417,12 +42417,12 @@ class DataSafeClient(object):
         :param str page: (optional)
             For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.

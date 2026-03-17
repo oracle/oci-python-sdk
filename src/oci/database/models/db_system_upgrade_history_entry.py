@@ -147,7 +147,7 @@ class DbSystemUpgradeHistoryEntry(object):
         **[Required]** Gets the id of this DbSystemUpgradeHistoryEntry.
         The `OCID`__ of the upgrade history entry.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbSystemUpgradeHistoryEntry.
@@ -161,7 +161,7 @@ class DbSystemUpgradeHistoryEntry(object):
         Sets the id of this DbSystemUpgradeHistoryEntry.
         The `OCID`__ of the upgrade history entry.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbSystemUpgradeHistoryEntry.

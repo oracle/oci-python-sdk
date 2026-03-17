@@ -261,7 +261,7 @@ class RemediationRunStageSummary(object):
         **[Required]** Gets the remediation_run_id of this RemediationRunStageSummary.
         The Oracle Cloud identifier (`OCID`__) of the remediation run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The remediation_run_id of this RemediationRunStageSummary.
@@ -275,7 +275,7 @@ class RemediationRunStageSummary(object):
         Sets the remediation_run_id of this RemediationRunStageSummary.
         The Oracle Cloud identifier (`OCID`__) of the remediation run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param remediation_run_id: The remediation_run_id of this RemediationRunStageSummary.

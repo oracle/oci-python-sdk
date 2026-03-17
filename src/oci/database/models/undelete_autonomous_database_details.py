@@ -438,7 +438,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         **[Required]** Gets the source_id of this UndeleteAutonomousDatabaseDetails.
         The `OCID`__ of the Autonomous AI Database that you want to undelete.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this UndeleteAutonomousDatabaseDetails.
@@ -452,7 +452,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         Sets the source_id of this UndeleteAutonomousDatabaseDetails.
         The `OCID`__ of the Autonomous AI Database that you want to undelete.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this UndeleteAutonomousDatabaseDetails.

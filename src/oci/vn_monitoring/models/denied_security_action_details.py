@@ -78,7 +78,7 @@ class DeniedSecurityActionDetails(object):
         The list of `OCIDs`__ of evaluated security lists associated
         with the OCI resource's subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The evaluated_security_list_ids of this DeniedSecurityActionDetails.
@@ -93,7 +93,7 @@ class DeniedSecurityActionDetails(object):
         The list of `OCIDs`__ of evaluated security lists associated
         with the OCI resource's subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param evaluated_security_list_ids: The evaluated_security_list_ids of this DeniedSecurityActionDetails.
@@ -108,7 +108,7 @@ class DeniedSecurityActionDetails(object):
         List of `OCIDs`__ of evaluated network security groups
         associated with the OCI resource's VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The evaluated_nsg_ids of this DeniedSecurityActionDetails.
@@ -123,7 +123,7 @@ class DeniedSecurityActionDetails(object):
         List of `OCIDs`__ of evaluated network security groups
         associated with the OCI resource's VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param evaluated_nsg_ids: The evaluated_nsg_ids of this DeniedSecurityActionDetails.

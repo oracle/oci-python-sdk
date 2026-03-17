@@ -80,7 +80,7 @@ class NodeSourceViaImageDetails(NodeSourceDetails):
         Gets the boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
         The size of the boot volume in GBs. Minimum value is 50 GB. See `here`__ for max custom boot volume sizing and OS-specific requirements.
 
-        __ https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm
 
 
         :return: The boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
@@ -94,7 +94,7 @@ class NodeSourceViaImageDetails(NodeSourceDetails):
         Sets the boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
         The size of the boot volume in GBs. Minimum value is 50 GB. See `here`__ for max custom boot volume sizing and OS-specific requirements.
 
-        __ https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm
 
 
         :param boot_volume_size_in_gbs: The boot_volume_size_in_gbs of this NodeSourceViaImageDetails.

@@ -84,7 +84,7 @@ class ReplicatedRegionDetails(object):
         See `Regions and Availability Domains`__
         for the full list of supported region names.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The region of this ReplicatedRegionDetails.
@@ -100,7 +100,7 @@ class ReplicatedRegionDetails(object):
         See `Regions and Availability Domains`__
         for the full list of supported region names.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param region: The region of this ReplicatedRegionDetails.

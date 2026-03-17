@@ -247,7 +247,7 @@ class Container(object):
         **[Required]** Gets the id of this Container.
         The `OCID`__ of the container.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Container.
@@ -261,7 +261,7 @@ class Container(object):
         Sets the id of this Container.
         The `OCID`__ of the container.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Container.
@@ -613,7 +613,7 @@ class Container(object):
         **[Required]** Gets the container_instance_id of this Container.
         The `OCID`__ of the container instance that the container is running on.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The container_instance_id of this Container.
@@ -627,7 +627,7 @@ class Container(object):
         Sets the container_instance_id of this Container.
         The `OCID`__ of the container instance that the container is running on.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param container_instance_id: The container_instance_id of this Container.

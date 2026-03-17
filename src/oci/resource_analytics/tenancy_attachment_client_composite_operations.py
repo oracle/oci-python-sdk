@@ -72,7 +72,7 @@ class TenancyAttachmentClientCompositeOperations(object):
         :param str tenancy_attachment_id: (required)
             The `OCID`__ of the TenancyAttachment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_analytics.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class TenancyAttachmentClientCompositeOperations(object):
         :param str tenancy_attachment_id: (required)
             The `OCID`__ of the TenancyAttachment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_analytics.models.UpdateTenancyAttachmentDetails update_tenancy_attachment_details: (required)
             The information to be updated.

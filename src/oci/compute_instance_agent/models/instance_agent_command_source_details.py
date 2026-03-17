@@ -85,7 +85,7 @@ class InstanceAgentCommandSourceDetails(object):
         For background information about Object Storage buckets and URLs, see
         `Overview of Object Storage`__.
 
-        __ https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
 
         Allowed values for this property are: "TEXT", "OBJECT_STORAGE_URI", "OBJECT_STORAGE_TUPLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -109,7 +109,7 @@ class InstanceAgentCommandSourceDetails(object):
         For background information about Object Storage buckets and URLs, see
         `Overview of Object Storage`__.
 
-        __ https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
 
 
         :param source_type: The source_type of this InstanceAgentCommandSourceDetails.

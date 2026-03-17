@@ -286,7 +286,7 @@ class GoldenGateConnection(Connection):
         Gets the deployment_id of this GoldenGateConnection.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The deployment_id of this GoldenGateConnection.
@@ -300,7 +300,7 @@ class GoldenGateConnection(Connection):
         Sets the deployment_id of this GoldenGateConnection.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param deployment_id: The deployment_id of this GoldenGateConnection.
@@ -426,7 +426,7 @@ class GoldenGateConnection(Connection):
         which is used to connect to the Oracle GoldenGate accessed trough this connection.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this GoldenGateConnection.
@@ -442,7 +442,7 @@ class GoldenGateConnection(Connection):
         which is used to connect to the Oracle GoldenGate accessed trough this connection.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this GoldenGateConnection.

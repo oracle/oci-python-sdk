@@ -237,7 +237,7 @@ class PreferredCredentialSummary(object):
         Gets the password_secret_id of this PreferredCredentialSummary.
         The `OCID`__ of the Vault service secret that contains the database user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this PreferredCredentialSummary.
@@ -251,7 +251,7 @@ class PreferredCredentialSummary(object):
         Sets the password_secret_id of this PreferredCredentialSummary.
         The `OCID`__ of the Vault service secret that contains the database user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this PreferredCredentialSummary.
@@ -265,7 +265,7 @@ class PreferredCredentialSummary(object):
         Gets the named_credential_id of this PreferredCredentialSummary.
         The `OCID`__ of the Named Credential that contains the database user password metadata.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The named_credential_id of this PreferredCredentialSummary.
@@ -279,7 +279,7 @@ class PreferredCredentialSummary(object):
         Sets the named_credential_id of this PreferredCredentialSummary.
         The `OCID`__ of the Named Credential that contains the database user password metadata.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param named_credential_id: The named_credential_id of this PreferredCredentialSummary.

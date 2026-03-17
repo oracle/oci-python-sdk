@@ -91,7 +91,7 @@ class EnableMacsManagedCloudDatabaseInsightDetails(EnableDatabaseInsightDetails)
         **[Required]** Gets the compartment_id of this EnableMacsManagedCloudDatabaseInsightDetails.
         The compartment `OCID`__ of the External Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EnableMacsManagedCloudDatabaseInsightDetails.
@@ -105,7 +105,7 @@ class EnableMacsManagedCloudDatabaseInsightDetails(EnableDatabaseInsightDetails)
         Sets the compartment_id of this EnableMacsManagedCloudDatabaseInsightDetails.
         The compartment `OCID`__ of the External Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EnableMacsManagedCloudDatabaseInsightDetails.
@@ -119,7 +119,7 @@ class EnableMacsManagedCloudDatabaseInsightDetails(EnableDatabaseInsightDetails)
         **[Required]** Gets the management_agent_id of this EnableMacsManagedCloudDatabaseInsightDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this EnableMacsManagedCloudDatabaseInsightDetails.
@@ -133,7 +133,7 @@ class EnableMacsManagedCloudDatabaseInsightDetails(EnableDatabaseInsightDetails)
         Sets the management_agent_id of this EnableMacsManagedCloudDatabaseInsightDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this EnableMacsManagedCloudDatabaseInsightDetails.

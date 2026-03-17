@@ -49,7 +49,7 @@ class CustomGiGoalVersionDetails(GiGoalVersionDetails):
         **[Required]** Gets the goal_software_image_id of this CustomGiGoalVersionDetails.
         The `OCID`__ of the custom 'GI' software image.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The goal_software_image_id of this CustomGiGoalVersionDetails.
@@ -63,7 +63,7 @@ class CustomGiGoalVersionDetails(GiGoalVersionDetails):
         Sets the goal_software_image_id of this CustomGiGoalVersionDetails.
         The `OCID`__ of the custom 'GI' software image.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param goal_software_image_id: The goal_software_image_id of this CustomGiGoalVersionDetails.

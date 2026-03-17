@@ -77,7 +77,7 @@ class RemoteClonePluggableDatabaseDetails(object):
         **[Required]** Gets the target_container_database_id of this RemoteClonePluggableDatabaseDetails.
         The `OCID`__ of the target CDB
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_container_database_id of this RemoteClonePluggableDatabaseDetails.
@@ -91,7 +91,7 @@ class RemoteClonePluggableDatabaseDetails(object):
         Sets the target_container_database_id of this RemoteClonePluggableDatabaseDetails.
         The `OCID`__ of the target CDB
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param target_container_database_id: The target_container_database_id of this RemoteClonePluggableDatabaseDetails.

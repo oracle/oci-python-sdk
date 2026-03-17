@@ -471,7 +471,7 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
         **[Required]** Gets the source_id of this CreateCrossRegionDisasterRecoveryDetails.
         The `OCID`__ of the source Autonomous AI Database that will be used to create a new peer database for the DR association.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this CreateCrossRegionDisasterRecoveryDetails.
@@ -485,7 +485,7 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
         Sets the source_id of this CreateCrossRegionDisasterRecoveryDetails.
         The `OCID`__ of the source Autonomous AI Database that will be used to create a new peer database for the DR association.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this CreateCrossRegionDisasterRecoveryDetails.

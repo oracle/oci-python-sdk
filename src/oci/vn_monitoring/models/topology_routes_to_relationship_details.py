@@ -126,7 +126,7 @@ class TopologyRoutesToRelationshipDetails(object):
         **[Required]** Gets the route_table_id of this TopologyRoutesToRelationshipDetails.
         The `OCID`__ of the routing table that contains the route rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this TopologyRoutesToRelationshipDetails.
@@ -140,7 +140,7 @@ class TopologyRoutesToRelationshipDetails(object):
         Sets the route_table_id of this TopologyRoutesToRelationshipDetails.
         The `OCID`__ of the routing table that contains the route rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this TopologyRoutesToRelationshipDetails.

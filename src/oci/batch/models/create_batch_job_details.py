@@ -89,7 +89,7 @@ class CreateBatchJobDetails(object):
         **[Required]** Gets the compartment_id of this CreateBatchJobDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateBatchJobDetails.
@@ -103,7 +103,7 @@ class CreateBatchJobDetails(object):
         Sets the compartment_id of this CreateBatchJobDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateBatchJobDetails.
@@ -117,7 +117,7 @@ class CreateBatchJobDetails(object):
         **[Required]** Gets the batch_job_pool_id of this CreateBatchJobDetails.
         The `OCID`__ of the parent batch job pool.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The batch_job_pool_id of this CreateBatchJobDetails.
@@ -131,7 +131,7 @@ class CreateBatchJobDetails(object):
         Sets the batch_job_pool_id of this CreateBatchJobDetails.
         The `OCID`__ of the parent batch job pool.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param batch_job_pool_id: The batch_job_pool_id of this CreateBatchJobDetails.
@@ -248,7 +248,7 @@ class CreateBatchJobDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateBatchJobDetails.
@@ -265,7 +265,7 @@ class CreateBatchJobDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateBatchJobDetails.
@@ -282,7 +282,7 @@ class CreateBatchJobDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateBatchJobDetails.
@@ -299,7 +299,7 @@ class CreateBatchJobDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateBatchJobDetails.

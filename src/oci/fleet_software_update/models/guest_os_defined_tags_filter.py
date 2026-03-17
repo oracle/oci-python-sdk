@@ -14,7 +14,7 @@ class GuestOsDefinedTagsFilter(GuestOsFleetDiscoveryFilter):
     """
     `Defined tags`__ to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+    __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
     """
 
     #: A constant which can be used with the operator property of a GuestOsDefinedTagsFilter.
@@ -78,7 +78,7 @@ class GuestOsDefinedTagsFilter(GuestOsFleetDiscoveryFilter):
         **[Required]** Gets the tags of this GuestOsDefinedTagsFilter.
         `Defined tags`__ to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The tags of this GuestOsDefinedTagsFilter.
@@ -92,7 +92,7 @@ class GuestOsDefinedTagsFilter(GuestOsFleetDiscoveryFilter):
         Sets the tags of this GuestOsDefinedTagsFilter.
         `Defined tags`__ to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param tags: The tags of this GuestOsDefinedTagsFilter.

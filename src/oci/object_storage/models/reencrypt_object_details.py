@@ -66,7 +66,7 @@ class ReencryptObjectDetails(object):
         empty, whether null or an empty string, the API will perform re-encryption by using the kmsKeyId associated with the
         bucket or the master encryption key managed by Oracle, depending on the bucket encryption mechanism.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this ReencryptObjectDetails.
@@ -83,7 +83,7 @@ class ReencryptObjectDetails(object):
         empty, whether null or an empty string, the API will perform re-encryption by using the kmsKeyId associated with the
         bucket or the master encryption key managed by Oracle, depending on the bucket encryption mechanism.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this ReencryptObjectDetails.

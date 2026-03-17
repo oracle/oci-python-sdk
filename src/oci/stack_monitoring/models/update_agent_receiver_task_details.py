@@ -81,7 +81,7 @@ class UpdateAgentReceiverTaskDetails(MonitoredResourceTaskDetails):
         **[Required]** Gets the agent_id of this UpdateAgentReceiverTaskDetails.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this UpdateAgentReceiverTaskDetails.
@@ -95,7 +95,7 @@ class UpdateAgentReceiverTaskDetails(MonitoredResourceTaskDetails):
         Sets the agent_id of this UpdateAgentReceiverTaskDetails.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this UpdateAgentReceiverTaskDetails.

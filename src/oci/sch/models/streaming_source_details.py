@@ -16,7 +16,7 @@ class StreamingSourceDetails(SourceDetails):
     For configuration instructions, see
     `Creating a Connector with a Streaming Source`__.
 
-    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class StreamingSourceDetails(SourceDetails):
         **[Required]** Gets the stream_id of this StreamingSourceDetails.
         The `OCID`__ of the stream.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_id of this StreamingSourceDetails.
@@ -74,7 +74,7 @@ class StreamingSourceDetails(SourceDetails):
         Sets the stream_id of this StreamingSourceDetails.
         The `OCID`__ of the stream.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_id: The stream_id of this StreamingSourceDetails.

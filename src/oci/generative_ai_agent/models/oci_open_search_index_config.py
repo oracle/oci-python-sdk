@@ -63,7 +63,7 @@ class OciOpenSearchIndexConfig(IndexConfig):
         **[Required]** Gets the cluster_id of this OciOpenSearchIndexConfig.
         The `OCID`__ of the OpenSearch Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this OciOpenSearchIndexConfig.
@@ -77,7 +77,7 @@ class OciOpenSearchIndexConfig(IndexConfig):
         Sets the cluster_id of this OciOpenSearchIndexConfig.
         The `OCID`__ of the OpenSearch Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this OciOpenSearchIndexConfig.
