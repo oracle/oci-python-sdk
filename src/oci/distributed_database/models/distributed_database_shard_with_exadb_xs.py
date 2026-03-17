@@ -186,7 +186,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
         Gets the db_home_id of this DistributedDatabaseShardWithExadbXs.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_home_id of this DistributedDatabaseShardWithExadbXs.
@@ -200,7 +200,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
         Sets the db_home_id of this DistributedDatabaseShardWithExadbXs.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_home_id: The db_home_id of this DistributedDatabaseShardWithExadbXs.
@@ -238,7 +238,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
         **[Required]** Gets the vm_cluster_id of this DistributedDatabaseShardWithExadbXs.
         The `OCID`__ of the VmCluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this DistributedDatabaseShardWithExadbXs.
@@ -252,7 +252,7 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
         Sets the vm_cluster_id of this DistributedDatabaseShardWithExadbXs.
         The `OCID`__ of the VmCluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this DistributedDatabaseShardWithExadbXs.
@@ -292,8 +292,8 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
         Gets the vault_id of this DistributedDatabaseShardWithExadbXs.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `kmsKeyId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this DistributedDatabaseShardWithExadbXs.
@@ -307,8 +307,8 @@ class DistributedDatabaseShardWithExadbXs(DistributedDatabaseShard):
         Sets the vault_id of this DistributedDatabaseShardWithExadbXs.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `kmsKeyId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this DistributedDatabaseShardWithExadbXs.

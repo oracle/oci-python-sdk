@@ -18,7 +18,7 @@ class BackendSet(object):
 
     **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm
+    __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm
     """
 
     #: A constant which can be used with the policy property of a BackendSet.

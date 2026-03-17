@@ -317,7 +317,7 @@ class DistributedAutonomousDatabaseShardWithDedicatedInfra(DistributedAutonomous
         **[Required]** Gets the cloud_autonomous_vm_cluster_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
         The `OCID`__ of the cloudAutonomousVmCluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
@@ -331,7 +331,7 @@ class DistributedAutonomousDatabaseShardWithDedicatedInfra(DistributedAutonomous
         Sets the cloud_autonomous_vm_cluster_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
         The `OCID`__ of the cloudAutonomousVmCluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
@@ -395,8 +395,8 @@ class DistributedAutonomousDatabaseShardWithDedicatedInfra(DistributedAutonomous
         Gets the vault_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `kmsKeyId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
@@ -410,8 +410,8 @@ class DistributedAutonomousDatabaseShardWithDedicatedInfra(DistributedAutonomous
         Sets the vault_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `kmsKeyId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
@@ -575,7 +575,7 @@ class DistributedAutonomousDatabaseShardWithDedicatedInfra(DistributedAutonomous
         Gets the okv_key_store_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
         The `OCID`__ of the key store used to create the shard.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The okv_key_store_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
@@ -589,7 +589,7 @@ class DistributedAutonomousDatabaseShardWithDedicatedInfra(DistributedAutonomous
         Sets the okv_key_store_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.
         The `OCID`__ of the key store used to create the shard.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param okv_key_store_id: The okv_key_store_id of this DistributedAutonomousDatabaseShardWithDedicatedInfra.

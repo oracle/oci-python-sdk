@@ -256,7 +256,7 @@ class UpdateLdapIdmapDetails(object):
         Gets the outbound_connector1_id of this UpdateLdapIdmapDetails.
         The `OCID`__ of the first connector to use to communicate with the LDAP server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The outbound_connector1_id of this UpdateLdapIdmapDetails.
@@ -270,7 +270,7 @@ class UpdateLdapIdmapDetails(object):
         Sets the outbound_connector1_id of this UpdateLdapIdmapDetails.
         The `OCID`__ of the first connector to use to communicate with the LDAP server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param outbound_connector1_id: The outbound_connector1_id of this UpdateLdapIdmapDetails.
@@ -284,7 +284,7 @@ class UpdateLdapIdmapDetails(object):
         Gets the outbound_connector2_id of this UpdateLdapIdmapDetails.
         The `OCID`__ of the second connector to use to communicate with the LDAP server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The outbound_connector2_id of this UpdateLdapIdmapDetails.
@@ -298,7 +298,7 @@ class UpdateLdapIdmapDetails(object):
         Sets the outbound_connector2_id of this UpdateLdapIdmapDetails.
         The `OCID`__ of the second connector to use to communicate with the LDAP server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param outbound_connector2_id: The outbound_connector2_id of this UpdateLdapIdmapDetails.

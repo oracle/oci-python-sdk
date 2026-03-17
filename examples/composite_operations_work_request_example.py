@@ -8,7 +8,7 @@
 # a GET call until the resource's states change to expected one. However, in some other cases, a resource can be impacted
 # by many different things or multiple resources are impacted by an operation. A work request service is for that use
 # case. For details, please see work request service document here:
-# https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/viewingworkrequestcompute.htm
+# https://docs.oracle.com/iaas/Content/Compute/Tasks/viewingworkrequestcompute.htm
 #
 # This script demonstrates how to use work request service via composite operations. In particular, how to create an image
 #

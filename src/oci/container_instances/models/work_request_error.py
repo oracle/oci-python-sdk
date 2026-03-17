@@ -53,7 +53,7 @@ class WorkRequestError(object):
         **[Required]** Gets the code of this WorkRequestError.
         A machine-usable code for the error that occured. See `API Errors`__ for a list of error codes.
 
-        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
+        __ https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
 
 
         :return: The code of this WorkRequestError.
@@ -67,7 +67,7 @@ class WorkRequestError(object):
         Sets the code of this WorkRequestError.
         A machine-usable code for the error that occured. See `API Errors`__ for a list of error codes.
 
-        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
+        __ https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
 
 
         :param code: The code of this WorkRequestError.

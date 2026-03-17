@@ -110,7 +110,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
         **[Required]** Gets the id of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
         The ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -124,7 +124,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
         Sets the id of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
         The ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SqlTuningAdvisorTaskSummaryReportTaskInfo.

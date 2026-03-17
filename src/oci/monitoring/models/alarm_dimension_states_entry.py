@@ -82,8 +82,8 @@ class AlarmDimensionStatesEntry(object):
         :func:`get_alarm_history` and
         :func:`retrieve_dimension_states`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The alarm_summary of this AlarmDimensionStatesEntry.
@@ -102,8 +102,8 @@ class AlarmDimensionStatesEntry(object):
         :func:`get_alarm_history` and
         :func:`retrieve_dimension_states`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param alarm_summary: The alarm_summary of this AlarmDimensionStatesEntry.

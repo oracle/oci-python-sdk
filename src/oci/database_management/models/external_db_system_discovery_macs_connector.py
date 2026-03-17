@@ -16,7 +16,7 @@ class ExternalDbSystemDiscoveryMacsConnector(ExternalDbSystemDiscoveryConnector)
     `Management Agent Cloud Service (MACS)`__
     to connect to an external DB system component.
 
-    __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
+    __ https://docs.oracle.com/iaas/management-agents/index.html
     """
 
     def __init__(self, **kwargs):
@@ -89,7 +89,7 @@ class ExternalDbSystemDiscoveryMacsConnector(ExternalDbSystemDiscoveryConnector)
         The `OCID`__ of the management agent
         used for the external DB system connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this ExternalDbSystemDiscoveryMacsConnector.
@@ -104,7 +104,7 @@ class ExternalDbSystemDiscoveryMacsConnector(ExternalDbSystemDiscoveryConnector)
         The `OCID`__ of the management agent
         used for the external DB system connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this ExternalDbSystemDiscoveryMacsConnector.

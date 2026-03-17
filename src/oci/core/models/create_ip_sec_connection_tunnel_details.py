@@ -472,7 +472,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         Gets the associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
         The list of virtual circuit `OCID`__s over which your network can reach this tunnel.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
@@ -486,7 +486,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         Sets the associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
         The list of virtual circuit `OCID`__s over which your network can reach this tunnel.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param associated_virtual_circuits: The associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
@@ -502,7 +502,7 @@ class CreateIPSecConnectionTunnelDetails(object):
 
         The DRG route table manages traffic inside the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_route_table_id of this CreateIPSecConnectionTunnelDetails.
@@ -518,7 +518,7 @@ class CreateIPSecConnectionTunnelDetails(object):
 
         The DRG route table manages traffic inside the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_route_table_id: The drg_route_table_id of this CreateIPSecConnectionTunnelDetails.

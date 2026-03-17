@@ -46,7 +46,7 @@ class SetOriginAsnDetails(object):
         **[Required]** Gets the byoasn_id of this SetOriginAsnDetails.
         The `OCID`__ of the `Byoasn` Resource to be associated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byoasn_id of this SetOriginAsnDetails.
@@ -60,7 +60,7 @@ class SetOriginAsnDetails(object):
         Sets the byoasn_id of this SetOriginAsnDetails.
         The `OCID`__ of the `Byoasn` Resource to be associated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byoasn_id: The byoasn_id of this SetOriginAsnDetails.

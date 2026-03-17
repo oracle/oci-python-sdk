@@ -126,7 +126,7 @@ class AutonomousDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         **[Required]** Gets the database_id of this AutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this AutonomousDatabaseConfigurationSummary.
@@ -140,7 +140,7 @@ class AutonomousDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         Sets the database_id of this AutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this AutonomousDatabaseConfigurationSummary.

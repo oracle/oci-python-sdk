@@ -143,7 +143,7 @@ class CreateAnnouncementSubscriptionDetails(object):
         **[Required]** Gets the compartment_id of this CreateAnnouncementSubscriptionDetails.
         The `OCID`__ of the compartment where you want to create the announcement subscription.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAnnouncementSubscriptionDetails.
@@ -157,7 +157,7 @@ class CreateAnnouncementSubscriptionDetails(object):
         Sets the compartment_id of this CreateAnnouncementSubscriptionDetails.
         The `OCID`__ of the compartment where you want to create the announcement subscription.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAnnouncementSubscriptionDetails.
@@ -171,7 +171,7 @@ class CreateAnnouncementSubscriptionDetails(object):
         **[Required]** Gets the ons_topic_id of this CreateAnnouncementSubscriptionDetails.
         The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see `Details for Notifications`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm
 
 
         :return: The ons_topic_id of this CreateAnnouncementSubscriptionDetails.
@@ -185,7 +185,7 @@ class CreateAnnouncementSubscriptionDetails(object):
         Sets the ons_topic_id of this CreateAnnouncementSubscriptionDetails.
         The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see `Details for Notifications`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm
 
 
         :param ons_topic_id: The ons_topic_id of this CreateAnnouncementSubscriptionDetails.

@@ -134,7 +134,7 @@ class DiagnosabilityClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_greater_than_or_equal_to: (optional)
             The optional greater than or equal to timestamp to filter the logs.
@@ -337,7 +337,7 @@ class DiagnosabilityClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_greater_than_or_equal_to: (optional)
             The optional greater than or equal to timestamp to filter the logs.
@@ -540,7 +540,7 @@ class DiagnosabilityClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_greater_than_or_equal_to: (optional)
             The optional greater than or equal to timestamp to filter the logs.
@@ -729,7 +729,7 @@ class DiagnosabilityClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_greater_than_or_equal_to: (optional)
             The optional greater than or equal to timestamp to filter the logs.

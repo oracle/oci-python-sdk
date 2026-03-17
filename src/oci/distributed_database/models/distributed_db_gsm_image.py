@@ -46,7 +46,7 @@ class DistributedDbGsmImage(object):
         **[Required]** Gets the id of this DistributedDbGsmImage.
         The `OCID`__ of the Global service manager software image.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DistributedDbGsmImage.
@@ -60,7 +60,7 @@ class DistributedDbGsmImage(object):
         Sets the id of this DistributedDbGsmImage.
         The `OCID`__ of the Global service manager software image.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DistributedDbGsmImage.

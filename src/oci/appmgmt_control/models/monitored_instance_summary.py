@@ -74,7 +74,7 @@ class MonitoredInstanceSummary(object):
         **[Required]** Gets the instance_id of this MonitoredInstanceSummary.
         The `OCID`__ of monitored instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this MonitoredInstanceSummary.
@@ -88,7 +88,7 @@ class MonitoredInstanceSummary(object):
         Sets the instance_id of this MonitoredInstanceSummary.
         The `OCID`__ of monitored instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this MonitoredInstanceSummary.
@@ -102,7 +102,7 @@ class MonitoredInstanceSummary(object):
         **[Required]** Gets the compartment_id of this MonitoredInstanceSummary.
         Compartment Identifier `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredInstanceSummary.
@@ -116,7 +116,7 @@ class MonitoredInstanceSummary(object):
         Sets the compartment_id of this MonitoredInstanceSummary.
         Compartment Identifier `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredInstanceSummary.
@@ -131,8 +131,8 @@ class MonitoredInstanceSummary(object):
         A user-friendly name of the monitored instance. It is binded to `Compute Instance`__.
         DisplayName is fetched from `Core Service API`__.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
-        __ https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/
+        __ https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Instance/
 
 
         :return: The display_name of this MonitoredInstanceSummary.
@@ -147,8 +147,8 @@ class MonitoredInstanceSummary(object):
         A user-friendly name of the monitored instance. It is binded to `Compute Instance`__.
         DisplayName is fetched from `Core Service API`__.
 
-        __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
-        __ https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/
+        __ https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Instance/
 
 
         :param display_name: The display_name of this MonitoredInstanceSummary.
@@ -162,7 +162,7 @@ class MonitoredInstanceSummary(object):
         Gets the management_agent_id of this MonitoredInstanceSummary.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MonitoredInstanceSummary.
@@ -176,7 +176,7 @@ class MonitoredInstanceSummary(object):
         Sets the management_agent_id of this MonitoredInstanceSummary.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MonitoredInstanceSummary.

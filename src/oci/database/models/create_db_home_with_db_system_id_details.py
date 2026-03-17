@@ -119,7 +119,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
         **[Required]** Gets the db_system_id of this CreateDbHomeWithDbSystemIdDetails.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this CreateDbHomeWithDbSystemIdDetails.
@@ -133,7 +133,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
         Sets the db_system_id of this CreateDbHomeWithDbSystemIdDetails.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this CreateDbHomeWithDbSystemIdDetails.

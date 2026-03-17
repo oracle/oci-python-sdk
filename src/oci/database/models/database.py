@@ -326,7 +326,7 @@ class Database(object):
         **[Required]** Gets the id of this Database.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Database.
@@ -340,7 +340,7 @@ class Database(object):
         Sets the id of this Database.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Database.
@@ -354,7 +354,7 @@ class Database(object):
         **[Required]** Gets the compartment_id of this Database.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Database.
@@ -368,7 +368,7 @@ class Database(object):
         Sets the compartment_id of this Database.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Database.
@@ -430,7 +430,7 @@ class Database(object):
         Gets the db_home_id of this Database.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_home_id of this Database.
@@ -444,7 +444,7 @@ class Database(object):
         Sets the db_home_id of this Database.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_home_id: The db_home_id of this Database.
@@ -458,7 +458,7 @@ class Database(object):
         Gets the db_system_id of this Database.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this Database.
@@ -472,7 +472,7 @@ class Database(object):
         Sets the db_system_id of this Database.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this Database.
@@ -486,7 +486,7 @@ class Database(object):
         Gets the vm_cluster_id of this Database.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this Database.
@@ -500,7 +500,7 @@ class Database(object):
         Sets the vm_cluster_id of this Database.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this Database.
@@ -789,7 +789,7 @@ class Database(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Database.
@@ -806,7 +806,7 @@ class Database(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Database.
@@ -821,7 +821,7 @@ class Database(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Database.
@@ -836,7 +836,7 @@ class Database(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Database.
@@ -851,7 +851,7 @@ class Database(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this Database.
@@ -866,7 +866,7 @@ class Database(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this Database.
@@ -952,8 +952,8 @@ class Database(object):
         Gets the vault_id of this Database.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this Database.
@@ -967,8 +967,8 @@ class Database(object):
         Sets the vault_id of this Database.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this Database.
@@ -1010,7 +1010,7 @@ class Database(object):
         Gets the database_software_image_id of this Database.
         The database software image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this Database.
@@ -1024,7 +1024,7 @@ class Database(object):
         Sets the database_software_image_id of this Database.
         The database software image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this Database.
@@ -1106,7 +1106,7 @@ class Database(object):
         Gets the key_store_id of this Database.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this Database.
@@ -1120,7 +1120,7 @@ class Database(object):
         Sets the key_store_id of this Database.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this Database.

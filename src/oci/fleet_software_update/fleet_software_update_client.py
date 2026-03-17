@@ -4958,7 +4958,7 @@ class FleetSoftwareUpdateClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource related to the Exadata Fleet Update Readiness Check.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycleState matches the specified lifecycleState.

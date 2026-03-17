@@ -46,7 +46,7 @@ class ConfigureDistributedAutonomousDatabaseGsmWalletDetails(object):
         **[Required]** Gets the certificate_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
         The `OCID`__ of the cluster certificate.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The certificate_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
@@ -60,7 +60,7 @@ class ConfigureDistributedAutonomousDatabaseGsmWalletDetails(object):
         Sets the certificate_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
         The `OCID`__ of the cluster certificate.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param certificate_id: The certificate_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
@@ -74,7 +74,7 @@ class ConfigureDistributedAutonomousDatabaseGsmWalletDetails(object):
         **[Required]** Gets the ca_bundle_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
         The `OCID`__ of the ca bundle id.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ca_bundle_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
@@ -88,7 +88,7 @@ class ConfigureDistributedAutonomousDatabaseGsmWalletDetails(object):
         Sets the ca_bundle_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.
         The `OCID`__ of the ca bundle id.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ca_bundle_id: The ca_bundle_id of this ConfigureDistributedAutonomousDatabaseGsmWalletDetails.

@@ -6959,7 +6959,7 @@ class DatabaseMigrationClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
             A filter to return only resources their lifecycleState matches the given OperationStatus.

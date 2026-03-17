@@ -70,7 +70,7 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
         Gets the software_source_id of this ManagedInstanceGroupAvailableModuleSummary.
         The `OCID`__ of the software source that provides the module.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ManagedInstanceGroupAvailableModuleSummary.
@@ -84,7 +84,7 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
         Sets the software_source_id of this ManagedInstanceGroupAvailableModuleSummary.
         The `OCID`__ of the software source that provides the module.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ManagedInstanceGroupAvailableModuleSummary.

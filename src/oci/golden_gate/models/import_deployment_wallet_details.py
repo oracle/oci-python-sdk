@@ -154,7 +154,7 @@ class ImportDeploymentWalletDetails(object):
         Gets the wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
         The `OCID`__ of the compartment, where the secret will be created in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
@@ -168,7 +168,7 @@ class ImportDeploymentWalletDetails(object):
         Sets the wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
         The `OCID`__ of the compartment, where the secret will be created in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param wallet_backup_secret_compartment_id: The wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.

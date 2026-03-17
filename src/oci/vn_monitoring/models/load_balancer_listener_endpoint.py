@@ -56,7 +56,7 @@ class LoadBalancerListenerEndpoint(Endpoint):
         **[Required]** Gets the listener_id of this LoadBalancerListenerEndpoint.
         The `OCID`__ of the load balancer listener.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The listener_id of this LoadBalancerListenerEndpoint.
@@ -70,7 +70,7 @@ class LoadBalancerListenerEndpoint(Endpoint):
         Sets the listener_id of this LoadBalancerListenerEndpoint.
         The `OCID`__ of the load balancer listener.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param listener_id: The listener_id of this LoadBalancerListenerEndpoint.
@@ -84,7 +84,7 @@ class LoadBalancerListenerEndpoint(Endpoint):
         **[Required]** Gets the load_balancer_id of this LoadBalancerListenerEndpoint.
         The `OCID`__ of the listener's load balancer.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this LoadBalancerListenerEndpoint.
@@ -98,7 +98,7 @@ class LoadBalancerListenerEndpoint(Endpoint):
         Sets the load_balancer_id of this LoadBalancerListenerEndpoint.
         The `OCID`__ of the listener's load balancer.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this LoadBalancerListenerEndpoint.

@@ -91,8 +91,8 @@ class CreatePublicIpDetails(object):
         The `OCID`__ of the compartment to contain the public IP. For ephemeral public IPs,
         you must set this to the private IP's compartment `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePublicIpDetails.
@@ -107,8 +107,8 @@ class CreatePublicIpDetails(object):
         The `OCID`__ of the compartment to contain the public IP. For ephemeral public IPs,
         you must set this to the private IP's compartment `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePublicIpDetails.
@@ -125,7 +125,7 @@ class CreatePublicIpDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreatePublicIpDetails.
@@ -142,7 +142,7 @@ class CreatePublicIpDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreatePublicIpDetails.
@@ -185,7 +185,7 @@ class CreatePublicIpDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreatePublicIpDetails.
@@ -202,7 +202,7 @@ class CreatePublicIpDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreatePublicIpDetails.
@@ -218,7 +218,7 @@ class CreatePublicIpDetails(object):
         Infrastructure public IP pool. For more information, see
         `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED"
 
@@ -236,7 +236,7 @@ class CreatePublicIpDetails(object):
         Infrastructure public IP pool. For more information, see
         `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this CreatePublicIpDetails.
@@ -262,7 +262,7 @@ class CreatePublicIpDetails(object):
         assigned to a private IP. You can later assign the public IP with
         :func:`update_public_ip`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this CreatePublicIpDetails.
@@ -283,7 +283,7 @@ class CreatePublicIpDetails(object):
         assigned to a private IP. You can later assign the public IP with
         :func:`update_public_ip`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this CreatePublicIpDetails.
@@ -297,7 +297,7 @@ class CreatePublicIpDetails(object):
         Gets the public_ip_pool_id of this CreatePublicIpDetails.
         The `OCID`__ of the public IP pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this CreatePublicIpDetails.
@@ -311,7 +311,7 @@ class CreatePublicIpDetails(object):
         Sets the public_ip_pool_id of this CreatePublicIpDetails.
         The `OCID`__ of the public IP pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this CreatePublicIpDetails.

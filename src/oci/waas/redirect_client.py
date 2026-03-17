@@ -132,7 +132,7 @@ class RedirectClient(object):
         :param str http_redirect_id: (required)
             The `OCID`__ of the HTTP Redirect.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.waas.models.ChangeHttpRedirectCompartmentDetails change_http_redirect_compartment_details: (required)
 
@@ -349,7 +349,7 @@ class RedirectClient(object):
         :param str http_redirect_id: (required)
             The `OCID`__ of the HTTP Redirect.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -464,7 +464,7 @@ class RedirectClient(object):
         :param str http_redirect_id: (required)
             The `OCID`__ of the HTTP Redirect.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -571,7 +571,7 @@ class RedirectClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This number is generated when the compartment is created.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -746,7 +746,7 @@ class RedirectClient(object):
         :param str http_redirect_id: (required)
             The `OCID`__ of the HTTP Redirect.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.waas.models.UpdateHttpRedirectDetails update_http_redirect_details: (required)
             The details of the HTTP Redirect to update.

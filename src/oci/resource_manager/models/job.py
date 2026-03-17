@@ -19,8 +19,8 @@ class Job(object):
     For more information about jobs, see
     `Key Concepts`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition
+    __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm
+    __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition
     """
 
     #: A constant which can be used with the operation property of a Job.
@@ -239,7 +239,7 @@ class Job(object):
         Gets the id of this Job.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Job.
@@ -253,7 +253,7 @@ class Job(object):
         Sets the id of this Job.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Job.
@@ -267,7 +267,7 @@ class Job(object):
         Gets the stack_id of this Job.
         The `OCID`__ of the stack that is associated with the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_id of this Job.
@@ -281,7 +281,7 @@ class Job(object):
         Sets the stack_id of this Job.
         The `OCID`__ of the stack that is associated with the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stack_id: The stack_id of this Job.
@@ -295,7 +295,7 @@ class Job(object):
         Gets the compartment_id of this Job.
         The `OCID`__ of the compartment in which the job's associated stack resides.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Job.
@@ -309,7 +309,7 @@ class Job(object):
         Sets the compartment_id of this Job.
         The `OCID`__ of the compartment in which the job's associated stack resides.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Job.
@@ -382,7 +382,7 @@ class Job(object):
         `Third-party Provider Configuration`__.
 
         __ https://registry.terraform.io/browse/providers
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
 
 
         :return: The is_third_party_provider_experience_enabled of this Job.
@@ -401,7 +401,7 @@ class Job(object):
         `Third-party Provider Configuration`__.
 
         __ https://registry.terraform.io/browse/providers
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
 
 
         :param is_third_party_provider_experience_enabled: The is_third_party_provider_experience_enabled of this Job.
@@ -488,7 +488,7 @@ class Job(object):
         Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
         The plan job `OCID`__ that was used (if this was an apply job and was not auto-approved).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resolved_plan_job_id of this Job.
@@ -503,7 +503,7 @@ class Job(object):
         Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
         The plan job `OCID`__ that was used (if this was an apply job and was not auto-approved).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resolved_plan_job_id: The resolved_plan_job_id of this Job.
@@ -575,7 +575,7 @@ class Job(object):
         For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -594,7 +594,7 @@ class Job(object):
         For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
 
         :param lifecycle_state: The lifecycle_state of this Job.
@@ -656,7 +656,7 @@ class Job(object):
         For more information about required and recommended file structure, see
         `File Structure (Terraform Configurations for Resource Manager)`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
 
 
         :return: The working_directory of this Job.
@@ -675,7 +675,7 @@ class Job(object):
         For more information about required and recommended file structure, see
         `File Structure (Terraform Configurations for Resource Manager)`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
 
 
         :param working_directory: The working_directory of this Job.
@@ -741,7 +741,7 @@ class Job(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Job.
@@ -757,7 +757,7 @@ class Job(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Job.
@@ -773,7 +773,7 @@ class Job(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Job.
@@ -789,7 +789,7 @@ class Job(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Job.
@@ -805,7 +805,7 @@ class Job(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this Job.
@@ -821,7 +821,7 @@ class Job(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this Job.

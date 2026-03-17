@@ -234,7 +234,7 @@ class UpdateMicrosoftFabricConnectionDetails(UpdateConnectionDetails):
         The `OCID`__ of the Secret where the client secret is stored.
         Note: When provided, 'clientSecret' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The client_secret_secret_id of this UpdateMicrosoftFabricConnectionDetails.
@@ -249,7 +249,7 @@ class UpdateMicrosoftFabricConnectionDetails(UpdateConnectionDetails):
         The `OCID`__ of the Secret where the client secret is stored.
         Note: When provided, 'clientSecret' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param client_secret_secret_id: The client_secret_secret_id of this UpdateMicrosoftFabricConnectionDetails.

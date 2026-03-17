@@ -123,7 +123,7 @@ class StreamJobSummary(object):
         **[Required]** Gets the id of this StreamJobSummary.
         `OCID`__ of the streamJob.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this StreamJobSummary.
@@ -137,7 +137,7 @@ class StreamJobSummary(object):
         Sets the id of this StreamJobSummary.
         `OCID`__ of the streamJob.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this StreamJobSummary.
@@ -151,7 +151,7 @@ class StreamJobSummary(object):
         **[Required]** Gets the stream_source_id of this StreamJobSummary.
         `OCID`__ of the streamSource
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_source_id of this StreamJobSummary.
@@ -165,7 +165,7 @@ class StreamJobSummary(object):
         Sets the stream_source_id of this StreamJobSummary.
         `OCID`__ of the streamSource
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_source_id: The stream_source_id of this StreamJobSummary.
@@ -179,7 +179,7 @@ class StreamJobSummary(object):
         **[Required]** Gets the compartment_id of this StreamJobSummary.
         `OCID`__ of compartment
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this StreamJobSummary.
@@ -193,7 +193,7 @@ class StreamJobSummary(object):
         Sets the compartment_id of this StreamJobSummary.
         `OCID`__ of compartment
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this StreamJobSummary.

@@ -143,7 +143,7 @@ class UpdateCccInfrastructureDetails(object):
         `OCID`__ for the network subnet that is
         used to communicate with Compute Cloud@Customer infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this UpdateCccInfrastructureDetails.
@@ -158,7 +158,7 @@ class UpdateCccInfrastructureDetails(object):
         `OCID`__ for the network subnet that is
         used to communicate with Compute Cloud@Customer infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this UpdateCccInfrastructureDetails.

@@ -14,7 +14,7 @@ class CreateMacsecKey(object):
     """
     Defines the secret `OCID`__s held in Vault that represent the MACsec key.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class CreateMacsecKey(object):
 
         NOTE: Only the latest secret version will be used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connectivity_association_name_secret_id of this CreateMacsecKey.
@@ -66,7 +66,7 @@ class CreateMacsecKey(object):
 
         NOTE: Only the latest secret version will be used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connectivity_association_name_secret_id: The connectivity_association_name_secret_id of this CreateMacsecKey.
@@ -82,7 +82,7 @@ class CreateMacsecKey(object):
 
         NOTE: Only the latest secret version will be used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connectivity_association_key_secret_id of this CreateMacsecKey.
@@ -98,7 +98,7 @@ class CreateMacsecKey(object):
 
         NOTE: Only the latest secret version will be used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connectivity_association_key_secret_id: The connectivity_association_key_secret_id of this CreateMacsecKey.

@@ -138,13 +138,13 @@ class ComputeManagementClient(object):
         that an instance must meet before you can attach it to a pool, see
         `Attaching an Instance to an Instance Pool`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance
 
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachInstancePoolInstanceDetails attach_instance_pool_instance_details: (required)
             Attach an instance to a pool
@@ -259,7 +259,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
@@ -383,14 +383,14 @@ class ComputeManagementClient(object):
         When you move a cluster network to a different compartment, associated resources such as the instances
         in the cluster network, boot volumes, and VNICs are not moved.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str cluster_network_id: (required)
             The `OCID`__ of the cluster network.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeClusterNetworkCompartmentDetails change_cluster_network_compartment_details: (required)
             Request to change the compartment of given cluster network.
@@ -524,8 +524,8 @@ class ComputeManagementClient(object):
         you should instead create a new instance configuration in the target compartment using
         `CreateInstanceConfiguration`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration
 
 
         :param str instance_configuration_id: (required)
@@ -656,13 +656,13 @@ class ComputeManagementClient(object):
         When you move an instance pool to a different compartment, associated resources such as the instances in
         the pool, boot volumes, VNICs, and autoscaling configurations are not moved.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeInstancePoolCompartmentDetails change_instance_pool_compartment_details: (required)
             Request to change the compartment of given instance pool.
@@ -798,7 +798,7 @@ class ComputeManagementClient(object):
         use the :func:`create_compute_capacity_report`
         operation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param oci.core.models.CreateClusterNetworkDetails create_cluster_network_details: (required)
@@ -1206,7 +1206,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachInstancePoolInstanceDetails detach_instance_pool_instance_details: (required)
             Instance being detached
@@ -1319,7 +1319,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
@@ -1437,13 +1437,13 @@ class ComputeManagementClient(object):
         """
         Gets information about a `cluster network with instance pools`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str cluster_network_id: (required)
             The `OCID`__ of the cluster network.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1629,7 +1629,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1723,12 +1723,12 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1823,7 +1823,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_pool_load_balancer_attachment_id: (required)
             The OCID of the load balancer attachment.
@@ -1945,8 +1945,8 @@ class ComputeManagementClient(object):
             The `OCID`__ of the
             `compute cluster`__ that the instance will be created in.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2049,18 +2049,18 @@ class ComputeManagementClient(object):
         """
         Lists the instances in a `cluster network with instance pools`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cluster_network_id: (required)
             The `OCID`__ of the cluster network.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2072,14 +2072,14 @@ class ComputeManagementClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2224,13 +2224,13 @@ class ComputeManagementClient(object):
         Lists the `cluster networks with instance pools`__
         in the specified compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2242,14 +2242,14 @@ class ComputeManagementClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2400,7 +2400,7 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -2409,14 +2409,14 @@ class ComputeManagementClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2550,12 +2550,12 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2567,14 +2567,14 @@ class ComputeManagementClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2722,7 +2722,7 @@ class ComputeManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -2734,14 +2734,14 @@ class ComputeManagementClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -2893,7 +2893,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3014,7 +3014,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3135,7 +3135,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3253,7 +3253,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3371,7 +3371,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3487,13 +3487,13 @@ class ComputeManagementClient(object):
         When you delete a cluster network, all of its resources are permanently deleted,
         including associated instances and instance pools.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str cluster_network_id: (required)
             The `OCID`__ of the cluster network.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -3605,7 +3605,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -3710,7 +3710,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.TerminationProceedInstancePoolInstanceDetails termination_proceed_instance_pool_instance_details: (required)
             Instance to be marked for terminating.
@@ -3820,13 +3820,13 @@ class ComputeManagementClient(object):
         Updates a `cluster network with instance pools`__.
         The OCID of the cluster network remains the same.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str cluster_network_id: (required)
             The `OCID`__ of the cluster network.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateClusterNetworkDetails update_cluster_network_details: (required)
             Update cluster network
@@ -4070,7 +4070,7 @@ class ComputeManagementClient(object):
         :param str instance_pool_id: (required)
             The `OCID`__ of the instance pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration

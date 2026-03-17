@@ -355,7 +355,7 @@ class DataguardMetrics(object):
         **[Required]** Gets the db_id of this DataguardMetrics.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_id of this DataguardMetrics.
@@ -369,7 +369,7 @@ class DataguardMetrics(object):
         Sets the db_id of this DataguardMetrics.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_id: The db_id of this DataguardMetrics.
@@ -383,7 +383,7 @@ class DataguardMetrics(object):
         **[Required]** Gets the compartment_id of this DataguardMetrics.
         The `OCID`__ of the compartment where the Managed Database resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DataguardMetrics.
@@ -397,7 +397,7 @@ class DataguardMetrics(object):
         Sets the compartment_id of this DataguardMetrics.
         The `OCID`__ of the compartment where the Managed Database resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DataguardMetrics.

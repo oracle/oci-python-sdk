@@ -123,7 +123,7 @@ class DrgAttachmentNetworkDetails(object):
         Gets the id of this DrgAttachmentNetworkDetails.
         The `OCID`__ of the network attached to the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DrgAttachmentNetworkDetails.
@@ -137,7 +137,7 @@ class DrgAttachmentNetworkDetails(object):
         Sets the id of this DrgAttachmentNetworkDetails.
         The `OCID`__ of the network attached to the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DrgAttachmentNetworkDetails.

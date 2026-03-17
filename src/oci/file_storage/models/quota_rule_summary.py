@@ -155,7 +155,7 @@ class QuotaRuleSummary(object):
         **[Required]** Gets the file_system_id of this QuotaRuleSummary.
         The `OCID`__ of the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this QuotaRuleSummary.
@@ -169,7 +169,7 @@ class QuotaRuleSummary(object):
         Sets the file_system_id of this QuotaRuleSummary.
         The `OCID`__ of the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this QuotaRuleSummary.

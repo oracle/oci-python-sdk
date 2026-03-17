@@ -15,7 +15,7 @@ class PathAnalyzerTest(object):
     Defines the details saved in a `PathAnalyzerTest` resource. These configuration details are used to
     run a `Network Path Analyzer`__ analysis.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a PathAnalyzerTest.
@@ -193,7 +193,7 @@ class PathAnalyzerTest(object):
         **[Required]** Gets the compartment_id of this PathAnalyzerTest.
         The `OCID`__ of the `PathAnalyzerTest` resource's compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PathAnalyzerTest.
@@ -207,7 +207,7 @@ class PathAnalyzerTest(object):
         Sets the compartment_id of this PathAnalyzerTest.
         The `OCID`__ of the `PathAnalyzerTest` resource's compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PathAnalyzerTest.

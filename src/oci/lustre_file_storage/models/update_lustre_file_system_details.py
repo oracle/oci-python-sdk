@@ -154,7 +154,7 @@ class UpdateLustreFileSystemDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateLustreFileSystemDetails.
@@ -171,7 +171,7 @@ class UpdateLustreFileSystemDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateLustreFileSystemDetails.
@@ -188,7 +188,7 @@ class UpdateLustreFileSystemDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateLustreFileSystemDetails.
@@ -205,7 +205,7 @@ class UpdateLustreFileSystemDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateLustreFileSystemDetails.
@@ -222,8 +222,8 @@ class UpdateLustreFileSystemDetails(object):
         Setting this to an empty array after the list is created removes the lustre file system from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this UpdateLustreFileSystemDetails.
@@ -240,8 +240,8 @@ class UpdateLustreFileSystemDetails(object):
         Setting this to an empty array after the list is created removes the lustre file system from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this UpdateLustreFileSystemDetails.
@@ -255,7 +255,7 @@ class UpdateLustreFileSystemDetails(object):
         Gets the kms_key_id of this UpdateLustreFileSystemDetails.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this UpdateLustreFileSystemDetails.
@@ -269,7 +269,7 @@ class UpdateLustreFileSystemDetails(object):
         Sets the kms_key_id of this UpdateLustreFileSystemDetails.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this UpdateLustreFileSystemDetails.

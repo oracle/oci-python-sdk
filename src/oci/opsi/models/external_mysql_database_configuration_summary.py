@@ -140,7 +140,7 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         **[Required]** Gets the database_id of this ExternalMysqlDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this ExternalMysqlDatabaseConfigurationSummary.
@@ -154,7 +154,7 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         Sets the database_id of this ExternalMysqlDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this ExternalMysqlDatabaseConfigurationSummary.
@@ -168,7 +168,7 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         **[Required]** Gets the agent_id of this ExternalMysqlDatabaseConfigurationSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this ExternalMysqlDatabaseConfigurationSummary.
@@ -182,7 +182,7 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         Sets the agent_id of this ExternalMysqlDatabaseConfigurationSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this ExternalMysqlDatabaseConfigurationSummary.
@@ -196,7 +196,7 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         **[Required]** Gets the database_connector_id of this ExternalMysqlDatabaseConfigurationSummary.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :return: The database_connector_id of this ExternalMysqlDatabaseConfigurationSummary.
@@ -210,7 +210,7 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
         Sets the database_connector_id of this ExternalMysqlDatabaseConfigurationSummary.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :param database_connector_id: The database_connector_id of this ExternalMysqlDatabaseConfigurationSummary.

@@ -47,7 +47,7 @@ class BulkUpdatePrivateIpsDetails(object):
         The `OCID`__ of the VNIC to reassign
         the private IPs to. The VNIC and private IPs must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this BulkUpdatePrivateIpsDetails.
@@ -62,7 +62,7 @@ class BulkUpdatePrivateIpsDetails(object):
         The `OCID`__ of the VNIC to reassign
         the private IPs to. The VNIC and private IPs must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this BulkUpdatePrivateIpsDetails.

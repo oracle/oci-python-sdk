@@ -228,7 +228,7 @@ class FsuCollection(object):
         **[Required]** Gets the id of this FsuCollection.
         The `OCID`__ of the Exadata Fleet Update Collection.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FsuCollection.
@@ -242,7 +242,7 @@ class FsuCollection(object):
         Sets the id of this FsuCollection.
         The `OCID`__ of the Exadata Fleet Update Collection.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FsuCollection.
@@ -340,7 +340,7 @@ class FsuCollection(object):
         **[Required]** Gets the compartment_id of this FsuCollection.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FsuCollection.
@@ -354,7 +354,7 @@ class FsuCollection(object):
         Sets the compartment_id of this FsuCollection.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FsuCollection.
@@ -516,7 +516,7 @@ class FsuCollection(object):
         Gets the last_completed_fsu_cycle_id of this FsuCollection.
         The `OCID`__ of last completed FSU Cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_completed_fsu_cycle_id of this FsuCollection.
@@ -530,7 +530,7 @@ class FsuCollection(object):
         Sets the last_completed_fsu_cycle_id of this FsuCollection.
         The `OCID`__ of last completed FSU Cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_completed_fsu_cycle_id: The last_completed_fsu_cycle_id of this FsuCollection.

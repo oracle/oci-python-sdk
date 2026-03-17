@@ -108,7 +108,7 @@ class ManagementApplianceConfiguration(object):
         Gets the support_bundle_bucket_id of this ManagementApplianceConfiguration.
         The `OCID`__ of support bundle Object Storage bucket.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The support_bundle_bucket_id of this ManagementApplianceConfiguration.
@@ -122,7 +122,7 @@ class ManagementApplianceConfiguration(object):
         Sets the support_bundle_bucket_id of this ManagementApplianceConfiguration.
         The `OCID`__ of support bundle Object Storage bucket.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param support_bundle_bucket_id: The support_bundle_bucket_id of this ManagementApplianceConfiguration.

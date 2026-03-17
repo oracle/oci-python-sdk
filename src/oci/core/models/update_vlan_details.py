@@ -77,7 +77,7 @@ class UpdateVlanDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateVlanDetails.
@@ -94,7 +94,7 @@ class UpdateVlanDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateVlanDetails.
@@ -137,7 +137,7 @@ class UpdateVlanDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateVlanDetails.
@@ -154,7 +154,7 @@ class UpdateVlanDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateVlanDetails.
@@ -198,7 +198,7 @@ class UpdateVlanDetails(object):
         Gets the route_table_id of this UpdateVlanDetails.
         The `OCID`__ of the route table the VLAN will use.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this UpdateVlanDetails.
@@ -212,7 +212,7 @@ class UpdateVlanDetails(object):
         Sets the route_table_id of this UpdateVlanDetails.
         The `OCID`__ of the route table the VLAN will use.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this UpdateVlanDetails.

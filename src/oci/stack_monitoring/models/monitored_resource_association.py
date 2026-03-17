@@ -154,7 +154,7 @@ class MonitoredResourceAssociation(object):
         **[Required]** Gets the compartment_id of this MonitoredResourceAssociation.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredResourceAssociation.
@@ -168,7 +168,7 @@ class MonitoredResourceAssociation(object):
         Sets the compartment_id of this MonitoredResourceAssociation.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredResourceAssociation.
@@ -182,7 +182,7 @@ class MonitoredResourceAssociation(object):
         **[Required]** Gets the tenant_id of this MonitoredResourceAssociation.
         Tenancy Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenant_id of this MonitoredResourceAssociation.
@@ -196,7 +196,7 @@ class MonitoredResourceAssociation(object):
         Sets the tenant_id of this MonitoredResourceAssociation.
         Tenancy Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenant_id: The tenant_id of this MonitoredResourceAssociation.
@@ -210,7 +210,7 @@ class MonitoredResourceAssociation(object):
         **[Required]** Gets the source_resource_id of this MonitoredResourceAssociation.
         Source Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_resource_id of this MonitoredResourceAssociation.
@@ -224,7 +224,7 @@ class MonitoredResourceAssociation(object):
         Sets the source_resource_id of this MonitoredResourceAssociation.
         Source Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_resource_id: The source_resource_id of this MonitoredResourceAssociation.
@@ -238,7 +238,7 @@ class MonitoredResourceAssociation(object):
         **[Required]** Gets the destination_resource_id of this MonitoredResourceAssociation.
         Destination Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destination_resource_id of this MonitoredResourceAssociation.
@@ -252,7 +252,7 @@ class MonitoredResourceAssociation(object):
         Sets the destination_resource_id of this MonitoredResourceAssociation.
         Destination Monitored Resource Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destination_resource_id: The destination_resource_id of this MonitoredResourceAssociation.

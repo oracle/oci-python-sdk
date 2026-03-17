@@ -210,8 +210,8 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         **[Required]** Gets the ssl_secret_id of this DatabaseSslConnectionCredentials.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The ssl_secret_id of this DatabaseSslConnectionCredentials.
@@ -225,8 +225,8 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         Sets the ssl_secret_id of this DatabaseSslConnectionCredentials.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param ssl_secret_id: The ssl_secret_id of this DatabaseSslConnectionCredentials.

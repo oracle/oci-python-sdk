@@ -120,7 +120,7 @@ class CreateConfigSourceDetails(object):
         For more information about required and recommended file structure, see
         `File Structure (Terraform Configurations for Resource Manager)`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
 
 
         :return: The working_directory of this CreateConfigSourceDetails.
@@ -139,7 +139,7 @@ class CreateConfigSourceDetails(object):
         For more information about required and recommended file structure, see
         `File Structure (Terraform Configurations for Resource Manager)`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
 
 
         :param working_directory: The working_directory of this CreateConfigSourceDetails.

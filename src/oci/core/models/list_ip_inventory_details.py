@@ -171,7 +171,7 @@ class ListIpInventoryDetails(object):
         **[Required]** Gets the compartment_list of this ListIpInventoryDetails.
         List the `OCID`__ of the compartments.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_list of this ListIpInventoryDetails.
@@ -185,7 +185,7 @@ class ListIpInventoryDetails(object):
         Sets the compartment_list of this ListIpInventoryDetails.
         List the `OCID`__ of the compartments.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_list: The compartment_list of this ListIpInventoryDetails.
@@ -426,7 +426,7 @@ class ListIpInventoryDetails(object):
         Most List operations paginate results. Results are paginated for the ListInstances operations. When you call a paginated List operation, the response indicates more pages of results by including the opc-next-page header.
         For more information, see `List Pagination`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
 
         :return: The pagination_offset of this ListIpInventoryDetails.
@@ -441,7 +441,7 @@ class ListIpInventoryDetails(object):
         Most List operations paginate results. Results are paginated for the ListInstances operations. When you call a paginated List operation, the response indicates more pages of results by including the opc-next-page header.
         For more information, see `List Pagination`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
 
         :param pagination_offset: The pagination_offset of this ListIpInventoryDetails.
@@ -456,7 +456,7 @@ class ListIpInventoryDetails(object):
         Specifies the maximum number of results displayed per page for a paginated \"List\" call. For more information, see `List Pagination`__.
         Example: `50`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
 
         :return: The pagination_limit of this ListIpInventoryDetails.
@@ -471,7 +471,7 @@ class ListIpInventoryDetails(object):
         Specifies the maximum number of results displayed per page for a paginated \"List\" call. For more information, see `List Pagination`__.
         Example: `50`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
 
         :param pagination_limit: The pagination_limit of this ListIpInventoryDetails.

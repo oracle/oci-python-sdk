@@ -761,7 +761,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -864,7 +864,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1330,7 +1330,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1481,7 +1481,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1631,7 +1631,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1781,7 +1781,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1945,7 +1945,7 @@ class LicenseManagerClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__ used for the license record, product license, and configuration.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.license_manager.models.UpdateConfigurationDetails update_configuration_details: (required)
             Configuration details that need to be updated.

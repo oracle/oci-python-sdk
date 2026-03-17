@@ -205,7 +205,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         **[Required]** Gets the database_id of this AutonomousDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this AutonomousDatabaseInsight.
@@ -219,7 +219,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         Sets the database_id of this AutonomousDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this AutonomousDatabaseInsight.
@@ -303,7 +303,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
     def db_additional_details(self):
         """
         Gets the db_additional_details of this AutonomousDatabaseInsight.
-        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
 
 
         :return: The db_additional_details of this AutonomousDatabaseInsight.
@@ -315,7 +315,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
     def db_additional_details(self, db_additional_details):
         """
         Sets the db_additional_details of this AutonomousDatabaseInsight.
-        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
 
 
         :param db_additional_details: The db_additional_details of this AutonomousDatabaseInsight.
@@ -329,7 +329,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         Gets the opsi_private_endpoint_id of this AutonomousDatabaseInsight.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this AutonomousDatabaseInsight.
@@ -343,7 +343,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         Sets the opsi_private_endpoint_id of this AutonomousDatabaseInsight.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this AutonomousDatabaseInsight.

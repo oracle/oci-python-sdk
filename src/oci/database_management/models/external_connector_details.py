@@ -49,7 +49,7 @@ class ExternalConnectorDetails(ConnectorDetails):
         **[Required]** Gets the database_connector_id of this ExternalConnectorDetails.
         The `OCID`__ of the external database connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_connector_id of this ExternalConnectorDetails.
@@ -63,7 +63,7 @@ class ExternalConnectorDetails(ConnectorDetails):
         Sets the database_connector_id of this ExternalConnectorDetails.
         The `OCID`__ of the external database connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_connector_id: The database_connector_id of this ExternalConnectorDetails.

@@ -16,7 +16,7 @@ class DatastoreSummary(object):
 
     The Datastore can be attached to multiple ESXi hosts.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
+    __ https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DatastoreSummary.
@@ -167,7 +167,7 @@ class DatastoreSummary(object):
         **[Required]** Gets the id of this DatastoreSummary.
         The `OCID`__ of the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DatastoreSummary.
@@ -181,7 +181,7 @@ class DatastoreSummary(object):
         Sets the id of this DatastoreSummary.
         The `OCID`__ of the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DatastoreSummary.
@@ -195,7 +195,7 @@ class DatastoreSummary(object):
         Gets the cluster_id of this DatastoreSummary.
         The `OCID`__ of the VMware Cluster that Datastore is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this DatastoreSummary.
@@ -209,7 +209,7 @@ class DatastoreSummary(object):
         Sets the cluster_id of this DatastoreSummary.
         The `OCID`__ of the VMware Cluster that Datastore is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this DatastoreSummary.
@@ -223,7 +223,7 @@ class DatastoreSummary(object):
         Gets the sddc_id of this DatastoreSummary.
         The `OCID`__ of the SDDC that Datastore is associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sddc_id of this DatastoreSummary.
@@ -237,7 +237,7 @@ class DatastoreSummary(object):
         Sets the sddc_id of this DatastoreSummary.
         The `OCID`__ of the SDDC that Datastore is associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sddc_id: The sddc_id of this DatastoreSummary.
@@ -251,7 +251,7 @@ class DatastoreSummary(object):
         **[Required]** Gets the block_volume_ids of this DatastoreSummary.
         The List of Block volume `OCID`__s that belong to the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The block_volume_ids of this DatastoreSummary.
@@ -265,7 +265,7 @@ class DatastoreSummary(object):
         Sets the block_volume_ids of this DatastoreSummary.
         The List of Block volume `OCID`__s that belong to the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param block_volume_ids: The block_volume_ids of this DatastoreSummary.
@@ -304,7 +304,7 @@ class DatastoreSummary(object):
         The `OCID`__ of the compartment that
         contains the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DatastoreSummary.
@@ -319,7 +319,7 @@ class DatastoreSummary(object):
         The `OCID`__ of the compartment that
         contains the Datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DatastoreSummary.
@@ -362,7 +362,7 @@ class DatastoreSummary(object):
         The `OCID`__ of the datastore cluster that
         Datastore belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The datastore_cluster_id of this DatastoreSummary.
@@ -377,7 +377,7 @@ class DatastoreSummary(object):
         The `OCID`__ of the datastore cluster that
         Datastore belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param datastore_cluster_id: The datastore_cluster_id of this DatastoreSummary.
@@ -506,7 +506,7 @@ class DatastoreSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DatastoreSummary.
@@ -523,7 +523,7 @@ class DatastoreSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DatastoreSummary.
@@ -540,7 +540,7 @@ class DatastoreSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DatastoreSummary.
@@ -557,7 +557,7 @@ class DatastoreSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DatastoreSummary.

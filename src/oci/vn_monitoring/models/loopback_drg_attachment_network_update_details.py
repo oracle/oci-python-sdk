@@ -49,7 +49,7 @@ class LoopbackDrgAttachmentNetworkUpdateDetails(DrgAttachmentNetworkUpdateDetail
         Gets the ids of this LoopbackDrgAttachmentNetworkUpdateDetails.
         The `OCID`__ of the Ipsec tunnel attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ids of this LoopbackDrgAttachmentNetworkUpdateDetails.
@@ -63,7 +63,7 @@ class LoopbackDrgAttachmentNetworkUpdateDetails(DrgAttachmentNetworkUpdateDetail
         Sets the ids of this LoopbackDrgAttachmentNetworkUpdateDetails.
         The `OCID`__ of the Ipsec tunnel attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ids: The ids of this LoopbackDrgAttachmentNetworkUpdateDetails.

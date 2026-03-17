@@ -51,7 +51,7 @@ class TestBdsObjectStorageConnectionDetails(object):
     def object_storage_uri(self):
         """
         **[Required]** Gets the object_storage_uri of this TestBdsObjectStorageConnectionDetails.
-        An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The object_storage_uri of this TestBdsObjectStorageConnectionDetails.
@@ -63,7 +63,7 @@ class TestBdsObjectStorageConnectionDetails(object):
     def object_storage_uri(self, object_storage_uri):
         """
         Sets the object_storage_uri of this TestBdsObjectStorageConnectionDetails.
-        An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        An Oracle Cloud Infrastructure URI to which this connection must be attempted. See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param object_storage_uri: The object_storage_uri of this TestBdsObjectStorageConnectionDetails.

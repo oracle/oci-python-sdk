@@ -108,7 +108,7 @@ class DetectStage(RemediationRunStage):
         Gets the audit_id of this DetectStage.
         The Oracle Cloud identifier (`OCID`__) of the vulnerability audit.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The audit_id of this DetectStage.
@@ -122,7 +122,7 @@ class DetectStage(RemediationRunStage):
         Sets the audit_id of this DetectStage.
         The Oracle Cloud identifier (`OCID`__) of the vulnerability audit.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param audit_id: The audit_id of this DetectStage.

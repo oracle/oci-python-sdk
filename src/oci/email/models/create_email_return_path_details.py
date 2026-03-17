@@ -108,7 +108,7 @@ class CreateEmailReturnPathDetails(object):
         **[Required]** Gets the parent_resource_id of this CreateEmailReturnPathDetails.
         The `OCID`__ of the EmailDomain for this email return path.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_resource_id of this CreateEmailReturnPathDetails.
@@ -122,7 +122,7 @@ class CreateEmailReturnPathDetails(object):
         Sets the parent_resource_id of this CreateEmailReturnPathDetails.
         The `OCID`__ of the EmailDomain for this email return path.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_resource_id: The parent_resource_id of this CreateEmailReturnPathDetails.
@@ -165,7 +165,7 @@ class CreateEmailReturnPathDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateEmailReturnPathDetails.
@@ -182,7 +182,7 @@ class CreateEmailReturnPathDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateEmailReturnPathDetails.
@@ -199,7 +199,7 @@ class CreateEmailReturnPathDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateEmailReturnPathDetails.
@@ -216,7 +216,7 @@ class CreateEmailReturnPathDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateEmailReturnPathDetails.

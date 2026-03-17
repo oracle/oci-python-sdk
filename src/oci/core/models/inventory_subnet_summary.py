@@ -94,7 +94,7 @@ class InventorySubnetSummary(object):
         Gets the subnet_id of this InventorySubnetSummary.
         The `OCID`__ of the subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this InventorySubnetSummary.
@@ -108,7 +108,7 @@ class InventorySubnetSummary(object):
         Sets the subnet_id of this InventorySubnetSummary.
         The `OCID`__ of the subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this InventorySubnetSummary.
@@ -248,7 +248,7 @@ class InventorySubnetSummary(object):
         Gets the compartment_id of this InventorySubnetSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InventorySubnetSummary.
@@ -262,7 +262,7 @@ class InventorySubnetSummary(object):
         Sets the compartment_id of this InventorySubnetSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InventorySubnetSummary.

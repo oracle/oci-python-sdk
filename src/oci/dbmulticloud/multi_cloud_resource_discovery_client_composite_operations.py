@@ -33,7 +33,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeMultiCloudResourceDiscoveryCompartmentDetails change_multi_cloud_resource_discovery_compartment_details: (required)
             Moves the Multi Cloud Discovered resource to a different compartment.
@@ -116,7 +116,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateMultiCloudResourceDiscoveryDetails update_multi_cloud_resource_discovery_details: (required)
             Details for to update MultiCloudResourceDiscovery.

@@ -129,13 +129,13 @@ class NetworkLoadBalancerClient(object):
         Moves a network load balancer into a different compartment within the same tenancy. For information about moving resources
         between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.ChangeNetworkLoadBalancerCompartmentDetails change_network_load_balancer_compartment_details: (required)
             The configuration details for moving a network load balancer to a different compartment.
@@ -265,7 +265,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.CreateBackendDetails create_backend_details: (required)
             The details to add a backend server to a backend set.
@@ -401,7 +401,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.CreateBackendSetDetails create_backend_set_details: (required)
             The details for adding a backend set.
@@ -531,7 +531,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.CreateListenerDetails create_listener_details: (required)
             Details to add a listener.
@@ -767,7 +767,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
@@ -899,7 +899,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to delete.
@@ -1020,7 +1020,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to delete.
@@ -1141,7 +1141,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1256,7 +1256,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set that includes the backend server.
@@ -1388,7 +1388,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server for which to retrieve the health status.
@@ -1511,7 +1511,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server for which to retrieve the operational status.
@@ -1634,7 +1634,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to retrieve.
@@ -1757,7 +1757,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set for which to retrieve the health status.
@@ -1871,7 +1871,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the health check policy to be retrieved.
@@ -2004,7 +2004,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to get.
@@ -2127,7 +2127,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_none_match: (optional)
             The system returns the requested resource, with a 200 status, only if the resource has no etag
@@ -2244,7 +2244,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -2458,7 +2458,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -2475,14 +2475,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -2627,7 +2627,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend servers.
@@ -2649,14 +2649,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -2802,7 +2802,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -2819,14 +2819,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -2971,7 +2971,7 @@ class NetworkLoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the network load balancers to list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -2992,14 +2992,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3120,7 +3120,7 @@ class NetworkLoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the network load balancers to list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state.
@@ -3134,14 +3134,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -3293,14 +3293,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -3437,14 +3437,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' (ascending) or 'desc' (descending).
@@ -3578,7 +3578,7 @@ class NetworkLoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the network load balancers to list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -3589,13 +3589,13 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3713,7 +3713,7 @@ class NetworkLoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the network load balancers to list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -3724,13 +3724,13 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3845,7 +3845,7 @@ class NetworkLoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the network load balancers to list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -3855,14 +3855,14 @@ class NetworkLoadBalancerClient(object):
             For list pagination. The maximum number of results per page or items to return, in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The page token representing the page from which to start retrieving results.
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3965,7 +3965,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateBackendDetails update_backend_details: (required)
             Details for updating a backend server.
@@ -4110,7 +4110,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateBackendSetDetails update_backend_set_details: (required)
             The details to update a backend set.
@@ -4246,7 +4246,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateHealthCheckerDetails update_health_checker_details: (required)
             The health check policy configuration details.
@@ -4382,7 +4382,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateListenerDetails update_listener_details: (required)
             Details to update a listener.
@@ -4518,7 +4518,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateNetworkLoadBalancerDetails update_network_load_balancer_details: (required)
             The information to be updated.
@@ -4638,7 +4638,7 @@ class NetworkLoadBalancerClient(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
             The details for updating the network security groups associated with the specified network load balancer.

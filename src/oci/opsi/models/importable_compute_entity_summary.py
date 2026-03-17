@@ -117,7 +117,7 @@ class ImportableComputeEntitySummary(object):
         **[Required]** Gets the compute_id of this ImportableComputeEntitySummary.
         The `OCID`__ of the Compute Instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_id of this ImportableComputeEntitySummary.
@@ -131,7 +131,7 @@ class ImportableComputeEntitySummary(object):
         Sets the compute_id of this ImportableComputeEntitySummary.
         The `OCID`__ of the Compute Instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_id: The compute_id of this ImportableComputeEntitySummary.
@@ -145,7 +145,7 @@ class ImportableComputeEntitySummary(object):
         **[Required]** Gets the compute_display_name of this ImportableComputeEntitySummary.
         The `Display Name`__ of the Compute Instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
 
 
         :return: The compute_display_name of this ImportableComputeEntitySummary.
@@ -159,7 +159,7 @@ class ImportableComputeEntitySummary(object):
         Sets the compute_display_name of this ImportableComputeEntitySummary.
         The `Display Name`__ of the Compute Instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
 
 
         :param compute_display_name: The compute_display_name of this ImportableComputeEntitySummary.
@@ -173,7 +173,7 @@ class ImportableComputeEntitySummary(object):
         **[Required]** Gets the compartment_id of this ImportableComputeEntitySummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ImportableComputeEntitySummary.
@@ -187,7 +187,7 @@ class ImportableComputeEntitySummary(object):
         Sets the compartment_id of this ImportableComputeEntitySummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ImportableComputeEntitySummary.

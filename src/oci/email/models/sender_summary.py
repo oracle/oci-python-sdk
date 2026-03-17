@@ -174,7 +174,7 @@ class SenderSummary(object):
         Gets the email_ip_pool_id of this SenderSummary.
         The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The email_ip_pool_id of this SenderSummary.
@@ -188,7 +188,7 @@ class SenderSummary(object):
         Sets the email_ip_pool_id of this SenderSummary.
         The IpPool `OCID`__ used to submit an email by Email Delivery when sent from this sender.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param email_ip_pool_id: The email_ip_pool_id of this SenderSummary.
@@ -259,7 +259,7 @@ class SenderSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this SenderSummary.
@@ -276,7 +276,7 @@ class SenderSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this SenderSummary.
@@ -293,7 +293,7 @@ class SenderSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this SenderSummary.
@@ -310,7 +310,7 @@ class SenderSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this SenderSummary.

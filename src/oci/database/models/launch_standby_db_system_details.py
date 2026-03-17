@@ -305,7 +305,7 @@ class LaunchStandbyDbSystemDetails(LaunchDbSystemBase):
         **[Required]** Gets the primary_db_system_id of this LaunchStandbyDbSystemDetails.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_db_system_id of this LaunchStandbyDbSystemDetails.
@@ -319,7 +319,7 @@ class LaunchStandbyDbSystemDetails(LaunchDbSystemBase):
         Sets the primary_db_system_id of this LaunchStandbyDbSystemDetails.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_db_system_id: The primary_db_system_id of this LaunchStandbyDbSystemDetails.

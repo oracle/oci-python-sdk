@@ -15,7 +15,7 @@ class FilterTextOrId(object):
     A span filter written in text, or as the `OCID`__ of a
     SpanFilter resource. If both are given, the filterText is used.
 
-    __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class FilterTextOrId(object):
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
         of MetricGroups. A filterId is generated when a Span Filter is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The filter_id of this FilterTextOrId.
@@ -65,7 +65,7 @@ class FilterTextOrId(object):
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
         of MetricGroups. A filterId is generated when a Span Filter is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param filter_id: The filter_id of this FilterTextOrId.

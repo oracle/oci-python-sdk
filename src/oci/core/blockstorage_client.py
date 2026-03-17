@@ -138,7 +138,7 @@ class BlockstorageClient(object):
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str boot_volume_backup_id: (required)
@@ -249,7 +249,7 @@ class BlockstorageClient(object):
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str boot_volume_id: (required)
@@ -360,7 +360,7 @@ class BlockstorageClient(object):
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_backup_id: (required)
@@ -471,7 +471,7 @@ class BlockstorageClient(object):
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_id: (required)
@@ -582,7 +582,7 @@ class BlockstorageClient(object):
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_group_backup_id: (required)
@@ -693,7 +693,7 @@ class BlockstorageClient(object):
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_group_id: (required)
@@ -803,7 +803,7 @@ class BlockstorageClient(object):
         Creates a boot volume backup copy in specified region. For general information about volume backups,
         see `Overview of Boot Volume Backups`__
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm
 
 
         :param str boot_volume_backup_id: (required)
@@ -925,7 +925,7 @@ class BlockstorageClient(object):
         Creates a volume backup copy in specified region. For general information about volume backups,
         see `Overview of Block Volume Service Backups`__
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param str volume_backup_id: (required)
@@ -1047,7 +1047,7 @@ class BlockstorageClient(object):
         Creates a volume group backup copy in specified region. For general information about volume group backups,
         see `Overview of Block Volume Backups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -1171,7 +1171,7 @@ class BlockstorageClient(object):
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm
 
 
         :param oci.core.models.CreateBootVolumeDetails create_boot_volume_details: (required)
@@ -1276,7 +1276,7 @@ class BlockstorageClient(object):
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm
 
 
         :param oci.core.models.CreateBootVolumeBackupDetails create_boot_volume_backup_details: (required)
@@ -1389,9 +1389,9 @@ class BlockstorageClient(object):
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
         description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param oci.core.models.CreateVolumeDetails create_volume_details: (required)
@@ -1496,7 +1496,7 @@ class BlockstorageClient(object):
         When the data is imaged, it goes into a CREATING state.
         After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param oci.core.models.CreateVolumeBackupDetails create_volume_backup_details: (required)
@@ -1599,7 +1599,7 @@ class BlockstorageClient(object):
         For more information about Oracle defined backup policies and user defined backup policies,
         see `Policy-Based Backups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param oci.core.models.CreateVolumeBackupPolicyDetails create_volume_backup_policy_details: (required)
@@ -1795,7 +1795,7 @@ class BlockstorageClient(object):
 
         For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param oci.core.models.CreateVolumeGroupDetails create_volume_group_details: (required)
@@ -1896,7 +1896,7 @@ class BlockstorageClient(object):
         Creates a new backup volume group of the specified volume group.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param oci.core.models.CreateVolumeGroupBackupDetails create_volume_group_backup_details: (required)
@@ -1999,7 +1999,7 @@ class BlockstorageClient(object):
         `Disconnecting From a Boot Volume`__.
         **Warning:** All data on the boot volume will be permanently lost when the boot volume is deleted.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/deletingbootvolume.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Tasks/deletingbootvolume.htm
 
 
         :param str boot_volume_id: (required)
@@ -2313,7 +2313,7 @@ class BlockstorageClient(object):
         `Disconnecting From a Volume`__.
         **Warning:** All data on the volume will be permanently lost when the volume is deleted.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/disconnectingfromavolume.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Tasks/disconnectingfromavolume.htm
 
 
         :param str volume_id: (required)
@@ -2525,7 +2525,7 @@ class BlockstorageClient(object):
 
          Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
+        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
 
 
         :param str policy_id: (required)
@@ -2740,7 +2740,7 @@ class BlockstorageClient(object):
         Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -2846,7 +2846,7 @@ class BlockstorageClient(object):
         Deletes a volume group backup. This operation deletes all the backups in
         the volume group. For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -3816,14 +3816,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4009,7 +4009,7 @@ class BlockstorageClient(object):
         """
         Gets information for the specified volume group. For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -4103,7 +4103,7 @@ class BlockstorageClient(object):
         """
         Gets information for the specified volume group backup. For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)
@@ -4403,7 +4403,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str volume_group_replica_id: (optional)
             The OCID of the volume group replica.
@@ -4415,14 +4415,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -4580,7 +4580,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str boot_volume_id: (optional)
             The OCID of the boot volume.
@@ -4592,14 +4592,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -4765,7 +4765,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str volume_group_replica_id: (optional)
             The OCID of the volume group replica.
@@ -4777,14 +4777,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -4947,7 +4947,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -4956,14 +4956,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str volume_group_id: (optional)
             The OCID of the volume group.
@@ -5068,7 +5068,7 @@ class BlockstorageClient(object):
         For more information about Oracle defined backup policies and user defined backup policies,
         see `Policy-Based Backups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param int limit: (optional)
@@ -5078,14 +5078,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str compartment_id: (optional)
             The OCID of the compartment.
@@ -5188,7 +5188,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str volume_id: (optional)
             The OCID of the volume.
@@ -5200,14 +5200,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5365,13 +5365,13 @@ class BlockstorageClient(object):
         Lists the volume group backups in the specified compartment. You can filter the results by volume group.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str volume_group_id: (optional)
             The OCID of the volume group.
@@ -5383,14 +5383,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5528,7 +5528,7 @@ class BlockstorageClient(object):
         Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
         For more information, see `Volume Group Replication`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm
 
 
         :param str availability_domain: (required)
@@ -5539,7 +5539,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -5548,14 +5548,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5706,13 +5706,13 @@ class BlockstorageClient(object):
         Lists the volume groups in the specified compartment and availability domain.
         For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -5726,14 +5726,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -5894,7 +5894,7 @@ class BlockstorageClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -5903,14 +5903,14 @@ class BlockstorageClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -6630,7 +6630,7 @@ class BlockstorageClient(object):
 
          Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
+        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
 
 
         :param str policy_id: (required)
@@ -6763,7 +6763,7 @@ class BlockstorageClient(object):
 
         For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_id: (required)
@@ -6888,7 +6888,7 @@ class BlockstorageClient(object):
         """
         Updates the display name for the specified volume group backup. For more information, see `Volume Groups`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm
 
 
         :param str volume_group_backup_id: (required)

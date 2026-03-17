@@ -193,7 +193,7 @@ class MultiCloudResourceDiscovery(object):
         **[Required]** Gets the id of this MultiCloudResourceDiscovery.
         The `OCID`__ of the Multicloud Resource Discovery resource
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MultiCloudResourceDiscovery.
@@ -207,7 +207,7 @@ class MultiCloudResourceDiscovery(object):
         Sets the id of this MultiCloudResourceDiscovery.
         The `OCID`__ of the Multicloud Resource Discovery resource
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MultiCloudResourceDiscovery.
@@ -221,7 +221,7 @@ class MultiCloudResourceDiscovery(object):
         **[Required]** Gets the compartment_id of this MultiCloudResourceDiscovery.
         The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MultiCloudResourceDiscovery.
@@ -235,7 +235,7 @@ class MultiCloudResourceDiscovery(object):
         Sets the compartment_id of this MultiCloudResourceDiscovery.
         The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MultiCloudResourceDiscovery.
@@ -273,7 +273,7 @@ class MultiCloudResourceDiscovery(object):
         **[Required]** Gets the oracle_db_connector_id of this MultiCloudResourceDiscovery.
         The `OCID`__ of the Oracle DB Connector resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_connector_id of this MultiCloudResourceDiscovery.
@@ -287,7 +287,7 @@ class MultiCloudResourceDiscovery(object):
         Sets the oracle_db_connector_id of this MultiCloudResourceDiscovery.
         The `OCID`__ of the Oracle DB Connector resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_connector_id: The oracle_db_connector_id of this MultiCloudResourceDiscovery.
@@ -532,7 +532,7 @@ class MultiCloudResourceDiscovery(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this MultiCloudResourceDiscovery.
@@ -549,7 +549,7 @@ class MultiCloudResourceDiscovery(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this MultiCloudResourceDiscovery.
@@ -566,7 +566,7 @@ class MultiCloudResourceDiscovery(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this MultiCloudResourceDiscovery.
@@ -583,7 +583,7 @@ class MultiCloudResourceDiscovery(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this MultiCloudResourceDiscovery.

@@ -159,7 +159,7 @@ class TranscriptionTask(object):
         **[Required]** Gets the id of this TranscriptionTask.
         The `OCID`__ of the task.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TranscriptionTask.
@@ -173,7 +173,7 @@ class TranscriptionTask(object):
         Sets the id of this TranscriptionTask.
         The `OCID`__ of the task.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TranscriptionTask.

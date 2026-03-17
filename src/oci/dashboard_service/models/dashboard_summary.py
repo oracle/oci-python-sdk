@@ -109,7 +109,7 @@ class DashboardSummary(object):
         **[Required]** Gets the id of this DashboardSummary.
         The `OCID`__ of the dashboard resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DashboardSummary.
@@ -123,7 +123,7 @@ class DashboardSummary(object):
         Sets the id of this DashboardSummary.
         The `OCID`__ of the dashboard resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DashboardSummary.
@@ -137,7 +137,7 @@ class DashboardSummary(object):
         **[Required]** Gets the dashboard_group_id of this DashboardSummary.
         The `OCID`__ of the dashboard group that the dashboard belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dashboard_group_id of this DashboardSummary.
@@ -151,7 +151,7 @@ class DashboardSummary(object):
         Sets the dashboard_group_id of this DashboardSummary.
         The `OCID`__ of the dashboard group that the dashboard belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dashboard_group_id: The dashboard_group_id of this DashboardSummary.
@@ -217,7 +217,7 @@ class DashboardSummary(object):
         **[Required]** Gets the compartment_id of this DashboardSummary.
         The `OCID`__ of the compartment containing the dashboard. A dashboard is always in the same compartment as its dashboard group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DashboardSummary.
@@ -231,7 +231,7 @@ class DashboardSummary(object):
         Sets the compartment_id of this DashboardSummary.
         The `OCID`__ of the compartment containing the dashboard. A dashboard is always in the same compartment as its dashboard group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DashboardSummary.

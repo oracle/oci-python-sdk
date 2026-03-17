@@ -20,8 +20,9 @@ import copy
 import _strptime  # noqa: F401
 from datetime import date, datetime, timezone
 from timeit import default_timer as timer
-from ._vendor import requests, six, urllib3, sseclient
-from ._vendor.urllib3.exceptions import HeaderParsingError
+from ._vendor import requests, six, sseclient
+import urllib3
+from urllib3.exceptions import HeaderParsingError
 from dateutil.parser import parse
 from dateutil import tz
 import functools
@@ -613,8 +614,9 @@ class BaseClient(object):
             query_params = self.process_query_params(query_params)
 
         if body is not None and header_params.get('content-type') == 'application/json':
-            body = self.sanitize_for_serialization(body)
-            body = json.dumps(body)
+            if not isinstance(body, (str, bytes)):
+                body = self.sanitize_for_serialization(body)
+                body = json.dumps(body)
 
         # Here is where we will change our endpoint with the path / query params if a {serviceParam} exists on the endpoint
         endpoint = self.handle_service_params_in_endpoint(path_params, query_params, required_arguments)

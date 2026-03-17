@@ -14,7 +14,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
     """
     The node count configuration to update on an existing OpenSearch cluster for `horizontal resizing`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/search-opensearch/Tasks/resizingacluster.htm#horizontalresize
+    __ https://docs.oracle.com/iaas/Content/search-opensearch/Tasks/resizingacluster.htm#horizontalresize
     """
 
     def __init__(self, **kwargs):
@@ -38,6 +38,10 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             The value to assign to the search_node_count property of this ResizeOpensearchClusterHorizontalDetails.
         :type search_node_count: int
 
+        :param ml_node_count:
+            The value to assign to the ml_node_count property of this ResizeOpensearchClusterHorizontalDetails.
+        :type ml_node_count: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ResizeOpensearchClusterHorizontalDetails.
         :type freeform_tags: dict(str, str)
@@ -52,6 +56,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'data_node_count': 'int',
             'opendashboard_node_count': 'int',
             'search_node_count': 'int',
+            'ml_node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -60,6 +65,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'data_node_count': 'dataNodeCount',
             'opendashboard_node_count': 'opendashboardNodeCount',
             'search_node_count': 'searchNodeCount',
+            'ml_node_count': 'mlNodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -67,6 +73,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
         self._data_node_count = None
         self._opendashboard_node_count = None
         self._search_node_count = None
+        self._ml_node_count = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -165,6 +172,30 @@ class ResizeOpensearchClusterHorizontalDetails(object):
         :type: int
         """
         self._search_node_count = search_node_count
+
+    @property
+    def ml_node_count(self):
+        """
+        Gets the ml_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        The number of ML nodes configured for the cluster.
+
+
+        :return: The ml_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        :rtype: int
+        """
+        return self._ml_node_count
+
+    @ml_node_count.setter
+    def ml_node_count(self, ml_node_count):
+        """
+        Sets the ml_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        The number of ML nodes configured for the cluster.
+
+
+        :param ml_node_count: The ml_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        :type: int
+        """
+        self._ml_node_count = ml_node_count
 
     @property
     def freeform_tags(self):

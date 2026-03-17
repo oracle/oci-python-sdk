@@ -83,7 +83,7 @@ class InstanceReservationConfig(object):
         If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
 
 
         :return: The fault_domain of this InstanceReservationConfig.
@@ -99,7 +99,7 @@ class InstanceReservationConfig(object):
         If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
 
 
         :param fault_domain: The fault_domain of this InstanceReservationConfig.

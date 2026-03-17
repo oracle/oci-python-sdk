@@ -66,7 +66,7 @@ class ComputeCapacityReport(object):
         The `OCID`__ for the compartment. This should always be the root
         compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ComputeCapacityReport.
@@ -81,7 +81,7 @@ class ComputeCapacityReport(object):
         The `OCID`__ for the compartment. This should always be the root
         compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ComputeCapacityReport.

@@ -16,7 +16,7 @@ class SmtpCredentialSummary(object):
     The SMTP credential is used for SMTP authentication with
     the `Email Delivery Service`__.
 
-    __ https://docs.cloud.oracle.com/Content/Email/Concepts/overview.htm
+    __ https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a SmtpCredentialSummary.

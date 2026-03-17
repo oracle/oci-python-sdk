@@ -374,7 +374,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the id of this WorkRequestSummary.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequestSummary.
@@ -388,7 +388,7 @@ class WorkRequestSummary(object):
         Sets the id of this WorkRequestSummary.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequestSummary.
@@ -474,7 +474,7 @@ class WorkRequestSummary(object):
         Gets the parent_id of this WorkRequestSummary.
         The `OCID`__ of the parent work request, if there is any.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this WorkRequestSummary.
@@ -488,7 +488,7 @@ class WorkRequestSummary(object):
         Sets the parent_id of this WorkRequestSummary.
         The `OCID`__ of the parent work request, if there is any.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this WorkRequestSummary.
@@ -502,7 +502,7 @@ class WorkRequestSummary(object):
         Gets the children_id of this WorkRequestSummary.
         The list of `OCIDs`__ for child work requests.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The children_id of this WorkRequestSummary.
@@ -516,7 +516,7 @@ class WorkRequestSummary(object):
         Sets the children_id of this WorkRequestSummary.
         The list of `OCIDs`__ for child work requests.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param children_id: The children_id of this WorkRequestSummary.
@@ -532,7 +532,7 @@ class WorkRequestSummary(object):
         Work requests should be scoped to the same compartment as the resource it affects.
         If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -548,7 +548,7 @@ class WorkRequestSummary(object):
         Work requests should be scoped to the same compartment as the resource it affects.
         If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.

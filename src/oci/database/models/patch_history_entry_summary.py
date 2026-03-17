@@ -133,7 +133,7 @@ class PatchHistoryEntrySummary(object):
         **[Required]** Gets the id of this PatchHistoryEntrySummary.
         The `OCID`__ of the patch history entry.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PatchHistoryEntrySummary.
@@ -147,7 +147,7 @@ class PatchHistoryEntrySummary(object):
         Sets the id of this PatchHistoryEntrySummary.
         The `OCID`__ of the patch history entry.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PatchHistoryEntrySummary.
@@ -161,7 +161,7 @@ class PatchHistoryEntrySummary(object):
         **[Required]** Gets the patch_id of this PatchHistoryEntrySummary.
         The `OCID`__ of the patch.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The patch_id of this PatchHistoryEntrySummary.
@@ -175,7 +175,7 @@ class PatchHistoryEntrySummary(object):
         Sets the patch_id of this PatchHistoryEntrySummary.
         The `OCID`__ of the patch.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param patch_id: The patch_id of this PatchHistoryEntrySummary.

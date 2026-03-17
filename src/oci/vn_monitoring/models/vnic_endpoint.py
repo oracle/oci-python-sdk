@@ -80,7 +80,7 @@ class VnicEndpoint(Endpoint):
         **[Required]** Gets the vnic_id of this VnicEndpoint.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this VnicEndpoint.
@@ -94,7 +94,7 @@ class VnicEndpoint(Endpoint):
         Sets the vnic_id of this VnicEndpoint.
         The `OCID`__ of the VNIC.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this VnicEndpoint.

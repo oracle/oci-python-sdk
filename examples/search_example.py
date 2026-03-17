@@ -6,14 +6,14 @@
 # query for resources.
 #
 # The search service documentation can be found here:
-# https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm
+# https://docs.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm
 #
 # When running this example, it is assumed that you already have active users
 # resources associated with your tenant to display the search results.
 #
 # Querying for resources may be done via a structured query or free text.
 # For more information on how to format queries, please refer to
-# https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/querysyntax.htm
+# https://docs.oracle.com/iaas/Content/Search/Concepts/querysyntax.htm
 
 from __future__ import print_function
 import oci

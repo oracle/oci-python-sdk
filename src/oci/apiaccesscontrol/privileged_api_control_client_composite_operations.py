@@ -33,7 +33,7 @@ class PrivilegedApiControlClientCompositeOperations(object):
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.apiaccesscontrol.models.ChangePrivilegedApiControlCompartmentDetails change_privileged_api_control_compartment_details: (required)
             The information to be updated.
@@ -116,7 +116,7 @@ class PrivilegedApiControlClientCompositeOperations(object):
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.apiaccesscontrol.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class PrivilegedApiControlClientCompositeOperations(object):
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.apiaccesscontrol.models.UpdatePrivilegedApiControlDetails update_privileged_api_control_details: (required)
             The information to be updated.

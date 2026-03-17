@@ -28,7 +28,7 @@
 ###########################################################################################
 # Connectivity:
 #    Using User Authentication
-#       $HOME/.oci/config, please follow - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
+#       $HOME/.oci/config, please follow - https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
 #       OCI user part of CapacityReporterGroup group with below Policy rules:
 #          Allow group CapacityReporterGroup to inspect tenancies in tenancy
 #          Allow group CapacityReporterGroup to inspect compartments in tenancy

@@ -46,7 +46,7 @@ class PrivateServerConfigDetails(object):
         **[Required]** Gets the private_endpoint_id of this PrivateServerConfigDetails.
         The `OCID`__ of a private endpoint associated with the configuration source provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_endpoint_id of this PrivateServerConfigDetails.
@@ -60,7 +60,7 @@ class PrivateServerConfigDetails(object):
         Sets the private_endpoint_id of this PrivateServerConfigDetails.
         The `OCID`__ of a private endpoint associated with the configuration source provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_endpoint_id: The private_endpoint_id of this PrivateServerConfigDetails.
@@ -74,7 +74,7 @@ class PrivateServerConfigDetails(object):
         Gets the certificate_id of this PrivateServerConfigDetails.
         The `OCID`__ of a certificate associated with the configuration source provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The certificate_id of this PrivateServerConfigDetails.
@@ -88,7 +88,7 @@ class PrivateServerConfigDetails(object):
         Sets the certificate_id of this PrivateServerConfigDetails.
         The `OCID`__ of a certificate associated with the configuration source provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param certificate_id: The certificate_id of this PrivateServerConfigDetails.

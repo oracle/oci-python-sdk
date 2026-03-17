@@ -15,7 +15,7 @@ class AutonomousDatabaseBackupConfig(object):
     Autonomous AI Database configuration details for storing `manual backups`__ in the `Object Storage`__ service.
 
     __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809
-    __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
+    __ https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm
     """
 
     #: A constant which can be used with the manual_backup_type property of a AutonomousDatabaseBackupConfig.
@@ -59,7 +59,7 @@ class AutonomousDatabaseBackupConfig(object):
         Gets the manual_backup_bucket_name of this AutonomousDatabaseBackupConfig.
         Name of `Object Storage`__ bucket to use for storing manual backups.
 
-        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm
 
 
         :return: The manual_backup_bucket_name of this AutonomousDatabaseBackupConfig.
@@ -73,7 +73,7 @@ class AutonomousDatabaseBackupConfig(object):
         Sets the manual_backup_bucket_name of this AutonomousDatabaseBackupConfig.
         Name of `Object Storage`__ bucket to use for storing manual backups.
 
-        __ https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm
 
 
         :param manual_backup_bucket_name: The manual_backup_bucket_name of this AutonomousDatabaseBackupConfig.

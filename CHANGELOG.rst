@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.168.2 - 2026-03-17
+====================
+
+Added 
+----- 
+* Support for additional node pools for ML and Coordinator nodes in the OpenSearch service  
+
+Changed  
+-------  
+* The urllib3 is no more a vendored library   
+
+Security 
+-------- 
+* The upper bound for `urllib3` dependency has changed to versions till `2.6.0` for python version `>
+
+=3.10` to address security vulnerability CVE-2025-66418.     
+
+====================
 2.168.1 - 2026-03-10
 ====================
 
@@ -4616,7 +4634,7 @@ Added
 
 Breaking
 --------
-* The attribute `model_type` in `TypedObject` model now raises `ValueError` when provided with an invalid value. Please see the `documentation <https://docs.cloud.oracle.com/en-us/iaas/tools/python/2.21.6/api/data_integration/models/oci.data_integration.models.TypedObject.html#oci.data_integration.models.TypedObject.model_type>`_ for a list of allowed values.
+* The attribute `model_type` in `TypedObject` model now raises `ValueError` when provided with an invalid value. Please see the `documentation <https://docs.oracle.com/en-us/iaas/tools/python/2.21.6/api/data_integration/models/oci.data_integration.models.TypedObject.html#oci.data_integration.models.TypedObject.model_type>`_ for a list of allowed values.
 
 ====================
 2.21.6 - 2020-09-29
@@ -4949,7 +4967,7 @@ Added
 -----
 * Support for access types on instances in the Content and Experience service
 * Support for identity contexts in the Search service
-* Support for Client Side Encryption: https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/clientsideencryption.htm
+* Support for Client Side Encryption: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/clientsideencryption.htm
 * Support for retries on Python built-in `ConnectionError <https://docs.python.org/3/library/exceptions.html#ConnectionError>`__
 
 ====================

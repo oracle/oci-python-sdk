@@ -148,7 +148,7 @@ class RemediationRunSummary(object):
         **[Required]** Gets the id of this RemediationRunSummary.
         The Oracle Cloud identifier (`OCID`__) of the remediation run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this RemediationRunSummary.
@@ -162,7 +162,7 @@ class RemediationRunSummary(object):
         Sets the id of this RemediationRunSummary.
         The Oracle Cloud identifier (`OCID`__) of the remediation run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this RemediationRunSummary.
@@ -200,7 +200,7 @@ class RemediationRunSummary(object):
         **[Required]** Gets the remediation_recipe_id of this RemediationRunSummary.
         The Oracle Cloud identifier (`OCID`__) of the Remediation Recipe.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The remediation_recipe_id of this RemediationRunSummary.
@@ -214,7 +214,7 @@ class RemediationRunSummary(object):
         Sets the remediation_recipe_id of this RemediationRunSummary.
         The Oracle Cloud identifier (`OCID`__) of the Remediation Recipe.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param remediation_recipe_id: The remediation_recipe_id of this RemediationRunSummary.
@@ -370,7 +370,7 @@ class RemediationRunSummary(object):
         **[Required]** Gets the compartment_id of this RemediationRunSummary.
         The compartment Oracle Cloud Identifier (`OCID`__) of the remediation run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RemediationRunSummary.
@@ -384,7 +384,7 @@ class RemediationRunSummary(object):
         Sets the compartment_id of this RemediationRunSummary.
         The compartment Oracle Cloud Identifier (`OCID`__) of the remediation run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RemediationRunSummary.

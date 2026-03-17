@@ -348,7 +348,7 @@ class InstanceMaintenanceEvent(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstanceMaintenanceEvent.
@@ -365,7 +365,7 @@ class InstanceMaintenanceEvent(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstanceMaintenanceEvent.
@@ -382,7 +382,7 @@ class InstanceMaintenanceEvent(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstanceMaintenanceEvent.
@@ -399,7 +399,7 @@ class InstanceMaintenanceEvent(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstanceMaintenanceEvent.
@@ -413,7 +413,7 @@ class InstanceMaintenanceEvent(object):
         **[Required]** Gets the id of this InstanceMaintenanceEvent.
         The `OCID`__ of the maintenance event.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstanceMaintenanceEvent.
@@ -427,7 +427,7 @@ class InstanceMaintenanceEvent(object):
         Sets the id of this InstanceMaintenanceEvent.
         The `OCID`__ of the maintenance event.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstanceMaintenanceEvent.
@@ -492,7 +492,7 @@ class InstanceMaintenanceEvent(object):
         deferred, or even cancelled. Please see the
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
         Allowed values for this property are: "EMERGENCY", "MANDATORY", "FLEXIBLE", "OPTIONAL", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -512,7 +512,7 @@ class InstanceMaintenanceEvent(object):
         deferred, or even cancelled. Please see the
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
 
         :param maintenance_category: The maintenance_category of this InstanceMaintenanceEvent.
@@ -530,7 +530,7 @@ class InstanceMaintenanceEvent(object):
         This is the reason that Maintenance is being performed. See
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
         Allowed values for this property are: "EVACUATION", "ENVIRONMENTAL_FACTORS", "DECOMMISSION", "HARDWARE_REPLACEMENT", "FIRMWARE_UPDATE", "SECURITY_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -548,7 +548,7 @@ class InstanceMaintenanceEvent(object):
         This is the reason that Maintenance is being performed. See
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
 
         :param maintenance_reason: The maintenance_reason of this InstanceMaintenanceEvent.

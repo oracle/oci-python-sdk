@@ -174,7 +174,7 @@ class ComputeHostConfigurationCheckDetails(object):
         Gets the firmware_bundle_id of this ComputeHostConfigurationCheckDetails.
         The `OCID`__ for the Customer-unique firmware bundle associated with the Host Configuration.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The firmware_bundle_id of this ComputeHostConfigurationCheckDetails.
@@ -188,7 +188,7 @@ class ComputeHostConfigurationCheckDetails(object):
         Sets the firmware_bundle_id of this ComputeHostConfigurationCheckDetails.
         The `OCID`__ for the Customer-unique firmware bundle associated with the Host Configuration.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param firmware_bundle_id: The firmware_bundle_id of this ComputeHostConfigurationCheckDetails.

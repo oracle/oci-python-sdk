@@ -100,7 +100,7 @@ class RotateAutonomousVmClusterOrdsCertsDetails(object):
         Gets the certificate_id of this RotateAutonomousVmClusterOrdsCertsDetails.
         The `OCID`__ of the certificate to use.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The certificate_id of this RotateAutonomousVmClusterOrdsCertsDetails.
@@ -114,7 +114,7 @@ class RotateAutonomousVmClusterOrdsCertsDetails(object):
         Sets the certificate_id of this RotateAutonomousVmClusterOrdsCertsDetails.
         The `OCID`__ of the certificate to use.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param certificate_id: The certificate_id of this RotateAutonomousVmClusterOrdsCertsDetails.
@@ -128,7 +128,7 @@ class RotateAutonomousVmClusterOrdsCertsDetails(object):
         Gets the certificate_authority_id of this RotateAutonomousVmClusterOrdsCertsDetails.
         The `OCID`__ of the certificate authority.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The certificate_authority_id of this RotateAutonomousVmClusterOrdsCertsDetails.
@@ -142,7 +142,7 @@ class RotateAutonomousVmClusterOrdsCertsDetails(object):
         Sets the certificate_authority_id of this RotateAutonomousVmClusterOrdsCertsDetails.
         The `OCID`__ of the certificate authority.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param certificate_authority_id: The certificate_authority_id of this RotateAutonomousVmClusterOrdsCertsDetails.
@@ -156,7 +156,7 @@ class RotateAutonomousVmClusterOrdsCertsDetails(object):
         Gets the ca_bundle_id of this RotateAutonomousVmClusterOrdsCertsDetails.
         The `OCID`__ of the certificate bundle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ca_bundle_id of this RotateAutonomousVmClusterOrdsCertsDetails.
@@ -170,7 +170,7 @@ class RotateAutonomousVmClusterOrdsCertsDetails(object):
         Sets the ca_bundle_id of this RotateAutonomousVmClusterOrdsCertsDetails.
         The `OCID`__ of the certificate bundle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ca_bundle_id: The ca_bundle_id of this RotateAutonomousVmClusterOrdsCertsDetails.
