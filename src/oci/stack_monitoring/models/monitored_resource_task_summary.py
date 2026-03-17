@@ -143,7 +143,7 @@ class MonitoredResourceTaskSummary(object):
         **[Required]** Gets the id of this MonitoredResourceTaskSummary.
         Task identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoredResourceTaskSummary.
@@ -157,7 +157,7 @@ class MonitoredResourceTaskSummary(object):
         Sets the id of this MonitoredResourceTaskSummary.
         Task identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoredResourceTaskSummary.
@@ -239,7 +239,7 @@ class MonitoredResourceTaskSummary(object):
         Gets the work_request_ids of this MonitoredResourceTaskSummary.
         Identifiers `OCID`__ for work requests submitted for this task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_ids of this MonitoredResourceTaskSummary.
@@ -253,7 +253,7 @@ class MonitoredResourceTaskSummary(object):
         Sets the work_request_ids of this MonitoredResourceTaskSummary.
         Identifiers `OCID`__ for work requests submitted for this task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_ids: The work_request_ids of this MonitoredResourceTaskSummary.

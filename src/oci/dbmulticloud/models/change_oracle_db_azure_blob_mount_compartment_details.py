@@ -87,7 +87,7 @@ class ChangeOracleDbAzureBlobMountCompartmentDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ChangeOracleDbAzureBlobMountCompartmentDetails.
@@ -104,7 +104,7 @@ class ChangeOracleDbAzureBlobMountCompartmentDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ChangeOracleDbAzureBlobMountCompartmentDetails.
@@ -121,7 +121,7 @@ class ChangeOracleDbAzureBlobMountCompartmentDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ChangeOracleDbAzureBlobMountCompartmentDetails.
@@ -138,7 +138,7 @@ class ChangeOracleDbAzureBlobMountCompartmentDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ChangeOracleDbAzureBlobMountCompartmentDetails.

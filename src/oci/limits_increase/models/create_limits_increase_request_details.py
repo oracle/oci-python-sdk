@@ -106,7 +106,7 @@ class CreateLimitsIncreaseRequestDetails(object):
         The `OCID`__ of the compartment for the new limit increase request.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateLimitsIncreaseRequestDetails.
@@ -121,7 +121,7 @@ class CreateLimitsIncreaseRequestDetails(object):
         The `OCID`__ of the compartment for the new limit increase request.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateLimitsIncreaseRequestDetails.
@@ -135,7 +135,7 @@ class CreateLimitsIncreaseRequestDetails(object):
         Gets the subscription_id of this CreateLimitsIncreaseRequestDetails.
         The `OCID`__ of the tenancy subscription for the limit increase request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CreateLimitsIncreaseRequestDetails.
@@ -149,7 +149,7 @@ class CreateLimitsIncreaseRequestDetails(object):
         Sets the subscription_id of this CreateLimitsIncreaseRequestDetails.
         The `OCID`__ of the tenancy subscription for the limit increase request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CreateLimitsIncreaseRequestDetails.

@@ -130,7 +130,7 @@ class JobSummary(object):
         Gets the id of this JobSummary.
         The `OCID`__ of the job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this JobSummary.
@@ -144,7 +144,7 @@ class JobSummary(object):
         Sets the id of this JobSummary.
         The `OCID`__ of the job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this JobSummary.
@@ -158,7 +158,7 @@ class JobSummary(object):
         Gets the stack_id of this JobSummary.
         The `OCID`__ of the stack that is associated with the specified job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_id of this JobSummary.
@@ -172,7 +172,7 @@ class JobSummary(object):
         Sets the stack_id of this JobSummary.
         The `OCID`__ of the stack that is associated with the specified job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stack_id: The stack_id of this JobSummary.
@@ -186,7 +186,7 @@ class JobSummary(object):
         Gets the compartment_id of this JobSummary.
         The `OCID`__ of the compartment where the stack of the associated job resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this JobSummary.
@@ -200,7 +200,7 @@ class JobSummary(object):
         Sets the compartment_id of this JobSummary.
         The `OCID`__ of the compartment where the stack of the associated job resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this JobSummary.
@@ -303,7 +303,7 @@ class JobSummary(object):
         Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
         The plan job `OCID`__ that was used (if this was an apply job and was not auto-approved).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resolved_plan_job_id of this JobSummary.
@@ -318,7 +318,7 @@ class JobSummary(object):
         Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
         The plan job `OCID`__ that was used (if this was an apply job and was not auto-approved).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resolved_plan_job_id: The resolved_plan_job_id of this JobSummary.
@@ -390,7 +390,7 @@ class JobSummary(object):
         For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
 
         :return: The lifecycle_state of this JobSummary.
@@ -406,7 +406,7 @@ class JobSummary(object):
         For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
 
         :param lifecycle_state: The lifecycle_state of this JobSummary.
@@ -422,7 +422,7 @@ class JobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this JobSummary.
@@ -438,7 +438,7 @@ class JobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this JobSummary.
@@ -454,7 +454,7 @@ class JobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this JobSummary.
@@ -470,7 +470,7 @@ class JobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this JobSummary.
@@ -486,7 +486,7 @@ class JobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this JobSummary.
@@ -502,7 +502,7 @@ class JobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this JobSummary.

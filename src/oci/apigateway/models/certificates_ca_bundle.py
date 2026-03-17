@@ -49,7 +49,7 @@ class CertificatesCaBundle(CaBundle):
         Gets the ca_bundle_id of this CertificatesCaBundle.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The ca_bundle_id of this CertificatesCaBundle.
@@ -63,7 +63,7 @@ class CertificatesCaBundle(CaBundle):
         Sets the ca_bundle_id of this CertificatesCaBundle.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param ca_bundle_id: The ca_bundle_id of this CertificatesCaBundle.

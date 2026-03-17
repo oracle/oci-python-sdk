@@ -91,7 +91,7 @@ class EnableMacsManagedAutonomousDatabaseInsightDetails(EnableDatabaseInsightDet
         **[Required]** Gets the compartment_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
         The compartment `OCID`__ of the Autonomous Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
@@ -105,7 +105,7 @@ class EnableMacsManagedAutonomousDatabaseInsightDetails(EnableDatabaseInsightDet
         Sets the compartment_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
         The compartment `OCID`__ of the Autonomous Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
@@ -119,7 +119,7 @@ class EnableMacsManagedAutonomousDatabaseInsightDetails(EnableDatabaseInsightDet
         **[Required]** Gets the management_agent_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
@@ -133,7 +133,7 @@ class EnableMacsManagedAutonomousDatabaseInsightDetails(EnableDatabaseInsightDet
         Sets the management_agent_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this EnableMacsManagedAutonomousDatabaseInsightDetails.

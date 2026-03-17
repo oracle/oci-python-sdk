@@ -166,7 +166,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAwsIdentityConnectorCompartmentDetails change_oracle_db_aws_identity_connector_compartment_details: (required)
             Moves the Oracle DB AWS Identity COnnector resource into a different compartment.
@@ -295,7 +295,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAwsKeyCompartmentDetails change_oracle_db_aws_key_compartment_details: (required)
             Moves the AWS Key resource into a different compartment.
@@ -643,7 +643,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -757,7 +757,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -867,13 +867,13 @@ class DbMulticloudAwsProviderClient(object):
         """
         Retrieves detailed information about a Oracle DB AWS Identity Connector resource by specifying its unique resource `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -976,13 +976,13 @@ class DbMulticloudAwsProviderClient(object):
         """
         Retrieves detailed information about a Oracle AWS Key resource by specifying its unique resource `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1119,7 +1119,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB AWS Identity Connector Resource that match the given display name.
@@ -1132,7 +1132,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str resource_id: (optional)
             A filter to return Oracle DB Identity Connector resource that match the given resource `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1285,7 +1285,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB AWS Key Resource that match the given display name.
@@ -1301,7 +1301,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_connector_id: (optional)
             A filter to return Oracle DB AWS Identity Connector resources that match the specified `OCID`__ of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1456,7 +1456,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
@@ -1580,7 +1580,7 @@ class DbMulticloudAwsProviderClient(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.RefreshOracleDbAwsKeyDetails refresh_oracle_db_aws_key_details: (required)
             Details for to refresh Oracle DB AWS Key.
@@ -1705,13 +1705,13 @@ class DbMulticloudAwsProviderClient(object):
         """
         Modifies the existing Oracle DB AWS Identity Connector resource for a given `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAwsIdentityConnectorDetails update_oracle_db_aws_identity_connector_details: (required)
             Details for to update OracleDbAwsIdentityConnector.
@@ -1826,13 +1826,13 @@ class DbMulticloudAwsProviderClient(object):
         """
         Modifies the existing Oracle AWS Key Details for a given `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAwsKeyDetails update_oracle_db_aws_key_details: (required)
             Details for to update OracleDbAwsKey.

@@ -93,7 +93,7 @@ class CatalogGitSourceConfig(CatalogSourcePayload):
         Gets the configuration_source_provider_id of this CatalogGitSourceConfig.
         configuration Source Provider `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The configuration_source_provider_id of this CatalogGitSourceConfig.
@@ -107,7 +107,7 @@ class CatalogGitSourceConfig(CatalogSourcePayload):
         Sets the configuration_source_provider_id of this CatalogGitSourceConfig.
         configuration Source Provider `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param configuration_source_provider_id: The configuration_source_provider_id of this CatalogGitSourceConfig.

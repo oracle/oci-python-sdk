@@ -142,7 +142,7 @@ class CccUpgradeSchedule(object):
         Upgrade schedule `OCID`__.
         This cannot be changed once created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CccUpgradeSchedule.
@@ -157,7 +157,7 @@ class CccUpgradeSchedule(object):
         Upgrade schedule `OCID`__.
         This cannot be changed once created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CccUpgradeSchedule.
@@ -224,7 +224,7 @@ class CccUpgradeSchedule(object):
         Compartment `OCID`__ for the
         Compute Cloud@Customer upgrade schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CccUpgradeSchedule.
@@ -239,7 +239,7 @@ class CccUpgradeSchedule(object):
         Compartment `OCID`__ for the
         Compute Cloud@Customer upgrade schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CccUpgradeSchedule.
@@ -387,7 +387,7 @@ class CccUpgradeSchedule(object):
         `OCIDs`__ that are using this upgrade
         schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The infrastructure_ids of this CccUpgradeSchedule.
@@ -403,7 +403,7 @@ class CccUpgradeSchedule(object):
         `OCIDs`__ that are using this upgrade
         schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param infrastructure_ids: The infrastructure_ids of this CccUpgradeSchedule.

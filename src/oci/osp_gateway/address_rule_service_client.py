@@ -135,7 +135,7 @@ class AddressRuleServiceClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str country_code: (required)
             Country code for the address rule in ISO-3166-1 2-letter format.

@@ -53,7 +53,7 @@ class UpdateTaskScheduleDetails(object):
         **[Required]** Gets the fleet_id of this UpdateTaskScheduleDetails.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this UpdateTaskScheduleDetails.
@@ -67,7 +67,7 @@ class UpdateTaskScheduleDetails(object):
         Sets the fleet_id of this UpdateTaskScheduleDetails.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this UpdateTaskScheduleDetails.

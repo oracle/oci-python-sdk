@@ -60,7 +60,7 @@ class SoftResetActionDetails(InstancePowerActionDetails):
 
         **Caution:** When `true`, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot
 
 
         :return: The allow_dense_reboot_migration of this SoftResetActionDetails.
@@ -86,7 +86,7 @@ class SoftResetActionDetails(InstancePowerActionDetails):
 
         **Caution:** When `true`, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot
 
 
         :param allow_dense_reboot_migration: The allow_dense_reboot_migration of this SoftResetActionDetails.

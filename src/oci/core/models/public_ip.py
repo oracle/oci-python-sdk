@@ -22,7 +22,7 @@ class PublicIp(object):
     For more information and comparison of the two types,
     see `Public IP Addresses`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
     """
 
     #: A constant which can be used with the assigned_entity_type property of a PublicIp.
@@ -212,7 +212,7 @@ class PublicIp(object):
         The `OCID`__ of the entity the public IP is assigned to, or in the process of
         being assigned to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The assigned_entity_id of this PublicIp.
@@ -227,7 +227,7 @@ class PublicIp(object):
         The `OCID`__ of the entity the public IP is assigned to, or in the process of
         being assigned to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param assigned_entity_id: The assigned_entity_id of this PublicIp.
@@ -308,7 +308,7 @@ class PublicIp(object):
         as a NAT gateway). For a reserved public IP that is currently assigned,
         its compartment can be different from the assigned private IP's.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicIp.
@@ -325,7 +325,7 @@ class PublicIp(object):
         as a NAT gateway). For a reserved public IP that is currently assigned,
         its compartment can be different from the assigned private IP's.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicIp.
@@ -342,7 +342,7 @@ class PublicIp(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this PublicIp.
@@ -359,7 +359,7 @@ class PublicIp(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this PublicIp.
@@ -402,7 +402,7 @@ class PublicIp(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this PublicIp.
@@ -419,7 +419,7 @@ class PublicIp(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this PublicIp.
@@ -433,7 +433,7 @@ class PublicIp(object):
         Gets the id of this PublicIp.
         The public IP's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PublicIp.
@@ -447,7 +447,7 @@ class PublicIp(object):
         Sets the id of this PublicIp.
         The public IP's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PublicIp.
@@ -532,7 +532,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -562,7 +562,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this PublicIp.
@@ -585,7 +585,7 @@ class PublicIp(object):
         **Note:** This is `null` if the public IP is not assigned to a private IP, or is
         in the process of being assigned to one.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this PublicIp.
@@ -605,7 +605,7 @@ class PublicIp(object):
         **Note:** This is `null` if the public IP is not assigned to a private IP, or is
         in the process of being assigned to one.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this PublicIp.
@@ -699,7 +699,7 @@ class PublicIp(object):
         Gets the public_ip_pool_id of this PublicIp.
         The `OCID`__ of the pool object created in the current tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_pool_id of this PublicIp.
@@ -713,7 +713,7 @@ class PublicIp(object):
         Sets the public_ip_pool_id of this PublicIp.
         The `OCID`__ of the pool object created in the current tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_pool_id: The public_ip_pool_id of this PublicIp.

@@ -107,7 +107,7 @@ class OdaPrivateEndpointAttachment(object):
         **[Required]** Gets the id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the ODA Private Endpoint Attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OdaPrivateEndpointAttachment.
@@ -121,7 +121,7 @@ class OdaPrivateEndpointAttachment(object):
         Sets the id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the ODA Private Endpoint Attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OdaPrivateEndpointAttachment.
@@ -135,7 +135,7 @@ class OdaPrivateEndpointAttachment(object):
         **[Required]** Gets the oda_instance_id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the attached ODA Instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oda_instance_id of this OdaPrivateEndpointAttachment.
@@ -149,7 +149,7 @@ class OdaPrivateEndpointAttachment(object):
         Sets the oda_instance_id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the attached ODA Instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oda_instance_id: The oda_instance_id of this OdaPrivateEndpointAttachment.
@@ -163,7 +163,7 @@ class OdaPrivateEndpointAttachment(object):
         **[Required]** Gets the oda_private_endpoint_id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the ODA Private Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oda_private_endpoint_id of this OdaPrivateEndpointAttachment.
@@ -177,7 +177,7 @@ class OdaPrivateEndpointAttachment(object):
         Sets the oda_private_endpoint_id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the ODA Private Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oda_private_endpoint_id: The oda_private_endpoint_id of this OdaPrivateEndpointAttachment.
@@ -191,7 +191,7 @@ class OdaPrivateEndpointAttachment(object):
         **[Required]** Gets the compartment_id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the compartment that the ODA private endpoint attachment belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OdaPrivateEndpointAttachment.
@@ -205,7 +205,7 @@ class OdaPrivateEndpointAttachment(object):
         Sets the compartment_id of this OdaPrivateEndpointAttachment.
         The `OCID`__ of the compartment that the ODA private endpoint attachment belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OdaPrivateEndpointAttachment.

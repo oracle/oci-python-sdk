@@ -135,13 +135,13 @@ class AutoScalingClient(object):
         When you move an autoscaling configuration to a different compartment, associated resources such as instance
         pools are not moved.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.autoscaling.models.ChangeAutoScalingCompartmentDetails change_compartment_details: (required)
             Request to change the compartment of given autoscaling configuration.
@@ -379,7 +379,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.autoscaling.models.CreateAutoScalingPolicyDetails create_auto_scaling_policy_details: (required)
             Creation details for an autoscaling policy.
@@ -500,7 +500,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -611,7 +611,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str auto_scaling_policy_id: (required)
             The ID of the autoscaling policy.
@@ -726,7 +726,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
 
@@ -832,7 +832,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str auto_scaling_policy_id: (required)
             The ID of the autoscaling policy.
@@ -944,7 +944,7 @@ class AutoScalingClient(object):
             resource. Use tenancyId to search in
             the root compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -955,13 +955,13 @@ class AutoScalingClient(object):
             For list pagination. The maximum number of items to return in a paginated \"List\" call. For important details
             about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -1102,7 +1102,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -1113,13 +1113,13 @@ class AutoScalingClient(object):
             For list pagination. The maximum number of items to return in a paginated \"List\" call. For important details
             about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
             details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -1272,7 +1272,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.autoscaling.models.UpdateAutoScalingConfigurationDetails update_auto_scaling_configuration_details: (required)
             Update details for an autoscaling configuration.
@@ -1400,7 +1400,7 @@ class AutoScalingClient(object):
         :param str auto_scaling_configuration_id: (required)
             The `OCID`__ of the autoscaling configuration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str auto_scaling_policy_id: (required)
             The ID of the autoscaling policy.

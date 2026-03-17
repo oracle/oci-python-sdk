@@ -22,7 +22,7 @@ class ReplicationTarget(object):
     Deleting a `ReplicationTarget` does not delete the associated `Replication` resource, but places it in a `FAILED` state.
     For more information, see `File System Replication`__.
 
-    __ https://docs.oracle.com/iaas/Content/File/Tasks/FSreplication.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ReplicationTarget.
@@ -243,7 +243,7 @@ class ReplicationTarget(object):
         **[Required]** Gets the compartment_id of this ReplicationTarget.
         The `OCID`__ of the compartment that contains the replication.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ReplicationTarget.
@@ -257,7 +257,7 @@ class ReplicationTarget(object):
         Sets the compartment_id of this ReplicationTarget.
         The `OCID`__ of the compartment that contains the replication.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ReplicationTarget.
@@ -271,7 +271,7 @@ class ReplicationTarget(object):
         **[Required]** Gets the id of this ReplicationTarget.
         The `OCID`__ of the replication.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ReplicationTarget.
@@ -285,7 +285,7 @@ class ReplicationTarget(object):
         Sets the id of this ReplicationTarget.
         The `OCID`__ of the replication.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ReplicationTarget.
@@ -387,7 +387,7 @@ class ReplicationTarget(object):
         **[Required]** Gets the source_id of this ReplicationTarget.
         The `OCID`__ of source filesystem.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this ReplicationTarget.
@@ -401,7 +401,7 @@ class ReplicationTarget(object):
         Sets the source_id of this ReplicationTarget.
         The `OCID`__ of source filesystem.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this ReplicationTarget.
@@ -415,7 +415,7 @@ class ReplicationTarget(object):
         **[Required]** Gets the target_id of this ReplicationTarget.
         The `OCID`__ of target filesystem.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_id of this ReplicationTarget.
@@ -429,7 +429,7 @@ class ReplicationTarget(object):
         Sets the target_id of this ReplicationTarget.
         The `OCID`__ of target filesystem.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param target_id: The target_id of this ReplicationTarget.
@@ -443,7 +443,7 @@ class ReplicationTarget(object):
         **[Required]** Gets the replication_id of this ReplicationTarget.
         The `OCID`__ of replication.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The replication_id of this ReplicationTarget.
@@ -457,7 +457,7 @@ class ReplicationTarget(object):
         Sets the replication_id of this ReplicationTarget.
         The `OCID`__ of replication.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param replication_id: The replication_id of this ReplicationTarget.
@@ -472,7 +472,7 @@ class ReplicationTarget(object):
         The `OCID`__ of the last snapshot snapshot which was completely applied to the target file system.
         Empty while the initial snapshot is being applied.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_snapshot_id of this ReplicationTarget.
@@ -487,7 +487,7 @@ class ReplicationTarget(object):
         The `OCID`__ of the last snapshot snapshot which was completely applied to the target file system.
         Empty while the initial snapshot is being applied.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_snapshot_id: The last_snapshot_id of this ReplicationTarget.
@@ -590,7 +590,7 @@ class ReplicationTarget(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ReplicationTarget.
@@ -607,7 +607,7 @@ class ReplicationTarget(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ReplicationTarget.
@@ -623,7 +623,7 @@ class ReplicationTarget(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ReplicationTarget.
@@ -639,7 +639,7 @@ class ReplicationTarget(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ReplicationTarget.

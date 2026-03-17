@@ -74,7 +74,7 @@ class OdaPrivateEndpointScanProxySummary(object):
         **[Required]** Gets the id of this OdaPrivateEndpointScanProxySummary.
         The `OCID`__ of the ODA Private Endpoint Scan Proxy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OdaPrivateEndpointScanProxySummary.
@@ -88,7 +88,7 @@ class OdaPrivateEndpointScanProxySummary(object):
         Sets the id of this OdaPrivateEndpointScanProxySummary.
         The `OCID`__ of the ODA Private Endpoint Scan Proxy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OdaPrivateEndpointScanProxySummary.

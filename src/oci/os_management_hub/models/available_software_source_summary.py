@@ -55,7 +55,7 @@ class AvailableSoftwareSourceSummary(object):
         **[Required]** Gets the id of this AvailableSoftwareSourceSummary.
         The `OCID`__ of the software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AvailableSoftwareSourceSummary.
@@ -69,7 +69,7 @@ class AvailableSoftwareSourceSummary(object):
         Sets the id of this AvailableSoftwareSourceSummary.
         The `OCID`__ of the software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AvailableSoftwareSourceSummary.
@@ -83,7 +83,7 @@ class AvailableSoftwareSourceSummary(object):
         **[Required]** Gets the compartment_id of this AvailableSoftwareSourceSummary.
         The `OCID`__ of the compartment that contains the software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AvailableSoftwareSourceSummary.
@@ -97,7 +97,7 @@ class AvailableSoftwareSourceSummary(object):
         Sets the compartment_id of this AvailableSoftwareSourceSummary.
         The `OCID`__ of the compartment that contains the software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AvailableSoftwareSourceSummary.

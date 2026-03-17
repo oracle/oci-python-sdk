@@ -89,7 +89,7 @@ class CreateNatGatewayDetails(object):
         The `OCID`__ of the compartment to contain the
         NAT gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateNatGatewayDetails.
@@ -104,7 +104,7 @@ class CreateNatGatewayDetails(object):
         The `OCID`__ of the compartment to contain the
         NAT gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateNatGatewayDetails.
@@ -121,7 +121,7 @@ class CreateNatGatewayDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateNatGatewayDetails.
@@ -138,7 +138,7 @@ class CreateNatGatewayDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateNatGatewayDetails.
@@ -181,7 +181,7 @@ class CreateNatGatewayDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateNatGatewayDetails.
@@ -198,7 +198,7 @@ class CreateNatGatewayDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateNatGatewayDetails.
@@ -240,7 +240,7 @@ class CreateNatGatewayDetails(object):
         **[Required]** Gets the vcn_id of this CreateNatGatewayDetails.
         The `OCID`__ of the VCN the gateway belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateNatGatewayDetails.
@@ -254,7 +254,7 @@ class CreateNatGatewayDetails(object):
         Sets the vcn_id of this CreateNatGatewayDetails.
         The `OCID`__ of the VCN the gateway belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateNatGatewayDetails.
@@ -268,7 +268,7 @@ class CreateNatGatewayDetails(object):
         Gets the public_ip_id of this CreateNatGatewayDetails.
         The `OCID`__ of the public IP address associated with the NAT gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The public_ip_id of this CreateNatGatewayDetails.
@@ -282,7 +282,7 @@ class CreateNatGatewayDetails(object):
         Sets the public_ip_id of this CreateNatGatewayDetails.
         The `OCID`__ of the public IP address associated with the NAT gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param public_ip_id: The public_ip_id of this CreateNatGatewayDetails.
@@ -300,7 +300,7 @@ class CreateNatGatewayDetails(object):
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the NAT gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this CreateNatGatewayDetails.
@@ -318,7 +318,7 @@ class CreateNatGatewayDetails(object):
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the NAT gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this CreateNatGatewayDetails.

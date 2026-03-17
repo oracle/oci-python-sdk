@@ -33,7 +33,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAwsIdentityConnectorCompartmentDetails change_oracle_db_aws_identity_connector_compartment_details: (required)
             Moves the Oracle DB AWS Identity COnnector resource into a different compartment.
@@ -77,7 +77,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAwsKeyCompartmentDetails change_oracle_db_aws_key_compartment_details: (required)
             Moves the AWS Key resource into a different compartment.
@@ -199,7 +199,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -248,7 +248,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -297,7 +297,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -338,7 +338,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.RefreshOracleDbAwsKeyDetails refresh_oracle_db_aws_key_details: (required)
             Details for to refresh Oracle DB AWS Key.
@@ -382,7 +382,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_identity_connector_id: (required)
             The `OCID`__  of the Oracle DB AWS Identity Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAwsIdentityConnectorDetails update_oracle_db_aws_identity_connector_details: (required)
             Details for to update OracleDbAwsIdentityConnector.
@@ -426,7 +426,7 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         :param str oracle_db_aws_key_id: (required)
             The `OCID`__ of the Oracle DB AWS Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAwsKeyDetails update_oracle_db_aws_key_details: (required)
             Details for to update OracleDbAwsKey.

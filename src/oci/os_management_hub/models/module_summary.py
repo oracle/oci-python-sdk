@@ -101,7 +101,7 @@ class ModuleSummary(object):
         **[Required]** Gets the software_source_id of this ModuleSummary.
         The `OCID`__ of the software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ModuleSummary.
@@ -115,7 +115,7 @@ class ModuleSummary(object):
         Sets the software_source_id of this ModuleSummary.
         The `OCID`__ of the software source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ModuleSummary.

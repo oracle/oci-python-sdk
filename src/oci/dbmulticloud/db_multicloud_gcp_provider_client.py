@@ -166,7 +166,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbGcpIdentityConnectorCompartmentDetails change_oracle_db_gcp_identity_connector_compartment_details: (required)
             Moves the Oracle DB GCP Identity Connector resource into a different compartment.
@@ -295,7 +295,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbGcpKeyRingCompartmentDetails change_oracle_db_gcp_key_ring_compartment_details: (required)
             Moves the GCP Key Ring resource into a different compartment.
@@ -643,7 +643,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -757,7 +757,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -867,13 +867,13 @@ class DbMulticloudGCPProviderClient(object):
         """
         Retrieves the Oracle DB GCP Identity Connector for a specified resource `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -976,13 +976,13 @@ class DbMulticloudGCPProviderClient(object):
         """
         Retrieves Oracle DB Google Cloud Key details using a specific resource `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_gcp_key_id: (required)
             The `OCID`__ of the Oracle DB Google Cloud Key resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1085,13 +1085,13 @@ class DbMulticloudGCPProviderClient(object):
         """
         Retrieves the Oracle GCP Key Ring details using a specific Container resource `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1228,7 +1228,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
@@ -1236,7 +1236,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str resource_id: (optional)
             A filter to return Oracle DB Identity Connector resource that match the given resource `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -1394,7 +1394,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB GCP Key Ring resources that match the specified display name.
@@ -1411,7 +1411,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_connector_id: (optional)
             A filter to return Oracle DB GCP Identity Connector resources that match the specified resource `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1566,7 +1566,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Google Cloud Key resources that match the specified display name.
@@ -1735,7 +1735,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
@@ -1859,7 +1859,7 @@ class DbMulticloudGCPProviderClient(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.RefreshOracleDbGcpKeyRingDetails refresh_oracle_db_gcp_key_ring_details: (required)
             Details for to refresh Oracle DD GCP Key Ring.
@@ -1984,13 +1984,13 @@ class DbMulticloudGCPProviderClient(object):
         """
         Modifies the existing Oracle DB GCP Identity Connector resource for a given `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbGcpIdentityConnectorDetails update_oracle_db_gcp_identity_connector_details: (required)
             Details for to update OracleDbGcpIdentityConnector.
@@ -2105,13 +2105,13 @@ class DbMulticloudGCPProviderClient(object):
         """
         Modifies the existing Oracle GCP Key Ring Details for a given `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbGcpKeyRingDetails update_oracle_db_gcp_key_ring_details: (required)
             Details for to update OracleDbGcpKeyRing.

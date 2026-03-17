@@ -46,7 +46,7 @@ class FirmwareBundleTransitions(object):
         Gets the upgrades of this FirmwareBundleTransitions.
         An array of `OCIDs`__ of validated firmware bundle upgrades.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The upgrades of this FirmwareBundleTransitions.
@@ -60,7 +60,7 @@ class FirmwareBundleTransitions(object):
         Sets the upgrades of this FirmwareBundleTransitions.
         An array of `OCIDs`__ of validated firmware bundle upgrades.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param upgrades: The upgrades of this FirmwareBundleTransitions.
@@ -74,7 +74,7 @@ class FirmwareBundleTransitions(object):
         Gets the downgrades of this FirmwareBundleTransitions.
         An array of `OCIDs`__ of validated firmware bundle downgrades.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The downgrades of this FirmwareBundleTransitions.
@@ -88,7 +88,7 @@ class FirmwareBundleTransitions(object):
         Sets the downgrades of this FirmwareBundleTransitions.
         An array of `OCIDs`__ of validated firmware bundle downgrades.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param downgrades: The downgrades of this FirmwareBundleTransitions.

@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class ReportingManagedInstanceClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -134,22 +134,22 @@ class ReportingManagedInstanceClient(object):
             The `OCID`__ of the compartment.
             This filter returns only resources contained within the specified compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_group_id: (optional)
             The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_environment_id: (optional)
             The `OCID`__ of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_stage_id: (optional)
             The `OCID`__ of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             A filter to return only managed instances whose status matches the status provided.
@@ -381,7 +381,7 @@ class ReportingManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.list[str] vulnerability_type: (required)
             A filter to return only vulnerabilities matching the given types.
@@ -564,22 +564,22 @@ class ReportingManagedInstanceClient(object):
             The `OCID`__ of the compartment.
             This filter returns only resources contained within the specified compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_group_id: (optional)
             The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_environment_id: (optional)
             The `OCID`__ of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_stage_id: (optional)
             The `OCID`__ of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             A filter to return only managed instances whose status matches the status provided.
@@ -616,7 +616,7 @@ class ReportingManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -624,7 +624,7 @@ class ReportingManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. The default is to sort in ascending order by metricName (previously name, which is now depricated).

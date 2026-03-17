@@ -56,7 +56,7 @@ class VaultSecretPasswordDetails(PasswordDetails):
         **[Required]** Gets the secret_id of this VaultSecretPasswordDetails.
         The `OCID`__ of the secret where the password is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this VaultSecretPasswordDetails.
@@ -70,7 +70,7 @@ class VaultSecretPasswordDetails(PasswordDetails):
         Sets the secret_id of this VaultSecretPasswordDetails.
         The `OCID`__ of the secret where the password is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this VaultSecretPasswordDetails.

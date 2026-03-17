@@ -39,7 +39,7 @@ class ChangeOracleDbAwsIdentityConnectorCompartmentDetails(object):
         Gets the compartment_id of this ChangeOracleDbAwsIdentityConnectorCompartmentDetails.
         The `OCID`__ of the new compartment to contain the Oracle DB AWS Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeOracleDbAwsIdentityConnectorCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeOracleDbAwsIdentityConnectorCompartmentDetails(object):
         Sets the compartment_id of this ChangeOracleDbAwsIdentityConnectorCompartmentDetails.
         The `OCID`__ of the new compartment to contain the Oracle DB AWS Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeOracleDbAwsIdentityConnectorCompartmentDetails.

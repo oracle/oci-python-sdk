@@ -134,7 +134,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tablespace_name: (required)
             The name of the tablespace.
@@ -260,7 +260,7 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails add_managed_database_to_managed_database_group_details: (required)
             The Managed Database details required to add the Managed Database to a Managed Database Group.
@@ -379,7 +379,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param datetime time_start: (required)
             The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
@@ -542,7 +542,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
             The details required to move the Exadata infrastructure from one compartment to another.
@@ -683,7 +683,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeDatabaseParametersDetails change_database_parameters_details: (required)
             The details required to change database parameter values.
@@ -803,7 +803,7 @@ class DbManagementClient(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeDbManagementPrivateEndpointCompartmentDetails change_db_management_private_endpoint_compartment_details: (required)
             The details used to move the Database Management private endpoint to another compartment.
@@ -930,12 +930,12 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeExternalDbSystemCompartmentDetails change_external_db_system_compartment_details: (required)
             The `OCID`__ of the compartment to which the external DB system should be moved.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1061,7 +1061,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeExternalExadataInfrastructureCompartmentDetails change_external_exadata_infrastructure_compartment_details: (required)
             The details required to move the Exadata infrastructure from one compartment to another.
@@ -1193,7 +1193,7 @@ class DbManagementClient(object):
         :param oci.database_management.models.ChangeJobCompartmentDetails change_job_compartment_details: (required)
             The `OCID`__ of the compartment to move the job to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1319,12 +1319,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails change_managed_database_group_compartment_details: (required)
             The `OCID`__ of the compartment to move the Managed Database Group to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1450,12 +1450,12 @@ class DbManagementClient(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeNamedCredentialCompartmentDetails change_named_credential_compartment_details: (required)
             The `OCID`__ of the compartment to which the named credential should be moved.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1583,7 +1583,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangePlanRetentionDetails change_plan_retention_details: (required)
             The details required to change the plan retention period.
@@ -1692,7 +1692,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeSpaceBudgetDetails change_space_budget_details: (required)
             The details required to change the disk space limit for the SQL Management Base.
@@ -1800,7 +1800,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeSqlPlanBaselinesAttributesDetails change_sql_plan_baselines_attributes_details: (required)
             The details required to change SQL plan baseline attributes.
@@ -1909,7 +1909,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2035,7 +2035,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2162,7 +2162,7 @@ class DbManagementClient(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2288,7 +2288,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2538,7 +2538,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ConfigureAutomaticCaptureFiltersDetails configure_automatic_capture_filters_details: (required)
             The details required to configure automatic capture filters.
@@ -2648,7 +2648,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ConfigureAutomaticSpmEvolveAdvisorTaskDetails configure_automatic_spm_evolve_advisor_task_details: (required)
             The configuration details of the Automatic SPM Evolve Advisor task.
@@ -4451,7 +4451,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.CreateTablespaceDetails create_tablespace_details: (required)
             The details required to create a tablespace.
@@ -4571,7 +4571,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4683,7 +4683,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4795,7 +4795,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_discovery_id: (required)
             The `OCID`__ of the cloud DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4907,7 +4907,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5019,7 +5019,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5131,7 +5131,7 @@ class DbManagementClient(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5243,7 +5243,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5355,7 +5355,7 @@ class DbManagementClient(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5467,7 +5467,7 @@ class DbManagementClient(object):
         :param str external_db_system_discovery_id: (required)
             The `OCID`__ of the external DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5579,7 +5579,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5691,7 +5691,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -6134,7 +6134,7 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6246,7 +6246,7 @@ class DbManagementClient(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6358,7 +6358,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
             The name of the preferred credential.
@@ -6465,7 +6465,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableAutomaticInitialPlanCaptureDetails disable_automatic_initial_plan_capture_details: (required)
             The details required to disable automatic initial plan capture.
@@ -6576,7 +6576,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableAutomaticSpmEvolveAdvisorTaskDetails disable_automatic_spm_evolve_advisor_task_details: (required)
             The details required to disable Automatic SPM Evolve Advisor task.
@@ -6684,7 +6684,7 @@ class DbManagementClient(object):
         :param str autonomous_database_id: (required)
             The `OCID`__ of the Autonomous Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableAutonomousDatabaseManagementFeatureDetails disable_autonomous_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an Autonomous Database.
@@ -6814,7 +6814,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -6939,7 +6939,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7070,7 +7070,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7194,7 +7194,7 @@ class DbManagementClient(object):
         :param str database_id: (required)
             The `OCID`__ of the Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableDatabaseManagementFeatureDetails disable_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an Oracle cloud database.
@@ -7323,7 +7323,7 @@ class DbManagementClient(object):
         :param str external_container_database_id: (required)
             The `OCID`__ of the external container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableExternalContainerDatabaseManagementFeatureDetails disable_external_container_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an external container database.
@@ -7453,7 +7453,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7578,7 +7578,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7709,7 +7709,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7955,7 +7955,7 @@ class DbManagementClient(object):
         :param str external_non_container_database_id: (required)
             The `OCID`__ of the external non-container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableExternalNonContainerDatabaseManagementFeatureDetails disable_external_non_container_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an external non-container database.
@@ -8084,7 +8084,7 @@ class DbManagementClient(object):
         :param str external_pluggable_database_id: (required)
             The `OCID`__ of the external pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableExternalPluggableDatabaseManagementFeatureDetails disable_external_pluggable_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an external pluggable database.
@@ -8216,7 +8216,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails disable_high_frequency_automatic_spm_evolve_advisor_task_details: (required)
             The details required to disable high frequency Automatic SPM Evolve Advisor task.
@@ -8324,7 +8324,7 @@ class DbManagementClient(object):
         :param str pluggable_database_id: (required)
             The `OCID`__ of the Oracle cloud pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisablePluggableDatabaseManagementFeatureDetails disable_pluggable_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an Oracle cloud pluggable database.
@@ -8455,7 +8455,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableSqlPlanBaselinesUsageDetails disable_sql_plan_baselines_usage_details: (required)
             The details required to disable SQL plan baseline usage.
@@ -8815,7 +8815,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DropSqlPlanBaselinesDetails drop_sql_plan_baselines_details: (required)
             The details required to drop SQL plan baselines.
@@ -8923,7 +8923,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tablespace_name: (required)
             The name of the tablespace.
@@ -9054,7 +9054,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableAutomaticInitialPlanCaptureDetails enable_automatic_initial_plan_capture_details: (required)
             The details required to enable automatic initial plan capture.
@@ -9174,7 +9174,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableAutomaticSpmEvolveAdvisorTaskDetails enable_automatic_spm_evolve_advisor_task_details: (required)
             The details required to enable Automatic SPM Evolve Advisor task.
@@ -9282,7 +9282,7 @@ class DbManagementClient(object):
         :param str autonomous_database_id: (required)
             The `OCID`__ of the Autonomous Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableAutonomousDatabaseManagementFeatureDetails enable_autonomous_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an Autonomous Database.
@@ -9412,7 +9412,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemDatabaseManagementDetails enable_cloud_db_system_database_management_details: (required)
             The details required to enable Stack Monitoring for an cloud DB system.
@@ -9542,7 +9542,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemStackMonitoringDetails enable_cloud_db_system_stack_monitoring_details: (required)
             The details required to enable Stack Monitoring for an cloud DB system.
@@ -9676,7 +9676,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudExadataInfrastructureManagementDetails enable_cloud_exadata_infrastructure_management_details: (required)
             The details required to enable management for the Exadata infrastructure.
@@ -9805,7 +9805,7 @@ class DbManagementClient(object):
         :param str database_id: (required)
             The `OCID`__ of the Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableDatabaseManagementFeatureDetails enable_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an Oracle cloud database.
@@ -9934,7 +9934,7 @@ class DbManagementClient(object):
         :param str external_container_database_id: (required)
             The `OCID`__ of the external container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalContainerDatabaseManagementFeatureDetails enable_external_container_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external container database.
@@ -10064,7 +10064,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails enable_external_db_system_database_management_details: (required)
             The details required to enable Database Management for an external DB system.
@@ -10194,7 +10194,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalDbSystemStackMonitoringDetails enable_external_db_system_stack_monitoring_details: (required)
             The details required to enable Stack Monitoring for an external DB system.
@@ -10328,7 +10328,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalExadataInfrastructureManagementDetails enable_external_exadata_infrastructure_management_details: (required)
             The details required to enable management for the Exadata infrastructure.
@@ -10584,7 +10584,7 @@ class DbManagementClient(object):
         :param str external_non_container_database_id: (required)
             The `OCID`__ of the external non-container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalNonContainerDatabaseManagementFeatureDetails enable_external_non_container_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external non-container database.
@@ -10713,7 +10713,7 @@ class DbManagementClient(object):
         :param str external_pluggable_database_id: (required)
             The `OCID`__ of the external pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalPluggableDatabaseManagementFeatureDetails enable_external_pluggable_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external pluggable database.
@@ -10850,7 +10850,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails enable_high_frequency_automatic_spm_evolve_advisor_task_details: (required)
             The details required to enable high frequency Automatic SPM Evolve Advisor task.
@@ -10958,7 +10958,7 @@ class DbManagementClient(object):
         :param str pluggable_database_id: (required)
             The `OCID`__ of the Oracle cloud pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnablePluggableDatabaseManagementFeatureDetails enable_pluggable_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an Oracle cloud pluggable database.
@@ -11090,7 +11090,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableSqlPlanBaselinesUsageDetails enable_sql_plan_baselines_usage_details: (required)
             The details required to enable SQL plan baseline usage.
@@ -11198,7 +11198,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -11318,7 +11318,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -11510,7 +11510,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -11692,7 +11692,7 @@ class DbManagementClient(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -11799,7 +11799,7 @@ class DbManagementClient(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -11911,7 +11911,7 @@ class DbManagementClient(object):
         :param str cloud_asm_instance_id: (required)
             The `OCID`__ of the cloud ASM instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12018,7 +12018,7 @@ class DbManagementClient(object):
         :param str cloud_cluster_id: (required)
             The `OCID`__ of the cloud cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12125,7 +12125,7 @@ class DbManagementClient(object):
         :param str cloud_cluster_instance_id: (required)
             The `OCID`__ of the cloud cluster instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12232,7 +12232,7 @@ class DbManagementClient(object):
         :param str cloud_db_home_id: (required)
             The `OCID`__ of the cloud database home.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12339,7 +12339,7 @@ class DbManagementClient(object):
         :param str cloud_db_node_id: (required)
             The `OCID`__ of the cloud database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12446,7 +12446,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12553,7 +12553,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12660,7 +12660,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_discovery_id: (required)
             The `OCID`__ of the cloud DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12768,7 +12768,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12875,7 +12875,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -12982,7 +12982,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_grid_id: (required)
             The `OCID`__ of the Exadata storage grid.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -13089,7 +13089,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -13196,7 +13196,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -13303,7 +13303,7 @@ class DbManagementClient(object):
         :param str cloud_listener_id: (required)
             The `OCID`__ of the cloud listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -13410,7 +13410,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -13519,7 +13519,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the health metrics of a Managed Database
@@ -13658,12 +13658,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str filter_by_metric_names: (optional)
             The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
@@ -13856,12 +13856,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str filter_by_metric_names: (optional)
             The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
@@ -14045,12 +14045,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str filter_by_metric_names: (optional)
             The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
@@ -14240,12 +14240,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compare_type: (optional)
             The time window used for metrics comparison.
@@ -14460,7 +14460,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -14572,7 +14572,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the health metrics of a Managed Database
@@ -14684,7 +14684,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the health metrics of a Managed Database
@@ -14701,7 +14701,7 @@ class DbManagementClient(object):
             The `OCID`__ of the compartment for which peer database metrics are required.
             This is not a mandatory parameter and in its absence, all the peer database metrics are returned.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str filter_by_metric_names: (optional)
             The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
@@ -14818,7 +14818,7 @@ class DbManagementClient(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -14924,7 +14924,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compare_baseline_time: (required)
             The baseline time for metrics comparison.
@@ -15105,7 +15105,7 @@ class DbManagementClient(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15212,7 +15212,7 @@ class DbManagementClient(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15324,7 +15324,7 @@ class DbManagementClient(object):
         :param str external_asm_instance_id: (required)
             The `OCID`__ of the external ASM instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15431,7 +15431,7 @@ class DbManagementClient(object):
         :param str external_cluster_id: (required)
             The `OCID`__ of the external cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15538,7 +15538,7 @@ class DbManagementClient(object):
         :param str external_cluster_instance_id: (required)
             The `OCID`__ of the external cluster instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15645,7 +15645,7 @@ class DbManagementClient(object):
         :param str external_db_home_id: (required)
             The `OCID`__ of the external database home.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15752,7 +15752,7 @@ class DbManagementClient(object):
         :param str external_db_node_id: (required)
             The `OCID`__ of the external database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15859,7 +15859,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15966,7 +15966,7 @@ class DbManagementClient(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16073,7 +16073,7 @@ class DbManagementClient(object):
         :param str external_db_system_discovery_id: (required)
             The `OCID`__ of the external DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16181,7 +16181,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16288,7 +16288,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16395,7 +16395,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_grid_id: (required)
             The `OCID`__ of the Exadata storage grid.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16502,7 +16502,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16609,7 +16609,7 @@ class DbManagementClient(object):
         :param str external_listener_id: (required)
             The `OCID`__ of the external listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -16926,7 +16926,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -17342,7 +17342,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -17447,7 +17447,7 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -17552,7 +17552,7 @@ class DbManagementClient(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -17659,7 +17659,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -17767,7 +17767,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str execution_name: (required)
             The name of the Optimizer Statistics Advisor execution.
@@ -17891,7 +17891,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str execution_name: (required)
             The name of the Optimizer Statistics Advisor execution.
@@ -18015,7 +18015,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param float optimizer_statistics_collection_operation_id: (required)
             The ID of the Optimizer Statistics Collection operation.
@@ -18132,7 +18132,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the health metrics of a Managed Database
@@ -18148,7 +18148,7 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compare_type: (optional)
             The time window used for metrics comparison.
@@ -18281,7 +18281,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the health metrics of a Managed Database
@@ -18298,7 +18298,7 @@ class DbManagementClient(object):
             The `OCID`__ of the compartment for which peer database metrics are required.
             This is not a mandatory parameter and in its absence, all the peer database metrics are returned.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compare_type: (optional)
             The time window used for metrics comparison.
@@ -18429,7 +18429,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
             The name of the preferred credential.
@@ -18538,7 +18538,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str plan_name: (required)
             The plan name of the SQL plan baseline.
@@ -18656,7 +18656,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -18768,7 +18768,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tablespace_name: (required)
             The name of the tablespace.
@@ -18882,7 +18882,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -18989,7 +18989,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -19103,7 +19103,7 @@ class DbManagementClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -19208,7 +19208,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str execution_name: (required)
             The name of the Optimizer Statistics Advisor execution.
@@ -19322,7 +19322,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -19479,12 +19479,12 @@ class DbManagementClient(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -19635,7 +19635,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -19838,7 +19838,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The optional single value query parameter to filter the entity name.
@@ -20018,7 +20018,7 @@ class DbManagementClient(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -20176,12 +20176,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_asm_id: (optional)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -20332,7 +20332,7 @@ class DbManagementClient(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -20490,12 +20490,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_db_system_id: (optional)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -20646,12 +20646,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_cluster_id: (optional)
             The `OCID`__ of the cloud cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -20802,12 +20802,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_db_system_id: (optional)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -20958,12 +20958,12 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -21113,12 +21113,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_db_system_id: (optional)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -21269,12 +21269,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_db_system_id: (optional)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -21425,12 +21425,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_db_system_id: (optional)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -21581,7 +21581,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -21729,12 +21729,12 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str dbaas_parent_infrastructure_id: (optional)
             The `OCID`__ of the dbaas parent infrastructure of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str deployment_type: (optional)
             A filter to return cloud DB systems of the specified deployment type.
@@ -21912,7 +21912,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             The optional single value query filter parameter on the entity display name.
@@ -22060,12 +22060,12 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             The optional single value query filter parameter on the entity display name.
@@ -22214,12 +22214,12 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             The optional single value query filter parameter on the entity display name.
@@ -22369,12 +22369,12 @@ class DbManagementClient(object):
         :param str cloud_listener_id: (required)
             The `OCID`__ of the cloud listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -22533,12 +22533,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cloud_db_system_id: (optional)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -22689,7 +22689,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -22854,7 +22854,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str sql_text: (optional)
             A filter to return all the SQL plan baselines that match the SQL text. By default, the search
@@ -23018,7 +23018,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -23183,7 +23183,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -23355,7 +23355,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             A filter to return only resources that match the entire name.
@@ -23363,7 +23363,7 @@ class DbManagementClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param bool is_cluster: (optional)
             The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
@@ -23533,7 +23533,7 @@ class DbManagementClient(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -23691,12 +23691,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_asm_id: (optional)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -23847,7 +23847,7 @@ class DbManagementClient(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -24005,12 +24005,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -24161,12 +24161,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_cluster_id: (optional)
             The `OCID`__ of the external cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -24317,12 +24317,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -24473,17 +24473,17 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_database_id: (optional)
             The `OCID`__ of the external database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -24636,12 +24636,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -24792,12 +24792,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -24948,12 +24948,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -25104,7 +25104,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -25252,7 +25252,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -25400,7 +25400,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             The optional single value query filter parameter on the entity display name.
@@ -25548,12 +25548,12 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             The optional single value query filter parameter on the entity display name.
@@ -25702,12 +25702,12 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             The optional single value query filter parameter on the entity display name.
@@ -25857,12 +25857,12 @@ class DbManagementClient(object):
         :param str external_listener_id: (required)
             The `OCID`__ of the external listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -26021,12 +26021,12 @@ class DbManagementClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_db_system_id: (optional)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to only return the resources that match the entire display name.
@@ -26177,7 +26177,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -26326,7 +26326,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -26340,12 +26340,12 @@ class DbManagementClient(object):
         :param str managed_database_id: (optional)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
             The status of the job execution.
@@ -26509,7 +26509,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -26523,12 +26523,12 @@ class DbManagementClient(object):
         :param str managed_database_id: (optional)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str run_status: (optional)
             The status of the job run.
@@ -26687,7 +26687,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -26698,12 +26698,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_database_id: (optional)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             A filter to return only resources that match the entire name.
@@ -26869,7 +26869,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -27039,7 +27039,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -27063,7 +27063,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (optional)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -27225,7 +27225,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -27233,7 +27233,7 @@ class DbManagementClient(object):
         :param str external_database_id: (optional)
             The `OCID`__ of the external database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The parameter to filter by MySQL Database System type.
@@ -27378,7 +27378,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -27559,7 +27559,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -27726,7 +27726,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time_greater_than_or_equal_to: (optional)
             The start time of the time range to retrieve the optimizer statistics of a Managed Database
@@ -27859,7 +27859,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str group_type: (required)
             The optimizer statistics tasks grouped by type.
@@ -28030,7 +28030,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time_greater_than_or_equal_to: (optional)
             The start time of the time range to retrieve the optimizer statistics of a Managed Database
@@ -28219,7 +28219,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -28324,7 +28324,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -28489,7 +28489,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -28654,7 +28654,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -28819,7 +28819,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             A filter to return the SQL plan baseline jobs that match the name.
@@ -28983,7 +28983,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str plan_name: (optional)
             A filter to return only SQL plan baselines that match the plan name.
@@ -29225,7 +29225,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str user_name: (required)
             The name of the user whose details are to be viewed.
@@ -29391,7 +29391,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -29501,7 +29501,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -29663,7 +29663,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -29825,7 +29825,7 @@ class DbManagementClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -29975,7 +29975,7 @@ class DbManagementClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -30125,12 +30125,12 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str resource_id: (optional)
             The `OCID`__ of the resource affected by the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -30138,7 +30138,7 @@ class DbManagementClient(object):
         :param str work_request_id: (optional)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
             A filter that returns the resources whose status matches the given WorkRequestStatus.
@@ -30296,7 +30296,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.LoadSqlPlanBaselinesFromAwrDetails load_sql_plan_baselines_from_awr_details: (required)
             The details required to load plans from Automatic Workload Repository (AWR).
@@ -30408,7 +30408,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.LoadSqlPlanBaselinesFromCursorCacheDetails load_sql_plan_baselines_from_cursor_cache_details: (required)
             The details of SQL statements and plans to be loaded from cursor cache.
@@ -30518,7 +30518,7 @@ class DbManagementClient(object):
         :param str autonomous_database_id: (required)
             The `OCID`__ of the Autonomous Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifyAutonomousDatabaseManagementFeatureDetails modify_autonomous_database_management_feature_details: (required)
             The details required to modify a Database Management feature for an Autonomous Database.
@@ -30647,7 +30647,7 @@ class DbManagementClient(object):
         :param str database_id: (required)
             The `OCID`__ of the Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifyDatabaseManagementFeatureDetails modify_database_management_feature_details: (required)
             The details required to modify a Database Management feature for an Oracle cloud database.
@@ -30776,7 +30776,7 @@ class DbManagementClient(object):
         :param str external_container_database_id: (required)
             The `OCID`__ of the external container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalContainerDatabaseManagementFeatureDetails enable_external_container_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external container database.
@@ -30905,7 +30905,7 @@ class DbManagementClient(object):
         :param str pluggable_database_id: (required)
             The `OCID`__ of the Oracle cloud pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifyPluggableDatabaseManagementFeatureDetails modify_pluggable_database_management_feature_details: (required)
             The details required to modify a Database Management feature for an Oracle cloud pluggable database.
@@ -31034,7 +31034,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_discovery_id: (required)
             The `OCID`__ of the cloud DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.PatchCloudDbSystemDiscoveryDetails patch_cloud_db_system_discovery_details: (required)
             The details required to update an cloud DB system discovery.
@@ -31153,7 +31153,7 @@ class DbManagementClient(object):
         :param str external_db_system_discovery_id: (required)
             The `OCID`__ of the external DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.PatchExternalDbSystemDiscoveryDetails patch_external_db_system_discovery_details: (required)
             The details required to update an external DB system discovery.
@@ -31272,7 +31272,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tablespace_name: (required)
             The name of the tablespace.
@@ -31399,7 +31399,7 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails remove_managed_database_from_managed_database_group_details: (required)
             The Managed Database details required to remove the Managed Database from a Managed Database Group.
@@ -31517,7 +31517,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ResetDatabaseParametersDetails reset_database_parameters_details: (required)
             The details required to reset database parameters.
@@ -31637,7 +31637,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tablespace_name: (required)
             The name of the tablespace.
@@ -31762,7 +31762,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.RunHistoricAddmDetails run_historic_addm_details: (required)
             The details of the ADDM task, which include the beginning and ending AWR snapshot IDs.
@@ -31887,7 +31887,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -32104,7 +32104,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -32315,7 +32315,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -32532,7 +32532,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -32787,7 +32787,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The optional single value query parameter to filter the entity name.
@@ -32967,7 +32967,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -33174,7 +33174,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -33385,7 +33385,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -33607,7 +33607,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
@@ -33829,7 +33829,7 @@ class DbManagementClient(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -33968,7 +33968,7 @@ class DbManagementClient(object):
         :param str cloud_cluster_id: (required)
             The `OCID`__ of the cloud cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34107,7 +34107,7 @@ class DbManagementClient(object):
         :param str cloud_db_node_id: (required)
             The `OCID`__ of the cloud database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34246,7 +34246,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34385,7 +34385,7 @@ class DbManagementClient(object):
         :param str cloud_listener_id: (required)
             The `OCID`__ of the cloud listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34524,7 +34524,7 @@ class DbManagementClient(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34663,7 +34663,7 @@ class DbManagementClient(object):
         :param str external_cluster_id: (required)
             The `OCID`__ of the external cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34802,7 +34802,7 @@ class DbManagementClient(object):
         :param str external_db_node_id: (required)
             The `OCID`__ of the external database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -34941,7 +34941,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -35080,7 +35080,7 @@ class DbManagementClient(object):
         :param str external_listener_id: (required)
             The `OCID`__ of the external listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The beginning of the time range set to retrieve metric data for the DB system
@@ -35219,7 +35219,7 @@ class DbManagementClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the status summary of job executions
@@ -35238,12 +35238,12 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (optional)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str managed_database_id: (optional)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             A filter to return only resources that match the entire name.
@@ -35384,7 +35384,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
             The start time of the time range to retrieve the health metrics of a Managed Database
@@ -35518,7 +35518,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -35642,7 +35642,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page from where the next set of paginated results
@@ -35766,12 +35766,12 @@ class DbManagementClient(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.TestNamedCredentialDetails test_named_credential_details: (required)
             The `OCID`__ of the database against which the credential is to be tested.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -35878,7 +35878,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
             The name of the preferred credential.
@@ -35993,7 +35993,7 @@ class DbManagementClient(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmDetails update_cloud_asm_details: (required)
             The details required to update an cloud ASM.
@@ -36110,7 +36110,7 @@ class DbManagementClient(object):
         :param str cloud_asm_instance_id: (required)
             The `OCID`__ of the cloud ASM instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmInstanceDetails update_cloud_asm_instance_details: (required)
             The details required to update an cloud ASM instance.
@@ -36229,7 +36229,7 @@ class DbManagementClient(object):
         :param str cloud_cluster_id: (required)
             The `OCID`__ of the cloud cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterDetails update_cloud_cluster_details: (required)
             The details required to update an cloud cluster.
@@ -36346,7 +36346,7 @@ class DbManagementClient(object):
         :param str cloud_cluster_instance_id: (required)
             The `OCID`__ of the cloud cluster instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterInstanceDetails update_cloud_cluster_instance_details: (required)
             The details required to update an cloud cluster instance.
@@ -36463,7 +36463,7 @@ class DbManagementClient(object):
         :param str cloud_db_home_id: (required)
             The `OCID`__ of the cloud database home.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbHomeDetails update_cloud_db_home_details: (required)
             The details required to update an cloud DB home.
@@ -36582,7 +36582,7 @@ class DbManagementClient(object):
         :param str cloud_db_node_id: (required)
             The `OCID`__ of the cloud database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbNodeDetails update_cloud_db_node_details: (required)
             The details required to update an cloud DB node.
@@ -36699,7 +36699,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDetails update_cloud_db_system_details: (required)
             The details required to update an cloud DB system.
@@ -36818,7 +36818,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemConnectorDetails update_cloud_db_system_connector_details: (required)
             The details required to update an cloud connector.
@@ -36935,7 +36935,7 @@ class DbManagementClient(object):
         :param str cloud_db_system_discovery_id: (required)
             The `OCID`__ of the cloud DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDiscoveryDetails update_cloud_db_system_discovery_details: (required)
             The details required to update an cloud DB system discovery.
@@ -37054,7 +37054,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             The details required to update the managed Exadata infrastructure resources.
@@ -37185,7 +37185,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataStorageConnectorDetails update_cloud_exadata_storage_connector_details: (required)
             The details required to update connections to the Exadata storage servers.
@@ -37304,7 +37304,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_grid_id: (required)
             The `OCID`__ of the Exadata storage grid.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataStorageGridDetails update_cloud_exadata_storage_grid_details: (required)
             The details required to update an Exadata storage grid.
@@ -37423,7 +37423,7 @@ class DbManagementClient(object):
         :param str cloud_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataStorageServerDetails update_cloud_exadata_storage_server_details: (required)
             The details required to update an Exadata storage server.
@@ -37542,7 +37542,7 @@ class DbManagementClient(object):
         :param str cloud_listener_id: (required)
             The `OCID`__ of the cloud listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudListenerDetails update_cloud_listener_details: (required)
             The details required to update an cloud listener.
@@ -37659,7 +37659,7 @@ class DbManagementClient(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateDbManagementPrivateEndpointDetails update_db_management_private_endpoint_details: (required)
             The details used to update a Database Management private endpoint.
@@ -37778,7 +37778,7 @@ class DbManagementClient(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalAsmDetails update_external_asm_details: (required)
             The details required to update an external ASM.
@@ -37895,7 +37895,7 @@ class DbManagementClient(object):
         :param str external_asm_instance_id: (required)
             The `OCID`__ of the external ASM instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalAsmInstanceDetails update_external_asm_instance_details: (required)
             The details required to update an external ASM instance.
@@ -38014,7 +38014,7 @@ class DbManagementClient(object):
         :param str external_cluster_id: (required)
             The `OCID`__ of the external cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalClusterDetails update_external_cluster_details: (required)
             The details required to update an external cluster.
@@ -38131,7 +38131,7 @@ class DbManagementClient(object):
         :param str external_cluster_instance_id: (required)
             The `OCID`__ of the external cluster instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalClusterInstanceDetails update_external_cluster_instance_details: (required)
             The details required to update an external cluster instance.
@@ -38248,7 +38248,7 @@ class DbManagementClient(object):
         :param str external_db_home_id: (required)
             The `OCID`__ of the external database home.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbHomeDetails update_external_db_home_details: (required)
             The details required to update an external DB home.
@@ -38367,7 +38367,7 @@ class DbManagementClient(object):
         :param str external_db_node_id: (required)
             The `OCID`__ of the external database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbNodeDetails update_external_db_node_details: (required)
             The details required to update an external DB node.
@@ -38484,7 +38484,7 @@ class DbManagementClient(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbSystemDetails update_external_db_system_details: (required)
             The details required to update an external DB system.
@@ -38603,7 +38603,7 @@ class DbManagementClient(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbSystemConnectorDetails update_external_db_system_connector_details: (required)
             The details required to update an external connector.
@@ -38720,7 +38720,7 @@ class DbManagementClient(object):
         :param str external_db_system_discovery_id: (required)
             The `OCID`__ of the external DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbSystemDiscoveryDetails update_external_db_system_discovery_details: (required)
             The details required to update an external DB system discovery.
@@ -38839,7 +38839,7 @@ class DbManagementClient(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataInfrastructureDetails update_external_exadata_infrastructure_details: (required)
             The details required to update the managed Exadata infrastructure resources.
@@ -38970,7 +38970,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataStorageConnectorDetails update_external_exadata_storage_connector_details: (required)
             The details required to update connections to the Exadata storage servers.
@@ -39089,7 +39089,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_grid_id: (required)
             The `OCID`__ of the Exadata storage grid.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataStorageGridDetails update_external_exadata_storage_grid_details: (required)
             The details required to update an external Exadata storage grid.
@@ -39208,7 +39208,7 @@ class DbManagementClient(object):
         :param str external_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataStorageServerDetails update_external_exadata_storage_server_details: (required)
             The details required to update an external Exadata storage server.
@@ -39327,7 +39327,7 @@ class DbManagementClient(object):
         :param str external_listener_id: (required)
             The `OCID`__ of the external listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalListenerDetails update_external_listener_details: (required)
             The details required to update an external listener.
@@ -39795,7 +39795,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateManagedDatabaseDetails update_managed_database_details: (required)
             The details required to update a Managed Database.
@@ -39914,7 +39914,7 @@ class DbManagementClient(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateManagedDatabaseGroupDetails update_managed_database_group_details: (required)
             The details required to update a Managed Database Group.
@@ -40033,7 +40033,7 @@ class DbManagementClient(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateNamedCredentialDetails update_named_credential_details: (required)
             The details required to update a named credential.
@@ -40152,7 +40152,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
             The name of the preferred credential.
@@ -40275,7 +40275,7 @@ class DbManagementClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str tablespace_name: (required)
             The name of the tablespace.

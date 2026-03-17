@@ -430,7 +430,7 @@ class OracleConnectionSummary(ConnectionSummary):
         Gets the database_id of this OracleConnectionSummary.
         The `OCID`__ of the database being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this OracleConnectionSummary.
@@ -444,7 +444,7 @@ class OracleConnectionSummary(ConnectionSummary):
         Sets the database_id of this OracleConnectionSummary.
         The `OCID`__ of the database being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this OracleConnectionSummary.
@@ -462,7 +462,7 @@ class OracleConnectionSummary(ConnectionSummary):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this OracleConnectionSummary.
@@ -480,7 +480,7 @@ class OracleConnectionSummary(ConnectionSummary):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this OracleConnectionSummary.
@@ -496,7 +496,7 @@ class OracleConnectionSummary(ConnectionSummary):
         The wallet contents Oracle GoldenGate uses to make connections to a database.
         Note: When provided, 'wallet' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The wallet_secret_id of this OracleConnectionSummary.
@@ -512,7 +512,7 @@ class OracleConnectionSummary(ConnectionSummary):
         The wallet contents Oracle GoldenGate uses to make connections to a database.
         Note: When provided, 'wallet' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param wallet_secret_id: The wallet_secret_id of this OracleConnectionSummary.

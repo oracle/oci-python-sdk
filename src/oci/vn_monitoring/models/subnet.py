@@ -22,9 +22,9 @@ class Subnet(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm
-    __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Subnet.
@@ -264,7 +264,7 @@ class Subnet(object):
         **[Required]** Gets the compartment_id of this Subnet.
         The `OCID`__ of the compartment containing the subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Subnet.
@@ -278,7 +278,7 @@ class Subnet(object):
         Sets the compartment_id of this Subnet.
         The `OCID`__ of the compartment containing the subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Subnet.
@@ -318,7 +318,7 @@ class Subnet(object):
         Gets the dhcp_options_id of this Subnet.
         The `OCID`__ of the set of DHCP options that the subnet uses.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dhcp_options_id of this Subnet.
@@ -332,7 +332,7 @@ class Subnet(object):
         Sets the dhcp_options_id of this Subnet.
         The `OCID`__ of the set of DHCP options that the subnet uses.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dhcp_options_id: The dhcp_options_id of this Subnet.
@@ -384,7 +384,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Subnet.
@@ -410,7 +410,7 @@ class Subnet(object):
 
         Example: `subnet123`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Subnet.
@@ -450,7 +450,7 @@ class Subnet(object):
         **[Required]** Gets the id of this Subnet.
         The subnet's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Subnet.
@@ -464,7 +464,7 @@ class Subnet(object):
         Sets the id of this Subnet.
         The subnet's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Subnet.
@@ -482,7 +482,7 @@ class Subnet(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this Subnet.
@@ -500,7 +500,7 @@ class Subnet(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this Subnet.
@@ -651,7 +651,7 @@ class Subnet(object):
         **[Required]** Gets the route_table_id of this Subnet.
         The `OCID`__ of the route table that the subnet uses.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this Subnet.
@@ -665,7 +665,7 @@ class Subnet(object):
         Sets the route_table_id of this Subnet.
         The `OCID`__ of the route table that the subnet uses.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this Subnet.
@@ -713,7 +713,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The subnet_domain_name of this Subnet.
@@ -733,7 +733,7 @@ class Subnet(object):
 
         Example: `subnet123.vcn1.oraclevcn.com`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param subnet_domain_name: The subnet_domain_name of this Subnet.
@@ -779,7 +779,7 @@ class Subnet(object):
         **[Required]** Gets the vcn_id of this Subnet.
         The `OCID`__ of the VCN the subnet is in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this Subnet.
@@ -793,7 +793,7 @@ class Subnet(object):
         Sets the vcn_id of this Subnet.
         The `OCID`__ of the VCN the subnet is in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this Subnet.

@@ -60,7 +60,7 @@ class BulkCreatePrivateIpsDetails(object):
         Gets the vnic_id of this BulkCreatePrivateIpsDetails.
         The `OCID`__ of the VNIC to assign the private IPs to. The VNIC and private IPs must be in the same subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this BulkCreatePrivateIpsDetails.
@@ -74,7 +74,7 @@ class BulkCreatePrivateIpsDetails(object):
         Sets the vnic_id of this BulkCreatePrivateIpsDetails.
         The `OCID`__ of the VNIC to assign the private IPs to. The VNIC and private IPs must be in the same subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this BulkCreatePrivateIpsDetails.
@@ -88,7 +88,7 @@ class BulkCreatePrivateIpsDetails(object):
         Gets the vlan_id of this BulkCreatePrivateIpsDetails.
         Use this attribute only with the Oracle Cloud VMware Solution. The `OCID`__ of the VLAN from which the private IPs is to be drawn. The IP addresses, *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this BulkCreatePrivateIpsDetails.
@@ -102,7 +102,7 @@ class BulkCreatePrivateIpsDetails(object):
         Sets the vlan_id of this BulkCreatePrivateIpsDetails.
         Use this attribute only with the Oracle Cloud VMware Solution. The `OCID`__ of the VLAN from which the private IPs is to be drawn. The IP addresses, *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this BulkCreatePrivateIpsDetails.
@@ -117,7 +117,7 @@ class BulkCreatePrivateIpsDetails(object):
         The `OCID`__ of the subnet from which the private IPs is to be drawn. The IP addresses,
         *if supplied*, must be valid for the given subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this BulkCreatePrivateIpsDetails.
@@ -132,7 +132,7 @@ class BulkCreatePrivateIpsDetails(object):
         The `OCID`__ of the subnet from which the private IPs is to be drawn. The IP addresses,
         *if supplied*, must be valid for the given subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this BulkCreatePrivateIpsDetails.

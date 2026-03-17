@@ -53,7 +53,7 @@ class AddmDbFindingCategorySummary(object):
         **[Required]** Gets the id of this AddmDbFindingCategorySummary.
         The `OCID`__ of the Database insight.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AddmDbFindingCategorySummary.
@@ -67,7 +67,7 @@ class AddmDbFindingCategorySummary(object):
         Sets the id of this AddmDbFindingCategorySummary.
         The `OCID`__ of the Database insight.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AddmDbFindingCategorySummary.

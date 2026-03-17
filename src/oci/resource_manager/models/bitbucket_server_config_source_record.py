@@ -71,7 +71,7 @@ class BitbucketServerConfigSourceRecord(ConfigSourceRecord):
         Unique identifier (`OCID`__)
         for the Bitbucket Server configuration source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The configuration_source_provider_id of this BitbucketServerConfigSourceRecord.
@@ -86,7 +86,7 @@ class BitbucketServerConfigSourceRecord(ConfigSourceRecord):
         Unique identifier (`OCID`__)
         for the Bitbucket Server configuration source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param configuration_source_provider_id: The configuration_source_provider_id of this BitbucketServerConfigSourceRecord.

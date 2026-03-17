@@ -72,7 +72,7 @@ class RedirectClientCompositeOperations(object):
         :param str http_redirect_id: (required)
             The `OCID`__ of the HTTP Redirect.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waas.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class RedirectClientCompositeOperations(object):
         :param str http_redirect_id: (required)
             The `OCID`__ of the HTTP Redirect.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waas.models.UpdateHttpRedirectDetails update_http_redirect_details: (required)
             The details of the HTTP Redirect to update.

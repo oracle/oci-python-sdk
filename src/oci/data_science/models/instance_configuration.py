@@ -106,7 +106,7 @@ class InstanceConfiguration(object):
         Gets the subnet_id of this InstanceConfiguration.
         A model deployment instance is provided with a VNIC for network access.  This specifies the `OCID`__ of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this InstanceConfiguration.
@@ -120,7 +120,7 @@ class InstanceConfiguration(object):
         Sets the subnet_id of this InstanceConfiguration.
         A model deployment instance is provided with a VNIC for network access.  This specifies the `OCID`__ of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this InstanceConfiguration.

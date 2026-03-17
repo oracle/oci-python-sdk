@@ -16,7 +16,7 @@ from base64 import b64encode, b64decode
 # * - Publish to a Stream
 # * - Consume from a stream partition using cursor
 # * - Consume from a stream using a group cursor
-# Documentation : https://docs.oracle.com/iaas/Content/Streaming/Concepts/streamingoverview.htm
+# Documentation : https://docs.cloud.oracle.com/iaas/Content/Streaming/Concepts/streamingoverview.htm
 
 # Usage : python stream_example.py <compartment id>
 

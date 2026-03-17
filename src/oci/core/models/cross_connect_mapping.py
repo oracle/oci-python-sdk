@@ -140,7 +140,7 @@ class CrossConnectMapping(object):
         customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
@@ -157,7 +157,7 @@ class CrossConnectMapping(object):
         customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_or_cross_connect_group_id: The cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
@@ -260,7 +260,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::1/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -285,7 +285,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::1/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param customer_bgp_peering_ipv6: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -309,7 +309,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::2/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -333,7 +333,7 @@ class CrossConnectMapping(object):
 
         Example: `2001:db8::2/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param oracle_bgp_peering_ipv6: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.

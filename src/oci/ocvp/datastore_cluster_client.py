@@ -133,7 +133,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AddDatastoreToDatastoreClusterDetails add_datastore_to_datastore_cluster_details: (required)
             The information about datastore addition to the Datastore Cluster.
@@ -266,7 +266,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AttachDatastoreClusterToClusterDetails attach_datastore_cluster_to_cluster_details: (required)
             The information about Datastore Cluster attachment.
@@ -399,7 +399,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AttachDatastoreClusterToEsxiHostDetails attach_datastore_cluster_to_esxi_host_details: (required)
             The information about Datastore Cluster attachment.
@@ -527,13 +527,13 @@ class DatastoreClusterClient(object):
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.ChangeDatastoreClusterCompartmentDetails change_datastore_cluster_compartment_details: (required)
             Request to change the compartment of the specified Datastore Cluster.
@@ -767,7 +767,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -885,7 +885,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1013,7 +1013,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.DetachDatastoreClusterFromEsxiHostDetails detach_datastore_cluster_from_esxi_host_details: (required)
             The information about Datastore Cluster detachment.
@@ -1143,7 +1143,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If you need to contact Oracle about a particular
@@ -1252,7 +1252,7 @@ class DatastoreClusterClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -1260,26 +1260,26 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (optional)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cluster_id: (optional)
             The `OCID`__ of the SDDC Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -1442,7 +1442,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.RemoveDatastoreFromDatastoreClusterDetails remove_datastore_from_datastore_cluster_details: (required)
             The information about datastore removal from the Datastore Cluster.
@@ -1575,7 +1575,7 @@ class DatastoreClusterClient(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateDatastoreClusterDetails update_datastore_cluster_details: (required)
             The information to be updated.

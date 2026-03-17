@@ -376,7 +376,7 @@ class KafkaConnection(Connection):
         Gets the stream_pool_id of this KafkaConnection.
         The `OCID`__ of the stream pool being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_pool_id of this KafkaConnection.
@@ -390,7 +390,7 @@ class KafkaConnection(Connection):
         Sets the stream_pool_id of this KafkaConnection.
         The `OCID`__ of the stream pool being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param stream_pool_id: The stream_pool_id of this KafkaConnection.
@@ -405,7 +405,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Kafka cluster
         being referenced from OCI Streaming with Apache Kafka.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this KafkaConnection.
@@ -420,7 +420,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Kafka cluster
         being referenced from OCI Streaming with Apache Kafka.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this KafkaConnection.
@@ -526,7 +526,7 @@ class KafkaConnection(Connection):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this KafkaConnection.
@@ -544,7 +544,7 @@ class KafkaConnection(Connection):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this KafkaConnection.
@@ -559,7 +559,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the content of the TrustStore file is stored.
         Note: When provided, 'trustStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The trust_store_secret_id of this KafkaConnection.
@@ -574,7 +574,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the content of the TrustStore file is stored.
         Note: When provided, 'trustStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param trust_store_secret_id: The trust_store_secret_id of this KafkaConnection.
@@ -589,7 +589,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the kafka TrustStore password is stored.
         Note: When provided, 'trustStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The trust_store_password_secret_id of this KafkaConnection.
@@ -604,7 +604,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the kafka TrustStore password is stored.
         Note: When provided, 'trustStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param trust_store_password_secret_id: The trust_store_password_secret_id of this KafkaConnection.
@@ -619,7 +619,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the content of the KeyStore file is stored.
         Note: When provided, 'keyStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_secret_id of this KafkaConnection.
@@ -634,7 +634,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the content of the KeyStore file is stored.
         Note: When provided, 'keyStore' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_secret_id: The key_store_secret_id of this KafkaConnection.
@@ -649,7 +649,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the kafka KeyStore password is stored.
         Note: When provided, 'keyStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_password_secret_id of this KafkaConnection.
@@ -664,7 +664,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the kafka KeyStore password is stored.
         Note: When provided, 'keyStorePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_password_secret_id: The key_store_password_secret_id of this KafkaConnection.
@@ -679,7 +679,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the kafka Ssl Key password is stored.
         Note: When provided, 'sslKeyPassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_key_password_secret_id of this KafkaConnection.
@@ -694,7 +694,7 @@ class KafkaConnection(Connection):
         The `OCID`__ of the Secret where the kafka Ssl Key password is stored.
         Note: When provided, 'sslKeyPassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_key_password_secret_id: The ssl_key_password_secret_id of this KafkaConnection.

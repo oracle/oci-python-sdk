@@ -39,7 +39,7 @@ class RefreshOracleDbGcpKeyRingDetails(object):
         Gets the oracle_db_gcp_connector_id of this RefreshOracleDbGcpKeyRingDetails.
         The `OCID`__ of the Oracle DB GCP Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_gcp_connector_id of this RefreshOracleDbGcpKeyRingDetails.
@@ -53,7 +53,7 @@ class RefreshOracleDbGcpKeyRingDetails(object):
         Sets the oracle_db_gcp_connector_id of this RefreshOracleDbGcpKeyRingDetails.
         The `OCID`__ of the Oracle DB GCP Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_gcp_connector_id: The oracle_db_gcp_connector_id of this RefreshOracleDbGcpKeyRingDetails.

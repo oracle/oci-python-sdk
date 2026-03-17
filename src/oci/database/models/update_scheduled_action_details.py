@@ -103,7 +103,7 @@ class UpdateScheduledActionDetails(object):
         Gets the scheduling_window_id of this UpdateScheduledActionDetails.
         The `OCID`__ of the Scheduling Window.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scheduling_window_id of this UpdateScheduledActionDetails.
@@ -117,7 +117,7 @@ class UpdateScheduledActionDetails(object):
         Sets the scheduling_window_id of this UpdateScheduledActionDetails.
         The `OCID`__ of the Scheduling Window.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scheduling_window_id: The scheduling_window_id of this UpdateScheduledActionDetails.

@@ -154,7 +154,7 @@ class CreateLustreFileSystemDetails(object):
         **[Required]** Gets the compartment_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the compartment that contains the Lustre file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateLustreFileSystemDetails.
@@ -168,7 +168,7 @@ class CreateLustreFileSystemDetails(object):
         Sets the compartment_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the compartment that contains the Lustre file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateLustreFileSystemDetails.
@@ -271,7 +271,7 @@ class CreateLustreFileSystemDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateLustreFileSystemDetails.
@@ -288,7 +288,7 @@ class CreateLustreFileSystemDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateLustreFileSystemDetails.
@@ -305,7 +305,7 @@ class CreateLustreFileSystemDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateLustreFileSystemDetails.
@@ -322,7 +322,7 @@ class CreateLustreFileSystemDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateLustreFileSystemDetails.
@@ -339,8 +339,8 @@ class CreateLustreFileSystemDetails(object):
         Setting this to an empty array after the list is created removes the lustre file system from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this CreateLustreFileSystemDetails.
@@ -357,8 +357,8 @@ class CreateLustreFileSystemDetails(object):
         Setting this to an empty array after the list is created removes the lustre file system from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this CreateLustreFileSystemDetails.
@@ -400,7 +400,7 @@ class CreateLustreFileSystemDetails(object):
         Gets the kms_key_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this CreateLustreFileSystemDetails.
@@ -414,7 +414,7 @@ class CreateLustreFileSystemDetails(object):
         Sets the kms_key_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this CreateLustreFileSystemDetails.
@@ -452,7 +452,7 @@ class CreateLustreFileSystemDetails(object):
         **[Required]** Gets the subnet_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the subnet the Lustre file system is in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateLustreFileSystemDetails.
@@ -466,7 +466,7 @@ class CreateLustreFileSystemDetails(object):
         Sets the subnet_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the subnet the Lustre file system is in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateLustreFileSystemDetails.
@@ -511,7 +511,7 @@ class CreateLustreFileSystemDetails(object):
         Gets the cluster_placement_group_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the cluster placement group in which the Lustre file system exists.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this CreateLustreFileSystemDetails.
@@ -525,7 +525,7 @@ class CreateLustreFileSystemDetails(object):
         Sets the cluster_placement_group_id of this CreateLustreFileSystemDetails.
         The `OCID`__ of the cluster placement group in which the Lustre file system exists.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this CreateLustreFileSystemDetails.

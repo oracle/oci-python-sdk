@@ -120,7 +120,7 @@ class DatabaseManagementConfig(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_management_connection_id of this DatabaseManagementConfig.
@@ -135,7 +135,7 @@ class DatabaseManagementConfig(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_management_connection_id: The database_management_connection_id of this DatabaseManagementConfig.

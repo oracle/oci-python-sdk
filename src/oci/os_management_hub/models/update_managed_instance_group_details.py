@@ -122,7 +122,7 @@ class UpdateManagedInstanceGroupDetails(object):
         Gets the notification_topic_id of this UpdateManagedInstanceGroupDetails.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The notification_topic_id of this UpdateManagedInstanceGroupDetails.
@@ -136,7 +136,7 @@ class UpdateManagedInstanceGroupDetails(object):
         Sets the notification_topic_id of this UpdateManagedInstanceGroupDetails.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param notification_topic_id: The notification_topic_id of this UpdateManagedInstanceGroupDetails.
@@ -172,7 +172,7 @@ class UpdateManagedInstanceGroupDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateManagedInstanceGroupDetails.
@@ -188,7 +188,7 @@ class UpdateManagedInstanceGroupDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateManagedInstanceGroupDetails.
@@ -204,7 +204,7 @@ class UpdateManagedInstanceGroupDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateManagedInstanceGroupDetails.
@@ -220,7 +220,7 @@ class UpdateManagedInstanceGroupDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateManagedInstanceGroupDetails.

@@ -101,7 +101,7 @@ class InclusionCriterion(object):
         **[Required]** Gets the id of this InclusionCriterion.
         The Oracle ID (`OCID`__) of the inclusion criterion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InclusionCriterion.
@@ -115,7 +115,7 @@ class InclusionCriterion(object):
         Sets the id of this InclusionCriterion.
         The Oracle ID (`OCID`__) of the inclusion criterion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InclusionCriterion.
@@ -129,7 +129,7 @@ class InclusionCriterion(object):
         **[Required]** Gets the governance_rule_id of this InclusionCriterion.
         The Oracle ID (`OCID`__) of the governance rule. Every inclusion criterion is associated with a governance rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The governance_rule_id of this InclusionCriterion.
@@ -143,7 +143,7 @@ class InclusionCriterion(object):
         Sets the governance_rule_id of this InclusionCriterion.
         The Oracle ID (`OCID`__) of the governance rule. Every inclusion criterion is associated with a governance rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param governance_rule_id: The governance_rule_id of this InclusionCriterion.

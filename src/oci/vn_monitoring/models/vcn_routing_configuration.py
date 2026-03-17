@@ -57,7 +57,7 @@ class VcnRoutingConfiguration(ForwardedRoutingConfiguration):
         The `OCID`__ of the VCN route
         table that allowed the traffic.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_route_table_id of this VcnRoutingConfiguration.
@@ -72,7 +72,7 @@ class VcnRoutingConfiguration(ForwardedRoutingConfiguration):
         The `OCID`__ of the VCN route
         table that allowed the traffic.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_route_table_id: The vcn_route_table_id of this VcnRoutingConfiguration.

@@ -140,7 +140,7 @@ class DistributedAutonomousDbBackupDestination(object):
         Gets the id of this DistributedAutonomousDbBackupDestination.
         The `OCID`__ of the backup destination.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DistributedAutonomousDbBackupDestination.
@@ -154,7 +154,7 @@ class DistributedAutonomousDbBackupDestination(object):
         Sets the id of this DistributedAutonomousDbBackupDestination.
         The `OCID`__ of the backup destination.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DistributedAutonomousDbBackupDestination.
@@ -240,7 +240,7 @@ class DistributedAutonomousDbBackupDestination(object):
         Gets the dbrs_policy_id of this DistributedAutonomousDbBackupDestination.
         The `OCID`__ of the DBRS policy used for backup.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The dbrs_policy_id of this DistributedAutonomousDbBackupDestination.
@@ -254,7 +254,7 @@ class DistributedAutonomousDbBackupDestination(object):
         Sets the dbrs_policy_id of this DistributedAutonomousDbBackupDestination.
         The `OCID`__ of the DBRS policy used for backup.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param dbrs_policy_id: The dbrs_policy_id of this DistributedAutonomousDbBackupDestination.
@@ -294,7 +294,7 @@ class DistributedAutonomousDbBackupDestination(object):
         For information about valid region names, see
         `Regions and Availability Domains`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The remote_region of this DistributedAutonomousDbBackupDestination.
@@ -310,7 +310,7 @@ class DistributedAutonomousDbBackupDestination(object):
         For information about valid region names, see
         `Regions and Availability Domains`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param remote_region: The remote_region of this DistributedAutonomousDbBackupDestination.

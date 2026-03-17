@@ -260,7 +260,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
         The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
         This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The step_id of this SqlTuningTaskSqlExecutionPlanStep.
@@ -275,7 +275,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
         The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
         This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param step_id: The step_id of this SqlTuningTaskSqlExecutionPlanStep.
@@ -290,7 +290,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
         The ID of the next step that operates on the results of this step.
         This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_step_id of this SqlTuningTaskSqlExecutionPlanStep.
@@ -305,7 +305,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
         The ID of the next step that operates on the results of this step.
         This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param parent_step_id: The parent_step_id of this SqlTuningTaskSqlExecutionPlanStep.

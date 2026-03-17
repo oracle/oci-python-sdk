@@ -71,7 +71,7 @@ class MembershipSummary(object):
         **[Required]** Gets the fsu_collection_id of this MembershipSummary.
         The `OCID`__ of the Exadata Fleet Update Collection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this MembershipSummary.
@@ -85,7 +85,7 @@ class MembershipSummary(object):
         Sets the fsu_collection_id of this MembershipSummary.
         The `OCID`__ of the Exadata Fleet Update Collection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this MembershipSummary.

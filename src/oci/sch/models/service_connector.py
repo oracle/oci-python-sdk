@@ -16,7 +16,7 @@ class ServiceConnector(object):
     For more information about flows defined by connectors, see
     `Overview of Connector Hub`__.
 
-    __ https://docs.oracle.com/iaas/Content/connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ServiceConnector.
@@ -175,7 +175,7 @@ class ServiceConnector(object):
         **[Required]** Gets the id of this ServiceConnector.
         The `OCID`__ of the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ServiceConnector.
@@ -189,7 +189,7 @@ class ServiceConnector(object):
         Sets the id of this ServiceConnector.
         The `OCID`__ of the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ServiceConnector.
@@ -253,7 +253,7 @@ class ServiceConnector(object):
         **[Required]** Gets the compartment_id of this ServiceConnector.
         The `OCID`__ of the compartment containing the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ServiceConnector.
@@ -267,7 +267,7 @@ class ServiceConnector(object):
         Sets the compartment_id of this ServiceConnector.
         The `OCID`__ of the compartment containing the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ServiceConnector.
@@ -551,7 +551,7 @@ class ServiceConnector(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ServiceConnector.
@@ -567,7 +567,7 @@ class ServiceConnector(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ServiceConnector.

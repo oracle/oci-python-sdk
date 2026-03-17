@@ -86,7 +86,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateIPSecConnectionDetails.
@@ -103,7 +103,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateIPSecConnectionDetails.
@@ -146,7 +146,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateIPSecConnectionDetails.
@@ -163,7 +163,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateIPSecConnectionDetails.
@@ -186,7 +186,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :return: The cpe_local_identifier of this UpdateIPSecConnectionDetails.
@@ -209,7 +209,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :param cpe_local_identifier: The cpe_local_identifier of this UpdateIPSecConnectionDetails.
@@ -264,7 +264,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The static_routes of this UpdateIPSecConnectionDetails.
@@ -286,7 +286,7 @@ class UpdateIPSecConnectionDetails(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param static_routes: The static_routes of this UpdateIPSecConnectionDetails.

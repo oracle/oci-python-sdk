@@ -1629,7 +1629,7 @@ class JavaDownloadClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the tenancy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str family_version: (optional)
             Unique Java family version identifier.
@@ -1808,7 +1808,7 @@ class JavaDownloadClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the tenancy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1972,7 +1972,7 @@ class JavaDownloadClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the tenancy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -2153,7 +2153,7 @@ class JavaDownloadClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the tenancy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str search_by_user: (optional)
             A filter to return only resources that match the user principal detail.
@@ -2784,7 +2784,7 @@ class JavaDownloadClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the tenancy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The ID of an asynchronous work request.

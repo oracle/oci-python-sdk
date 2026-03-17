@@ -137,13 +137,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Activating a Connector`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm
 
 
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -268,13 +268,13 @@ class ServiceConnectorClient(object):
 
         When provided, If-Match is checked against ETag values of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/change-compartment-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/change-compartment-service-connector.htm
 
 
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.sch.models.ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
             The configuration details for moving a connector to a different compartment.
@@ -409,11 +409,11 @@ class ServiceConnectorClient(object):
         activating connectors, see
         `Activating a Connector`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
-        __ https://docs.oracle.com/iaas/Content/connector-hub/overview.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm
 
 
         :param oci.sch.models.CreateServiceConnectorDetails create_service_connector_details: (required)
@@ -524,13 +524,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Deactivating a Connector`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/deactivate-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/deactivate-service-connector.htm
 
 
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -656,13 +656,13 @@ class ServiceConnectorClient(object):
         After you send your request, the connector's state is temporarily
         DELETING and any data transfer stops. The state then changes to DELETED.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/delete-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/delete-service-connector.htm
 
 
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -775,13 +775,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Getting a Connector`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/get-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm
 
 
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request.
@@ -887,13 +887,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Getting a Work Request's Details`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/get-work-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-work-request.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request.
@@ -999,13 +999,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Listing Connectors`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/list-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment for this request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state.
@@ -1024,14 +1024,14 @@ class ServiceConnectorClient(object):
             in a paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -1176,13 +1176,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Listing Work Request Errors`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/list-work-request-error.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-work-request-error.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request.
@@ -1193,14 +1193,14 @@ class ServiceConnectorClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return
             in a paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1312,13 +1312,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Listing Work Request Log Entries`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/list-work-request-log-entry.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-work-request-log-entry.htm
 
 
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request.
@@ -1329,14 +1329,14 @@ class ServiceConnectorClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return
             in a paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1448,13 +1448,13 @@ class ServiceConnectorClient(object):
         For more information, see
         `Listing Work Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/list-work-request.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-work-request.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment for this request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request.
@@ -1465,14 +1465,14 @@ class ServiceConnectorClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return
             in a paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1577,13 +1577,13 @@ class ServiceConnectorClient(object):
         UPDATING and any data transfer pauses. The state then changes back to its
         original value: if ACTIVE, then data transfer resumes.
 
-        __ https://docs.oracle.com/iaas/Content/connector-hub/update-service-connector.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/update-service-connector.htm
 
 
         :param str service_connector_id: (required)
             The `OCID`__ of the connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.sch.models.UpdateServiceConnectorDetails update_service_connector_details: (required)
             The information to be updated.

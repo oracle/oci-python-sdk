@@ -60,7 +60,7 @@ class NodeError(object):
         **[Required]** Gets the code of this NodeError.
         A short error code that defines the upstream error, meant for programmatic parsing. See `API Errors`__.
 
-        __ https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
+        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
 
 
         :return: The code of this NodeError.
@@ -74,7 +74,7 @@ class NodeError(object):
         Sets the code of this NodeError.
         A short error code that defines the upstream error, meant for programmatic parsing. See `API Errors`__.
 
-        __ https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
+        __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
 
 
         :param code: The code of this NodeError.

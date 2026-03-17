@@ -16,7 +16,7 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
     For configuration instructions, see
     `Creating a Connector`__.
 
-    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
         **[Required]** Gets the log_group_id of this LoggingAnalyticsTargetDetails.
         The `OCID`__ of the Logging Analytics log group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_group_id of this LoggingAnalyticsTargetDetails.
@@ -74,7 +74,7 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
         Sets the log_group_id of this LoggingAnalyticsTargetDetails.
         The `OCID`__ of the Logging Analytics log group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_group_id: The log_group_id of this LoggingAnalyticsTargetDetails.

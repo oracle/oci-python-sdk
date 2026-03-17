@@ -33,7 +33,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str remediation_recipe_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Remediation Recipe, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.adm.models.WorkRequest.status`
@@ -116,7 +116,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str knowledge_base_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Knowledge Base, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.adm.models.ChangeKnowledgeBaseCompartmentDetails change_knowledge_base_compartment_details: (required)
             The information to be updated.
@@ -160,7 +160,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str remediation_recipe_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Remediation Recipe, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.adm.models.ChangeRemediationRecipeCompartmentDetails change_remediation_recipe_compartment_details: (required)
             The information to be updated.
@@ -366,7 +366,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str remediation_recipe_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Remediation Recipe, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.adm.models.WorkRequest.status`
@@ -407,7 +407,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str knowledge_base_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Knowledge Base, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.adm.models.WorkRequest.status`
@@ -456,7 +456,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str remediation_recipe_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Remediation Recipe, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.adm.models.WorkRequest.status`
@@ -623,7 +623,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str knowledge_base_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Knowledge Base, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.adm.models.UpdateKnowledgeBaseDetails update_knowledge_base_details: (required)
             The details to update a Knowledge Base.
@@ -667,7 +667,7 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         :param str remediation_recipe_id: (required)
             The Oracle Cloud Identifier (`OCID`__) of a Remediation Recipe, as a URL path parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.adm.models.UpdateRemediationRecipeDetails update_remediation_recipe_details: (required)
             The details to update a Remediation Recipe.

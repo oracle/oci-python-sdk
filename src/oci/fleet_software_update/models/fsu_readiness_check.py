@@ -195,7 +195,7 @@ class FsuReadinessCheck(object):
         **[Required]** Gets the id of this FsuReadinessCheck.
         The `OCID`__ of the Exadata Fleet Update Readiness Check.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FsuReadinessCheck.
@@ -209,7 +209,7 @@ class FsuReadinessCheck(object):
         Sets the id of this FsuReadinessCheck.
         The `OCID`__ of the Exadata Fleet Update Readiness Check.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FsuReadinessCheck.
@@ -247,7 +247,7 @@ class FsuReadinessCheck(object):
         **[Required]** Gets the compartment_id of this FsuReadinessCheck.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FsuReadinessCheck.
@@ -261,7 +261,7 @@ class FsuReadinessCheck(object):
         Sets the compartment_id of this FsuReadinessCheck.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FsuReadinessCheck.

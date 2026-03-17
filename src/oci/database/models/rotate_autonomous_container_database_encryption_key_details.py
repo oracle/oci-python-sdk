@@ -39,7 +39,7 @@ class RotateAutonomousContainerDatabaseEncryptionKeyDetails(object):
         Gets the key_version_id of this RotateAutonomousContainerDatabaseEncryptionKeyDetails.
         Key version ocid of the key provided by the user for rotate operation. `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_version_id of this RotateAutonomousContainerDatabaseEncryptionKeyDetails.
@@ -53,7 +53,7 @@ class RotateAutonomousContainerDatabaseEncryptionKeyDetails(object):
         Sets the key_version_id of this RotateAutonomousContainerDatabaseEncryptionKeyDetails.
         Key version ocid of the key provided by the user for rotate operation. `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_version_id: The key_version_id of this RotateAutonomousContainerDatabaseEncryptionKeyDetails.

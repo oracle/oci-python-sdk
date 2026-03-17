@@ -210,7 +210,7 @@ class OracleDbGcpIdentityConnector(object):
         **[Required]** Gets the id of this OracleDbGcpIdentityConnector.
         The `OCID`__ of the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbGcpIdentityConnector.
@@ -224,7 +224,7 @@ class OracleDbGcpIdentityConnector(object):
         Sets the id of this OracleDbGcpIdentityConnector.
         The `OCID`__ of the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbGcpIdentityConnector.
@@ -262,7 +262,7 @@ class OracleDbGcpIdentityConnector(object):
         **[Required]** Gets the compartment_id of this OracleDbGcpIdentityConnector.
         The `OCID`__ of the compartment that contains the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbGcpIdentityConnector.
@@ -276,7 +276,7 @@ class OracleDbGcpIdentityConnector(object):
         Sets the compartment_id of this OracleDbGcpIdentityConnector.
         The `OCID`__ of the compartment that contains the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbGcpIdentityConnector.
@@ -338,7 +338,7 @@ class OracleDbGcpIdentityConnector(object):
         **[Required]** Gets the resource_id of this OracleDbGcpIdentityConnector.
         The `OCID`__ of the GCP VM Cluster resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this OracleDbGcpIdentityConnector.
@@ -352,7 +352,7 @@ class OracleDbGcpIdentityConnector(object):
         Sets the resource_id of this OracleDbGcpIdentityConnector.
         The `OCID`__ of the GCP VM Cluster resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this OracleDbGcpIdentityConnector.
@@ -629,7 +629,7 @@ class OracleDbGcpIdentityConnector(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this OracleDbGcpIdentityConnector.
@@ -646,7 +646,7 @@ class OracleDbGcpIdentityConnector(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this OracleDbGcpIdentityConnector.
@@ -663,7 +663,7 @@ class OracleDbGcpIdentityConnector(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this OracleDbGcpIdentityConnector.
@@ -680,7 +680,7 @@ class OracleDbGcpIdentityConnector(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this OracleDbGcpIdentityConnector.

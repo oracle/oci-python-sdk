@@ -163,7 +163,7 @@ class CreateFsuCycleDetails(object):
         **[Required]** Gets the compartment_id of this CreateFsuCycleDetails.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateFsuCycleDetails.
@@ -177,7 +177,7 @@ class CreateFsuCycleDetails(object):
         Sets the compartment_id of this CreateFsuCycleDetails.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateFsuCycleDetails.
@@ -222,7 +222,7 @@ class CreateFsuCycleDetails(object):
         **[Required]** Gets the fsu_collection_id of this CreateFsuCycleDetails.
         The `OCID`__ of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this CreateFsuCycleDetails.
@@ -236,7 +236,7 @@ class CreateFsuCycleDetails(object):
         Sets the fsu_collection_id of this CreateFsuCycleDetails.
         The `OCID`__ of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this CreateFsuCycleDetails.

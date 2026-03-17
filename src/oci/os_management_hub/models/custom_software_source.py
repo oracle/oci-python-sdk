@@ -14,7 +14,7 @@ class CustomSoftwareSource(SoftwareSource):
     """
     The object that defines a custom software source. A software source contains a collection of packages. For more information, see `Managing Software Sources`__.
 
-    __ https://docs.oracle.com/iaas/osmh/doc/software-sources.htm
+    __ https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm
     """
 
     #: A constant which can be used with the software_source_sub_type property of a CustomSoftwareSource.

@@ -39,7 +39,7 @@ class DbServerDetails(object):
         **[Required]** Gets the db_server_id of this DbServerDetails.
         The `OCID`__ of Exacc Db server.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_server_id of this DbServerDetails.
@@ -53,7 +53,7 @@ class DbServerDetails(object):
         Sets the db_server_id of this DbServerDetails.
         The `OCID`__ of Exacc Db server.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_server_id: The db_server_id of this DbServerDetails.

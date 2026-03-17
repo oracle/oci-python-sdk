@@ -33,7 +33,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.wlms.models.WlsDomain.lifecycle_state`
@@ -94,7 +94,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.InstallLatestPatchesOnWlsDomainDetails install_latest_patches_on_wls_domain_details: (required)
             Information for the operation to install latest patches to a WebLogic domain.
@@ -138,7 +138,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.RestartWlsDomainDetails restart_wls_domain_details: (required)
             Information for the operation to restart the WebLogic domain.
@@ -182,7 +182,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.RestoreWlsDomainDetails restore_wls_domain_details: (required)
             Information for the operation to restore WebLogic domain from the backup.
@@ -226,7 +226,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.wlms.models.WorkRequest.status`
@@ -267,7 +267,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.wlms.models.WorkRequest.status`
@@ -308,7 +308,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.wlms.models.WorkRequest.status`
@@ -349,7 +349,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.StopWlsDomainDetails stop_wls_domain_details: (required)
             Information for the stop WebLogic domain operation
@@ -393,7 +393,7 @@ class WeblogicManagementServiceClientCompositeOperations(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.UpdateWlsDomainDetails update_wls_domain_details: (required)
             The new details required to update the WebLogic domain.

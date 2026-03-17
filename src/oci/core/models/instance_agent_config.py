@@ -162,7 +162,7 @@ class InstanceAgentConfig(object):
         For more information about the available plugins, see
         `Managing Plugins with Oracle Cloud Agent`__.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
 
 
         :return: The are_all_plugins_disabled of this InstanceAgentConfig.
@@ -180,7 +180,7 @@ class InstanceAgentConfig(object):
         For more information about the available plugins, see
         `Managing Plugins with Oracle Cloud Agent`__.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
 
 
         :param are_all_plugins_disabled: The are_all_plugins_disabled of this InstanceAgentConfig.

@@ -70,7 +70,7 @@ class GenerateAgentDeployScriptDetails(object):
         **[Required]** Gets the install_key_id of this GenerateAgentDeployScriptDetails.
         The `OCID`__ of the install key for which to generate the script.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The install_key_id of this GenerateAgentDeployScriptDetails.
@@ -84,7 +84,7 @@ class GenerateAgentDeployScriptDetails(object):
         Sets the install_key_id of this GenerateAgentDeployScriptDetails.
         The `OCID`__ of the install key for which to generate the script.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param install_key_id: The install_key_id of this GenerateAgentDeployScriptDetails.

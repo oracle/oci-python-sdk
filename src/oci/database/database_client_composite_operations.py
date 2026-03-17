@@ -37,7 +37,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
             The activation details for the Exadata infrastructure and the additional storage servers requested.
@@ -78,7 +78,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
             The activation details for the Exadata infrastructure and the additional storage servers requested.
@@ -128,7 +128,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -169,7 +169,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -210,7 +210,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -254,7 +254,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -292,7 +292,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudExadataInfrastructure.lifecycle_state`
@@ -336,7 +336,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -374,7 +374,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadataInfrastructure.lifecycle_state`
@@ -421,7 +421,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -462,7 +462,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
@@ -509,7 +509,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -550,7 +550,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.VmCluster.lifecycle_state`
@@ -594,7 +594,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
             Request details for manually refreshing an Autonomous AI Database refreshable clone.
@@ -635,7 +635,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
             Request details for manually refreshing an Autonomous AI Database refreshable clone.
@@ -682,7 +682,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -720,7 +720,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CancelExecutionWindowDetails cancel_execution_window_details: (required)
             Request to cancel the in progress maintenance activity under this execution window.
@@ -761,7 +761,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CancelExecutionWindowDetails cancel_execution_window_details: (required)
             Request to cancel the in progress maintenance activity under this execution window.
@@ -808,7 +808,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -849,7 +849,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -890,7 +890,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -931,7 +931,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -972,7 +972,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1013,7 +1013,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1054,7 +1054,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1095,7 +1095,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1136,7 +1136,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1177,7 +1177,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1218,7 +1218,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1259,7 +1259,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1300,7 +1300,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1341,7 +1341,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1382,7 +1382,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1423,7 +1423,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1464,7 +1464,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1505,7 +1505,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -1553,13 +1553,13 @@ class DatabaseClientCompositeOperations(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1597,7 +1597,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
             Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
@@ -1638,7 +1638,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
             Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
@@ -1685,7 +1685,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EncryptionKeyLocationDetails encryption_key_location_details: (required)
             Request to change the source of the encryption key for the database.
@@ -1729,7 +1729,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1770,7 +1770,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1811,7 +1811,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1852,7 +1852,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1893,7 +1893,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1934,7 +1934,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1975,7 +1975,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2018,7 +2018,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2059,7 +2059,7 @@ class DatabaseClientCompositeOperations(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2097,7 +2097,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeKeyStoreTypeDetails change_key_store_type_details: (required)
             Request to change the source of the encryption key for the database.
@@ -2141,7 +2141,7 @@ class DatabaseClientCompositeOperations(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2182,7 +2182,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2223,7 +2223,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2264,7 +2264,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2303,7 +2303,7 @@ class DatabaseClientCompositeOperations(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2341,7 +2341,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
             Updates the status of the backup resource.
@@ -2382,12 +2382,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails configure_autonomous_database_vault_key_details: (required)
             Configuration details for the Autonomous AI Database Vault service `key`__.
 
-            __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+            __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2425,7 +2425,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureExascaleCloudExadataInfrastructureDetails configure_exascale_cloud_exadata_infrastructure_details: (required)
             The exascale config details for the Exadata infrastructure with the total storage needed.
@@ -2466,7 +2466,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureExascaleCloudExadataInfrastructureDetails configure_exascale_cloud_exadata_infrastructure_details: (required)
             The exascale config details for the Exadata infrastructure with the total storage needed.
@@ -2513,7 +2513,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureExascaleExadataInfrastructureDetails configure_exascale_exadata_infrastructure_details: (required)
             The exascale config details for the Exadata infrastructure with the total storage needed.
@@ -2554,7 +2554,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureExascaleExadataInfrastructureDetails configure_exascale_exadata_infrastructure_details: (required)
             The exascale config details for the Exadata infrastructure with the total storage needed.
@@ -2601,7 +2601,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
             Request to update SaaS administrative user configuration of the Autonomous AI Database.
@@ -2642,7 +2642,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
             Request to update SaaS administrative user configuration of the Autonomous AI Database.
@@ -2689,7 +2689,7 @@ class DatabaseClientCompositeOperations(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2730,7 +2730,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2771,7 +2771,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -2815,7 +2815,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertStandbyDatabaseTypeDetails convert_standby_database_type_details: (required)
             Request parameters needed to convert Standby to snapshot standby and vice-versa.
@@ -2856,7 +2856,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertStandbyDatabaseTypeDetails convert_standby_database_type_details: (required)
             Request parameters needed to convert Standby to snapshot standby and vice-versa.
@@ -2903,7 +2903,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertToPdbDetails convert_to_pdb_details: (required)
             Request to convert a non-container database to a pluggable database.
@@ -2944,7 +2944,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertToPdbDetails convert_to_pdb_details: (required)
             Request to convert a non-container database to a pluggable database.
@@ -2994,7 +2994,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -3035,7 +3035,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -3079,7 +3079,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertToStandaloneDetails convert_to_standalone_details: (required)
             A request to update an existing Data Guard member.
@@ -3120,7 +3120,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertToStandaloneDetails convert_to_standalone_details: (required)
             A request to update an existing Data Guard member.
@@ -3401,7 +3401,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails create_autonomous_container_database_dataguard_association_details: (required)
             A request to create an Autonomous Data Guard association.
@@ -3442,7 +3442,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails create_autonomous_container_database_dataguard_association_details: (required)
             A request to create an Autonomous Data Guard association.
@@ -3999,7 +3999,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
             Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
 
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm
+            __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4037,7 +4037,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
             Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
 
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm
+            __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudExadataInfrastructure.lifecycle_state`
@@ -4081,7 +4081,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4119,7 +4119,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
@@ -4166,7 +4166,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4207,7 +4207,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ConsoleConnection.lifecycle_state`
@@ -4254,7 +4254,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4295,7 +4295,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ConsoleHistory.lifecycle_state`
@@ -4339,7 +4339,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
@@ -4380,7 +4380,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
@@ -4739,7 +4739,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateExadbVmClusterDetails create_exadb_vm_cluster_details: (required)
             Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4777,7 +4777,7 @@ class DatabaseClientCompositeOperations(object):
         :param oci.database.models.CreateExadbVmClusterDetails create_exadb_vm_cluster_details: (required)
             Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadbVmCluster.lifecycle_state`
@@ -5955,7 +5955,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateSchedulingWindowDetails create_scheduling_window_details: (required)
             Request to create Scheduling Window.
@@ -5996,7 +5996,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateSchedulingWindowDetails create_scheduling_window_details: (required)
             Request to create Scheduling Window.
@@ -6123,7 +6123,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.VmClusterNetworkDetails vm_cluster_network_details: (required)
             Request to create the Cloud@Customer VM cluster network.
@@ -6164,7 +6164,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.VmClusterNetworkDetails vm_cluster_network_details: (required)
             Request to create the Cloud@Customer VM cluster network.
@@ -6211,7 +6211,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the DB Node.
@@ -6254,7 +6254,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the DB Node.
@@ -6303,7 +6303,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6341,7 +6341,7 @@ class DatabaseClientCompositeOperations(object):
         :param str application_vip_id: (required)
             The `OCID`__ of the application virtual IP (VIP) address.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6379,7 +6379,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6417,7 +6417,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous AI Database backup.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6455,7 +6455,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6493,7 +6493,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6531,7 +6531,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6569,7 +6569,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.BackupDestination.lifecycle_state`
@@ -6630,7 +6630,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6668,7 +6668,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6706,7 +6706,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6744,7 +6744,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str console_connection_id: (required)
             The OCID of the console connection.
@@ -6785,7 +6785,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -6826,7 +6826,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6864,7 +6864,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6902,7 +6902,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6940,7 +6940,7 @@ class DatabaseClientCompositeOperations(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -6978,7 +6978,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7016,7 +7016,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7054,7 +7054,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7092,7 +7092,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7130,7 +7130,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExecutionWindow.lifecycle_state`
@@ -7191,7 +7191,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7230,7 +7230,7 @@ class DatabaseClientCompositeOperations(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7268,7 +7268,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7306,7 +7306,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7344,7 +7344,7 @@ class DatabaseClientCompositeOperations(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.KeyStore.lifecycle_state`
@@ -7405,7 +7405,7 @@ class DatabaseClientCompositeOperations(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7443,7 +7443,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7481,7 +7481,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_snapshot_id: (required)
             The Exadata Pluggable Database Snapshot `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7519,7 +7519,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduled_action_id: (required)
             The Scheduled Action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7557,7 +7557,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7595,7 +7595,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.SchedulingPolicy.lifecycle_state`
@@ -7656,7 +7656,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7694,12 +7694,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7737,7 +7737,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7775,7 +7775,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7813,7 +7813,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7851,7 +7851,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7889,7 +7889,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Database.lifecycle_state`
@@ -7933,7 +7933,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -7971,7 +7971,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8009,7 +8009,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8047,7 +8047,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8085,7 +8085,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8123,7 +8123,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8161,7 +8161,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8199,7 +8199,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8237,7 +8237,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8275,7 +8275,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -8322,7 +8322,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8363,7 +8363,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -8407,7 +8407,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8445,7 +8445,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -8483,7 +8483,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableDatabaseManagementDetails enable_database_management_details: (required)
             Request to enable the Database Management service for an Oracle Database located in Oracle Cloud Infrastructure.
@@ -8524,7 +8524,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableDatabaseManagementDetails enable_database_management_details: (required)
             Request to enable the Database Management service for an Oracle Database located in Oracle Cloud Infrastructure.
@@ -8571,7 +8571,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails enable_external_container_database_database_management_details: (required)
             Request to enable the Database Management Service for an external container database.
@@ -8612,7 +8612,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails enable_external_container_database_stack_monitoring_details: (required)
             Details to enable Stack Monitoring on the external container database.
@@ -8653,7 +8653,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalNonContainerDatabaseDatabaseManagementDetails enable_external_non_container_database_database_management_details: (required)
             Request to enable the Database Management Service for an external non-container database.
@@ -8694,7 +8694,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalNonContainerDatabaseOperationsInsightsDetails enable_external_non_container_database_operations_insights_details: (required)
             Details to enable Operations Insights on the external non-container database
@@ -8735,7 +8735,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalNonContainerDatabaseStackMonitoringDetails enable_external_non_container_database_stack_monitoring_details: (required)
             Details to enable Stack Monitoring on the external non-container database.
@@ -8776,7 +8776,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails enable_external_pluggable_database_database_management_details: (required)
             Request to enable the Database Management Service for an external database.
@@ -8817,7 +8817,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails enable_external_pluggable_database_operations_insights_details: (required)
             Details to enable Operations Insights on the external pluggable database
@@ -8858,7 +8858,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalPluggableDatabaseStackMonitoringDetails enable_external_pluggable_database_stack_monitoring_details: (required)
             Details to enable Stack Monitoring on the external pluggable database.
@@ -8899,7 +8899,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnablePluggableDatabaseManagementDetails enable_pluggable_database_management_details: (required)
             Request to enable the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure.
@@ -8940,7 +8940,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnablePluggableDatabaseManagementDetails enable_pluggable_database_management_details: (required)
             Request to enable the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure.
@@ -8990,7 +8990,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9028,7 +9028,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9066,7 +9066,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -9110,7 +9110,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9148,7 +9148,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -9192,12 +9192,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9235,12 +9235,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation.lifecycle_state`
@@ -9284,7 +9284,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.FailoverDataGuardDetails failover_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -9325,7 +9325,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.FailoverDataGuardDetails failover_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -9372,12 +9372,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
@@ -9418,12 +9418,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
@@ -9470,7 +9470,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ImportTransportableTablespaceDetails import_transportable_tablespace_details: (required)
             Details for importing transportable tablespace for the Autonomous AI Database.
@@ -9511,7 +9511,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ImportTransportableTablespaceDetails import_transportable_tablespace_details: (required)
             Details for importing transportable tablespace for the Autonomous AI Database.
@@ -9640,8 +9640,8 @@ class DatabaseClientCompositeOperations(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9683,8 +9683,8 @@ class DatabaseClientCompositeOperations(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbSystem.lifecycle_state`
@@ -9731,7 +9731,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9772,7 +9772,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -9816,12 +9816,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9859,12 +9859,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation.lifecycle_state`
@@ -9908,12 +9908,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -9951,12 +9951,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Database.lifecycle_state`
@@ -10000,7 +10000,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10038,7 +10038,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.MigrateVaultKeyDetails migrate_vault_key_details: (required)
             Request to change the source of the encryption key for the database.
@@ -10079,7 +10079,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.MigrateVaultKeyDetails migrate_vault_key_details: (required)
             Request to change the source of the encryption key for the database.
@@ -10126,7 +10126,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ModifyDatabaseManagementDetails modify_database_management_details: (required)
             The data to update one or more attributes of the Database Management Service for the database.
@@ -10167,7 +10167,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ModifyDatabaseManagementDetails modify_database_management_details: (required)
             The data to update one or more attributes of the Database Management Service for the database.
@@ -10214,7 +10214,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ModifyPluggableDatabaseManagementDetails modify_pluggable_database_management_details: (required)
             The data to update one or more attributes of the Database Management Service for the pluggable database.
@@ -10255,7 +10255,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ModifyPluggableDatabaseManagementDetails modify_pluggable_database_management_details: (required)
             The data to update one or more attributes of the Database Management Service for the pluggable database.
@@ -10302,7 +10302,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10340,7 +10340,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AdvancedClusterFileSystem.lifecycle_state`
@@ -10387,7 +10387,7 @@ class DatabaseClientCompositeOperations(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10428,7 +10428,7 @@ class DatabaseClientCompositeOperations(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbnodeSnapshot.lifecycle_state`
@@ -10472,7 +10472,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.MoveExecutionActionMemberDetails move_execution_action_member_details: (required)
             Request to move an execution action member to this execution action resource from another.
@@ -10513,7 +10513,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.MoveExecutionActionMemberDetails move_execution_action_member_details: (required)
             Request to move an execution action member to this execution action resource from another.
@@ -10560,7 +10560,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10598,7 +10598,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Database.lifecycle_state`
@@ -10642,7 +10642,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10680,7 +10680,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -10724,7 +10724,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10762,7 +10762,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RegisterCloudAutonomousVmClusterPkcsDetails register_cloud_autonomous_vm_cluster_pkcs_details: (required)
             Details of registering PKCS11 driver.
@@ -10803,7 +10803,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RegisterCloudVmClusterPkcsDetails register_cloud_vm_cluster_pkcs_details: (required)
             Details of registering PKCS11 driver.
@@ -10844,7 +10844,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10882,7 +10882,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -10926,12 +10926,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -10969,12 +10969,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation.lifecycle_state`
@@ -11018,7 +11018,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReinstateDataGuardDetails reinstate_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -11059,7 +11059,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReinstateDataGuardDetails reinstate_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -11106,12 +11106,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
@@ -11152,12 +11152,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
@@ -11207,7 +11207,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11248,7 +11248,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -11295,7 +11295,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11336,7 +11336,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
@@ -11383,7 +11383,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11424,7 +11424,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadbVmCluster.lifecycle_state`
@@ -11471,7 +11471,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11512,7 +11512,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.VmCluster.lifecycle_state`
@@ -11556,7 +11556,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReorderExecutionActionDetails reorder_execution_action_details: (required)
             Request to reorder the execution actions under this execution window resource.
@@ -11597,7 +11597,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReorderExecutionActionDetails reorder_execution_action_details: (required)
             Request to reorder the execution actions under this execution window resource.
@@ -11647,7 +11647,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11688,7 +11688,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.SchedulingPlan.lifecycle_state`
@@ -11732,12 +11732,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ResizeVmClusterNetworkDetails resize_vm_cluster_network_details: (required)
             Request to add or remove Db server network nodes in the VM cluster network.
@@ -11778,12 +11778,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ResizeVmClusterNetworkDetails resize_vm_cluster_network_details: (required)
             Request to add or remove Db server network nodes in the VM cluster network.
@@ -11830,7 +11830,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11868,7 +11868,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -11912,7 +11912,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -11950,7 +11950,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -11994,7 +11994,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous AI Database restore.
@@ -12035,7 +12035,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous AI Database restore.
@@ -12082,7 +12082,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
@@ -12123,7 +12123,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
@@ -12170,7 +12170,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12208,7 +12208,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -12252,7 +12252,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12290,7 +12290,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -12337,7 +12337,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12378,7 +12378,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12416,7 +12416,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12454,7 +12454,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12492,7 +12492,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12530,7 +12530,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12568,7 +12568,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12606,7 +12606,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12644,7 +12644,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Database.lifecycle_state`
@@ -12688,7 +12688,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12726,7 +12726,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.Database.lifecycle_state`
@@ -12770,13 +12770,13 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str external_database_connector_id: (required)
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -12814,7 +12814,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SetKeyVersionDetails set_key_version_details: (required)
             Requests Key Version Update.
@@ -12855,7 +12855,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SetKeyVersionDetails set_key_version_details: (required)
             Requests Key Version Update.
@@ -12902,7 +12902,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SetKeyVersionDetails set_key_version_details: (required)
             Requests Key Version Update.
@@ -12943,7 +12943,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SetKeyVersionDetails set_key_version_details: (required)
             Requests Key Version Update.
@@ -12990,7 +12990,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13028,7 +13028,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -13072,7 +13072,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13110,7 +13110,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -13154,7 +13154,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13192,7 +13192,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -13236,7 +13236,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13274,7 +13274,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -13318,7 +13318,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13356,7 +13356,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.PluggableDatabase.lifecycle_state`
@@ -13400,7 +13400,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SwitchOverDataGuardDetails switch_over_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -13441,7 +13441,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SwitchOverDataGuardDetails switch_over_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -13488,7 +13488,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13526,7 +13526,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
@@ -13570,12 +13570,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13613,12 +13613,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation.lifecycle_state`
@@ -13662,7 +13662,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13700,7 +13700,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
@@ -13744,12 +13744,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
@@ -13790,12 +13790,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
@@ -13842,7 +13842,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13880,7 +13880,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13918,7 +13918,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13956,7 +13956,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -13994,7 +13994,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AdvancedClusterFileSystem.lifecycle_state`
@@ -14041,7 +14041,7 @@ class DatabaseClientCompositeOperations(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -14082,7 +14082,7 @@ class DatabaseClientCompositeOperations(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbnodeSnapshot.lifecycle_state`
@@ -14126,7 +14126,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UnregisterCloudAutonomousVmClusterPkcsDetails unregister_cloud_autonomous_vm_cluster_pkcs_details: (required)
             Details of unregistering PKCS11 driver.
@@ -14167,7 +14167,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UnregisterCloudVmClusterPkcsDetails unregister_cloud_vm_cluster_pkcs_details: (required)
             Details of registering PKCS11 driver.
@@ -14208,7 +14208,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAdvancedClusterFileSystemDetails update_advanced_cluster_file_system_details: (required)
             Request to update the properties of an advanced cluster file system.
@@ -14249,7 +14249,7 @@ class DatabaseClientCompositeOperations(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAdvancedClusterFileSystemDetails update_advanced_cluster_file_system_details: (required)
             Request to update the properties of an advanced cluster file system.
@@ -14296,7 +14296,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
             Request to update the properties of an Autonomous Container Database.
@@ -14337,7 +14337,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
             Request to update the properties of an Autonomous Container Database.
@@ -14384,12 +14384,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails update_autonomous_container_database_data_guard_association_details: (required)
             A request to update Data Guard association of a database.
@@ -14430,12 +14430,12 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails update_autonomous_container_database_data_guard_association_details: (required)
             A request to update Data Guard association of a database.
@@ -14482,7 +14482,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous AI Database.
@@ -14523,7 +14523,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous AI Database.
@@ -14570,7 +14570,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous AI Database backup.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseBackupDetails update_autonomous_database_backup_details: (required)
             Request to update an existing Autonomous AI Database backup.
@@ -14611,7 +14611,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous AI Database backup.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseBackupDetails update_autonomous_database_backup_details: (required)
             Request to update an existing Autonomous AI Database backup.
@@ -14694,7 +14694,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseSoftwareImageDetails update_autonomous_database_software_image_details: (required)
             Request to update the properties of an Autonomous AI Database Software Image.
@@ -14741,7 +14741,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
             Request to update the properties of an Autonomous AI Database wallet.
@@ -14782,7 +14782,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
             Request to update the properties of a Autonomous Exadata Infrastructure.
@@ -14823,7 +14823,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
             Request to update the properties of a Autonomous Exadata Infrastructure.
@@ -14870,7 +14870,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
             Request to update the attributes of an Autonomous VM cluster.
@@ -14911,7 +14911,7 @@ class DatabaseClientCompositeOperations(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
             Request to update the attributes of an Autonomous VM cluster.
@@ -14958,7 +14958,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateBackupDetails update_backup_details: (required)
             Request to update the properties of a Backup.
@@ -14999,7 +14999,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateBackupDetails update_backup_details: (required)
             Request to update the properties of a Backup.
@@ -15046,7 +15046,7 @@ class DatabaseClientCompositeOperations(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateBackupDestinationDetails update_backup_destination_details: (required)
             For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
@@ -15094,7 +15094,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudAutonomousVmClusterDetails update_cloud_autonomous_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
@@ -15135,7 +15135,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudAutonomousVmClusterDetails update_cloud_autonomous_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
@@ -15182,7 +15182,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             Request to update the properties of an cloud Exadata infrastructure resource.
@@ -15223,7 +15223,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             Request to update the properties of an cloud Exadata infrastructure resource.
@@ -15270,7 +15270,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
@@ -15311,7 +15311,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
@@ -15358,7 +15358,7 @@ class DatabaseClientCompositeOperations(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
             Request to perform database update.
@@ -15399,7 +15399,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str console_connection_id: (required)
             The OCID of the console connection.
@@ -15443,7 +15443,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str console_connection_id: (required)
             The OCID of the console connection.
@@ -15493,7 +15493,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -15537,7 +15537,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -15587,7 +15587,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDataGuardDetails update_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -15628,7 +15628,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDataGuardDetails update_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -15675,12 +15675,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDataGuardAssociationDetails update_data_guard_association_details: (required)
             A request to update Data Guard association of a database.
@@ -15721,12 +15721,12 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDataGuardAssociationDetails update_data_guard_association_details: (required)
             A request to update Data Guard association of a database.
@@ -15773,7 +15773,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
@@ -15814,7 +15814,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
@@ -15861,7 +15861,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDatabaseSoftwareImageDetails update_database_software_image_details: (required)
             Request to update the properties of a DB system.
@@ -15908,7 +15908,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a Database Home.
@@ -15949,7 +15949,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a Database Home.
@@ -15996,7 +15996,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbNodeDetails update_db_node_details: (required)
             Request to update the specified database node.
@@ -16037,7 +16037,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbNodeDetails update_db_node_details: (required)
             Request to update the specified database node.
@@ -16084,7 +16084,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
@@ -16125,7 +16125,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
@@ -16172,7 +16172,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
             Request to update the properties of an Exadata Cloud@Customer infrastructure.
@@ -16213,7 +16213,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
             Request to update the properties of an Exadata Cloud@Customer infrastructure.
@@ -16260,7 +16260,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.
@@ -16301,7 +16301,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.
@@ -16348,7 +16348,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExadbVmClusterDetails update_exadb_vm_cluster_details: (required)
             Request to update the attributes of a Exadata VM cluster on Exascale Infrastructure.
@@ -16389,7 +16389,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExadbVmClusterDetails update_exadb_vm_cluster_details: (required)
             Request to update the attributes of a Exadata VM cluster on Exascale Infrastructure.
@@ -16436,7 +16436,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExascaleDbStorageVaultDetails update_exascale_db_storage_vault_details: (required)
             Request to update the attributes of a Exadata Database Storage Vault.
@@ -16477,7 +16477,7 @@ class DatabaseClientCompositeOperations(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExascaleDbStorageVaultDetails update_exascale_db_storage_vault_details: (required)
             Request to update the attributes of a Exadata Database Storage Vault.
@@ -16524,7 +16524,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExecutionActionDetails update_execution_action_details: (required)
             Request to update the properties of a execution action.
@@ -16565,7 +16565,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExecutionActionDetails update_execution_action_details: (required)
             Request to update the properties of a execution action.
@@ -16612,7 +16612,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExecutionWindowDetails update_execution_window_details: (required)
             Request to update the properties of a execution window.
@@ -16653,7 +16653,7 @@ class DatabaseClientCompositeOperations(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExecutionWindowDetails update_execution_window_details: (required)
             Request to update the properties of a execution window.
@@ -16700,7 +16700,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalContainerDatabaseDetails update_external_container_database_details: (required)
             Request to update the properties of an
@@ -16742,7 +16742,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalContainerDatabaseDetails update_external_container_database_details: (required)
             Request to update the properties of an
@@ -16791,7 +16791,7 @@ class DatabaseClientCompositeOperations(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalDatabaseConnectorDetails update_external_database_connector_details: (required)
             Request to update the properties of an external database connector.
@@ -16833,7 +16833,7 @@ class DatabaseClientCompositeOperations(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalDatabaseConnectorDetails update_external_database_connector_details: (required)
             Request to update the properties of an external database connector.
@@ -16880,7 +16880,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalNonContainerDatabaseDetails update_external_non_container_database_details: (required)
             Request to update the properties of an external non-container database.
@@ -16921,7 +16921,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalNonContainerDatabaseDetails update_external_non_container_database_details: (required)
             Request to update the properties of an external non-container database.
@@ -16968,7 +16968,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalPluggableDatabaseDetails update_external_pluggable_database_details: (required)
             Request to update the properties of an external pluggable database resource.
@@ -17009,7 +17009,7 @@ class DatabaseClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalPluggableDatabaseDetails update_external_pluggable_database_details: (required)
             Request to update the properties of an external pluggable database resource.
@@ -17056,7 +17056,7 @@ class DatabaseClientCompositeOperations(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateKeyStoreDetails update_key_store_details: (required)
             Request to update the attributes of a key store.
@@ -17148,7 +17148,7 @@ class DatabaseClientCompositeOperations(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateOneoffPatchDetails update_oneoff_patch_details: (required)
             Request to update the properties of a one-off patch.
@@ -17195,7 +17195,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdatePluggableDatabaseDetails update_pluggable_database_details: (required)
             Request to perform pluggable database update.
@@ -17236,7 +17236,7 @@ class DatabaseClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdatePluggableDatabaseDetails update_pluggable_database_details: (required)
             Request to perform pluggable database update.
@@ -17283,7 +17283,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduled_action_id: (required)
             The Scheduled Action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateScheduledActionDetails update_scheduled_action_details: (required)
             Request to update the properties of a Scheduled Action.
@@ -17324,7 +17324,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduled_action_id: (required)
             The Scheduled Action `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateScheduledActionDetails update_scheduled_action_details: (required)
             Request to update the properties of a Scheduled Action.
@@ -17371,7 +17371,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateSchedulingPolicyDetails update_scheduling_policy_details: (required)
             Request to update the properties of a Scheduling Policy.
@@ -17412,7 +17412,7 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateSchedulingPolicyDetails update_scheduling_policy_details: (required)
             Request to update the properties of a Scheduling Policy.
@@ -17459,12 +17459,12 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str scheduling_window_id: (required)
             The Scheduling Window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateSchedulingWindowDetails update_scheduling_window_details: (required)
             Request to update the properties of a Scheduling Window.
@@ -17505,12 +17505,12 @@ class DatabaseClientCompositeOperations(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str scheduling_window_id: (required)
             The Scheduling Window `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateSchedulingWindowDetails update_scheduling_window_details: (required)
             Request to update the properties of a Scheduling Window.
@@ -17557,7 +17557,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateVmClusterDetails update_vm_cluster_details: (required)
             Request to update the attributes of a VM cluster.
@@ -17598,7 +17598,7 @@ class DatabaseClientCompositeOperations(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateVmClusterDetails update_vm_cluster_details: (required)
             Request to update the attributes of a VM cluster.
@@ -17645,12 +17645,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
             Request to update the properties of a VM cluster network.
@@ -17691,12 +17691,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
             Request to update the properties of a VM cluster network.
@@ -17743,7 +17743,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
             Request to perform a database upgrade.
@@ -17784,7 +17784,7 @@ class DatabaseClientCompositeOperations(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
             Request to perform a database upgrade.
@@ -17831,7 +17831,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDbSystemDetails upgrade_db_system_details: (required)
             Request to perform an upgrade of the operating system and the Oracle Grid Infrastructure (GI) of the DB system.
@@ -17872,7 +17872,7 @@ class DatabaseClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDbSystemDetails upgrade_db_system_details: (required)
             Request to perform an upgrade of the operating system and the Oracle Grid Infrastructure (GI) of the DB system.
@@ -17919,12 +17919,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -17962,12 +17962,12 @@ class DatabaseClientCompositeOperations(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.VmClusterNetwork.lifecycle_state`

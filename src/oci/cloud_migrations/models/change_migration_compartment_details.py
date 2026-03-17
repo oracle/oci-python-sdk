@@ -40,7 +40,7 @@ class ChangeMigrationCompartmentDetails(object):
         The `OCID`__ of the compartment
         into which the resource should be moved.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeMigrationCompartmentDetails.
@@ -55,7 +55,7 @@ class ChangeMigrationCompartmentDetails(object):
         The `OCID`__ of the compartment
         into which the resource should be moved.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeMigrationCompartmentDetails.

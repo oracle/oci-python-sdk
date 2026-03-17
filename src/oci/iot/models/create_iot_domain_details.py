@@ -74,7 +74,7 @@ class CreateIotDomainDetails(object):
         **[Required]** Gets the iot_domain_group_id of this CreateIotDomainDetails.
         The `OCID`__ of the IoT domain group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The iot_domain_group_id of this CreateIotDomainDetails.
@@ -88,7 +88,7 @@ class CreateIotDomainDetails(object):
         Sets the iot_domain_group_id of this CreateIotDomainDetails.
         The `OCID`__ of the IoT domain group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param iot_domain_group_id: The iot_domain_group_id of this CreateIotDomainDetails.
@@ -102,7 +102,7 @@ class CreateIotDomainDetails(object):
         **[Required]** Gets the compartment_id of this CreateIotDomainDetails.
         The `OCID`__ of the compartment corresponding to the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateIotDomainDetails.
@@ -116,7 +116,7 @@ class CreateIotDomainDetails(object):
         Sets the compartment_id of this CreateIotDomainDetails.
         The `OCID`__ of the compartment corresponding to the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateIotDomainDetails.
@@ -181,7 +181,7 @@ class CreateIotDomainDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateIotDomainDetails.
@@ -198,7 +198,7 @@ class CreateIotDomainDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateIotDomainDetails.
@@ -215,7 +215,7 @@ class CreateIotDomainDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateIotDomainDetails.
@@ -232,7 +232,7 @@ class CreateIotDomainDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateIotDomainDetails.

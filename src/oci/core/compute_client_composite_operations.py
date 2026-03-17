@@ -37,7 +37,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -117,12 +117,12 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachComputeHostGroupHostDetails attach_compute_host_group_host_details: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -325,7 +325,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeComputeCapacityTopologyCompartmentDetails change_compute_capacity_topology_compartment_details: (required)
             The configuration details for the move operation.
@@ -366,7 +366,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeComputeHostCompartmentDetails change_compute_host_compartment_details: (required)
             The configuration details for the move operation.
@@ -407,7 +407,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeComputeHostGroupCompartmentDetails change_compute_host_group_compartment_details: (required)
             The configuration details for the move operation.
@@ -487,7 +487,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
             Request to change the compartment of a given instance.
@@ -698,7 +698,7 @@ class ComputeClientCompositeOperations(object):
             For details about creating a cluster network that uses instance pools to manage groups of identical instances,
             see :func:`create_cluster_network_details`.
 
-            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ComputeCluster.lifecycle_state`
@@ -1174,7 +1174,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1214,8 +1214,8 @@ class ComputeClientCompositeOperations(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ComputeCluster.lifecycle_state`
@@ -1312,7 +1312,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ComputeHostGroup.lifecycle_state`
@@ -1527,7 +1527,7 @@ class ComputeClientCompositeOperations(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Image.lifecycle_state`
@@ -1706,12 +1706,12 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachComputeHostGroupHostDetails detach_compute_host_group_host_details: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1867,7 +1867,7 @@ class ComputeClientCompositeOperations(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ExportImageDetails export_image_details: (required)
             Details for the image export.
@@ -1908,7 +1908,7 @@ class ComputeClientCompositeOperations(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ExportImageDetails export_image_details: (required)
             Details for the image export.
@@ -1955,7 +1955,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the instance.
@@ -2082,7 +2082,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Instance.lifecycle_state`
@@ -2182,7 +2182,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeCapacityTopologyDetails update_compute_capacity_topology_details: (required)
             Update compute capacity topology details.
@@ -2225,8 +2225,8 @@ class ComputeClientCompositeOperations(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param oci.core.models.UpdateComputeClusterDetails update_compute_cluster_details: (required)
             Details for updating the compute cluster.
@@ -2402,7 +2402,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeHostGroupDetails update_compute_host_group_details: (required)
             Update compute host group details.
@@ -2443,7 +2443,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeHostGroupDetails update_compute_host_group_details: (required)
             Update compute host group details.
@@ -2490,7 +2490,7 @@ class ComputeClientCompositeOperations(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeHostsDetails update_compute_hosts_details: (required)
             Update compute capacity topology details.
@@ -2666,7 +2666,7 @@ class ComputeClientCompositeOperations(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateImageDetails update_image_details: (required)
             Updates the image display name field. Avoid entering confidential information.
@@ -2713,7 +2713,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields
@@ -2754,7 +2754,7 @@ class ComputeClientCompositeOperations(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields

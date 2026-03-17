@@ -49,7 +49,7 @@ class PrivateEndPointConnectorDetails(ConnectorDetails):
         **[Required]** Gets the private_end_point_id of this PrivateEndPointConnectorDetails.
         The `OCID`__ of the private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_end_point_id of this PrivateEndPointConnectorDetails.
@@ -63,7 +63,7 @@ class PrivateEndPointConnectorDetails(ConnectorDetails):
         Sets the private_end_point_id of this PrivateEndPointConnectorDetails.
         The `OCID`__ of the private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_end_point_id: The private_end_point_id of this PrivateEndPointConnectorDetails.

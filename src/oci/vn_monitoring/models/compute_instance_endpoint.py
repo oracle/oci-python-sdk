@@ -87,7 +87,7 @@ class ComputeInstanceEndpoint(Endpoint):
         **[Required]** Gets the instance_id of this ComputeInstanceEndpoint.
         The `OCID`__ of the compute instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this ComputeInstanceEndpoint.
@@ -101,7 +101,7 @@ class ComputeInstanceEndpoint(Endpoint):
         Sets the instance_id of this ComputeInstanceEndpoint.
         The `OCID`__ of the compute instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this ComputeInstanceEndpoint.
@@ -115,7 +115,7 @@ class ComputeInstanceEndpoint(Endpoint):
         **[Required]** Gets the vnic_id of this ComputeInstanceEndpoint.
         The `OCID`__ of the VNIC attached to the compute instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this ComputeInstanceEndpoint.
@@ -129,7 +129,7 @@ class ComputeInstanceEndpoint(Endpoint):
         Sets the vnic_id of this ComputeInstanceEndpoint.
         The `OCID`__ of the VNIC attached to the compute instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this ComputeInstanceEndpoint.

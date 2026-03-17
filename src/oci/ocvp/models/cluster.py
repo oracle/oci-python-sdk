@@ -22,7 +22,7 @@ class Cluster(object):
     set of VLANs for various components of the VMware environment (vSphere, vMotion,
     vSAN, and so on). See the Core Services API for information about VCN subnets and VLANs.
 
-    __ https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm
     """
 
     #: A constant which can be used with the initial_commitment property of a Cluster.
@@ -299,7 +299,7 @@ class Cluster(object):
         **[Required]** Gets the id of this Cluster.
         The `OCID`__ of the Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Cluster.
@@ -313,7 +313,7 @@ class Cluster(object):
         Sets the id of this Cluster.
         The `OCID`__ of the Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Cluster.
@@ -518,7 +518,7 @@ class Cluster(object):
         The `OCID`__ of the compartment that
         contains the Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Cluster.
@@ -533,7 +533,7 @@ class Cluster(object):
         The `OCID`__ of the compartment that
         contains the Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Cluster.
@@ -548,7 +548,7 @@ class Cluster(object):
         The `OCID`__ of the SDDC that the
         Cluster belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The sddc_id of this Cluster.
@@ -563,7 +563,7 @@ class Cluster(object):
         The `OCID`__ of the SDDC that the
         Cluster belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param sddc_id: The sddc_id of this Cluster.
@@ -895,7 +895,7 @@ class Cluster(object):
         Gets the capacity_reservation_id of this Cluster.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The capacity_reservation_id of this Cluster.
@@ -909,7 +909,7 @@ class Cluster(object):
         Sets the capacity_reservation_id of this Cluster.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this Cluster.
@@ -1021,7 +1021,7 @@ class Cluster(object):
         Gets the initial_vcf_byol_allocation_id of this Cluster.
         The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The initial_vcf_byol_allocation_id of this Cluster.
@@ -1035,7 +1035,7 @@ class Cluster(object):
         Sets the initial_vcf_byol_allocation_id of this Cluster.
         The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param initial_vcf_byol_allocation_id: The initial_vcf_byol_allocation_id of this Cluster.
@@ -1052,7 +1052,7 @@ class Cluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Cluster.
@@ -1069,7 +1069,7 @@ class Cluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Cluster.
@@ -1086,7 +1086,7 @@ class Cluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Cluster.
@@ -1103,7 +1103,7 @@ class Cluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Cluster.

@@ -196,7 +196,7 @@ class AwrDatabaseWaitEventSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabaseSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The snapshot_identifier of this AwrDatabaseWaitEventSummary.
@@ -212,7 +212,7 @@ class AwrDatabaseWaitEventSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabaseSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param snapshot_identifier: The snapshot_identifier of this AwrDatabaseWaitEventSummary.

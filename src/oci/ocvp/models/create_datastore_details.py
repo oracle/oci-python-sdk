@@ -81,7 +81,7 @@ class CreateDatastoreDetails(object):
         **[Required]** Gets the compartment_id of this CreateDatastoreDetails.
         The `OCID`__ of the compartment to contain the Datastore.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDatastoreDetails.
@@ -95,7 +95,7 @@ class CreateDatastoreDetails(object):
         Sets the compartment_id of this CreateDatastoreDetails.
         The `OCID`__ of the compartment to contain the Datastore.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDatastoreDetails.
@@ -109,7 +109,7 @@ class CreateDatastoreDetails(object):
         **[Required]** Gets the block_volume_ids of this CreateDatastoreDetails.
         The List of Block volume `OCID`__s that belong to the Datastore.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The block_volume_ids of this CreateDatastoreDetails.
@@ -123,7 +123,7 @@ class CreateDatastoreDetails(object):
         Sets the block_volume_ids of this CreateDatastoreDetails.
         The List of Block volume `OCID`__s that belong to the Datastore.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param block_volume_ids: The block_volume_ids of this CreateDatastoreDetails.
@@ -166,7 +166,7 @@ class CreateDatastoreDetails(object):
         The `OCID`__ of the datastore cluster that
         Datastore belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The datastore_cluster_id of this CreateDatastoreDetails.
@@ -181,7 +181,7 @@ class CreateDatastoreDetails(object):
         The `OCID`__ of the datastore cluster that
         Datastore belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param datastore_cluster_id: The datastore_cluster_id of this CreateDatastoreDetails.
@@ -222,7 +222,7 @@ class CreateDatastoreDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDatastoreDetails.
@@ -239,7 +239,7 @@ class CreateDatastoreDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDatastoreDetails.
@@ -256,7 +256,7 @@ class CreateDatastoreDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDatastoreDetails.
@@ -273,7 +273,7 @@ class CreateDatastoreDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDatastoreDetails.

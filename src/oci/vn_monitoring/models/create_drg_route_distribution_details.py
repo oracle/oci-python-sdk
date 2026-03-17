@@ -150,7 +150,7 @@ class CreateDrgRouteDistributionDetails(object):
         **[Required]** Gets the drg_id of this CreateDrgRouteDistributionDetails.
         The `OCID`__ of the DRG the DRG route table belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateDrgRouteDistributionDetails.
@@ -164,7 +164,7 @@ class CreateDrgRouteDistributionDetails(object):
         Sets the drg_id of this CreateDrgRouteDistributionDetails.
         The `OCID`__ of the DRG the DRG route table belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateDrgRouteDistributionDetails.

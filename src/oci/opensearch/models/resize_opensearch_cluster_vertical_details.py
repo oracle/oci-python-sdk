@@ -14,7 +14,7 @@ class ResizeOpensearchClusterVerticalDetails(object):
     """
     The OCPU and memory configuration to update on an existing OpenSearch cluster for `vertical resizing`__.
 
-    __ https://docs.oracle.com/iaas/Content/search-opensearch/Tasks/resizingacluster.htm#vertical
+    __ https://docs.cloud.oracle.com/iaas/Content/search-opensearch/Tasks/resizingacluster.htm#vertical
     """
 
     def __init__(self, **kwargs):
@@ -78,22 +78,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
             The value to assign to the search_node_storage_gb property of this ResizeOpensearchClusterVerticalDetails.
         :type search_node_storage_gb: int
 
-        :param ml_node_host_shape:
-            The value to assign to the ml_node_host_shape property of this ResizeOpensearchClusterVerticalDetails.
-        :type ml_node_host_shape: str
-
-        :param ml_node_host_ocpu_count:
-            The value to assign to the ml_node_host_ocpu_count property of this ResizeOpensearchClusterVerticalDetails.
-        :type ml_node_host_ocpu_count: int
-
-        :param ml_node_host_memory_gb:
-            The value to assign to the ml_node_host_memory_gb property of this ResizeOpensearchClusterVerticalDetails.
-        :type ml_node_host_memory_gb: int
-
-        :param ml_node_storage_gb:
-            The value to assign to the ml_node_storage_gb property of this ResizeOpensearchClusterVerticalDetails.
-        :type ml_node_storage_gb: int
-
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ResizeOpensearchClusterVerticalDetails.
         :type freeform_tags: dict(str, str)
@@ -118,10 +102,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
             'search_node_host_ocpu_count': 'int',
             'search_node_host_memory_gb': 'int',
             'search_node_storage_gb': 'int',
-            'ml_node_host_shape': 'str',
-            'ml_node_host_ocpu_count': 'int',
-            'ml_node_host_memory_gb': 'int',
-            'ml_node_storage_gb': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -140,10 +120,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
             'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
             'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
             'search_node_storage_gb': 'searchNodeStorageGB',
-            'ml_node_host_shape': 'mlNodeHostShape',
-            'ml_node_host_ocpu_count': 'mlNodeHostOcpuCount',
-            'ml_node_host_memory_gb': 'mlNodeHostMemoryGB',
-            'ml_node_storage_gb': 'mlNodeStorageGB',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -161,10 +137,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
         self._search_node_host_ocpu_count = None
         self._search_node_host_memory_gb = None
         self._search_node_storage_gb = None
-        self._ml_node_host_shape = None
-        self._ml_node_host_ocpu_count = None
-        self._ml_node_host_memory_gb = None
-        self._ml_node_storage_gb = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -503,102 +475,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
         :type: int
         """
         self._search_node_storage_gb = search_node_storage_gb
-
-    @property
-    def ml_node_host_shape(self):
-        """
-        Gets the ml_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
-        The node shape for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
-        :rtype: str
-        """
-        return self._ml_node_host_shape
-
-    @ml_node_host_shape.setter
-    def ml_node_host_shape(self, ml_node_host_shape):
-        """
-        Sets the ml_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
-        The node shape for the cluster's ML nodes.
-
-
-        :param ml_node_host_shape: The ml_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
-        :type: str
-        """
-        self._ml_node_host_shape = ml_node_host_shape
-
-    @property
-    def ml_node_host_ocpu_count(self):
-        """
-        Gets the ml_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
-        The number of OCPUs configured for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
-        :rtype: int
-        """
-        return self._ml_node_host_ocpu_count
-
-    @ml_node_host_ocpu_count.setter
-    def ml_node_host_ocpu_count(self, ml_node_host_ocpu_count):
-        """
-        Sets the ml_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
-        The number of OCPUs configured for the cluster's ML nodes.
-
-
-        :param ml_node_host_ocpu_count: The ml_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
-        :type: int
-        """
-        self._ml_node_host_ocpu_count = ml_node_host_ocpu_count
-
-    @property
-    def ml_node_host_memory_gb(self):
-        """
-        Gets the ml_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
-        The amount of memory in GB, for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
-        :rtype: int
-        """
-        return self._ml_node_host_memory_gb
-
-    @ml_node_host_memory_gb.setter
-    def ml_node_host_memory_gb(self, ml_node_host_memory_gb):
-        """
-        Sets the ml_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
-        The amount of memory in GB, for the cluster's ML nodes.
-
-
-        :param ml_node_host_memory_gb: The ml_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
-        :type: int
-        """
-        self._ml_node_host_memory_gb = ml_node_host_memory_gb
-
-    @property
-    def ml_node_storage_gb(self):
-        """
-        Gets the ml_node_storage_gb of this ResizeOpensearchClusterVerticalDetails.
-        The amount of storage in GB, to configure per node for the cluster's ML nodes.
-
-
-        :return: The ml_node_storage_gb of this ResizeOpensearchClusterVerticalDetails.
-        :rtype: int
-        """
-        return self._ml_node_storage_gb
-
-    @ml_node_storage_gb.setter
-    def ml_node_storage_gb(self, ml_node_storage_gb):
-        """
-        Sets the ml_node_storage_gb of this ResizeOpensearchClusterVerticalDetails.
-        The amount of storage in GB, to configure per node for the cluster's ML nodes.
-
-
-        :param ml_node_storage_gb: The ml_node_storage_gb of this ResizeOpensearchClusterVerticalDetails.
-        :type: int
-        """
-        self._ml_node_storage_gb = ml_node_storage_gb
 
     @property
     def freeform_tags(self):

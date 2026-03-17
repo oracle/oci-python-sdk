@@ -142,7 +142,7 @@ class VisionPrivateEndpoint(object):
         **[Required]** Gets the id of this VisionPrivateEndpoint.
         `OCID`__ of private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this VisionPrivateEndpoint.
@@ -156,7 +156,7 @@ class VisionPrivateEndpoint(object):
         Sets the id of this VisionPrivateEndpoint.
         `OCID`__ of private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this VisionPrivateEndpoint.
@@ -170,7 +170,7 @@ class VisionPrivateEndpoint(object):
         **[Required]** Gets the subnet_id of this VisionPrivateEndpoint.
         `OCID`__ of subnet
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this VisionPrivateEndpoint.
@@ -184,7 +184,7 @@ class VisionPrivateEndpoint(object):
         Sets the subnet_id of this VisionPrivateEndpoint.
         `OCID`__ of subnet
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this VisionPrivateEndpoint.

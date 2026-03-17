@@ -130,13 +130,13 @@ class EventsClient(object):
         Moves a rule into a different compartment within the same tenancy. For information about moving
         resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str rule_id: (required)
             The `OCID`__ of this rule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.events.models.ChangeRuleCompartmentDetails change_rule_compartment_details: (required)
 
@@ -365,7 +365,7 @@ class EventsClient(object):
         :param str rule_id: (required)
             The `OCID`__ of this rule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
@@ -476,7 +476,7 @@ class EventsClient(object):
         :param str rule_id: (required)
             The `OCID`__ of this rule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -582,7 +582,7 @@ class EventsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment to which this rule belongs.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return. 1 is the minimum, 50 is the maximum.
@@ -593,7 +593,7 @@ class EventsClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only rules that match the lifecycle state in this parameter.
@@ -759,7 +759,7 @@ class EventsClient(object):
         :param str rule_id: (required)
             The `OCID`__ of this rule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.events.models.UpdateRuleDetails update_rule_details: (required)
             The new rule spec to apply

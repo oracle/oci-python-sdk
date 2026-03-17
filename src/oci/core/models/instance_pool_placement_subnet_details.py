@@ -115,7 +115,7 @@ class InstancePoolPlacementSubnetDetails(object):
         **[Required]** Gets the subnet_id of this InstancePoolPlacementSubnetDetails.
         The subnet `OCID`__ for the secondary VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this InstancePoolPlacementSubnetDetails.
@@ -129,7 +129,7 @@ class InstancePoolPlacementSubnetDetails(object):
         Sets the subnet_id of this InstancePoolPlacementSubnetDetails.
         The subnet `OCID`__ for the secondary VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this InstancePoolPlacementSubnetDetails.

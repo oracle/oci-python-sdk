@@ -57,7 +57,7 @@ class StatefulNsgConfiguration(AllowedSecurityConfiguration):
         The `OCID`__ of the network
         security group that allowed the traffic.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_id of this StatefulNsgConfiguration.
@@ -72,7 +72,7 @@ class StatefulNsgConfiguration(AllowedSecurityConfiguration):
         The `OCID`__ of the network
         security group that allowed the traffic.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_id: The nsg_id of this StatefulNsgConfiguration.

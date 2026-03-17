@@ -33,7 +33,7 @@ class WafClientCompositeOperations(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.ChangeNetworkAddressListCompartmentDetails change_network_address_list_compartment_details: (required)
             The information to be updated.
@@ -77,7 +77,7 @@ class WafClientCompositeOperations(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.ChangeWebAppFirewallCompartmentDetails change_web_app_firewall_compartment_details: (required)
             The information to be updated.
@@ -121,7 +121,7 @@ class WafClientCompositeOperations(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.ChangeWebAppFirewallPolicyCompartmentDetails change_web_app_firewall_policy_compartment_details: (required)
             The information to be updated.
@@ -282,7 +282,7 @@ class WafClientCompositeOperations(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waf.models.WorkRequest.status`
@@ -331,7 +331,7 @@ class WafClientCompositeOperations(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waf.models.WorkRequest.status`
@@ -380,7 +380,7 @@ class WafClientCompositeOperations(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waf.models.WorkRequest.status`
@@ -429,7 +429,7 @@ class WafClientCompositeOperations(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.UpdateNetworkAddressListDetails update_network_address_list_details: (required)
             The information to be updated.
@@ -473,7 +473,7 @@ class WafClientCompositeOperations(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.UpdateWebAppFirewallDetails update_web_app_firewall_details: (required)
             The information to be updated.
@@ -517,7 +517,7 @@ class WafClientCompositeOperations(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.UpdateWebAppFirewallPolicyDetails update_web_app_firewall_policy_details: (required)
             The information to be updated.

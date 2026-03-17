@@ -67,7 +67,7 @@ class CreateRemotePeeringConnectionDetails(object):
         **[Required]** Gets the compartment_id of this CreateRemotePeeringConnectionDetails.
         The `OCID`__ of the compartment to contain the RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateRemotePeeringConnectionDetails.
@@ -81,7 +81,7 @@ class CreateRemotePeeringConnectionDetails(object):
         Sets the compartment_id of this CreateRemotePeeringConnectionDetails.
         The `OCID`__ of the compartment to contain the RPC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateRemotePeeringConnectionDetails.
@@ -98,7 +98,7 @@ class CreateRemotePeeringConnectionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateRemotePeeringConnectionDetails.
@@ -115,7 +115,7 @@ class CreateRemotePeeringConnectionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateRemotePeeringConnectionDetails.
@@ -155,7 +155,7 @@ class CreateRemotePeeringConnectionDetails(object):
         **[Required]** Gets the drg_id of this CreateRemotePeeringConnectionDetails.
         The `OCID`__ of the DRG the RPC belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateRemotePeeringConnectionDetails.
@@ -169,7 +169,7 @@ class CreateRemotePeeringConnectionDetails(object):
         Sets the drg_id of this CreateRemotePeeringConnectionDetails.
         The `OCID`__ of the DRG the RPC belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateRemotePeeringConnectionDetails.
@@ -186,7 +186,7 @@ class CreateRemotePeeringConnectionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateRemotePeeringConnectionDetails.
@@ -203,7 +203,7 @@ class CreateRemotePeeringConnectionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateRemotePeeringConnectionDetails.

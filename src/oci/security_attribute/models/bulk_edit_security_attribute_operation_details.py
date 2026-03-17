@@ -108,7 +108,7 @@ class BulkEditSecurityAttributeOperationDetails(object):
         For more information, see `Resource Tags`__.
         Example: ``{\"oracle-zpr\": {\"td\": {\"value\": \"42\", \"mode\": \"audit\"}}}``
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this BulkEditSecurityAttributeOperationDetails.
@@ -124,7 +124,7 @@ class BulkEditSecurityAttributeOperationDetails(object):
         For more information, see `Resource Tags`__.
         Example: ``{\"oracle-zpr\": {\"td\": {\"value\": \"42\", \"mode\": \"audit\"}}}``
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this BulkEditSecurityAttributeOperationDetails.

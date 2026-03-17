@@ -42,7 +42,7 @@ class CreateRegionSubscriptionDetails(object):
 
         Example: `PHX`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The region_key of this CreateRegionSubscriptionDetails.
@@ -59,7 +59,7 @@ class CreateRegionSubscriptionDetails(object):
 
         Example: `PHX`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param region_key: The region_key of this CreateRegionSubscriptionDetails.

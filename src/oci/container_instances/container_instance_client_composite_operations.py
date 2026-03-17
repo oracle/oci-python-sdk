@@ -33,7 +33,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_instance_id: (required)
             The `OCID`__ of the container instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.ChangeContainerInstanceCompartmentDetails change_container_instance_compartment_details: (required)
             The information to be updated.
@@ -116,7 +116,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_instance_id: (required)
             The `OCID`__ of the container instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_instance_id: (required)
             The `OCID`__ of the container instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -206,7 +206,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_instance_id: (required)
             The `OCID`__ of the container instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -247,7 +247,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_instance_id: (required)
             The `OCID`__ of the container instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -288,7 +288,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_id: (required)
             The `OCID`__ of the container.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.UpdateContainerDetails update_container_details: (required)
             The information to be updated.
@@ -332,7 +332,7 @@ class ContainerInstanceClientCompositeOperations(object):
         :param str container_instance_id: (required)
             The `OCID`__ of the container instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.UpdateContainerInstanceDetails update_container_instance_details: (required)
             The information to be updated.

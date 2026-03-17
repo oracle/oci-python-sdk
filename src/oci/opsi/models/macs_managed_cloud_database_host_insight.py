@@ -217,7 +217,7 @@ class MacsManagedCloudDatabaseHostInsight(HostInsight):
         **[Required]** Gets the management_agent_id of this MacsManagedCloudDatabaseHostInsight.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedCloudDatabaseHostInsight.
@@ -231,7 +231,7 @@ class MacsManagedCloudDatabaseHostInsight(HostInsight):
         Sets the management_agent_id of this MacsManagedCloudDatabaseHostInsight.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedCloudDatabaseHostInsight.
@@ -329,7 +329,7 @@ class MacsManagedCloudDatabaseHostInsight(HostInsight):
         Gets the parent_id of this MacsManagedCloudDatabaseHostInsight.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this MacsManagedCloudDatabaseHostInsight.
@@ -343,7 +343,7 @@ class MacsManagedCloudDatabaseHostInsight(HostInsight):
         Sets the parent_id of this MacsManagedCloudDatabaseHostInsight.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this MacsManagedCloudDatabaseHostInsight.
@@ -357,7 +357,7 @@ class MacsManagedCloudDatabaseHostInsight(HostInsight):
         Gets the root_id of this MacsManagedCloudDatabaseHostInsight.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The root_id of this MacsManagedCloudDatabaseHostInsight.
@@ -371,7 +371,7 @@ class MacsManagedCloudDatabaseHostInsight(HostInsight):
         Sets the root_id of this MacsManagedCloudDatabaseHostInsight.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param root_id: The root_id of this MacsManagedCloudDatabaseHostInsight.

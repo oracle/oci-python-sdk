@@ -131,7 +131,7 @@ class ExadataInfrastructureUsageMetrics(object):
         Gets the infrastructure_id of this ExadataInfrastructureUsageMetrics.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The infrastructure_id of this ExadataInfrastructureUsageMetrics.
@@ -145,7 +145,7 @@ class ExadataInfrastructureUsageMetrics(object):
         Sets the infrastructure_id of this ExadataInfrastructureUsageMetrics.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param infrastructure_id: The infrastructure_id of this ExadataInfrastructureUsageMetrics.
@@ -159,7 +159,7 @@ class ExadataInfrastructureUsageMetrics(object):
         Gets the compartment_id of this ExadataInfrastructureUsageMetrics.
         The `OCID`__ of the compartment where the Exadata infrastructure resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExadataInfrastructureUsageMetrics.
@@ -173,7 +173,7 @@ class ExadataInfrastructureUsageMetrics(object):
         Sets the compartment_id of this ExadataInfrastructureUsageMetrics.
         The `OCID`__ of the compartment where the Exadata infrastructure resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExadataInfrastructureUsageMetrics.

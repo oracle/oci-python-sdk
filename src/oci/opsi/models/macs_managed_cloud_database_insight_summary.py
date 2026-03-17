@@ -222,7 +222,7 @@ class MacsManagedCloudDatabaseInsightSummary(DatabaseInsightSummary):
         Gets the management_agent_id of this MacsManagedCloudDatabaseInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedCloudDatabaseInsightSummary.
@@ -236,7 +236,7 @@ class MacsManagedCloudDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the management_agent_id of this MacsManagedCloudDatabaseInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedCloudDatabaseInsightSummary.
@@ -250,7 +250,7 @@ class MacsManagedCloudDatabaseInsightSummary(DatabaseInsightSummary):
         Gets the parent_id of this MacsManagedCloudDatabaseInsightSummary.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this MacsManagedCloudDatabaseInsightSummary.
@@ -264,7 +264,7 @@ class MacsManagedCloudDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the parent_id of this MacsManagedCloudDatabaseInsightSummary.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this MacsManagedCloudDatabaseInsightSummary.
@@ -278,7 +278,7 @@ class MacsManagedCloudDatabaseInsightSummary(DatabaseInsightSummary):
         Gets the root_id of this MacsManagedCloudDatabaseInsightSummary.
         The `OCID`__ of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The root_id of this MacsManagedCloudDatabaseInsightSummary.
@@ -292,7 +292,7 @@ class MacsManagedCloudDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the root_id of this MacsManagedCloudDatabaseInsightSummary.
         The `OCID`__ of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param root_id: The root_id of this MacsManagedCloudDatabaseInsightSummary.

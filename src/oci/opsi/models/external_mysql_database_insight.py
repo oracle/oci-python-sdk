@@ -164,7 +164,7 @@ class ExternalMysqlDatabaseInsight(DatabaseInsight):
         **[Required]** Gets the database_id of this ExternalMysqlDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this ExternalMysqlDatabaseInsight.
@@ -178,7 +178,7 @@ class ExternalMysqlDatabaseInsight(DatabaseInsight):
         Sets the database_id of this ExternalMysqlDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this ExternalMysqlDatabaseInsight.

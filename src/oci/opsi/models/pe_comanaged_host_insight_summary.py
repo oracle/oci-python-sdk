@@ -239,7 +239,7 @@ class PeComanagedHostInsightSummary(HostInsightSummary):
         Gets the parent_id of this PeComanagedHostInsightSummary.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this PeComanagedHostInsightSummary.
@@ -253,7 +253,7 @@ class PeComanagedHostInsightSummary(HostInsightSummary):
         Sets the parent_id of this PeComanagedHostInsightSummary.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this PeComanagedHostInsightSummary.
@@ -267,7 +267,7 @@ class PeComanagedHostInsightSummary(HostInsightSummary):
         Gets the root_id of this PeComanagedHostInsightSummary.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The root_id of this PeComanagedHostInsightSummary.
@@ -281,7 +281,7 @@ class PeComanagedHostInsightSummary(HostInsightSummary):
         Sets the root_id of this PeComanagedHostInsightSummary.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param root_id: The root_id of this PeComanagedHostInsightSummary.

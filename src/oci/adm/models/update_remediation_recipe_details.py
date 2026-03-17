@@ -199,7 +199,7 @@ class UpdateRemediationRecipeDetails(object):
         Gets the knowledge_base_id of this UpdateRemediationRecipeDetails.
         The Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The knowledge_base_id of this UpdateRemediationRecipeDetails.
@@ -213,7 +213,7 @@ class UpdateRemediationRecipeDetails(object):
         Sets the knowledge_base_id of this UpdateRemediationRecipeDetails.
         The Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param knowledge_base_id: The knowledge_base_id of this UpdateRemediationRecipeDetails.

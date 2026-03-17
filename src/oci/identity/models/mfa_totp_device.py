@@ -19,7 +19,7 @@ class MfaTotpDevice(object):
     interaction with the Console and cannot be completed programmatically. For more information, see
     `Managing Multi-Factor Authentication`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/mfa/understand-multi-factor-authentication.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/mfa/understand-multi-factor-authentication.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a MfaTotpDevice.

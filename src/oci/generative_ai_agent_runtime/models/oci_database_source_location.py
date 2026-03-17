@@ -63,7 +63,7 @@ class OciDatabaseSourceLocation(SourceLocation):
         Gets the id of this OciDatabaseSourceLocation.
         The OCID of the `OCI Database Tools Connection`__.
 
-        __ https://docs.oracle.com/iaas/database-tools/home.htm
+        __ https://docs.cloud.oracle.com/iaas/database-tools/home.htm
 
 
         :return: The id of this OciDatabaseSourceLocation.
@@ -77,7 +77,7 @@ class OciDatabaseSourceLocation(SourceLocation):
         Sets the id of this OciDatabaseSourceLocation.
         The OCID of the `OCI Database Tools Connection`__.
 
-        __ https://docs.oracle.com/iaas/database-tools/home.htm
+        __ https://docs.cloud.oracle.com/iaas/database-tools/home.htm
 
 
         :param id: The id of this OciDatabaseSourceLocation.

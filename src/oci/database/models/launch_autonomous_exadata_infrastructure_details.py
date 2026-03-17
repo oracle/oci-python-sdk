@@ -118,7 +118,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         **[Required]** Gets the compartment_id of this LaunchAutonomousExadataInfrastructureDetails.
         The `OCID`__ of the compartment the Autonomous Exadata Infrastructure belongs in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LaunchAutonomousExadataInfrastructureDetails.
@@ -132,7 +132,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Sets the compartment_id of this LaunchAutonomousExadataInfrastructureDetails.
         The `OCID`__ of the compartment the Autonomous Exadata Infrastructure belongs in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LaunchAutonomousExadataInfrastructureDetails.
@@ -201,7 +201,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this LaunchAutonomousExadataInfrastructureDetails.
@@ -222,7 +222,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this LaunchAutonomousExadataInfrastructureDetails.
@@ -238,8 +238,8 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this LaunchAutonomousExadataInfrastructureDetails.
@@ -255,8 +255,8 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this LaunchAutonomousExadataInfrastructureDetails.
@@ -376,7 +376,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LaunchAutonomousExadataInfrastructureDetails.
@@ -393,7 +393,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LaunchAutonomousExadataInfrastructureDetails.
@@ -408,7 +408,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LaunchAutonomousExadataInfrastructureDetails.
@@ -423,7 +423,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LaunchAutonomousExadataInfrastructureDetails.

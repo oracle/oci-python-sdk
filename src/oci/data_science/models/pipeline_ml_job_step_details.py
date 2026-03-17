@@ -91,7 +91,7 @@ class PipelineMLJobStepDetails(PipelineStepDetails):
         **[Required]** Gets the job_id of this PipelineMLJobStepDetails.
         The `OCID`__ of the job to be used as a step.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The job_id of this PipelineMLJobStepDetails.
@@ -105,7 +105,7 @@ class PipelineMLJobStepDetails(PipelineStepDetails):
         Sets the job_id of this PipelineMLJobStepDetails.
         The `OCID`__ of the job to be used as a step.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param job_id: The job_id of this PipelineMLJobStepDetails.

@@ -15,7 +15,7 @@ class Gateway(object):
     A gateway is a virtual network appliance in a regional subnet. A gateway routes inbound traffic to back-end services including public, private, and partner HTTP APIs, as well as Oracle Functions. Avoid entering confidential information. For more information, see
     `API Gateway Concepts`__.
 
-    __ https://docs.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm
     """
 
     #: A constant which can be used with the endpoint_type property of a Gateway.
@@ -239,7 +239,7 @@ class Gateway(object):
         **[Required]** Gets the id of this Gateway.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Gateway.
@@ -253,7 +253,7 @@ class Gateway(object):
         Sets the id of this Gateway.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Gateway.
@@ -298,7 +298,7 @@ class Gateway(object):
         The `OCID`__ of the compartment in which the
         resource is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Gateway.
@@ -313,7 +313,7 @@ class Gateway(object):
         The `OCID`__ of the compartment in which the
         resource is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Gateway.
@@ -364,7 +364,7 @@ class Gateway(object):
         The `OCID`__ of the subnet in which
         related resources are created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this Gateway.
@@ -379,7 +379,7 @@ class Gateway(object):
         The `OCID`__ of the subnet in which
         related resources are created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this Gateway.
@@ -571,7 +571,7 @@ class Gateway(object):
         Gets the certificate_id of this Gateway.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The certificate_id of this Gateway.
@@ -585,7 +585,7 @@ class Gateway(object):
         Sets the certificate_id of this Gateway.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param certificate_id: The certificate_id of this Gateway.
@@ -647,7 +647,7 @@ class Gateway(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Gateway.
@@ -665,7 +665,7 @@ class Gateway(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Gateway.
@@ -683,7 +683,7 @@ class Gateway(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Gateway.
@@ -701,7 +701,7 @@ class Gateway(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Gateway.

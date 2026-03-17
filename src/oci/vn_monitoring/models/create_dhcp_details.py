@@ -74,7 +74,7 @@ class CreateDhcpDetails(object):
         **[Required]** Gets the compartment_id of this CreateDhcpDetails.
         The `OCID`__ of the compartment to contain the set of DHCP options.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDhcpDetails.
@@ -88,7 +88,7 @@ class CreateDhcpDetails(object):
         Sets the compartment_id of this CreateDhcpDetails.
         The `OCID`__ of the compartment to contain the set of DHCP options.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDhcpDetails.
@@ -204,7 +204,7 @@ class CreateDhcpDetails(object):
         **[Required]** Gets the vcn_id of this CreateDhcpDetails.
         The `OCID`__ of the VCN the set of DHCP options belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateDhcpDetails.
@@ -218,7 +218,7 @@ class CreateDhcpDetails(object):
         Sets the vcn_id of this CreateDhcpDetails.
         The `OCID`__ of the VCN the set of DHCP options belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateDhcpDetails.

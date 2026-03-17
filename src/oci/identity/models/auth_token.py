@@ -23,7 +23,7 @@ class AuthToken(object):
 
     For more information, see `Managing User Credentials`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a AuthToken.

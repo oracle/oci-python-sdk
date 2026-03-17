@@ -203,7 +203,7 @@ class MacsManagedCloudHostInsightSummary(HostInsightSummary):
         **[Required]** Gets the compute_id of this MacsManagedCloudHostInsightSummary.
         The `OCID`__ of the Compute Instance
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_id of this MacsManagedCloudHostInsightSummary.
@@ -217,7 +217,7 @@ class MacsManagedCloudHostInsightSummary(HostInsightSummary):
         Sets the compute_id of this MacsManagedCloudHostInsightSummary.
         The `OCID`__ of the Compute Instance
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_id: The compute_id of this MacsManagedCloudHostInsightSummary.
@@ -231,7 +231,7 @@ class MacsManagedCloudHostInsightSummary(HostInsightSummary):
         **[Required]** Gets the management_agent_id of this MacsManagedCloudHostInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedCloudHostInsightSummary.
@@ -245,7 +245,7 @@ class MacsManagedCloudHostInsightSummary(HostInsightSummary):
         Sets the management_agent_id of this MacsManagedCloudHostInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedCloudHostInsightSummary.

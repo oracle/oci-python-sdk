@@ -362,7 +362,7 @@ class JobExecution(object):
         **[Required]** Gets the compartment_id of this JobExecution.
         The `OCID`__ of the compartment in which the parent job resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this JobExecution.
@@ -376,7 +376,7 @@ class JobExecution(object):
         Sets the compartment_id of this JobExecution.
         The `OCID`__ of the compartment in which the parent job resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this JobExecution.
@@ -390,7 +390,7 @@ class JobExecution(object):
         Gets the managed_database_group_id of this JobExecution.
         The `OCID`__ of the Managed Database Group where the parent job has to be executed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_group_id of this JobExecution.
@@ -404,7 +404,7 @@ class JobExecution(object):
         Sets the managed_database_group_id of this JobExecution.
         The `OCID`__ of the Managed Database Group where the parent job has to be executed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_group_id: The managed_database_group_id of this JobExecution.
@@ -418,7 +418,7 @@ class JobExecution(object):
         **[Required]** Gets the managed_database_id of this JobExecution.
         The `OCID`__ of the Managed Database associated with the job execution.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_database_id of this JobExecution.
@@ -432,7 +432,7 @@ class JobExecution(object):
         Sets the managed_database_id of this JobExecution.
         The `OCID`__ of the Managed Database associated with the job execution.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param managed_database_id: The managed_database_id of this JobExecution.
@@ -614,7 +614,7 @@ class JobExecution(object):
         **[Required]** Gets the job_id of this JobExecution.
         The `OCID`__ of the parent job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The job_id of this JobExecution.
@@ -628,7 +628,7 @@ class JobExecution(object):
         Sets the job_id of this JobExecution.
         The `OCID`__ of the parent job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param job_id: The job_id of this JobExecution.

@@ -90,7 +90,7 @@ class CccUpgradeScheduleSummary(object):
         The upgrade schedule `OCID`__.
         This cannot be changed once created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CccUpgradeScheduleSummary.
@@ -105,7 +105,7 @@ class CccUpgradeScheduleSummary(object):
         The upgrade schedule `OCID`__.
         This cannot be changed once created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CccUpgradeScheduleSummary.
@@ -146,7 +146,7 @@ class CccUpgradeScheduleSummary(object):
         Compartment `OCID`__ for the
         Compute Cloud@Customer Upgrade Schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CccUpgradeScheduleSummary.
@@ -161,7 +161,7 @@ class CccUpgradeScheduleSummary(object):
         Compartment `OCID`__ for the
         Compute Cloud@Customer Upgrade Schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CccUpgradeScheduleSummary.

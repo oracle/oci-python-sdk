@@ -91,7 +91,7 @@ class SqlTextSummary(object):
         **[Required]** Gets the id of this SqlTextSummary.
         The `OCID`__ of the database insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SqlTextSummary.
@@ -105,7 +105,7 @@ class SqlTextSummary(object):
         Sets the id of this SqlTextSummary.
         The `OCID`__ of the database insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SqlTextSummary.
@@ -119,7 +119,7 @@ class SqlTextSummary(object):
         **[Required]** Gets the database_id of this SqlTextSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this SqlTextSummary.
@@ -133,7 +133,7 @@ class SqlTextSummary(object):
         Sets the database_id of this SqlTextSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this SqlTextSummary.
@@ -147,7 +147,7 @@ class SqlTextSummary(object):
         Gets the compartment_id of this SqlTextSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this SqlTextSummary.
@@ -161,7 +161,7 @@ class SqlTextSummary(object):
         Sets the compartment_id of this SqlTextSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this SqlTextSummary.

@@ -49,7 +49,7 @@ class TestNamedPreferredCredentialDetails(TestPreferredCredentialDetails):
         Gets the named_credential_id of this TestNamedPreferredCredentialDetails.
         The `OCID`__ of the Named Credential that contains the database user password metadata.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The named_credential_id of this TestNamedPreferredCredentialDetails.
@@ -63,7 +63,7 @@ class TestNamedPreferredCredentialDetails(TestPreferredCredentialDetails):
         Sets the named_credential_id of this TestNamedPreferredCredentialDetails.
         The `OCID`__ of the Named Credential that contains the database user password metadata.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param named_credential_id: The named_credential_id of this TestNamedPreferredCredentialDetails.

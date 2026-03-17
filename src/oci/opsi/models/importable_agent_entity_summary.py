@@ -110,7 +110,7 @@ class ImportableAgentEntitySummary(object):
         **[Required]** Gets the management_agent_id of this ImportableAgentEntitySummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this ImportableAgentEntitySummary.
@@ -124,7 +124,7 @@ class ImportableAgentEntitySummary(object):
         Sets the management_agent_id of this ImportableAgentEntitySummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this ImportableAgentEntitySummary.
@@ -138,7 +138,7 @@ class ImportableAgentEntitySummary(object):
         **[Required]** Gets the management_agent_display_name of this ImportableAgentEntitySummary.
         The `Display Name`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
 
 
         :return: The management_agent_display_name of this ImportableAgentEntitySummary.
@@ -152,7 +152,7 @@ class ImportableAgentEntitySummary(object):
         Sets the management_agent_display_name of this ImportableAgentEntitySummary.
         The `Display Name`__ of the Management Agent
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display
 
 
         :param management_agent_display_name: The management_agent_display_name of this ImportableAgentEntitySummary.

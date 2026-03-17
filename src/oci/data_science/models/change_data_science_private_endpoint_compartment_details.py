@@ -39,7 +39,7 @@ class ChangeDataSciencePrivateEndpointCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeDataSciencePrivateEndpointCompartmentDetails.
         The `OCID`__ of the compartment where you want to create private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeDataSciencePrivateEndpointCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeDataSciencePrivateEndpointCompartmentDetails(object):
         Sets the compartment_id of this ChangeDataSciencePrivateEndpointCompartmentDetails.
         The `OCID`__ of the compartment where you want to create private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeDataSciencePrivateEndpointCompartmentDetails.

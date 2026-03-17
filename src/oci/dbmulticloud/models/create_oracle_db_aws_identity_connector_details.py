@@ -133,7 +133,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
         **[Required]** Gets the compartment_id of this CreateOracleDbAwsIdentityConnectorDetails.
         The `OCID`__ of the compartment that contains Oracle DB AWS Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -147,7 +147,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
         Sets the compartment_id of this CreateOracleDbAwsIdentityConnectorDetails.
         The `OCID`__ of the compartment that contains Oracle DB AWS Identity Connector resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -161,7 +161,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
         **[Required]** Gets the resource_id of this CreateOracleDbAwsIdentityConnectorDetails.
         The `OCID`__ of the AWS VM Cluster resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -175,7 +175,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
         Sets the resource_id of this CreateOracleDbAwsIdentityConnectorDetails.
         The `OCID`__ of the AWS VM Cluster resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -336,7 +336,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -353,7 +353,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -370,7 +370,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateOracleDbAwsIdentityConnectorDetails.
@@ -387,7 +387,7 @@ class CreateOracleDbAwsIdentityConnectorDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateOracleDbAwsIdentityConnectorDetails.

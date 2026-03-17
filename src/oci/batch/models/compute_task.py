@@ -134,7 +134,7 @@ class ComputeTask(BatchTask):
         Gets the batch_task_profile_id of this ComputeTask.
         The `OCID`__ of the batch task profile used for this task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The batch_task_profile_id of this ComputeTask.
@@ -148,7 +148,7 @@ class ComputeTask(BatchTask):
         Sets the batch_task_profile_id of this ComputeTask.
         The `OCID`__ of the batch task profile used for this task.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param batch_task_profile_id: The batch_task_profile_id of this ComputeTask.
@@ -230,7 +230,7 @@ class ComputeTask(BatchTask):
         **[Required]** Gets the batch_task_environment_id of this ComputeTask.
         The `OCID`__ of the BatchTaskEnvironment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The batch_task_environment_id of this ComputeTask.
@@ -244,7 +244,7 @@ class ComputeTask(BatchTask):
         Sets the batch_task_environment_id of this ComputeTask.
         The `OCID`__ of the BatchTaskEnvironment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param batch_task_environment_id: The batch_task_environment_id of this ComputeTask.

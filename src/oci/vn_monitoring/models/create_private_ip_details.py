@@ -164,7 +164,7 @@ class CreatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this CreatePrivateIpDetails.
@@ -190,7 +190,7 @@ class CreatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this CreatePrivateIpDetails.
@@ -237,7 +237,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this CreatePrivateIpDetails.
@@ -252,7 +252,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this CreatePrivateIpDetails.
