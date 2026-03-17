@@ -18,8 +18,8 @@ class CustomTerraformProvider(object):
     See :func:`update_stack`. For more information, see
     `Using Terraform Registry with an Older Stack`__.
 
-    __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-custom-providers.htm
-    __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-custom-providers.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm
     """
 
     def __init__(self, **kwargs):
@@ -62,7 +62,7 @@ class CustomTerraformProvider(object):
         For information about regions, see `Regions and Availability Domains`__.
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The region of this CustomTerraformProvider.
@@ -78,7 +78,7 @@ class CustomTerraformProvider(object):
         For information about regions, see `Regions and Availability Domains`__.
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param region: The region of this CustomTerraformProvider.
@@ -93,7 +93,7 @@ class CustomTerraformProvider(object):
         The Object Storage namespace that contains the bucket you want.
         For information about Object Storage namespaces, see `Understanding Object Storage Namespaces`__.
 
-        __ https://docs.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm
 
 
         :return: The namespace of this CustomTerraformProvider.
@@ -108,7 +108,7 @@ class CustomTerraformProvider(object):
         The Object Storage namespace that contains the bucket you want.
         For information about Object Storage namespaces, see `Understanding Object Storage Namespaces`__.
 
-        __ https://docs.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm
 
 
         :param namespace: The namespace of this CustomTerraformProvider.
@@ -123,7 +123,7 @@ class CustomTerraformProvider(object):
         The name of the bucket that contains the binary files for the custom Terraform providers.
         For information about buckets, see `Managing Buckets`__.
 
-        __ https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm
 
 
         :return: The bucket_name of this CustomTerraformProvider.
@@ -138,7 +138,7 @@ class CustomTerraformProvider(object):
         The name of the bucket that contains the binary files for the custom Terraform providers.
         For information about buckets, see `Managing Buckets`__.
 
-        __ https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm
 
 
         :param bucket_name: The bucket_name of this CustomTerraformProvider.

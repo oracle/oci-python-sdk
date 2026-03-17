@@ -31,8 +31,8 @@ class MetricData(object):
     For more information about metric-related concepts, see
     `Monitoring Concepts`__.
 
-    __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
-    __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
+    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts
     """
 
     def __init__(self, **kwargs):
@@ -169,7 +169,7 @@ class MetricData(object):
         The `OCID`__ of the compartment containing the
         resources that the aggregated data was returned from.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MetricData.
@@ -184,7 +184,7 @@ class MetricData(object):
         The `OCID`__ of the compartment containing the
         resources that the aggregated data was returned from.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MetricData.

@@ -39,7 +39,7 @@ class SynchronizeMirrorsDetails(object):
         **[Required]** Gets the software_source_list of this SynchronizeMirrorsDetails.
         List of software source `OCIDs`__ to synchronize.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_list of this SynchronizeMirrorsDetails.
@@ -53,7 +53,7 @@ class SynchronizeMirrorsDetails(object):
         Sets the software_source_list of this SynchronizeMirrorsDetails.
         List of software source `OCIDs`__ to synchronize.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_list: The software_source_list of this SynchronizeMirrorsDetails.

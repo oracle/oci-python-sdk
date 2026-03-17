@@ -15,7 +15,6 @@ logger = logging.getLogger(name=__name__)
 # * failure_threshold - 3
 # * failure_statuses_and_codes
 #    - HTTP 409/IncorrectState
-#    - HTTP 409/LockConflict
 #    - HTTP 429
 #    - HTTP 500
 #    - HTTP 502
@@ -40,7 +39,6 @@ else:
 #: * failure_statuses_and_codes
 #:
 #:    - HTTP 409/IncorrectState
-#:    - HTTP 409/LockConflict
 #:    - HTTP 429
 #:    - HTTP 500
 #:    - HTTP 502

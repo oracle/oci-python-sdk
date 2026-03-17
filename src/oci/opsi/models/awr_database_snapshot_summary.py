@@ -83,7 +83,7 @@ class AwrDatabaseSnapshotSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabases
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The awr_source_database_identifier of this AwrDatabaseSnapshotSummary.
@@ -99,7 +99,7 @@ class AwrDatabaseSnapshotSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabases
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param awr_source_database_identifier: The awr_source_database_identifier of this AwrDatabaseSnapshotSummary.
@@ -211,7 +211,7 @@ class AwrDatabaseSnapshotSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDbSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The snapshot_identifier of this AwrDatabaseSnapshotSummary.
@@ -227,7 +227,7 @@ class AwrDatabaseSnapshotSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDbSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param snapshot_identifier: The snapshot_identifier of this AwrDatabaseSnapshotSummary.

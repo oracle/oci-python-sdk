@@ -48,7 +48,7 @@ class CreateDedicatedCapacitySourceDetails(CreateCapacitySourceDetails):
         Gets the compartment_id of this CreateDedicatedCapacitySourceDetails.
         The `OCID`__ of the compartment of this capacity source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDedicatedCapacitySourceDetails.
@@ -62,7 +62,7 @@ class CreateDedicatedCapacitySourceDetails(CreateCapacitySourceDetails):
         Sets the compartment_id of this CreateDedicatedCapacitySourceDetails.
         The `OCID`__ of the compartment of this capacity source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDedicatedCapacitySourceDetails.

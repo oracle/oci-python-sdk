@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class ScheduledJobClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -133,12 +133,12 @@ class ScheduledJobClient(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ChangeScheduledJobCompartmentDetails change_scheduled_job_compartment_details: (required)
             The `OCID`__ of the compartment to move the scheduled job to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -369,7 +369,7 @@ class ScheduledJobClient(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -483,7 +483,7 @@ class ScheduledJobClient(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -586,7 +586,7 @@ class ScheduledJobClient(object):
         """
         Lists scheduled jobs that match the specified compartment or scheduled job `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (optional)
@@ -606,22 +606,22 @@ class ScheduledJobClient(object):
         :param str managed_instance_id: (optional)
             The `OCID`__ of the managed instance. This filter returns resources associated with this managed instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_group_id: (optional)
             The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_compartment_id: (optional)
             The `OCID`__ of the managed compartment. This filter returns resources associated with this compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_stage_id: (optional)
             The `OCID`__ of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str operation_type: (optional)
             A filter to return only scheduled jobs with the given operation type.
@@ -649,7 +649,7 @@ class ScheduledJobClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -657,7 +657,7 @@ class ScheduledJobClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -678,7 +678,7 @@ class ScheduledJobClient(object):
         :param str id: (optional)
             The `OCID`__ of the scheduled job. A filter to return the specified job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Indicates whether to include subcompartments in the returned results. Default is false.
@@ -888,7 +888,7 @@ class ScheduledJobClient(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1012,7 +1012,7 @@ class ScheduledJobClient(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateScheduledJobDetails update_scheduled_job_details: (required)
             Provides the information used to update the job.

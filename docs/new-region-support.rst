@@ -14,7 +14,7 @@ New Region Support
 
 If you are using a version of the SDK released prior to the announcement of a new region, you may need to use a workaround to reach it, depending on whether the region is in the oraclecloud.com realm.
 
-A *region* is a localized geographic area. For more information on regions and how to identify them, see `Regions and Availability Domains <https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm>`_
+A *region* is a localized geographic area. For more information on regions and how to identify them, see `Regions and Availability Domains <https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm>`_
 
 A *realm* is a set of regions that share entities. You can identify your realm by looking at the domain name at the end of the network address. For example, the realm for ``xyz.abc.123.oraclecloud.com`` is ``oraclecloud.com``.
 

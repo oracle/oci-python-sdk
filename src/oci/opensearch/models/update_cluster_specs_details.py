@@ -60,18 +60,6 @@ class UpdateClusterSpecsDetails(object):
             The value to assign to the search_node_host_memory_gb property of this UpdateClusterSpecsDetails.
         :type search_node_host_memory_gb: int
 
-        :param ml_node_host_shape:
-            The value to assign to the ml_node_host_shape property of this UpdateClusterSpecsDetails.
-        :type ml_node_host_shape: str
-
-        :param ml_node_host_ocpu_count:
-            The value to assign to the ml_node_host_ocpu_count property of this UpdateClusterSpecsDetails.
-        :type ml_node_host_ocpu_count: int
-
-        :param ml_node_host_memory_gb:
-            The value to assign to the ml_node_host_memory_gb property of this UpdateClusterSpecsDetails.
-        :type ml_node_host_memory_gb: int
-
         :param software_version:
             The value to assign to the software_version property of this UpdateClusterSpecsDetails.
         :type software_version: str
@@ -100,9 +88,6 @@ class UpdateClusterSpecsDetails(object):
             'search_node_host_shape': 'str',
             'search_node_host_ocpu_count': 'int',
             'search_node_host_memory_gb': 'int',
-            'ml_node_host_shape': 'str',
-            'ml_node_host_ocpu_count': 'int',
-            'ml_node_host_memory_gb': 'int',
             'software_version': 'str',
             'dashboard_software_version': 'str',
             'opendashboard_node_host_shape': 'str',
@@ -119,9 +104,6 @@ class UpdateClusterSpecsDetails(object):
             'search_node_host_shape': 'searchNodeHostShape',
             'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
             'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
-            'ml_node_host_shape': 'mlNodeHostShape',
-            'ml_node_host_ocpu_count': 'mlNodeHostOcpuCount',
-            'ml_node_host_memory_gb': 'mlNodeHostMemoryGB',
             'software_version': 'softwareVersion',
             'dashboard_software_version': 'dashboardSoftwareVersion',
             'opendashboard_node_host_shape': 'opendashboardNodeHostShape',
@@ -137,9 +119,6 @@ class UpdateClusterSpecsDetails(object):
         self._search_node_host_shape = None
         self._search_node_host_ocpu_count = None
         self._search_node_host_memory_gb = None
-        self._ml_node_host_shape = None
-        self._ml_node_host_ocpu_count = None
-        self._ml_node_host_memory_gb = None
         self._software_version = None
         self._dashboard_software_version = None
         self._opendashboard_node_host_shape = None
@@ -384,78 +363,6 @@ class UpdateClusterSpecsDetails(object):
         :type: int
         """
         self._search_node_host_memory_gb = search_node_host_memory_gb
-
-    @property
-    def ml_node_host_shape(self):
-        """
-        Gets the ml_node_host_shape of this UpdateClusterSpecsDetails.
-        The node shape for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_shape of this UpdateClusterSpecsDetails.
-        :rtype: str
-        """
-        return self._ml_node_host_shape
-
-    @ml_node_host_shape.setter
-    def ml_node_host_shape(self, ml_node_host_shape):
-        """
-        Sets the ml_node_host_shape of this UpdateClusterSpecsDetails.
-        The node shape for the cluster's ML nodes.
-
-
-        :param ml_node_host_shape: The ml_node_host_shape of this UpdateClusterSpecsDetails.
-        :type: str
-        """
-        self._ml_node_host_shape = ml_node_host_shape
-
-    @property
-    def ml_node_host_ocpu_count(self):
-        """
-        Gets the ml_node_host_ocpu_count of this UpdateClusterSpecsDetails.
-        The number of OCPUs configured for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_ocpu_count of this UpdateClusterSpecsDetails.
-        :rtype: int
-        """
-        return self._ml_node_host_ocpu_count
-
-    @ml_node_host_ocpu_count.setter
-    def ml_node_host_ocpu_count(self, ml_node_host_ocpu_count):
-        """
-        Sets the ml_node_host_ocpu_count of this UpdateClusterSpecsDetails.
-        The number of OCPUs configured for the cluster's ML nodes.
-
-
-        :param ml_node_host_ocpu_count: The ml_node_host_ocpu_count of this UpdateClusterSpecsDetails.
-        :type: int
-        """
-        self._ml_node_host_ocpu_count = ml_node_host_ocpu_count
-
-    @property
-    def ml_node_host_memory_gb(self):
-        """
-        Gets the ml_node_host_memory_gb of this UpdateClusterSpecsDetails.
-        The amount of memory in GB, for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_memory_gb of this UpdateClusterSpecsDetails.
-        :rtype: int
-        """
-        return self._ml_node_host_memory_gb
-
-    @ml_node_host_memory_gb.setter
-    def ml_node_host_memory_gb(self, ml_node_host_memory_gb):
-        """
-        Sets the ml_node_host_memory_gb of this UpdateClusterSpecsDetails.
-        The amount of memory in GB, for the cluster's ML nodes.
-
-
-        :param ml_node_host_memory_gb: The ml_node_host_memory_gb of this UpdateClusterSpecsDetails.
-        :type: int
-        """
-        self._ml_node_host_memory_gb = ml_node_host_memory_gb
 
     @property
     def software_version(self):

@@ -236,7 +236,7 @@ class Queue(object):
         **[Required]** Gets the compartment_id of this Queue.
         The `OCID`__ of the compartment containing the queue.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Queue.
@@ -250,7 +250,7 @@ class Queue(object):
         Sets the compartment_id of this Queue.
         The `OCID`__ of the compartment containing the queue.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Queue.
@@ -502,7 +502,7 @@ class Queue(object):
         Gets the custom_encryption_key_id of this Queue.
         The `OCID`__ of the custom encryption key to be used to encrypt messages content.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The custom_encryption_key_id of this Queue.
@@ -516,7 +516,7 @@ class Queue(object):
         Sets the custom_encryption_key_id of this Queue.
         The `OCID`__ of the custom encryption key to be used to encrypt messages content.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param custom_encryption_key_id: The custom_encryption_key_id of this Queue.

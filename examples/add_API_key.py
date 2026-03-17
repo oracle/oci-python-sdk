@@ -19,14 +19,14 @@ from time import sleep
 #
 # The script relies on having a config file for the other variables.
 # More information on the config file can be found here:
-#    https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm
+#    https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm
 #
 # Note, you must already have an API key associated with your user to call the
 # APIs so this example shows you how to add a second key, or you could create
 # a new user and use the steps here to upload a key to that user.
 #
 # More information on Keys and API Signing can be found here:
-#    https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
+#    https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
 #
 
 

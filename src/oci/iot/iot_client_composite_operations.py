@@ -33,7 +33,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_id: (required)
             The `OCID`__ of the IoT domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.ChangeIotDomainCompartmentDetails change_iot_domain_compartment_details: (required)
             Details for changing the IoT domain compartment.
@@ -77,7 +77,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_id: (required)
             The `OCID`__ of the IoT domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.ChangeIotDomainDataRetentionPeriodDetails change_iot_domain_data_retention_period_details: (required)
             Details for changing data retention period of IoT domain data.
@@ -121,7 +121,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_group_id: (required)
             The `OCID`__ of an IoT Domain Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.ChangeIotDomainGroupCompartmentDetails change_iot_domain_group_compartment_details: (required)
             Details for changing the IoT domain group compartment.
@@ -165,7 +165,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_id: (required)
             The `OCID`__ of the IoT domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.ConfigureIotDomainDataAccessDetails configure_iot_domain_data_access_details: (required)
             Details for configuring data access.
@@ -209,7 +209,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_group_id: (required)
             The `OCID`__ of an IoT Domain Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.ConfigureIotDomainGroupDataAccessDetails configure_iot_domain_group_data_access_details: (required)
             Details for configuring data access.
@@ -499,7 +499,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_adapter_id: (required)
             The `OCID`__ of the digital twin adapter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.iot.models.DigitalTwinAdapter.lifecycle_state`
@@ -560,7 +560,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_instance_id: (required)
             The `OCID`__ of digital twin instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.iot.models.DigitalTwinInstance.lifecycle_state`
@@ -621,7 +621,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_model_id: (required)
             The `OCID`__ of digital twin model.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.iot.models.DigitalTwinModel.lifecycle_state`
@@ -682,7 +682,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_relationship_id: (required)
             The `OCID`__ of digital twin relationship.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.iot.models.DigitalTwinRelationship.lifecycle_state`
@@ -743,7 +743,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_id: (required)
             The `OCID`__ of the IoT domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.iot.models.WorkRequest.status`
@@ -792,7 +792,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_group_id: (required)
             The `OCID`__ of an IoT Domain Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.iot.models.WorkRequest.status`
@@ -841,7 +841,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_adapter_id: (required)
             The `OCID`__ of the digital twin adapter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.UpdateDigitalTwinAdapterDetails update_digital_twin_adapter_details: (required)
             The digital twin adapter details to be updated.
@@ -888,7 +888,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_instance_id: (required)
             The `OCID`__ of digital twin instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.UpdateDigitalTwinInstanceDetails update_digital_twin_instance_details: (required)
             The digital twin instance details to be updated.
@@ -935,7 +935,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_model_id: (required)
             The `OCID`__ of digital twin model.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.UpdateDigitalTwinModelDetails update_digital_twin_model_details: (required)
             The digital twin model details to be updated.
@@ -982,7 +982,7 @@ class IotClientCompositeOperations(object):
         :param str digital_twin_relationship_id: (required)
             The `OCID`__ of digital twin relationship.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.UpdateDigitalTwinRelationshipDetails update_digital_twin_relationship_details: (required)
             The digital twin relationship details to be updated.
@@ -1029,7 +1029,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_id: (required)
             The `OCID`__ of the IoT domain.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.UpdateIotDomainDetails update_iot_domain_details: (required)
             The IoT domain details to be updated.
@@ -1073,7 +1073,7 @@ class IotClientCompositeOperations(object):
         :param str iot_domain_group_id: (required)
             The `OCID`__ of an IoT Domain Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.iot.models.UpdateIotDomainGroupDetails update_iot_domain_group_details: (required)
             The IoT domain group details to be updated.

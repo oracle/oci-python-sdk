@@ -192,7 +192,7 @@ class MetricExtension(object):
         **[Required]** Gets the id of this MetricExtension.
         The `OCID`__ of Metric Extension resource
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MetricExtension.
@@ -206,7 +206,7 @@ class MetricExtension(object):
         Sets the id of this MetricExtension.
         The `OCID`__ of Metric Extension resource
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MetricExtension.
@@ -316,7 +316,7 @@ class MetricExtension(object):
         **[Required]** Gets the compartment_id of this MetricExtension.
         Compartment Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MetricExtension.
@@ -330,7 +330,7 @@ class MetricExtension(object):
         Sets the compartment_id of this MetricExtension.
         Compartment Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MetricExtension.
@@ -344,7 +344,7 @@ class MetricExtension(object):
         **[Required]** Gets the tenant_id of this MetricExtension.
         Tenant Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenant_id of this MetricExtension.
@@ -358,7 +358,7 @@ class MetricExtension(object):
         Sets the tenant_id of this MetricExtension.
         Tenant Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param tenant_id: The tenant_id of this MetricExtension.

@@ -108,7 +108,7 @@ class PipelineLogConfigurationDetails(object):
         Gets the log_group_id of this PipelineLogConfigurationDetails.
         The `OCID`__ of the log group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_group_id of this PipelineLogConfigurationDetails.
@@ -122,7 +122,7 @@ class PipelineLogConfigurationDetails(object):
         Sets the log_group_id of this PipelineLogConfigurationDetails.
         The `OCID`__ of the log group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_group_id: The log_group_id of this PipelineLogConfigurationDetails.
@@ -136,7 +136,7 @@ class PipelineLogConfigurationDetails(object):
         Gets the log_id of this PipelineLogConfigurationDetails.
         The `OCID`__ of the log.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_id of this PipelineLogConfigurationDetails.
@@ -150,7 +150,7 @@ class PipelineLogConfigurationDetails(object):
         Sets the log_id of this PipelineLogConfigurationDetails.
         The `OCID`__ of the log.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_id: The log_id of this PipelineLogConfigurationDetails.

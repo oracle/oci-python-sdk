@@ -626,7 +626,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the database_software_image_id of this CreateAutonomousContainerDatabaseBase.
         The Autonomous AI Database Software Image `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this CreateAutonomousContainerDatabaseBase.
@@ -640,7 +640,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the database_software_image_id of this CreateAutonomousContainerDatabaseBase.
         The Autonomous AI Database Software Image `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this CreateAutonomousContainerDatabaseBase.
@@ -789,7 +789,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
@@ -803,7 +803,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_cloud_autonomous_vm_cluster_id: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
@@ -817,7 +817,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
@@ -831,7 +831,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_autonomous_vm_cluster_id: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
@@ -846,7 +846,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         The `OCID`__ of the compartment where the standby Autonomous Container Database
         will be created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseBase.
@@ -861,7 +861,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         The `OCID`__ of the compartment where the standby Autonomous Container Database
         will be created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_autonomous_container_database_compartment_id: The peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseBase.
@@ -943,7 +943,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
@@ -957,7 +957,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseBase.
@@ -971,7 +971,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the compartment_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the compartment containing the Autonomous Container Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAutonomousContainerDatabaseBase.
@@ -985,7 +985,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the compartment_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the compartment containing the Autonomous Container Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAutonomousContainerDatabaseBase.
@@ -1134,7 +1134,7 @@ class CreateAutonomousContainerDatabaseBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateAutonomousContainerDatabaseBase.
@@ -1151,7 +1151,7 @@ class CreateAutonomousContainerDatabaseBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateAutonomousContainerDatabaseBase.
@@ -1166,7 +1166,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateAutonomousContainerDatabaseBase.
@@ -1181,7 +1181,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateAutonomousContainerDatabaseBase.
@@ -1263,8 +1263,8 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the vault_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this CreateAutonomousContainerDatabaseBase.
@@ -1278,8 +1278,8 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the vault_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this CreateAutonomousContainerDatabaseBase.
@@ -1293,7 +1293,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the key_store_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this CreateAutonomousContainerDatabaseBase.
@@ -1307,7 +1307,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Sets the key_store_id of this CreateAutonomousContainerDatabaseBase.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this CreateAutonomousContainerDatabaseBase.

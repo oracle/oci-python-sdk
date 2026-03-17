@@ -85,7 +85,7 @@ class FaaSAction(Action):
         Gets the function_id of this FaaSAction.
         The `OCID`__ of a Function hosted by Oracle Functions Service.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The function_id of this FaaSAction.
@@ -99,7 +99,7 @@ class FaaSAction(Action):
         Sets the function_id of this FaaSAction.
         The `OCID`__ of a Function hosted by Oracle Functions Service.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param function_id: The function_id of this FaaSAction.

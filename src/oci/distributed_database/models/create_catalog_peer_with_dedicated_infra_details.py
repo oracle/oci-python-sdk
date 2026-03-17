@@ -76,7 +76,7 @@ class CreateCatalogPeerWithDedicatedInfraDetails(object):
         **[Required]** Gets the cloud_autonomous_vm_cluster_id of this CreateCatalogPeerWithDedicatedInfraDetails.
         The `OCID`__ of the cloud Autonomous VM Cluster for the peer catalog.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this CreateCatalogPeerWithDedicatedInfraDetails.
@@ -90,7 +90,7 @@ class CreateCatalogPeerWithDedicatedInfraDetails(object):
         Sets the cloud_autonomous_vm_cluster_id of this CreateCatalogPeerWithDedicatedInfraDetails.
         The `OCID`__ of the cloud Autonomous VM Cluster for the peer catalog.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this CreateCatalogPeerWithDedicatedInfraDetails.

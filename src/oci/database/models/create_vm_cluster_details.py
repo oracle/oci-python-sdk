@@ -258,7 +258,7 @@ class CreateVmClusterDetails(object):
         **[Required]** Gets the compartment_id of this CreateVmClusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVmClusterDetails.
@@ -272,7 +272,7 @@ class CreateVmClusterDetails(object):
         Sets the compartment_id of this CreateVmClusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVmClusterDetails.
@@ -310,7 +310,7 @@ class CreateVmClusterDetails(object):
         **[Required]** Gets the exadata_infrastructure_id of this CreateVmClusterDetails.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this CreateVmClusterDetails.
@@ -324,7 +324,7 @@ class CreateVmClusterDetails(object):
         Sets the exadata_infrastructure_id of this CreateVmClusterDetails.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this CreateVmClusterDetails.
@@ -506,7 +506,7 @@ class CreateVmClusterDetails(object):
         **[Required]** Gets the vm_cluster_network_id of this CreateVmClusterDetails.
         The `OCID`__ of the VM cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_network_id of this CreateVmClusterDetails.
@@ -520,7 +520,7 @@ class CreateVmClusterDetails(object):
         Sets the vm_cluster_network_id of this CreateVmClusterDetails.
         The `OCID`__ of the VM cluster network.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_network_id: The vm_cluster_network_id of this CreateVmClusterDetails.
@@ -613,7 +613,7 @@ class CreateVmClusterDetails(object):
         Gets the time_zone of this CreateVmClusterDetails.
         The time zone to use for the VM cluster. For details, see `DB System Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this CreateVmClusterDetails.
@@ -627,7 +627,7 @@ class CreateVmClusterDetails(object):
         Sets the time_zone of this CreateVmClusterDetails.
         The time zone to use for the VM cluster. For details, see `DB System Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this CreateVmClusterDetails.
@@ -692,7 +692,7 @@ class CreateVmClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVmClusterDetails.
@@ -709,7 +709,7 @@ class CreateVmClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVmClusterDetails.
@@ -724,7 +724,7 @@ class CreateVmClusterDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVmClusterDetails.
@@ -739,7 +739,7 @@ class CreateVmClusterDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVmClusterDetails.
@@ -872,7 +872,7 @@ class CreateVmClusterDetails(object):
         Gets the exascale_db_storage_vault_id of this CreateVmClusterDetails.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The exascale_db_storage_vault_id of this CreateVmClusterDetails.
@@ -886,7 +886,7 @@ class CreateVmClusterDetails(object):
         Sets the exascale_db_storage_vault_id of this CreateVmClusterDetails.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param exascale_db_storage_vault_id: The exascale_db_storage_vault_id of this CreateVmClusterDetails.

@@ -91,7 +91,7 @@ class FlexTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         Gets the transport_attachment_id of this FlexTunnelDrgAttachmentNetworkDetails.
         The `OCID`__ of the transport drg attachment of the flex tunnel.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The transport_attachment_id of this FlexTunnelDrgAttachmentNetworkDetails.
@@ -105,7 +105,7 @@ class FlexTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         Sets the transport_attachment_id of this FlexTunnelDrgAttachmentNetworkDetails.
         The `OCID`__ of the transport drg attachment of the flex tunnel.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param transport_attachment_id: The transport_attachment_id of this FlexTunnelDrgAttachmentNetworkDetails.

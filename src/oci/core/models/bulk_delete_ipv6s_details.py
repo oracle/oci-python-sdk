@@ -54,7 +54,7 @@ class BulkDeleteIpv6sDetails(object):
         The `OCID`__ of the VNIC to assign the IPv6s to. The
         IPv6 will be in the VNIC's subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this BulkDeleteIpv6sDetails.
@@ -69,7 +69,7 @@ class BulkDeleteIpv6sDetails(object):
         The `OCID`__ of the VNIC to assign the IPv6s to. The
         IPv6 will be in the VNIC's subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this BulkDeleteIpv6sDetails.
@@ -83,7 +83,7 @@ class BulkDeleteIpv6sDetails(object):
         Gets the subnet_id of this BulkDeleteIpv6sDetails.
         The `OCID`__ of the subnet from which the IPv6s addresses are to be deleted.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this BulkDeleteIpv6sDetails.
@@ -97,7 +97,7 @@ class BulkDeleteIpv6sDetails(object):
         Sets the subnet_id of this BulkDeleteIpv6sDetails.
         The `OCID`__ of the subnet from which the IPv6s addresses are to be deleted.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this BulkDeleteIpv6sDetails.

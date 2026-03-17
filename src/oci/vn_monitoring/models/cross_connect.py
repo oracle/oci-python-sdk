@@ -29,8 +29,8 @@ class CrossConnect(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a CrossConnect.
@@ -138,7 +138,7 @@ class CrossConnect(object):
         Gets the compartment_id of this CrossConnect.
         The `OCID`__ of the compartment containing the cross-connect group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CrossConnect.
@@ -152,7 +152,7 @@ class CrossConnect(object):
         Sets the compartment_id of this CrossConnect.
         The `OCID`__ of the compartment containing the cross-connect group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CrossConnect.
@@ -166,7 +166,7 @@ class CrossConnect(object):
         Gets the cross_connect_group_id of this CrossConnect.
         The `OCID`__ of the cross-connect group this cross-connect belongs to (if any).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_group_id of this CrossConnect.
@@ -180,7 +180,7 @@ class CrossConnect(object):
         Sets the cross_connect_group_id of this CrossConnect.
         The `OCID`__ of the cross-connect group this cross-connect belongs to (if any).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_group_id: The cross_connect_group_id of this CrossConnect.

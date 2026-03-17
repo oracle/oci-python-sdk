@@ -16,7 +16,7 @@ class PrivateEndpointSummary(object):
     talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     def __init__(self, **kwargs):
@@ -180,7 +180,7 @@ class PrivateEndpointSummary(object):
         **[Required]** Gets the created_by of this PrivateEndpointSummary.
         The `OCID`__ of the user who created the Private Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this PrivateEndpointSummary.
@@ -194,7 +194,7 @@ class PrivateEndpointSummary(object):
         Sets the created_by of this PrivateEndpointSummary.
         The `OCID`__ of the user who created the Private Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this PrivateEndpointSummary.

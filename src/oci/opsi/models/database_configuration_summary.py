@@ -195,7 +195,7 @@ class DatabaseConfigurationSummary(object):
         **[Required]** Gets the database_insight_id of this DatabaseConfigurationSummary.
         The `OCID`__ of the database insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_insight_id of this DatabaseConfigurationSummary.
@@ -209,7 +209,7 @@ class DatabaseConfigurationSummary(object):
         Sets the database_insight_id of this DatabaseConfigurationSummary.
         The `OCID`__ of the database insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_insight_id: The database_insight_id of this DatabaseConfigurationSummary.
@@ -253,7 +253,7 @@ class DatabaseConfigurationSummary(object):
         **[Required]** Gets the compartment_id of this DatabaseConfigurationSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DatabaseConfigurationSummary.
@@ -267,7 +267,7 @@ class DatabaseConfigurationSummary(object):
         Sets the compartment_id of this DatabaseConfigurationSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DatabaseConfigurationSummary.

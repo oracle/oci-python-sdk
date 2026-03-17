@@ -62,7 +62,7 @@ class ApproveDeploymentDetails(object):
         **[Required]** Gets the deploy_stage_id of this ApproveDeploymentDetails.
         The `OCID`__ of the stage which is marked for approval.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The deploy_stage_id of this ApproveDeploymentDetails.
@@ -76,7 +76,7 @@ class ApproveDeploymentDetails(object):
         Sets the deploy_stage_id of this ApproveDeploymentDetails.
         The `OCID`__ of the stage which is marked for approval.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param deploy_stage_id: The deploy_stage_id of this ApproveDeploymentDetails.

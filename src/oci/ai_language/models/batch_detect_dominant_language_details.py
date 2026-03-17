@@ -178,7 +178,7 @@ class BatchDetectDominantLanguageDetails(object):
         Gets the compartment_id of this BatchDetectDominantLanguageDetails.
         The `OCID`__ of the compartment that calls the API, inference will be served from pre trained model
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this BatchDetectDominantLanguageDetails.
@@ -192,7 +192,7 @@ class BatchDetectDominantLanguageDetails(object):
         Sets the compartment_id of this BatchDetectDominantLanguageDetails.
         The `OCID`__ of the compartment that calls the API, inference will be served from pre trained model
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this BatchDetectDominantLanguageDetails.

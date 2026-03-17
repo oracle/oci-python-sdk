@@ -73,7 +73,7 @@ class FailoverDbSystemDetails(object):
         The `OCID`__ of the database instance node. This parameter is optional.
         If not set, an existing database instance node will be chosen based on availability.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_instance_id of this FailoverDbSystemDetails.
@@ -88,7 +88,7 @@ class FailoverDbSystemDetails(object):
         The `OCID`__ of the database instance node. This parameter is optional.
         If not set, an existing database instance node will be chosen based on availability.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_instance_id: The db_instance_id of this FailoverDbSystemDetails.

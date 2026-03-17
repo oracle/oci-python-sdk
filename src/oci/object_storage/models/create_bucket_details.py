@@ -16,7 +16,7 @@ class CreateBucketDetails(object):
     talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the public_access_type property of a CreateBucketDetails.
@@ -298,7 +298,7 @@ class CreateBucketDetails(object):
         set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
         about events, see `Overview of Events`__.
 
-        __ https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm
 
 
         :return: The object_events_enabled of this CreateBucketDetails.
@@ -314,7 +314,7 @@ class CreateBucketDetails(object):
         set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
         about events, see `Overview of Events`__.
 
-        __ https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm
 
 
         :param object_events_enabled: The object_events_enabled of this CreateBucketDetails.
@@ -330,7 +330,7 @@ class CreateBucketDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateBucketDetails.
@@ -346,7 +346,7 @@ class CreateBucketDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateBucketDetails.
@@ -362,7 +362,7 @@ class CreateBucketDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateBucketDetails.
@@ -378,7 +378,7 @@ class CreateBucketDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateBucketDetails.
@@ -393,7 +393,7 @@ class CreateBucketDetails(object):
         The `OCID`__ of a master encryption key used to call the Key
         Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this CreateBucketDetails.
@@ -408,7 +408,7 @@ class CreateBucketDetails(object):
         The `OCID`__ of a master encryption key used to call the Key
         Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this CreateBucketDetails.

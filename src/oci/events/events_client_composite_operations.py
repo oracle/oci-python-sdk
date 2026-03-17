@@ -75,7 +75,7 @@ class EventsClientCompositeOperations(object):
         :param str rule_id: (required)
             The `OCID`__ of this rule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.events.models.Rule.lifecycle_state`
@@ -136,7 +136,7 @@ class EventsClientCompositeOperations(object):
         :param str rule_id: (required)
             The `OCID`__ of this rule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.events.models.UpdateRuleDetails update_rule_details: (required)
             The new rule spec to apply

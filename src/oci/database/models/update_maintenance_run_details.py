@@ -190,7 +190,7 @@ class UpdateMaintenanceRunDetails(object):
         Gets the patch_id of this UpdateMaintenanceRunDetails.
         The `OCID`__ of the patch to be applied in the maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The patch_id of this UpdateMaintenanceRunDetails.
@@ -204,7 +204,7 @@ class UpdateMaintenanceRunDetails(object):
         Sets the patch_id of this UpdateMaintenanceRunDetails.
         The `OCID`__ of the patch to be applied in the maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param patch_id: The patch_id of this UpdateMaintenanceRunDetails.
@@ -220,7 +220,7 @@ class UpdateMaintenanceRunDetails(object):
 
         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
 
-        __ https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
         Allowed values for this property are: "ROLLING", "NONROLLING"
 
@@ -238,7 +238,7 @@ class UpdateMaintenanceRunDetails(object):
 
         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
 
-        __ https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
 
         :param patching_mode: The patching_mode of this UpdateMaintenanceRunDetails.

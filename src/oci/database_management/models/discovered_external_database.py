@@ -236,7 +236,7 @@ class DiscoveredExternalDatabase(DiscoveredExternalDbSystemComponent):
         **[Required]** Gets the compartment_id of this DiscoveredExternalDatabase.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DiscoveredExternalDatabase.
@@ -250,7 +250,7 @@ class DiscoveredExternalDatabase(DiscoveredExternalDbSystemComponent):
         Sets the compartment_id of this DiscoveredExternalDatabase.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DiscoveredExternalDatabase.

@@ -70,7 +70,7 @@ class UpdateComputeCapacityReservationDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateComputeCapacityReservationDetails.
@@ -87,7 +87,7 @@ class UpdateComputeCapacityReservationDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateComputeCapacityReservationDetails.
@@ -130,7 +130,7 @@ class UpdateComputeCapacityReservationDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateComputeCapacityReservationDetails.
@@ -147,7 +147,7 @@ class UpdateComputeCapacityReservationDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateComputeCapacityReservationDetails.
@@ -162,7 +162,7 @@ class UpdateComputeCapacityReservationDetails(object):
         Whether this capacity reservation is the default.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :return: The is_default_reservation of this UpdateComputeCapacityReservationDetails.
@@ -177,7 +177,7 @@ class UpdateComputeCapacityReservationDetails(object):
         Whether this capacity reservation is the default.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :param is_default_reservation: The is_default_reservation of this UpdateComputeCapacityReservationDetails.

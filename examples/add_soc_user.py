@@ -107,7 +107,7 @@ if __name__ == "__main__":
     parser.add_argument("-u", "--username", action="store", help="specify the username to add.")
     parser.add_argument("-g", "--groupname", action="store", default="soc",
                         help="Specify the group name to add this SOC user to. Defaults to 'SOC'.")
-    parser.add_argument("-f", "--certpath", action="store", type=str, help="Specify absolute path to the public key file in PEM format, See - https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How")
+    parser.add_argument("-f", "--certpath", action="store", type=str, help="Specify absolute path to the public key file in PEM format, See - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#How")
     args = parser.parse_args()
     if args.debug is not None:
         debug = args.debug

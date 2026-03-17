@@ -149,8 +149,8 @@ class SummarizeMetricsDataDetails(object):
 
         Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \\\"<var>&lt;instance_OCID&gt;</var>\\\"}.max()`
 
-        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this SummarizeMetricsDataDetails.
@@ -180,8 +180,8 @@ class SummarizeMetricsDataDetails(object):
 
         Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \\\"<var>&lt;instance_OCID&gt;</var>\\\"}.max()`
 
-        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this SummarizeMetricsDataDetails.

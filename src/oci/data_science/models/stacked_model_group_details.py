@@ -56,7 +56,7 @@ class StackedModelGroupDetails(ModelGroupDetails):
         **[Required]** Gets the base_model_id of this StackedModelGroupDetails.
         The `OCID`__ of the model in the group that represents the base model for stacked deployment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The base_model_id of this StackedModelGroupDetails.
@@ -70,7 +70,7 @@ class StackedModelGroupDetails(ModelGroupDetails):
         Sets the base_model_id of this StackedModelGroupDetails.
         The `OCID`__ of the model in the group that represents the base model for stacked deployment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param base_model_id: The base_model_id of this StackedModelGroupDetails.

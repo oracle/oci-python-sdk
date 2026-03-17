@@ -46,7 +46,7 @@ class ManagedInstanceDetails(object):
         **[Required]** Gets the id of this ManagedInstanceDetails.
         The `OCID`__ of the managed instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceDetails.
@@ -60,7 +60,7 @@ class ManagedInstanceDetails(object):
         Sets the id of this ManagedInstanceDetails.
         The `OCID`__ of the managed instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceDetails.

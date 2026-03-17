@@ -221,7 +221,7 @@ class MountTargetSummary(object):
         **[Required]** Gets the compartment_id of this MountTargetSummary.
         The `OCID`__ of the compartment that contains the mount target.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MountTargetSummary.
@@ -235,7 +235,7 @@ class MountTargetSummary(object):
         Sets the compartment_id of this MountTargetSummary.
         The `OCID`__ of the compartment that contains the mount target.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MountTargetSummary.
@@ -281,7 +281,7 @@ class MountTargetSummary(object):
         systems will be exported using Network File System (NFS) protocol on
         this mount target.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_set_id of this MountTargetSummary.
@@ -297,7 +297,7 @@ class MountTargetSummary(object):
         systems will be exported using Network File System (NFS) protocol on
         this mount target.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param export_set_id: The export_set_id of this MountTargetSummary.
@@ -311,7 +311,7 @@ class MountTargetSummary(object):
         **[Required]** Gets the id of this MountTargetSummary.
         The `OCID`__ of the mount target.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MountTargetSummary.
@@ -325,7 +325,7 @@ class MountTargetSummary(object):
         Sets the id of this MountTargetSummary.
         The `OCID`__ of the mount target.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MountTargetSummary.
@@ -393,7 +393,7 @@ class MountTargetSummary(object):
         **[Required]** Gets the subnet_id of this MountTargetSummary.
         The `OCID`__ of the subnet the mount target is in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this MountTargetSummary.
@@ -407,7 +407,7 @@ class MountTargetSummary(object):
         Sets the subnet_id of this MountTargetSummary.
         The `OCID`__ of the subnet the mount target is in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this MountTargetSummary.
@@ -424,8 +424,8 @@ class MountTargetSummary(object):
         Setting this to an empty array after the list is created removes the mount target from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this MountTargetSummary.
@@ -442,8 +442,8 @@ class MountTargetSummary(object):
         Setting this to an empty array after the list is created removes the mount target from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this MountTargetSummary.
@@ -638,7 +638,7 @@ class MountTargetSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this MountTargetSummary.
@@ -655,7 +655,7 @@ class MountTargetSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this MountTargetSummary.
@@ -671,7 +671,7 @@ class MountTargetSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this MountTargetSummary.
@@ -687,7 +687,7 @@ class MountTargetSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this MountTargetSummary.
@@ -731,8 +731,8 @@ class MountTargetSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this MountTargetSummary.
@@ -750,8 +750,8 @@ class MountTargetSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this MountTargetSummary.

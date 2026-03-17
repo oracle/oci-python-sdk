@@ -485,7 +485,7 @@ class ConnectionSummary(object):
         The `OCID`__ of the connection being
         referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ConnectionSummary.
@@ -500,7 +500,7 @@ class ConnectionSummary(object):
         The `OCID`__ of the connection being
         referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ConnectionSummary.
@@ -562,7 +562,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the compartment_id of this ConnectionSummary.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ConnectionSummary.
@@ -576,7 +576,7 @@ class ConnectionSummary(object):
         Sets the compartment_id of this ConnectionSummary.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ConnectionSummary.
@@ -652,7 +652,7 @@ class ConnectionSummary(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ConnectionSummary.
@@ -670,7 +670,7 @@ class ConnectionSummary(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ConnectionSummary.
@@ -898,7 +898,7 @@ class ConnectionSummary(object):
         Gets the subnet_id of this ConnectionSummary.
         The `OCID`__ of the target subnet of the dedicated connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this ConnectionSummary.
@@ -912,7 +912,7 @@ class ConnectionSummary(object):
         Sets the subnet_id of this ConnectionSummary.
         The `OCID`__ of the target subnet of the dedicated connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this ConnectionSummary.
@@ -1010,7 +1010,7 @@ class ConnectionSummary(object):
         Gets the subscription_id of this ConnectionSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ConnectionSummary.
@@ -1024,7 +1024,7 @@ class ConnectionSummary(object):
         Sets the subscription_id of this ConnectionSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ConnectionSummary.
@@ -1069,7 +1069,7 @@ class ConnectionSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this ConnectionSummary.
@@ -1086,7 +1086,7 @@ class ConnectionSummary(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this ConnectionSummary.

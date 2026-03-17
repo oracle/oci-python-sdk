@@ -151,7 +151,7 @@ class KafkaClusterSummary(object):
         **[Required]** Gets the id of this KafkaClusterSummary.
         The `OCID`__ of the KafkaCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this KafkaClusterSummary.
@@ -165,7 +165,7 @@ class KafkaClusterSummary(object):
         Sets the id of this KafkaClusterSummary.
         The `OCID`__ of the KafkaCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this KafkaClusterSummary.
@@ -203,7 +203,7 @@ class KafkaClusterSummary(object):
         **[Required]** Gets the compartment_id of this KafkaClusterSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this KafkaClusterSummary.
@@ -217,7 +217,7 @@ class KafkaClusterSummary(object):
         Sets the compartment_id of this KafkaClusterSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this KafkaClusterSummary.
@@ -441,7 +441,7 @@ class KafkaClusterSummary(object):
         **[Required]** Gets the cluster_config_id of this KafkaClusterSummary.
         The `OCID`__ of Kafka Cluster configuration object
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_config_id of this KafkaClusterSummary.
@@ -455,7 +455,7 @@ class KafkaClusterSummary(object):
         Sets the cluster_config_id of this KafkaClusterSummary.
         The `OCID`__ of Kafka Cluster configuration object
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_config_id: The cluster_config_id of this KafkaClusterSummary.
@@ -520,7 +520,7 @@ class KafkaClusterSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this KafkaClusterSummary.
@@ -537,7 +537,7 @@ class KafkaClusterSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this KafkaClusterSummary.
@@ -554,7 +554,7 @@ class KafkaClusterSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this KafkaClusterSummary.
@@ -571,7 +571,7 @@ class KafkaClusterSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this KafkaClusterSummary.

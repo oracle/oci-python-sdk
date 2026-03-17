@@ -78,7 +78,7 @@ class ResourceAnalyticsInstanceOacAttachmentDetails(object):
         **[Required]** Gets the idcs_domain_id of this ResourceAnalyticsInstanceOacAttachmentDetails.
         IDCS domain `OCID`__ identifying a stripe and service administrator user.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The idcs_domain_id of this ResourceAnalyticsInstanceOacAttachmentDetails.
@@ -92,7 +92,7 @@ class ResourceAnalyticsInstanceOacAttachmentDetails(object):
         Sets the idcs_domain_id of this ResourceAnalyticsInstanceOacAttachmentDetails.
         IDCS domain `OCID`__ identifying a stripe and service administrator user.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param idcs_domain_id: The idcs_domain_id of this ResourceAnalyticsInstanceOacAttachmentDetails.

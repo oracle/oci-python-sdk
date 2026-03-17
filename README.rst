@@ -120,7 +120,7 @@ Known Issues
 You can find information on any known issues with the SDK `here`__ and under the “Issues” tab of this
 project's `GitHub repository`__.
 
-__ https://docs.oracle.com/iaas/Content/knownissues.htm
+__ https://docs.cloud.oracle.com/Content/knownissues.htm
 __ https://github.com/oracle/oci-python-sdk
 
 =======

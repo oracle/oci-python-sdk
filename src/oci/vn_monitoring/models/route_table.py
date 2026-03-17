@@ -20,8 +20,8 @@ class RouteTable(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a RouteTable.
@@ -121,7 +121,7 @@ class RouteTable(object):
         **[Required]** Gets the compartment_id of this RouteTable.
         The `OCID`__ of the compartment containing the route table.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RouteTable.
@@ -135,7 +135,7 @@ class RouteTable(object):
         Sets the compartment_id of this RouteTable.
         The `OCID`__ of the compartment containing the route table.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RouteTable.
@@ -227,7 +227,7 @@ class RouteTable(object):
         **[Required]** Gets the id of this RouteTable.
         The route table's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this RouteTable.
@@ -241,7 +241,7 @@ class RouteTable(object):
         Sets the id of this RouteTable.
         The route table's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this RouteTable.
@@ -342,7 +342,7 @@ class RouteTable(object):
         **[Required]** Gets the vcn_id of this RouteTable.
         The `OCID`__ of the VCN the route table list belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this RouteTable.
@@ -356,7 +356,7 @@ class RouteTable(object):
         Sets the vcn_id of this RouteTable.
         The `OCID`__ of the VCN the route table list belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this RouteTable.

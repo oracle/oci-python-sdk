@@ -1321,7 +1321,7 @@ class AutonomousDwDatabase(object):
         **[Required]** Gets the id of this AutonomousDwDatabase.
         The `OCID`__ of the Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousDwDatabase.
@@ -1335,7 +1335,7 @@ class AutonomousDwDatabase(object):
         Sets the id of this AutonomousDwDatabase.
         The `OCID`__ of the Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousDwDatabase.
@@ -1349,7 +1349,7 @@ class AutonomousDwDatabase(object):
         **[Required]** Gets the compartment_id of this AutonomousDwDatabase.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutonomousDwDatabase.
@@ -1363,7 +1363,7 @@ class AutonomousDwDatabase(object):
         Sets the compartment_id of this AutonomousDwDatabase.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutonomousDwDatabase.
@@ -1377,7 +1377,7 @@ class AutonomousDwDatabase(object):
         Gets the subscription_id of this AutonomousDwDatabase.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this AutonomousDwDatabase.
@@ -1391,7 +1391,7 @@ class AutonomousDwDatabase(object):
         Sets the subscription_id of this AutonomousDwDatabase.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this AutonomousDwDatabase.
@@ -1484,8 +1484,8 @@ class AutonomousDwDatabase(object):
         Gets the vault_id of this AutonomousDwDatabase.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this AutonomousDwDatabase.
@@ -1499,8 +1499,8 @@ class AutonomousDwDatabase(object):
         Sets the vault_id of this AutonomousDwDatabase.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this AutonomousDwDatabase.
@@ -1801,7 +1801,7 @@ class AutonomousDwDatabase(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this AutonomousDwDatabase.
@@ -1816,7 +1816,7 @@ class AutonomousDwDatabase(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this AutonomousDwDatabase.
@@ -2368,7 +2368,7 @@ class AutonomousDwDatabase(object):
         Gets the autonomous_container_database_id of this AutonomousDwDatabase.
         The Autonomous Container Database `OCID`__. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_container_database_id of this AutonomousDwDatabase.
@@ -2382,7 +2382,7 @@ class AutonomousDwDatabase(object):
         Sets the autonomous_container_database_id of this AutonomousDwDatabase.
         The Autonomous Container Database `OCID`__. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_container_database_id: The autonomous_container_database_id of this AutonomousDwDatabase.
@@ -2774,7 +2774,7 @@ class AutonomousDwDatabase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AutonomousDwDatabase.
@@ -2791,7 +2791,7 @@ class AutonomousDwDatabase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AutonomousDwDatabase.
@@ -2806,7 +2806,7 @@ class AutonomousDwDatabase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AutonomousDwDatabase.
@@ -2821,7 +2821,7 @@ class AutonomousDwDatabase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AutonomousDwDatabase.
@@ -2837,7 +2837,7 @@ class AutonomousDwDatabase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this AutonomousDwDatabase.
@@ -2853,7 +2853,7 @@ class AutonomousDwDatabase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this AutonomousDwDatabase.
@@ -2876,7 +2876,7 @@ class AutonomousDwDatabase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this AutonomousDwDatabase.
@@ -2899,7 +2899,7 @@ class AutonomousDwDatabase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this AutonomousDwDatabase.
@@ -2915,8 +2915,8 @@ class AutonomousDwDatabase(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this AutonomousDwDatabase.
@@ -2932,8 +2932,8 @@ class AutonomousDwDatabase(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this AutonomousDwDatabase.
@@ -3764,7 +3764,7 @@ class AutonomousDwDatabase(object):
         Gets the source_id of this AutonomousDwDatabase.
         The `OCID`__ of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this AutonomousDwDatabase.
@@ -3778,7 +3778,7 @@ class AutonomousDwDatabase(object):
         Sets the source_id of this AutonomousDwDatabase.
         The `OCID`__ of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this AutonomousDwDatabase.
@@ -4070,7 +4070,7 @@ class AutonomousDwDatabase(object):
         Gets the key_store_id of this AutonomousDwDatabase.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this AutonomousDwDatabase.
@@ -4084,7 +4084,7 @@ class AutonomousDwDatabase(object):
         Sets the key_store_id of this AutonomousDwDatabase.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this AutonomousDwDatabase.
@@ -4417,7 +4417,7 @@ class AutonomousDwDatabase(object):
         Gets the resource_pool_leader_id of this AutonomousDwDatabase.
         The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_pool_leader_id of this AutonomousDwDatabase.
@@ -4431,7 +4431,7 @@ class AutonomousDwDatabase(object):
         Sets the resource_pool_leader_id of this AutonomousDwDatabase.
         The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param resource_pool_leader_id: The resource_pool_leader_id of this AutonomousDwDatabase.
@@ -4931,7 +4931,7 @@ class AutonomousDwDatabase(object):
         Gets the cluster_placement_group_id of this AutonomousDwDatabase.
         The `OCID`__ of the cluster placement group of the Autonomous Serverless Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this AutonomousDwDatabase.
@@ -4945,7 +4945,7 @@ class AutonomousDwDatabase(object):
         Sets the cluster_placement_group_id of this AutonomousDwDatabase.
         The `OCID`__ of the cluster placement group of the Autonomous Serverless Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this AutonomousDwDatabase.
@@ -5040,7 +5040,7 @@ class AutonomousDwDatabase(object):
         Gets the local_adg_resource_pool_leader_id of this AutonomousDwDatabase.
         The `OCID`__ of the dedicated resource pool leader Autonomous AI Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The local_adg_resource_pool_leader_id of this AutonomousDwDatabase.
@@ -5054,7 +5054,7 @@ class AutonomousDwDatabase(object):
         Sets the local_adg_resource_pool_leader_id of this AutonomousDwDatabase.
         The `OCID`__ of the dedicated resource pool leader Autonomous AI Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param local_adg_resource_pool_leader_id: The local_adg_resource_pool_leader_id of this AutonomousDwDatabase.

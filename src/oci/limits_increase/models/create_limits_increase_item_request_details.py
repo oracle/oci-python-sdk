@@ -16,7 +16,7 @@ class CreateLimitsIncreaseItemRequestDetails(object):
     For more information, see
     `Creating a Limit Increase Request`__.
 
-    __ https://docs.oracle.com/iaas/Content/General/service-limits/create-requests.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/create-requests.htm
     """
 
     def __init__(self, **kwargs):

@@ -132,7 +132,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.AddHeatWaveClusterDetails add_heat_wave_cluster_details: (required)
             Request to add a HeatWave cluster.
@@ -375,7 +375,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -492,7 +492,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -609,7 +609,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.GenerateDbSystemStatusDetails generate_db_system_status_details: (required)
             The parameters for selecting the attributes to collect the status of.
@@ -734,7 +734,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -854,7 +854,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -973,7 +973,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -1082,7 +1082,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -1201,7 +1201,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -1311,7 +1311,7 @@ class DbSystemClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -1326,7 +1326,7 @@ class DbSystemClient(object):
         :param str db_system_id: (optional)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only the resource matching the given display name exactly.
@@ -1362,14 +1362,14 @@ class DbSystemClient(object):
             The maximum number of items to return in a paginated list call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` or `opc-prev-page` response header from
             the previous list call. For information about pagination, see `List
             Pagination`__.
 
-            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1519,7 +1519,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -1551,14 +1551,14 @@ class DbSystemClient(object):
             The maximum number of items to return in a paginated list call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` or `opc-prev-page` response header from
             the previous list call. For information about pagination, see `List
             Pagination`__.
 
-            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
@@ -1732,7 +1732,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.RestartDbSystemDetails restart_db_system_details: (required)
             Optional parameters for the stop portion of the restart action.
@@ -1864,7 +1864,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -1991,7 +1991,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -2118,7 +2118,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -2247,7 +2247,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.StopDbSystemDetails stop_db_system_details: (required)
             Optional parameters for the stop action.
@@ -2379,7 +2379,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -2513,7 +2513,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update a DB System.
@@ -2634,7 +2634,7 @@ class DbSystemClient(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.UpdateHeatWaveClusterDetails update_heat_wave_cluster_details: (required)
             Request to update a HeatWave cluster.

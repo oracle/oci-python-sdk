@@ -170,7 +170,7 @@ class ExternalDbSystem(object):
         **[Required]** Gets the id of this ExternalDbSystem.
         The `OCID`__ of the external DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExternalDbSystem.
@@ -184,7 +184,7 @@ class ExternalDbSystem(object):
         Sets the id of this ExternalDbSystem.
         The `OCID`__ of the external DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExternalDbSystem.
@@ -222,7 +222,7 @@ class ExternalDbSystem(object):
         **[Required]** Gets the compartment_id of this ExternalDbSystem.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExternalDbSystem.
@@ -236,7 +236,7 @@ class ExternalDbSystem(object):
         Sets the compartment_id of this ExternalDbSystem.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExternalDbSystem.
@@ -250,7 +250,7 @@ class ExternalDbSystem(object):
         Gets the db_system_discovery_id of this ExternalDbSystem.
         The `OCID`__ of the DB system discovery.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_discovery_id of this ExternalDbSystem.
@@ -264,7 +264,7 @@ class ExternalDbSystem(object):
         Sets the db_system_discovery_id of this ExternalDbSystem.
         The `OCID`__ of the DB system discovery.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_discovery_id: The db_system_discovery_id of this ExternalDbSystem.
@@ -278,7 +278,7 @@ class ExternalDbSystem(object):
         Gets the discovery_agent_id of this ExternalDbSystem.
         The `OCID`__ of the management agent used during the discovery of the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The discovery_agent_id of this ExternalDbSystem.
@@ -292,7 +292,7 @@ class ExternalDbSystem(object):
         Sets the discovery_agent_id of this ExternalDbSystem.
         The `OCID`__ of the management agent used during the discovery of the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param discovery_agent_id: The discovery_agent_id of this ExternalDbSystem.
@@ -500,7 +500,7 @@ class ExternalDbSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExternalDbSystem.
@@ -516,7 +516,7 @@ class ExternalDbSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExternalDbSystem.
@@ -532,7 +532,7 @@ class ExternalDbSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExternalDbSystem.
@@ -548,7 +548,7 @@ class ExternalDbSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExternalDbSystem.
@@ -566,7 +566,7 @@ class ExternalDbSystem(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExternalDbSystem.
@@ -584,7 +584,7 @@ class ExternalDbSystem(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExternalDbSystem.

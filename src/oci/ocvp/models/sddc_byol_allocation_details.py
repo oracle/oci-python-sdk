@@ -46,7 +46,7 @@ class SddcByolAllocationDetails(object):
         Gets the load_balancer_byol_allocation_id of this SddcByolAllocationDetails.
         The `OCID`__ of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_byol_allocation_id of this SddcByolAllocationDetails.
@@ -60,7 +60,7 @@ class SddcByolAllocationDetails(object):
         Sets the load_balancer_byol_allocation_id of this SddcByolAllocationDetails.
         The `OCID`__ of the VMware BYOL Allocation used to deploy VMware Avi Load Balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_byol_allocation_id: The load_balancer_byol_allocation_id of this SddcByolAllocationDetails.

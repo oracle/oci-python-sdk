@@ -56,7 +56,7 @@ class NetworkLoadBalancerListenerEndpoint(Endpoint):
         **[Required]** Gets the listener_id of this NetworkLoadBalancerListenerEndpoint.
         The `OCID`__ of the network load balancer listener.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The listener_id of this NetworkLoadBalancerListenerEndpoint.
@@ -70,7 +70,7 @@ class NetworkLoadBalancerListenerEndpoint(Endpoint):
         Sets the listener_id of this NetworkLoadBalancerListenerEndpoint.
         The `OCID`__ of the network load balancer listener.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param listener_id: The listener_id of this NetworkLoadBalancerListenerEndpoint.
@@ -84,7 +84,7 @@ class NetworkLoadBalancerListenerEndpoint(Endpoint):
         **[Required]** Gets the network_load_balancer_id of this NetworkLoadBalancerListenerEndpoint.
         The `OCID`__ of the listener's network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_load_balancer_id of this NetworkLoadBalancerListenerEndpoint.
@@ -98,7 +98,7 @@ class NetworkLoadBalancerListenerEndpoint(Endpoint):
         Sets the network_load_balancer_id of this NetworkLoadBalancerListenerEndpoint.
         The `OCID`__ of the listener's network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param network_load_balancer_id: The network_load_balancer_id of this NetworkLoadBalancerListenerEndpoint.

@@ -15,7 +15,7 @@ class NetworkConfiguration(object):
     The network configurations used by Cluster, including
     `OCIDs`__ of the management subnet and VLANs.
 
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -113,7 +113,7 @@ class NetworkConfiguration(object):
         The `OCID`__ of the management subnet used
         to provision the Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The provisioning_subnet_id of this NetworkConfiguration.
@@ -128,7 +128,7 @@ class NetworkConfiguration(object):
         The `OCID`__ of the management subnet used
         to provision the Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param provisioning_subnet_id: The provisioning_subnet_id of this NetworkConfiguration.
@@ -155,7 +155,7 @@ class NetworkConfiguration(object):
         should use :func:`update_sddc` to update the Cluster's
         `vsphereVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vsphere_vlan_id of this NetworkConfiguration.
@@ -182,7 +182,7 @@ class NetworkConfiguration(object):
         should use :func:`update_sddc` to update the Cluster's
         `vsphereVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vsphere_vlan_id: The vsphere_vlan_id of this NetworkConfiguration.
@@ -208,7 +208,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `vmotionVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vmotion_vlan_id of this NetworkConfiguration.
@@ -234,7 +234,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `vmotionVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vmotion_vlan_id: The vmotion_vlan_id of this NetworkConfiguration.
@@ -260,7 +260,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `vsanVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vsan_vlan_id of this NetworkConfiguration.
@@ -286,7 +286,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `vsanVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vsan_vlan_id: The vsan_vlan_id of this NetworkConfiguration.
@@ -312,7 +312,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxVTepVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsx_v_tep_vlan_id of this NetworkConfiguration.
@@ -338,7 +338,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxVTepVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsx_v_tep_vlan_id: The nsx_v_tep_vlan_id of this NetworkConfiguration.
@@ -364,7 +364,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxEdgeVTepVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsx_edge_v_tep_vlan_id of this NetworkConfiguration.
@@ -390,7 +390,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxEdgeVTepVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsx_edge_v_tep_vlan_id: The nsx_edge_v_tep_vlan_id of this NetworkConfiguration.
@@ -417,7 +417,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsx_edge_uplink1_vlan_id of this NetworkConfiguration.
@@ -444,7 +444,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsx_edge_uplink1_vlan_id: The nsx_edge_uplink1_vlan_id of this NetworkConfiguration.
@@ -471,7 +471,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsx_edge_uplink2_vlan_id of this NetworkConfiguration.
@@ -498,7 +498,7 @@ class NetworkConfiguration(object):
         should use :func:`update_cluster` to update the Cluster's
         `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsx_edge_uplink2_vlan_id: The nsx_edge_uplink2_vlan_id of this NetworkConfiguration.
@@ -513,7 +513,7 @@ class NetworkConfiguration(object):
         The `OCID`__ of the VLAN used by the Cluster
         for the vSphere Replication component of the VMware environment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The replication_vlan_id of this NetworkConfiguration.
@@ -528,7 +528,7 @@ class NetworkConfiguration(object):
         The `OCID`__ of the VLAN used by the Cluster
         for the vSphere Replication component of the VMware environment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param replication_vlan_id: The replication_vlan_id of this NetworkConfiguration.
@@ -543,7 +543,7 @@ class NetworkConfiguration(object):
         The `OCID`__ of the VLAN used by the Cluster
         for the Provisioning component of the VMware environment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The provisioning_vlan_id of this NetworkConfiguration.
@@ -558,7 +558,7 @@ class NetworkConfiguration(object):
         The `OCID`__ of the VLAN used by the Cluster
         for the Provisioning component of the VMware environment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param provisioning_vlan_id: The provisioning_vlan_id of this NetworkConfiguration.
@@ -585,7 +585,7 @@ class NetworkConfiguration(object):
         should use :func:`update_sddc` to update the SDDC's
         `hcxVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The hcx_vlan_id of this NetworkConfiguration.
@@ -612,7 +612,7 @@ class NetworkConfiguration(object):
         should use :func:`update_sddc` to update the SDDC's
         `hcxVlanId` with that new VLAN's OCID.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param hcx_vlan_id: The hcx_vlan_id of this NetworkConfiguration.

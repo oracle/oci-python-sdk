@@ -164,7 +164,7 @@ class ExternalAsmServicedDatabase(object):
         **[Required]** Gets the id of this ExternalAsmServicedDatabase.
         The `OCID`__ of the external database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExternalAsmServicedDatabase.
@@ -178,7 +178,7 @@ class ExternalAsmServicedDatabase(object):
         Sets the id of this ExternalAsmServicedDatabase.
         The `OCID`__ of the external database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExternalAsmServicedDatabase.
@@ -240,7 +240,7 @@ class ExternalAsmServicedDatabase(object):
         Gets the compartment_id of this ExternalAsmServicedDatabase.
         The `OCID`__ of the compartment in which the external database resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExternalAsmServicedDatabase.
@@ -254,7 +254,7 @@ class ExternalAsmServicedDatabase(object):
         Sets the compartment_id of this ExternalAsmServicedDatabase.
         The `OCID`__ of the compartment in which the external database resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExternalAsmServicedDatabase.

@@ -604,7 +604,7 @@ class CloudVmCluster(object):
         **[Required]** Gets the id of this CloudVmCluster.
         The `OCID`__ of the cloud VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CloudVmCluster.
@@ -618,7 +618,7 @@ class CloudVmCluster(object):
         Sets the id of this CloudVmCluster.
         The `OCID`__ of the cloud VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CloudVmCluster.
@@ -632,7 +632,7 @@ class CloudVmCluster(object):
         **[Required]** Gets the compartment_id of this CloudVmCluster.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloudVmCluster.
@@ -646,7 +646,7 @@ class CloudVmCluster(object):
         Sets the compartment_id of this CloudVmCluster.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloudVmCluster.
@@ -660,7 +660,7 @@ class CloudVmCluster(object):
         Gets the subscription_id of this CloudVmCluster.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CloudVmCluster.
@@ -674,7 +674,7 @@ class CloudVmCluster(object):
         Sets the subscription_id of this CloudVmCluster.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CloudVmCluster.
@@ -719,7 +719,7 @@ class CloudVmCluster(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CloudVmCluster.
@@ -740,7 +740,7 @@ class CloudVmCluster(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CloudVmCluster.
@@ -756,7 +756,7 @@ class CloudVmCluster(object):
 
         **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this CloudVmCluster.
@@ -772,7 +772,7 @@ class CloudVmCluster(object):
 
         **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this CloudVmCluster.
@@ -788,8 +788,8 @@ class CloudVmCluster(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this CloudVmCluster.
@@ -805,8 +805,8 @@ class CloudVmCluster(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this CloudVmCluster.
@@ -820,8 +820,8 @@ class CloudVmCluster(object):
         Gets the backup_network_nsg_ids of this CloudVmCluster.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this CloudVmCluster.
@@ -835,8 +835,8 @@ class CloudVmCluster(object):
         Sets the backup_network_nsg_ids of this CloudVmCluster.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this CloudVmCluster.
@@ -850,7 +850,7 @@ class CloudVmCluster(object):
         Gets the last_update_history_entry_id of this CloudVmCluster.
         The `OCID`__ of the last maintenance update history entry. This value is updated when a maintenance update starts.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_update_history_entry_id of this CloudVmCluster.
@@ -864,7 +864,7 @@ class CloudVmCluster(object):
         Sets the last_update_history_entry_id of this CloudVmCluster.
         The `OCID`__ of the last maintenance update history entry. This value is updated when a maintenance update starts.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_update_history_entry_id: The last_update_history_entry_id of this CloudVmCluster.
@@ -1076,7 +1076,7 @@ class CloudVmCluster(object):
         Gets the time_zone of this CloudVmCluster.
         The time zone of the cloud VM cluster. For details, see `Exadata Infrastructure Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this CloudVmCluster.
@@ -1090,7 +1090,7 @@ class CloudVmCluster(object):
         Sets the time_zone of this CloudVmCluster.
         The time zone of the cloud VM cluster. For details, see `Exadata Infrastructure Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this CloudVmCluster.
@@ -1321,7 +1321,7 @@ class CloudVmCluster(object):
         The percentage assigned to DATA storage (user data and database files).
         The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
 
-        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata
 
 
         :return: The data_storage_percentage of this CloudVmCluster.
@@ -1336,7 +1336,7 @@ class CloudVmCluster(object):
         The percentage assigned to DATA storage (user data and database files).
         The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
 
-        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata
 
 
         :param data_storage_percentage: The data_storage_percentage of this CloudVmCluster.
@@ -1374,7 +1374,7 @@ class CloudVmCluster(object):
         **[Required]** Gets the cloud_exadata_infrastructure_id of this CloudVmCluster.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_exadata_infrastructure_id of this CloudVmCluster.
@@ -1388,7 +1388,7 @@ class CloudVmCluster(object):
         Sets the cloud_exadata_infrastructure_id of this CloudVmCluster.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_exadata_infrastructure_id: The cloud_exadata_infrastructure_id of this CloudVmCluster.
@@ -1566,7 +1566,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ip_ids of this CloudVmCluster.
@@ -1584,7 +1584,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ip_ids: The scan_ip_ids of this CloudVmCluster.
@@ -1602,7 +1602,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vip_ids of this CloudVmCluster.
@@ -1620,7 +1620,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vip_ids: The vip_ids of this CloudVmCluster.
@@ -1638,7 +1638,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ipv6_ids of this CloudVmCluster.
@@ -1656,7 +1656,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ipv6_ids: The scan_ipv6_ids of this CloudVmCluster.
@@ -1674,7 +1674,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vipv6_ids of this CloudVmCluster.
@@ -1692,7 +1692,7 @@ class CloudVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vipv6_ids: The vipv6_ids of this CloudVmCluster.
@@ -1706,7 +1706,7 @@ class CloudVmCluster(object):
         Gets the scan_dns_record_id of this CloudVmCluster.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_dns_record_id of this CloudVmCluster.
@@ -1720,7 +1720,7 @@ class CloudVmCluster(object):
         Sets the scan_dns_record_id of this CloudVmCluster.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_dns_record_id: The scan_dns_record_id of this CloudVmCluster.
@@ -1737,7 +1737,7 @@ class CloudVmCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CloudVmCluster.
@@ -1754,7 +1754,7 @@ class CloudVmCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CloudVmCluster.
@@ -1769,7 +1769,7 @@ class CloudVmCluster(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CloudVmCluster.
@@ -1784,7 +1784,7 @@ class CloudVmCluster(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CloudVmCluster.
@@ -1800,7 +1800,7 @@ class CloudVmCluster(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this CloudVmCluster.
@@ -1816,7 +1816,7 @@ class CloudVmCluster(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this CloudVmCluster.
@@ -1831,7 +1831,7 @@ class CloudVmCluster(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this CloudVmCluster.
@@ -1846,7 +1846,7 @@ class CloudVmCluster(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this CloudVmCluster.
@@ -1976,7 +1976,7 @@ class CloudVmCluster(object):
         Gets the gi_software_image_id of this CloudVmCluster.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The gi_software_image_id of this CloudVmCluster.
@@ -1990,7 +1990,7 @@ class CloudVmCluster(object):
         Sets the gi_software_image_id of this CloudVmCluster.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param gi_software_image_id: The gi_software_image_id of this CloudVmCluster.
@@ -2048,7 +2048,7 @@ class CloudVmCluster(object):
         Gets the exascale_db_storage_vault_id of this CloudVmCluster.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The exascale_db_storage_vault_id of this CloudVmCluster.
@@ -2062,7 +2062,7 @@ class CloudVmCluster(object):
         Sets the exascale_db_storage_vault_id of this CloudVmCluster.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param exascale_db_storage_vault_id: The exascale_db_storage_vault_id of this CloudVmCluster.

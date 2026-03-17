@@ -53,7 +53,7 @@ class CreateTaskScheduleDetails(object):
         **[Required]** Gets the fleet_id of this CreateTaskScheduleDetails.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this CreateTaskScheduleDetails.
@@ -67,7 +67,7 @@ class CreateTaskScheduleDetails(object):
         Sets the fleet_id of this CreateTaskScheduleDetails.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this CreateTaskScheduleDetails.

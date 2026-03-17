@@ -134,7 +134,7 @@ class WafClient(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.ChangeNetworkAddressListCompartmentDetails change_network_address_list_compartment_details: (required)
             The information to be updated.
@@ -252,7 +252,7 @@ class WafClient(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.ChangeWebAppFirewallCompartmentDetails change_web_app_firewall_compartment_details: (required)
             The information to be updated.
@@ -370,7 +370,7 @@ class WafClient(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.ChangeWebAppFirewallPolicyCompartmentDetails change_web_app_firewall_policy_compartment_details: (required)
             The information to be updated.
@@ -799,7 +799,7 @@ class WafClient(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -911,7 +911,7 @@ class WafClient(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -1023,7 +1023,7 @@ class WafClient(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource,
@@ -1135,7 +1135,7 @@ class WafClient(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1242,7 +1242,7 @@ class WafClient(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1349,7 +1349,7 @@ class WafClient(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1456,7 +1456,7 @@ class WafClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1563,7 +1563,7 @@ class WafClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[NetworkAddressListLifecycleState] lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycleState.
@@ -1574,7 +1574,7 @@ class WafClient(object):
         :param str id: (optional)
             A filter to return only the NetworkAddressList with the given `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1724,7 +1724,7 @@ class WafClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1903,7 +1903,7 @@ class WafClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2065,7 +2065,7 @@ class WafClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[WebAppFirewallPolicyLifecycleState] lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycleState.
@@ -2076,7 +2076,7 @@ class WafClient(object):
         :param str id: (optional)
             A filter to return only the WebAppFirewallPolicy with the given `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2226,17 +2226,17 @@ class WafClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             A filter to return only the WebAppFirewall with the given `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str web_app_firewall_policy_id: (optional)
             A filter to return only the WebAppFirewall with the given `OCID`__ of related WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[WebAppFirewallLifecycleState] lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycleState.
@@ -2394,7 +2394,7 @@ class WafClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2518,7 +2518,7 @@ class WafClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2642,12 +2642,12 @@ class WafClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str work_request_id: (optional)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2762,7 +2762,7 @@ class WafClient(object):
         :param str network_address_list_id: (required)
             The `OCID`__ of the NetworkAddressList.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.UpdateNetworkAddressListDetails update_network_address_list_details: (required)
             The information to be updated.
@@ -2879,7 +2879,7 @@ class WafClient(object):
         :param str web_app_firewall_id: (required)
             The `OCID`__ of the WebAppFirewall.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.UpdateWebAppFirewallDetails update_web_app_firewall_details: (required)
             The information to be updated.
@@ -2996,7 +2996,7 @@ class WafClient(object):
         :param str web_app_firewall_policy_id: (required)
             The `OCID`__ of the WebAppFirewallPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waf.models.UpdateWebAppFirewallPolicyDetails update_web_app_firewall_policy_details: (required)
             The information to be updated.

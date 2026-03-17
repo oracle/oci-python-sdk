@@ -306,7 +306,7 @@ class ManagementStation(object):
         **[Required]** Gets the id of this ManagementStation.
         The `OCID`__ of the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagementStation.
@@ -320,7 +320,7 @@ class ManagementStation(object):
         Sets the id of this ManagementStation.
         The `OCID`__ of the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagementStation.
@@ -334,7 +334,7 @@ class ManagementStation(object):
         Gets the managed_instance_id of this ManagementStation.
         The `OCID`__ of the instance that is acting as the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this ManagementStation.
@@ -348,7 +348,7 @@ class ManagementStation(object):
         Sets the managed_instance_id of this ManagementStation.
         The `OCID`__ of the instance that is acting as the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this ManagementStation.
@@ -362,7 +362,7 @@ class ManagementStation(object):
         **[Required]** Gets the compartment_id of this ManagementStation.
         The `OCID`__ of the compartment that contains the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagementStation.
@@ -376,7 +376,7 @@ class ManagementStation(object):
         Sets the compartment_id of this ManagementStation.
         The `OCID`__ of the compartment that contains the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagementStation.
@@ -390,7 +390,7 @@ class ManagementStation(object):
         Gets the scheduled_job_id of this ManagementStation.
         The `OCID`__ of the scheduled job for the mirror sync.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scheduled_job_id of this ManagementStation.
@@ -404,7 +404,7 @@ class ManagementStation(object):
         Sets the scheduled_job_id of this ManagementStation.
         The `OCID`__ of the scheduled job for the mirror sync.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scheduled_job_id: The scheduled_job_id of this ManagementStation.
@@ -418,7 +418,7 @@ class ManagementStation(object):
         Gets the profile_id of this ManagementStation.
         The `OCID`__ of the registration profile used for the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The profile_id of this ManagementStation.
@@ -432,7 +432,7 @@ class ManagementStation(object):
         Sets the profile_id of this ManagementStation.
         The `OCID`__ of the registration profile used for the management station.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param profile_id: The profile_id of this ManagementStation.
@@ -930,7 +930,7 @@ class ManagementStation(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ManagementStation.
@@ -946,7 +946,7 @@ class ManagementStation(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ManagementStation.
@@ -962,7 +962,7 @@ class ManagementStation(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ManagementStation.
@@ -978,7 +978,7 @@ class ManagementStation(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ManagementStation.

@@ -70,7 +70,7 @@ class GitConfigSource(ConfigSource):
         **[Required]** Gets the configuration_source_provider_id of this GitConfigSource.
         The `OCID`__ of the Git configuration source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The configuration_source_provider_id of this GitConfigSource.
@@ -84,7 +84,7 @@ class GitConfigSource(ConfigSource):
         Sets the configuration_source_provider_id of this GitConfigSource.
         The `OCID`__ of the Git configuration source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param configuration_source_provider_id: The configuration_source_provider_id of this GitConfigSource.

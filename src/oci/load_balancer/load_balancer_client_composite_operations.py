@@ -33,7 +33,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to move.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.load_balancer.models.ChangeLoadBalancerCompartmentDetails change_load_balancer_compartment_details: (required)
             The configuration details for moving a load balancer to a different compartment.
@@ -80,7 +80,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and servers.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to add the backend server to.
@@ -129,7 +129,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add a backend set.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -173,7 +173,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add the certificate bundle.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -217,7 +217,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to add the hostname to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -261,7 +261,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add a listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -344,7 +344,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to add the path route set to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -388,7 +388,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to add the routing policy rule list to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -429,7 +429,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.load_balancer.models.CreateRuleSetDetails create_rule_set_details: (required)
             The configuration details for the rule set to create.
@@ -476,7 +476,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -517,7 +517,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
@@ -576,7 +576,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to delete.
@@ -631,7 +631,7 @@ class LoadBalancerClientCompositeOperations(object):
             The `OCID`__ of the load balancer associated with the certificate bundle
             to be deleted.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str certificate_name: (required)
             The name of the certificate bundle to delete.
@@ -685,7 +685,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the hostname to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the hostname resource to delete.
@@ -739,7 +739,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to delete.
@@ -793,7 +793,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -842,7 +842,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the path route set to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str path_route_set_name: (required)
             The name of the path route set to delete.
@@ -896,7 +896,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the routing policy to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str routing_policy_name: (required)
             The name of the routing policy to delete.
@@ -950,7 +950,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str rule_set_name: (required)
             The name of the rule set to delete.
@@ -1004,7 +1004,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the SSL cipher suite to delete.
@@ -1061,7 +1061,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
@@ -1115,7 +1115,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to update.
@@ -1164,7 +1164,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the health check policy to be updated.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the health check policy to be retrieved.
@@ -1214,7 +1214,7 @@ class LoadBalancerClientCompositeOperations(object):
             The `OCID`__ of the load balancer associated with the virtual hostname
             to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the hostname resource to update.
@@ -1263,7 +1263,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to update.
@@ -1312,7 +1312,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -1353,7 +1353,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer whose shape will be updated.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.load_balancer.models.UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
             The details for updating a load balancer's shape. This contains the new, desired shape.
@@ -1400,7 +1400,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to update the NSGs for.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
@@ -1444,7 +1444,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the path route set to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str path_route_set_name: (required)
             The name of the path route set to update.
@@ -1493,7 +1493,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the routing policy to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str routing_policy_name: (required)
             The name of the routing policy to update.
@@ -1539,7 +1539,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str rule_set_name: (required)
             The name of the rule set to update.
@@ -1591,7 +1591,7 @@ class LoadBalancerClientCompositeOperations(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the SSL cipher suite to update.

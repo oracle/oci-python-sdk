@@ -90,7 +90,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         **[Required]** Gets the vmcluster_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the VM Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vmcluster_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -104,7 +104,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         Sets the vmcluster_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the VM Cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vmcluster_id: The vmcluster_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -118,7 +118,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         Gets the opsi_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -132,7 +132,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         Sets the opsi_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -146,7 +146,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         Gets the dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the Database Management private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -160,7 +160,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         Sets the dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the Database Management private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dbm_private_endpoint_id: The dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -253,7 +253,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         **[Required]** Gets the compartment_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePeComanagedExadataVmclusterDetails.
@@ -267,7 +267,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         Sets the compartment_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePeComanagedExadataVmclusterDetails.

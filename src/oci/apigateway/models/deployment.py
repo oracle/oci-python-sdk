@@ -16,7 +16,7 @@ class Deployment(object):
     For more information, see
     `API Gateway Concepts`__.
 
-    __ https://docs.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Deployment.
@@ -167,7 +167,7 @@ class Deployment(object):
         **[Required]** Gets the id of this Deployment.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Deployment.
@@ -181,7 +181,7 @@ class Deployment(object):
         Sets the id of this Deployment.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Deployment.
@@ -195,7 +195,7 @@ class Deployment(object):
         **[Required]** Gets the gateway_id of this Deployment.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this Deployment.
@@ -209,7 +209,7 @@ class Deployment(object):
         Sets the gateway_id of this Deployment.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this Deployment.
@@ -254,7 +254,7 @@ class Deployment(object):
         The `OCID`__ of the compartment in which the
         resource is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Deployment.
@@ -269,7 +269,7 @@ class Deployment(object):
         The `OCID`__ of the compartment in which the
         resource is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Deployment.
@@ -286,7 +286,7 @@ class Deployment(object):
         `Deploying an API on an API Gateway by Creating an API
         Deployment`__.
 
-        __ https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
 
 
         :return: The path_prefix of this Deployment.
@@ -303,7 +303,7 @@ class Deployment(object):
         `Deploying an API on an API Gateway by Creating an API
         Deployment`__.
 
-        __ https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm
 
 
         :param path_prefix: The path_prefix of this Deployment.
@@ -495,7 +495,7 @@ class Deployment(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Deployment.
@@ -513,7 +513,7 @@ class Deployment(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Deployment.
@@ -531,7 +531,7 @@ class Deployment(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Deployment.
@@ -549,7 +549,7 @@ class Deployment(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Deployment.

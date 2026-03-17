@@ -63,7 +63,7 @@ class FlexTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDeta
         **[Required]** Gets the compartment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the compartment that contains the flex tunnel.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
@@ -77,7 +77,7 @@ class FlexTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDeta
         Sets the compartment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the compartment that contains the flex tunnel.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
@@ -91,7 +91,7 @@ class FlexTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDeta
         **[Required]** Gets the transport_attachment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the transport drg attachment of the flex tunnel.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The transport_attachment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
@@ -105,7 +105,7 @@ class FlexTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDeta
         Sets the transport_attachment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the transport drg attachment of the flex tunnel.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param transport_attachment_id: The transport_attachment_id of this FlexTunnelDrgAttachmentNetworkCreateDetails.

@@ -101,7 +101,7 @@ class CloudAsmUserSummary(object):
         Gets the asm_id of this CloudAsmUserSummary.
         The `OCID`__ of the cloud ASM.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The asm_id of this CloudAsmUserSummary.
@@ -115,7 +115,7 @@ class CloudAsmUserSummary(object):
         Sets the asm_id of this CloudAsmUserSummary.
         The `OCID`__ of the cloud ASM.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param asm_id: The asm_id of this CloudAsmUserSummary.

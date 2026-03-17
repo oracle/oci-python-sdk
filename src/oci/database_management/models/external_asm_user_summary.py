@@ -101,7 +101,7 @@ class ExternalAsmUserSummary(object):
         Gets the asm_id of this ExternalAsmUserSummary.
         The `OCID`__ of the external ASM.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The asm_id of this ExternalAsmUserSummary.
@@ -115,7 +115,7 @@ class ExternalAsmUserSummary(object):
         Sets the asm_id of this ExternalAsmUserSummary.
         The `OCID`__ of the external ASM.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param asm_id: The asm_id of this ExternalAsmUserSummary.

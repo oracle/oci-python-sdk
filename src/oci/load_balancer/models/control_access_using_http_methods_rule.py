@@ -78,7 +78,7 @@ class ControlAccessUsingHttpMethodsRule(Rule):
         Example: [\"GET\", \"PUT\", \"POST\", \"PROPFIND\"]
 
         __ http://www.iana.org/assignments/http-methods/http-methods.xhtml
-        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm
         __ http://support.oracle.com/
 
 
@@ -106,7 +106,7 @@ class ControlAccessUsingHttpMethodsRule(Rule):
         Example: [\"GET\", \"PUT\", \"POST\", \"PROPFIND\"]
 
         __ http://www.iana.org/assignments/http-methods/http-methods.xhtml
-        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm
         __ http://support.oracle.com/
 
 

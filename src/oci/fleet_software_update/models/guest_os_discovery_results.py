@@ -50,7 +50,7 @@ class GuestOsDiscoveryResults(GuestOsFleetDiscoveryDetails):
         **[Required]** Gets the fsu_discovery_id of this GuestOsDiscoveryResults.
         The `OCID`__ of the Exadata Fleet Update Discovery.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_discovery_id of this GuestOsDiscoveryResults.
@@ -64,7 +64,7 @@ class GuestOsDiscoveryResults(GuestOsFleetDiscoveryDetails):
         Sets the fsu_discovery_id of this GuestOsDiscoveryResults.
         The `OCID`__ of the Exadata Fleet Update Discovery.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_discovery_id: The fsu_discovery_id of this GuestOsDiscoveryResults.

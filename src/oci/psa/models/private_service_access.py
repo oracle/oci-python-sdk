@@ -185,7 +185,7 @@ class PrivateServiceAccess(object):
         The `OCID`__ of the compartment that contains the
         private service access.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PrivateServiceAccess.
@@ -200,7 +200,7 @@ class PrivateServiceAccess(object):
         The `OCID`__ of the compartment that contains the
         private service access.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PrivateServiceAccess.
@@ -217,7 +217,7 @@ class PrivateServiceAccess(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this PrivateServiceAccess.
@@ -234,7 +234,7 @@ class PrivateServiceAccess(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this PrivateServiceAccess.
@@ -251,7 +251,7 @@ class PrivateServiceAccess(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this PrivateServiceAccess.
@@ -268,7 +268,7 @@ class PrivateServiceAccess(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this PrivateServiceAccess.
@@ -314,8 +314,8 @@ class PrivateServiceAccess(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this PrivateServiceAccess.
@@ -333,8 +333,8 @@ class PrivateServiceAccess(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this PrivateServiceAccess.
@@ -398,7 +398,7 @@ class PrivateServiceAccess(object):
         **[Required]** Gets the id of this PrivateServiceAccess.
         The `OCID`__ of the private service access.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PrivateServiceAccess.
@@ -412,7 +412,7 @@ class PrivateServiceAccess(object):
         Sets the id of this PrivateServiceAccess.
         The `OCID`__ of the private service access.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PrivateServiceAccess.
@@ -491,7 +491,7 @@ class PrivateServiceAccess(object):
         The `OCID`__ of the VCN that the private
         service access belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this PrivateServiceAccess.
@@ -506,7 +506,7 @@ class PrivateServiceAccess(object):
         The `OCID`__ of the VCN that the private
         service access belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this PrivateServiceAccess.
@@ -521,7 +521,7 @@ class PrivateServiceAccess(object):
         The `OCID`__ of the subnet that the private service access
         belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this PrivateServiceAccess.
@@ -536,7 +536,7 @@ class PrivateServiceAccess(object):
         The `OCID`__ of the subnet that the private service access
         belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this PrivateServiceAccess.
@@ -551,7 +551,7 @@ class PrivateServiceAccess(object):
         An `OCID`__ of the private service access's VNIC, which
         resides in the private service access's VCN .
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this PrivateServiceAccess.
@@ -566,7 +566,7 @@ class PrivateServiceAccess(object):
         An `OCID`__ of the private service access's VNIC, which
         resides in the private service access's VCN .
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this PrivateServiceAccess.

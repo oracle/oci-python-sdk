@@ -18,7 +18,7 @@ class ResourceAnalyticsInstance(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ResourceAnalyticsInstance.
@@ -159,7 +159,7 @@ class ResourceAnalyticsInstance(object):
         **[Required]** Gets the id of this ResourceAnalyticsInstance.
         The `OCID`__ of the ResourceAnalyticsInstance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ResourceAnalyticsInstance.
@@ -173,7 +173,7 @@ class ResourceAnalyticsInstance(object):
         Sets the id of this ResourceAnalyticsInstance.
         The `OCID`__ of the ResourceAnalyticsInstance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ResourceAnalyticsInstance.
@@ -211,7 +211,7 @@ class ResourceAnalyticsInstance(object):
         **[Required]** Gets the compartment_id of this ResourceAnalyticsInstance.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ResourceAnalyticsInstance.
@@ -225,7 +225,7 @@ class ResourceAnalyticsInstance(object):
         Sets the compartment_id of this ResourceAnalyticsInstance.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ResourceAnalyticsInstance.
@@ -263,7 +263,7 @@ class ResourceAnalyticsInstance(object):
         Gets the adw_id of this ResourceAnalyticsInstance.
         The `OCID`__ of the created ADW instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The adw_id of this ResourceAnalyticsInstance.
@@ -277,7 +277,7 @@ class ResourceAnalyticsInstance(object):
         Sets the adw_id of this ResourceAnalyticsInstance.
         The `OCID`__ of the created ADW instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param adw_id: The adw_id of this ResourceAnalyticsInstance.
@@ -291,7 +291,7 @@ class ResourceAnalyticsInstance(object):
         Gets the oac_id of this ResourceAnalyticsInstance.
         The `OCID`__ of the OAC enabled for the ResourceAnalyticsInstance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oac_id of this ResourceAnalyticsInstance.
@@ -305,7 +305,7 @@ class ResourceAnalyticsInstance(object):
         Sets the oac_id of this ResourceAnalyticsInstance.
         The `OCID`__ of the OAC enabled for the ResourceAnalyticsInstance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oac_id: The oac_id of this ResourceAnalyticsInstance.
@@ -440,7 +440,7 @@ class ResourceAnalyticsInstance(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ResourceAnalyticsInstance.
@@ -457,7 +457,7 @@ class ResourceAnalyticsInstance(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ResourceAnalyticsInstance.
@@ -474,7 +474,7 @@ class ResourceAnalyticsInstance(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ResourceAnalyticsInstance.
@@ -491,7 +491,7 @@ class ResourceAnalyticsInstance(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ResourceAnalyticsInstance.

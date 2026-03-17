@@ -352,7 +352,7 @@ class ManagedDatabase(object):
         **[Required]** Gets the id of this ManagedDatabase.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedDatabase.
@@ -366,7 +366,7 @@ class ManagedDatabase(object):
         Sets the id of this ManagedDatabase.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedDatabase.
@@ -380,7 +380,7 @@ class ManagedDatabase(object):
         **[Required]** Gets the compartment_id of this ManagedDatabase.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagedDatabase.
@@ -394,7 +394,7 @@ class ManagedDatabase(object):
         Sets the compartment_id of this ManagedDatabase.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagedDatabase.
@@ -609,7 +609,7 @@ class ManagedDatabase(object):
         The `OCID`__ of the parent Container Database
         if Managed Database is a Pluggable Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_container_id of this ManagedDatabase.
@@ -624,7 +624,7 @@ class ManagedDatabase(object):
         The `OCID`__ of the parent Container Database
         if Managed Database is a Pluggable Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param parent_container_id: The parent_container_id of this ManagedDatabase.
@@ -662,7 +662,7 @@ class ManagedDatabase(object):
         Gets the db_system_id of this ManagedDatabase.
         The `OCID`__ of the DB system that this Managed Database is part of.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this ManagedDatabase.
@@ -676,7 +676,7 @@ class ManagedDatabase(object):
         Sets the db_system_id of this ManagedDatabase.
         The `OCID`__ of the DB system that this Managed Database is part of.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this ManagedDatabase.
@@ -690,7 +690,7 @@ class ManagedDatabase(object):
         Gets the storage_system_id of this ManagedDatabase.
         The `OCID`__ of the storage DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The storage_system_id of this ManagedDatabase.
@@ -704,7 +704,7 @@ class ManagedDatabase(object):
         Sets the storage_system_id of this ManagedDatabase.
         The `OCID`__ of the storage DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param storage_system_id: The storage_system_id of this ManagedDatabase.
@@ -824,7 +824,7 @@ class ManagedDatabase(object):
         in which the parent Container Database resides, if the Managed Database
         is a Pluggable Database (PDB).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_container_compartment_id of this ManagedDatabase.
@@ -840,7 +840,7 @@ class ManagedDatabase(object):
         in which the parent Container Database resides, if the Managed Database
         is a Pluggable Database (PDB).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param parent_container_compartment_id: The parent_container_compartment_id of this ManagedDatabase.
@@ -978,7 +978,7 @@ class ManagedDatabase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ManagedDatabase.
@@ -994,7 +994,7 @@ class ManagedDatabase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ManagedDatabase.
@@ -1010,7 +1010,7 @@ class ManagedDatabase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ManagedDatabase.
@@ -1026,7 +1026,7 @@ class ManagedDatabase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ManagedDatabase.
@@ -1044,7 +1044,7 @@ class ManagedDatabase(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ManagedDatabase.
@@ -1062,7 +1062,7 @@ class ManagedDatabase(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ManagedDatabase.

@@ -19,8 +19,8 @@ class TaskDetailsResponse(object):
     For configuration instructions, see
     `Creating a Connector`__.
 
-    __ https://docs.oracle.com/iaas/Content/connector-hub/overview.htm
-    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     #: A constant which can be used with the kind property of a TaskDetailsResponse.

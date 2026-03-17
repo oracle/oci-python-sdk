@@ -107,7 +107,7 @@ class BulkCreatePrivateIpItem(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this BulkCreatePrivateIpItem.
@@ -124,7 +124,7 @@ class BulkCreatePrivateIpItem(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this BulkCreatePrivateIpItem.
@@ -167,7 +167,7 @@ class BulkCreatePrivateIpItem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this BulkCreatePrivateIpItem.
@@ -184,7 +184,7 @@ class BulkCreatePrivateIpItem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this BulkCreatePrivateIpItem.
@@ -210,7 +210,7 @@ class BulkCreatePrivateIpItem(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this BulkCreatePrivateIpItem.
@@ -236,7 +236,7 @@ class BulkCreatePrivateIpItem(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this BulkCreatePrivateIpItem.
@@ -320,7 +320,7 @@ class BulkCreatePrivateIpItem(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
@@ -336,7 +336,7 @@ class BulkCreatePrivateIpItem(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 

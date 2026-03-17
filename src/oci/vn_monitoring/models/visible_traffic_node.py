@@ -99,7 +99,7 @@ class VisibleTrafficNode(TrafficNode):
         The `OCID`__ of the OCI entity that
         represents the traffic node (Instance, GW, LB, etc.).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The entity_id of this VisibleTrafficNode.
@@ -114,7 +114,7 @@ class VisibleTrafficNode(TrafficNode):
         The `OCID`__ of the OCI entity that
         represents the traffic node (Instance, GW, LB, etc.).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param entity_id: The entity_id of this VisibleTrafficNode.

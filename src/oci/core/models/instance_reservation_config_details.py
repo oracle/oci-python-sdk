@@ -133,8 +133,8 @@ class InstanceReservationConfigDetails(object):
 
         Example: `FAULT-DOMAIN-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
-        __ https://docs.oracle.com/iaas/api/#/en/identity/20160918/
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/
 
 
         :return: The fault_domain of this InstanceReservationConfigDetails.
@@ -157,8 +157,8 @@ class InstanceReservationConfigDetails(object):
 
         Example: `FAULT-DOMAIN-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
-        __ https://docs.oracle.com/iaas/api/#/en/identity/20160918/
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/
 
 
         :param fault_domain: The fault_domain of this InstanceReservationConfigDetails.

@@ -16,7 +16,7 @@ class JavaMigrationAnalysis(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     def __init__(self, **kwargs):
@@ -141,7 +141,7 @@ class JavaMigrationAnalysis(object):
         **[Required]** Gets the id of this JavaMigrationAnalysis.
         The `OCID`__ of the Java Migration Analysis.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this JavaMigrationAnalysis.
@@ -155,7 +155,7 @@ class JavaMigrationAnalysis(object):
         Sets the id of this JavaMigrationAnalysis.
         The `OCID`__ of the Java Migration Analysis.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this JavaMigrationAnalysis.
@@ -169,7 +169,7 @@ class JavaMigrationAnalysis(object):
         **[Required]** Gets the work_request_id of this JavaMigrationAnalysis.
         The `OCID`__ of the Work Request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_id of this JavaMigrationAnalysis.
@@ -183,7 +183,7 @@ class JavaMigrationAnalysis(object):
         Sets the work_request_id of this JavaMigrationAnalysis.
         The `OCID`__ of the Work Request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_id: The work_request_id of this JavaMigrationAnalysis.
@@ -197,7 +197,7 @@ class JavaMigrationAnalysis(object):
         **[Required]** Gets the compartment_id of this JavaMigrationAnalysis.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this JavaMigrationAnalysis.
@@ -211,7 +211,7 @@ class JavaMigrationAnalysis(object):
         Sets the compartment_id of this JavaMigrationAnalysis.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this JavaMigrationAnalysis.

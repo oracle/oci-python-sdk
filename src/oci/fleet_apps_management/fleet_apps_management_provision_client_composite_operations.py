@@ -33,7 +33,7 @@ class FleetAppsManagementProvisionClientCompositeOperations(object):
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.ChangeProvisionCompartmentDetails change_provision_compartment_details: (required)
             Details of the target compartment.
@@ -116,7 +116,7 @@ class FleetAppsManagementProvisionClientCompositeOperations(object):
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class FleetAppsManagementProvisionClientCompositeOperations(object):
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.UpdateProvisionDetails update_provision_details: (required)
             The information to be updated.

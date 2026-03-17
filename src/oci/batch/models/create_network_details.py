@@ -46,7 +46,7 @@ class CreateNetworkDetails(object):
         **[Required]** Gets the subnet_id of this CreateNetworkDetails.
         `OCID`__ of associated subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateNetworkDetails.
@@ -60,7 +60,7 @@ class CreateNetworkDetails(object):
         Sets the subnet_id of this CreateNetworkDetails.
         `OCID`__ of associated subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateNetworkDetails.
@@ -74,7 +74,7 @@ class CreateNetworkDetails(object):
         Gets the nsg_ids of this CreateNetworkDetails.
         A list of `OCIDs`__ of associated network security groups.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this CreateNetworkDetails.
@@ -88,7 +88,7 @@ class CreateNetworkDetails(object):
         Sets the nsg_ids of this CreateNetworkDetails.
         A list of `OCIDs`__ of associated network security groups.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this CreateNetworkDetails.

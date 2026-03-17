@@ -512,7 +512,7 @@ class SecurityAttributeClient(object):
 
         Moving a security attribute namespace moves all the security attributes contained in the security attribute namespace.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm
 
 
         :param str security_attribute_namespace_id: (required)
@@ -1503,7 +1503,7 @@ class SecurityAttributeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1927,7 +1927,7 @@ class SecurityAttributeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2325,7 +2325,7 @@ class SecurityAttributeClient(object):
 
         You can't add a namespace with the same name as a retired namespace in the same tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
+        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
 
 
         :param str security_attribute_namespace_id: (required)

@@ -157,7 +157,7 @@ class CreatePrivilegedApiControlDetails(object):
         **[Required]** Gets the compartment_id of this CreatePrivilegedApiControlDetails.
         The `OCID`__ of the compartment to create the PrivilegedApiControl in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePrivilegedApiControlDetails.
@@ -171,7 +171,7 @@ class CreatePrivilegedApiControlDetails(object):
         Sets the compartment_id of this CreatePrivilegedApiControlDetails.
         The `OCID`__ of the compartment to create the PrivilegedApiControl in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePrivilegedApiControlDetails.
@@ -332,7 +332,7 @@ class CreatePrivilegedApiControlDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreatePrivilegedApiControlDetails.
@@ -349,7 +349,7 @@ class CreatePrivilegedApiControlDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreatePrivilegedApiControlDetails.
@@ -366,7 +366,7 @@ class CreatePrivilegedApiControlDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreatePrivilegedApiControlDetails.
@@ -383,7 +383,7 @@ class CreatePrivilegedApiControlDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreatePrivilegedApiControlDetails.

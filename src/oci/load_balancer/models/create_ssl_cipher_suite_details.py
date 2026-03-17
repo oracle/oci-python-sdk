@@ -254,8 +254,8 @@ class CreateSSLCipherSuiteDetails(object):
     \"AES128-SHA\"
     \"AES256-SHA\"
 
-    __ https://docs.oracle.com/en-us/iaas/api/#/en/loadbalancer/20170115/datatypes/SSLConfigurationDetails
-    __ https://docs.oracle.com/en-us/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/CreateSSLCipherSuite
+    __ https://docs.cloud.oracle.com/api/#/en/loadbalancer/20170115/datatypes/SSLConfigurationDetails
+    __ https://docs.cloud.oracle.com/api/#/en/loadbalancer/20170115/SSLCipherSuite/CreateSSLCipherSuite
     """
 
     def __init__(self, **kwargs):

@@ -39,8 +39,8 @@ class ChangeCustomProtectionRuleCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeCustomProtectionRuleCompartmentDetails.
         The `OCID`__ of the compartment into which the resource should be moved. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :return: The compartment_id of this ChangeCustomProtectionRuleCompartmentDetails.
@@ -54,8 +54,8 @@ class ChangeCustomProtectionRuleCompartmentDetails(object):
         Sets the compartment_id of this ChangeCustomProtectionRuleCompartmentDetails.
         The `OCID`__ of the compartment into which the resource should be moved. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param compartment_id: The compartment_id of this ChangeCustomProtectionRuleCompartmentDetails.

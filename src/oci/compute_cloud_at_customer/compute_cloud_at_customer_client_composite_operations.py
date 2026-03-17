@@ -118,7 +118,7 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.compute_cloud_at_customer.models.CccInfrastructure.lifecycle_state`
@@ -180,7 +180,7 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.compute_cloud_at_customer.models.CccUpgradeSchedule.lifecycle_state`
@@ -242,7 +242,7 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.compute_cloud_at_customer.models.UpdateCccInfrastructureDetails update_ccc_infrastructure_details: (required)
             The information to be updated.
@@ -290,7 +290,7 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.compute_cloud_at_customer.models.UpdateCccUpgradeScheduleDetails update_ccc_upgrade_schedule_details: (required)
             The information to be updated in the Compute Cloud@Customer upgrade schedule.

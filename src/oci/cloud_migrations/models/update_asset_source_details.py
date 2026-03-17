@@ -153,7 +153,7 @@ class UpdateAssetSourceDetails(object):
         Gets the assets_compartment_id of this UpdateAssetSourceDetails.
         The `OCID`__ of the compartment that is going to be used to create assets.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The assets_compartment_id of this UpdateAssetSourceDetails.
@@ -167,7 +167,7 @@ class UpdateAssetSourceDetails(object):
         Sets the assets_compartment_id of this UpdateAssetSourceDetails.
         The `OCID`__ of the compartment that is going to be used to create assets.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param assets_compartment_id: The assets_compartment_id of this UpdateAssetSourceDetails.

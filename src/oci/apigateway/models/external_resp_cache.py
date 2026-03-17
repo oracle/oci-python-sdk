@@ -122,7 +122,7 @@ class ExternalRespCache(ResponseCacheDetails):
         **[Required]** Gets the authentication_secret_id of this ExternalRespCache.
         The `OCID`__ of the Oracle Vault Service secret resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The authentication_secret_id of this ExternalRespCache.
@@ -136,7 +136,7 @@ class ExternalRespCache(ResponseCacheDetails):
         Sets the authentication_secret_id of this ExternalRespCache.
         The `OCID`__ of the Oracle Vault Service secret resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param authentication_secret_id: The authentication_secret_id of this ExternalRespCache.

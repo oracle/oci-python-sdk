@@ -148,7 +148,7 @@ class CreateDataGuardAssociationDetails(object):
         Gets the database_software_image_id of this CreateDataGuardAssociationDetails.
         The database software image `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this CreateDataGuardAssociationDetails.
@@ -162,7 +162,7 @@ class CreateDataGuardAssociationDetails(object):
         Sets the database_software_image_id of this CreateDataGuardAssociationDetails.
         The database software image `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this CreateDataGuardAssociationDetails.

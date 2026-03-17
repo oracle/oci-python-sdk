@@ -264,7 +264,7 @@ class PrivateEndpoint(object):
         **[Required]** Gets the created_by of this PrivateEndpoint.
         The `OCID`__ of the user who created the Private Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this PrivateEndpoint.
@@ -278,7 +278,7 @@ class PrivateEndpoint(object):
         Sets the created_by of this PrivateEndpoint.
         The `OCID`__ of the user who created the Private Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this PrivateEndpoint.
@@ -586,7 +586,7 @@ class PrivateEndpoint(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this PrivateEndpoint.
@@ -602,7 +602,7 @@ class PrivateEndpoint(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this PrivateEndpoint.
@@ -618,7 +618,7 @@ class PrivateEndpoint(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this PrivateEndpoint.
@@ -634,7 +634,7 @@ class PrivateEndpoint(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this PrivateEndpoint.
@@ -648,7 +648,7 @@ class PrivateEndpoint(object):
         Gets the id of this PrivateEndpoint.
         The `OCID`__ of the PrivateEndpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PrivateEndpoint.
@@ -662,7 +662,7 @@ class PrivateEndpoint(object):
         Sets the id of this PrivateEndpoint.
         The `OCID`__ of the PrivateEndpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PrivateEndpoint.

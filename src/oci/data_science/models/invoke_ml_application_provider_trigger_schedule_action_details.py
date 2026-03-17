@@ -56,7 +56,7 @@ class InvokeMlApplicationProviderTriggerScheduleActionDetails(ScheduleHttpAction
         **[Required]** Gets the ml_application_instance_view_id of this InvokeMlApplicationProviderTriggerScheduleActionDetails.
         The `OCID`__ of the schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ml_application_instance_view_id of this InvokeMlApplicationProviderTriggerScheduleActionDetails.
@@ -70,7 +70,7 @@ class InvokeMlApplicationProviderTriggerScheduleActionDetails(ScheduleHttpAction
         Sets the ml_application_instance_view_id of this InvokeMlApplicationProviderTriggerScheduleActionDetails.
         The `OCID`__ of the schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ml_application_instance_view_id: The ml_application_instance_view_id of this InvokeMlApplicationProviderTriggerScheduleActionDetails.

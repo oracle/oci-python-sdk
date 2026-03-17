@@ -53,7 +53,7 @@ class LogSource(object):
         **[Required]** Gets the compartment_id of this LogSource.
         The `OCID`__ of the compartment containing the log source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LogSource.
@@ -67,7 +67,7 @@ class LogSource(object):
         Sets the compartment_id of this LogSource.
         The `OCID`__ of the compartment containing the log source.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LogSource.
@@ -82,7 +82,7 @@ class LogSource(object):
         Identifier of the log group. Either `_Audit` or the `OCID`__ of the log group.
         Note: For the Notifications target, only `_Audit` is allowed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_group_id of this LogSource.
@@ -97,7 +97,7 @@ class LogSource(object):
         Identifier of the log group. Either `_Audit` or the `OCID`__ of the log group.
         Note: For the Notifications target, only `_Audit` is allowed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_group_id: The log_group_id of this LogSource.
@@ -111,7 +111,7 @@ class LogSource(object):
         Gets the log_id of this LogSource.
         The `OCID`__ of the log.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_id of this LogSource.
@@ -125,7 +125,7 @@ class LogSource(object):
         Sets the log_id of this LogSource.
         The `OCID`__ of the log.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param log_id: The log_id of this LogSource.

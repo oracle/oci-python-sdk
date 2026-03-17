@@ -39,7 +39,7 @@ class DetachManagedInstancesFromManagedInstanceGroupDetails(object):
         **[Required]** Gets the managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
         List of managed instance `OCIDs`__ to detach from the group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
@@ -53,7 +53,7 @@ class DetachManagedInstancesFromManagedInstanceGroupDetails(object):
         Sets the managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
         List of managed instance `OCIDs`__ to detach from the group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instances: The managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.

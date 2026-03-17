@@ -234,7 +234,7 @@ class DistributedAutonomousDatabaseSummary(object):
         **[Required]** Gets the id of this DistributedAutonomousDatabaseSummary.
         The `OCID`__ of the Globally distributed autonomous database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DistributedAutonomousDatabaseSummary.
@@ -248,7 +248,7 @@ class DistributedAutonomousDatabaseSummary(object):
         Sets the id of this DistributedAutonomousDatabaseSummary.
         The `OCID`__ of the Globally distributed autonomous database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DistributedAutonomousDatabaseSummary.
@@ -262,7 +262,7 @@ class DistributedAutonomousDatabaseSummary(object):
         **[Required]** Gets the compartment_id of this DistributedAutonomousDatabaseSummary.
         The `OCID`__ of the Globally distributed autonomous database compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DistributedAutonomousDatabaseSummary.
@@ -276,7 +276,7 @@ class DistributedAutonomousDatabaseSummary(object):
         Sets the compartment_id of this DistributedAutonomousDatabaseSummary.
         The `OCID`__ of the Globally distributed autonomous database compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DistributedAutonomousDatabaseSummary.
@@ -480,7 +480,7 @@ class DistributedAutonomousDatabaseSummary(object):
         **[Required]** Gets the private_endpoint_ids of this DistributedAutonomousDatabaseSummary.
         The collection of `OCID`__ of the private endpoint associated with Globally distributed autonomous database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_endpoint_ids of this DistributedAutonomousDatabaseSummary.
@@ -494,7 +494,7 @@ class DistributedAutonomousDatabaseSummary(object):
         Sets the private_endpoint_ids of this DistributedAutonomousDatabaseSummary.
         The collection of `OCID`__ of the private endpoint associated with Globally distributed autonomous database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_endpoint_ids: The private_endpoint_ids of this DistributedAutonomousDatabaseSummary.

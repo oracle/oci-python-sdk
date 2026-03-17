@@ -149,7 +149,7 @@ class BasicNamedCredentialContent(NamedCredentialContent):
         **[Required]** Gets the password_secret_id of this BasicNamedCredentialContent.
         The `OCID`__ of the Vault service secret that contains the database user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this BasicNamedCredentialContent.
@@ -163,7 +163,7 @@ class BasicNamedCredentialContent(NamedCredentialContent):
         Sets the password_secret_id of this BasicNamedCredentialContent.
         The `OCID`__ of the Vault service secret that contains the database user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this BasicNamedCredentialContent.

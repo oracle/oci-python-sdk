@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class EventClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -130,7 +130,7 @@ class EventClient(object):
         Moves an event into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param oci.os_management_hub.models.ChangeEventCompartmentDetails change_event_compartment_details: (required)
@@ -139,7 +139,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -265,7 +265,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -379,7 +379,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -503,7 +503,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -610,7 +610,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -717,7 +717,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -847,7 +847,7 @@ class EventClient(object):
         :param str id: (optional)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str event_fingerprint: (optional)
             The eventFingerprint of the KernelEventData.
@@ -863,7 +863,7 @@ class EventClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource. This filter returns resources associated with the specified resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] type: (optional)
             A filter to return only resources whose type matches the given value.
@@ -876,7 +876,7 @@ class EventClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -884,7 +884,7 @@ class EventClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param datetime time_created_less_than: (optional)
             A filter that returns events that occurred on or before the date provided.
@@ -1065,7 +1065,7 @@ class EventClient(object):
         :param str event_id: (required)
             The `OCID`__ of the event.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateEventDetails update_event_details: (required)
             Provides the information used to update the event tags.

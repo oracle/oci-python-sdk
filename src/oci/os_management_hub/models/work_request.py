@@ -479,7 +479,7 @@ class WorkRequest(object):
         **[Required]** Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequest.
@@ -493,7 +493,7 @@ class WorkRequest(object):
         Sets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequest.
@@ -579,7 +579,7 @@ class WorkRequest(object):
         Gets the parent_id of this WorkRequest.
         The `OCID`__ of the parent work request, if there is any.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this WorkRequest.
@@ -593,7 +593,7 @@ class WorkRequest(object):
         Sets the parent_id of this WorkRequest.
         The `OCID`__ of the parent work request, if there is any.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this WorkRequest.
@@ -607,7 +607,7 @@ class WorkRequest(object):
         Gets the children_id of this WorkRequest.
         The list of `OCIDs`__ for the child work requests.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The children_id of this WorkRequest.
@@ -621,7 +621,7 @@ class WorkRequest(object):
         Sets the children_id of this WorkRequest.
         The list of `OCIDs`__ for the child work requests.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param children_id: The children_id of this WorkRequest.
@@ -637,7 +637,7 @@ class WorkRequest(object):
         Work requests should be scoped to the same compartment as the resource it affects.
         If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -653,7 +653,7 @@ class WorkRequest(object):
         Work requests should be scoped to the same compartment as the resource it affects.
         If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -667,7 +667,7 @@ class WorkRequest(object):
         **[Required]** Gets the resources of this WorkRequest.
         The list of `OCIDs`__ for the resources affected by the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resources of this WorkRequest.
@@ -681,7 +681,7 @@ class WorkRequest(object):
         Sets the resources of this WorkRequest.
         The list of `OCIDs`__ for the resources affected by the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resources: The resources of this WorkRequest.
@@ -903,7 +903,7 @@ class WorkRequest(object):
         Gets the initiator_id of this WorkRequest.
         The `OCID`__ of the resource that initiated the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The initiator_id of this WorkRequest.
@@ -917,7 +917,7 @@ class WorkRequest(object):
         Sets the initiator_id of this WorkRequest.
         The `OCID`__ of the resource that initiated the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param initiator_id: The initiator_id of this WorkRequest.
@@ -1051,7 +1051,7 @@ class WorkRequest(object):
         Gets the retry_of_id of this WorkRequest.
         The `OCID`__ of the original work request that is being retried.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The retry_of_id of this WorkRequest.
@@ -1065,7 +1065,7 @@ class WorkRequest(object):
         Sets the retry_of_id of this WorkRequest.
         The `OCID`__ of the original work request that is being retried.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param retry_of_id: The retry_of_id of this WorkRequest.
@@ -1079,7 +1079,7 @@ class WorkRequest(object):
         Gets the rerun_of_id of this WorkRequest.
         The `OCID`__ of the original work request that is being rerun.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The rerun_of_id of this WorkRequest.
@@ -1093,7 +1093,7 @@ class WorkRequest(object):
         Sets the rerun_of_id of this WorkRequest.
         The `OCID`__ of the original work request that is being rerun.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param rerun_of_id: The rerun_of_id of this WorkRequest.

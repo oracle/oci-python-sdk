@@ -146,7 +146,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The awr_db_id of this AwrDbSnapshotRangeSummary.
@@ -162,7 +162,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param awr_db_id: The awr_db_id of this AwrDbSnapshotRangeSummary.
@@ -370,7 +370,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The first_snapshot_id of this AwrDbSnapshotRangeSummary.
@@ -386,7 +386,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param first_snapshot_id: The first_snapshot_id of this AwrDbSnapshotRangeSummary.
@@ -402,7 +402,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The latest_snapshot_id of this AwrDbSnapshotRangeSummary.
@@ -418,7 +418,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param latest_snapshot_id: The latest_snapshot_id of this AwrDbSnapshotRangeSummary.
@@ -482,7 +482,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The container_id of this AwrDbSnapshotRangeSummary.
@@ -498,7 +498,7 @@ class AwrDbSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param container_id: The container_id of this AwrDbSnapshotRangeSummary.

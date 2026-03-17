@@ -764,7 +764,7 @@ class CohereChatRequestV2(BaseChatRequest):
         Off: No safety mode is applied.
         Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See `release dates`__.
 
-        __ https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/deprecating.htm
 
         Allowed values for this property are: "CONTEXTUAL", "STRICT", "OFF"
 
@@ -784,7 +784,7 @@ class CohereChatRequestV2(BaseChatRequest):
         Off: No safety mode is applied.
         Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See `release dates`__.
 
-        __ https://docs.oracle.com/iaas/Content/generative-ai/deprecating.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/deprecating.htm
 
 
         :param safety_mode: The safety_mode of this CohereChatRequestV2.

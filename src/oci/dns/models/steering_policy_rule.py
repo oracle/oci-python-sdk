@@ -24,7 +24,7 @@ class SteeringPolicyRule(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
     """
 
     #: A constant which can be used with the rule_type property of a SteeringPolicyRule.

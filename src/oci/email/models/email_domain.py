@@ -199,7 +199,7 @@ class EmailDomain(object):
         **[Required]** Gets the id of this EmailDomain.
         The `OCID`__ of the email domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this EmailDomain.
@@ -213,7 +213,7 @@ class EmailDomain(object):
         Sets the id of this EmailDomain.
         The `OCID`__ of the email domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this EmailDomain.
@@ -227,7 +227,7 @@ class EmailDomain(object):
         Gets the compartment_id of this EmailDomain.
         The `OCID`__ of the compartment that contains this email domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EmailDomain.
@@ -241,7 +241,7 @@ class EmailDomain(object):
         Sets the compartment_id of this EmailDomain.
         The `OCID`__ of the compartment that contains this email domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EmailDomain.
@@ -286,7 +286,7 @@ class EmailDomain(object):
         The `OCID`__ of the DKIM key
         that will be used to sign mail sent from this email domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The active_dkim_id of this EmailDomain.
@@ -301,7 +301,7 @@ class EmailDomain(object):
         The `OCID`__ of the DKIM key
         that will be used to sign mail sent from this email domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param active_dkim_id: The active_dkim_id of this EmailDomain.
@@ -316,7 +316,7 @@ class EmailDomain(object):
         Value of the SPF field. For more information about SPF, please see
         `SPF Authentication`__.
 
-        __ https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components
+        __ https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components
 
 
         :return: The is_spf of this EmailDomain.
@@ -331,7 +331,7 @@ class EmailDomain(object):
         Value of the SPF field. For more information about SPF, please see
         `SPF Authentication`__.
 
-        __ https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components
+        __ https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components
 
 
         :param is_spf: The is_spf of this EmailDomain.
@@ -460,7 +460,7 @@ class EmailDomain(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this EmailDomain.
@@ -477,7 +477,7 @@ class EmailDomain(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this EmailDomain.
@@ -494,7 +494,7 @@ class EmailDomain(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this EmailDomain.
@@ -511,7 +511,7 @@ class EmailDomain(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this EmailDomain.

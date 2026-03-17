@@ -143,7 +143,7 @@ class ServiceConnectorSummary(object):
         **[Required]** Gets the id of this ServiceConnectorSummary.
         The `OCID`__ of the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ServiceConnectorSummary.
@@ -157,7 +157,7 @@ class ServiceConnectorSummary(object):
         Sets the id of this ServiceConnectorSummary.
         The `OCID`__ of the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ServiceConnectorSummary.
@@ -221,7 +221,7 @@ class ServiceConnectorSummary(object):
         **[Required]** Gets the compartment_id of this ServiceConnectorSummary.
         The `OCID`__ of the compartment containing the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ServiceConnectorSummary.
@@ -235,7 +235,7 @@ class ServiceConnectorSummary(object):
         Sets the compartment_id of this ServiceConnectorSummary.
         The `OCID`__ of the compartment containing the connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ServiceConnectorSummary.
@@ -425,7 +425,7 @@ class ServiceConnectorSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ServiceConnectorSummary.
@@ -441,7 +441,7 @@ class ServiceConnectorSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ServiceConnectorSummary.

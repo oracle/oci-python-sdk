@@ -74,7 +74,7 @@ class CreateServiceGatewayDetails(object):
         **[Required]** Gets the compartment_id of this CreateServiceGatewayDetails.
         The `OCID`__ of the compartment to contain the service gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateServiceGatewayDetails.
@@ -88,7 +88,7 @@ class CreateServiceGatewayDetails(object):
         Sets the compartment_id of this CreateServiceGatewayDetails.
         The `OCID`__ of the compartment to contain the service gateway.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateServiceGatewayDetails.
@@ -220,7 +220,7 @@ class CreateServiceGatewayDetails(object):
         **[Required]** Gets the vcn_id of this CreateServiceGatewayDetails.
         The `OCID`__ of the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateServiceGatewayDetails.
@@ -234,7 +234,7 @@ class CreateServiceGatewayDetails(object):
         Sets the vcn_id of this CreateServiceGatewayDetails.
         The `OCID`__ of the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateServiceGatewayDetails.

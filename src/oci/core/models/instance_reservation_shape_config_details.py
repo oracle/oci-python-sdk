@@ -24,7 +24,7 @@ class InstanceReservationShapeConfigDetails(object):
     For more information about customizing the resources that are allocated to flexible shapes,
     see `Flexible Shapes`__.
 
-    __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
     """
 
     def __init__(self, **kwargs):

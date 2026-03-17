@@ -39,7 +39,7 @@ class AttachComputeHostGroupHostDetails(object):
         **[Required]** Gets the compute_host_group_id of this AttachComputeHostGroupHostDetails.
         'The `OCID`__ of the compute host group.'
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_host_group_id of this AttachComputeHostGroupHostDetails.
@@ -53,7 +53,7 @@ class AttachComputeHostGroupHostDetails(object):
         Sets the compute_host_group_id of this AttachComputeHostGroupHostDetails.
         'The `OCID`__ of the compute host group.'
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_host_group_id: The compute_host_group_id of this AttachComputeHostGroupHostDetails.

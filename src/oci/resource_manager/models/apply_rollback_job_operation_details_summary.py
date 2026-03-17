@@ -15,7 +15,7 @@ class ApplyRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
     Job details that are specific to an apply rollback job. For more information about apply rollback jobs, see
     `Creating an Apply Rollback Job`__.
 
-    __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-apply-rollback.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-apply-rollback.htm
     """
 
     def __init__(self, **kwargs):
@@ -91,7 +91,7 @@ class ApplyRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
         Gets the execution_plan_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
         The `OCID`__ of a plan rollback job, for use when specifying `\"FROM_PLAN_ROLLBACK_JOB_ID\"` as the `executionPlanRollbackStrategy`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The execution_plan_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
@@ -105,7 +105,7 @@ class ApplyRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
         Sets the execution_plan_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
         The `OCID`__ of a plan rollback job, for use when specifying `\"FROM_PLAN_ROLLBACK_JOB_ID\"` as the `executionPlanRollbackStrategy`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param execution_plan_rollback_job_id: The execution_plan_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
@@ -119,7 +119,7 @@ class ApplyRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
         Gets the target_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
         The `OCID`__ of a successful apply job, for use when specifying `\"AUTO_APPROVED\"` as the `executionPlanRollbackStrategy`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
@@ -133,7 +133,7 @@ class ApplyRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
         Sets the target_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.
         The `OCID`__ of a successful apply job, for use when specifying `\"AUTO_APPROVED\"` as the `executionPlanRollbackStrategy`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_rollback_job_id: The target_rollback_job_id of this ApplyRollbackJobOperationDetailsSummary.

@@ -49,7 +49,7 @@ class NetworkLoadBalancerEndpoint(Endpoint):
         **[Required]** Gets the network_load_balancer_id of this NetworkLoadBalancerEndpoint.
         The `OCID`__ of the network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_load_balancer_id of this NetworkLoadBalancerEndpoint.
@@ -63,7 +63,7 @@ class NetworkLoadBalancerEndpoint(Endpoint):
         Sets the network_load_balancer_id of this NetworkLoadBalancerEndpoint.
         The `OCID`__ of the network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param network_load_balancer_id: The network_load_balancer_id of this NetworkLoadBalancerEndpoint.

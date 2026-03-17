@@ -203,7 +203,7 @@ class ContainerImage(object):
         **[Required]** Gets the created_by of this ContainerImage.
         The `OCID`__ of the user or principal that created the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this ContainerImage.
@@ -217,7 +217,7 @@ class ContainerImage(object):
         Sets the created_by of this ContainerImage.
         The `OCID`__ of the user or principal that created the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this ContainerImage.
@@ -289,7 +289,7 @@ class ContainerImage(object):
 
         Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ContainerImage.
@@ -305,7 +305,7 @@ class ContainerImage(object):
 
         Example: `ocid1.containerimage.oc1..exampleuniqueID`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ContainerImage.
@@ -445,7 +445,7 @@ class ContainerImage(object):
         **[Required]** Gets the repository_id of this ContainerImage.
         The `OCID`__ of the container repository.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The repository_id of this ContainerImage.
@@ -459,7 +459,7 @@ class ContainerImage(object):
         Sets the repository_id of this ContainerImage.
         The `OCID`__ of the container repository.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param repository_id: The repository_id of this ContainerImage.
@@ -596,7 +596,7 @@ class ContainerImage(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ContainerImage.
@@ -613,7 +613,7 @@ class ContainerImage(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ContainerImage.
@@ -630,7 +630,7 @@ class ContainerImage(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ContainerImage.
@@ -647,7 +647,7 @@ class ContainerImage(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ContainerImage.

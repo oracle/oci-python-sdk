@@ -89,7 +89,7 @@ class Resource(object):
         **[Required]** Gets the id of this Resource.
         The `OCID`__ of the resource that is managed by the autoscaling configuration.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Resource.
@@ -103,7 +103,7 @@ class Resource(object):
         Sets the id of this Resource.
         The `OCID`__ of the resource that is managed by the autoscaling configuration.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Resource.

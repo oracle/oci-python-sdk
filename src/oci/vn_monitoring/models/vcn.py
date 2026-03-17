@@ -19,8 +19,8 @@ class Vcn(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Vcn.
@@ -190,7 +190,7 @@ class Vcn(object):
         **[Required]** Gets the compartment_id of this Vcn.
         The `OCID`__ of the compartment containing the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Vcn.
@@ -204,7 +204,7 @@ class Vcn(object):
         Sets the compartment_id of this Vcn.
         The `OCID`__ of the compartment containing the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Vcn.
@@ -218,7 +218,7 @@ class Vcn(object):
         Gets the default_dhcp_options_id of this Vcn.
         The `OCID`__ for the VCN's default set of DHCP options.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_dhcp_options_id of this Vcn.
@@ -232,7 +232,7 @@ class Vcn(object):
         Sets the default_dhcp_options_id of this Vcn.
         The `OCID`__ for the VCN's default set of DHCP options.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_dhcp_options_id: The default_dhcp_options_id of this Vcn.
@@ -246,7 +246,7 @@ class Vcn(object):
         Gets the default_route_table_id of this Vcn.
         The `OCID`__ for the VCN's default route table.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_route_table_id of this Vcn.
@@ -260,7 +260,7 @@ class Vcn(object):
         Sets the default_route_table_id of this Vcn.
         The `OCID`__ for the VCN's default route table.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_route_table_id: The default_route_table_id of this Vcn.
@@ -274,7 +274,7 @@ class Vcn(object):
         Gets the default_security_list_id of this Vcn.
         The `OCID`__ for the VCN's default security list.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_security_list_id of this Vcn.
@@ -288,7 +288,7 @@ class Vcn(object):
         Sets the default_security_list_id of this Vcn.
         The `OCID`__ for the VCN's default security list.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_security_list_id: The default_security_list_id of this Vcn.
@@ -366,7 +366,7 @@ class Vcn(object):
 
         Example: `vcn1`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this Vcn.
@@ -392,7 +392,7 @@ class Vcn(object):
 
         Example: `vcn1`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this Vcn.
@@ -432,7 +432,7 @@ class Vcn(object):
         **[Required]** Gets the id of this Vcn.
         The VCN's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Vcn.
@@ -446,7 +446,7 @@ class Vcn(object):
         Sets the id of this Vcn.
         The VCN's Oracle ID (`OCID`__).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Vcn.
@@ -465,7 +465,7 @@ class Vcn(object):
         See `IPv6 Addresses`__.
         Example: `2001:0db8:0123::/56`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this Vcn.
@@ -484,7 +484,7 @@ class Vcn(object):
         See `IPv6 Addresses`__.
         Example: `2001:0db8:0123::/56`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this Vcn.
@@ -603,7 +603,7 @@ class Vcn(object):
 
         Example: `vcn1.oraclevcn.com`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The vcn_domain_name of this Vcn.
@@ -623,7 +623,7 @@ class Vcn(object):
 
         Example: `vcn1.oraclevcn.com`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param vcn_domain_name: The vcn_domain_name of this Vcn.

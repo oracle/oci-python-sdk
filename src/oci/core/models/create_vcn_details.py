@@ -183,7 +183,7 @@ class CreateVcnDetails(object):
         **[Required]** Gets the compartment_id of this CreateVcnDetails.
         The `OCID`__ of the compartment to contain the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVcnDetails.
@@ -197,7 +197,7 @@ class CreateVcnDetails(object):
         Sets the compartment_id of this CreateVcnDetails.
         The `OCID`__ of the compartment to contain the VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVcnDetails.
@@ -298,7 +298,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVcnDetails.
@@ -315,7 +315,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVcnDetails.
@@ -369,7 +369,7 @@ class CreateVcnDetails(object):
 
         Example: `vcn1`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this CreateVcnDetails.
@@ -397,7 +397,7 @@ class CreateVcnDetails(object):
 
         Example: `vcn1`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this CreateVcnDetails.
@@ -414,7 +414,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVcnDetails.
@@ -431,7 +431,7 @@ class CreateVcnDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVcnDetails.
@@ -449,8 +449,8 @@ class CreateVcnDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this CreateVcnDetails.
@@ -468,8 +468,8 @@ class CreateVcnDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this CreateVcnDetails.
@@ -488,7 +488,7 @@ class CreateVcnDetails(object):
 
         Example: `true`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The is_ipv6_enabled of this CreateVcnDetails.
@@ -507,7 +507,7 @@ class CreateVcnDetails(object):
 
         Example: `true`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param is_ipv6_enabled: The is_ipv6_enabled of this CreateVcnDetails.

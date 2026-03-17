@@ -142,7 +142,7 @@ class UpdateGovernanceRuleDetails(object):
         Gets the related_resource_id of this UpdateGovernanceRuleDetails.
         The Oracle ID (`OCID`__) of the resource, which was used as a template to create this governance rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The related_resource_id of this UpdateGovernanceRuleDetails.
@@ -156,7 +156,7 @@ class UpdateGovernanceRuleDetails(object):
         Sets the related_resource_id of this UpdateGovernanceRuleDetails.
         The Oracle ID (`OCID`__) of the resource, which was used as a template to create this governance rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param related_resource_id: The related_resource_id of this UpdateGovernanceRuleDetails.

@@ -40,7 +40,7 @@ class AttachDatastoreClusterToEsxiHostDetails(object):
         The `OCID`__ of the ESXi host to attach the
         datastore cluster to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The esxi_host_id of this AttachDatastoreClusterToEsxiHostDetails.
@@ -55,7 +55,7 @@ class AttachDatastoreClusterToEsxiHostDetails(object):
         The `OCID`__ of the ESXi host to attach the
         datastore cluster to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param esxi_host_id: The esxi_host_id of this AttachDatastoreClusterToEsxiHostDetails.

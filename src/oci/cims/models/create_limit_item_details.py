@@ -15,7 +15,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     Details about the service limit increase request. Avoid entering confidential information.
     For information about `LIMIT` support requests, see `Creating a Service Limit Increase Request`__.
 
-    __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
     """
 
     def __init__(self, **kwargs):

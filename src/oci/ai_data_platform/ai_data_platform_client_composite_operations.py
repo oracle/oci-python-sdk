@@ -33,7 +33,7 @@ class AiDataPlatformClientCompositeOperations(object):
         :param str ai_data_platform_id: (required)
             The `OCID`__ of the AiDataPlatform.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ai_data_platform.models.ChangeAiDataPlatformCompartmentDetails change_ai_data_platform_compartment_details: (required)
             The information to be updated.
@@ -116,7 +116,7 @@ class AiDataPlatformClientCompositeOperations(object):
         :param str ai_data_platform_id: (required)
             The `OCID`__ of the AiDataPlatform.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_data_platform.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class AiDataPlatformClientCompositeOperations(object):
         :param str ai_data_platform_id: (required)
             The `OCID`__ of the AiDataPlatform.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ai_data_platform.models.UpdateAiDataPlatformDetails update_ai_data_platform_details: (required)
             The information to be updated.
