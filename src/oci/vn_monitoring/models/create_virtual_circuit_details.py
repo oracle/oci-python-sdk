@@ -164,7 +164,7 @@ class CreateVirtualCircuitDetails(object):
         **[Required]** Gets the compartment_id of this CreateVirtualCircuitDetails.
         The `OCID`__ of the compartment to contain the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVirtualCircuitDetails.
@@ -178,7 +178,7 @@ class CreateVirtualCircuitDetails(object):
         Sets the compartment_id of this CreateVirtualCircuitDetails.
         The `OCID`__ of the compartment to contain the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVirtualCircuitDetails.
@@ -297,7 +297,7 @@ class CreateVirtualCircuitDetails(object):
         For private virtual circuits only. The `OCID`__ of the :class:`Drg`
         that this virtual circuit uses.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this CreateVirtualCircuitDetails.
@@ -312,7 +312,7 @@ class CreateVirtualCircuitDetails(object):
         For private virtual circuits only. The `OCID`__ of the :class:`Drg`
         that this virtual circuit uses.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this CreateVirtualCircuitDetails.
@@ -356,7 +356,7 @@ class CreateVirtualCircuitDetails(object):
         via a provider). To get a list of the available service offerings, see
         :func:`list_fast_connect_provider_services`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The provider_service_id of this CreateVirtualCircuitDetails.
@@ -372,7 +372,7 @@ class CreateVirtualCircuitDetails(object):
         via a provider). To get a list of the available service offerings, see
         :func:`list_fast_connect_provider_services`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param provider_service_id: The provider_service_id of this CreateVirtualCircuitDetails.

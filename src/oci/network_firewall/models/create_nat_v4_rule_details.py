@@ -14,7 +14,7 @@ class CreateNatV4RuleDetails(CreateNatRuleDetails):
     """
     Request for creating NATv4 type `NAT rule`__ used in the firewall policy.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+    __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
     """
 
     #: A constant which can be used with the action property of a CreateNatV4RuleDetails.

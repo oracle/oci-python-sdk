@@ -142,7 +142,7 @@ class UpdatePublicIpDetails(object):
         * If you set this field to an empty string, the public IP will be unassigned from the
         private IP it is currently assigned to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this UpdatePublicIpDetails.
@@ -160,7 +160,7 @@ class UpdatePublicIpDetails(object):
         * If you set this field to an empty string, the public IP will be unassigned from the
         private IP it is currently assigned to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this UpdatePublicIpDetails.

@@ -130,7 +130,7 @@ class CreateCloudDbSystemConnectorDetails(object):
         **[Required]** Gets the cloud_db_system_id of this CreateCloudDbSystemConnectorDetails.
         The `OCID`__ of the cloud DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_db_system_id of this CreateCloudDbSystemConnectorDetails.
@@ -144,7 +144,7 @@ class CreateCloudDbSystemConnectorDetails(object):
         Sets the cloud_db_system_id of this CreateCloudDbSystemConnectorDetails.
         The `OCID`__ of the cloud DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_db_system_id: The cloud_db_system_id of this CreateCloudDbSystemConnectorDetails.

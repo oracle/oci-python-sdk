@@ -79,7 +79,7 @@ class CreateShardPeerWithExadbXsDetails(object):
         **[Required]** Gets the vm_cluster_id of this CreateShardPeerWithExadbXsDetails.
         The `OCID`__ of the VM Cluster for the shard peer.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this CreateShardPeerWithExadbXsDetails.
@@ -93,7 +93,7 @@ class CreateShardPeerWithExadbXsDetails(object):
         Sets the vm_cluster_id of this CreateShardPeerWithExadbXsDetails.
         The `OCID`__ of the VM Cluster for the shard peer.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this CreateShardPeerWithExadbXsDetails.

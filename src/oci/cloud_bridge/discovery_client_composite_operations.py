@@ -114,7 +114,7 @@ class DiscoveryClientCompositeOperations(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_bridge.models.WorkRequest.status`
@@ -163,7 +163,7 @@ class DiscoveryClientCompositeOperations(object):
         :param str discovery_schedule_id: (required)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_bridge.models.DiscoverySchedule.lifecycle_state`
@@ -224,7 +224,7 @@ class DiscoveryClientCompositeOperations(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_bridge.models.WorkRequest.status`
@@ -265,7 +265,7 @@ class DiscoveryClientCompositeOperations(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.cloud_bridge.models.UpdateAssetSourceDetails update_asset_source_details: (required)
             Asset source information to be updated.
@@ -312,7 +312,7 @@ class DiscoveryClientCompositeOperations(object):
         :param str discovery_schedule_id: (required)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_bridge.models.DiscoverySchedule.lifecycle_state`

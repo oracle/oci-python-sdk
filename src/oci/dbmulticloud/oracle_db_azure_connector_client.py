@@ -166,7 +166,7 @@ class OracleDBAzureConnectorClient(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureConnectorCompartmentDetails change_oracle_db_azure_connector_compartment_details: (required)
             Moves the Oracle DB Azure Connector resource into a different compartment.
@@ -401,7 +401,7 @@ class OracleDBAzureConnectorClient(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -511,13 +511,13 @@ class OracleDBAzureConnectorClient(object):
         """
         Retrieves the Oracle DB Azure Identity Connector for a specified resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -654,7 +654,7 @@ class OracleDBAzureConnectorClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Azure Connector resources that match the specified display name.
@@ -670,7 +670,7 @@ class OracleDBAzureConnectorClient(object):
         :param str db_cluster_resource_id: (optional)
             The `ID`__ of the Database resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -825,7 +825,7 @@ class OracleDBAzureConnectorClient(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.PatchOracleDbAzureConnectorDetails patch_oracle_db_azure_connector_details: (required)
             Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
@@ -944,7 +944,7 @@ class OracleDBAzureConnectorClient(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
@@ -1064,13 +1064,13 @@ class OracleDBAzureConnectorClient(object):
         """
         Modifies the existing Oracle DB Azure Connector resource for a given `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureConnectorDetails update_oracle_db_azure_connector_details: (required)
             Details for to update Oracle DB Azure Connector resource.

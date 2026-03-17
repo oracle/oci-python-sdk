@@ -17,7 +17,7 @@ class ShapeSummary(object):
     and storage for non-VM (or bare metal) shapes.  For a description of
     shapes, see `DB System Shape Options`__.
 
-    __ https://docs.cloud.oracle.com/mysql-database/doc/shapes.htm
+    __ https://docs.oracle.com/mysql-database/doc/shapes.htm
     """
 
     #: A constant which can be used with the is_supported_for property of a ShapeSummary.

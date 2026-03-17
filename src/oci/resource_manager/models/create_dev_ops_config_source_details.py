@@ -14,7 +14,7 @@ class CreateDevOpsConfigSourceDetails(CreateConfigSourceDetails):
     """
     Creation details for a `DevOps`__ configuration source.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/devops/using/home.htm
+    __ https://docs.oracle.com/iaas/Content/devops/using/home.htm
     """
 
     def __init__(self, **kwargs):
@@ -71,7 +71,7 @@ class CreateDevOpsConfigSourceDetails(CreateConfigSourceDetails):
         **[Required]** Gets the project_id of this CreateDevOpsConfigSourceDetails.
         The `OCID`__ of the :class:`Project`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this CreateDevOpsConfigSourceDetails.
@@ -85,7 +85,7 @@ class CreateDevOpsConfigSourceDetails(CreateConfigSourceDetails):
         Sets the project_id of this CreateDevOpsConfigSourceDetails.
         The `OCID`__ of the :class:`Project`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this CreateDevOpsConfigSourceDetails.
@@ -99,7 +99,7 @@ class CreateDevOpsConfigSourceDetails(CreateConfigSourceDetails):
         **[Required]** Gets the repository_id of this CreateDevOpsConfigSourceDetails.
         The `OCID`__ of the :class:`Repository`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The repository_id of this CreateDevOpsConfigSourceDetails.
@@ -113,7 +113,7 @@ class CreateDevOpsConfigSourceDetails(CreateConfigSourceDetails):
         Sets the repository_id of this CreateDevOpsConfigSourceDetails.
         The `OCID`__ of the :class:`Repository`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param repository_id: The repository_id of this CreateDevOpsConfigSourceDetails.

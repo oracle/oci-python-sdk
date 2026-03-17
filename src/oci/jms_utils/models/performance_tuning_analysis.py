@@ -16,7 +16,7 @@ class PerformanceTuningAnalysis(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the result property of a PerformanceTuningAnalysis.
@@ -130,7 +130,7 @@ class PerformanceTuningAnalysis(object):
         **[Required]** Gets the id of this PerformanceTuningAnalysis.
         The `OCID`__ of the Performance Tuning Analysis.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PerformanceTuningAnalysis.
@@ -144,7 +144,7 @@ class PerformanceTuningAnalysis(object):
         Sets the id of this PerformanceTuningAnalysis.
         The `OCID`__ of the Performance Tuning Analysis.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PerformanceTuningAnalysis.
@@ -158,7 +158,7 @@ class PerformanceTuningAnalysis(object):
         **[Required]** Gets the work_request_id of this PerformanceTuningAnalysis.
         The `OCID`__ of the Work Request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_id of this PerformanceTuningAnalysis.
@@ -172,7 +172,7 @@ class PerformanceTuningAnalysis(object):
         Sets the work_request_id of this PerformanceTuningAnalysis.
         The `OCID`__ of the Work Request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_id: The work_request_id of this PerformanceTuningAnalysis.
@@ -186,7 +186,7 @@ class PerformanceTuningAnalysis(object):
         **[Required]** Gets the compartment_id of this PerformanceTuningAnalysis.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PerformanceTuningAnalysis.
@@ -200,7 +200,7 @@ class PerformanceTuningAnalysis(object):
         Sets the compartment_id of this PerformanceTuningAnalysis.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PerformanceTuningAnalysis.

@@ -95,7 +95,7 @@ class PluginErrorSummary(object):
         **[Required]** Gets the managed_instance_id of this PluginErrorSummary.
         The `OCID`__ of the Managed Instance running the plugin.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this PluginErrorSummary.
@@ -109,7 +109,7 @@ class PluginErrorSummary(object):
         Sets the managed_instance_id of this PluginErrorSummary.
         The `OCID`__ of the Managed Instance running the plugin.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this PluginErrorSummary.
@@ -177,7 +177,7 @@ class PluginErrorSummary(object):
         **[Required]** Gets the compartment_id of this PluginErrorSummary.
         The compartment `OCID`__ of the Fleet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PluginErrorSummary.
@@ -191,7 +191,7 @@ class PluginErrorSummary(object):
         Sets the compartment_id of this PluginErrorSummary.
         The compartment `OCID`__ of the Fleet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PluginErrorSummary.

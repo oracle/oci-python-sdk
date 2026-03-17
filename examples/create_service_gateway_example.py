@@ -15,7 +15,7 @@
 #   * The display name for the Service Gateway to be created (optional)
 #   * The route table ID to which the Service Gateway will be assigned (optional)
 #
-# for more information on Service Gateways see: https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm
+# for more information on Service Gateways see: https://docs.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm
 
 
 import oci

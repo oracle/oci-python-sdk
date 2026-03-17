@@ -170,7 +170,7 @@ class AdvancedClusterFileSystem(object):
         **[Required]** Gets the id of this AdvancedClusterFileSystem.
         The `OCID`__ of the advanced cluster file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AdvancedClusterFileSystem.
@@ -184,7 +184,7 @@ class AdvancedClusterFileSystem(object):
         Sets the id of this AdvancedClusterFileSystem.
         The `OCID`__ of the advanced cluster file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AdvancedClusterFileSystem.
@@ -222,7 +222,7 @@ class AdvancedClusterFileSystem(object):
         **[Required]** Gets the compartment_id of this AdvancedClusterFileSystem.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AdvancedClusterFileSystem.
@@ -236,7 +236,7 @@ class AdvancedClusterFileSystem(object):
         Sets the compartment_id of this AdvancedClusterFileSystem.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AdvancedClusterFileSystem.
@@ -250,7 +250,7 @@ class AdvancedClusterFileSystem(object):
         **[Required]** Gets the vm_cluster_id of this AdvancedClusterFileSystem.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this AdvancedClusterFileSystem.
@@ -264,7 +264,7 @@ class AdvancedClusterFileSystem(object):
         Sets the vm_cluster_id of this AdvancedClusterFileSystem.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this AdvancedClusterFileSystem.
@@ -278,8 +278,8 @@ class AdvancedClusterFileSystem(object):
         Gets the vault_id of this AdvancedClusterFileSystem.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this AdvancedClusterFileSystem.
@@ -293,8 +293,8 @@ class AdvancedClusterFileSystem(object):
         Sets the vault_id of this AdvancedClusterFileSystem.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this AdvancedClusterFileSystem.
@@ -509,7 +509,7 @@ class AdvancedClusterFileSystem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AdvancedClusterFileSystem.
@@ -526,7 +526,7 @@ class AdvancedClusterFileSystem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AdvancedClusterFileSystem.
@@ -541,7 +541,7 @@ class AdvancedClusterFileSystem(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AdvancedClusterFileSystem.
@@ -556,7 +556,7 @@ class AdvancedClusterFileSystem(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AdvancedClusterFileSystem.
@@ -571,7 +571,7 @@ class AdvancedClusterFileSystem(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this AdvancedClusterFileSystem.
@@ -586,7 +586,7 @@ class AdvancedClusterFileSystem(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this AdvancedClusterFileSystem.

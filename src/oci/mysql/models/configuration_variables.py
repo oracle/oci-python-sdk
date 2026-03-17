@@ -3120,7 +3120,7 @@ class ConfigurationVariables(object):
         See `Default User Variables`__.
 
         __ https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size
-        __ https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A
+        __ https://docs.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A
 
 
         :return: The innodb_buffer_pool_size of this ConfigurationVariables.
@@ -3141,7 +3141,7 @@ class ConfigurationVariables(object):
         See `Default User Variables`__.
 
         __ https://dev.mysql.com/doc/refman/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size
-        __ https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A
+        __ https://docs.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A
 
 
         :param innodb_buffer_pool_size: The innodb_buffer_pool_size of this ConfigurationVariables.

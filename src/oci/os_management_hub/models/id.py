@@ -46,7 +46,7 @@ class Id(object):
         **[Required]** Gets the id of this Id.
         The `OCID`__ of the resource that is immutable on creation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Id.
@@ -60,7 +60,7 @@ class Id(object):
         Sets the id of this Id.
         The `OCID`__ of the resource that is immutable on creation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Id.

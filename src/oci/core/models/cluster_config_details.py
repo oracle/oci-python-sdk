@@ -51,7 +51,7 @@ class ClusterConfigDetails(object):
         **[Required]** Gets the hpc_island_id of this ClusterConfigDetails.
         The `OCID`__ of the HPC island.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The hpc_island_id of this ClusterConfigDetails.
@@ -65,7 +65,7 @@ class ClusterConfigDetails(object):
         Sets the hpc_island_id of this ClusterConfigDetails.
         The `OCID`__ of the HPC island.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param hpc_island_id: The hpc_island_id of this ClusterConfigDetails.

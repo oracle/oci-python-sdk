@@ -234,7 +234,7 @@ class EmailDPClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment that contains the approved sender resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sender: (required)
             The envelope and the header from email address, that is sending the email. Email address must be an approved sender.

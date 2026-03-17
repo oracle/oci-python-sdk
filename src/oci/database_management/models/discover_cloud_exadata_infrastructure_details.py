@@ -69,7 +69,7 @@ class DiscoverCloudExadataInfrastructureDetails(object):
         **[Required]** Gets the compartment_id of this DiscoverCloudExadataInfrastructureDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DiscoverCloudExadataInfrastructureDetails.
@@ -83,7 +83,7 @@ class DiscoverCloudExadataInfrastructureDetails(object):
         Sets the compartment_id of this DiscoverCloudExadataInfrastructureDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DiscoverCloudExadataInfrastructureDetails.
@@ -152,7 +152,7 @@ class DiscoverCloudExadataInfrastructureDetails(object):
         Gets the exadata_infrastructure_id of this DiscoverCloudExadataInfrastructureDetails.
         The `OCID`__ of the Exadata infrastructure. This is applicable for rediscovery only.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this DiscoverCloudExadataInfrastructureDetails.
@@ -166,7 +166,7 @@ class DiscoverCloudExadataInfrastructureDetails(object):
         Sets the exadata_infrastructure_id of this DiscoverCloudExadataInfrastructureDetails.
         The `OCID`__ of the Exadata infrastructure. This is applicable for rediscovery only.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this DiscoverCloudExadataInfrastructureDetails.

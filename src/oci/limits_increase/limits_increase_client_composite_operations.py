@@ -33,7 +33,7 @@ class LimitsIncreaseClientCompositeOperations(object):
         :param str limits_increase_item_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.limits_increase.models.LimitsIncreaseItemRequest.lifecycle_state`
@@ -77,7 +77,7 @@ class LimitsIncreaseClientCompositeOperations(object):
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.limits_increase.models.LimitsIncreaseRequest.lifecycle_state`
@@ -163,7 +163,7 @@ class LimitsIncreaseClientCompositeOperations(object):
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.limits_increase.models.LimitsIncreaseRequest.lifecycle_state`
@@ -227,7 +227,7 @@ class LimitsIncreaseClientCompositeOperations(object):
         :param str limits_increase_request_id: (required)
             The `OCID`__ of the limit increase request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.limits_increase.models.LimitsIncreaseRequest.lifecycle_state`

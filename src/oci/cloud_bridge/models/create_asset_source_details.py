@@ -191,7 +191,7 @@ class CreateAssetSourceDetails(object):
         **[Required]** Gets the compartment_id of this CreateAssetSourceDetails.
         The `OCID`__ of the compartment for the resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAssetSourceDetails.
@@ -205,7 +205,7 @@ class CreateAssetSourceDetails(object):
         Sets the compartment_id of this CreateAssetSourceDetails.
         The `OCID`__ of the compartment for the resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAssetSourceDetails.
@@ -219,7 +219,7 @@ class CreateAssetSourceDetails(object):
         **[Required]** Gets the environment_id of this CreateAssetSourceDetails.
         The `OCID`__ of the environment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The environment_id of this CreateAssetSourceDetails.
@@ -233,7 +233,7 @@ class CreateAssetSourceDetails(object):
         Sets the environment_id of this CreateAssetSourceDetails.
         The `OCID`__ of the environment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param environment_id: The environment_id of this CreateAssetSourceDetails.
@@ -247,7 +247,7 @@ class CreateAssetSourceDetails(object):
         **[Required]** Gets the inventory_id of this CreateAssetSourceDetails.
         The `OCID`__ of the inventory that will contain created assets.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The inventory_id of this CreateAssetSourceDetails.
@@ -261,7 +261,7 @@ class CreateAssetSourceDetails(object):
         Sets the inventory_id of this CreateAssetSourceDetails.
         The `OCID`__ of the inventory that will contain created assets.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param inventory_id: The inventory_id of this CreateAssetSourceDetails.
@@ -275,7 +275,7 @@ class CreateAssetSourceDetails(object):
         **[Required]** Gets the assets_compartment_id of this CreateAssetSourceDetails.
         The `OCID`__ of the compartment that is going to be used to create assets.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The assets_compartment_id of this CreateAssetSourceDetails.
@@ -289,7 +289,7 @@ class CreateAssetSourceDetails(object):
         Sets the assets_compartment_id of this CreateAssetSourceDetails.
         The `OCID`__ of the compartment that is going to be used to create assets.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param assets_compartment_id: The assets_compartment_id of this CreateAssetSourceDetails.
@@ -303,7 +303,7 @@ class CreateAssetSourceDetails(object):
         Gets the discovery_schedule_id of this CreateAssetSourceDetails.
         The `OCID`__ of the discovery schedule that is going to be attached to the created asset.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The discovery_schedule_id of this CreateAssetSourceDetails.
@@ -317,7 +317,7 @@ class CreateAssetSourceDetails(object):
         Sets the discovery_schedule_id of this CreateAssetSourceDetails.
         The `OCID`__ of the discovery schedule that is going to be attached to the created asset.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param discovery_schedule_id: The discovery_schedule_id of this CreateAssetSourceDetails.
@@ -333,7 +333,7 @@ class CreateAssetSourceDetails(object):
         predefined name, type, or namespace/scope. For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateAssetSourceDetails.
@@ -349,7 +349,7 @@ class CreateAssetSourceDetails(object):
         predefined name, type, or namespace/scope. For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateAssetSourceDetails.
@@ -365,7 +365,7 @@ class CreateAssetSourceDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateAssetSourceDetails.
@@ -381,7 +381,7 @@ class CreateAssetSourceDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateAssetSourceDetails.
@@ -397,7 +397,7 @@ class CreateAssetSourceDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this CreateAssetSourceDetails.
@@ -413,7 +413,7 @@ class CreateAssetSourceDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this CreateAssetSourceDetails.

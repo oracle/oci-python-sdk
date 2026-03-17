@@ -82,7 +82,7 @@ class UpdateDatabaseToolsRelatedResourcePostgresqlDetails(object):
         Gets the identifier of this UpdateDatabaseToolsRelatedResourcePostgresqlDetails.
         The `OCID`__ of the related resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifier of this UpdateDatabaseToolsRelatedResourcePostgresqlDetails.
@@ -96,7 +96,7 @@ class UpdateDatabaseToolsRelatedResourcePostgresqlDetails(object):
         Sets the identifier of this UpdateDatabaseToolsRelatedResourcePostgresqlDetails.
         The `OCID`__ of the related resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param identifier: The identifier of this UpdateDatabaseToolsRelatedResourcePostgresqlDetails.

@@ -181,7 +181,7 @@ class NetworkFirewallSummary(object):
         **[Required]** Gets the id of this NetworkFirewallSummary.
         The `OCID`__ of the Network Firewall resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this NetworkFirewallSummary.
@@ -195,7 +195,7 @@ class NetworkFirewallSummary(object):
         Sets the id of this NetworkFirewallSummary.
         The `OCID`__ of the Network Firewall resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this NetworkFirewallSummary.
@@ -209,7 +209,7 @@ class NetworkFirewallSummary(object):
         **[Required]** Gets the compartment_id of this NetworkFirewallSummary.
         The `OCID`__ of the compartment containing the Network Firewall.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this NetworkFirewallSummary.
@@ -223,7 +223,7 @@ class NetworkFirewallSummary(object):
         Sets the compartment_id of this NetworkFirewallSummary.
         The `OCID`__ of the compartment containing the Network Firewall.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this NetworkFirewallSummary.
@@ -261,7 +261,7 @@ class NetworkFirewallSummary(object):
         **[Required]** Gets the subnet_id of this NetworkFirewallSummary.
         The `OCID`__ of the subnet associated with the Network Firewall.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this NetworkFirewallSummary.
@@ -275,7 +275,7 @@ class NetworkFirewallSummary(object):
         Sets the subnet_id of this NetworkFirewallSummary.
         The `OCID`__ of the subnet associated with the Network Firewall.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this NetworkFirewallSummary.
@@ -409,7 +409,7 @@ class NetworkFirewallSummary(object):
         **[Required]** Gets the network_firewall_policy_id of this NetworkFirewallSummary.
         The `OCID`__ of the Network Firewall Policy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_firewall_policy_id of this NetworkFirewallSummary.
@@ -423,7 +423,7 @@ class NetworkFirewallSummary(object):
         Sets the network_firewall_policy_id of this NetworkFirewallSummary.
         The `OCID`__ of the Network Firewall Policy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_firewall_policy_id: The network_firewall_policy_id of this NetworkFirewallSummary.
@@ -553,7 +553,7 @@ class NetworkFirewallSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this NetworkFirewallSummary.
@@ -569,7 +569,7 @@ class NetworkFirewallSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this NetworkFirewallSummary.
@@ -585,7 +585,7 @@ class NetworkFirewallSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this NetworkFirewallSummary.
@@ -601,7 +601,7 @@ class NetworkFirewallSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this NetworkFirewallSummary.

@@ -109,7 +109,7 @@ class LimitsIncreaseRequestSummary(object):
         **[Required]** Gets the id of this LimitsIncreaseRequestSummary.
         The `OCID`__ of the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LimitsIncreaseRequestSummary.
@@ -123,7 +123,7 @@ class LimitsIncreaseRequestSummary(object):
         Sets the id of this LimitsIncreaseRequestSummary.
         The `OCID`__ of the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LimitsIncreaseRequestSummary.
@@ -138,7 +138,7 @@ class LimitsIncreaseRequestSummary(object):
         The `OCID`__ of the compartment that contains the limit increase request.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LimitsIncreaseRequestSummary.
@@ -153,7 +153,7 @@ class LimitsIncreaseRequestSummary(object):
         The `OCID`__ of the compartment that contains the limit increase request.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LimitsIncreaseRequestSummary.
@@ -167,7 +167,7 @@ class LimitsIncreaseRequestSummary(object):
         Gets the subscription_id of this LimitsIncreaseRequestSummary.
         The `OCID`__ of the tenancy subscription for the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this LimitsIncreaseRequestSummary.
@@ -181,7 +181,7 @@ class LimitsIncreaseRequestSummary(object):
         Sets the subscription_id of this LimitsIncreaseRequestSummary.
         The `OCID`__ of the tenancy subscription for the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this LimitsIncreaseRequestSummary.

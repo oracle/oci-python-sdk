@@ -46,7 +46,7 @@ class RestoreDbSystemDetails(object):
         **[Required]** Gets the backup_id of this RestoreDbSystemDetails.
         The `OCID`__ of the database system backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this RestoreDbSystemDetails.
@@ -60,7 +60,7 @@ class RestoreDbSystemDetails(object):
         Sets the backup_id of this RestoreDbSystemDetails.
         The `OCID`__ of the database system backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this RestoreDbSystemDetails.

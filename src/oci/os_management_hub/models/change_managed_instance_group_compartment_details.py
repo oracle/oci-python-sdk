@@ -14,7 +14,7 @@ class ChangeManagedInstanceGroupCompartmentDetails(object):
     """
     Provides the information used to move the managed instance group to another compartment within the same tenancy. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+    __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
     """
 
     def __init__(self, **kwargs):
@@ -41,7 +41,7 @@ class ChangeManagedInstanceGroupCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeManagedInstanceGroupCompartmentDetails.
         The `OCID`__ of the compartment to move the group to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeManagedInstanceGroupCompartmentDetails.
@@ -55,7 +55,7 @@ class ChangeManagedInstanceGroupCompartmentDetails(object):
         Sets the compartment_id of this ChangeManagedInstanceGroupCompartmentDetails.
         The `OCID`__ of the compartment to move the group to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeManagedInstanceGroupCompartmentDetails.

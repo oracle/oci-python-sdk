@@ -84,7 +84,7 @@ class PipelineDataflowStepDetails(PipelineStepDetails):
         **[Required]** Gets the application_id of this PipelineDataflowStepDetails.
         The `OCID`__ of the dataflow application to be used as a step.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The application_id of this PipelineDataflowStepDetails.
@@ -98,7 +98,7 @@ class PipelineDataflowStepDetails(PipelineStepDetails):
         Sets the application_id of this PipelineDataflowStepDetails.
         The `OCID`__ of the dataflow application to be used as a step.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param application_id: The application_id of this PipelineDataflowStepDetails.

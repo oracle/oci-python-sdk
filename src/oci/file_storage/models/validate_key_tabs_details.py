@@ -46,7 +46,7 @@ class ValidateKeyTabsDetails(object):
         Gets the mount_target_id of this ValidateKeyTabsDetails.
         The `OCID`__ of the mount target whose keytabs are to be validated.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The mount_target_id of this ValidateKeyTabsDetails.
@@ -60,7 +60,7 @@ class ValidateKeyTabsDetails(object):
         Sets the mount_target_id of this ValidateKeyTabsDetails.
         The `OCID`__ of the mount target whose keytabs are to be validated.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param mount_target_id: The mount_target_id of this ValidateKeyTabsDetails.

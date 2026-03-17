@@ -206,7 +206,7 @@ class CreateDbSystemDetails(object):
         **[Required]** Gets the compartment_id of this CreateDbSystemDetails.
         The `OCID`__ of the compartment that contains the database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDbSystemDetails.
@@ -220,7 +220,7 @@ class CreateDbSystemDetails(object):
         Sets the compartment_id of this CreateDbSystemDetails.
         The `OCID`__ of the compartment that contains the database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDbSystemDetails.
@@ -282,7 +282,7 @@ class CreateDbSystemDetails(object):
         Gets the config_id of this CreateDbSystemDetails.
         The `OCID`__ of the configuration associated with the database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_id of this CreateDbSystemDetails.
@@ -296,7 +296,7 @@ class CreateDbSystemDetails(object):
         Sets the config_id of this CreateDbSystemDetails.
         The `OCID`__ of the configuration associated with the database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param config_id: The config_id of this CreateDbSystemDetails.

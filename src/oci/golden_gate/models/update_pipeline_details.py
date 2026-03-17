@@ -281,7 +281,7 @@ class UpdatePipelineDetails(object):
         The `OCID`__ of the subnet of the pipeline's private endpoint.
         The subnet must be a private subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this UpdatePipelineDetails.
@@ -296,7 +296,7 @@ class UpdatePipelineDetails(object):
         The `OCID`__ of the subnet of the pipeline's private endpoint.
         The subnet must be a private subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this UpdatePipelineDetails.

@@ -232,7 +232,7 @@ class WorkRequest(object):
         the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
         another compartment. In this case, the OCID of the source compartment is used.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -251,7 +251,7 @@ class WorkRequest(object):
         the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
         another compartment. In this case, the OCID of the source compartment is used.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

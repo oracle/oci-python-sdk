@@ -53,7 +53,7 @@ class DnssecKeyVersionDsData(object):
         Presentation-format DS record data that must be added to the parent zone. For more information about RDATA,
         see `Supported DNS Resource Record Types`__
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rdata of this DnssecKeyVersionDsData.
@@ -68,7 +68,7 @@ class DnssecKeyVersionDsData(object):
         Presentation-format DS record data that must be added to the parent zone. For more information about RDATA,
         see `Supported DNS Resource Record Types`__
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rdata: The rdata of this DnssecKeyVersionDsData.

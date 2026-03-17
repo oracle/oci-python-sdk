@@ -154,7 +154,7 @@ class DistributedDbVmCluster(object):
         Gets the vm_cluster_id of this DistributedDbVmCluster.
         The `OCID`__ of the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this DistributedDbVmCluster.
@@ -168,7 +168,7 @@ class DistributedDbVmCluster(object):
         Sets the vm_cluster_id of this DistributedDbVmCluster.
         The `OCID`__ of the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this DistributedDbVmCluster.
@@ -206,7 +206,7 @@ class DistributedDbVmCluster(object):
         **[Required]** Gets the subnet_id of this DistributedDbVmCluster.
         The `OCID`__ of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DistributedDbVmCluster.
@@ -220,7 +220,7 @@ class DistributedDbVmCluster(object):
         Sets the subnet_id of this DistributedDbVmCluster.
         The `OCID`__ of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DistributedDbVmCluster.
@@ -234,7 +234,7 @@ class DistributedDbVmCluster(object):
         **[Required]** Gets the backup_subnet_id of this DistributedDbVmCluster.
         The `OCID`__ of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this DistributedDbVmCluster.
@@ -248,7 +248,7 @@ class DistributedDbVmCluster(object):
         Sets the backup_subnet_id of this DistributedDbVmCluster.
         The `OCID`__ of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this DistributedDbVmCluster.
@@ -444,8 +444,8 @@ class DistributedDbVmCluster(object):
         Setting this to an empty list removes all resources from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this DistributedDbVmCluster.
@@ -461,8 +461,8 @@ class DistributedDbVmCluster(object):
         Setting this to an empty list removes all resources from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this DistributedDbVmCluster.
@@ -478,8 +478,8 @@ class DistributedDbVmCluster(object):
         Setting this to an empty array after the list is created removes the resource from all NSGs.
         For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this DistributedDbVmCluster.
@@ -495,8 +495,8 @@ class DistributedDbVmCluster(object):
         Setting this to an empty array after the list is created removes the resource from all NSGs.
         For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this DistributedDbVmCluster.

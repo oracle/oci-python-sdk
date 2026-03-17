@@ -39,7 +39,7 @@ class ChangeVtapCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeVtapCompartmentDetails.
         The `OCID`__ of the destination compartment for the VTAP move.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeVtapCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeVtapCompartmentDetails(object):
         Sets the compartment_id of this ChangeVtapCompartmentDetails.
         The `OCID`__ of the destination compartment for the VTAP move.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeVtapCompartmentDetails.

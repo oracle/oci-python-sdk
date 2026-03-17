@@ -91,7 +91,7 @@ class DatastoreAttachment(object):
         **[Required]** Gets the block_volume_id of this DatastoreAttachment.
         The `OCID`__ of the Block Volume that belongs to the datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The block_volume_id of this DatastoreAttachment.
@@ -105,7 +105,7 @@ class DatastoreAttachment(object):
         Sets the block_volume_id of this DatastoreAttachment.
         The `OCID`__ of the Block Volume that belongs to the datastore.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param block_volume_id: The block_volume_id of this DatastoreAttachment.
@@ -119,7 +119,7 @@ class DatastoreAttachment(object):
         **[Required]** Gets the datastore_id of this DatastoreAttachment.
         The `OCIDs`__ of the Datastore that ESXi host is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The datastore_id of this DatastoreAttachment.
@@ -133,7 +133,7 @@ class DatastoreAttachment(object):
         Sets the datastore_id of this DatastoreAttachment.
         The `OCIDs`__ of the Datastore that ESXi host is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param datastore_id: The datastore_id of this DatastoreAttachment.

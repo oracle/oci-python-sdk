@@ -359,7 +359,7 @@ class CloudExadataInfrastructureSummary(object):
         **[Required]** Gets the id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the cloud Exadata infrastructure resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CloudExadataInfrastructureSummary.
@@ -373,7 +373,7 @@ class CloudExadataInfrastructureSummary(object):
         Sets the id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the cloud Exadata infrastructure resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CloudExadataInfrastructureSummary.
@@ -387,7 +387,7 @@ class CloudExadataInfrastructureSummary(object):
         **[Required]** Gets the compartment_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloudExadataInfrastructureSummary.
@@ -401,7 +401,7 @@ class CloudExadataInfrastructureSummary(object):
         Sets the compartment_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloudExadataInfrastructureSummary.
@@ -415,7 +415,7 @@ class CloudExadataInfrastructureSummary(object):
         Gets the cluster_placement_group_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this CloudExadataInfrastructureSummary.
@@ -429,7 +429,7 @@ class CloudExadataInfrastructureSummary(object):
         Sets the cluster_placement_group_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this CloudExadataInfrastructureSummary.
@@ -443,7 +443,7 @@ class CloudExadataInfrastructureSummary(object):
         Gets the subscription_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CloudExadataInfrastructureSummary.
@@ -457,7 +457,7 @@ class CloudExadataInfrastructureSummary(object):
         Sets the subscription_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CloudExadataInfrastructureSummary.
@@ -977,7 +977,7 @@ class CloudExadataInfrastructureSummary(object):
         Gets the last_maintenance_run_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_maintenance_run_id of this CloudExadataInfrastructureSummary.
@@ -991,7 +991,7 @@ class CloudExadataInfrastructureSummary(object):
         Sets the last_maintenance_run_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_maintenance_run_id: The last_maintenance_run_id of this CloudExadataInfrastructureSummary.
@@ -1005,7 +1005,7 @@ class CloudExadataInfrastructureSummary(object):
         Gets the next_maintenance_run_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_maintenance_run_id of this CloudExadataInfrastructureSummary.
@@ -1019,7 +1019,7 @@ class CloudExadataInfrastructureSummary(object):
         Sets the next_maintenance_run_id of this CloudExadataInfrastructureSummary.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param next_maintenance_run_id: The next_maintenance_run_id of this CloudExadataInfrastructureSummary.
@@ -1036,7 +1036,7 @@ class CloudExadataInfrastructureSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CloudExadataInfrastructureSummary.
@@ -1053,7 +1053,7 @@ class CloudExadataInfrastructureSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CloudExadataInfrastructureSummary.
@@ -1068,7 +1068,7 @@ class CloudExadataInfrastructureSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CloudExadataInfrastructureSummary.
@@ -1083,7 +1083,7 @@ class CloudExadataInfrastructureSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CloudExadataInfrastructureSummary.
@@ -1098,7 +1098,7 @@ class CloudExadataInfrastructureSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this CloudExadataInfrastructureSummary.
@@ -1113,7 +1113,7 @@ class CloudExadataInfrastructureSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this CloudExadataInfrastructureSummary.

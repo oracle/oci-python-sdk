@@ -412,7 +412,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Gets the storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm
 
         Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE"
 
@@ -428,7 +428,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Sets the storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm
 
 
         :param storage_volume_performance_mode: The storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -564,8 +564,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -581,8 +581,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -596,8 +596,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Gets the backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -611,8 +611,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Sets the backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -678,7 +678,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Gets the time_zone of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The time zone of the dataguard standby DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -692,7 +692,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Sets the time_zone of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The time zone of the dataguard standby DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -848,7 +848,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The db_system_freeform_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -865,7 +865,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param db_system_freeform_tags: The db_system_freeform_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -880,7 +880,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The db_system_defined_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -895,7 +895,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param db_system_defined_tags: The db_system_defined_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -911,7 +911,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The db_system_security_attributes of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -927,7 +927,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param db_system_security_attributes: The db_system_security_attributes of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -944,7 +944,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The database_freeform_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -961,7 +961,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param database_freeform_tags: The database_freeform_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -976,7 +976,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The database_defined_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -991,7 +991,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param database_defined_tags: The database_defined_tags of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -1025,7 +1025,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Gets the cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -1039,7 +1039,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Sets the cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -1053,7 +1053,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Gets the subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -1067,7 +1067,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Sets the subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.

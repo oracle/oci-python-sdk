@@ -74,7 +74,7 @@ class ExternalAsmInstanceParameters(object):
         **[Required]** Gets the asm_instance_id of this ExternalAsmInstanceParameters.
         The `OCID`__ of the external ASM instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The asm_instance_id of this ExternalAsmInstanceParameters.
@@ -88,7 +88,7 @@ class ExternalAsmInstanceParameters(object):
         Sets the asm_instance_id of this ExternalAsmInstanceParameters.
         The `OCID`__ of the external ASM instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param asm_instance_id: The asm_instance_id of this ExternalAsmInstanceParameters.

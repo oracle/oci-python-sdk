@@ -76,7 +76,7 @@ class CreateBitbucketCloudConfigSourceDetails(CreateConfigSourceDetails):
         **[Required]** Gets the configuration_source_provider_id of this CreateBitbucketCloudConfigSourceDetails.
         The `OCID`__ of the Bitbucket Cloud configuration source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The configuration_source_provider_id of this CreateBitbucketCloudConfigSourceDetails.
@@ -90,7 +90,7 @@ class CreateBitbucketCloudConfigSourceDetails(CreateConfigSourceDetails):
         Sets the configuration_source_provider_id of this CreateBitbucketCloudConfigSourceDetails.
         The `OCID`__ of the Bitbucket Cloud configuration source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param configuration_source_provider_id: The configuration_source_provider_id of this CreateBitbucketCloudConfigSourceDetails.

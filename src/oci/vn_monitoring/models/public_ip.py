@@ -22,7 +22,7 @@ class PublicIp(object):
     For more information and comparison of the two types,
     see `Public IP Addresses`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a PublicIp.
@@ -211,7 +211,7 @@ class PublicIp(object):
         the same compartment as the private IP's. For a reserved public IP that is currently assigned,
         this can be a different compartment than the assigned private IP's.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicIp.
@@ -227,7 +227,7 @@ class PublicIp(object):
         the same compartment as the private IP's. For a reserved public IP that is currently assigned,
         this can be a different compartment than the assigned private IP's.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicIp.
@@ -319,7 +319,7 @@ class PublicIp(object):
         Gets the id of this PublicIp.
         The public IP's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PublicIp.
@@ -333,7 +333,7 @@ class PublicIp(object):
         Sets the id of this PublicIp.
         The public IP's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PublicIp.
@@ -417,7 +417,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED"
 
@@ -444,7 +444,7 @@ class PublicIp(object):
         For more information and comparison of the two types,
         see `Public IP Addresses`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this PublicIp.
@@ -464,7 +464,7 @@ class PublicIp(object):
         The `OCID`__ of the private IP that the public IP is currently assigned to, or in the
         process of being assigned to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this PublicIp.
@@ -479,7 +479,7 @@ class PublicIp(object):
         The `OCID`__ of the private IP that the public IP is currently assigned to, or in the
         process of being assigned to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this PublicIp.

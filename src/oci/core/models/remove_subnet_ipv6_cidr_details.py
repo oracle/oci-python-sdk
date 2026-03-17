@@ -43,7 +43,7 @@ class RemoveSubnetIpv6CidrDetails(object):
 
         Example: `2001:0db8:0123::/64`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this RemoveSubnetIpv6CidrDetails.
@@ -61,7 +61,7 @@ class RemoveSubnetIpv6CidrDetails(object):
 
         Example: `2001:0db8:0123::/64`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this RemoveSubnetIpv6CidrDetails.

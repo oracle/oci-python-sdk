@@ -47,7 +47,7 @@ class Vnic(object):
         The `OCID`__ of the private endpoint's VNIC,
         which resides in the customer's VCN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Vnic.
@@ -62,7 +62,7 @@ class Vnic(object):
         The `OCID`__ of the private endpoint's VNIC,
         which resides in the customer's VCN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Vnic.

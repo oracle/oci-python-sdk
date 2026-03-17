@@ -33,12 +33,12 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AssociateManagedInstancesWithManagementStationDetails associate_managed_instances_with_management_station_details: (required)
             The managed instances `OCIDs`__ to associate to the management station.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -79,7 +79,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceDetails attach_software_sources_to_managed_instance_details: (required)
             Details of software sources to be attached to a managed instance.
@@ -123,7 +123,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -172,7 +172,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceDetails detach_software_sources_from_managed_instance_details: (required)
             Details of software sources to be detached from a managed instance.
@@ -216,7 +216,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceDetails disable_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be disabled on a managed instance.
@@ -260,7 +260,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.EnableModuleStreamOnManagedInstanceDetails enable_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be enabled on a managed instance.
@@ -343,7 +343,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceDetails install_module_stream_profile_on_managed_instance_details: (required)
             The details of the module stream profile to be installed on a managed instance.
@@ -387,7 +387,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallPackagesOnManagedInstanceDetails install_packages_on_managed_instance_details: (required)
             Details about packages to be installed on a managed instance.
@@ -431,7 +431,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceDetails install_windows_updates_on_managed_instance_details: (required)
             Details about Windows updates to be installed on a managed instance.
@@ -475,7 +475,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -516,7 +516,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ManageModuleStreamsOnManagedInstanceDetails manage_module_streams_on_managed_instance_details: (required)
             A description of an operation to perform against the modules, streams, and profiles of a managed instance.
@@ -560,7 +560,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RebootManagedInstanceDetails reboot_managed_instance_details: (required)
             The timeout to be set for the reboot job. The timeout is the amount of time in minutes that the service waits for
@@ -605,7 +605,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -646,7 +646,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceDetails remove_module_stream_profile_from_managed_instance_details: (required)
             The details of the module stream profile to be removed from a managed instance.
@@ -690,7 +690,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromManagedInstanceDetails remove_packages_from_managed_instance_details: (required)
             Details about packages to be removed on a managed instance.
@@ -734,7 +734,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceDetails switch_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be switched on a managed instance.
@@ -817,7 +817,7 @@ class ManagedInstanceClientCompositeOperations(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdatePackagesOnManagedInstanceDetails update_packages_on_managed_instance_details: (required)
             Details about packages to be updated on a managed instance.

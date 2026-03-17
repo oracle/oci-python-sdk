@@ -49,7 +49,7 @@ class VaultSecretPasswordDetails(AdwAdminPasswordDetails):
         **[Required]** Gets the secret_id of this VaultSecretPasswordDetails.
         The `OCID`__ of the vault secret to use as the ADW admin password.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this VaultSecretPasswordDetails.
@@ -63,7 +63,7 @@ class VaultSecretPasswordDetails(AdwAdminPasswordDetails):
         Sets the secret_id of this VaultSecretPasswordDetails.
         The `OCID`__ of the vault secret to use as the ADW admin password.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this VaultSecretPasswordDetails.

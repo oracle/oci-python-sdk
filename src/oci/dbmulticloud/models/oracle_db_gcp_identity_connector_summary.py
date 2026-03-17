@@ -165,7 +165,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
         Gets the id of this OracleDbGcpIdentityConnectorSummary.
         The `OCID`__ of the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbGcpIdentityConnectorSummary.
@@ -179,7 +179,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
         Sets the id of this OracleDbGcpIdentityConnectorSummary.
         The `OCID`__ of the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbGcpIdentityConnectorSummary.
@@ -217,7 +217,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
         Gets the compartment_id of this OracleDbGcpIdentityConnectorSummary.
         The `OCID`__ of the compartment that contains the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbGcpIdentityConnectorSummary.
@@ -231,7 +231,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
         Sets the compartment_id of this OracleDbGcpIdentityConnectorSummary.
         The `OCID`__ of the compartment that contains the Oracle DB GCP Identity Connector resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbGcpIdentityConnectorSummary.
@@ -293,7 +293,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
         Gets the resource_id of this OracleDbGcpIdentityConnectorSummary.
         The `OCID`__ of the GCP VM Cluster resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this OracleDbGcpIdentityConnectorSummary.
@@ -307,7 +307,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
         Sets the resource_id of this OracleDbGcpIdentityConnectorSummary.
         The `OCID`__ of the GCP VM Cluster resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this OracleDbGcpIdentityConnectorSummary.
@@ -572,7 +572,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this OracleDbGcpIdentityConnectorSummary.
@@ -589,7 +589,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this OracleDbGcpIdentityConnectorSummary.
@@ -606,7 +606,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this OracleDbGcpIdentityConnectorSummary.
@@ -623,7 +623,7 @@ class OracleDbGcpIdentityConnectorSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this OracleDbGcpIdentityConnectorSummary.

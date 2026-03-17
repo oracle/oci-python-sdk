@@ -119,7 +119,7 @@ class SynthesizeSpeechDetails(object):
         Gets the compartment_id of this SynthesizeSpeechDetails.
         The `OCID`__ of the compartment where the user has access to call `SpeechSynthesize` api. But default user access will be checked at tenancy level.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this SynthesizeSpeechDetails.
@@ -133,7 +133,7 @@ class SynthesizeSpeechDetails(object):
         Sets the compartment_id of this SynthesizeSpeechDetails.
         The `OCID`__ of the compartment where the user has access to call `SpeechSynthesize` api. But default user access will be checked at tenancy level.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this SynthesizeSpeechDetails.

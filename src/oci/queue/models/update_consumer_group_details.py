@@ -74,7 +74,7 @@ class UpdateConsumerGroupDetails(object):
         Gets the display_name of this UpdateConsumerGroupDetails.
         The `OCID`__ of the consumer group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The display_name of this UpdateConsumerGroupDetails.
@@ -88,7 +88,7 @@ class UpdateConsumerGroupDetails(object):
         Sets the display_name of this UpdateConsumerGroupDetails.
         The `OCID`__ of the consumer group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param display_name: The display_name of this UpdateConsumerGroupDetails.

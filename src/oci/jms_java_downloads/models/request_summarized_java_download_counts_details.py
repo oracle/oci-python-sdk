@@ -133,7 +133,7 @@ class RequestSummarizedJavaDownloadCountsDetails(object):
         **[Required]** Gets the compartment_id of this RequestSummarizedJavaDownloadCountsDetails.
         The compartment `OCID`__ here should be the tenancy OCID.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RequestSummarizedJavaDownloadCountsDetails.
@@ -147,7 +147,7 @@ class RequestSummarizedJavaDownloadCountsDetails(object):
         Sets the compartment_id of this RequestSummarizedJavaDownloadCountsDetails.
         The compartment `OCID`__ here should be the tenancy OCID.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RequestSummarizedJavaDownloadCountsDetails.

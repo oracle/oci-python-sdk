@@ -134,7 +134,7 @@ class UpdateHistoryEntrySummary(object):
         **[Required]** Gets the id of this UpdateHistoryEntrySummary.
         The `OCID`__ of the maintenance update history entry.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this UpdateHistoryEntrySummary.
@@ -148,7 +148,7 @@ class UpdateHistoryEntrySummary(object):
         Sets the id of this UpdateHistoryEntrySummary.
         The `OCID`__ of the maintenance update history entry.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this UpdateHistoryEntrySummary.
@@ -162,7 +162,7 @@ class UpdateHistoryEntrySummary(object):
         **[Required]** Gets the update_id of this UpdateHistoryEntrySummary.
         The `OCID`__ of the maintenance update.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The update_id of this UpdateHistoryEntrySummary.
@@ -176,7 +176,7 @@ class UpdateHistoryEntrySummary(object):
         Sets the update_id of this UpdateHistoryEntrySummary.
         The `OCID`__ of the maintenance update.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param update_id: The update_id of this UpdateHistoryEntrySummary.

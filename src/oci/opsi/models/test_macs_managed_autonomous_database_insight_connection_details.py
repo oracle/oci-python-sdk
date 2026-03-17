@@ -53,7 +53,7 @@ class TestMacsManagedAutonomousDatabaseInsightConnectionDetails(object):
         **[Required]** Gets the management_agent_id of this TestMacsManagedAutonomousDatabaseInsightConnectionDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this TestMacsManagedAutonomousDatabaseInsightConnectionDetails.
@@ -67,7 +67,7 @@ class TestMacsManagedAutonomousDatabaseInsightConnectionDetails(object):
         Sets the management_agent_id of this TestMacsManagedAutonomousDatabaseInsightConnectionDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this TestMacsManagedAutonomousDatabaseInsightConnectionDetails.

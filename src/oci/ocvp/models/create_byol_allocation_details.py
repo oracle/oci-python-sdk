@@ -74,7 +74,7 @@ class CreateByolAllocationDetails(object):
         **[Required]** Gets the byol_id of this CreateByolAllocationDetails.
         The `OCID`__ of the BYOL resource from which this BYOL Allocation is derived.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byol_id of this CreateByolAllocationDetails.
@@ -88,7 +88,7 @@ class CreateByolAllocationDetails(object):
         Sets the byol_id of this CreateByolAllocationDetails.
         The `OCID`__ of the BYOL resource from which this BYOL Allocation is derived.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byol_id: The byol_id of this CreateByolAllocationDetails.
@@ -127,7 +127,7 @@ class CreateByolAllocationDetails(object):
         The `OCID`__ of the compartment that
         contains the BYOL Allocation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateByolAllocationDetails.
@@ -142,7 +142,7 @@ class CreateByolAllocationDetails(object):
         The `OCID`__ of the compartment that
         contains the BYOL Allocation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateByolAllocationDetails.
@@ -183,7 +183,7 @@ class CreateByolAllocationDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateByolAllocationDetails.
@@ -200,7 +200,7 @@ class CreateByolAllocationDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateByolAllocationDetails.
@@ -217,7 +217,7 @@ class CreateByolAllocationDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateByolAllocationDetails.
@@ -234,7 +234,7 @@ class CreateByolAllocationDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateByolAllocationDetails.

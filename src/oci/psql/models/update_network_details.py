@@ -46,7 +46,7 @@ class UpdateNetworkDetails(object):
         Gets the nsg_ids of this UpdateNetworkDetails.
         List of Network Security Group `OCIDs`__ associated with the database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this UpdateNetworkDetails.
@@ -60,7 +60,7 @@ class UpdateNetworkDetails(object):
         Sets the nsg_ids of this UpdateNetworkDetails.
         List of Network Security Group `OCIDs`__ associated with the database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this UpdateNetworkDetails.

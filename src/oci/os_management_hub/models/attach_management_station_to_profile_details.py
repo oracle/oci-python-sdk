@@ -39,7 +39,7 @@ class AttachManagementStationToProfileDetails(object):
         **[Required]** Gets the management_station_id of this AttachManagementStationToProfileDetails.
         The `OCID`__ of the management station that the instance will be associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_station_id of this AttachManagementStationToProfileDetails.
@@ -53,7 +53,7 @@ class AttachManagementStationToProfileDetails(object):
         Sets the management_station_id of this AttachManagementStationToProfileDetails.
         The `OCID`__ of the management station that the instance will be associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_station_id: The management_station_id of this AttachManagementStationToProfileDetails.

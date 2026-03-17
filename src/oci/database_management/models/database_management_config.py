@@ -119,7 +119,7 @@ class DatabaseManagementConfig(object):
         Gets the connector_id of this DatabaseManagementConfig.
         The `OCID`__ of the external database connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this DatabaseManagementConfig.
@@ -133,7 +133,7 @@ class DatabaseManagementConfig(object):
         Sets the connector_id of this DatabaseManagementConfig.
         The `OCID`__ of the external database connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this DatabaseManagementConfig.

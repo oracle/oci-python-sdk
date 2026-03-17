@@ -133,7 +133,7 @@ class ComputeBareMetalHost(object):
         **[Required]** Gets the compute_capacity_topology_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute capacity topology.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_capacity_topology_id of this ComputeBareMetalHost.
@@ -147,7 +147,7 @@ class ComputeBareMetalHost(object):
         Sets the compute_capacity_topology_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute capacity topology.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_capacity_topology_id: The compute_capacity_topology_id of this ComputeBareMetalHost.
@@ -161,7 +161,7 @@ class ComputeBareMetalHost(object):
         Gets the compute_hpc_island_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute HPC island.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_hpc_island_id of this ComputeBareMetalHost.
@@ -175,7 +175,7 @@ class ComputeBareMetalHost(object):
         Sets the compute_hpc_island_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute HPC island.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_hpc_island_id: The compute_hpc_island_id of this ComputeBareMetalHost.
@@ -189,7 +189,7 @@ class ComputeBareMetalHost(object):
         Gets the compute_local_block_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute local block.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_local_block_id of this ComputeBareMetalHost.
@@ -203,7 +203,7 @@ class ComputeBareMetalHost(object):
         Sets the compute_local_block_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute local block.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_local_block_id: The compute_local_block_id of this ComputeBareMetalHost.
@@ -217,7 +217,7 @@ class ComputeBareMetalHost(object):
         Gets the compute_network_block_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute network block.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_network_block_id of this ComputeBareMetalHost.
@@ -231,7 +231,7 @@ class ComputeBareMetalHost(object):
         Sets the compute_network_block_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute network block.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_network_block_id: The compute_network_block_id of this ComputeBareMetalHost.
@@ -245,7 +245,7 @@ class ComputeBareMetalHost(object):
         **[Required]** Gets the id of this ComputeBareMetalHost.
         The `OCID`__ of the compute bare metal host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeBareMetalHost.
@@ -259,7 +259,7 @@ class ComputeBareMetalHost(object):
         Sets the id of this ComputeBareMetalHost.
         The `OCID`__ of the compute bare metal host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeBareMetalHost.
@@ -273,7 +273,7 @@ class ComputeBareMetalHost(object):
         Gets the instance_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute instance that runs on the compute bare metal host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this ComputeBareMetalHost.
@@ -287,7 +287,7 @@ class ComputeBareMetalHost(object):
         Sets the instance_id of this ComputeBareMetalHost.
         The `OCID`__ of the compute instance that runs on the compute bare metal host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this ComputeBareMetalHost.

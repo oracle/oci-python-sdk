@@ -17,7 +17,7 @@ class CreateVnicDetails(object):
     For more information about VNICs, see
     `Virtual Network Interface Cards (VNICs)`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
     """
 
     def __init__(self, **kwargs):
@@ -203,8 +203,8 @@ class CreateVnicDetails(object):
         If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
         :class:`Vlan`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :return: The assign_public_ip of this CreateVnicDetails.
@@ -240,8 +240,8 @@ class CreateVnicDetails(object):
         If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
         :class:`Vlan`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param assign_public_ip: The assign_public_ip of this CreateVnicDetails.
@@ -290,7 +290,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVnicDetails.
@@ -307,7 +307,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVnicDetails.
@@ -350,7 +350,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVnicDetails.
@@ -367,7 +367,7 @@ class CreateVnicDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVnicDetails.
@@ -385,8 +385,8 @@ class CreateVnicDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this CreateVnicDetails.
@@ -404,8 +404,8 @@ class CreateVnicDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this CreateVnicDetails.
@@ -443,7 +443,7 @@ class CreateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this CreateVnicDetails.
@@ -481,7 +481,7 @@ class CreateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this CreateVnicDetails.
@@ -651,7 +651,7 @@ class CreateVnicDetails(object):
         Gets the private_ip_id of this CreateVnicDetails.
         An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this CreateVnicDetails.
@@ -665,7 +665,7 @@ class CreateVnicDetails(object):
         Sets the private_ip_id of this CreateVnicDetails.
         An `OCID`__ that specifies a previously-reserved IP address to use for this VNIC.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this CreateVnicDetails.
@@ -689,7 +689,7 @@ class CreateVnicDetails(object):
 
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :return: The skip_source_dest_check of this CreateVnicDetails.
@@ -713,7 +713,7 @@ class CreateVnicDetails(object):
 
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param skip_source_dest_check: The skip_source_dest_check of this CreateVnicDetails.
@@ -734,7 +734,7 @@ class CreateVnicDetails(object):
         VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
         If you provide both a `vlanId` and `subnetId`, the request fails.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateVnicDetails.
@@ -755,7 +755,7 @@ class CreateVnicDetails(object):
         VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
         If you provide both a `vlanId` and `subnetId`, the request fails.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateVnicDetails.
@@ -774,7 +774,7 @@ class CreateVnicDetails(object):
         Provide a `vlanId` instead of a `subnetId`. If you provide both a
         `vlanId` and `subnetId`, the request fails.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this CreateVnicDetails.
@@ -793,7 +793,7 @@ class CreateVnicDetails(object):
         Provide a `vlanId` instead of a `subnetId`. If you provide both a
         `vlanId` and `subnetId`, the request fails.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this CreateVnicDetails.

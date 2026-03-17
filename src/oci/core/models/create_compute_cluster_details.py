@@ -24,7 +24,7 @@ class CreateComputeClusterDetails(object):
     For details about creating a cluster network that uses instance pools to manage groups of identical instances,
     see :func:`create_cluster_network_details`.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+    __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """
 
     def __init__(self, **kwargs):
@@ -107,7 +107,7 @@ class CreateComputeClusterDetails(object):
         **[Required]** Gets the compartment_id of this CreateComputeClusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateComputeClusterDetails.
@@ -121,7 +121,7 @@ class CreateComputeClusterDetails(object):
         Sets the compartment_id of this CreateComputeClusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateComputeClusterDetails.
@@ -164,7 +164,7 @@ class CreateComputeClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateComputeClusterDetails.
@@ -181,7 +181,7 @@ class CreateComputeClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateComputeClusterDetails.
@@ -198,7 +198,7 @@ class CreateComputeClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateComputeClusterDetails.
@@ -215,7 +215,7 @@ class CreateComputeClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateComputeClusterDetails.

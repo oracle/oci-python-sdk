@@ -33,7 +33,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str lustre_file_system_id: (required)
             The `OCID`__ of the Lustre file system.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.lustre_file_storage.models.ChangeLustreFileSystemCompartmentDetails change_lustre_file_system_compartment_details: (required)
             The information to be updated.
@@ -77,7 +77,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str object_storage_link_id: (required)
             The `OCID`__ of the Object Storage link.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.lustre_file_storage.models.ChangeObjectStorageLinkCompartmentDetails change_object_storage_link_compartment_details: (required)
             The information to be updated.
@@ -205,7 +205,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str lustre_file_system_id: (required)
             The `OCID`__ of the Lustre file system.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.lustre_file_storage.models.WorkRequest.status`
@@ -254,7 +254,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str object_storage_link_id: (required)
             The `OCID`__ of the Object Storage link.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.lustre_file_storage.models.WorkRequest.status`
@@ -303,7 +303,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str lustre_file_system_id: (required)
             The `OCID`__ of the Lustre file system.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.lustre_file_storage.models.OverrideMaintenanceDetails override_maintenance_details: (required)
             The date and time at which upcoming maintenance needs to be set
@@ -347,7 +347,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str lustre_file_system_id: (required)
             The `OCID`__ of the Lustre file system.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.lustre_file_storage.models.UpdateLustreFileSystemDetails update_lustre_file_system_details: (required)
             The information to be updated.
@@ -391,7 +391,7 @@ class LustreFileStorageClientCompositeOperations(object):
         :param str object_storage_link_id: (required)
             The `OCID`__ of the Object Storage link.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.lustre_file_storage.models.UpdateObjectStorageLinkDetails update_object_storage_link_details: (required)
             The information to be updated.

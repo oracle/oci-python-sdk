@@ -276,7 +276,7 @@ class ExternalListener(object):
         **[Required]** Gets the id of this ExternalListener.
         The `OCID`__ of the external listener.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExternalListener.
@@ -290,7 +290,7 @@ class ExternalListener(object):
         Sets the id of this ExternalListener.
         The `OCID`__ of the external listener.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExternalListener.
@@ -352,7 +352,7 @@ class ExternalListener(object):
         **[Required]** Gets the compartment_id of this ExternalListener.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExternalListener.
@@ -366,7 +366,7 @@ class ExternalListener(object):
         Sets the compartment_id of this ExternalListener.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExternalListener.
@@ -380,7 +380,7 @@ class ExternalListener(object):
         **[Required]** Gets the external_db_system_id of this ExternalListener.
         The `OCID`__ of the external DB system that the listener is a part of.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_db_system_id of this ExternalListener.
@@ -394,7 +394,7 @@ class ExternalListener(object):
         Sets the external_db_system_id of this ExternalListener.
         The `OCID`__ of the external DB system that the listener is a part of.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_db_system_id: The external_db_system_id of this ExternalListener.
@@ -408,7 +408,7 @@ class ExternalListener(object):
         Gets the external_connector_id of this ExternalListener.
         The `OCID`__ of the external connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_connector_id of this ExternalListener.
@@ -422,7 +422,7 @@ class ExternalListener(object):
         Sets the external_connector_id of this ExternalListener.
         The `OCID`__ of the external connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_connector_id: The external_connector_id of this ExternalListener.
@@ -436,7 +436,7 @@ class ExternalListener(object):
         Gets the external_db_node_id of this ExternalListener.
         The `OCID`__ of the external DB node.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_db_node_id of this ExternalListener.
@@ -450,7 +450,7 @@ class ExternalListener(object):
         Sets the external_db_node_id of this ExternalListener.
         The `OCID`__ of the external DB node.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_db_node_id: The external_db_node_id of this ExternalListener.
@@ -464,7 +464,7 @@ class ExternalListener(object):
         Gets the external_db_home_id of this ExternalListener.
         The `OCID`__ of the external DB home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_db_home_id of this ExternalListener.
@@ -478,7 +478,7 @@ class ExternalListener(object):
         Sets the external_db_home_id of this ExternalListener.
         The `OCID`__ of the external DB home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_db_home_id: The external_db_home_id of this ExternalListener.
@@ -916,7 +916,7 @@ class ExternalListener(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExternalListener.
@@ -932,7 +932,7 @@ class ExternalListener(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExternalListener.
@@ -948,7 +948,7 @@ class ExternalListener(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExternalListener.
@@ -964,7 +964,7 @@ class ExternalListener(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExternalListener.
@@ -982,7 +982,7 @@ class ExternalListener(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExternalListener.
@@ -1000,7 +1000,7 @@ class ExternalListener(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExternalListener.

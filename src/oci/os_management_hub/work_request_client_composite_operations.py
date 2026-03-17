@@ -33,12 +33,12 @@ class WorkRequestClientCompositeOperations(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RerunWorkRequestDetails rerun_work_request_details: (required)
             The resource `OCIDs`__ to rerun the work requests for. If no OCIDs are provided, rerun will apply to all failed work requests associated with the specified work request id.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`

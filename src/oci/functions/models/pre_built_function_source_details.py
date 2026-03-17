@@ -50,7 +50,7 @@ class PreBuiltFunctionSourceDetails(FunctionSourceDetails):
         The `OCID`__ of the PbfListing this
         function is sourced from.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The pbf_listing_id of this PreBuiltFunctionSourceDetails.
@@ -65,7 +65,7 @@ class PreBuiltFunctionSourceDetails(FunctionSourceDetails):
         The `OCID`__ of the PbfListing this
         function is sourced from.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param pbf_listing_id: The pbf_listing_id of this PreBuiltFunctionSourceDetails.

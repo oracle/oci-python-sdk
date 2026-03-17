@@ -85,7 +85,7 @@ class StreamingServiceAction(Action):
         Gets the stream_id of this StreamingServiceAction.
         The `OCID`__ of the stream to which messages are delivered.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_id of this StreamingServiceAction.
@@ -99,7 +99,7 @@ class StreamingServiceAction(Action):
         Sets the stream_id of this StreamingServiceAction.
         The `OCID`__ of the stream to which messages are delivered.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_id: The stream_id of this StreamingServiceAction.

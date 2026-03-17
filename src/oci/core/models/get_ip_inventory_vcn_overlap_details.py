@@ -70,7 +70,7 @@ class GetIpInventoryVcnOverlapDetails(object):
         **[Required]** Gets the compartment_list of this GetIpInventoryVcnOverlapDetails.
         The list of `OCID`__ of the compartments.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_list of this GetIpInventoryVcnOverlapDetails.
@@ -84,7 +84,7 @@ class GetIpInventoryVcnOverlapDetails(object):
         Sets the compartment_list of this GetIpInventoryVcnOverlapDetails.
         The list of `OCID`__ of the compartments.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_list: The compartment_list of this GetIpInventoryVcnOverlapDetails.

@@ -72,7 +72,7 @@ class ReplicasClientCompositeOperations(object):
         :param str replica_id: (required)
             The Replica `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class ReplicasClientCompositeOperations(object):
         :param str replica_id: (required)
             The Replica `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.UpdateReplicaDetails update_replica_details: (required)
             The parameters of the request to update the read replica.

@@ -56,7 +56,7 @@ class DropSqlTuningTaskDetails(object):
         It can be retrieved from the following endpoint
         :func:`list_sql_tuning_advisor_tasks`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The task_id of this DropSqlTuningTaskDetails.
@@ -72,7 +72,7 @@ class DropSqlTuningTaskDetails(object):
         It can be retrieved from the following endpoint
         :func:`list_sql_tuning_advisor_tasks`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param task_id: The task_id of this DropSqlTuningTaskDetails.

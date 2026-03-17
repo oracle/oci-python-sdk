@@ -186,7 +186,7 @@ def delete_internet_gateway(virtual_network_composite_operations, internet_gatew
 
 
 # This makes sure that we use the internet gateway for accessing the internet. See:
-# https://docs.cloud.oracle.com/Content/Network/Tasks/managingIGs.htm
+# https://docs.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm
 # for more information.
 #
 # As a convenience, we'll add a route rule to the default route table. However, in your
@@ -335,7 +335,7 @@ def get_launch_instance_details(compartment_id, availability_domain, shape, imag
     #
     # We can also provide arbitrary string keys and string values. If you are providing these, you should consider
     # whether defined and freeform tags on an instance would better meet your use case. See:
-    # https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm for more information
+    # https://docs.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm for more information
     # on tagging
     instance_metadata = {
         'ssh_authorized_keys': ssh_public_key,
@@ -347,7 +347,7 @@ def get_launch_instance_details(compartment_id, availability_domain, shape, imag
     # key should be Base64-encoded data and the SDK offers a convenience function to transform
     # a file at a given path to that encoded data
     #
-    # See: https://docs.cloud.oracle.com/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails
+    # See: https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails
     # for more information
     instance_metadata['user_data'] = oci.util.file_content_as_launch_instance_user_data(
         'examples/launch_instance/user_data.sh'

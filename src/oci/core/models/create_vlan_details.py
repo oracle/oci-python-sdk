@@ -182,7 +182,7 @@ class CreateVlanDetails(object):
         **[Required]** Gets the compartment_id of this CreateVlanDetails.
         The `OCID`__ of the compartment to contain the VLAN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVlanDetails.
@@ -196,7 +196,7 @@ class CreateVlanDetails(object):
         Sets the compartment_id of this CreateVlanDetails.
         The `OCID`__ of the compartment to contain the VLAN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVlanDetails.
@@ -213,7 +213,7 @@ class CreateVlanDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVlanDetails.
@@ -230,7 +230,7 @@ class CreateVlanDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVlanDetails.
@@ -273,7 +273,7 @@ class CreateVlanDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVlanDetails.
@@ -290,7 +290,7 @@ class CreateVlanDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVlanDetails.
@@ -333,7 +333,7 @@ class CreateVlanDetails(object):
         The `OCID`__ of the route table the VLAN will use. If you don't provide a value,
         the VLAN uses the VCN's default route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this CreateVlanDetails.
@@ -348,7 +348,7 @@ class CreateVlanDetails(object):
         The `OCID`__ of the route table the VLAN will use. If you don't provide a value,
         the VLAN uses the VCN's default route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this CreateVlanDetails.
@@ -362,7 +362,7 @@ class CreateVlanDetails(object):
         **[Required]** Gets the vcn_id of this CreateVlanDetails.
         The `OCID`__ of the VCN to contain the VLAN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateVlanDetails.
@@ -376,7 +376,7 @@ class CreateVlanDetails(object):
         Sets the vcn_id of this CreateVlanDetails.
         The `OCID`__ of the VCN to contain the VLAN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateVlanDetails.

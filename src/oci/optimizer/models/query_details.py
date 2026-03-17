@@ -40,7 +40,7 @@ class QueryDetails(object):
         The query describing which resources to search for.
         For more information, see `Query Language Syntax`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm
+        __ https://docs.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm
 
 
         :return: The query of this QueryDetails.
@@ -55,7 +55,7 @@ class QueryDetails(object):
         The query describing which resources to search for.
         For more information, see `Query Language Syntax`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm
+        __ https://docs.oracle.com/iaas/Content/CloudAdvisor/Reference/query-syntax.htm
 
 
         :param query: The query of this QueryDetails.

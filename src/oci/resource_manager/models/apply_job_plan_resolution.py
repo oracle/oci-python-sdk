@@ -53,7 +53,7 @@ class ApplyJobPlanResolution(object):
         Gets the plan_job_id of this ApplyJobPlanResolution.
         The `OCID`__ that specifies the most recently executed plan job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The plan_job_id of this ApplyJobPlanResolution.
@@ -67,7 +67,7 @@ class ApplyJobPlanResolution(object):
         Sets the plan_job_id of this ApplyJobPlanResolution.
         The `OCID`__ that specifies the most recently executed plan job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param plan_job_id: The plan_job_id of this ApplyJobPlanResolution.
@@ -82,8 +82,8 @@ class ApplyJobPlanResolution(object):
         Specifies whether to use the `OCID`__ of the most recently run plan job.
         `True` if using the latest job `OCID`__. Must be a plan job that completed successfully.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The is_use_latest_job_id of this ApplyJobPlanResolution.
@@ -98,8 +98,8 @@ class ApplyJobPlanResolution(object):
         Specifies whether to use the `OCID`__ of the most recently run plan job.
         `True` if using the latest job `OCID`__. Must be a plan job that completed successfully.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param is_use_latest_job_id: The is_use_latest_job_id of this ApplyJobPlanResolution.

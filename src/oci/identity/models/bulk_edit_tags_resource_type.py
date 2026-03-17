@@ -75,8 +75,8 @@ class BulkEditTagsResourceType(object):
         See [UpdateBucket`__ and
         `DeleteBucket`__.
 
-        __ https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket
-        __ https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket
 
 
         :return: The metadata_keys of this BulkEditTagsResourceType.
@@ -95,8 +95,8 @@ class BulkEditTagsResourceType(object):
         See [UpdateBucket`__ and
         `DeleteBucket`__.
 
-        __ https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket
-        __ https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket
 
 
         :param metadata_keys: The metadata_keys of this BulkEditTagsResourceType.

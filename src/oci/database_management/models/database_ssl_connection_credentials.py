@@ -158,7 +158,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         **[Required]** Gets the password_secret_id of this DatabaseSslConnectionCredentials.
         The `OCID`__ of the secret containing the user password.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this DatabaseSslConnectionCredentials.
@@ -172,7 +172,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         Sets the password_secret_id of this DatabaseSslConnectionCredentials.
         The `OCID`__ of the secret containing the user password.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this DatabaseSslConnectionCredentials.
@@ -216,7 +216,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         **[Required]** Gets the ssl_secret_id of this DatabaseSslConnectionCredentials.
         The `OCID`__ of the secret containing the SSL keystore and truststore details.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_secret_id of this DatabaseSslConnectionCredentials.
@@ -230,7 +230,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         Sets the ssl_secret_id of this DatabaseSslConnectionCredentials.
         The `OCID`__ of the secret containing the SSL keystore and truststore details.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_secret_id: The ssl_secret_id of this DatabaseSslConnectionCredentials.

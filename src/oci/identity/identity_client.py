@@ -855,7 +855,7 @@ class IdentityClient(object):
         :class:`WorkRequest`. Use the :func:`get_work_request`
         API to monitor the status of the bulk action.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home
+        __ https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm#Home
 
 
         :param str compartment_id: (required)
@@ -1233,7 +1233,7 @@ class IdentityClient(object):
         compartments. This operation creates a :class:`WorkRequest`.
         Use the :func:`get_work_request` API to monitor the status of the bulk action.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home
+        __ https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm#Home
 
 
         :param str compartment_id: (required)
@@ -1772,7 +1772,7 @@ class IdentityClient(object):
 
         Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm
 
 
         :param str tag_namespace_id: (required)
@@ -1907,7 +1907,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create an auth token for any user, including themselves.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm
 
 
         :param oci.identity.models.CreateAuthTokenDetails create_auth_token_details: (required)
@@ -2040,8 +2040,8 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm
 
 
         :param oci.identity.models.CreateCompartmentDetails create_compartment_details: (required)
@@ -2153,7 +2153,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create a secret key for any user, including themselves.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm
 
 
         :param oci.identity.models.CreateCustomerSecretKeyDetails create_customer_secret_key_details: (required)
@@ -2519,8 +2519,8 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm
 
 
         :param oci.identity.models.CreateDynamicGroupDetails create_dynamic_group_details: (required)
@@ -2642,8 +2642,8 @@ class IdentityClient(object):
         See :func:`add_user_to_group` and
         :func:`create_policy`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm
 
 
         :param oci.identity.models.CreateGroupDetails create_group_details: (required)
@@ -2764,9 +2764,9 @@ class IdentityClient(object):
         be CREATING. Before using the object, first make sure its `lifecycleState` has
         changed to ACTIVE.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.identity.models.CreateIdentityProviderDetails create_identity_provider_details: (required)
@@ -2871,7 +2871,7 @@ class IdentityClient(object):
         Creates a single mapping between an IdP group and an IAM Service
         :class:`Group`.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param oci.identity.models.CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
@@ -3118,9 +3118,9 @@ class IdentityClient(object):
         After your network resource is created, you can use it in policy to restrict access to only requests made from an allowed
         IP address specified in your network source. For more information, see `Managing Network Sources`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingnetworksources.htm
 
 
         :param oci.identity.models.CreateNetworkSourceDetails create_network_source_details: (required)
@@ -3351,7 +3351,7 @@ class IdentityClient(object):
         **Note:** The user's Console login is the unique name you specified when you created the user
         (see :func:`create_user`).
 
-        __ https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm
 
 
         :param str user_id: (required)
@@ -3479,9 +3479,9 @@ class IdentityClient(object):
 
         New policies take effect typically within 10 seconds.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm
 
 
         :param oci.identity.models.CreatePolicyDetails create_policy_details: (required)
@@ -3827,7 +3827,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create a Swift password for any user, including themselves.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm
 
 
         :param oci.identity.models.CreateSwiftPasswordDetails create_swift_password_details: (required)
@@ -4351,9 +4351,9 @@ class IdentityClient(object):
 
         **Important:** Make sure to inform the new user which compartment(s) they have access to.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm
 
 
         :param oci.identity.models.CreateUserDetails create_user_details: (required)
@@ -5466,7 +5466,7 @@ class IdentityClient(object):
         Deletes the specified identity provider. The identity provider must not have
         any group mappings (see :class:`IdpGroupMapping`).
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -5575,7 +5575,7 @@ class IdentityClient(object):
 
         Deletes the specified group mapping.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -7676,7 +7676,7 @@ class IdentityClient(object):
 
         Gets the specified identity provider's information.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -7774,7 +7774,7 @@ class IdentityClient(object):
 
         Gets the specified group mapping.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -9525,7 +9525,7 @@ class IdentityClient(object):
         Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
         create a dependency on the list order.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -9622,7 +9622,7 @@ class IdentityClient(object):
         require an `OCID`__ to identify a specific resource, but some resource-types,
         such as buckets, require you to provide other identifying information.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str bulk_action_type: (required)
@@ -9853,7 +9853,7 @@ class IdentityClient(object):
 
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -10044,7 +10044,7 @@ class IdentityClient(object):
         Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         cost-tracking tags, see `Using Cost-tracking Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/usingcosttrackingtags.htm
+        __ https://docs.oracle.com/iaas/Content/Tagging/Tasks/usingcosttrackingtags.htm
 
 
         :param str compartment_id: (required)
@@ -10620,7 +10620,7 @@ class IdentityClient(object):
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -10783,7 +10783,7 @@ class IdentityClient(object):
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -10880,7 +10880,7 @@ class IdentityClient(object):
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -11433,7 +11433,7 @@ class IdentityClient(object):
 
         Lists the identity provider groups.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -11574,8 +11574,8 @@ class IdentityClient(object):
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str protocol: (required)
@@ -11744,7 +11744,7 @@ class IdentityClient(object):
 
         Lists the group mappings for the specified identity provider.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -12015,7 +12015,7 @@ class IdentityClient(object):
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -12309,7 +12309,7 @@ class IdentityClient(object):
         To determine which policies apply to a particular group or compartment, you must view the individual
         statements inside all your policies. There isn't a way to automatically obtain that information via the API.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -13669,7 +13669,7 @@ class IdentityClient(object):
         If the answer is no, the response is an empty list.
         - Although`userId` and `groupId` are not individually required, you must set one of them.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -13787,7 +13787,7 @@ class IdentityClient(object):
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
+        __ https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five
 
 
         :param str compartment_id: (required)
@@ -14074,7 +14074,7 @@ class IdentityClient(object):
         are aware of the implications for the compartment contents before you move it. For more
         information, see `Moving a Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/compartments/managingcompartments.htm#MoveCompartment
+        __ https://docs.oracle.com/iaas/Content/Identity/compartments/managingcompartments.htm#MoveCompartment
 
 
         :param str compartment_id: (required)
@@ -15571,7 +15571,7 @@ class IdentityClient(object):
 
         Updates the specified identity provider.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -15687,7 +15687,7 @@ class IdentityClient(object):
 
         Updates the specified group mapping.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -16659,7 +16659,7 @@ class IdentityClient(object):
 
         You can't add a namespace with the same name as a retired namespace in the same tenancy.
 
-        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
+        __ https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :param str tag_namespace_id: (required)

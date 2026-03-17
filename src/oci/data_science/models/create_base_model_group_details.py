@@ -114,7 +114,7 @@ class CreateBaseModelGroupDetails(object):
         **[Required]** Gets the compartment_id of this CreateBaseModelGroupDetails.
         The `OCID`__ of the compartment to create the modelGroup in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateBaseModelGroupDetails.
@@ -128,7 +128,7 @@ class CreateBaseModelGroupDetails(object):
         Sets the compartment_id of this CreateBaseModelGroupDetails.
         The `OCID`__ of the compartment to create the modelGroup in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateBaseModelGroupDetails.
@@ -142,7 +142,7 @@ class CreateBaseModelGroupDetails(object):
         **[Required]** Gets the project_id of this CreateBaseModelGroupDetails.
         The `OCID`__ of the project to associate with the modelGroup.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this CreateBaseModelGroupDetails.
@@ -156,7 +156,7 @@ class CreateBaseModelGroupDetails(object):
         Sets the project_id of this CreateBaseModelGroupDetails.
         The `OCID`__ of the project to associate with the modelGroup.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this CreateBaseModelGroupDetails.

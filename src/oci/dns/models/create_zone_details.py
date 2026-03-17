@@ -356,7 +356,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
 
         For more information, see `DNSSEC`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -396,7 +396,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
 
         For more information, see `DNSSEC`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
 
 
         :param dnssec_state: The dnssec_state of this CreateZoneDetails.

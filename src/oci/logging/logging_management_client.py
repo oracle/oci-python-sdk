@@ -132,7 +132,7 @@ class LoggingManagementClient(object):
         Moves a log group into a different compartment within the same tenancy.  When provided, the If-Match is checked against the resource ETag values.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str log_group_id: (required)
@@ -371,7 +371,7 @@ class LoggingManagementClient(object):
         Moves a saved search into a different compartment within the same tenancy. For information about moving
         resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str log_saved_search_id: (required)
@@ -501,7 +501,7 @@ class LoggingManagementClient(object):
         Moves the unified agent configuration into a different compartment within the same tenancy.  When provided, the If-Match is checked against the ETag values of the resource.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str unified_agent_configuration_id: (required)
@@ -2159,7 +2159,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -2311,7 +2311,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -2475,7 +2475,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -2761,7 +2761,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by (one column only). Default sort order is
@@ -2920,7 +2920,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -3043,7 +3043,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -3167,7 +3167,7 @@ class LoggingManagementClient(object):
         :param str id: (optional)
             <b>Filter</b> results by `OCID`__. Must be an OCID of the correct type for the resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -3177,7 +3177,7 @@ class LoggingManagementClient(object):
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.

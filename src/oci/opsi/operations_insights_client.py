@@ -25,7 +25,7 @@ class OperationsInsightsClient(object):
     """
     Use the Ops Insights API to perform data extraction operations to obtain database
     resource utilization, performance statistics, and reference information. For more information,
-    see [About Oracle Cloud Infrastructure Ops Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
+    see [About Oracle Cloud Infrastructure Ops Insights](https://docs.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
     """
 
     def __init__(self, config, **kwargs):
@@ -516,7 +516,7 @@ class OperationsInsightsClient(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.ChangeChargebackPlanCompartmentDetails change_chargeback_plan_compartment_details: (required)
             The information to be updated.
@@ -1651,7 +1651,7 @@ class OperationsInsightsClient(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails change_operations_insights_private_endpoint_compartment_details: (required)
             The details used to change the compartment of a private endpoint
@@ -1907,7 +1907,7 @@ class OperationsInsightsClient(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails change_opsi_configuration_compartment_details: (required)
             The information to be updated.
@@ -3975,7 +3975,7 @@ class OperationsInsightsClient(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -4088,7 +4088,7 @@ class OperationsInsightsClient(object):
         :param str chargeback_plan_report_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan report
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Unique Ops insight identifier
@@ -4771,7 +4771,7 @@ class OperationsInsightsClient(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -5109,7 +5109,7 @@ class OperationsInsightsClient(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -6838,7 +6838,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -7011,7 +7011,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_id: (required)
             The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/awrHubs/{awrHubId}/awrDbReport).
@@ -7647,7 +7647,7 @@ class OperationsInsightsClient(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -7755,7 +7755,7 @@ class OperationsInsightsClient(object):
         :param str chargeback_plan_report_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan report
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Unique Ops insight identifier
@@ -7878,7 +7878,7 @@ class OperationsInsightsClient(object):
         :param str chargeback_plan_report_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan report
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Unique Ops insight identifier
@@ -8555,7 +8555,7 @@ class OperationsInsightsClient(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -8878,7 +8878,7 @@ class OperationsInsightsClient(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] opsi_config_field: (optional)
             Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
@@ -9043,7 +9043,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opsi_data_object_identifier: (required)
             Unique OPSI data object identifier.
@@ -9379,12 +9379,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -9513,12 +9513,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -9644,7 +9644,7 @@ class OperationsInsightsClient(object):
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.IngestHostConfigurationDetails ingest_host_configuration_details: (required)
             Payload for one or more host configuration metrics for a particular host.
@@ -9770,7 +9770,7 @@ class OperationsInsightsClient(object):
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.IngestHostMetricsDetails ingest_host_metrics_details: (required)
             Payload for one or more host performance metrics for a particular host.
@@ -9900,12 +9900,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -10036,17 +10036,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -10178,17 +10178,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -10320,17 +10320,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -10462,12 +10462,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -10598,17 +10598,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -10736,17 +10736,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -10755,14 +10755,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -10939,17 +10939,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -10977,14 +10977,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -11169,17 +11169,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -11188,14 +11188,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -11372,17 +11372,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -11391,14 +11391,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -11575,17 +11575,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -11629,14 +11629,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -11829,17 +11829,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_interval_start: (optional)
             Analysis start time in UTC in ISO 8601 format(inclusive).
@@ -11861,14 +11861,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -12054,7 +12054,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -12076,7 +12076,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -12085,7 +12085,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR snapshot summary data.
@@ -12256,7 +12256,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -12265,7 +12265,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR summary data.
@@ -12441,7 +12441,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -12450,7 +12450,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str fields: (optional)
             By default all the fields are returned. Use this parameter to fetch specific fields 'size', 'etag', 'md5',
@@ -12598,7 +12598,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str awr_hub_source_id: (optional)
             Awr Hub source identifier
@@ -12629,14 +12629,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -12810,7 +12810,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name.
@@ -12830,14 +12830,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -13005,14 +13005,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -13174,14 +13174,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -13317,12 +13317,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str chargebackplan_id: (optional)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -13331,14 +13331,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -13482,7 +13482,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str enterprise_manager_bridge_id: (optional)
             Unique Enterprise Manager bridge identifier
@@ -13490,17 +13490,17 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -13518,14 +13518,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -13730,7 +13730,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str enterprise_manager_bridge_id: (optional)
             Unique Enterprise Manager bridge identifier
@@ -13738,7 +13738,7 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             Resource Status
@@ -13759,7 +13759,7 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] fields: (optional)
             Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
@@ -13773,14 +13773,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -13795,7 +13795,7 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (optional)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
@@ -13980,7 +13980,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name.
@@ -14000,14 +14000,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -14162,12 +14162,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -14180,14 +14180,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -14366,7 +14366,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str enterprise_manager_bridge_id: (optional)
             Unique Enterprise Manager bridge identifier
@@ -14374,7 +14374,7 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of Exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             Resource Status
@@ -14397,14 +14397,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -14572,7 +14572,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str enterprise_manager_bridge_id: (optional)
             Unique Enterprise Manager bridge identifier
@@ -14580,12 +14580,12 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
@@ -14602,14 +14602,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -14660,7 +14660,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -14833,12 +14833,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             Resource Status
@@ -14869,14 +14869,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -14894,7 +14894,7 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (optional)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
@@ -15063,12 +15063,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -15100,7 +15100,7 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (optional)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -15109,14 +15109,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -15139,7 +15139,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             Resource Status
@@ -15302,7 +15302,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -15311,14 +15311,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -15459,7 +15459,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -15468,14 +15468,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -15617,14 +15617,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] enterprise_manager_entity_type: (optional)
             Filter by one or more Enterprise Manager entity types. Currently, the supported types are \"oracle_pdb\", \"oracle_database\", \"host\", \"oracle_dbmachine\", \"oracle_exa_cloud_service\", and \"oracle_oci_exadata_cloud_service\". If this parameter is not specified, targets of all supported entity types are returned by default.
@@ -15757,7 +15757,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str news_report_id: (optional)
             Unique Ops Insights news report identifier
@@ -15779,14 +15779,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -15949,7 +15949,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name.
@@ -15963,7 +15963,7 @@ class OperationsInsightsClient(object):
         :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] lifecycle_state: (optional)
             Lifecycle states
@@ -15977,14 +15977,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -16146,7 +16146,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name.
@@ -16166,14 +16166,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -16325,7 +16325,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name.
@@ -16345,14 +16345,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -16502,7 +16502,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             Filter to return based on resources that match the entire display name.
@@ -16524,14 +16524,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -16688,7 +16688,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] data_object_type: (optional)
             OPSI data object types.
@@ -16705,14 +16705,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -16870,7 +16870,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_identifier: (required)
             Unique SQL_ID for a SQL Statement.
@@ -16883,19 +16883,19 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -17008,7 +17008,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_identifier: (required)
             Unique SQL_ID for a SQL Statement.
@@ -17038,7 +17038,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -17188,7 +17188,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.list[str] sql_identifier: (required)
             One or more unique SQL_IDs for a SQL Statement.
@@ -17197,19 +17197,19 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the assosicated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database `OCIDs`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -17362,7 +17362,7 @@ class OperationsInsightsClient(object):
         :param str warehouse_id: (required)
             The `OCID`__ of a Warehouse.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] data_object_type: (optional)
             A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
@@ -17382,14 +17382,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -17574,7 +17574,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -17583,7 +17583,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
@@ -17734,7 +17734,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -17743,7 +17743,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
@@ -17891,7 +17891,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -17900,12 +17900,12 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The ID of the asynchronous work request.
@@ -18218,7 +18218,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.QueryOpsiDataObjectDataDetails query_opsi_data_object_data_details: (required)
             The information to be used for querying an OPSI data object.
@@ -18230,14 +18230,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18352,7 +18352,7 @@ class OperationsInsightsClient(object):
         :param str warehouse_id: (required)
             The `OCID`__ of a Warehouse.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.QueryWarehouseDataObjectDataDetails query_warehouse_data_object_data_details: (required)
             The information to be used for querying a Warehouse.
@@ -18364,14 +18364,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -18603,17 +18603,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -18641,14 +18641,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -18835,7 +18835,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             Required filter to return only changes for the specified parameter. The
@@ -18844,12 +18844,12 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -18878,14 +18878,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -19074,17 +19074,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -19136,14 +19136,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -19357,17 +19357,17 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -19414,14 +19414,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -19616,7 +19616,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.list[int] object_identifier: (required)
             One or more unique Object id (from RDBMS)
@@ -19624,12 +19624,12 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_interval_start: (optional)
             Analysis start time in UTC in ISO 8601 format(inclusive).
@@ -19651,14 +19651,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -19812,7 +19812,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.list[str] sql_identifier: (required)
             One or more unique SQL_IDs for a SQL Statement.
@@ -19821,12 +19821,12 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param datetime time_interval_start: (optional)
             Analysis start time in UTC in ISO 8601 format(inclusive).
@@ -19848,14 +19848,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -20018,7 +20018,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -20045,7 +20045,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -20054,7 +20054,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR CPU usage summary data.
@@ -20225,7 +20225,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.list[str] name: (required)
             The required multiple value query parameter to filter the entity name.
@@ -20250,7 +20250,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -20259,7 +20259,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR time series summary data.
@@ -20426,7 +20426,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The required single value query parameter to filter the entity name.
@@ -20451,7 +20451,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -20460,7 +20460,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR database parameter change history data.
@@ -20633,7 +20633,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -20676,7 +20676,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -20685,7 +20685,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR database parameter change history data.
@@ -20887,7 +20887,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -20896,7 +20896,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the AWR summary data.
@@ -21053,7 +21053,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.list[str] name: (required)
             The required multiple value query parameter to filter the entity name.
@@ -21078,7 +21078,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -21087,7 +21087,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the data within a time period.
@@ -21250,7 +21250,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -21442,7 +21442,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The required single value query parameter to filter the entity name.
@@ -21476,7 +21476,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -21485,7 +21485,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort distribution data.
@@ -21654,7 +21654,7 @@ class OperationsInsightsClient(object):
             It can be retrieved from the following endpoint:
             /awrHubs/{awrHubId}/awrDatabases
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_number: (optional)
             The optional single value query parameter to filter by database instance number.
@@ -21684,7 +21684,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -21693,7 +21693,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The option to sort the data within a time period.
@@ -21864,7 +21864,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             Name for an Awr source database
@@ -21876,14 +21876,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The order in which Awr sources summary records are listed
@@ -22034,7 +22034,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opsi_config_type: (optional)
             Filter to return configuration items based on configuration type of OPSI configuration.
@@ -22048,14 +22048,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] config_items_applicable_context: (optional)
             Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
@@ -22199,7 +22199,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by resource metric.
@@ -22233,17 +22233,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -22262,7 +22262,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -22500,7 +22500,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by resource metric.
@@ -22534,17 +22534,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -22587,7 +22587,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
@@ -22819,7 +22819,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by resource metric.
@@ -22853,17 +22853,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -22886,14 +22886,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -23127,7 +23127,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by resource metric.
@@ -23161,17 +23161,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
@@ -23186,7 +23186,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int percentile: (optional)
             Percentile values of daily usage to be used for computing the aggregate resource usage.
@@ -23373,7 +23373,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by resource metric.
@@ -23407,24 +23407,24 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -23641,7 +23641,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by resource metric.
@@ -23675,17 +23675,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int forecast_days: (optional)
             Number of days used for utilization forecast analysis.
@@ -23703,7 +23703,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -23897,7 +23897,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -23921,19 +23921,19 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -23942,7 +23942,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -24074,12 +24074,12 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (required)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -24103,12 +24103,12 @@ class OperationsInsightsClient(object):
         :param list[str] database_insight_id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] host_insight_id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] storage_server_name: (optional)
             Optional storage server name on an exadata system.
@@ -24128,7 +24128,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -24137,7 +24137,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -24306,7 +24306,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -24330,7 +24330,7 @@ class OperationsInsightsClient(object):
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -24347,7 +24347,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -24550,7 +24550,7 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (required)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -24574,12 +24574,12 @@ class OperationsInsightsClient(object):
         :param list[str] database_insight_id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] host_insight_id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] storage_server_name: (optional)
             Optional storage server name on an exadata system.
@@ -24621,7 +24621,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int confidence: (optional)
             This parameter is used to change data's confidence level, this data is ingested by the
@@ -24645,7 +24645,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -24825,7 +24825,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -24849,7 +24849,7 @@ class OperationsInsightsClient(object):
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -24893,7 +24893,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] defined_tag_equals: (optional)
             A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
@@ -25081,7 +25081,7 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (required)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_type: (required)
             Filter by resource.
@@ -25140,14 +25140,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25293,7 +25293,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_type: (required)
             Filter by resource.
@@ -25325,7 +25325,7 @@ class OperationsInsightsClient(object):
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -25352,7 +25352,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -25361,7 +25361,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int percentile: (optional)
             Percentile values of daily usage to be used for computing the aggregate resource usage.
@@ -25550,7 +25550,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_type: (required)
             Filter by resource.
@@ -25582,7 +25582,7 @@ class OperationsInsightsClient(object):
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -25599,7 +25599,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int percentile: (optional)
             Percentile values of daily usage to be used for computing the aggregate resource usage.
@@ -25763,7 +25763,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_type: (required)
             Filter by resource.
@@ -25795,7 +25795,7 @@ class OperationsInsightsClient(object):
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -25820,14 +25820,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] defined_tag_equals: (optional)
             A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
@@ -26002,7 +26002,7 @@ class OperationsInsightsClient(object):
         :param str exadata_insight_id: (required)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_type: (optional)
             Filter by one or more Exadata types.
@@ -26025,14 +26025,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -26159,12 +26159,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -26188,7 +26188,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -26329,12 +26329,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -26362,7 +26362,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -26371,7 +26371,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -26500,12 +26500,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -26529,14 +26529,14 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -26545,7 +26545,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -26690,12 +26690,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -26719,14 +26719,14 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -26735,7 +26735,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -26882,7 +26882,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -26918,12 +26918,12 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str utilization_level: (optional)
             Filter by utilization level by the following buckets:
@@ -26939,7 +26939,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -26990,7 +26990,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -27184,7 +27184,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -27220,12 +27220,12 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -27265,7 +27265,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -27306,7 +27306,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -27519,7 +27519,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -27555,12 +27555,12 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int percentile: (optional)
             Percentile values of daily usage to be used for computing the aggregate resource usage.
@@ -27580,14 +27580,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -27638,7 +27638,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -27833,7 +27833,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -27869,19 +27869,19 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int percentile: (optional)
             Percentile values of daily usage to be used for computing the aggregate resource usage.
@@ -27925,7 +27925,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -28085,7 +28085,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -28121,19 +28121,19 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -28184,7 +28184,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -28359,7 +28359,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Filter by host resource metric.
@@ -28395,12 +28395,12 @@ class OperationsInsightsClient(object):
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int forecast_days: (optional)
             Number of days used for utilization forecast analysis.
@@ -28410,7 +28410,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -28451,7 +28451,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
@@ -28619,12 +28619,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -28648,14 +28648,14 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -28664,7 +28664,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -28811,12 +28811,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Host top processes resource metric sort options.
@@ -28844,7 +28844,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -28853,7 +28853,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -28872,7 +28872,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -29019,12 +29019,12 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Required `OCID`__ of the host insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_metric: (required)
             Host top processes resource metric sort options.
@@ -29054,7 +29054,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -29063,7 +29063,7 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29076,7 +29076,7 @@ class OperationsInsightsClient(object):
         :param str host_id: (optional)
             Optional `OCID`__ of the host (Compute Id)
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str process_hash: (optional)
             Unique identifier for a process.
@@ -29334,7 +29334,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_type: (optional)
             Filter by one or more database type.
@@ -29345,17 +29345,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -29390,7 +29390,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29568,7 +29568,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_identifier: (required)
             Unique SQL_ID for a SQL Statement.
@@ -29577,12 +29577,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -29608,7 +29608,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29725,7 +29725,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_identifier: (required)
             Unique SQL_ID for a SQL Statement.
@@ -29734,12 +29734,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -29765,7 +29765,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29883,7 +29883,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] database_type: (optional)
             Filter by one or more database type.
@@ -29894,17 +29894,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -29945,14 +29945,14 @@ class OperationsInsightsClient(object):
             `List Pagination`__.
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30178,7 +30178,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_identifier: (required)
             Unique SQL_ID for a SQL Statement.
@@ -30187,17 +30187,17 @@ class OperationsInsightsClient(object):
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] id: (optional)
             Optional list of database `OCIDs`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] exadata_insight_id: (optional)
             Optional list of exadata insight resource `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] cdb_name: (optional)
             Filter by one or more cdb name.
@@ -30229,7 +30229,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30396,7 +30396,7 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sql_identifier: (required)
             Unique SQL_ID for a SQL Statement.
@@ -30405,12 +30405,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -30436,7 +30436,7 @@ class OperationsInsightsClient(object):
             the previous \"List\" call. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30556,22 +30556,22 @@ class OperationsInsightsClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str exadata_insight_id: (optional)
             `OCID`__ of exadata insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -30702,12 +30702,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30827,12 +30827,12 @@ class OperationsInsightsClient(object):
         :param str database_id: (optional)
             Optional `OCID`__ of the associated DBaaS entity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             `OCID`__ of the database insight resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -31181,7 +31181,7 @@ class OperationsInsightsClient(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.UpdateChargebackPlanDetails update_chargeback_plan_details: (required)
             The details used to update a chargeback plan.
@@ -31299,7 +31299,7 @@ class OperationsInsightsClient(object):
         :param str chargeback_plan_report_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan report
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Unique Ops insight identifier
@@ -32012,7 +32012,7 @@ class OperationsInsightsClient(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails update_operations_insights_private_endpoint_details: (required)
             The details used to update a private endpoint.
@@ -32363,7 +32363,7 @@ class OperationsInsightsClient(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.UpdateOpsiConfigurationDetails update_opsi_configuration_details: (required)
             The OPSI configuration resource details to be updated.

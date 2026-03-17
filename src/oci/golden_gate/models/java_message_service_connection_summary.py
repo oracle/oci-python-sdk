@@ -655,7 +655,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the security credentials are stored associated to the principal.
         Note: When provided, 'jndiSecurityCredentials' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The jndi_security_credentials_secret_id of this JavaMessageServiceConnectionSummary.
@@ -670,7 +670,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the security credentials are stored associated to the principal.
         Note: When provided, 'jndiSecurityCredentials' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param jndi_security_credentials_secret_id: The jndi_security_credentials_secret_id of this JavaMessageServiceConnectionSummary.
@@ -686,7 +686,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         that Oracle GoldenGate uses to connect the associated Java Message Service.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -702,7 +702,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         that Oracle GoldenGate uses to connect the associated Java Message Service.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -717,7 +717,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the content of the TrustStore file is stored.
         Note: When provided, 'trustStore' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The trust_store_secret_id of this JavaMessageServiceConnectionSummary.
@@ -732,7 +732,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the content of the TrustStore file is stored.
         Note: When provided, 'trustStore' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param trust_store_secret_id: The trust_store_secret_id of this JavaMessageServiceConnectionSummary.
@@ -747,7 +747,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the TrustStore password is stored.
         Note: When provided, 'trustStorePassword' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The trust_store_password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -762,7 +762,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the TrustStore password is stored.
         Note: When provided, 'trustStorePassword' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param trust_store_password_secret_id: The trust_store_password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -777,7 +777,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the content of the KeyStore file is stored.
         Note: When provided, 'keyStore' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_secret_id of this JavaMessageServiceConnectionSummary.
@@ -792,7 +792,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the content of the KeyStore file is stored.
         Note: When provided, 'keyStore' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_secret_id: The key_store_secret_id of this JavaMessageServiceConnectionSummary.
@@ -807,7 +807,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the KeyStore password is stored.
         Note: When provided, 'keyStorePassword' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -822,7 +822,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the KeyStore password is stored.
         Note: When provided, 'keyStorePassword' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_password_secret_id: The key_store_password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -838,7 +838,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         In case it differs from the KeyStore password, it should be provided.
         Note: When provided, 'sslKeyPassword' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_key_password_secret_id of this JavaMessageServiceConnectionSummary.
@@ -854,7 +854,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         In case it differs from the KeyStore password, it should be provided.
         Note: When provided, 'sslKeyPassword' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_key_password_secret_id: The ssl_key_password_secret_id of this JavaMessageServiceConnectionSummary.
