@@ -78,7 +78,7 @@ class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfiguration
         The `OCID`__ of the instance to use to create the
         instance configuration.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this CreateInstanceConfigurationFromInstanceDetails.
@@ -93,7 +93,7 @@ class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfiguration
         The `OCID`__ of the instance to use to create the
         instance configuration.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this CreateInstanceConfigurationFromInstanceDetails.

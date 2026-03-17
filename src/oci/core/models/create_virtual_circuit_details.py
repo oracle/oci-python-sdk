@@ -255,7 +255,7 @@ class CreateVirtualCircuitDetails(object):
         **[Required]** Gets the compartment_id of this CreateVirtualCircuitDetails.
         The `OCID`__ of the compartment to contain the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVirtualCircuitDetails.
@@ -269,7 +269,7 @@ class CreateVirtualCircuitDetails(object):
         Sets the compartment_id of this CreateVirtualCircuitDetails.
         The `OCID`__ of the compartment to contain the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVirtualCircuitDetails.
@@ -312,7 +312,7 @@ class CreateVirtualCircuitDetails(object):
         See `Route Filtering`__ for details.
         By default, routing information is shared for all routes in the same market.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
 
         Allowed values for items in this list are: "ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL"
 
@@ -331,7 +331,7 @@ class CreateVirtualCircuitDetails(object):
         See `Route Filtering`__ for details.
         By default, routing information is shared for all routes in the same market.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
 
 
         :param routing_policy: The routing_policy of this CreateVirtualCircuitDetails.
@@ -495,7 +495,7 @@ class CreateVirtualCircuitDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVirtualCircuitDetails.
@@ -512,7 +512,7 @@ class CreateVirtualCircuitDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVirtualCircuitDetails.
@@ -555,7 +555,7 @@ class CreateVirtualCircuitDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVirtualCircuitDetails.
@@ -572,7 +572,7 @@ class CreateVirtualCircuitDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVirtualCircuitDetails.
@@ -587,7 +587,7 @@ class CreateVirtualCircuitDetails(object):
         For private virtual circuits only. The `OCID`__ of the :class:`Drg`
         that this virtual circuit uses.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this CreateVirtualCircuitDetails.
@@ -602,7 +602,7 @@ class CreateVirtualCircuitDetails(object):
         For private virtual circuits only. The `OCID`__ of the :class:`Drg`
         that this virtual circuit uses.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this CreateVirtualCircuitDetails.
@@ -646,7 +646,7 @@ class CreateVirtualCircuitDetails(object):
         via a provider). To get a list of the available service offerings, see
         :func:`list_fast_connect_provider_services`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The provider_service_id of this CreateVirtualCircuitDetails.
@@ -662,7 +662,7 @@ class CreateVirtualCircuitDetails(object):
         via a provider). To get a list of the available service offerings, see
         :func:`list_fast_connect_provider_services`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param provider_service_id: The provider_service_id of this CreateVirtualCircuitDetails.

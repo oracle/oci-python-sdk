@@ -53,7 +53,7 @@ class ChangeMacsManagedCloudDatabaseInsightConnectionDetails(object):
         **[Required]** Gets the management_agent_id of this ChangeMacsManagedCloudDatabaseInsightConnectionDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this ChangeMacsManagedCloudDatabaseInsightConnectionDetails.
@@ -67,7 +67,7 @@ class ChangeMacsManagedCloudDatabaseInsightConnectionDetails(object):
         Sets the management_agent_id of this ChangeMacsManagedCloudDatabaseInsightConnectionDetails.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this ChangeMacsManagedCloudDatabaseInsightConnectionDetails.

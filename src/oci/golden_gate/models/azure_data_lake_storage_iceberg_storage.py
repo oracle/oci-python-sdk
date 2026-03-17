@@ -118,7 +118,7 @@ class AzureDataLakeStorageIcebergStorage(IcebergStorage):
         **[Required]** Gets the account_key_secret_id of this AzureDataLakeStorageIcebergStorage.
         The `OCID`__ of the Secret where the account key is stored.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The account_key_secret_id of this AzureDataLakeStorageIcebergStorage.
@@ -132,7 +132,7 @@ class AzureDataLakeStorageIcebergStorage(IcebergStorage):
         Sets the account_key_secret_id of this AzureDataLakeStorageIcebergStorage.
         The `OCID`__ of the Secret where the account key is stored.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param account_key_secret_id: The account_key_secret_id of this AzureDataLakeStorageIcebergStorage.

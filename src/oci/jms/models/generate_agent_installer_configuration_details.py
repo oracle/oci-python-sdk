@@ -66,7 +66,7 @@ class GenerateAgentInstallerConfigurationDetails(object):
         **[Required]** Gets the install_key_id of this GenerateAgentInstallerConfigurationDetails.
         The `OCID`__ of the management agent install key for which to generate the configuration file.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The install_key_id of this GenerateAgentInstallerConfigurationDetails.
@@ -80,7 +80,7 @@ class GenerateAgentInstallerConfigurationDetails(object):
         Sets the install_key_id of this GenerateAgentInstallerConfigurationDetails.
         The `OCID`__ of the management agent install key for which to generate the configuration file.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param install_key_id: The install_key_id of this GenerateAgentInstallerConfigurationDetails.
@@ -94,7 +94,7 @@ class GenerateAgentInstallerConfigurationDetails(object):
         **[Required]** Gets the fleet_id of this GenerateAgentInstallerConfigurationDetails.
         The `OCID`__ of the fleet for which to generate the configuration file.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this GenerateAgentInstallerConfigurationDetails.
@@ -108,7 +108,7 @@ class GenerateAgentInstallerConfigurationDetails(object):
         Sets the fleet_id of this GenerateAgentInstallerConfigurationDetails.
         The `OCID`__ of the fleet for which to generate the configuration file.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this GenerateAgentInstallerConfigurationDetails.

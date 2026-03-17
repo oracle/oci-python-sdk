@@ -92,7 +92,7 @@ class UpdateWebAppAccelerationDetails(object):
         The `OCID`__ of WebAppAccelerationPolicy, which is attached to the resource.
         This update guarantees that the resource always has WebAppAccelerationPolicy attached at any time.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The web_app_acceleration_policy_id of this UpdateWebAppAccelerationDetails.
@@ -107,7 +107,7 @@ class UpdateWebAppAccelerationDetails(object):
         The `OCID`__ of WebAppAccelerationPolicy, which is attached to the resource.
         This update guarantees that the resource always has WebAppAccelerationPolicy attached at any time.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param web_app_acceleration_policy_id: The web_app_acceleration_policy_id of this UpdateWebAppAccelerationDetails.

@@ -140,7 +140,7 @@ class ProductLicenseConsumerSummary(object):
         **[Required]** Gets the resource_id of this ProductLicenseConsumerSummary.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this ProductLicenseConsumerSummary.
@@ -154,7 +154,7 @@ class ProductLicenseConsumerSummary(object):
         Sets the resource_id of this ProductLicenseConsumerSummary.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this ProductLicenseConsumerSummary.
@@ -216,7 +216,7 @@ class ProductLicenseConsumerSummary(object):
         **[Required]** Gets the resource_compartment_id of this ProductLicenseConsumerSummary.
         The `OCID`__ of the compartment that contains the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_compartment_id of this ProductLicenseConsumerSummary.
@@ -230,7 +230,7 @@ class ProductLicenseConsumerSummary(object):
         Sets the resource_compartment_id of this ProductLicenseConsumerSummary.
         The `OCID`__ of the compartment that contains the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_compartment_id: The resource_compartment_id of this ProductLicenseConsumerSummary.

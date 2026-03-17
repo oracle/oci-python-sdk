@@ -46,7 +46,7 @@ class BulkDetachIpv6sDetails(object):
         Gets the vnic_id of this BulkDetachIpv6sDetails.
         The `OCID`__ of the VNIC of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this BulkDetachIpv6sDetails.
@@ -60,7 +60,7 @@ class BulkDetachIpv6sDetails(object):
         Sets the vnic_id of this BulkDetachIpv6sDetails.
         The `OCID`__ of the VNIC of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this BulkDetachIpv6sDetails.

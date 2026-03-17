@@ -255,7 +255,7 @@ class UpdateVirtualCircuitDetails(object):
         See `Route Filtering`__ for details.
         By default, routing information is shared for all routes in the same market.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
 
         Allowed values for items in this list are: "ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL"
 
@@ -274,7 +274,7 @@ class UpdateVirtualCircuitDetails(object):
         See `Route Filtering`__ for details.
         By default, routing information is shared for all routes in the same market.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
 
 
         :param routing_policy: The routing_policy of this UpdateVirtualCircuitDetails.
@@ -450,7 +450,7 @@ class UpdateVirtualCircuitDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateVirtualCircuitDetails.
@@ -467,7 +467,7 @@ class UpdateVirtualCircuitDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateVirtualCircuitDetails.
@@ -510,7 +510,7 @@ class UpdateVirtualCircuitDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateVirtualCircuitDetails.
@@ -527,7 +527,7 @@ class UpdateVirtualCircuitDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateVirtualCircuitDetails.
@@ -544,7 +544,7 @@ class UpdateVirtualCircuitDetails(object):
 
         To be updated only by the customer who owns the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this UpdateVirtualCircuitDetails.
@@ -561,7 +561,7 @@ class UpdateVirtualCircuitDetails(object):
 
         To be updated only by the customer who owns the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this UpdateVirtualCircuitDetails.

@@ -40,7 +40,7 @@ class ChangeDashboardGroupDetails(object):
         The `OCID`__ of the dashboardGroup
         into which the resource should be moved.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dashboard_group_id of this ChangeDashboardGroupDetails.
@@ -55,7 +55,7 @@ class ChangeDashboardGroupDetails(object):
         The `OCID`__ of the dashboardGroup
         into which the resource should be moved.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dashboard_group_id: The dashboard_group_id of this ChangeDashboardGroupDetails.

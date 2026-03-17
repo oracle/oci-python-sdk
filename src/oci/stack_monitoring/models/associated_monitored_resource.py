@@ -215,7 +215,7 @@ class AssociatedMonitoredResource(object):
         **[Required]** Gets the id of this AssociatedMonitoredResource.
         Monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AssociatedMonitoredResource.
@@ -229,7 +229,7 @@ class AssociatedMonitoredResource(object):
         Sets the id of this AssociatedMonitoredResource.
         Monitored resource identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AssociatedMonitoredResource.
@@ -315,7 +315,7 @@ class AssociatedMonitoredResource(object):
         Gets the compartment_id of this AssociatedMonitoredResource.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AssociatedMonitoredResource.
@@ -329,7 +329,7 @@ class AssociatedMonitoredResource(object):
         Sets the compartment_id of this AssociatedMonitoredResource.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AssociatedMonitoredResource.
@@ -370,7 +370,7 @@ class AssociatedMonitoredResource(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_id of this AssociatedMonitoredResource.
@@ -387,7 +387,7 @@ class AssociatedMonitoredResource(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_id: The external_id of this AssociatedMonitoredResource.
@@ -401,7 +401,7 @@ class AssociatedMonitoredResource(object):
         Gets the management_agent_id of this AssociatedMonitoredResource.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this AssociatedMonitoredResource.
@@ -415,7 +415,7 @@ class AssociatedMonitoredResource(object):
         Sets the management_agent_id of this AssociatedMonitoredResource.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this AssociatedMonitoredResource.

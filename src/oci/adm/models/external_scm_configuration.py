@@ -188,7 +188,7 @@ class ExternalScmConfiguration(ScmConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the Private Access Token (PAT) Secret.
         The secret provides the credentials necessary to authenticate against the SCM.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The pat_secret_id of this ExternalScmConfiguration.
@@ -203,7 +203,7 @@ class ExternalScmConfiguration(ScmConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the Private Access Token (PAT) Secret.
         The secret provides the credentials necessary to authenticate against the SCM.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param pat_secret_id: The pat_secret_id of this ExternalScmConfiguration.

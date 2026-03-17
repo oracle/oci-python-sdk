@@ -109,7 +109,7 @@ class LimitsIncreaseItemRequestSummary(object):
         **[Required]** Gets the id of this LimitsIncreaseItemRequestSummary.
         The `OCID`__ of the limit increase item.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LimitsIncreaseItemRequestSummary.
@@ -123,7 +123,7 @@ class LimitsIncreaseItemRequestSummary(object):
         Sets the id of this LimitsIncreaseItemRequestSummary.
         The `OCID`__ of the limit increase item.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LimitsIncreaseItemRequestSummary.
@@ -138,7 +138,7 @@ class LimitsIncreaseItemRequestSummary(object):
         The `OCID`__ of the compartment that contains the limit increase item.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LimitsIncreaseItemRequestSummary.
@@ -153,7 +153,7 @@ class LimitsIncreaseItemRequestSummary(object):
         The `OCID`__ of the compartment that contains the limit increase item.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LimitsIncreaseItemRequestSummary.
@@ -315,7 +315,7 @@ class LimitsIncreaseItemRequestSummary(object):
         **[Required]** Gets the limits_increase_request_id of this LimitsIncreaseItemRequestSummary.
         The `OCID`__ of the limit increase request that the limit increase item belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The limits_increase_request_id of this LimitsIncreaseItemRequestSummary.
@@ -329,7 +329,7 @@ class LimitsIncreaseItemRequestSummary(object):
         Sets the limits_increase_request_id of this LimitsIncreaseItemRequestSummary.
         The `OCID`__ of the limit increase request that the limit increase item belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param limits_increase_request_id: The limits_increase_request_id of this LimitsIncreaseItemRequestSummary.

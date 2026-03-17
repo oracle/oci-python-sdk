@@ -136,7 +136,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         The `OCID`__ of the compartment where the standby Autonomous Container Database
         will be created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
@@ -151,7 +151,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         The `OCID`__ of the compartment where the standby Autonomous Container Database
         will be created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_autonomous_container_database_compartment_id: The peer_autonomous_container_database_compartment_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
@@ -165,7 +165,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         Gets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
@@ -179,7 +179,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         Sets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_cloud_autonomous_vm_cluster_id: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
@@ -193,7 +193,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         Gets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         The `OCID`__ of the peer Autonomous Exadata VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
@@ -207,7 +207,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         Sets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         The `OCID`__ of the peer Autonomous Exadata VM Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_autonomous_vm_cluster_id: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.

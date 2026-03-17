@@ -178,7 +178,7 @@ class ComputeCapacityReservation(object):
         The `OCID`__ of the compartment
         containing the compute capacity reservation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ComputeCapacityReservation.
@@ -193,7 +193,7 @@ class ComputeCapacityReservation(object):
         The `OCID`__ of the compartment
         containing the compute capacity reservation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ComputeCapacityReservation.
@@ -210,7 +210,7 @@ class ComputeCapacityReservation(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ComputeCapacityReservation.
@@ -227,7 +227,7 @@ class ComputeCapacityReservation(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ComputeCapacityReservation.
@@ -270,7 +270,7 @@ class ComputeCapacityReservation(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ComputeCapacityReservation.
@@ -287,7 +287,7 @@ class ComputeCapacityReservation(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ComputeCapacityReservation.
@@ -301,7 +301,7 @@ class ComputeCapacityReservation(object):
         **[Required]** Gets the id of this ComputeCapacityReservation.
         The `OCID`__ of the compute capacity reservation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeCapacityReservation.
@@ -315,7 +315,7 @@ class ComputeCapacityReservation(object):
         Sets the id of this ComputeCapacityReservation.
         The `OCID`__ of the compute capacity reservation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeCapacityReservation.
@@ -330,7 +330,7 @@ class ComputeCapacityReservation(object):
         Whether this capacity reservation is the default.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :return: The is_default_reservation of this ComputeCapacityReservation.
@@ -345,7 +345,7 @@ class ComputeCapacityReservation(object):
         Whether this capacity reservation is the default.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :param is_default_reservation: The is_default_reservation of this ComputeCapacityReservation.

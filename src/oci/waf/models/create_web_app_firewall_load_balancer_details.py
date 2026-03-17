@@ -91,7 +91,7 @@ class CreateWebAppFirewallLoadBalancerDetails(CreateWebAppFirewallDetails):
         **[Required]** Gets the load_balancer_id of this CreateWebAppFirewallLoadBalancerDetails.
         LoadBalancer `OCID`__ to which the WebAppFirewallPolicy is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this CreateWebAppFirewallLoadBalancerDetails.
@@ -105,7 +105,7 @@ class CreateWebAppFirewallLoadBalancerDetails(CreateWebAppFirewallDetails):
         Sets the load_balancer_id of this CreateWebAppFirewallLoadBalancerDetails.
         LoadBalancer `OCID`__ to which the WebAppFirewallPolicy is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this CreateWebAppFirewallLoadBalancerDetails.

@@ -167,7 +167,7 @@ class LaunchCreateVolumeFromAttributes(LaunchCreateVolumeDetails):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :return: The vpus_per_gb of this LaunchCreateVolumeFromAttributes.
@@ -193,7 +193,7 @@ class LaunchCreateVolumeFromAttributes(LaunchCreateVolumeDetails):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :param vpus_per_gb: The vpus_per_gb of this LaunchCreateVolumeFromAttributes.

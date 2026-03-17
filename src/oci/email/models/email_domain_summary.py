@@ -138,7 +138,7 @@ class EmailDomainSummary(object):
         **[Required]** Gets the id of this EmailDomainSummary.
         The `OCID`__ of the email domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this EmailDomainSummary.
@@ -152,7 +152,7 @@ class EmailDomainSummary(object):
         Sets the id of this EmailDomainSummary.
         The `OCID`__ of the email domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this EmailDomainSummary.
@@ -166,7 +166,7 @@ class EmailDomainSummary(object):
         Gets the compartment_id of this EmailDomainSummary.
         The `OCID`__ of the compartment that contains this email domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EmailDomainSummary.
@@ -180,7 +180,7 @@ class EmailDomainSummary(object):
         Sets the compartment_id of this EmailDomainSummary.
         The `OCID`__ of the compartment that contains this email domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EmailDomainSummary.
@@ -219,7 +219,7 @@ class EmailDomainSummary(object):
         The `OCID`__ of the DKIM key
         that is adding the DKIM signature for this email domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The active_dkim_id of this EmailDomainSummary.
@@ -234,7 +234,7 @@ class EmailDomainSummary(object):
         The `OCID`__ of the DKIM key
         that is adding the DKIM signature for this email domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param active_dkim_id: The active_dkim_id of this EmailDomainSummary.
@@ -309,7 +309,7 @@ class EmailDomainSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this EmailDomainSummary.
@@ -326,7 +326,7 @@ class EmailDomainSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this EmailDomainSummary.
@@ -343,7 +343,7 @@ class EmailDomainSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this EmailDomainSummary.
@@ -360,7 +360,7 @@ class EmailDomainSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this EmailDomainSummary.

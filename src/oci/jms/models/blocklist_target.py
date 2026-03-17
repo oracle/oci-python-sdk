@@ -53,7 +53,7 @@ class BlocklistTarget(object):
         **[Required]** Gets the fleet_id of this BlocklistTarget.
         The `OCID`__ of the fleet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this BlocklistTarget.
@@ -67,7 +67,7 @@ class BlocklistTarget(object):
         Sets the fleet_id of this BlocklistTarget.
         The `OCID`__ of the fleet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this BlocklistTarget.
@@ -81,7 +81,7 @@ class BlocklistTarget(object):
         Gets the managed_instance_id of this BlocklistTarget.
         The `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this BlocklistTarget.
@@ -95,7 +95,7 @@ class BlocklistTarget(object):
         Sets the managed_instance_id of this BlocklistTarget.
         The `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this BlocklistTarget.

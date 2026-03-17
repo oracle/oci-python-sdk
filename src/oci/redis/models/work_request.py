@@ -283,7 +283,7 @@ class WorkRequest(object):
         **[Required]** Gets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The id of this WorkRequest.
@@ -297,7 +297,7 @@ class WorkRequest(object):
         Sets the id of this WorkRequest.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param id: The id of this WorkRequest.
@@ -311,7 +311,7 @@ class WorkRequest(object):
         **[Required]** Gets the compartment_id of this WorkRequest.
         The `OCID`__ of the compartment that contains the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The compartment_id of this WorkRequest.
@@ -325,7 +325,7 @@ class WorkRequest(object):
         Sets the compartment_id of this WorkRequest.
         The `OCID`__ of the compartment that contains the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

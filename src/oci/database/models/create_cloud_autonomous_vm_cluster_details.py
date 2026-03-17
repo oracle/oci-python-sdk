@@ -204,7 +204,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         **[Required]** Gets the compartment_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCloudAutonomousVmClusterDetails.
@@ -218,7 +218,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Sets the compartment_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCloudAutonomousVmClusterDetails.
@@ -256,7 +256,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         **[Required]** Gets the subnet_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the subnet the cloud Autonomous VM Cluster is associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateCloudAutonomousVmClusterDetails.
@@ -270,7 +270,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Sets the subnet_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the subnet the cloud Autonomous VM Cluster is associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateCloudAutonomousVmClusterDetails.
@@ -308,7 +308,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         **[Required]** Gets the cloud_exadata_infrastructure_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_exadata_infrastructure_id of this CreateCloudAutonomousVmClusterDetails.
@@ -322,7 +322,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Sets the cloud_exadata_infrastructure_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_exadata_infrastructure_id: The cloud_exadata_infrastructure_id of this CreateCloudAutonomousVmClusterDetails.
@@ -432,7 +432,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Gets the cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
         The time zone to use for the Cloud Autonomous VM cluster. For details, see `DB System Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :return: The cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
@@ -446,7 +446,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Sets the cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
         The time zone to use for the Cloud Autonomous VM cluster. For details, see `DB System Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :param cluster_time_zone: The cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
@@ -656,8 +656,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this CreateCloudAutonomousVmClusterDetails.
@@ -673,8 +673,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this CreateCloudAutonomousVmClusterDetails.
@@ -691,7 +691,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateCloudAutonomousVmClusterDetails.
@@ -708,7 +708,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateCloudAutonomousVmClusterDetails.
@@ -723,7 +723,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateCloudAutonomousVmClusterDetails.
@@ -738,7 +738,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateCloudAutonomousVmClusterDetails.
@@ -754,7 +754,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this CreateCloudAutonomousVmClusterDetails.
@@ -770,7 +770,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this CreateCloudAutonomousVmClusterDetails.
@@ -784,7 +784,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Gets the subscription_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CreateCloudAutonomousVmClusterDetails.
@@ -798,7 +798,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Sets the subscription_id of this CreateCloudAutonomousVmClusterDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CreateCloudAutonomousVmClusterDetails.

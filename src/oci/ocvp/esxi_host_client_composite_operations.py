@@ -72,7 +72,7 @@ class EsxiHostClientCompositeOperations(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -121,7 +121,7 @@ class EsxiHostClientCompositeOperations(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -162,7 +162,7 @@ class EsxiHostClientCompositeOperations(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.ReplaceHostDetails replace_host_details: (required)
             The details for replacing ESXi host
@@ -206,12 +206,12 @@ class EsxiHostClientCompositeOperations(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str swap_billing_host_id: (required)
             The `OCID`__ of the active ESXi Host to swap billing with current host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -252,7 +252,7 @@ class EsxiHostClientCompositeOperations(object):
         :param str esxi_host_id: (required)
             The `OCID`__ of the ESXi host.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateEsxiHostDetails update_esxi_host_details: (required)
             The information to be updated.

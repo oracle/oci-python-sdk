@@ -46,7 +46,7 @@ class EnableSuperuserDetails(object):
         **[Required]** Gets the compartment_id of this EnableSuperuserDetails.
         The `OCID`__ of the compartment that contains the superuser secret.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EnableSuperuserDetails.
@@ -60,7 +60,7 @@ class EnableSuperuserDetails(object):
         Sets the compartment_id of this EnableSuperuserDetails.
         The `OCID`__ of the compartment that contains the superuser secret.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EnableSuperuserDetails.
@@ -74,7 +74,7 @@ class EnableSuperuserDetails(object):
         **[Required]** Gets the secret_id of this EnableSuperuserDetails.
         The `OCID`__ of the secret that will be populated with the generated superuser password.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this EnableSuperuserDetails.
@@ -88,7 +88,7 @@ class EnableSuperuserDetails(object):
         Sets the secret_id of this EnableSuperuserDetails.
         The `OCID`__ of the secret that will be populated with the generated superuser password.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this EnableSuperuserDetails.

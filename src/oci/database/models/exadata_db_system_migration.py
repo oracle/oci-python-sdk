@@ -60,7 +60,7 @@ class ExadataDbSystemMigration(object):
         **[Required]** Gets the db_system_id of this ExadataDbSystemMigration.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this ExadataDbSystemMigration.
@@ -74,7 +74,7 @@ class ExadataDbSystemMigration(object):
         Sets the db_system_id of this ExadataDbSystemMigration.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this ExadataDbSystemMigration.
@@ -88,7 +88,7 @@ class ExadataDbSystemMigration(object):
         **[Required]** Gets the cloud_vm_cluster_id of this ExadataDbSystemMigration.
         The `OCID`__ of the cloud VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_vm_cluster_id of this ExadataDbSystemMigration.
@@ -102,7 +102,7 @@ class ExadataDbSystemMigration(object):
         Sets the cloud_vm_cluster_id of this ExadataDbSystemMigration.
         The `OCID`__ of the cloud VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_vm_cluster_id: The cloud_vm_cluster_id of this ExadataDbSystemMigration.
@@ -116,7 +116,7 @@ class ExadataDbSystemMigration(object):
         **[Required]** Gets the cloud_exadata_infrastructure_id of this ExadataDbSystemMigration.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_exadata_infrastructure_id of this ExadataDbSystemMigration.
@@ -130,7 +130,7 @@ class ExadataDbSystemMigration(object):
         Sets the cloud_exadata_infrastructure_id of this ExadataDbSystemMigration.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_exadata_infrastructure_id: The cloud_exadata_infrastructure_id of this ExadataDbSystemMigration.

@@ -77,7 +77,7 @@ class CreateDrgRouteTableDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDrgRouteTableDetails.
@@ -94,7 +94,7 @@ class CreateDrgRouteTableDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDrgRouteTableDetails.
@@ -137,7 +137,7 @@ class CreateDrgRouteTableDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDrgRouteTableDetails.
@@ -154,7 +154,7 @@ class CreateDrgRouteTableDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDrgRouteTableDetails.
@@ -168,7 +168,7 @@ class CreateDrgRouteTableDetails(object):
         **[Required]** Gets the drg_id of this CreateDrgRouteTableDetails.
         The `OCID`__ of the DRG the DRG route table belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateDrgRouteTableDetails.
@@ -182,7 +182,7 @@ class CreateDrgRouteTableDetails(object):
         Sets the drg_id of this CreateDrgRouteTableDetails.
         The `OCID`__ of the DRG the DRG route table belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateDrgRouteTableDetails.
@@ -197,7 +197,7 @@ class CreateDrgRouteTableDetails(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements through
         referenced attachments are inserted into the DRG route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The import_drg_route_distribution_id of this CreateDrgRouteTableDetails.
@@ -212,7 +212,7 @@ class CreateDrgRouteTableDetails(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements through
         referenced attachments are inserted into the DRG route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param import_drg_route_distribution_id: The import_drg_route_distribution_id of this CreateDrgRouteTableDetails.

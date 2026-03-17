@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class OnboardingClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -133,12 +133,12 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachLifecycleStageToProfileDetails attach_lifecycle_stage_to_profile_details: (required)
             The lifecycle stage `OCID`__ to attach to the profile
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -264,12 +264,12 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachManagedInstanceGroupToProfileDetails attach_managed_instance_group_to_profile_details: (required)
             The managed instance group `OCID`__ to attach to the profile
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -395,12 +395,12 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachManagementStationToProfileDetails attach_management_station_to_profile_details: (required)
             The management station `OCID`__ to attach to the profile
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -526,12 +526,12 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachSoftwareSourcesToProfileDetails attach_software_sources_to_profile_details: (required)
             The software source `OCIDs`__ to attach to the profile
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -657,12 +657,12 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ChangeProfileCompartmentDetails change_profile_compartment_details: (required)
             The `OCID`__ of the compartment to move the profile to.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -893,7 +893,7 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1007,12 +1007,12 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachSoftwareSourcesFromProfileDetails detach_software_sources_from_profile_details: (required)
             The software source `OCIDs`__ to detach from the profile
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1138,7 +1138,7 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1245,7 +1245,7 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str profile_version: (required)
             The version of the registration profile.
@@ -1356,7 +1356,7 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1373,7 +1373,7 @@ class OnboardingClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1381,7 +1381,7 @@ class OnboardingClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -1549,7 +1549,7 @@ class OnboardingClient(object):
         :param str profile_id: (optional)
             The `OCID`__ of the registration profile. A filter used to return the specified profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str os_family: (optional)
             A filter to return only resources that match the given operating system family.
@@ -1574,13 +1574,13 @@ class OnboardingClient(object):
             A filter to return resources that are associated with the specified management
             station `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] management_station_not_equal_to: (optional)
             A filter to return resources that aren't associated with the specified management
             station `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str profile_version: (optional)
             The version of the registration profile.
@@ -1596,7 +1596,7 @@ class OnboardingClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1604,7 +1604,7 @@ class OnboardingClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only registration profiles in the given state.
@@ -1810,7 +1810,7 @@ class OnboardingClient(object):
         :param str profile_id: (required)
             The `OCID`__ of the registration profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateProfileDetails update_profile_details: (required)
             The information to be updated.

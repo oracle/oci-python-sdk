@@ -75,7 +75,7 @@ class ScheduledJobClientCompositeOperations(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.ScheduledJob.lifecycle_state`
@@ -136,7 +136,7 @@ class ScheduledJobClientCompositeOperations(object):
         :param str scheduled_job_id: (required)
             The `OCID`__ of the scheduled job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateScheduledJobDetails update_scheduled_job_details: (required)
             Provides the information used to update the job.

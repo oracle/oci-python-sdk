@@ -64,7 +64,7 @@ class NetworkLoadBalancerHealthSummary(object):
         **[Required]** Gets the network_load_balancer_id of this NetworkLoadBalancerHealthSummary.
         The `OCID`__ of the network load balancer with which the health status is associated.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_load_balancer_id of this NetworkLoadBalancerHealthSummary.
@@ -78,7 +78,7 @@ class NetworkLoadBalancerHealthSummary(object):
         Sets the network_load_balancer_id of this NetworkLoadBalancerHealthSummary.
         The `OCID`__ of the network load balancer with which the health status is associated.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_load_balancer_id: The network_load_balancer_id of this NetworkLoadBalancerHealthSummary.

@@ -16,7 +16,7 @@ class ConfigurationSourceProvider(object):
     For more information, see
     `Managing Configuration Source Providers`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm
+    __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ConfigurationSourceProvider.
@@ -180,7 +180,7 @@ class ConfigurationSourceProvider(object):
         Gets the id of this ConfigurationSourceProvider.
         The `OCID`__ of the configuration source provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ConfigurationSourceProvider.
@@ -194,7 +194,7 @@ class ConfigurationSourceProvider(object):
         Sets the id of this ConfigurationSourceProvider.
         The `OCID`__ of the configuration source provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ConfigurationSourceProvider.
@@ -208,7 +208,7 @@ class ConfigurationSourceProvider(object):
         Gets the compartment_id of this ConfigurationSourceProvider.
         The `OCID`__ of the compartment where the configuration source provider is located.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ConfigurationSourceProvider.
@@ -222,7 +222,7 @@ class ConfigurationSourceProvider(object):
         Sets the compartment_id of this ConfigurationSourceProvider.
         The `OCID`__ of the compartment where the configuration source provider is located.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ConfigurationSourceProvider.
@@ -314,7 +314,7 @@ class ConfigurationSourceProvider(object):
         For more information about configuration source provider lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -333,7 +333,7 @@ class ConfigurationSourceProvider(object):
         For more information about configuration source provider lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
+        __ https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
 
 
         :param lifecycle_state: The lifecycle_state of this ConfigurationSourceProvider.
@@ -458,7 +458,7 @@ class ConfigurationSourceProvider(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ConfigurationSourceProvider.
@@ -474,7 +474,7 @@ class ConfigurationSourceProvider(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ConfigurationSourceProvider.
@@ -490,7 +490,7 @@ class ConfigurationSourceProvider(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ConfigurationSourceProvider.
@@ -506,7 +506,7 @@ class ConfigurationSourceProvider(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ConfigurationSourceProvider.
@@ -522,7 +522,7 @@ class ConfigurationSourceProvider(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ConfigurationSourceProvider.
@@ -538,7 +538,7 @@ class ConfigurationSourceProvider(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ConfigurationSourceProvider.

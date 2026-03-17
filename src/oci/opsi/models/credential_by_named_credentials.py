@@ -56,7 +56,7 @@ class CredentialByNamedCredentials(CredentialDetails):
         Gets the named_credential_id of this CredentialByNamedCredentials.
         The credential `OCID`__ stored in management agent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The named_credential_id of this CredentialByNamedCredentials.
@@ -70,7 +70,7 @@ class CredentialByNamedCredentials(CredentialDetails):
         Sets the named_credential_id of this CredentialByNamedCredentials.
         The credential `OCID`__ stored in management agent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param named_credential_id: The named_credential_id of this CredentialByNamedCredentials.

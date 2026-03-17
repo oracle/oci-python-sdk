@@ -48,7 +48,7 @@ class TenancyAssociation(Association):
         **[Required]** Gets the tenancy_id of this TenancyAssociation.
         The Oracle ID (`OCID`__) of the tenancy to which the governance rule will be applied as part of this tenancy inclusion criterion.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this TenancyAssociation.
@@ -62,7 +62,7 @@ class TenancyAssociation(Association):
         Sets the tenancy_id of this TenancyAssociation.
         The Oracle ID (`OCID`__) of the tenancy to which the governance rule will be applied as part of this tenancy inclusion criterion.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this TenancyAssociation.

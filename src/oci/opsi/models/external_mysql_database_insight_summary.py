@@ -192,7 +192,7 @@ class ExternalMysqlDatabaseInsightSummary(DatabaseInsightSummary):
         **[Required]** Gets the agent_id of this ExternalMysqlDatabaseInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this ExternalMysqlDatabaseInsightSummary.
@@ -206,7 +206,7 @@ class ExternalMysqlDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the agent_id of this ExternalMysqlDatabaseInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this ExternalMysqlDatabaseInsightSummary.
@@ -244,7 +244,7 @@ class ExternalMysqlDatabaseInsightSummary(DatabaseInsightSummary):
         Gets the database_connector_id of this ExternalMysqlDatabaseInsightSummary.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :return: The database_connector_id of this ExternalMysqlDatabaseInsightSummary.
@@ -258,7 +258,7 @@ class ExternalMysqlDatabaseInsightSummary(DatabaseInsightSummary):
         Sets the database_connector_id of this ExternalMysqlDatabaseInsightSummary.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :param database_connector_id: The database_connector_id of this ExternalMysqlDatabaseInsightSummary.

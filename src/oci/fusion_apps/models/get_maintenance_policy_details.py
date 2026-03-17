@@ -14,7 +14,7 @@ class GetMaintenancePolicyDetails(object):
     """
     The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see `Understanding Environment Maintenance`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance
+    __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance
     """
 
     def __init__(self, **kwargs):

@@ -190,8 +190,8 @@ class UpdateSecurityRuleDetails(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destination of this UpdateSecurityRuleDetails.
@@ -220,8 +220,8 @@ class UpdateSecurityRuleDetails(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destination: The destination of this UpdateSecurityRuleDetails.
@@ -246,7 +246,7 @@ class UpdateSecurityRuleDetails(object):
           * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP"
 
@@ -273,7 +273,7 @@ class UpdateSecurityRuleDetails(object):
           * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destination_type: The destination_type of this UpdateSecurityRuleDetails.
@@ -454,8 +454,8 @@ class UpdateSecurityRuleDetails(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source of this UpdateSecurityRuleDetails.
@@ -484,8 +484,8 @@ class UpdateSecurityRuleDetails(object):
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source: The source of this UpdateSecurityRuleDetails.
@@ -508,7 +508,7 @@ class UpdateSecurityRuleDetails(object):
           * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP"
 
@@ -533,7 +533,7 @@ class UpdateSecurityRuleDetails(object):
           * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_type: The source_type of this UpdateSecurityRuleDetails.

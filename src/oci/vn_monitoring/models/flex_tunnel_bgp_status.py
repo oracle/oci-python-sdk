@@ -71,7 +71,7 @@ class FlexTunnelBgpStatus(object):
         **[Required]** Gets the flex_tunnel_id of this FlexTunnelBgpStatus.
         The `OCID`__ of the flex tunnel.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The flex_tunnel_id of this FlexTunnelBgpStatus.
@@ -85,7 +85,7 @@ class FlexTunnelBgpStatus(object):
         Sets the flex_tunnel_id of this FlexTunnelBgpStatus.
         The `OCID`__ of the flex tunnel.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param flex_tunnel_id: The flex_tunnel_id of this FlexTunnelBgpStatus.

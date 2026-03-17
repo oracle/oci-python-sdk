@@ -32,8 +32,8 @@ class VirtualCircuit(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the bgp_management property of a VirtualCircuit.
@@ -541,7 +541,7 @@ class VirtualCircuit(object):
         Gets the compartment_id of this VirtualCircuit.
         The `OCID`__ of the compartment containing the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this VirtualCircuit.
@@ -555,7 +555,7 @@ class VirtualCircuit(object):
         Sets the compartment_id of this VirtualCircuit.
         The `OCID`__ of the compartment containing the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this VirtualCircuit.
@@ -600,7 +600,7 @@ class VirtualCircuit(object):
         See `Route Filtering`__ for details.
         By default, routing information is shared for all routes in the same market.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
 
         Allowed values for items in this list are: "ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -620,7 +620,7 @@ class VirtualCircuit(object):
         See `Route Filtering`__ for details.
         By default, routing information is shared for all routes in the same market.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering
 
 
         :param routing_policy: The routing_policy of this VirtualCircuit.
@@ -778,7 +778,7 @@ class VirtualCircuit(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this VirtualCircuit.
@@ -795,7 +795,7 @@ class VirtualCircuit(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this VirtualCircuit.
@@ -838,7 +838,7 @@ class VirtualCircuit(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this VirtualCircuit.
@@ -855,7 +855,7 @@ class VirtualCircuit(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this VirtualCircuit.
@@ -870,7 +870,7 @@ class VirtualCircuit(object):
         The `OCID`__ of the customer's :class:`Drg`
         that this virtual circuit uses. Applicable only to private virtual circuits.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this VirtualCircuit.
@@ -885,7 +885,7 @@ class VirtualCircuit(object):
         The `OCID`__ of the customer's :class:`Drg`
         that this virtual circuit uses. Applicable only to private virtual circuits.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this VirtualCircuit.
@@ -899,7 +899,7 @@ class VirtualCircuit(object):
         Gets the id of this VirtualCircuit.
         The virtual circuit's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this VirtualCircuit.
@@ -913,7 +913,7 @@ class VirtualCircuit(object):
         Sets the id of this VirtualCircuit.
         The virtual circuit's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this VirtualCircuit.
@@ -929,7 +929,7 @@ class VirtualCircuit(object):
         the different states, see
         `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
         Allowed values for this property are: "PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -948,7 +948,7 @@ class VirtualCircuit(object):
         the different states, see
         `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param lifecycle_state: The lifecycle_state of this VirtualCircuit.
@@ -1013,7 +1013,7 @@ class VirtualCircuit(object):
         Gets the provider_service_id of this VirtualCircuit.
         The `OCID`__ of the service offered by the provider (if the customer is connecting via a provider).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The provider_service_id of this VirtualCircuit.
@@ -1027,7 +1027,7 @@ class VirtualCircuit(object):
         Sets the provider_service_id of this VirtualCircuit.
         The `OCID`__ of the service offered by the provider (if the customer is connecting via a provider).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param provider_service_id: The provider_service_id of this VirtualCircuit.
@@ -1270,7 +1270,7 @@ class VirtualCircuit(object):
         Whether the virtual circuit supports private or public peering. For more information,
         see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
         Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1288,7 +1288,7 @@ class VirtualCircuit(object):
         Whether the virtual circuit supports private or public peering. For more information,
         see `FastConnect Overview`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
 
 
         :param type: The type of this VirtualCircuit.

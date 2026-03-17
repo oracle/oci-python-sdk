@@ -58,7 +58,7 @@ class QueueSuccessDestinationDetails(SuccessDestinationDetails):
         **[Required]** Gets the queue_id of this QueueSuccessDestinationDetails.
         The `OCID`__ of the queue.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The queue_id of this QueueSuccessDestinationDetails.
@@ -72,7 +72,7 @@ class QueueSuccessDestinationDetails(SuccessDestinationDetails):
         Sets the queue_id of this QueueSuccessDestinationDetails.
         The `OCID`__ of the queue.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param queue_id: The queue_id of this QueueSuccessDestinationDetails.

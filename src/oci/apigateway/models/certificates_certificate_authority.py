@@ -49,7 +49,7 @@ class CertificatesCertificateAuthority(CaBundle):
         Gets the certificate_authority_id of this CertificatesCertificateAuthority.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The certificate_authority_id of this CertificatesCertificateAuthority.
@@ -63,7 +63,7 @@ class CertificatesCertificateAuthority(CaBundle):
         Sets the certificate_authority_id of this CertificatesCertificateAuthority.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param certificate_authority_id: The certificate_authority_id of this CertificatesCertificateAuthority.

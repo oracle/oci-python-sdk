@@ -16,7 +16,7 @@
 #
 # Connectivity:
 #    Option 1 - User Authentication
-#       $HOME/.oci/config, please follow - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
+#       $HOME/.oci/config, please follow - https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
 #       OCI user part of ListDBSystemGroup group with below Policy rules:
 #          Allow group ListDBSystemGroup to inspect compartments in tenancy
 #          Allow group ListDBSystemGroup to inspect tenancies in tenancy

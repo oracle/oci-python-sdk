@@ -53,7 +53,7 @@ class ManagementStationDetails(object):
         **[Required]** Gets the primary_management_station_id of this ManagementStationDetails.
         The `OCID`__ of the management station for the instance to use as primary management station.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_management_station_id of this ManagementStationDetails.
@@ -67,7 +67,7 @@ class ManagementStationDetails(object):
         Sets the primary_management_station_id of this ManagementStationDetails.
         The `OCID`__ of the management station for the instance to use as primary management station.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_management_station_id: The primary_management_station_id of this ManagementStationDetails.
@@ -81,7 +81,7 @@ class ManagementStationDetails(object):
         Gets the secondary_management_station_id of this ManagementStationDetails.
         The `OCID`__ of the management station for the instance to use as secondary managment station.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secondary_management_station_id of this ManagementStationDetails.
@@ -95,7 +95,7 @@ class ManagementStationDetails(object):
         Sets the secondary_management_station_id of this ManagementStationDetails.
         The `OCID`__ of the management station for the instance to use as secondary managment station.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secondary_management_station_id: The secondary_management_station_id of this ManagementStationDetails.

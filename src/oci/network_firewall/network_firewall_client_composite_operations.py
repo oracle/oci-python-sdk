@@ -579,7 +579,7 @@ class NetworkFirewallClientCompositeOperations(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_firewall.models.ChangeNetworkFirewallCompartmentDetails change_network_firewall_compartment_details: (required)
             The information to be updated.
@@ -743,7 +743,7 @@ class NetworkFirewallClientCompositeOperations(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.network_firewall.models.WorkRequest.status`
@@ -878,7 +878,7 @@ class NetworkFirewallClientCompositeOperations(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_firewall.models.UpdateNetworkFirewallDetails update_network_firewall_details: (required)
             The information to be updated.

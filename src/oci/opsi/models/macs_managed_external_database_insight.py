@@ -205,7 +205,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         Gets the management_agent_id of this MacsManagedExternalDatabaseInsight.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedExternalDatabaseInsight.
@@ -219,7 +219,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         Sets the management_agent_id of this MacsManagedExternalDatabaseInsight.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedExternalDatabaseInsight.
@@ -233,7 +233,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         Gets the connector_id of this MacsManagedExternalDatabaseInsight.
         The `OCID`__ of External Database Connector
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this MacsManagedExternalDatabaseInsight.
@@ -247,7 +247,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         Sets the connector_id of this MacsManagedExternalDatabaseInsight.
         The `OCID`__ of External Database Connector
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this MacsManagedExternalDatabaseInsight.
@@ -301,7 +301,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         **[Required]** Gets the database_id of this MacsManagedExternalDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this MacsManagedExternalDatabaseInsight.
@@ -315,7 +315,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         Sets the database_id of this MacsManagedExternalDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this MacsManagedExternalDatabaseInsight.
@@ -399,7 +399,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
     def db_additional_details(self):
         """
         Gets the db_additional_details of this MacsManagedExternalDatabaseInsight.
-        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
 
 
         :return: The db_additional_details of this MacsManagedExternalDatabaseInsight.
@@ -411,7 +411,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
     def db_additional_details(self, db_additional_details):
         """
         Sets the db_additional_details of this MacsManagedExternalDatabaseInsight.
-        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
 
 
         :param db_additional_details: The db_additional_details of this MacsManagedExternalDatabaseInsight.

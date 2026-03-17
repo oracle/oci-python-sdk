@@ -291,7 +291,7 @@ class FileSystemSummary(object):
         **[Required]** Gets the compartment_id of this FileSystemSummary.
         The `OCID`__ of the compartment that contains the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FileSystemSummary.
@@ -305,7 +305,7 @@ class FileSystemSummary(object):
         Sets the compartment_id of this FileSystemSummary.
         The `OCID`__ of the compartment that contains the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FileSystemSummary.
@@ -349,7 +349,7 @@ class FileSystemSummary(object):
         **[Required]** Gets the id of this FileSystemSummary.
         The `OCID`__ of the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FileSystemSummary.
@@ -363,7 +363,7 @@ class FileSystemSummary(object):
         Sets the id of this FileSystemSummary.
         The `OCID`__ of the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FileSystemSummary.
@@ -468,7 +468,7 @@ class FileSystemSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this FileSystemSummary.
@@ -485,7 +485,7 @@ class FileSystemSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this FileSystemSummary.
@@ -501,7 +501,7 @@ class FileSystemSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this FileSystemSummary.
@@ -517,7 +517,7 @@ class FileSystemSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this FileSystemSummary.
@@ -581,7 +581,7 @@ class FileSystemSummary(object):
         Gets the kms_key_id of this FileSystemSummary.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this FileSystemSummary.
@@ -595,7 +595,7 @@ class FileSystemSummary(object):
         Sets the kms_key_id of this FileSystemSummary.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this FileSystemSummary.
@@ -630,7 +630,7 @@ class FileSystemSummary(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The is_clone_parent of this FileSystemSummary.
@@ -645,7 +645,7 @@ class FileSystemSummary(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param is_clone_parent: The is_clone_parent of this FileSystemSummary.
@@ -662,7 +662,7 @@ class FileSystemSummary(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :return: The is_hydrated of this FileSystemSummary.
@@ -679,7 +679,7 @@ class FileSystemSummary(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :param is_hydrated: The is_hydrated of this FileSystemSummary.

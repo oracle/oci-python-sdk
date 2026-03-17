@@ -455,7 +455,7 @@ class ExadbVmCluster(object):
         **[Required]** Gets the id of this ExadbVmCluster.
         The `OCID`__ of the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExadbVmCluster.
@@ -469,7 +469,7 @@ class ExadbVmCluster(object):
         Sets the id of this ExadbVmCluster.
         The `OCID`__ of the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExadbVmCluster.
@@ -483,7 +483,7 @@ class ExadbVmCluster(object):
         **[Required]** Gets the compartment_id of this ExadbVmCluster.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExadbVmCluster.
@@ -497,7 +497,7 @@ class ExadbVmCluster(object):
         Sets the compartment_id of this ExadbVmCluster.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExadbVmCluster.
@@ -535,7 +535,7 @@ class ExadbVmCluster(object):
         **[Required]** Gets the subnet_id of this ExadbVmCluster.
         The `OCID`__ of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this ExadbVmCluster.
@@ -549,7 +549,7 @@ class ExadbVmCluster(object):
         Sets the subnet_id of this ExadbVmCluster.
         The `OCID`__ of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this ExadbVmCluster.
@@ -563,7 +563,7 @@ class ExadbVmCluster(object):
         **[Required]** Gets the backup_subnet_id of this ExadbVmCluster.
         The `OCID`__ of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this ExadbVmCluster.
@@ -577,7 +577,7 @@ class ExadbVmCluster(object):
         Sets the backup_subnet_id of this ExadbVmCluster.
         The `OCID`__ of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this ExadbVmCluster.
@@ -593,8 +593,8 @@ class ExadbVmCluster(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this ExadbVmCluster.
@@ -610,8 +610,8 @@ class ExadbVmCluster(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this ExadbVmCluster.
@@ -625,8 +625,8 @@ class ExadbVmCluster(object):
         Gets the backup_network_nsg_ids of this ExadbVmCluster.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this ExadbVmCluster.
@@ -640,8 +640,8 @@ class ExadbVmCluster(object):
         Sets the backup_network_nsg_ids of this ExadbVmCluster.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this ExadbVmCluster.
@@ -655,7 +655,7 @@ class ExadbVmCluster(object):
         Gets the last_update_history_entry_id of this ExadbVmCluster.
         The `OCID`__ of the last maintenance update history entry. This value is updated when a maintenance update starts.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_update_history_entry_id of this ExadbVmCluster.
@@ -669,7 +669,7 @@ class ExadbVmCluster(object):
         Sets the last_update_history_entry_id of this ExadbVmCluster.
         The `OCID`__ of the last maintenance update history entry. This value is updated when a maintenance update starts.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_update_history_entry_id: The last_update_history_entry_id of this ExadbVmCluster.
@@ -857,7 +857,7 @@ class ExadbVmCluster(object):
         Gets the time_zone of this ExadbVmCluster.
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see `Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this ExadbVmCluster.
@@ -871,7 +871,7 @@ class ExadbVmCluster(object):
         Sets the time_zone of this ExadbVmCluster.
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see `Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this ExadbVmCluster.
@@ -1141,7 +1141,7 @@ class ExadbVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ip_ids of this ExadbVmCluster.
@@ -1159,7 +1159,7 @@ class ExadbVmCluster(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ip_ids: The scan_ip_ids of this ExadbVmCluster.
@@ -1175,7 +1175,7 @@ class ExadbVmCluster(object):
         The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
         enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vip_ids of this ExadbVmCluster.
@@ -1191,7 +1191,7 @@ class ExadbVmCluster(object):
         The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
         enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vip_ids: The vip_ids of this ExadbVmCluster.
@@ -1205,7 +1205,7 @@ class ExadbVmCluster(object):
         Gets the scan_dns_record_id of this ExadbVmCluster.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_dns_record_id of this ExadbVmCluster.
@@ -1219,7 +1219,7 @@ class ExadbVmCluster(object):
         Sets the scan_dns_record_id of this ExadbVmCluster.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scan_dns_record_id: The scan_dns_record_id of this ExadbVmCluster.
@@ -1236,7 +1236,7 @@ class ExadbVmCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExadbVmCluster.
@@ -1253,7 +1253,7 @@ class ExadbVmCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExadbVmCluster.
@@ -1268,7 +1268,7 @@ class ExadbVmCluster(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExadbVmCluster.
@@ -1283,7 +1283,7 @@ class ExadbVmCluster(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExadbVmCluster.
@@ -1299,7 +1299,7 @@ class ExadbVmCluster(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this ExadbVmCluster.
@@ -1315,7 +1315,7 @@ class ExadbVmCluster(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this ExadbVmCluster.
@@ -1330,7 +1330,7 @@ class ExadbVmCluster(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExadbVmCluster.
@@ -1345,7 +1345,7 @@ class ExadbVmCluster(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExadbVmCluster.
@@ -1607,7 +1607,7 @@ class ExadbVmCluster(object):
         **[Required]** Gets the exascale_db_storage_vault_id of this ExadbVmCluster.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exascale_db_storage_vault_id of this ExadbVmCluster.
@@ -1621,7 +1621,7 @@ class ExadbVmCluster(object):
         Sets the exascale_db_storage_vault_id of this ExadbVmCluster.
         The `OCID`__ of the Exadata Database Storage Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exascale_db_storage_vault_id: The exascale_db_storage_vault_id of this ExadbVmCluster.
@@ -1659,7 +1659,7 @@ class ExadbVmCluster(object):
         Gets the cluster_placement_group_id of this ExadbVmCluster.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this ExadbVmCluster.
@@ -1673,7 +1673,7 @@ class ExadbVmCluster(object):
         Sets the cluster_placement_group_id of this ExadbVmCluster.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this ExadbVmCluster.
@@ -1687,7 +1687,7 @@ class ExadbVmCluster(object):
         Gets the subscription_id of this ExadbVmCluster.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ExadbVmCluster.
@@ -1701,7 +1701,7 @@ class ExadbVmCluster(object):
         Sets the subscription_id of this ExadbVmCluster.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ExadbVmCluster.

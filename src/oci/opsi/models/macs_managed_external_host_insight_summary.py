@@ -196,7 +196,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
         **[Required]** Gets the management_agent_id of this MacsManagedExternalHostInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedExternalHostInsightSummary.
@@ -210,7 +210,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
         Sets the management_agent_id of this MacsManagedExternalHostInsightSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedExternalHostInsightSummary.

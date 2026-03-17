@@ -22,7 +22,7 @@ from datetime import timedelta
 # * - Update a secret
 # * - Move a secret to a new compartment
 # * - Delete a secret
-# Documentation : https://docs.cloud.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingsecrets.htm
+# Documentation : https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Tasks/managingsecrets.htm
 
 # Usage : python secret_examples.py compartment_id OCI_PROFILE
 # OCI_PROFILE is the name of profile that you want to use from OCI config file.

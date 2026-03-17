@@ -166,7 +166,7 @@ class UpdateEsxiHostDetails(object):
         **Note:** This option also requires the `nextCommitment` parameter to be populated with a value other than `HOUR`. Otherwise,
         any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The billing_donor_host_id of this UpdateEsxiHostDetails.
@@ -183,7 +183,7 @@ class UpdateEsxiHostDetails(object):
         **Note:** This option also requires the `nextCommitment` parameter to be populated with a value other than `HOUR`. Otherwise,
         any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param billing_donor_host_id: The billing_donor_host_id of this UpdateEsxiHostDetails.
@@ -197,7 +197,7 @@ class UpdateEsxiHostDetails(object):
         Gets the vcf_byol_allocation_id of this UpdateEsxiHostDetails.
         The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcf_byol_allocation_id of this UpdateEsxiHostDetails.
@@ -211,7 +211,7 @@ class UpdateEsxiHostDetails(object):
         Sets the vcf_byol_allocation_id of this UpdateEsxiHostDetails.
         The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcf_byol_allocation_id: The vcf_byol_allocation_id of this UpdateEsxiHostDetails.
@@ -252,7 +252,7 @@ class UpdateEsxiHostDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateEsxiHostDetails.
@@ -269,7 +269,7 @@ class UpdateEsxiHostDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateEsxiHostDetails.
@@ -286,7 +286,7 @@ class UpdateEsxiHostDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateEsxiHostDetails.
@@ -303,7 +303,7 @@ class UpdateEsxiHostDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateEsxiHostDetails.

@@ -92,7 +92,7 @@ class PipelineMLJobStepRun(PipelineStepRun):
         Gets the job_run_id of this PipelineMLJobStepRun.
         The `OCID`__ of the job run triggered for this step run.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The job_run_id of this PipelineMLJobStepRun.
@@ -106,7 +106,7 @@ class PipelineMLJobStepRun(PipelineStepRun):
         Sets the job_run_id of this PipelineMLJobStepRun.
         The `OCID`__ of the job run triggered for this step run.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param job_run_id: The job_run_id of this PipelineMLJobStepRun.

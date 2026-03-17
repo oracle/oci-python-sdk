@@ -39,7 +39,7 @@ class RefreshOracleDbAzureVaultDetails(object):
         Gets the oracle_db_azure_connector_id of this RefreshOracleDbAzureVaultDetails.
         The `OCID`__ of the Oracle DB Azure Vault resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_connector_id of this RefreshOracleDbAzureVaultDetails.
@@ -53,7 +53,7 @@ class RefreshOracleDbAzureVaultDetails(object):
         Sets the oracle_db_azure_connector_id of this RefreshOracleDbAzureVaultDetails.
         The `OCID`__ of the Oracle DB Azure Vault resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_connector_id: The oracle_db_azure_connector_id of this RefreshOracleDbAzureVaultDetails.

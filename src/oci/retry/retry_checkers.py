@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 RETRYABLE_STATUSES_AND_CODES = {
     -1: [],
-    409: ['IncorrectState'],
+    409: ['IncorrectState', 'LockConflict'],
     429: []
 }
 
@@ -135,7 +135,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
 
     The last item is configurable via dictionary where the key is some numeric status representing a HTTP status and the value
     is a list of strings with each string representing a textual error code (such as those error codes documented at
-    https://docs.cloud.oracle.com/Content/API/References/apierrors.htm). If an empty list is provided, then
+    https://docs.oracle.com/iaas/Content/API/References/apierrors.htm). If an empty list is provided, then
     only the numeric status is checked for retry purposes. For a populated array, we are looking for where the numeric status matches
     and the code from the exception appears in the array. As an example:
 
@@ -146,7 +146,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
             500: []
         }
 
-    If no configuration is provided, then the default for service errors is to retry on HTTP 409/IncorrectState, 429's and 5xx's (except 501) without any
+    If no configuration is provided, then the default for service errors is to retry on HTTP 409/IncorrectState, 409/LockConflict, 429's and 5xx's (except 501) without any
     code checks. If a specific 5xx code (e.g. 500, 502) is provided in the dictionary, then it takes precedence over the option to retry on any 500, for example,
     it is possible to retry on only 502s (either by status or by status and matching some code) by disabling the general "retry on any 5xx"
     configuration and placing an entry for 502 in the dictionary
@@ -154,7 +154,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
 
     RETRYABLE_STATUSES_AND_CODES = {
         -1: [],
-        409: ['IncorrectState'],
+        409: ['IncorrectState', 'LockConflict'],
         429: []
     }
 

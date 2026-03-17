@@ -172,7 +172,7 @@ class DeploymentPeerSummary(object):
         **[Required]** Gets the deployment_id of this DeploymentPeerSummary.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The deployment_id of this DeploymentPeerSummary.
@@ -186,7 +186,7 @@ class DeploymentPeerSummary(object):
         Sets the deployment_id of this DeploymentPeerSummary.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param deployment_id: The deployment_id of this DeploymentPeerSummary.
@@ -478,7 +478,7 @@ class DeploymentPeerSummary(object):
         Gets the subscription_id of this DeploymentPeerSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this DeploymentPeerSummary.
@@ -492,7 +492,7 @@ class DeploymentPeerSummary(object):
         Sets the subscription_id of this DeploymentPeerSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this DeploymentPeerSummary.

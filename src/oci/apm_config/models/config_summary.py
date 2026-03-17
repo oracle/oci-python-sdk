@@ -166,7 +166,7 @@ class ConfigSummary(object):
         The `OCID`__ of the configuration item. An OCID is generated
         when the item is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ConfigSummary.
@@ -181,7 +181,7 @@ class ConfigSummary(object):
         The `OCID`__ of the configuration item. An OCID is generated
         when the item is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ConfigSummary.
@@ -289,7 +289,7 @@ class ConfigSummary(object):
         Gets the created_by of this ConfigSummary.
         The `OCID`__ of a user.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this ConfigSummary.
@@ -303,7 +303,7 @@ class ConfigSummary(object):
         Sets the created_by of this ConfigSummary.
         The `OCID`__ of a user.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this ConfigSummary.
@@ -317,7 +317,7 @@ class ConfigSummary(object):
         Gets the updated_by of this ConfigSummary.
         The `OCID`__ of a user.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The updated_by of this ConfigSummary.
@@ -331,7 +331,7 @@ class ConfigSummary(object):
         Sets the updated_by of this ConfigSummary.
         The `OCID`__ of a user.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param updated_by: The updated_by of this ConfigSummary.

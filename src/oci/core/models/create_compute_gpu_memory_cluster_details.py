@@ -127,7 +127,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
         The `OCID`__ of the compartment that contains the compute GPU memory cluster.
         compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateComputeGpuMemoryClusterDetails.
@@ -142,7 +142,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
         The `OCID`__ of the compartment that contains the compute GPU memory cluster.
         compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateComputeGpuMemoryClusterDetails.
@@ -156,7 +156,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
         Gets the gpu_memory_fabric_id of this CreateComputeGpuMemoryClusterDetails.
         The `OCID`__ of the GPU memory fabric.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gpu_memory_fabric_id of this CreateComputeGpuMemoryClusterDetails.
@@ -170,7 +170,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
         Sets the gpu_memory_fabric_id of this CreateComputeGpuMemoryClusterDetails.
         The `OCID`__ of the GPU memory fabric.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gpu_memory_fabric_id: The gpu_memory_fabric_id of this CreateComputeGpuMemoryClusterDetails.
@@ -184,7 +184,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
         **[Required]** Gets the compute_cluster_id of this CreateComputeGpuMemoryClusterDetails.
         The `OCID`__ of the compute cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_cluster_id of this CreateComputeGpuMemoryClusterDetails.
@@ -198,7 +198,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
         Sets the compute_cluster_id of this CreateComputeGpuMemoryClusterDetails.
         The `OCID`__ of the compute cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_cluster_id: The compute_cluster_id of this CreateComputeGpuMemoryClusterDetails.
@@ -263,7 +263,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateComputeGpuMemoryClusterDetails.
@@ -280,7 +280,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateComputeGpuMemoryClusterDetails.
@@ -297,7 +297,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateComputeGpuMemoryClusterDetails.
@@ -314,7 +314,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateComputeGpuMemoryClusterDetails.

@@ -92,7 +92,7 @@ class TopologyEntityRelationship(object):
         **[Required]** Gets the id1 of this TopologyEntityRelationship.
         The `OCID`__ of the first entity in the relationship.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id1 of this TopologyEntityRelationship.
@@ -106,7 +106,7 @@ class TopologyEntityRelationship(object):
         Sets the id1 of this TopologyEntityRelationship.
         The `OCID`__ of the first entity in the relationship.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id1: The id1 of this TopologyEntityRelationship.
@@ -120,7 +120,7 @@ class TopologyEntityRelationship(object):
         **[Required]** Gets the id2 of this TopologyEntityRelationship.
         The `OCID`__ of the second entity in the relationship.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id2 of this TopologyEntityRelationship.
@@ -134,7 +134,7 @@ class TopologyEntityRelationship(object):
         Sets the id2 of this TopologyEntityRelationship.
         The `OCID`__ of the second entity in the relationship.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id2: The id2 of this TopologyEntityRelationship.

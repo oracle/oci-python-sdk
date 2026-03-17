@@ -294,7 +294,7 @@ class LaunchInstanceDetails(object):
         You can opt out of all default reservations by specifying an empty string as input for this field.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :return: The capacity_reservation_id of this LaunchInstanceDetails.
@@ -310,7 +310,7 @@ class LaunchInstanceDetails(object):
         You can opt out of all default reservations by specifying an empty string as input for this field.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this LaunchInstanceDetails.
@@ -395,7 +395,7 @@ class LaunchInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LaunchInstanceDetails.
@@ -412,7 +412,7 @@ class LaunchInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LaunchInstanceDetails.
@@ -430,8 +430,8 @@ class LaunchInstanceDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this LaunchInstanceDetails.
@@ -449,8 +449,8 @@ class LaunchInstanceDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this LaunchInstanceDetails.
@@ -605,7 +605,7 @@ class LaunchInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LaunchInstanceDetails.
@@ -622,7 +622,7 @@ class LaunchInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LaunchInstanceDetails.
@@ -637,8 +637,8 @@ class LaunchInstanceDetails(object):
         The `OCID`__ of the
         `compute cluster`__ that the instance will be created in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :return: The compute_cluster_id of this LaunchInstanceDetails.
@@ -653,8 +653,8 @@ class LaunchInstanceDetails(object):
         The `OCID`__ of the
         `compute cluster`__ that the instance will be created in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param compute_cluster_id: The compute_cluster_id of this LaunchInstanceDetails.
@@ -751,7 +751,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this LaunchInstanceDetails.
@@ -794,7 +794,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this LaunchInstanceDetails.

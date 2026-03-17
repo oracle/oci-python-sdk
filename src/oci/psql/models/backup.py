@@ -215,7 +215,7 @@ class Backup(object):
         **[Required]** Gets the id of this Backup.
         The `OCID`__ of the backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Backup.
@@ -229,7 +229,7 @@ class Backup(object):
         Sets the id of this Backup.
         The `OCID`__ of the backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Backup.
@@ -291,7 +291,7 @@ class Backup(object):
         **[Required]** Gets the compartment_id of this Backup.
         The `OCID`__ of the compartment that contains the backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Backup.
@@ -305,7 +305,7 @@ class Backup(object):
         Sets the compartment_id of this Backup.
         The `OCID`__ of the compartment that contains the backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Backup.
@@ -555,7 +555,7 @@ class Backup(object):
         Gets the db_system_id of this Backup.
         The `OCID`__ of the backup's source database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this Backup.
@@ -569,7 +569,7 @@ class Backup(object):
         Sets the db_system_id of this Backup.
         The `OCID`__ of the backup's source database system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this Backup.

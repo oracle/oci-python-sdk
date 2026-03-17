@@ -22,8 +22,8 @@ class LocalPeeringGateway(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
@@ -165,7 +165,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the compartment_id of this LocalPeeringGateway.
         The `OCID`__ of the compartment containing the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LocalPeeringGateway.
@@ -179,7 +179,7 @@ class LocalPeeringGateway(object):
         Sets the compartment_id of this LocalPeeringGateway.
         The `OCID`__ of the compartment containing the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LocalPeeringGateway.
@@ -271,7 +271,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the id of this LocalPeeringGateway.
         The LPG's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LocalPeeringGateway.
@@ -285,7 +285,7 @@ class LocalPeeringGateway(object):
         Sets the id of this LocalPeeringGateway.
         The LPG's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LocalPeeringGateway.
@@ -483,7 +483,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the vcn_id of this LocalPeeringGateway.
         The `OCID`__ of the VCN that uses the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this LocalPeeringGateway.
@@ -497,7 +497,7 @@ class LocalPeeringGateway(object):
         Sets the vcn_id of this LocalPeeringGateway.
         The `OCID`__ of the VCN that uses the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this LocalPeeringGateway.

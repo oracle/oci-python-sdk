@@ -147,7 +147,7 @@ class MacsManagedAutonomousDatabaseConfigurationSummary(DatabaseConfigurationSum
         **[Required]** Gets the database_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
@@ -161,7 +161,7 @@ class MacsManagedAutonomousDatabaseConfigurationSummary(DatabaseConfigurationSum
         Sets the database_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
@@ -175,7 +175,7 @@ class MacsManagedAutonomousDatabaseConfigurationSummary(DatabaseConfigurationSum
         **[Required]** Gets the management_agent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
@@ -189,7 +189,7 @@ class MacsManagedAutonomousDatabaseConfigurationSummary(DatabaseConfigurationSum
         Sets the management_agent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
@@ -203,7 +203,7 @@ class MacsManagedAutonomousDatabaseConfigurationSummary(DatabaseConfigurationSum
         **[Required]** Gets the parent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
@@ -217,7 +217,7 @@ class MacsManagedAutonomousDatabaseConfigurationSummary(DatabaseConfigurationSum
         Sets the parent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this MacsManagedAutonomousDatabaseConfigurationSummary.

@@ -133,7 +133,7 @@ class DigitalTwinRelationshipSummary(object):
         **[Required]** Gets the id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DigitalTwinRelationshipSummary.
@@ -147,7 +147,7 @@ class DigitalTwinRelationshipSummary(object):
         Sets the id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of the resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DigitalTwinRelationshipSummary.
@@ -161,7 +161,7 @@ class DigitalTwinRelationshipSummary(object):
         **[Required]** Gets the iot_domain_id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The iot_domain_id of this DigitalTwinRelationshipSummary.
@@ -175,7 +175,7 @@ class DigitalTwinRelationshipSummary(object):
         Sets the iot_domain_id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param iot_domain_id: The iot_domain_id of this DigitalTwinRelationshipSummary.
@@ -261,7 +261,7 @@ class DigitalTwinRelationshipSummary(object):
         **[Required]** Gets the source_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of source digital twin instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
@@ -275,7 +275,7 @@ class DigitalTwinRelationshipSummary(object):
         Sets the source_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of source digital twin instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_digital_twin_instance_id: The source_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
@@ -289,7 +289,7 @@ class DigitalTwinRelationshipSummary(object):
         **[Required]** Gets the target_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of target digital twin instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
@@ -303,7 +303,7 @@ class DigitalTwinRelationshipSummary(object):
         Sets the target_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
         The `OCID`__ of target digital twin instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_digital_twin_instance_id: The target_digital_twin_instance_id of this DigitalTwinRelationshipSummary.
@@ -350,7 +350,7 @@ class DigitalTwinRelationshipSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DigitalTwinRelationshipSummary.
@@ -367,7 +367,7 @@ class DigitalTwinRelationshipSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DigitalTwinRelationshipSummary.
@@ -384,7 +384,7 @@ class DigitalTwinRelationshipSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DigitalTwinRelationshipSummary.
@@ -401,7 +401,7 @@ class DigitalTwinRelationshipSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DigitalTwinRelationshipSummary.

@@ -98,7 +98,7 @@ class CreateApplicationVipDetails(object):
         Gets the db_node_id of this CreateApplicationVipDetails.
         The `OCID`__ of the DB node associated with the application virtual IP (VIP) address.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_node_id of this CreateApplicationVipDetails.
@@ -112,7 +112,7 @@ class CreateApplicationVipDetails(object):
         Sets the db_node_id of this CreateApplicationVipDetails.
         The `OCID`__ of the DB node associated with the application virtual IP (VIP) address.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_node_id: The db_node_id of this CreateApplicationVipDetails.
@@ -126,7 +126,7 @@ class CreateApplicationVipDetails(object):
         **[Required]** Gets the cloud_vm_cluster_id of this CreateApplicationVipDetails.
         The `OCID`__ of the cloud VM cluster associated with the application virtual IP (VIP) address.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_vm_cluster_id of this CreateApplicationVipDetails.
@@ -140,7 +140,7 @@ class CreateApplicationVipDetails(object):
         Sets the cloud_vm_cluster_id of this CreateApplicationVipDetails.
         The `OCID`__ of the cloud VM cluster associated with the application virtual IP (VIP) address.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_vm_cluster_id: The cloud_vm_cluster_id of this CreateApplicationVipDetails.
@@ -154,7 +154,7 @@ class CreateApplicationVipDetails(object):
         **[Required]** Gets the subnet_id of this CreateApplicationVipDetails.
         The `OCID`__ of the subnet associated with the application virtual IP (VIP) address.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateApplicationVipDetails.
@@ -168,7 +168,7 @@ class CreateApplicationVipDetails(object):
         Sets the subnet_id of this CreateApplicationVipDetails.
         The `OCID`__ of the subnet associated with the application virtual IP (VIP) address.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateApplicationVipDetails.

@@ -14,7 +14,7 @@ class VendorSoftwareSource(SoftwareSource):
     """
     The object that defines a vendor software source. A software source is a collection of packages. For more information, see `Managing Software Sources`__.
 
-    __ https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm
+    __ https://docs.oracle.com/iaas/osmh/doc/software-sources.htm
     """
 
     #: A constant which can be used with the vendor_name property of a VendorSoftwareSource.
@@ -265,7 +265,7 @@ class VendorSoftwareSource(SoftwareSource):
         Gets the origin_software_source_id of this VendorSoftwareSource.
         The `OCID`__ of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The origin_software_source_id of this VendorSoftwareSource.
@@ -279,7 +279,7 @@ class VendorSoftwareSource(SoftwareSource):
         Sets the origin_software_source_id of this VendorSoftwareSource.
         The `OCID`__ of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param origin_software_source_id: The origin_software_source_id of this VendorSoftwareSource.

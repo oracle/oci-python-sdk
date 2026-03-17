@@ -70,7 +70,7 @@ class OciCodeRepositoryConfiguration(ScmConfiguration):
         **[Required]** Gets the oci_code_repository_id of this OciCodeRepositoryConfiguration.
         The Oracle Cloud Identifier (`OCID`__) of the OCI DevOps repository.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oci_code_repository_id of this OciCodeRepositoryConfiguration.
@@ -84,7 +84,7 @@ class OciCodeRepositoryConfiguration(ScmConfiguration):
         Sets the oci_code_repository_id of this OciCodeRepositoryConfiguration.
         The Oracle Cloud Identifier (`OCID`__) of the OCI DevOps repository.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci_code_repository_id: The oci_code_repository_id of this OciCodeRepositoryConfiguration.

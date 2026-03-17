@@ -56,7 +56,7 @@ class BackupSourceDetails(SourceDetails):
         **[Required]** Gets the backup_id of this BackupSourceDetails.
         The `OCID`__ of the database system backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this BackupSourceDetails.
@@ -70,7 +70,7 @@ class BackupSourceDetails(SourceDetails):
         Sets the backup_id of this BackupSourceDetails.
         The `OCID`__ of the database system backup.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this BackupSourceDetails.

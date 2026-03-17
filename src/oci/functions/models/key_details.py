@@ -39,7 +39,7 @@ class KeyDetails(object):
         **[Required]** Gets the kms_key_id of this KeyDetails.
         The `OCID`__s of the KMS key that will be used to verify the image signature.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this KeyDetails.
@@ -53,7 +53,7 @@ class KeyDetails(object):
         Sets the kms_key_id of this KeyDetails.
         The `OCID`__s of the KMS key that will be used to verify the image signature.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this KeyDetails.

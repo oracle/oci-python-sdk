@@ -158,7 +158,7 @@ class CreateExportDetails(object):
         **[Required]** Gets the export_set_id of this CreateExportDetails.
         The `OCID`__ of this export's export set.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_set_id of this CreateExportDetails.
@@ -172,7 +172,7 @@ class CreateExportDetails(object):
         Sets the export_set_id of this CreateExportDetails.
         The `OCID`__ of this export's export set.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param export_set_id: The export_set_id of this CreateExportDetails.
@@ -186,7 +186,7 @@ class CreateExportDetails(object):
         **[Required]** Gets the file_system_id of this CreateExportDetails.
         The `OCID`__ of this export's file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this CreateExportDetails.
@@ -200,7 +200,7 @@ class CreateExportDetails(object):
         Sets the file_system_id of this CreateExportDetails.
         The `OCID`__ of this export's file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this CreateExportDetails.

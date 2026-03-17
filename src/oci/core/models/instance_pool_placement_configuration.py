@@ -103,8 +103,8 @@ class InstancePoolPlacementConfiguration(object):
         The `OCID`__ of the
         `compute cluster`__ that the instance will be created in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :return: The compute_cluster_id of this InstancePoolPlacementConfiguration.
@@ -119,8 +119,8 @@ class InstancePoolPlacementConfiguration(object):
         The `OCID`__ of the
         `compute cluster`__ that the instance will be created in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param compute_cluster_id: The compute_cluster_id of this InstancePoolPlacementConfiguration.
@@ -135,7 +135,7 @@ class InstancePoolPlacementConfiguration(object):
         The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
         Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_subnet_id of this InstancePoolPlacementConfiguration.
@@ -150,7 +150,7 @@ class InstancePoolPlacementConfiguration(object):
         The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
         Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_subnet_id: The primary_subnet_id of this InstancePoolPlacementConfiguration.

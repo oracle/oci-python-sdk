@@ -135,12 +135,12 @@ class ServiceManagerProxyClient(object):
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             The `OCID`__ for the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -254,14 +254,14 @@ class ServiceManagerProxyClient(object):
         :param str compartment_id: (required)
             The `OCID`__ for the compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str service_environment_id: (optional)
             The unique identifier associated with the service environment.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str service_environment_type: (optional)
             The environment's service definition type.

@@ -33,7 +33,7 @@ class EmailClientCompositeOperations(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.AddLockDetails add_lock_details: (required)
             Details for adding a lock to a resource.
@@ -80,7 +80,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.AddLockDetails add_lock_details: (required)
             Details for adding a lock to a resource.
@@ -130,7 +130,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.email.models.WorkRequest.status`
@@ -171,7 +171,7 @@ class EmailClientCompositeOperations(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.AddLockDetails add_lock_details: (required)
             Details for adding a lock to a resource.
@@ -263,7 +263,7 @@ class EmailClientCompositeOperations(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.ChangeEmailDomainCompartmentDetails change_email_domain_compartment_details: (required)
             The configuration details for the move operation.
@@ -307,7 +307,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.ChangeEmailIpPoolCompartmentDetails change_email_ip_pool_compartment_details: (required)
             Details for the compartment move.
@@ -549,7 +549,7 @@ class EmailClientCompositeOperations(object):
         :param str dkim_id: (required)
             The `OCID`__ of this DKIM.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.email.models.WorkRequest.status`
@@ -598,7 +598,7 @@ class EmailClientCompositeOperations(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.email.models.WorkRequest.status`
@@ -647,7 +647,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.email.models.WorkRequest.status`
@@ -696,7 +696,7 @@ class EmailClientCompositeOperations(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.email.models.WorkRequest.status`
@@ -804,7 +804,7 @@ class EmailClientCompositeOperations(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.RemoveLockDetails remove_lock_details: (required)
             Details for removing a lock from a resource.
@@ -851,7 +851,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.RemoveLockDetails remove_lock_details: (required)
             Details for removing a lock to a resource.
@@ -901,7 +901,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.email.models.WorkRequest.status`
@@ -942,7 +942,7 @@ class EmailClientCompositeOperations(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.RemoveLockDetails remove_lock_details: (required)
             Details for removing a lock from a resource.
@@ -1034,7 +1034,7 @@ class EmailClientCompositeOperations(object):
         :param str dkim_id: (required)
             The `OCID`__ of this DKIM.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateDkimDetails update_dkim_details: (required)
             The new DKIM attributes to apply.
@@ -1078,7 +1078,7 @@ class EmailClientCompositeOperations(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateEmailDomainDetails update_email_domain_details: (required)
             The new email domain attributes to apply.
@@ -1122,7 +1122,7 @@ class EmailClientCompositeOperations(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateEmailIpPoolDetails update_email_ip_pool_details: (required)
             The information to be updated.
@@ -1166,7 +1166,7 @@ class EmailClientCompositeOperations(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateEmailReturnPathDetails update_email_return_path_details: (required)
             The new email return path attributes to apply.

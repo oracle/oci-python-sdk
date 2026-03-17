@@ -60,7 +60,7 @@ class CreateRemediationRunDetails(object):
         **[Required]** Gets the remediation_recipe_id of this CreateRemediationRunDetails.
         The Oracle Cloud identifier (`OCID`__) of the Remediation Recipe.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The remediation_recipe_id of this CreateRemediationRunDetails.
@@ -74,7 +74,7 @@ class CreateRemediationRunDetails(object):
         Sets the remediation_recipe_id of this CreateRemediationRunDetails.
         The Oracle Cloud identifier (`OCID`__) of the Remediation Recipe.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param remediation_recipe_id: The remediation_recipe_id of this CreateRemediationRunDetails.

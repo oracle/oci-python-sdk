@@ -126,7 +126,7 @@ class WebAppAccelerationLoadBalancerSummary(WebAppAccelerationSummary):
         **[Required]** Gets the load_balancer_id of this WebAppAccelerationLoadBalancerSummary.
         LoadBalancer `OCID`__ to which the WebAppAccelerationPolicy is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this WebAppAccelerationLoadBalancerSummary.
@@ -140,7 +140,7 @@ class WebAppAccelerationLoadBalancerSummary(WebAppAccelerationSummary):
         Sets the load_balancer_id of this WebAppAccelerationLoadBalancerSummary.
         LoadBalancer `OCID`__ to which the WebAppAccelerationPolicy is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this WebAppAccelerationLoadBalancerSummary.

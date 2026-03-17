@@ -60,7 +60,7 @@ class CreateKnowledgeBaseDetails(object):
         **[Required]** Gets the compartment_id of this CreateKnowledgeBaseDetails.
         The compartment Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateKnowledgeBaseDetails.
@@ -74,7 +74,7 @@ class CreateKnowledgeBaseDetails(object):
         Sets the compartment_id of this CreateKnowledgeBaseDetails.
         The compartment Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateKnowledgeBaseDetails.

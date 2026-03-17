@@ -180,7 +180,7 @@ class MonitoringTemplateSummary(object):
         **[Required]** Gets the id of this MonitoringTemplateSummary.
         The `OCID`__ of the monitoringTemplate
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoringTemplateSummary.
@@ -194,7 +194,7 @@ class MonitoringTemplateSummary(object):
         Sets the id of this MonitoringTemplateSummary.
         The `OCID`__ of the monitoringTemplate
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoringTemplateSummary.
@@ -232,7 +232,7 @@ class MonitoringTemplateSummary(object):
         **[Required]** Gets the tenant_id of this MonitoringTemplateSummary.
         Tenant Identifier `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenant_id of this MonitoringTemplateSummary.
@@ -246,7 +246,7 @@ class MonitoringTemplateSummary(object):
         Sets the tenant_id of this MonitoringTemplateSummary.
         Tenant Identifier `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenant_id: The tenant_id of this MonitoringTemplateSummary.

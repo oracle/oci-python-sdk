@@ -91,7 +91,7 @@ class OciCacheDefaultConfigSet(object):
         **[Required]** Gets the id of this OciCacheDefaultConfigSet.
         The `OCID`__ of the OCI Cache Default Config Set.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The id of this OciCacheDefaultConfigSet.
@@ -105,7 +105,7 @@ class OciCacheDefaultConfigSet(object):
         Sets the id of this OciCacheDefaultConfigSet.
         The `OCID`__ of the OCI Cache Default Config Set.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param id: The id of this OciCacheDefaultConfigSet.

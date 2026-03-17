@@ -33,7 +33,7 @@ class SoftwareSourceClientCompositeOperations(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AddPackagesToSoftwareSourceDetails add_packages_to_software_source_details: (required)
             A list of packages to be added to the software source.
@@ -116,7 +116,7 @@ class SoftwareSourceClientCompositeOperations(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.SoftwareSource.lifecycle_state`
@@ -177,7 +177,7 @@ class SoftwareSourceClientCompositeOperations(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromSoftwareSourceDetails remove_packages_from_software_source_details: (required)
             A list of packages to be removed from the software source.
@@ -221,7 +221,7 @@ class SoftwareSourceClientCompositeOperations(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ReplacePackagesInSoftwareSourceDetails replace_packages_in_software_source_details: (required)
             A list of packages that will replace the existing packages in the software source.
@@ -265,7 +265,7 @@ class SoftwareSourceClientCompositeOperations(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateSoftwareSourceDetails update_software_source_details: (required)
             The information to be updated.
@@ -312,7 +312,7 @@ class SoftwareSourceClientCompositeOperations(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`

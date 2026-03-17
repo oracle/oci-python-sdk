@@ -63,7 +63,7 @@ class DatastoreDetails(object):
         **[Required]** Gets the block_volume_ids of this DatastoreDetails.
         A list of `OCID`__s of Block Storage Volumes.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The block_volume_ids of this DatastoreDetails.
@@ -77,7 +77,7 @@ class DatastoreDetails(object):
         Sets the block_volume_ids of this DatastoreDetails.
         A list of `OCID`__s of Block Storage Volumes.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param block_volume_ids: The block_volume_ids of this DatastoreDetails.

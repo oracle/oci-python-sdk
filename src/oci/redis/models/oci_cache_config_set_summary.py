@@ -109,7 +109,7 @@ class OciCacheConfigSetSummary(object):
         **[Required]** Gets the id of this OciCacheConfigSetSummary.
         The `OCID`__ of the OCI Cache Config Set.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The id of this OciCacheConfigSetSummary.
@@ -123,7 +123,7 @@ class OciCacheConfigSetSummary(object):
         Sets the id of this OciCacheConfigSetSummary.
         The `OCID`__ of the OCI Cache Config Set.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param id: The id of this OciCacheConfigSetSummary.
@@ -137,7 +137,7 @@ class OciCacheConfigSetSummary(object):
         Gets the default_config_set_id of this OciCacheConfigSetSummary.
         The `OCID`__ of the default OCI Cache Config Set which the custom OCI Cache Config Set is based upon.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The default_config_set_id of this OciCacheConfigSetSummary.
@@ -151,7 +151,7 @@ class OciCacheConfigSetSummary(object):
         Sets the default_config_set_id of this OciCacheConfigSetSummary.
         The `OCID`__ of the default OCI Cache Config Set which the custom OCI Cache Config Set is based upon.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param default_config_set_id: The default_config_set_id of this OciCacheConfigSetSummary.
@@ -189,7 +189,7 @@ class OciCacheConfigSetSummary(object):
         **[Required]** Gets the compartment_id of this OciCacheConfigSetSummary.
         The `OCID`__ of the compartment that contains the OCI Cache Config Set.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The compartment_id of this OciCacheConfigSetSummary.
@@ -203,7 +203,7 @@ class OciCacheConfigSetSummary(object):
         Sets the compartment_id of this OciCacheConfigSetSummary.
         The `OCID`__ of the compartment that contains the OCI Cache Config Set.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param compartment_id: The compartment_id of this OciCacheConfigSetSummary.

@@ -33,7 +33,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeAgentCompartmentDetails change_agent_compartment_details: (required)
             The information to be updated.
@@ -77,7 +77,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeAgentEndpointCompartmentDetails change_agent_endpoint_compartment_details: (required)
             The information to be updated.
@@ -121,7 +121,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeKnowledgeBaseCompartmentDetails change_knowledge_base_compartment_details: (required)
             The information to be updated.
@@ -165,7 +165,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeProvisionedCapacityCompartmentDetails change_provisioned_capacity_compartment_details: (required)
             The information to be updated.
@@ -482,7 +482,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -531,7 +531,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -580,7 +580,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str data_ingestion_job_id: (required)
             The `OCID`__ of the data ingestion job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -629,7 +629,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str data_source_id: (required)
             The `OCID`__ of the data source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -678,7 +678,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -727,7 +727,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -776,7 +776,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str tool_id: (required)
             The `OCID`__ of the Tool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai_agent.models.WorkRequest.status`
@@ -825,7 +825,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateAgentDetails update_agent_details: (required)
             The information to be updated.
@@ -869,7 +869,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateAgentEndpointDetails update_agent_endpoint_details: (required)
             The information to be updated.
@@ -913,7 +913,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str data_source_id: (required)
             The `OCID`__ of the data source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateDataSourceDetails update_data_source_details: (required)
             The data source information to be updated.
@@ -957,7 +957,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateKnowledgeBaseDetails update_knowledge_base_details: (required)
             The information to be updated.
@@ -1001,7 +1001,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateProvisionedCapacityDetails update_provisioned_capacity_details: (required)
             The information to be updated.
@@ -1045,7 +1045,7 @@ class GenerativeAiAgentClientCompositeOperations(object):
         :param str tool_id: (required)
             The `OCID`__ of the Tool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateToolDetails update_tool_details: (required)
             The information to be updated.

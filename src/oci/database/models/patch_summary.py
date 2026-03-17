@@ -18,7 +18,7 @@ class PatchSummary(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
     see `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the last_action property of a PatchSummary.
@@ -132,7 +132,7 @@ class PatchSummary(object):
         **[Required]** Gets the id of this PatchSummary.
         The `OCID`__ of the patch.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PatchSummary.
@@ -146,7 +146,7 @@ class PatchSummary(object):
         Sets the id of this PatchSummary.
         The `OCID`__ of the patch.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PatchSummary.

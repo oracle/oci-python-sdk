@@ -132,7 +132,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.cloud_bridge.models.ChangeAssetSourceCompartmentDetails change_asset_source_compartment_details: (required)
             Details for the compartment move.
@@ -261,7 +261,7 @@ class DiscoveryClient(object):
         :param str discovery_schedule_id: (required)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.cloud_bridge.models.ChangeDiscoveryScheduleCompartmentDetails change_discovery_schedule_compartment_details: (required)
             Information about the compartment in to which the discovery schedule should be moved.
@@ -600,7 +600,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -714,7 +714,7 @@ class DiscoveryClient(object):
         :param str discovery_schedule_id: (required)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -828,7 +828,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -935,7 +935,7 @@ class DiscoveryClient(object):
         :param str discovery_schedule_id: (required)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1042,7 +1042,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1168,7 +1168,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (optional)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. By default, the timeCreated is in descending order and displayName is in ascending order.
@@ -1332,7 +1332,7 @@ class DiscoveryClient(object):
         :param str discovery_schedule_id: (optional)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             The current state of the discovery schedule.
@@ -1646,7 +1646,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1761,7 +1761,7 @@ class DiscoveryClient(object):
         :param str asset_source_id: (required)
             The `OCID`__ of the asset source.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.cloud_bridge.models.UpdateAssetSourceDetails update_asset_source_details: (required)
             Asset source information to be updated.
@@ -1883,7 +1883,7 @@ class DiscoveryClient(object):
         :param str discovery_schedule_id: (required)
             The `OCID`__ of the discovery schedule.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

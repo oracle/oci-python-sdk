@@ -160,7 +160,7 @@ class AutonomousVirtualMachine(object):
         **[Required]** Gets the id of this AutonomousVirtualMachine.
         The `OCID`__ of the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousVirtualMachine.
@@ -174,7 +174,7 @@ class AutonomousVirtualMachine(object):
         Sets the id of this AutonomousVirtualMachine.
         The `OCID`__ of the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousVirtualMachine.
@@ -212,7 +212,7 @@ class AutonomousVirtualMachine(object):
         Gets the db_server_id of this AutonomousVirtualMachine.
         The `OCID`__ of the Db server associated with the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_server_id of this AutonomousVirtualMachine.
@@ -226,7 +226,7 @@ class AutonomousVirtualMachine(object):
         Sets the db_server_id of this AutonomousVirtualMachine.
         The `OCID`__ of the Db server associated with the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_server_id: The db_server_id of this AutonomousVirtualMachine.
@@ -390,7 +390,7 @@ class AutonomousVirtualMachine(object):
         Gets the compartment_id of this AutonomousVirtualMachine.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutonomousVirtualMachine.
@@ -404,7 +404,7 @@ class AutonomousVirtualMachine(object):
         Sets the compartment_id of this AutonomousVirtualMachine.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutonomousVirtualMachine.
@@ -418,7 +418,7 @@ class AutonomousVirtualMachine(object):
         Gets the autonomous_vm_cluster_id of this AutonomousVirtualMachine.
         The `OCID`__ of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_vm_cluster_id of this AutonomousVirtualMachine.
@@ -432,7 +432,7 @@ class AutonomousVirtualMachine(object):
         Sets the autonomous_vm_cluster_id of this AutonomousVirtualMachine.
         The `OCID`__ of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_vm_cluster_id: The autonomous_vm_cluster_id of this AutonomousVirtualMachine.
@@ -449,7 +449,7 @@ class AutonomousVirtualMachine(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AutonomousVirtualMachine.
@@ -466,7 +466,7 @@ class AutonomousVirtualMachine(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AutonomousVirtualMachine.
@@ -481,7 +481,7 @@ class AutonomousVirtualMachine(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AutonomousVirtualMachine.
@@ -496,7 +496,7 @@ class AutonomousVirtualMachine(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AutonomousVirtualMachine.
@@ -510,7 +510,7 @@ class AutonomousVirtualMachine(object):
         Gets the cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
         The `OCID`__ of the Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
@@ -524,7 +524,7 @@ class AutonomousVirtualMachine(object):
         Sets the cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
         The `OCID`__ of the Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.

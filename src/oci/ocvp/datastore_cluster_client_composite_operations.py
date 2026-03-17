@@ -33,7 +33,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AddDatastoreToDatastoreClusterDetails add_datastore_to_datastore_cluster_details: (required)
             The information about datastore addition to the Datastore Cluster.
@@ -77,7 +77,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AttachDatastoreClusterToClusterDetails attach_datastore_cluster_to_cluster_details: (required)
             The information about Datastore Cluster attachment.
@@ -121,7 +121,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AttachDatastoreClusterToEsxiHostDetails attach_datastore_cluster_to_esxi_host_details: (required)
             The information about Datastore Cluster attachment.
@@ -204,7 +204,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -253,7 +253,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -294,7 +294,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.DetachDatastoreClusterFromEsxiHostDetails detach_datastore_cluster_from_esxi_host_details: (required)
             The information about Datastore Cluster detachment.
@@ -338,7 +338,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.RemoveDatastoreFromDatastoreClusterDetails remove_datastore_from_datastore_cluster_details: (required)
             The information about datastore removal from the Datastore Cluster.
@@ -382,7 +382,7 @@ class DatastoreClusterClientCompositeOperations(object):
         :param str datastore_cluster_id: (required)
             The `OCID`__ of the Datastore Cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateDatastoreClusterDetails update_datastore_cluster_details: (required)
             The information to be updated.

@@ -997,7 +997,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateAutonomousDatabaseDetails.
@@ -1014,7 +1014,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateAutonomousDatabaseDetails.
@@ -1029,7 +1029,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateAutonomousDatabaseDetails.
@@ -1044,7 +1044,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateAutonomousDatabaseDetails.
@@ -1060,7 +1060,7 @@ class UpdateAutonomousDatabaseDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this UpdateAutonomousDatabaseDetails.
@@ -1076,7 +1076,7 @@ class UpdateAutonomousDatabaseDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this UpdateAutonomousDatabaseDetails.
@@ -1696,7 +1696,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this UpdateAutonomousDatabaseDetails.
@@ -1719,7 +1719,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this UpdateAutonomousDatabaseDetails.
@@ -1793,8 +1793,8 @@ class UpdateAutonomousDatabaseDetails(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this UpdateAutonomousDatabaseDetails.
@@ -1810,8 +1810,8 @@ class UpdateAutonomousDatabaseDetails(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this UpdateAutonomousDatabaseDetails.
@@ -1969,7 +1969,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Gets the resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
         The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
@@ -1983,7 +1983,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Sets the resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
         The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_pool_leader_id: The resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
@@ -2416,7 +2416,7 @@ class UpdateAutonomousDatabaseDetails(object):
         This field applies only to dedicated resource pool members, and the specified leader must be different from the primary\u2019s leader.
         Local Autonomous Data Guard can be enabled only if more than one dedicated resource pool exists in the region.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The local_adg_resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
@@ -2432,7 +2432,7 @@ class UpdateAutonomousDatabaseDetails(object):
         This field applies only to dedicated resource pool members, and the specified leader must be different from the primary\u2019s leader.
         Local Autonomous Data Guard can be enabled only if more than one dedicated resource pool exists in the region.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param local_adg_resource_pool_leader_id: The local_adg_resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.

@@ -159,7 +159,7 @@ class MetricGroup(Config):
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
         of MetricGroups. A filterId is generated when a Span Filter is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The filter_id of this MetricGroup.
@@ -174,7 +174,7 @@ class MetricGroup(Config):
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
         of MetricGroups. A filterId is generated when a Span Filter is created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param filter_id: The filter_id of this MetricGroup.

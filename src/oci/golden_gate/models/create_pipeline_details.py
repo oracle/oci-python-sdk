@@ -219,7 +219,7 @@ class CreatePipelineDetails(object):
         **[Required]** Gets the compartment_id of this CreatePipelineDetails.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePipelineDetails.
@@ -233,7 +233,7 @@ class CreatePipelineDetails(object):
         Sets the compartment_id of this CreatePipelineDetails.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePipelineDetails.
@@ -401,7 +401,7 @@ class CreatePipelineDetails(object):
         The `OCID`__ of the subnet of the pipeline's private endpoint.
         The subnet must be a private subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreatePipelineDetails.
@@ -416,7 +416,7 @@ class CreatePipelineDetails(object):
         The `OCID`__ of the subnet of the pipeline's private endpoint.
         The subnet must be a private subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreatePipelineDetails.

@@ -46,7 +46,7 @@ class ClusterByolAllocationDetails(object):
         Gets the vsan_byol_allocation_id of this ClusterByolAllocationDetails.
         The `OCID`__ of the VMware BYOL Allocation used to deploy VMware vSAN.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vsan_byol_allocation_id of this ClusterByolAllocationDetails.
@@ -60,7 +60,7 @@ class ClusterByolAllocationDetails(object):
         Sets the vsan_byol_allocation_id of this ClusterByolAllocationDetails.
         The `OCID`__ of the VMware BYOL Allocation used to deploy VMware vSAN.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vsan_byol_allocation_id: The vsan_byol_allocation_id of this ClusterByolAllocationDetails.
@@ -74,7 +74,7 @@ class ClusterByolAllocationDetails(object):
         Gets the firewall_byol_allocation_id of this ClusterByolAllocationDetails.
         The `OCID`__ of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The firewall_byol_allocation_id of this ClusterByolAllocationDetails.
@@ -88,7 +88,7 @@ class ClusterByolAllocationDetails(object):
         Sets the firewall_byol_allocation_id of this ClusterByolAllocationDetails.
         The `OCID`__ of the VMware BYOL Allocation used to deploy VMware vDefend Firewall.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param firewall_byol_allocation_id: The firewall_byol_allocation_id of this ClusterByolAllocationDetails.

@@ -241,7 +241,7 @@ class WorkRequestSummary(object):
         and those resources are not in the same compartment, the OCID of the resource designated as the primary
         resource is used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -258,7 +258,7 @@ class WorkRequestSummary(object):
         and those resources are not in the same compartment, the OCID of the resource designated as the primary
         resource is used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.

@@ -292,7 +292,7 @@ class SearchMonitoredResourcesDetails(object):
         **[Required]** Gets the compartment_id of this SearchMonitoredResourcesDetails.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this SearchMonitoredResourcesDetails.
@@ -306,7 +306,7 @@ class SearchMonitoredResourcesDetails(object):
         Sets the compartment_id of this SearchMonitoredResourcesDetails.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this SearchMonitoredResourcesDetails.
@@ -320,7 +320,7 @@ class SearchMonitoredResourcesDetails(object):
         Gets the compartment_ids of this SearchMonitoredResourcesDetails.
         Multiple compartment identifiers `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_ids of this SearchMonitoredResourcesDetails.
@@ -334,7 +334,7 @@ class SearchMonitoredResourcesDetails(object):
         Sets the compartment_ids of this SearchMonitoredResourcesDetails.
         Multiple compartment identifiers `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_ids: The compartment_ids of this SearchMonitoredResourcesDetails.
@@ -533,7 +533,7 @@ class SearchMonitoredResourcesDetails(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_id of this SearchMonitoredResourcesDetails.
@@ -550,7 +550,7 @@ class SearchMonitoredResourcesDetails(object):
         Currently supports only following resource types - Container database, non-container database,
         pluggable database and OCI compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_id: The external_id of this SearchMonitoredResourcesDetails.

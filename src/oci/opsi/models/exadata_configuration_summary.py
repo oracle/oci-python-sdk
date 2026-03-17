@@ -211,7 +211,7 @@ class ExadataConfigurationSummary(object):
         **[Required]** Gets the exadata_insight_id of this ExadataConfigurationSummary.
         The `OCID`__ of the Exadata insight.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_insight_id of this ExadataConfigurationSummary.
@@ -225,7 +225,7 @@ class ExadataConfigurationSummary(object):
         Sets the exadata_insight_id of this ExadataConfigurationSummary.
         The `OCID`__ of the Exadata insight.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_insight_id: The exadata_insight_id of this ExadataConfigurationSummary.
@@ -269,7 +269,7 @@ class ExadataConfigurationSummary(object):
         **[Required]** Gets the compartment_id of this ExadataConfigurationSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExadataConfigurationSummary.
@@ -283,7 +283,7 @@ class ExadataConfigurationSummary(object):
         Sets the compartment_id of this ExadataConfigurationSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExadataConfigurationSummary.
