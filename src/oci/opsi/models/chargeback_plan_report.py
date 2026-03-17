@@ -95,7 +95,7 @@ class ChargebackPlanReport(object):
         **[Required]** Gets the report_id of this ChargebackPlanReport.
         `OCID`__ of the Chargeback plan report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The report_id of this ChargebackPlanReport.
@@ -109,7 +109,7 @@ class ChargebackPlanReport(object):
         Sets the report_id of this ChargebackPlanReport.
         `OCID`__ of the Chargeback plan report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param report_id: The report_id of this ChargebackPlanReport.
@@ -177,7 +177,7 @@ class ChargebackPlanReport(object):
         **[Required]** Gets the resource_id of this ChargebackPlanReport.
         `OCID`__ of the Chargeback plan report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this ChargebackPlanReport.
@@ -191,7 +191,7 @@ class ChargebackPlanReport(object):
         Sets the resource_id of this ChargebackPlanReport.
         `OCID`__ of the Chargeback plan report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this ChargebackPlanReport.

@@ -39,7 +39,7 @@ class KnowledgeBaseConfig(object):
         **[Required]** Gets the knowledge_base_id of this KnowledgeBaseConfig.
         The `OCID`__ of the knowledgeBase this RAG Tool uses
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The knowledge_base_id of this KnowledgeBaseConfig.
@@ -53,7 +53,7 @@ class KnowledgeBaseConfig(object):
         Sets the knowledge_base_id of this KnowledgeBaseConfig.
         The `OCID`__ of the knowledgeBase this RAG Tool uses
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param knowledge_base_id: The knowledge_base_id of this KnowledgeBaseConfig.

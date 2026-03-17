@@ -123,7 +123,7 @@ class EnablePluggableDatabaseManagementDetails(object):
         **[Required]** Gets the private_end_point_id of this EnablePluggableDatabaseManagementDetails.
         The `OCID`__ of the private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_end_point_id of this EnablePluggableDatabaseManagementDetails.
@@ -137,7 +137,7 @@ class EnablePluggableDatabaseManagementDetails(object):
         Sets the private_end_point_id of this EnablePluggableDatabaseManagementDetails.
         The `OCID`__ of the private endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_end_point_id: The private_end_point_id of this EnablePluggableDatabaseManagementDetails.
@@ -230,8 +230,8 @@ class EnablePluggableDatabaseManagementDetails(object):
         Gets the ssl_secret_id of this EnablePluggableDatabaseManagementDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The ssl_secret_id of this EnablePluggableDatabaseManagementDetails.
@@ -245,8 +245,8 @@ class EnablePluggableDatabaseManagementDetails(object):
         Sets the ssl_secret_id of this EnablePluggableDatabaseManagementDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param ssl_secret_id: The ssl_secret_id of this EnablePluggableDatabaseManagementDetails.

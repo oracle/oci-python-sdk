@@ -33,7 +33,7 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureConnectorCompartmentDetails change_oracle_db_azure_connector_compartment_details: (required)
             Moves the Oracle DB Azure Connector resource into a different compartment.
@@ -117,7 +117,7 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -166,7 +166,7 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.PatchOracleDbAzureConnectorDetails patch_oracle_db_azure_connector_details: (required)
             Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
@@ -210,7 +210,7 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -251,7 +251,7 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         :param str oracle_db_azure_connector_id: (required)
             The `OCID`__ of the Oracle DB Azure Connector resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureConnectorDetails update_oracle_db_azure_connector_details: (required)
             Details for to update Oracle DB Azure Connector resource.

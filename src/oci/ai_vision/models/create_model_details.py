@@ -351,7 +351,7 @@ class CreateModelDetails(object):
         **[Required]** Gets the project_id of this CreateModelDetails.
         The `OCID`__ of the project that contains the model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this CreateModelDetails.
@@ -365,7 +365,7 @@ class CreateModelDetails(object):
         Sets the project_id of this CreateModelDetails.
         The `OCID`__ of the project that contains the model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this CreateModelDetails.

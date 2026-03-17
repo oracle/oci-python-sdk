@@ -18,7 +18,7 @@ Oracle Cloud Infrastructure API not yet supported in the SDK.
  Creating a Signer
 ===================
 
-The Signer used as part of making raw requests can be either an `Instance Principals-based <https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__ signer or one that uses a user OCID and private key.
+The Signer used as part of making raw requests can be either an `Instance Principals-based <https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm>`__ signer or one that uses a user OCID and private key.  
 
 Signer with user OCID and private key 
 --------------------------------------

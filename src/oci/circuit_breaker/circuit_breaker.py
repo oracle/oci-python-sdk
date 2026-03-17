@@ -11,7 +11,7 @@ from oci.exceptions import TransientServiceError
 logger = logging.getLogger(__name__)
 
 DEFAULT_CIRCUIT_BREAKER_FAILURE_STATUSES_AND_CODES = {
-    409: ['IncorrectState', 'LockConflict'],
+    409: ['IncorrectState'],
     429: [],
     500: [],
     502: [],
@@ -43,7 +43,7 @@ class CircuitBreakerStrategy(object):
 
             defaults to:
             {
-                409: ['IncorrectState', 'LockConflict'],
+                409: ['IncorrectState'],
                 429: [],
                 500: [],
                 502: [],

@@ -57,7 +57,7 @@ class StatefulEgressSecurityListConfiguration(AllowedSecurityConfiguration):
         The `OCID`__ of the security
         list that allowed the traffic.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The security_list_id of this StatefulEgressSecurityListConfiguration.
@@ -72,7 +72,7 @@ class StatefulEgressSecurityListConfiguration(AllowedSecurityConfiguration):
         The `OCID`__ of the security
         list that allowed the traffic.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param security_list_id: The security_list_id of this StatefulEgressSecurityListConfiguration.

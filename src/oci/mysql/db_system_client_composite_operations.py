@@ -33,7 +33,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.AddHeatWaveClusterDetails add_heat_wave_cluster_details: (required)
             Request to add a HeatWave cluster.
@@ -116,7 +116,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -214,7 +214,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.GenerateDbSystemStatusDetails generate_db_system_status_details: (required)
             The parameters for selecting the attributes to collect the status of.
@@ -258,7 +258,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -299,7 +299,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.RestartDbSystemDetails restart_db_system_details: (required)
             Optional parameters for the stop portion of the restart action.
@@ -343,7 +343,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -384,7 +384,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -425,7 +425,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -466,7 +466,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.StopDbSystemDetails stop_db_system_details: (required)
             Optional parameters for the stop action.
@@ -510,7 +510,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mysql.models.WorkRequest.status`
@@ -551,7 +551,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update a DB System.
@@ -595,7 +595,7 @@ class DbSystemClientCompositeOperations(object):
         :param str db_system_id: (required)
             The DB System `OCID`__.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.mysql.models.UpdateHeatWaveClusterDetails update_heat_wave_cluster_details: (required)
             Request to update a HeatWave cluster.

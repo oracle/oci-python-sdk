@@ -65,7 +65,7 @@ class SqlTuningSetAdminSecretCredentialDetails(SqlTuningSetAdminCredentialDetail
         The `OCID`__ of the Secret
         where the database password is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this SqlTuningSetAdminSecretCredentialDetails.
@@ -80,7 +80,7 @@ class SqlTuningSetAdminSecretCredentialDetails(SqlTuningSetAdminCredentialDetail
         The `OCID`__ of the Secret
         where the database password is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this SqlTuningSetAdminSecretCredentialDetails.

@@ -60,7 +60,7 @@ class UpdateMacsecKey(object):
         **[Required]** Gets the connectivity_association_name_secret_id of this UpdateMacsecKey.
         Secret `OCID`__ containing the Connectivity Association Key Name (CKN) of this MACsec key.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connectivity_association_name_secret_id of this UpdateMacsecKey.
@@ -74,7 +74,7 @@ class UpdateMacsecKey(object):
         Sets the connectivity_association_name_secret_id of this UpdateMacsecKey.
         Secret `OCID`__ containing the Connectivity Association Key Name (CKN) of this MACsec key.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connectivity_association_name_secret_id: The connectivity_association_name_secret_id of this UpdateMacsecKey.
@@ -112,7 +112,7 @@ class UpdateMacsecKey(object):
         **[Required]** Gets the connectivity_association_key_secret_id of this UpdateMacsecKey.
         Secret `OCID`__ containing the Connectivity Association Key (CAK) of this MACsec key.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connectivity_association_key_secret_id of this UpdateMacsecKey.
@@ -126,7 +126,7 @@ class UpdateMacsecKey(object):
         Sets the connectivity_association_key_secret_id of this UpdateMacsecKey.
         Secret `OCID`__ containing the Connectivity Association Key (CAK) of this MACsec key.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connectivity_association_key_secret_id: The connectivity_association_key_secret_id of this UpdateMacsecKey.

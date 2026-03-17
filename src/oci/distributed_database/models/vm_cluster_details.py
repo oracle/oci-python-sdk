@@ -139,7 +139,7 @@ class VmClusterDetails(object):
         **[Required]** Gets the subnet_id of this VmClusterDetails.
         The `OCID`__ of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this VmClusterDetails.
@@ -153,7 +153,7 @@ class VmClusterDetails(object):
         Sets the subnet_id of this VmClusterDetails.
         The `OCID`__ of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this VmClusterDetails.
@@ -167,7 +167,7 @@ class VmClusterDetails(object):
         **[Required]** Gets the backup_subnet_id of this VmClusterDetails.
         The `OCID`__ of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this VmClusterDetails.
@@ -181,7 +181,7 @@ class VmClusterDetails(object):
         Sets the backup_subnet_id of this VmClusterDetails.
         The `OCID`__ of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this VmClusterDetails.
@@ -466,8 +466,8 @@ class VmClusterDetails(object):
         Setting this to an empty list removes all resources from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this VmClusterDetails.
@@ -483,8 +483,8 @@ class VmClusterDetails(object):
         Setting this to an empty list removes all resources from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this VmClusterDetails.
@@ -500,8 +500,8 @@ class VmClusterDetails(object):
         Setting this to an empty array after the list is created removes the resource from all NSGs.
         For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this VmClusterDetails.
@@ -517,8 +517,8 @@ class VmClusterDetails(object):
         Setting this to an empty array after the list is created removes the resource from all NSGs.
         For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this VmClusterDetails.

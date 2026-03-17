@@ -50,7 +50,7 @@ class Byoipv6CidrDetails(object):
         **[Required]** Gets the byoipv6_range_id of this Byoipv6CidrDetails.
         The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byoipv6_range_id of this Byoipv6CidrDetails.
@@ -64,7 +64,7 @@ class Byoipv6CidrDetails(object):
         Sets the byoipv6_range_id of this Byoipv6CidrDetails.
         The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byoipv6_range_id: The byoipv6_range_id of this Byoipv6CidrDetails.

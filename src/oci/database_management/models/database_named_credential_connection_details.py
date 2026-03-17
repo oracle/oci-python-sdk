@@ -50,7 +50,7 @@ class DatabaseNamedCredentialConnectionDetails(DatabaseConnectionCredentials):
         The `OCID`__ of the Named Credential
         where the database password metadata is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The named_credential_id of this DatabaseNamedCredentialConnectionDetails.
@@ -65,7 +65,7 @@ class DatabaseNamedCredentialConnectionDetails(DatabaseConnectionCredentials):
         The `OCID`__ of the Named Credential
         where the database password metadata is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param named_credential_id: The named_credential_id of this DatabaseNamedCredentialConnectionDetails.

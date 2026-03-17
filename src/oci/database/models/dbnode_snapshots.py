@@ -70,7 +70,7 @@ class DbnodeSnapshots(object):
         Gets the snapshots of this DbnodeSnapshots.
         The `OCID`__ of the Exadata Database Node.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The snapshots of this DbnodeSnapshots.
@@ -84,7 +84,7 @@ class DbnodeSnapshots(object):
         Sets the snapshots of this DbnodeSnapshots.
         The `OCID`__ of the Exadata Database Node.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param snapshots: The snapshots of this DbnodeSnapshots.

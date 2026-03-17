@@ -87,7 +87,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Gets the max_ocpus_per_node of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The max_ocpus_per_node of this MetricBasedVerticalScaleUpConfig.
@@ -101,7 +101,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Sets the max_ocpus_per_node of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param max_ocpus_per_node: The max_ocpus_per_node of this MetricBasedVerticalScaleUpConfig.
@@ -115,7 +115,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Gets the max_memory_per_node of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The max_memory_per_node of this MetricBasedVerticalScaleUpConfig.
@@ -129,7 +129,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Sets the max_memory_per_node of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param max_memory_per_node: The max_memory_per_node of this MetricBasedVerticalScaleUpConfig.
@@ -143,7 +143,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Gets the ocpu_step_size of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The ocpu_step_size of this MetricBasedVerticalScaleUpConfig.
@@ -157,7 +157,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Sets the ocpu_step_size of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param ocpu_step_size: The ocpu_step_size of this MetricBasedVerticalScaleUpConfig.
@@ -171,7 +171,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Gets the memory_step_size of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The memory_step_size of this MetricBasedVerticalScaleUpConfig.
@@ -185,7 +185,7 @@ class MetricBasedVerticalScaleUpConfig(object):
         Sets the memory_step_size of this MetricBasedVerticalScaleUpConfig.
         For nodes with `flexible compute shapes`__, this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param memory_step_size: The memory_step_size of this MetricBasedVerticalScaleUpConfig.

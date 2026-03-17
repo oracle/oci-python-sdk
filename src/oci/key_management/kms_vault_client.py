@@ -403,7 +403,7 @@ class KmsVaultClient(object):
         throttle this call to reject an otherwise valid request when the total rate of provisioning
         write operations exceeds 10 requests per second for a given tenancy.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str vault_id: (required)

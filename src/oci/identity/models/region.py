@@ -20,8 +20,8 @@ class Region(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
     see `Get Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class Region(object):
 
         Example: `PHX`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The key of this Region.
@@ -75,7 +75,7 @@ class Region(object):
 
         Example: `PHX`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param key: The key of this Region.
@@ -92,7 +92,7 @@ class Region(object):
 
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The name of this Region.
@@ -109,7 +109,7 @@ class Region(object):
 
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param name: The name of this Region.

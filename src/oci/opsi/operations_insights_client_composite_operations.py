@@ -159,7 +159,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.ChangeChargebackPlanCompartmentDetails change_chargeback_plan_compartment_details: (required)
             The information to be updated.
@@ -539,7 +539,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails change_operations_insights_private_endpoint_compartment_details: (required)
             The details used to change the compartment of a private endpoint
@@ -625,7 +625,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails change_opsi_configuration_compartment_details: (required)
             The information to be updated.
@@ -1319,7 +1319,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -1368,7 +1368,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str chargeback_plan_report_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan report
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Unique Ops insight identifier
@@ -1659,7 +1659,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -1802,7 +1802,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -2574,7 +2574,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str chargebackplan_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.UpdateChargebackPlanDetails update_chargeback_plan_details: (required)
             The details used to update a chargeback plan.
@@ -2618,7 +2618,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str chargeback_plan_report_id: (required)
             The `OCID`__ of the Ops Insights chargeback plan report
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str id: (required)
             Unique Ops insight identifier
@@ -2879,7 +2879,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str operations_insights_private_endpoint_id: (required)
             The `OCID`__ of the Operation Insights private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails update_operations_insights_private_endpoint_details: (required)
             The details used to update a private endpoint.
@@ -3007,7 +3007,7 @@ class OperationsInsightsClientCompositeOperations(object):
         :param str opsi_configuration_id: (required)
             `OCID`__ of OPSI configuration resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.opsi.models.UpdateOpsiConfigurationDetails update_opsi_configuration_details: (required)
             The OPSI configuration resource details to be updated.

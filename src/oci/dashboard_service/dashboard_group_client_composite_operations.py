@@ -75,7 +75,7 @@ class DashboardGroupClientCompositeOperations(object):
         :param str dashboard_group_id: (required)
             The `OCID`__ of the dashboard group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dashboard_service.models.DashboardGroup.lifecycle_state`
@@ -136,7 +136,7 @@ class DashboardGroupClientCompositeOperations(object):
         :param str dashboard_group_id: (required)
             The `OCID`__ of the dashboard group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dashboard_service.models.UpdateDashboardGroupDetails update_dashboard_group_details: (required)
             The dashboard group details to be updated.

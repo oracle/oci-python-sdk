@@ -39,7 +39,7 @@ class AttachSoftwareSourcesToProfileDetails(object):
         **[Required]** Gets the software_sources of this AttachSoftwareSourcesToProfileDetails.
         List of software source `OCIDs`__ to attach to the profile.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_sources of this AttachSoftwareSourcesToProfileDetails.
@@ -53,7 +53,7 @@ class AttachSoftwareSourcesToProfileDetails(object):
         Sets the software_sources of this AttachSoftwareSourcesToProfileDetails.
         List of software source `OCIDs`__ to attach to the profile.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_sources: The software_sources of this AttachSoftwareSourcesToProfileDetails.

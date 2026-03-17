@@ -302,7 +302,7 @@ class Backup(object):
         Gets the id of this Backup.
         The `OCID`__ of the backup.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Backup.
@@ -316,7 +316,7 @@ class Backup(object):
         Sets the id of this Backup.
         The `OCID`__ of the backup.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Backup.
@@ -330,7 +330,7 @@ class Backup(object):
         Gets the compartment_id of this Backup.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Backup.
@@ -344,7 +344,7 @@ class Backup(object):
         Sets the compartment_id of this Backup.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Backup.
@@ -358,7 +358,7 @@ class Backup(object):
         Gets the database_id of this Backup.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this Backup.
@@ -372,7 +372,7 @@ class Backup(object):
         Sets the database_id of this Backup.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this Backup.
@@ -718,8 +718,8 @@ class Backup(object):
         Gets the vault_id of this Backup.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this Backup.
@@ -733,8 +733,8 @@ class Backup(object):
         Sets the vault_id of this Backup.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this Backup.
@@ -748,7 +748,7 @@ class Backup(object):
         Gets the key_store_id of this Backup.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this Backup.
@@ -762,7 +762,7 @@ class Backup(object):
         Sets the key_store_id of this Backup.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this Backup.

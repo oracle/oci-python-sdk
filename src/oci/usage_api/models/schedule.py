@@ -489,7 +489,7 @@ class Schedule(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         See `Resource Tags`__. Example: `{\"bar-key\": \"value\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Schedule.
@@ -504,7 +504,7 @@ class Schedule(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         See `Resource Tags`__. Example: `{\"bar-key\": \"value\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Schedule.
@@ -518,7 +518,7 @@ class Schedule(object):
         Gets the defined_tags of this Schedule.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__. Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Schedule.
@@ -532,7 +532,7 @@ class Schedule(object):
         Sets the defined_tags of this Schedule.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__. Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Schedule.
@@ -546,7 +546,7 @@ class Schedule(object):
         Gets the system_tags of this Schedule.
         Usage of system tag keys. These predefined keys are scoped to namespaces. See `Resource Tags`__. Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this Schedule.
@@ -560,7 +560,7 @@ class Schedule(object):
         Sets the system_tags of this Schedule.
         Usage of system tag keys. These predefined keys are scoped to namespaces. See `Resource Tags`__. Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this Schedule.

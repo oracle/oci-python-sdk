@@ -186,7 +186,7 @@ class LicenseRecordSummary(object):
         **[Required]** Gets the id of this LicenseRecordSummary.
         The license record `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LicenseRecordSummary.
@@ -200,7 +200,7 @@ class LicenseRecordSummary(object):
         Sets the id of this LicenseRecordSummary.
         The license record `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LicenseRecordSummary.
@@ -214,7 +214,7 @@ class LicenseRecordSummary(object):
         Gets the product_license_id of this LicenseRecordSummary.
         The product license `OCID`__ with which the license record is associated.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The product_license_id of this LicenseRecordSummary.
@@ -228,7 +228,7 @@ class LicenseRecordSummary(object):
         Sets the product_license_id of this LicenseRecordSummary.
         The product license `OCID`__ with which the license record is associated.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param product_license_id: The product_license_id of this LicenseRecordSummary.
@@ -242,7 +242,7 @@ class LicenseRecordSummary(object):
         Gets the compartment_id of this LicenseRecordSummary.
         The compartment `OCID`__ where the license record is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LicenseRecordSummary.
@@ -256,7 +256,7 @@ class LicenseRecordSummary(object):
         Sets the compartment_id of this LicenseRecordSummary.
         The compartment `OCID`__ where the license record is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LicenseRecordSummary.

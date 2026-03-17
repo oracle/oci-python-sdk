@@ -14,7 +14,7 @@ class CreateEmManagedExternalExadataMemberEntityDetails(object):
     """
     Compartment `OCID`__ of the Enterprise Manager member entity (e.g. databases and hosts) associated with an Exadata system.
 
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CreateEmManagedExternalExadataMemberEntityDetails(object):
         **[Required]** Gets the compartment_id of this CreateEmManagedExternalExadataMemberEntityDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateEmManagedExternalExadataMemberEntityDetails.
@@ -86,7 +86,7 @@ class CreateEmManagedExternalExadataMemberEntityDetails(object):
         Sets the compartment_id of this CreateEmManagedExternalExadataMemberEntityDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateEmManagedExternalExadataMemberEntityDetails.

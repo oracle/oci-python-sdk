@@ -16,7 +16,7 @@ class CreateCustomProtectionRuleDetails(object):
     For more information about custom protection rules, see `Custom Protection Rules`__.
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
     """
 
     def __init__(self, **kwargs):
@@ -78,7 +78,7 @@ class CreateCustomProtectionRuleDetails(object):
         **[Required]** Gets the compartment_id of this CreateCustomProtectionRuleDetails.
         The `OCID`__ of the compartment in which to create the custom protection rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCustomProtectionRuleDetails.
@@ -92,7 +92,7 @@ class CreateCustomProtectionRuleDetails(object):
         Sets the compartment_id of this CreateCustomProtectionRuleDetails.
         The `OCID`__ of the compartment in which to create the custom protection rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCustomProtectionRuleDetails.
@@ -185,7 +185,7 @@ class CreateCustomProtectionRuleDetails(object):
 
         For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
 
-        __ https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
+        __ https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
         __ https://www.modsecurity.org/CRS/Documentation/index.html
 
@@ -232,7 +232,7 @@ class CreateCustomProtectionRuleDetails(object):
 
         For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
 
-        __ https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
+        __ https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
         __ https://www.modsecurity.org/CRS/Documentation/index.html
 
@@ -251,7 +251,7 @@ class CreateCustomProtectionRuleDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateCustomProtectionRuleDetails.
@@ -268,7 +268,7 @@ class CreateCustomProtectionRuleDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateCustomProtectionRuleDetails.
@@ -285,7 +285,7 @@ class CreateCustomProtectionRuleDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateCustomProtectionRuleDetails.
@@ -302,7 +302,7 @@ class CreateCustomProtectionRuleDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateCustomProtectionRuleDetails.

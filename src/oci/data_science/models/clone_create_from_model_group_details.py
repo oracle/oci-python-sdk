@@ -63,7 +63,7 @@ class CloneCreateFromModelGroupDetails(ModelGroupCloneSourceDetails):
         **[Required]** Gets the source_id of this CloneCreateFromModelGroupDetails.
         The `OCID`__ of the model group to be cloned.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this CloneCreateFromModelGroupDetails.
@@ -77,7 +77,7 @@ class CloneCreateFromModelGroupDetails(ModelGroupCloneSourceDetails):
         Sets the source_id of this CloneCreateFromModelGroupDetails.
         The `OCID`__ of the model group to be cloned.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this CloneCreateFromModelGroupDetails.

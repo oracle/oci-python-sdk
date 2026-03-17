@@ -151,7 +151,7 @@ class DatabaseConnectionCredentialsByDetails(DatabaseConnectionCredentials):
         **[Required]** Gets the password_secret_id of this DatabaseConnectionCredentialsByDetails.
         The `OCID`__ of the secret containing the user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this DatabaseConnectionCredentialsByDetails.
@@ -165,7 +165,7 @@ class DatabaseConnectionCredentialsByDetails(DatabaseConnectionCredentials):
         Sets the password_secret_id of this DatabaseConnectionCredentialsByDetails.
         The `OCID`__ of the secret containing the user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this DatabaseConnectionCredentialsByDetails.

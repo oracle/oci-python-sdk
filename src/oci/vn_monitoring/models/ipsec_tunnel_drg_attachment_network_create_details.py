@@ -77,7 +77,7 @@ class IpsecTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDet
         **[Required]** Gets the compartment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the compartment that contains the IPSec connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
@@ -91,7 +91,7 @@ class IpsecTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDet
         Sets the compartment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the compartment that contains the IPSec connection.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
@@ -153,7 +153,7 @@ class IpsecTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDet
         Gets the transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the virtual-circuit drg attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
@@ -167,7 +167,7 @@ class IpsecTunnelDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDet
         Sets the transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the virtual-circuit drg attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param transport_attachment_id: The transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkCreateDetails.

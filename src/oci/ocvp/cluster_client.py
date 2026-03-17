@@ -134,7 +134,7 @@ class ClusterClient(object):
 
         **Important:** You must configure the Cluster's networking resources with the security rules detailed in `Security Rules for Oracle Cloud VMware Solution SDDCs`__. Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
 
-        __ https://docs.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm
 
 
         :param oci.ocvp.models.CreateClusterDetails create_cluster_details: (required)
@@ -249,7 +249,7 @@ class ClusterClient(object):
         :param str cluster_id: (required)
             The `OCID`__ of the SDDC Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -364,7 +364,7 @@ class ClusterClient(object):
         :param str cluster_id: (required)
             The `OCID`__ of the SDDC Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If you need to contact Oracle about a particular
@@ -472,7 +472,7 @@ class ClusterClient(object):
         :param str sddc_id: (optional)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -482,14 +482,14 @@ class ClusterClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -521,7 +521,7 @@ class ClusterClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment as optional parameter.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -660,7 +660,7 @@ class ClusterClient(object):
         :param str cluster_id: (required)
             The `OCID`__ of the SDDC Cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateClusterDetails update_cluster_details: (required)
             The information to be updated.

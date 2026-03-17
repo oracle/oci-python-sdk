@@ -53,7 +53,7 @@ class KafkaClusterConfigVersionSummary(object):
         **[Required]** Gets the config_id of this KafkaClusterConfigVersionSummary.
         The `OCID`__ of the KafkaClusterConfig.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_id of this KafkaClusterConfigVersionSummary.
@@ -67,7 +67,7 @@ class KafkaClusterConfigVersionSummary(object):
         Sets the config_id of this KafkaClusterConfigVersionSummary.
         The `OCID`__ of the KafkaClusterConfig.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param config_id: The config_id of this KafkaClusterConfigVersionSummary.

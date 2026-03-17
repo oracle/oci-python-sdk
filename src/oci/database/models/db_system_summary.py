@@ -35,13 +35,13 @@ class DbSystemSummary(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm
-    __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-    __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm
-    __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-    __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
     """
 
     #: A constant which can be used with the storage_volume_performance_mode property of a DbSystemSummary.
@@ -564,7 +564,7 @@ class DbSystemSummary(object):
         **[Required]** Gets the id of this DbSystemSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbSystemSummary.
@@ -578,7 +578,7 @@ class DbSystemSummary(object):
         Sets the id of this DbSystemSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbSystemSummary.
@@ -592,7 +592,7 @@ class DbSystemSummary(object):
         **[Required]** Gets the compartment_id of this DbSystemSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbSystemSummary.
@@ -606,7 +606,7 @@ class DbSystemSummary(object):
         Sets the compartment_id of this DbSystemSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbSystemSummary.
@@ -620,7 +620,7 @@ class DbSystemSummary(object):
         Gets the subscription_id of this DbSystemSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this DbSystemSummary.
@@ -634,7 +634,7 @@ class DbSystemSummary(object):
         Sets the subscription_id of this DbSystemSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this DbSystemSummary.
@@ -648,7 +648,7 @@ class DbSystemSummary(object):
         Gets the cluster_placement_group_id of this DbSystemSummary.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this DbSystemSummary.
@@ -662,7 +662,7 @@ class DbSystemSummary(object):
         Sets the cluster_placement_group_id of this DbSystemSummary.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this DbSystemSummary.
@@ -756,7 +756,7 @@ class DbSystemSummary(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DbSystemSummary.
@@ -778,7 +778,7 @@ class DbSystemSummary(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DbSystemSummary.
@@ -794,7 +794,7 @@ class DbSystemSummary(object):
 
         **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this DbSystemSummary.
@@ -810,7 +810,7 @@ class DbSystemSummary(object):
 
         **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this DbSystemSummary.
@@ -826,8 +826,8 @@ class DbSystemSummary(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this DbSystemSummary.
@@ -843,8 +843,8 @@ class DbSystemSummary(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this DbSystemSummary.
@@ -858,8 +858,8 @@ class DbSystemSummary(object):
         Gets the backup_network_nsg_ids of this DbSystemSummary.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this DbSystemSummary.
@@ -873,8 +873,8 @@ class DbSystemSummary(object):
         Sets the backup_network_nsg_ids of this DbSystemSummary.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this DbSystemSummary.
@@ -888,7 +888,7 @@ class DbSystemSummary(object):
         Gets the gi_software_image_id of this DbSystemSummary.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The gi_software_image_id of this DbSystemSummary.
@@ -902,7 +902,7 @@ class DbSystemSummary(object):
         Sets the gi_software_image_id of this DbSystemSummary.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param gi_software_image_id: The gi_software_image_id of this DbSystemSummary.
@@ -940,7 +940,7 @@ class DbSystemSummary(object):
         Gets the storage_volume_performance_mode of this DbSystemSummary.
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
 
         Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -957,7 +957,7 @@ class DbSystemSummary(object):
         Sets the storage_volume_performance_mode of this DbSystemSummary.
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
 
 
         :param storage_volume_performance_mode: The storage_volume_performance_mode of this DbSystemSummary.
@@ -1046,7 +1046,7 @@ class DbSystemSummary(object):
         Gets the time_zone of this DbSystemSummary.
         The time zone of the DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this DbSystemSummary.
@@ -1060,7 +1060,7 @@ class DbSystemSummary(object):
         Sets the time_zone of this DbSystemSummary.
         The time zone of the DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this DbSystemSummary.
@@ -1300,7 +1300,7 @@ class DbSystemSummary(object):
         Gets the last_patch_history_entry_id of this DbSystemSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbSystemSummary.
@@ -1314,7 +1314,7 @@ class DbSystemSummary(object):
         Sets the last_patch_history_entry_id of this DbSystemSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbSystemSummary.
@@ -1492,7 +1492,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ip_ids of this DbSystemSummary.
@@ -1510,7 +1510,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ip_ids: The scan_ip_ids of this DbSystemSummary.
@@ -1528,7 +1528,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vip_ids of this DbSystemSummary.
@@ -1546,7 +1546,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vip_ids: The vip_ids of this DbSystemSummary.
@@ -1564,7 +1564,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_ipv6_ids of this DbSystemSummary.
@@ -1582,7 +1582,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_ipv6_ids: The scan_ipv6_ids of this DbSystemSummary.
@@ -1600,7 +1600,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vipv6_ids of this DbSystemSummary.
@@ -1618,7 +1618,7 @@ class DbSystemSummary(object):
 
         **Note:** For a single-node DB system, this list is empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vipv6_ids: The vipv6_ids of this DbSystemSummary.
@@ -1632,7 +1632,7 @@ class DbSystemSummary(object):
         Gets the scan_dns_record_id of this DbSystemSummary.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The scan_dns_record_id of this DbSystemSummary.
@@ -1646,7 +1646,7 @@ class DbSystemSummary(object):
         Sets the scan_dns_record_id of this DbSystemSummary.
         The `OCID`__ of the DNS record for the SCAN IP addresses that are associated with the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param scan_dns_record_id: The scan_dns_record_id of this DbSystemSummary.
@@ -1830,7 +1830,7 @@ class DbSystemSummary(object):
         Gets the last_maintenance_run_id of this DbSystemSummary.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_maintenance_run_id of this DbSystemSummary.
@@ -1844,7 +1844,7 @@ class DbSystemSummary(object):
         Sets the last_maintenance_run_id of this DbSystemSummary.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_maintenance_run_id: The last_maintenance_run_id of this DbSystemSummary.
@@ -1858,7 +1858,7 @@ class DbSystemSummary(object):
         Gets the next_maintenance_run_id of this DbSystemSummary.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_maintenance_run_id of this DbSystemSummary.
@@ -1872,7 +1872,7 @@ class DbSystemSummary(object):
         Sets the next_maintenance_run_id of this DbSystemSummary.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param next_maintenance_run_id: The next_maintenance_run_id of this DbSystemSummary.
@@ -1889,7 +1889,7 @@ class DbSystemSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DbSystemSummary.
@@ -1906,7 +1906,7 @@ class DbSystemSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DbSystemSummary.
@@ -1921,7 +1921,7 @@ class DbSystemSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DbSystemSummary.
@@ -1936,7 +1936,7 @@ class DbSystemSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DbSystemSummary.
@@ -1951,7 +1951,7 @@ class DbSystemSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this DbSystemSummary.
@@ -1966,7 +1966,7 @@ class DbSystemSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this DbSystemSummary.
@@ -1982,7 +1982,7 @@ class DbSystemSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this DbSystemSummary.
@@ -1998,7 +1998,7 @@ class DbSystemSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this DbSystemSummary.
@@ -2012,7 +2012,7 @@ class DbSystemSummary(object):
         Gets the source_db_system_id of this DbSystemSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_db_system_id of this DbSystemSummary.
@@ -2026,7 +2026,7 @@ class DbSystemSummary(object):
         Sets the source_db_system_id of this DbSystemSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_db_system_id: The source_db_system_id of this DbSystemSummary.

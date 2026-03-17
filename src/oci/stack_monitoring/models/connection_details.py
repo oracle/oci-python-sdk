@@ -145,7 +145,7 @@ class ConnectionDetails(object):
         Gets the connector_id of this ConnectionDetails.
         Database connector Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this ConnectionDetails.
@@ -159,7 +159,7 @@ class ConnectionDetails(object):
         Sets the connector_id of this ConnectionDetails.
         Database connector Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this ConnectionDetails.
@@ -245,7 +245,7 @@ class ConnectionDetails(object):
         Gets the ssl_secret_id of this ConnectionDetails.
         SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_secret_id of this ConnectionDetails.
@@ -259,7 +259,7 @@ class ConnectionDetails(object):
         Sets the ssl_secret_id of this ConnectionDetails.
         SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_secret_id: The ssl_secret_id of this ConnectionDetails.

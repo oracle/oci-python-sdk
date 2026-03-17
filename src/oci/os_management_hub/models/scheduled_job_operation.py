@@ -302,7 +302,7 @@ class ScheduledJobOperation(object):
         The software source `OCIDs`__.
         This parameter only applies when the scheduled job is for attaching or detaching software sources.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this ScheduledJobOperation.
@@ -317,7 +317,7 @@ class ScheduledJobOperation(object):
         The software source `OCIDs`__.
         This parameter only applies when the scheduled job is for attaching or detaching software sources.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this ScheduledJobOperation.

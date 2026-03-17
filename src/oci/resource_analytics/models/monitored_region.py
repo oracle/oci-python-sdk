@@ -18,7 +18,7 @@ class MonitoredRegion(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a MonitoredRegion.
@@ -120,7 +120,7 @@ class MonitoredRegion(object):
         **[Required]** Gets the id of this MonitoredRegion.
         The `OCID`__ of the MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoredRegion.
@@ -134,7 +134,7 @@ class MonitoredRegion(object):
         Sets the id of this MonitoredRegion.
         The `OCID`__ of the MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoredRegion.
@@ -148,7 +148,7 @@ class MonitoredRegion(object):
         **[Required]** Gets the resource_analytics_instance_id of this MonitoredRegion.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_analytics_instance_id of this MonitoredRegion.
@@ -162,7 +162,7 @@ class MonitoredRegion(object):
         Sets the resource_analytics_instance_id of this MonitoredRegion.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_analytics_instance_id: The resource_analytics_instance_id of this MonitoredRegion.
@@ -176,7 +176,7 @@ class MonitoredRegion(object):
         **[Required]** Gets the region_id of this MonitoredRegion.
         The `Region Identifier`__ of this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The region_id of this MonitoredRegion.
@@ -190,7 +190,7 @@ class MonitoredRegion(object):
         Sets the region_id of this MonitoredRegion.
         The `Region Identifier`__ of this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param region_id: The region_id of this MonitoredRegion.

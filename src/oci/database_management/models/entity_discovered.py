@@ -222,7 +222,7 @@ class EntityDiscovered(object):
         Gets the id of this EntityDiscovered.
         The `OCID`__ of the entity discovered.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this EntityDiscovered.
@@ -236,7 +236,7 @@ class EntityDiscovered(object):
         Sets the id of this EntityDiscovered.
         The `OCID`__ of the entity discovered.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this EntityDiscovered.
@@ -250,7 +250,7 @@ class EntityDiscovered(object):
         Gets the agent_id of this EntityDiscovered.
         The `OCID`__ of the agent used for monitoring.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The agent_id of this EntityDiscovered.
@@ -264,7 +264,7 @@ class EntityDiscovered(object):
         Sets the agent_id of this EntityDiscovered.
         The `OCID`__ of the agent used for monitoring.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param agent_id: The agent_id of this EntityDiscovered.
@@ -278,7 +278,7 @@ class EntityDiscovered(object):
         Gets the connector_id of this EntityDiscovered.
         The `OCID`__ of the associated connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this EntityDiscovered.
@@ -292,7 +292,7 @@ class EntityDiscovered(object):
         Sets the connector_id of this EntityDiscovered.
         The `OCID`__ of the associated connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this EntityDiscovered.

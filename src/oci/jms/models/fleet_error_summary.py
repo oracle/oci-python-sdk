@@ -74,7 +74,7 @@ class FleetErrorSummary(object):
         **[Required]** Gets the fleet_id of this FleetErrorSummary.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this FleetErrorSummary.
@@ -88,7 +88,7 @@ class FleetErrorSummary(object):
         Sets the fleet_id of this FleetErrorSummary.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this FleetErrorSummary.
@@ -126,7 +126,7 @@ class FleetErrorSummary(object):
         **[Required]** Gets the compartment_id of this FleetErrorSummary.
         The compartment `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FleetErrorSummary.
@@ -140,7 +140,7 @@ class FleetErrorSummary(object):
         Sets the compartment_id of this FleetErrorSummary.
         The compartment `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FleetErrorSummary.

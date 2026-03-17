@@ -46,7 +46,7 @@ class CreateMonitoredRegionDetails(object):
         **[Required]** Gets the resource_analytics_instance_id of this CreateMonitoredRegionDetails.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_analytics_instance_id of this CreateMonitoredRegionDetails.
@@ -60,7 +60,7 @@ class CreateMonitoredRegionDetails(object):
         Sets the resource_analytics_instance_id of this CreateMonitoredRegionDetails.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_analytics_instance_id: The resource_analytics_instance_id of this CreateMonitoredRegionDetails.
@@ -74,7 +74,7 @@ class CreateMonitoredRegionDetails(object):
         **[Required]** Gets the region_id of this CreateMonitoredRegionDetails.
         The `Region Identifier`__ of this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The region_id of this CreateMonitoredRegionDetails.
@@ -88,7 +88,7 @@ class CreateMonitoredRegionDetails(object):
         Sets the region_id of this CreateMonitoredRegionDetails.
         The `Region Identifier`__ of this MonitoredRegion.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param region_id: The region_id of this CreateMonitoredRegionDetails.

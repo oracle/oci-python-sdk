@@ -513,7 +513,7 @@ class ExadataInfrastructure(object):
         **[Required]** Gets the id of this ExadataInfrastructure.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExadataInfrastructure.
@@ -527,7 +527,7 @@ class ExadataInfrastructure(object):
         Sets the id of this ExadataInfrastructure.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExadataInfrastructure.
@@ -541,7 +541,7 @@ class ExadataInfrastructure(object):
         **[Required]** Gets the compartment_id of this ExadataInfrastructure.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExadataInfrastructure.
@@ -555,7 +555,7 @@ class ExadataInfrastructure(object):
         Sets the compartment_id of this ExadataInfrastructure.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExadataInfrastructure.
@@ -647,7 +647,7 @@ class ExadataInfrastructure(object):
         Gets the time_zone of this ExadataInfrastructure.
         The time zone of the Exadata infrastructure. For details, see `Exadata Infrastructure Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this ExadataInfrastructure.
@@ -661,7 +661,7 @@ class ExadataInfrastructure(object):
         Sets the time_zone of this ExadataInfrastructure.
         The time zone of the Exadata infrastructure. For details, see `Exadata Infrastructure Time Zones`__.
 
-        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this ExadataInfrastructure.
@@ -1527,7 +1527,7 @@ class ExadataInfrastructure(object):
         Gets the last_maintenance_run_id of this ExadataInfrastructure.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_maintenance_run_id of this ExadataInfrastructure.
@@ -1541,7 +1541,7 @@ class ExadataInfrastructure(object):
         Sets the last_maintenance_run_id of this ExadataInfrastructure.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_maintenance_run_id: The last_maintenance_run_id of this ExadataInfrastructure.
@@ -1555,7 +1555,7 @@ class ExadataInfrastructure(object):
         Gets the next_maintenance_run_id of this ExadataInfrastructure.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_maintenance_run_id of this ExadataInfrastructure.
@@ -1569,7 +1569,7 @@ class ExadataInfrastructure(object):
         Sets the next_maintenance_run_id of this ExadataInfrastructure.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param next_maintenance_run_id: The next_maintenance_run_id of this ExadataInfrastructure.
@@ -1682,7 +1682,7 @@ class ExadataInfrastructure(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExadataInfrastructure.
@@ -1699,7 +1699,7 @@ class ExadataInfrastructure(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExadataInfrastructure.
@@ -1714,7 +1714,7 @@ class ExadataInfrastructure(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExadataInfrastructure.
@@ -1729,7 +1729,7 @@ class ExadataInfrastructure(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExadataInfrastructure.
@@ -1744,7 +1744,7 @@ class ExadataInfrastructure(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExadataInfrastructure.
@@ -1759,7 +1759,7 @@ class ExadataInfrastructure(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExadataInfrastructure.

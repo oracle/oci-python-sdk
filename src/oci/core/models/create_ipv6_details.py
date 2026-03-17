@@ -114,7 +114,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateIpv6Details.
@@ -131,7 +131,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateIpv6Details.
@@ -174,7 +174,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateIpv6Details.
@@ -191,7 +191,7 @@ class CreateIpv6Details(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateIpv6Details.
@@ -264,7 +264,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this CreateIpv6Details.
@@ -279,7 +279,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this CreateIpv6Details.
@@ -294,7 +294,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the subnet from which the IPv6 is to be drawn. The IP address,
         *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateIpv6Details.
@@ -309,7 +309,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the subnet from which the IPv6 is to be drawn. The IP address,
         *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateIpv6Details.
@@ -361,7 +361,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
@@ -377,7 +377,7 @@ class CreateIpv6Details(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 

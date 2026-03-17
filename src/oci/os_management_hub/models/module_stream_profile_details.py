@@ -132,7 +132,7 @@ class ModuleStreamProfileDetails(object):
         Gets the software_source_id of this ModuleStreamProfileDetails.
         The `OCID`__ of the software source that contains the module stream.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ModuleStreamProfileDetails.
@@ -146,7 +146,7 @@ class ModuleStreamProfileDetails(object):
         Sets the software_source_id of this ModuleStreamProfileDetails.
         The `OCID`__ of the software source that contains the module stream.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ModuleStreamProfileDetails.

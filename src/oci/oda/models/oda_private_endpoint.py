@@ -135,7 +135,7 @@ class OdaPrivateEndpoint(object):
         **[Required]** Gets the id of this OdaPrivateEndpoint.
         The `OCID`__ that was assigned when the ODA private endpoint was created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OdaPrivateEndpoint.
@@ -149,7 +149,7 @@ class OdaPrivateEndpoint(object):
         Sets the id of this OdaPrivateEndpoint.
         The `OCID`__ that was assigned when the ODA private endpoint was created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OdaPrivateEndpoint.
@@ -213,7 +213,7 @@ class OdaPrivateEndpoint(object):
         **[Required]** Gets the compartment_id of this OdaPrivateEndpoint.
         The `OCID`__ of the compartment that the ODA private endpoint belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OdaPrivateEndpoint.
@@ -227,7 +227,7 @@ class OdaPrivateEndpoint(object):
         Sets the compartment_id of this OdaPrivateEndpoint.
         The `OCID`__ of the compartment that the ODA private endpoint belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OdaPrivateEndpoint.
@@ -327,7 +327,7 @@ class OdaPrivateEndpoint(object):
         **[Required]** Gets the subnet_id of this OdaPrivateEndpoint.
         The `OCID`__ of the subnet that the private endpoint belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this OdaPrivateEndpoint.
@@ -341,7 +341,7 @@ class OdaPrivateEndpoint(object):
         Sets the subnet_id of this OdaPrivateEndpoint.
         The `OCID`__ of the subnet that the private endpoint belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this OdaPrivateEndpoint.
@@ -355,8 +355,8 @@ class OdaPrivateEndpoint(object):
         Gets the nsg_ids of this OdaPrivateEndpoint.
         List of `OCIDs`__ of `network security groups`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :return: The nsg_ids of this OdaPrivateEndpoint.
@@ -370,8 +370,8 @@ class OdaPrivateEndpoint(object):
         Sets the nsg_ids of this OdaPrivateEndpoint.
         List of `OCIDs`__ of `network security groups`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :param nsg_ids: The nsg_ids of this OdaPrivateEndpoint.

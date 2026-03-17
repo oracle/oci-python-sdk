@@ -46,7 +46,7 @@ class Principal(object):
         **[Required]** Gets the id of this Principal.
         The `OCID`__ of the principal.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Principal.
@@ -60,7 +60,7 @@ class Principal(object):
         Sets the id of this Principal.
         The `OCID`__ of the principal.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Principal.

@@ -190,7 +190,7 @@ class CreateClusterDetails(object):
         The `OCID`__ of the SDDC that the
         Cluster belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The sddc_id of this CreateClusterDetails.
@@ -205,7 +205,7 @@ class CreateClusterDetails(object):
         The `OCID`__ of the SDDC that the
         Cluster belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param sddc_id: The sddc_id of this CreateClusterDetails.
@@ -492,7 +492,7 @@ class CreateClusterDetails(object):
         Gets the capacity_reservation_id of this CreateClusterDetails.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The capacity_reservation_id of this CreateClusterDetails.
@@ -506,7 +506,7 @@ class CreateClusterDetails(object):
         Sets the capacity_reservation_id of this CreateClusterDetails.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this CreateClusterDetails.
@@ -646,7 +646,7 @@ class CreateClusterDetails(object):
         Gets the initial_vcf_byol_allocation_id of this CreateClusterDetails.
         The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The initial_vcf_byol_allocation_id of this CreateClusterDetails.
@@ -660,7 +660,7 @@ class CreateClusterDetails(object):
         Sets the initial_vcf_byol_allocation_id of this CreateClusterDetails.
         The `OCID`__ of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param initial_vcf_byol_allocation_id: The initial_vcf_byol_allocation_id of this CreateClusterDetails.
@@ -677,7 +677,7 @@ class CreateClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateClusterDetails.
@@ -694,7 +694,7 @@ class CreateClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateClusterDetails.
@@ -711,7 +711,7 @@ class CreateClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateClusterDetails.
@@ -728,7 +728,7 @@ class CreateClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateClusterDetails.

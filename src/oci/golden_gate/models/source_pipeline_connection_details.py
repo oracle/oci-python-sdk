@@ -40,7 +40,7 @@ class SourcePipelineConnectionDetails(object):
         The `OCID`__ of the connection being
         referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The connection_id of this SourcePipelineConnectionDetails.
@@ -55,7 +55,7 @@ class SourcePipelineConnectionDetails(object):
         The `OCID`__ of the connection being
         referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param connection_id: The connection_id of this SourcePipelineConnectionDetails.

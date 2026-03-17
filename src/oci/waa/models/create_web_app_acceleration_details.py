@@ -158,7 +158,7 @@ class CreateWebAppAccelerationDetails(object):
         **[Required]** Gets the compartment_id of this CreateWebAppAccelerationDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateWebAppAccelerationDetails.
@@ -172,7 +172,7 @@ class CreateWebAppAccelerationDetails(object):
         Sets the compartment_id of this CreateWebAppAccelerationDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateWebAppAccelerationDetails.
@@ -186,7 +186,7 @@ class CreateWebAppAccelerationDetails(object):
         **[Required]** Gets the web_app_acceleration_policy_id of this CreateWebAppAccelerationDetails.
         The `OCID`__ of WebAppAccelerationPolicy, which is attached to the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The web_app_acceleration_policy_id of this CreateWebAppAccelerationDetails.
@@ -200,7 +200,7 @@ class CreateWebAppAccelerationDetails(object):
         Sets the web_app_acceleration_policy_id of this CreateWebAppAccelerationDetails.
         The `OCID`__ of WebAppAccelerationPolicy, which is attached to the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param web_app_acceleration_policy_id: The web_app_acceleration_policy_id of this CreateWebAppAccelerationDetails.

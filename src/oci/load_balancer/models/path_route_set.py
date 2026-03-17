@@ -17,7 +17,7 @@ class PathRouteSet(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
     """
 
     def __init__(self, **kwargs):

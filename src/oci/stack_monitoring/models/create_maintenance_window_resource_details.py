@@ -47,7 +47,7 @@ class CreateMaintenanceWindowResourceDetails(object):
         The `OCID`__ of monitored resource
         part of the Maintenance window.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this CreateMaintenanceWindowResourceDetails.
@@ -62,7 +62,7 @@ class CreateMaintenanceWindowResourceDetails(object):
         The `OCID`__ of monitored resource
         part of the Maintenance window.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this CreateMaintenanceWindowResourceDetails.

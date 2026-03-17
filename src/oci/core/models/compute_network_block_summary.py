@@ -81,7 +81,7 @@ class ComputeNetworkBlockSummary(object):
         **[Required]** Gets the compute_capacity_topology_id of this ComputeNetworkBlockSummary.
         The `OCID`__ of the compute capacity topology.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_capacity_topology_id of this ComputeNetworkBlockSummary.
@@ -95,7 +95,7 @@ class ComputeNetworkBlockSummary(object):
         Sets the compute_capacity_topology_id of this ComputeNetworkBlockSummary.
         The `OCID`__ of the compute capacity topology.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_capacity_topology_id: The compute_capacity_topology_id of this ComputeNetworkBlockSummary.
@@ -109,7 +109,7 @@ class ComputeNetworkBlockSummary(object):
         **[Required]** Gets the compute_hpc_island_id of this ComputeNetworkBlockSummary.
         The `OCID`__ of the compute HPC island.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_hpc_island_id of this ComputeNetworkBlockSummary.
@@ -123,7 +123,7 @@ class ComputeNetworkBlockSummary(object):
         Sets the compute_hpc_island_id of this ComputeNetworkBlockSummary.
         The `OCID`__ of the compute HPC island.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_hpc_island_id: The compute_hpc_island_id of this ComputeNetworkBlockSummary.
@@ -137,7 +137,7 @@ class ComputeNetworkBlockSummary(object):
         **[Required]** Gets the id of this ComputeNetworkBlockSummary.
         The `OCID`__ of the compute network block.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeNetworkBlockSummary.
@@ -151,7 +151,7 @@ class ComputeNetworkBlockSummary(object):
         Sets the id of this ComputeNetworkBlockSummary.
         The `OCID`__ of the compute network block.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeNetworkBlockSummary.

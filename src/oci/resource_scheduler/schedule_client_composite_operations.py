@@ -33,7 +33,7 @@ class ScheduleClientCompositeOperations(object):
         :param str schedule_id: (required)
             This is the `OCID`__ of the schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_scheduler.models.Schedule.lifecycle_state`
@@ -77,7 +77,7 @@ class ScheduleClientCompositeOperations(object):
         :param str schedule_id: (required)
             This is the `OCID`__ of the schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_scheduler.models.ChangeScheduleCompartmentDetails change_schedule_compartment_details: (required)
             This is the change schedule compartment details that will be updated.
@@ -160,7 +160,7 @@ class ScheduleClientCompositeOperations(object):
         :param str schedule_id: (required)
             This is the `OCID`__ of the schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_scheduler.models.Schedule.lifecycle_state`
@@ -204,7 +204,7 @@ class ScheduleClientCompositeOperations(object):
         :param str schedule_id: (required)
             This is the `OCID`__ of the schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_scheduler.models.Schedule.lifecycle_state`
@@ -265,7 +265,7 @@ class ScheduleClientCompositeOperations(object):
         :param str schedule_id: (required)
             This is the `OCID`__ of the schedule.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_scheduler.models.UpdateScheduleDetails update_schedule_details: (required)
             The information about a schedule that will be updated.

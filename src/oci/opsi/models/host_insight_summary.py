@@ -273,7 +273,7 @@ class HostInsightSummary(object):
         **[Required]** Gets the id of this HostInsightSummary.
         The `OCID`__ of the host insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this HostInsightSummary.
@@ -287,7 +287,7 @@ class HostInsightSummary(object):
         Sets the id of this HostInsightSummary.
         The `OCID`__ of the host insight resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this HostInsightSummary.
@@ -301,7 +301,7 @@ class HostInsightSummary(object):
         **[Required]** Gets the compartment_id of this HostInsightSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this HostInsightSummary.
@@ -315,7 +315,7 @@ class HostInsightSummary(object):
         Sets the compartment_id of this HostInsightSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this HostInsightSummary.
@@ -503,7 +503,7 @@ class HostInsightSummary(object):
         Gets the opsi_private_endpoint_id of this HostInsightSummary.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this HostInsightSummary.
@@ -517,7 +517,7 @@ class HostInsightSummary(object):
         Sets the opsi_private_endpoint_id of this HostInsightSummary.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this HostInsightSummary.

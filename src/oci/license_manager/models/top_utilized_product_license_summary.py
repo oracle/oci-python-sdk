@@ -113,7 +113,7 @@ class TopUtilizedProductLicenseSummary(object):
         **[Required]** Gets the product_license_id of this TopUtilizedProductLicenseSummary.
         The product license `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The product_license_id of this TopUtilizedProductLicenseSummary.
@@ -127,7 +127,7 @@ class TopUtilizedProductLicenseSummary(object):
         Sets the product_license_id of this TopUtilizedProductLicenseSummary.
         The product license `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param product_license_id: The product_license_id of this TopUtilizedProductLicenseSummary.

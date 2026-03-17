@@ -33,7 +33,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.ChangeWebAppAccelerationCompartmentDetails change_web_app_acceleration_compartment_details: (required)
             The information to be updated.
@@ -77,7 +77,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.ChangeWebAppAccelerationPolicyCompartmentDetails change_web_app_acceleration_policy_compartment_details: (required)
             The information to be updated.
@@ -199,7 +199,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waa.models.WorkRequest.status`
@@ -248,7 +248,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waa.models.WorkRequest.status`
@@ -297,7 +297,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.PurgeWebAppAccelerationCacheDetails purge_web_app_acceleration_cache_details: (required)
             Options for the cache purge.
@@ -341,7 +341,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_id: (required)
             The `OCID`__ of the WebAppAcceleration.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.UpdateWebAppAccelerationDetails update_web_app_acceleration_details: (required)
             The information to be updated.
@@ -385,7 +385,7 @@ class WaaClientCompositeOperations(object):
         :param str web_app_acceleration_policy_id: (required)
             The `OCID`__ of the WebAppAccelerationPolicy.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.waa.models.UpdateWebAppAccelerationPolicyDetails update_web_app_acceleration_policy_details: (required)
             The information to be updated.

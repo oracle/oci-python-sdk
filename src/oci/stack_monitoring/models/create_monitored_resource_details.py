@@ -237,7 +237,7 @@ class CreateMonitoredResourceDetails(object):
         **[Required]** Gets the compartment_id of this CreateMonitoredResourceDetails.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateMonitoredResourceDetails.
@@ -251,7 +251,7 @@ class CreateMonitoredResourceDetails(object):
         Sets the compartment_id of this CreateMonitoredResourceDetails.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateMonitoredResourceDetails.
@@ -291,7 +291,7 @@ class CreateMonitoredResourceDetails(object):
         which is not a Stack Monitoring service resource.
         Currently supports only OCI compute instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_id of this CreateMonitoredResourceDetails.
@@ -307,7 +307,7 @@ class CreateMonitoredResourceDetails(object):
         which is not a Stack Monitoring service resource.
         Currently supports only OCI compute instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param external_id: The external_id of this CreateMonitoredResourceDetails.
@@ -321,7 +321,7 @@ class CreateMonitoredResourceDetails(object):
         Gets the management_agent_id of this CreateMonitoredResourceDetails.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this CreateMonitoredResourceDetails.
@@ -335,7 +335,7 @@ class CreateMonitoredResourceDetails(object):
         Sets the management_agent_id of this CreateMonitoredResourceDetails.
         Management Agent Identifier `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this CreateMonitoredResourceDetails.

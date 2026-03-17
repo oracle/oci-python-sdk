@@ -39,7 +39,7 @@ class EnablePlanExadataInsightDetails(object):
         **[Required]** Gets the plan_id of this EnablePlanExadataInsightDetails.
         `OCID`__ of OPSI Chargeback plan resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The plan_id of this EnablePlanExadataInsightDetails.
@@ -53,7 +53,7 @@ class EnablePlanExadataInsightDetails(object):
         Sets the plan_id of this EnablePlanExadataInsightDetails.
         `OCID`__ of OPSI Chargeback plan resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param plan_id: The plan_id of this EnablePlanExadataInsightDetails.

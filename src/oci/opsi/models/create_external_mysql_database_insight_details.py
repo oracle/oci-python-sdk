@@ -78,7 +78,7 @@ class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
         **[Required]** Gets the database_id of this CreateExternalMysqlDatabaseInsightDetails.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this CreateExternalMysqlDatabaseInsightDetails.
@@ -92,7 +92,7 @@ class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
         Sets the database_id of this CreateExternalMysqlDatabaseInsightDetails.
         The `OCID`__ of the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this CreateExternalMysqlDatabaseInsightDetails.
@@ -106,7 +106,7 @@ class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
         **[Required]** Gets the database_connector_id of this CreateExternalMysqlDatabaseInsightDetails.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :return: The database_connector_id of this CreateExternalMysqlDatabaseInsightDetails.
@@ -120,7 +120,7 @@ class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
         Sets the database_connector_id of this CreateExternalMysqlDatabaseInsightDetails.
         The DBM owned database connector `OCID`__ mapping to the database credentials and connection details.
 
-        __ https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html
+        __ https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html
 
 
         :param database_connector_id: The database_connector_id of this CreateExternalMysqlDatabaseInsightDetails.

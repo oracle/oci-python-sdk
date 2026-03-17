@@ -60,7 +60,7 @@ class IpInventoryVcnOverlapSummary(object):
         Gets the overlapping_vcn_id of this IpInventoryVcnOverlapSummary.
         The `OCID`__ of the VCN .
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The overlapping_vcn_id of this IpInventoryVcnOverlapSummary.
@@ -74,7 +74,7 @@ class IpInventoryVcnOverlapSummary(object):
         Sets the overlapping_vcn_id of this IpInventoryVcnOverlapSummary.
         The `OCID`__ of the VCN .
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param overlapping_vcn_id: The overlapping_vcn_id of this IpInventoryVcnOverlapSummary.

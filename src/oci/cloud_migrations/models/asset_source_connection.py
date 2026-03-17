@@ -128,7 +128,7 @@ class AssetSourceConnection(object):
         **[Required]** Gets the connector_id of this AssetSourceConnection.
         The `OCID`__ of the cloud bridge connector used for migration operations.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this AssetSourceConnection.
@@ -142,7 +142,7 @@ class AssetSourceConnection(object):
         Sets the connector_id of this AssetSourceConnection.
         The `OCID`__ of the cloud bridge connector used for migration operations.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this AssetSourceConnection.

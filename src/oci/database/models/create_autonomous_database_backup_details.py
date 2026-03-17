@@ -93,7 +93,7 @@ class CreateAutonomousDatabaseBackupDetails(object):
         **[Required]** Gets the autonomous_database_id of this CreateAutonomousDatabaseBackupDetails.
         The `OCID`__ of the Autonomous AI Database backup.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_database_id of this CreateAutonomousDatabaseBackupDetails.
@@ -107,7 +107,7 @@ class CreateAutonomousDatabaseBackupDetails(object):
         Sets the autonomous_database_id of this CreateAutonomousDatabaseBackupDetails.
         The `OCID`__ of the Autonomous AI Database backup.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_database_id: The autonomous_database_id of this CreateAutonomousDatabaseBackupDetails.

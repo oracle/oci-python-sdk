@@ -117,7 +117,7 @@ class UpdateDatabaseDetails(object):
         Gets the db_home_id of this UpdateDatabaseDetails.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_home_id of this UpdateDatabaseDetails.
@@ -131,7 +131,7 @@ class UpdateDatabaseDetails(object):
         Sets the db_home_id of this UpdateDatabaseDetails.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_home_id: The db_home_id of this UpdateDatabaseDetails.
@@ -240,7 +240,7 @@ class UpdateDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateDatabaseDetails.
@@ -257,7 +257,7 @@ class UpdateDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateDatabaseDetails.
@@ -272,7 +272,7 @@ class UpdateDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateDatabaseDetails.
@@ -287,7 +287,7 @@ class UpdateDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateDatabaseDetails.

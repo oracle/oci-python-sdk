@@ -16,7 +16,7 @@ class SourceConnectorPlugin(ConnectorPlugin):
     For configuration instructions, see
     `Creating a Connector`__.
 
-    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):

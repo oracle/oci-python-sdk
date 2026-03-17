@@ -328,7 +328,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         **[Required]** Gets the autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
         The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
@@ -342,7 +342,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         Sets the autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
         The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_container_database_id: The autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
@@ -464,7 +464,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         Gets the peer_autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
         The `OCID`__ of the peer Autonomous Container Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
@@ -478,7 +478,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         Sets the peer_autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
         The `OCID`__ of the peer Autonomous Container Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_autonomous_container_database_id: The peer_autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.

@@ -17,8 +17,8 @@ class CreateVolumeBackupPolicyDetails(object):
     see `User Defined Policies`__ in
     `Policy-Based Backups`__.
 
-    __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
-    __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     def __init__(self, **kwargs):
@@ -131,7 +131,7 @@ class CreateVolumeBackupPolicyDetails(object):
         The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`.
         See `Region Pairs`__ for details about paired regions.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
 
 
         :return: The destination_region of this CreateVolumeBackupPolicyDetails.
@@ -146,7 +146,7 @@ class CreateVolumeBackupPolicyDetails(object):
         The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`.
         See `Region Pairs`__ for details about paired regions.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
 
 
         :param destination_region: The destination_region of this CreateVolumeBackupPolicyDetails.
@@ -162,8 +162,8 @@ class CreateVolumeBackupPolicyDetails(object):
         see `Schedules`__ in
         `Policy-Based Backups`__ for more information.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
-        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :return: The schedules of this CreateVolumeBackupPolicyDetails.
@@ -179,8 +179,8 @@ class CreateVolumeBackupPolicyDetails(object):
         see `Schedules`__ in
         `Policy-Based Backups`__ for more information.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
-        __ https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param schedules: The schedules of this CreateVolumeBackupPolicyDetails.
@@ -197,7 +197,7 @@ class CreateVolumeBackupPolicyDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVolumeBackupPolicyDetails.
@@ -214,7 +214,7 @@ class CreateVolumeBackupPolicyDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVolumeBackupPolicyDetails.
@@ -231,7 +231,7 @@ class CreateVolumeBackupPolicyDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVolumeBackupPolicyDetails.
@@ -248,7 +248,7 @@ class CreateVolumeBackupPolicyDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVolumeBackupPolicyDetails.

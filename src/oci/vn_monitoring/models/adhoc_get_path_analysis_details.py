@@ -84,7 +84,7 @@ class AdhocGetPathAnalysisDetails(GetPathAnalysisDetails):
         **[Required]** Gets the compartment_id of this AdhocGetPathAnalysisDetails.
         The `OCID`__ for the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AdhocGetPathAnalysisDetails.
@@ -98,7 +98,7 @@ class AdhocGetPathAnalysisDetails(GetPathAnalysisDetails):
         Sets the compartment_id of this AdhocGetPathAnalysisDetails.
         The `OCID`__ for the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AdhocGetPathAnalysisDetails.

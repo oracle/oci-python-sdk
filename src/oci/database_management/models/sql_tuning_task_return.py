@@ -41,7 +41,7 @@ class SqlTuningTaskReturn(object):
         It can be retrieved from the following endpoint
         :func:`list_sql_tuning_advisor_tasks`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_task_id of this SqlTuningTaskReturn.
@@ -57,7 +57,7 @@ class SqlTuningTaskReturn(object):
         It can be retrieved from the following endpoint
         :func:`list_sql_tuning_advisor_tasks`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_task_id: The sql_tuning_task_id of this SqlTuningTaskReturn.

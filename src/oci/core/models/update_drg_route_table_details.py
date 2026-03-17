@@ -72,7 +72,7 @@ class UpdateDrgRouteTableDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateDrgRouteTableDetails.
@@ -89,7 +89,7 @@ class UpdateDrgRouteTableDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateDrgRouteTableDetails.
@@ -132,7 +132,7 @@ class UpdateDrgRouteTableDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateDrgRouteTableDetails.
@@ -149,7 +149,7 @@ class UpdateDrgRouteTableDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateDrgRouteTableDetails.
@@ -164,7 +164,7 @@ class UpdateDrgRouteTableDetails(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements through
         referenced attachements are inserted into the DRG route table.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The import_drg_route_distribution_id of this UpdateDrgRouteTableDetails.
@@ -179,7 +179,7 @@ class UpdateDrgRouteTableDetails(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements through
         referenced attachements are inserted into the DRG route table.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param import_drg_route_distribution_id: The import_drg_route_distribution_id of this UpdateDrgRouteTableDetails.

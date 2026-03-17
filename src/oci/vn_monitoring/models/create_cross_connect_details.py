@@ -81,7 +81,7 @@ class CreateCrossConnectDetails(object):
         **[Required]** Gets the compartment_id of this CreateCrossConnectDetails.
         The `OCID`__ of the compartment to contain the cross-connect.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCrossConnectDetails.
@@ -95,7 +95,7 @@ class CreateCrossConnectDetails(object):
         Sets the compartment_id of this CreateCrossConnectDetails.
         The `OCID`__ of the compartment to contain the cross-connect.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCrossConnectDetails.
@@ -109,7 +109,7 @@ class CreateCrossConnectDetails(object):
         Gets the cross_connect_group_id of this CreateCrossConnectDetails.
         The `OCID`__ of the cross-connect group to put this cross-connect in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_group_id of this CreateCrossConnectDetails.
@@ -123,7 +123,7 @@ class CreateCrossConnectDetails(object):
         Sets the cross_connect_group_id of this CreateCrossConnectDetails.
         The `OCID`__ of the cross-connect group to put this cross-connect in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_group_id: The cross_connect_group_id of this CreateCrossConnectDetails.
@@ -166,7 +166,7 @@ class CreateCrossConnectDetails(object):
         purposes of redundancy), provide the `OCID`__ of that existing cross-connect or
         cross-connect group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The far_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -183,7 +183,7 @@ class CreateCrossConnectDetails(object):
         purposes of redundancy), provide the `OCID`__ of that existing cross-connect or
         cross-connect group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param far_cross_connect_or_cross_connect_group_id: The far_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -231,7 +231,7 @@ class CreateCrossConnectDetails(object):
         location, and you want this new cross-connect to be on the same router, provide the
         `OCID`__ of that existing cross-connect or cross-connect group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The near_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -247,7 +247,7 @@ class CreateCrossConnectDetails(object):
         location, and you want this new cross-connect to be on the same router, provide the
         `OCID`__ of that existing cross-connect or cross-connect group.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param near_cross_connect_or_cross_connect_group_id: The near_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.

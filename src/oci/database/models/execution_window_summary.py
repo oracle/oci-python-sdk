@@ -264,7 +264,7 @@ class ExecutionWindowSummary(object):
         **[Required]** Gets the id of this ExecutionWindowSummary.
         The `OCID`__ of the execution window.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExecutionWindowSummary.
@@ -278,7 +278,7 @@ class ExecutionWindowSummary(object):
         Sets the id of this ExecutionWindowSummary.
         The `OCID`__ of the execution window.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExecutionWindowSummary.
@@ -292,7 +292,7 @@ class ExecutionWindowSummary(object):
         **[Required]** Gets the execution_resource_id of this ExecutionWindowSummary.
         The `OCID`__ of the execution resource the execution window belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The execution_resource_id of this ExecutionWindowSummary.
@@ -306,7 +306,7 @@ class ExecutionWindowSummary(object):
         Sets the execution_resource_id of this ExecutionWindowSummary.
         The `OCID`__ of the execution resource the execution window belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param execution_resource_id: The execution_resource_id of this ExecutionWindowSummary.
@@ -320,7 +320,7 @@ class ExecutionWindowSummary(object):
         Gets the deferred_execution_window_id of this ExecutionWindowSummary.
         The `OCID`__ of the new execution window created as part of reschedule for the execution window failure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The deferred_execution_window_id of this ExecutionWindowSummary.
@@ -334,7 +334,7 @@ class ExecutionWindowSummary(object):
         Sets the deferred_execution_window_id of this ExecutionWindowSummary.
         The `OCID`__ of the new execution window created as part of reschedule for the execution window failure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param deferred_execution_window_id: The deferred_execution_window_id of this ExecutionWindowSummary.
@@ -348,7 +348,7 @@ class ExecutionWindowSummary(object):
         **[Required]** Gets the compartment_id of this ExecutionWindowSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExecutionWindowSummary.
@@ -362,7 +362,7 @@ class ExecutionWindowSummary(object):
         Sets the compartment_id of this ExecutionWindowSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExecutionWindowSummary.
@@ -759,7 +759,7 @@ class ExecutionWindowSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ExecutionWindowSummary.
@@ -776,7 +776,7 @@ class ExecutionWindowSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ExecutionWindowSummary.
@@ -791,7 +791,7 @@ class ExecutionWindowSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ExecutionWindowSummary.
@@ -806,7 +806,7 @@ class ExecutionWindowSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ExecutionWindowSummary.
@@ -821,7 +821,7 @@ class ExecutionWindowSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ExecutionWindowSummary.
@@ -836,7 +836,7 @@ class ExecutionWindowSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ExecutionWindowSummary.

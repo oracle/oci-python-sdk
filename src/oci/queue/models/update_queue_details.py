@@ -95,7 +95,7 @@ class UpdateQueueDetails(object):
         Gets the display_name of this UpdateQueueDetails.
         The `OCID`__ of the queue.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The display_name of this UpdateQueueDetails.
@@ -109,7 +109,7 @@ class UpdateQueueDetails(object):
         Sets the display_name of this UpdateQueueDetails.
         The `OCID`__ of the queue.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param display_name: The display_name of this UpdateQueueDetails.
@@ -223,7 +223,7 @@ class UpdateQueueDetails(object):
         Gets the custom_encryption_key_id of this UpdateQueueDetails.
         The `OCID`__ of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The custom_encryption_key_id of this UpdateQueueDetails.
@@ -237,7 +237,7 @@ class UpdateQueueDetails(object):
         Sets the custom_encryption_key_id of this UpdateQueueDetails.
         The `OCID`__ of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param custom_encryption_key_id: The custom_encryption_key_id of this UpdateQueueDetails.

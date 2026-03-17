@@ -15,7 +15,7 @@ class Rule(object):
     The configuration details of an Events rule. For more information, see
     `Managing Rules for Events`__.
 
-    __ https://docs.oracle.com/iaas/Content/Events/Task/managingrules.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Events/Task/managingrules.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Rule.
@@ -257,9 +257,9 @@ class Rule(object):
 
         Example: `\\\"eventType\\\": \\\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\\"`
 
-        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
-        __ https://docs.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
-        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
 
 
         :return: The condition of this Rule.
@@ -295,9 +295,9 @@ class Rule(object):
 
         Example: `\\\"eventType\\\": \\\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\\"`
 
-        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
-        __ https://docs.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
-        __ https://docs.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm
 
 
         :param condition: The condition of this Rule.
@@ -311,7 +311,7 @@ class Rule(object):
         **[Required]** Gets the compartment_id of this Rule.
         The `OCID`__ of the compartment to which this rule belongs.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Rule.
@@ -325,7 +325,7 @@ class Rule(object):
         Sets the compartment_id of this Rule.
         The `OCID`__ of the compartment to which this rule belongs.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Rule.
@@ -370,7 +370,7 @@ class Rule(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Rule.
@@ -387,7 +387,7 @@ class Rule(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Rule.
@@ -403,7 +403,7 @@ class Rule(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Rule.
@@ -419,7 +419,7 @@ class Rule(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Rule.
@@ -453,7 +453,7 @@ class Rule(object):
         **[Required]** Gets the id of this Rule.
         The `OCID`__ of this rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Rule.
@@ -467,7 +467,7 @@ class Rule(object):
         Sets the id of this Rule.
         The `OCID`__ of this rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Rule.

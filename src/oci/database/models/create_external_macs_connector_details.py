@@ -15,7 +15,7 @@ class CreateExternalMacsConnectorDetails(CreateExternalDatabaseConnectorDetails)
     Details for creating a resource used to connect to an external Oracle Database using
     the `Management Agent cloud service (MACS)`__.
 
-    __ https://docs.oracle.com/iaas/management-agents/index.html
+    __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
     """
 
     def __init__(self, **kwargs):

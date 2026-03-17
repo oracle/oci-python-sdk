@@ -134,13 +134,13 @@ class PrivilegedApiControlClient(object):
         Moves a PrivilegedApiControl into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.apiaccesscontrol.models.ChangePrivilegedApiControlCompartmentDetails change_privileged_api_control_compartment_details: (required)
             The information to be updated.
@@ -379,7 +379,7 @@ class PrivilegedApiControlClient(object):
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str description: (optional)
             reason for deletion of PrivilegedApiControl.
@@ -506,7 +506,7 @@ class PrivilegedApiControlClient(object):
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -616,12 +616,12 @@ class PrivilegedApiControlClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -640,14 +640,14 @@ class PrivilegedApiControlClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -801,7 +801,7 @@ class PrivilegedApiControlClient(object):
         :param str privileged_api_control_id: (required)
             The `OCID`__ of the PrivilegedApiControl.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.apiaccesscontrol.models.UpdatePrivilegedApiControlDetails update_privileged_api_control_details: (required)
             The information to be updated.

@@ -50,7 +50,7 @@ class GuestOsTargetListDiscovery(GuestOsFleetDiscoveryDetails):
         The `OCIDs`__ of Exadata VM Cluster targets.
         Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The targets of this GuestOsTargetListDiscovery.
@@ -65,7 +65,7 @@ class GuestOsTargetListDiscovery(GuestOsFleetDiscoveryDetails):
         The `OCIDs`__ of Exadata VM Cluster targets.
         Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param targets: The targets of this GuestOsTargetListDiscovery.

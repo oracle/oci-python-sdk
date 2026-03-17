@@ -16,7 +16,7 @@ class CreateIPSecTunnelEncryptionDomainDetails(object):
     There can't be more than 50 security associations in use at one time. See `Encryption domain for policy-based
     tunnels`__ for more.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Tasks/ipsecencryptiondomains.htm#spi_policy_based_tunnel
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/ipsecencryptiondomains.htm#spi_policy_based_tunnel
     """
 
     def __init__(self, **kwargs):

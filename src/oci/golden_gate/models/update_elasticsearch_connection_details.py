@@ -307,7 +307,7 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this UpdateElasticsearchConnectionDetails.
@@ -325,7 +325,7 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this UpdateElasticsearchConnectionDetails.

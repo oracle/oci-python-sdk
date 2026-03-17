@@ -172,7 +172,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
         Gets the id of this ComputeGpuMemoryClusterInstanceSummary.
         The `OCID`__ for the Customer-unique GPU memory cluster instance
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeGpuMemoryClusterInstanceSummary.
@@ -186,7 +186,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
         Sets the id of this ComputeGpuMemoryClusterInstanceSummary.
         The `OCID`__ for the Customer-unique GPU memory cluster instance
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeGpuMemoryClusterInstanceSummary.
@@ -201,7 +201,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
         The `OCID`__ for the compartment
         compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ComputeGpuMemoryClusterInstanceSummary.
@@ -216,7 +216,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
         The `OCID`__ for the compartment
         compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ComputeGpuMemoryClusterInstanceSummary.

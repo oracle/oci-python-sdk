@@ -225,7 +225,7 @@ class AppCatalogListingResourceVersion(object):
 
         Example: `[\"us-ashburn-1\", \"us-phoenix-1\"]`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The available_regions of this AppCatalogListingResourceVersion.
@@ -244,7 +244,7 @@ class AppCatalogListingResourceVersion(object):
 
         Example: `[\"us-ashburn-1\", \"us-phoenix-1\"]`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param available_regions: The available_regions of this AppCatalogListingResourceVersion.

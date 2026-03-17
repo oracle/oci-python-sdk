@@ -92,7 +92,7 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
         **[Required]** Gets the function_id of this CustomAuthenticationPolicy.
         The `OCID`__ of the Oracle Functions function resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The function_id of this CustomAuthenticationPolicy.
@@ -106,7 +106,7 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
         Sets the function_id of this CustomAuthenticationPolicy.
         The `OCID`__ of the Oracle Functions function resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param function_id: The function_id of this CustomAuthenticationPolicy.

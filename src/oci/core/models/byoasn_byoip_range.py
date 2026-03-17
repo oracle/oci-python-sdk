@@ -112,7 +112,7 @@ class ByoasnByoipRange(object):
         **[Required]** Gets the byoip_range_id of this ByoasnByoipRange.
         The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byoip_range_id of this ByoasnByoipRange.
@@ -126,7 +126,7 @@ class ByoasnByoipRange(object):
         Sets the byoip_range_id of this ByoasnByoipRange.
         The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byoip_range_id: The byoip_range_id of this ByoasnByoipRange.

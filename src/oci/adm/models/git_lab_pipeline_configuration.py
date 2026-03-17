@@ -128,7 +128,7 @@ class GitLabPipelineConfiguration(VerifyConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the Private Access Token (PAT) Secret.
         The PAT provides the credentials to access the GitLab pipeline.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The pat_secret_id of this GitLabPipelineConfiguration.
@@ -143,7 +143,7 @@ class GitLabPipelineConfiguration(VerifyConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the Private Access Token (PAT) Secret.
         The PAT provides the credentials to access the GitLab pipeline.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param pat_secret_id: The pat_secret_id of this GitLabPipelineConfiguration.
@@ -158,7 +158,7 @@ class GitLabPipelineConfiguration(VerifyConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the trigger Secret.
         The Secret provides access to the trigger for a GitLab pipeline.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The trigger_secret_id of this GitLabPipelineConfiguration.
@@ -173,7 +173,7 @@ class GitLabPipelineConfiguration(VerifyConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the trigger Secret.
         The Secret provides access to the trigger for a GitLab pipeline.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param trigger_secret_id: The trigger_secret_id of this GitLabPipelineConfiguration.

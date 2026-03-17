@@ -63,7 +63,7 @@ class UpdateVolumeBackupDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateVolumeBackupDetails.
@@ -80,7 +80,7 @@ class UpdateVolumeBackupDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateVolumeBackupDetails.
@@ -123,7 +123,7 @@ class UpdateVolumeBackupDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateVolumeBackupDetails.
@@ -140,7 +140,7 @@ class UpdateVolumeBackupDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateVolumeBackupDetails.
@@ -157,8 +157,8 @@ class UpdateVolumeBackupDetails(object):
         `Overview of Vault service`__ and
         `Using Keys`__.
 
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :return: The kms_key_id of this UpdateVolumeBackupDetails.
@@ -175,8 +175,8 @@ class UpdateVolumeBackupDetails(object):
         `Overview of Vault service`__ and
         `Using Keys`__.
 
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
 
 
         :param kms_key_id: The kms_key_id of this UpdateVolumeBackupDetails.

@@ -55,7 +55,7 @@ from oci.functions import models as fn_models
 #    clearing down any supporting Subnets and VCN.
 #
 # For more information see the OCI Function Docs:
-#   https://docs.oracle.com/iaas/Content/Functions/Concepts/functionsoverview.htm
+#   https://docs.cloud.oracle.com/iaas/Content/Functions/Concepts/functionsoverview.htm
 
 NAME_PREFIX = "oci-python-sdk-function-example"
 

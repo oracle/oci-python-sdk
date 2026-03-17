@@ -33,7 +33,7 @@ class MacOrderClientCompositeOperations(object):
         :param str mac_order_id: (required)
             The `OCID`__ of the MacOrder.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.mngdmac.models.WorkRequest.status`
@@ -74,7 +74,7 @@ class MacOrderClientCompositeOperations(object):
         :param str mac_order_id: (required)
             The `OCID`__ of the MacOrder.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.mngdmac.models.ChangeMacOrderCompartmentDetails change_mac_order_compartment_details: (required)
             The information to be updated.
@@ -157,7 +157,7 @@ class MacOrderClientCompositeOperations(object):
         :param str mac_order_id: (required)
             The `OCID`__ of the MacOrder.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.mngdmac.models.UpdateMacOrderDetails update_mac_order_details: (required)
             The information to be updated.

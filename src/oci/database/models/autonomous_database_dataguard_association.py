@@ -348,7 +348,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         **[Required]** Gets the autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
         The `OCID`__ of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
@@ -362,7 +362,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         Sets the autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
         The `OCID`__ of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_database_id: The autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
@@ -490,7 +490,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         Gets the peer_autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
         The `OCID`__ of the peer Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
@@ -504,7 +504,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         Sets the peer_autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
         The `OCID`__ of the peer Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_autonomous_database_id: The peer_autonomous_database_id of this AutonomousDatabaseDataguardAssociation.

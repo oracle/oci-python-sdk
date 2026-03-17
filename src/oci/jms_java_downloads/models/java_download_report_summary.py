@@ -217,7 +217,7 @@ class JavaDownloadReportSummary(object):
         **[Required]** Gets the id of this JavaDownloadReportSummary.
         The `OCID`__ of the Java download report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this JavaDownloadReportSummary.
@@ -231,7 +231,7 @@ class JavaDownloadReportSummary(object):
         Sets the id of this JavaDownloadReportSummary.
         The `OCID`__ of the Java download report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this JavaDownloadReportSummary.
@@ -377,7 +377,7 @@ class JavaDownloadReportSummary(object):
         **[Required]** Gets the compartment_id of this JavaDownloadReportSummary.
         The `OCID`__ of the tenancy scoped to the Java download report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this JavaDownloadReportSummary.
@@ -391,7 +391,7 @@ class JavaDownloadReportSummary(object):
         Sets the compartment_id of this JavaDownloadReportSummary.
         The `OCID`__ of the tenancy scoped to the Java download report.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this JavaDownloadReportSummary.
@@ -600,7 +600,7 @@ class JavaDownloadReportSummary(object):
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
 
-        __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
 
 
         :return: The freeform_tags of this JavaDownloadReportSummary.
@@ -615,7 +615,7 @@ class JavaDownloadReportSummary(object):
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
 
-        __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
 
 
         :param freeform_tags: The freeform_tags of this JavaDownloadReportSummary.
@@ -630,7 +630,7 @@ class JavaDownloadReportSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See `Understanding Free-form Tags`__).
 
-        __ https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
 
 
         :return: The defined_tags of this JavaDownloadReportSummary.
@@ -645,7 +645,7 @@ class JavaDownloadReportSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See `Understanding Free-form Tags`__).
 
-        __ https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
 
 
         :param defined_tags: The defined_tags of this JavaDownloadReportSummary.
@@ -663,7 +663,7 @@ class JavaDownloadReportSummary(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this JavaDownloadReportSummary.
@@ -681,7 +681,7 @@ class JavaDownloadReportSummary(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this JavaDownloadReportSummary.

@@ -98,7 +98,7 @@ class CreateDistributedDatabaseShardWithExadbXsDetails(CreateDistributedDatabase
         **[Required]** Gets the vm_cluster_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
         The `OCID`__ of the VmCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
@@ -112,7 +112,7 @@ class CreateDistributedDatabaseShardWithExadbXsDetails(CreateDistributedDatabase
         Sets the vm_cluster_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
         The `OCID`__ of the VmCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
@@ -226,8 +226,8 @@ class CreateDistributedDatabaseShardWithExadbXsDetails(CreateDistributedDatabase
         Gets the vault_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `kmsKeyId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
@@ -241,8 +241,8 @@ class CreateDistributedDatabaseShardWithExadbXsDetails(CreateDistributedDatabase
         Sets the vault_id of this CreateDistributedDatabaseShardWithExadbXsDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `kmsKeyId` are required for Customer Managed Keys.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this CreateDistributedDatabaseShardWithExadbXsDetails.

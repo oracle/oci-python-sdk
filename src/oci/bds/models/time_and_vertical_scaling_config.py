@@ -84,7 +84,7 @@ class TimeAndVerticalScalingConfig(object):
         Gets the target_shape of this TimeAndVerticalScalingConfig.
         For nodes with `fixed compute shapes`__, this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The target_shape of this TimeAndVerticalScalingConfig.
@@ -98,7 +98,7 @@ class TimeAndVerticalScalingConfig(object):
         Sets the target_shape of this TimeAndVerticalScalingConfig.
         For nodes with `fixed compute shapes`__, this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param target_shape: The target_shape of this TimeAndVerticalScalingConfig.
@@ -112,7 +112,7 @@ class TimeAndVerticalScalingConfig(object):
         Gets the target_ocpus_per_node of this TimeAndVerticalScalingConfig.
         For nodes with `flexible compute shapes`__, this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The target_ocpus_per_node of this TimeAndVerticalScalingConfig.
@@ -126,7 +126,7 @@ class TimeAndVerticalScalingConfig(object):
         Sets the target_ocpus_per_node of this TimeAndVerticalScalingConfig.
         For nodes with `flexible compute shapes`__, this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param target_ocpus_per_node: The target_ocpus_per_node of this TimeAndVerticalScalingConfig.
@@ -140,7 +140,7 @@ class TimeAndVerticalScalingConfig(object):
         Gets the target_memory_per_node of this TimeAndVerticalScalingConfig.
         For nodes with `flexible compute shapes`__, this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :return: The target_memory_per_node of this TimeAndVerticalScalingConfig.
@@ -154,7 +154,7 @@ class TimeAndVerticalScalingConfig(object):
         Sets the target_memory_per_node of this TimeAndVerticalScalingConfig.
         For nodes with `flexible compute shapes`__, this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
 
-        __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
+        __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape
 
 
         :param target_memory_per_node: The target_memory_per_node of this TimeAndVerticalScalingConfig.

@@ -15,7 +15,7 @@ class PlanRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
     Job details that are specific to a plan rollback job. For more information about plan rollback jobs,
     see `Creating a Plan Rollback Job`__.
 
-    __ https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-plan-rollback.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-plan-rollback.htm
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class PlanRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
         **[Required]** Gets the target_rollback_job_id of this PlanRollbackJobOperationDetailsSummary.
         The `OCID`__ of a successful apply job to use for the plan rollback job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_rollback_job_id of this PlanRollbackJobOperationDetailsSummary.
@@ -65,7 +65,7 @@ class PlanRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
         Sets the target_rollback_job_id of this PlanRollbackJobOperationDetailsSummary.
         The `OCID`__ of a successful apply job to use for the plan rollback job.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_rollback_job_id: The target_rollback_job_id of this PlanRollbackJobOperationDetailsSummary.

@@ -33,7 +33,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbGcpIdentityConnectorCompartmentDetails change_oracle_db_gcp_identity_connector_compartment_details: (required)
             Moves the Oracle DB GCP Identity Connector resource into a different compartment.
@@ -77,7 +77,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbGcpKeyRingCompartmentDetails change_oracle_db_gcp_key_ring_compartment_details: (required)
             Moves the GCP Key Ring resource into a different compartment.
@@ -199,7 +199,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -248,7 +248,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -297,7 +297,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -338,7 +338,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.RefreshOracleDbGcpKeyRingDetails refresh_oracle_db_gcp_key_ring_details: (required)
             Details for to refresh Oracle DD GCP Key Ring.
@@ -382,7 +382,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_identity_connector_id: (required)
             The `OCID`__ of the Oracle DB GCP Identity Configuration Resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbGcpIdentityConnectorDetails update_oracle_db_gcp_identity_connector_details: (required)
             Details for to update OracleDbGcpIdentityConnector.
@@ -426,7 +426,7 @@ class DbMulticloudGCPProviderClientCompositeOperations(object):
         :param str oracle_db_gcp_key_ring_id: (required)
             The `OCID`__ of the Oracle DB GCP Key-Ring resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbGcpKeyRingDetails update_oracle_db_gcp_key_ring_details: (required)
             Details for to update OracleDbGcpKeyRing.

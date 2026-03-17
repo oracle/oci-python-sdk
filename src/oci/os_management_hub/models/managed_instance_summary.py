@@ -281,7 +281,7 @@ class ManagedInstanceSummary(object):
         **[Required]** Gets the id of this ManagedInstanceSummary.
         The `OCID`__ of the managed instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceSummary.
@@ -295,7 +295,7 @@ class ManagedInstanceSummary(object):
         Sets the id of this ManagedInstanceSummary.
         The `OCID`__ of the managed instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceSummary.
@@ -357,7 +357,7 @@ class ManagedInstanceSummary(object):
         **[Required]** Gets the tenancy_id of this ManagedInstanceSummary.
         The `OCID`__ of the tenancy this managed instance resides in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this ManagedInstanceSummary.
@@ -371,7 +371,7 @@ class ManagedInstanceSummary(object):
         Sets the tenancy_id of this ManagedInstanceSummary.
         The `OCID`__ of the tenancy this managed instance resides in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this ManagedInstanceSummary.
@@ -385,7 +385,7 @@ class ManagedInstanceSummary(object):
         **[Required]** Gets the compartment_id of this ManagedInstanceSummary.
         The `OCID`__ of the compartment that contains the managed instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagedInstanceSummary.
@@ -399,7 +399,7 @@ class ManagedInstanceSummary(object):
         Sets the compartment_id of this ManagedInstanceSummary.
         The `OCID`__ of the compartment that contains the managed instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagedInstanceSummary.
@@ -665,7 +665,7 @@ class ManagedInstanceSummary(object):
         Gets the notification_topic_id of this ManagedInstanceSummary.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The notification_topic_id of this ManagedInstanceSummary.
@@ -679,7 +679,7 @@ class ManagedInstanceSummary(object):
         Sets the notification_topic_id of this ManagedInstanceSummary.
         The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param notification_topic_id: The notification_topic_id of this ManagedInstanceSummary.

@@ -16,7 +16,7 @@
 #
 # Connectivity:
 #    Option 1 - User Authentication
-#       $HOME/.oci/config, please follow - https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
+#       $HOME/.oci/config, please follow - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
 #    Option 2 - Instance Principle
 #    Option 3 - Token Delegation using cloud shell
 #

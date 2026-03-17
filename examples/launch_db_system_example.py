@@ -6,8 +6,8 @@
 #
 #   * Create a VCN and subnet for the DB system and its related resources
 #   * Launch a DB system containing a single DB home and database. See:
-#     https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm and
-#     https://docs.oracle.com/iaas/Content/Database/Tasks/launchingDB.htm
+#     https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm and
+#     https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm
 #     for more information
 #   * Demonstrate listing and retrieving information on individual DB systems, DB homes and databases
 #   * Demonstrate taking action on nodes

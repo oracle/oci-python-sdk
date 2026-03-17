@@ -130,13 +130,13 @@ class LoadBalancerClient(object):
         Moves a load balancer into a different compartment within the same tenancy. For information about moving resources
         between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to move.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.load_balancer.models.ChangeLoadBalancerCompartmentDetails change_load_balancer_compartment_details: (required)
             The configuration details for moving a load balancer to a different compartment.
@@ -272,7 +272,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and servers.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to add the backend server to.
@@ -411,7 +411,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add a backend set.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -544,7 +544,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add the certificate bundle.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -671,7 +671,7 @@ class LoadBalancerClient(object):
         Adds a hostname resource to the specified load balancer. For more information, see
         `Managing Request Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
 
         :param oci.load_balancer.models.CreateHostnameDetails create_hostname_details: (required)
@@ -680,7 +680,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to add the hostname to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -813,7 +813,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer on which to add a listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -965,10 +965,10 @@ class LoadBalancerClient(object):
         When you create a load balancer, the system assigns an IP address.
         To get the IP address, use the :func:`get_load_balancer` operation.
 
-        __ https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm
-        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param oci.load_balancer.models.CreateLoadBalancerDetails create_load_balancer_details: (required)
@@ -1073,7 +1073,7 @@ class LoadBalancerClient(object):
         Adds a path route set to a load balancer. For more information, see
         `Managing Request Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
 
         :param oci.load_balancer.models.CreatePathRouteSetDetails create_path_route_set_details: (required)
@@ -1082,7 +1082,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to add the path route set to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1209,7 +1209,7 @@ class LoadBalancerClient(object):
         Adds a routing policy to a load balancer. For more information, see
         `Managing Request Routing`__.
 
-        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm
 
 
         :param oci.load_balancer.models.CreateRoutingPolicyDetails create_routing_policy_details: (required)
@@ -1218,7 +1218,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to add the routing policy rule list to.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1345,13 +1345,13 @@ class LoadBalancerClient(object):
         Creates a new rule set associated with the specified load balancer. For more information, see
         `Managing Rule Sets`__.
 
-        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm
 
 
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.load_balancer.models.CreateRuleSetDetails create_rule_set_details: (required)
             The configuration details for the rule set to create.
@@ -1487,7 +1487,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -1617,7 +1617,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
@@ -1749,7 +1749,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to delete.
@@ -1874,7 +1874,7 @@ class LoadBalancerClient(object):
             The `OCID`__ of the load balancer associated with the certificate bundle
             to be deleted.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str certificate_name: (required)
             The name of the certificate bundle to delete.
@@ -1998,7 +1998,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the hostname to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the hostname resource to delete.
@@ -2122,7 +2122,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to delete.
@@ -2246,7 +2246,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2367,7 +2367,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the path route set to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str path_route_set_name: (required)
             The name of the path route set to delete.
@@ -2494,7 +2494,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the routing policy to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str routing_policy_name: (required)
             The name of the routing policy to delete.
@@ -2621,7 +2621,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str rule_set_name: (required)
             The name of the rule set to delete.
@@ -2745,7 +2745,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the SSL cipher suite to delete.
@@ -2869,7 +2869,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set that includes the backend server.
@@ -3001,7 +3001,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend server health status to be retrieved.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server to retrieve the health status for.
@@ -3133,7 +3133,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to retrieve.
@@ -3259,7 +3259,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set health status to be retrieved.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to retrieve the health status for.
@@ -3385,7 +3385,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the health check policy to be retrieved.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the health check policy to be retrieved.
@@ -3511,7 +3511,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the hostname resource to retrieve.
@@ -3637,7 +3637,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3757,7 +3757,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to return health status for.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3877,7 +3877,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str path_route_set_name: (required)
             The name of the path route set to retrieve.
@@ -4003,7 +4003,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str routing_policy_name: (required)
             The name of the routing policy to retrieve.
@@ -4129,7 +4129,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str rule_set_name: (required)
             The name of the rule set to retrieve.
@@ -4255,7 +4255,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the SSL cipher suite to retrieve.
@@ -4381,7 +4381,7 @@ class LoadBalancerClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the work request to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4487,7 +4487,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend sets to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4607,7 +4607,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and servers.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend servers.
@@ -4734,7 +4734,7 @@ class LoadBalancerClient(object):
             The `OCID`__ of the load balancer associated with the certificate bundles
             to be listed.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4855,7 +4855,7 @@ class LoadBalancerClient(object):
             The `OCID`__ of the load balancer associated with the hostnames
             to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -4981,7 +4981,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener the rules are associated with.
@@ -5106,7 +5106,7 @@ class LoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancers to return health status information for.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5118,7 +5118,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -5126,7 +5126,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5227,7 +5227,7 @@ class LoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancers to list.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5239,7 +5239,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -5247,7 +5247,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str detail: (optional)
             The level of detail to return for each result. Can be `full` or `simple`.
@@ -5408,7 +5408,7 @@ class LoadBalancerClient(object):
             The `OCID`__ of the load balancer associated with the path route sets
             to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5528,7 +5528,7 @@ class LoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancer policies to list.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5540,7 +5540,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -5548,7 +5548,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5649,7 +5649,7 @@ class LoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancer protocols to list.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5661,7 +5661,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -5669,7 +5669,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5770,7 +5770,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the routing policies.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5782,7 +5782,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -5790,7 +5790,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
@@ -5916,7 +5916,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -6036,7 +6036,7 @@ class LoadBalancerClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment containing the load balancer shapes to list.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -6048,7 +6048,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -6056,7 +6056,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6157,7 +6157,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -6277,7 +6277,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the work requests to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -6289,7 +6289,7 @@ class LoadBalancerClient(object):
 
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -6297,7 +6297,7 @@ class LoadBalancerClient(object):
 
             Example: `3`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6412,7 +6412,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set and server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
@@ -6557,7 +6557,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the backend set.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to update.
@@ -6696,7 +6696,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the health check policy to be updated.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the health check policy to be retrieved.
@@ -6837,7 +6837,7 @@ class LoadBalancerClient(object):
             The `OCID`__ of the load balancer associated with the virtual hostname
             to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the hostname resource to update.
@@ -6976,7 +6976,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the listener to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to update.
@@ -7115,7 +7115,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -7250,7 +7250,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer whose shape will be updated.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.load_balancer.models.UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
             The details for updating a load balancer's shape. This contains the new, desired shape.
@@ -7386,7 +7386,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer to update the NSGs for.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -7524,7 +7524,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the path route set to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str path_route_set_name: (required)
             The name of the path route set to update.
@@ -7666,7 +7666,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the load balancer associated with the routing policy to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str routing_policy_name: (required)
             The name of the routing policy to update.
@@ -7805,7 +7805,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the specified load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str rule_set_name: (required)
             The name of the rule set to update.
@@ -7947,7 +7947,7 @@ class LoadBalancerClient(object):
         :param str load_balancer_id: (required)
             The `OCID`__ of the associated load balancer.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The name of the SSL cipher suite to update.

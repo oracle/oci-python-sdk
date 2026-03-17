@@ -33,7 +33,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.ChangeNetworkLoadBalancerCompartmentDetails change_network_load_balancer_compartment_details: (required)
             The configuration details for moving a network load balancer to a different compartment.
@@ -77,7 +77,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.CreateBackendDetails create_backend_details: (required)
             The details to add a backend server to a backend set.
@@ -126,7 +126,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.CreateBackendSetDetails create_backend_set_details: (required)
             The details for adding a backend set.
@@ -170,7 +170,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.CreateListenerDetails create_listener_details: (required)
             Details to add a listener.
@@ -253,7 +253,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set associated with the backend server.
@@ -315,7 +315,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str backend_set_name: (required)
             The name of the backend set to delete.
@@ -369,7 +369,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
             The name of the listener to delete.
@@ -423,7 +423,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.network_load_balancer.models.WorkRequest.status`
@@ -472,7 +472,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateBackendDetails update_backend_details: (required)
             Details for updating a backend server.
@@ -529,7 +529,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateBackendSetDetails update_backend_set_details: (required)
             The details to update a backend set.
@@ -578,7 +578,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateHealthCheckerDetails update_health_checker_details: (required)
             The health check policy configuration details.
@@ -627,7 +627,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateListenerDetails update_listener_details: (required)
             Details to update a listener.
@@ -676,7 +676,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateNetworkLoadBalancerDetails update_network_load_balancer_details: (required)
             The information to be updated.
@@ -720,7 +720,7 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         :param str network_load_balancer_id: (required)
             The `OCID`__ of the network load balancer to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.network_load_balancer.models.UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
             The details for updating the network security groups associated with the specified network load balancer.

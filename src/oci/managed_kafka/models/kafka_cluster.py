@@ -18,7 +18,7 @@ class KafkaCluster(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a KafkaCluster.
@@ -224,7 +224,7 @@ class KafkaCluster(object):
         **[Required]** Gets the id of this KafkaCluster.
         The `OCID`__ of the KafkaCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this KafkaCluster.
@@ -238,7 +238,7 @@ class KafkaCluster(object):
         Sets the id of this KafkaCluster.
         The `OCID`__ of the KafkaCluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this KafkaCluster.
@@ -276,7 +276,7 @@ class KafkaCluster(object):
         **[Required]** Gets the compartment_id of this KafkaCluster.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this KafkaCluster.
@@ -290,7 +290,7 @@ class KafkaCluster(object):
         Sets the compartment_id of this KafkaCluster.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this KafkaCluster.
@@ -550,7 +550,7 @@ class KafkaCluster(object):
         **[Required]** Gets the cluster_config_id of this KafkaCluster.
         The `OCID`__ of Kafka Cluster configuration object
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_config_id of this KafkaCluster.
@@ -564,7 +564,7 @@ class KafkaCluster(object):
         Sets the cluster_config_id of this KafkaCluster.
         The `OCID`__ of Kafka Cluster configuration object
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_config_id: The cluster_config_id of this KafkaCluster.
@@ -656,7 +656,7 @@ class KafkaCluster(object):
         Gets the secret_id of this KafkaCluster.
         The `OCID`__ of the secret that contains superuser password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this KafkaCluster.
@@ -670,7 +670,7 @@ class KafkaCluster(object):
         Sets the secret_id of this KafkaCluster.
         The `OCID`__ of the secret that contains superuser password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this KafkaCluster.
@@ -687,7 +687,7 @@ class KafkaCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this KafkaCluster.
@@ -704,7 +704,7 @@ class KafkaCluster(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this KafkaCluster.
@@ -721,7 +721,7 @@ class KafkaCluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this KafkaCluster.
@@ -738,7 +738,7 @@ class KafkaCluster(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this KafkaCluster.

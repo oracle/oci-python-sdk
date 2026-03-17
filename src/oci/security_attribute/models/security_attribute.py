@@ -19,7 +19,7 @@ class SecurityAttribute(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
     using the API.
 
-    __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm
+    __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a SecurityAttribute.
@@ -305,7 +305,7 @@ class SecurityAttribute(object):
         Indicates whether the security attribute is retired.
         See `Managing Security Attribute Namespaces`__.
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
+        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
 
 
         :return: The is_retired of this SecurityAttribute.
@@ -320,7 +320,7 @@ class SecurityAttribute(object):
         Indicates whether the security attribute is retired.
         See `Managing Security Attribute Namespaces`__.
 
-        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
+        __ https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm
 
 
         :param is_retired: The is_retired of this SecurityAttribute.

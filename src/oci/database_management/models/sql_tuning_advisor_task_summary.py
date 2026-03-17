@@ -138,7 +138,7 @@ class SqlTuningAdvisorTaskSummary(object):
         **[Required]** Gets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskSummary.
         The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskSummary.
@@ -152,7 +152,7 @@ class SqlTuningAdvisorTaskSummary(object):
         Sets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskSummary.
         The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_advisor_task_id: The sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskSummary.
@@ -166,7 +166,7 @@ class SqlTuningAdvisorTaskSummary(object):
         Gets the instance_id of this SqlTuningAdvisorTaskSummary.
         The instance ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this SqlTuningAdvisorTaskSummary.
@@ -180,7 +180,7 @@ class SqlTuningAdvisorTaskSummary(object):
         Sets the instance_id of this SqlTuningAdvisorTaskSummary.
         The instance ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this SqlTuningAdvisorTaskSummary.
