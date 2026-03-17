@@ -145,7 +145,7 @@ class ExportDeploymentWalletDetails(object):
         Gets the secret_compartment_id of this ExportDeploymentWalletDetails.
         The `OCID`__ of the compartment, where the secret will be created in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_compartment_id of this ExportDeploymentWalletDetails.
@@ -159,7 +159,7 @@ class ExportDeploymentWalletDetails(object):
         Sets the secret_compartment_id of this ExportDeploymentWalletDetails.
         The `OCID`__ of the compartment, where the secret will be created in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_compartment_id: The secret_compartment_id of this ExportDeploymentWalletDetails.

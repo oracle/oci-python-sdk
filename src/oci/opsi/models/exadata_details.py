@@ -53,7 +53,7 @@ class ExadataDetails(object):
         **[Required]** Gets the id of this ExadataDetails.
         The `OCID`__ of exadata insight resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExadataDetails.
@@ -67,7 +67,7 @@ class ExadataDetails(object):
         Sets the id of this ExadataDetails.
         The `OCID`__ of exadata insight resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExadataDetails.

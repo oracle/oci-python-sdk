@@ -117,7 +117,7 @@ class CreateDkimDetails(object):
         **[Required]** Gets the email_domain_id of this CreateDkimDetails.
         The `OCID`__ of the EmailDomain for this DKIM.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The email_domain_id of this CreateDkimDetails.
@@ -131,7 +131,7 @@ class CreateDkimDetails(object):
         Sets the email_domain_id of this CreateDkimDetails.
         The `OCID`__ of the EmailDomain for this DKIM.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param email_domain_id: The email_domain_id of this CreateDkimDetails.
@@ -198,7 +198,7 @@ class CreateDkimDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDkimDetails.
@@ -215,7 +215,7 @@ class CreateDkimDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDkimDetails.
@@ -232,7 +232,7 @@ class CreateDkimDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDkimDetails.
@@ -249,7 +249,7 @@ class CreateDkimDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDkimDetails.

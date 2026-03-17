@@ -117,8 +117,8 @@ class UpdateOdaPrivateEndpointDetails(object):
         Gets the nsg_ids of this UpdateOdaPrivateEndpointDetails.
         List of `OCIDs`__ of `network security groups`__
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :return: The nsg_ids of this UpdateOdaPrivateEndpointDetails.
@@ -132,8 +132,8 @@ class UpdateOdaPrivateEndpointDetails(object):
         Sets the nsg_ids of this UpdateOdaPrivateEndpointDetails.
         List of `OCIDs`__ of `network security groups`__
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :param nsg_ids: The nsg_ids of this UpdateOdaPrivateEndpointDetails.

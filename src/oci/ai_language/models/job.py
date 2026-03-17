@@ -213,7 +213,7 @@ class Job(object):
         **[Required]** Gets the id of this Job.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Job.
@@ -227,7 +227,7 @@ class Job(object):
         Sets the id of this Job.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Job.
@@ -357,7 +357,7 @@ class Job(object):
         **[Required]** Gets the compartment_id of this Job.
         The `OCID`__ of the compartment where you want to create the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Job.
@@ -371,7 +371,7 @@ class Job(object):
         Sets the compartment_id of this Job.
         The `OCID`__ of the compartment where you want to create the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Job.
@@ -627,7 +627,7 @@ class Job(object):
         Gets the created_by of this Job.
         The `OCID`__ of the user who created the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this Job.
@@ -641,7 +641,7 @@ class Job(object):
         Sets the created_by of this Job.
         The `OCID`__ of the user who created the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this Job.

@@ -14,7 +14,7 @@ class RefreshActivity(object):
     """
     An environment refresh copies data from a source environment to a target environment, making a copy of the source environment onto the target environment. For more information, see `Refreshing an Environment`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/fusion-applications/refresh-environment.htm
+    __ https://docs.oracle.com/iaas/Content/fusion-applications/refresh-environment.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a RefreshActivity.

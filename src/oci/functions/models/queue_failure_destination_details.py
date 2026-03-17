@@ -58,7 +58,7 @@ class QueueFailureDestinationDetails(FailureDestinationDetails):
         **[Required]** Gets the queue_id of this QueueFailureDestinationDetails.
         The `OCID`__ of the queue.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The queue_id of this QueueFailureDestinationDetails.
@@ -72,7 +72,7 @@ class QueueFailureDestinationDetails(FailureDestinationDetails):
         Sets the queue_id of this QueueFailureDestinationDetails.
         The `OCID`__ of the queue.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param queue_id: The queue_id of this QueueFailureDestinationDetails.

@@ -57,7 +57,7 @@ class DrgRoutingConfiguration(ForwardedRoutingConfiguration):
         The `OCID`__ of the DRG route
         table that allowed the traffic.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_route_table_id of this DrgRoutingConfiguration.
@@ -72,7 +72,7 @@ class DrgRoutingConfiguration(ForwardedRoutingConfiguration):
         The `OCID`__ of the DRG route
         table that allowed the traffic.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_route_table_id: The drg_route_table_id of this DrgRoutingConfiguration.

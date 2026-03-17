@@ -53,7 +53,7 @@ class BlockVolumeDetails(object):
         **[Required]** Gets the id of this BlockVolumeDetails.
         An `OCID`__s of the Block Storage Volume.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this BlockVolumeDetails.
@@ -67,7 +67,7 @@ class BlockVolumeDetails(object):
         Sets the id of this BlockVolumeDetails.
         An `OCID`__s of the Block Storage Volume.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this BlockVolumeDetails.

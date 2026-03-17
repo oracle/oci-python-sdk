@@ -14,7 +14,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
     """
     The Autonomous AI Database `Vault`__ service key management history entry.
 
-    __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+    __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
     """
 
     def __init__(self, **kwargs):
@@ -62,7 +62,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
         **[Required]** Gets the id of this AutonomousDatabaseKeyHistoryEntry.
         The id of the Autonomous AI Database `Vault`__ service key management history entry.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The id of this AutonomousDatabaseKeyHistoryEntry.
@@ -76,7 +76,7 @@ class AutonomousDatabaseKeyHistoryEntry(object):
         Sets the id of this AutonomousDatabaseKeyHistoryEntry.
         The id of the Autonomous AI Database `Vault`__ service key management history entry.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param id: The id of this AutonomousDatabaseKeyHistoryEntry.
@@ -114,8 +114,8 @@ class AutonomousDatabaseKeyHistoryEntry(object):
         Gets the vault_id of this AutonomousDatabaseKeyHistoryEntry.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this AutonomousDatabaseKeyHistoryEntry.
@@ -129,8 +129,8 @@ class AutonomousDatabaseKeyHistoryEntry(object):
         Sets the vault_id of this AutonomousDatabaseKeyHistoryEntry.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this AutonomousDatabaseKeyHistoryEntry.

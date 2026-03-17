@@ -60,7 +60,7 @@ class SetDrgPeeringConnectionDetails(object):
         **[Required]** Gets the drg_id of this SetDrgPeeringConnectionDetails.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this SetDrgPeeringConnectionDetails.
@@ -74,7 +74,7 @@ class SetDrgPeeringConnectionDetails(object):
         Sets the drg_id of this SetDrgPeeringConnectionDetails.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this SetDrgPeeringConnectionDetails.

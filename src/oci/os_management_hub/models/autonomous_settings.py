@@ -70,7 +70,7 @@ class AutonomousSettings(object):
         Gets the scheduled_job_id of this AutonomousSettings.
         The `OCID`__ of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scheduled_job_id of this AutonomousSettings.
@@ -84,7 +84,7 @@ class AutonomousSettings(object):
         Sets the scheduled_job_id of this AutonomousSettings.
         The `OCID`__ of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scheduled_job_id: The scheduled_job_id of this AutonomousSettings.

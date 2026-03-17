@@ -8,11 +8,11 @@ import sys
 # This code exists for backwards compatibility reasons.
 # I don't like it either. Just look the other way. :)
 
-for package in ('urllib3', 'idna', 'chardet'):
+for package in ('idna', 'chardet'):
     vendored_package = "oci._vendor." + package
     locals()[package] = __import__(vendored_package)
     # This traversal is apparently necessary such that the identities are
-    # preserved (requests.packages.urllib3.* is urllib3.*)
+    # preserved (requests.packages.idna.* is idna.*)
     for mod in list(sys.modules):
         if mod == vendored_package or mod.startswith(vendored_package + '.'):
             unprefixed_mod = mod[len("oci._vendor."):]

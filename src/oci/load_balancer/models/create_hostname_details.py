@@ -81,7 +81,7 @@ class CreateHostnameDetails(object):
 
         Example: `app.example.com`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing
+        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing
 
 
         :return: The hostname of this CreateHostnameDetails.
@@ -98,7 +98,7 @@ class CreateHostnameDetails(object):
 
         Example: `app.example.com`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing
+        __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing
 
 
         :param hostname: The hostname of this CreateHostnameDetails.

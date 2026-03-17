@@ -87,7 +87,7 @@ class LoopBackDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDetail
         **[Required]** Gets the ids of this LoopBackDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the network attached to the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ids of this LoopBackDrgAttachmentNetworkCreateDetails.
@@ -101,7 +101,7 @@ class LoopBackDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDetail
         Sets the ids of this LoopBackDrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the network attached to the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ids: The ids of this LoopBackDrgAttachmentNetworkCreateDetails.

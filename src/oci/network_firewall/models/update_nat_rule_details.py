@@ -15,7 +15,7 @@ class UpdateNatRuleDetails(object):
     Request for updating a NAT rule used in the firewall policy.
     A `NAT rule`__ defines which traffic NAT should be applied to by the firewall, and how it should do so.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+    __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
     """
 
     #: A constant which can be used with the type property of a UpdateNatRuleDetails.

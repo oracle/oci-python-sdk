@@ -102,7 +102,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the id of this TenancyAttachmentSummary.
         The `OCID`__ of the TenancyAttachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TenancyAttachmentSummary.
@@ -116,7 +116,7 @@ class TenancyAttachmentSummary(object):
         Sets the id of this TenancyAttachmentSummary.
         The `OCID`__ of the TenancyAttachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TenancyAttachmentSummary.
@@ -154,7 +154,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the resource_analytics_instance_id of this TenancyAttachmentSummary.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_analytics_instance_id of this TenancyAttachmentSummary.
@@ -168,7 +168,7 @@ class TenancyAttachmentSummary(object):
         Sets the resource_analytics_instance_id of this TenancyAttachmentSummary.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_analytics_instance_id: The resource_analytics_instance_id of this TenancyAttachmentSummary.
@@ -182,7 +182,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the tenancy_id of this TenancyAttachmentSummary.
         The `OCID`__ of the tenancy associated with this TenancyAttachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this TenancyAttachmentSummary.
@@ -196,7 +196,7 @@ class TenancyAttachmentSummary(object):
         Sets the tenancy_id of this TenancyAttachmentSummary.
         The `OCID`__ of the tenancy associated with this TenancyAttachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this TenancyAttachmentSummary.

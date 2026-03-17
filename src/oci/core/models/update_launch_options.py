@@ -141,7 +141,7 @@ class UpdateLaunchOptions(object):
         the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
         as expected, the changes are not supported. Revert the instance to the original networking type.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
 
         Allowed values for this property are: "VFIO", "PARAVIRTUALIZED"
 
@@ -172,7 +172,7 @@ class UpdateLaunchOptions(object):
         the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
         as expected, the changes are not supported. Revert the instance to the original networking type.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
 
 
         :param network_type: The network_type of this UpdateLaunchOptions.
@@ -201,7 +201,7 @@ class UpdateLaunchOptions(object):
 
         For more information, see `Block Volume Encryption`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti
 
 
         :return: The is_pv_encryption_in_transit_enabled of this UpdateLaunchOptions.
@@ -225,7 +225,7 @@ class UpdateLaunchOptions(object):
 
         For more information, see `Block Volume Encryption`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this UpdateLaunchOptions.

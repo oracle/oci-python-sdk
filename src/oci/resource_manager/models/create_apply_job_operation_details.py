@@ -115,7 +115,7 @@ class CreateApplyJobOperationDetails(CreateJobOperationDetails):
         Gets the execution_plan_job_id of this CreateApplyJobOperationDetails.
         The `OCID`__ of a plan job, for use when specifying `FROM_PLAN_JOB_ID` as the `executionPlanStrategy`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The execution_plan_job_id of this CreateApplyJobOperationDetails.
@@ -129,7 +129,7 @@ class CreateApplyJobOperationDetails(CreateJobOperationDetails):
         Sets the execution_plan_job_id of this CreateApplyJobOperationDetails.
         The `OCID`__ of a plan job, for use when specifying `FROM_PLAN_JOB_ID` as the `executionPlanStrategy`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param execution_plan_job_id: The execution_plan_job_id of this CreateApplyJobOperationDetails.

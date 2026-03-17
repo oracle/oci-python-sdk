@@ -46,7 +46,7 @@ class ReorderScheduledActionsDetails(object):
         **[Required]** Gets the scheduling_window_id of this ReorderScheduledActionsDetails.
         The `OCID`__ of the Scheduling Window.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scheduling_window_id of this ReorderScheduledActionsDetails.
@@ -60,7 +60,7 @@ class ReorderScheduledActionsDetails(object):
         Sets the scheduling_window_id of this ReorderScheduledActionsDetails.
         The `OCID`__ of the Scheduling Window.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scheduling_window_id: The scheduling_window_id of this ReorderScheduledActionsDetails.

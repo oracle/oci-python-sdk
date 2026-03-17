@@ -33,7 +33,7 @@ class OracleDbAzureVaultAssociationClientCompositeOperations(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -74,7 +74,7 @@ class OracleDbAzureVaultAssociationClientCompositeOperations(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureVaultAssociationCompartmentDetails change_oracle_db_azure_vault_association_compartment_details: (required)
             Moves the Oracle DB Azure Vault Association resource into a different compartment.
@@ -157,7 +157,7 @@ class OracleDbAzureVaultAssociationClientCompositeOperations(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -206,7 +206,7 @@ class OracleDbAzureVaultAssociationClientCompositeOperations(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureVaultAssociationDetails update_oracle_db_azure_vault_association_details: (required)
             Details for to update OracleDbAzureVaultAssociation.

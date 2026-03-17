@@ -203,7 +203,7 @@ class ExternalDbSystemConnector(object):
         **[Required]** Gets the id of this ExternalDbSystemConnector.
         The `OCID`__ of the external DB system connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExternalDbSystemConnector.
@@ -217,7 +217,7 @@ class ExternalDbSystemConnector(object):
         Sets the id of this ExternalDbSystemConnector.
         The `OCID`__ of the external DB system connector.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExternalDbSystemConnector.
@@ -255,7 +255,7 @@ class ExternalDbSystemConnector(object):
         **[Required]** Gets the compartment_id of this ExternalDbSystemConnector.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ExternalDbSystemConnector.
@@ -269,7 +269,7 @@ class ExternalDbSystemConnector(object):
         Sets the compartment_id of this ExternalDbSystemConnector.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ExternalDbSystemConnector.
@@ -283,7 +283,7 @@ class ExternalDbSystemConnector(object):
         **[Required]** Gets the external_db_system_id of this ExternalDbSystemConnector.
         The `OCID`__ of the external DB system that the connector is a part of.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_db_system_id of this ExternalDbSystemConnector.
@@ -297,7 +297,7 @@ class ExternalDbSystemConnector(object):
         Sets the external_db_system_id of this ExternalDbSystemConnector.
         The `OCID`__ of the external DB system that the connector is a part of.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_db_system_id: The external_db_system_id of this ExternalDbSystemConnector.

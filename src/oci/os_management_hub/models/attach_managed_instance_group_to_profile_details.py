@@ -39,7 +39,7 @@ class AttachManagedInstanceGroupToProfileDetails(object):
         **[Required]** Gets the managed_instance_group_id of this AttachManagedInstanceGroupToProfileDetails.
         The `OCID`__ of the managed instance group that the instance will be associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_group_id of this AttachManagedInstanceGroupToProfileDetails.
@@ -53,7 +53,7 @@ class AttachManagedInstanceGroupToProfileDetails(object):
         Sets the managed_instance_group_id of this AttachManagedInstanceGroupToProfileDetails.
         The `OCID`__ of the managed instance group that the instance will be associated with.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_group_id: The managed_instance_group_id of this AttachManagedInstanceGroupToProfileDetails.

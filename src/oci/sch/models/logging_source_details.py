@@ -16,7 +16,7 @@ class LoggingSourceDetails(SourceDetails):
     For configuration instructions, see
     `Creating a Connector with a Logging Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-logging-source.htm
+    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-logging-source.htm
     """
 
     def __init__(self, **kwargs):

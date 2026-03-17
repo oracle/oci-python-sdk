@@ -118,7 +118,7 @@ class AwrDatabaseSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabases
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The awr_source_database_identifier of this AwrDatabaseSnapshotRangeSummary.
@@ -134,7 +134,7 @@ class AwrDatabaseSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabases
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param awr_source_database_identifier: The awr_source_database_identifier of this AwrDatabaseSnapshotRangeSummary.
@@ -270,7 +270,7 @@ class AwrDatabaseSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabaseSnapshots
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The first_snapshot_identifier of this AwrDatabaseSnapshotRangeSummary.
@@ -286,7 +286,7 @@ class AwrDatabaseSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabaseSnapshots
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param first_snapshot_identifier: The first_snapshot_identifier of this AwrDatabaseSnapshotRangeSummary.
@@ -302,7 +302,7 @@ class AwrDatabaseSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabaseSnapshots
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The latest_snapshot_identifier of this AwrDatabaseSnapshotRangeSummary.
@@ -318,7 +318,7 @@ class AwrDatabaseSnapshotRangeSummary(object):
         It can be retrieved from the following endpoint:
         /awrHubs/{awrHubId}/awrDatabaseSnapshots
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param latest_snapshot_identifier: The latest_snapshot_identifier of this AwrDatabaseSnapshotRangeSummary.

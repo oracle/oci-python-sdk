@@ -74,7 +74,7 @@ class ReinstateDataGuardDetails(object):
         **[Required]** Gets the source_database_id of this ReinstateDataGuardDetails.
         The `OCID`__ of the source (primary) database in the Data Guard group.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_database_id of this ReinstateDataGuardDetails.
@@ -88,7 +88,7 @@ class ReinstateDataGuardDetails(object):
         Sets the source_database_id of this ReinstateDataGuardDetails.
         The `OCID`__ of the source (primary) database in the Data Guard group.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_database_id: The source_database_id of this ReinstateDataGuardDetails.

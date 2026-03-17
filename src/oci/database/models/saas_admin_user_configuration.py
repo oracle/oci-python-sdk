@@ -118,8 +118,8 @@ class SaasAdminUserConfiguration(object):
         Gets the secret_id of this SaasAdminUserConfiguration.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The secret_id of this SaasAdminUserConfiguration.
@@ -133,8 +133,8 @@ class SaasAdminUserConfiguration(object):
         Sets the secret_id of this SaasAdminUserConfiguration.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param secret_id: The secret_id of this SaasAdminUserConfiguration.

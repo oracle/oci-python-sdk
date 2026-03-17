@@ -91,7 +91,7 @@ class PrivateApplicationPackageSummary(object):
         **[Required]** Gets the id of this PrivateApplicationPackageSummary.
         The `OCID`__ of the private application package.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PrivateApplicationPackageSummary.
@@ -105,7 +105,7 @@ class PrivateApplicationPackageSummary(object):
         Sets the id of this PrivateApplicationPackageSummary.
         The `OCID`__ of the private application package.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PrivateApplicationPackageSummary.
@@ -119,7 +119,7 @@ class PrivateApplicationPackageSummary(object):
         **[Required]** Gets the private_application_id of this PrivateApplicationPackageSummary.
         The `OCID`__ of the private application where the package is hosted.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_application_id of this PrivateApplicationPackageSummary.
@@ -133,7 +133,7 @@ class PrivateApplicationPackageSummary(object):
         Sets the private_application_id of this PrivateApplicationPackageSummary.
         The `OCID`__ of the private application where the package is hosted.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_application_id: The private_application_id of this PrivateApplicationPackageSummary.

@@ -1096,7 +1096,7 @@ class LogAnalyticsClientCompositeOperations(object):
         :param str log_analytics_object_collection_rule_id: (required)
             The Log Analytics Object Collection Rule `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.log_analytics.models.UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
             The rule config to be updated.

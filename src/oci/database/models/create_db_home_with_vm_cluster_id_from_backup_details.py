@@ -112,7 +112,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
         **[Required]** Gets the vm_cluster_id of this CreateDbHomeWithVmClusterIdFromBackupDetails.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this CreateDbHomeWithVmClusterIdFromBackupDetails.
@@ -126,7 +126,7 @@ class CreateDbHomeWithVmClusterIdFromBackupDetails(CreateDbHomeBase):
         Sets the vm_cluster_id of this CreateDbHomeWithVmClusterIdFromBackupDetails.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this CreateDbHomeWithVmClusterIdFromBackupDetails.

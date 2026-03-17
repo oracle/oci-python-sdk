@@ -70,8 +70,8 @@ class DatabaseCredentialDetails(object):
         **[Required]** Gets the password_secret_id of this DatabaseCredentialDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The password_secret_id of this DatabaseCredentialDetails.
@@ -85,8 +85,8 @@ class DatabaseCredentialDetails(object):
         Sets the password_secret_id of this DatabaseCredentialDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `secret`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param password_secret_id: The password_secret_id of this DatabaseCredentialDetails.

@@ -479,7 +479,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         **[Required]** Gets the autonomous_database_id of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_database_id of this CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -493,7 +493,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         Sets the autonomous_database_id of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_database_id: The autonomous_database_id of this CreateAutonomousDatabaseFromBackupTimestampDetails.

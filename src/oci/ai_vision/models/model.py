@@ -539,7 +539,7 @@ class Model(object):
         **[Required]** Gets the project_id of this Model.
         The `OCID`__ of the project that contains the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this Model.
@@ -553,7 +553,7 @@ class Model(object):
         Sets the project_id of this Model.
         The `OCID`__ of the project that contains the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this Model.

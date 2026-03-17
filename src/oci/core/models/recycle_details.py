@@ -90,7 +90,7 @@ class RecycleDetails(object):
         Gets the compute_host_group_id of this RecycleDetails.
         The `OCID`__ of the compute host group this host was attached to at the time of recycle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_host_group_id of this RecycleDetails.
@@ -104,7 +104,7 @@ class RecycleDetails(object):
         Sets the compute_host_group_id of this RecycleDetails.
         The `OCID`__ of the compute host group this host was attached to at the time of recycle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_host_group_id: The compute_host_group_id of this RecycleDetails.

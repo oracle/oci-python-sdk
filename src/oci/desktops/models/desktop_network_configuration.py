@@ -46,7 +46,7 @@ class DesktopNetworkConfiguration(object):
         **[Required]** Gets the vcn_id of this DesktopNetworkConfiguration.
         The `OCID`__ of the customer VCN.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DesktopNetworkConfiguration.
@@ -60,7 +60,7 @@ class DesktopNetworkConfiguration(object):
         Sets the vcn_id of this DesktopNetworkConfiguration.
         The `OCID`__ of the customer VCN.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DesktopNetworkConfiguration.
@@ -75,7 +75,7 @@ class DesktopNetworkConfiguration(object):
         The `OCID`__ of the subnet in the customer VCN where the
         connectivity will be established.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DesktopNetworkConfiguration.
@@ -90,7 +90,7 @@ class DesktopNetworkConfiguration(object):
         The `OCID`__ of the subnet in the customer VCN where the
         connectivity will be established.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DesktopNetworkConfiguration.

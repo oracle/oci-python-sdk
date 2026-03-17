@@ -129,7 +129,7 @@ class ApplyJobOperationDetails(JobOperationDetails):
         The `OCID`__ of the plan job that contains the execution plan used for this job,
         or `null` if no execution plan was used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The execution_plan_job_id of this ApplyJobOperationDetails.
@@ -144,7 +144,7 @@ class ApplyJobOperationDetails(JobOperationDetails):
         The `OCID`__ of the plan job that contains the execution plan used for this job,
         or `null` if no execution plan was used.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param execution_plan_job_id: The execution_plan_job_id of this ApplyJobOperationDetails.

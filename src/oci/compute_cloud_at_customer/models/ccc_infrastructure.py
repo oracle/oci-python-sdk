@@ -221,7 +221,7 @@ class CccInfrastructure(object):
         The Compute Cloud@Customer infrastructure `OCID`__.
         This cannot be changed once created.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CccInfrastructure.
@@ -236,7 +236,7 @@ class CccInfrastructure(object):
         The Compute Cloud@Customer infrastructure `OCID`__.
         This cannot be changed once created.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CccInfrastructure.
@@ -332,7 +332,7 @@ class CccInfrastructure(object):
         **[Required]** Gets the compartment_id of this CccInfrastructure.
         The infrastructure compartment `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CccInfrastructure.
@@ -346,7 +346,7 @@ class CccInfrastructure(object):
         Sets the compartment_id of this CccInfrastructure.
         The infrastructure compartment `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CccInfrastructure.
@@ -361,7 +361,7 @@ class CccInfrastructure(object):
         `OCID`__ for the network subnet that is
         used to communicate with Compute Cloud@Customer infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CccInfrastructure.
@@ -376,7 +376,7 @@ class CccInfrastructure(object):
         `OCID`__ for the network subnet that is
         used to communicate with Compute Cloud@Customer infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CccInfrastructure.

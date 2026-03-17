@@ -130,7 +130,7 @@ class Identity(object):
         Gets the principal_id of this Identity.
         The `OCID`__ of the principal.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The principal_id of this Identity.
@@ -144,7 +144,7 @@ class Identity(object):
         Sets the principal_id of this Identity.
         The `OCID`__ of the principal.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param principal_id: The principal_id of this Identity.
@@ -211,7 +211,7 @@ class Identity(object):
         The `OCID`__ of the caller. The caller that made a
         request on behalf of the prinicpal.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The caller_id of this Identity.
@@ -226,7 +226,7 @@ class Identity(object):
         The `OCID`__ of the caller. The caller that made a
         request on behalf of the prinicpal.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param caller_id: The caller_id of this Identity.
@@ -240,7 +240,7 @@ class Identity(object):
         Gets the tenant_id of this Identity.
         The `OCID`__ of the tenant.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenant_id of this Identity.
@@ -254,7 +254,7 @@ class Identity(object):
         Sets the tenant_id of this Identity.
         The `OCID`__ of the tenant.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenant_id: The tenant_id of this Identity.

@@ -197,7 +197,7 @@ class DataGuardGroupMember(object):
         **[Required]** Gets the db_system_id of this DataGuardGroupMember.
         The `OCID`__ of the DB system, Cloud VM cluster or VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DataGuardGroupMember.
@@ -211,7 +211,7 @@ class DataGuardGroupMember(object):
         Sets the db_system_id of this DataGuardGroupMember.
         The `OCID`__ of the DB system, Cloud VM cluster or VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DataGuardGroupMember.
@@ -225,7 +225,7 @@ class DataGuardGroupMember(object):
         **[Required]** Gets the database_id of this DataGuardGroupMember.
         The `OCID`__ of the Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this DataGuardGroupMember.
@@ -239,7 +239,7 @@ class DataGuardGroupMember(object):
         Sets the database_id of this DataGuardGroupMember.
         The `OCID`__ of the Database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this DataGuardGroupMember.

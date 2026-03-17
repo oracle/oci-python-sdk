@@ -70,7 +70,7 @@ class CreateMacsManagedCloudHostInsightDetails(CreateHostInsightDetails):
         **[Required]** Gets the compute_id of this CreateMacsManagedCloudHostInsightDetails.
         The `OCID`__ of the Compute Instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_id of this CreateMacsManagedCloudHostInsightDetails.
@@ -84,7 +84,7 @@ class CreateMacsManagedCloudHostInsightDetails(CreateHostInsightDetails):
         Sets the compute_id of this CreateMacsManagedCloudHostInsightDetails.
         The `OCID`__ of the Compute Instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_id: The compute_id of this CreateMacsManagedCloudHostInsightDetails.

@@ -89,7 +89,7 @@ class VirtualCircuitAssociatedTunnelDetails(object):
         Gets the ipsec_connection_id of this VirtualCircuitAssociatedTunnelDetails.
         The `OCID`__ of IPSec connection associated with the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ipsec_connection_id of this VirtualCircuitAssociatedTunnelDetails.
@@ -103,7 +103,7 @@ class VirtualCircuitAssociatedTunnelDetails(object):
         Sets the ipsec_connection_id of this VirtualCircuitAssociatedTunnelDetails.
         The `OCID`__ of IPSec connection associated with the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ipsec_connection_id: The ipsec_connection_id of this VirtualCircuitAssociatedTunnelDetails.
@@ -117,7 +117,7 @@ class VirtualCircuitAssociatedTunnelDetails(object):
         **[Required]** Gets the tunnel_id of this VirtualCircuitAssociatedTunnelDetails.
         The `OCID`__ of the IPSec tunnel associated with the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tunnel_id of this VirtualCircuitAssociatedTunnelDetails.
@@ -131,7 +131,7 @@ class VirtualCircuitAssociatedTunnelDetails(object):
         Sets the tunnel_id of this VirtualCircuitAssociatedTunnelDetails.
         The `OCID`__ of the IPSec tunnel associated with the virtual circuit.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tunnel_id: The tunnel_id of this VirtualCircuitAssociatedTunnelDetails.

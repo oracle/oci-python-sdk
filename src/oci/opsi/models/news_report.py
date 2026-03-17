@@ -360,7 +360,7 @@ class NewsReport(object):
         **[Required]** Gets the id of this NewsReport.
         The `OCID`__ of the news report resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this NewsReport.
@@ -374,7 +374,7 @@ class NewsReport(object):
         Sets the id of this NewsReport.
         The `OCID`__ of the news report resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this NewsReport.
@@ -412,7 +412,7 @@ class NewsReport(object):
         **[Required]** Gets the compartment_id of this NewsReport.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this NewsReport.
@@ -426,7 +426,7 @@ class NewsReport(object):
         Sets the compartment_id of this NewsReport.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this NewsReport.
@@ -464,7 +464,7 @@ class NewsReport(object):
         **[Required]** Gets the ons_topic_id of this NewsReport.
         The `OCID`__ of the ONS topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ons_topic_id of this NewsReport.
@@ -478,7 +478,7 @@ class NewsReport(object):
         Sets the ons_topic_id of this NewsReport.
         The `OCID`__ of the ONS topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ons_topic_id: The ons_topic_id of this NewsReport.

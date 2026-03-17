@@ -15,7 +15,7 @@ class ComputeClusterCollection(object):
     A list of compute clusters that match filter criteria, if any. A `compute cluster`__
     is a remote direct memory access (RDMA) network group.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+    __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """
 
     def __init__(self, **kwargs):

@@ -309,7 +309,7 @@ class UpdateNewsReportDetails(object):
         Gets the ons_topic_id of this UpdateNewsReportDetails.
         The `OCID`__ of the ONS topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ons_topic_id of this UpdateNewsReportDetails.
@@ -323,7 +323,7 @@ class UpdateNewsReportDetails(object):
         Sets the ons_topic_id of this UpdateNewsReportDetails.
         The `OCID`__ of the ONS topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ons_topic_id: The ons_topic_id of this UpdateNewsReportDetails.

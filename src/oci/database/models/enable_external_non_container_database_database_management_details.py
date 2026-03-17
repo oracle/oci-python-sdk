@@ -87,7 +87,7 @@ class EnableExternalNonContainerDatabaseDatabaseManagementDetails(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The external_database_connector_id of this EnableExternalNonContainerDatabaseDatabaseManagementDetails.
@@ -102,7 +102,7 @@ class EnableExternalNonContainerDatabaseDatabaseManagementDetails(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param external_database_connector_id: The external_database_connector_id of this EnableExternalNonContainerDatabaseDatabaseManagementDetails.

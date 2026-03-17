@@ -14,7 +14,7 @@ class NatRule(object):
     """
     A `NAT rule`__ defines which traffic NAT should be applied to by the firewall.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+    __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
     """
 
     #: A constant which can be used with the type property of a NatRule.
@@ -225,7 +225,7 @@ class NatRule(object):
         **[Required]** Gets the parent_resource_id of this NatRule.
         The `OCID`__ of the Network Firewall policy this NAT rule belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_resource_id of this NatRule.
@@ -239,7 +239,7 @@ class NatRule(object):
         Sets the parent_resource_id of this NatRule.
         The `OCID`__ of the Network Firewall policy this NAT rule belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_resource_id: The parent_resource_id of this NatRule.

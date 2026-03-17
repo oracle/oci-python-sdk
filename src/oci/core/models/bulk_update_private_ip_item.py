@@ -90,7 +90,7 @@ class BulkUpdatePrivateIpItem(object):
         **[Required]** Gets the private_ip_id of this BulkUpdatePrivateIpItem.
         The `OCID`__ of the secondary Private IP.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this BulkUpdatePrivateIpItem.
@@ -104,7 +104,7 @@ class BulkUpdatePrivateIpItem(object):
         Sets the private_ip_id of this BulkUpdatePrivateIpItem.
         The `OCID`__ of the secondary Private IP.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this BulkUpdatePrivateIpItem.
@@ -121,7 +121,7 @@ class BulkUpdatePrivateIpItem(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this BulkUpdatePrivateIpItem.
@@ -138,7 +138,7 @@ class BulkUpdatePrivateIpItem(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this BulkUpdatePrivateIpItem.
@@ -181,7 +181,7 @@ class BulkUpdatePrivateIpItem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this BulkUpdatePrivateIpItem.
@@ -198,7 +198,7 @@ class BulkUpdatePrivateIpItem(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this BulkUpdatePrivateIpItem.
@@ -224,7 +224,7 @@ class BulkUpdatePrivateIpItem(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this BulkUpdatePrivateIpItem.
@@ -250,7 +250,7 @@ class BulkUpdatePrivateIpItem(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this BulkUpdatePrivateIpItem.
@@ -302,7 +302,7 @@ class BulkUpdatePrivateIpItem(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
@@ -318,7 +318,7 @@ class BulkUpdatePrivateIpItem(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 

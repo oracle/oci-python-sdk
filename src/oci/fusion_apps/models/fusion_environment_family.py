@@ -14,7 +14,7 @@ class FusionEnvironmentFamily(object):
     """
     Details of a Fusion environment family. An environment family is a logical grouping of environments. The environment family defines a set of characteristics that are shared across the environments to allow consistent management and maintenance across your production, test, and development environments. For more information, see `Planning an Environment Family`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm
+    __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a FusionEnvironmentFamily.

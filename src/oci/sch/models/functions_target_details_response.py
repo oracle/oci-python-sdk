@@ -16,7 +16,7 @@ class FunctionsTargetDetailsResponse(TargetDetailsResponse):
     For configuration instructions, see
     `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class FunctionsTargetDetailsResponse(TargetDetailsResponse):
         **[Required]** Gets the function_id of this FunctionsTargetDetailsResponse.
         The `OCID`__ of the function.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The function_id of this FunctionsTargetDetailsResponse.
@@ -95,7 +95,7 @@ class FunctionsTargetDetailsResponse(TargetDetailsResponse):
         Sets the function_id of this FunctionsTargetDetailsResponse.
         The `OCID`__ of the function.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param function_id: The function_id of this FunctionsTargetDetailsResponse.

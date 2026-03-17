@@ -18,7 +18,7 @@ class Provision(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Provision.
@@ -260,7 +260,7 @@ class Provision(object):
         **[Required]** Gets the id of this Provision.
         The `OCID`__ of the FamProvision.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Provision.
@@ -274,7 +274,7 @@ class Provision(object):
         Sets the id of this Provision.
         The `OCID`__ of the FamProvision.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Provision.
@@ -432,7 +432,7 @@ class Provision(object):
         **[Required]** Gets the compartment_id of this Provision.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Provision.
@@ -446,7 +446,7 @@ class Provision(object):
         Sets the compartment_id of this Provision.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Provision.
@@ -580,7 +580,7 @@ class Provision(object):
         **[Required]** Gets the package_catalog_item_id of this Provision.
         The `OCID`__ of the Catalog Item.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The package_catalog_item_id of this Provision.
@@ -594,7 +594,7 @@ class Provision(object):
         Sets the package_catalog_item_id of this Provision.
         The `OCID`__ of the Catalog Item.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param package_catalog_item_id: The package_catalog_item_id of this Provision.
@@ -608,7 +608,7 @@ class Provision(object):
         **[Required]** Gets the config_catalog_item_id of this Provision.
         A `OCID`__ of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_catalog_item_id of this Provision.
@@ -622,7 +622,7 @@ class Provision(object):
         Sets the config_catalog_item_id of this Provision.
         A `OCID`__ of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param config_catalog_item_id: The config_catalog_item_id of this Provision.
@@ -780,7 +780,7 @@ class Provision(object):
         Gets the stack_id of this Provision.
         The `OCID`__ of the RMS Stack.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_id of this Provision.
@@ -794,7 +794,7 @@ class Provision(object):
         Sets the stack_id of this Provision.
         The `OCID`__ of the RMS Stack.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stack_id: The stack_id of this Provision.
@@ -808,7 +808,7 @@ class Provision(object):
         **[Required]** Gets the fleet_id of this Provision.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this Provision.
@@ -822,7 +822,7 @@ class Provision(object):
         Sets the fleet_id of this Provision.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this Provision.
@@ -836,7 +836,7 @@ class Provision(object):
         Gets the rms_apply_job_id of this Provision.
         The `OCID`__ of the RMS APPLY Job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The rms_apply_job_id of this Provision.
@@ -850,7 +850,7 @@ class Provision(object):
         Sets the rms_apply_job_id of this Provision.
         The `OCID`__ of the RMS APPLY Job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param rms_apply_job_id: The rms_apply_job_id of this Provision.

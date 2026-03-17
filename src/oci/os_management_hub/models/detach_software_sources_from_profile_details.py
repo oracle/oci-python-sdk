@@ -39,7 +39,7 @@ class DetachSoftwareSourcesFromProfileDetails(object):
         **[Required]** Gets the software_sources of this DetachSoftwareSourcesFromProfileDetails.
         List of software source `OCIDs`__ to detach from the profile.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_sources of this DetachSoftwareSourcesFromProfileDetails.
@@ -53,7 +53,7 @@ class DetachSoftwareSourcesFromProfileDetails(object):
         Sets the software_sources of this DetachSoftwareSourcesFromProfileDetails.
         List of software source `OCIDs`__ to detach from the profile.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_sources: The software_sources of this DetachSoftwareSourcesFromProfileDetails.

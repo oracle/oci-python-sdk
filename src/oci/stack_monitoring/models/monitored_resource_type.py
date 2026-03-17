@@ -250,7 +250,7 @@ class MonitoredResourceType(object):
         **[Required]** Gets the id of this MonitoredResourceType.
         Monitored resource type identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MonitoredResourceType.
@@ -264,7 +264,7 @@ class MonitoredResourceType(object):
         Sets the id of this MonitoredResourceType.
         Monitored resource type identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MonitoredResourceType.
@@ -376,7 +376,7 @@ class MonitoredResourceType(object):
         **[Required]** Gets the compartment_id of this MonitoredResourceType.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoredResourceType.
@@ -390,7 +390,7 @@ class MonitoredResourceType(object):
         Sets the compartment_id of this MonitoredResourceType.
         Compartment Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoredResourceType.
@@ -404,7 +404,7 @@ class MonitoredResourceType(object):
         Gets the tenancy_id of this MonitoredResourceType.
         Tenancy Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this MonitoredResourceType.
@@ -418,7 +418,7 @@ class MonitoredResourceType(object):
         Sets the tenancy_id of this MonitoredResourceType.
         Tenancy Identifier `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this MonitoredResourceType.

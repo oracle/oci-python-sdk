@@ -328,7 +328,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
         **[Required]** Gets the autonomous_container_database_backup_id of this CreateAutonomousContainerDatabaseFromBackupDetails.
         The `OCID`__ of the source ACD backup that you will clone to create a new ACD.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_container_database_backup_id of this CreateAutonomousContainerDatabaseFromBackupDetails.
@@ -342,7 +342,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
         Sets the autonomous_container_database_backup_id of this CreateAutonomousContainerDatabaseFromBackupDetails.
         The `OCID`__ of the source ACD backup that you will clone to create a new ACD.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_container_database_backup_id: The autonomous_container_database_backup_id of this CreateAutonomousContainerDatabaseFromBackupDetails.

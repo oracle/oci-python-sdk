@@ -25,8 +25,8 @@ import tempfile
 import warnings
 import zipfile
 from collections import OrderedDict
-from oci._vendor.urllib3.util import make_headers
-from oci._vendor.urllib3.util import parse_url
+from urllib3.util import make_headers
+from urllib3.util import parse_url
 
 from .__version__ import __version__
 from . import certs

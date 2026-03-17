@@ -94,7 +94,7 @@ class CloneSqlTuningTaskDetails(object):
         It can be retrieved from the following endpoint
         :func:`list_sql_tuning_advisor_tasks`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The original_task_id of this CloneSqlTuningTaskDetails.
@@ -110,7 +110,7 @@ class CloneSqlTuningTaskDetails(object):
         It can be retrieved from the following endpoint
         :func:`list_sql_tuning_advisor_tasks`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param original_task_id: The original_task_id of this CloneSqlTuningTaskDetails.

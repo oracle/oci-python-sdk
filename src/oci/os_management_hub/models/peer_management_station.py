@@ -47,7 +47,7 @@ class PeerManagementStation(object):
         **[Required]** Gets the id of this PeerManagementStation.
         The `OCID`__ of the management station.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PeerManagementStation.
@@ -61,7 +61,7 @@ class PeerManagementStation(object):
         Sets the id of this PeerManagementStation.
         The `OCID`__ of the management station.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PeerManagementStation.

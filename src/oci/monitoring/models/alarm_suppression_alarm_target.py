@@ -49,7 +49,7 @@ class AlarmSuppressionAlarmTarget(AlarmSuppressionTarget):
         **[Required]** Gets the alarm_id of this AlarmSuppressionAlarmTarget.
         The `OCID`__ of the alarm that is the target of the alarm suppression.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The alarm_id of this AlarmSuppressionAlarmTarget.
@@ -63,7 +63,7 @@ class AlarmSuppressionAlarmTarget(AlarmSuppressionTarget):
         Sets the alarm_id of this AlarmSuppressionAlarmTarget.
         The `OCID`__ of the alarm that is the target of the alarm suppression.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param alarm_id: The alarm_id of this AlarmSuppressionAlarmTarget.

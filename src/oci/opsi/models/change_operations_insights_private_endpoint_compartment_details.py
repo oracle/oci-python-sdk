@@ -39,7 +39,7 @@ class ChangeOperationsInsightsPrivateEndpointCompartmentDetails(object):
         Gets the compartment_id of this ChangeOperationsInsightsPrivateEndpointCompartmentDetails.
         The new compartment `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeOperationsInsightsPrivateEndpointCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeOperationsInsightsPrivateEndpointCompartmentDetails(object):
         Sets the compartment_id of this ChangeOperationsInsightsPrivateEndpointCompartmentDetails.
         The new compartment `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeOperationsInsightsPrivateEndpointCompartmentDetails.

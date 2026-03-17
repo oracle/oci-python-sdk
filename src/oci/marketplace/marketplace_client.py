@@ -1174,11 +1174,11 @@ class MarketplaceClient(object):
         To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
         Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
 
 
         :param str listing_id: (required)
@@ -1310,11 +1310,11 @@ class MarketplaceClient(object):
         To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
         Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
 
 
         :param str listing_id: (required)
@@ -2179,11 +2179,11 @@ class MarketplaceClient(object):
         To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
         Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
 
 
         :param list[str] name: (optional)
@@ -2552,11 +2552,11 @@ class MarketplaceClient(object):
         To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
         Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
 
 
         :param str listing_id: (required)

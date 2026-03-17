@@ -84,7 +84,7 @@ class DistributedDbStorageVault(object):
         Gets the db_storage_vault_id of this DistributedDbStorageVault.
         The `OCID`__ of the Database Vault Storage.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_storage_vault_id of this DistributedDbStorageVault.
@@ -98,7 +98,7 @@ class DistributedDbStorageVault(object):
         Sets the db_storage_vault_id of this DistributedDbStorageVault.
         The `OCID`__ of the Database Vault Storage.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_storage_vault_id: The db_storage_vault_id of this DistributedDbStorageVault.

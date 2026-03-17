@@ -87,7 +87,7 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         Gets the transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
         The `OCID`__ of the virtual circuit's DRG attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
@@ -101,7 +101,7 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         Sets the transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
         The `OCID`__ of the virtual circuit's DRG attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param transport_attachment_id: The transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.

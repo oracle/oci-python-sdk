@@ -16,8 +16,8 @@ class Shape(object):
     For more information, see `Overview of the Compute Service`__ and
     `Compute Shapes`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm
+    __ https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm
     """
 
     #: A constant which can be used with the baseline_ocpu_utilizations property of a Shape.
@@ -891,7 +891,7 @@ class Shape(object):
         is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
         spikes in usage.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm
 
 
         :return: The is_subcore of this Shape.
@@ -907,7 +907,7 @@ class Shape(object):
         is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
         spikes in usage.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm
 
 
         :param is_subcore: The is_subcore of this Shape.
@@ -922,7 +922,7 @@ class Shape(object):
         Whether the shape supports creating flexible instances. A `flexible shape`__
         is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
+        __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
 
 
         :return: The is_flexible of this Shape.
@@ -937,7 +937,7 @@ class Shape(object):
         Whether the shape supports creating flexible instances. A `flexible shape`__
         is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
+        __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
 
 
         :param is_flexible: The is_flexible of this Shape.
@@ -952,7 +952,7 @@ class Shape(object):
         The list of compatible shapes that this shape can be changed to. For more information,
         see `Changing the Shape of an Instance`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
 
 
         :return: The resize_compatible_shapes of this Shape.
@@ -967,7 +967,7 @@ class Shape(object):
         The list of compatible shapes that this shape can be changed to. For more information,
         see `Changing the Shape of an Instance`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
 
 
         :param resize_compatible_shapes: The resize_compatible_shapes of this Shape.

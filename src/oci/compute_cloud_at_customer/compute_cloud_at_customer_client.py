@@ -134,13 +134,13 @@ class ComputeCloudAtCustomerClient(object):
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.compute_cloud_at_customer.models.ChangeCccInfrastructureCompartmentDetails change_ccc_infrastructure_compartment_details: (required)
             Details about the compartment change operation including the destination compartment
             specified by the resource `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -159,7 +159,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -265,20 +265,20 @@ class ComputeCloudAtCustomerClient(object):
         Moves a Compute Cloud@Customer upgrade schedule from one compartment to another using the
         specified `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ccc_upgrade_schedule_id: (required)
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.compute_cloud_at_customer.models.ChangeCccUpgradeScheduleCompartmentDetails change_ccc_upgrade_schedule_compartment_details: (required)
             Details about the compartment change operation including the destination compartment
             specified by the resource `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -297,7 +297,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -417,7 +417,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -524,7 +524,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -618,14 +618,14 @@ class ComputeCloudAtCustomerClient(object):
         Deletes a Compute Cloud@Customer infrastructure resource specified by the resource
         `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ccc_infrastructure_id: (required)
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -637,7 +637,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -736,14 +736,14 @@ class ComputeCloudAtCustomerClient(object):
         Deletes a Compute Cloud@Customer upgrade schedule by the specified
         `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ccc_upgrade_schedule_id: (required)
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -755,7 +755,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -854,19 +854,19 @@ class ComputeCloudAtCustomerClient(object):
         Gets a Compute Cloud@Customer infrastructure using the infrastructure
         `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ccc_infrastructure_id: (required)
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -967,19 +967,19 @@ class ComputeCloudAtCustomerClient(object):
         Gets a Compute Cloud@Customer upgrade schedule by the specified
         `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ccc_upgrade_schedule_id: (required)
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1084,7 +1084,7 @@ class ComputeCloudAtCustomerClient(object):
             The `OCID`__ of the compartment in which to
             list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
@@ -1115,7 +1115,7 @@ class ComputeCloudAtCustomerClient(object):
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1136,7 +1136,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1285,13 +1285,13 @@ class ComputeCloudAtCustomerClient(object):
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to
             list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
@@ -1337,7 +1337,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1486,7 +1486,7 @@ class ComputeCloudAtCustomerClient(object):
             An `OCID`__ for a
             Compute Cloud@Customer Infrastructure.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.compute_cloud_at_customer.models.UpdateCccInfrastructureDetails update_ccc_infrastructure_details: (required)
             The information to be updated.
@@ -1501,7 +1501,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1608,7 +1608,7 @@ class ComputeCloudAtCustomerClient(object):
             Compute Cloud@Customer upgrade schedule
             `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.compute_cloud_at_customer.models.UpdateCccUpgradeScheduleDetails update_ccc_upgrade_schedule_details: (required)
             The information to be updated in the Compute Cloud@Customer upgrade schedule.
@@ -1623,7 +1623,7 @@ class ComputeCloudAtCustomerClient(object):
         :param str opc_request_id: (optional)
             The client request `OCID`__ for tracing.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

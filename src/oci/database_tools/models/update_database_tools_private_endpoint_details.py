@@ -208,7 +208,7 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
         that the private endpoint's VNIC belongs to.  For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this UpdateDatabaseToolsPrivateEndpointDetails.
@@ -224,7 +224,7 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
         that the private endpoint's VNIC belongs to.  For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this UpdateDatabaseToolsPrivateEndpointDetails.

@@ -210,7 +210,7 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
         The `OCID`__ of the Secret where the Secret Access Key is stored.
         Note: When provided, 'secretAccessKey' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_access_key_secret_id of this UpdateAmazonS3ConnectionDetails.
@@ -225,7 +225,7 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
         The `OCID`__ of the Secret where the Secret Access Key is stored.
         Note: When provided, 'secretAccessKey' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_access_key_secret_id: The secret_access_key_secret_id of this UpdateAmazonS3ConnectionDetails.

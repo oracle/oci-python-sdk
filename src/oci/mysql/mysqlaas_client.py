@@ -476,7 +476,7 @@ class MysqlaasClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -516,14 +516,14 @@ class MysqlaasClient(object):
             The maximum number of items to return in a paginated list call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` or `opc-prev-page` response header from
             the previous list call. For information about pagination, see `List
             Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -672,7 +672,7 @@ class MysqlaasClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to
@@ -803,7 +803,7 @@ class MysqlaasClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer-defined unique identifier for the request. If you need to

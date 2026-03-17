@@ -214,7 +214,7 @@ class UpdateInstanceDetails(object):
         You can remove the instance from a reservation by specifying an empty string as input for this field.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :return: The capacity_reservation_id of this UpdateInstanceDetails.
@@ -230,7 +230,7 @@ class UpdateInstanceDetails(object):
         You can remove the instance from a reservation by specifying an empty string as input for this field.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this UpdateInstanceDetails.
@@ -247,7 +247,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateInstanceDetails.
@@ -264,7 +264,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateInstanceDetails.
@@ -282,8 +282,8 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this UpdateInstanceDetails.
@@ -301,8 +301,8 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this UpdateInstanceDetails.
@@ -345,7 +345,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateInstanceDetails.
@@ -362,7 +362,7 @@ class UpdateInstanceDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateInstanceDetails.
@@ -506,8 +506,8 @@ class UpdateInstanceDetails(object):
 
         Example: `VM.Standard2.1`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm
 
 
         :return: The shape of this UpdateInstanceDetails.
@@ -539,8 +539,8 @@ class UpdateInstanceDetails(object):
 
         Example: `VM.Standard2.1`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm
 
 
         :param shape: The shape of this UpdateInstanceDetails.
@@ -756,7 +756,7 @@ class UpdateInstanceDetails(object):
         Example: `2018-05-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
 
 
         :return: The time_maintenance_reboot_due of this UpdateInstanceDetails.
@@ -787,7 +787,7 @@ class UpdateInstanceDetails(object):
         Example: `2018-05-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
 
 
         :param time_maintenance_reboot_due: The time_maintenance_reboot_due of this UpdateInstanceDetails.

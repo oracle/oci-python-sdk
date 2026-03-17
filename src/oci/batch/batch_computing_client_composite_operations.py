@@ -33,7 +33,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_id: (required)
             The `OCID`__ of the batch job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.batch.models.WorkRequest.status`
@@ -82,7 +82,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_context_id: (required)
             The `OCID`__ of the batch context.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.ChangeBatchContextCompartmentDetails change_batch_context_compartment_details: (required)
             The information to be updated.
@@ -126,7 +126,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_id: (required)
             The `OCID`__ of the batch job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.ChangeBatchJobCompartmentDetails change_batch_job_compartment_details: (required)
             The information to be updated.
@@ -170,7 +170,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_pool_id: (required)
             The `OCID`__ of the batch job pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.ChangeBatchJobPoolCompartmentDetails change_batch_job_pool_compartment_details: (required)
             The information to be updated.
@@ -214,7 +214,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_task_environment_id: (required)
             The `OCID`__ of the batch task environment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.ChangeBatchTaskEnvironmentCompartmentDetails change_batch_task_environment_compartment_details: (required)
             The information to be updated.
@@ -258,7 +258,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_task_profile_id: (required)
             The `OCID`__ of the batch task profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.ChangeBatchTaskProfileCompartmentDetails change_batch_task_profile_compartment_details: (required)
             The information to be updated.
@@ -506,7 +506,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_context_id: (required)
             The `OCID`__ of the batch context.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.batch.models.WorkRequest.status`
@@ -555,7 +555,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_pool_id: (required)
             The `OCID`__ of the batch job pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.batch.models.BatchJobPool.lifecycle_state`
@@ -616,7 +616,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_task_environment_id: (required)
             The `OCID`__ of the batch task environment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.batch.models.BatchTaskEnvironment.lifecycle_state`
@@ -677,7 +677,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_task_profile_id: (required)
             The `OCID`__ of the batch task profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.batch.models.BatchTaskProfile.lifecycle_state`
@@ -738,7 +738,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_id: (required)
             The `OCID`__ of the batch job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.PauseBatchJobDetails pause_batch_job_details: (required)
             Information needed to pause the batch job.
@@ -782,7 +782,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_context_id: (required)
             The `OCID`__ of the batch context.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.StartBatchContextDetails start_batch_context_details: (required)
             Information needed to start the batch context.
@@ -826,7 +826,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_pool_id: (required)
             The `OCID`__ of the batch job pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.StartBatchJobPoolDetails start_batch_job_pool_details: (required)
             Information needed to start the batch job pool.
@@ -870,7 +870,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_context_id: (required)
             The `OCID`__ of the batch context.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.StopBatchContextDetails stop_batch_context_details: (required)
             Information needed to stop the batch context.
@@ -914,7 +914,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_pool_id: (required)
             The `OCID`__ of the batch job pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.StopBatchJobPoolDetails stop_batch_job_pool_details: (required)
             Information needed to stop the batch job pool.
@@ -958,7 +958,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_id: (required)
             The `OCID`__ of the batch job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.UnpauseBatchJobDetails unpause_batch_job_details: (required)
             Information needed to unpause the batch job.
@@ -1002,7 +1002,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_context_id: (required)
             The `OCID`__ of the batch context.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.UpdateBatchContextDetails update_batch_context_details: (required)
             The information to be updated.
@@ -1046,7 +1046,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_id: (required)
             The `OCID`__ of the batch job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.UpdateBatchJobDetails update_batch_job_details: (required)
             The information to be updated.
@@ -1090,7 +1090,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_job_pool_id: (required)
             The `OCID`__ of the batch job pool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.UpdateBatchJobPoolDetails update_batch_job_pool_details: (required)
             The information to be updated.
@@ -1134,7 +1134,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_task_environment_id: (required)
             The `OCID`__ of the batch task environment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.UpdateBatchTaskEnvironmentDetails update_batch_task_environment_details: (required)
             The information to be updated.
@@ -1181,7 +1181,7 @@ class BatchComputingClientCompositeOperations(object):
         :param str batch_task_profile_id: (required)
             The `OCID`__ of the batch task profile.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.batch.models.UpdateBatchTaskProfileDetails update_batch_task_profile_details: (required)
             The information to be updated.

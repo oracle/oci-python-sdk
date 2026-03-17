@@ -134,7 +134,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.ChangeWlsDomainCompartmentDetails change_wls_domain_compartment_details: (required)
             Compartment identifier
@@ -266,7 +266,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -394,7 +394,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -608,7 +608,7 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -715,14 +715,14 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -830,7 +830,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -937,7 +937,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str credential_type: (required)
             The type of the credentials.
@@ -1050,14 +1050,14 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1165,21 +1165,21 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backup_id: (required)
             The unique identifier of the backup.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1288,21 +1288,21 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backup_id: (required)
             The unique identifier of the backup.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1411,7 +1411,7 @@ class WeblogicManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1518,7 +1518,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.InstallLatestPatchesOnWlsDomainDetails install_latest_patches_on_wls_domain_details: (required)
             Information for the operation to install latest patches to a WebLogic domain.
@@ -1647,7 +1647,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1801,7 +1801,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1964,7 +1964,7 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1991,7 +1991,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (optional)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_name: (optional)
             The name of the server.
@@ -2130,14 +2130,14 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2291,7 +2291,7 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The name of the resource.
@@ -2467,7 +2467,7 @@ class WeblogicManagementServiceClient(object):
         :param str id: (optional)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str plugin_status: (optional)
             The plugin status of the managed instance.
@@ -2729,7 +2729,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2846,7 +2846,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_name: (optional)
             The name of the server.
@@ -3005,14 +3005,14 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3166,14 +3166,14 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str server_id: (required)
             The unique identifier of a server.
 
             **Note:** Not an `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3327,7 +3327,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The name of the resource.
@@ -3509,7 +3509,7 @@ class WeblogicManagementServiceClient(object):
         :param str id: (optional)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str weblogic_version: (optional)
             A filter to return WebLogic domains based on the WebLogic version.
@@ -3718,7 +3718,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3872,7 +3872,7 @@ class WeblogicManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4023,7 +4023,7 @@ class WeblogicManagementServiceClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4178,7 +4178,7 @@ class WeblogicManagementServiceClient(object):
         :param str work_request_id: (optional)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
             A filter to return only the resources that match the given lifecycle state.
@@ -4188,7 +4188,7 @@ class WeblogicManagementServiceClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource affected by the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4342,7 +4342,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.RestartWlsDomainDetails restart_wls_domain_details: (required)
             Information for the operation to restart the WebLogic domain.
@@ -4471,7 +4471,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.RestoreWlsDomainDetails restore_wls_domain_details: (required)
             Information for the operation to restore WebLogic domain from the backup.
@@ -4600,7 +4600,7 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4724,7 +4724,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -4848,7 +4848,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.SetRestartOrderDetails set_restart_order_details: (required)
             Set Restart Order Details.
@@ -4979,7 +4979,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5103,7 +5103,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.StopWlsDomainDetails stop_wls_domain_details: (required)
             Information for the stop WebLogic domain operation
@@ -5333,7 +5333,7 @@ class WeblogicManagementServiceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.UpdateManagedInstanceDetails update_managed_instance_details: (required)
             Provides the informaton used to update a managed instance.
@@ -5464,7 +5464,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.wlms.models.UpdateWlsDomainDetails update_wls_domain_details: (required)
             The new details required to update the WebLogic domain.
@@ -5585,7 +5585,7 @@ class WeblogicManagementServiceClient(object):
         :param str wls_domain_id: (required)
             The `OCID`__ of the WebLogic domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str credential_type: (required)
             The type of the credentials.

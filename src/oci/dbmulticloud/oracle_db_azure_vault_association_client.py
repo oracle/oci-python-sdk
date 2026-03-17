@@ -166,7 +166,7 @@ class OracleDbAzureVaultAssociationClient(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
@@ -290,7 +290,7 @@ class OracleDbAzureVaultAssociationClient(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureVaultAssociationCompartmentDetails change_oracle_db_azure_vault_association_compartment_details: (required)
             Moves the Oracle DB Azure Vault Association resource into a different compartment.
@@ -533,7 +533,7 @@ class OracleDbAzureVaultAssociationClient(object):
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -643,13 +643,13 @@ class OracleDbAzureVaultAssociationClient(object):
         """
         Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -786,12 +786,12 @@ class OracleDbAzureVaultAssociationClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str oracle_db_azure_vault_id: (optional)
             A filter to return Oracle DB Azure Vault resources that match the specified `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
@@ -958,13 +958,13 @@ class OracleDbAzureVaultAssociationClient(object):
         """
         Modifies the properties of an Oracle DB Azure Vault Association resource identified by the specified resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_vault_association_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureVaultAssociationDetails update_oracle_db_azure_vault_association_details: (required)
             Details for to update OracleDbAzureVaultAssociation.

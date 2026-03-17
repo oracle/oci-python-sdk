@@ -133,13 +133,13 @@ class NotificationControlPlaneClient(object):
 
         Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str topic_id: (required)
             The `OCID`__ of the topic to move.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ons.models.ChangeCompartmentDetails change_topic_compartment_details: (required)
             The configuration details for the move operation.
@@ -274,9 +274,9 @@ class NotificationControlPlaneClient(object):
 
         Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.ons.models.CreateTopicDetails create_topic_details: (required)
@@ -388,7 +388,7 @@ class NotificationControlPlaneClient(object):
         :param str topic_id: (required)
             The `OCID`__ of the topic to delete.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -501,7 +501,7 @@ class NotificationControlPlaneClient(object):
 
             Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -609,7 +609,7 @@ class NotificationControlPlaneClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             A filter to only return resources that match the given id exactly.
@@ -621,13 +621,13 @@ class NotificationControlPlaneClient(object):
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one field can be selected for sorting.
@@ -780,7 +780,7 @@ class NotificationControlPlaneClient(object):
         :param str topic_id: (required)
             The `OCID`__ of the topic to update.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ons.models.TopicAttributesDetails topic_attributes_details: (required)
             TopicAttributes

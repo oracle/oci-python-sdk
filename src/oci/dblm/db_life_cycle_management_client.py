@@ -485,7 +485,7 @@ class DbLifeCycleManagementClient(object):
         :param str vulnerability_scan_id: (required)
             The `OCID`__ of the VulnerabilityScan.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

@@ -7,7 +7,7 @@
 # into. This compartment cannot be the one in which the load balancer currently exists.
 # For an example of creating a load balancer, please refer to 'load_balancer_rule_sets_example.py'.
 # For further information on load balancers please see:
-#   https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm
+#   https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm
 # This script accepts two arguments:
 #   - The first argument is the load balancer to move
 #   - The second argument is the destination compartment for the load balancer.

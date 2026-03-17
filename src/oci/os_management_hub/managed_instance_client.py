@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class ManagedInstanceClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -133,12 +133,12 @@ class ManagedInstanceClient(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AssociateManagedInstancesWithManagementStationDetails associate_managed_instances_with_management_station_details: (required)
             The managed instances `OCIDs`__ to associate to the management station.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -265,7 +265,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachProfileToManagedInstanceDetails attach_profile_to_managed_instance_details: (required)
             Details of the registration profile to be attached to a managed instance.
@@ -395,7 +395,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceDetails attach_software_sources_to_managed_instance_details: (required)
             Details of software sources to be attached to a managed instance.
@@ -525,7 +525,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -640,7 +640,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -765,7 +765,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceDetails detach_software_sources_from_managed_instance_details: (required)
             Details of software sources to be detached from a managed instance.
@@ -897,7 +897,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceDetails disable_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be disabled on a managed instance.
@@ -1030,7 +1030,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.EnableModuleStreamOnManagedInstanceDetails enable_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be enabled on a managed instance.
@@ -1159,7 +1159,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1486,7 +1486,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceDetails install_module_stream_profile_on_managed_instance_details: (required)
             The details of the module stream profile to be installed on a managed instance.
@@ -1615,7 +1615,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallPackagesOnManagedInstanceDetails install_packages_on_managed_instance_details: (required)
             Details about packages to be installed on a managed instance.
@@ -1744,7 +1744,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceDetails install_windows_updates_on_managed_instance_details: (required)
             Details about Windows updates to be installed on a managed instance.
@@ -1873,7 +1873,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1890,7 +1890,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1898,7 +1898,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2049,7 +2049,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2066,7 +2066,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2074,7 +2074,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2225,7 +2225,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] classification_type: (optional)
             A filter to return only packages that match the given update classification type.
@@ -2256,7 +2256,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2264,7 +2264,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2436,7 +2436,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] classification_type: (optional)
             A filter to return only packages that match the given update classification type.
@@ -2460,7 +2460,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2468,7 +2468,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2629,7 +2629,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2656,7 +2656,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2664,7 +2664,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2819,7 +2819,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] name: (optional)
             A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
@@ -2840,7 +2840,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2848,7 +2848,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3001,7 +3001,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -3018,7 +3018,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3026,7 +3026,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3177,7 +3177,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] classification_type: (optional)
             A filter to return only packages that match the given update classification type.
@@ -3204,7 +3204,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3212,7 +3212,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3384,7 +3384,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (optional)
             The `OCID`__ of the managed instance. This filter returns resources associated with this managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             A filter to return only managed instances whose status matches the status provided.
@@ -3422,7 +3422,7 @@ class ManagedInstanceClient(object):
         :param str software_source_id: (optional)
             The `OCID`__ of the software source. This filter returns resources associated with this software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] advisory_name: (optional)
             The assigned erratum name. It's unique and not changeable.
@@ -3451,7 +3451,7 @@ class ManagedInstanceClient(object):
         :param list[str] profile_not_equal_to: (optional)
             A multi filter to return only managed instances that don't contain the given profile `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_profile_attached: (optional)
             A filter to return only managed instances with a registration profile attached.
@@ -3466,13 +3466,13 @@ class ManagedInstanceClient(object):
             A filter to return resources that are associated with the specified management
             station `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] management_station_not_equal_to: (optional)
             A filter to return resources that aren't associated with the specified management
             station `OCIDs`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_reboot_required: (optional)
             A filter to return only managed instances that require a reboot to install updates.
@@ -3483,7 +3483,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3491,7 +3491,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3718,7 +3718,7 @@ class ManagedInstanceClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] classification_type: (optional)
             A filter to return only packages that match the given update classification type.
@@ -3738,7 +3738,7 @@ class ManagedInstanceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3746,7 +3746,7 @@ class ManagedInstanceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3897,7 +3897,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ManageModuleStreamsOnManagedInstanceDetails manage_module_streams_on_managed_instance_details: (required)
             A description of an operation to perform against the modules, streams, and profiles of a managed instance.
@@ -4027,7 +4027,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RebootManagedInstanceDetails reboot_managed_instance_details: (required)
             The timeout to be set for the reboot job. The timeout is the amount of time in minutes that the service waits for
@@ -4157,7 +4157,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -4283,7 +4283,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceDetails remove_module_stream_profile_from_managed_instance_details: (required)
             The details of the module stream profile to be removed from a managed instance.
@@ -4412,7 +4412,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromManagedInstanceDetails remove_packages_from_managed_instance_details: (required)
             Details about packages to be removed on a managed instance.
@@ -4544,7 +4544,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceDetails switch_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be switched on a managed instance.
@@ -4785,7 +4785,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateManagedInstanceDetails update_managed_instance_details: (required)
             Details about a managed instance to be updated.
@@ -4906,7 +4906,7 @@ class ManagedInstanceClient(object):
         :param str managed_instance_id: (required)
             The `OCID`__ of the managed instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdatePackagesOnManagedInstanceDetails update_packages_on_managed_instance_details: (required)
             Details about packages to be updated on a managed instance.

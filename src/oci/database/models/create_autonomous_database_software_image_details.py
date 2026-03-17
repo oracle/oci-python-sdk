@@ -83,7 +83,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
         **[Required]** Gets the compartment_id of this CreateAutonomousDatabaseSoftwareImageDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -97,7 +97,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
         Sets the compartment_id of this CreateAutonomousDatabaseSoftwareImageDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -135,7 +135,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
         **[Required]** Gets the source_cdb_id of this CreateAutonomousDatabaseSoftwareImageDetails.
         The source Autonomous Container Database `OCID`__ from which to create Autonomous AI Database Software Image.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_cdb_id of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -149,7 +149,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
         Sets the source_cdb_id of this CreateAutonomousDatabaseSoftwareImageDetails.
         The source Autonomous Container Database `OCID`__ from which to create Autonomous AI Database Software Image.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_cdb_id: The source_cdb_id of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -197,7 +197,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -214,7 +214,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -229,7 +229,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -244,7 +244,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateAutonomousDatabaseSoftwareImageDetails.

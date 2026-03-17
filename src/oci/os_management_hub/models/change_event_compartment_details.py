@@ -39,7 +39,7 @@ class ChangeEventCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeEventCompartmentDetails.
         The `OCID`__ of the compartment to move the event to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeEventCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeEventCompartmentDetails(object):
         Sets the compartment_id of this ChangeEventCompartmentDetails.
         The `OCID`__ of the compartment to move the event to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeEventCompartmentDetails.

@@ -166,7 +166,7 @@ class UpdateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this UpdateVnicDetails.
@@ -194,7 +194,7 @@ class UpdateVnicDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this UpdateVnicDetails.
@@ -244,7 +244,7 @@ class UpdateVnicDetails(object):
         `Using a Private IP as a Route Target`__.
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :return: The skip_source_dest_check of this UpdateVnicDetails.
@@ -262,7 +262,7 @@ class UpdateVnicDetails(object):
         `Using a Private IP as a Route Target`__.
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param skip_source_dest_check: The skip_source_dest_check of this UpdateVnicDetails.

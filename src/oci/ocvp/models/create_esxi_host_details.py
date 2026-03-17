@@ -164,7 +164,7 @@ class CreateEsxiHostDetails(object):
         **[Required]** Gets the cluster_id of this CreateEsxiHostDetails.
         The `OCID`__ of the Cluster to add the ESXi host to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this CreateEsxiHostDetails.
@@ -178,7 +178,7 @@ class CreateEsxiHostDetails(object):
         Sets the cluster_id of this CreateEsxiHostDetails.
         The `OCID`__ of the Cluster to add the ESXi host to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this CreateEsxiHostDetails.
@@ -234,7 +234,7 @@ class CreateEsxiHostDetails(object):
         Gets the billing_donor_host_id of this CreateEsxiHostDetails.
         The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The billing_donor_host_id of this CreateEsxiHostDetails.
@@ -248,7 +248,7 @@ class CreateEsxiHostDetails(object):
         Sets the billing_donor_host_id of this CreateEsxiHostDetails.
         The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param billing_donor_host_id: The billing_donor_host_id of this CreateEsxiHostDetails.
@@ -408,7 +408,7 @@ class CreateEsxiHostDetails(object):
         Gets the capacity_reservation_id of this CreateEsxiHostDetails.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The capacity_reservation_id of this CreateEsxiHostDetails.
@@ -422,7 +422,7 @@ class CreateEsxiHostDetails(object):
         Sets the capacity_reservation_id of this CreateEsxiHostDetails.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this CreateEsxiHostDetails.
@@ -466,7 +466,7 @@ class CreateEsxiHostDetails(object):
         Gets the vcf_byol_allocation_id of this CreateEsxiHostDetails.
         The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcf_byol_allocation_id of this CreateEsxiHostDetails.
@@ -480,7 +480,7 @@ class CreateEsxiHostDetails(object):
         Sets the vcf_byol_allocation_id of this CreateEsxiHostDetails.
         The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcf_byol_allocation_id: The vcf_byol_allocation_id of this CreateEsxiHostDetails.
@@ -521,7 +521,7 @@ class CreateEsxiHostDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateEsxiHostDetails.
@@ -538,7 +538,7 @@ class CreateEsxiHostDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateEsxiHostDetails.
@@ -555,7 +555,7 @@ class CreateEsxiHostDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateEsxiHostDetails.
@@ -572,7 +572,7 @@ class CreateEsxiHostDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateEsxiHostDetails.

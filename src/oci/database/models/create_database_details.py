@@ -224,7 +224,7 @@ class CreateDatabaseDetails(object):
         Gets the database_software_image_id of this CreateDatabaseDetails.
         The database software image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this CreateDatabaseDetails.
@@ -238,7 +238,7 @@ class CreateDatabaseDetails(object):
         Sets the database_software_image_id of this CreateDatabaseDetails.
         The database software image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this CreateDatabaseDetails.
@@ -438,7 +438,7 @@ class CreateDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDatabaseDetails.
@@ -455,7 +455,7 @@ class CreateDatabaseDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDatabaseDetails.
@@ -470,7 +470,7 @@ class CreateDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDatabaseDetails.
@@ -485,7 +485,7 @@ class CreateDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDatabaseDetails.
@@ -547,8 +547,8 @@ class CreateDatabaseDetails(object):
         Gets the vault_id of this CreateDatabaseDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :return: The vault_id of this CreateDatabaseDetails.
@@ -562,8 +562,8 @@ class CreateDatabaseDetails(object):
         Sets the vault_id of this CreateDatabaseDetails.
         The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param vault_id: The vault_id of this CreateDatabaseDetails.
@@ -601,7 +601,7 @@ class CreateDatabaseDetails(object):
         Gets the key_store_id of this CreateDatabaseDetails.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this CreateDatabaseDetails.
@@ -615,7 +615,7 @@ class CreateDatabaseDetails(object):
         Sets the key_store_id of this CreateDatabaseDetails.
         The `OCID`__ of the key store of Oracle Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this CreateDatabaseDetails.

@@ -135,7 +135,7 @@ class ModelDeploymentClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str request_body: (required)
             Input data details for making a prediction call
@@ -248,7 +248,7 @@ class ModelDeploymentClient(object):
         :param str model_deployment_id: (required)
             The `OCID`__ of the model deployment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str request_body: (required)
             Input data details for making a prediction call
