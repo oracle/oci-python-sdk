@@ -137,7 +137,7 @@ class AIServiceLanguageClient(object):
         - A record may be up to 5000 characters long.
         - The total of characters to process in a request can be up to 20,000 characters.
 
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect
 
 
         :param oci.ai_language.models.BatchDetectDominantLanguageDetails batch_detect_dominant_language_details: (required)
@@ -337,7 +337,7 @@ class AIServiceLanguageClient(object):
         - A record may be up to 5000 characters long.
         - The total of characters to process in a request can be up to 20,000 characters.
 
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#ner__sup-ner-entity
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#ner__sup-ner-entity
 
 
         :param oci.ai_language.models.BatchDetectLanguageEntitiesDetails batch_detect_language_entities_details: (required)
@@ -639,7 +639,7 @@ class AIServiceLanguageClient(object):
          - A record may be up to 5000 characters long.
          - The total of characters to process in a request can be up to 20,000 characters.
 
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#sentiment
 
 
         :param oci.ai_language.models.BatchDetectLanguageSentimentsDetails batch_detect_language_sentiments_details: (required)
@@ -767,7 +767,7 @@ class AIServiceLanguageClient(object):
         - A record may be up to 5000 characters long.
         - The total of characters to process in a request can be up to 20,000 characters.
 
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#text-class
 
 
         :param oci.ai_language.models.BatchDetectLanguageTextClassificationDetails batch_detect_language_text_classification_details: (required)
@@ -2457,8 +2457,8 @@ class AIServiceLanguageClient(object):
         Limitations:
         - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect
+        __ https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect
 
 
         :param oci.ai_language.models.DetectDominantLanguageDetails detect_dominant_language_details: (required)
@@ -2559,7 +2559,7 @@ class AIServiceLanguageClient(object):
         Limitations:
         - A text may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities
+        __ https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities
 
 
         :param oci.ai_language.models.DetectLanguageEntitiesDetails detect_language_entities_details: (required)
@@ -2685,7 +2685,7 @@ class AIServiceLanguageClient(object):
         Limitations:
         - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases
+        __ https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases
 
 
         :param oci.ai_language.models.DetectLanguageKeyPhrasesDetails detect_language_key_phrases_details: (required)
@@ -2792,8 +2792,8 @@ class AIServiceLanguageClient(object):
         Limitations:
          - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment
+        __ https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#sentiment
 
 
         :param oci.ai_language.models.DetectLanguageSentimentsDetails detect_language_sentiments_details: (required)
@@ -2896,8 +2896,8 @@ class AIServiceLanguageClient(object):
         Limitations:
         - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification
-        __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class
+        __ https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification
+        __ https://docs.oracle.com/iaas/language/using/pretrain-models.htm#text-class
 
 
         :param oci.ai_language.models.DetectLanguageTextClassificationDetails detect_language_text_classification_details: (required)

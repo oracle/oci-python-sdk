@@ -89,7 +89,7 @@ class SoftwareSourceDetails(object):
         **[Required]** Gets the id of this SoftwareSourceDetails.
         The `OCID`__ of the software source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SoftwareSourceDetails.
@@ -103,7 +103,7 @@ class SoftwareSourceDetails(object):
         Sets the id of this SoftwareSourceDetails.
         The `OCID`__ of the software source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SoftwareSourceDetails.

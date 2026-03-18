@@ -106,7 +106,7 @@ class ExportSummary(object):
         **[Required]** Gets the export_set_id of this ExportSummary.
         The `OCID`__ of this export's export set.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_set_id of this ExportSummary.
@@ -120,7 +120,7 @@ class ExportSummary(object):
         Sets the export_set_id of this ExportSummary.
         The `OCID`__ of this export's export set.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param export_set_id: The export_set_id of this ExportSummary.
@@ -134,7 +134,7 @@ class ExportSummary(object):
         **[Required]** Gets the file_system_id of this ExportSummary.
         The `OCID`__ of this export's file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The file_system_id of this ExportSummary.
@@ -148,7 +148,7 @@ class ExportSummary(object):
         Sets the file_system_id of this ExportSummary.
         The `OCID`__ of this export's file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param file_system_id: The file_system_id of this ExportSummary.
@@ -162,7 +162,7 @@ class ExportSummary(object):
         **[Required]** Gets the id of this ExportSummary.
         The `OCID`__ of this export.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ExportSummary.
@@ -176,7 +176,7 @@ class ExportSummary(object):
         Sets the id of this ExportSummary.
         The `OCID`__ of this export.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ExportSummary.

@@ -146,7 +146,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
         Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.
@@ -161,7 +161,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
         Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_subnet_id: The primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.

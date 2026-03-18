@@ -117,7 +117,7 @@ class FunctionsManagementClientCompositeOperations(object):
         :param str application_id: (required)
             The `OCID`__ of this application.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.functions.models.Application.lifecycle_state`
@@ -178,7 +178,7 @@ class FunctionsManagementClientCompositeOperations(object):
         :param str function_id: (required)
             The `OCID`__ of this function.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.functions.models.Function.lifecycle_state`
@@ -239,7 +239,7 @@ class FunctionsManagementClientCompositeOperations(object):
         :param str application_id: (required)
             The `OCID`__ of this application.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.functions.models.UpdateApplicationDetails update_application_details: (required)
             The new application spec to apply
@@ -286,7 +286,7 @@ class FunctionsManagementClientCompositeOperations(object):
         :param str function_id: (required)
             The `OCID`__ of this function.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.functions.models.UpdateFunctionDetails update_function_details: (required)
             The new function spec to apply

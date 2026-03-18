@@ -142,7 +142,7 @@ class DbSystemOsPatchHistoryEntry(object):
         **[Required]** Gets the db_system_id of this DbSystemOsPatchHistoryEntry.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbSystemOsPatchHistoryEntry.
@@ -156,7 +156,7 @@ class DbSystemOsPatchHistoryEntry(object):
         Sets the db_system_id of this DbSystemOsPatchHistoryEntry.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbSystemOsPatchHistoryEntry.
@@ -170,7 +170,7 @@ class DbSystemOsPatchHistoryEntry(object):
         **[Required]** Gets the id of this DbSystemOsPatchHistoryEntry.
         The `OCID`__ of the OS patch history entry.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbSystemOsPatchHistoryEntry.
@@ -184,7 +184,7 @@ class DbSystemOsPatchHistoryEntry(object):
         Sets the id of this DbSystemOsPatchHistoryEntry.
         The `OCID`__ of the OS patch history entry.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbSystemOsPatchHistoryEntry.

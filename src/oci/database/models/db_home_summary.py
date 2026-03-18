@@ -22,9 +22,9 @@ class DbHomeSummary(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm
-    __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm
+    __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbHomeSummary.
@@ -196,7 +196,7 @@ class DbHomeSummary(object):
         **[Required]** Gets the id of this DbHomeSummary.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbHomeSummary.
@@ -210,7 +210,7 @@ class DbHomeSummary(object):
         Sets the id of this DbHomeSummary.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbHomeSummary.
@@ -224,7 +224,7 @@ class DbHomeSummary(object):
         **[Required]** Gets the compartment_id of this DbHomeSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbHomeSummary.
@@ -238,7 +238,7 @@ class DbHomeSummary(object):
         Sets the compartment_id of this DbHomeSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbHomeSummary.
@@ -276,7 +276,7 @@ class DbHomeSummary(object):
         Gets the last_patch_history_entry_id of this DbHomeSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_patch_history_entry_id of this DbHomeSummary.
@@ -290,7 +290,7 @@ class DbHomeSummary(object):
         Sets the last_patch_history_entry_id of this DbHomeSummary.
         The `OCID`__ of the last patch history. This value is updated as soon as a patch operation is started.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_patch_history_entry_id: The last_patch_history_entry_id of this DbHomeSummary.
@@ -334,7 +334,7 @@ class DbHomeSummary(object):
         Gets the db_system_id of this DbHomeSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this DbHomeSummary.
@@ -348,7 +348,7 @@ class DbHomeSummary(object):
         Sets the db_system_id of this DbHomeSummary.
         The `OCID`__ of the DB system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this DbHomeSummary.
@@ -362,7 +362,7 @@ class DbHomeSummary(object):
         Gets the vm_cluster_id of this DbHomeSummary.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_id of this DbHomeSummary.
@@ -376,7 +376,7 @@ class DbHomeSummary(object):
         Sets the vm_cluster_id of this DbHomeSummary.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_id: The vm_cluster_id of this DbHomeSummary.
@@ -537,7 +537,7 @@ class DbHomeSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DbHomeSummary.
@@ -554,7 +554,7 @@ class DbHomeSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DbHomeSummary.
@@ -569,7 +569,7 @@ class DbHomeSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DbHomeSummary.
@@ -584,7 +584,7 @@ class DbHomeSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DbHomeSummary.
@@ -599,7 +599,7 @@ class DbHomeSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this DbHomeSummary.
@@ -614,7 +614,7 @@ class DbHomeSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this DbHomeSummary.
@@ -628,7 +628,7 @@ class DbHomeSummary(object):
         Gets the database_software_image_id of this DbHomeSummary.
         The database software image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this DbHomeSummary.
@@ -642,7 +642,7 @@ class DbHomeSummary(object):
         Sets the database_software_image_id of this DbHomeSummary.
         The database software image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this DbHomeSummary.

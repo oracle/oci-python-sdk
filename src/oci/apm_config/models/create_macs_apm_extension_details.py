@@ -129,7 +129,7 @@ class CreateMacsApmExtensionDetails(CreateConfigDetails):
         **[Required]** Gets the management_agent_id of this CreateMacsApmExtensionDetails.
         The `OCID`__ of the Management Agent that will provision the APM Agent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this CreateMacsApmExtensionDetails.
@@ -143,7 +143,7 @@ class CreateMacsApmExtensionDetails(CreateConfigDetails):
         Sets the management_agent_id of this CreateMacsApmExtensionDetails.
         The `OCID`__ of the Management Agent that will provision the APM Agent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this CreateMacsApmExtensionDetails.

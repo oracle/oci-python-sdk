@@ -60,7 +60,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
         Gets the byoip_range_id of this ByoipRangeVcnIpv6AllocationSummary.
         The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The byoip_range_id of this ByoipRangeVcnIpv6AllocationSummary.
@@ -74,7 +74,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
         Sets the byoip_range_id of this ByoipRangeVcnIpv6AllocationSummary.
         The `OCID`__ of the `ByoipRange` resource to which the CIDR block belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param byoip_range_id: The byoip_range_id of this ByoipRangeVcnIpv6AllocationSummary.
@@ -88,7 +88,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
         Gets the compartment_id of this ByoipRangeVcnIpv6AllocationSummary.
         The `OCID`__ of the compartment containing the `ByoipRange`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ByoipRangeVcnIpv6AllocationSummary.
@@ -102,7 +102,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
         Sets the compartment_id of this ByoipRangeVcnIpv6AllocationSummary.
         The `OCID`__ of the compartment containing the `ByoipRange`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ByoipRangeVcnIpv6AllocationSummary.
@@ -142,7 +142,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
         Gets the vcn_id of this ByoipRangeVcnIpv6AllocationSummary.
         The `OCID`__ of the `Vcn` resource to which the ByoipRange belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this ByoipRangeVcnIpv6AllocationSummary.
@@ -156,7 +156,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
         Sets the vcn_id of this ByoipRangeVcnIpv6AllocationSummary.
         The `OCID`__ of the `Vcn` resource to which the ByoipRange belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this ByoipRangeVcnIpv6AllocationSummary.

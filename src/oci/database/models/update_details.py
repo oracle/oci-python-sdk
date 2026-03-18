@@ -70,7 +70,7 @@ class UpdateDetails(object):
         Gets the update_id of this UpdateDetails.
         The `OCID`__ of the maintenance update.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The update_id of this UpdateDetails.
@@ -84,7 +84,7 @@ class UpdateDetails(object):
         Sets the update_id of this UpdateDetails.
         The `OCID`__ of the maintenance update.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param update_id: The update_id of this UpdateDetails.
@@ -129,7 +129,7 @@ class UpdateDetails(object):
         Gets the gi_software_image_id of this UpdateDetails.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gi_software_image_id of this UpdateDetails.
@@ -143,7 +143,7 @@ class UpdateDetails(object):
         Sets the gi_software_image_id of this UpdateDetails.
         The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gi_software_image_id: The gi_software_image_id of this UpdateDetails.

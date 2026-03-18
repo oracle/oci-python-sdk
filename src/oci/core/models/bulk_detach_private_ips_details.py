@@ -46,7 +46,7 @@ class BulkDetachPrivateIpsDetails(object):
         Gets the vnic_id of this BulkDetachPrivateIpsDetails.
         The `OCID`__ of the VNIC of which private IPs should be detached. The VNIC and private IPs must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this BulkDetachPrivateIpsDetails.
@@ -60,7 +60,7 @@ class BulkDetachPrivateIpsDetails(object):
         Sets the vnic_id of this BulkDetachPrivateIpsDetails.
         The `OCID`__ of the VNIC of which private IPs should be detached. The VNIC and private IPs must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this BulkDetachPrivateIpsDetails.

@@ -229,7 +229,7 @@ class DbServer(object):
         Gets the id of this DbServer.
         The `OCID`__ of the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbServer.
@@ -243,7 +243,7 @@ class DbServer(object):
         Sets the id of this DbServer.
         The `OCID`__ of the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbServer.
@@ -281,7 +281,7 @@ class DbServer(object):
         Gets the compartment_id of this DbServer.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbServer.
@@ -295,7 +295,7 @@ class DbServer(object):
         Sets the compartment_id of this DbServer.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbServer.
@@ -309,7 +309,7 @@ class DbServer(object):
         Gets the exadata_infrastructure_id of this DbServer.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this DbServer.
@@ -323,7 +323,7 @@ class DbServer(object):
         Sets the exadata_infrastructure_id of this DbServer.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this DbServer.
@@ -409,7 +409,7 @@ class DbServer(object):
         Gets the vm_cluster_ids of this DbServer.
         The `OCID`__ of the VM Clusters associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vm_cluster_ids of this DbServer.
@@ -423,7 +423,7 @@ class DbServer(object):
         Sets the vm_cluster_ids of this DbServer.
         The `OCID`__ of the VM Clusters associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vm_cluster_ids: The vm_cluster_ids of this DbServer.
@@ -437,7 +437,7 @@ class DbServer(object):
         Gets the autonomous_vm_cluster_ids of this DbServer.
         The list of `OCIDs`__ of the Autonomous VM Clusters associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_vm_cluster_ids of this DbServer.
@@ -451,7 +451,7 @@ class DbServer(object):
         Sets the autonomous_vm_cluster_ids of this DbServer.
         The list of `OCIDs`__ of the Autonomous VM Clusters associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_vm_cluster_ids: The autonomous_vm_cluster_ids of this DbServer.
@@ -465,7 +465,7 @@ class DbServer(object):
         Gets the autonomous_virtual_machine_ids of this DbServer.
         The list of `OCIDs`__ of the Autonomous Virtual Machines associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The autonomous_virtual_machine_ids of this DbServer.
@@ -479,7 +479,7 @@ class DbServer(object):
         Sets the autonomous_virtual_machine_ids of this DbServer.
         The list of `OCIDs`__ of the Autonomous Virtual Machines associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param autonomous_virtual_machine_ids: The autonomous_virtual_machine_ids of this DbServer.
@@ -493,7 +493,7 @@ class DbServer(object):
         Gets the db_node_ids of this DbServer.
         The `OCID`__ of the Db nodes associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_node_ids of this DbServer.
@@ -507,7 +507,7 @@ class DbServer(object):
         Sets the db_node_ids of this DbServer.
         The `OCID`__ of the Db nodes associated with the Db server.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_node_ids: The db_node_ids of this DbServer.
@@ -718,7 +718,7 @@ class DbServer(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DbServer.
@@ -735,7 +735,7 @@ class DbServer(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DbServer.
@@ -750,7 +750,7 @@ class DbServer(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DbServer.
@@ -765,7 +765,7 @@ class DbServer(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DbServer.
@@ -780,7 +780,7 @@ class DbServer(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this DbServer.
@@ -795,7 +795,7 @@ class DbServer(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this DbServer.

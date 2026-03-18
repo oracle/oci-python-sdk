@@ -34,8 +34,8 @@ class IPSecConnection(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a IPSecConnection.
@@ -184,7 +184,7 @@ class IPSecConnection(object):
         **[Required]** Gets the compartment_id of this IPSecConnection.
         The `OCID`__ of the compartment containing the IPSec connection.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this IPSecConnection.
@@ -198,7 +198,7 @@ class IPSecConnection(object):
         Sets the compartment_id of this IPSecConnection.
         The `OCID`__ of the compartment containing the IPSec connection.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this IPSecConnection.
@@ -212,7 +212,7 @@ class IPSecConnection(object):
         **[Required]** Gets the cpe_id of this IPSecConnection.
         The `OCID`__ of the :class:`Cpe` object.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cpe_id of this IPSecConnection.
@@ -226,7 +226,7 @@ class IPSecConnection(object):
         Sets the cpe_id of this IPSecConnection.
         The `OCID`__ of the :class:`Cpe` object.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cpe_id: The cpe_id of this IPSecConnection.
@@ -243,7 +243,7 @@ class IPSecConnection(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this IPSecConnection.
@@ -260,7 +260,7 @@ class IPSecConnection(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this IPSecConnection.
@@ -300,7 +300,7 @@ class IPSecConnection(object):
         **[Required]** Gets the drg_id of this IPSecConnection.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this IPSecConnection.
@@ -314,7 +314,7 @@ class IPSecConnection(object):
         Sets the drg_id of this IPSecConnection.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this IPSecConnection.
@@ -331,7 +331,7 @@ class IPSecConnection(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this IPSecConnection.
@@ -348,7 +348,7 @@ class IPSecConnection(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this IPSecConnection.
@@ -362,7 +362,7 @@ class IPSecConnection(object):
         **[Required]** Gets the id of this IPSecConnection.
         The IPSec connection's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this IPSecConnection.
@@ -376,7 +376,7 @@ class IPSecConnection(object):
         Sets the id of this IPSecConnection.
         The IPSec connection's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this IPSecConnection.
@@ -432,7 +432,7 @@ class IPSecConnection(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :return: The cpe_local_identifier of this IPSecConnection.
@@ -458,7 +458,7 @@ class IPSecConnection(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :param cpe_local_identifier: The cpe_local_identifier of this IPSecConnection.
@@ -517,7 +517,7 @@ class IPSecConnection(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The static_routes of this IPSecConnection.
@@ -544,7 +544,7 @@ class IPSecConnection(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param static_routes: The static_routes of this IPSecConnection.

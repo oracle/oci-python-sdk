@@ -73,4 +73,4 @@ If you want to use the private key which is not in the key file, key_content can
     These are supported across the OCI SDKs, so if you've already set this file up for any of the SDKs,
     you're all set.
 
-    __ https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
+    __ https://docs.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm

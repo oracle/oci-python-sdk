@@ -49,7 +49,7 @@ class LoadBalancerEndpoint(Endpoint):
         **[Required]** Gets the load_balancer_id of this LoadBalancerEndpoint.
         The `OCID`__ of the load balancer.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this LoadBalancerEndpoint.
@@ -63,7 +63,7 @@ class LoadBalancerEndpoint(Endpoint):
         Sets the load_balancer_id of this LoadBalancerEndpoint.
         The `OCID`__ of the load balancer.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this LoadBalancerEndpoint.

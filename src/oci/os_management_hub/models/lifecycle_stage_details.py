@@ -46,7 +46,7 @@ class LifecycleStageDetails(object):
         **[Required]** Gets the id of this LifecycleStageDetails.
         The `OCID`__ of the lifecycle stage.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LifecycleStageDetails.
@@ -60,7 +60,7 @@ class LifecycleStageDetails(object):
         Sets the id of this LifecycleStageDetails.
         The `OCID`__ of the lifecycle stage.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LifecycleStageDetails.

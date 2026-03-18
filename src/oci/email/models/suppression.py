@@ -197,7 +197,7 @@ class Suppression(object):
         Gets the reason of this Suppression.
         The reason that the email address was suppressed. For more information on the types of bounces, see `Suppression List`__.
 
-        __ https://docs.cloud.oracle.com/Content/Email/Concepts/overview.htm#components
+        __ https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components
 
         Allowed values for this property are: "UNKNOWN", "HARDBOUNCE", "COMPLAINT", "MANUAL", "SOFTBOUNCE", "UNSUBSCRIBE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -214,7 +214,7 @@ class Suppression(object):
         Sets the reason of this Suppression.
         The reason that the email address was suppressed. For more information on the types of bounces, see `Suppression List`__.
 
-        __ https://docs.cloud.oracle.com/Content/Email/Concepts/overview.htm#components
+        __ https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components
 
 
         :param reason: The reason of this Suppression.

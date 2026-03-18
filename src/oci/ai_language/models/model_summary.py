@@ -171,7 +171,7 @@ class ModelSummary(object):
         **[Required]** Gets the compartment_id of this ModelSummary.
         The `OCID`__  for the model's compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ModelSummary.
@@ -185,7 +185,7 @@ class ModelSummary(object):
         Sets the compartment_id of this ModelSummary.
         The `OCID`__  for the model's compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ModelSummary.
@@ -315,7 +315,7 @@ class ModelSummary(object):
         **[Required]** Gets the project_id of this ModelSummary.
         The `OCID`__ of the project to associate with the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this ModelSummary.
@@ -329,7 +329,7 @@ class ModelSummary(object):
         Sets the project_id of this ModelSummary.
         The `OCID`__ of the project to associate with the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this ModelSummary.

@@ -19,8 +19,8 @@ class ObjectStorageLink(object):
     an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/lustre/object-storage-sync.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.oracle.com/iaas/Content/lustre/object-storage-sync.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ObjectStorageLink.
@@ -181,7 +181,7 @@ class ObjectStorageLink(object):
         **[Required]** Gets the id of this ObjectStorageLink.
         The `OCID`__ of the ObjectStorageLink.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ObjectStorageLink.
@@ -195,7 +195,7 @@ class ObjectStorageLink(object):
         Sets the id of this ObjectStorageLink.
         The `OCID`__ of the ObjectStorageLink.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ObjectStorageLink.
@@ -209,7 +209,7 @@ class ObjectStorageLink(object):
         **[Required]** Gets the compartment_id of this ObjectStorageLink.
         The `OCID`__ of the compartment that contains the Lustre file system.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ObjectStorageLink.
@@ -223,7 +223,7 @@ class ObjectStorageLink(object):
         Sets the compartment_id of this ObjectStorageLink.
         The `OCID`__ of the compartment that contains the Lustre file system.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ObjectStorageLink.
@@ -422,7 +422,7 @@ class ObjectStorageLink(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ObjectStorageLink.
@@ -439,7 +439,7 @@ class ObjectStorageLink(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ObjectStorageLink.
@@ -456,7 +456,7 @@ class ObjectStorageLink(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ObjectStorageLink.
@@ -473,7 +473,7 @@ class ObjectStorageLink(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ObjectStorageLink.
@@ -515,7 +515,7 @@ class ObjectStorageLink(object):
         **[Required]** Gets the lustre_file_system_id of this ObjectStorageLink.
         The `OCID`__ of the associated Lustre file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lustre_file_system_id of this ObjectStorageLink.
@@ -529,7 +529,7 @@ class ObjectStorageLink(object):
         Sets the lustre_file_system_id of this ObjectStorageLink.
         The `OCID`__ of the associated Lustre file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lustre_file_system_id: The lustre_file_system_id of this ObjectStorageLink.
@@ -599,7 +599,7 @@ class ObjectStorageLink(object):
         Gets the current_job_id of this ObjectStorageLink.
         The `OCID`__ of currently running sync job. If no sync job is running, then this will be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The current_job_id of this ObjectStorageLink.
@@ -613,7 +613,7 @@ class ObjectStorageLink(object):
         Sets the current_job_id of this ObjectStorageLink.
         The `OCID`__ of currently running sync job. If no sync job is running, then this will be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param current_job_id: The current_job_id of this ObjectStorageLink.
@@ -627,7 +627,7 @@ class ObjectStorageLink(object):
         Gets the last_job_id of this ObjectStorageLink.
         The `OCID`__ of last succeeded sync job. If no sync job has previously run, then this will be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_job_id of this ObjectStorageLink.
@@ -641,7 +641,7 @@ class ObjectStorageLink(object):
         Sets the last_job_id of this ObjectStorageLink.
         The `OCID`__ of last succeeded sync job. If no sync job has previously run, then this will be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param last_job_id: The last_job_id of this ObjectStorageLink.

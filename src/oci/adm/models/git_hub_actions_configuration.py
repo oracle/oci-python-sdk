@@ -106,7 +106,7 @@ class GitHubActionsConfiguration(VerifyConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the Private Access Token (PAT) Secret.
         The PAT provides the credentials to access the GitHub Action.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The pat_secret_id of this GitHubActionsConfiguration.
@@ -121,7 +121,7 @@ class GitHubActionsConfiguration(VerifyConfiguration):
         The Oracle Cloud Identifier (`OCID`__) of the Private Access Token (PAT) Secret.
         The PAT provides the credentials to access the GitHub Action.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param pat_secret_id: The pat_secret_id of this GitHubActionsConfiguration.

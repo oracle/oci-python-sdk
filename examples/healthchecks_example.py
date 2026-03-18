@@ -6,7 +6,7 @@
 # Please review the documentation for more information about
 # how Health Checks works, including permissions needed.
 #
-# https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Concepts/healthchecks.htm
+# https://docs.oracle.com/iaas/Content/HealthChecks/Concepts/healthchecks.htm
 
 
 import oci

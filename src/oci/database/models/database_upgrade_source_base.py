@@ -87,7 +87,7 @@ class DatabaseUpgradeSourceBase(object):
          - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          - Use `DB_SOFTWARE_IMAGE` to specify a `database software image`__ to upgrade the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
 
         Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"
 
@@ -106,7 +106,7 @@ class DatabaseUpgradeSourceBase(object):
          - Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
          - Use `DB_SOFTWARE_IMAGE` to specify a `database software image`__ to upgrade the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm
 
 
         :param source: The source of this DatabaseUpgradeSourceBase.

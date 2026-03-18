@@ -47,7 +47,7 @@ class BulkUpdateIpv6sDetails(object):
         The `OCID`__ of the VNIC to move the IPv6s to.
         The VNIC and IPv6s must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this BulkUpdateIpv6sDetails.
@@ -62,7 +62,7 @@ class BulkUpdateIpv6sDetails(object):
         The `OCID`__ of the VNIC to move the IPv6s to.
         The VNIC and IPv6s must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this BulkUpdateIpv6sDetails.

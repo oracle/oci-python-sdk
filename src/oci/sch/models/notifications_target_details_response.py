@@ -16,7 +16,7 @@ class NotificationsTargetDetailsResponse(TargetDetailsResponse):
     For configuration instructions, see
     `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class NotificationsTargetDetailsResponse(TargetDetailsResponse):
         **[Required]** Gets the topic_id of this NotificationsTargetDetailsResponse.
         The `OCID`__ of the topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The topic_id of this NotificationsTargetDetailsResponse.
@@ -81,7 +81,7 @@ class NotificationsTargetDetailsResponse(TargetDetailsResponse):
         Sets the topic_id of this NotificationsTargetDetailsResponse.
         The `OCID`__ of the topic.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param topic_id: The topic_id of this NotificationsTargetDetailsResponse.

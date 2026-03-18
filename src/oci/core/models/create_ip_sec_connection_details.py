@@ -111,7 +111,7 @@ class CreateIPSecConnectionDetails(object):
         **[Required]** Gets the compartment_id of this CreateIPSecConnectionDetails.
         The `OCID`__ of the compartment to contain the IPSec connection.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateIPSecConnectionDetails.
@@ -125,7 +125,7 @@ class CreateIPSecConnectionDetails(object):
         Sets the compartment_id of this CreateIPSecConnectionDetails.
         The `OCID`__ of the compartment to contain the IPSec connection.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateIPSecConnectionDetails.
@@ -139,7 +139,7 @@ class CreateIPSecConnectionDetails(object):
         **[Required]** Gets the cpe_id of this CreateIPSecConnectionDetails.
         The `OCID`__ of the :class:`Cpe` object.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cpe_id of this CreateIPSecConnectionDetails.
@@ -153,7 +153,7 @@ class CreateIPSecConnectionDetails(object):
         Sets the cpe_id of this CreateIPSecConnectionDetails.
         The `OCID`__ of the :class:`Cpe` object.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cpe_id: The cpe_id of this CreateIPSecConnectionDetails.
@@ -170,7 +170,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateIPSecConnectionDetails.
@@ -187,7 +187,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateIPSecConnectionDetails.
@@ -227,7 +227,7 @@ class CreateIPSecConnectionDetails(object):
         **[Required]** Gets the drg_id of this CreateIPSecConnectionDetails.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateIPSecConnectionDetails.
@@ -241,7 +241,7 @@ class CreateIPSecConnectionDetails(object):
         Sets the drg_id of this CreateIPSecConnectionDetails.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateIPSecConnectionDetails.
@@ -258,7 +258,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateIPSecConnectionDetails.
@@ -275,7 +275,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateIPSecConnectionDetails.
@@ -301,7 +301,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :return: The cpe_local_identifier of this CreateIPSecConnectionDetails.
@@ -327,7 +327,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example hostname: `cpe.example.com`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :param cpe_local_identifier: The cpe_local_identifier of this CreateIPSecConnectionDetails.
@@ -388,7 +388,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The static_routes of this CreateIPSecConnectionDetails.
@@ -416,7 +416,7 @@ class CreateIPSecConnectionDetails(object):
 
         Example: `2001:db8::/32`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param static_routes: The static_routes of this CreateIPSecConnectionDetails.

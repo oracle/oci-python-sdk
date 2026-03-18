@@ -101,7 +101,7 @@ class Whitelist(object):
         Gets the address_lists of this Whitelist.
         A list of `OCID`__ of IP address lists to include in the whitelist.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The address_lists of this Whitelist.
@@ -115,7 +115,7 @@ class Whitelist(object):
         Sets the address_lists of this Whitelist.
         A list of `OCID`__ of IP address lists to include in the whitelist.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param address_lists: The address_lists of this Whitelist.

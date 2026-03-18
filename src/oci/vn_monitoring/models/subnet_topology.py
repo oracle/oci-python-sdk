@@ -16,7 +16,7 @@ class SubnetTopology(Topology):
     See `Network Visualizer Documentation`__ for more information, including
     conventions and pictures of symbols.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/network_visualizer.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/network_visualizer.htm
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class SubnetTopology(Topology):
         Gets the subnet_id of this SubnetTopology.
         The `OCID`__ of the subnet for which the visualization is generated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this SubnetTopology.
@@ -95,7 +95,7 @@ class SubnetTopology(Topology):
         Sets the subnet_id of this SubnetTopology.
         The `OCID`__ of the subnet for which the visualization is generated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this SubnetTopology.

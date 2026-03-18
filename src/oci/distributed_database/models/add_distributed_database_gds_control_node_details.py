@@ -70,7 +70,7 @@ class AddDistributedDatabaseGdsControlNodeDetails(object):
         Gets the subnet_id of this AddDistributedDatabaseGdsControlNodeDetails.
         The `OCID`__ of the subnet on which the Global database services control(GDS CTL) node should be created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this AddDistributedDatabaseGdsControlNodeDetails.
@@ -84,7 +84,7 @@ class AddDistributedDatabaseGdsControlNodeDetails(object):
         Sets the subnet_id of this AddDistributedDatabaseGdsControlNodeDetails.
         The `OCID`__ of the subnet on which the Global database services control(GDS CTL) node should be created.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this AddDistributedDatabaseGdsControlNodeDetails.

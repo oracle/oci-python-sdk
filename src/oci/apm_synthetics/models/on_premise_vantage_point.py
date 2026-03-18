@@ -108,7 +108,7 @@ class OnPremiseVantagePoint(object):
         **[Required]** Gets the id of this OnPremiseVantagePoint.
         The `OCID`__ of the On-premise vantage point.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OnPremiseVantagePoint.
@@ -122,7 +122,7 @@ class OnPremiseVantagePoint(object):
         Sets the id of this OnPremiseVantagePoint.
         The `OCID`__ of the On-premise vantage point.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OnPremiseVantagePoint.

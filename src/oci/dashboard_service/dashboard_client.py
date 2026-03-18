@@ -139,7 +139,7 @@ class DashboardClient(object):
         :param str dashboard_id: (required)
             The `OCID`__ of the dashboard.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dashboard_service.models.ChangeDashboardGroupDetails change_dashboard_group_details: (required)
             The information to be updated.
@@ -373,7 +373,7 @@ class DashboardClient(object):
         :param str dashboard_id: (required)
             The `OCID`__ of the dashboard.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -494,7 +494,7 @@ class DashboardClient(object):
         :param str dashboard_id: (required)
             The `OCID`__ of the dashboard.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -610,7 +610,7 @@ class DashboardClient(object):
         :param str dashboard_group_id: (required)
             The `OCID`__ of the dashboard group that the dashboard belongs to.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter that returns dashboard resources that match the lifecycle state specified.
@@ -623,7 +623,7 @@ class DashboardClient(object):
         :param str id: (optional)
             The `OCID`__ of the dashboard.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -788,7 +788,7 @@ class DashboardClient(object):
         :param str dashboard_id: (required)
             The `OCID`__ of the dashboard.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dashboard_service.models.UpdateDashboardDetails update_dashboard_details: (required)
             The dashboard details to be updated.

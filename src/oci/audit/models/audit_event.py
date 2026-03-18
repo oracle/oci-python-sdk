@@ -14,7 +14,7 @@ class AuditEvent(object):
     """
     All the attributes of an audit event. For more information, see `Viewing Audit Log Events`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm
+    __ https://docs.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm
     """
 
     def __init__(self, **kwargs):

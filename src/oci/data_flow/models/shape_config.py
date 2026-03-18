@@ -47,7 +47,7 @@ class ShapeConfig(object):
         The total number of OCPUs used for the driver or executors.
         See `here`__ for details.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
 
 
         :return: The ocpus of this ShapeConfig.
@@ -62,7 +62,7 @@ class ShapeConfig(object):
         The total number of OCPUs used for the driver or executors.
         See `here`__ for details.
 
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/
 
 
         :param ocpus: The ocpus of this ShapeConfig.

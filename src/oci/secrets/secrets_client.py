@@ -404,13 +404,13 @@ class SecretsClient(object):
             The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call. For information about
             pagination, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
 
         :param str sort_by: (optional)
             The field to sort by. You can specify only one sort order. The default

@@ -135,7 +135,7 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
         **[Required]** Gets the management_agent_id of this ExadataExaccConfigurationSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this ExadataExaccConfigurationSummary.
@@ -149,7 +149,7 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
         Sets the management_agent_id of this ExadataExaccConfigurationSummary.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this ExadataExaccConfigurationSummary.
@@ -163,7 +163,7 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
         **[Required]** Gets the parent_id of this ExadataExaccConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this ExadataExaccConfigurationSummary.
@@ -177,7 +177,7 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
         Sets the parent_id of this ExadataExaccConfigurationSummary.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this ExadataExaccConfigurationSummary.

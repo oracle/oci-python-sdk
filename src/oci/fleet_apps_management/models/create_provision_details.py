@@ -164,7 +164,7 @@ class CreateProvisionDetails(object):
         **[Required]** Gets the compartment_id of this CreateProvisionDetails.
         The `OCID`__ of the compartment to create the FamProvision in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateProvisionDetails.
@@ -178,7 +178,7 @@ class CreateProvisionDetails(object):
         Sets the compartment_id of this CreateProvisionDetails.
         The `OCID`__ of the compartment to create the FamProvision in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateProvisionDetails.
@@ -192,7 +192,7 @@ class CreateProvisionDetails(object):
         **[Required]** Gets the package_catalog_item_id of this CreateProvisionDetails.
         The `OCID`__ of the Catalog Item.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The package_catalog_item_id of this CreateProvisionDetails.
@@ -206,7 +206,7 @@ class CreateProvisionDetails(object):
         Sets the package_catalog_item_id of this CreateProvisionDetails.
         The `OCID`__ of the Catalog Item.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param package_catalog_item_id: The package_catalog_item_id of this CreateProvisionDetails.
@@ -220,7 +220,7 @@ class CreateProvisionDetails(object):
         **[Required]** Gets the config_catalog_item_id of this CreateProvisionDetails.
         A `OCID`__ of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_catalog_item_id of this CreateProvisionDetails.
@@ -234,7 +234,7 @@ class CreateProvisionDetails(object):
         Sets the config_catalog_item_id of this CreateProvisionDetails.
         A `OCID`__ of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param config_catalog_item_id: The config_catalog_item_id of this CreateProvisionDetails.
@@ -248,7 +248,7 @@ class CreateProvisionDetails(object):
         **[Required]** Gets the fleet_id of this CreateProvisionDetails.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this CreateProvisionDetails.
@@ -262,7 +262,7 @@ class CreateProvisionDetails(object):
         Sets the fleet_id of this CreateProvisionDetails.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this CreateProvisionDetails.

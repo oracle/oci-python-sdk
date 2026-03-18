@@ -95,7 +95,7 @@ class CreateDigitalTwinAdapterDetails(object):
         **[Required]** Gets the iot_domain_id of this CreateDigitalTwinAdapterDetails.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The iot_domain_id of this CreateDigitalTwinAdapterDetails.
@@ -109,7 +109,7 @@ class CreateDigitalTwinAdapterDetails(object):
         Sets the iot_domain_id of this CreateDigitalTwinAdapterDetails.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param iot_domain_id: The iot_domain_id of this CreateDigitalTwinAdapterDetails.
@@ -123,7 +123,7 @@ class CreateDigitalTwinAdapterDetails(object):
         Gets the digital_twin_model_id of this CreateDigitalTwinAdapterDetails.
         The `OCID`__ of the digital twin model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The digital_twin_model_id of this CreateDigitalTwinAdapterDetails.
@@ -137,7 +137,7 @@ class CreateDigitalTwinAdapterDetails(object):
         Sets the digital_twin_model_id of this CreateDigitalTwinAdapterDetails.
         The `OCID`__ of the digital twin model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param digital_twin_model_id: The digital_twin_model_id of this CreateDigitalTwinAdapterDetails.
@@ -270,7 +270,7 @@ class CreateDigitalTwinAdapterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDigitalTwinAdapterDetails.
@@ -287,7 +287,7 @@ class CreateDigitalTwinAdapterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDigitalTwinAdapterDetails.
@@ -304,7 +304,7 @@ class CreateDigitalTwinAdapterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDigitalTwinAdapterDetails.
@@ -321,7 +321,7 @@ class CreateDigitalTwinAdapterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDigitalTwinAdapterDetails.

@@ -39,7 +39,7 @@ class UnmountDbnodeSnapshotDetails(object):
         **[Required]** Gets the db_node_id of this UnmountDbnodeSnapshotDetails.
         The `OCID`__ of the Exadata Database Node where snapshot needs to be unmounted.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_node_id of this UnmountDbnodeSnapshotDetails.
@@ -53,7 +53,7 @@ class UnmountDbnodeSnapshotDetails(object):
         Sets the db_node_id of this UnmountDbnodeSnapshotDetails.
         The `OCID`__ of the Exadata Database Node where snapshot needs to be unmounted.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_node_id: The db_node_id of this UnmountDbnodeSnapshotDetails.

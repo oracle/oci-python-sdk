@@ -253,7 +253,7 @@ class GooglePubSubConnection(Connection):
         which contains the credentials required to use Google PubSub.
         Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The service_account_key_file_secret_id of this GooglePubSubConnection.
@@ -269,7 +269,7 @@ class GooglePubSubConnection(Connection):
         which contains the credentials required to use Google PubSub.
         Note: When provided, 'serviceAccountKeyFile' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param service_account_key_file_secret_id: The service_account_key_file_secret_id of this GooglePubSubConnection.

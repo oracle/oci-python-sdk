@@ -84,7 +84,7 @@ class AssetSourceCredentials(object):
         If the the type of the credentials is BASIC`, the secret must contain the username and
         password in JSON format, which is in the form of `{ \"username\": \"<VMwareUser>\", \"password\": \"<VMwarePassword>\" }`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this AssetSourceCredentials.
@@ -100,7 +100,7 @@ class AssetSourceCredentials(object):
         If the the type of the credentials is BASIC`, the secret must contain the username and
         password in JSON format, which is in the form of `{ \"username\": \"<VMwareUser>\", \"password\": \"<VMwarePassword>\" }`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this AssetSourceCredentials.

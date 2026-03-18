@@ -16,7 +16,7 @@ class RuleSet(object):
     such as adding, altering, or removing HTTP headers. For more information, see
     `Managing Rule Sets`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm
+    __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm
     """
 
     def __init__(self, **kwargs):

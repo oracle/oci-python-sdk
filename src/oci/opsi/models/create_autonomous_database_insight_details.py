@@ -112,7 +112,7 @@ class CreateAutonomousDatabaseInsightDetails(CreateDatabaseInsightDetails):
         **[Required]** Gets the database_id of this CreateAutonomousDatabaseInsightDetails.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this CreateAutonomousDatabaseInsightDetails.
@@ -126,7 +126,7 @@ class CreateAutonomousDatabaseInsightDetails(CreateDatabaseInsightDetails):
         Sets the database_id of this CreateAutonomousDatabaseInsightDetails.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this CreateAutonomousDatabaseInsightDetails.
@@ -228,7 +228,7 @@ class CreateAutonomousDatabaseInsightDetails(CreateDatabaseInsightDetails):
         Gets the opsi_private_endpoint_id of this CreateAutonomousDatabaseInsightDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The opsi_private_endpoint_id of this CreateAutonomousDatabaseInsightDetails.
@@ -242,7 +242,7 @@ class CreateAutonomousDatabaseInsightDetails(CreateDatabaseInsightDetails):
         Sets the opsi_private_endpoint_id of this CreateAutonomousDatabaseInsightDetails.
         The `OCID`__ of the OPSI private endpoint
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this CreateAutonomousDatabaseInsightDetails.

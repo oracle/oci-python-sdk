@@ -136,7 +136,7 @@ class EmailClient(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.AddLockDetails add_lock_details: (required)
             Details for adding a lock to a resource.
@@ -253,7 +253,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.AddLockDetails add_lock_details: (required)
             Details for adding a lock to a resource.
@@ -373,7 +373,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -495,7 +495,7 @@ class EmailClient(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.AddLockDetails add_lock_details: (required)
             Details for adding a lock to a resource.
@@ -728,13 +728,13 @@ class EmailClient(object):
 
         **Note:** All DKIM objects associated with this email domain will also be moved into the provided compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.ChangeEmailDomainCompartmentDetails change_email_domain_compartment_details: (required)
             The configuration details for the move operation.
@@ -870,7 +870,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.ChangeEmailIpPoolCompartmentDetails change_email_ip_pool_compartment_details: (required)
             Details for the compartment move.
@@ -1740,7 +1740,7 @@ class EmailClient(object):
         :param str dkim_id: (required)
             The `OCID`__ of this DKIM.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -1850,7 +1850,7 @@ class EmailClient(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -1971,7 +1971,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -2092,7 +2092,7 @@ class EmailClient(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -2435,7 +2435,7 @@ class EmailClient(object):
         :param str dkim_id: (required)
             The `OCID`__ of this DKIM.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -2638,7 +2638,7 @@ class EmailClient(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -2743,7 +2743,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -2848,7 +2848,7 @@ class EmailClient(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -3263,7 +3263,7 @@ class EmailClient(object):
         :param str email_domain_id: (required)
             The `OCID`__ of the email domain to which this DKIM belongs.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -3279,14 +3279,14 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending or descending order.
@@ -3453,14 +3453,14 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending or descending order.
@@ -3632,14 +3632,14 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending or descending order.
@@ -3796,14 +3796,14 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending or descending order.
@@ -3970,7 +3970,7 @@ class EmailClient(object):
         :param str parent_resource_id: (optional)
             The `OCID`__ of the Email Domain to which this Email Return Path belongs.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
             A filter to only return resources that match the given id exactly.
@@ -3983,14 +3983,14 @@ class EmailClient(object):
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending or descending order.
@@ -4168,14 +4168,14 @@ class EmailClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. The `TIMECREATED` value returns the list in in
@@ -4359,14 +4359,14 @@ class EmailClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. The `TIMECREATED` value returns the list in in
@@ -4512,14 +4512,14 @@ class EmailClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
@@ -4667,14 +4667,14 @@ class EmailClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
@@ -4825,14 +4825,14 @@ class EmailClient(object):
             For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
             how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str status: (optional)
             A filter to return only resources their lifecycleState matches the given OperationStatus.
@@ -4991,7 +4991,7 @@ class EmailClient(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.RemoveLockDetails remove_lock_details: (required)
             Details for removing a lock from a resource.
@@ -5108,7 +5108,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.RemoveLockDetails remove_lock_details: (required)
             Details for removing a lock to a resource.
@@ -5228,7 +5228,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The request ID for tracing from the system
@@ -5350,7 +5350,7 @@ class EmailClient(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.RemoveLockDetails remove_lock_details: (required)
             Details for removing a lock from a resource.
@@ -5582,7 +5582,7 @@ class EmailClient(object):
         :param str dkim_id: (required)
             The `OCID`__ of this DKIM.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateDkimDetails update_dkim_details: (required)
             The new DKIM attributes to apply.
@@ -5697,7 +5697,7 @@ class EmailClient(object):
         :param str email_domain_id: (required)
             The `OCID`__ of this email domain.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateEmailDomainDetails update_email_domain_details: (required)
             The new email domain attributes to apply.
@@ -5823,7 +5823,7 @@ class EmailClient(object):
         :param str email_ip_pool_id: (required)
             The `OCID`__ of the IpPool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateEmailIpPoolDetails update_email_ip_pool_details: (required)
             The information to be updated.
@@ -5949,7 +5949,7 @@ class EmailClient(object):
         :param str email_return_path_id: (required)
             The `OCID`__ of this email return path.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.email.models.UpdateEmailReturnPathDetails update_email_return_path_details: (required)
             The new email return path attributes to apply.
@@ -6074,7 +6074,7 @@ class EmailClient(object):
         include the full set of tags for the sender, partial updates are not permitted.
         For more information about tagging, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param str sender_id: (required)

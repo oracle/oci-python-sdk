@@ -179,7 +179,7 @@ class InstallationSiteSummary(object):
         **[Required]** Gets the managed_instance_id of this InstallationSiteSummary.
         The `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this InstallationSiteSummary.
@@ -193,7 +193,7 @@ class InstallationSiteSummary(object):
         Sets the managed_instance_id of this InstallationSiteSummary.
         The `OCID`__ of the related managed instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this InstallationSiteSummary.

@@ -176,7 +176,7 @@ class DatabaseToolsIdentity(object):
         **[Required]** Gets the id of this DatabaseToolsIdentity.
         The `OCID`__ of the Database Tools identity.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DatabaseToolsIdentity.
@@ -190,7 +190,7 @@ class DatabaseToolsIdentity(object):
         Sets the id of this DatabaseToolsIdentity.
         The `OCID`__ of the Database Tools identity.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DatabaseToolsIdentity.
@@ -234,7 +234,7 @@ class DatabaseToolsIdentity(object):
         **[Required]** Gets the compartment_id of this DatabaseToolsIdentity.
         The `OCID`__ of the compartment containing the Database Tools identity.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DatabaseToolsIdentity.
@@ -248,7 +248,7 @@ class DatabaseToolsIdentity(object):
         Sets the compartment_id of this DatabaseToolsIdentity.
         The `OCID`__ of the compartment containing the Database Tools identity.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DatabaseToolsIdentity.
@@ -286,7 +286,7 @@ class DatabaseToolsIdentity(object):
         **[Required]** Gets the database_tools_connection_id of this DatabaseToolsIdentity.
         The `OCID`__ of the related Database Tools connection.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_tools_connection_id of this DatabaseToolsIdentity.
@@ -300,7 +300,7 @@ class DatabaseToolsIdentity(object):
         Sets the database_tools_connection_id of this DatabaseToolsIdentity.
         The `OCID`__ of the related Database Tools connection.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_tools_connection_id: The database_tools_connection_id of this DatabaseToolsIdentity.

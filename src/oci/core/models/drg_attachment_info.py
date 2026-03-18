@@ -14,7 +14,7 @@ class DrgAttachmentInfo(object):
     """
     The `DrgAttachmentInfo` resource contains the `OCID`__ of the DRG attachment.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):

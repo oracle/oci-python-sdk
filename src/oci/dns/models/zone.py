@@ -391,7 +391,7 @@ class Zone(object):
 
         **Example:** `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Zone.
@@ -409,7 +409,7 @@ class Zone(object):
 
         **Example:** `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Zone.
@@ -427,7 +427,7 @@ class Zone(object):
 
         **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Zone.
@@ -445,7 +445,7 @@ class Zone(object):
 
         **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Zone.
@@ -513,7 +513,7 @@ class Zone(object):
 
         For more information, see `DNSSEC`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -554,7 +554,7 @@ class Zone(object):
 
         For more information, see `DNSSEC`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
 
 
         :param dnssec_state: The dnssec_state of this Zone.

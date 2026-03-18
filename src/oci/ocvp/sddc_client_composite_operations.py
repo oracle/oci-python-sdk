@@ -33,7 +33,7 @@ class SddcClientCompositeOperations(object):
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -113,7 +113,7 @@ class SddcClientCompositeOperations(object):
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class SddcClientCompositeOperations(object):
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -206,7 +206,7 @@ class SddcClientCompositeOperations(object):
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -247,7 +247,7 @@ class SddcClientCompositeOperations(object):
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateSddcDetails update_sddc_details: (required)
             The information to be updated.
@@ -294,7 +294,7 @@ class SddcClientCompositeOperations(object):
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`

@@ -312,7 +312,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str api_key_id: (required)
             The `OCID`__ of the APIKey.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai.models.ApiKey.lifecycle_state`
@@ -373,7 +373,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str dedicated_ai_cluster_id: (required)
             The `OCID`__ of the dedicated AI cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai.models.WorkRequest.status`
@@ -422,7 +422,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai.models.WorkRequest.status`
@@ -612,7 +612,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str api_key_id: (required)
             The `OCID`__ of the APIKey.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai.models.RenewApiKeyDetails renew_api_key_details: (required)
             The information to be renewed.
@@ -659,7 +659,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str api_key_id: (required)
             The `OCID`__ of the APIKey.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai.models.SetApiKeyStateDetails set_api_key_state_details: (required)
             The information for setting key state.
@@ -706,7 +706,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str api_key_id: (required)
             The `OCID`__ of the APIKey.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai.models.UpdateApiKeyDetails update_api_key_details: (required)
             The information to be updated.
@@ -753,7 +753,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str dedicated_ai_cluster_id: (required)
             The `OCID`__ of the dedicated AI cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai.models.UpdateDedicatedAiClusterDetails update_dedicated_ai_cluster_details: (required)
             The information to be updated.
@@ -797,7 +797,7 @@ class GenerativeAiClientCompositeOperations(object):
         :param str endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai.models.UpdateEndpointDetails update_endpoint_details: (required)
             The information to be updated.

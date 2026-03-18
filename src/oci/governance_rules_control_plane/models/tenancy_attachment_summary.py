@@ -88,7 +88,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the tenancy attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TenancyAttachmentSummary.
@@ -102,7 +102,7 @@ class TenancyAttachmentSummary(object):
         Sets the id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the tenancy attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TenancyAttachmentSummary.
@@ -116,7 +116,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the compartment_id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the root compartment containing the tenancy attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this TenancyAttachmentSummary.
@@ -130,7 +130,7 @@ class TenancyAttachmentSummary(object):
         Sets the compartment_id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the root compartment containing the tenancy attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this TenancyAttachmentSummary.
@@ -144,7 +144,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the governance_rule_id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the governance rule. Every tenancy attachment is associated with a governance rule.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The governance_rule_id of this TenancyAttachmentSummary.
@@ -158,7 +158,7 @@ class TenancyAttachmentSummary(object):
         Sets the governance_rule_id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the governance rule. Every tenancy attachment is associated with a governance rule.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param governance_rule_id: The governance_rule_id of this TenancyAttachmentSummary.
@@ -172,7 +172,7 @@ class TenancyAttachmentSummary(object):
         **[Required]** Gets the tenancy_id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the tenancy to which the governance rule is attached.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this TenancyAttachmentSummary.
@@ -186,7 +186,7 @@ class TenancyAttachmentSummary(object):
         Sets the tenancy_id of this TenancyAttachmentSummary.
         The Oracle ID (`OCID`__) of the tenancy to which the governance rule is attached.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this TenancyAttachmentSummary.

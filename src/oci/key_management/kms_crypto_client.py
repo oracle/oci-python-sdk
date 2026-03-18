@@ -126,7 +126,7 @@ class KmsCryptoClient(object):
         """
         Decrypts data using the given `DecryptDataDetails`__ resource.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/DecryptDataDetails
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/datatypes/DecryptDataDetails
 
 
         :param oci.key_management.models.DecryptDataDetails decrypt_data_details: (required)
@@ -224,7 +224,7 @@ class KmsCryptoClient(object):
         Encrypts data using the given `EncryptDataDetails`__ resource.
         Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/EncryptDataDetails
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/datatypes/EncryptDataDetails
 
 
         :param oci.key_management.models.EncryptDataDetails encrypt_data_details: (required)
@@ -504,7 +504,7 @@ class KmsCryptoClient(object):
         operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
         This operation is not supported for keys having protection mode `EXTERNAL`.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/VerifiedData/Verify
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/VerifiedData/Verify
 
 
         :param oci.key_management.models.SignDataDetails sign_data_details: (required)
@@ -604,7 +604,7 @@ class KmsCryptoClient(object):
         digital signature outside of the service, you can do so by using the public key of the asymmetric key.
         This operation is not supported for keys having protection mode `EXTERNAL`.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/latest/SignedData/Sign
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/key/latest/SignedData/Sign
 
 
         :param oci.key_management.models.VerifyDataDetails verify_data_details: (required)

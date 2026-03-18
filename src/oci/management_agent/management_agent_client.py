@@ -23,7 +23,7 @@ missing = Sentinel("Missing")
 class ManagementAgentClient(object):
     """
     Use the Management Agent API to manage your infrastructure's management agents, including their plugins and install keys.
-    For more information, see [Management Agent](https://docs.cloud.oracle.com/iaas/management-agents/index.html).
+    For more information, see [Management Agent](https://docs.oracle.com/iaas/management-agents/index.html).
     """
 
     def __init__(self, config, **kwargs):

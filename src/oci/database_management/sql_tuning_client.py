@@ -134,7 +134,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.CloneSqlTuningTaskDetails clone_sql_tuning_task_details: (required)
             The detailed inputs required to clone a SQL tuning task.
@@ -254,7 +254,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.CreateSqlTuningSetDetails create_sql_tuning_set_details: (required)
             The details required to create a Sql tuning set.
@@ -376,7 +376,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_set_id: (required)
             The unique identifier of the Sql tuning set. This is not OCID.
@@ -502,7 +502,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DropSqlTuningTaskDetails drop_sql_tuning_task_details: (required)
             The detailed inputs required to drop a SQL tuning task.
@@ -621,7 +621,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_set_id: (required)
             The unique identifier of the Sql tuning set. This is not OCID.
@@ -747,7 +747,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_set_id: (required)
             The unique identifier of the Sql tuning set. This is not OCID.
@@ -875,22 +875,22 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_advisor_task_id: (required)
             The SQL tuning task identifier. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_object_id: (required)
             The SQL object ID for the SQL tuning task. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int execution_id: (required)
             The execution ID for an execution of a SQL tuning task. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1009,17 +1009,17 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_advisor_task_id: (required)
             The SQL tuning task identifier. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_object_id: (required)
             The SQL object ID for the SQL tuning task. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str attribute: (required)
             The attribute of the SQL execution plan.
@@ -1149,12 +1149,12 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_advisor_task_id: (required)
             The SQL tuning task identifier. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str search_period: (optional)
             How far back the API will search for begin and end exec id. Unused if neither exec ids nor time filter query params are supplied. This is applicable only for Auto SQL Tuning tasks.
@@ -1305,12 +1305,12 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_advisor_task_id: (required)
             The SQL tuning task identifier. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int begin_exec_id: (optional)
             The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
@@ -1516,22 +1516,22 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_advisor_task_id: (required)
             The SQL tuning task identifier. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_object_id: (required)
             The SQL object ID for the SQL tuning task. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int execution_id: (required)
             The execution ID for an execution of a SQL tuning task. This is not the `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The possible sortBy values of an object's recommendations.
@@ -1689,7 +1689,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             The optional query parameter to filter the SQL Tuning Advisor task list by name.
@@ -1873,7 +1873,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str owner: (optional)
             The owner of the SQL tuning set.
@@ -2038,7 +2038,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_set_id: (required)
             The unique identifier of the Sql tuning set. This is not OCID.
@@ -2164,7 +2164,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_set_id: (required)
             The unique identifier of the Sql tuning set. This is not OCID.
@@ -2290,7 +2290,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.StartSqlTuningTaskDetails start_sql_tuning_task_details: (required)
             The detailed inputs required to start a SQL tuning task.
@@ -2410,7 +2410,7 @@ class SqlTuningClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int sql_tuning_set_id: (required)
             The unique identifier of the Sql tuning set. This is not OCID.

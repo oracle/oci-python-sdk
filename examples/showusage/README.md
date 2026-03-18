@@ -64,7 +64,7 @@ Please follow [Oracle Python SDK Documentation](https://github.com/oracle/oci-py
 4. Create new User  : showuser.user -> Add to ShowUsageGroup group  
 
 5. Config OCI config file - ~/.oci/config
-   Please follow SDK config documentation - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm 
+   Please follow SDK config documentation - https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm 
 ```
 
 ## Copy the Software

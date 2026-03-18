@@ -340,7 +340,7 @@ class ClusterSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ClusterSummary.
@@ -356,7 +356,7 @@ class ClusterSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ClusterSummary.
@@ -372,7 +372,7 @@ class ClusterSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ClusterSummary.
@@ -388,7 +388,7 @@ class ClusterSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ClusterSummary.
@@ -476,7 +476,7 @@ class ClusterSummary(object):
         Gets the lifecycle_state of this ClusterSummary.
         The state of the cluster masters. For more information, see `Monitoring Clusters`__
 
-        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
+        __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
         Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -493,7 +493,7 @@ class ClusterSummary(object):
         Sets the lifecycle_state of this ClusterSummary.
         The state of the cluster masters. For more information, see `Monitoring Clusters`__
 
-        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
+        __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
 
         :param lifecycle_state: The lifecycle_state of this ClusterSummary.
@@ -630,7 +630,7 @@ class ClusterSummary(object):
         Gets the type of this ClusterSummary.
         Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see `Cluster Types`__
 
-        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm
+        __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm
 
         Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -647,7 +647,7 @@ class ClusterSummary(object):
         Sets the type of this ClusterSummary.
         Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see `Cluster Types`__
 
-        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm
+        __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm
 
 
         :param type: The type of this ClusterSummary.

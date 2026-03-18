@@ -14,7 +14,7 @@ class GuestOsCompartmentIdFilter(GuestOsFleetDiscoveryFilter):
     """
     List of `OCIDs`__ of compartments to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-    __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -59,7 +59,7 @@ class GuestOsCompartmentIdFilter(GuestOsFleetDiscoveryFilter):
         **[Required]** Gets the identifiers of this GuestOsCompartmentIdFilter.
         List of `OCIDs`__ of Compartments to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifiers of this GuestOsCompartmentIdFilter.
@@ -73,7 +73,7 @@ class GuestOsCompartmentIdFilter(GuestOsFleetDiscoveryFilter):
         Sets the identifiers of this GuestOsCompartmentIdFilter.
         List of `OCIDs`__ of Compartments to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param identifiers: The identifiers of this GuestOsCompartmentIdFilter.

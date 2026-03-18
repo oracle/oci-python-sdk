@@ -194,7 +194,7 @@ class ManagedInstanceModuleSummary(object):
         Gets the software_source_id of this ManagedInstanceModuleSummary.
         The `OCID`__ of the software source that provides this module and the associated streams.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ManagedInstanceModuleSummary.
@@ -208,7 +208,7 @@ class ManagedInstanceModuleSummary(object):
         Sets the software_source_id of this ManagedInstanceModuleSummary.
         The `OCID`__ of the software source that provides this module and the associated streams.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ManagedInstanceModuleSummary.

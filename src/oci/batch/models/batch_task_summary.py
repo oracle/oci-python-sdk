@@ -122,7 +122,7 @@ class BatchTaskSummary(object):
         **[Required]** Gets the job_id of this BatchTaskSummary.
         The `OCID`__ of the batch job to which this task belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The job_id of this BatchTaskSummary.
@@ -136,7 +136,7 @@ class BatchTaskSummary(object):
         Sets the job_id of this BatchTaskSummary.
         The `OCID`__ of the batch job to which this task belongs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param job_id: The job_id of this BatchTaskSummary.

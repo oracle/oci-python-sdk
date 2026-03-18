@@ -33,7 +33,7 @@ class RedisClusterClientCompositeOperations(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.AttachOciCacheUsersDetails attach_oci_cache_users_details: (required)
             The parameter details to attach the OCI cache users to the redis cluster.
@@ -77,7 +77,7 @@ class RedisClusterClientCompositeOperations(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.ChangeRedisClusterCompartmentDetails change_redis_cluster_compartment_details: (required)
             The information to be updated.
@@ -160,7 +160,7 @@ class RedisClusterClientCompositeOperations(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.redis.models.WorkRequest.status`
@@ -209,7 +209,7 @@ class RedisClusterClientCompositeOperations(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.DetachOciCacheUsersDetails detach_oci_cache_users_details: (required)
             The parameter details to detach the OCI cache users to the redis cluster.
@@ -253,7 +253,7 @@ class RedisClusterClientCompositeOperations(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.UpdateRedisClusterDetails update_redis_cluster_details: (required)
             The information to be updated.

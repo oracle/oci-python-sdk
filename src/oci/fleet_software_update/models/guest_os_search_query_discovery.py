@@ -14,7 +14,7 @@ class GuestOsSearchQueryDiscovery(GuestOsFleetDiscoveryDetails):
     """
     Discover Exadata VM Cluster targets for a 'GUEST_OS' collection by querying `OCI Search Service`__ using specified query string.
 
-    __ https://docs.cloud.oracle.com/Content/Search/Concepts/queryoverview.htm
+    __ https://docs.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class GuestOsSearchQueryDiscovery(GuestOsFleetDiscoveryDetails):
         **[Required]** Gets the query of this GuestOsSearchQueryDiscovery.
         `OCI Search Service`__ query string.
 
-        __ https://docs.cloud.oracle.com/Content/Search/Concepts/queryoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm
 
 
         :return: The query of this GuestOsSearchQueryDiscovery.
@@ -65,7 +65,7 @@ class GuestOsSearchQueryDiscovery(GuestOsFleetDiscoveryDetails):
         Sets the query of this GuestOsSearchQueryDiscovery.
         `OCI Search Service`__ query string.
 
-        __ https://docs.cloud.oracle.com/Content/Search/Concepts/queryoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm
 
 
         :param query: The query of this GuestOsSearchQueryDiscovery.

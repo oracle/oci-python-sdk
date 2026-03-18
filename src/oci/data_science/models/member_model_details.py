@@ -70,7 +70,7 @@ class MemberModelDetails(object):
         **[Required]** Gets the model_id of this MemberModelDetails.
         The `OCID`__ of the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The model_id of this MemberModelDetails.
@@ -84,7 +84,7 @@ class MemberModelDetails(object):
         Sets the model_id of this MemberModelDetails.
         The `OCID`__ of the model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param model_id: The model_id of this MemberModelDetails.

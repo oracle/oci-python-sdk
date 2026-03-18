@@ -134,7 +134,7 @@ class PerfhubClient(object):
         :param str managed_database_id: (required)
             The `OCID`__ of the Managed Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifySnapshotSettingsDetails modify_snapshot_settings_details: (required)
             Request to modify snapshot settings for a Database.

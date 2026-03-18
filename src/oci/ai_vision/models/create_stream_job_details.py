@@ -81,7 +81,7 @@ class CreateStreamJobDetails(object):
         **[Required]** Gets the stream_source_id of this CreateStreamJobDetails.
         `OCID`__ of streamSource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_source_id of this CreateStreamJobDetails.
@@ -95,7 +95,7 @@ class CreateStreamJobDetails(object):
         Sets the stream_source_id of this CreateStreamJobDetails.
         `OCID`__ of streamSource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_source_id: The stream_source_id of this CreateStreamJobDetails.
@@ -153,7 +153,7 @@ class CreateStreamJobDetails(object):
         **[Required]** Gets the compartment_id of this CreateStreamJobDetails.
         `OCID`__ of the compartment
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateStreamJobDetails.
@@ -167,7 +167,7 @@ class CreateStreamJobDetails(object):
         Sets the compartment_id of this CreateStreamJobDetails.
         `OCID`__ of the compartment
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateStreamJobDetails.

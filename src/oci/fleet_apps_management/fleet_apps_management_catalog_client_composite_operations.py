@@ -33,7 +33,7 @@ class FleetAppsManagementCatalogClientCompositeOperations(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.ChangeCatalogItemCompartmentDetails change_catalog_item_compartment_details: (required)
             Details of the target compartment.
@@ -77,7 +77,7 @@ class FleetAppsManagementCatalogClientCompositeOperations(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.CloneCatalogItemDetails clone_catalog_item_details: (required)
             The information to be updated.
@@ -121,7 +121,7 @@ class FleetAppsManagementCatalogClientCompositeOperations(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.ConfigureCatalogItemDetails configure_catalog_item_details: (required)
             The information to be updated.
@@ -204,7 +204,7 @@ class FleetAppsManagementCatalogClientCompositeOperations(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -253,7 +253,7 @@ class FleetAppsManagementCatalogClientCompositeOperations(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.UpdateCatalogItemDetails update_catalog_item_details: (required)
             The information to be updated.

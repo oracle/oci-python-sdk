@@ -53,7 +53,7 @@ class BlockVolumeAttachment(object):
         **[Required]** Gets the esxi_host_id of this BlockVolumeAttachment.
         The `OCIDs`__ of the ESXi host that block volume is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The esxi_host_id of this BlockVolumeAttachment.
@@ -67,7 +67,7 @@ class BlockVolumeAttachment(object):
         Sets the esxi_host_id of this BlockVolumeAttachment.
         The `OCIDs`__ of the ESXi host that block volume is attached to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param esxi_host_id: The esxi_host_id of this BlockVolumeAttachment.

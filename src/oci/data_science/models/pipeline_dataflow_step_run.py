@@ -85,7 +85,7 @@ class PipelineDataflowStepRun(PipelineStepRun):
         Gets the dataflow_run_id of this PipelineDataflowStepRun.
         The `OCID`__ of the dataflow run triggered for this step run.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dataflow_run_id of this PipelineDataflowStepRun.
@@ -99,7 +99,7 @@ class PipelineDataflowStepRun(PipelineStepRun):
         Sets the dataflow_run_id of this PipelineDataflowStepRun.
         The `OCID`__ of the dataflow run triggered for this step run.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dataflow_run_id: The dataflow_run_id of this PipelineDataflowStepRun.

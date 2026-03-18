@@ -16,7 +16,7 @@ class Listener(object):
     For more information on backend set configuration, see
     `Managing Load Balancer Listeners`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm
+    __ https://docs.oracle.com/iaas/Content/Balance/Tasks/managinglisteners.htm
     """
 
     def __init__(self, **kwargs):

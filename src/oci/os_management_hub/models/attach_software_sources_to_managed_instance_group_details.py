@@ -46,7 +46,7 @@ class AttachSoftwareSourcesToManagedInstanceGroupDetails(object):
         **[Required]** Gets the software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
         List of software source `OCIDs`__ to attach to the group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
@@ -60,7 +60,7 @@ class AttachSoftwareSourcesToManagedInstanceGroupDetails(object):
         Sets the software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
         List of software source `OCIDs`__ to attach to the group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_sources: The software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.

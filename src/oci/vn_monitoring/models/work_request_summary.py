@@ -158,7 +158,7 @@ class WorkRequestSummary(object):
         The `OCID`__ of the compartment
         that contains the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -173,7 +173,7 @@ class WorkRequestSummary(object):
         The `OCID`__ of the compartment
         that contains the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.
@@ -187,7 +187,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the id of this WorkRequestSummary.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequestSummary.
@@ -201,7 +201,7 @@ class WorkRequestSummary(object):
         Sets the id of this WorkRequestSummary.
         The `OCID`__ of the work request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequestSummary.

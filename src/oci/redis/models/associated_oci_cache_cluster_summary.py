@@ -39,7 +39,7 @@ class AssociatedOciCacheClusterSummary(object):
         **[Required]** Gets the id of this AssociatedOciCacheClusterSummary.
         The `OCID`__ of the cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :return: The id of this AssociatedOciCacheClusterSummary.
@@ -53,7 +53,7 @@ class AssociatedOciCacheClusterSummary(object):
         Sets the id of this AssociatedOciCacheClusterSummary.
         The `OCID`__ of the cluster.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
 
         :param id: The id of this AssociatedOciCacheClusterSummary.

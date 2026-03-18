@@ -132,7 +132,7 @@ class RedisClusterClient(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.AttachOciCacheUsersDetails attach_oci_cache_users_details: (required)
             The parameter details to attach the OCI cache users to the redis cluster.
@@ -369,13 +369,13 @@ class RedisClusterClient(object):
         """
         Moves an OCI Cache cluster into a different compartment within the same tenancy. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.ChangeRedisClusterCompartmentDetails change_redis_cluster_compartment_details: (required)
             The information to be updated.
@@ -500,7 +500,7 @@ class RedisClusterClient(object):
         """
         Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param oci.redis.models.CreateRedisClusterDetails create_redis_cluster_details: (required)
@@ -607,13 +607,13 @@ class RedisClusterClient(object):
         """
         Deletes the specified OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -727,7 +727,7 @@ class RedisClusterClient(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.DetachOciCacheUsersDetails detach_oci_cache_users_details: (required)
             The parameter details to detach the OCI cache users to the redis cluster.
@@ -852,13 +852,13 @@ class RedisClusterClient(object):
         """
         Retrieves the specified OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1070,7 +1070,7 @@ class RedisClusterClient(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
@@ -1231,7 +1231,7 @@ class RedisClusterClient(object):
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -1383,7 +1383,7 @@ class RedisClusterClient(object):
         """
         Lists the OCI Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str compartment_id: (optional)
@@ -1400,7 +1400,7 @@ class RedisClusterClient(object):
         :param str id: (optional)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1863,7 +1863,7 @@ class RedisClusterClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource affected by the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2013,13 +2013,13 @@ class RedisClusterClient(object):
         """
         Updates the specified OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
+        __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
             The `OCID`__ of the cluster.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
         :param oci.redis.models.UpdateRedisClusterDetails update_redis_cluster_details: (required)
             The information to be updated.

@@ -53,7 +53,7 @@ class KeyTabSecretDetails(object):
         **[Required]** Gets the key_tab_secret_id of this KeyTabSecretDetails.
         The `OCID`__ of the keytab secret in the Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_tab_secret_id of this KeyTabSecretDetails.
@@ -67,7 +67,7 @@ class KeyTabSecretDetails(object):
         Sets the key_tab_secret_id of this KeyTabSecretDetails.
         The `OCID`__ of the keytab secret in the Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_tab_secret_id: The key_tab_secret_id of this KeyTabSecretDetails.

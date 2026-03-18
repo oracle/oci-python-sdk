@@ -128,7 +128,7 @@ class CreatePrivateIpDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreatePrivateIpDetails.
@@ -145,7 +145,7 @@ class CreatePrivateIpDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreatePrivateIpDetails.
@@ -188,7 +188,7 @@ class CreatePrivateIpDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreatePrivateIpDetails.
@@ -205,7 +205,7 @@ class CreatePrivateIpDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreatePrivateIpDetails.
@@ -231,7 +231,7 @@ class CreatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this CreatePrivateIpDetails.
@@ -257,7 +257,7 @@ class CreatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this CreatePrivateIpDetails.
@@ -340,7 +340,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this CreatePrivateIpDetails.
@@ -355,7 +355,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this CreatePrivateIpDetails.
@@ -372,7 +372,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the VLAN from which the private IP is to be drawn. The IP address,
         *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this CreatePrivateIpDetails.
@@ -389,7 +389,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the VLAN from which the private IP is to be drawn. The IP address,
         *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this CreatePrivateIpDetails.
@@ -404,7 +404,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the subnet from which the private IP is to be drawn. The IP address,
         *if supplied*, must be valid for the given subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreatePrivateIpDetails.
@@ -419,7 +419,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the subnet from which the private IP is to be drawn. The IP address,
         *if supplied*, must be valid for the given subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreatePrivateIpDetails.
@@ -495,7 +495,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
@@ -511,7 +511,7 @@ class CreatePrivateIpDetails(object):
         The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
         `Per-resource Routing`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 

@@ -15,7 +15,7 @@ class UpdateExternalMacsConnectorDetails(UpdateExternalDatabaseConnectorDetails)
     Details for updating an external `Management Agent cloud service (MACS)`__
     database connection.
 
-    __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
+    __ https://docs.oracle.com/iaas/management-agents/index.html
     """
 
     def __init__(self, **kwargs):

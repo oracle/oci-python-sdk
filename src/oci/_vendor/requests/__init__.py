@@ -45,7 +45,7 @@ is at <https://requests.readthedocs.io>.
 :license: Apache 2.0, see LICENSE for more details.
 """
 
-from oci._vendor import urllib3
+import urllib3
 import warnings
 from .exceptions import RequestsDependencyWarning
 
@@ -70,9 +70,9 @@ def check_compatibility(urllib3_version, chardet_version, charset_normalizer_ver
     # Check urllib3 for compatibility.
     major, minor, patch = urllib3_version  # noqa: F811
     major, minor, patch = int(major), int(minor), int(patch)
-    # urllib3 >= 1.21.1, <= 1.26
-    assert major == 1
-    assert minor >= 21
+    # urllib3 >= 1.21.1, <= 2.6
+    assert major <= 2
+    assert minor >= 0
     assert minor <= 26
 
     # Check charset_normalizer for compatibility.
@@ -84,8 +84,8 @@ def check_compatibility(urllib3_version, chardet_version, charset_normalizer_ver
     elif charset_normalizer_version:
         major, minor, patch = charset_normalizer_version.split('.')[:3]
         major, minor, patch = int(major), int(minor), int(patch)
-        # charset_normalizer >= 2.0.0 < 3.0.0
-        assert (2, 0, 0) <= (major, minor, patch) < (3, 0, 0)
+        # charset_normalizer >= 2.0.0 < 4.0.0
+        assert (2, 0, 0) <= (major, minor, patch) < (4, 0, 0)
     else:
         raise Exception("You need either charset_normalizer or chardet installed")
 
@@ -118,7 +118,7 @@ try:
         ssl = None
 
     if not getattr(ssl, "HAS_SNI", False):
-        from oci._vendor.urllib3.contrib import pyopenssl
+        from urllib3.contrib import pyopenssl
         pyopenssl.inject_into_urllib3()
 
         # Check cryptography version
@@ -128,7 +128,7 @@ except ImportError:
     pass
 
 # urllib3's DependencyWarnings should be silenced.
-from oci._vendor.urllib3.exceptions import DependencyWarning
+from urllib3.exceptions import DependencyWarning
 warnings.simplefilter('ignore', DependencyWarning)
 
 from .__version__ import __title__, __description__, __url__, __version__

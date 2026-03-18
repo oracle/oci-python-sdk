@@ -62,7 +62,7 @@ class RunDataPatchDetails(object):
         Gets the pluggable_databases of this RunDataPatchDetails.
         List of Pluggable Database `OCIDs`__ to run datapatch on. The datapatch would run on the database first and then the given pluggable databases.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The pluggable_databases of this RunDataPatchDetails.
@@ -76,7 +76,7 @@ class RunDataPatchDetails(object):
         Sets the pluggable_databases of this RunDataPatchDetails.
         List of Pluggable Database `OCIDs`__ to run datapatch on. The datapatch would run on the database first and then the given pluggable databases.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param pluggable_databases: The pluggable_databases of this RunDataPatchDetails.

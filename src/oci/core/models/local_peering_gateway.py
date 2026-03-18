@@ -22,8 +22,8 @@ class LocalPeeringGateway(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a LocalPeeringGateway.
@@ -195,7 +195,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the compartment_id of this LocalPeeringGateway.
         The `OCID`__ of the compartment containing the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LocalPeeringGateway.
@@ -209,7 +209,7 @@ class LocalPeeringGateway(object):
         Sets the compartment_id of this LocalPeeringGateway.
         The `OCID`__ of the compartment containing the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LocalPeeringGateway.
@@ -226,7 +226,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LocalPeeringGateway.
@@ -243,7 +243,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LocalPeeringGateway.
@@ -286,7 +286,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LocalPeeringGateway.
@@ -303,7 +303,7 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LocalPeeringGateway.
@@ -321,8 +321,8 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :return: The security_attributes of this LocalPeeringGateway.
@@ -340,8 +340,8 @@ class LocalPeeringGateway(object):
 
         Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
-        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
 
 
         :param security_attributes: The security_attributes of this LocalPeeringGateway.
@@ -355,7 +355,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the id of this LocalPeeringGateway.
         The LPG's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LocalPeeringGateway.
@@ -369,7 +369,7 @@ class LocalPeeringGateway(object):
         Sets the id of this LocalPeeringGateway.
         The LPG's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LocalPeeringGateway.
@@ -565,7 +565,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the peer_id of this LocalPeeringGateway.
         The `OCID`__ of the peered LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_id of this LocalPeeringGateway.
@@ -579,7 +579,7 @@ class LocalPeeringGateway(object):
         Sets the peer_id of this LocalPeeringGateway.
         The `OCID`__ of the peered LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_id: The peer_id of this LocalPeeringGateway.
@@ -596,8 +596,8 @@ class LocalPeeringGateway(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
         :return: The route_table_id of this LocalPeeringGateway.
@@ -614,8 +614,8 @@ class LocalPeeringGateway(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
         :param route_table_id: The route_table_id of this LocalPeeringGateway.
@@ -661,7 +661,7 @@ class LocalPeeringGateway(object):
         **[Required]** Gets the vcn_id of this LocalPeeringGateway.
         The `OCID`__ of the VCN that uses the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this LocalPeeringGateway.
@@ -675,7 +675,7 @@ class LocalPeeringGateway(object):
         Sets the vcn_id of this LocalPeeringGateway.
         The `OCID`__ of the VCN that uses the LPG.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this LocalPeeringGateway.
