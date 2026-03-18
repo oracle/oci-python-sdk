@@ -112,7 +112,7 @@ class UpdateGoogleCloudStorageIcebergStorageDetails(UpdateIcebergStorageDetails)
         The `OCID`__ of the Secret where the content of the service account key file is stored,
         which contains the credentials required to use Google Cloud Storage.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The service_account_key_file_secret_id of this UpdateGoogleCloudStorageIcebergStorageDetails.
@@ -127,7 +127,7 @@ class UpdateGoogleCloudStorageIcebergStorageDetails(UpdateIcebergStorageDetails)
         The `OCID`__ of the Secret where the content of the service account key file is stored,
         which contains the credentials required to use Google Cloud Storage.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param service_account_key_file_secret_id: The service_account_key_file_secret_id of this UpdateGoogleCloudStorageIcebergStorageDetails.

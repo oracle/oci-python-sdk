@@ -119,7 +119,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         **[Required]** Gets the compartment_id of this CreateOperationsInsightsPrivateEndpointDetails.
         The compartment `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -133,7 +133,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         Sets the compartment_id of this CreateOperationsInsightsPrivateEndpointDetails.
         The compartment `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -147,7 +147,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         **[Required]** Gets the vcn_id of this CreateOperationsInsightsPrivateEndpointDetails.
         The VCN `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -161,7 +161,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         Sets the vcn_id of this CreateOperationsInsightsPrivateEndpointDetails.
         The VCN `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -175,7 +175,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         **[Required]** Gets the subnet_id of this CreateOperationsInsightsPrivateEndpointDetails.
         The Subnet `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -189,7 +189,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         Sets the subnet_id of this CreateOperationsInsightsPrivateEndpointDetails.
         The Subnet `OCID`__ of the Private service accessed database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -253,7 +253,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         Gets the nsg_ids of this CreateOperationsInsightsPrivateEndpointDetails.
         The `OCID`__ of the network security groups that the private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this CreateOperationsInsightsPrivateEndpointDetails.
@@ -267,7 +267,7 @@ class CreateOperationsInsightsPrivateEndpointDetails(object):
         Sets the nsg_ids of this CreateOperationsInsightsPrivateEndpointDetails.
         The `OCID`__ of the network security groups that the private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this CreateOperationsInsightsPrivateEndpointDetails.

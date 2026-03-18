@@ -91,7 +91,7 @@ class CreateKerberosDetails(object):
         Gets the key_tab_secret_id of this CreateKerberosDetails.
         The `OCID`__ of the keytab Secret in the Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_tab_secret_id of this CreateKerberosDetails.
@@ -105,7 +105,7 @@ class CreateKerberosDetails(object):
         Sets the key_tab_secret_id of this CreateKerberosDetails.
         The `OCID`__ of the keytab Secret in the Vault.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_tab_secret_id: The key_tab_secret_id of this CreateKerberosDetails.

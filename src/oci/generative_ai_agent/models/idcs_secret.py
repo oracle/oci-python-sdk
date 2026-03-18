@@ -118,7 +118,7 @@ class IdcsSecret(SecretDetail):
         **[Required]** Gets the vault_secret_id of this IdcsSecret.
         The `OCID`__ of the secret for client secret.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vault_secret_id of this IdcsSecret.
@@ -132,7 +132,7 @@ class IdcsSecret(SecretDetail):
         Sets the vault_secret_id of this IdcsSecret.
         The `OCID`__ of the secret for client secret.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vault_secret_id: The vault_secret_id of this IdcsSecret.

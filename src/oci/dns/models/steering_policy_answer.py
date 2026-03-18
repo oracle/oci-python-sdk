@@ -127,7 +127,7 @@ class SteeringPolicyAnswer(object):
         The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
         information, see `Supported DNS Resource Record Types`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rtype of this SteeringPolicyAnswer.
@@ -142,7 +142,7 @@ class SteeringPolicyAnswer(object):
         The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more
         information, see `Supported DNS Resource Record Types`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rtype: The rtype of this SteeringPolicyAnswer.
@@ -159,7 +159,7 @@ class SteeringPolicyAnswer(object):
         returned presentation of your RDATA may differ from its initial input.
         For more information about RDATA, see `Supported DNS Resource Record Types`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :return: The rdata of this SteeringPolicyAnswer.
@@ -176,7 +176,7 @@ class SteeringPolicyAnswer(object):
         returned presentation of your RDATA may differ from its initial input.
         For more information about RDATA, see `Supported DNS Resource Record Types`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
+        __ https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm
 
 
         :param rdata: The rdata of this SteeringPolicyAnswer.

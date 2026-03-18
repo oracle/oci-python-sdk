@@ -344,7 +344,7 @@ class LaunchDbSystemBase(object):
         **[Required]** Gets the compartment_id of this LaunchDbSystemBase.
         The `OCID`__ of the compartment the DB system  belongs in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LaunchDbSystemBase.
@@ -358,7 +358,7 @@ class LaunchDbSystemBase(object):
         Sets the compartment_id of this LaunchDbSystemBase.
         The `OCID`__ of the compartment the DB system  belongs in.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LaunchDbSystemBase.
@@ -484,7 +484,7 @@ class LaunchDbSystemBase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this LaunchDbSystemBase.
@@ -506,7 +506,7 @@ class LaunchDbSystemBase(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and the backup subnet.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this LaunchDbSystemBase.
@@ -522,7 +522,7 @@ class LaunchDbSystemBase(object):
 
         **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_subnet_id of this LaunchDbSystemBase.
@@ -538,7 +538,7 @@ class LaunchDbSystemBase(object):
 
         **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param backup_subnet_id: The backup_subnet_id of this LaunchDbSystemBase.
@@ -554,8 +554,8 @@ class LaunchDbSystemBase(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this LaunchDbSystemBase.
@@ -571,8 +571,8 @@ class LaunchDbSystemBase(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this LaunchDbSystemBase.
@@ -586,8 +586,8 @@ class LaunchDbSystemBase(object):
         Gets the backup_network_nsg_ids of this LaunchDbSystemBase.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this LaunchDbSystemBase.
@@ -601,8 +601,8 @@ class LaunchDbSystemBase(object):
         Sets the backup_network_nsg_ids of this LaunchDbSystemBase.
         A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata systems.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this LaunchDbSystemBase.
@@ -648,7 +648,7 @@ class LaunchDbSystemBase(object):
         Gets the time_zone of this LaunchDbSystemBase.
         The time zone to use for the DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :return: The time_zone of this LaunchDbSystemBase.
@@ -662,7 +662,7 @@ class LaunchDbSystemBase(object):
         Sets the time_zone of this LaunchDbSystemBase.
         The time zone to use for the DB system. For details, see `DB System Time Zones`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
 
 
         :param time_zone: The time_zone of this LaunchDbSystemBase.
@@ -696,7 +696,7 @@ class LaunchDbSystemBase(object):
         Gets the storage_volume_performance_mode of this LaunchDbSystemBase.
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm
 
         Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE"
 
@@ -712,7 +712,7 @@ class LaunchDbSystemBase(object):
         Sets the storage_volume_performance_mode of this LaunchDbSystemBase.
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm
 
 
         :param storage_volume_performance_mode: The storage_volume_performance_mode of this LaunchDbSystemBase.
@@ -857,7 +857,7 @@ class LaunchDbSystemBase(object):
         This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
         For information about the number of cores for a virtual machine DB system shape, see `Virtual Machine DB Systems`__
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine
 
 
         :return: The cpu_core_count of this LaunchDbSystemBase.
@@ -885,7 +885,7 @@ class LaunchDbSystemBase(object):
         This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
         For information about the number of cores for a virtual machine DB system shape, see `Virtual Machine DB Systems`__
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine
 
 
         :param cpu_core_count: The cpu_core_count of this LaunchDbSystemBase.
@@ -1050,7 +1050,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this LaunchDbSystemBase.
@@ -1067,7 +1067,7 @@ class LaunchDbSystemBase(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this LaunchDbSystemBase.
@@ -1082,7 +1082,7 @@ class LaunchDbSystemBase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this LaunchDbSystemBase.
@@ -1097,7 +1097,7 @@ class LaunchDbSystemBase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this LaunchDbSystemBase.
@@ -1113,7 +1113,7 @@ class LaunchDbSystemBase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this LaunchDbSystemBase.
@@ -1129,7 +1129,7 @@ class LaunchDbSystemBase(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this LaunchDbSystemBase.
@@ -1230,7 +1230,7 @@ class LaunchDbSystemBase(object):
         Gets the cluster_placement_group_id of this LaunchDbSystemBase.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this LaunchDbSystemBase.
@@ -1244,7 +1244,7 @@ class LaunchDbSystemBase(object):
         Sets the cluster_placement_group_id of this LaunchDbSystemBase.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this LaunchDbSystemBase.
@@ -1258,7 +1258,7 @@ class LaunchDbSystemBase(object):
         Gets the subscription_id of this LaunchDbSystemBase.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this LaunchDbSystemBase.
@@ -1272,7 +1272,7 @@ class LaunchDbSystemBase(object):
         Sets the subscription_id of this LaunchDbSystemBase.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this LaunchDbSystemBase.

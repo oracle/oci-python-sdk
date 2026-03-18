@@ -82,7 +82,7 @@ class ReadinessCheckTargetEntry(object):
         **[Required]** Gets the entity_id of this ReadinessCheckTargetEntry.
         Resource identifier `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The entity_id of this ReadinessCheckTargetEntry.
@@ -96,7 +96,7 @@ class ReadinessCheckTargetEntry(object):
         Sets the entity_id of this ReadinessCheckTargetEntry.
         Resource identifier `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param entity_id: The entity_id of this ReadinessCheckTargetEntry.

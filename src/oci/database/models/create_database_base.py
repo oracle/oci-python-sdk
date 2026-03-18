@@ -115,7 +115,7 @@ class CreateDatabaseBase(object):
         **[Required]** Gets the db_home_id of this CreateDatabaseBase.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_home_id of this CreateDatabaseBase.
@@ -129,7 +129,7 @@ class CreateDatabaseBase(object):
         Sets the db_home_id of this CreateDatabaseBase.
         The `OCID`__ of the Database Home.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_home_id: The db_home_id of this CreateDatabaseBase.

@@ -16,7 +16,7 @@ class LimitsIncreaseRequest(object):
     For information about limit increase requests, see
     `Working with Limit Increase Requests`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/requests.htm
+    __ https://docs.oracle.com/iaas/Content/General/service-limits/requests.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a LimitsIncreaseRequest.
@@ -160,7 +160,7 @@ class LimitsIncreaseRequest(object):
         **[Required]** Gets the id of this LimitsIncreaseRequest.
         The `OCID`__ of the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LimitsIncreaseRequest.
@@ -174,7 +174,7 @@ class LimitsIncreaseRequest(object):
         Sets the id of this LimitsIncreaseRequest.
         The `OCID`__ of the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LimitsIncreaseRequest.
@@ -213,7 +213,7 @@ class LimitsIncreaseRequest(object):
         The `OCID`__ of the compartment that contains the limit increase request.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LimitsIncreaseRequest.
@@ -228,7 +228,7 @@ class LimitsIncreaseRequest(object):
         The `OCID`__ of the compartment that contains the limit increase request.
         Note: The tenancy is the root compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LimitsIncreaseRequest.
@@ -242,7 +242,7 @@ class LimitsIncreaseRequest(object):
         Gets the subscription_id of this LimitsIncreaseRequest.
         The `OCID`__ of the tenancy subscription for the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this LimitsIncreaseRequest.
@@ -256,7 +256,7 @@ class LimitsIncreaseRequest(object):
         Sets the subscription_id of this LimitsIncreaseRequest.
         The `OCID`__ of the tenancy subscription for the limit increase request.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this LimitsIncreaseRequest.

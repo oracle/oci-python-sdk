@@ -59,7 +59,7 @@ class InstanceAgentPluginConfigDetails(object):
         operation in the Oracle Cloud Agent API. For more information about the available plugins, see
         `Managing Plugins with Oracle Cloud Agent`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
 
 
         :return: The name of this InstanceAgentPluginConfigDetails.
@@ -76,7 +76,7 @@ class InstanceAgentPluginConfigDetails(object):
         operation in the Oracle Cloud Agent API. For more information about the available plugins, see
         `Managing Plugins with Oracle Cloud Agent`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm
 
 
         :param name: The name of this InstanceAgentPluginConfigDetails.

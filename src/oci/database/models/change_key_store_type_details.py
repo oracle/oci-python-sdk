@@ -39,7 +39,7 @@ class ChangeKeyStoreTypeDetails(object):
         **[Required]** Gets the key_store_id of this ChangeKeyStoreTypeDetails.
         The `OCID`__ of the key store.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The key_store_id of this ChangeKeyStoreTypeDetails.
@@ -53,7 +53,7 @@ class ChangeKeyStoreTypeDetails(object):
         Sets the key_store_id of this ChangeKeyStoreTypeDetails.
         The `OCID`__ of the key store.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param key_store_id: The key_store_id of this ChangeKeyStoreTypeDetails.

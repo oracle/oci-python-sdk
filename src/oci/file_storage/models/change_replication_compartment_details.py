@@ -39,7 +39,7 @@ class ChangeReplicationCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeReplicationCompartmentDetails.
         The `OCID`__ of the compartment to move the replication to. Also changes the replication target's compartment in the target region.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeReplicationCompartmentDetails.
@@ -53,7 +53,7 @@ class ChangeReplicationCompartmentDetails(object):
         Sets the compartment_id of this ChangeReplicationCompartmentDetails.
         The `OCID`__ of the compartment to move the replication to. Also changes the replication target's compartment in the target region.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeReplicationCompartmentDetails.

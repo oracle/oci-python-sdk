@@ -108,7 +108,7 @@ class PatchingIssueEntry(object):
         **[Required]** Gets the impacted_resource_id of this PatchingIssueEntry.
         The `OCID`__ of the resource impacted by the patching issue.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The impacted_resource_id of this PatchingIssueEntry.
@@ -122,7 +122,7 @@ class PatchingIssueEntry(object):
         Sets the impacted_resource_id of this PatchingIssueEntry.
         The `OCID`__ of the resource impacted by the patching issue.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param impacted_resource_id: The impacted_resource_id of this PatchingIssueEntry.

@@ -105,7 +105,7 @@ class AlarmSuppressionHistoryItem(object):
         **[Required]** Gets the suppression_id of this AlarmSuppressionHistoryItem.
         The `OCID`__ of the alarm suppression.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The suppression_id of this AlarmSuppressionHistoryItem.
@@ -119,7 +119,7 @@ class AlarmSuppressionHistoryItem(object):
         Sets the suppression_id of this AlarmSuppressionHistoryItem.
         The `OCID`__ of the alarm suppression.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param suppression_id: The suppression_id of this AlarmSuppressionHistoryItem.

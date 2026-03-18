@@ -142,7 +142,7 @@ class DrgRouteDistribution(object):
         **[Required]** Gets the drg_id of this DrgRouteDistribution.
         The `OCID`__ of the DRG that contains this route distribution.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this DrgRouteDistribution.
@@ -156,7 +156,7 @@ class DrgRouteDistribution(object):
         Sets the drg_id of this DrgRouteDistribution.
         The `OCID`__ of the DRG that contains this route distribution.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this DrgRouteDistribution.
@@ -170,7 +170,7 @@ class DrgRouteDistribution(object):
         **[Required]** Gets the compartment_id of this DrgRouteDistribution.
         The `OCID`__ of the compartment containing the route distribution.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DrgRouteDistribution.
@@ -184,7 +184,7 @@ class DrgRouteDistribution(object):
         Sets the compartment_id of this DrgRouteDistribution.
         The `OCID`__ of the compartment containing the route distribution.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DrgRouteDistribution.
@@ -201,7 +201,7 @@ class DrgRouteDistribution(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DrgRouteDistribution.
@@ -218,7 +218,7 @@ class DrgRouteDistribution(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DrgRouteDistribution.
@@ -261,7 +261,7 @@ class DrgRouteDistribution(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DrgRouteDistribution.
@@ -278,7 +278,7 @@ class DrgRouteDistribution(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DrgRouteDistribution.
@@ -292,7 +292,7 @@ class DrgRouteDistribution(object):
         **[Required]** Gets the id of this DrgRouteDistribution.
         The route distribution's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DrgRouteDistribution.
@@ -306,7 +306,7 @@ class DrgRouteDistribution(object):
         Sets the id of this DrgRouteDistribution.
         The route distribution's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DrgRouteDistribution.

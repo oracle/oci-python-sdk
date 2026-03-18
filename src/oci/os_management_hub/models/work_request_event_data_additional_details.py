@@ -46,7 +46,7 @@ class WorkRequestEventDataAdditionalDetails(object):
         **[Required]** Gets the initiator_id of this WorkRequestEventDataAdditionalDetails.
         The `OCID`__ of the resource that triggered the event, such as scheduled job id.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The initiator_id of this WorkRequestEventDataAdditionalDetails.
@@ -60,7 +60,7 @@ class WorkRequestEventDataAdditionalDetails(object):
         Sets the initiator_id of this WorkRequestEventDataAdditionalDetails.
         The `OCID`__ of the resource that triggered the event, such as scheduled job id.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param initiator_id: The initiator_id of this WorkRequestEventDataAdditionalDetails.
@@ -74,7 +74,7 @@ class WorkRequestEventDataAdditionalDetails(object):
         Gets the work_request_ids of this WorkRequestEventDataAdditionalDetails.
         List of all work request `OCIDs`__ associated with the event.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_ids of this WorkRequestEventDataAdditionalDetails.
@@ -88,7 +88,7 @@ class WorkRequestEventDataAdditionalDetails(object):
         Sets the work_request_ids of this WorkRequestEventDataAdditionalDetails.
         List of all work request `OCIDs`__ associated with the event.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_ids: The work_request_ids of this WorkRequestEventDataAdditionalDetails.

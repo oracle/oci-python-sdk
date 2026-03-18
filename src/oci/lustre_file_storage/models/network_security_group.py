@@ -14,8 +14,8 @@ class NetworkSecurityGroup(object):
     """
     A list of Network Security Group `OCIDs`__ associated with this Lustre file system. For more information about NSGs, see `Security Rules`__.
 
-    __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
     """
 
     def __init__(self, **kwargs):
@@ -45,8 +45,8 @@ class NetworkSecurityGroup(object):
         Setting this to an empty array after the list is created removes the lustre file system from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this NetworkSecurityGroup.
@@ -63,8 +63,8 @@ class NetworkSecurityGroup(object):
         Setting this to an empty array after the list is created removes the lustre file system from all NSGs.
         For more information about NSGs, see `Security Rules`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this NetworkSecurityGroup.

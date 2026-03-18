@@ -14,7 +14,7 @@ class FusionEnvironmentStatus(object):
     """
     The health status of the Fusion Applications environment. For more information, see `Environment Status`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/fusion-applications/manage-environment.htm#environment-status
+    __ https://docs.oracle.com/iaas/Content/fusion-applications/manage-environment.htm#environment-status
     """
 
     #: A constant which can be used with the status property of a FusionEnvironmentStatus.

@@ -103,7 +103,7 @@ class OperationsInsightsConfig(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The operations_insights_connector_id of this OperationsInsightsConfig.
@@ -118,7 +118,7 @@ class OperationsInsightsConfig(object):
         The `OCID`__ of the
         :func:`create_external_database_connector_details`.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param operations_insights_connector_id: The operations_insights_connector_id of this OperationsInsightsConfig.

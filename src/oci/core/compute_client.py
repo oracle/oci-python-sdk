@@ -138,7 +138,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -259,7 +259,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str shape_name: (required)
             Shape name.
@@ -368,7 +368,7 @@ class ComputeClient(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -591,12 +591,12 @@ class ComputeClient(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AttachComputeHostGroupHostDetails attach_compute_host_group_host_details: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -721,7 +721,7 @@ class ComputeClient(object):
         For more information about secondary VNICs, see
         `Virtual Network Interface Cards (VNICs)`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
 
 
         :param oci.core.models.AttachVnicDetails attach_vnic_details: (required)
@@ -1035,7 +1035,7 @@ class ComputeClient(object):
         moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str capacity_reservation_id: (required)
@@ -1162,13 +1162,13 @@ class ComputeClient(object):
         Moves a compute capacity topology into a different compartment. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeComputeCapacityTopologyCompartmentDetails change_compute_capacity_topology_compartment_details: (required)
             The configuration details for the move operation.
@@ -1296,8 +1296,8 @@ class ComputeClient(object):
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_cluster_id: (required)
@@ -1305,8 +1305,8 @@ class ComputeClient(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param oci.core.models.ChangeComputeClusterCompartmentDetails change_compute_cluster_compartment_details: (required)
             The request to move the compute cluster to a different compartment.
@@ -1429,7 +1429,7 @@ class ComputeClient(object):
         Moves a compute GPU memory cluster into a different compartment. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_gpu_memory_cluster_id: (required)
@@ -1558,7 +1558,7 @@ class ComputeClient(object):
         Moves a compute GPU memory fabric into a different compartment. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_gpu_memory_fabric_id: (required)
@@ -1687,13 +1687,13 @@ class ComputeClient(object):
         Moves a compute host into a different compartment. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeComputeHostCompartmentDetails change_compute_host_compartment_details: (required)
             The configuration details for the move operation.
@@ -1818,13 +1818,13 @@ class ComputeClient(object):
         Moves a compute host group into a different compartment. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeComputeHostGroupCompartmentDetails change_compute_host_group_compartment_details: (required)
             The configuration details for the move operation.
@@ -1950,7 +1950,7 @@ class ComputeClient(object):
         For information about moving resources between compartments, see
                 `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_image_capability_schema_id: (required)
@@ -2204,13 +2204,13 @@ class ComputeClient(object):
         resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeImageCompartmentDetails change_image_compartment_details: (required)
             Request to change the compartment of a given image.
@@ -2339,13 +2339,13 @@ class ComputeClient(object):
         When you move an instance to a different compartment, associated resources such as boot volumes and VNICs
         are not moved.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeInstanceCompartmentDetails change_instance_compartment_details: (required)
             Request to change the compartment of a given instance.
@@ -2471,7 +2471,7 @@ class ComputeClient(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -2807,7 +2807,7 @@ class ComputeClient(object):
         and you won't get out of capacity errors.
         For more information, see `Reserved Capacity`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
 
 
         :param oci.core.models.CreateComputeCapacityReservationDetails create_compute_capacity_reservation_details: (required)
@@ -3037,7 +3037,7 @@ class ComputeClient(object):
         create a cluster network that uses instance pools by using the
         :func:`create_cluster_network` operation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param oci.core.models.CreateComputeClusterDetails create_compute_cluster_details: (required)
@@ -3053,7 +3053,7 @@ class ComputeClient(object):
             For details about creating a cluster network that uses instance pools to manage groups of identical instances,
             see :func:`create_cluster_network_details`.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3470,7 +3470,7 @@ class ComputeClient(object):
         that are a single tenant and not shared with other customers.
         For more information, see `Dedicated Virtual Machine Hosts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm
 
 
         :param oci.core.models.CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
@@ -3598,10 +3598,10 @@ class ComputeClient(object):
         It does not have to be unique, and you can change it. See :func:`update_image`.
         Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm
 
 
         :param oci.core.models.CreateImageDetails create_image_details: (required)
@@ -3707,7 +3707,7 @@ class ComputeClient(object):
 
         For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm
 
 
         :param oci.core.models.CreateInstanceConsoleConnectionDetails create_instance_console_connection_details: (required)
@@ -3814,7 +3814,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_version: (required)
             Listing Resource Version.
@@ -4015,7 +4015,7 @@ class ComputeClient(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4128,7 +4128,7 @@ class ComputeClient(object):
         Before you delete a compute cluster, first delete all instances in the cluster by using
         the :func:`terminate_instance` operation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compute_cluster_id: (required)
@@ -4136,8 +4136,8 @@ class ComputeClient(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -4359,7 +4359,7 @@ class ComputeClient(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -4781,7 +4781,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5095,12 +5095,12 @@ class ComputeClient(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.DetachComputeHostGroupHostDetails detach_compute_host_group_host_details: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5230,7 +5230,7 @@ class ComputeClient(object):
         deleting the VNIC causes that route rule to blackhole and the traffic
         will be dropped.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
         :param str vnic_attachment_id: (required)
@@ -5450,16 +5450,16 @@ class ComputeClient(object):
         See `Object Storage URLs`__ and `Using Pre-Authenticated Requests`__
         for constructing URLs for image import/export.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
-        __ https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs
+        __ https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ExportImageDetails export_image_details: (required)
             Details for the image export.
@@ -6069,7 +6069,7 @@ class ComputeClient(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6174,7 +6174,7 @@ class ComputeClient(object):
         Gets information about a compute cluster. A `compute cluster`__
         is a remote direct memory access (RDMA) network group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compute_cluster_id: (required)
@@ -6182,8 +6182,8 @@ class ComputeClient(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6289,7 +6289,7 @@ class ComputeClient(object):
         :param str compute_global_image_capability_schema_id: (required)
             The `OCID`__ of the compute global image capability schema
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6385,7 +6385,7 @@ class ComputeClient(object):
         :param str compute_global_image_capability_schema_id: (required)
             The `OCID`__ of the compute global image capability schema
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_global_image_capability_schema_version_name: (required)
             The name of the compute global image capability schema version
@@ -6695,7 +6695,7 @@ class ComputeClient(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6803,7 +6803,7 @@ class ComputeClient(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -7438,7 +7438,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7534,7 +7534,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str shape_name: (required)
             Shape name.
@@ -7649,7 +7649,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7936,13 +7936,13 @@ class ComputeClient(object):
         Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
         `Infrastructure Maintenance`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
 
 
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -8048,7 +8048,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -8339,7 +8339,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8469,17 +8469,17 @@ class ComputeClient(object):
         For more information about managing instance lifecycle states, see
         `Stopping and Starting an Instance`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm
 
 
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the instance.
@@ -8658,10 +8658,10 @@ class ComputeClient(object):
         use the :func:`create_compute_capacity_report`
         operation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm
 
 
         :param oci.core.models.LaunchInstanceDetails launch_instance_details: (required)
@@ -8772,14 +8772,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -8909,14 +8909,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
@@ -9045,7 +9045,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -9054,14 +9054,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -9208,7 +9208,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -9217,14 +9217,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -9333,7 +9333,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -9351,14 +9351,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -9510,7 +9510,7 @@ class ComputeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -9523,14 +9523,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -9685,7 +9685,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -9707,14 +9707,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -9869,7 +9869,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -9886,14 +9886,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10040,7 +10040,7 @@ class ComputeClient(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -10050,22 +10050,22 @@ class ComputeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_hpc_island_id: (optional)
             The `OCID`__ of the compute HPC island.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_network_block_id: (optional)
             The `OCID`__ of the compute network block.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_local_block_id: (optional)
             The `OCID`__ of the compute local block.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -10074,14 +10074,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10245,7 +10245,7 @@ class ComputeClient(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -10255,7 +10255,7 @@ class ComputeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -10264,14 +10264,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10429,7 +10429,7 @@ class ComputeClient(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -10439,12 +10439,12 @@ class ComputeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_hpc_island_id: (optional)
             The `OCID`__ of the compute HPC island.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -10453,14 +10453,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -10617,13 +10617,13 @@ class ComputeClient(object):
         Lists the compute clusters in the specified compartment.
         A `compute cluster`__ is a remote direct memory access (RDMA) network group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -10640,14 +10640,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -10792,7 +10792,7 @@ class ComputeClient(object):
         :param str compute_global_image_capability_schema_id: (required)
             The `OCID`__ of the compute global image capability schema
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -10804,14 +10804,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -10970,14 +10970,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -11125,7 +11125,7 @@ class ComputeClient(object):
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -11152,7 +11152,7 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11284,7 +11284,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -11306,15 +11306,15 @@ class ComputeClient(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -11341,7 +11341,7 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11470,7 +11470,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -11490,12 +11490,12 @@ class ComputeClient(object):
         :param str compute_hpc_island_id: (optional)
             The `OCID`__ of the compute HPC island.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_network_block_id: (optional)
             The `OCID`__ of the compute network block.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compute_gpu_memory_fabric_lifecycle_state: (optional)
             A filter to return ComputeGpuMemoryFabricSummary resources that match the given lifecycle state.
@@ -11514,14 +11514,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -11688,7 +11688,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -11699,7 +11699,7 @@ class ComputeClient(object):
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11708,7 +11708,7 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11811,7 +11811,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -11831,7 +11831,7 @@ class ComputeClient(object):
             - Customer-unique network block ID
             - Customer-unique local block ID
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -11840,14 +11840,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -11876,7 +11876,7 @@ class ComputeClient(object):
         :param str compute_host_group_id: (optional)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compute_host_in_subtree: (optional)
             When set to true, all the compartments in the tenancy are traversed
@@ -12019,7 +12019,7 @@ class ComputeClient(object):
         :param str image_id: (optional)
             The `OCID`__ of an image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -12031,14 +12031,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -12179,7 +12179,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -12193,14 +12193,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -12357,7 +12357,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -12374,14 +12374,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -12490,7 +12490,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str dedicated_vm_host_id: (required)
             The OCID of the dedicated VM host.
@@ -12510,14 +12510,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -12674,7 +12674,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -12691,14 +12691,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -12810,7 +12810,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -12835,14 +12835,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -13017,7 +13017,7 @@ class ComputeClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_default_bundle: (optional)
             If true, return only the default firmware bundle for a given platform. Default is false.
@@ -13029,14 +13029,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state name exactly.
@@ -13150,7 +13150,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -13159,14 +13159,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -13290,14 +13290,14 @@ class ComputeClient(object):
         **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
         The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/images.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -13322,14 +13322,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -13486,13 +13486,13 @@ class ComputeClient(object):
 
         For more information about instance console connections, see `Troubleshooting Instances Using Instance Console Connections`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -13504,14 +13504,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13611,7 +13611,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_available: (optional)
             A filter to return only available devices or only used devices.
@@ -13626,14 +13626,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -13789,7 +13789,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -13822,14 +13822,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -13994,7 +13994,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -14009,8 +14009,8 @@ class ComputeClient(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -14022,14 +14022,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -14187,7 +14187,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -14201,19 +14201,19 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str image_id: (optional)
             The `OCID`__ of an image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str shape: (optional)
             Shape name.
@@ -14322,7 +14322,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -14339,14 +14339,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str vnic_id: (optional)
             The OCID of the VNIC.
@@ -14457,7 +14457,7 @@ class ComputeClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -14471,14 +14471,14 @@ class ComputeClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
             call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -14588,7 +14588,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str shape_name: (required)
             Shape name.
@@ -14695,7 +14695,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14951,7 +14951,7 @@ class ComputeClient(object):
         :param str compute_capacity_topology_id: (required)
             The `OCID`__ of the compute capacity topology.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeCapacityTopologyDetails update_compute_capacity_topology_details: (required)
             Update compute capacity topology details.
@@ -15072,7 +15072,7 @@ class ComputeClient(object):
         To delete instances from a compute cluster, use the :func:`terminate_instance`
         operation.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compute_cluster_id: (required)
@@ -15080,8 +15080,8 @@ class ComputeClient(object):
             A `compute cluster`__ is a remote direct memory
             access (RDMA) network group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-            __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
         :param oci.core.models.UpdateComputeClusterDetails update_compute_cluster_details: (required)
             Details for updating the compute cluster.
@@ -15466,7 +15466,7 @@ class ComputeClient(object):
         :param str compute_host_group_id: (required)
             The `OCID`__ of the compute host group.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeHostGroupDetails update_compute_host_group_details: (required)
             Update compute host group details.
@@ -15596,7 +15596,7 @@ class ComputeClient(object):
         :param str compute_host_id: (required)
             The `OCID`__ of the compute host.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateComputeHostsDetails update_compute_hosts_details: (required)
             Update compute capacity topology details.
@@ -16071,7 +16071,7 @@ class ComputeClient(object):
         :param str image_id: (required)
             The `OCID`__ of the image.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateImageDetails update_image_details: (required)
             Updates the image display name field. Avoid entering confidential information.
@@ -16199,7 +16199,7 @@ class ComputeClient(object):
         :param str instance_id: (required)
             The `OCID`__ of the instance.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInstanceDetails update_instance_details: (required)
             Update instance fields

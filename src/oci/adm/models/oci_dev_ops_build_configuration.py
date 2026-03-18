@@ -56,7 +56,7 @@ class OciDevOpsBuildConfiguration(VerifyConfiguration):
         **[Required]** Gets the pipeline_id of this OciDevOpsBuildConfiguration.
         The Oracle Cloud Identifier (`OCID`__) of the user's DevOps Build Pipeline.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The pipeline_id of this OciDevOpsBuildConfiguration.
@@ -70,7 +70,7 @@ class OciDevOpsBuildConfiguration(VerifyConfiguration):
         Sets the pipeline_id of this OciDevOpsBuildConfiguration.
         The Oracle Cloud Identifier (`OCID`__) of the user's DevOps Build Pipeline.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param pipeline_id: The pipeline_id of this OciDevOpsBuildConfiguration.

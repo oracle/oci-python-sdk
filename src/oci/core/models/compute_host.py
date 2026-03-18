@@ -322,7 +322,7 @@ class ComputeHost(object):
         The `OCID`__ for the compartment. This should always be the root
         compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ComputeHost.
@@ -337,7 +337,7 @@ class ComputeHost(object):
         The `OCID`__ for the compartment. This should always be the root
         compartment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ComputeHost.
@@ -351,7 +351,7 @@ class ComputeHost(object):
         **[Required]** Gets the id of this ComputeHost.
         The `OCID`__ for the Customer-unique host
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ComputeHost.
@@ -365,7 +365,7 @@ class ComputeHost(object):
         Sets the id of this ComputeHost.
         The `OCID`__ for the Customer-unique host
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ComputeHost.
@@ -415,7 +415,7 @@ class ComputeHost(object):
         Gets the hpc_island_id of this ComputeHost.
         The `OCID`__ for Customer-unique HPC Island
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The hpc_island_id of this ComputeHost.
@@ -429,7 +429,7 @@ class ComputeHost(object):
         Sets the hpc_island_id of this ComputeHost.
         The `OCID`__ for Customer-unique HPC Island
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param hpc_island_id: The hpc_island_id of this ComputeHost.
@@ -467,7 +467,7 @@ class ComputeHost(object):
         Gets the compute_host_group_id of this ComputeHost.
         The `OCID`__ for the Customer-unique host group associated with the Compute Bare Metal Host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_host_group_id of this ComputeHost.
@@ -481,7 +481,7 @@ class ComputeHost(object):
         Sets the compute_host_group_id of this ComputeHost.
         The `OCID`__ for the Customer-unique host group associated with the Compute Bare Metal Host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_host_group_id: The compute_host_group_id of this ComputeHost.
@@ -597,7 +597,7 @@ class ComputeHost(object):
         Gets the firmware_bundle_id of this ComputeHost.
         The `OCID`__ for the Customer-unique firmware bundle associated with the Host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The firmware_bundle_id of this ComputeHost.
@@ -611,7 +611,7 @@ class ComputeHost(object):
         Sets the firmware_bundle_id of this ComputeHost.
         The `OCID`__ for the Customer-unique firmware bundle associated with the Host.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param firmware_bundle_id: The firmware_bundle_id of this ComputeHost.
@@ -649,7 +649,7 @@ class ComputeHost(object):
         Gets the network_block_id of this ComputeHost.
         The `OCID`__ for Customer-unique Network Block
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_block_id of this ComputeHost.
@@ -663,7 +663,7 @@ class ComputeHost(object):
         Sets the network_block_id of this ComputeHost.
         The `OCID`__ for Customer-unique Network Block
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_block_id: The network_block_id of this ComputeHost.
@@ -677,7 +677,7 @@ class ComputeHost(object):
         Gets the local_block_id of this ComputeHost.
         The `OCID`__ for Customer-unique Local Block
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The local_block_id of this ComputeHost.
@@ -691,7 +691,7 @@ class ComputeHost(object):
         Sets the local_block_id of this ComputeHost.
         The `OCID`__ for Customer-unique Local Block
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param local_block_id: The local_block_id of this ComputeHost.
@@ -705,7 +705,7 @@ class ComputeHost(object):
         Gets the gpu_memory_fabric_id of this ComputeHost.
         The `OCID`__ for Customer-unique GPU Memory Fabric
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gpu_memory_fabric_id of this ComputeHost.
@@ -719,7 +719,7 @@ class ComputeHost(object):
         Sets the gpu_memory_fabric_id of this ComputeHost.
         The `OCID`__ for Customer-unique GPU Memory Fabric
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gpu_memory_fabric_id: The gpu_memory_fabric_id of this ComputeHost.
@@ -733,7 +733,7 @@ class ComputeHost(object):
         Gets the instance_id of this ComputeHost.
         The public `OCID`__ for the Virtual Machine or Bare Metal instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this ComputeHost.
@@ -747,7 +747,7 @@ class ComputeHost(object):
         Sets the instance_id of this ComputeHost.
         The public `OCID`__ for the Virtual Machine or Bare Metal instance
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this ComputeHost.
@@ -893,7 +893,7 @@ class ComputeHost(object):
         Gets the capacity_reservation_id of this ComputeHost.
         The `OCID`__ for the Capacity Reserver that is currently on host
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The capacity_reservation_id of this ComputeHost.
@@ -907,7 +907,7 @@ class ComputeHost(object):
         Sets the capacity_reservation_id of this ComputeHost.
         The `OCID`__ for the Capacity Reserver that is currently on host
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this ComputeHost.
@@ -1016,7 +1016,7 @@ class ComputeHost(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ComputeHost.
@@ -1033,7 +1033,7 @@ class ComputeHost(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ComputeHost.
@@ -1076,7 +1076,7 @@ class ComputeHost(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ComputeHost.
@@ -1093,7 +1093,7 @@ class ComputeHost(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ComputeHost.

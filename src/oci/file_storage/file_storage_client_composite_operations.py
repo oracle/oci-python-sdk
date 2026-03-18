@@ -33,7 +33,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_id: (required)
             The `OCID`__ of the export.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_export_lock_details: (required)
             The details to be updated for the AddLock.
@@ -80,7 +80,7 @@ class FileStorageClientCompositeOperations(object):
         :param str file_system_id: (required)
             The `OCID`__ of the file system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_file_system_lock_details: (required)
             The details to be updated for the AddLock.
@@ -127,7 +127,7 @@ class FileStorageClientCompositeOperations(object):
         :param str filesystem_snapshot_policy_id: (required)
             The `OCID`__ of the file system snapshot policy.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_filesystem_snapshot_policy_lock_details: (required)
             The details to be updated for the AddLock.
@@ -174,7 +174,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_mount_target_lock_details: (required)
             The details to be updated for the AddLock.
@@ -221,7 +221,7 @@ class FileStorageClientCompositeOperations(object):
         :param str outbound_connector_id: (required)
             The `OCID`__ of the outbound connector.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_outbound_connector_lock_details: (required)
             The details to be updated for the AddLock.
@@ -268,7 +268,7 @@ class FileStorageClientCompositeOperations(object):
         :param str replication_id: (required)
             The `OCID`__ of the replication.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_replication_lock_details: (required)
             The details to be updated for the AddLock.
@@ -315,7 +315,7 @@ class FileStorageClientCompositeOperations(object):
         :param str snapshot_id: (required)
             The `OCID`__ of the snapshot.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock add_snapshot_lock_details: (required)
             The details to be updated for the AddLock.
@@ -362,7 +362,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.MountTarget.lifecycle_state`
@@ -700,7 +700,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_id: (required)
             The `OCID`__ of the export.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.Export.lifecycle_state`
@@ -761,7 +761,7 @@ class FileStorageClientCompositeOperations(object):
         :param str file_system_id: (required)
             The `OCID`__ of the file system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.FileSystem.lifecycle_state`
@@ -822,7 +822,7 @@ class FileStorageClientCompositeOperations(object):
         :param str filesystem_snapshot_policy_id: (required)
             The `OCID`__ of the file system snapshot policy.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.FilesystemSnapshotPolicy.lifecycle_state`
@@ -883,7 +883,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.MountTarget.lifecycle_state`
@@ -944,7 +944,7 @@ class FileStorageClientCompositeOperations(object):
         :param str outbound_connector_id: (required)
             The `OCID`__ of the outbound connector.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.OutboundConnector.lifecycle_state`
@@ -1005,7 +1005,7 @@ class FileStorageClientCompositeOperations(object):
         :param str replication_id: (required)
             The `OCID`__ of the replication.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.Replication.lifecycle_state`
@@ -1066,7 +1066,7 @@ class FileStorageClientCompositeOperations(object):
         :param str replication_target_id: (required)
             The `OCID`__ of the replication target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.ReplicationTarget.lifecycle_state`
@@ -1127,7 +1127,7 @@ class FileStorageClientCompositeOperations(object):
         :param str snapshot_id: (required)
             The `OCID`__ of the snapshot.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.Snapshot.lifecycle_state`
@@ -1188,7 +1188,7 @@ class FileStorageClientCompositeOperations(object):
         :param str filesystem_snapshot_policy_id: (required)
             The `OCID`__ of the file system snapshot policy.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.FilesystemSnapshotPolicy.lifecycle_state`
@@ -1232,7 +1232,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_id: (required)
             The `OCID`__ of the export.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_export_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1279,7 +1279,7 @@ class FileStorageClientCompositeOperations(object):
         :param str file_system_id: (required)
             The `OCID`__ of the file system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_file_system_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1326,7 +1326,7 @@ class FileStorageClientCompositeOperations(object):
         :param str filesystem_snapshot_policy_id: (required)
             The `OCID`__ of the file system snapshot policy.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_filesystem_snapshot_policy_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1373,7 +1373,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_mount_target_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1420,7 +1420,7 @@ class FileStorageClientCompositeOperations(object):
         :param str outbound_connector_id: (required)
             The `OCID`__ of the outbound connector.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_outbound_connector_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1467,7 +1467,7 @@ class FileStorageClientCompositeOperations(object):
         :param str replication_id: (required)
             The `OCID`__ of the replication.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_replication_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1514,7 +1514,7 @@ class FileStorageClientCompositeOperations(object):
         :param str snapshot_id: (required)
             The `OCID`__ of the snapshot.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ResourceLock remove_snapshot_lock_details: (required)
             The details to be updated for the RemoveLock.
@@ -1561,7 +1561,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.ScheduleDowngradeShapeMountTargetDetails schedule_downgrade_shape_mount_target_details: (required)
             Details for changing the shape of mount target.
@@ -1608,7 +1608,7 @@ class FileStorageClientCompositeOperations(object):
         :param str filesystem_snapshot_policy_id: (required)
             The `OCID`__ of the file system snapshot policy.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.file_storage.models.FilesystemSnapshotPolicy.lifecycle_state`
@@ -1652,7 +1652,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_id: (required)
             The `OCID`__ of the export.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateExportDetails update_export_details: (required)
             Details object for updating an export.
@@ -1699,7 +1699,7 @@ class FileStorageClientCompositeOperations(object):
         :param str export_set_id: (required)
             The `OCID`__ of the export set.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateExportSetDetails update_export_set_details: (required)
             Details object for updating an export set.
@@ -1746,7 +1746,7 @@ class FileStorageClientCompositeOperations(object):
         :param str file_system_id: (required)
             The `OCID`__ of the file system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateFileSystemDetails update_file_system_details: (required)
             Details object for updating a file system.
@@ -1793,7 +1793,7 @@ class FileStorageClientCompositeOperations(object):
         :param str filesystem_snapshot_policy_id: (required)
             The `OCID`__ of the file system snapshot policy.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateFilesystemSnapshotPolicyDetails update_filesystem_snapshot_policy_details: (required)
             Details object for updating a file system snapshot policy.
@@ -1840,7 +1840,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateMountTargetDetails update_mount_target_details: (required)
             Details object for updating a mount target.
@@ -1887,7 +1887,7 @@ class FileStorageClientCompositeOperations(object):
         :param str outbound_connector_id: (required)
             The `OCID`__ of the outbound connector.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateOutboundConnectorDetails update_outbound_connector_details: (required)
             Details object for updating a outbound connector.
@@ -1934,7 +1934,7 @@ class FileStorageClientCompositeOperations(object):
         :param str replication_id: (required)
             The `OCID`__ of the replication.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateReplicationDetails update_replication_details: (required)
             Details object for updating a replication.
@@ -1981,7 +1981,7 @@ class FileStorageClientCompositeOperations(object):
         :param str snapshot_id: (required)
             The `OCID`__ of the snapshot.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpdateSnapshotDetails update_snapshot_details: (required)
             Details object for updating a snapshot.
@@ -2028,7 +2028,7 @@ class FileStorageClientCompositeOperations(object):
         :param str mount_target_id: (required)
             The `OCID`__ of the mount target.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.file_storage.models.UpgradeShapeMountTargetDetails upgrade_shape_mount_target_details: (required)
             Details for changing the shape of mount target.

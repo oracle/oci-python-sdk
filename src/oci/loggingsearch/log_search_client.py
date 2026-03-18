@@ -130,7 +130,7 @@ class LogSearchClient(object):
 
         See `Using the API`__ for SDK examples.
 
-        __ https://docs.cloud.oracle.com/Content/Logging/Concepts/using_the_api_searchlogs.htm
+        __ https://docs.oracle.com/iaas/Content/Logging/Concepts/using_the_api_searchlogs.htm
 
 
         :param oci.loggingsearch.models.SearchLogsDetails search_logs_details: (required)
@@ -147,7 +147,7 @@ class LogSearchClient(object):
             For list pagination. The value of the opc-next-page response header from the previous \"Search\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

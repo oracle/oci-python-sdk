@@ -16,7 +16,7 @@ class AvailabilityDomain(object):
     and subnets. A region contains several Availability Domains. For more information, see
     `Regions and Availability Domains`__.
 
-    __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
     """
 
     def __init__(self, **kwargs):

@@ -152,7 +152,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
         **[Required]** Gets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskFindingSummary.
         The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskFindingSummary.
@@ -166,7 +166,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
         Sets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskFindingSummary.
         The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_advisor_task_id: The sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskFindingSummary.
@@ -181,7 +181,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
         The key of the object to which these recommendations apply.
         This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskFindingSummary.
@@ -196,7 +196,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
         The key of the object to which these recommendations apply.
         This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_advisor_task_object_id: The sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskFindingSummary.
@@ -210,7 +210,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
         **[Required]** Gets the sql_tuning_advisor_task_object_execution_id of this SqlTuningAdvisorTaskFindingSummary.
         The execution id of the analyzed SQL object. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_advisor_task_object_execution_id of this SqlTuningAdvisorTaskFindingSummary.
@@ -224,7 +224,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
         Sets the sql_tuning_advisor_task_object_execution_id of this SqlTuningAdvisorTaskFindingSummary.
         The execution id of the analyzed SQL object. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_advisor_task_object_execution_id: The sql_tuning_advisor_task_object_execution_id of this SqlTuningAdvisorTaskFindingSummary.

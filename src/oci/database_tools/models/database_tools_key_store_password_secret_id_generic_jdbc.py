@@ -49,7 +49,7 @@ class DatabaseToolsKeyStorePasswordSecretIdGenericJdbc(DatabaseToolsKeyStorePass
         Gets the secret_id of this DatabaseToolsKeyStorePasswordSecretIdGenericJdbc.
         The `OCID`__ of the secret containing the key store password.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this DatabaseToolsKeyStorePasswordSecretIdGenericJdbc.
@@ -63,7 +63,7 @@ class DatabaseToolsKeyStorePasswordSecretIdGenericJdbc(DatabaseToolsKeyStorePass
         Sets the secret_id of this DatabaseToolsKeyStorePasswordSecretIdGenericJdbc.
         The `OCID`__ of the secret containing the key store password.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this DatabaseToolsKeyStorePasswordSecretIdGenericJdbc.

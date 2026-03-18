@@ -322,7 +322,7 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this UpdateMicrosoftSqlserverConnectionDetails.
@@ -337,7 +337,7 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this UpdateMicrosoftSqlserverConnectionDetails.

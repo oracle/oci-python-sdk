@@ -25,10 +25,10 @@ class AlarmSummary(object):
     For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm
+    __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm
+    __ https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm
     """
 
     #: A constant which can be used with the severity property of a AlarmSummary.
@@ -213,7 +213,7 @@ class AlarmSummary(object):
         **[Required]** Gets the id of this AlarmSummary.
         The `OCID`__ of the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AlarmSummary.
@@ -227,7 +227,7 @@ class AlarmSummary(object):
         Sets the id of this AlarmSummary.
         The `OCID`__ of the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AlarmSummary.
@@ -273,7 +273,7 @@ class AlarmSummary(object):
         **[Required]** Gets the compartment_id of this AlarmSummary.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AlarmSummary.
@@ -287,7 +287,7 @@ class AlarmSummary(object):
         Sets the compartment_id of this AlarmSummary.
         The `OCID`__ of the compartment containing the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AlarmSummary.
@@ -302,7 +302,7 @@ class AlarmSummary(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The metric_compartment_id of this AlarmSummary.
@@ -317,7 +317,7 @@ class AlarmSummary(object):
         The `OCID`__ of the compartment containing the metric
         being evaluated by the alarm.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param metric_compartment_id: The metric_compartment_id of this AlarmSummary.
@@ -386,9 +386,9 @@ class AlarmSummary(object):
 
           -----
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :return: The query of this AlarmSummary.
@@ -429,9 +429,9 @@ class AlarmSummary(object):
 
           -----
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
 
 
         :param query: The query of this AlarmSummary.
@@ -483,7 +483,7 @@ class AlarmSummary(object):
         Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destinations of this AlarmSummary.
@@ -501,7 +501,7 @@ class AlarmSummary(object):
         Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destinations: The destinations of this AlarmSummary.
@@ -569,7 +569,7 @@ class AlarmSummary(object):
         See `Creating an Alarm That Splits Messages by Metric Stream`__.
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm
 
 
         :return: The is_notifications_per_metric_dimension_enabled of this AlarmSummary.
@@ -585,7 +585,7 @@ class AlarmSummary(object):
         See `Creating an Alarm That Splits Messages by Metric Stream`__.
         Example: `true`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm
 
 
         :param is_notifications_per_metric_dimension_enabled: The is_notifications_per_metric_dimension_enabled of this AlarmSummary.
@@ -765,8 +765,8 @@ class AlarmSummary(object):
         Optionally include `dynamic variables`__.
         The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The notification_title of this AlarmSummary.
@@ -782,8 +782,8 @@ class AlarmSummary(object):
         Optionally include `dynamic variables`__.
         The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param notification_title: The notification_title of this AlarmSummary.
@@ -801,7 +801,7 @@ class AlarmSummary(object):
         For more information about the slack period, see
         `About the Internal Reset Period`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
 
 
         :return: The evaluation_slack_duration of this AlarmSummary.
@@ -819,7 +819,7 @@ class AlarmSummary(object):
         For more information about the slack period, see
         `About the Internal Reset Period`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
 
 
         :param evaluation_slack_duration: The evaluation_slack_duration of this AlarmSummary.
@@ -838,8 +838,8 @@ class AlarmSummary(object):
         :func:`get_alarm_history` and
         :func:`retrieve_dimension_states`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The alarm_summary of this AlarmSummary.
@@ -858,8 +858,8 @@ class AlarmSummary(object):
         :func:`get_alarm_history` and
         :func:`retrieve_dimension_states`.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param alarm_summary: The alarm_summary of this AlarmSummary.

@@ -134,7 +134,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ActivateExadataInfrastructureDetails activate_exadata_infrastructure_details: (required)
             The activation details for the Exadata infrastructure and the additional storage servers requested.
@@ -257,7 +257,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -387,7 +387,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -511,7 +511,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -633,7 +633,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -758,7 +758,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -885,7 +885,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1009,7 +1009,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.AutonomousDatabaseManualRefreshDetails autonomous_database_manual_refresh_details: (required)
             Request details for manually refreshing an Autonomous AI Database refreshable clone.
@@ -1142,7 +1142,7 @@ class DatabaseClient(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1262,7 +1262,7 @@ class DatabaseClient(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CancelExecutionWindowDetails cancel_execution_window_details: (required)
             Request to cancel the in progress maintenance activity under this execution window.
@@ -1389,7 +1389,7 @@ class DatabaseClient(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1516,7 +1516,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1636,7 +1636,7 @@ class DatabaseClient(object):
         For more information about moving Autonomous AI Databases, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -1645,7 +1645,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1776,7 +1776,7 @@ class DatabaseClient(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1901,7 +1901,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2027,7 +2027,7 @@ class DatabaseClient(object):
         For more information, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -2036,7 +2036,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2161,7 +2161,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2281,7 +2281,7 @@ class DatabaseClient(object):
         For more information, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -2290,7 +2290,7 @@ class DatabaseClient(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2415,7 +2415,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2540,7 +2540,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2665,7 +2665,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2783,7 +2783,7 @@ class DatabaseClient(object):
         """
         Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
@@ -2792,7 +2792,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2917,7 +2917,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3042,7 +3042,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3167,7 +3167,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3287,7 +3287,7 @@ class DatabaseClient(object):
         For more information about moving Databse Software Images, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -3296,7 +3296,7 @@ class DatabaseClient(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3426,7 +3426,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -3548,7 +3548,7 @@ class DatabaseClient(object):
         For more information about moving DB systems, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -3558,13 +3558,13 @@ class DatabaseClient(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3686,7 +3686,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
             Request to update the cross-region disaster recovery (DR) details of the standby Autonomous AI Database Serverless database.
@@ -3809,7 +3809,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EncryptionKeyLocationDetails encryption_key_location_details: (required)
             Request to change the source of the encryption key for the database.
@@ -3938,7 +3938,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4063,7 +4063,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4188,7 +4188,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4313,7 +4313,7 @@ class DatabaseClient(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4438,7 +4438,7 @@ class DatabaseClient(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4559,7 +4559,7 @@ class DatabaseClient(object):
         For more information about moving external container databases, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -4568,7 +4568,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4688,7 +4688,7 @@ class DatabaseClient(object):
         For more information about moving external non-container databases, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -4697,7 +4697,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4818,7 +4818,7 @@ class DatabaseClient(object):
         For more information about moving external pluggable databases, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -4829,7 +4829,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4949,7 +4949,7 @@ class DatabaseClient(object):
         For more information about moving key stores, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes
 
 
         :param oci.database.models.ChangeKeyStoreCompartmentDetails change_key_store_compartment_details: (required)
@@ -4958,7 +4958,7 @@ class DatabaseClient(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -5080,7 +5080,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeKeyStoreTypeDetails change_key_store_type_details: (required)
             Request to change the source of the encryption key for the database.
@@ -5208,7 +5208,7 @@ class DatabaseClient(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -5333,7 +5333,7 @@ class DatabaseClient(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5458,7 +5458,7 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5584,7 +5584,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -5708,7 +5708,7 @@ class DatabaseClient(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -5826,13 +5826,13 @@ class DatabaseClient(object):
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm
 
 
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CompleteExternalBackupJobDetails complete_external_backup_job_details: (required)
             Updates the status of the backup resource.
@@ -5950,18 +5950,18 @@ class DatabaseClient(object):
         """
         Configures the Autonomous AI Database Vault service `key`__.
 
-        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails configure_autonomous_database_vault_key_details: (required)
             Configuration details for the Autonomous AI Database Vault service `key`__.
 
-            __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+            __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6089,7 +6089,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureExascaleCloudExadataInfrastructureDetails configure_exascale_cloud_exadata_infrastructure_details: (required)
             The exascale config details for the Exadata infrastructure with the total storage needed.
@@ -6216,7 +6216,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureExascaleExadataInfrastructureDetails configure_exascale_exadata_infrastructure_details: (required)
             The exascale config details for the Exadata infrastructure with the total storage needed.
@@ -6343,7 +6343,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
             Request to update SaaS administrative user configuration of the Autonomous AI Database.
@@ -6467,7 +6467,7 @@ class DatabaseClient(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -6594,7 +6594,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -6721,7 +6721,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertStandbyDatabaseTypeDetails convert_standby_database_type_details: (required)
             Request parameters needed to convert Standby to snapshot standby and vice-versa.
@@ -6848,7 +6848,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertToPdbDetails convert_to_pdb_details: (required)
             Request to convert a non-container database to a pluggable database.
@@ -6969,7 +6969,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -7097,7 +7097,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ConvertToStandaloneDetails convert_to_standalone_details: (required)
             A request to update an existing Data Guard member.
@@ -7531,7 +7531,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails create_autonomous_container_database_dataguard_association_details: (required)
             A request to create an Autonomous Data Guard association.
@@ -8376,13 +8376,13 @@ class DatabaseClient(object):
         """
         Creates a cloud Exadata infrastructure resource. This resource is used to create either an `Exadata Cloud Service`__ instance or an Autonomous AI Database on dedicated Exadata infrastructure.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm
 
 
         :param oci.database.models.CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
             Request to create a cloud Exadata infrastructure resource in an `Exadata Cloud Service`__ instance.
 
-            __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
+            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8493,7 +8493,7 @@ class DatabaseClient(object):
         :param oci.database.models.CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
             Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8609,7 +8609,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8724,7 +8724,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8844,14 +8844,14 @@ class DatabaseClient(object):
         resource in the Console. For more information, see
         `Resource Identifiers`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateDataGuardAssociationDetails create_data_guard_association_details: (required)
             A request to create a Data Guard association.
@@ -9375,7 +9375,7 @@ class DatabaseClient(object):
         :param oci.database.models.CreateExadbVmClusterDetails create_exadb_vm_cluster_details: (required)
             Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only. See `The New Exadata Cloud Service Resource Model`__ for information on this resource type.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -9787,7 +9787,7 @@ class DatabaseClient(object):
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm
 
 
         :param oci.database.models.CreateExternalBackupJobDetails create_external_backup_job_details: (required)
@@ -11133,7 +11133,7 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.CreateSchedulingWindowDetails create_scheduling_window_details: (required)
             Request to create Scheduling Window.
@@ -11358,7 +11358,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.VmClusterNetworkDetails vm_cluster_network_details: (required)
             Request to create the Cloud@Customer VM cluster network.
@@ -11490,7 +11490,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str action: (required)
             The action to perform on the DB Node.
@@ -11619,7 +11619,7 @@ class DatabaseClient(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -11729,7 +11729,7 @@ class DatabaseClient(object):
         :param str application_vip_id: (required)
             The `OCID`__ of the application virtual IP (VIP) address.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -11839,7 +11839,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -11966,7 +11966,7 @@ class DatabaseClient(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous AI Database backup.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12082,7 +12082,7 @@ class DatabaseClient(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12192,7 +12192,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12302,7 +12302,7 @@ class DatabaseClient(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12407,7 +12407,7 @@ class DatabaseClient(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12517,7 +12517,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12627,7 +12627,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12748,7 +12748,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -12858,7 +12858,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_connection_id: (required)
             The OCID of the console connection.
@@ -12967,7 +12967,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -13083,7 +13083,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13208,7 +13208,7 @@ class DatabaseClient(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13315,7 +13315,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13435,7 +13435,7 @@ class DatabaseClient(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13545,7 +13545,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13655,7 +13655,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13765,7 +13765,7 @@ class DatabaseClient(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13875,7 +13875,7 @@ class DatabaseClient(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13985,7 +13985,7 @@ class DatabaseClient(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14097,7 +14097,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -14210,7 +14210,7 @@ class DatabaseClient(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14320,7 +14320,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14431,7 +14431,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -14541,7 +14541,7 @@ class DatabaseClient(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14651,7 +14651,7 @@ class DatabaseClient(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -14761,7 +14761,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14871,7 +14871,7 @@ class DatabaseClient(object):
         :param str pluggable_database_snapshot_id: (required)
             The Exadata Pluggable Database Snapshot `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -14981,7 +14981,7 @@ class DatabaseClient(object):
         :param str scheduled_action_id: (required)
             The Scheduled Action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -15091,7 +15091,7 @@ class DatabaseClient(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -15201,7 +15201,7 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -15311,12 +15311,12 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str scheduling_window_id: (required)
             The Scheduling Window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -15427,7 +15427,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -15538,12 +15538,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -15654,7 +15654,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -15769,7 +15769,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -15878,7 +15878,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -15987,7 +15987,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16109,7 +16109,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16229,7 +16229,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16347,13 +16347,13 @@ class DatabaseClient(object):
         For more information about the Database Management Service, see
         `Database Management Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
+        __ https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
 
 
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16473,7 +16473,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16593,7 +16593,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16711,13 +16711,13 @@ class DatabaseClient(object):
         For more information about the Database Management Service, see
         `Database Management Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
+        __ https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
 
 
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16837,7 +16837,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -16957,7 +16957,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -17077,7 +17077,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -17325,7 +17325,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17440,7 +17440,7 @@ class DatabaseClient(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -17562,12 +17562,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17683,12 +17683,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17810,7 +17810,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17934,7 +17934,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -18043,7 +18043,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -18152,7 +18152,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableDatabaseManagementDetails enable_database_management_details: (required)
             Request to enable the Database Management service for an Oracle Database located in Oracle Cloud Infrastructure.
@@ -18277,13 +18277,13 @@ class DatabaseClient(object):
         For more information about the Database Management Service, see
         `Database Management Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
+        __ https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
 
 
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails enable_external_container_database_database_management_details: (required)
             Request to enable the Database Management Service for an external container database.
@@ -18408,7 +18408,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails enable_external_container_database_stack_monitoring_details: (required)
             Details to enable Stack Monitoring on the external container database.
@@ -18531,13 +18531,13 @@ class DatabaseClient(object):
         For more information about the Database Management Service, see
         `Database Management Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
+        __ https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
 
 
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalNonContainerDatabaseDatabaseManagementDetails enable_external_non_container_database_database_management_details: (required)
             Request to enable the Database Management Service for an external non-container database.
@@ -18662,7 +18662,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalNonContainerDatabaseOperationsInsightsDetails enable_external_non_container_database_operations_insights_details: (required)
             Details to enable Operations Insights on the external non-container database
@@ -18787,7 +18787,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalNonContainerDatabaseStackMonitoringDetails enable_external_non_container_database_stack_monitoring_details: (required)
             Details to enable Stack Monitoring on the external non-container database.
@@ -18910,13 +18910,13 @@ class DatabaseClient(object):
         For more information about the Database Management Service, see
         `Database Management Service`__.
 
-        __ https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
+        __ https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm
 
 
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails enable_external_pluggable_database_database_management_details: (required)
             Request to enable the Database Management Service for an external database.
@@ -19041,7 +19041,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails enable_external_pluggable_database_operations_insights_details: (required)
             Details to enable Operations Insights on the external pluggable database
@@ -19166,7 +19166,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnableExternalPluggableDatabaseStackMonitoringDetails enable_external_pluggable_database_stack_monitoring_details: (required)
             Details to enable Stack Monitoring on the external pluggable database.
@@ -19291,7 +19291,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.EnablePluggableDatabaseManagementDetails enable_pluggable_database_management_details: (required)
             Request to enable the Database Management service for an Oracle Pluggable Database located in Oracle Cloud Infrastructure.
@@ -19421,7 +19421,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -19548,7 +19548,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -19690,7 +19690,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -19804,12 +19804,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -19923,7 +19923,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.FailoverDataGuardDetails failover_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -20054,12 +20054,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.FailoverDataGuardAssociationDetails failover_data_guard_association_details: (required)
             A request to perform a failover, transitioning a standby database into a primary database.
@@ -20172,7 +20172,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.GenerateAutonomousDatabaseWalletDetails generate_autonomous_database_wallet_details: (required)
             Request to create a new Autonomous AI Database wallet.
@@ -20298,7 +20298,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.GenerateRecommendedNetworkDetails generate_recommended_network_details: (required)
             Request to generate a recommended Cloud@Customer VM cluster network configuration.
@@ -20418,7 +20418,7 @@ class DatabaseClient(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -20523,7 +20523,7 @@ class DatabaseClient(object):
         :param str application_vip_id: (required)
             The `OCID`__ of the application virtual IP (VIP) address.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -20628,7 +20628,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -20722,12 +20722,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -20822,7 +20822,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -20927,7 +20927,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21032,7 +21032,7 @@ class DatabaseClient(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous AI Database backup.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21137,12 +21137,12 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21336,7 +21336,7 @@ class DatabaseClient(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21441,7 +21441,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21546,7 +21546,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -21640,7 +21640,7 @@ class DatabaseClient(object):
         :param str autonomous_patch_id: (required)
             The autonomous patch `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -21734,7 +21734,7 @@ class DatabaseClient(object):
         :param str autonomous_virtual_machine_id: (required)
             The Autonomous Virtual machine `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21839,7 +21839,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21944,7 +21944,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22049,7 +22049,7 @@ class DatabaseClient(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -22143,7 +22143,7 @@ class DatabaseClient(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22248,7 +22248,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22353,7 +22353,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22458,7 +22458,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22563,7 +22563,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22571,7 +22571,7 @@ class DatabaseClient(object):
         :param list[str] db_servers: (optional)
             The list of `OCIDs`__ of the Db servers.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -22681,7 +22681,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22787,7 +22787,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -22892,12 +22892,12 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_id: (required)
             The `OCID`__ of the maintenance update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -23003,12 +23003,12 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_history_entry_id: (required)
             The `OCID`__ of the maintenance update history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -23114,7 +23114,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_connection_id: (required)
             The OCID of the console connection.
@@ -23212,7 +23212,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -23321,7 +23321,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -23430,12 +23430,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -23530,7 +23530,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -23624,7 +23624,7 @@ class DatabaseClient(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -23718,12 +23718,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str upgrade_history_entry_id: (required)
             The database/db system upgrade History `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -23932,7 +23932,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24026,12 +24026,12 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
             The `OCID`__ of the patch.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24126,12 +24126,12 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
             The `OCID`__ of the patch history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24226,7 +24226,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24320,12 +24320,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The `OCID`__ of the ExadataInfrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str db_server_id: (required)
             The DB server `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -24437,14 +24437,14 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24538,12 +24538,12 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str os_patch_history_entry_id: (required)
             The `OCID`__ of the patch history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -24649,12 +24649,12 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
             The `OCID`__ of the patch.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24749,12 +24749,12 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
             The `OCID`__ of the patch history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -24849,12 +24849,12 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str upgrade_history_entry_id: (required)
             The database/db system upgrade History `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -24960,7 +24960,7 @@ class DatabaseClient(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25066,7 +25066,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25192,7 +25192,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25297,7 +25297,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25305,7 +25305,7 @@ class DatabaseClient(object):
         :param list[str] db_servers: (optional)
             The list of `OCIDs`__ of the Db servers.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -25419,14 +25419,14 @@ class DatabaseClient(object):
         The :func:`get_cloud_vm_cluster_iorm_config` API is used for this operation with Exadata systems using the
         new resource model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25531,7 +25531,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25636,12 +25636,12 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_id: (required)
             The `OCID`__ of the maintenance update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25747,12 +25747,12 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_history_entry_id: (required)
             The `OCID`__ of the maintenance update history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25858,7 +25858,7 @@ class DatabaseClient(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -25963,7 +25963,7 @@ class DatabaseClient(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26068,7 +26068,7 @@ class DatabaseClient(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26171,13 +26171,13 @@ class DatabaseClient(object):
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm
 
 
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -26271,7 +26271,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26377,7 +26377,7 @@ class DatabaseClient(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26482,7 +26482,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26588,7 +26588,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26694,7 +26694,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str target_resource_id: (optional)
             The target resource ID.
@@ -26813,7 +26813,7 @@ class DatabaseClient(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27102,7 +27102,7 @@ class DatabaseClient(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27207,12 +27207,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str pdb_conversion_history_entry_id: (required)
             The database conversion history `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27318,7 +27318,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -27412,7 +27412,7 @@ class DatabaseClient(object):
         :param str pluggable_database_snapshot_id: (required)
             The Exadata Pluggable Database Snapshot `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27517,7 +27517,7 @@ class DatabaseClient(object):
         :param str scheduled_action_id: (required)
             The Scheduled Action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27622,7 +27622,7 @@ class DatabaseClient(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27727,7 +27727,7 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27832,12 +27832,12 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str scheduling_window_id: (required)
             The Scheduling Window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -27943,7 +27943,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -28049,12 +28049,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -28160,12 +28160,12 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str patch_id: (required)
             The `OCID`__ of the patch.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -28260,12 +28260,12 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str patch_history_entry_id: (required)
             The `OCID`__ of the patch history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -28360,12 +28360,12 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_id: (required)
             The `OCID`__ of the maintenance update.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -28471,12 +28471,12 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_history_entry_id: (required)
             The `OCID`__ of the maintenance update history entry.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -28582,7 +28582,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ImportTransportableTablespaceDetails import_transportable_tablespace_details: (required)
             Details for importing transportable tablespace for the Autonomous AI Database.
@@ -28819,9 +28819,9 @@ class DatabaseClient(object):
 
         Use the :func:`create_cloud_exadata_infrastructure` and :func:`create_cloud_vm_cluster` APIs to provision a new Exadata Cloud Service instance.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param oci.database.models.LaunchDbSystemBase launch_db_system_details: (required)
@@ -28831,8 +28831,8 @@ class DatabaseClient(object):
 
             For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-            __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+            __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -28938,7 +28938,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -29105,12 +29105,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cloud_vm_cluster_id: (required)
             The `OCID`__ of the cloud VM cluster associated with the application virtual IP (VIP) address.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -29266,12 +29266,12 @@ class DatabaseClient(object):
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_id: (optional)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_remote: (optional)
             call for all remote backups
@@ -29452,7 +29452,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -29567,7 +29567,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str service_component: (required)
             The service component to use, either ADBD or EXACC.
@@ -29703,17 +29703,17 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_exadata_infrastructure_id: (optional)
             The Autonomous Exadata Infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_vm_cluster_id: (optional)
             The Autonomous VM Cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str infrastructure_type: (optional)
             A filter to return only resources that match the given Infrastructure Type.
@@ -29755,7 +29755,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (optional)
             The cloud Autonomous VM Cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -29901,12 +29901,12 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (optional)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -30215,12 +30215,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -30405,7 +30405,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -30520,7 +30520,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -30641,7 +30641,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -30762,7 +30762,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str image_shape_family: (required)
             A filter to return only resources that match the given image shape family exactly.
@@ -30931,12 +30931,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_id: (optional)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -31002,7 +31002,7 @@ class DatabaseClient(object):
         :param str resource_pool_leader_id: (optional)
             The database `OCID`__ of the resourcepool Leader Autonomous AI Database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -31174,7 +31174,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -31314,7 +31314,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -31455,7 +31455,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -31566,7 +31566,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -31724,12 +31724,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_vm_cluster_id: (required)
             The Autonomous Virtual machine `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -31854,12 +31854,12 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -31982,7 +31982,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str exadata_infrastructure_id: (optional)
             If provided, filters the results for the given Exadata Infrastructure.
@@ -32144,7 +32144,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -32259,12 +32259,12 @@ class DatabaseClient(object):
         :param str database_id: (optional)
             The `OCID`__ of the database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -32425,12 +32425,12 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -32553,7 +32553,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cloud_exadata_infrastructure_id: (optional)
             If provided, filters the results for the specified cloud Exadata infrastructure.
@@ -32720,7 +32720,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -32882,7 +32882,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_type: (optional)
             A filter to return only resources that match the given update type exactly.
@@ -33017,7 +33017,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_type: (optional)
             A filter to return only resources that match the given update type exactly.
@@ -33152,7 +33152,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str cloud_exadata_infrastructure_id: (optional)
             If provided, filters the results for the specified cloud Exadata infrastructure.
@@ -33328,7 +33328,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -33422,7 +33422,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -33590,12 +33590,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -33725,7 +33725,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -33840,7 +33840,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -33883,7 +33883,7 @@ class DatabaseClient(object):
         :param str db_system_id: (optional)
             The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool is_upgrade_supported: (optional)
             If provided, filters the results to the set of database versions which are supported for Upgrade.
@@ -34037,7 +34037,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str upgrade_action: (optional)
             A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
@@ -34214,17 +34214,17 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str db_home_id: (optional)
             A Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str system_id: (optional)
             The `OCID`__ of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -34379,7 +34379,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -34557,7 +34557,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -34672,7 +34672,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -34787,22 +34787,22 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (optional)
             The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_id: (optional)
             The `OCID`__ of the VM cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str backup_id: (optional)
             The `OCID`__ of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str db_version: (optional)
             A filter to return only DB Homes that match the specified dbVersion.
@@ -34964,17 +34964,17 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (optional)
             The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_id: (optional)
             The `OCID`__ of the VM cluster.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -35000,7 +35000,7 @@ class DatabaseClient(object):
         :param str db_server_id: (optional)
             The `OCID`__ of the Exacc Db server.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -35131,12 +35131,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str exadata_infrastructure_id: (required)
             The `OCID`__ of the ExadataInfrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -35393,7 +35393,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -35570,7 +35570,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -35685,7 +35685,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -35800,7 +35800,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the Availability Domain.
@@ -35932,7 +35932,7 @@ class DatabaseClient(object):
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -36048,7 +36048,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -36225,7 +36225,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -36340,14 +36340,14 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -36358,7 +36358,7 @@ class DatabaseClient(object):
         :param str backup_id: (optional)
             The `OCID`__ of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str sort_by: (optional)
             The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
@@ -36512,7 +36512,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -36526,7 +36526,7 @@ class DatabaseClient(object):
         :param str db_system_id: (optional)
             The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str storage_management: (optional)
             The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
@@ -36659,7 +36659,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -36829,7 +36829,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -36952,7 +36952,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -37124,7 +37124,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_type: (optional)
             A filter to return only resources that match the given update type exactly.
@@ -37259,7 +37259,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_type: (optional)
             A filter to return only resources that match the given update type exactly.
@@ -37399,7 +37399,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -37566,7 +37566,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -37753,7 +37753,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -37915,7 +37915,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -38077,7 +38077,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -38237,12 +38237,12 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str external_database_id: (required)
             The `OCID`__ of the external database whose connectors will be listed.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -38403,7 +38403,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -38564,7 +38564,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -38572,7 +38572,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (optional)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -38731,7 +38731,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (optional)
             A filter to return only resources that match the entire name given. The match is not case sensitive.
@@ -38879,7 +38879,7 @@ class DatabaseClient(object):
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -39056,7 +39056,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -39194,7 +39194,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -39304,7 +39304,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str target_resource_id: (optional)
             The target resource ID.
@@ -39504,7 +39504,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str target_resource_id: (optional)
             The target resource ID.
@@ -39709,7 +39709,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -39982,7 +39982,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str pdb_conversion_action: (optional)
             A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
@@ -40159,7 +40159,7 @@ class DatabaseClient(object):
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -40191,7 +40191,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (optional)
             A filter to return only Exadata Pluggable Database Snapshots that match the given database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -40329,12 +40329,12 @@ class DatabaseClient(object):
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str database_id: (optional)
             The `OCID`__ of the database.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -40488,12 +40488,12 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str scheduling_policy_target_resource_id: (required)
             The target resource `OCID`__ the scheduled actions will be for.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str plan_intent: (required)
             The scheduling plan intent the scheduled actions will be for.
@@ -40627,7 +40627,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -40748,7 +40748,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -40920,7 +40920,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -41092,7 +41092,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -41249,12 +41249,12 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -41427,7 +41427,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str gi_version: (required)
             Specifies gi version query parameter.
@@ -41582,7 +41582,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str gi_version: (required)
             Specifies gi version query parameter.
@@ -41725,12 +41725,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -41899,7 +41899,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -42014,7 +42014,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -42129,7 +42129,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_type: (optional)
             A filter to return only resources that match the given update type exactly.
@@ -42278,7 +42278,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str update_type: (optional)
             A filter to return only resources that match the given update type exactly.
@@ -42428,7 +42428,7 @@ class DatabaseClient(object):
         :param str compartment_id: (required)
             The compartment `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str exadata_infrastructure_id: (optional)
             If provided, filters the results for the given Exadata Infrastructure.
@@ -42608,7 +42608,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -42732,12 +42732,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -42852,12 +42852,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -42977,13 +42977,13 @@ class DatabaseClient(object):
         Migrates the Exadata DB system to the new `Exadata resource model`__.
         All related resources will be migrated.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
 
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -43101,13 +43101,13 @@ class DatabaseClient(object):
         """
         Changes encryption key management from customer-managed, using the `Vault service`__, to Oracle-managed.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.MigrateVaultKeyDetails migrate_vault_key_details: (required)
             Request to change the source of the encryption key for the database.
@@ -43234,7 +43234,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ModifyDatabaseManagementDetails modify_database_management_details: (required)
             The data to update one or more attributes of the Database Management Service for the database.
@@ -43361,7 +43361,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ModifyPluggableDatabaseManagementDetails modify_pluggable_database_management_details: (required)
             The data to update one or more attributes of the Database Management Service for the pluggable database.
@@ -43488,7 +43488,7 @@ class DatabaseClient(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -43613,7 +43613,7 @@ class DatabaseClient(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -43737,7 +43737,7 @@ class DatabaseClient(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.MoveExecutionActionMemberDetails move_execution_action_member_details: (required)
             Request to move an execution action member to this execution action resource from another.
@@ -43864,7 +43864,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -43986,7 +43986,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -44108,7 +44108,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -44223,7 +44223,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RegisterCloudAutonomousVmClusterPkcsDetails register_cloud_autonomous_vm_cluster_pkcs_details: (required)
             Details of registering PKCS11 driver.
@@ -44348,7 +44348,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RegisterCloudVmClusterPkcsDetails register_cloud_vm_cluster_pkcs_details: (required)
             Details of registering PKCS11 driver.
@@ -44476,7 +44476,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -44588,12 +44588,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -44703,7 +44703,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReinstateDataGuardDetails reinstate_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -44830,12 +44830,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReinstateDataGuardAssociationDetails reinstate_data_guard_association_details: (required)
             A request to reinstate a database in a standby role.
@@ -44953,7 +44953,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -45080,7 +45080,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45207,7 +45207,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45334,7 +45334,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45458,7 +45458,7 @@ class DatabaseClient(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ReorderExecutionActionDetails reorder_execution_action_details: (required)
             Request to reorder the execution actions under this execution window resource.
@@ -45588,7 +45588,7 @@ class DatabaseClient(object):
         :param str scheduling_plan_id: (required)
             The Schedule Plan `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45713,12 +45713,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ResizeVmClusterNetworkDetails resize_vm_cluster_network_details: (required)
             Request to add or remove Db server network nodes in the VM cluster network.
@@ -45967,7 +45967,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -46079,7 +46079,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -46203,7 +46203,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreAutonomousDatabaseDetails restore_autonomous_database_details: (required)
             Request to perform an Autonomous AI Database restore.
@@ -46321,7 +46321,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RestoreDatabaseDetails restore_database_details: (required)
             Request to perform database restore.
@@ -46429,13 +46429,13 @@ class DatabaseClient(object):
         """
         Creates a new version of an existing `Vault service`__ key.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -46559,13 +46559,13 @@ class DatabaseClient(object):
         """
         Rotate existing AutonomousDatabase `Vault service`__ key.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -46696,7 +46696,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -46821,7 +46821,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -46943,7 +46943,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RotateCloudAutonomousVmClusterOrdsCertsDetails rotate_cloud_autonomous_vm_cluster_ords_certs_details: (optional)
             Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous Exadata VM cluster.
@@ -47069,7 +47069,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RotateCloudAutonomousVmClusterSslCertsDetails rotate_cloud_autonomous_vm_cluster_ssl_certs_details: (optional)
             Request to rotate the SSL certificates on Cloud Autonomous Exadata VM cluster.
@@ -47195,7 +47195,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -47315,7 +47315,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -47435,7 +47435,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -47551,13 +47551,13 @@ class DatabaseClient(object):
         """
         Creates a new version of an existing `Vault service`__ key.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -47679,7 +47679,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.RunDataPatchDetails run_data_patch_details: (optional)
             Request to run a database datapatch.
@@ -47807,7 +47807,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -47913,13 +47913,13 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str external_database_connector_id: (required)
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -48035,13 +48035,13 @@ class DatabaseClient(object):
         """
         Sets a new version of an existing `Vault service`__ key.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SetKeyVersionDetails set_key_version_details: (required)
             Requests Key Version Update.
@@ -48164,13 +48164,13 @@ class DatabaseClient(object):
         """
         Sets a new version of an existing `Vault service`__ key.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SetKeyVersionDetails set_key_version_details: (required)
             Requests Key Version Update.
@@ -48297,7 +48297,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -48410,7 +48410,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -48523,7 +48523,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -48645,7 +48645,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -48763,7 +48763,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -48890,7 +48890,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SwitchOverDataGuardDetails switch_over_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -49020,7 +49020,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -49134,12 +49134,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -49252,7 +49252,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -49394,12 +49394,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.SwitchoverDataGuardAssociationDetails switchover_data_guard_association_details: (required)
             Request to swtichover a primary to a standby.
@@ -49512,7 +49512,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -49617,7 +49617,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -49722,14 +49722,14 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -49834,7 +49834,7 @@ class DatabaseClient(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -49959,7 +49959,7 @@ class DatabaseClient(object):
         :param str dbnode_snapshot_id: (required)
             The Exadata Database Node Snapshot `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -50083,7 +50083,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UnregisterCloudAutonomousVmClusterPkcsDetails unregister_cloud_autonomous_vm_cluster_pkcs_details: (required)
             Details of unregistering PKCS11 driver.
@@ -50208,7 +50208,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UnregisterCloudVmClusterPkcsDetails unregister_cloud_vm_cluster_pkcs_details: (required)
             Details of registering PKCS11 driver.
@@ -50333,7 +50333,7 @@ class DatabaseClient(object):
         :param str advanced_cluster_file_system_id: (required)
             The advanced cluster file system Id `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAdvancedClusterFileSystemDetails update_advanced_cluster_file_system_details: (required)
             Request to update the properties of an advanced cluster file system.
@@ -50450,7 +50450,7 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousContainerDatabaseDetails update_autonomous_container_database_details: (required)
             Request to update the properties of an Autonomous Container Database.
@@ -50562,12 +50562,12 @@ class DatabaseClient(object):
         :param str autonomous_container_database_id: (required)
             The Autonomous Container Database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str autonomous_container_database_dataguard_association_id: (required)
             The Autonomous Container Database-Autonomous Data Guard association `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails update_autonomous_container_database_data_guard_association_details: (required)
             A request to update Data Guard association of a database.
@@ -50685,7 +50685,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseDetails update_autonomous_database_details: (required)
             Request to update the properties of an Autonomous AI Database.
@@ -50808,7 +50808,7 @@ class DatabaseClient(object):
         :param str autonomous_database_backup_id: (required)
             The `OCID`__ of the Autonomous AI Database backup.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseBackupDetails update_autonomous_database_backup_details: (required)
             Request to update an existing Autonomous AI Database backup.
@@ -51028,7 +51028,7 @@ class DatabaseClient(object):
         :param str autonomous_database_software_image_id: (required)
             The Autonomous AI Database Software Image `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseSoftwareImageDetails update_autonomous_database_software_image_details: (required)
             Request to update the properties of an Autonomous AI Database Software Image.
@@ -51145,7 +51145,7 @@ class DatabaseClient(object):
         :param str autonomous_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousDatabaseWalletDetails update_autonomous_database_wallet_details: (required)
             Request to update the properties of an Autonomous AI Database wallet.
@@ -51259,7 +51259,7 @@ class DatabaseClient(object):
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousExadataInfrastructureDetails update_autonomous_exadata_infrastructures_details: (required)
             Request to update the properties of a Autonomous Exadata Infrastructure.
@@ -51371,7 +51371,7 @@ class DatabaseClient(object):
         :param str autonomous_vm_cluster_id: (required)
             The autonomous VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateAutonomousVmClusterDetails update_autonomous_vm_cluster_details: (required)
             Request to update the attributes of an Autonomous VM cluster.
@@ -51488,7 +51488,7 @@ class DatabaseClient(object):
         :param str backup_id: (required)
             The backup `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateBackupDetails update_backup_details: (required)
             Request to update the properties of a Backup.
@@ -51607,7 +51607,7 @@ class DatabaseClient(object):
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateBackupDestinationDetails update_backup_destination_details: (required)
             For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users.
@@ -51725,7 +51725,7 @@ class DatabaseClient(object):
         :param str cloud_autonomous_vm_cluster_id: (required)
             The Cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudAutonomousVmClusterDetails update_cloud_autonomous_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
@@ -51848,7 +51848,7 @@ class DatabaseClient(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The cloud Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             Request to update the properties of an cloud Exadata infrastructure resource.
@@ -51965,7 +51965,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
             Request to update the attributes of a cloud VM cluster.
@@ -52082,7 +52082,7 @@ class DatabaseClient(object):
         :param str cloud_vm_cluster_id: (required)
             The cloud VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
             Request to perform database update.
@@ -52199,7 +52199,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_connection_id: (required)
             The OCID of the console connection.
@@ -52320,7 +52320,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str console_history_id: (required)
             The OCID of the console history.
@@ -52438,13 +52438,13 @@ class DatabaseClient(object):
         Update an existing Data Guard member. A Data Guard member represents the replication relationship between the
         specified database and a standby database. For more information, see `Using Oracle Data Guard`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm
 
 
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDataGuardDetails update_data_guard_details: (required)
             A request to update an existing Data Guard member.
@@ -52571,12 +52571,12 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_guard_association_id: (required)
             The Data Guard association's `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDataGuardAssociationDetails update_data_guard_association_details: (required)
             A request to update Data Guard association of a database.
@@ -52694,7 +52694,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDatabaseDetails update_database_details: (required)
             Request to perform database update.
@@ -52806,7 +52806,7 @@ class DatabaseClient(object):
         :param str database_software_image_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDatabaseSoftwareImageDetails update_database_software_image_details: (required)
             Request to update the properties of a DB system.
@@ -52918,7 +52918,7 @@ class DatabaseClient(object):
         :param str db_home_id: (required)
             The Database Home `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbHomeDetails update_db_home_details: (required)
             Request to update the properties of a Database Home.
@@ -53030,7 +53030,7 @@ class DatabaseClient(object):
         :param str db_node_id: (required)
             The database node `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbNodeDetails update_db_node_details: (required)
             Request to update the specified database node.
@@ -53147,14 +53147,14 @@ class DatabaseClient(object):
 
         For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See `Switching an Exadata DB System to the New Resource Model and APIs`__ for details on converting existing Exadata DB systems to the new resource model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateDbSystemDetails update_db_system_details: (required)
             Request to update the properties of a DB system.
@@ -53273,7 +53273,7 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
             Request to update the properties of an Exadata Cloud@Customer infrastructure.
@@ -53393,14 +53393,14 @@ class DatabaseClient(object):
         The :func:`update_cloud_vm_cluster_iorm_config` API is used for Exadata systems using the
         new resource model.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm
 
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ExadataIormConfigUpdateDetails exadata_iorm_config_update_details: (required)
             Request to perform database update.
@@ -53517,7 +53517,7 @@ class DatabaseClient(object):
         :param str exadb_vm_cluster_id: (required)
             The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExadbVmClusterDetails update_exadb_vm_cluster_details: (required)
             Request to update the attributes of a Exadata VM cluster on Exascale Infrastructure.
@@ -53634,7 +53634,7 @@ class DatabaseClient(object):
         :param str exascale_db_storage_vault_id: (required)
             The Exadata Database Storage Vault `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExascaleDbStorageVaultDetails update_exascale_db_storage_vault_details: (required)
             Request to update the attributes of a Exadata Database Storage Vault.
@@ -53751,7 +53751,7 @@ class DatabaseClient(object):
         :param str execution_action_id: (required)
             The execution action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExecutionActionDetails update_execution_action_details: (required)
             Request to update the properties of a execution action.
@@ -53868,7 +53868,7 @@ class DatabaseClient(object):
         :param str execution_window_id: (required)
             The execution window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExecutionWindowDetails update_execution_window_details: (required)
             Request to update the properties of a execution window.
@@ -53987,7 +53987,7 @@ class DatabaseClient(object):
         :param str external_container_database_id: (required)
             The ExternalContainerDatabase `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalContainerDatabaseDetails update_external_container_database_details: (required)
             Request to update the properties of an
@@ -54106,7 +54106,7 @@ class DatabaseClient(object):
             The `OCID`__ of the
             external database connector resource (`ExternalDatabaseConnectorId`).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalDatabaseConnectorDetails update_external_database_connector_details: (required)
             Request to update the properties of an external database connector.
@@ -54223,7 +54223,7 @@ class DatabaseClient(object):
         :param str external_non_container_database_id: (required)
             The external non-container database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalNonContainerDatabaseDetails update_external_non_container_database_details: (required)
             Request to update the properties of an external non-container database.
@@ -54342,7 +54342,7 @@ class DatabaseClient(object):
         :param str external_pluggable_database_id: (required)
             The ExternalPluggableDatabaseId `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateExternalPluggableDatabaseDetails update_external_pluggable_database_details: (required)
             Request to update the properties of an external pluggable database resource.
@@ -54459,7 +54459,7 @@ class DatabaseClient(object):
         :param str key_store_id: (required)
             The `OCID`__ of the key store.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateKeyStoreDetails update_key_store_details: (required)
             Request to update the attributes of a key store.
@@ -54686,7 +54686,7 @@ class DatabaseClient(object):
         :param str oneoff_patch_id: (required)
             The one-off patch `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateOneoffPatchDetails update_oneoff_patch_details: (required)
             Request to update the properties of a one-off patch.
@@ -54803,7 +54803,7 @@ class DatabaseClient(object):
         :param str pluggable_database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdatePluggableDatabaseDetails update_pluggable_database_details: (required)
             Request to perform pluggable database update.
@@ -54915,7 +54915,7 @@ class DatabaseClient(object):
         :param str scheduled_action_id: (required)
             The Scheduled Action `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateScheduledActionDetails update_scheduled_action_details: (required)
             Request to update the properties of a Scheduled Action.
@@ -55032,7 +55032,7 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateSchedulingPolicyDetails update_scheduling_policy_details: (required)
             Request to update the properties of a Scheduling Policy.
@@ -55149,12 +55149,12 @@ class DatabaseClient(object):
         :param str scheduling_policy_id: (required)
             The Scheduling Policy `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str scheduling_window_id: (required)
             The Scheduling Window `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateSchedulingWindowDetails update_scheduling_window_details: (required)
             Request to update the properties of a Scheduling Window.
@@ -55272,7 +55272,7 @@ class DatabaseClient(object):
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateVmClusterDetails update_vm_cluster_details: (required)
             Request to update the attributes of a VM cluster.
@@ -55390,12 +55390,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpdateVmClusterNetworkDetails update_vm_cluster_network_details: (required)
             Request to update the properties of a VM cluster network.
@@ -55513,7 +55513,7 @@ class DatabaseClient(object):
         :param str database_id: (required)
             The database `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDatabaseDetails upgrade_database_details: (required)
             Request to perform a database upgrade.
@@ -55630,7 +55630,7 @@ class DatabaseClient(object):
         :param str db_system_id: (required)
             The DB system `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.UpgradeDbSystemDetails upgrade_db_system_details: (required)
             Request to perform an upgrade of the operating system and the Oracle Grid Infrastructure (GI) of the DB system.
@@ -55757,12 +55757,12 @@ class DatabaseClient(object):
         :param str exadata_infrastructure_id: (required)
             The Exadata infrastructure `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str vm_cluster_network_id: (required)
             The VM cluster network `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.

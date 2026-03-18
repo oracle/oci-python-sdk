@@ -199,7 +199,7 @@ class AutonomousDataWarehouse(object):
         **[Required]** Gets the id of this AutonomousDataWarehouse.
         The `OCID`__ of the Autonomous AI Lakehouse.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutonomousDataWarehouse.
@@ -213,7 +213,7 @@ class AutonomousDataWarehouse(object):
         Sets the id of this AutonomousDataWarehouse.
         The `OCID`__ of the Autonomous AI Lakehouse.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutonomousDataWarehouse.
@@ -227,7 +227,7 @@ class AutonomousDataWarehouse(object):
         **[Required]** Gets the compartment_id of this AutonomousDataWarehouse.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutonomousDataWarehouse.
@@ -241,7 +241,7 @@ class AutonomousDataWarehouse(object):
         Sets the compartment_id of this AutonomousDataWarehouse.
         The `OCID`__ of the compartment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutonomousDataWarehouse.
@@ -512,7 +512,7 @@ class AutonomousDataWarehouse(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AutonomousDataWarehouse.
@@ -529,7 +529,7 @@ class AutonomousDataWarehouse(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AutonomousDataWarehouse.
@@ -544,7 +544,7 @@ class AutonomousDataWarehouse(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AutonomousDataWarehouse.
@@ -559,7 +559,7 @@ class AutonomousDataWarehouse(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AutonomousDataWarehouse.

@@ -24,7 +24,7 @@ missing = Sentinel("Missing")
 class SoftwareSourceClient(object):
     """
     Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
-    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -139,7 +139,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AddPackagesToSoftwareSourceDetails add_packages_to_software_source_details: (required)
             A list of packages to be added to the software source.
@@ -368,18 +368,18 @@ class SoftwareSourceClient(object):
         Moves the specified software sources to a different compartment within the same tenancy.
         For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ChangeSoftwareSourceCompartmentDetails change_software_source_compartment_details: (required)
             The `OCID`__ for the compartment to move the software source to.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -713,7 +713,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -827,7 +827,7 @@ class SoftwareSourceClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str name: (required)
             The erratum name (such as ELSA-2023-34678).
@@ -944,7 +944,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str module_name: (required)
             The name of the module.
@@ -1065,7 +1065,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str profile_name: (required)
             The name of the module stream profile.
@@ -1190,7 +1190,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str package_group_id: (required)
             The unique package group identifier.
@@ -1301,7 +1301,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str software_package_name: (required)
             The name of the software package.
@@ -1517,7 +1517,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1624,7 +1624,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1757,7 +1757,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1765,7 +1765,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -1925,7 +1925,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return resources that match the given user-friendly name.
@@ -1942,7 +1942,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -1950,7 +1950,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2098,13 +2098,13 @@ class SoftwareSourceClient(object):
         Lists entitlements in the specified tenancy `OCID`__. Filter the list against a variety of criteria including but
         not limited to its Customer Support Identifier (CSI), and vendor name.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str csi: (optional)
             A filter to return entitlements that match the given customer support identifier (CSI).
@@ -2120,7 +2120,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2128,7 +2128,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2274,7 +2274,7 @@ class SoftwareSourceClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] name: (optional)
             The assigned erratum name. It's unique and not changeable.
@@ -2320,7 +2320,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2328,7 +2328,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2506,13 +2506,13 @@ class SoftwareSourceClient(object):
         Lists module stream profiles from the specified software source `OCID`__. Filter the list against a variety of
         criteria including but not limited to its module name, stream name, and profile name.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str module_name: (optional)
             The name of a module. This parameter is required if a
@@ -2530,7 +2530,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2538,7 +2538,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2686,13 +2686,13 @@ class SoftwareSourceClient(object):
         Lists module streams from the specified software source `OCID`__.
         Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str module_name: (optional)
             The name of a module. This parameter is required if a
@@ -2710,7 +2710,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2718,7 +2718,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2871,13 +2871,13 @@ class SoftwareSourceClient(object):
         Lists package groups that are associated with the specified software source `OCID`__. Filter the list against a
         variety of criteria including but not limited to its name, and package group type.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
             The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -2897,7 +2897,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -2905,7 +2905,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3062,7 +3062,7 @@ class SoftwareSourceClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] software_source_type: (optional)
             The type of the software source.
@@ -3106,7 +3106,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3114,7 +3114,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3330,7 +3330,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return resources that match the given user-friendly name.
@@ -3347,7 +3347,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3355,7 +3355,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3507,7 +3507,7 @@ class SoftwareSourceClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -3639,7 +3639,7 @@ class SoftwareSourceClient(object):
         Lists software sources that match the specified tenancy or software source `OCID`__. Filter the list against a
         variety of criteria including but not limited to its name, status, architecture, and OS family.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (optional)
@@ -3648,7 +3648,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (optional)
             The `OCID`__ for the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] software_source_type: (optional)
             The type of the software source.
@@ -3706,7 +3706,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -3714,7 +3714,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -3939,7 +3939,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromSoftwareSourceDetails remove_packages_from_software_source_details: (required)
             A list of packages to be removed from the software source.
@@ -4072,7 +4072,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ReplacePackagesInSoftwareSourceDetails replace_packages_in_software_source_details: (required)
             A list of packages that will replace the existing packages in the software source.
@@ -4211,7 +4211,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4219,7 +4219,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4333,7 +4333,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4341,7 +4341,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4455,7 +4455,7 @@ class SoftwareSourceClient(object):
 
             Example: `50`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -4463,7 +4463,7 @@ class SoftwareSourceClient(object):
 
             Example: `3`
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4567,7 +4567,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -4691,7 +4691,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateSoftwareSourceDetails update_software_source_details: (required)
             The information to be updated.
@@ -4815,7 +4815,7 @@ class SoftwareSourceClient(object):
         :param str software_source_id: (required)
             The `OCID`__ of the software source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

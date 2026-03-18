@@ -129,13 +129,13 @@ class FleetAppsManagementProvisionClient(object):
         Moves a Provision into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.ChangeProvisionCompartmentDetails change_provision_compartment_details: (required)
             Details of the target compartment.
@@ -359,7 +359,7 @@ class FleetAppsManagementProvisionClient(object):
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -473,7 +473,7 @@ class FleetAppsManagementProvisionClient(object):
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -752,7 +752,7 @@ class FleetAppsManagementProvisionClient(object):
         :param str provision_id: (required)
             The `OCID`__ of the FamProvision.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.UpdateProvisionDetails update_provision_details: (required)
             The information to be updated.

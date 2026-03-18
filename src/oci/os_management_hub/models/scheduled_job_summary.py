@@ -196,7 +196,7 @@ class ScheduledJobSummary(object):
         **[Required]** Gets the id of this ScheduledJobSummary.
         The `OCID`__ of the scheduled job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ScheduledJobSummary.
@@ -210,7 +210,7 @@ class ScheduledJobSummary(object):
         Sets the id of this ScheduledJobSummary.
         The `OCID`__ of the scheduled job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ScheduledJobSummary.
@@ -248,7 +248,7 @@ class ScheduledJobSummary(object):
         **[Required]** Gets the compartment_id of this ScheduledJobSummary.
         The `OCID`__ of the compartment that contains the scheduled job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ScheduledJobSummary.
@@ -262,7 +262,7 @@ class ScheduledJobSummary(object):
         Sets the compartment_id of this ScheduledJobSummary.
         The `OCID`__ of the compartment that contains the scheduled job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ScheduledJobSummary.
@@ -444,7 +444,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_ids of this ScheduledJobSummary.
@@ -460,7 +460,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_ids: The managed_instance_ids of this ScheduledJobSummary.
@@ -476,7 +476,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_group_ids of this ScheduledJobSummary.
@@ -492,7 +492,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_group_ids: The managed_instance_group_ids of this ScheduledJobSummary.
@@ -508,7 +508,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_compartment_ids of this ScheduledJobSummary.
@@ -524,7 +524,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_compartment_ids: The managed_compartment_ids of this ScheduledJobSummary.
@@ -540,7 +540,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lifecycle_stage_ids of this ScheduledJobSummary.
@@ -556,7 +556,7 @@ class ScheduledJobSummary(object):
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
         managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lifecycle_stage_ids: The lifecycle_stage_ids of this ScheduledJobSummary.
@@ -662,7 +662,7 @@ class ScheduledJobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ScheduledJobSummary.
@@ -678,7 +678,7 @@ class ScheduledJobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ScheduledJobSummary.
@@ -694,7 +694,7 @@ class ScheduledJobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ScheduledJobSummary.
@@ -710,7 +710,7 @@ class ScheduledJobSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ScheduledJobSummary.
@@ -806,7 +806,7 @@ class ScheduledJobSummary(object):
         Gets the work_request_id of this ScheduledJobSummary.
         The `OCID`__ for the work request that will be rerun.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_id of this ScheduledJobSummary.
@@ -820,7 +820,7 @@ class ScheduledJobSummary(object):
         Sets the work_request_id of this ScheduledJobSummary.
         The `OCID`__ for the work request that will be rerun.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_id: The work_request_id of this ScheduledJobSummary.

@@ -37,7 +37,7 @@ class LBCookieSessionPersistenceConfigurationDetails(object):
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm
+    __ https://docs.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm
     """
 
     def __init__(self, **kwargs):

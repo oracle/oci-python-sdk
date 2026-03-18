@@ -15,7 +15,7 @@ from oci._vendor import six
 from oci._vendor import requests
 from oci._vendor.requests.exceptions import HTTPError, ConnectionError, RetryError
 from oci._vendor.requests.adapters import HTTPAdapter
-from oci._vendor.urllib3.util.retry import Retry
+from urllib3.util.retry import Retry
 
 REGIONS_SHORT_NAMES = regions_definitions.REGIONS_SHORT_NAMES
 REGION_REALMS = regions_definitions.REGION_REALMS

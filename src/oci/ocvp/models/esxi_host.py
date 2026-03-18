@@ -346,7 +346,7 @@ class EsxiHost(object):
         **[Required]** Gets the id of this EsxiHost.
         The `OCID`__ of the ESXi host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this EsxiHost.
@@ -360,7 +360,7 @@ class EsxiHost(object):
         Sets the id of this EsxiHost.
         The `OCID`__ of the ESXi host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this EsxiHost.
@@ -401,7 +401,7 @@ class EsxiHost(object):
         The `OCID`__ of the SDDC that the
         ESXi host belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sddc_id of this EsxiHost.
@@ -416,7 +416,7 @@ class EsxiHost(object):
         The `OCID`__ of the SDDC that the
         ESXi host belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sddc_id: The sddc_id of this EsxiHost.
@@ -431,7 +431,7 @@ class EsxiHost(object):
         The `OCID`__ of the Cluster that the
         ESXi host belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this EsxiHost.
@@ -446,7 +446,7 @@ class EsxiHost(object):
         The `OCID`__ of the Cluster that the
         ESXi host belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this EsxiHost.
@@ -461,7 +461,7 @@ class EsxiHost(object):
         The `OCID`__ of the compartment that
         contains the Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EsxiHost.
@@ -476,7 +476,7 @@ class EsxiHost(object):
         The `OCID`__ of the compartment that
         contains the Cluster.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EsxiHost.
@@ -492,7 +492,7 @@ class EsxiHost(object):
         is configured with the chosen bundle of VMware software. The `computeInstanceId`
         is the `OCID`__ of that Compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compute_instance_id of this EsxiHost.
@@ -508,7 +508,7 @@ class EsxiHost(object):
         is configured with the chosen bundle of VMware software. The `computeInstanceId`
         is the `OCID`__ of that Compute instance.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compute_instance_id: The compute_instance_id of this EsxiHost.
@@ -616,7 +616,7 @@ class EsxiHost(object):
         Gets the billing_donor_host_id of this EsxiHost.
         The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The billing_donor_host_id of this EsxiHost.
@@ -630,7 +630,7 @@ class EsxiHost(object):
         Sets the billing_donor_host_id of this EsxiHost.
         The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param billing_donor_host_id: The billing_donor_host_id of this EsxiHost.
@@ -644,7 +644,7 @@ class EsxiHost(object):
         Gets the swap_billing_host_id of this EsxiHost.
         The `OCID`__ of the active ESXi Host to swap billing with current host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The swap_billing_host_id of this EsxiHost.
@@ -658,7 +658,7 @@ class EsxiHost(object):
         Sets the swap_billing_host_id of this EsxiHost.
         The `OCID`__ of the active ESXi Host to swap billing with current host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param swap_billing_host_id: The swap_billing_host_id of this EsxiHost.
@@ -814,7 +814,7 @@ class EsxiHost(object):
         Gets the failed_esxi_host_id of this EsxiHost.
         The `OCID`__ of the ESXi host that failed.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The failed_esxi_host_id of this EsxiHost.
@@ -828,7 +828,7 @@ class EsxiHost(object):
         Sets the failed_esxi_host_id of this EsxiHost.
         The `OCID`__ of the ESXi host that failed.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param failed_esxi_host_id: The failed_esxi_host_id of this EsxiHost.
@@ -843,7 +843,7 @@ class EsxiHost(object):
         The `OCID`__ of the ESXi host that
         is created to replace the failed host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The replacement_esxi_host_id of this EsxiHost.
@@ -858,7 +858,7 @@ class EsxiHost(object):
         The `OCID`__ of the ESXi host that
         is created to replace the failed host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param replacement_esxi_host_id: The replacement_esxi_host_id of this EsxiHost.
@@ -953,7 +953,7 @@ class EsxiHost(object):
         The `OCID`__ of the ESXi host that
         will be upgraded.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The non_upgraded_esxi_host_id of this EsxiHost.
@@ -968,7 +968,7 @@ class EsxiHost(object):
         The `OCID`__ of the ESXi host that
         will be upgraded.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param non_upgraded_esxi_host_id: The non_upgraded_esxi_host_id of this EsxiHost.
@@ -983,7 +983,7 @@ class EsxiHost(object):
         The `OCID`__ of the ESXi host that
         is newly created to upgrade the original host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The upgraded_replacement_esxi_host_id of this EsxiHost.
@@ -998,7 +998,7 @@ class EsxiHost(object):
         The `OCID`__ of the ESXi host that
         is newly created to upgrade the original host.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param upgraded_replacement_esxi_host_id: The upgraded_replacement_esxi_host_id of this EsxiHost.
@@ -1086,7 +1086,7 @@ class EsxiHost(object):
         Gets the capacity_reservation_id of this EsxiHost.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The capacity_reservation_id of this EsxiHost.
@@ -1100,7 +1100,7 @@ class EsxiHost(object):
         Sets the capacity_reservation_id of this EsxiHost.
         The `OCID`__ of the Capacity Reservation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this EsxiHost.
@@ -1117,7 +1117,7 @@ class EsxiHost(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this EsxiHost.
@@ -1134,7 +1134,7 @@ class EsxiHost(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this EsxiHost.
@@ -1151,7 +1151,7 @@ class EsxiHost(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this EsxiHost.
@@ -1168,7 +1168,7 @@ class EsxiHost(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this EsxiHost.
@@ -1280,7 +1280,7 @@ class EsxiHost(object):
         Gets the vcf_byol_allocation_id of this EsxiHost.
         The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcf_byol_allocation_id of this EsxiHost.
@@ -1294,7 +1294,7 @@ class EsxiHost(object):
         Sets the vcf_byol_allocation_id of this EsxiHost.
         The `OCID`__ of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcf_byol_allocation_id: The vcf_byol_allocation_id of this EsxiHost.

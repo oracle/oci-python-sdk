@@ -418,7 +418,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the account key is stored.
         Note: When provided, 'accountKey' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The account_key_secret_id of this AzureDataLakeStorageConnectionSummary.
@@ -433,7 +433,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the account key is stored.
         Note: When provided, 'accountKey' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param account_key_secret_id: The account_key_secret_id of this AzureDataLakeStorageConnectionSummary.
@@ -448,7 +448,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the sas token is stored.
         Note: When provided, 'sasToken' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sas_token_secret_id of this AzureDataLakeStorageConnectionSummary.
@@ -463,7 +463,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the sas token is stored.
         Note: When provided, 'sasToken' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sas_token_secret_id: The sas_token_secret_id of this AzureDataLakeStorageConnectionSummary.
@@ -478,7 +478,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the client secret is stored.
         Note: When provided, 'clientSecret' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The client_secret_secret_id of this AzureDataLakeStorageConnectionSummary.
@@ -493,7 +493,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         The `OCID`__ of the Secret where the client secret is stored.
         Note: When provided, 'clientSecret' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param client_secret_secret_id: The client_secret_secret_id of this AzureDataLakeStorageConnectionSummary.

@@ -95,7 +95,7 @@ class FirmwareBundleSummary(object):
         **[Required]** Gets the id of this FirmwareBundleSummary.
         The `OCID`__ of this firmware bundle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FirmwareBundleSummary.
@@ -109,7 +109,7 @@ class FirmwareBundleSummary(object):
         Sets the id of this FirmwareBundleSummary.
         The `OCID`__ of this firmware bundle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FirmwareBundleSummary.
@@ -215,7 +215,7 @@ class FirmwareBundleSummary(object):
         **[Required]** Gets the compartment_id of this FirmwareBundleSummary.
         The `OCID`__ of the compartment of this firmware bundle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FirmwareBundleSummary.
@@ -229,7 +229,7 @@ class FirmwareBundleSummary(object):
         Sets the compartment_id of this FirmwareBundleSummary.
         The `OCID`__ of the compartment of this firmware bundle.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FirmwareBundleSummary.

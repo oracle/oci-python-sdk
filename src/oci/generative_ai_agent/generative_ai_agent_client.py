@@ -140,7 +140,7 @@ class GenerativeAiAgentClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -253,13 +253,13 @@ class GenerativeAiAgentClient(object):
         Moves an agent into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeAgentCompartmentDetails change_agent_compartment_details: (required)
             The information to be updated.
@@ -387,13 +387,13 @@ class GenerativeAiAgentClient(object):
         Moves an endpoint into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeAgentEndpointCompartmentDetails change_agent_endpoint_compartment_details: (required)
             The information to be updated.
@@ -521,13 +521,13 @@ class GenerativeAiAgentClient(object):
         Moves a knowledge base into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeKnowledgeBaseCompartmentDetails change_knowledge_base_compartment_details: (required)
             The information to be updated.
@@ -655,13 +655,13 @@ class GenerativeAiAgentClient(object):
         Moves a provisioned capacity into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.ChangeProvisionedCapacityCompartmentDetails change_provisioned_capacity_compartment_details: (required)
             The information to be updated.
@@ -1548,7 +1548,7 @@ class GenerativeAiAgentClient(object):
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -1664,7 +1664,7 @@ class GenerativeAiAgentClient(object):
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -1780,7 +1780,7 @@ class GenerativeAiAgentClient(object):
         :param str data_ingestion_job_id: (required)
             The `OCID`__ of the data ingestion job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -1896,7 +1896,7 @@ class GenerativeAiAgentClient(object):
         :param str data_source_id: (required)
             The `OCID`__ of the data source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -2012,7 +2012,7 @@ class GenerativeAiAgentClient(object):
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -2128,7 +2128,7 @@ class GenerativeAiAgentClient(object):
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -2244,7 +2244,7 @@ class GenerativeAiAgentClient(object):
         :param str tool_id: (required)
             The `OCID`__ of the Tool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -2360,7 +2360,7 @@ class GenerativeAiAgentClient(object):
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2470,7 +2470,7 @@ class GenerativeAiAgentClient(object):
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2580,7 +2580,7 @@ class GenerativeAiAgentClient(object):
         :param str data_ingestion_job_id: (required)
             The `OCID`__ of the data ingestion job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2690,7 +2690,7 @@ class GenerativeAiAgentClient(object):
         :param str data_ingestion_job_id: (required)
             The `OCID`__ of the data ingestion job.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2800,7 +2800,7 @@ class GenerativeAiAgentClient(object):
         :param str data_source_id: (required)
             The `OCID`__ of the data source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2910,7 +2910,7 @@ class GenerativeAiAgentClient(object):
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -3020,7 +3020,7 @@ class GenerativeAiAgentClient(object):
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -3130,7 +3130,7 @@ class GenerativeAiAgentClient(object):
         :param str tool_id: (required)
             The `OCID`__ of the Tool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -3240,7 +3240,7 @@ class GenerativeAiAgentClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -3350,12 +3350,12 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str agent_id: (optional)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -3371,14 +3371,14 @@ class GenerativeAiAgentClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -3530,7 +3530,7 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -3546,14 +3546,14 @@ class GenerativeAiAgentClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -3703,12 +3703,12 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str data_source_id: (optional)
             The `OCID`__ of the data source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -3724,14 +3724,14 @@ class GenerativeAiAgentClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -3883,12 +3883,12 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str knowledge_base_id: (optional)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -3904,14 +3904,14 @@ class GenerativeAiAgentClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -4063,7 +4063,7 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -4079,14 +4079,14 @@ class GenerativeAiAgentClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -4236,12 +4236,12 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str provisioned_capacity_id: (optional)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -4257,14 +4257,14 @@ class GenerativeAiAgentClient(object):
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -4416,7 +4416,7 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -4430,21 +4430,21 @@ class GenerativeAiAgentClient(object):
         :param str agent_id: (optional)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -4596,7 +4596,7 @@ class GenerativeAiAgentClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -4609,14 +4609,14 @@ class GenerativeAiAgentClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for `timestamp` is descending.
@@ -4758,7 +4758,7 @@ class GenerativeAiAgentClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -4771,14 +4771,14 @@ class GenerativeAiAgentClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for `timestamp` is descending.
@@ -4920,12 +4920,12 @@ class GenerativeAiAgentClient(object):
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str work_request_id: (optional)
             The `OCID`__ of the asynchronous work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
             A filter to return only the resources that match the given lifecycle state.
@@ -4935,7 +4935,7 @@ class GenerativeAiAgentClient(object):
         :param str resource_id: (optional)
             The `OCID`__ of the resource affected by the work request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -4948,14 +4948,14 @@ class GenerativeAiAgentClient(object):
             \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -5100,7 +5100,7 @@ class GenerativeAiAgentClient(object):
         :param str agent_id: (required)
             The `OCID`__ of the agent.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateAgentDetails update_agent_details: (required)
             The information to be updated.
@@ -5221,7 +5221,7 @@ class GenerativeAiAgentClient(object):
         :param str agent_endpoint_id: (required)
             The `OCID`__ of the endpoint.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateAgentEndpointDetails update_agent_endpoint_details: (required)
             The information to be updated.
@@ -5342,7 +5342,7 @@ class GenerativeAiAgentClient(object):
         :param str data_source_id: (required)
             The `OCID`__ of the data source.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateDataSourceDetails update_data_source_details: (required)
             The data source information to be updated.
@@ -5463,7 +5463,7 @@ class GenerativeAiAgentClient(object):
         :param str knowledge_base_id: (required)
             The `OCID`__ of the knowledge base.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateKnowledgeBaseDetails update_knowledge_base_details: (required)
             The information to be updated.
@@ -5584,7 +5584,7 @@ class GenerativeAiAgentClient(object):
         :param str provisioned_capacity_id: (required)
             The `OCID`__ of the provisioned capacity.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateProvisionedCapacityDetails update_provisioned_capacity_details: (required)
             The information to be updated.
@@ -5705,7 +5705,7 @@ class GenerativeAiAgentClient(object):
         :param str tool_id: (required)
             The `OCID`__ of the Tool.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.generative_ai_agent.models.UpdateToolDetails update_tool_details: (required)
             The information to be updated.

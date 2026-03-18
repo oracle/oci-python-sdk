@@ -16,7 +16,7 @@ class ListenerDetails(object):
     For more information about listener configuration, see
     `Listeners for Network Load Balancers`__.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm
+    __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/Listeners/listener-management.htm
     """
 
     #: A constant which can be used with the ip_version property of a ListenerDetails.

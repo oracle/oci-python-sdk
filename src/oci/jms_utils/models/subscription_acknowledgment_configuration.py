@@ -77,7 +77,7 @@ class SubscriptionAcknowledgmentConfiguration(object):
         Gets the acknowledged_by of this SubscriptionAcknowledgmentConfiguration.
         The `OCID`__ of the principal that ackwnoledged the subscription.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The acknowledged_by of this SubscriptionAcknowledgmentConfiguration.
@@ -91,7 +91,7 @@ class SubscriptionAcknowledgmentConfiguration(object):
         Sets the acknowledged_by of this SubscriptionAcknowledgmentConfiguration.
         The `OCID`__ of the principal that ackwnoledged the subscription.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param acknowledged_by: The acknowledged_by of this SubscriptionAcknowledgmentConfiguration.

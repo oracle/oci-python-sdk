@@ -591,7 +591,7 @@ class CertificatesManagementClient(object):
 
         When provided, if-match is checked against the ETag values of the secret.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str ca_bundle_id: (required)
@@ -724,7 +724,7 @@ class CertificatesManagementClient(object):
 
         When provided, If-Match is checked against the ETag values of the source.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str certificate_authority_id: (required)
@@ -857,7 +857,7 @@ class CertificatesManagementClient(object):
 
         When provided, if-match is checked against the ETag values of the secret.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str certificate_id: (required)

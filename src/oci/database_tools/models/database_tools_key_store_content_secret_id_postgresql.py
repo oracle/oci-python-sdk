@@ -49,7 +49,7 @@ class DatabaseToolsKeyStoreContentSecretIdPostgresql(DatabaseToolsKeyStoreConten
         Gets the secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresql.
         The `OCID`__ of the secret containing the key store.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresql.
@@ -63,7 +63,7 @@ class DatabaseToolsKeyStoreContentSecretIdPostgresql(DatabaseToolsKeyStoreConten
         Sets the secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresql.
         The `OCID`__ of the secret containing the key store.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this DatabaseToolsKeyStoreContentSecretIdPostgresql.

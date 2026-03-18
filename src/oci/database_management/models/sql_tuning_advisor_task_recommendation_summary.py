@@ -132,7 +132,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
         **[Required]** Gets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskRecommendationSummary.
         The unique identifier of the task. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -146,7 +146,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
         Sets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskRecommendationSummary.
         The unique identifier of the task. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_advisor_task_id: The sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -160,7 +160,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
         **[Required]** Gets the sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskRecommendationSummary.
         The key of the object to which these recommendations apply. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -174,7 +174,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
         Sets the sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskRecommendationSummary.
         The key of the object to which these recommendations apply. This is not the `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param sql_tuning_advisor_task_object_id: The sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskRecommendationSummary.

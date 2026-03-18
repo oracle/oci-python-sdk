@@ -15,7 +15,7 @@ class FastConnectProviderService(object):
     A service offering from a supported provider. For more information,
     see `FastConnect Overview`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
     """
 
     #: A constant which can be used with the private_peering_bgp_management property of a FastConnectProviderService.
@@ -241,7 +241,7 @@ class FastConnectProviderService(object):
         **[Required]** Gets the id of this FastConnectProviderService.
         The `OCID`__ of the service offered by the provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FastConnectProviderService.
@@ -255,7 +255,7 @@ class FastConnectProviderService(object):
         Sets the id of this FastConnectProviderService.
         The `OCID`__ of the service offered by the provider.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FastConnectProviderService.

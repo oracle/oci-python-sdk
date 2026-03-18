@@ -14,7 +14,7 @@ class Byoasn(object):
     """
     Oracle offers the ability to Bring Your Own Autonomous System Number (BYOASN), importing AS Numbers you currently own to Oracle Cloud Infrastructure. A `Byoasn` resource is a record of the imported AS Number and also some associated metadata. The process used to `Bring Your Own ASN`__ is explained in the documentation.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Byoasn.
@@ -173,7 +173,7 @@ class Byoasn(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Byoasn.
@@ -190,7 +190,7 @@ class Byoasn(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Byoasn.
@@ -233,7 +233,7 @@ class Byoasn(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Byoasn.
@@ -250,7 +250,7 @@ class Byoasn(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Byoasn.
@@ -264,7 +264,7 @@ class Byoasn(object):
         **[Required]** Gets the id of this Byoasn.
         The `OCID`__ of the `Byoasn` resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Byoasn.
@@ -278,7 +278,7 @@ class Byoasn(object):
         Sets the id of this Byoasn.
         The `OCID`__ of the `Byoasn` resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Byoasn.
@@ -316,7 +316,7 @@ class Byoasn(object):
         **[Required]** Gets the compartment_id of this Byoasn.
         The `OCID`__ of the compartment containing the `Byoasn` resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Byoasn.
@@ -330,7 +330,7 @@ class Byoasn(object):
         Sets the compartment_id of this Byoasn.
         The `OCID`__ of the compartment containing the `Byoasn` resource.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Byoasn.
@@ -376,7 +376,7 @@ class Byoasn(object):
         **[Required]** Gets the validation_token of this Byoasn.
         The validation token is an internally-generated ASCII string used in the validation process. See `Importing a Byoasn`__ for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm
 
 
         :return: The validation_token of this Byoasn.
@@ -390,7 +390,7 @@ class Byoasn(object):
         Sets the validation_token of this Byoasn.
         The validation token is an internally-generated ASCII string used in the validation process. See `Importing a Byoasn`__ for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm
 
 
         :param validation_token: The validation_token of this Byoasn.

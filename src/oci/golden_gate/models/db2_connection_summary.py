@@ -441,7 +441,7 @@ class Db2ConnectionSummary(ConnectionSummary):
         that Oracle GoldenGate uses to connect the associated DB2 database.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this Db2ConnectionSummary.
@@ -457,7 +457,7 @@ class Db2ConnectionSummary(ConnectionSummary):
         that Oracle GoldenGate uses to connect the associated DB2 database.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this Db2ConnectionSummary.
@@ -475,7 +475,7 @@ class Db2ConnectionSummary(ConnectionSummary):
 
         Note: When provided, 'sslClientKeystoredb' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
@@ -493,7 +493,7 @@ class Db2ConnectionSummary(ConnectionSummary):
 
         Note: When provided, 'sslClientKeystoredb' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_client_keystoredb_secret_id: The ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
@@ -511,7 +511,7 @@ class Db2ConnectionSummary(ConnectionSummary):
 
         Note: When provided, 'sslClientKeystash' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_client_keystash_secret_id of this Db2ConnectionSummary.
@@ -529,7 +529,7 @@ class Db2ConnectionSummary(ConnectionSummary):
 
         Note: When provided, 'sslClientKeystash' field must not be provided.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_client_keystash_secret_id: The ssl_client_keystash_secret_id of this Db2ConnectionSummary.

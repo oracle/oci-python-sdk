@@ -14,7 +14,7 @@ class UpdateGenericArtifactDetails(object):
     """
     Details for updating an artifact by providing its `OCID`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+    __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class UpdateGenericArtifactDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateGenericArtifactDetails.
@@ -68,7 +68,7 @@ class UpdateGenericArtifactDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateGenericArtifactDetails.
@@ -85,7 +85,7 @@ class UpdateGenericArtifactDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateGenericArtifactDetails.
@@ -102,7 +102,7 @@ class UpdateGenericArtifactDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateGenericArtifactDetails.

@@ -39,7 +39,7 @@ class AttachProfileToManagedInstanceDetails(object):
         **[Required]** Gets the profile_id of this AttachProfileToManagedInstanceDetails.
         The profile `OCID`__ to attach to the managed instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The profile_id of this AttachProfileToManagedInstanceDetails.
@@ -53,7 +53,7 @@ class AttachProfileToManagedInstanceDetails(object):
         Sets the profile_id of this AttachProfileToManagedInstanceDetails.
         The profile `OCID`__ to attach to the managed instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param profile_id: The profile_id of this AttachProfileToManagedInstanceDetails.

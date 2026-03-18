@@ -166,7 +166,7 @@ class OracleDBAzureBlobMountClient(object):
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureBlobMountCompartmentDetails change_oracle_db_azure_blob_mount_compartment_details: (required)
             Moves the Oracle DbAzure Blob Mount resource into a different compartment.
@@ -409,7 +409,7 @@ class OracleDBAzureBlobMountClient(object):
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -519,13 +519,13 @@ class OracleDBAzureBlobMountClient(object):
         """
         Retrieves the Oracle DB Azure Blob Mount resource for a specified resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -662,7 +662,7 @@ class OracleDBAzureBlobMountClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
@@ -670,7 +670,7 @@ class OracleDBAzureBlobMountClient(object):
         :param str oracle_db_azure_blob_mount_id: (optional)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -834,13 +834,13 @@ class OracleDBAzureBlobMountClient(object):
         """
         Modifies the existing Oracle DB Azure Blob Mount resource for a given `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureBlobMountDetails update_oracle_db_azure_blob_mount_details: (required)
             Details for to update OracleDbAzureBlobMount.

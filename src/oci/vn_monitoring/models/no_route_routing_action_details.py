@@ -77,7 +77,7 @@ class NoRouteRoutingActionDetails(object):
         Gets the evaluated_vcn_route_table_id of this NoRouteRoutingActionDetails.
         `OCIDs`__ of the evaluated VCN route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The evaluated_vcn_route_table_id of this NoRouteRoutingActionDetails.
@@ -91,7 +91,7 @@ class NoRouteRoutingActionDetails(object):
         Sets the evaluated_vcn_route_table_id of this NoRouteRoutingActionDetails.
         `OCIDs`__ of the evaluated VCN route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param evaluated_vcn_route_table_id: The evaluated_vcn_route_table_id of this NoRouteRoutingActionDetails.
@@ -105,7 +105,7 @@ class NoRouteRoutingActionDetails(object):
         Gets the evaluated_drg_route_table_id of this NoRouteRoutingActionDetails.
         `OCIDs`__ of evaluated DRG route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The evaluated_drg_route_table_id of this NoRouteRoutingActionDetails.
@@ -119,7 +119,7 @@ class NoRouteRoutingActionDetails(object):
         Sets the evaluated_drg_route_table_id of this NoRouteRoutingActionDetails.
         `OCIDs`__ of evaluated DRG route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param evaluated_drg_route_table_id: The evaluated_drg_route_table_id of this NoRouteRoutingActionDetails.

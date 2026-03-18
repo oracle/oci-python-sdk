@@ -220,7 +220,7 @@ class Certificate(object):
         **[Required]** Gets the deployment_id of this Certificate.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The deployment_id of this Certificate.
@@ -234,7 +234,7 @@ class Certificate(object):
         Sets the deployment_id of this Certificate.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param deployment_id: The deployment_id of this Certificate.

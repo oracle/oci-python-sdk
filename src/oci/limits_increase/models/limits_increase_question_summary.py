@@ -17,7 +17,7 @@ class LimitsIncreaseQuestionSummary(object):
     For more information, see
     `Creating a Limit Increase Request`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/General/service-limits/create-request.htm
+    __ https://docs.oracle.com/iaas/Content/General/service-limits/create-request.htm
     """
 
     #: A constant which can be used with the question_type property of a LimitsIncreaseQuestionSummary.
@@ -104,7 +104,7 @@ class LimitsIncreaseQuestionSummary(object):
         **[Required]** Gets the id of this LimitsIncreaseQuestionSummary.
         The `OCID`__ of the question.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LimitsIncreaseQuestionSummary.
@@ -118,7 +118,7 @@ class LimitsIncreaseQuestionSummary(object):
         Sets the id of this LimitsIncreaseQuestionSummary.
         The `OCID`__ of the question.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LimitsIncreaseQuestionSummary.

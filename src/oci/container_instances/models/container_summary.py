@@ -151,7 +151,7 @@ class ContainerSummary(object):
         **[Required]** Gets the id of this ContainerSummary.
         The `OCID`__ of the container.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ContainerSummary.
@@ -165,7 +165,7 @@ class ContainerSummary(object):
         Sets the id of this ContainerSummary.
         The `OCID`__ of the container.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ContainerSummary.
@@ -203,7 +203,7 @@ class ContainerSummary(object):
         **[Required]** Gets the compartment_id of this ContainerSummary.
         The compartment `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ContainerSummary.
@@ -217,7 +217,7 @@ class ContainerSummary(object):
         Sets the compartment_id of this ContainerSummary.
         The compartment `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ContainerSummary.
@@ -463,7 +463,7 @@ class ContainerSummary(object):
         **[Required]** Gets the container_instance_id of this ContainerSummary.
         The `OCID`__ of the container instance on which the container is running.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The container_instance_id of this ContainerSummary.
@@ -477,7 +477,7 @@ class ContainerSummary(object):
         Sets the container_instance_id of this ContainerSummary.
         The `OCID`__ of the container instance on which the container is running.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param container_instance_id: The container_instance_id of this ContainerSummary.

@@ -199,7 +199,7 @@ class InstanceMaintenanceEventSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this InstanceMaintenanceEventSummary.
@@ -216,7 +216,7 @@ class InstanceMaintenanceEventSummary(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this InstanceMaintenanceEventSummary.
@@ -259,7 +259,7 @@ class InstanceMaintenanceEventSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this InstanceMaintenanceEventSummary.
@@ -276,7 +276,7 @@ class InstanceMaintenanceEventSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this InstanceMaintenanceEventSummary.
@@ -290,7 +290,7 @@ class InstanceMaintenanceEventSummary(object):
         **[Required]** Gets the id of this InstanceMaintenanceEventSummary.
         The `OCID`__ of the maintenance event.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstanceMaintenanceEventSummary.
@@ -304,7 +304,7 @@ class InstanceMaintenanceEventSummary(object):
         Sets the id of this InstanceMaintenanceEventSummary.
         The `OCID`__ of the maintenance event.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstanceMaintenanceEventSummary.
@@ -369,7 +369,7 @@ class InstanceMaintenanceEventSummary(object):
         deferred, or even cancelled. Please see the
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
 
         :return: The maintenance_category of this InstanceMaintenanceEventSummary.
@@ -386,7 +386,7 @@ class InstanceMaintenanceEventSummary(object):
         deferred, or even cancelled. Please see the
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
 
         :param maintenance_category: The maintenance_category of this InstanceMaintenanceEventSummary.
@@ -401,7 +401,7 @@ class InstanceMaintenanceEventSummary(object):
         This is the reason that Maintenance is being performed. See
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
 
         :return: The maintenance_reason of this InstanceMaintenanceEventSummary.
@@ -416,7 +416,7 @@ class InstanceMaintenanceEventSummary(object):
         This is the reason that Maintenance is being performed. See
         `Instance Maintenance`__ documentation for details.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
+        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm
 
 
         :param maintenance_reason: The maintenance_reason of this InstanceMaintenanceEventSummary.

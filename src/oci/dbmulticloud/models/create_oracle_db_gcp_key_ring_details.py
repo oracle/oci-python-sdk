@@ -95,7 +95,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
         **[Required]** Gets the compartment_id of this CreateOracleDbGcpKeyRingDetails.
         The compartment `OCID`__ where the Oracle DB GCP Key Ring resource resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOracleDbGcpKeyRingDetails.
@@ -109,7 +109,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
         Sets the compartment_id of this CreateOracleDbGcpKeyRingDetails.
         The compartment `OCID`__ where the Oracle DB GCP Key Ring resource resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOracleDbGcpKeyRingDetails.
@@ -123,7 +123,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
         **[Required]** Gets the oracle_db_connector_id of this CreateOracleDbGcpKeyRingDetails.
         The `OCID`__ of the compartment where the Oracle DB GCP Identity Connector resource resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_connector_id of this CreateOracleDbGcpKeyRingDetails.
@@ -137,7 +137,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
         Sets the oracle_db_connector_id of this CreateOracleDbGcpKeyRingDetails.
         The `OCID`__ of the compartment where the Oracle DB GCP Identity Connector resource resides.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_connector_id: The oracle_db_connector_id of this CreateOracleDbGcpKeyRingDetails.
@@ -274,7 +274,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateOracleDbGcpKeyRingDetails.
@@ -291,7 +291,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateOracleDbGcpKeyRingDetails.
@@ -308,7 +308,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateOracleDbGcpKeyRingDetails.
@@ -325,7 +325,7 @@ class CreateOracleDbGcpKeyRingDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateOracleDbGcpKeyRingDetails.

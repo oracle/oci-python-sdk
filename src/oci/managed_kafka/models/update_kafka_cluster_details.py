@@ -163,7 +163,7 @@ class UpdateKafkaClusterDetails(object):
         Gets the cluster_config_id of this UpdateKafkaClusterDetails.
         The `OCID`__ of Kafka Cluster configuration object
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_config_id of this UpdateKafkaClusterDetails.
@@ -177,7 +177,7 @@ class UpdateKafkaClusterDetails(object):
         Sets the cluster_config_id of this UpdateKafkaClusterDetails.
         The `OCID`__ of Kafka Cluster configuration object
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_config_id: The cluster_config_id of this UpdateKafkaClusterDetails.
@@ -266,7 +266,7 @@ class UpdateKafkaClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateKafkaClusterDetails.
@@ -283,7 +283,7 @@ class UpdateKafkaClusterDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateKafkaClusterDetails.
@@ -300,7 +300,7 @@ class UpdateKafkaClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateKafkaClusterDetails.
@@ -317,7 +317,7 @@ class UpdateKafkaClusterDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateKafkaClusterDetails.

@@ -875,7 +875,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1533,7 +1533,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_object_collection_rule_id: (required)
             The Log Analytics Object Collection Rule `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.log_analytics.models.ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails change_log_analytics_object_collection_rule_compartment_details: (required)
             The new compartment this Object Collection Rule will be moved to.
@@ -4001,7 +4001,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_object_collection_rule_id: (required)
             The Log Analytics Object Collection Rule `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7275,7 +7275,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8825,7 +8825,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_object_collection_rule_id: (required)
             The Log Analytics Object Collection Rule `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -9735,7 +9735,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -9886,7 +9886,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -10881,7 +10881,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str namespace_name: (required)
             The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
@@ -11318,7 +11318,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -19012,7 +19012,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str namespace_name: (required)
             The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
@@ -20499,7 +20499,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -20624,7 +20624,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -21457,7 +21457,7 @@ class LogAnalyticsClient(object):
         :param str work_request_id: (required)
             Work Request Identifier `OCID]`__ for the asynchronous request. The work request id can be usually obtained from the 'opc-work-request-id' response header of the asynchronous request.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -24197,7 +24197,7 @@ class LogAnalyticsClient(object):
         :param str log_analytics_object_collection_rule_id: (required)
             The Log Analytics Object Collection Rule `OCID`__.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.log_analytics.models.UpdateLogAnalyticsObjectCollectionRuleDetails update_log_analytics_object_collection_rule_details: (required)
             The rule config to be updated.

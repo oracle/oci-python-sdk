@@ -49,7 +49,7 @@ class DatabaseToolConnection(DatabaseConnection):
         **[Required]** Gets the connection_id of this DatabaseToolConnection.
         The `OCID`__ of the Database Tools Connection.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The connection_id of this DatabaseToolConnection.
@@ -63,7 +63,7 @@ class DatabaseToolConnection(DatabaseConnection):
         Sets the connection_id of this DatabaseToolConnection.
         The `OCID`__ of the Database Tools Connection.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param connection_id: The connection_id of this DatabaseToolConnection.

@@ -153,7 +153,7 @@ class UpdateEndpointDetails(object):
         Gets the model_id of this UpdateEndpointDetails.
         The `OCID`__ of the model to associate with the endpoint.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The model_id of this UpdateEndpointDetails.
@@ -167,7 +167,7 @@ class UpdateEndpointDetails(object):
         Sets the model_id of this UpdateEndpointDetails.
         The `OCID`__ of the model to associate with the endpoint.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param model_id: The model_id of this UpdateEndpointDetails.

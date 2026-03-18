@@ -338,7 +338,7 @@ class Profile(object):
         **[Required]** Gets the id of this Profile.
         The `OCID`__ of the registration profile.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Profile.
@@ -352,7 +352,7 @@ class Profile(object):
         Sets the id of this Profile.
         The `OCID`__ of the registration profile.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Profile.
@@ -366,7 +366,7 @@ class Profile(object):
         **[Required]** Gets the compartment_id of this Profile.
         The `OCID`__ of the compartment that contains the registration profile.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Profile.
@@ -380,7 +380,7 @@ class Profile(object):
         Sets the compartment_id of this Profile.
         The `OCID`__ of the compartment that contains the registration profile.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Profile.
@@ -443,7 +443,7 @@ class Profile(object):
         The `OCID`__ of the management station to associate with an
         instance once registered. Management stations are only used by non-OCI instances.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_station_id of this Profile.
@@ -458,7 +458,7 @@ class Profile(object):
         The `OCID`__ of the management station to associate with an
         instance once registered. Management stations are only used by non-OCI instances.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_station_id: The management_station_id of this Profile.
@@ -782,7 +782,7 @@ class Profile(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Profile.
@@ -798,7 +798,7 @@ class Profile(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Profile.
@@ -814,7 +814,7 @@ class Profile(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Profile.
@@ -830,7 +830,7 @@ class Profile(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Profile.

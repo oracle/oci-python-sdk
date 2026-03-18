@@ -16,7 +16,7 @@ class CaptureFilter(object):
     mirrored for a *:class:`Vtap`* or captured for a *`VCN Flow Log`__*.
     The capture filter is created with no rules defined, and it must have at least one rule to mirror traffic for the VTAP or collect VCN flow logs.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/vcn-flow-logs.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/vcn-flow-logs.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a CaptureFilter.
@@ -138,7 +138,7 @@ class CaptureFilter(object):
         **[Required]** Gets the compartment_id of this CaptureFilter.
         The `OCID`__ of the compartment containing the capture filter.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CaptureFilter.
@@ -152,7 +152,7 @@ class CaptureFilter(object):
         Sets the compartment_id of this CaptureFilter.
         The `OCID`__ of the compartment containing the capture filter.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CaptureFilter.
@@ -169,7 +169,7 @@ class CaptureFilter(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CaptureFilter.
@@ -186,7 +186,7 @@ class CaptureFilter(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CaptureFilter.
@@ -229,7 +229,7 @@ class CaptureFilter(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CaptureFilter.
@@ -246,7 +246,7 @@ class CaptureFilter(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CaptureFilter.
@@ -260,7 +260,7 @@ class CaptureFilter(object):
         **[Required]** Gets the id of this CaptureFilter.
         The capture filter's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CaptureFilter.
@@ -274,7 +274,7 @@ class CaptureFilter(object):
         Sets the id of this CaptureFilter.
         The capture filter's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CaptureFilter.

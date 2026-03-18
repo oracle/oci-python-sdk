@@ -256,7 +256,7 @@ class CreateSubnetDetails(object):
         **[Required]** Gets the compartment_id of this CreateSubnetDetails.
         The `OCID`__ of the compartment to contain the subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateSubnetDetails.
@@ -270,7 +270,7 @@ class CreateSubnetDetails(object):
         Sets the compartment_id of this CreateSubnetDetails.
         The `OCID`__ of the compartment to contain the subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateSubnetDetails.
@@ -287,7 +287,7 @@ class CreateSubnetDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateSubnetDetails.
@@ -304,7 +304,7 @@ class CreateSubnetDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateSubnetDetails.
@@ -319,7 +319,7 @@ class CreateSubnetDetails(object):
         The `OCID`__ of the set of DHCP options the subnet will use. If you don't
         provide a value, the subnet uses the VCN's default set of DHCP options.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dhcp_options_id of this CreateSubnetDetails.
@@ -334,7 +334,7 @@ class CreateSubnetDetails(object):
         The `OCID`__ of the set of DHCP options the subnet will use. If you don't
         provide a value, the subnet uses the VCN's default set of DHCP options.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dhcp_options_id: The dhcp_options_id of this CreateSubnetDetails.
@@ -387,7 +387,7 @@ class CreateSubnetDetails(object):
 
         Example: `subnet123`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The dns_label of this CreateSubnetDetails.
@@ -414,7 +414,7 @@ class CreateSubnetDetails(object):
 
         Example: `subnet123`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param dns_label: The dns_label of this CreateSubnetDetails.
@@ -431,7 +431,7 @@ class CreateSubnetDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateSubnetDetails.
@@ -448,7 +448,7 @@ class CreateSubnetDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateSubnetDetails.
@@ -468,7 +468,7 @@ class CreateSubnetDetails(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this CreateSubnetDetails.
@@ -488,7 +488,7 @@ class CreateSubnetDetails(object):
 
         Example: `2001:0db8:0123:1111::/64`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this CreateSubnetDetails.
@@ -621,7 +621,7 @@ class CreateSubnetDetails(object):
         The `OCID`__ of the route table the subnet will use. If you don't provide a value,
         the subnet uses the VCN's default route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this CreateSubnetDetails.
@@ -636,7 +636,7 @@ class CreateSubnetDetails(object):
         The `OCID`__ of the route table the subnet will use. If you don't provide a value,
         the subnet uses the VCN's default route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this CreateSubnetDetails.
@@ -680,7 +680,7 @@ class CreateSubnetDetails(object):
         **[Required]** Gets the vcn_id of this CreateSubnetDetails.
         The `OCID`__ of the VCN to contain the subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateSubnetDetails.
@@ -694,7 +694,7 @@ class CreateSubnetDetails(object):
         Sets the vcn_id of this CreateSubnetDetails.
         The `OCID`__ of the VCN to contain the subnet.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateSubnetDetails.

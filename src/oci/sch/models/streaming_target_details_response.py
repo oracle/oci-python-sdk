@@ -15,7 +15,7 @@ class StreamingTargetDetailsResponse(TargetDetailsResponse):
     The Streaming target response. Private metadata is included when the target is a stream accessed through
     a `private endpoint`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Streaming/Concepts/streamsecurity.htm#private_endpoints
+    __ https://docs.oracle.com/iaas/Content/Streaming/Concepts/streamsecurity.htm#private_endpoints
     """
 
     def __init__(self, **kwargs):
@@ -59,7 +59,7 @@ class StreamingTargetDetailsResponse(TargetDetailsResponse):
         **[Required]** Gets the stream_id of this StreamingTargetDetailsResponse.
         The `OCID`__ of the stream.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stream_id of this StreamingTargetDetailsResponse.
@@ -73,7 +73,7 @@ class StreamingTargetDetailsResponse(TargetDetailsResponse):
         Sets the stream_id of this StreamingTargetDetailsResponse.
         The `OCID`__ of the stream.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stream_id: The stream_id of this StreamingTargetDetailsResponse.

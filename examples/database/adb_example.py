@@ -6,7 +6,7 @@ import oci
 import time
 
 # Overview of Autonomous Data Warehouse
-# https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm
+# https://docs.oracle.com/iaas/Content/Database/Concepts/adboverview.htm
 
 # Load the default configuration
 config = oci.config.from_file()
@@ -19,7 +19,7 @@ compartment_id = config["tenancy"]
 
 def create_adb(db_client):
     # Create the model and populate the values
-    # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
+    # See: https://docs.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
     adb_request = oci.database.models.CreateAutonomousDatabaseDetails()
 
     adb_request.compartment_id = compartment_id
@@ -45,7 +45,7 @@ def create_adb(db_client):
 
 def create_adb_preview(db_client):
     # Create the model and populate the values
-    # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
+    # See: https://docs.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
     adb_request = oci.database.models.CreateAutonomousDatabaseDetails()
 
     adb_request.compartment_id = compartment_id
@@ -83,7 +83,7 @@ def delete_adb(db_client, adb_id):
 
 def update_adb(db_client, adb_id):
     # Create the model and populate the values
-    # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
+    # See: https://docs.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
     adb_request = oci.database.models.UpdateAutonomousDatabaseDetails()
 
     adb_request.cpu_core_count = 2
@@ -131,7 +131,7 @@ def update_adb_licesnse_type(db_client, adb_id):
 
 def create_free_adb(db_client):
     # Create the model and populate the values
-    # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
+    # See: https://docs.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
     adb_request = oci.database.models.CreateAutonomousDatabaseDetails()
 
     adb_request.compartment_id = compartment_id

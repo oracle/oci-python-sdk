@@ -168,7 +168,7 @@ class CreateOggDeploymentDetails(object):
         Gets the identity_domain_id of this CreateOggDeploymentDetails.
         The `OCID`__ of the Identity Domain when IAM credential store is used.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The identity_domain_id of this CreateOggDeploymentDetails.
@@ -182,7 +182,7 @@ class CreateOggDeploymentDetails(object):
         Sets the identity_domain_id of this CreateOggDeploymentDetails.
         The `OCID`__ of the Identity Domain when IAM credential store is used.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param identity_domain_id: The identity_domain_id of this CreateOggDeploymentDetails.
@@ -196,7 +196,7 @@ class CreateOggDeploymentDetails(object):
         Gets the password_secret_id of this CreateOggDeploymentDetails.
         The `OCID`__ of the Secret where the deployment password is stored.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this CreateOggDeploymentDetails.
@@ -210,7 +210,7 @@ class CreateOggDeploymentDetails(object):
         Sets the password_secret_id of this CreateOggDeploymentDetails.
         The `OCID`__ of the Secret where the deployment password is stored.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this CreateOggDeploymentDetails.

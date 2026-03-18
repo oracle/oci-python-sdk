@@ -77,7 +77,7 @@ class DetectedDocumentType(object):
         Gets the document_id of this DetectedDocumentType.
         The `OCID`__ of the Key-Value Extraction model that was used to extract the key-value pairs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The document_id of this DetectedDocumentType.
@@ -91,7 +91,7 @@ class DetectedDocumentType(object):
         Sets the document_id of this DetectedDocumentType.
         The `OCID`__ of the Key-Value Extraction model that was used to extract the key-value pairs.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param document_id: The document_id of this DetectedDocumentType.

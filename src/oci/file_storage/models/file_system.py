@@ -23,7 +23,7 @@ class FileSystem(object):
     policies to give users access, see `Getting Started with
     Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a FileSystem.
@@ -311,7 +311,7 @@ class FileSystem(object):
         updates to the file system.
         For more information, see `File System Usage and Metering`__.
 
-        __ https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm
+        __ https://docs.oracle.com/iaas/Content/File/Concepts/FSutilization.htm
 
 
         :return: The metered_bytes of this FileSystem.
@@ -329,7 +329,7 @@ class FileSystem(object):
         updates to the file system.
         For more information, see `File System Usage and Metering`__.
 
-        __ https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm
+        __ https://docs.oracle.com/iaas/Content/File/Concepts/FSutilization.htm
 
 
         :param metered_bytes: The metered_bytes of this FileSystem.
@@ -343,7 +343,7 @@ class FileSystem(object):
         **[Required]** Gets the compartment_id of this FileSystem.
         The `OCID`__ of the compartment that contains the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FileSystem.
@@ -357,7 +357,7 @@ class FileSystem(object):
         Sets the compartment_id of this FileSystem.
         The `OCID`__ of the compartment that contains the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FileSystem.
@@ -401,7 +401,7 @@ class FileSystem(object):
         **[Required]** Gets the id of this FileSystem.
         The `OCID`__ of the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FileSystem.
@@ -415,7 +415,7 @@ class FileSystem(object):
         Sets the id of this FileSystem.
         The `OCID`__ of the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FileSystem.
@@ -496,7 +496,7 @@ class FileSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this FileSystem.
@@ -513,7 +513,7 @@ class FileSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this FileSystem.
@@ -529,7 +529,7 @@ class FileSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this FileSystem.
@@ -545,7 +545,7 @@ class FileSystem(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this FileSystem.
@@ -585,7 +585,7 @@ class FileSystem(object):
         Gets the kms_key_id of this FileSystem.
         The `OCID`__ of the KMS key which is the master encryption key for the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this FileSystem.
@@ -599,7 +599,7 @@ class FileSystem(object):
         Sets the kms_key_id of this FileSystem.
         The `OCID`__ of the KMS key which is the master encryption key for the file system.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this FileSystem.
@@ -634,7 +634,7 @@ class FileSystem(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The is_clone_parent of this FileSystem.
@@ -649,7 +649,7 @@ class FileSystem(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param is_clone_parent: The is_clone_parent of this FileSystem.
@@ -666,7 +666,7 @@ class FileSystem(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :return: The is_hydrated of this FileSystem.
@@ -683,7 +683,7 @@ class FileSystem(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :param is_hydrated: The is_hydrated of this FileSystem.
@@ -800,7 +800,7 @@ class FileSystem(object):
         Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`.
         For more information, see `Using Replication`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/using-replication.htm
 
 
         :return: The is_targetable of this FileSystem.
@@ -815,7 +815,7 @@ class FileSystem(object):
         Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`.
         For more information, see `Using Replication`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/using-replication.htm
 
 
         :param is_targetable: The is_targetable of this FileSystem.
@@ -830,7 +830,7 @@ class FileSystem(object):
         The `OCID`__ of the replication target associated with the file system.
         Empty if the file system is not being used as target in a replication.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The replication_target_id of this FileSystem.
@@ -845,7 +845,7 @@ class FileSystem(object):
         The `OCID`__ of the replication target associated with the file system.
         Empty if the file system is not being used as target in a replication.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param replication_target_id: The replication_target_id of this FileSystem.
@@ -860,7 +860,7 @@ class FileSystem(object):
         The `OCID`__ of the associated file system snapshot policy, which
         controls the frequency of snapshot creation and retention period of the taken snapshots.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The filesystem_snapshot_policy_id of this FileSystem.
@@ -875,7 +875,7 @@ class FileSystem(object):
         The `OCID`__ of the associated file system snapshot policy, which
         controls the frequency of snapshot creation and retention period of the taken snapshots.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this FileSystem.

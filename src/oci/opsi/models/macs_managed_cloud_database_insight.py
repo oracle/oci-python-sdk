@@ -212,7 +212,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Gets the management_agent_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_agent_id of this MacsManagedCloudDatabaseInsight.
@@ -226,7 +226,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Sets the management_agent_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the Management Agent
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_agent_id: The management_agent_id of this MacsManagedCloudDatabaseInsight.
@@ -280,7 +280,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         **[Required]** Gets the database_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this MacsManagedCloudDatabaseInsight.
@@ -294,7 +294,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Sets the database_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the database.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this MacsManagedCloudDatabaseInsight.
@@ -378,7 +378,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
     def db_additional_details(self):
         """
         Gets the db_additional_details of this MacsManagedCloudDatabaseInsight.
-        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
 
 
         :return: The db_additional_details of this MacsManagedCloudDatabaseInsight.
@@ -390,7 +390,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
     def db_additional_details(self, db_additional_details):
         """
         Sets the db_additional_details of this MacsManagedCloudDatabaseInsight.
-        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.cloud.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
+        Additional details of a database in JSON format. For autonomous databases, this is the AutonomousDatabase object serialized as a JSON string as defined in https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/. For EM, pass in null or an empty string. Note that this string needs to be escaped when specified in the curl command.
 
 
         :param db_additional_details: The db_additional_details of this MacsManagedCloudDatabaseInsight.
@@ -404,7 +404,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Gets the parent_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this MacsManagedCloudDatabaseInsight.
@@ -418,7 +418,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Sets the parent_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this MacsManagedCloudDatabaseInsight.
@@ -432,7 +432,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Gets the root_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The root_id of this MacsManagedCloudDatabaseInsight.
@@ -446,7 +446,7 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
         Sets the root_id of this MacsManagedCloudDatabaseInsight.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param root_id: The root_id of this MacsManagedCloudDatabaseInsight.

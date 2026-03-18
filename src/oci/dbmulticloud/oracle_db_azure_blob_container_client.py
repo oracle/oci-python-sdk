@@ -166,7 +166,7 @@ class OracleDBAzureBlobContainerClient(object):
         :param str oracle_db_azure_blob_container_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Container resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureBlobContainerCompartmentDetails change_oracle_db_azure_blob_container_compartment_details: (required)
             Moves the DB Azure Blob Container resource into a different compartment.
@@ -409,7 +409,7 @@ class OracleDBAzureBlobContainerClient(object):
         :param str oracle_db_azure_blob_container_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Container resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -519,13 +519,13 @@ class OracleDBAzureBlobContainerClient(object):
         """
         Retrieves the details of an Oracle DB\u2013associated Azure Blob Container using the specified container resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_blob_container_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Container resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -662,7 +662,7 @@ class OracleDBAzureBlobContainerClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
@@ -832,13 +832,13 @@ class OracleDBAzureBlobContainerClient(object):
         """
         Modifies the existing Oracle DB Azure Blob Container resource for a given `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_blob_container_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Container resource.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureBlobContainerDetails update_oracle_db_azure_blob_container_details: (required)
             Details for to update OracleDbAzureBlobContainer.

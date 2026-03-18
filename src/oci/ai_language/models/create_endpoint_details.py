@@ -160,7 +160,7 @@ class CreateEndpointDetails(object):
         **[Required]** Gets the compartment_id of this CreateEndpointDetails.
         The `OCID`__ compartment identifier for the endpoint
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateEndpointDetails.
@@ -174,7 +174,7 @@ class CreateEndpointDetails(object):
         Sets the compartment_id of this CreateEndpointDetails.
         The `OCID`__ compartment identifier for the endpoint
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateEndpointDetails.
@@ -188,7 +188,7 @@ class CreateEndpointDetails(object):
         **[Required]** Gets the model_id of this CreateEndpointDetails.
         The `OCID`__ of the model to associate with the endpoint.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The model_id of this CreateEndpointDetails.
@@ -202,7 +202,7 @@ class CreateEndpointDetails(object):
         Sets the model_id of this CreateEndpointDetails.
         The `OCID`__ of the model to associate with the endpoint.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param model_id: The model_id of this CreateEndpointDetails.

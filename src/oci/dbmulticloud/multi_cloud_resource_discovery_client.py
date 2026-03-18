@@ -166,7 +166,7 @@ class MultiCloudResourceDiscoveryClient(object):
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeMultiCloudResourceDiscoveryCompartmentDetails change_multi_cloud_resource_discovery_compartment_details: (required)
             Moves the Multi Cloud Discovered resource to a different compartment.
@@ -409,7 +409,7 @@ class MultiCloudResourceDiscoveryClient(object):
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -519,13 +519,13 @@ class MultiCloudResourceDiscoveryClient(object):
         """
         Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -662,7 +662,7 @@ class MultiCloudResourceDiscoveryClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
@@ -670,7 +670,7 @@ class MultiCloudResourceDiscoveryClient(object):
         :param str multi_cloud_resource_discovery_id: (optional)
             The `OCID`__ of the Multicloud Discovery resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -848,13 +848,13 @@ class MultiCloudResourceDiscoveryClient(object):
         """
         Modifies the properties of an Azure discovered resource identified by the specified resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str multi_cloud_resource_discovery_id: (required)
             The `OCID`__ of the Multicloud Discovery Resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateMultiCloudResourceDiscoveryDetails update_multi_cloud_resource_discovery_details: (required)
             Details for to update MultiCloudResourceDiscovery.

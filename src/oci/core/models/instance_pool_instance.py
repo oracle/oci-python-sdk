@@ -145,7 +145,7 @@ class InstancePoolInstance(object):
         **[Required]** Gets the id of this InstancePoolInstance.
         The `OCID`__ of the instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstancePoolInstance.
@@ -159,7 +159,7 @@ class InstancePoolInstance(object):
         Sets the id of this InstancePoolInstance.
         The `OCID`__ of the instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstancePoolInstance.
@@ -173,7 +173,7 @@ class InstancePoolInstance(object):
         **[Required]** Gets the instance_pool_id of this InstancePoolInstance.
         The `OCID`__ of the instance pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_pool_id of this InstancePoolInstance.
@@ -187,7 +187,7 @@ class InstancePoolInstance(object):
         Sets the instance_pool_id of this InstancePoolInstance.
         The `OCID`__ of the instance pool.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_pool_id: The instance_pool_id of this InstancePoolInstance.
@@ -256,7 +256,7 @@ class InstancePoolInstance(object):
         The `OCID`__ of the compartment that contains the
         instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstancePoolInstance.
@@ -271,7 +271,7 @@ class InstancePoolInstance(object):
         The `OCID`__ of the compartment that contains the
         instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstancePoolInstance.
@@ -336,7 +336,7 @@ class InstancePoolInstance(object):
         The `OCID`__ of the instance configuration
         used to create the instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_configuration_id of this InstancePoolInstance.
@@ -351,7 +351,7 @@ class InstancePoolInstance(object):
         The `OCID`__ of the instance configuration
         used to create the instance.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_configuration_id: The instance_configuration_id of this InstancePoolInstance.

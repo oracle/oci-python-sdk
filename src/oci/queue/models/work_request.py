@@ -242,7 +242,7 @@ class WorkRequest(object):
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -259,7 +259,7 @@ class WorkRequest(object):
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

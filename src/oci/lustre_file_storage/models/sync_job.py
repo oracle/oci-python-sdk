@@ -187,7 +187,7 @@ class SyncJob(object):
         **[Required]** Gets the id of this SyncJob.
         The `OCID`__ of the sync job.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SyncJob.
@@ -201,7 +201,7 @@ class SyncJob(object):
         Sets the id of this SyncJob.
         The `OCID`__ of the sync job.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SyncJob.
@@ -215,7 +215,7 @@ class SyncJob(object):
         Gets the parent_id of this SyncJob.
         The `OCID`__ of the Object Storage link.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this SyncJob.
@@ -229,7 +229,7 @@ class SyncJob(object):
         Sets the parent_id of this SyncJob.
         The `OCID`__ of the Object Storage link.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this SyncJob.
@@ -332,7 +332,7 @@ class SyncJob(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this SyncJob.
@@ -349,7 +349,7 @@ class SyncJob(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this SyncJob.
@@ -366,7 +366,7 @@ class SyncJob(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this SyncJob.
@@ -383,7 +383,7 @@ class SyncJob(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this SyncJob.

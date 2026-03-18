@@ -162,13 +162,13 @@ class OracleDbAzureKeyClient(object):
         """
         Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource `OCID`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_key_id: (required)
             The `OCID`__ of the Oracle DB Azure Vault Key resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -305,7 +305,7 @@ class OracleDbAzureKeyClient(object):
         :param str compartment_id: (required)
             The `ID`__ of the compartment.
 
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
@@ -313,12 +313,12 @@ class OracleDbAzureKeyClient(object):
         :param str oracle_db_azure_vault_id: (optional)
             A filter to return Oracle DB Azure Vault resources that match the specified `OCID`__ of the Oracle DB Azure Vault resource.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str oracle_db_azure_key_id: (optional)
             A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key `OCID`__.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.

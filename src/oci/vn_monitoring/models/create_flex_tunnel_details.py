@@ -88,7 +88,7 @@ class CreateFlexTunnelDetails(object):
         **[Required]** Gets the compartment_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the compartment to contain the flex tunnel.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateFlexTunnelDetails.
@@ -102,7 +102,7 @@ class CreateFlexTunnelDetails(object):
         Sets the compartment_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the compartment to contain the flex tunnel.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateFlexTunnelDetails.
@@ -142,7 +142,7 @@ class CreateFlexTunnelDetails(object):
         **[Required]** Gets the drg_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the DRG for loopback attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateFlexTunnelDetails.
@@ -156,7 +156,7 @@ class CreateFlexTunnelDetails(object):
         Sets the drg_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the DRG for loopback attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateFlexTunnelDetails.
@@ -170,7 +170,7 @@ class CreateFlexTunnelDetails(object):
         **[Required]** Gets the transport_attachment_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the transport attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The transport_attachment_id of this CreateFlexTunnelDetails.
@@ -184,7 +184,7 @@ class CreateFlexTunnelDetails(object):
         Sets the transport_attachment_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the transport attachment.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param transport_attachment_id: The transport_attachment_id of this CreateFlexTunnelDetails.
@@ -198,7 +198,7 @@ class CreateFlexTunnelDetails(object):
         **[Required]** Gets the drg_route_table_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the DRG route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_route_table_id of this CreateFlexTunnelDetails.
@@ -212,7 +212,7 @@ class CreateFlexTunnelDetails(object):
         Sets the drg_route_table_id of this CreateFlexTunnelDetails.
         The `OCID`__ of the DRG route table.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_route_table_id: The drg_route_table_id of this CreateFlexTunnelDetails.

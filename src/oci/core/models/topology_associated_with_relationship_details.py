@@ -39,7 +39,7 @@ class TopologyAssociatedWithRelationshipDetails(object):
         Gets the via of this TopologyAssociatedWithRelationshipDetails.
         The `OCID`__ of the entities via which the relationship is created. For example an instance is associated with a network security group via the VNIC attachment and the VNIC.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The via of this TopologyAssociatedWithRelationshipDetails.
@@ -53,7 +53,7 @@ class TopologyAssociatedWithRelationshipDetails(object):
         Sets the via of this TopologyAssociatedWithRelationshipDetails.
         The `OCID`__ of the entities via which the relationship is created. For example an instance is associated with a network security group via the VNIC attachment and the VNIC.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param via: The via of this TopologyAssociatedWithRelationshipDetails.

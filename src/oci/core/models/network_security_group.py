@@ -51,8 +51,8 @@ class NetworkSecurityGroup(object):
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
+    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a NetworkSecurityGroup.
@@ -146,7 +146,7 @@ class NetworkSecurityGroup(object):
         **[Required]** Gets the compartment_id of this NetworkSecurityGroup.
         The `OCID`__ of the compartment the network security group is in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this NetworkSecurityGroup.
@@ -160,7 +160,7 @@ class NetworkSecurityGroup(object):
         Sets the compartment_id of this NetworkSecurityGroup.
         The `OCID`__ of the compartment the network security group is in.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this NetworkSecurityGroup.
@@ -177,7 +177,7 @@ class NetworkSecurityGroup(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this NetworkSecurityGroup.
@@ -194,7 +194,7 @@ class NetworkSecurityGroup(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this NetworkSecurityGroup.
@@ -237,7 +237,7 @@ class NetworkSecurityGroup(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this NetworkSecurityGroup.
@@ -254,7 +254,7 @@ class NetworkSecurityGroup(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this NetworkSecurityGroup.
@@ -268,7 +268,7 @@ class NetworkSecurityGroup(object):
         **[Required]** Gets the id of this NetworkSecurityGroup.
         The `OCID`__ of the network security group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this NetworkSecurityGroup.
@@ -282,7 +282,7 @@ class NetworkSecurityGroup(object):
         Sets the id of this NetworkSecurityGroup.
         The `OCID`__ of the network security group.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this NetworkSecurityGroup.
@@ -358,7 +358,7 @@ class NetworkSecurityGroup(object):
         **[Required]** Gets the vcn_id of this NetworkSecurityGroup.
         The `OCID`__ of the network security group's VCN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this NetworkSecurityGroup.
@@ -372,7 +372,7 @@ class NetworkSecurityGroup(object):
         Sets the vcn_id of this NetworkSecurityGroup.
         The `OCID`__ of the network security group's VCN.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this NetworkSecurityGroup.

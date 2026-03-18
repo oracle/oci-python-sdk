@@ -163,7 +163,7 @@ class Customization(object):
         **[Required]** Gets the id of this Customization.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Customization.
@@ -177,7 +177,7 @@ class Customization(object):
         Sets the id of this Customization.
         The `OCID`__ of the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Customization.
@@ -215,7 +215,7 @@ class Customization(object):
         **[Required]** Gets the compartment_id of this Customization.
         The `OCID`__ of the compartment where you want to create the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Customization.
@@ -229,7 +229,7 @@ class Customization(object):
         Sets the compartment_id of this Customization.
         The `OCID`__ of the compartment where you want to create the job.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Customization.

@@ -15,7 +15,7 @@ class CreateTechSupportItemDetails(CreateItemDetails):
     Details about the issue that the technical support request relates to. Avoid entering confidential information.
     For information about `TECH` support requests, see `Creating a Technical Support Request`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
+    __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
     """
 
     def __init__(self, **kwargs):

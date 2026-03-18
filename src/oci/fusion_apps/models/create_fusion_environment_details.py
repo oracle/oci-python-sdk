@@ -14,7 +14,7 @@ class CreateFusionEnvironmentDetails(object):
     """
     The configuration details of the FusionEnvironment. For more information about these fields, see `Managing Environments`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/fusion-applications/manage-environment.htm
+    __ https://docs.oracle.com/iaas/Content/fusion-applications/manage-environment.htm
     """
 
     def __init__(self, **kwargs):

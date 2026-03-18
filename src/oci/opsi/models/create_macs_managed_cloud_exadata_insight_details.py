@@ -77,7 +77,7 @@ class CreateMacsManagedCloudExadataInsightDetails(CreateExadataInsightDetails):
         **[Required]** Gets the exadata_infra_id of this CreateMacsManagedCloudExadataInsightDetails.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infra_id of this CreateMacsManagedCloudExadataInsightDetails.
@@ -91,7 +91,7 @@ class CreateMacsManagedCloudExadataInsightDetails(CreateExadataInsightDetails):
         Sets the exadata_infra_id of this CreateMacsManagedCloudExadataInsightDetails.
         The `OCID`__ of the Exadata Infrastructure.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infra_id: The exadata_infra_id of this CreateMacsManagedCloudExadataInsightDetails.

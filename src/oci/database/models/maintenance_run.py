@@ -810,7 +810,7 @@ class MaintenanceRun(object):
         Gets the peer_maintenance_run_id of this MaintenanceRun.
         The `OCID`__ of the maintenance run for the Autonomous Data Guard association's peer container database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_maintenance_run_id of this MaintenanceRun.
@@ -824,7 +824,7 @@ class MaintenanceRun(object):
         Sets the peer_maintenance_run_id of this MaintenanceRun.
         The `OCID`__ of the maintenance run for the Autonomous Data Guard association's peer container database.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_maintenance_run_id: The peer_maintenance_run_id of this MaintenanceRun.
@@ -864,7 +864,7 @@ class MaintenanceRun(object):
 
         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
         Allowed values for this property are: "ROLLING", "NONROLLING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -883,7 +883,7 @@ class MaintenanceRun(object):
 
         *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
 
 
         :param patching_mode: The patching_mode of this MaintenanceRun.
@@ -1193,7 +1193,7 @@ class MaintenanceRun(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this MaintenanceRun.
@@ -1208,7 +1208,7 @@ class MaintenanceRun(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this MaintenanceRun.
@@ -1270,7 +1270,7 @@ class MaintenanceRun(object):
         Gets the database_software_image_id of this MaintenanceRun.
         The Autonomous AI Database Software Image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_software_image_id of this MaintenanceRun.
@@ -1284,7 +1284,7 @@ class MaintenanceRun(object):
         Sets the database_software_image_id of this MaintenanceRun.
         The Autonomous AI Database Software Image `OCID`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param database_software_image_id: The database_software_image_id of this MaintenanceRun.
