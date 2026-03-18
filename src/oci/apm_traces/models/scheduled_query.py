@@ -220,7 +220,7 @@ class ScheduledQuery(object):
         The `OCID`__ of the scheduled query . An OCID is generated
         when the scheduled query is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ScheduledQuery.
@@ -235,7 +235,7 @@ class ScheduledQuery(object):
         The `OCID`__ of the scheduled query . An OCID is generated
         when the scheduled query is created.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ScheduledQuery.

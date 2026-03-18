@@ -82,7 +82,7 @@ class VlanEndpoint(Endpoint):
         This can be used to disambiguate which VLAN is queried, in case the endpoint IP
         address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this VlanEndpoint.
@@ -98,7 +98,7 @@ class VlanEndpoint(Endpoint):
         This can be used to disambiguate which VLAN is queried, in case the endpoint IP
         address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this VlanEndpoint.

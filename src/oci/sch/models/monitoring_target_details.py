@@ -16,7 +16,7 @@ class MonitoringTargetDetails(TargetDetails):
     For configuration instructions, see
     `Creating a Connector`__.
 
-    __ https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,7 @@ class MonitoringTargetDetails(TargetDetails):
         **[Required]** Gets the compartment_id of this MonitoringTargetDetails.
         The `OCID`__ of the compartment containing the metric.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MonitoringTargetDetails.
@@ -88,7 +88,7 @@ class MonitoringTargetDetails(TargetDetails):
         Sets the compartment_id of this MonitoringTargetDetails.
         The `OCID`__ of the compartment containing the metric.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MonitoringTargetDetails.

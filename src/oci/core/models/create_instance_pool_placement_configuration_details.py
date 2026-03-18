@@ -106,8 +106,8 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
         Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400.
         Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :return: The compute_cluster_id of this CreateInstancePoolPlacementConfigurationDetails.
@@ -125,8 +125,8 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
         Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400.
         Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param compute_cluster_id: The compute_cluster_id of this CreateInstancePoolPlacementConfigurationDetails.
@@ -191,7 +191,7 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
         The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
         Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_subnet_id of this CreateInstancePoolPlacementConfigurationDetails.
@@ -206,7 +206,7 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
         The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
         Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_subnet_id: The primary_subnet_id of this CreateInstancePoolPlacementConfigurationDetails.

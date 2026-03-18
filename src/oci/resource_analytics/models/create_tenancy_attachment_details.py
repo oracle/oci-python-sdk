@@ -77,7 +77,7 @@ class CreateTenancyAttachmentDetails(object):
         **[Required]** Gets the resource_analytics_instance_id of this CreateTenancyAttachmentDetails.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_analytics_instance_id of this CreateTenancyAttachmentDetails.
@@ -91,7 +91,7 @@ class CreateTenancyAttachmentDetails(object):
         Sets the resource_analytics_instance_id of this CreateTenancyAttachmentDetails.
         The `OCID`__ of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resource_analytics_instance_id: The resource_analytics_instance_id of this CreateTenancyAttachmentDetails.
@@ -105,7 +105,7 @@ class CreateTenancyAttachmentDetails(object):
         **[Required]** Gets the tenancy_id of this CreateTenancyAttachmentDetails.
         The `OCID`__ of the tenancy associated with this TenancyAttachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this CreateTenancyAttachmentDetails.
@@ -119,7 +119,7 @@ class CreateTenancyAttachmentDetails(object):
         Sets the tenancy_id of this CreateTenancyAttachmentDetails.
         The `OCID`__ of the tenancy associated with this TenancyAttachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this CreateTenancyAttachmentDetails.

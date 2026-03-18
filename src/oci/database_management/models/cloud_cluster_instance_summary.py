@@ -172,7 +172,7 @@ class CloudClusterInstanceSummary(object):
         **[Required]** Gets the id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud cluster instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CloudClusterInstanceSummary.
@@ -186,7 +186,7 @@ class CloudClusterInstanceSummary(object):
         Sets the id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud cluster instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CloudClusterInstanceSummary.
@@ -200,7 +200,7 @@ class CloudClusterInstanceSummary(object):
         Gets the dbaas_id of this CloudClusterInstanceSummary.
         The `OCID`__ in DBaas service.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The dbaas_id of this CloudClusterInstanceSummary.
@@ -214,7 +214,7 @@ class CloudClusterInstanceSummary(object):
         Sets the dbaas_id of this CloudClusterInstanceSummary.
         The `OCID`__ in DBaas service.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param dbaas_id: The dbaas_id of this CloudClusterInstanceSummary.
@@ -276,7 +276,7 @@ class CloudClusterInstanceSummary(object):
         **[Required]** Gets the compartment_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloudClusterInstanceSummary.
@@ -290,7 +290,7 @@ class CloudClusterInstanceSummary(object):
         Sets the compartment_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloudClusterInstanceSummary.
@@ -304,7 +304,7 @@ class CloudClusterInstanceSummary(object):
         **[Required]** Gets the cloud_cluster_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud cluster that the cluster instance belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_cluster_id of this CloudClusterInstanceSummary.
@@ -318,7 +318,7 @@ class CloudClusterInstanceSummary(object):
         Sets the cloud_cluster_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud cluster that the cluster instance belongs to.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_cluster_id: The cloud_cluster_id of this CloudClusterInstanceSummary.
@@ -332,7 +332,7 @@ class CloudClusterInstanceSummary(object):
         **[Required]** Gets the cloud_db_system_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud DB system that the cluster instance is a part of.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_db_system_id of this CloudClusterInstanceSummary.
@@ -346,7 +346,7 @@ class CloudClusterInstanceSummary(object):
         Sets the cloud_db_system_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud DB system that the cluster instance is a part of.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_db_system_id: The cloud_db_system_id of this CloudClusterInstanceSummary.
@@ -360,7 +360,7 @@ class CloudClusterInstanceSummary(object):
         Gets the cloud_db_node_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud DB node.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_db_node_id of this CloudClusterInstanceSummary.
@@ -374,7 +374,7 @@ class CloudClusterInstanceSummary(object):
         Sets the cloud_db_node_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud DB node.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_db_node_id: The cloud_db_node_id of this CloudClusterInstanceSummary.
@@ -388,7 +388,7 @@ class CloudClusterInstanceSummary(object):
         Gets the cloud_connector_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_connector_id of this CloudClusterInstanceSummary.
@@ -402,7 +402,7 @@ class CloudClusterInstanceSummary(object):
         Sets the cloud_connector_id of this CloudClusterInstanceSummary.
         The `OCID`__ of the cloud connector.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_connector_id: The cloud_connector_id of this CloudClusterInstanceSummary.
@@ -610,7 +610,7 @@ class CloudClusterInstanceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CloudClusterInstanceSummary.
@@ -626,7 +626,7 @@ class CloudClusterInstanceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CloudClusterInstanceSummary.
@@ -642,7 +642,7 @@ class CloudClusterInstanceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CloudClusterInstanceSummary.
@@ -658,7 +658,7 @@ class CloudClusterInstanceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CloudClusterInstanceSummary.
@@ -676,7 +676,7 @@ class CloudClusterInstanceSummary(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this CloudClusterInstanceSummary.
@@ -694,7 +694,7 @@ class CloudClusterInstanceSummary(object):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this CloudClusterInstanceSummary.

@@ -53,7 +53,7 @@ class LimitsIncreaseItemQuestionResponse(object):
         **[Required]** Gets the id of this LimitsIncreaseItemQuestionResponse.
         The `OCID`__ of the question.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LimitsIncreaseItemQuestionResponse.
@@ -67,7 +67,7 @@ class LimitsIncreaseItemQuestionResponse(object):
         Sets the id of this LimitsIncreaseItemQuestionResponse.
         The `OCID`__ of the question.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LimitsIncreaseItemQuestionResponse.

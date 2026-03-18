@@ -153,7 +153,7 @@ class WorkerSummary(object):
         **[Required]** Gets the id of this WorkerSummary.
         The `OCID`__ of the On-premise VP worker.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkerSummary.
@@ -167,7 +167,7 @@ class WorkerSummary(object):
         Sets the id of this WorkerSummary.
         The `OCID`__ of the On-premise VP worker.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkerSummary.

@@ -46,7 +46,7 @@ class LogDetails(object):
         **[Required]** Gets the log_id of this LogDetails.
         The `OCID`__ of a log to work with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_id of this LogDetails.
@@ -60,7 +60,7 @@ class LogDetails(object):
         Sets the log_id of this LogDetails.
         The `OCID`__ of a log to work with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param log_id: The log_id of this LogDetails.
@@ -74,7 +74,7 @@ class LogDetails(object):
         **[Required]** Gets the log_group_id of this LogDetails.
         The `OCID`__ of a log group to work with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The log_group_id of this LogDetails.
@@ -88,7 +88,7 @@ class LogDetails(object):
         Sets the log_group_id of this LogDetails.
         The `OCID`__ of a log group to work with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param log_group_id: The log_group_id of this LogDetails.

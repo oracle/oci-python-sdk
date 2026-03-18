@@ -39,7 +39,7 @@ class BulkDeletePrivateIpItem(object):
         **[Required]** Gets the private_ip_id of this BulkDeletePrivateIpItem.
         The `OCID`__ of the secondary Private IP.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this BulkDeletePrivateIpItem.
@@ -53,7 +53,7 @@ class BulkDeletePrivateIpItem(object):
         Sets the private_ip_id of this BulkDeletePrivateIpItem.
         The `OCID`__ of the secondary Private IP.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this BulkDeletePrivateIpItem.

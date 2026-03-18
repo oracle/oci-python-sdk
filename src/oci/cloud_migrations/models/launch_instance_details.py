@@ -189,7 +189,7 @@ class LaunchInstanceDetails(object):
         You can opt out of all default reservations by specifying an empty string as input for this field.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :return: The capacity_reservation_id of this LaunchInstanceDetails.
@@ -205,7 +205,7 @@ class LaunchInstanceDetails(object):
         You can opt out of all default reservations by specifying an empty string as input for this field.
         For more information, see `Capacity Reservations`__.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default
 
 
         :param capacity_reservation_id: The capacity_reservation_id of this LaunchInstanceDetails.
@@ -472,7 +472,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :return: The ipxe_script of this LaunchInstanceDetails.
@@ -515,7 +515,7 @@ class LaunchInstanceDetails(object):
 
         For more information about iPXE, see http://ipxe.org.
 
-        __ https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm
 
 
         :param ipxe_script: The ipxe_script of this LaunchInstanceDetails.

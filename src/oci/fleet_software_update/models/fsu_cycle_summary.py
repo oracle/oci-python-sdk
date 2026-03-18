@@ -297,7 +297,7 @@ class FsuCycleSummary(object):
         **[Required]** Gets the id of this FsuCycleSummary.
         The `OCID`__ of the Exadata Fleet Update Cycle.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FsuCycleSummary.
@@ -311,7 +311,7 @@ class FsuCycleSummary(object):
         Sets the id of this FsuCycleSummary.
         The `OCID`__ of the Exadata Fleet Update Cycle.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FsuCycleSummary.
@@ -349,7 +349,7 @@ class FsuCycleSummary(object):
         **[Required]** Gets the compartment_id of this FsuCycleSummary.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FsuCycleSummary.
@@ -363,7 +363,7 @@ class FsuCycleSummary(object):
         Sets the compartment_id of this FsuCycleSummary.
         The `OCID`__ of the Compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FsuCycleSummary.
@@ -407,7 +407,7 @@ class FsuCycleSummary(object):
         **[Required]** Gets the fsu_collection_id of this FsuCycleSummary.
         The `OCID`__ of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this FsuCycleSummary.
@@ -421,7 +421,7 @@ class FsuCycleSummary(object):
         Sets the fsu_collection_id of this FsuCycleSummary.
         The `OCID`__ of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this FsuCycleSummary.
@@ -465,7 +465,7 @@ class FsuCycleSummary(object):
         Gets the executing_fsu_action_id of this FsuCycleSummary.
         The `OCID`__ of the Exadata Fleet Update Action that is currently in progress, if applicable.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The executing_fsu_action_id of this FsuCycleSummary.
@@ -479,7 +479,7 @@ class FsuCycleSummary(object):
         Sets the executing_fsu_action_id of this FsuCycleSummary.
         The `OCID`__ of the Exadata Fleet Update Action that is currently in progress, if applicable.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param executing_fsu_action_id: The executing_fsu_action_id of this FsuCycleSummary.

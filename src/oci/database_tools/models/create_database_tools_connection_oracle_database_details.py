@@ -287,7 +287,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
         Gets the private_endpoint_id of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_endpoint_id of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -301,7 +301,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
         Sets the private_endpoint_id of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param private_endpoint_id: The private_endpoint_id of this CreateDatabaseToolsConnectionOracleDatabaseDetails.

@@ -194,7 +194,7 @@ class ChargebackPlan(object):
         **[Required]** Gets the id of this ChargebackPlan.
         `OCID`__ of OPSI Chargeback plan resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ChargebackPlan.
@@ -208,7 +208,7 @@ class ChargebackPlan(object):
         Sets the id of this ChargebackPlan.
         `OCID`__ of OPSI Chargeback plan resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ChargebackPlan.
@@ -222,7 +222,7 @@ class ChargebackPlan(object):
         **[Required]** Gets the compartment_id of this ChargebackPlan.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChargebackPlan.
@@ -236,7 +236,7 @@ class ChargebackPlan(object):
         Sets the compartment_id of this ChargebackPlan.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChargebackPlan.

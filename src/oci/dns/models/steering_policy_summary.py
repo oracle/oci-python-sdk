@@ -239,7 +239,7 @@ class SteeringPolicySummary(object):
         must be created using the Health Checks service first. For more information on how to
         create a monitor, please see `Managing Health Checks`__.
 
-        __ https://docs.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm
 
 
         :return: The health_check_monitor_id of this SteeringPolicySummary.
@@ -261,7 +261,7 @@ class SteeringPolicySummary(object):
         must be created using the Health Checks service first. For more information on how to
         create a monitor, please see `Managing Health Checks`__.
 
-        __ https://docs.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm
 
 
         :param health_check_monitor_id: The health_check_monitor_id of this SteeringPolicySummary.
@@ -315,8 +315,8 @@ class SteeringPolicySummary(object):
 
         * `CUSTOM` - Allows a customized configuration of rules.
 
-        __ https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
-        __ https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm
 
         Allowed values for this property are: "FAILOVER", "LOAD_BALANCE", "ROUTE_BY_GEO", "ROUTE_BY_ASN", "ROUTE_BY_IP", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -373,8 +373,8 @@ class SteeringPolicySummary(object):
 
         * `CUSTOM` - Allows a customized configuration of rules.
 
-        __ https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
-        __ https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm
 
 
         :param template: The template of this SteeringPolicySummary.
@@ -395,7 +395,7 @@ class SteeringPolicySummary(object):
 
         **Example:** `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this SteeringPolicySummary.
@@ -413,7 +413,7 @@ class SteeringPolicySummary(object):
 
         **Example:** `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this SteeringPolicySummary.
@@ -431,7 +431,7 @@ class SteeringPolicySummary(object):
 
         **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this SteeringPolicySummary.
@@ -449,7 +449,7 @@ class SteeringPolicySummary(object):
 
         **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this SteeringPolicySummary.

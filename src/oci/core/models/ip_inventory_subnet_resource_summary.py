@@ -159,7 +159,7 @@ class IpInventorySubnetResourceSummary(object):
         Gets the ip_id of this IpInventorySubnetResourceSummary.
         The `OCID`__ of the IP address.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ip_id of this IpInventorySubnetResourceSummary.
@@ -173,7 +173,7 @@ class IpInventorySubnetResourceSummary(object):
         Sets the ip_id of this IpInventorySubnetResourceSummary.
         The `OCID`__ of the IP address.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ip_id: The ip_id of this IpInventorySubnetResourceSummary.

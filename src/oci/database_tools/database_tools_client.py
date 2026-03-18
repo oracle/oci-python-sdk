@@ -132,7 +132,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -250,7 +250,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -368,7 +368,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
             AddResourceLockDetails body parameter
@@ -484,13 +484,13 @@ class DatabaseToolsClient(object):
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsConnectionCompartmentDetails change_database_tools_connection_compartment_details: (required)
             Request to change the compartment of the Database Tools connection.
@@ -616,13 +616,13 @@ class DatabaseToolsClient(object):
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsIdentityCompartmentDetails change_database_tools_identity_compartment_details: (required)
             Request to change the compartment of the Database Tools identity.
@@ -748,13 +748,13 @@ class DatabaseToolsClient(object):
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsPrivateEndpointCompartmentDetails change_database_tools_private_endpoint_compartment_details: (required)
             Request to change the compartment of the Database Tools private endpoint.
@@ -1203,7 +1203,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1326,7 +1326,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1449,7 +1449,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1572,7 +1572,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1679,7 +1679,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_endpoint_service_id: (required)
             The `OCID`__ of a Database Tools Endpoint Service.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1786,7 +1786,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1893,7 +1893,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2000,7 +2000,7 @@ class DatabaseToolsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2107,7 +2107,7 @@ class DatabaseToolsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
@@ -2135,7 +2135,7 @@ class DatabaseToolsClient(object):
         :param str related_resource_identifier: (optional)
             The `OCID`__ of the related resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2318,7 +2318,7 @@ class DatabaseToolsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2482,7 +2482,7 @@ class DatabaseToolsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
@@ -2661,7 +2661,7 @@ class DatabaseToolsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str subnet_id: (optional)
             A filter to return only resources their `subnetId` matches the specified `subnetId`.
@@ -2830,7 +2830,7 @@ class DatabaseToolsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2981,7 +2981,7 @@ class DatabaseToolsClient(object):
         :param str work_request_id: (required)
             The `OCID`__ of the asynchronous request.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3132,12 +3132,12 @@ class DatabaseToolsClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str resource_identifier: (optional)
             The `OCID`__ of the resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3279,7 +3279,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RefreshDatabaseToolsIdentityCredentialDetails refresh_database_tools_identity_credential_details: (required)
             Request to refresh Database Tools identity credential.
@@ -3396,7 +3396,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -3514,7 +3514,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -3632,7 +3632,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
             RemoveResourceLockDetails body parameter
@@ -3750,7 +3750,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.UpdateDatabaseToolsConnectionDetails update_database_tools_connection_details: (required)
             The information to be updated.
@@ -3878,7 +3878,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.UpdateDatabaseToolsIdentityDetails update_database_tools_identity_details: (required)
             The information to be updated.
@@ -4006,7 +4006,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_private_endpoint_id: (required)
             The `OCID`__ of a Database Tools private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.UpdateDatabaseToolsPrivateEndpointDetails update_database_tools_private_endpoint_details: (required)
             The information to be updated.
@@ -4134,7 +4134,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_connection_id: (required)
             The `OCID`__ of a Database Tools connection.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ValidateDatabaseToolsConnectionDetails validate_database_tools_connection_details: (required)
             Request to validate a Database Tools connection.
@@ -4254,7 +4254,7 @@ class DatabaseToolsClient(object):
         :param str database_tools_identity_id: (required)
             The `OCID`__ of a Database Tools identity.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialDetails validate_database_tools_identity_credential_details: (required)
             Request to validate a Database Tools identity Credential.

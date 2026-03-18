@@ -33,7 +33,7 @@ class OracleDBAzureBlobMountClientCompositeOperations(object):
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureBlobMountCompartmentDetails change_oracle_db_azure_blob_mount_compartment_details: (required)
             Moves the Oracle DbAzure Blob Mount resource into a different compartment.
@@ -116,7 +116,7 @@ class OracleDBAzureBlobMountClientCompositeOperations(object):
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class OracleDBAzureBlobMountClientCompositeOperations(object):
         :param str oracle_db_azure_blob_mount_id: (required)
             The `OCID`__ of the Oracle DB Azure Blob Mount resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureBlobMountDetails update_oracle_db_azure_blob_mount_details: (required)
             Details for to update OracleDbAzureBlobMount.

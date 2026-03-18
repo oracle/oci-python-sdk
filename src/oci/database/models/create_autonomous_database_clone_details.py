@@ -458,7 +458,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         **[Required]** Gets the source_id of this CreateAutonomousDatabaseCloneDetails.
         The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this CreateAutonomousDatabaseCloneDetails.
@@ -472,7 +472,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         Sets the source_id of this CreateAutonomousDatabaseCloneDetails.
         The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this CreateAutonomousDatabaseCloneDetails.

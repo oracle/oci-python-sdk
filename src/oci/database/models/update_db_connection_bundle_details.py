@@ -108,7 +108,7 @@ class UpdateDbConnectionBundleDetails(object):
         Gets the freeform_tags of this UpdateDbConnectionBundleDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateDbConnectionBundleDetails.
@@ -122,7 +122,7 @@ class UpdateDbConnectionBundleDetails(object):
         Sets the freeform_tags of this UpdateDbConnectionBundleDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateDbConnectionBundleDetails.
@@ -136,7 +136,7 @@ class UpdateDbConnectionBundleDetails(object):
         Gets the defined_tags of this UpdateDbConnectionBundleDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateDbConnectionBundleDetails.
@@ -150,7 +150,7 @@ class UpdateDbConnectionBundleDetails(object):
         Sets the defined_tags of this UpdateDbConnectionBundleDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateDbConnectionBundleDetails.

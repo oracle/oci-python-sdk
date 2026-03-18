@@ -43,7 +43,7 @@ class EnableReplicationToRegionDetails(object):
 
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The replica_region of this EnableReplicationToRegionDetails.
@@ -61,7 +61,7 @@ class EnableReplicationToRegionDetails(object):
 
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param replica_region: The replica_region of this EnableReplicationToRegionDetails.

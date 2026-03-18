@@ -124,7 +124,7 @@ class PerformanceMetricsData(object):
         Gets the compartment_id of this PerformanceMetricsData.
         The `OCID`__ of the compartment in which the Managed Database resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PerformanceMetricsData.
@@ -138,7 +138,7 @@ class PerformanceMetricsData(object):
         Sets the compartment_id of this PerformanceMetricsData.
         The `OCID`__ of the compartment in which the Managed Database resides.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PerformanceMetricsData.
@@ -152,7 +152,7 @@ class PerformanceMetricsData(object):
         Gets the resource_id of this PerformanceMetricsData.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this PerformanceMetricsData.
@@ -166,7 +166,7 @@ class PerformanceMetricsData(object):
         Sets the resource_id of this PerformanceMetricsData.
         The `OCID`__ of the Managed Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this PerformanceMetricsData.

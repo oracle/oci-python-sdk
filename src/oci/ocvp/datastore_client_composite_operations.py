@@ -33,7 +33,7 @@ class DatastoreClientCompositeOperations(object):
         :param str datastore_id: (required)
             The `OCID`__ of the Datastore.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.AddBlockVolumeToDatastoreDetails add_block_volume_to_datastore_details: (required)
             The information about Block Volume addition to datastore.
@@ -116,7 +116,7 @@ class DatastoreClientCompositeOperations(object):
         :param str datastore_id: (required)
             The `OCID`__ of the Datastore.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ocvp.models.WorkRequest.status`
@@ -165,7 +165,7 @@ class DatastoreClientCompositeOperations(object):
         :param str datastore_id: (required)
             The `OCID`__ of the Datastore.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.ocvp.models.UpdateDatastoreDetails update_datastore_details: (required)
             The information to be updated.

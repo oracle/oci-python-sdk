@@ -1037,7 +1037,7 @@ class DnsClient(object):
         Creates a new steering policy in the specified compartment. For more information on
         creating policies with templates, see `Traffic Management API Guide`__.
 
-        __ https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm
 
 
         :param oci.dns.models.CreateSteeringPolicyDetails create_steering_policy_details: (required)
@@ -6901,7 +6901,7 @@ class DnsClient(object):
 
         For more information, see `DNSSEC`__.
 
-        __ https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
 
 
         :param str zone_id: (required)
@@ -7066,7 +7066,7 @@ class DnsClient(object):
 
         For more information, see the `DNSSEC`__ documentation.
 
-        __ https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
 
 
         :param str zone_id: (required)
@@ -8480,7 +8480,7 @@ class DnsClient(object):
         is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
         query parameter is required.
 
-        __ https://docs.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm
 
 
         :param str zone_name_or_id: (required)

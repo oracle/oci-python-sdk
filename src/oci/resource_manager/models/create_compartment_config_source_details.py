@@ -70,7 +70,7 @@ class CreateCompartmentConfigSourceDetails(CreateConfigSourceDetails):
         The `OCID`__ of the compartment to use for creating the stack.
         The new stack will include definitions for supported resource types in scope of the specified compartment OCID (tenancy level for root compartment, compartment level otherwise).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCompartmentConfigSourceDetails.
@@ -85,7 +85,7 @@ class CreateCompartmentConfigSourceDetails(CreateConfigSourceDetails):
         The `OCID`__ of the compartment to use for creating the stack.
         The new stack will include definitions for supported resource types in scope of the specified compartment OCID (tenancy level for root compartment, compartment level otherwise).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCompartmentConfigSourceDetails.

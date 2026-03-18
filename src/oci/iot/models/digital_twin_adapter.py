@@ -19,7 +19,7 @@ class DigitalTwinAdapter(object):
     If you are an administrator who needs to create policies to grant users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DigitalTwinAdapter.
@@ -147,7 +147,7 @@ class DigitalTwinAdapter(object):
         **[Required]** Gets the id of this DigitalTwinAdapter.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DigitalTwinAdapter.
@@ -161,7 +161,7 @@ class DigitalTwinAdapter(object):
         Sets the id of this DigitalTwinAdapter.
         The `OCID`__ of the resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DigitalTwinAdapter.
@@ -175,7 +175,7 @@ class DigitalTwinAdapter(object):
         **[Required]** Gets the iot_domain_id of this DigitalTwinAdapter.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The iot_domain_id of this DigitalTwinAdapter.
@@ -189,7 +189,7 @@ class DigitalTwinAdapter(object):
         Sets the iot_domain_id of this DigitalTwinAdapter.
         The `OCID`__ of the IoT domain.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param iot_domain_id: The iot_domain_id of this DigitalTwinAdapter.
@@ -203,7 +203,7 @@ class DigitalTwinAdapter(object):
         **[Required]** Gets the digital_twin_model_id of this DigitalTwinAdapter.
         The `OCID`__ of the digital twin model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The digital_twin_model_id of this DigitalTwinAdapter.
@@ -217,7 +217,7 @@ class DigitalTwinAdapter(object):
         Sets the digital_twin_model_id of this DigitalTwinAdapter.
         The `OCID`__ of the digital twin model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param digital_twin_model_id: The digital_twin_model_id of this DigitalTwinAdapter.
@@ -380,7 +380,7 @@ class DigitalTwinAdapter(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this DigitalTwinAdapter.
@@ -397,7 +397,7 @@ class DigitalTwinAdapter(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this DigitalTwinAdapter.
@@ -414,7 +414,7 @@ class DigitalTwinAdapter(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this DigitalTwinAdapter.
@@ -431,7 +431,7 @@ class DigitalTwinAdapter(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this DigitalTwinAdapter.

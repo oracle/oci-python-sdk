@@ -66,7 +66,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VCN on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn of this DefaultDrgRouteTables.
@@ -81,7 +81,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VCN on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn: The vcn of this DefaultDrgRouteTables.
@@ -96,7 +96,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table assigned to DRG attachments
         of type IPSEC_TUNNEL on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ipsec_tunnel of this DefaultDrgRouteTables.
@@ -111,7 +111,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table assigned to DRG attachments
         of type IPSEC_TUNNEL on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ipsec_tunnel: The ipsec_tunnel of this DefaultDrgRouteTables.
@@ -126,7 +126,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VIRTUAL_CIRCUIT on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The virtual_circuit of this DefaultDrgRouteTables.
@@ -141,7 +141,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VIRTUAL_CIRCUIT on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param virtual_circuit: The virtual_circuit of this DefaultDrgRouteTables.
@@ -156,7 +156,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type REMOTE_PEERING_CONNECTION on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The remote_peering_connection of this DefaultDrgRouteTables.
@@ -171,7 +171,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type REMOTE_PEERING_CONNECTION on creation.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param remote_peering_connection: The remote_peering_connection of this DefaultDrgRouteTables.

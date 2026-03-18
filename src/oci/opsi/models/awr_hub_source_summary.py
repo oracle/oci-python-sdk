@@ -351,7 +351,7 @@ class AwrHubSourceSummary(object):
         **[Required]** Gets the compartment_id of this AwrHubSourceSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AwrHubSourceSummary.
@@ -365,7 +365,7 @@ class AwrHubSourceSummary(object):
         Sets the compartment_id of this AwrHubSourceSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AwrHubSourceSummary.
@@ -409,7 +409,7 @@ class AwrHubSourceSummary(object):
         **[Required]** Gets the id of this AwrHubSourceSummary.
         The `OCID`__ of the Awr Hub source database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AwrHubSourceSummary.
@@ -423,7 +423,7 @@ class AwrHubSourceSummary(object):
         Sets the id of this AwrHubSourceSummary.
         The `OCID`__ of the Awr Hub source database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AwrHubSourceSummary.
@@ -485,7 +485,7 @@ class AwrHubSourceSummary(object):
         Gets the associated_resource_id of this AwrHubSourceSummary.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The associated_resource_id of this AwrHubSourceSummary.
@@ -499,7 +499,7 @@ class AwrHubSourceSummary(object):
         Sets the associated_resource_id of this AwrHubSourceSummary.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param associated_resource_id: The associated_resource_id of this AwrHubSourceSummary.
@@ -513,7 +513,7 @@ class AwrHubSourceSummary(object):
         Gets the associated_opsi_id of this AwrHubSourceSummary.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The associated_opsi_id of this AwrHubSourceSummary.
@@ -527,7 +527,7 @@ class AwrHubSourceSummary(object):
         Sets the associated_opsi_id of this AwrHubSourceSummary.
         The `OCID`__ of the database id.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param associated_opsi_id: The associated_opsi_id of this AwrHubSourceSummary.

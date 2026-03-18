@@ -320,7 +320,7 @@ class DeploymentBackup(object):
         **[Required]** Gets the id of this DeploymentBackup.
         The `OCID`__ of the backup being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DeploymentBackup.
@@ -334,7 +334,7 @@ class DeploymentBackup(object):
         Sets the id of this DeploymentBackup.
         The `OCID`__ of the backup being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DeploymentBackup.
@@ -348,7 +348,7 @@ class DeploymentBackup(object):
         **[Required]** Gets the deployment_id of this DeploymentBackup.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The deployment_id of this DeploymentBackup.
@@ -362,7 +362,7 @@ class DeploymentBackup(object):
         Sets the deployment_id of this DeploymentBackup.
         The `OCID`__ of the deployment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param deployment_id: The deployment_id of this DeploymentBackup.
@@ -410,7 +410,7 @@ class DeploymentBackup(object):
         **[Required]** Gets the compartment_id of this DeploymentBackup.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DeploymentBackup.
@@ -424,7 +424,7 @@ class DeploymentBackup(object):
         Sets the compartment_id of this DeploymentBackup.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DeploymentBackup.
@@ -904,7 +904,7 @@ class DeploymentBackup(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this DeploymentBackup.
@@ -922,7 +922,7 @@ class DeploymentBackup(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this DeploymentBackup.

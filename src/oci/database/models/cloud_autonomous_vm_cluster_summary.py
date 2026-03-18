@@ -541,7 +541,7 @@ class CloudAutonomousVmClusterSummary(object):
         **[Required]** Gets the id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the Cloud Autonomous VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this CloudAutonomousVmClusterSummary.
@@ -555,7 +555,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the Cloud Autonomous VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this CloudAutonomousVmClusterSummary.
@@ -569,7 +569,7 @@ class CloudAutonomousVmClusterSummary(object):
         **[Required]** Gets the compartment_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloudAutonomousVmClusterSummary.
@@ -583,7 +583,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the compartment_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloudAutonomousVmClusterSummary.
@@ -652,7 +652,7 @@ class CloudAutonomousVmClusterSummary(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CloudAutonomousVmClusterSummary.
@@ -673,7 +673,7 @@ class CloudAutonomousVmClusterSummary(object):
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
         This restriction applies to both the client subnet and backup subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CloudAutonomousVmClusterSummary.
@@ -689,8 +689,8 @@ class CloudAutonomousVmClusterSummary(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this CloudAutonomousVmClusterSummary.
@@ -706,8 +706,8 @@ class CloudAutonomousVmClusterSummary(object):
         **NsgIds restrictions:**
         - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this CloudAutonomousVmClusterSummary.
@@ -721,7 +721,7 @@ class CloudAutonomousVmClusterSummary(object):
         Gets the last_update_history_entry_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the last maintenance update history. This value is updated when a maintenance update starts.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_update_history_entry_id of this CloudAutonomousVmClusterSummary.
@@ -735,7 +735,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the last_update_history_entry_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the last maintenance update history. This value is updated when a maintenance update starts.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_update_history_entry_id: The last_update_history_entry_id of this CloudAutonomousVmClusterSummary.
@@ -947,7 +947,7 @@ class CloudAutonomousVmClusterSummary(object):
         **[Required]** Gets the cloud_exadata_infrastructure_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_exadata_infrastructure_id of this CloudAutonomousVmClusterSummary.
@@ -961,7 +961,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the cloud_exadata_infrastructure_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the cloud Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_exadata_infrastructure_id: The cloud_exadata_infrastructure_id of this CloudAutonomousVmClusterSummary.
@@ -1271,7 +1271,7 @@ class CloudAutonomousVmClusterSummary(object):
         Gets the last_maintenance_run_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The last_maintenance_run_id of this CloudAutonomousVmClusterSummary.
@@ -1285,7 +1285,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the last_maintenance_run_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the last maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param last_maintenance_run_id: The last_maintenance_run_id of this CloudAutonomousVmClusterSummary.
@@ -1299,7 +1299,7 @@ class CloudAutonomousVmClusterSummary(object):
         Gets the next_maintenance_run_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_maintenance_run_id of this CloudAutonomousVmClusterSummary.
@@ -1313,7 +1313,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the next_maintenance_run_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the next maintenance run.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param next_maintenance_run_id: The next_maintenance_run_id of this CloudAutonomousVmClusterSummary.
@@ -1398,7 +1398,7 @@ class CloudAutonomousVmClusterSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CloudAutonomousVmClusterSummary.
@@ -1415,7 +1415,7 @@ class CloudAutonomousVmClusterSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CloudAutonomousVmClusterSummary.
@@ -1430,7 +1430,7 @@ class CloudAutonomousVmClusterSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CloudAutonomousVmClusterSummary.
@@ -1445,7 +1445,7 @@ class CloudAutonomousVmClusterSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CloudAutonomousVmClusterSummary.
@@ -1461,7 +1461,7 @@ class CloudAutonomousVmClusterSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this CloudAutonomousVmClusterSummary.
@@ -1477,7 +1477,7 @@ class CloudAutonomousVmClusterSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this CloudAutonomousVmClusterSummary.
@@ -1755,7 +1755,7 @@ class CloudAutonomousVmClusterSummary(object):
         Gets the db_servers of this CloudAutonomousVmClusterSummary.
         The list of `OCIDs`__ of the Db servers.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_servers of this CloudAutonomousVmClusterSummary.
@@ -1769,7 +1769,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the db_servers of this CloudAutonomousVmClusterSummary.
         The list of `OCIDs`__ of the Db servers.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_servers: The db_servers of this CloudAutonomousVmClusterSummary.
@@ -2072,7 +2072,7 @@ class CloudAutonomousVmClusterSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this CloudAutonomousVmClusterSummary.
@@ -2087,7 +2087,7 @@ class CloudAutonomousVmClusterSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this CloudAutonomousVmClusterSummary.
@@ -2101,7 +2101,7 @@ class CloudAutonomousVmClusterSummary(object):
         Gets the subscription_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CloudAutonomousVmClusterSummary.
@@ -2115,7 +2115,7 @@ class CloudAutonomousVmClusterSummary(object):
         Sets the subscription_id of this CloudAutonomousVmClusterSummary.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CloudAutonomousVmClusterSummary.

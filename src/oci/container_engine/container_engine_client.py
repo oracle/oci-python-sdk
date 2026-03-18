@@ -3377,13 +3377,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -3531,13 +3531,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -3682,7 +3682,7 @@ class ContainerEngineClient(object):
         :param list[str] lifecycle_state: (optional)
             A cluster lifecycle state to filter on. Can have multiple parameters of this name. For more information, see `Monitoring Clusters`__
 
-            __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm
+            __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
             Allowed values are: "CREATING", "ACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING"
 
@@ -3694,13 +3694,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -3858,13 +3858,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -3883,7 +3883,7 @@ class ContainerEngineClient(object):
         :param list[str] lifecycle_state: (optional)
             A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. `ACTIVE, DELETING]. For more information, see [Monitoring Clusters`__
 
-            __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm
+            __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
             Allowed values are: "DELETED", "CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED", "INACTIVE", "NEEDS_ATTENTION"
 
@@ -4035,13 +4035,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -4191,13 +4191,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -4359,13 +4359,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -4760,13 +4760,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.
@@ -4925,13 +4925,13 @@ class ContainerEngineClient(object):
             1 is the minimum, 1000 is the maximum. For important details about how pagination works,
             see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The optional order in which to sort the results.

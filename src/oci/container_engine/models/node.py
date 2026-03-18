@@ -409,7 +409,7 @@ class Node(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Node.
@@ -425,7 +425,7 @@ class Node(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Node.
@@ -441,7 +441,7 @@ class Node(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Node.
@@ -457,7 +457,7 @@ class Node(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Node.
@@ -497,7 +497,7 @@ class Node(object):
         Gets the lifecycle_state of this Node.
         The state of the node. For more information, see `Monitoring Clusters`__
 
-        __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILING", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -514,7 +514,7 @@ class Node(object):
         Sets the lifecycle_state of this Node.
         The state of the node. For more information, see `Monitoring Clusters`__
 
-        __ https://docs.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
 
         :param lifecycle_state: The lifecycle_state of this Node.

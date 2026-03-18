@@ -254,7 +254,7 @@ class UpdateApplicationDetails(object):
         """
         Gets the file_uri of this UpdateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The file_uri of this UpdateApplicationDetails.
@@ -267,7 +267,7 @@ class UpdateApplicationDetails(object):
         """
         Sets the file_uri of this UpdateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param file_uri: The file_uri of this UpdateApplicationDetails.
@@ -355,7 +355,7 @@ class UpdateApplicationDetails(object):
         """
         Gets the archive_uri of this UpdateApplicationDetails.
         A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The archive_uri of this UpdateApplicationDetails.
@@ -368,7 +368,7 @@ class UpdateApplicationDetails(object):
         """
         Sets the archive_uri of this UpdateApplicationDetails.
         A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param archive_uri: The archive_uri of this UpdateApplicationDetails.
@@ -453,7 +453,7 @@ class UpdateApplicationDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateApplicationDetails.
@@ -468,7 +468,7 @@ class UpdateApplicationDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateApplicationDetails.
@@ -652,7 +652,7 @@ class UpdateApplicationDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateApplicationDetails.
@@ -668,7 +668,7 @@ class UpdateApplicationDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateApplicationDetails.
@@ -681,7 +681,7 @@ class UpdateApplicationDetails(object):
         """
         Gets the logs_bucket_uri of this UpdateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The logs_bucket_uri of this UpdateApplicationDetails.
@@ -694,7 +694,7 @@ class UpdateApplicationDetails(object):
         """
         Sets the logs_bucket_uri of this UpdateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param logs_bucket_uri: The logs_bucket_uri of this UpdateApplicationDetails.
@@ -834,7 +834,7 @@ class UpdateApplicationDetails(object):
         Gets the warehouse_bucket_uri of this UpdateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The warehouse_bucket_uri of this UpdateApplicationDetails.
@@ -848,7 +848,7 @@ class UpdateApplicationDetails(object):
         Sets the warehouse_bucket_uri of this UpdateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param warehouse_bucket_uri: The warehouse_bucket_uri of this UpdateApplicationDetails.

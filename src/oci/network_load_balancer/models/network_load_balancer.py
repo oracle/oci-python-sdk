@@ -23,10 +23,10 @@ class NetworkLoadBalancer(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm
-    __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
-    __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm
-    __ https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
+    __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a NetworkLoadBalancer.
@@ -226,7 +226,7 @@ class NetworkLoadBalancer(object):
         **[Required]** Gets the id of this NetworkLoadBalancer.
         The `OCID`__ of the network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this NetworkLoadBalancer.
@@ -240,7 +240,7 @@ class NetworkLoadBalancer(object):
         Sets the id of this NetworkLoadBalancer.
         The `OCID`__ of the network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this NetworkLoadBalancer.
@@ -254,7 +254,7 @@ class NetworkLoadBalancer(object):
         **[Required]** Gets the compartment_id of this NetworkLoadBalancer.
         The `OCID`__ of the compartment containing the network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this NetworkLoadBalancer.
@@ -268,7 +268,7 @@ class NetworkLoadBalancer(object):
         Sets the compartment_id of this NetworkLoadBalancer.
         The `OCID`__ of the compartment containing the network load balancer.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this NetworkLoadBalancer.
@@ -488,8 +488,8 @@ class NetworkLoadBalancer(object):
 
         Example: `true`
 
-        __ https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm
-        __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes
+        __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes
 
 
         :return: The is_private of this NetworkLoadBalancer.
@@ -515,8 +515,8 @@ class NetworkLoadBalancer(object):
 
         Example: `true`
 
-        __ https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm
-        __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes
+        __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes
 
 
         :param is_private: The is_private of this NetworkLoadBalancer.
@@ -582,7 +582,7 @@ class NetworkLoadBalancer(object):
         **[Required]** Gets the subnet_id of this NetworkLoadBalancer.
         The subnet in which the network load balancer is spawned `OCIDs`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this NetworkLoadBalancer.
@@ -596,7 +596,7 @@ class NetworkLoadBalancer(object):
         Sets the subnet_id of this NetworkLoadBalancer.
         The subnet in which the network load balancer is spawned `OCIDs`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this NetworkLoadBalancer.
@@ -622,7 +622,7 @@ class NetworkLoadBalancer(object):
 
         Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_security_group_ids of this NetworkLoadBalancer.
@@ -648,7 +648,7 @@ class NetworkLoadBalancer(object):
 
         Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param network_security_group_ids: The network_security_group_ids of this NetworkLoadBalancer.
@@ -713,7 +713,7 @@ class NetworkLoadBalancer(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this NetworkLoadBalancer.
@@ -730,7 +730,7 @@ class NetworkLoadBalancer(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this NetworkLoadBalancer.
@@ -747,7 +747,7 @@ class NetworkLoadBalancer(object):
 
         Example: `{ \"oracle-zpr\": { \"td\": { \"value\": \"42\", \"mode\": \"audit\" } } }`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this NetworkLoadBalancer.
@@ -764,7 +764,7 @@ class NetworkLoadBalancer(object):
 
         Example: `{ \"oracle-zpr\": { \"td\": { \"value\": \"42\", \"mode\": \"audit\" } } }`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this NetworkLoadBalancer.
@@ -781,7 +781,7 @@ class NetworkLoadBalancer(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this NetworkLoadBalancer.
@@ -798,7 +798,7 @@ class NetworkLoadBalancer(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this NetworkLoadBalancer.

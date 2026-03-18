@@ -84,8 +84,8 @@ class CreatePublicIpDetails(object):
         The `OCID`__ of the compartment to contain the public IP. For ephemeral public IPs,
         you must set this to the private IP's compartment `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePublicIpDetails.
@@ -100,8 +100,8 @@ class CreatePublicIpDetails(object):
         The `OCID`__ of the compartment to contain the public IP. For ephemeral public IPs,
         you must set this to the private IP's compartment `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePublicIpDetails.
@@ -195,7 +195,7 @@ class CreatePublicIpDetails(object):
         Infrastructure public IP pool. For more information, see
         `Public IP Addresses`__.
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
         Allowed values for this property are: "EPHEMERAL", "RESERVED"
 
@@ -213,7 +213,7 @@ class CreatePublicIpDetails(object):
         Infrastructure public IP pool. For more information, see
         `Public IP Addresses`__.
 
-        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
         :param lifetime: The lifetime of this CreatePublicIpDetails.
@@ -239,7 +239,7 @@ class CreatePublicIpDetails(object):
         assigned to a private IP. You can later assign the public IP with
         :func:`update_public_ip`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this CreatePublicIpDetails.
@@ -260,7 +260,7 @@ class CreatePublicIpDetails(object):
         assigned to a private IP. You can later assign the public IP with
         :func:`update_public_ip`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this CreatePublicIpDetails.

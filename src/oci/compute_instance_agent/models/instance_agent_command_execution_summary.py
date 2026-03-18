@@ -143,7 +143,7 @@ class InstanceAgentCommandExecutionSummary(object):
         **[Required]** Gets the instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
         The `OCID`__ of the command.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
@@ -157,7 +157,7 @@ class InstanceAgentCommandExecutionSummary(object):
         Sets the instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
         The `OCID`__ of the command.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_agent_command_id: The instance_agent_command_id of this InstanceAgentCommandExecutionSummary.
@@ -171,7 +171,7 @@ class InstanceAgentCommandExecutionSummary(object):
         **[Required]** Gets the instance_id of this InstanceAgentCommandExecutionSummary.
         The `OCID`__ of the instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this InstanceAgentCommandExecutionSummary.
@@ -185,7 +185,7 @@ class InstanceAgentCommandExecutionSummary(object):
         Sets the instance_id of this InstanceAgentCommandExecutionSummary.
         The `OCID`__ of the instance.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this InstanceAgentCommandExecutionSummary.

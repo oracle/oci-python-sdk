@@ -48,7 +48,7 @@ class ResourceAnalyticsInstanceOacNetworkDetails(object):
         **[Required]** Gets the subnet_id of this ResourceAnalyticsInstanceOacNetworkDetails.
         The `OCID`__ of the subnet for the private network details.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this ResourceAnalyticsInstanceOacNetworkDetails.
@@ -62,7 +62,7 @@ class ResourceAnalyticsInstanceOacNetworkDetails(object):
         Sets the subnet_id of this ResourceAnalyticsInstanceOacNetworkDetails.
         The `OCID`__ of the subnet for the private network details.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this ResourceAnalyticsInstanceOacNetworkDetails.
@@ -78,7 +78,7 @@ class ResourceAnalyticsInstanceOacNetworkDetails(object):
 
         Example: `[\"ocid...\", \"ocid...\"]`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this ResourceAnalyticsInstanceOacNetworkDetails.
@@ -94,7 +94,7 @@ class ResourceAnalyticsInstanceOacNetworkDetails(object):
 
         Example: `[\"ocid...\", \"ocid...\"]`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this ResourceAnalyticsInstanceOacNetworkDetails.

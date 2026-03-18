@@ -116,7 +116,7 @@ class PerformanceTuningAnalysisSummary(object):
         **[Required]** Gets the id of this PerformanceTuningAnalysisSummary.
         The `OCID`__ of the Performance Tuning Analysis.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PerformanceTuningAnalysisSummary.
@@ -130,7 +130,7 @@ class PerformanceTuningAnalysisSummary(object):
         Sets the id of this PerformanceTuningAnalysisSummary.
         The `OCID`__ of the Performance Tuning Analysis.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PerformanceTuningAnalysisSummary.
@@ -144,7 +144,7 @@ class PerformanceTuningAnalysisSummary(object):
         **[Required]** Gets the work_request_id of this PerformanceTuningAnalysisSummary.
         The `OCID`__ of the  Work Request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The work_request_id of this PerformanceTuningAnalysisSummary.
@@ -158,7 +158,7 @@ class PerformanceTuningAnalysisSummary(object):
         Sets the work_request_id of this PerformanceTuningAnalysisSummary.
         The `OCID`__ of the  Work Request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param work_request_id: The work_request_id of this PerformanceTuningAnalysisSummary.
@@ -172,7 +172,7 @@ class PerformanceTuningAnalysisSummary(object):
         **[Required]** Gets the compartment_id of this PerformanceTuningAnalysisSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PerformanceTuningAnalysisSummary.
@@ -186,7 +186,7 @@ class PerformanceTuningAnalysisSummary(object):
         Sets the compartment_id of this PerformanceTuningAnalysisSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PerformanceTuningAnalysisSummary.

@@ -46,7 +46,7 @@ class ChangeCloudAutonomousVmClusterSubscriptionDetails(object):
         Gets the subscription_id of this ChangeCloudAutonomousVmClusterSubscriptionDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ChangeCloudAutonomousVmClusterSubscriptionDetails.
@@ -60,7 +60,7 @@ class ChangeCloudAutonomousVmClusterSubscriptionDetails(object):
         Sets the subscription_id of this ChangeCloudAutonomousVmClusterSubscriptionDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ChangeCloudAutonomousVmClusterSubscriptionDetails.

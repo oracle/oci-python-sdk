@@ -189,7 +189,7 @@ class LdapBindAccount(OutboundConnector):
         Gets the password_secret_id of this LdapBindAccount.
         The `OCID`__ of the password for the LDAP bind account in the Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this LdapBindAccount.
@@ -203,7 +203,7 @@ class LdapBindAccount(OutboundConnector):
         Sets the password_secret_id of this LdapBindAccount.
         The `OCID`__ of the password for the LDAP bind account in the Vault.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this LdapBindAccount.

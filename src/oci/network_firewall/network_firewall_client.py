@@ -1194,7 +1194,7 @@ class NetworkFirewallClient(object):
         """
         Creates a new `NAT rule`__ at bulk for the Network Firewall policy.
 
-        __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+        __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
 
 
         :param str network_firewall_policy_id: (required)
@@ -2248,7 +2248,7 @@ class NetworkFirewallClient(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_firewall.models.ChangeNetworkFirewallCompartmentDetails change_network_firewall_compartment_details: (required)
             The information to be updated.
@@ -3349,7 +3349,7 @@ class NetworkFirewallClient(object):
         """
         Creates a new `NAT rule`__ for the Network Firewall policy.
 
-        __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+        __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
 
 
         :param str network_firewall_policy_id: (required)
@@ -4977,7 +4977,7 @@ class NetworkFirewallClient(object):
         """
         Deletes a `NAT rule`__ resource with the given identifier.
 
-        __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+        __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
 
 
         :param str network_firewall_policy_id: (required)
@@ -5099,7 +5099,7 @@ class NetworkFirewallClient(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -6603,7 +6603,7 @@ class NetworkFirewallClient(object):
         """
         Get a `NAT rule`__ by the given name in the context of Network Firewall policy.
 
-        __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+        __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
 
 
         :param str network_firewall_policy_id: (required)
@@ -6718,7 +6718,7 @@ class NetworkFirewallClient(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -8521,7 +8521,7 @@ class NetworkFirewallClient(object):
         """
         Returns a list of `NAT rules`__ for the Network Firewall policy.
 
-        __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+        __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
 
 
         :param str network_firewall_policy_id: (required)
@@ -8857,7 +8857,7 @@ class NetworkFirewallClient(object):
         :param str id: (optional)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             A filter to return only resources that are present within the specified availability domain.
@@ -11120,7 +11120,7 @@ class NetworkFirewallClient(object):
         """
         Updates the `NAT rule`__ with the given name in the Network Firewall policy.
 
-        __ https://docs.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
+        __ https://docs.cloud.oracle.com/iaas/Content/network-firewall/policies.htm#network-firewall-policies__nat
 
 
         :param str network_firewall_policy_id: (required)
@@ -11249,7 +11249,7 @@ class NetworkFirewallClient(object):
         :param str network_firewall_id: (required)
             The `OCID`__ of the Network Firewall resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.network_firewall.models.UpdateNetworkFirewallDetails update_network_firewall_details: (required)
             The information to be updated.

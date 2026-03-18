@@ -325,7 +325,7 @@ class Pipeline(object):
         **[Required]** Gets the id of this Pipeline.
         The `OCID`__ of the pipeline. This option applies when retrieving a pipeline.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Pipeline.
@@ -339,7 +339,7 @@ class Pipeline(object):
         Sets the id of this Pipeline.
         The `OCID`__ of the pipeline. This option applies when retrieving a pipeline.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Pipeline.
@@ -401,7 +401,7 @@ class Pipeline(object):
         **[Required]** Gets the compartment_id of this Pipeline.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Pipeline.
@@ -415,7 +415,7 @@ class Pipeline(object):
         Sets the compartment_id of this Pipeline.
         The `OCID`__ of the compartment being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Pipeline.
@@ -629,7 +629,7 @@ class Pipeline(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this Pipeline.
@@ -647,7 +647,7 @@ class Pipeline(object):
 
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this Pipeline.
@@ -832,7 +832,7 @@ class Pipeline(object):
         The `OCID`__ of the subnet of the pipeline's private endpoint.
         The subnet must be a private subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this Pipeline.
@@ -847,7 +847,7 @@ class Pipeline(object):
         The `OCID`__ of the subnet of the pipeline's private endpoint.
         The subnet must be a private subnet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this Pipeline.

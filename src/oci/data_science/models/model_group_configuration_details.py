@@ -39,7 +39,7 @@ class ModelGroupConfigurationDetails(object):
         **[Required]** Gets the model_group_id of this ModelGroupConfigurationDetails.
         The `OCID`__ of the model group you want to deploy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The model_group_id of this ModelGroupConfigurationDetails.
@@ -53,7 +53,7 @@ class ModelGroupConfigurationDetails(object):
         Sets the model_group_id of this ModelGroupConfigurationDetails.
         The `OCID`__ of the model group you want to deploy.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param model_group_id: The model_group_id of this ModelGroupConfigurationDetails.

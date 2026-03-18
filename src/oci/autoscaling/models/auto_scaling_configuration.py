@@ -15,7 +15,7 @@ class AutoScalingConfiguration(object):
     An autoscaling configuration lets you dynamically scale the resources in a Compute instance pool.
     For more information, see `Autoscaling`__.
 
-    __ https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
     """
 
     def __init__(self, **kwargs):
@@ -119,7 +119,7 @@ class AutoScalingConfiguration(object):
         **[Required]** Gets the compartment_id of this AutoScalingConfiguration.
         The `OCID`__ of the compartment containing the autoscaling configuration.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutoScalingConfiguration.
@@ -133,7 +133,7 @@ class AutoScalingConfiguration(object):
         Sets the compartment_id of this AutoScalingConfiguration.
         The `OCID`__ of the compartment containing the autoscaling configuration.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutoScalingConfiguration.
@@ -150,7 +150,7 @@ class AutoScalingConfiguration(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this AutoScalingConfiguration.
@@ -167,7 +167,7 @@ class AutoScalingConfiguration(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this AutoScalingConfiguration.
@@ -208,7 +208,7 @@ class AutoScalingConfiguration(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this AutoScalingConfiguration.
@@ -225,7 +225,7 @@ class AutoScalingConfiguration(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this AutoScalingConfiguration.
@@ -239,7 +239,7 @@ class AutoScalingConfiguration(object):
         **[Required]** Gets the id of this AutoScalingConfiguration.
         The `OCID`__ of the autoscaling configuration.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutoScalingConfiguration.
@@ -253,7 +253,7 @@ class AutoScalingConfiguration(object):
         Sets the id of this AutoScalingConfiguration.
         The `OCID`__ of the autoscaling configuration.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutoScalingConfiguration.

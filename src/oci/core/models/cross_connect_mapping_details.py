@@ -160,7 +160,7 @@ class CrossConnectMappingDetails(object):
         customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_or_cross_connect_group_id of this CrossConnectMappingDetails.
@@ -177,7 +177,7 @@ class CrossConnectMappingDetails(object):
         customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_or_cross_connect_group_id: The cross_connect_or_cross_connect_group_id of this CrossConnectMappingDetails.

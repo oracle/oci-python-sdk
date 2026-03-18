@@ -129,13 +129,13 @@ class FleetAppsManagementCatalogClient(object):
         Moves a CatalogItem into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.ChangeCatalogItemCompartmentDetails change_catalog_item_compartment_details: (required)
             Details of the target compartment.
@@ -261,13 +261,13 @@ class FleetAppsManagementCatalogClient(object):
         Clones a CatalogItem into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.CloneCatalogItemDetails clone_catalog_item_details: (required)
             The information to be updated.
@@ -398,7 +398,7 @@ class FleetAppsManagementCatalogClient(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.ConfigureCatalogItemDetails configure_catalog_item_details: (required)
             The information to be updated.
@@ -634,7 +634,7 @@ class FleetAppsManagementCatalogClient(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -748,7 +748,7 @@ class FleetAppsManagementCatalogClient(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -855,7 +855,7 @@ class FleetAppsManagementCatalogClient(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -965,7 +965,7 @@ class FleetAppsManagementCatalogClient(object):
         :param str config_source_type: (optional)
             The `ConfigSourceType`__ Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, URL_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
 
-            __ https://docs.oracle.com/definitions/CatalogItem/configSourceType
+            __ https://docs.cloud.oracle.com/definitions/CatalogItem/configSourceType
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state. The
@@ -1167,7 +1167,7 @@ class FleetAppsManagementCatalogClient(object):
         :param str catalog_item_id: (required)
             The `OCID`__ of the CatalogItem.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.fleet_apps_management.models.UpdateCatalogItemDetails update_catalog_item_details: (required)
             The information to be updated.

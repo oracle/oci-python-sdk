@@ -15,7 +15,7 @@ class OpensearchCluster(object):
     An OpenSearch cluster resource. An OpenSearch cluster is set of instances that provide OpenSearch functionality in OCI Search Service with OpenSearch.
     For more information, see `About Search Service with OpenSearch`__.
 
-    __ https://docs.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearch.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearch.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a OpensearchCluster.
@@ -61,10 +61,6 @@ class OpensearchCluster(object):
     #: A constant which can be used with the search_node_host_type property of a OpensearchCluster.
     #: This constant has a value of "FLEX"
     SEARCH_NODE_HOST_TYPE_FLEX = "FLEX"
-
-    #: A constant which can be used with the ml_node_host_type property of a OpensearchCluster.
-    #: This constant has a value of "FLEX"
-    ML_NODE_HOST_TYPE_FLEX = "FLEX"
 
     #: A constant which can be used with the security_mode property of a OpensearchCluster.
     #: This constant has a value of "DISABLED"
@@ -239,32 +235,6 @@ class OpensearchCluster(object):
             The value to assign to the search_node_storage_gb property of this OpensearchCluster.
         :type search_node_storage_gb: int
 
-        :param ml_node_count:
-            The value to assign to the ml_node_count property of this OpensearchCluster.
-        :type ml_node_count: int
-
-        :param ml_node_host_type:
-            The value to assign to the ml_node_host_type property of this OpensearchCluster.
-            Allowed values for this property are: "FLEX", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type ml_node_host_type: str
-
-        :param ml_node_host_shape:
-            The value to assign to the ml_node_host_shape property of this OpensearchCluster.
-        :type ml_node_host_shape: str
-
-        :param ml_node_host_ocpu_count:
-            The value to assign to the ml_node_host_ocpu_count property of this OpensearchCluster.
-        :type ml_node_host_ocpu_count: int
-
-        :param ml_node_host_memory_gb:
-            The value to assign to the ml_node_host_memory_gb property of this OpensearchCluster.
-        :type ml_node_host_memory_gb: int
-
-        :param ml_node_storage_gb:
-            The value to assign to the ml_node_storage_gb property of this OpensearchCluster.
-        :type ml_node_storage_gb: int
-
         :param opendashboard_node_host_shape:
             The value to assign to the opendashboard_node_host_shape property of this OpensearchCluster.
         :type opendashboard_node_host_shape: str
@@ -398,12 +368,6 @@ class OpensearchCluster(object):
             'search_node_host_ocpu_count': 'int',
             'search_node_host_memory_gb': 'int',
             'search_node_storage_gb': 'int',
-            'ml_node_count': 'int',
-            'ml_node_host_type': 'str',
-            'ml_node_host_shape': 'str',
-            'ml_node_host_ocpu_count': 'int',
-            'ml_node_host_memory_gb': 'int',
-            'ml_node_storage_gb': 'int',
             'opendashboard_node_host_shape': 'str',
             'opendashboard_node_count': 'int',
             'opendashboard_node_host_ocpu_count': 'int',
@@ -466,12 +430,6 @@ class OpensearchCluster(object):
             'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
             'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
             'search_node_storage_gb': 'searchNodeStorageGB',
-            'ml_node_count': 'mlNodeCount',
-            'ml_node_host_type': 'mlNodeHostType',
-            'ml_node_host_shape': 'mlNodeHostShape',
-            'ml_node_host_ocpu_count': 'mlNodeHostOcpuCount',
-            'ml_node_host_memory_gb': 'mlNodeHostMemoryGB',
-            'ml_node_storage_gb': 'mlNodeStorageGB',
             'opendashboard_node_host_shape': 'opendashboardNodeHostShape',
             'opendashboard_node_count': 'opendashboardNodeCount',
             'opendashboard_node_host_ocpu_count': 'opendashboardNodeHostOcpuCount',
@@ -533,12 +491,6 @@ class OpensearchCluster(object):
         self._search_node_host_ocpu_count = None
         self._search_node_host_memory_gb = None
         self._search_node_storage_gb = None
-        self._ml_node_count = None
-        self._ml_node_host_type = None
-        self._ml_node_host_shape = None
-        self._ml_node_host_ocpu_count = None
-        self._ml_node_host_memory_gb = None
-        self._ml_node_storage_gb = None
         self._opendashboard_node_host_shape = None
         self._opendashboard_node_count = None
         self._opendashboard_node_host_ocpu_count = None
@@ -848,7 +800,7 @@ class OpensearchCluster(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The security_attributes of this OpensearchCluster.
@@ -865,7 +817,7 @@ class OpensearchCluster(object):
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param security_attributes: The security_attributes of this OpensearchCluster.
@@ -1490,156 +1442,6 @@ class OpensearchCluster(object):
         :type: int
         """
         self._search_node_storage_gb = search_node_storage_gb
-
-    @property
-    def ml_node_count(self):
-        """
-        Gets the ml_node_count of this OpensearchCluster.
-        The number of ML nodes configured for the cluster.
-
-
-        :return: The ml_node_count of this OpensearchCluster.
-        :rtype: int
-        """
-        return self._ml_node_count
-
-    @ml_node_count.setter
-    def ml_node_count(self, ml_node_count):
-        """
-        Sets the ml_node_count of this OpensearchCluster.
-        The number of ML nodes configured for the cluster.
-
-
-        :param ml_node_count: The ml_node_count of this OpensearchCluster.
-        :type: int
-        """
-        self._ml_node_count = ml_node_count
-
-    @property
-    def ml_node_host_type(self):
-        """
-        Gets the ml_node_host_type of this OpensearchCluster.
-        The instance type for the cluster's ML nodes.
-
-        Allowed values for this property are: "FLEX", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The ml_node_host_type of this OpensearchCluster.
-        :rtype: str
-        """
-        return self._ml_node_host_type
-
-    @ml_node_host_type.setter
-    def ml_node_host_type(self, ml_node_host_type):
-        """
-        Sets the ml_node_host_type of this OpensearchCluster.
-        The instance type for the cluster's ML nodes.
-
-
-        :param ml_node_host_type: The ml_node_host_type of this OpensearchCluster.
-        :type: str
-        """
-        allowed_values = ["FLEX"]
-        if not value_allowed_none_or_none_sentinel(ml_node_host_type, allowed_values):
-            ml_node_host_type = 'UNKNOWN_ENUM_VALUE'
-        self._ml_node_host_type = ml_node_host_type
-
-    @property
-    def ml_node_host_shape(self):
-        """
-        Gets the ml_node_host_shape of this OpensearchCluster.
-        The node shape for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_shape of this OpensearchCluster.
-        :rtype: str
-        """
-        return self._ml_node_host_shape
-
-    @ml_node_host_shape.setter
-    def ml_node_host_shape(self, ml_node_host_shape):
-        """
-        Sets the ml_node_host_shape of this OpensearchCluster.
-        The node shape for the cluster's ML nodes.
-
-
-        :param ml_node_host_shape: The ml_node_host_shape of this OpensearchCluster.
-        :type: str
-        """
-        self._ml_node_host_shape = ml_node_host_shape
-
-    @property
-    def ml_node_host_ocpu_count(self):
-        """
-        Gets the ml_node_host_ocpu_count of this OpensearchCluster.
-        The number of OCPUs configured for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_ocpu_count of this OpensearchCluster.
-        :rtype: int
-        """
-        return self._ml_node_host_ocpu_count
-
-    @ml_node_host_ocpu_count.setter
-    def ml_node_host_ocpu_count(self, ml_node_host_ocpu_count):
-        """
-        Sets the ml_node_host_ocpu_count of this OpensearchCluster.
-        The number of OCPUs configured for the cluster's ML nodes.
-
-
-        :param ml_node_host_ocpu_count: The ml_node_host_ocpu_count of this OpensearchCluster.
-        :type: int
-        """
-        self._ml_node_host_ocpu_count = ml_node_host_ocpu_count
-
-    @property
-    def ml_node_host_memory_gb(self):
-        """
-        Gets the ml_node_host_memory_gb of this OpensearchCluster.
-        The amount of memory in GB, for the cluster's ML nodes.
-
-
-        :return: The ml_node_host_memory_gb of this OpensearchCluster.
-        :rtype: int
-        """
-        return self._ml_node_host_memory_gb
-
-    @ml_node_host_memory_gb.setter
-    def ml_node_host_memory_gb(self, ml_node_host_memory_gb):
-        """
-        Sets the ml_node_host_memory_gb of this OpensearchCluster.
-        The amount of memory in GB, for the cluster's ML nodes.
-
-
-        :param ml_node_host_memory_gb: The ml_node_host_memory_gb of this OpensearchCluster.
-        :type: int
-        """
-        self._ml_node_host_memory_gb = ml_node_host_memory_gb
-
-    @property
-    def ml_node_storage_gb(self):
-        """
-        Gets the ml_node_storage_gb of this OpensearchCluster.
-        The amount of storage in GB, to configure per node for the cluster's ML nodes.
-
-
-        :return: The ml_node_storage_gb of this OpensearchCluster.
-        :rtype: int
-        """
-        return self._ml_node_storage_gb
-
-    @ml_node_storage_gb.setter
-    def ml_node_storage_gb(self, ml_node_storage_gb):
-        """
-        Sets the ml_node_storage_gb of this OpensearchCluster.
-        The amount of storage in GB, to configure per node for the cluster's ML nodes.
-
-
-        :param ml_node_storage_gb: The ml_node_storage_gb of this OpensearchCluster.
-        :type: int
-        """
-        self._ml_node_storage_gb = ml_node_storage_gb
 
     @property
     def opendashboard_node_host_shape(self):

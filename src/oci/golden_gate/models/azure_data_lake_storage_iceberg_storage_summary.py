@@ -118,7 +118,7 @@ class AzureDataLakeStorageIcebergStorageSummary(IcebergStorageSummary):
         **[Required]** Gets the account_key_secret_id of this AzureDataLakeStorageIcebergStorageSummary.
         The `OCID`__ of the Secret where the account key is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The account_key_secret_id of this AzureDataLakeStorageIcebergStorageSummary.
@@ -132,7 +132,7 @@ class AzureDataLakeStorageIcebergStorageSummary(IcebergStorageSummary):
         Sets the account_key_secret_id of this AzureDataLakeStorageIcebergStorageSummary.
         The `OCID`__ of the Secret where the account key is stored.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param account_key_secret_id: The account_key_secret_id of this AzureDataLakeStorageIcebergStorageSummary.

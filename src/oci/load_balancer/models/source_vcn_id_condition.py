@@ -55,7 +55,7 @@ class SourceVcnIdCondition(RuleCondition):
         **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition
         matches all incoming traffic in the specified VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The attribute_value of this SourceVcnIdCondition.
@@ -75,7 +75,7 @@ class SourceVcnIdCondition(RuleCondition):
         **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition
         matches all incoming traffic in the specified VCN.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param attribute_value: The attribute_value of this SourceVcnIdCondition.

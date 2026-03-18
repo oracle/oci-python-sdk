@@ -115,7 +115,7 @@ class UpdateOperationsInsightsPrivateEndpointDetails(object):
         Gets the nsg_ids of this UpdateOperationsInsightsPrivateEndpointDetails.
         The `OCID`__ of the network security groups that the Private service accessed the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this UpdateOperationsInsightsPrivateEndpointDetails.
@@ -129,7 +129,7 @@ class UpdateOperationsInsightsPrivateEndpointDetails(object):
         Sets the nsg_ids of this UpdateOperationsInsightsPrivateEndpointDetails.
         The `OCID`__ of the network security groups that the Private service accessed the database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this UpdateOperationsInsightsPrivateEndpointDetails.

@@ -40,7 +40,7 @@ class EntitlementTarget(object):
         The `OCID`__ of a deployment
         resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The deployment_id of this EntitlementTarget.
@@ -55,7 +55,7 @@ class EntitlementTarget(object):
         The `OCID`__ of a deployment
         resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param deployment_id: The deployment_id of this EntitlementTarget.

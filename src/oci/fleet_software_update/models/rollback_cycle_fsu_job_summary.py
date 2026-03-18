@@ -162,7 +162,7 @@ class RollbackCycleFsuJobSummary(FsuJobSummary):
         **[Required]** Gets the fsu_collection_id of this RollbackCycleFsuJobSummary.
         The `OCID`__ of the Exadata Fleet Update Collection that the job is executing on.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this RollbackCycleFsuJobSummary.
@@ -176,7 +176,7 @@ class RollbackCycleFsuJobSummary(FsuJobSummary):
         Sets the fsu_collection_id of this RollbackCycleFsuJobSummary.
         The `OCID`__ of the Exadata Fleet Update Collection that the job is executing on.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this RollbackCycleFsuJobSummary.
@@ -190,7 +190,7 @@ class RollbackCycleFsuJobSummary(FsuJobSummary):
         **[Required]** Gets the fsu_cycle_id of this RollbackCycleFsuJobSummary.
         The `OCID`__ of the Exadata Fleet Update Cycle that this job is part of.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_cycle_id of this RollbackCycleFsuJobSummary.
@@ -204,7 +204,7 @@ class RollbackCycleFsuJobSummary(FsuJobSummary):
         Sets the fsu_cycle_id of this RollbackCycleFsuJobSummary.
         The `OCID`__ of the Exadata Fleet Update Cycle that this job is part of.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_cycle_id: The fsu_cycle_id of this RollbackCycleFsuJobSummary.

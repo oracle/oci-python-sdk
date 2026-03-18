@@ -110,7 +110,7 @@ class SearchLogsDetails(object):
         should follow the specification. For more information on the query language specification, see
         `Logging Query Language Specification`__.
 
-        __ https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm
+        __ https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm
 
 
         :return: The search_query of this SearchLogsDetails.
@@ -126,7 +126,7 @@ class SearchLogsDetails(object):
         should follow the specification. For more information on the query language specification, see
         `Logging Query Language Specification`__.
 
-        __ https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm
+        __ https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm
 
 
         :param search_query: The search_query of this SearchLogsDetails.

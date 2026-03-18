@@ -109,7 +109,7 @@ class TaskScheduleSummary(object):
         **[Required]** Gets the id of this TaskScheduleSummary.
         The `OCID`__ to identify this task schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TaskScheduleSummary.
@@ -123,7 +123,7 @@ class TaskScheduleSummary(object):
         Sets the id of this TaskScheduleSummary.
         The `OCID`__ to identify this task schedule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TaskScheduleSummary.
@@ -137,7 +137,7 @@ class TaskScheduleSummary(object):
         **[Required]** Gets the fleet_id of this TaskScheduleSummary.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fleet_id of this TaskScheduleSummary.
@@ -151,7 +151,7 @@ class TaskScheduleSummary(object):
         Sets the fleet_id of this TaskScheduleSummary.
         The `OCID`__ of the Fleet.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fleet_id: The fleet_id of this TaskScheduleSummary.

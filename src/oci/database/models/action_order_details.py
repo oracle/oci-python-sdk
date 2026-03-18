@@ -70,7 +70,7 @@ class ActionOrderDetails(object):
         Gets the action_resource_id of this ActionOrderDetails.
         The `OCID`__ of the action resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The action_resource_id of this ActionOrderDetails.
@@ -84,7 +84,7 @@ class ActionOrderDetails(object):
         Sets the action_resource_id of this ActionOrderDetails.
         The `OCID`__ of the action resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param action_resource_id: The action_resource_id of this ActionOrderDetails.

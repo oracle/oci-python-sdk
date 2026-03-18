@@ -351,7 +351,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this CreateMysqlConnectionDetails.
@@ -369,7 +369,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
         If secretId is used plaintext field must not be provided.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this CreateMysqlConnectionDetails.
@@ -615,7 +615,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
         - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
         Note: When provided, 'sslKey' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The ssl_key_secret_id of this CreateMysqlConnectionDetails.
@@ -631,7 +631,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
         - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
         Note: When provided, 'sslKey' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param ssl_key_secret_id: The ssl_key_secret_id of this CreateMysqlConnectionDetails.
@@ -709,7 +709,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
         Gets the db_system_id of this CreateMysqlConnectionDetails.
         The `OCID`__ of the database system being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this CreateMysqlConnectionDetails.
@@ -723,7 +723,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
         Sets the db_system_id of this CreateMysqlConnectionDetails.
         The `OCID`__ of the database system being referenced.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this CreateMysqlConnectionDetails.

@@ -335,7 +335,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this CreateMongoDbConnectionDetails.
@@ -350,7 +350,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
         Note: When provided, 'password' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this CreateMongoDbConnectionDetails.
@@ -364,7 +364,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         Gets the database_id of this CreateMongoDbConnectionDetails.
         The `OCID`__ of the Oracle Autonomous Json Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The database_id of this CreateMongoDbConnectionDetails.
@@ -378,7 +378,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         Sets the database_id of this CreateMongoDbConnectionDetails.
         The `OCID`__ of the Oracle Autonomous Json Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param database_id: The database_id of this CreateMongoDbConnectionDetails.
@@ -470,7 +470,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         - The content of a .pem file containing the client private key (for 2-way SSL).
         Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The tls_certificate_key_file_secret_id of this CreateMongoDbConnectionDetails.
@@ -486,7 +486,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         - The content of a .pem file containing the client private key (for 2-way SSL).
         Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param tls_certificate_key_file_secret_id: The tls_certificate_key_file_secret_id of this CreateMongoDbConnectionDetails.
@@ -527,7 +527,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the password of the tls certificate key file.
         Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The tls_certificate_key_file_password_secret_id of this CreateMongoDbConnectionDetails.
@@ -542,7 +542,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         The `OCID`__ of the Secret that stores the password of the tls certificate key file.
         Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param tls_certificate_key_file_password_secret_id: The tls_certificate_key_file_password_secret_id of this CreateMongoDbConnectionDetails.

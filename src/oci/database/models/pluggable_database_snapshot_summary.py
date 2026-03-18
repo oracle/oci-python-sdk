@@ -109,7 +109,7 @@ class PluggableDatabaseSnapshotSummary(object):
         **[Required]** Gets the id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the Exadata Pluggable Database Snapshot.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PluggableDatabaseSnapshotSummary.
@@ -123,7 +123,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Sets the id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the Exadata Pluggable Database Snapshot.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PluggableDatabaseSnapshotSummary.
@@ -137,7 +137,7 @@ class PluggableDatabaseSnapshotSummary(object):
         **[Required]** Gets the pluggable_database_id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the Exadata Pluggable Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The pluggable_database_id of this PluggableDatabaseSnapshotSummary.
@@ -151,7 +151,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Sets the pluggable_database_id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the Exadata Pluggable Database.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param pluggable_database_id: The pluggable_database_id of this PluggableDatabaseSnapshotSummary.
@@ -264,7 +264,7 @@ class PluggableDatabaseSnapshotSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this PluggableDatabaseSnapshotSummary.
@@ -281,7 +281,7 @@ class PluggableDatabaseSnapshotSummary(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this PluggableDatabaseSnapshotSummary.
@@ -296,7 +296,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this PluggableDatabaseSnapshotSummary.
@@ -311,7 +311,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this PluggableDatabaseSnapshotSummary.
@@ -326,7 +326,7 @@ class PluggableDatabaseSnapshotSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this PluggableDatabaseSnapshotSummary.
@@ -341,7 +341,7 @@ class PluggableDatabaseSnapshotSummary(object):
         System tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this PluggableDatabaseSnapshotSummary.
@@ -355,7 +355,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Gets the compartment_id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PluggableDatabaseSnapshotSummary.
@@ -369,7 +369,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Sets the compartment_id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PluggableDatabaseSnapshotSummary.
@@ -383,7 +383,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Gets the cluster_id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_id of this PluggableDatabaseSnapshotSummary.
@@ -397,7 +397,7 @@ class PluggableDatabaseSnapshotSummary(object):
         Sets the cluster_id of this PluggableDatabaseSnapshotSummary.
         The `OCID`__ of the VM cluster.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_id: The cluster_id of this PluggableDatabaseSnapshotSummary.

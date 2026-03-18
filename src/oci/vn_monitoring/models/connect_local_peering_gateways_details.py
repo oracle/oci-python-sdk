@@ -39,7 +39,7 @@ class ConnectLocalPeeringGatewaysDetails(object):
         **[Required]** Gets the peer_id of this ConnectLocalPeeringGatewaysDetails.
         The `OCID`__ of the LPG you want to peer with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_id of this ConnectLocalPeeringGatewaysDetails.
@@ -53,7 +53,7 @@ class ConnectLocalPeeringGatewaysDetails(object):
         Sets the peer_id of this ConnectLocalPeeringGatewaysDetails.
         The `OCID`__ of the LPG you want to peer with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_id: The peer_id of this ConnectLocalPeeringGatewaysDetails.

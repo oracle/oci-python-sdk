@@ -26,7 +26,7 @@ class AddAutoScalePolicyDetails(object):
 
     An autoscaling configuration can have one of above supported policies.
 
-    __ https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale
+    __ https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale
     """
 
     def __init__(self, **kwargs):

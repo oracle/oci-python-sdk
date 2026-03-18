@@ -75,7 +75,7 @@ class ManagementStationClientCompositeOperations(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.ManagementStation.lifecycle_state`
@@ -136,7 +136,7 @@ class ManagementStationClientCompositeOperations(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -177,7 +177,7 @@ class ManagementStationClientCompositeOperations(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.SynchronizeMirrorsDetails synchronize_mirrors_details: (required)
             Details for syncing mirrors
@@ -221,7 +221,7 @@ class ManagementStationClientCompositeOperations(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str mirror_id: (required)
             Unique Software Source identifier
@@ -265,7 +265,7 @@ class ManagementStationClientCompositeOperations(object):
         :param str management_station_id: (required)
             The `OCID`__ of the management station.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateManagementStationDetails update_management_station_details: (required)
             The information used to update the management station.

@@ -378,7 +378,7 @@ class ConfigClient(object):
         :param str config_id: (required)
             The `OCID`__ of the configuration item.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -619,7 +619,7 @@ class ConfigClient(object):
         :param str config_id: (required)
             The `OCID`__ of the configuration item.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -970,7 +970,7 @@ class ConfigClient(object):
             how pagination works, see `List Pagination`__.
             Example: `50`
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The displayName sort order
@@ -1462,7 +1462,7 @@ class ConfigClient(object):
         :param str config_id: (required)
             The `OCID`__ of the configuration item.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.apm_config.models.UpdateConfigDetails update_config_details: (required)
             The configuration details to be updated.

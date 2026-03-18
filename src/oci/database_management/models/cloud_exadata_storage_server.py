@@ -213,7 +213,7 @@ class CloudExadataStorageServer(DbmResource):
         Gets the exadata_infrastructure_id of this CloudExadataStorageServer.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The exadata_infrastructure_id of this CloudExadataStorageServer.
@@ -227,7 +227,7 @@ class CloudExadataStorageServer(DbmResource):
         Sets the exadata_infrastructure_id of this CloudExadataStorageServer.
         The `OCID`__ of the Exadata infrastructure.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param exadata_infrastructure_id: The exadata_infrastructure_id of this CloudExadataStorageServer.
@@ -241,7 +241,7 @@ class CloudExadataStorageServer(DbmResource):
         Gets the storage_grid_id of this CloudExadataStorageServer.
         The `OCID`__ of the Exadata storage server grid.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The storage_grid_id of this CloudExadataStorageServer.
@@ -255,7 +255,7 @@ class CloudExadataStorageServer(DbmResource):
         Sets the storage_grid_id of this CloudExadataStorageServer.
         The `OCID`__ of the Exadata storage server grid.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param storage_grid_id: The storage_grid_id of this CloudExadataStorageServer.
@@ -483,7 +483,7 @@ class CloudExadataStorageServer(DbmResource):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CloudExadataStorageServer.
@@ -499,7 +499,7 @@ class CloudExadataStorageServer(DbmResource):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CloudExadataStorageServer.
@@ -515,7 +515,7 @@ class CloudExadataStorageServer(DbmResource):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CloudExadataStorageServer.
@@ -531,7 +531,7 @@ class CloudExadataStorageServer(DbmResource):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CloudExadataStorageServer.
@@ -549,7 +549,7 @@ class CloudExadataStorageServer(DbmResource):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this CloudExadataStorageServer.
@@ -567,7 +567,7 @@ class CloudExadataStorageServer(DbmResource):
 
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this CloudExadataStorageServer.

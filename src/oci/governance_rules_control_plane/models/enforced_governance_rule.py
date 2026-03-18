@@ -112,7 +112,7 @@ class EnforcedGovernanceRule(object):
         **[Required]** Gets the id of this EnforcedGovernanceRule.
         The Oracle ID (`OCID`__) of the enforced governance rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this EnforcedGovernanceRule.
@@ -126,7 +126,7 @@ class EnforcedGovernanceRule(object):
         Sets the id of this EnforcedGovernanceRule.
         The Oracle ID (`OCID`__) of the enforced governance rule.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this EnforcedGovernanceRule.
@@ -140,7 +140,7 @@ class EnforcedGovernanceRule(object):
         **[Required]** Gets the compartment_id of this EnforcedGovernanceRule.
         The Oracle ID (`OCID`__) of the child's root compartment to which the governance rule is attached.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EnforcedGovernanceRule.
@@ -154,7 +154,7 @@ class EnforcedGovernanceRule(object):
         Sets the compartment_id of this EnforcedGovernanceRule.
         The Oracle ID (`OCID`__) of the child's root compartment to which the governance rule is attached.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EnforcedGovernanceRule.

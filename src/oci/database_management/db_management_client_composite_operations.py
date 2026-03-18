@@ -33,7 +33,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
             The details required to move the Exadata infrastructure from one compartment to another.
@@ -77,12 +77,12 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeExternalDbSystemCompartmentDetails change_external_db_system_compartment_details: (required)
             The `OCID`__ of the compartment to which the external DB system should be moved.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -123,7 +123,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeExternalExadataInfrastructureCompartmentDetails change_external_exadata_infrastructure_compartment_details: (required)
             The details required to move the Exadata infrastructure from one compartment to another.
@@ -167,7 +167,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbSystemConnector.lifecycle_state`
@@ -211,7 +211,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.ExternalDbSystemConnector.lifecycle_state`
@@ -912,7 +912,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -961,7 +961,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbSystemConnector.lifecycle_state`
@@ -1022,7 +1022,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_discovery_id: (required)
             The `OCID`__ of the cloud DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbSystemDiscovery.lifecycle_state`
@@ -1083,7 +1083,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1132,7 +1132,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudExadataStorageConnector.lifecycle_state`
@@ -1193,7 +1193,7 @@ class DbManagementClientCompositeOperations(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1242,7 +1242,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1291,7 +1291,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.ExternalDbSystemConnector.lifecycle_state`
@@ -1352,7 +1352,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_discovery_id: (required)
             The `OCID`__ of the external DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.ExternalDbSystemDiscovery.lifecycle_state`
@@ -1413,7 +1413,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1462,7 +1462,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.ExternalExadataStorageConnector.lifecycle_state`
@@ -1676,7 +1676,7 @@ class DbManagementClientCompositeOperations(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.ManagedDatabaseGroup.lifecycle_state`
@@ -1737,7 +1737,7 @@ class DbManagementClientCompositeOperations(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.NamedCredential.lifecycle_state`
@@ -1798,7 +1798,7 @@ class DbManagementClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The `OCID`__ of the Autonomous Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableAutonomousDatabaseManagementFeatureDetails disable_autonomous_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an Autonomous Database.
@@ -1842,7 +1842,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1883,7 +1883,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1924,7 +1924,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -1965,7 +1965,7 @@ class DbManagementClientCompositeOperations(object):
         :param str database_id: (required)
             The `OCID`__ of the Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableDatabaseManagementFeatureDetails disable_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an Oracle cloud database.
@@ -2009,7 +2009,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The `OCID`__ of the external container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableExternalContainerDatabaseManagementFeatureDetails disable_external_container_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an external container database.
@@ -2053,7 +2053,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -2094,7 +2094,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -2135,7 +2135,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -2215,7 +2215,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The `OCID`__ of the external non-container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableExternalNonContainerDatabaseManagementFeatureDetails disable_external_non_container_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an external non-container database.
@@ -2259,7 +2259,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The `OCID`__ of the external pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisableExternalPluggableDatabaseManagementFeatureDetails disable_external_pluggable_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an external pluggable database.
@@ -2303,7 +2303,7 @@ class DbManagementClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The `OCID`__ of the Oracle cloud pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DisablePluggableDatabaseManagementFeatureDetails disable_pluggable_database_management_feature_details: (required)
             The details required to disable a Database Management feature for an Oracle cloud pluggable database.
@@ -2347,7 +2347,7 @@ class DbManagementClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The `OCID`__ of the Autonomous Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableAutonomousDatabaseManagementFeatureDetails enable_autonomous_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an Autonomous Database.
@@ -2391,7 +2391,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemDatabaseManagementDetails enable_cloud_db_system_database_management_details: (required)
             The details required to enable Stack Monitoring for an cloud DB system.
@@ -2435,7 +2435,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemStackMonitoringDetails enable_cloud_db_system_stack_monitoring_details: (required)
             The details required to enable Stack Monitoring for an cloud DB system.
@@ -2479,7 +2479,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudExadataInfrastructureManagementDetails enable_cloud_exadata_infrastructure_management_details: (required)
             The details required to enable management for the Exadata infrastructure.
@@ -2523,7 +2523,7 @@ class DbManagementClientCompositeOperations(object):
         :param str database_id: (required)
             The `OCID`__ of the Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableDatabaseManagementFeatureDetails enable_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an Oracle cloud database.
@@ -2567,7 +2567,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The `OCID`__ of the external container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalContainerDatabaseManagementFeatureDetails enable_external_container_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external container database.
@@ -2611,7 +2611,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails enable_external_db_system_database_management_details: (required)
             The details required to enable Database Management for an external DB system.
@@ -2655,7 +2655,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalDbSystemStackMonitoringDetails enable_external_db_system_stack_monitoring_details: (required)
             The details required to enable Stack Monitoring for an external DB system.
@@ -2699,7 +2699,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalExadataInfrastructureManagementDetails enable_external_exadata_infrastructure_management_details: (required)
             The details required to enable management for the Exadata infrastructure.
@@ -2785,7 +2785,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_non_container_database_id: (required)
             The `OCID`__ of the external non-container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalNonContainerDatabaseManagementFeatureDetails enable_external_non_container_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external non-container database.
@@ -2829,7 +2829,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_pluggable_database_id: (required)
             The `OCID`__ of the external pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalPluggableDatabaseManagementFeatureDetails enable_external_pluggable_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external pluggable database.
@@ -2873,7 +2873,7 @@ class DbManagementClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The `OCID`__ of the Oracle cloud pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnablePluggableDatabaseManagementFeatureDetails enable_pluggable_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an Oracle cloud pluggable database.
@@ -2917,7 +2917,7 @@ class DbManagementClientCompositeOperations(object):
         :param str autonomous_database_id: (required)
             The `OCID`__ of the Autonomous Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifyAutonomousDatabaseManagementFeatureDetails modify_autonomous_database_management_feature_details: (required)
             The details required to modify a Database Management feature for an Autonomous Database.
@@ -2961,7 +2961,7 @@ class DbManagementClientCompositeOperations(object):
         :param str database_id: (required)
             The `OCID`__ of the Database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifyDatabaseManagementFeatureDetails modify_database_management_feature_details: (required)
             The details required to modify a Database Management feature for an Oracle cloud database.
@@ -3005,7 +3005,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_container_database_id: (required)
             The `OCID`__ of the external container database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableExternalContainerDatabaseManagementFeatureDetails enable_external_container_database_management_feature_details: (required)
             The details required to enable a Database Management feature for an external container database.
@@ -3049,7 +3049,7 @@ class DbManagementClientCompositeOperations(object):
         :param str pluggable_database_id: (required)
             The `OCID`__ of the Oracle cloud pluggable database.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ModifyPluggableDatabaseManagementFeatureDetails modify_pluggable_database_management_feature_details: (required)
             The details required to modify a Database Management feature for an Oracle cloud pluggable database.
@@ -3093,7 +3093,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_asm_id: (required)
             The `OCID`__ of the cloud ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmDetails update_cloud_asm_details: (required)
             The details required to update an cloud ASM.
@@ -3137,7 +3137,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_asm_instance_id: (required)
             The `OCID`__ of the cloud ASM instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmInstanceDetails update_cloud_asm_instance_details: (required)
             The details required to update an cloud ASM instance.
@@ -3184,7 +3184,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_cluster_id: (required)
             The `OCID`__ of the cloud cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterDetails update_cloud_cluster_details: (required)
             The details required to update an cloud cluster.
@@ -3228,7 +3228,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_cluster_instance_id: (required)
             The `OCID`__ of the cloud cluster instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterInstanceDetails update_cloud_cluster_instance_details: (required)
             The details required to update an cloud cluster instance.
@@ -3272,7 +3272,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_home_id: (required)
             The `OCID`__ of the cloud database home.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbHomeDetails update_cloud_db_home_details: (required)
             The details required to update an cloud DB home.
@@ -3319,7 +3319,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_node_id: (required)
             The `OCID`__ of the cloud database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbNodeDetails update_cloud_db_node_details: (required)
             The details required to update an cloud DB node.
@@ -3363,7 +3363,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_id: (required)
             The `OCID`__ of the cloud DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDetails update_cloud_db_system_details: (required)
             The details required to update an cloud DB system.
@@ -3410,7 +3410,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_connector_id: (required)
             The `OCID`__ of the cloud connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemConnectorDetails update_cloud_db_system_connector_details: (required)
             The details required to update an cloud connector.
@@ -3454,7 +3454,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_db_system_discovery_id: (required)
             The `OCID`__ of the cloud DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDiscoveryDetails update_cloud_db_system_discovery_details: (required)
             The details required to update an cloud DB system discovery.
@@ -3501,7 +3501,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
             The details required to update the managed Exadata infrastructure resources.
@@ -3548,7 +3548,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataStorageConnectorDetails update_cloud_exadata_storage_connector_details: (required)
             The details required to update connections to the Exadata storage servers.
@@ -3595,7 +3595,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_storage_grid_id: (required)
             The `OCID`__ of the Exadata storage grid.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataStorageGridDetails update_cloud_exadata_storage_grid_details: (required)
             The details required to update an Exadata storage grid.
@@ -3642,7 +3642,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudExadataStorageServerDetails update_cloud_exadata_storage_server_details: (required)
             The details required to update an Exadata storage server.
@@ -3689,7 +3689,7 @@ class DbManagementClientCompositeOperations(object):
         :param str cloud_listener_id: (required)
             The `OCID`__ of the cloud listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudListenerDetails update_cloud_listener_details: (required)
             The details required to update an cloud listener.
@@ -3733,7 +3733,7 @@ class DbManagementClientCompositeOperations(object):
         :param str db_management_private_endpoint_id: (required)
             The `OCID`__ of the Database Management private endpoint.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateDbManagementPrivateEndpointDetails update_db_management_private_endpoint_details: (required)
             The details used to update a Database Management private endpoint.
@@ -3780,7 +3780,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_asm_id: (required)
             The `OCID`__ of the external ASM.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalAsmDetails update_external_asm_details: (required)
             The details required to update an external ASM.
@@ -3824,7 +3824,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_asm_instance_id: (required)
             The `OCID`__ of the external ASM instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalAsmInstanceDetails update_external_asm_instance_details: (required)
             The details required to update an external ASM instance.
@@ -3871,7 +3871,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_cluster_id: (required)
             The `OCID`__ of the external cluster.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalClusterDetails update_external_cluster_details: (required)
             The details required to update an external cluster.
@@ -3915,7 +3915,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_cluster_instance_id: (required)
             The `OCID`__ of the external cluster instance.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalClusterInstanceDetails update_external_cluster_instance_details: (required)
             The details required to update an external cluster instance.
@@ -3959,7 +3959,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_home_id: (required)
             The `OCID`__ of the external database home.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbHomeDetails update_external_db_home_details: (required)
             The details required to update an external DB home.
@@ -4006,7 +4006,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_node_id: (required)
             The `OCID`__ of the external database node.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbNodeDetails update_external_db_node_details: (required)
             The details required to update an external DB node.
@@ -4050,7 +4050,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_id: (required)
             The `OCID`__ of the external DB system.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbSystemDetails update_external_db_system_details: (required)
             The details required to update an external DB system.
@@ -4097,7 +4097,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_connector_id: (required)
             The `OCID`__ of the external connector.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbSystemConnectorDetails update_external_db_system_connector_details: (required)
             The details required to update an external connector.
@@ -4141,7 +4141,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_db_system_discovery_id: (required)
             The `OCID`__ of the external DB system discovery.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalDbSystemDiscoveryDetails update_external_db_system_discovery_details: (required)
             The details required to update an external DB system discovery.
@@ -4188,7 +4188,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_infrastructure_id: (required)
             The `OCID`__ of the Exadata infrastructure.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataInfrastructureDetails update_external_exadata_infrastructure_details: (required)
             The details required to update the managed Exadata infrastructure resources.
@@ -4235,7 +4235,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_storage_connector_id: (required)
             The `OCID`__ of the connector to the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataStorageConnectorDetails update_external_exadata_storage_connector_details: (required)
             The details required to update connections to the Exadata storage servers.
@@ -4282,7 +4282,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_storage_grid_id: (required)
             The `OCID`__ of the Exadata storage grid.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataStorageGridDetails update_external_exadata_storage_grid_details: (required)
             The details required to update an external Exadata storage grid.
@@ -4329,7 +4329,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_exadata_storage_server_id: (required)
             The `OCID`__ of the Exadata storage server.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalExadataStorageServerDetails update_external_exadata_storage_server_details: (required)
             The details required to update an external Exadata storage server.
@@ -4376,7 +4376,7 @@ class DbManagementClientCompositeOperations(object):
         :param str external_listener_id: (required)
             The `OCID`__ of the external listener.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateExternalListenerDetails update_external_listener_details: (required)
             The details required to update an external listener.
@@ -4507,7 +4507,7 @@ class DbManagementClientCompositeOperations(object):
         :param str managed_database_group_id: (required)
             The `OCID`__ of the Managed Database Group.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateManagedDatabaseGroupDetails update_managed_database_group_details: (required)
             The details required to update a Managed Database Group.
@@ -4554,7 +4554,7 @@ class DbManagementClientCompositeOperations(object):
         :param str named_credential_id: (required)
             The `OCID`__ of the named credential.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateNamedCredentialDetails update_named_credential_details: (required)
             The details required to update a named credential.

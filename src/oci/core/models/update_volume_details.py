@@ -98,7 +98,7 @@ class UpdateVolumeDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this UpdateVolumeDetails.
@@ -115,7 +115,7 @@ class UpdateVolumeDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this UpdateVolumeDetails.
@@ -158,7 +158,7 @@ class UpdateVolumeDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateVolumeDetails.
@@ -175,7 +175,7 @@ class UpdateVolumeDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateVolumeDetails.
@@ -203,7 +203,7 @@ class UpdateVolumeDetails(object):
 
         For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :return: The vpus_per_gb of this UpdateVolumeDetails.
@@ -231,7 +231,7 @@ class UpdateVolumeDetails(object):
 
         For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :param vpus_per_gb: The vpus_per_gb of this UpdateVolumeDetails.
@@ -346,7 +346,7 @@ class UpdateVolumeDetails(object):
         When set to true, enables SCSI Persistent Reservation (SCSI PR) for the volume. For more information, see
         `Persistent Reservations`__.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
 
 
         :return: The is_reservations_enabled of this UpdateVolumeDetails.
@@ -361,7 +361,7 @@ class UpdateVolumeDetails(object):
         When set to true, enables SCSI Persistent Reservation (SCSI PR) for the volume. For more information, see
         `Persistent Reservations`__.
 
-        __ https://docs.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
 
 
         :param is_reservations_enabled: The is_reservations_enabled of this UpdateVolumeDetails.

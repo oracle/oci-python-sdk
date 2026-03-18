@@ -154,7 +154,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         **[Required]** Gets the compartment_id of this CreateCloudExadataInfrastructureDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCloudExadataInfrastructureDetails.
@@ -168,7 +168,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Sets the compartment_id of this CreateCloudExadataInfrastructureDetails.
         The `OCID`__ of the compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCloudExadataInfrastructureDetails.
@@ -301,7 +301,7 @@ class CreateCloudExadataInfrastructureDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateCloudExadataInfrastructureDetails.
@@ -318,7 +318,7 @@ class CreateCloudExadataInfrastructureDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateCloudExadataInfrastructureDetails.
@@ -333,7 +333,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateCloudExadataInfrastructureDetails.
@@ -348,7 +348,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateCloudExadataInfrastructureDetails.
@@ -362,7 +362,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Gets the cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
@@ -376,7 +376,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Sets the cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
         The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cluster_placement_group_id: The cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
@@ -390,7 +390,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Gets the subscription_id of this CreateCloudExadataInfrastructureDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this CreateCloudExadataInfrastructureDetails.
@@ -404,7 +404,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         Sets the subscription_id of this CreateCloudExadataInfrastructureDetails.
         The `OCID`__ of the subscription with which resource needs to be associated with.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this CreateCloudExadataInfrastructureDetails.

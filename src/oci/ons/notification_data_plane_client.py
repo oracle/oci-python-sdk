@@ -133,13 +133,13 @@ class NotificationDataPlaneClient(object):
 
         Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
-        __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to move.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ons.models.ChangeCompartmentDetails change_subscription_compartment_details: (required)
             The configuration details for the move operation.
@@ -265,7 +265,7 @@ class NotificationDataPlaneClient(object):
 
         Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
-        __ https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub
 
 
         :param oci.ons.models.CreateSubscriptionDetails create_subscription_details: (required)
@@ -377,7 +377,7 @@ class NotificationDataPlaneClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to delete.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -490,7 +490,7 @@ class NotificationDataPlaneClient(object):
         :param str id: (required)
             The `OCID`__ of the subscription to get the confirmation details for.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str token: (required)
             The subscription confirmation token.
@@ -510,7 +510,7 @@ class NotificationDataPlaneClient(object):
             For information about subscription protocols, see
             `To create a subscription`__.
 
-            __ https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
+            __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -626,7 +626,7 @@ class NotificationDataPlaneClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to retrieve.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -734,7 +734,7 @@ class NotificationDataPlaneClient(object):
         :param str id: (required)
             The `OCID`__ of the subscription to unsubscribe from.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str token: (required)
             The subscription confirmation token.
@@ -754,7 +754,7 @@ class NotificationDataPlaneClient(object):
             For information about subscription protocols, see
             `To create a subscription`__.
 
-            __ https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
+            __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -870,7 +870,7 @@ class NotificationDataPlaneClient(object):
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str topic_id: (optional)
             Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
@@ -879,13 +879,13 @@ class NotificationDataPlaneClient(object):
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1004,14 +1004,14 @@ class NotificationDataPlaneClient(object):
         For more information about publishing messages, see `Publishing Messages`__.
         For steps to request a limit increase, see `Requesting a Service Limit Increase`__.
 
-        __ https://docs.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three
 
 
         :param str topic_id: (required)
             The `OCID`__ of the topic.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ons.models.MessageDetails message_details: (required)
             The message to publish.
@@ -1137,7 +1137,7 @@ class NotificationDataPlaneClient(object):
         :param str id: (required)
             The `OCID`__ of the subscription to resend the confirmation for.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1245,7 +1245,7 @@ class NotificationDataPlaneClient(object):
         :param str subscription_id: (required)
             The `OCID`__ of the subscription to update.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.ons.models.UpdateSubscriptionDetails update_subscription_details: (required)
             The configuration details for updating the subscription.

@@ -134,7 +134,7 @@ class IncidentClient(object):
         Creates a support request in the specified tenancy.
         For more information, see `Creating Support Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/create-incident.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident.htm
 
 
         :param oci.cims.models.CreateIncident create_incident_details: (required)
@@ -262,7 +262,7 @@ class IncidentClient(object):
         Gets the specified support request.
         For more information, see `Getting Details for a Support Request`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/get-incident.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/get-incident.htm
 
 
         :param str incident_key: (required)
@@ -427,8 +427,8 @@ class IncidentClient(object):
         For more information about listing limits, see
         `Listing Limits for Service Limit Increase Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm
-        __ https://docs.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm
 
 
         :param str problem_type: (required)
@@ -443,12 +443,12 @@ class IncidentClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The key to use to sort the returned items.
@@ -603,7 +603,7 @@ class IncidentClient(object):
         Lists support requests for the specified tenancy.
         For more information, see `Listing Support Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/list-incidents.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incidents.htm
 
 
         :param str compartment_id: (required)
@@ -616,7 +616,7 @@ class IncidentClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The key to use to sort the returned items.
@@ -636,7 +636,7 @@ class IncidentClient(object):
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1007,7 +1007,7 @@ class IncidentClient(object):
         Updates the specified support request.
         For more information, see `Updating Support Requests`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/update-incident.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/update-incident.htm
 
 
         :param str incident_key: (required)
@@ -1171,7 +1171,7 @@ class IncidentClient(object):
         Checks whether the requested user is valid.
         For more information, see `Validating a User`__.
 
-        __ https://docs.oracle.com/iaas/Content/GSG/support/validate-user.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/validate-user.htm
 
 
         :param str csi: (optional)

@@ -14,7 +14,7 @@ class VirtualCircuitRedundancyMetadata(object):
     """
     This resource provides redundancy level details for the virtual circuit. For more about redundancy, see `FastConnect Redundancy Best Practices`__.
 
-    __ https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm
     """
 
     #: A constant which can be used with the configured_redundancy_level property of a VirtualCircuitRedundancyMetadata.

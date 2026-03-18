@@ -46,7 +46,7 @@ class AssociatedDatabaseDetails(object):
         Gets the id of this AssociatedDatabaseDetails.
         The database `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AssociatedDatabaseDetails.
@@ -60,7 +60,7 @@ class AssociatedDatabaseDetails(object):
         Sets the id of this AssociatedDatabaseDetails.
         The database `OCID`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AssociatedDatabaseDetails.

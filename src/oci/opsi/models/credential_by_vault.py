@@ -108,7 +108,7 @@ class CredentialByVault(CredentialDetails):
         Gets the password_secret_id of this CredentialByVault.
         The secret `OCID`__ mapping to the database credentials.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The password_secret_id of this CredentialByVault.
@@ -122,7 +122,7 @@ class CredentialByVault(CredentialDetails):
         Sets the password_secret_id of this CredentialByVault.
         The secret `OCID`__ mapping to the database credentials.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param password_secret_id: The password_secret_id of this CredentialByVault.
@@ -136,7 +136,7 @@ class CredentialByVault(CredentialDetails):
         Gets the wallet_secret_id of this CredentialByVault.
         The `OCID`__ of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The wallet_secret_id of this CredentialByVault.
@@ -150,7 +150,7 @@ class CredentialByVault(CredentialDetails):
         Sets the wallet_secret_id of this CredentialByVault.
         The `OCID`__ of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param wallet_secret_id: The wallet_secret_id of this CredentialByVault.

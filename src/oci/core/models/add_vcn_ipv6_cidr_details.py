@@ -56,7 +56,7 @@ class AddVcnIpv6CidrDetails(object):
 
         Example: `2001:0db8:0123::/48` or `fd00:1000:0:1::/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_private_cidr_block of this AddVcnIpv6CidrDetails.
@@ -73,7 +73,7 @@ class AddVcnIpv6CidrDetails(object):
 
         Example: `2001:0db8:0123::/48` or `fd00:1000:0:1::/64`
 
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_private_cidr_block: The ipv6_private_cidr_block of this AddVcnIpv6CidrDetails.

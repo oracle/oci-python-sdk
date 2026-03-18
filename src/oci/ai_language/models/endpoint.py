@@ -235,7 +235,7 @@ class Endpoint(object):
         **[Required]** Gets the compartment_id of this Endpoint.
         The `OCID`__ for the endpoint compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Endpoint.
@@ -249,7 +249,7 @@ class Endpoint(object):
         Sets the compartment_id of this Endpoint.
         The `OCID`__ for the endpoint compartment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Endpoint.
@@ -263,7 +263,7 @@ class Endpoint(object):
         **[Required]** Gets the project_id of this Endpoint.
         The `OCID`__ of the project to associate with the Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this Endpoint.
@@ -277,7 +277,7 @@ class Endpoint(object):
         Sets the project_id of this Endpoint.
         The `OCID`__ of the project to associate with the Endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this Endpoint.
@@ -441,7 +441,7 @@ class Endpoint(object):
         **[Required]** Gets the model_id of this Endpoint.
         The `OCID`__ of the model to associate with the endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The model_id of this Endpoint.
@@ -455,7 +455,7 @@ class Endpoint(object):
         Sets the model_id of this Endpoint.
         The `OCID`__ of the model to associate with the endpoint.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param model_id: The model_id of this Endpoint.

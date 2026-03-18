@@ -82,7 +82,7 @@ class SubnetEndpoint(Endpoint):
         This can be used to disambiguate which subnet is intended, in case the IP address
         is used in more than one subnet (when there are subnets with overlapping IP ranges).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this SubnetEndpoint.
@@ -98,7 +98,7 @@ class SubnetEndpoint(Endpoint):
         This can be used to disambiguate which subnet is intended, in case the IP address
         is used in more than one subnet (when there are subnets with overlapping IP ranges).
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this SubnetEndpoint.

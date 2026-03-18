@@ -95,7 +95,7 @@ class CreateObjectStorageLinkDetails(object):
         **[Required]** Gets the compartment_id of this CreateObjectStorageLinkDetails.
         The `OCID`__ of the compartment that contains the Object Storage link.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateObjectStorageLinkDetails.
@@ -109,7 +109,7 @@ class CreateObjectStorageLinkDetails(object):
         Sets the compartment_id of this CreateObjectStorageLinkDetails.
         The `OCID`__ of the compartment that contains the Object Storage link.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateObjectStorageLinkDetails.
@@ -186,7 +186,7 @@ class CreateObjectStorageLinkDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateObjectStorageLinkDetails.
@@ -203,7 +203,7 @@ class CreateObjectStorageLinkDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateObjectStorageLinkDetails.
@@ -220,7 +220,7 @@ class CreateObjectStorageLinkDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateObjectStorageLinkDetails.
@@ -237,7 +237,7 @@ class CreateObjectStorageLinkDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateObjectStorageLinkDetails.
@@ -251,7 +251,7 @@ class CreateObjectStorageLinkDetails(object):
         **[Required]** Gets the lustre_file_system_id of this CreateObjectStorageLinkDetails.
         The `OCID`__ of the associated Lustre file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The lustre_file_system_id of this CreateObjectStorageLinkDetails.
@@ -265,7 +265,7 @@ class CreateObjectStorageLinkDetails(object):
         Sets the lustre_file_system_id of this CreateObjectStorageLinkDetails.
         The `OCID`__ of the associated Lustre file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param lustre_file_system_id: The lustre_file_system_id of this CreateObjectStorageLinkDetails.

@@ -33,7 +33,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitoring_template_id: (required)
             The `OCID`__ of the monitoring template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -74,7 +74,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_id: (required)
             The `OCID`__ of monitored resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.ChangeMonitoredResourceCompartmentDetails change_monitored_resource_compartment_details: (required)
             The information to be updated.
@@ -121,7 +121,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitoring_template_id: (required)
             The `OCID`__ of the monitoring template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.AlarmCondition.lifecycle_state`
@@ -753,7 +753,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str maintenance_window_id: (required)
             The `OCID`__ of maintenance window.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -802,7 +802,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str metric_extension_id: (required)
             The `OCID`__ of the metric extension resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.MetricExtension.lifecycle_state`
@@ -863,7 +863,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_id: (required)
             The `OCID`__ of monitored resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -912,7 +912,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_type_id: (required)
             The `OCID`__ of monitored resource type.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.MonitoredResourceType.lifecycle_state`
@@ -973,7 +973,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitoring_template_id: (required)
             The `OCID`__ of the monitoring template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.MonitoringTemplate.lifecycle_state`
@@ -1093,7 +1093,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_id: (required)
             The `OCID`__ of monitored resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -1134,7 +1134,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str metric_extension_id: (required)
             The `OCID`__ of the metric extension resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.DisableMetricExtensionDetails disable_metric_extension_details: (required)
             The list of Resource IDs for which given metric extension needs to be disabled
@@ -1178,7 +1178,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str metric_extension_id: (required)
             The `OCID`__ of the metric extension resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.EnableMetricExtensionDetails enable_metric_extension_details: (required)
             The list of Resource IDs for which given metric extension needs to be enabled
@@ -1222,7 +1222,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str metric_extension_id: (required)
             The `OCID`__ of the metric extension resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.MetricExtension.lifecycle_state`
@@ -1266,7 +1266,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str maintenance_window_id: (required)
             The `OCID`__ of maintenance window.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -1307,7 +1307,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str maintenance_window_id: (required)
             The `OCID`__ of maintenance window.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -1348,7 +1348,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str metric_extension_id: (required)
             The `OCID`__ of the metric extension resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.TestMetricExtensionDetails test_metric_extension_details: (required)
             It contains OCID of resource.
@@ -1392,7 +1392,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitoring_template_id: (required)
             The `OCID`__ of the monitoring template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.WorkRequest.status`
@@ -1436,12 +1436,12 @@ class StackMonitoringClientCompositeOperations(object):
         :param str alarm_condition_id: (required)
             The `OCID`__ of the alarm condition.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str monitoring_template_id: (required)
             The `OCID`__ of the monitoring template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.AlarmCondition.lifecycle_state`
@@ -1485,7 +1485,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_id: (required)
             The `OCID`__ of monitored resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateAndPropagateTagsDetails update_and_propagate_tags_details: (required)
             The tags to be updated.
@@ -1619,7 +1619,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str maintenance_window_id: (required)
             The `OCID`__ of maintenance window.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateMaintenanceWindowDetails update_maintenance_window_details: (required)
             The information to be updated.
@@ -1663,7 +1663,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str metric_extension_id: (required)
             The `OCID`__ of the metric extension resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateMetricExtensionDetails update_metric_extension_details: (required)
             The information to be updated.
@@ -1710,7 +1710,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_id: (required)
             The `OCID`__ of monitored resource.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateMonitoredResourceDetails update_monitored_resource_details: (required)
             The information to be updated.
@@ -1754,7 +1754,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_task_id: (required)
             The `OCID`__ of stack monitoring resource task.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateMonitoredResourceTaskDetails update_monitored_resource_task_details: (required)
             The information to be updated.
@@ -1801,7 +1801,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitored_resource_type_id: (required)
             The `OCID`__ of monitored resource type.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateMonitoredResourceTypeDetails update_monitored_resource_type_details: (required)
             The information to be updated for the given resource type id.
@@ -1848,7 +1848,7 @@ class StackMonitoringClientCompositeOperations(object):
         :param str monitoring_template_id: (required)
             The `OCID`__ of the monitoring template.
 
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.UpdateMonitoringTemplateDetails update_monitoring_template_details: (required)
             The information to be updated.

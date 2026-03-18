@@ -157,7 +157,7 @@ class UpdatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :return: The hostname_label of this UpdatePrivateIpDetails.
@@ -183,7 +183,7 @@ class UpdatePrivateIpDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
-        __ https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
 
 
         :param hostname_label: The hostname_label of this UpdatePrivateIpDetails.
@@ -198,7 +198,7 @@ class UpdatePrivateIpDetails(object):
         The `OCID`__ of the VNIC to reassign the private IP to. The VNIC must
         be in the same subnet as the current VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this UpdatePrivateIpDetails.
@@ -213,7 +213,7 @@ class UpdatePrivateIpDetails(object):
         The `OCID`__ of the VNIC to reassign the private IP to. The VNIC must
         be in the same subnet as the current VNIC.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this UpdatePrivateIpDetails.

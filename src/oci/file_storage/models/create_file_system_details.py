@@ -146,7 +146,7 @@ class CreateFileSystemDetails(object):
         **[Required]** Gets the compartment_id of this CreateFileSystemDetails.
         The `OCID`__ of the compartment to create the file system in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateFileSystemDetails.
@@ -160,7 +160,7 @@ class CreateFileSystemDetails(object):
         Sets the compartment_id of this CreateFileSystemDetails.
         The `OCID`__ of the compartment to create the file system in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateFileSystemDetails.
@@ -207,7 +207,7 @@ class CreateFileSystemDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateFileSystemDetails.
@@ -224,7 +224,7 @@ class CreateFileSystemDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateFileSystemDetails.
@@ -240,7 +240,7 @@ class CreateFileSystemDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateFileSystemDetails.
@@ -256,7 +256,7 @@ class CreateFileSystemDetails(object):
         For more information, see `Resource Tags`__.
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateFileSystemDetails.
@@ -294,7 +294,7 @@ class CreateFileSystemDetails(object):
         Gets the kms_key_id of this CreateFileSystemDetails.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this CreateFileSystemDetails.
@@ -308,7 +308,7 @@ class CreateFileSystemDetails(object):
         Sets the kms_key_id of this CreateFileSystemDetails.
         The `OCID`__ of the KMS key used to encrypt the encryption keys associated with this file system.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this CreateFileSystemDetails.
@@ -323,8 +323,8 @@ class CreateFileSystemDetails(object):
         The `OCID`__ of the snapshot used to create a cloned file system.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The source_snapshot_id of this CreateFileSystemDetails.
@@ -339,8 +339,8 @@ class CreateFileSystemDetails(object):
         The `OCID`__ of the snapshot used to create a cloned file system.
         See `Cloning a File System`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param source_snapshot_id: The source_snapshot_id of this CreateFileSystemDetails.
@@ -392,7 +392,7 @@ class CreateFileSystemDetails(object):
 
         May be unset as a blank value.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The filesystem_snapshot_policy_id of this CreateFileSystemDetails.
@@ -409,7 +409,7 @@ class CreateFileSystemDetails(object):
 
         May be unset as a blank value.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this CreateFileSystemDetails.

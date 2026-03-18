@@ -700,7 +700,7 @@ class Model(object):
         Gets the component_models of this Model.
         The `OCID`__ collection of active custom Key Value models that need to be composed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The component_models of this Model.
@@ -714,7 +714,7 @@ class Model(object):
         Sets the component_models of this Model.
         The `OCID`__ collection of active custom Key Value models that need to be composed.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param component_models: The component_models of this Model.
@@ -776,7 +776,7 @@ class Model(object):
         **[Required]** Gets the project_id of this Model.
         The `OCID`__ of the project that contains the model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this Model.
@@ -790,7 +790,7 @@ class Model(object):
         Sets the project_id of this Model.
         The `OCID`__ of the project that contains the model.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this Model.

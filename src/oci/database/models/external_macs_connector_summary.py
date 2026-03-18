@@ -14,7 +14,7 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
     """
     An Oracle Cloud Infrastructure resource that uses the `Management Agent cloud service (MACS)`__ to connect to an external Oracle Database.
 
-    __ https://docs.oracle.com/iaas/management-agents/index.html
+    __ https://docs.cloud.oracle.com/iaas/management-agents/index.html
     """
 
     def __init__(self, **kwargs):

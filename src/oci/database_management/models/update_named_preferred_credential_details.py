@@ -49,7 +49,7 @@ class UpdateNamedPreferredCredentialDetails(UpdatePreferredCredentialDetails):
         Gets the named_credential_id of this UpdateNamedPreferredCredentialDetails.
         The `OCID`__ of the Named Credential that contains the database user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The named_credential_id of this UpdateNamedPreferredCredentialDetails.
@@ -63,7 +63,7 @@ class UpdateNamedPreferredCredentialDetails(UpdatePreferredCredentialDetails):
         Sets the named_credential_id of this UpdateNamedPreferredCredentialDetails.
         The `OCID`__ of the Named Credential that contains the database user password.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param named_credential_id: The named_credential_id of this UpdateNamedPreferredCredentialDetails.

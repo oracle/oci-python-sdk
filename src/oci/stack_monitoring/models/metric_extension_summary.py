@@ -161,7 +161,7 @@ class MetricExtensionSummary(object):
         **[Required]** Gets the id of this MetricExtensionSummary.
         The `OCID`__ of metric extension.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MetricExtensionSummary.
@@ -175,7 +175,7 @@ class MetricExtensionSummary(object):
         Sets the id of this MetricExtensionSummary.
         The `OCID`__ of metric extension.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MetricExtensionSummary.
@@ -285,7 +285,7 @@ class MetricExtensionSummary(object):
         **[Required]** Gets the compartment_id of this MetricExtensionSummary.
         Compartment Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MetricExtensionSummary.
@@ -299,7 +299,7 @@ class MetricExtensionSummary(object):
         Sets the compartment_id of this MetricExtensionSummary.
         Compartment Identifier `OCID`__
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MetricExtensionSummary.

@@ -14,7 +14,7 @@ class GuestOsFreeformTagsFilter(GuestOsFleetDiscoveryFilter):
     """
     `Free-form tags`__ to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-    __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm
+    __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
     """
 
     #: A constant which can be used with the operator property of a GuestOsFreeformTagsFilter.
@@ -78,7 +78,7 @@ class GuestOsFreeformTagsFilter(GuestOsFleetDiscoveryFilter):
         **[Required]** Gets the tags of this GuestOsFreeformTagsFilter.
         `Free-form tags`__ to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-        __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
 
 
         :return: The tags of this GuestOsFreeformTagsFilter.
@@ -92,7 +92,7 @@ class GuestOsFreeformTagsFilter(GuestOsFleetDiscoveryFilter):
         Sets the tags of this GuestOsFreeformTagsFilter.
         `Free-form tags`__ to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 
-        __ https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
 
 
         :param tags: The tags of this GuestOsFreeformTagsFilter.

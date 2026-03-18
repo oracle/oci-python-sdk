@@ -60,7 +60,7 @@ class CustomizationInference(object):
         Gets the customization_id of this CustomizationInference.
         The `OCID`__ of the customization to use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The customization_id of this CustomizationInference.
@@ -74,7 +74,7 @@ class CustomizationInference(object):
         Sets the customization_id of this CustomizationInference.
         The `OCID`__ of the customization to use.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param customization_id: The customization_id of this CustomizationInference.
@@ -112,7 +112,7 @@ class CustomizationInference(object):
         Gets the compartment_id of this CustomizationInference.
         The `OCID`__ of the compartment where customization is present
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CustomizationInference.
@@ -126,7 +126,7 @@ class CustomizationInference(object):
         Sets the compartment_id of this CustomizationInference.
         The `OCID`__ of the compartment where customization is present
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CustomizationInference.

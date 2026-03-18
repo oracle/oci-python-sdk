@@ -46,7 +46,7 @@ class RerunWorkRequestDetails(object):
         Gets the managed_instances of this RerunWorkRequestDetails.
         List of managed instance `OCIDs`__ to affected by the rerun of the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instances of this RerunWorkRequestDetails.
@@ -60,7 +60,7 @@ class RerunWorkRequestDetails(object):
         Sets the managed_instances of this RerunWorkRequestDetails.
         List of managed instance `OCIDs`__ to affected by the rerun of the work request.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instances: The managed_instances of this RerunWorkRequestDetails.

@@ -90,7 +90,7 @@ class DatabaseToolsRelatedResource(object):
         **[Required]** Gets the identifier of this DatabaseToolsRelatedResource.
         The `OCID`__ of the related resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifier of this DatabaseToolsRelatedResource.
@@ -104,7 +104,7 @@ class DatabaseToolsRelatedResource(object):
         Sets the identifier of this DatabaseToolsRelatedResource.
         The `OCID`__ of the related resource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param identifier: The identifier of this DatabaseToolsRelatedResource.

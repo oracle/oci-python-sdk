@@ -85,7 +85,7 @@ class InstanceConfigurationInstanceSourceImageFilterDetails(object):
         Filter based on these defined tags. Each key is predefined and scoped to a
         namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags_filter of this InstanceConfigurationInstanceSourceImageFilterDetails.
@@ -100,7 +100,7 @@ class InstanceConfigurationInstanceSourceImageFilterDetails(object):
         Filter based on these defined tags. Each key is predefined and scoped to a
         namespace. For more information, see `Resource Tags`__.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags_filter: The defined_tags_filter of this InstanceConfigurationInstanceSourceImageFilterDetails.

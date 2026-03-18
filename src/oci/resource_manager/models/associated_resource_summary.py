@@ -213,7 +213,7 @@ class AssociatedResourceSummary(object):
         For information about regions, see `Regions and Availability Domains`__.
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The region of this AssociatedResourceSummary.
@@ -229,7 +229,7 @@ class AssociatedResourceSummary(object):
         For information about regions, see `Regions and Availability Domains`__.
         Example: `us-phoenix-1`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param region: The region of this AssociatedResourceSummary.

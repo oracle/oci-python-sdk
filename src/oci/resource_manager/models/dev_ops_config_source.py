@@ -14,7 +14,7 @@ class DevOpsConfigSource(ConfigSource):
     """
     Metadata about the `DevOps`__ configuration source.
 
-    __ https://docs.oracle.com/iaas/Content/devops/using/home.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/devops/using/home.htm
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class DevOpsConfigSource(ConfigSource):
         **[Required]** Gets the project_id of this DevOpsConfigSource.
         The `OCID`__ of the :class:`Project`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The project_id of this DevOpsConfigSource.
@@ -86,7 +86,7 @@ class DevOpsConfigSource(ConfigSource):
         Sets the project_id of this DevOpsConfigSource.
         The `OCID`__ of the :class:`Project`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param project_id: The project_id of this DevOpsConfigSource.
@@ -100,7 +100,7 @@ class DevOpsConfigSource(ConfigSource):
         **[Required]** Gets the repository_id of this DevOpsConfigSource.
         The `OCID`__ of the :class:`Repository`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The repository_id of this DevOpsConfigSource.
@@ -114,7 +114,7 @@ class DevOpsConfigSource(ConfigSource):
         Sets the repository_id of this DevOpsConfigSource.
         The `OCID`__ of the :class:`Repository`.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param repository_id: The repository_id of this DevOpsConfigSource.

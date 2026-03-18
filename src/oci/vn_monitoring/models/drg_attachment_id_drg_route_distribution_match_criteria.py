@@ -49,7 +49,7 @@ class DrgAttachmentIdDrgRouteDistributionMatchCriteria(DrgRouteDistributionMatch
         **[Required]** Gets the drg_attachment_id of this DrgAttachmentIdDrgRouteDistributionMatchCriteria.
         The `OCID`__ of the DRG attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_attachment_id of this DrgAttachmentIdDrgRouteDistributionMatchCriteria.
@@ -63,7 +63,7 @@ class DrgAttachmentIdDrgRouteDistributionMatchCriteria(DrgRouteDistributionMatch
         Sets the drg_attachment_id of this DrgAttachmentIdDrgRouteDistributionMatchCriteria.
         The `OCID`__ of the DRG attachment.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_attachment_id: The drg_attachment_id of this DrgAttachmentIdDrgRouteDistributionMatchCriteria.

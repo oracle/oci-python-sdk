@@ -122,7 +122,7 @@ class CreateDataIngestionJobDetails(object):
         **[Required]** Gets the data_source_id of this CreateDataIngestionJobDetails.
         The `OCID`__ of the parent DataSource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The data_source_id of this CreateDataIngestionJobDetails.
@@ -136,7 +136,7 @@ class CreateDataIngestionJobDetails(object):
         Sets the data_source_id of this CreateDataIngestionJobDetails.
         The `OCID`__ of the parent DataSource.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param data_source_id: The data_source_id of this CreateDataIngestionJobDetails.
@@ -150,7 +150,7 @@ class CreateDataIngestionJobDetails(object):
         **[Required]** Gets the compartment_id of this CreateDataIngestionJobDetails.
         The `OCID`__ of the compartment to create the data ingestion job in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDataIngestionJobDetails.
@@ -164,7 +164,7 @@ class CreateDataIngestionJobDetails(object):
         Sets the compartment_id of this CreateDataIngestionJobDetails.
         The `OCID`__ of the compartment to create the data ingestion job in.
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDataIngestionJobDetails.
@@ -181,7 +181,7 @@ class CreateDataIngestionJobDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateDataIngestionJobDetails.
@@ -198,7 +198,7 @@ class CreateDataIngestionJobDetails(object):
 
         Example: `{\"Department\": \"Finance\"}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateDataIngestionJobDetails.
@@ -215,7 +215,7 @@ class CreateDataIngestionJobDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateDataIngestionJobDetails.
@@ -232,7 +232,7 @@ class CreateDataIngestionJobDetails(object):
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateDataIngestionJobDetails.
