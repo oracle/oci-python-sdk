@@ -24,6 +24,10 @@ class RemoveNodeDetails(object):
             The value to assign to the cluster_admin_password property of this RemoveNodeDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this RemoveNodeDetails.
+        :type secret_id: str
+
         :param is_force_remove_enabled:
             The value to assign to the is_force_remove_enabled property of this RemoveNodeDetails.
         :type is_force_remove_enabled: bool
@@ -35,22 +39,25 @@ class RemoveNodeDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'is_force_remove_enabled': 'bool',
             'node_id': 'str'
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'is_force_remove_enabled': 'isForceRemoveEnabled',
             'node_id': 'nodeId'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._is_force_remove_enabled = None
         self._node_id = None
 
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this RemoveNodeDetails.
+        Gets the cluster_admin_password of this RemoveNodeDetails.
         Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
@@ -70,6 +77,30 @@ class RemoveNodeDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this RemoveNodeDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this RemoveNodeDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this RemoveNodeDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this RemoveNodeDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def is_force_remove_enabled(self):

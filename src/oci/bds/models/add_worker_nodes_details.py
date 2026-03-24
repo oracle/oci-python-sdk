@@ -40,6 +40,10 @@ class AddWorkerNodesDetails(object):
             The value to assign to the cluster_admin_password property of this AddWorkerNodesDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this AddWorkerNodesDetails.
+        :type secret_id: str
+
         :param number_of_worker_nodes:
             The value to assign to the number_of_worker_nodes property of this AddWorkerNodesDetails.
         :type number_of_worker_nodes: int
@@ -64,6 +68,7 @@ class AddWorkerNodesDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'number_of_worker_nodes': 'int',
             'node_type': 'str',
             'shape': 'str',
@@ -72,6 +77,7 @@ class AddWorkerNodesDetails(object):
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'number_of_worker_nodes': 'numberOfWorkerNodes',
             'node_type': 'nodeType',
             'shape': 'shape',
@@ -79,6 +85,7 @@ class AddWorkerNodesDetails(object):
             'shape_config': 'shapeConfig'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._number_of_worker_nodes = None
         self._node_type = None
         self._shape = None
@@ -88,7 +95,7 @@ class AddWorkerNodesDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this AddWorkerNodesDetails.
+        Gets the cluster_admin_password of this AddWorkerNodesDetails.
         Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
@@ -108,6 +115,30 @@ class AddWorkerNodesDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this AddWorkerNodesDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this AddWorkerNodesDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this AddWorkerNodesDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this AddWorkerNodesDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def number_of_worker_nodes(self):
@@ -192,7 +223,8 @@ class AddWorkerNodesDetails(object):
     def block_volume_size_in_gbs(self):
         """
         Gets the block_volume_size_in_gbs of this AddWorkerNodesDetails.
-        The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+        The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker or edge node at the first time.
+        For EDGE nodes. Each node can have a different block storage size within the valid range (50GB-10TB) and the value must be specified.
 
 
         :return: The block_volume_size_in_gbs of this AddWorkerNodesDetails.
@@ -204,7 +236,8 @@ class AddWorkerNodesDetails(object):
     def block_volume_size_in_gbs(self, block_volume_size_in_gbs):
         """
         Sets the block_volume_size_in_gbs of this AddWorkerNodesDetails.
-        The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+        The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker or edge node at the first time.
+        For EDGE nodes. Each node can have a different block storage size within the valid range (50GB-10TB) and the value must be specified.
 
 
         :param block_volume_size_in_gbs: The block_volume_size_in_gbs of this AddWorkerNodesDetails.

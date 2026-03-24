@@ -132,6 +132,14 @@ class BdsInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cluster_version: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this BdsInstance.
+        :type secret_id: str
+
+        :param is_secret_reused:
+            The value to assign to the is_secret_reused property of this BdsInstance.
+        :type is_secret_reused: bool
+
         :param is_high_availability:
             The value to assign to the is_high_availability property of this BdsInstance.
         :type is_high_availability: bool
@@ -210,6 +218,10 @@ class BdsInstance(object):
             The value to assign to the bds_cluster_version_summary property of this BdsInstance.
         :type bds_cluster_version_summary: oci.bds.models.BdsClusterVersionSummary
 
+        :param time_earliest_certificate_expiration:
+            The value to assign to the time_earliest_certificate_expiration property of this BdsInstance.
+        :type time_earliest_certificate_expiration: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -217,6 +229,8 @@ class BdsInstance(object):
             'display_name': 'str',
             'lifecycle_state': 'str',
             'cluster_version': 'str',
+            'secret_id': 'str',
+            'is_secret_reused': 'bool',
             'is_high_availability': 'bool',
             'is_secure': 'bool',
             'is_cloud_sql_configured': 'bool',
@@ -235,7 +249,8 @@ class BdsInstance(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
             'cluster_profile': 'str',
-            'bds_cluster_version_summary': 'BdsClusterVersionSummary'
+            'bds_cluster_version_summary': 'BdsClusterVersionSummary',
+            'time_earliest_certificate_expiration': 'datetime'
         }
         self.attribute_map = {
             'id': 'id',
@@ -243,6 +258,8 @@ class BdsInstance(object):
             'display_name': 'displayName',
             'lifecycle_state': 'lifecycleState',
             'cluster_version': 'clusterVersion',
+            'secret_id': 'secretId',
+            'is_secret_reused': 'isSecretReused',
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
             'is_cloud_sql_configured': 'isCloudSqlConfigured',
@@ -261,13 +278,16 @@ class BdsInstance(object):
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
             'cluster_profile': 'clusterProfile',
-            'bds_cluster_version_summary': 'bdsClusterVersionSummary'
+            'bds_cluster_version_summary': 'bdsClusterVersionSummary',
+            'time_earliest_certificate_expiration': 'timeEarliestCertificateExpiration'
         }
         self._id = None
         self._compartment_id = None
         self._display_name = None
         self._lifecycle_state = None
         self._cluster_version = None
+        self._secret_id = None
+        self._is_secret_reused = None
         self._is_high_availability = None
         self._is_secure = None
         self._is_cloud_sql_configured = None
@@ -287,6 +307,7 @@ class BdsInstance(object):
         self._kms_key_id = None
         self._cluster_profile = None
         self._bds_cluster_version_summary = None
+        self._time_earliest_certificate_expiration = None
 
     @property
     def id(self):
@@ -419,6 +440,54 @@ class BdsInstance(object):
         if not value_allowed_none_or_none_sentinel(cluster_version, allowed_values):
             cluster_version = 'UNKNOWN_ENUM_VALUE'
         self._cluster_version = cluster_version
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this BdsInstance.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this BdsInstance.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this BdsInstance.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this BdsInstance.
+        :type: str
+        """
+        self._secret_id = secret_id
+
+    @property
+    def is_secret_reused(self):
+        """
+        Gets the is_secret_reused of this BdsInstance.
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+
+
+        :return: The is_secret_reused of this BdsInstance.
+        :rtype: bool
+        """
+        return self._is_secret_reused
+
+    @is_secret_reused.setter
+    def is_secret_reused(self, is_secret_reused):
+        """
+        Sets the is_secret_reused of this BdsInstance.
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+
+
+        :param is_secret_reused: The is_secret_reused of this BdsInstance.
+        :type: bool
+        """
+        self._is_secret_reused = is_secret_reused
 
     @property
     def is_high_availability(self):
@@ -869,6 +938,30 @@ class BdsInstance(object):
         :type: oci.bds.models.BdsClusterVersionSummary
         """
         self._bds_cluster_version_summary = bds_cluster_version_summary
+
+    @property
+    def time_earliest_certificate_expiration(self):
+        """
+        Gets the time_earliest_certificate_expiration of this BdsInstance.
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+
+
+        :return: The time_earliest_certificate_expiration of this BdsInstance.
+        :rtype: datetime
+        """
+        return self._time_earliest_certificate_expiration
+
+    @time_earliest_certificate_expiration.setter
+    def time_earliest_certificate_expiration(self, time_earliest_certificate_expiration):
+        """
+        Sets the time_earliest_certificate_expiration of this BdsInstance.
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+
+
+        :param time_earliest_certificate_expiration: The time_earliest_certificate_expiration of this BdsInstance.
+        :type: datetime
+        """
+        self._time_earliest_certificate_expiration = time_earliest_certificate_expiration
 
     def __repr__(self):
         return formatted_flat_dict(self)

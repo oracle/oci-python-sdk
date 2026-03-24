@@ -196,6 +196,10 @@ class Node(object):
             The value to assign to the node_backup_id property of this Node.
         :type node_backup_id: str
 
+        :param certificate_configuration_id:
+            The value to assign to the certificate_configuration_id property of this Node.
+        :type certificate_configuration_id: str
+
         """
         self.swagger_types = {
             'instance_id': 'str',
@@ -222,7 +226,8 @@ class Node(object):
             'is_reboot_required': 'bool',
             'odh_version': 'str',
             'time_replaced': 'datetime',
-            'node_backup_id': 'str'
+            'node_backup_id': 'str',
+            'certificate_configuration_id': 'str'
         }
         self.attribute_map = {
             'instance_id': 'instanceId',
@@ -249,7 +254,8 @@ class Node(object):
             'is_reboot_required': 'isRebootRequired',
             'odh_version': 'odhVersion',
             'time_replaced': 'timeReplaced',
-            'node_backup_id': 'nodeBackupId'
+            'node_backup_id': 'nodeBackupId',
+            'certificate_configuration_id': 'certificateConfigurationId'
         }
         self._instance_id = None
         self._display_name = None
@@ -276,6 +282,7 @@ class Node(object):
         self._odh_version = None
         self._time_replaced = None
         self._node_backup_id = None
+        self._certificate_configuration_id = None
 
     @property
     def instance_id(self):
@@ -888,6 +895,30 @@ class Node(object):
         :type: str
         """
         self._node_backup_id = node_backup_id
+
+    @property
+    def certificate_configuration_id(self):
+        """
+        Gets the certificate_configuration_id of this Node.
+        ID of the certificate configuration which is used to generate the certificate for the node.
+
+
+        :return: The certificate_configuration_id of this Node.
+        :rtype: str
+        """
+        return self._certificate_configuration_id
+
+    @certificate_configuration_id.setter
+    def certificate_configuration_id(self, certificate_configuration_id):
+        """
+        Sets the certificate_configuration_id of this Node.
+        ID of the certificate configuration which is used to generate the certificate for the node.
+
+
+        :param certificate_configuration_id: The certificate_configuration_id of this Node.
+        :type: str
+        """
+        self._certificate_configuration_id = certificate_configuration_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

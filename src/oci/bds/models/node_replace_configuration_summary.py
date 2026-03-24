@@ -79,7 +79,7 @@ class NodeReplaceConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this NodeReplaceConfigurationSummary.
-        The id of the NodeReplaceConfiguration.
+        The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 
 
         :return: The id of this NodeReplaceConfigurationSummary.
@@ -91,7 +91,7 @@ class NodeReplaceConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this NodeReplaceConfigurationSummary.
-        The id of the NodeReplaceConfiguration.
+        The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 
 
         :param id: The id of this NodeReplaceConfigurationSummary.

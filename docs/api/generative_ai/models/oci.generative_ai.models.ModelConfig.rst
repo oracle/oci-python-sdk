@@ -1,0 +1,11 @@
+ModelConfig
+===========
+
+.. currentmodule:: oci.generative_ai.models
+
+.. autoclass:: ModelConfig
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

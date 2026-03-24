@@ -24,19 +24,26 @@ class ForceRefreshResourcePrincipalDetails(object):
             The value to assign to the cluster_admin_password property of this ForceRefreshResourcePrincipalDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this ForceRefreshResourcePrincipalDetails.
+        :type secret_id: str
+
         """
         self.swagger_types = {
-            'cluster_admin_password': 'str'
+            'cluster_admin_password': 'str',
+            'secret_id': 'str'
         }
         self.attribute_map = {
-            'cluster_admin_password': 'clusterAdminPassword'
+            'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
 
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this ForceRefreshResourcePrincipalDetails.
+        Gets the cluster_admin_password of this ForceRefreshResourcePrincipalDetails.
         Base-64 encoded Cluster Admin Password for cluster admin user.
 
 
@@ -56,6 +63,30 @@ class ForceRefreshResourcePrincipalDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this ForceRefreshResourcePrincipalDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this ForceRefreshResourcePrincipalDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this ForceRefreshResourcePrincipalDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this ForceRefreshResourcePrincipalDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -20,6 +20,14 @@ class UpdateBdsInstanceDetails(object):
         Initializes a new UpdateBdsInstanceDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param secret_id:
+            The value to assign to the secret_id property of this UpdateBdsInstanceDetails.
+        :type secret_id: str
+
+        :param is_secret_reused:
+            The value to assign to the is_secret_reused property of this UpdateBdsInstanceDetails.
+        :type is_secret_reused: bool
+
         :param display_name:
             The value to assign to the display_name property of this UpdateBdsInstanceDetails.
         :type display_name: str
@@ -46,6 +54,8 @@ class UpdateBdsInstanceDetails(object):
 
         """
         self.swagger_types = {
+            'secret_id': 'str',
+            'is_secret_reused': 'bool',
             'display_name': 'str',
             'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -54,6 +64,8 @@ class UpdateBdsInstanceDetails(object):
             'network_config': 'NetworkConfig'
         }
         self.attribute_map = {
+            'secret_id': 'secretId',
+            'is_secret_reused': 'isSecretReused',
             'display_name': 'displayName',
             'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
@@ -61,12 +73,62 @@ class UpdateBdsInstanceDetails(object):
             'kms_key_id': 'kmsKeyId',
             'network_config': 'networkConfig'
         }
+        self._secret_id = None
+        self._is_secret_reused = None
         self._display_name = None
         self._bootstrap_script_url = None
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
         self._network_config = None
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this UpdateBdsInstanceDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this UpdateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this UpdateBdsInstanceDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this UpdateBdsInstanceDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
+
+    @property
+    def is_secret_reused(self):
+        """
+        Gets the is_secret_reused of this UpdateBdsInstanceDetails.
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+
+
+        :return: The is_secret_reused of this UpdateBdsInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_secret_reused
+
+    @is_secret_reused.setter
+    def is_secret_reused(self, is_secret_reused):
+        """
+        Sets the is_secret_reused of this UpdateBdsInstanceDetails.
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+
+
+        :param is_secret_reused: The is_secret_reused of this UpdateBdsInstanceDetails.
+        :type: bool
+        """
+        self._is_secret_reused = is_secret_reused
 
     @property
     def display_name(self):

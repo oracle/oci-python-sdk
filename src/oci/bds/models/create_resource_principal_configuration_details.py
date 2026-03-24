@@ -28,6 +28,10 @@ class CreateResourcePrincipalConfigurationDetails(object):
             The value to assign to the cluster_admin_password property of this CreateResourcePrincipalConfigurationDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateResourcePrincipalConfigurationDetails.
+        :type secret_id: str
+
         :param session_token_life_span_duration_in_hours:
             The value to assign to the session_token_life_span_duration_in_hours property of this CreateResourcePrincipalConfigurationDetails.
         :type session_token_life_span_duration_in_hours: int
@@ -36,15 +40,18 @@ class CreateResourcePrincipalConfigurationDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'session_token_life_span_duration_in_hours': 'int'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'session_token_life_span_duration_in_hours': 'sessionTokenLifeSpanDurationInHours'
         }
         self._display_name = None
         self._cluster_admin_password = None
+        self._secret_id = None
         self._session_token_life_span_duration_in_hours = None
 
     @property
@@ -74,7 +81,7 @@ class CreateResourcePrincipalConfigurationDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this CreateResourcePrincipalConfigurationDetails.
+        Gets the cluster_admin_password of this CreateResourcePrincipalConfigurationDetails.
         Base-64 encoded Cluster Admin Password for cluster admin user.
 
 
@@ -94,6 +101,30 @@ class CreateResourcePrincipalConfigurationDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this CreateResourcePrincipalConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this CreateResourcePrincipalConfigurationDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this CreateResourcePrincipalConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this CreateResourcePrincipalConfigurationDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def session_token_life_span_duration_in_hours(self):

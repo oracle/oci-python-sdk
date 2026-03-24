@@ -27,6 +27,10 @@ class AddBlockStorageDetails(object):
     #: This constant has a value of "KAFKA_BROKER"
     NODE_TYPE_KAFKA_BROKER = "KAFKA_BROKER"
 
+    #: A constant which can be used with the node_type property of a AddBlockStorageDetails.
+    #: This constant has a value of "EDGE"
+    NODE_TYPE_EDGE = "EDGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AddBlockStorageDetails object with values from keyword arguments.
@@ -36,34 +40,48 @@ class AddBlockStorageDetails(object):
             The value to assign to the cluster_admin_password property of this AddBlockStorageDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this AddBlockStorageDetails.
+        :type secret_id: str
+
         :param block_volume_size_in_gbs:
             The value to assign to the block_volume_size_in_gbs property of this AddBlockStorageDetails.
         :type block_volume_size_in_gbs: int
 
         :param node_type:
             The value to assign to the node_type property of this AddBlockStorageDetails.
-            Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER"
+            Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER", "EDGE"
         :type node_type: str
+
+        :param node_ids:
+            The value to assign to the node_ids property of this AddBlockStorageDetails.
+        :type node_ids: list[str]
 
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'block_volume_size_in_gbs': 'int',
-            'node_type': 'str'
+            'node_type': 'str',
+            'node_ids': 'list[str]'
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
-            'node_type': 'nodeType'
+            'node_type': 'nodeType',
+            'node_ids': 'nodeIds'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._block_volume_size_in_gbs = None
         self._node_type = None
+        self._node_ids = None
 
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this AddBlockStorageDetails.
+        Gets the cluster_admin_password of this AddBlockStorageDetails.
         Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 
@@ -85,11 +103,37 @@ class AddBlockStorageDetails(object):
         self._cluster_admin_password = cluster_admin_password
 
     @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this AddBlockStorageDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this AddBlockStorageDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this AddBlockStorageDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this AddBlockStorageDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
+
+    @property
     def block_volume_size_in_gbs(self):
         """
         **[Required]** Gets the block_volume_size_in_gbs of this AddBlockStorageDetails.
-        The size of block volume in GB to be added to each worker node. All the
-        details needed for attaching the block volume are managed by service itself.
+        The size of block volume in GB to be added. For WORKER, COMPUTE_ONLY_WORKER, and KAFKA_BROKER nodes,
+        the same size will be added to all nodes of that type. For EDGE nodes, this size can be different
+        per node when nodeId is specified. All the details needed for attaching the block volume are managed
+        by service itself.
 
 
         :return: The block_volume_size_in_gbs of this AddBlockStorageDetails.
@@ -101,8 +145,10 @@ class AddBlockStorageDetails(object):
     def block_volume_size_in_gbs(self, block_volume_size_in_gbs):
         """
         Sets the block_volume_size_in_gbs of this AddBlockStorageDetails.
-        The size of block volume in GB to be added to each worker node. All the
-        details needed for attaching the block volume are managed by service itself.
+        The size of block volume in GB to be added. For WORKER, COMPUTE_ONLY_WORKER, and KAFKA_BROKER nodes,
+        the same size will be added to all nodes of that type. For EDGE nodes, this size can be different
+        per node when nodeId is specified. All the details needed for attaching the block volume are managed
+        by service itself.
 
 
         :param block_volume_size_in_gbs: The block_volume_size_in_gbs of this AddBlockStorageDetails.
@@ -116,7 +162,7 @@ class AddBlockStorageDetails(object):
         **[Required]** Gets the node_type of this AddBlockStorageDetails.
         Worker node types.
 
-        Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER"
+        Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER", "EDGE"
 
 
         :return: The node_type of this AddBlockStorageDetails.
@@ -134,12 +180,40 @@ class AddBlockStorageDetails(object):
         :param node_type: The node_type of this AddBlockStorageDetails.
         :type: str
         """
-        allowed_values = ["WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER"]
+        allowed_values = ["WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER", "EDGE"]
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `node_type`, must be None or one of {allowed_values}"
             )
         self._node_type = node_type
+
+    @property
+    def node_ids(self):
+        """
+        Gets the node_ids of this AddBlockStorageDetails.
+        Optional. List of OCIDs of specific nodes to add storage to.
+        Only supported for EDGE nodes.
+        When omitted, storage is added to all nodes of the specified type.
+
+
+        :return: The node_ids of this AddBlockStorageDetails.
+        :rtype: list[str]
+        """
+        return self._node_ids
+
+    @node_ids.setter
+    def node_ids(self, node_ids):
+        """
+        Sets the node_ids of this AddBlockStorageDetails.
+        Optional. List of OCIDs of specific nodes to add storage to.
+        Only supported for EDGE nodes.
+        When omitted, storage is added to all nodes of the specified type.
+
+
+        :param node_ids: The node_ids of this AddBlockStorageDetails.
+        :type: list[str]
+        """
+        self._node_ids = node_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

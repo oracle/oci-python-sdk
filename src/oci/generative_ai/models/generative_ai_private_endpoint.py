@@ -39,6 +39,14 @@ class GenerativeAiPrivateEndpoint(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the resource_type property of a GenerativeAiPrivateEndpoint.
+    #: This constant has a value of "APPLICATION"
+    RESOURCE_TYPE_APPLICATION = "APPLICATION"
+
+    #: A constant which can be used with the resource_type property of a GenerativeAiPrivateEndpoint.
+    #: This constant has a value of "ENDPOINT"
+    RESOURCE_TYPE_ENDPOINT = "ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GenerativeAiPrivateEndpoint object with values from keyword arguments.
@@ -102,6 +110,12 @@ class GenerativeAiPrivateEndpoint(object):
             The value to assign to the previous_state property of this GenerativeAiPrivateEndpoint.
         :type previous_state: oci.generative_ai.models.GenerativeAiPrivateEndpoint
 
+        :param resource_type:
+            The value to assign to the resource_type property of this GenerativeAiPrivateEndpoint.
+            Allowed values for this property are: "APPLICATION", "ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this GenerativeAiPrivateEndpoint.
         :type freeform_tags: dict(str, str)
@@ -134,6 +148,7 @@ class GenerativeAiPrivateEndpoint(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'previous_state': 'GenerativeAiPrivateEndpoint',
+            'resource_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -154,6 +169,7 @@ class GenerativeAiPrivateEndpoint(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'previous_state': 'previousState',
+            'resource_type': 'resourceType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -173,6 +189,7 @@ class GenerativeAiPrivateEndpoint(object):
         self._time_created = None
         self._time_updated = None
         self._previous_state = None
+        self._resource_type = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -523,6 +540,36 @@ class GenerativeAiPrivateEndpoint(object):
         :type: oci.generative_ai.models.GenerativeAiPrivateEndpoint
         """
         self._previous_state = previous_state
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this GenerativeAiPrivateEndpoint.
+        The resource type that Generative AI private endpoint can be used for.
+
+        Allowed values for this property are: "APPLICATION", "ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_type of this GenerativeAiPrivateEndpoint.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this GenerativeAiPrivateEndpoint.
+        The resource type that Generative AI private endpoint can be used for.
+
+
+        :param resource_type: The resource_type of this GenerativeAiPrivateEndpoint.
+        :type: str
+        """
+        allowed_values = ["APPLICATION", "ENDPOINT"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            resource_type = 'UNKNOWN_ENUM_VALUE'
+        self._resource_type = resource_type
 
     @property
     def freeform_tags(self):

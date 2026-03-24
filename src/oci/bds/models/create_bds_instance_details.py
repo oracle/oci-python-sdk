@@ -40,6 +40,14 @@ class CreateBdsInstanceDetails(object):
             The value to assign to the cluster_admin_password property of this CreateBdsInstanceDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateBdsInstanceDetails.
+        :type secret_id: str
+
+        :param is_secret_reused:
+            The value to assign to the is_secret_reused property of this CreateBdsInstanceDetails.
+        :type is_secret_reused: bool
+
         :param is_high_availability:
             The value to assign to the is_high_availability property of this CreateBdsInstanceDetails.
         :type is_high_availability: bool
@@ -91,6 +99,8 @@ class CreateBdsInstanceDetails(object):
             'cluster_version': 'str',
             'cluster_public_key': 'str',
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
+            'is_secret_reused': 'bool',
             'is_high_availability': 'bool',
             'is_secure': 'bool',
             'network_config': 'NetworkConfig',
@@ -109,6 +119,8 @@ class CreateBdsInstanceDetails(object):
             'cluster_version': 'clusterVersion',
             'cluster_public_key': 'clusterPublicKey',
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
+            'is_secret_reused': 'isSecretReused',
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
             'network_config': 'networkConfig',
@@ -126,6 +138,8 @@ class CreateBdsInstanceDetails(object):
         self._cluster_version = None
         self._cluster_public_key = None
         self._cluster_admin_password = None
+        self._secret_id = None
+        self._is_secret_reused = None
         self._is_high_availability = None
         self._is_secure = None
         self._network_config = None
@@ -237,8 +251,8 @@ class CreateBdsInstanceDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this CreateBdsInstanceDetails.
-        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        Gets the cluster_admin_password of this CreateBdsInstanceDetails.
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
 
 
         :return: The cluster_admin_password of this CreateBdsInstanceDetails.
@@ -250,13 +264,61 @@ class CreateBdsInstanceDetails(object):
     def cluster_admin_password(self, cluster_admin_password):
         """
         Sets the cluster_admin_password of this CreateBdsInstanceDetails.
-        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
 
 
         :param cluster_admin_password: The cluster_admin_password of this CreateBdsInstanceDetails.
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this CreateBdsInstanceDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this CreateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this CreateBdsInstanceDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this CreateBdsInstanceDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
+
+    @property
+    def is_secret_reused(self):
+        """
+        Gets the is_secret_reused of this CreateBdsInstanceDetails.
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+
+
+        :return: The is_secret_reused of this CreateBdsInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_secret_reused
+
+    @is_secret_reused.setter
+    def is_secret_reused(self, is_secret_reused):
+        """
+        Sets the is_secret_reused of this CreateBdsInstanceDetails.
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+
+
+        :param is_secret_reused: The is_secret_reused of this CreateBdsInstanceDetails.
+        :type: bool
+        """
+        self._is_secret_reused = is_secret_reused
 
     @property
     def is_high_availability(self):

@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.168.3 - 2026-03-24
+====================
+
+Added 
+----- 
+* Support for the Generative AI Data service 
+* Support for Generative AI Project features in the Generative AI service 
+* Support for the Generative AI Vector Store Connector feature in the Generative AI service 
+* Support for Hosted Deployment in the Generative AI service 
+* Support for cluster admin password stored in OCI Vaults in the Big Data service (BDS) 
+* Support for Block Storage to Master/Utility and Edge Nodes in the Big Data service 
+* Support for deleting multiple nodes in the Big Data service  
+
+====================
 2.168.2 - 2026-03-17
 ====================
 

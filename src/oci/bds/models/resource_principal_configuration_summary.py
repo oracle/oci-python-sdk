@@ -86,7 +86,7 @@ class ResourcePrincipalConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResourcePrincipalConfigurationSummary.
-        the ID of the ResourcePrincipalConfiguration.
+        the ID of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 
 
         :return: The id of this ResourcePrincipalConfigurationSummary.
@@ -98,7 +98,7 @@ class ResourcePrincipalConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this ResourcePrincipalConfigurationSummary.
-        the ID of the ResourcePrincipalConfiguration.
+        the ID of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 
 
         :param id: The id of this ResourcePrincipalConfigurationSummary.

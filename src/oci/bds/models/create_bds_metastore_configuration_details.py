@@ -40,26 +40,33 @@ class CreateBdsMetastoreConfigurationDetails(object):
             The value to assign to the cluster_admin_password property of this CreateBdsMetastoreConfigurationDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateBdsMetastoreConfigurationDetails.
+        :type secret_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'metastore_id': 'str',
             'bds_api_key_id': 'str',
             'bds_api_key_passphrase': 'str',
-            'cluster_admin_password': 'str'
+            'cluster_admin_password': 'str',
+            'secret_id': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'metastore_id': 'metastoreId',
             'bds_api_key_id': 'bdsApiKeyId',
             'bds_api_key_passphrase': 'bdsApiKeyPassphrase',
-            'cluster_admin_password': 'clusterAdminPassword'
+            'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId'
         }
         self._display_name = None
         self._metastore_id = None
         self._bds_api_key_id = None
         self._bds_api_key_passphrase = None
         self._cluster_admin_password = None
+        self._secret_id = None
 
     @property
     def display_name(self):
@@ -160,7 +167,7 @@ class CreateBdsMetastoreConfigurationDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this CreateBdsMetastoreConfigurationDetails.
+        Gets the cluster_admin_password of this CreateBdsMetastoreConfigurationDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -180,6 +187,30 @@ class CreateBdsMetastoreConfigurationDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this CreateBdsMetastoreConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this CreateBdsMetastoreConfigurationDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this CreateBdsMetastoreConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this CreateBdsMetastoreConfigurationDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

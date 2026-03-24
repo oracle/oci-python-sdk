@@ -86,7 +86,7 @@ class AutoScalingConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutoScalingConfigurationSummary.
-        The OCID of the autoscale configuration.
+        The ID of the autoscale configuration defined under BDS resources, not OCID.
 
 
         :return: The id of this AutoScalingConfigurationSummary.
@@ -98,7 +98,7 @@ class AutoScalingConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this AutoScalingConfigurationSummary.
-        The OCID of the autoscale configuration.
+        The ID of the autoscale configuration defined under BDS resources, not OCID.
 
 
         :param id: The id of this AutoScalingConfigurationSummary.

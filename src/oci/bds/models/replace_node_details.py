@@ -32,6 +32,10 @@ class ReplaceNodeDetails(object):
             The value to assign to the cluster_admin_password property of this ReplaceNodeDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this ReplaceNodeDetails.
+        :type secret_id: str
+
         :param shape:
             The value to assign to the shape property of this ReplaceNodeDetails.
         :type shape: str
@@ -41,17 +45,20 @@ class ReplaceNodeDetails(object):
             'node_host_name': 'str',
             'node_backup_id': 'str',
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'shape': 'str'
         }
         self.attribute_map = {
             'node_host_name': 'nodeHostName',
             'node_backup_id': 'nodeBackupId',
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'shape': 'shape'
         }
         self._node_host_name = None
         self._node_backup_id = None
         self._cluster_admin_password = None
+        self._secret_id = None
         self._shape = None
 
     @property
@@ -105,7 +112,7 @@ class ReplaceNodeDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this ReplaceNodeDetails.
+        Gets the cluster_admin_password of this ReplaceNodeDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -125,6 +132,30 @@ class ReplaceNodeDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this ReplaceNodeDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this ReplaceNodeDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this ReplaceNodeDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this ReplaceNodeDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def shape(self):

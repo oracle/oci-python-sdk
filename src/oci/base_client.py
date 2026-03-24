@@ -605,6 +605,10 @@ class BaseClient(object):
             for k, v in path_params.items():
                 if should_enable_strict_url_encoding:
                     replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)), safe='')
+                    # For Object Storage path parameters, encode standalone dot segments so
+                    # object names are preserved as literal keys and not interpreted as path segments.
+                    if self.service == "object_storage" and replacement in {".", ".."}:
+                        replacement = replacement.replace('.', '%2E')
                 else:
                     replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
@@ -1395,6 +1399,12 @@ class BaseClient(object):
         # Check at the global level
         if global_configuration is True:
             return True
+
+        # Object Storage path parameters should use strict encoding by default so
+        # object names containing slash/dot segments are not path-normalized.
+        if self.service == "object_storage":
+            return True
+
         return False
 
     def should_allow_template_per_realm(self):

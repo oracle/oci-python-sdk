@@ -32,6 +32,10 @@ class UpdateAutoScalingConfigurationDetails(object):
             The value to assign to the cluster_admin_password property of this UpdateAutoScalingConfigurationDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this UpdateAutoScalingConfigurationDetails.
+        :type secret_id: str
+
         :param policy:
             The value to assign to the policy property of this UpdateAutoScalingConfigurationDetails.
         :type policy: oci.bds.models.AutoScalePolicy
@@ -45,6 +49,7 @@ class UpdateAutoScalingConfigurationDetails(object):
             'display_name': 'str',
             'is_enabled': 'bool',
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'policy': 'AutoScalePolicy',
             'policy_details': 'UpdateAutoScalePolicyDetails'
         }
@@ -52,12 +57,14 @@ class UpdateAutoScalingConfigurationDetails(object):
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'policy': 'policy',
             'policy_details': 'policyDetails'
         }
         self._display_name = None
         self._is_enabled = None
         self._cluster_admin_password = None
+        self._secret_id = None
         self._policy = None
         self._policy_details = None
 
@@ -132,6 +139,30 @@ class UpdateAutoScalingConfigurationDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this UpdateAutoScalingConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this UpdateAutoScalingConfigurationDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this UpdateAutoScalingConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this UpdateAutoScalingConfigurationDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def policy(self):

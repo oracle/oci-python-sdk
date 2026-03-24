@@ -24,6 +24,10 @@ class AddUtilityNodesDetails(object):
             The value to assign to the cluster_admin_password property of this AddUtilityNodesDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this AddUtilityNodesDetails.
+        :type secret_id: str
+
         :param number_of_utility_nodes:
             The value to assign to the number_of_utility_nodes property of this AddUtilityNodesDetails.
         :type number_of_utility_nodes: int
@@ -43,6 +47,7 @@ class AddUtilityNodesDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'number_of_utility_nodes': 'int',
             'shape': 'str',
             'block_volume_size_in_gbs': 'int',
@@ -50,12 +55,14 @@ class AddUtilityNodesDetails(object):
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'number_of_utility_nodes': 'numberOfUtilityNodes',
             'shape': 'shape',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'shape_config': 'shapeConfig'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._number_of_utility_nodes = None
         self._shape = None
         self._block_volume_size_in_gbs = None
@@ -64,7 +71,7 @@ class AddUtilityNodesDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this AddUtilityNodesDetails.
+        Gets the cluster_admin_password of this AddUtilityNodesDetails.
         Base-64 encoded Cluster Admin Password for cluster admin user.
 
 
@@ -84,6 +91,30 @@ class AddUtilityNodesDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this AddUtilityNodesDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this AddUtilityNodesDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this AddUtilityNodesDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this AddUtilityNodesDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def number_of_utility_nodes(self):
