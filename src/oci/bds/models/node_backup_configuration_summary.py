@@ -79,7 +79,7 @@ class NodeBackupConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this NodeBackupConfigurationSummary.
-        The id of the NodeBackupConfiguration.
+        The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 
 
         :return: The id of this NodeBackupConfigurationSummary.
@@ -91,7 +91,7 @@ class NodeBackupConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this NodeBackupConfigurationSummary.
-        The id of the NodeBackupConfiguration.
+        The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 
 
         :param id: The id of this NodeBackupConfigurationSummary.

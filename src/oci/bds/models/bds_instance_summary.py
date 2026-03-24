@@ -72,6 +72,10 @@ class BdsInstanceSummary(object):
             The value to assign to the time_created property of this BdsInstanceSummary.
         :type time_created: datetime
 
+        :param time_earliest_certificate_expiration:
+            The value to assign to the time_earliest_certificate_expiration property of this BdsInstanceSummary.
+        :type time_earliest_certificate_expiration: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BdsInstanceSummary.
         :type freeform_tags: dict(str, str)
@@ -95,6 +99,7 @@ class BdsInstanceSummary(object):
             'is_kafka_configured': 'bool',
             'cluster_profile': 'str',
             'time_created': 'datetime',
+            'time_earliest_certificate_expiration': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -112,6 +117,7 @@ class BdsInstanceSummary(object):
             'is_kafka_configured': 'isKafkaConfigured',
             'cluster_profile': 'clusterProfile',
             'time_created': 'timeCreated',
+            'time_earliest_certificate_expiration': 'timeEarliestCertificateExpiration',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -128,6 +134,7 @@ class BdsInstanceSummary(object):
         self._is_kafka_configured = None
         self._cluster_profile = None
         self._time_created = None
+        self._time_earliest_certificate_expiration = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -442,6 +449,30 @@ class BdsInstanceSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_earliest_certificate_expiration(self):
+        """
+        Gets the time_earliest_certificate_expiration of this BdsInstanceSummary.
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+
+
+        :return: The time_earliest_certificate_expiration of this BdsInstanceSummary.
+        :rtype: datetime
+        """
+        return self._time_earliest_certificate_expiration
+
+    @time_earliest_certificate_expiration.setter
+    def time_earliest_certificate_expiration(self, time_earliest_certificate_expiration):
+        """
+        Sets the time_earliest_certificate_expiration of this BdsInstanceSummary.
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+
+
+        :param time_earliest_certificate_expiration: The time_earliest_certificate_expiration of this BdsInstanceSummary.
+        :type: datetime
+        """
+        self._time_earliest_certificate_expiration = time_earliest_certificate_expiration
 
     @property
     def freeform_tags(self):

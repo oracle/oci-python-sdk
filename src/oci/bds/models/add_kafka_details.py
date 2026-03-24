@@ -40,26 +40,33 @@ class AddKafkaDetails(object):
             The value to assign to the cluster_admin_password property of this AddKafkaDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this AddKafkaDetails.
+        :type secret_id: str
+
         """
         self.swagger_types = {
             'shape': 'str',
             'number_of_kafka_nodes': 'int',
             'shape_config': 'ShapeConfigDetails',
             'block_volume_size_in_gbs': 'int',
-            'cluster_admin_password': 'str'
+            'cluster_admin_password': 'str',
+            'secret_id': 'str'
         }
         self.attribute_map = {
             'shape': 'shape',
             'number_of_kafka_nodes': 'numberOfKafkaNodes',
             'shape_config': 'shapeConfig',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
-            'cluster_admin_password': 'clusterAdminPassword'
+            'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId'
         }
         self._shape = None
         self._number_of_kafka_nodes = None
         self._shape_config = None
         self._block_volume_size_in_gbs = None
         self._cluster_admin_password = None
+        self._secret_id = None
 
     @property
     def shape(self):
@@ -156,7 +163,7 @@ class AddKafkaDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this AddKafkaDetails.
+        Gets the cluster_admin_password of this AddKafkaDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -176,6 +183,30 @@ class AddKafkaDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this AddKafkaDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this AddKafkaDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this AddKafkaDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this AddKafkaDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

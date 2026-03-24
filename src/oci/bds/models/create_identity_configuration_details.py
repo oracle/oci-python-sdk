@@ -24,6 +24,10 @@ class CreateIdentityConfigurationDetails(object):
             The value to assign to the cluster_admin_password property of this CreateIdentityConfigurationDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateIdentityConfigurationDetails.
+        :type secret_id: str
+
         :param display_name:
             The value to assign to the display_name property of this CreateIdentityConfigurationDetails.
         :type display_name: str
@@ -47,6 +51,7 @@ class CreateIdentityConfigurationDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'display_name': 'str',
             'identity_domain_id': 'str',
             'confidential_application_id': 'str',
@@ -55,6 +60,7 @@ class CreateIdentityConfigurationDetails(object):
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'display_name': 'displayName',
             'identity_domain_id': 'identityDomainId',
             'confidential_application_id': 'confidentialApplicationId',
@@ -62,6 +68,7 @@ class CreateIdentityConfigurationDetails(object):
             'iam_user_sync_configuration_details': 'iamUserSyncConfigurationDetails'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._display_name = None
         self._identity_domain_id = None
         self._confidential_application_id = None
@@ -71,7 +78,7 @@ class CreateIdentityConfigurationDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this CreateIdentityConfigurationDetails.
+        Gets the cluster_admin_password of this CreateIdentityConfigurationDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -91,6 +98,30 @@ class CreateIdentityConfigurationDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this CreateIdentityConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this CreateIdentityConfigurationDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this CreateIdentityConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this CreateIdentityConfigurationDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def display_name(self):

@@ -45,8 +45,11 @@ Bds
     oci.bds.models.BdsApiKey
     oci.bds.models.BdsApiKeySummary
     oci.bds.models.BdsCapacityReport
+    oci.bds.models.BdsCertificateConfiguration
+    oci.bds.models.BdsCertificateConfigurationSummary
     oci.bds.models.BdsClusterVersionSummary
     oci.bds.models.BdsInstance
+    oci.bds.models.BdsInstanceResetPasswordDetails
     oci.bds.models.BdsInstanceSummary
     oci.bds.models.BdsMetastoreConfiguration
     oci.bds.models.BdsMetastoreConfigurationSummary
@@ -60,8 +63,10 @@ Bds
     oci.bds.models.ChangeShapeNodes
     oci.bds.models.CloudSqlDetails
     oci.bds.models.ClusterDetails
+    oci.bds.models.ConfigLevelManageBdsCertificateDetails
     oci.bds.models.CreateBdsApiKeyDetails
     oci.bds.models.CreateBdsCapacityReportDetails
+    oci.bds.models.CreateBdsCertificateConfigurationDetails
     oci.bds.models.CreateBdsInstanceDetails
     oci.bds.models.CreateBdsMetastoreConfigurationDetails
     oci.bds.models.CreateCapacityReportShapeAvailabilityDetails
@@ -84,6 +89,7 @@ Bds
     oci.bds.models.EnableCertificateDetails
     oci.bds.models.ExecuteBootstrapScriptDetails
     oci.bds.models.ForceRefreshResourcePrincipalDetails
+    oci.bds.models.GenerateBdsCertificateDetails
     oci.bds.models.HorizontalScalingScheduleDetails
     oci.bds.models.HostCertDetails
     oci.bds.models.HostSpecificCertificateDetails
@@ -96,6 +102,7 @@ Bds
     oci.bds.models.InstallSoftwareUpdatesDetails
     oci.bds.models.KerberosDetails
     oci.bds.models.LevelTypeDetails
+    oci.bds.models.ManageBdsCertificateLevelTypeDetails
     oci.bds.models.MetricBasedHorizontalScaleInConfig
     oci.bds.models.MetricBasedHorizontalScaleOutConfig
     oci.bds.models.MetricBasedHorizontalScalingPolicyDetails
@@ -111,6 +118,7 @@ Bds
     oci.bds.models.NodeBackupConfigurationSummary
     oci.bds.models.NodeBackupSummary
     oci.bds.models.NodeLevelDetails
+    oci.bds.models.NodeLevelManageBdsCertificateDetails
     oci.bds.models.NodeReplaceConfiguration
     oci.bds.models.NodeReplaceConfigurationSummary
     oci.bds.models.NodeTypeLevelDetails
@@ -119,6 +127,7 @@ Bds
     oci.bds.models.OsPatchDetails
     oci.bds.models.OsPatchPackageSummary
     oci.bds.models.OsPatchSummary
+    oci.bds.models.PasswordSummary
     oci.bds.models.PatchHistorySummary
     oci.bds.models.PatchSummary
     oci.bds.models.PatchingConfigs
@@ -129,7 +138,9 @@ Bds
     oci.bds.models.RemoveKafkaDetails
     oci.bds.models.RemoveNodeDetails
     oci.bds.models.RemoveNodeReplaceConfigurationDetails
+    oci.bds.models.RemoveNodesDetails
     oci.bds.models.RemoveResourcePrincipalConfigurationDetails
+    oci.bds.models.RenewBdsCertificateDetails
     oci.bds.models.RenewCertificateDetails
     oci.bds.models.ReplaceNodeDetails
     oci.bds.models.ResourcePrincipalConfiguration
@@ -137,6 +148,7 @@ Bds
     oci.bds.models.RestartNodeDetails
     oci.bds.models.ScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.ScheduleBasedVerticalScalingPolicyDetails
+    oci.bds.models.SetDefaultBdsCertificateConfigurationDetails
     oci.bds.models.ShapeConfigDetails
     oci.bds.models.SingleAdCapacityReport
     oci.bds.models.SoftwareUpdate

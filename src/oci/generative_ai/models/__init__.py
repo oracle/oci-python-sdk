@@ -6,54 +6,126 @@
 
 from __future__ import absolute_import
 
+from .add_artifact_details import AddArtifactDetails
 from .api_key import ApiKey
 from .api_key_collection import ApiKeyCollection
 from .api_key_item import ApiKeyItem
 from .api_key_summary import ApiKeySummary
+from .artifact import Artifact
 from .change_api_key_compartment_details import ChangeApiKeyCompartmentDetails
 from .change_dedicated_ai_cluster_compartment_details import ChangeDedicatedAiClusterCompartmentDetails
 from .change_endpoint_compartment_details import ChangeEndpointCompartmentDetails
 from .change_generative_ai_private_endpoint_compartment_details import ChangeGenerativeAiPrivateEndpointCompartmentDetails
+from .change_generative_ai_project_compartment_details import ChangeGenerativeAiProjectCompartmentDetails
+from .change_hosted_application_compartment_details import ChangeHostedApplicationCompartmentDetails
+from .change_hosted_application_storage_compartment_details import ChangeHostedApplicationStorageCompartmentDetails
 from .change_imported_model_compartment_details import ChangeImportedModelCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
+from .change_semantic_store_compartment_details import ChangeSemanticStoreCompartmentDetails
 from .chat_model_metrics import ChatModelMetrics
+from .condenser_config import CondenserConfig
+from .connector_configuration import ConnectorConfiguration
 from .content_moderation_config import ContentModerationConfig
+from .conversation_config import ConversationConfig
 from .create_api_key_details import CreateApiKeyDetails
+from .create_artifact_details import CreateArtifactDetails
+from .create_data_source_database_tools_connection_details import CreateDataSourceDatabaseToolsConnectionDetails
+from .create_data_source_details import CreateDataSourceDetails
 from .create_dedicated_ai_cluster_details import CreateDedicatedAiClusterDetails
 from .create_endpoint_details import CreateEndpointDetails
 from .create_generative_ai_private_endpoint_details import CreateGenerativeAiPrivateEndpointDetails
+from .create_generative_ai_project_details import CreateGenerativeAiProjectDetails
+from .create_hosted_application_details import CreateHostedApplicationDetails
+from .create_hosted_application_storage_details import CreateHostedApplicationStorageDetails
+from .create_hosted_deployment_details import CreateHostedDeploymentDetails
 from .create_imported_model_details import CreateImportedModelDetails
 from .create_model_details import CreateModelDetails
+from .create_schemas_database_tools_connection_details import CreateSchemasDatabaseToolsConnectionDetails
+from .create_schemas_details import CreateSchemasDetails
+from .create_semantic_store_details import CreateSemanticStoreDetails
+from .create_single_docker_artifact_details import CreateSingleDockerArtifactDetails
+from .create_vector_store_connector_details import CreateVectorStoreConnectorDetails
+from .create_vector_store_connector_file_sync_details import CreateVectorStoreConnectorFileSyncDetails
+from .data_source_database_tools_connection_details import DataSourceDatabaseToolsConnectionDetails
+from .data_source_details import DataSourceDetails
+from .database_tools_connection import DatabaseToolsConnection
 from .dataset import Dataset
 from .dedicated_ai_cluster import DedicatedAiCluster
 from .dedicated_ai_cluster_capacity import DedicatedAiClusterCapacity
 from .dedicated_ai_cluster_collection import DedicatedAiClusterCollection
 from .dedicated_ai_cluster_hosting_capacity import DedicatedAiClusterHostingCapacity
 from .dedicated_ai_cluster_summary import DedicatedAiClusterSummary
+from .embedding_config import EmbeddingConfig
 from .endpoint import Endpoint
 from .endpoint_collection import EndpointCollection
 from .endpoint_summary import EndpointSummary
+from .environment_variable import EnvironmentVariable
+from .extraction_config import ExtractionConfig
+from .file_sync_ingestion_logs import FileSyncIngestionLogs
+from .file_sync_ingestion_logs_collection import FileSyncIngestionLogsCollection
+from .file_sync_statistics import FileSyncStatistics
 from .fine_tune_details import FineTuneDetails
+from .gen_ai_model_llm_selection import GenAiModelLlmSelection
 from .generative_ai_private_endpoint import GenerativeAiPrivateEndpoint
 from .generative_ai_private_endpoint_collection import GenerativeAiPrivateEndpointCollection
 from .generative_ai_private_endpoint_summary import GenerativeAiPrivateEndpointSummary
+from .generative_ai_project import GenerativeAiProject
+from .generative_ai_project_collection import GenerativeAiProjectCollection
+from .generative_ai_project_summary import GenerativeAiProjectSummary
+from .hosted_application import HostedApplication
+from .hosted_application_collection import HostedApplicationCollection
+from .hosted_application_storage import HostedApplicationStorage
+from .hosted_application_storage_collection import HostedApplicationStorageCollection
+from .hosted_application_storage_summary import HostedApplicationStorageSummary
+from .hosted_application_summary import HostedApplicationSummary
+from .hosted_deployment import HostedDeployment
+from .hosted_deployment_collection import HostedDeploymentCollection
+from .hosted_deployment_summary import HostedDeploymentSummary
 from .hugging_face_model import HuggingFaceModel
+from .idcs_auth_config import IdcsAuthConfig
 from .imported_model import ImportedModel
 from .imported_model_collection import ImportedModelCollection
 from .imported_model_summary import ImportedModelSummary
+from .inbound_auth_config import InboundAuthConfig
+from .inbound_networking_config import InboundNetworkingConfig
 from .key_details import KeyDetails
+from .llm_selection import LlmSelection
+from .long_term_memory_config import LongTermMemoryConfig
 from .lora_training_config import LoraTrainingConfig
 from .model import Model
 from .model_collection import ModelCollection
+from .model_config import ModelConfig
 from .model_data_source import ModelDataSource
 from .model_metrics import ModelMetrics
 from .model_summary import ModelSummary
+from .networking_config import NetworkingConfig
+from .object_storage_config import ObjectStorageConfig
 from .object_storage_dataset import ObjectStorageDataset
 from .object_storage_object import ObjectStorageObject
+from .oci_object_storage_configuration import OciObjectStorageConfiguration
+from .outbound_networking_config import OutboundNetworkingConfig
 from .pii_detection_config import PiiDetectionConfig
 from .prompt_injection_config import PromptInjectionConfig
+from .refresh_schedule_details import RefreshScheduleDetails
+from .refresh_schedule_interval_details import RefreshScheduleIntervalDetails
+from .refresh_schedule_none_details import RefreshScheduleNoneDetails
+from .refresh_schedule_on_create_details import RefreshScheduleOnCreateDetails
 from .renew_api_key_details import RenewApiKeyDetails
+from .scaling_config import ScalingConfig
+from .schedule_config import ScheduleConfig
+from .schedule_cron_config import ScheduleCronConfig
+from .schedule_interval_config import ScheduleIntervalConfig
+from .schema_item import SchemaItem
+from .schemas_database_tools_connection_details import SchemasDatabaseToolsConnectionDetails
+from .schemas_details import SchemasDetails
+from .semantic_store import SemanticStore
+from .semantic_store_collection import SemanticStoreCollection
+from .semantic_store_summary import SemanticStoreSummary
 from .set_api_key_state_details import SetApiKeyStateDetails
+from .short_term_memory_optimization_config import ShortTermMemoryOptimizationConfig
+from .single_docker_artifact import SingleDockerArtifact
+from .standard_long_term_memory_strategy import StandardLongTermMemoryStrategy
+from .storage_config import StorageConfig
 from .t_few_training_config import TFewTrainingConfig
 from .text_generation_model_metrics import TextGenerationModelMetrics
 from .training_config import TrainingConfig
@@ -61,9 +133,23 @@ from .update_api_key_details import UpdateApiKeyDetails
 from .update_dedicated_ai_cluster_details import UpdateDedicatedAiClusterDetails
 from .update_endpoint_details import UpdateEndpointDetails
 from .update_generative_ai_private_endpoint_details import UpdateGenerativeAiPrivateEndpointDetails
+from .update_generative_ai_project_details import UpdateGenerativeAiProjectDetails
+from .update_hosted_application_details import UpdateHostedApplicationDetails
+from .update_hosted_deployment_details import UpdateHostedDeploymentDetails
 from .update_imported_model_details import UpdateImportedModelDetails
 from .update_model_details import UpdateModelDetails
+from .update_semantic_store_details import UpdateSemanticStoreDetails
+from .update_vector_store_connector_details import UpdateVectorStoreConnectorDetails
 from .vanilla_training_config import VanillaTrainingConfig
+from .vector_store_connector import VectorStoreConnector
+from .vector_store_connector_collection import VectorStoreConnectorCollection
+from .vector_store_connector_file_sync import VectorStoreConnectorFileSync
+from .vector_store_connector_file_sync_collection import VectorStoreConnectorFileSyncCollection
+from .vector_store_connector_file_sync_summary import VectorStoreConnectorFileSyncSummary
+from .vector_store_connector_ingestion_logs import VectorStoreConnectorIngestionLogs
+from .vector_store_connector_ingestion_logs_collection import VectorStoreConnectorIngestionLogsCollection
+from .vector_store_connector_stats import VectorStoreConnectorStats
+from .vector_store_connector_summary import VectorStoreConnectorSummary
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -75,54 +161,126 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for generative_ai services.
 generative_ai_type_mapping = {
+    "AddArtifactDetails": AddArtifactDetails,
     "ApiKey": ApiKey,
     "ApiKeyCollection": ApiKeyCollection,
     "ApiKeyItem": ApiKeyItem,
     "ApiKeySummary": ApiKeySummary,
+    "Artifact": Artifact,
     "ChangeApiKeyCompartmentDetails": ChangeApiKeyCompartmentDetails,
     "ChangeDedicatedAiClusterCompartmentDetails": ChangeDedicatedAiClusterCompartmentDetails,
     "ChangeEndpointCompartmentDetails": ChangeEndpointCompartmentDetails,
     "ChangeGenerativeAiPrivateEndpointCompartmentDetails": ChangeGenerativeAiPrivateEndpointCompartmentDetails,
+    "ChangeGenerativeAiProjectCompartmentDetails": ChangeGenerativeAiProjectCompartmentDetails,
+    "ChangeHostedApplicationCompartmentDetails": ChangeHostedApplicationCompartmentDetails,
+    "ChangeHostedApplicationStorageCompartmentDetails": ChangeHostedApplicationStorageCompartmentDetails,
     "ChangeImportedModelCompartmentDetails": ChangeImportedModelCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
+    "ChangeSemanticStoreCompartmentDetails": ChangeSemanticStoreCompartmentDetails,
     "ChatModelMetrics": ChatModelMetrics,
+    "CondenserConfig": CondenserConfig,
+    "ConnectorConfiguration": ConnectorConfiguration,
     "ContentModerationConfig": ContentModerationConfig,
+    "ConversationConfig": ConversationConfig,
     "CreateApiKeyDetails": CreateApiKeyDetails,
+    "CreateArtifactDetails": CreateArtifactDetails,
+    "CreateDataSourceDatabaseToolsConnectionDetails": CreateDataSourceDatabaseToolsConnectionDetails,
+    "CreateDataSourceDetails": CreateDataSourceDetails,
     "CreateDedicatedAiClusterDetails": CreateDedicatedAiClusterDetails,
     "CreateEndpointDetails": CreateEndpointDetails,
     "CreateGenerativeAiPrivateEndpointDetails": CreateGenerativeAiPrivateEndpointDetails,
+    "CreateGenerativeAiProjectDetails": CreateGenerativeAiProjectDetails,
+    "CreateHostedApplicationDetails": CreateHostedApplicationDetails,
+    "CreateHostedApplicationStorageDetails": CreateHostedApplicationStorageDetails,
+    "CreateHostedDeploymentDetails": CreateHostedDeploymentDetails,
     "CreateImportedModelDetails": CreateImportedModelDetails,
     "CreateModelDetails": CreateModelDetails,
+    "CreateSchemasDatabaseToolsConnectionDetails": CreateSchemasDatabaseToolsConnectionDetails,
+    "CreateSchemasDetails": CreateSchemasDetails,
+    "CreateSemanticStoreDetails": CreateSemanticStoreDetails,
+    "CreateSingleDockerArtifactDetails": CreateSingleDockerArtifactDetails,
+    "CreateVectorStoreConnectorDetails": CreateVectorStoreConnectorDetails,
+    "CreateVectorStoreConnectorFileSyncDetails": CreateVectorStoreConnectorFileSyncDetails,
+    "DataSourceDatabaseToolsConnectionDetails": DataSourceDatabaseToolsConnectionDetails,
+    "DataSourceDetails": DataSourceDetails,
+    "DatabaseToolsConnection": DatabaseToolsConnection,
     "Dataset": Dataset,
     "DedicatedAiCluster": DedicatedAiCluster,
     "DedicatedAiClusterCapacity": DedicatedAiClusterCapacity,
     "DedicatedAiClusterCollection": DedicatedAiClusterCollection,
     "DedicatedAiClusterHostingCapacity": DedicatedAiClusterHostingCapacity,
     "DedicatedAiClusterSummary": DedicatedAiClusterSummary,
+    "EmbeddingConfig": EmbeddingConfig,
     "Endpoint": Endpoint,
     "EndpointCollection": EndpointCollection,
     "EndpointSummary": EndpointSummary,
+    "EnvironmentVariable": EnvironmentVariable,
+    "ExtractionConfig": ExtractionConfig,
+    "FileSyncIngestionLogs": FileSyncIngestionLogs,
+    "FileSyncIngestionLogsCollection": FileSyncIngestionLogsCollection,
+    "FileSyncStatistics": FileSyncStatistics,
     "FineTuneDetails": FineTuneDetails,
+    "GenAiModelLlmSelection": GenAiModelLlmSelection,
     "GenerativeAiPrivateEndpoint": GenerativeAiPrivateEndpoint,
     "GenerativeAiPrivateEndpointCollection": GenerativeAiPrivateEndpointCollection,
     "GenerativeAiPrivateEndpointSummary": GenerativeAiPrivateEndpointSummary,
+    "GenerativeAiProject": GenerativeAiProject,
+    "GenerativeAiProjectCollection": GenerativeAiProjectCollection,
+    "GenerativeAiProjectSummary": GenerativeAiProjectSummary,
+    "HostedApplication": HostedApplication,
+    "HostedApplicationCollection": HostedApplicationCollection,
+    "HostedApplicationStorage": HostedApplicationStorage,
+    "HostedApplicationStorageCollection": HostedApplicationStorageCollection,
+    "HostedApplicationStorageSummary": HostedApplicationStorageSummary,
+    "HostedApplicationSummary": HostedApplicationSummary,
+    "HostedDeployment": HostedDeployment,
+    "HostedDeploymentCollection": HostedDeploymentCollection,
+    "HostedDeploymentSummary": HostedDeploymentSummary,
     "HuggingFaceModel": HuggingFaceModel,
+    "IdcsAuthConfig": IdcsAuthConfig,
     "ImportedModel": ImportedModel,
     "ImportedModelCollection": ImportedModelCollection,
     "ImportedModelSummary": ImportedModelSummary,
+    "InboundAuthConfig": InboundAuthConfig,
+    "InboundNetworkingConfig": InboundNetworkingConfig,
     "KeyDetails": KeyDetails,
+    "LlmSelection": LlmSelection,
+    "LongTermMemoryConfig": LongTermMemoryConfig,
     "LoraTrainingConfig": LoraTrainingConfig,
     "Model": Model,
     "ModelCollection": ModelCollection,
+    "ModelConfig": ModelConfig,
     "ModelDataSource": ModelDataSource,
     "ModelMetrics": ModelMetrics,
     "ModelSummary": ModelSummary,
+    "NetworkingConfig": NetworkingConfig,
+    "ObjectStorageConfig": ObjectStorageConfig,
     "ObjectStorageDataset": ObjectStorageDataset,
     "ObjectStorageObject": ObjectStorageObject,
+    "OciObjectStorageConfiguration": OciObjectStorageConfiguration,
+    "OutboundNetworkingConfig": OutboundNetworkingConfig,
     "PiiDetectionConfig": PiiDetectionConfig,
     "PromptInjectionConfig": PromptInjectionConfig,
+    "RefreshScheduleDetails": RefreshScheduleDetails,
+    "RefreshScheduleIntervalDetails": RefreshScheduleIntervalDetails,
+    "RefreshScheduleNoneDetails": RefreshScheduleNoneDetails,
+    "RefreshScheduleOnCreateDetails": RefreshScheduleOnCreateDetails,
     "RenewApiKeyDetails": RenewApiKeyDetails,
+    "ScalingConfig": ScalingConfig,
+    "ScheduleConfig": ScheduleConfig,
+    "ScheduleCronConfig": ScheduleCronConfig,
+    "ScheduleIntervalConfig": ScheduleIntervalConfig,
+    "SchemaItem": SchemaItem,
+    "SchemasDatabaseToolsConnectionDetails": SchemasDatabaseToolsConnectionDetails,
+    "SchemasDetails": SchemasDetails,
+    "SemanticStore": SemanticStore,
+    "SemanticStoreCollection": SemanticStoreCollection,
+    "SemanticStoreSummary": SemanticStoreSummary,
     "SetApiKeyStateDetails": SetApiKeyStateDetails,
+    "ShortTermMemoryOptimizationConfig": ShortTermMemoryOptimizationConfig,
+    "SingleDockerArtifact": SingleDockerArtifact,
+    "StandardLongTermMemoryStrategy": StandardLongTermMemoryStrategy,
+    "StorageConfig": StorageConfig,
     "TFewTrainingConfig": TFewTrainingConfig,
     "TextGenerationModelMetrics": TextGenerationModelMetrics,
     "TrainingConfig": TrainingConfig,
@@ -130,9 +288,23 @@ generative_ai_type_mapping = {
     "UpdateDedicatedAiClusterDetails": UpdateDedicatedAiClusterDetails,
     "UpdateEndpointDetails": UpdateEndpointDetails,
     "UpdateGenerativeAiPrivateEndpointDetails": UpdateGenerativeAiPrivateEndpointDetails,
+    "UpdateGenerativeAiProjectDetails": UpdateGenerativeAiProjectDetails,
+    "UpdateHostedApplicationDetails": UpdateHostedApplicationDetails,
+    "UpdateHostedDeploymentDetails": UpdateHostedDeploymentDetails,
     "UpdateImportedModelDetails": UpdateImportedModelDetails,
     "UpdateModelDetails": UpdateModelDetails,
+    "UpdateSemanticStoreDetails": UpdateSemanticStoreDetails,
+    "UpdateVectorStoreConnectorDetails": UpdateVectorStoreConnectorDetails,
     "VanillaTrainingConfig": VanillaTrainingConfig,
+    "VectorStoreConnector": VectorStoreConnector,
+    "VectorStoreConnectorCollection": VectorStoreConnectorCollection,
+    "VectorStoreConnectorFileSync": VectorStoreConnectorFileSync,
+    "VectorStoreConnectorFileSyncCollection": VectorStoreConnectorFileSyncCollection,
+    "VectorStoreConnectorFileSyncSummary": VectorStoreConnectorFileSyncSummary,
+    "VectorStoreConnectorIngestionLogs": VectorStoreConnectorIngestionLogs,
+    "VectorStoreConnectorIngestionLogsCollection": VectorStoreConnectorIngestionLogsCollection,
+    "VectorStoreConnectorStats": VectorStoreConnectorStats,
+    "VectorStoreConnectorSummary": VectorStoreConnectorSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

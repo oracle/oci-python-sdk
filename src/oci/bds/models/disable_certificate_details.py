@@ -24,6 +24,10 @@ class DisableCertificateDetails(object):
             The value to assign to the cluster_admin_password property of this DisableCertificateDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this DisableCertificateDetails.
+        :type secret_id: str
+
         :param services:
             The value to assign to the services property of this DisableCertificateDetails.
         :type services: list[oci.bds.models.Service]
@@ -31,19 +35,22 @@ class DisableCertificateDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'services': 'list[Service]'
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'services': 'services'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._services = None
 
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this DisableCertificateDetails.
+        Gets the cluster_admin_password of this DisableCertificateDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -63,6 +70,30 @@ class DisableCertificateDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this DisableCertificateDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this DisableCertificateDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this DisableCertificateDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this DisableCertificateDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def services(self):

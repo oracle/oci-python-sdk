@@ -18,54 +18,126 @@ Generative Ai
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.generative_ai.models.AddArtifactDetails
     oci.generative_ai.models.ApiKey
     oci.generative_ai.models.ApiKeyCollection
     oci.generative_ai.models.ApiKeyItem
     oci.generative_ai.models.ApiKeySummary
+    oci.generative_ai.models.Artifact
     oci.generative_ai.models.ChangeApiKeyCompartmentDetails
     oci.generative_ai.models.ChangeDedicatedAiClusterCompartmentDetails
     oci.generative_ai.models.ChangeEndpointCompartmentDetails
     oci.generative_ai.models.ChangeGenerativeAiPrivateEndpointCompartmentDetails
+    oci.generative_ai.models.ChangeGenerativeAiProjectCompartmentDetails
+    oci.generative_ai.models.ChangeHostedApplicationCompartmentDetails
+    oci.generative_ai.models.ChangeHostedApplicationStorageCompartmentDetails
     oci.generative_ai.models.ChangeImportedModelCompartmentDetails
     oci.generative_ai.models.ChangeModelCompartmentDetails
+    oci.generative_ai.models.ChangeSemanticStoreCompartmentDetails
     oci.generative_ai.models.ChatModelMetrics
+    oci.generative_ai.models.CondenserConfig
+    oci.generative_ai.models.ConnectorConfiguration
     oci.generative_ai.models.ContentModerationConfig
+    oci.generative_ai.models.ConversationConfig
     oci.generative_ai.models.CreateApiKeyDetails
+    oci.generative_ai.models.CreateArtifactDetails
+    oci.generative_ai.models.CreateDataSourceDatabaseToolsConnectionDetails
+    oci.generative_ai.models.CreateDataSourceDetails
     oci.generative_ai.models.CreateDedicatedAiClusterDetails
     oci.generative_ai.models.CreateEndpointDetails
     oci.generative_ai.models.CreateGenerativeAiPrivateEndpointDetails
+    oci.generative_ai.models.CreateGenerativeAiProjectDetails
+    oci.generative_ai.models.CreateHostedApplicationDetails
+    oci.generative_ai.models.CreateHostedApplicationStorageDetails
+    oci.generative_ai.models.CreateHostedDeploymentDetails
     oci.generative_ai.models.CreateImportedModelDetails
     oci.generative_ai.models.CreateModelDetails
+    oci.generative_ai.models.CreateSchemasDatabaseToolsConnectionDetails
+    oci.generative_ai.models.CreateSchemasDetails
+    oci.generative_ai.models.CreateSemanticStoreDetails
+    oci.generative_ai.models.CreateSingleDockerArtifactDetails
+    oci.generative_ai.models.CreateVectorStoreConnectorDetails
+    oci.generative_ai.models.CreateVectorStoreConnectorFileSyncDetails
+    oci.generative_ai.models.DataSourceDatabaseToolsConnectionDetails
+    oci.generative_ai.models.DataSourceDetails
+    oci.generative_ai.models.DatabaseToolsConnection
     oci.generative_ai.models.Dataset
     oci.generative_ai.models.DedicatedAiCluster
     oci.generative_ai.models.DedicatedAiClusterCapacity
     oci.generative_ai.models.DedicatedAiClusterCollection
     oci.generative_ai.models.DedicatedAiClusterHostingCapacity
     oci.generative_ai.models.DedicatedAiClusterSummary
+    oci.generative_ai.models.EmbeddingConfig
     oci.generative_ai.models.Endpoint
     oci.generative_ai.models.EndpointCollection
     oci.generative_ai.models.EndpointSummary
+    oci.generative_ai.models.EnvironmentVariable
+    oci.generative_ai.models.ExtractionConfig
+    oci.generative_ai.models.FileSyncIngestionLogs
+    oci.generative_ai.models.FileSyncIngestionLogsCollection
+    oci.generative_ai.models.FileSyncStatistics
     oci.generative_ai.models.FineTuneDetails
+    oci.generative_ai.models.GenAiModelLlmSelection
     oci.generative_ai.models.GenerativeAiPrivateEndpoint
     oci.generative_ai.models.GenerativeAiPrivateEndpointCollection
     oci.generative_ai.models.GenerativeAiPrivateEndpointSummary
+    oci.generative_ai.models.GenerativeAiProject
+    oci.generative_ai.models.GenerativeAiProjectCollection
+    oci.generative_ai.models.GenerativeAiProjectSummary
+    oci.generative_ai.models.HostedApplication
+    oci.generative_ai.models.HostedApplicationCollection
+    oci.generative_ai.models.HostedApplicationStorage
+    oci.generative_ai.models.HostedApplicationStorageCollection
+    oci.generative_ai.models.HostedApplicationStorageSummary
+    oci.generative_ai.models.HostedApplicationSummary
+    oci.generative_ai.models.HostedDeployment
+    oci.generative_ai.models.HostedDeploymentCollection
+    oci.generative_ai.models.HostedDeploymentSummary
     oci.generative_ai.models.HuggingFaceModel
+    oci.generative_ai.models.IdcsAuthConfig
     oci.generative_ai.models.ImportedModel
     oci.generative_ai.models.ImportedModelCollection
     oci.generative_ai.models.ImportedModelSummary
+    oci.generative_ai.models.InboundAuthConfig
+    oci.generative_ai.models.InboundNetworkingConfig
     oci.generative_ai.models.KeyDetails
+    oci.generative_ai.models.LlmSelection
+    oci.generative_ai.models.LongTermMemoryConfig
     oci.generative_ai.models.LoraTrainingConfig
     oci.generative_ai.models.Model
     oci.generative_ai.models.ModelCollection
+    oci.generative_ai.models.ModelConfig
     oci.generative_ai.models.ModelDataSource
     oci.generative_ai.models.ModelMetrics
     oci.generative_ai.models.ModelSummary
+    oci.generative_ai.models.NetworkingConfig
+    oci.generative_ai.models.ObjectStorageConfig
     oci.generative_ai.models.ObjectStorageDataset
     oci.generative_ai.models.ObjectStorageObject
+    oci.generative_ai.models.OciObjectStorageConfiguration
+    oci.generative_ai.models.OutboundNetworkingConfig
     oci.generative_ai.models.PiiDetectionConfig
     oci.generative_ai.models.PromptInjectionConfig
+    oci.generative_ai.models.RefreshScheduleDetails
+    oci.generative_ai.models.RefreshScheduleIntervalDetails
+    oci.generative_ai.models.RefreshScheduleNoneDetails
+    oci.generative_ai.models.RefreshScheduleOnCreateDetails
     oci.generative_ai.models.RenewApiKeyDetails
+    oci.generative_ai.models.ScalingConfig
+    oci.generative_ai.models.ScheduleConfig
+    oci.generative_ai.models.ScheduleCronConfig
+    oci.generative_ai.models.ScheduleIntervalConfig
+    oci.generative_ai.models.SchemaItem
+    oci.generative_ai.models.SchemasDatabaseToolsConnectionDetails
+    oci.generative_ai.models.SchemasDetails
+    oci.generative_ai.models.SemanticStore
+    oci.generative_ai.models.SemanticStoreCollection
+    oci.generative_ai.models.SemanticStoreSummary
     oci.generative_ai.models.SetApiKeyStateDetails
+    oci.generative_ai.models.ShortTermMemoryOptimizationConfig
+    oci.generative_ai.models.SingleDockerArtifact
+    oci.generative_ai.models.StandardLongTermMemoryStrategy
+    oci.generative_ai.models.StorageConfig
     oci.generative_ai.models.TFewTrainingConfig
     oci.generative_ai.models.TextGenerationModelMetrics
     oci.generative_ai.models.TrainingConfig
@@ -73,9 +145,23 @@ Generative Ai
     oci.generative_ai.models.UpdateDedicatedAiClusterDetails
     oci.generative_ai.models.UpdateEndpointDetails
     oci.generative_ai.models.UpdateGenerativeAiPrivateEndpointDetails
+    oci.generative_ai.models.UpdateGenerativeAiProjectDetails
+    oci.generative_ai.models.UpdateHostedApplicationDetails
+    oci.generative_ai.models.UpdateHostedDeploymentDetails
     oci.generative_ai.models.UpdateImportedModelDetails
     oci.generative_ai.models.UpdateModelDetails
+    oci.generative_ai.models.UpdateSemanticStoreDetails
+    oci.generative_ai.models.UpdateVectorStoreConnectorDetails
     oci.generative_ai.models.VanillaTrainingConfig
+    oci.generative_ai.models.VectorStoreConnector
+    oci.generative_ai.models.VectorStoreConnectorCollection
+    oci.generative_ai.models.VectorStoreConnectorFileSync
+    oci.generative_ai.models.VectorStoreConnectorFileSyncCollection
+    oci.generative_ai.models.VectorStoreConnectorFileSyncSummary
+    oci.generative_ai.models.VectorStoreConnectorIngestionLogs
+    oci.generative_ai.models.VectorStoreConnectorIngestionLogsCollection
+    oci.generative_ai.models.VectorStoreConnectorStats
+    oci.generative_ai.models.VectorStoreConnectorSummary
     oci.generative_ai.models.WorkRequest
     oci.generative_ai.models.WorkRequestError
     oci.generative_ai.models.WorkRequestErrorCollection

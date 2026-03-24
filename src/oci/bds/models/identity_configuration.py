@@ -36,6 +36,10 @@ class IdentityConfiguration(object):
             The value to assign to the display_name property of this IdentityConfiguration.
         :type display_name: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this IdentityConfiguration.
+        :type secret_id: str
+
         :param identity_domain_id:
             The value to assign to the identity_domain_id property of this IdentityConfiguration.
         :type identity_domain_id: str
@@ -70,6 +74,7 @@ class IdentityConfiguration(object):
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
+            'secret_id': 'str',
             'identity_domain_id': 'str',
             'confidential_application_id': 'str',
             'lifecycle_state': 'str',
@@ -81,6 +86,7 @@ class IdentityConfiguration(object):
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
+            'secret_id': 'secretId',
             'identity_domain_id': 'identityDomainId',
             'confidential_application_id': 'confidentialApplicationId',
             'lifecycle_state': 'lifecycleState',
@@ -91,6 +97,7 @@ class IdentityConfiguration(object):
         }
         self._id = None
         self._display_name = None
+        self._secret_id = None
         self._identity_domain_id = None
         self._confidential_application_id = None
         self._lifecycle_state = None
@@ -146,6 +153,30 @@ class IdentityConfiguration(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this IdentityConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this IdentityConfiguration.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this IdentityConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this IdentityConfiguration.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def identity_domain_id(self):

@@ -286,6 +286,7 @@ class ApiKeySummary(object):
 
         Allowed values are:
         - ACTIVE
+        - INACTIVE
         - CREATING
         - UPDATING
         - DELETING
@@ -306,6 +307,7 @@ class ApiKeySummary(object):
 
         Allowed values are:
         - ACTIVE
+        - INACTIVE
         - CREATING
         - UPDATING
         - DELETING

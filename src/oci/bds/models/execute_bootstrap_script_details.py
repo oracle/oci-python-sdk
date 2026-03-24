@@ -24,6 +24,10 @@ class ExecuteBootstrapScriptDetails(object):
             The value to assign to the cluster_admin_password property of this ExecuteBootstrapScriptDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this ExecuteBootstrapScriptDetails.
+        :type secret_id: str
+
         :param bootstrap_script_url:
             The value to assign to the bootstrap_script_url property of this ExecuteBootstrapScriptDetails.
         :type bootstrap_script_url: str
@@ -31,19 +35,22 @@ class ExecuteBootstrapScriptDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'bootstrap_script_url': 'str'
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'bootstrap_script_url': 'bootstrapScriptUrl'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._bootstrap_script_url = None
 
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this ExecuteBootstrapScriptDetails.
+        Gets the cluster_admin_password of this ExecuteBootstrapScriptDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -63,6 +70,30 @@ class ExecuteBootstrapScriptDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this ExecuteBootstrapScriptDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this ExecuteBootstrapScriptDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this ExecuteBootstrapScriptDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this ExecuteBootstrapScriptDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def bootstrap_script_url(self):

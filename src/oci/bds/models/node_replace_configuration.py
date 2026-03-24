@@ -64,6 +64,10 @@ class NodeReplaceConfiguration(object):
             The value to assign to the display_name property of this NodeReplaceConfiguration.
         :type display_name: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this NodeReplaceConfiguration.
+        :type secret_id: str
+
         :param level_type_details:
             The value to assign to the level_type_details property of this NodeReplaceConfiguration.
         :type level_type_details: oci.bds.models.LevelTypeDetails
@@ -97,6 +101,7 @@ class NodeReplaceConfiguration(object):
             'id': 'str',
             'bds_instance_id': 'str',
             'display_name': 'str',
+            'secret_id': 'str',
             'level_type_details': 'LevelTypeDetails',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
@@ -108,6 +113,7 @@ class NodeReplaceConfiguration(object):
             'id': 'id',
             'bds_instance_id': 'bdsInstanceId',
             'display_name': 'displayName',
+            'secret_id': 'secretId',
             'level_type_details': 'levelTypeDetails',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
@@ -118,6 +124,7 @@ class NodeReplaceConfiguration(object):
         self._id = None
         self._bds_instance_id = None
         self._display_name = None
+        self._secret_id = None
         self._level_type_details = None
         self._lifecycle_state = None
         self._time_created = None
@@ -196,6 +203,30 @@ class NodeReplaceConfiguration(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this NodeReplaceConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this NodeReplaceConfiguration.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this NodeReplaceConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this NodeReplaceConfiguration.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def level_type_details(self):

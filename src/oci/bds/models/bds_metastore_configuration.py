@@ -68,6 +68,10 @@ class BdsMetastoreConfiguration(object):
             The value to assign to the display_name property of this BdsMetastoreConfiguration.
         :type display_name: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this BdsMetastoreConfiguration.
+        :type secret_id: str
+
         :param metastore_type:
             The value to assign to the metastore_type property of this BdsMetastoreConfiguration.
             Allowed values for this property are: "LOCAL", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
@@ -100,6 +104,7 @@ class BdsMetastoreConfiguration(object):
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
+            'secret_id': 'str',
             'metastore_type': 'str',
             'metastore_id': 'str',
             'bds_api_key_id': 'str',
@@ -110,6 +115,7 @@ class BdsMetastoreConfiguration(object):
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
+            'secret_id': 'secretId',
             'metastore_type': 'metastoreType',
             'metastore_id': 'metastoreId',
             'bds_api_key_id': 'bdsApiKeyId',
@@ -119,6 +125,7 @@ class BdsMetastoreConfiguration(object):
         }
         self._id = None
         self._display_name = None
+        self._secret_id = None
         self._metastore_type = None
         self._metastore_id = None
         self._bds_api_key_id = None
@@ -173,6 +180,30 @@ class BdsMetastoreConfiguration(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this BdsMetastoreConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this BdsMetastoreConfiguration.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this BdsMetastoreConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this BdsMetastoreConfiguration.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def metastore_type(self):

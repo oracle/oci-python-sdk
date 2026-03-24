@@ -89,6 +89,94 @@ class WorkRequest(object):
     #: This constant has a value of "MOVE_PRIVATE_ENDPOINT"
     OPERATION_TYPE_MOVE_PRIVATE_ENDPOINT = "MOVE_PRIVATE_ENDPOINT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_VECTOR_STORE_CONNECTOR"
+    OPERATION_TYPE_CREATE_VECTOR_STORE_CONNECTOR = "CREATE_VECTOR_STORE_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_VECTOR_STORE_CONNECTOR"
+    OPERATION_TYPE_UPDATE_VECTOR_STORE_CONNECTOR = "UPDATE_VECTOR_STORE_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_VECTOR_STORE_CONNECTOR"
+    OPERATION_TYPE_DELETE_VECTOR_STORE_CONNECTOR = "DELETE_VECTOR_STORE_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "SCHEDULE_FILE_SYNC"
+    OPERATION_TYPE_SCHEDULE_FILE_SYNC = "SCHEDULE_FILE_SYNC"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "TRIGGER_FILE_SYNC"
+    OPERATION_TYPE_TRIGGER_FILE_SYNC = "TRIGGER_FILE_SYNC"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_SEMANTIC_STORE"
+    OPERATION_TYPE_CREATE_SEMANTIC_STORE = "CREATE_SEMANTIC_STORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_SEMANTIC_STORE"
+    OPERATION_TYPE_DELETE_SEMANTIC_STORE = "DELETE_SEMANTIC_STORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_SEMANTIC_STORE"
+    OPERATION_TYPE_MOVE_SEMANTIC_STORE = "MOVE_SEMANTIC_STORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_APPLICATION_DEPLOYMENT"
+    OPERATION_TYPE_CREATE_APPLICATION_DEPLOYMENT = "CREATE_APPLICATION_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_APPLICATION_DEPLOYMENT"
+    OPERATION_TYPE_UPDATE_APPLICATION_DEPLOYMENT = "UPDATE_APPLICATION_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_APPLICATION_DEPLOYMENT"
+    OPERATION_TYPE_DELETE_APPLICATION_DEPLOYMENT = "DELETE_APPLICATION_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_APPLICATION_DEPLOYMENT"
+    OPERATION_TYPE_MOVE_APPLICATION_DEPLOYMENT = "MOVE_APPLICATION_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_HOSTED_DEPLOYMENT"
+    OPERATION_TYPE_CREATE_HOSTED_DEPLOYMENT = "CREATE_HOSTED_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_HOSTED_DEPLOYMENT"
+    OPERATION_TYPE_UPDATE_HOSTED_DEPLOYMENT = "UPDATE_HOSTED_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_HOSTED_DEPLOYMENT"
+    OPERATION_TYPE_MOVE_HOSTED_DEPLOYMENT = "MOVE_HOSTED_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_HOSTED_DEPLOYMENT"
+    OPERATION_TYPE_DELETE_HOSTED_DEPLOYMENT = "DELETE_HOSTED_DEPLOYMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "START_LOGGING"
+    OPERATION_TYPE_START_LOGGING = "START_LOGGING"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "STOP_LOGGING"
+    OPERATION_TYPE_STOP_LOGGING = "STOP_LOGGING"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_APPLICATION_STORAGE"
+    OPERATION_TYPE_CREATE_APPLICATION_STORAGE = "CREATE_APPLICATION_STORAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_APPLICATION_STORAGE"
+    OPERATION_TYPE_UPDATE_APPLICATION_STORAGE = "UPDATE_APPLICATION_STORAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_APPLICATION_STORAGE"
+    OPERATION_TYPE_MOVE_APPLICATION_STORAGE = "MOVE_APPLICATION_STORAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_APPLICATION_STORAGE"
+    OPERATION_TYPE_DELETE_APPLICATION_STORAGE = "DELETE_APPLICATION_STORAGE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -124,7 +212,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", "CREATE_VECTOR_STORE_CONNECTOR", "UPDATE_VECTOR_STORE_CONNECTOR", "DELETE_VECTOR_STORE_CONNECTOR", "SCHEDULE_FILE_SYNC", "TRIGGER_FILE_SYNC", "CREATE_SEMANTIC_STORE", "DELETE_SEMANTIC_STORE", "MOVE_SEMANTIC_STORE", "CREATE_APPLICATION_DEPLOYMENT", "UPDATE_APPLICATION_DEPLOYMENT", "DELETE_APPLICATION_DEPLOYMENT", "MOVE_APPLICATION_DEPLOYMENT", "CREATE_HOSTED_DEPLOYMENT", "UPDATE_HOSTED_DEPLOYMENT", "MOVE_HOSTED_DEPLOYMENT", "DELETE_HOSTED_DEPLOYMENT", "START_LOGGING", "STOP_LOGGING", "CREATE_APPLICATION_STORAGE", "UPDATE_APPLICATION_STORAGE", "MOVE_APPLICATION_STORAGE", "DELETE_APPLICATION_STORAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -201,7 +289,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", "CREATE_VECTOR_STORE_CONNECTOR", "UPDATE_VECTOR_STORE_CONNECTOR", "DELETE_VECTOR_STORE_CONNECTOR", "SCHEDULE_FILE_SYNC", "TRIGGER_FILE_SYNC", "CREATE_SEMANTIC_STORE", "DELETE_SEMANTIC_STORE", "MOVE_SEMANTIC_STORE", "CREATE_APPLICATION_DEPLOYMENT", "UPDATE_APPLICATION_DEPLOYMENT", "DELETE_APPLICATION_DEPLOYMENT", "MOVE_APPLICATION_DEPLOYMENT", "CREATE_HOSTED_DEPLOYMENT", "UPDATE_HOSTED_DEPLOYMENT", "MOVE_HOSTED_DEPLOYMENT", "DELETE_HOSTED_DEPLOYMENT", "START_LOGGING", "STOP_LOGGING", "CREATE_APPLICATION_STORAGE", "UPDATE_APPLICATION_STORAGE", "MOVE_APPLICATION_STORAGE", "DELETE_APPLICATION_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -220,7 +308,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT"]
+        allowed_values = ["CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_IMPORTED_MODEL", "UPDATE_IMPORTED_MODEL", "DELETE_IMPORTED_MODEL", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", "CREATE_VECTOR_STORE_CONNECTOR", "UPDATE_VECTOR_STORE_CONNECTOR", "DELETE_VECTOR_STORE_CONNECTOR", "SCHEDULE_FILE_SYNC", "TRIGGER_FILE_SYNC", "CREATE_SEMANTIC_STORE", "DELETE_SEMANTIC_STORE", "MOVE_SEMANTIC_STORE", "CREATE_APPLICATION_DEPLOYMENT", "UPDATE_APPLICATION_DEPLOYMENT", "DELETE_APPLICATION_DEPLOYMENT", "MOVE_APPLICATION_DEPLOYMENT", "CREATE_HOSTED_DEPLOYMENT", "UPDATE_HOSTED_DEPLOYMENT", "MOVE_HOSTED_DEPLOYMENT", "DELETE_HOSTED_DEPLOYMENT", "START_LOGGING", "STOP_LOGGING", "CREATE_APPLICATION_STORAGE", "UPDATE_APPLICATION_STORAGE", "MOVE_APPLICATION_STORAGE", "DELETE_APPLICATION_STORAGE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

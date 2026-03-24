@@ -24,6 +24,10 @@ class ActivateIamUserSyncConfigurationDetails(object):
             The value to assign to the cluster_admin_password property of this ActivateIamUserSyncConfigurationDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this ActivateIamUserSyncConfigurationDetails.
+        :type secret_id: str
+
         :param is_posix_attributes_addition_required:
             The value to assign to the is_posix_attributes_addition_required property of this ActivateIamUserSyncConfigurationDetails.
         :type is_posix_attributes_addition_required: bool
@@ -31,19 +35,22 @@ class ActivateIamUserSyncConfigurationDetails(object):
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'is_posix_attributes_addition_required': 'bool'
         }
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'is_posix_attributes_addition_required': 'isPosixAttributesAdditionRequired'
         }
         self._cluster_admin_password = None
+        self._secret_id = None
         self._is_posix_attributes_addition_required = None
 
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this ActivateIamUserSyncConfigurationDetails.
+        Gets the cluster_admin_password of this ActivateIamUserSyncConfigurationDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -63,6 +70,30 @@ class ActivateIamUserSyncConfigurationDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this ActivateIamUserSyncConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this ActivateIamUserSyncConfigurationDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this ActivateIamUserSyncConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this ActivateIamUserSyncConfigurationDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def is_posix_attributes_addition_required(self):

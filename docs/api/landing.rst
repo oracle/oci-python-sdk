@@ -39,6 +39,7 @@ API Reference
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
 * :doc:`Byol <ocvp/client/oci.ocvp.ByolClient>`
 * :doc:`Byol Allocation <ocvp/client/oci.ocvp.ByolAllocationClient>`
+* :doc:`Cancel Enrichment Job <generative_ai_data/client/oci.generative_ai_data.CancelEnrichmentJobClient>`
 * :doc:`Capacity Management <capacity_management/client/oci.capacity_management.CapacityManagementClient>`
 * :doc:`Certificates <certificates/client/oci.certificates.CertificatesClient>`
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
@@ -119,11 +120,14 @@ API Reference
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Fusion Applications <fusion_apps/client/oci.fusion_apps.FusionApplicationsClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
+* :doc:`Generate Enrichment Job <generative_ai_data/client/oci.generative_ai_data.GenerateEnrichmentJobClient>`
+* :doc:`Generate Sql From Nl Job <generative_ai_data/client/oci.generative_ai_data.GenerateSqlFromNlJobClient>`
 * :doc:`Generative Ai <generative_ai/client/oci.generative_ai.GenerativeAiClient>`
 * :doc:`Generative Ai Agent <generative_ai_agent/client/oci.generative_ai_agent.GenerativeAiAgentClient>`
 * :doc:`Generative Ai Agent Runtime <generative_ai_agent_runtime/client/oci.generative_ai_agent_runtime.GenerativeAiAgentRuntimeClient>`
 * :doc:`Generative Ai Inference <generative_ai_inference/client/oci.generative_ai_inference.GenerativeAiInferenceClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
+* :doc:`Get Enrichment Job <generative_ai_data/client/oci.generative_ai_data.GetEnrichmentJobClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.GovernanceClient>`
 * :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
@@ -151,6 +155,7 @@ API Reference
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Limits Increase <limits_increase/client/oci.limits_increase.LimitsIncreaseClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
+* :doc:`List Enrichment Jobs <generative_ai_data/client/oci.generative_ai_data.ListEnrichmentJobsClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Lockbox <lockbox/client/oci.lockbox.LockboxClient>`
 * :doc:`Log Analytics <log_analytics/client/oci.log_analytics.LogAnalyticsClient>`
@@ -394,6 +399,7 @@ API Reference
     generative_ai
     generative_ai_agent
     generative_ai_agent_runtime
+    generative_ai_data
     generative_ai_inference
     generic_artifacts_content
     golden_gate

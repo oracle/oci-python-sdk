@@ -56,6 +56,10 @@ class AutoScalingConfiguration(object):
             The value to assign to the display_name property of this AutoScalingConfiguration.
         :type display_name: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this AutoScalingConfiguration.
+        :type secret_id: str
+
         :param node_type:
             The value to assign to the node_type property of this AutoScalingConfiguration.
         :type node_type: str
@@ -86,6 +90,7 @@ class AutoScalingConfiguration(object):
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
+            'secret_id': 'str',
             'node_type': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
@@ -96,6 +101,7 @@ class AutoScalingConfiguration(object):
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
+            'secret_id': 'secretId',
             'node_type': 'nodeType',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
@@ -105,6 +111,7 @@ class AutoScalingConfiguration(object):
         }
         self._id = None
         self._display_name = None
+        self._secret_id = None
         self._node_type = None
         self._lifecycle_state = None
         self._time_created = None
@@ -159,6 +166,30 @@ class AutoScalingConfiguration(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this AutoScalingConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this AutoScalingConfiguration.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this AutoScalingConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this AutoScalingConfiguration.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def node_type(self):

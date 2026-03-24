@@ -28,6 +28,10 @@ class InstallOsPatchDetails(object):
             The value to assign to the cluster_admin_password property of this InstallOsPatchDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this InstallOsPatchDetails.
+        :type secret_id: str
+
         :param patching_configs:
             The value to assign to the patching_configs property of this InstallOsPatchDetails.
         :type patching_configs: oci.bds.models.PatchingConfigs
@@ -40,17 +44,20 @@ class InstallOsPatchDetails(object):
         self.swagger_types = {
             'os_patch_version': 'str',
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'patching_configs': 'PatchingConfigs',
             'is_dry_run': 'bool'
         }
         self.attribute_map = {
             'os_patch_version': 'osPatchVersion',
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'patching_configs': 'patchingConfigs',
             'is_dry_run': 'isDryRun'
         }
         self._os_patch_version = None
         self._cluster_admin_password = None
+        self._secret_id = None
         self._patching_configs = None
         self._is_dry_run = None
 
@@ -81,7 +88,7 @@ class InstallOsPatchDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this InstallOsPatchDetails.
+        Gets the cluster_admin_password of this InstallOsPatchDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -101,6 +108,30 @@ class InstallOsPatchDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this InstallOsPatchDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this InstallOsPatchDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this InstallOsPatchDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this InstallOsPatchDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def patching_configs(self):

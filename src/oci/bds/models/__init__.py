@@ -33,8 +33,11 @@ from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
 from .bds_capacity_report import BdsCapacityReport
+from .bds_certificate_configuration import BdsCertificateConfiguration
+from .bds_certificate_configuration_summary import BdsCertificateConfigurationSummary
 from .bds_cluster_version_summary import BdsClusterVersionSummary
 from .bds_instance import BdsInstance
+from .bds_instance_reset_password_details import BdsInstanceResetPasswordDetails
 from .bds_instance_summary import BdsInstanceSummary
 from .bds_metastore_configuration import BdsMetastoreConfiguration
 from .bds_metastore_configuration_summary import BdsMetastoreConfigurationSummary
@@ -48,8 +51,10 @@ from .change_shape_details import ChangeShapeDetails
 from .change_shape_nodes import ChangeShapeNodes
 from .cloud_sql_details import CloudSqlDetails
 from .cluster_details import ClusterDetails
+from .config_level_manage_bds_certificate_details import ConfigLevelManageBdsCertificateDetails
 from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_capacity_report_details import CreateBdsCapacityReportDetails
+from .create_bds_certificate_configuration_details import CreateBdsCertificateConfigurationDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
 from .create_capacity_report_shape_availability_details import CreateCapacityReportShapeAvailabilityDetails
@@ -72,6 +77,7 @@ from .downtime_based_patching_configs import DowntimeBasedPatchingConfigs
 from .enable_certificate_details import EnableCertificateDetails
 from .execute_bootstrap_script_details import ExecuteBootstrapScriptDetails
 from .force_refresh_resource_principal_details import ForceRefreshResourcePrincipalDetails
+from .generate_bds_certificate_details import GenerateBdsCertificateDetails
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
 from .host_cert_details import HostCertDetails
 from .host_specific_certificate_details import HostSpecificCertificateDetails
@@ -84,6 +90,7 @@ from .install_patch_details import InstallPatchDetails
 from .install_software_updates_details import InstallSoftwareUpdatesDetails
 from .kerberos_details import KerberosDetails
 from .level_type_details import LevelTypeDetails
+from .manage_bds_certificate_level_type_details import ManageBdsCertificateLevelTypeDetails
 from .metric_based_horizontal_scale_in_config import MetricBasedHorizontalScaleInConfig
 from .metric_based_horizontal_scale_out_config import MetricBasedHorizontalScaleOutConfig
 from .metric_based_horizontal_scaling_policy_details import MetricBasedHorizontalScalingPolicyDetails
@@ -99,6 +106,7 @@ from .node_backup_configuration import NodeBackupConfiguration
 from .node_backup_configuration_summary import NodeBackupConfigurationSummary
 from .node_backup_summary import NodeBackupSummary
 from .node_level_details import NodeLevelDetails
+from .node_level_manage_bds_certificate_details import NodeLevelManageBdsCertificateDetails
 from .node_replace_configuration import NodeReplaceConfiguration
 from .node_replace_configuration_summary import NodeReplaceConfigurationSummary
 from .node_type_level_details import NodeTypeLevelDetails
@@ -107,6 +115,7 @@ from .odh_patching_config import OdhPatchingConfig
 from .os_patch_details import OsPatchDetails
 from .os_patch_package_summary import OsPatchPackageSummary
 from .os_patch_summary import OsPatchSummary
+from .password_summary import PasswordSummary
 from .patch_history_summary import PatchHistorySummary
 from .patch_summary import PatchSummary
 from .patching_configs import PatchingConfigs
@@ -117,7 +126,9 @@ from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .remove_kafka_details import RemoveKafkaDetails
 from .remove_node_details import RemoveNodeDetails
 from .remove_node_replace_configuration_details import RemoveNodeReplaceConfigurationDetails
+from .remove_nodes_details import RemoveNodesDetails
 from .remove_resource_principal_configuration_details import RemoveResourcePrincipalConfigurationDetails
+from .renew_bds_certificate_details import RenewBdsCertificateDetails
 from .renew_certificate_details import RenewCertificateDetails
 from .replace_node_details import ReplaceNodeDetails
 from .resource_principal_configuration import ResourcePrincipalConfiguration
@@ -125,6 +136,7 @@ from .resource_principal_configuration_summary import ResourcePrincipalConfigura
 from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
+from .set_default_bds_certificate_configuration_details import SetDefaultBdsCertificateConfigurationDetails
 from .shape_config_details import ShapeConfigDetails
 from .single_ad_capacity_report import SingleAdCapacityReport
 from .software_update import SoftwareUpdate
@@ -187,8 +199,11 @@ bds_type_mapping = {
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
     "BdsCapacityReport": BdsCapacityReport,
+    "BdsCertificateConfiguration": BdsCertificateConfiguration,
+    "BdsCertificateConfigurationSummary": BdsCertificateConfigurationSummary,
     "BdsClusterVersionSummary": BdsClusterVersionSummary,
     "BdsInstance": BdsInstance,
+    "BdsInstanceResetPasswordDetails": BdsInstanceResetPasswordDetails,
     "BdsInstanceSummary": BdsInstanceSummary,
     "BdsMetastoreConfiguration": BdsMetastoreConfiguration,
     "BdsMetastoreConfigurationSummary": BdsMetastoreConfigurationSummary,
@@ -202,8 +217,10 @@ bds_type_mapping = {
     "ChangeShapeNodes": ChangeShapeNodes,
     "CloudSqlDetails": CloudSqlDetails,
     "ClusterDetails": ClusterDetails,
+    "ConfigLevelManageBdsCertificateDetails": ConfigLevelManageBdsCertificateDetails,
     "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
     "CreateBdsCapacityReportDetails": CreateBdsCapacityReportDetails,
+    "CreateBdsCertificateConfigurationDetails": CreateBdsCertificateConfigurationDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
     "CreateCapacityReportShapeAvailabilityDetails": CreateCapacityReportShapeAvailabilityDetails,
@@ -226,6 +243,7 @@ bds_type_mapping = {
     "EnableCertificateDetails": EnableCertificateDetails,
     "ExecuteBootstrapScriptDetails": ExecuteBootstrapScriptDetails,
     "ForceRefreshResourcePrincipalDetails": ForceRefreshResourcePrincipalDetails,
+    "GenerateBdsCertificateDetails": GenerateBdsCertificateDetails,
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
     "HostCertDetails": HostCertDetails,
     "HostSpecificCertificateDetails": HostSpecificCertificateDetails,
@@ -238,6 +256,7 @@ bds_type_mapping = {
     "InstallSoftwareUpdatesDetails": InstallSoftwareUpdatesDetails,
     "KerberosDetails": KerberosDetails,
     "LevelTypeDetails": LevelTypeDetails,
+    "ManageBdsCertificateLevelTypeDetails": ManageBdsCertificateLevelTypeDetails,
     "MetricBasedHorizontalScaleInConfig": MetricBasedHorizontalScaleInConfig,
     "MetricBasedHorizontalScaleOutConfig": MetricBasedHorizontalScaleOutConfig,
     "MetricBasedHorizontalScalingPolicyDetails": MetricBasedHorizontalScalingPolicyDetails,
@@ -253,6 +272,7 @@ bds_type_mapping = {
     "NodeBackupConfigurationSummary": NodeBackupConfigurationSummary,
     "NodeBackupSummary": NodeBackupSummary,
     "NodeLevelDetails": NodeLevelDetails,
+    "NodeLevelManageBdsCertificateDetails": NodeLevelManageBdsCertificateDetails,
     "NodeReplaceConfiguration": NodeReplaceConfiguration,
     "NodeReplaceConfigurationSummary": NodeReplaceConfigurationSummary,
     "NodeTypeLevelDetails": NodeTypeLevelDetails,
@@ -261,6 +281,7 @@ bds_type_mapping = {
     "OsPatchDetails": OsPatchDetails,
     "OsPatchPackageSummary": OsPatchPackageSummary,
     "OsPatchSummary": OsPatchSummary,
+    "PasswordSummary": PasswordSummary,
     "PatchHistorySummary": PatchHistorySummary,
     "PatchSummary": PatchSummary,
     "PatchingConfigs": PatchingConfigs,
@@ -271,7 +292,9 @@ bds_type_mapping = {
     "RemoveKafkaDetails": RemoveKafkaDetails,
     "RemoveNodeDetails": RemoveNodeDetails,
     "RemoveNodeReplaceConfigurationDetails": RemoveNodeReplaceConfigurationDetails,
+    "RemoveNodesDetails": RemoveNodesDetails,
     "RemoveResourcePrincipalConfigurationDetails": RemoveResourcePrincipalConfigurationDetails,
+    "RenewBdsCertificateDetails": RenewBdsCertificateDetails,
     "RenewCertificateDetails": RenewCertificateDetails,
     "ReplaceNodeDetails": ReplaceNodeDetails,
     "ResourcePrincipalConfiguration": ResourcePrincipalConfiguration,
@@ -279,6 +302,7 @@ bds_type_mapping = {
     "RestartNodeDetails": RestartNodeDetails,
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
+    "SetDefaultBdsCertificateConfigurationDetails": SetDefaultBdsCertificateConfigurationDetails,
     "ShapeConfigDetails": ShapeConfigDetails,
     "SingleAdCapacityReport": SingleAdCapacityReport,
     "SoftwareUpdate": SoftwareUpdate,

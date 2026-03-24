@@ -125,7 +125,7 @@ class AddCloudSqlDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this AddCloudSqlDetails.
+        Gets the cluster_admin_password of this AddCloudSqlDetails.
         Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 
 

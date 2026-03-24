@@ -56,6 +56,10 @@ class ResourcePrincipalConfiguration(object):
             The value to assign to the display_name property of this ResourcePrincipalConfiguration.
         :type display_name: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this ResourcePrincipalConfiguration.
+        :type secret_id: str
+
         :param session_token_life_span_duration_in_hours:
             The value to assign to the session_token_life_span_duration_in_hours property of this ResourcePrincipalConfiguration.
         :type session_token_life_span_duration_in_hours: int
@@ -87,6 +91,7 @@ class ResourcePrincipalConfiguration(object):
             'id': 'str',
             'bds_instance_id': 'str',
             'display_name': 'str',
+            'secret_id': 'str',
             'session_token_life_span_duration_in_hours': 'int',
             'lifecycle_state': 'str',
             'time_token_refreshed': 'datetime',
@@ -98,6 +103,7 @@ class ResourcePrincipalConfiguration(object):
             'id': 'id',
             'bds_instance_id': 'bdsInstanceId',
             'display_name': 'displayName',
+            'secret_id': 'secretId',
             'session_token_life_span_duration_in_hours': 'sessionTokenLifeSpanDurationInHours',
             'lifecycle_state': 'lifecycleState',
             'time_token_refreshed': 'timeTokenRefreshed',
@@ -108,6 +114,7 @@ class ResourcePrincipalConfiguration(object):
         self._id = None
         self._bds_instance_id = None
         self._display_name = None
+        self._secret_id = None
         self._session_token_life_span_duration_in_hours = None
         self._lifecycle_state = None
         self._time_token_refreshed = None
@@ -119,7 +126,7 @@ class ResourcePrincipalConfiguration(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResourcePrincipalConfiguration.
-        The id of the ResourcePrincipalConfiguration.
+        The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 
 
         :return: The id of this ResourcePrincipalConfiguration.
@@ -131,7 +138,7 @@ class ResourcePrincipalConfiguration(object):
     def id(self, id):
         """
         Sets the id of this ResourcePrincipalConfiguration.
-        The id of the ResourcePrincipalConfiguration.
+        The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 
 
         :param id: The id of this ResourcePrincipalConfiguration.
@@ -186,6 +193,30 @@ class ResourcePrincipalConfiguration(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this ResourcePrincipalConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this ResourcePrincipalConfiguration.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this ResourcePrincipalConfiguration.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this ResourcePrincipalConfiguration.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def session_token_life_span_duration_in_hours(self):

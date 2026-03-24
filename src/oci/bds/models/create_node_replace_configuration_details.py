@@ -32,6 +32,10 @@ class CreateNodeReplaceConfigurationDetails(object):
             The value to assign to the cluster_admin_password property of this CreateNodeReplaceConfigurationDetails.
         :type cluster_admin_password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateNodeReplaceConfigurationDetails.
+        :type secret_id: str
+
         :param metric_type:
             The value to assign to the metric_type property of this CreateNodeReplaceConfigurationDetails.
         :type metric_type: str
@@ -45,6 +49,7 @@ class CreateNodeReplaceConfigurationDetails(object):
             'level_type_details': 'LevelTypeDetails',
             'display_name': 'str',
             'cluster_admin_password': 'str',
+            'secret_id': 'str',
             'metric_type': 'str',
             'duration_in_minutes': 'int'
         }
@@ -52,12 +57,14 @@ class CreateNodeReplaceConfigurationDetails(object):
             'level_type_details': 'levelTypeDetails',
             'display_name': 'displayName',
             'cluster_admin_password': 'clusterAdminPassword',
+            'secret_id': 'secretId',
             'metric_type': 'metricType',
             'duration_in_minutes': 'durationInMinutes'
         }
         self._level_type_details = None
         self._display_name = None
         self._cluster_admin_password = None
+        self._secret_id = None
         self._metric_type = None
         self._duration_in_minutes = None
 
@@ -108,7 +115,7 @@ class CreateNodeReplaceConfigurationDetails(object):
     @property
     def cluster_admin_password(self):
         """
-        **[Required]** Gets the cluster_admin_password of this CreateNodeReplaceConfigurationDetails.
+        Gets the cluster_admin_password of this CreateNodeReplaceConfigurationDetails.
         Base-64 encoded password for the cluster admin user.
 
 
@@ -128,6 +135,30 @@ class CreateNodeReplaceConfigurationDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this CreateNodeReplaceConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :return: The secret_id of this CreateNodeReplaceConfigurationDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this CreateNodeReplaceConfigurationDetails.
+        The secretId for the clusterAdminPassword.
+
+
+        :param secret_id: The secret_id of this CreateNodeReplaceConfigurationDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def metric_type(self):
