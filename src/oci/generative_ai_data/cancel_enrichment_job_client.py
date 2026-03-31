@@ -176,7 +176,7 @@ class CancelEnrichmentJobClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['semanticStoreId', 'enrichmentJobId']
-        resource_path = "/20260325/semanticStores/{semanticStoreId}/enrichmentJobs/{enrichmentJobId}/actions/cancel"
+        resource_path = "/semanticStores/{semanticStoreId}/enrichmentJobs/{enrichmentJobId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_enrichment_job"
         api_reference_link = ""

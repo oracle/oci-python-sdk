@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
     """
-    Description of an asset source.
+    VMware asset source creation request.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
 
         :param type:
             The value to assign to the type property of this CreateVmWareAssetSourceDetails.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param display_name:
@@ -62,6 +62,11 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
             The value to assign to the system_tags property of this CreateVmWareAssetSourceDetails.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this CreateVmWareAssetSourceDetails.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         :param vcenter_endpoint:
             The value to assign to the vcenter_endpoint property of this CreateVmWareAssetSourceDetails.
         :type vcenter_endpoint: str
@@ -94,6 +99,7 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'vcenter_endpoint': 'str',
             'discovery_credentials': 'AssetSourceCredentials',
             'replication_credentials': 'AssetSourceCredentials',
@@ -111,6 +117,7 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'vcenter_endpoint': 'vcenterEndpoint',
             'discovery_credentials': 'discoveryCredentials',
             'replication_credentials': 'replicationCredentials',
@@ -127,6 +134,7 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._vcenter_endpoint = None
         self._discovery_credentials = None
         self._replication_credentials = None

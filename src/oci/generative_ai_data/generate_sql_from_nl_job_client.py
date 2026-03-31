@@ -145,9 +145,6 @@ class GenerateSqlFromNlJobClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
-        :param str opc_compartment_id: (optional)
-            The ID of the compartment.
-
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
@@ -179,7 +176,7 @@ class GenerateSqlFromNlJobClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['semanticStoreId']
-        resource_path = "/20260325/semanticStores/{semanticStoreId}/actions/generateSqlFromNl"
+        resource_path = "/semanticStores/{semanticStoreId}/actions/generateSqlFromNl"
         method = "POST"
         operation_name = "generate_sql_from_nl"
         api_reference_link = ""
@@ -191,7 +188,6 @@ class GenerateSqlFromNlJobClient(object):
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
-            "opc_compartment_id",
             "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -214,7 +210,6 @@ class GenerateSqlFromNlJobClient(object):
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-compartment-id": kwargs.get("opc_compartment_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}

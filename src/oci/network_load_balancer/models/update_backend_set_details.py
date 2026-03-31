@@ -216,7 +216,8 @@ class UpdateBackendSetDetails(object):
     def is_instant_failover_tcp_reset_enabled(self):
         """
         Gets the is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
-        If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
+        This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.
+        If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 
 
         :return: The is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
@@ -228,7 +229,8 @@ class UpdateBackendSetDetails(object):
     def is_instant_failover_tcp_reset_enabled(self, is_instant_failover_tcp_reset_enabled):
         """
         Sets the is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
-        If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
+        This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.
+        If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
 
 
         :param is_instant_failover_tcp_reset_enabled: The is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
@@ -240,7 +242,8 @@ class UpdateBackendSetDetails(object):
     def are_operationally_active_backends_preferred(self):
         """
         Gets the are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
-        If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.
+        The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 
 
         :return: The are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
@@ -252,7 +255,8 @@ class UpdateBackendSetDetails(object):
     def are_operationally_active_backends_preferred(self, are_operationally_active_backends_preferred):
         """
         Sets the are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
-        If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+        If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.
+        The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 
 
         :param are_operationally_active_backends_preferred: The are_operationally_active_backends_preferred of this UpdateBackendSetDetails.

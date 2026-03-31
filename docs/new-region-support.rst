@@ -42,4 +42,4 @@ If you are authenticating via instance principals, you can set the federation_en
 
 If the correct federation_endpoint for the region is not passed in, you will see the following error during instance principals authentication::
     
-    oci._vendor.requests.exceptions.ConnectionError: HTTPSConnectionPool(host='auth.us-gov-phoenix-1.oraclecloud.com', port=443): Max retries exceeded with url: /v1/x509 (Caused by NewConnectionError('<oci._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7f5c91002ba8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+    oci._vendor.requests.exceptions.ConnectionError: HTTPSConnectionPool(host='auth.us-gov-phoenix-1.oraclecloud.com', port=443): Max retries exceeded with url: /v1/x509 (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f5c91002ba8>: Failed to establish a new connection: [Errno -2] Name or service not known',))

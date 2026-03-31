@@ -170,11 +170,26 @@ class OCIHTTPResponse(HTTPResponse):
             return HTTPResponse._read_status(self)
 
 
-class OCIConnection(urllib3.connection.VerifiedHTTPSConnection):
+try:
+    # urllib3 1.26.x
+    BaseHTTPSConnection = urllib3.connection.VerifiedHTTPSConnection
+except AttributeError:
+    # urllib3 2.x
+    BaseHTTPSConnection = urllib3.connection.HTTPSConnection
+
+
+class OCIConnection(BaseHTTPSConnection):
     """ HTTPConnection with 100 Continue support. """
 
     def __init__(self, *args, **kwargs):
         super(OCIConnection, self).__init__(*args, **kwargs)
+        # urllib3 connect() expects assert_hostname/assert_fingerprint attrs to
+        # exist on the connection object. Ensure compatibility across base
+        # classes/versions where these may not be initialized.
+        if not hasattr(self, 'assert_hostname'):
+            self.assert_hostname = kwargs.get('assert_hostname', None)
+        if not hasattr(self, 'assert_fingerprint'):
+            self.assert_fingerprint = kwargs.get('assert_fingerprint', None)
         self._original_response_cls = self.response_class
         self._response_received = False
         self._using_expect_header = False

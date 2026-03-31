@@ -51,6 +51,8 @@ Mysql
     oci.mysql.models.Configuration
     oci.mysql.models.ConfigurationSummary
     oci.mysql.models.ConfigurationVariables
+    oci.mysql.models.ControlledUpdate
+    oci.mysql.models.ControlledUpdateDbSystemDetails
     oci.mysql.models.CopyBackupDetails
     oci.mysql.models.CopyPolicy
     oci.mysql.models.CreateBackupDetails

@@ -12607,7 +12607,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "UNDEFINED"
+            Allowed values are: "ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "LH_S", "APEX_S", "AJD_S", "AVD_S", "LH_D", "APEX_D", "AJD_D", "AVD_D", "UNDEFINED"
 
         :param str name: (optional)
             Awr Hub source database name
@@ -12704,7 +12704,7 @@ class OperationsInsightsClient(object):
                 f"list_awr_hub_sources got unknown kwargs: {extra_kwargs!r}")
 
         if 'source_type' in kwargs:
-            source_type_allowed_values = ["ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "UNDEFINED"]
+            source_type_allowed_values = ["ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "LH_S", "APEX_S", "AJD_S", "AVD_S", "LH_D", "APEX_D", "AJD_D", "AVD_D", "UNDEFINED"]
             for source_type_item in kwargs['source_type']:
                 if source_type_item not in source_type_allowed_values:
                     raise ValueError(
@@ -13509,7 +13509,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -13635,7 +13635,7 @@ class OperationsInsightsClient(object):
                 f"list_database_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -13754,7 +13754,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -13880,7 +13880,7 @@ class OperationsInsightsClient(object):
                     )
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -22228,7 +22228,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -22391,7 +22391,7 @@ class OperationsInsightsClient(object):
                 f"summarize_database_insight_resource_capacity_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -22529,7 +22529,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -22708,7 +22708,7 @@ class OperationsInsightsClient(object):
                 f"summarize_database_insight_resource_forecast_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -22848,7 +22848,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -23021,7 +23021,7 @@ class OperationsInsightsClient(object):
                 f"summarize_database_insight_resource_statistics got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -23156,7 +23156,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -23289,7 +23289,7 @@ class OperationsInsightsClient(object):
                 f"summarize_database_insight_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -23402,7 +23402,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -23543,7 +23543,7 @@ class OperationsInsightsClient(object):
                 f"summarize_database_insight_resource_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -23670,7 +23670,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -23811,7 +23811,7 @@ class OperationsInsightsClient(object):
                 f"summarize_database_insight_resource_utilization_insight got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -29340,7 +29340,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -29486,7 +29486,7 @@ class OperationsInsightsClient(object):
                 f"summarize_sql_insights got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -29889,7 +29889,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -30069,7 +30069,7 @@ class OperationsInsightsClient(object):
                 f"summarize_sql_statistics got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB", "COMANAGED-EXACC-CDB", "COMANAGED-EXACC-PDB", "COMANAGED-EXACC-NONCDB", "MDS-MYSQL", "EXTERNAL-MYSQL", "ATP-EXACC", "ADW-EXACC", "EXTERNAL-ADW", "EXTERNAL-ATP", "LH-D", "APEX-D", "AJD-D", "AVD-D", "LH-S", "APEX-S", "AJD-S", "AVD-S", "LH-EXACC", "APEX-EXACC", "AJD-EXACC", "AVD-EXACC"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(

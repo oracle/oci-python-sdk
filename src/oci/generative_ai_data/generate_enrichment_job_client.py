@@ -176,7 +176,7 @@ class GenerateEnrichmentJobClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['semanticStoreId']
-        resource_path = "/20260325/semanticStores/{semanticStoreId}/actions/enrich"
+        resource_path = "/semanticStores/{semanticStoreId}/actions/enrich"
         method = "POST"
         operation_name = "generate_enrichment_job"
         api_reference_link = ""

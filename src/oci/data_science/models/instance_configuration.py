@@ -15,6 +15,18 @@ class InstanceConfiguration(object):
     The model deployment instance configuration.
     """
 
+    #: A constant which can be used with the network_access_type property of a InstanceConfiguration.
+    #: This constant has a value of "MANAGED_NETWORKING_NO_INTERNET_ACCESS"
+    NETWORK_ACCESS_TYPE_MANAGED_NETWORKING_NO_INTERNET_ACCESS = "MANAGED_NETWORKING_NO_INTERNET_ACCESS"
+
+    #: A constant which can be used with the network_access_type property of a InstanceConfiguration.
+    #: This constant has a value of "MANAGED_NETWORKING_INTERNET_ACCESS"
+    NETWORK_ACCESS_TYPE_MANAGED_NETWORKING_INTERNET_ACCESS = "MANAGED_NETWORKING_INTERNET_ACCESS"
+
+    #: A constant which can be used with the network_access_type property of a InstanceConfiguration.
+    #: This constant has a value of "CUSTOM_NETWORKING"
+    NETWORK_ACCESS_TYPE_CUSTOM_NETWORKING = "CUSTOM_NETWORKING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstanceConfiguration object with values from keyword arguments.
@@ -36,23 +48,32 @@ class InstanceConfiguration(object):
             The value to assign to the private_endpoint_id property of this InstanceConfiguration.
         :type private_endpoint_id: str
 
+        :param network_access_type:
+            The value to assign to the network_access_type property of this InstanceConfiguration.
+            Allowed values for this property are: "MANAGED_NETWORKING_NO_INTERNET_ACCESS", "MANAGED_NETWORKING_INTERNET_ACCESS", "CUSTOM_NETWORKING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type network_access_type: str
+
         """
         self.swagger_types = {
             'instance_shape_name': 'str',
             'model_deployment_instance_shape_config_details': 'ModelDeploymentInstanceShapeConfigDetails',
             'subnet_id': 'str',
-            'private_endpoint_id': 'str'
+            'private_endpoint_id': 'str',
+            'network_access_type': 'str'
         }
         self.attribute_map = {
             'instance_shape_name': 'instanceShapeName',
             'model_deployment_instance_shape_config_details': 'modelDeploymentInstanceShapeConfigDetails',
             'subnet_id': 'subnetId',
-            'private_endpoint_id': 'privateEndpointId'
+            'private_endpoint_id': 'privateEndpointId',
+            'network_access_type': 'networkAccessType'
         }
         self._instance_shape_name = None
         self._model_deployment_instance_shape_config_details = None
         self._subnet_id = None
         self._private_endpoint_id = None
+        self._network_access_type = None
 
     @property
     def instance_shape_name(self):
@@ -151,6 +172,36 @@ class InstanceConfiguration(object):
         :type: str
         """
         self._private_endpoint_id = private_endpoint_id
+
+    @property
+    def network_access_type(self):
+        """
+        Gets the network_access_type of this InstanceConfiguration.
+        Network Access type of model deployment.
+
+        Allowed values for this property are: "MANAGED_NETWORKING_NO_INTERNET_ACCESS", "MANAGED_NETWORKING_INTERNET_ACCESS", "CUSTOM_NETWORKING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The network_access_type of this InstanceConfiguration.
+        :rtype: str
+        """
+        return self._network_access_type
+
+    @network_access_type.setter
+    def network_access_type(self, network_access_type):
+        """
+        Sets the network_access_type of this InstanceConfiguration.
+        Network Access type of model deployment.
+
+
+        :param network_access_type: The network_access_type of this InstanceConfiguration.
+        :type: str
+        """
+        allowed_values = ["MANAGED_NETWORKING_NO_INTERNET_ACCESS", "MANAGED_NETWORKING_INTERNET_ACCESS", "CUSTOM_NETWORKING"]
+        if not value_allowed_none_or_none_sentinel(network_access_type, allowed_values):
+            network_access_type = 'UNKNOWN_ENUM_VALUE'
+        self._network_access_type = network_access_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

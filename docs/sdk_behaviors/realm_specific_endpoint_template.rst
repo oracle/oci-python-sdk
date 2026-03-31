@@ -8,8 +8,10 @@ Dedicated endpoints are the endpoint templates defined by the service for a spec
 * To opt-in the realm-specific endpoint templates feature at application level, set the environment variable ``OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED``  to ``true``. The boolean value is case-insensitive.
 * To opt-in the realm-specific endpoint templates feature at client level, set the flag in code as shown below
 
-.. code-block:: python
+.. code-block:: pycon
+
    object_storage = oci.object_storage.ObjectStorageClient(config)
    object_storage.base_client.client_level_realm_specific_endpoint_template_enabled = True
+
 
 For example, please refer `enable_realm_specific_endpoint_example.py <https://github.com/oracle/oci-python-sdk/blob/master/examples/enable_realm_specific_endpoint_example.py>`__

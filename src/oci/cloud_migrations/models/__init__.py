@@ -7,86 +7,219 @@
 from __future__ import absolute_import
 
 from .as_is_resource_assessment_strategy import AsIsResourceAssessmentStrategy
+from .asset import Asset
+from .asset_aggregation import AssetAggregation
+from .asset_aggregation_collection import AssetAggregationCollection
+from .asset_collection import AssetCollection
 from .asset_source import AssetSource
 from .asset_source_collection import AssetSourceCollection
 from .asset_source_connection import AssetSourceConnection
 from .asset_source_connection_collection import AssetSourceConnectionCollection
 from .asset_source_credentials import AssetSourceCredentials
 from .asset_source_summary import AssetSourceSummary
+from .asset_summary import AssetSummary
 from .available_shape_summary import AvailableShapeSummary
 from .available_shapes_collection import AvailableShapesCollection
 from .average_resource_assessment_strategy import AverageResourceAssessmentStrategy
+from .aws_asset_source import AwsAssetSource
+from .aws_asset_source_summary import AwsAssetSourceSummary
+from .aws_ebs_asset import AwsEbsAsset
+from .aws_ebs_asset_details import AwsEbsAssetDetails
+from .aws_ebs_properties import AwsEbsProperties
+from .aws_ec2_asset import AwsEc2Asset
+from .aws_ec2_asset_details import AwsEc2AssetDetails
+from .aws_ec2_properties import AwsEc2Properties
+from .change_asset_compartment_details import ChangeAssetCompartmentDetails
 from .change_asset_source_compartment_details import ChangeAssetSourceCompartmentDetails
+from .change_asset_tags_details import ChangeAssetTagsDetails
 from .change_discovery_schedule_compartment_details import ChangeDiscoveryScheduleCompartmentDetails
 from .change_migration_compartment_details import ChangeMigrationCompartmentDetails
 from .change_migration_plan_compartment_details import ChangeMigrationPlanCompartmentDetails
 from .change_replication_schedule_compartment_details import ChangeReplicationScheduleCompartmentDetails
 from .compatibility_message import CompatibilityMessage
 from .compute_cost_estimation import ComputeCostEstimation
+from .compute_properties import ComputeProperties
 from .cost_estimation import CostEstimation
+from .cost_to_migrate import CostToMigrate
+from .create_asset_details import CreateAssetDetails
 from .create_asset_source_details import CreateAssetSourceDetails
+from .create_aws_asset_source_details import CreateAwsAssetSourceDetails
+from .create_aws_ebs_asset_details import CreateAwsEbsAssetDetails
+from .create_aws_ec2_asset_details import CreateAwsEc2AssetDetails
 from .create_discovery_schedule_details import CreateDiscoveryScheduleDetails
 from .create_migration_asset_details import CreateMigrationAssetDetails
 from .create_migration_details import CreateMigrationDetails
 from .create_migration_plan_details import CreateMigrationPlanDetails
+from .create_olvm_asset_source_details import CreateOlvmAssetSourceDetails
+from .create_olvm_target_asset_details import CreateOlvmTargetAssetDetails
 from .create_replication_schedule_details import CreateReplicationScheduleDetails
 from .create_target_asset_details import CreateTargetAssetDetails
 from .create_vm_target_asset_details import CreateVmTargetAssetDetails
 from .create_vm_ware_asset_source_details import CreateVmWareAssetSourceDetails
+from .create_vmware_vm_asset_details import CreateVmwareVmAssetDetails
 from .create_vnic_details import CreateVnicDetails
+from .current_monthly_cost import CurrentMonthlyCost
+from .customer_tag import CustomerTag
+from .destination_disk import DestinationDisk
 from .discovery_schedule import DiscoverySchedule
 from .discovery_schedule_collection import DiscoveryScheduleCollection
 from .discovery_schedule_summary import DiscoveryScheduleSummary
+from .disk import Disk
+from .gpu_device import GpuDevice
+from .group_identifier import GroupIdentifier
+from .historical_metric import HistoricalMetric
+from .historical_metric_collection import HistoricalMetricCollection
+from .historical_metric_summary import HistoricalMetricSummary
 from .hydrated_volume import HydratedVolume
 from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetails
+from .instance_network_interface import InstanceNetworkInterface
+from .instance_network_interface_association import InstanceNetworkInterfaceAssociation
+from .instance_network_interface_attachment import InstanceNetworkInterfaceAttachment
 from .instance_options import InstanceOptions
+from .instance_private_ip_address import InstancePrivateIpAddress
 from .instance_source_details import InstanceSourceDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
+from .instance_state import InstanceState
+from .ksm import Ksm
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
 from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetails
+from .logical_unit import LogicalUnit
+from .memory_over_commit import MemoryOverCommit
 from .migration import Migration
 from .migration_asset import MigrationAsset
 from .migration_asset_collection import MigrationAssetCollection
 from .migration_asset_summary import MigrationAssetSummary
+from .migration_bandwidth import MigrationBandwidth
 from .migration_collection import MigrationCollection
+from .migration_config import MigrationConfig
 from .migration_plan import MigrationPlan
 from .migration_plan_collection import MigrationPlanCollection
 from .migration_plan_stats import MigrationPlanStats
 from .migration_plan_summary import MigrationPlanSummary
 from .migration_summary import MigrationSummary
+from .monthly_cost_summary import MonthlyCostSummary
+from .nic import Nic
+from .nvdimm import Nvdimm
+from .nvdimm_controller import NvdimmController
+from .olvm_agent import OlvmAgent
+from .olvm_asset_source import OlvmAssetSource
+from .olvm_asset_source_summary import OlvmAssetSourceSummary
+from .olvm_bios import OlvmBios
+from .olvm_bios_type import OlvmBiosType
+from .olvm_boot_menu import OlvmBootMenu
+from .olvm_boot_protocol import OlvmBootProtocol
+from .olvm_certificate import OlvmCertificate
+from .olvm_cluster_asset_details import OlvmClusterAssetDetails
+from .olvm_cluster_properties import OlvmClusterProperties
+from .olvm_configuration import OlvmConfiguration
+from .olvm_console import OlvmConsole
+from .olvm_core import OlvmCore
+from .olvm_cpu import OlvmCpu
+from .olvm_cpu_topology import OlvmCpuTopology
+from .olvm_cpu_tune import OlvmCpuTune
+from .olvm_custom_property import OlvmCustomProperty
+from .olvm_data_center import OlvmDataCenter
+from .olvm_display import OlvmDisplay
+from .olvm_domain import OlvmDomain
+from .olvm_error_handling import OlvmErrorHandling
+from .olvm_fencing_policy import OlvmFencingPolicy
+from .olvm_guest_operating_system import OlvmGuestOperatingSystem
+from .olvm_hardware_information import OlvmHardwareInformation
+from .olvm_high_availability import OlvmHighAvailability
+from .olvm_host import OlvmHost
+from .olvm_host_status import OlvmHostStatus
+from .olvm_host_type import OlvmHostType
+from .olvm_hosted_engine import OlvmHostedEngine
+from .olvm_icon import OlvmIcon
+from .olvm_initialization import OlvmInitialization
+from .olvm_ip import OlvmIp
+from .olvm_iscsi_details import OlvmIscsiDetails
+from .olvm_kernel import OlvmKernel
+from .olvm_memory_policy import OlvmMemoryPolicy
+from .olvm_migration_options import OlvmMigrationOptions
+from .olvm_nic_configuration import OlvmNicConfiguration
+from .olvm_operating_system import OlvmOperatingSystem
+from .olvm_pm_proxy import OlvmPmProxy
+from .olvm_power_management import OlvmPowerManagement
+from .olvm_property import OlvmProperty
+from .olvm_selinux import OlvmSelinux
+from .olvm_serial_number import OlvmSerialNumber
+from .olvm_spm import OlvmSpm
+from .olvm_storage_domain_asset_details import OlvmStorageDomainAssetDetails
+from .olvm_storage_domain_properties import OlvmStorageDomainProperties
+from .olvm_target_asset import OlvmTargetAsset
+from .olvm_target_asset_summary import OlvmTargetAssetSummary
+from .olvm_target_environment import OlvmTargetEnvironment
+from .olvm_template_asset_details import OlvmTemplateAssetDetails
+from .olvm_template_properties import OlvmTemplateProperties
+from .olvm_template_version import OlvmTemplateVersion
+from .olvm_usb import OlvmUsb
+from .olvm_version import OlvmVersion
+from .olvm_virtual_machine import OlvmVirtualMachine
+from .olvm_vm_placement_policy import OlvmVmPlacementPolicy
+from .olvm_vm_status import OlvmVmStatus
+from .olvm_vm_summary import OlvmVmSummary
+from .olvm_vm_type import OlvmVmType
+from .olvm_vnic_profile_asset_details import OlvmVnicProfileAssetDetails
+from .olvm_vnic_profile_properties import OlvmVnicProfileProperties
 from .os_image_estimation import OsImageEstimation
 from .peak_resource_assessment_strategy import PeakResourceAssessmentStrategy
 from .percentile_resource_assessment_strategy import PercentileResourceAssessmentStrategy
+from .placement import Placement
 from .preemptible_instance_config_details import PreemptibleInstanceConfigDetails
 from .preemption_action import PreemptionAction
+from .replication_location_detail import ReplicationLocationDetail
 from .replication_progress import ReplicationProgress
 from .replication_schedule import ReplicationSchedule
 from .replication_schedule_collection import ReplicationScheduleCollection
 from .replication_schedule_summary import ReplicationScheduleSummary
 from .resource_assessment_strategy import ResourceAssessmentStrategy
+from .scsi_controller import ScsiController
+from .skip_if_connectivity_broken import SkipIfConnectivityBroken
+from .skip_if_sd_active import SkipIfSdActive
+from .storage import Storage
 from .storage_cost_estimation import StorageCostEstimation
+from .submit_historical_metrics_details import SubmitHistoricalMetricsDetails
+from .tag import Tag
 from .target_asset import TargetAsset
 from .target_asset_collection import TargetAssetCollection
 from .target_asset_summary import TargetAssetSummary
 from .target_environment import TargetEnvironment
 from .terminate_preemption_action import TerminatePreemptionAction
+from .transparent_huge_pages import TransparentHugePages
+from .update_asset_details import UpdateAssetDetails
 from .update_asset_source_details import UpdateAssetSourceDetails
+from .update_aws_asset_source_details import UpdateAwsAssetSourceDetails
+from .update_aws_ebs_asset_details import UpdateAwsEbsAssetDetails
+from .update_aws_ec2_asset_details import UpdateAwsEc2AssetDetails
 from .update_discovery_schedule_details import UpdateDiscoveryScheduleDetails
 from .update_migration_asset_details import UpdateMigrationAssetDetails
 from .update_migration_details import UpdateMigrationDetails
 from .update_migration_plan_details import UpdateMigrationPlanDetails
+from .update_olvm_asset_source_details import UpdateOlvmAssetSourceDetails
+from .update_olvm_target_asset_details import UpdateOlvmTargetAssetDetails
 from .update_replication_schedule_details import UpdateReplicationScheduleDetails
 from .update_target_asset_details import UpdateTargetAssetDetails
+from .update_vm_asset_details import UpdateVmAssetDetails
 from .update_vm_target_asset_details import UpdateVmTargetAssetDetails
 from .update_vm_ware_asset_source_details import UpdateVmWareAssetSourceDetails
+from .update_vmware_vm_asset_details import UpdateVmwareVmAssetDetails
+from .vcpu_pin import VcpuPin
+from .vm_asset import VmAsset
+from .vm_properties import VmProperties
 from .vm_target_asset import VmTargetAsset
 from .vm_target_asset_summary import VmTargetAssetSummary
 from .vm_target_environment import VmTargetEnvironment
 from .vm_ware_asset_source import VmWareAssetSource
 from .vm_ware_asset_source_summary import VmWareAssetSourceSummary
+from .vmware_v_center_properties import VmwareVCenterProperties
+from .vmware_vm_asset import VmwareVmAsset
+from .vmware_vm_properties import VmwareVmProperties
+from .volume_attachment import VolumeAttachment
 from .volume_cost_estimation import VolumeCostEstimation
+from .volume_group import VolumeGroup
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -99,86 +232,219 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for cloud_migrations services.
 cloud_migrations_type_mapping = {
     "AsIsResourceAssessmentStrategy": AsIsResourceAssessmentStrategy,
+    "Asset": Asset,
+    "AssetAggregation": AssetAggregation,
+    "AssetAggregationCollection": AssetAggregationCollection,
+    "AssetCollection": AssetCollection,
     "AssetSource": AssetSource,
     "AssetSourceCollection": AssetSourceCollection,
     "AssetSourceConnection": AssetSourceConnection,
     "AssetSourceConnectionCollection": AssetSourceConnectionCollection,
     "AssetSourceCredentials": AssetSourceCredentials,
     "AssetSourceSummary": AssetSourceSummary,
+    "AssetSummary": AssetSummary,
     "AvailableShapeSummary": AvailableShapeSummary,
     "AvailableShapesCollection": AvailableShapesCollection,
     "AverageResourceAssessmentStrategy": AverageResourceAssessmentStrategy,
+    "AwsAssetSource": AwsAssetSource,
+    "AwsAssetSourceSummary": AwsAssetSourceSummary,
+    "AwsEbsAsset": AwsEbsAsset,
+    "AwsEbsAssetDetails": AwsEbsAssetDetails,
+    "AwsEbsProperties": AwsEbsProperties,
+    "AwsEc2Asset": AwsEc2Asset,
+    "AwsEc2AssetDetails": AwsEc2AssetDetails,
+    "AwsEc2Properties": AwsEc2Properties,
+    "ChangeAssetCompartmentDetails": ChangeAssetCompartmentDetails,
     "ChangeAssetSourceCompartmentDetails": ChangeAssetSourceCompartmentDetails,
+    "ChangeAssetTagsDetails": ChangeAssetTagsDetails,
     "ChangeDiscoveryScheduleCompartmentDetails": ChangeDiscoveryScheduleCompartmentDetails,
     "ChangeMigrationCompartmentDetails": ChangeMigrationCompartmentDetails,
     "ChangeMigrationPlanCompartmentDetails": ChangeMigrationPlanCompartmentDetails,
     "ChangeReplicationScheduleCompartmentDetails": ChangeReplicationScheduleCompartmentDetails,
     "CompatibilityMessage": CompatibilityMessage,
     "ComputeCostEstimation": ComputeCostEstimation,
+    "ComputeProperties": ComputeProperties,
     "CostEstimation": CostEstimation,
+    "CostToMigrate": CostToMigrate,
+    "CreateAssetDetails": CreateAssetDetails,
     "CreateAssetSourceDetails": CreateAssetSourceDetails,
+    "CreateAwsAssetSourceDetails": CreateAwsAssetSourceDetails,
+    "CreateAwsEbsAssetDetails": CreateAwsEbsAssetDetails,
+    "CreateAwsEc2AssetDetails": CreateAwsEc2AssetDetails,
     "CreateDiscoveryScheduleDetails": CreateDiscoveryScheduleDetails,
     "CreateMigrationAssetDetails": CreateMigrationAssetDetails,
     "CreateMigrationDetails": CreateMigrationDetails,
     "CreateMigrationPlanDetails": CreateMigrationPlanDetails,
+    "CreateOlvmAssetSourceDetails": CreateOlvmAssetSourceDetails,
+    "CreateOlvmTargetAssetDetails": CreateOlvmTargetAssetDetails,
     "CreateReplicationScheduleDetails": CreateReplicationScheduleDetails,
     "CreateTargetAssetDetails": CreateTargetAssetDetails,
     "CreateVmTargetAssetDetails": CreateVmTargetAssetDetails,
     "CreateVmWareAssetSourceDetails": CreateVmWareAssetSourceDetails,
+    "CreateVmwareVmAssetDetails": CreateVmwareVmAssetDetails,
     "CreateVnicDetails": CreateVnicDetails,
+    "CurrentMonthlyCost": CurrentMonthlyCost,
+    "CustomerTag": CustomerTag,
+    "DestinationDisk": DestinationDisk,
     "DiscoverySchedule": DiscoverySchedule,
     "DiscoveryScheduleCollection": DiscoveryScheduleCollection,
     "DiscoveryScheduleSummary": DiscoveryScheduleSummary,
+    "Disk": Disk,
+    "GpuDevice": GpuDevice,
+    "GroupIdentifier": GroupIdentifier,
+    "HistoricalMetric": HistoricalMetric,
+    "HistoricalMetricCollection": HistoricalMetricCollection,
+    "HistoricalMetricSummary": HistoricalMetricSummary,
     "HydratedVolume": HydratedVolume,
     "InstanceAgentPluginConfigDetails": InstanceAgentPluginConfigDetails,
+    "InstanceNetworkInterface": InstanceNetworkInterface,
+    "InstanceNetworkInterfaceAssociation": InstanceNetworkInterfaceAssociation,
+    "InstanceNetworkInterfaceAttachment": InstanceNetworkInterfaceAttachment,
     "InstanceOptions": InstanceOptions,
+    "InstancePrivateIpAddress": InstancePrivateIpAddress,
     "InstanceSourceDetails": InstanceSourceDetails,
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
+    "InstanceState": InstanceState,
+    "Ksm": Ksm,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LaunchInstanceShapeConfigDetails": LaunchInstanceShapeConfigDetails,
+    "LogicalUnit": LogicalUnit,
+    "MemoryOverCommit": MemoryOverCommit,
     "Migration": Migration,
     "MigrationAsset": MigrationAsset,
     "MigrationAssetCollection": MigrationAssetCollection,
     "MigrationAssetSummary": MigrationAssetSummary,
+    "MigrationBandwidth": MigrationBandwidth,
     "MigrationCollection": MigrationCollection,
+    "MigrationConfig": MigrationConfig,
     "MigrationPlan": MigrationPlan,
     "MigrationPlanCollection": MigrationPlanCollection,
     "MigrationPlanStats": MigrationPlanStats,
     "MigrationPlanSummary": MigrationPlanSummary,
     "MigrationSummary": MigrationSummary,
+    "MonthlyCostSummary": MonthlyCostSummary,
+    "Nic": Nic,
+    "Nvdimm": Nvdimm,
+    "NvdimmController": NvdimmController,
+    "OlvmAgent": OlvmAgent,
+    "OlvmAssetSource": OlvmAssetSource,
+    "OlvmAssetSourceSummary": OlvmAssetSourceSummary,
+    "OlvmBios": OlvmBios,
+    "OlvmBiosType": OlvmBiosType,
+    "OlvmBootMenu": OlvmBootMenu,
+    "OlvmBootProtocol": OlvmBootProtocol,
+    "OlvmCertificate": OlvmCertificate,
+    "OlvmClusterAssetDetails": OlvmClusterAssetDetails,
+    "OlvmClusterProperties": OlvmClusterProperties,
+    "OlvmConfiguration": OlvmConfiguration,
+    "OlvmConsole": OlvmConsole,
+    "OlvmCore": OlvmCore,
+    "OlvmCpu": OlvmCpu,
+    "OlvmCpuTopology": OlvmCpuTopology,
+    "OlvmCpuTune": OlvmCpuTune,
+    "OlvmCustomProperty": OlvmCustomProperty,
+    "OlvmDataCenter": OlvmDataCenter,
+    "OlvmDisplay": OlvmDisplay,
+    "OlvmDomain": OlvmDomain,
+    "OlvmErrorHandling": OlvmErrorHandling,
+    "OlvmFencingPolicy": OlvmFencingPolicy,
+    "OlvmGuestOperatingSystem": OlvmGuestOperatingSystem,
+    "OlvmHardwareInformation": OlvmHardwareInformation,
+    "OlvmHighAvailability": OlvmHighAvailability,
+    "OlvmHost": OlvmHost,
+    "OlvmHostStatus": OlvmHostStatus,
+    "OlvmHostType": OlvmHostType,
+    "OlvmHostedEngine": OlvmHostedEngine,
+    "OlvmIcon": OlvmIcon,
+    "OlvmInitialization": OlvmInitialization,
+    "OlvmIp": OlvmIp,
+    "OlvmIscsiDetails": OlvmIscsiDetails,
+    "OlvmKernel": OlvmKernel,
+    "OlvmMemoryPolicy": OlvmMemoryPolicy,
+    "OlvmMigrationOptions": OlvmMigrationOptions,
+    "OlvmNicConfiguration": OlvmNicConfiguration,
+    "OlvmOperatingSystem": OlvmOperatingSystem,
+    "OlvmPmProxy": OlvmPmProxy,
+    "OlvmPowerManagement": OlvmPowerManagement,
+    "OlvmProperty": OlvmProperty,
+    "OlvmSelinux": OlvmSelinux,
+    "OlvmSerialNumber": OlvmSerialNumber,
+    "OlvmSpm": OlvmSpm,
+    "OlvmStorageDomainAssetDetails": OlvmStorageDomainAssetDetails,
+    "OlvmStorageDomainProperties": OlvmStorageDomainProperties,
+    "OlvmTargetAsset": OlvmTargetAsset,
+    "OlvmTargetAssetSummary": OlvmTargetAssetSummary,
+    "OlvmTargetEnvironment": OlvmTargetEnvironment,
+    "OlvmTemplateAssetDetails": OlvmTemplateAssetDetails,
+    "OlvmTemplateProperties": OlvmTemplateProperties,
+    "OlvmTemplateVersion": OlvmTemplateVersion,
+    "OlvmUsb": OlvmUsb,
+    "OlvmVersion": OlvmVersion,
+    "OlvmVirtualMachine": OlvmVirtualMachine,
+    "OlvmVmPlacementPolicy": OlvmVmPlacementPolicy,
+    "OlvmVmStatus": OlvmVmStatus,
+    "OlvmVmSummary": OlvmVmSummary,
+    "OlvmVmType": OlvmVmType,
+    "OlvmVnicProfileAssetDetails": OlvmVnicProfileAssetDetails,
+    "OlvmVnicProfileProperties": OlvmVnicProfileProperties,
     "OsImageEstimation": OsImageEstimation,
     "PeakResourceAssessmentStrategy": PeakResourceAssessmentStrategy,
     "PercentileResourceAssessmentStrategy": PercentileResourceAssessmentStrategy,
+    "Placement": Placement,
     "PreemptibleInstanceConfigDetails": PreemptibleInstanceConfigDetails,
     "PreemptionAction": PreemptionAction,
+    "ReplicationLocationDetail": ReplicationLocationDetail,
     "ReplicationProgress": ReplicationProgress,
     "ReplicationSchedule": ReplicationSchedule,
     "ReplicationScheduleCollection": ReplicationScheduleCollection,
     "ReplicationScheduleSummary": ReplicationScheduleSummary,
     "ResourceAssessmentStrategy": ResourceAssessmentStrategy,
+    "ScsiController": ScsiController,
+    "SkipIfConnectivityBroken": SkipIfConnectivityBroken,
+    "SkipIfSdActive": SkipIfSdActive,
+    "Storage": Storage,
     "StorageCostEstimation": StorageCostEstimation,
+    "SubmitHistoricalMetricsDetails": SubmitHistoricalMetricsDetails,
+    "Tag": Tag,
     "TargetAsset": TargetAsset,
     "TargetAssetCollection": TargetAssetCollection,
     "TargetAssetSummary": TargetAssetSummary,
     "TargetEnvironment": TargetEnvironment,
     "TerminatePreemptionAction": TerminatePreemptionAction,
+    "TransparentHugePages": TransparentHugePages,
+    "UpdateAssetDetails": UpdateAssetDetails,
     "UpdateAssetSourceDetails": UpdateAssetSourceDetails,
+    "UpdateAwsAssetSourceDetails": UpdateAwsAssetSourceDetails,
+    "UpdateAwsEbsAssetDetails": UpdateAwsEbsAssetDetails,
+    "UpdateAwsEc2AssetDetails": UpdateAwsEc2AssetDetails,
     "UpdateDiscoveryScheduleDetails": UpdateDiscoveryScheduleDetails,
     "UpdateMigrationAssetDetails": UpdateMigrationAssetDetails,
     "UpdateMigrationDetails": UpdateMigrationDetails,
     "UpdateMigrationPlanDetails": UpdateMigrationPlanDetails,
+    "UpdateOlvmAssetSourceDetails": UpdateOlvmAssetSourceDetails,
+    "UpdateOlvmTargetAssetDetails": UpdateOlvmTargetAssetDetails,
     "UpdateReplicationScheduleDetails": UpdateReplicationScheduleDetails,
     "UpdateTargetAssetDetails": UpdateTargetAssetDetails,
+    "UpdateVmAssetDetails": UpdateVmAssetDetails,
     "UpdateVmTargetAssetDetails": UpdateVmTargetAssetDetails,
     "UpdateVmWareAssetSourceDetails": UpdateVmWareAssetSourceDetails,
+    "UpdateVmwareVmAssetDetails": UpdateVmwareVmAssetDetails,
+    "VcpuPin": VcpuPin,
+    "VmAsset": VmAsset,
+    "VmProperties": VmProperties,
     "VmTargetAsset": VmTargetAsset,
     "VmTargetAssetSummary": VmTargetAssetSummary,
     "VmTargetEnvironment": VmTargetEnvironment,
     "VmWareAssetSource": VmWareAssetSource,
     "VmWareAssetSourceSummary": VmWareAssetSourceSummary,
+    "VmwareVCenterProperties": VmwareVCenterProperties,
+    "VmwareVmAsset": VmwareVmAsset,
+    "VmwareVmProperties": VmwareVmProperties,
+    "VolumeAttachment": VolumeAttachment,
     "VolumeCostEstimation": VolumeCostEstimation,
+    "VolumeGroup": VolumeGroup,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

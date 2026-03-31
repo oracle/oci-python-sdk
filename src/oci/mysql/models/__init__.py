@@ -29,6 +29,8 @@ from .compression_options import CompressionOptions
 from .configuration import Configuration
 from .configuration_summary import ConfigurationSummary
 from .configuration_variables import ConfigurationVariables
+from .controlled_update import ControlledUpdate
+from .controlled_update_db_system_details import ControlledUpdateDbSystemDetails
 from .copy_backup_details import CopyBackupDetails
 from .copy_policy import CopyPolicy
 from .create_backup_details import CreateBackupDetails
@@ -153,6 +155,8 @@ mysql_type_mapping = {
     "Configuration": Configuration,
     "ConfigurationSummary": ConfigurationSummary,
     "ConfigurationVariables": ConfigurationVariables,
+    "ControlledUpdate": ControlledUpdate,
+    "ControlledUpdateDbSystemDetails": ControlledUpdateDbSystemDetails,
     "CopyBackupDetails": CopyBackupDetails,
     "CopyPolicy": CopyPolicy,
     "CreateBackupDetails": CreateBackupDetails,

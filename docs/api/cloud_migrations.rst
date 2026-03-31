@@ -19,86 +19,219 @@ Cloud Migrations
     :template: autosummary/model_class.rst
 
     oci.cloud_migrations.models.AsIsResourceAssessmentStrategy
+    oci.cloud_migrations.models.Asset
+    oci.cloud_migrations.models.AssetAggregation
+    oci.cloud_migrations.models.AssetAggregationCollection
+    oci.cloud_migrations.models.AssetCollection
     oci.cloud_migrations.models.AssetSource
     oci.cloud_migrations.models.AssetSourceCollection
     oci.cloud_migrations.models.AssetSourceConnection
     oci.cloud_migrations.models.AssetSourceConnectionCollection
     oci.cloud_migrations.models.AssetSourceCredentials
     oci.cloud_migrations.models.AssetSourceSummary
+    oci.cloud_migrations.models.AssetSummary
     oci.cloud_migrations.models.AvailableShapeSummary
     oci.cloud_migrations.models.AvailableShapesCollection
     oci.cloud_migrations.models.AverageResourceAssessmentStrategy
+    oci.cloud_migrations.models.AwsAssetSource
+    oci.cloud_migrations.models.AwsAssetSourceSummary
+    oci.cloud_migrations.models.AwsEbsAsset
+    oci.cloud_migrations.models.AwsEbsAssetDetails
+    oci.cloud_migrations.models.AwsEbsProperties
+    oci.cloud_migrations.models.AwsEc2Asset
+    oci.cloud_migrations.models.AwsEc2AssetDetails
+    oci.cloud_migrations.models.AwsEc2Properties
+    oci.cloud_migrations.models.ChangeAssetCompartmentDetails
     oci.cloud_migrations.models.ChangeAssetSourceCompartmentDetails
+    oci.cloud_migrations.models.ChangeAssetTagsDetails
     oci.cloud_migrations.models.ChangeDiscoveryScheduleCompartmentDetails
     oci.cloud_migrations.models.ChangeMigrationCompartmentDetails
     oci.cloud_migrations.models.ChangeMigrationPlanCompartmentDetails
     oci.cloud_migrations.models.ChangeReplicationScheduleCompartmentDetails
     oci.cloud_migrations.models.CompatibilityMessage
     oci.cloud_migrations.models.ComputeCostEstimation
+    oci.cloud_migrations.models.ComputeProperties
     oci.cloud_migrations.models.CostEstimation
+    oci.cloud_migrations.models.CostToMigrate
+    oci.cloud_migrations.models.CreateAssetDetails
     oci.cloud_migrations.models.CreateAssetSourceDetails
+    oci.cloud_migrations.models.CreateAwsAssetSourceDetails
+    oci.cloud_migrations.models.CreateAwsEbsAssetDetails
+    oci.cloud_migrations.models.CreateAwsEc2AssetDetails
     oci.cloud_migrations.models.CreateDiscoveryScheduleDetails
     oci.cloud_migrations.models.CreateMigrationAssetDetails
     oci.cloud_migrations.models.CreateMigrationDetails
     oci.cloud_migrations.models.CreateMigrationPlanDetails
+    oci.cloud_migrations.models.CreateOlvmAssetSourceDetails
+    oci.cloud_migrations.models.CreateOlvmTargetAssetDetails
     oci.cloud_migrations.models.CreateReplicationScheduleDetails
     oci.cloud_migrations.models.CreateTargetAssetDetails
     oci.cloud_migrations.models.CreateVmTargetAssetDetails
     oci.cloud_migrations.models.CreateVmWareAssetSourceDetails
+    oci.cloud_migrations.models.CreateVmwareVmAssetDetails
     oci.cloud_migrations.models.CreateVnicDetails
+    oci.cloud_migrations.models.CurrentMonthlyCost
+    oci.cloud_migrations.models.CustomerTag
+    oci.cloud_migrations.models.DestinationDisk
     oci.cloud_migrations.models.DiscoverySchedule
     oci.cloud_migrations.models.DiscoveryScheduleCollection
     oci.cloud_migrations.models.DiscoveryScheduleSummary
+    oci.cloud_migrations.models.Disk
+    oci.cloud_migrations.models.GpuDevice
+    oci.cloud_migrations.models.GroupIdentifier
+    oci.cloud_migrations.models.HistoricalMetric
+    oci.cloud_migrations.models.HistoricalMetricCollection
+    oci.cloud_migrations.models.HistoricalMetricSummary
     oci.cloud_migrations.models.HydratedVolume
     oci.cloud_migrations.models.InstanceAgentPluginConfigDetails
+    oci.cloud_migrations.models.InstanceNetworkInterface
+    oci.cloud_migrations.models.InstanceNetworkInterfaceAssociation
+    oci.cloud_migrations.models.InstanceNetworkInterfaceAttachment
     oci.cloud_migrations.models.InstanceOptions
+    oci.cloud_migrations.models.InstancePrivateIpAddress
     oci.cloud_migrations.models.InstanceSourceDetails
     oci.cloud_migrations.models.InstanceSourceViaBootVolumeDetails
     oci.cloud_migrations.models.InstanceSourceViaImageDetails
+    oci.cloud_migrations.models.InstanceState
+    oci.cloud_migrations.models.Ksm
     oci.cloud_migrations.models.LaunchInstanceAgentConfigDetails
     oci.cloud_migrations.models.LaunchInstanceDetails
     oci.cloud_migrations.models.LaunchInstanceShapeConfigDetails
+    oci.cloud_migrations.models.LogicalUnit
+    oci.cloud_migrations.models.MemoryOverCommit
     oci.cloud_migrations.models.Migration
     oci.cloud_migrations.models.MigrationAsset
     oci.cloud_migrations.models.MigrationAssetCollection
     oci.cloud_migrations.models.MigrationAssetSummary
+    oci.cloud_migrations.models.MigrationBandwidth
     oci.cloud_migrations.models.MigrationCollection
+    oci.cloud_migrations.models.MigrationConfig
     oci.cloud_migrations.models.MigrationPlan
     oci.cloud_migrations.models.MigrationPlanCollection
     oci.cloud_migrations.models.MigrationPlanStats
     oci.cloud_migrations.models.MigrationPlanSummary
     oci.cloud_migrations.models.MigrationSummary
+    oci.cloud_migrations.models.MonthlyCostSummary
+    oci.cloud_migrations.models.Nic
+    oci.cloud_migrations.models.Nvdimm
+    oci.cloud_migrations.models.NvdimmController
+    oci.cloud_migrations.models.OlvmAgent
+    oci.cloud_migrations.models.OlvmAssetSource
+    oci.cloud_migrations.models.OlvmAssetSourceSummary
+    oci.cloud_migrations.models.OlvmBios
+    oci.cloud_migrations.models.OlvmBiosType
+    oci.cloud_migrations.models.OlvmBootMenu
+    oci.cloud_migrations.models.OlvmBootProtocol
+    oci.cloud_migrations.models.OlvmCertificate
+    oci.cloud_migrations.models.OlvmClusterAssetDetails
+    oci.cloud_migrations.models.OlvmClusterProperties
+    oci.cloud_migrations.models.OlvmConfiguration
+    oci.cloud_migrations.models.OlvmConsole
+    oci.cloud_migrations.models.OlvmCore
+    oci.cloud_migrations.models.OlvmCpu
+    oci.cloud_migrations.models.OlvmCpuTopology
+    oci.cloud_migrations.models.OlvmCpuTune
+    oci.cloud_migrations.models.OlvmCustomProperty
+    oci.cloud_migrations.models.OlvmDataCenter
+    oci.cloud_migrations.models.OlvmDisplay
+    oci.cloud_migrations.models.OlvmDomain
+    oci.cloud_migrations.models.OlvmErrorHandling
+    oci.cloud_migrations.models.OlvmFencingPolicy
+    oci.cloud_migrations.models.OlvmGuestOperatingSystem
+    oci.cloud_migrations.models.OlvmHardwareInformation
+    oci.cloud_migrations.models.OlvmHighAvailability
+    oci.cloud_migrations.models.OlvmHost
+    oci.cloud_migrations.models.OlvmHostStatus
+    oci.cloud_migrations.models.OlvmHostType
+    oci.cloud_migrations.models.OlvmHostedEngine
+    oci.cloud_migrations.models.OlvmIcon
+    oci.cloud_migrations.models.OlvmInitialization
+    oci.cloud_migrations.models.OlvmIp
+    oci.cloud_migrations.models.OlvmIscsiDetails
+    oci.cloud_migrations.models.OlvmKernel
+    oci.cloud_migrations.models.OlvmMemoryPolicy
+    oci.cloud_migrations.models.OlvmMigrationOptions
+    oci.cloud_migrations.models.OlvmNicConfiguration
+    oci.cloud_migrations.models.OlvmOperatingSystem
+    oci.cloud_migrations.models.OlvmPmProxy
+    oci.cloud_migrations.models.OlvmPowerManagement
+    oci.cloud_migrations.models.OlvmProperty
+    oci.cloud_migrations.models.OlvmSelinux
+    oci.cloud_migrations.models.OlvmSerialNumber
+    oci.cloud_migrations.models.OlvmSpm
+    oci.cloud_migrations.models.OlvmStorageDomainAssetDetails
+    oci.cloud_migrations.models.OlvmStorageDomainProperties
+    oci.cloud_migrations.models.OlvmTargetAsset
+    oci.cloud_migrations.models.OlvmTargetAssetSummary
+    oci.cloud_migrations.models.OlvmTargetEnvironment
+    oci.cloud_migrations.models.OlvmTemplateAssetDetails
+    oci.cloud_migrations.models.OlvmTemplateProperties
+    oci.cloud_migrations.models.OlvmTemplateVersion
+    oci.cloud_migrations.models.OlvmUsb
+    oci.cloud_migrations.models.OlvmVersion
+    oci.cloud_migrations.models.OlvmVirtualMachine
+    oci.cloud_migrations.models.OlvmVmPlacementPolicy
+    oci.cloud_migrations.models.OlvmVmStatus
+    oci.cloud_migrations.models.OlvmVmSummary
+    oci.cloud_migrations.models.OlvmVmType
+    oci.cloud_migrations.models.OlvmVnicProfileAssetDetails
+    oci.cloud_migrations.models.OlvmVnicProfileProperties
     oci.cloud_migrations.models.OsImageEstimation
     oci.cloud_migrations.models.PeakResourceAssessmentStrategy
     oci.cloud_migrations.models.PercentileResourceAssessmentStrategy
+    oci.cloud_migrations.models.Placement
     oci.cloud_migrations.models.PreemptibleInstanceConfigDetails
     oci.cloud_migrations.models.PreemptionAction
+    oci.cloud_migrations.models.ReplicationLocationDetail
     oci.cloud_migrations.models.ReplicationProgress
     oci.cloud_migrations.models.ReplicationSchedule
     oci.cloud_migrations.models.ReplicationScheduleCollection
     oci.cloud_migrations.models.ReplicationScheduleSummary
     oci.cloud_migrations.models.ResourceAssessmentStrategy
+    oci.cloud_migrations.models.ScsiController
+    oci.cloud_migrations.models.SkipIfConnectivityBroken
+    oci.cloud_migrations.models.SkipIfSdActive
+    oci.cloud_migrations.models.Storage
     oci.cloud_migrations.models.StorageCostEstimation
+    oci.cloud_migrations.models.SubmitHistoricalMetricsDetails
+    oci.cloud_migrations.models.Tag
     oci.cloud_migrations.models.TargetAsset
     oci.cloud_migrations.models.TargetAssetCollection
     oci.cloud_migrations.models.TargetAssetSummary
     oci.cloud_migrations.models.TargetEnvironment
     oci.cloud_migrations.models.TerminatePreemptionAction
+    oci.cloud_migrations.models.TransparentHugePages
+    oci.cloud_migrations.models.UpdateAssetDetails
     oci.cloud_migrations.models.UpdateAssetSourceDetails
+    oci.cloud_migrations.models.UpdateAwsAssetSourceDetails
+    oci.cloud_migrations.models.UpdateAwsEbsAssetDetails
+    oci.cloud_migrations.models.UpdateAwsEc2AssetDetails
     oci.cloud_migrations.models.UpdateDiscoveryScheduleDetails
     oci.cloud_migrations.models.UpdateMigrationAssetDetails
     oci.cloud_migrations.models.UpdateMigrationDetails
     oci.cloud_migrations.models.UpdateMigrationPlanDetails
+    oci.cloud_migrations.models.UpdateOlvmAssetSourceDetails
+    oci.cloud_migrations.models.UpdateOlvmTargetAssetDetails
     oci.cloud_migrations.models.UpdateReplicationScheduleDetails
     oci.cloud_migrations.models.UpdateTargetAssetDetails
+    oci.cloud_migrations.models.UpdateVmAssetDetails
     oci.cloud_migrations.models.UpdateVmTargetAssetDetails
     oci.cloud_migrations.models.UpdateVmWareAssetSourceDetails
+    oci.cloud_migrations.models.UpdateVmwareVmAssetDetails
+    oci.cloud_migrations.models.VcpuPin
+    oci.cloud_migrations.models.VmAsset
+    oci.cloud_migrations.models.VmProperties
     oci.cloud_migrations.models.VmTargetAsset
     oci.cloud_migrations.models.VmTargetAssetSummary
     oci.cloud_migrations.models.VmTargetEnvironment
     oci.cloud_migrations.models.VmWareAssetSource
     oci.cloud_migrations.models.VmWareAssetSourceSummary
+    oci.cloud_migrations.models.VmwareVCenterProperties
+    oci.cloud_migrations.models.VmwareVmAsset
+    oci.cloud_migrations.models.VmwareVmProperties
+    oci.cloud_migrations.models.VolumeAttachment
     oci.cloud_migrations.models.VolumeCostEstimation
+    oci.cloud_migrations.models.VolumeGroup
     oci.cloud_migrations.models.WorkRequest
     oci.cloud_migrations.models.WorkRequestError
     oci.cloud_migrations.models.WorkRequestErrorCollection

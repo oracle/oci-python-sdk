@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DiscoveryScheduleSummary(object):
     """
-    Sumarized information about a discovery schedule.
+    Summarized information about a discovery schedule.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DiscoveryScheduleSummary.

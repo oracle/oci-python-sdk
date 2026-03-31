@@ -237,8 +237,8 @@ class BackendSummary(object):
     def is_drain(self):
         """
         Gets the is_drain of this BackendSummary.
-        Whether the network load balancer should drain this server. Servers marked \"isDrain\" receive no
-        incoming traffic.
+        Whether the network load balancer should drain this server.
+        Servers marked \"isDrain\" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.
 
         Example: `false`
 
@@ -252,8 +252,8 @@ class BackendSummary(object):
     def is_drain(self, is_drain):
         """
         Sets the is_drain of this BackendSummary.
-        Whether the network load balancer should drain this server. Servers marked \"isDrain\" receive no
-        incoming traffic.
+        Whether the network load balancer should drain this server.
+        Servers marked \"isDrain\" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated or times out.
 
         Example: `false`
 

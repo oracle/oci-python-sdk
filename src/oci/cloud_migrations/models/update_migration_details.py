@@ -32,6 +32,14 @@ class UpdateMigrationDetails(object):
             The value to assign to the is_completed property of this UpdateMigrationDetails.
         :type is_completed: bool
 
+        :param migration_type:
+            The value to assign to the migration_type property of this UpdateMigrationDetails.
+        :type migration_type: str
+
+        :param migration_config:
+            The value to assign to the migration_config property of this UpdateMigrationDetails.
+        :type migration_config: oci.cloud_migrations.models.MigrationConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateMigrationDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +53,8 @@ class UpdateMigrationDetails(object):
             'display_name': 'str',
             'replication_schedule_id': 'str',
             'is_completed': 'bool',
+            'migration_type': 'str',
+            'migration_config': 'MigrationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +62,16 @@ class UpdateMigrationDetails(object):
             'display_name': 'displayName',
             'replication_schedule_id': 'replicationScheduleId',
             'is_completed': 'isCompleted',
+            'migration_type': 'migrationType',
+            'migration_config': 'migrationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._replication_schedule_id = None
         self._is_completed = None
+        self._migration_type = None
+        self._migration_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -132,6 +146,50 @@ class UpdateMigrationDetails(object):
         :type: bool
         """
         self._is_completed = is_completed
+
+    @property
+    def migration_type(self):
+        """
+        Gets the migration_type of this UpdateMigrationDetails.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :return: The migration_type of this UpdateMigrationDetails.
+        :rtype: str
+        """
+        return self._migration_type
+
+    @migration_type.setter
+    def migration_type(self, migration_type):
+        """
+        Sets the migration_type of this UpdateMigrationDetails.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :param migration_type: The migration_type of this UpdateMigrationDetails.
+        :type: str
+        """
+        self._migration_type = migration_type
+
+    @property
+    def migration_config(self):
+        """
+        Gets the migration_config of this UpdateMigrationDetails.
+
+        :return: The migration_config of this UpdateMigrationDetails.
+        :rtype: oci.cloud_migrations.models.MigrationConfig
+        """
+        return self._migration_config
+
+    @migration_config.setter
+    def migration_config(self, migration_config):
+        """
+        Sets the migration_config of this UpdateMigrationDetails.
+
+        :param migration_config: The migration_config of this UpdateMigrationDetails.
+        :type: oci.cloud_migrations.models.MigrationConfig
+        """
+        self._migration_config = migration_config
 
     @property
     def freeform_tags(self):

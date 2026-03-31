@@ -59,6 +59,10 @@ class UpdateNetworkLoadBalancerDetails(object):
             The value to assign to the assigned_ipv6 property of this UpdateNetworkLoadBalancerDetails.
         :type assigned_ipv6: str
 
+        :param reserved_ipv6_id:
+            The value to assign to the reserved_ipv6_id property of this UpdateNetworkLoadBalancerDetails.
+        :type reserved_ipv6_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateNetworkLoadBalancerDetails.
         :type freeform_tags: dict(str, str)
@@ -79,6 +83,7 @@ class UpdateNetworkLoadBalancerDetails(object):
             'nlb_ip_version': 'str',
             'subnet_ipv6_cidr': 'str',
             'assigned_ipv6': 'str',
+            'reserved_ipv6_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))'
@@ -90,6 +95,7 @@ class UpdateNetworkLoadBalancerDetails(object):
             'nlb_ip_version': 'nlbIpVersion',
             'subnet_ipv6_cidr': 'subnetIpv6Cidr',
             'assigned_ipv6': 'assignedIpv6',
+            'reserved_ipv6_id': 'reservedIpv6Id',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes'
@@ -100,6 +106,7 @@ class UpdateNetworkLoadBalancerDetails(object):
         self._nlb_ip_version = None
         self._subnet_ipv6_cidr = None
         self._assigned_ipv6 = None
+        self._reserved_ipv6_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._security_attributes = None
@@ -268,6 +275,32 @@ class UpdateNetworkLoadBalancerDetails(object):
         :type: str
         """
         self._assigned_ipv6 = assigned_ipv6
+
+    @property
+    def reserved_ipv6_id(self):
+        """
+        Gets the reserved_ipv6_id of this UpdateNetworkLoadBalancerDetails.
+        The reservedIpv6Id field is used to specify the OCID of a reserved IPv6 address to be used only when updating NLB from single-stack IPv4 to dual-stack.
+        This field should not be used for any other scenario
+
+
+        :return: The reserved_ipv6_id of this UpdateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._reserved_ipv6_id
+
+    @reserved_ipv6_id.setter
+    def reserved_ipv6_id(self, reserved_ipv6_id):
+        """
+        Sets the reserved_ipv6_id of this UpdateNetworkLoadBalancerDetails.
+        The reservedIpv6Id field is used to specify the OCID of a reserved IPv6 address to be used only when updating NLB from single-stack IPv4 to dual-stack.
+        This field should not be used for any other scenario
+
+
+        :param reserved_ipv6_id: The reserved_ipv6_id of this UpdateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        self._reserved_ipv6_id = reserved_ipv6_id
 
     @property
     def freeform_tags(self):

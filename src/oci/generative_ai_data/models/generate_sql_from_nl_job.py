@@ -50,10 +50,6 @@ class GenerateSqlFromNlJob(object):
             The value to assign to the id property of this GenerateSqlFromNlJob.
         :type id: str
 
-        :param compartment_id:
-            The value to assign to the compartment_id property of this GenerateSqlFromNlJob.
-        :type compartment_id: str
-
         :param description:
             The value to assign to the description property of this GenerateSqlFromNlJob.
         :type description: str
@@ -111,7 +107,6 @@ class GenerateSqlFromNlJob(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'compartment_id': 'str',
             'description': 'str',
             'semantic_store_id': 'str',
             'display_name': 'str',
@@ -128,7 +123,6 @@ class GenerateSqlFromNlJob(object):
         }
         self.attribute_map = {
             'id': 'id',
-            'compartment_id': 'compartmentId',
             'description': 'description',
             'semantic_store_id': 'semanticStoreId',
             'display_name': 'displayName',
@@ -144,7 +138,6 @@ class GenerateSqlFromNlJob(object):
             'system_tags': 'systemTags'
         }
         self._id = None
-        self._compartment_id = None
         self._description = None
         self._semantic_store_id = None
         self._display_name = None
@@ -182,34 +175,6 @@ class GenerateSqlFromNlJob(object):
         :type: str
         """
         self._id = id
-
-    @property
-    def compartment_id(self):
-        """
-        Gets the compartment_id of this GenerateSqlFromNlJob.
-        Owning compartmentId `OCID`__ for a GenerateSqlFromNlJob.
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The compartment_id of this GenerateSqlFromNlJob.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this GenerateSqlFromNlJob.
-        Owning compartmentId `OCID`__ for a GenerateSqlFromNlJob.
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param compartment_id: The compartment_id of this GenerateSqlFromNlJob.
-        :type: str
-        """
-        self._compartment_id = compartment_id
 
     @property
     def description(self):

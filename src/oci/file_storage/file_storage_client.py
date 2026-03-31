@@ -105,7 +105,7 @@ class FileStorageClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20171215',
-            'service_endpoint_template': 'https://filestorage.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://filestorage.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
             'endpoint_service_name': 'filestorage',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,

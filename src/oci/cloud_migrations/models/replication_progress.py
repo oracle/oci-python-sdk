@@ -72,6 +72,10 @@ class ReplicationProgress(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type last_replication_status: str
 
+        :param last_replication_sub_status:
+            The value to assign to the last_replication_sub_status property of this ReplicationProgress.
+        :type last_replication_sub_status: str
+
         :param last_replication_error:
             The value to assign to the last_replication_error property of this ReplicationProgress.
         :type last_replication_error: str
@@ -85,6 +89,7 @@ class ReplicationProgress(object):
             'time_of_last_replication_end': 'datetime',
             'time_of_last_replication_success': 'datetime',
             'last_replication_status': 'str',
+            'last_replication_sub_status': 'str',
             'last_replication_error': 'str'
         }
         self.attribute_map = {
@@ -95,6 +100,7 @@ class ReplicationProgress(object):
             'time_of_last_replication_end': 'timeOfLastReplicationEnd',
             'time_of_last_replication_success': 'timeOfLastReplicationSuccess',
             'last_replication_status': 'lastReplicationStatus',
+            'last_replication_sub_status': 'lastReplicationSubStatus',
             'last_replication_error': 'lastReplicationError'
         }
         self._percentage = None
@@ -104,6 +110,7 @@ class ReplicationProgress(object):
         self._time_of_last_replication_end = None
         self._time_of_last_replication_success = None
         self._last_replication_status = None
+        self._last_replication_sub_status = None
         self._last_replication_error = None
 
     @property
@@ -285,6 +292,30 @@ class ReplicationProgress(object):
         if not value_allowed_none_or_none_sentinel(last_replication_status, allowed_values):
             last_replication_status = 'UNKNOWN_ENUM_VALUE'
         self._last_replication_status = last_replication_status
+
+    @property
+    def last_replication_sub_status(self):
+        """
+        Gets the last_replication_sub_status of this ReplicationProgress.
+        The child status of the last replication task.
+
+
+        :return: The last_replication_sub_status of this ReplicationProgress.
+        :rtype: str
+        """
+        return self._last_replication_sub_status
+
+    @last_replication_sub_status.setter
+    def last_replication_sub_status(self, last_replication_sub_status):
+        """
+        Sets the last_replication_sub_status of this ReplicationProgress.
+        The child status of the last replication task.
+
+
+        :param last_replication_sub_status: The last_replication_sub_status of this ReplicationProgress.
+        :type: str
+        """
+        self._last_replication_sub_status = last_replication_sub_status
 
     @property
     def last_replication_error(self):

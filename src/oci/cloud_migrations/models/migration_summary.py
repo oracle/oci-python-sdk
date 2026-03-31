@@ -56,6 +56,14 @@ class MigrationSummary(object):
             The value to assign to the replication_schedule_id property of this MigrationSummary.
         :type replication_schedule_id: str
 
+        :param migration_type:
+            The value to assign to the migration_type property of this MigrationSummary.
+        :type migration_type: str
+
+        :param migration_config:
+            The value to assign to the migration_config property of this MigrationSummary.
+        :type migration_config: oci.cloud_migrations.models.MigrationConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MigrationSummary.
         :type freeform_tags: dict(str, str)
@@ -79,6 +87,8 @@ class MigrationSummary(object):
             'lifecycle_details': 'str',
             'is_completed': 'bool',
             'replication_schedule_id': 'str',
+            'migration_type': 'str',
+            'migration_config': 'MigrationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -93,6 +103,8 @@ class MigrationSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_completed': 'isCompleted',
             'replication_schedule_id': 'replicationScheduleId',
+            'migration_type': 'migrationType',
+            'migration_config': 'migrationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -106,6 +118,8 @@ class MigrationSummary(object):
         self._lifecycle_details = None
         self._is_completed = None
         self._replication_schedule_id = None
+        self._migration_type = None
+        self._migration_config = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -325,6 +339,50 @@ class MigrationSummary(object):
         :type: str
         """
         self._replication_schedule_id = replication_schedule_id
+
+    @property
+    def migration_type(self):
+        """
+        Gets the migration_type of this MigrationSummary.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :return: The migration_type of this MigrationSummary.
+        :rtype: str
+        """
+        return self._migration_type
+
+    @migration_type.setter
+    def migration_type(self, migration_type):
+        """
+        Sets the migration_type of this MigrationSummary.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :param migration_type: The migration_type of this MigrationSummary.
+        :type: str
+        """
+        self._migration_type = migration_type
+
+    @property
+    def migration_config(self):
+        """
+        Gets the migration_config of this MigrationSummary.
+
+        :return: The migration_config of this MigrationSummary.
+        :rtype: oci.cloud_migrations.models.MigrationConfig
+        """
+        return self._migration_config
+
+    @migration_config.setter
+    def migration_config(self, migration_config):
+        """
+        Sets the migration_config of this MigrationSummary.
+
+        :param migration_config: The migration_config of this MigrationSummary.
+        :type: oci.cloud_migrations.models.MigrationConfig
+        """
+        self._migration_config = migration_config
 
     @property
     def freeform_tags(self):

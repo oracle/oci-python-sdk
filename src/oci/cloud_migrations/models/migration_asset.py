@@ -144,6 +144,14 @@ class MigrationAsset(object):
             The value to assign to the depends_on property of this MigrationAsset.
         :type depends_on: list[str]
 
+        :param replication_location_detail:
+            The value to assign to the replication_location_detail property of this MigrationAsset.
+        :type replication_location_detail: oci.cloud_migrations.models.ReplicationLocationDetail
+
+        :param destination_disks:
+            The value to assign to the destination_disks property of this MigrationAsset.
+        :type destination_disks: dict(str, DestinationDisk)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -166,7 +174,9 @@ class MigrationAsset(object):
             'tenancy_id': 'str',
             'snap_shot_bucket_name': 'str',
             'depended_on_by': 'list[str]',
-            'depends_on': 'list[str]'
+            'depends_on': 'list[str]',
+            'replication_location_detail': 'ReplicationLocationDetail',
+            'destination_disks': 'dict(str, DestinationDisk)'
         }
         self.attribute_map = {
             'id': 'id',
@@ -189,7 +199,9 @@ class MigrationAsset(object):
             'tenancy_id': 'tenancyId',
             'snap_shot_bucket_name': 'snapShotBucketName',
             'depended_on_by': 'dependedOnBy',
-            'depends_on': 'dependsOn'
+            'depends_on': 'dependsOn',
+            'replication_location_detail': 'replicationLocationDetail',
+            'destination_disks': 'destinationDisks'
         }
         self._id = None
         self._type = None
@@ -212,6 +224,8 @@ class MigrationAsset(object):
         self._snap_shot_bucket_name = None
         self._depended_on_by = None
         self._depends_on = None
+        self._replication_location_detail = None
+        self._destination_disks = None
 
     @property
     def id(self):
@@ -732,6 +746,50 @@ class MigrationAsset(object):
         :type: list[str]
         """
         self._depends_on = depends_on
+
+    @property
+    def replication_location_detail(self):
+        """
+        Gets the replication_location_detail of this MigrationAsset.
+
+        :return: The replication_location_detail of this MigrationAsset.
+        :rtype: oci.cloud_migrations.models.ReplicationLocationDetail
+        """
+        return self._replication_location_detail
+
+    @replication_location_detail.setter
+    def replication_location_detail(self, replication_location_detail):
+        """
+        Sets the replication_location_detail of this MigrationAsset.
+
+        :param replication_location_detail: The replication_location_detail of this MigrationAsset.
+        :type: oci.cloud_migrations.models.ReplicationLocationDetail
+        """
+        self._replication_location_detail = replication_location_detail
+
+    @property
+    def destination_disks(self):
+        """
+        Gets the destination_disks of this MigrationAsset.
+        Mapping of source disk id to destination disk details
+
+
+        :return: The destination_disks of this MigrationAsset.
+        :rtype: dict(str, DestinationDisk)
+        """
+        return self._destination_disks
+
+    @destination_disks.setter
+    def destination_disks(self, destination_disks):
+        """
+        Sets the destination_disks of this MigrationAsset.
+        Mapping of source disk id to destination disk details
+
+
+        :param destination_disks: The destination_disks of this MigrationAsset.
+        :type: dict(str, DestinationDisk)
+        """
+        self._destination_disks = destination_disks
 
     def __repr__(self):
         return formatted_flat_dict(self)
