@@ -47,12 +47,17 @@ class TargetAsset(object):
     #: This constant has a value of "INSTANCE"
     TYPE_INSTANCE = "INSTANCE"
 
+    #: A constant which can be used with the type property of a TargetAsset.
+    #: This constant has a value of "OLVM_INSTANCE"
+    TYPE_OLVM_INSTANCE = "OLVM_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TargetAsset object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.cloud_migrations.models.VmTargetAsset`
+        * :class:`~oci.cloud_migrations.models.OlvmTargetAsset`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -88,7 +93,7 @@ class TargetAsset(object):
 
         :param type:
             The value to assign to the type property of this TargetAsset.
-            Allowed values for this property are: "INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTANCE", "OLVM_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -181,6 +186,9 @@ class TargetAsset(object):
 
         if type == 'INSTANCE':
             return 'VmTargetAsset'
+
+        if type == 'OLVM_INSTANCE':
+            return 'OlvmTargetAsset'
         else:
             return 'TargetAsset'
 
@@ -364,7 +372,7 @@ class TargetAsset(object):
         **[Required]** Gets the type of this TargetAsset.
         The type of target asset.
 
-        Allowed values for this property are: "INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTANCE", "OLVM_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -383,7 +391,7 @@ class TargetAsset(object):
         :param type: The type of this TargetAsset.
         :type: str
         """
-        allowed_values = ["INSTANCE"]
+        allowed_values = ["INSTANCE", "OLVM_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

@@ -34,6 +34,10 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
             The value to assign to the image_digest property of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
         :type image_digest: str
 
+        :param image_signature_id:
+            The value to assign to the image_signature_id property of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :type image_signature_id: str
+
         :param cmd:
             The value to assign to the cmd property of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
         :type cmd: list[str]
@@ -59,6 +63,7 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
             'environment_configuration_type': 'str',
             'image': 'str',
             'image_digest': 'str',
+            'image_signature_id': 'str',
             'cmd': 'list[str]',
             'entrypoint': 'list[str]',
             'server_port': 'int',
@@ -69,6 +74,7 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
             'environment_configuration_type': 'environmentConfigurationType',
             'image': 'image',
             'image_digest': 'imageDigest',
+            'image_signature_id': 'imageSignatureId',
             'cmd': 'cmd',
             'entrypoint': 'entrypoint',
             'server_port': 'serverPort',
@@ -78,6 +84,7 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
         self._environment_configuration_type = None
         self._image = None
         self._image_digest = None
+        self._image_signature_id = None
         self._cmd = None
         self._entrypoint = None
         self._server_port = None
@@ -140,6 +147,30 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
         :type: str
         """
         self._image_digest = image_digest
+
+    @property
+    def image_signature_id(self):
+        """
+        Gets the image_signature_id of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        OCID of the container image signature
+
+
+        :return: The image_signature_id of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :rtype: str
+        """
+        return self._image_signature_id
+
+    @image_signature_id.setter
+    def image_signature_id(self, image_signature_id):
+        """
+        Sets the image_signature_id of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        OCID of the container image signature
+
+
+        :param image_signature_id: The image_signature_id of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :type: str
+        """
+        self._image_signature_id = image_signature_id
 
     @property
     def cmd(self):

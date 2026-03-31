@@ -19,6 +19,26 @@ class ConvertInstanceDetails(object):
     #: This constant has a value of "DISASTER_RECOVERY"
     CONVERSION_TYPE_DISASTER_RECOVERY = "DISASTER_RECOVERY"
 
+    #: A constant which can be used with the conversion_type property of a ConvertInstanceDetails.
+    #: This constant has a value of "DEVELOPMENT_SHAPE"
+    CONVERSION_TYPE_DEVELOPMENT_SHAPE = "DEVELOPMENT_SHAPE"
+
+    #: A constant which can be used with the conversion_type property of a ConvertInstanceDetails.
+    #: This constant has a value of "PRODUCTION_SHAPE"
+    CONVERSION_TYPE_PRODUCTION_SHAPE = "PRODUCTION_SHAPE"
+
+    #: A constant which can be used with the conversion_phase property of a ConvertInstanceDetails.
+    #: This constant has a value of "BEGIN_MIGRATION"
+    CONVERSION_PHASE_BEGIN_MIGRATION = "BEGIN_MIGRATION"
+
+    #: A constant which can be used with the conversion_phase property of a ConvertInstanceDetails.
+    #: This constant has a value of "COMPLETE_MIGRATION"
+    CONVERSION_PHASE_COMPLETE_MIGRATION = "COMPLETE_MIGRATION"
+
+    #: A constant which can be used with the conversion_phase property of a ConvertInstanceDetails.
+    #: This constant has a value of "ROLLBACK_MIGRATION"
+    CONVERSION_PHASE_ROLLBACK_MIGRATION = "ROLLBACK_MIGRATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConvertInstanceDetails object with values from keyword arguments.
@@ -26,17 +46,25 @@ class ConvertInstanceDetails(object):
 
         :param conversion_type:
             The value to assign to the conversion_type property of this ConvertInstanceDetails.
-            Allowed values for this property are: "DISASTER_RECOVERY"
+            Allowed values for this property are: "DISASTER_RECOVERY", "DEVELOPMENT_SHAPE", "PRODUCTION_SHAPE"
         :type conversion_type: str
+
+        :param conversion_phase:
+            The value to assign to the conversion_phase property of this ConvertInstanceDetails.
+            Allowed values for this property are: "BEGIN_MIGRATION", "COMPLETE_MIGRATION", "ROLLBACK_MIGRATION"
+        :type conversion_phase: str
 
         """
         self.swagger_types = {
-            'conversion_type': 'str'
+            'conversion_type': 'str',
+            'conversion_phase': 'str'
         }
         self.attribute_map = {
-            'conversion_type': 'conversionType'
+            'conversion_type': 'conversionType',
+            'conversion_phase': 'conversionPhase'
         }
         self._conversion_type = None
+        self._conversion_phase = None
 
     @property
     def conversion_type(self):
@@ -44,7 +72,7 @@ class ConvertInstanceDetails(object):
         **[Required]** Gets the conversion_type of this ConvertInstanceDetails.
         Convert given instance to specified DR instance
 
-        Allowed values for this property are: "DISASTER_RECOVERY"
+        Allowed values for this property are: "DISASTER_RECOVERY", "DEVELOPMENT_SHAPE", "PRODUCTION_SHAPE"
 
 
         :return: The conversion_type of this ConvertInstanceDetails.
@@ -62,12 +90,43 @@ class ConvertInstanceDetails(object):
         :param conversion_type: The conversion_type of this ConvertInstanceDetails.
         :type: str
         """
-        allowed_values = ["DISASTER_RECOVERY"]
+        allowed_values = ["DISASTER_RECOVERY", "DEVELOPMENT_SHAPE", "PRODUCTION_SHAPE"]
         if not value_allowed_none_or_none_sentinel(conversion_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `conversion_type`, must be None or one of {allowed_values}"
             )
         self._conversion_type = conversion_type
+
+    @property
+    def conversion_phase(self):
+        """
+        Gets the conversion_phase of this ConvertInstanceDetails.
+        Conversion phase for convert instance operation.
+
+        Allowed values for this property are: "BEGIN_MIGRATION", "COMPLETE_MIGRATION", "ROLLBACK_MIGRATION"
+
+
+        :return: The conversion_phase of this ConvertInstanceDetails.
+        :rtype: str
+        """
+        return self._conversion_phase
+
+    @conversion_phase.setter
+    def conversion_phase(self, conversion_phase):
+        """
+        Sets the conversion_phase of this ConvertInstanceDetails.
+        Conversion phase for convert instance operation.
+
+
+        :param conversion_phase: The conversion_phase of this ConvertInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["BEGIN_MIGRATION", "COMPLETE_MIGRATION", "ROLLBACK_MIGRATION"]
+        if not value_allowed_none_or_none_sentinel(conversion_phase, allowed_values):
+            raise ValueError(
+                f"Invalid value for `conversion_phase`, must be None or one of {allowed_values}"
+            )
+        self._conversion_phase = conversion_phase
 
     def __repr__(self):
         return formatted_flat_dict(self)

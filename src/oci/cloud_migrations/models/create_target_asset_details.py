@@ -19,11 +19,16 @@ class CreateTargetAssetDetails(object):
     #: This constant has a value of "INSTANCE"
     TYPE_INSTANCE = "INSTANCE"
 
+    #: A constant which can be used with the type property of a CreateTargetAssetDetails.
+    #: This constant has a value of "OLVM_INSTANCE"
+    TYPE_OLVM_INSTANCE = "OLVM_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTargetAssetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cloud_migrations.models.CreateOlvmTargetAssetDetails`
         * :class:`~oci.cloud_migrations.models.CreateVmTargetAssetDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -34,7 +39,7 @@ class CreateTargetAssetDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateTargetAssetDetails.
-            Allowed values for this property are: "INSTANCE"
+            Allowed values for this property are: "INSTANCE", "OLVM_INSTANCE"
         :type type: str
 
         :param is_excluded_from_execution:
@@ -63,6 +68,9 @@ class CreateTargetAssetDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'OLVM_INSTANCE':
+            return 'CreateOlvmTargetAssetDetails'
 
         if type == 'INSTANCE':
             return 'CreateVmTargetAssetDetails'
@@ -99,7 +107,7 @@ class CreateTargetAssetDetails(object):
         **[Required]** Gets the type of this CreateTargetAssetDetails.
         The type of target asset.
 
-        Allowed values for this property are: "INSTANCE"
+        Allowed values for this property are: "INSTANCE", "OLVM_INSTANCE"
 
 
         :return: The type of this CreateTargetAssetDetails.
@@ -117,7 +125,7 @@ class CreateTargetAssetDetails(object):
         :param type: The type of this CreateTargetAssetDetails.
         :type: str
         """
-        allowed_values = ["INSTANCE"]
+        allowed_values = ["INSTANCE", "OLVM_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

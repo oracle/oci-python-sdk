@@ -19,11 +19,16 @@ class TargetEnvironment(object):
     #: This constant has a value of "VM_TARGET_ENV"
     TARGET_ENVIRONMENT_TYPE_VM_TARGET_ENV = "VM_TARGET_ENV"
 
+    #: A constant which can be used with the target_environment_type property of a TargetEnvironment.
+    #: This constant has a value of "OLVM_TARGET_ENV"
+    TARGET_ENVIRONMENT_TYPE_OLVM_TARGET_ENV = "OLVM_TARGET_ENV"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TargetEnvironment object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cloud_migrations.models.OlvmTargetEnvironment`
         * :class:`~oci.cloud_migrations.models.VmTargetEnvironment`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -34,7 +39,7 @@ class TargetEnvironment(object):
 
         :param target_environment_type:
             The value to assign to the target_environment_type property of this TargetEnvironment.
-            Allowed values for this property are: "VM_TARGET_ENV", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VM_TARGET_ENV", "OLVM_TARGET_ENV", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_environment_type: str
 
@@ -57,6 +62,9 @@ class TargetEnvironment(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['targetEnvironmentType']
+
+        if type == 'OLVM_TARGET_ENV':
+            return 'OlvmTargetEnvironment'
 
         if type == 'VM_TARGET_ENV':
             return 'VmTargetEnvironment'
@@ -93,7 +101,7 @@ class TargetEnvironment(object):
         **[Required]** Gets the target_environment_type of this TargetEnvironment.
         The type of target environment.
 
-        Allowed values for this property are: "VM_TARGET_ENV", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VM_TARGET_ENV", "OLVM_TARGET_ENV", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -112,7 +120,7 @@ class TargetEnvironment(object):
         :param target_environment_type: The target_environment_type of this TargetEnvironment.
         :type: str
         """
-        allowed_values = ["VM_TARGET_ENV"]
+        allowed_values = ["VM_TARGET_ENV", "OLVM_TARGET_ENV"]
         if not value_allowed_none_or_none_sentinel(target_environment_type, allowed_values):
             target_environment_type = 'UNKNOWN_ENUM_VALUE'
         self._target_environment_type = target_environment_type

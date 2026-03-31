@@ -148,6 +148,10 @@ class DbSystem(object):
             The value to assign to the mysql_version property of this DbSystem.
         :type mysql_version: str
 
+        :param controlled_update:
+            The value to assign to the controlled_update property of this DbSystem.
+        :type controlled_update: oci.mysql.models.ControlledUpdate
+
         :param backup_policy:
             The value to assign to the backup_policy property of this DbSystem.
         :type backup_policy: oci.mysql.models.BackupPolicy
@@ -297,6 +301,7 @@ class DbSystem(object):
             'fault_domain': 'str',
             'shape_name': 'str',
             'mysql_version': 'str',
+            'controlled_update': 'ControlledUpdate',
             'backup_policy': 'BackupPolicy',
             'source': 'DbSystemSource',
             'configuration_id': 'str',
@@ -346,6 +351,7 @@ class DbSystem(object):
             'fault_domain': 'faultDomain',
             'shape_name': 'shapeName',
             'mysql_version': 'mysqlVersion',
+            'controlled_update': 'controlledUpdate',
             'backup_policy': 'backupPolicy',
             'source': 'source',
             'configuration_id': 'configurationId',
@@ -394,6 +400,7 @@ class DbSystem(object):
         self._fault_domain = None
         self._shape_name = None
         self._mysql_version = None
+        self._controlled_update = None
         self._backup_policy = None
         self._source = None
         self._configuration_id = None
@@ -856,6 +863,26 @@ class DbSystem(object):
         :type: str
         """
         self._mysql_version = mysql_version
+
+    @property
+    def controlled_update(self):
+        """
+        Gets the controlled_update of this DbSystem.
+
+        :return: The controlled_update of this DbSystem.
+        :rtype: oci.mysql.models.ControlledUpdate
+        """
+        return self._controlled_update
+
+    @controlled_update.setter
+    def controlled_update(self, controlled_update):
+        """
+        Sets the controlled_update of this DbSystem.
+
+        :param controlled_update: The controlled_update of this DbSystem.
+        :type: oci.mysql.models.ControlledUpdate
+        """
+        self._controlled_update = controlled_update
 
     @property
     def backup_policy(self):

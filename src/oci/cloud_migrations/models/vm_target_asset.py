@@ -85,7 +85,7 @@ class VmTargetAsset(TargetAsset):
 
         :param type:
             The value to assign to the type property of this VmTargetAsset.
-            Allowed values for this property are: "INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTANCE", "OLVM_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 

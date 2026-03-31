@@ -20,6 +20,10 @@ class CreateMigrationDetails(object):
         Initializes a new CreateMigrationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param migration_type:
+            The value to assign to the migration_type property of this CreateMigrationDetails.
+        :type migration_type: str
+
         :param display_name:
             The value to assign to the display_name property of this CreateMigrationDetails.
         :type display_name: str
@@ -36,6 +40,10 @@ class CreateMigrationDetails(object):
             The value to assign to the is_completed property of this CreateMigrationDetails.
         :type is_completed: bool
 
+        :param migration_config:
+            The value to assign to the migration_config property of this CreateMigrationDetails.
+        :type migration_config: oci.cloud_migrations.models.MigrationConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateMigrationDetails.
         :type freeform_tags: dict(str, str)
@@ -46,27 +54,57 @@ class CreateMigrationDetails(object):
 
         """
         self.swagger_types = {
+            'migration_type': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
             'replication_schedule_id': 'str',
             'is_completed': 'bool',
+            'migration_config': 'MigrationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'migration_type': 'migrationType',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'replication_schedule_id': 'replicationScheduleId',
             'is_completed': 'isCompleted',
+            'migration_config': 'migrationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
+        self._migration_type = None
         self._display_name = None
         self._compartment_id = None
         self._replication_schedule_id = None
         self._is_completed = None
+        self._migration_config = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def migration_type(self):
+        """
+        Gets the migration_type of this CreateMigrationDetails.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :return: The migration_type of this CreateMigrationDetails.
+        :rtype: str
+        """
+        return self._migration_type
+
+    @migration_type.setter
+    def migration_type(self, migration_type):
+        """
+        Sets the migration_type of this CreateMigrationDetails.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :param migration_type: The migration_type of this CreateMigrationDetails.
+        :type: str
+        """
+        self._migration_type = migration_type
 
     @property
     def display_name(self):
@@ -163,6 +201,26 @@ class CreateMigrationDetails(object):
         :type: bool
         """
         self._is_completed = is_completed
+
+    @property
+    def migration_config(self):
+        """
+        Gets the migration_config of this CreateMigrationDetails.
+
+        :return: The migration_config of this CreateMigrationDetails.
+        :rtype: oci.cloud_migrations.models.MigrationConfig
+        """
+        return self._migration_config
+
+    @migration_config.setter
+    def migration_config(self, migration_config):
+        """
+        Sets the migration_config of this CreateMigrationDetails.
+
+        :param migration_config: The migration_config of this CreateMigrationDetails.
+        :type: oci.cloud_migrations.models.MigrationConfig
+        """
+        self._migration_config = migration_config
 
     @property
     def freeform_tags(self):

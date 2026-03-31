@@ -32,20 +32,34 @@ class MigrationPlanStats(object):
             The value to assign to the vm_count property of this MigrationPlanStats.
         :type vm_count: int
 
+        :param current_monthly_cost:
+            The value to assign to the current_monthly_cost property of this MigrationPlanStats.
+        :type current_monthly_cost: oci.cloud_migrations.models.CurrentMonthlyCost
+
+        :param cost_to_migrate:
+            The value to assign to the cost_to_migrate property of this MigrationPlanStats.
+        :type cost_to_migrate: oci.cloud_migrations.models.CostToMigrate
+
         """
         self.swagger_types = {
             'total_estimated_cost': 'CostEstimation',
             'time_updated': 'datetime',
-            'vm_count': 'int'
+            'vm_count': 'int',
+            'current_monthly_cost': 'CurrentMonthlyCost',
+            'cost_to_migrate': 'CostToMigrate'
         }
         self.attribute_map = {
             'total_estimated_cost': 'totalEstimatedCost',
             'time_updated': 'timeUpdated',
-            'vm_count': 'vmCount'
+            'vm_count': 'vmCount',
+            'current_monthly_cost': 'currentMonthlyCost',
+            'cost_to_migrate': 'costToMigrate'
         }
         self._total_estimated_cost = None
         self._time_updated = None
         self._vm_count = None
+        self._current_monthly_cost = None
+        self._cost_to_migrate = None
 
     @property
     def total_estimated_cost(self):
@@ -114,6 +128,46 @@ class MigrationPlanStats(object):
         :type: int
         """
         self._vm_count = vm_count
+
+    @property
+    def current_monthly_cost(self):
+        """
+        Gets the current_monthly_cost of this MigrationPlanStats.
+
+        :return: The current_monthly_cost of this MigrationPlanStats.
+        :rtype: oci.cloud_migrations.models.CurrentMonthlyCost
+        """
+        return self._current_monthly_cost
+
+    @current_monthly_cost.setter
+    def current_monthly_cost(self, current_monthly_cost):
+        """
+        Sets the current_monthly_cost of this MigrationPlanStats.
+
+        :param current_monthly_cost: The current_monthly_cost of this MigrationPlanStats.
+        :type: oci.cloud_migrations.models.CurrentMonthlyCost
+        """
+        self._current_monthly_cost = current_monthly_cost
+
+    @property
+    def cost_to_migrate(self):
+        """
+        Gets the cost_to_migrate of this MigrationPlanStats.
+
+        :return: The cost_to_migrate of this MigrationPlanStats.
+        :rtype: oci.cloud_migrations.models.CostToMigrate
+        """
+        return self._cost_to_migrate
+
+    @cost_to_migrate.setter
+    def cost_to_migrate(self, cost_to_migrate):
+        """
+        Sets the cost_to_migrate of this MigrationPlanStats.
+
+        :param cost_to_migrate: The cost_to_migrate of this MigrationPlanStats.
+        :type: oci.cloud_migrations.models.CostToMigrate
+        """
+        self._cost_to_migrate = cost_to_migrate
 
     def __repr__(self):
         return formatted_flat_dict(self)

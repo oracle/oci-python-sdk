@@ -27,7 +27,7 @@ class VmTargetEnvironment(TargetEnvironment):
 
         :param target_environment_type:
             The value to assign to the target_environment_type property of this VmTargetEnvironment.
-            Allowed values for this property are: "VM_TARGET_ENV"
+            Allowed values for this property are: "VM_TARGET_ENV", "OLVM_TARGET_ENV"
         :type target_environment_type: str
 
         :param availability_domain:

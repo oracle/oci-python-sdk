@@ -48,6 +48,10 @@ class CreateMigrationAssetDetails(object):
             The value to assign to the snap_shot_bucket_name property of this CreateMigrationAssetDetails.
         :type snap_shot_bucket_name: str
 
+        :param replication_location_detail:
+            The value to assign to the replication_location_detail property of this CreateMigrationAssetDetails.
+        :type replication_location_detail: oci.cloud_migrations.models.ReplicationLocationDetail
+
         :param depends_on:
             The value to assign to the depends_on property of this CreateMigrationAssetDetails.
         :type depends_on: list[str]
@@ -61,6 +65,7 @@ class CreateMigrationAssetDetails(object):
             'availability_domain': 'str',
             'replication_compartment_id': 'str',
             'snap_shot_bucket_name': 'str',
+            'replication_location_detail': 'ReplicationLocationDetail',
             'depends_on': 'list[str]'
         }
         self.attribute_map = {
@@ -71,6 +76,7 @@ class CreateMigrationAssetDetails(object):
             'availability_domain': 'availabilityDomain',
             'replication_compartment_id': 'replicationCompartmentId',
             'snap_shot_bucket_name': 'snapShotBucketName',
+            'replication_location_detail': 'replicationLocationDetail',
             'depends_on': 'dependsOn'
         }
         self._display_name = None
@@ -80,6 +86,7 @@ class CreateMigrationAssetDetails(object):
         self._availability_domain = None
         self._replication_compartment_id = None
         self._snap_shot_bucket_name = None
+        self._replication_location_detail = None
         self._depends_on = None
 
     @property
@@ -249,6 +256,26 @@ class CreateMigrationAssetDetails(object):
         :type: str
         """
         self._snap_shot_bucket_name = snap_shot_bucket_name
+
+    @property
+    def replication_location_detail(self):
+        """
+        Gets the replication_location_detail of this CreateMigrationAssetDetails.
+
+        :return: The replication_location_detail of this CreateMigrationAssetDetails.
+        :rtype: oci.cloud_migrations.models.ReplicationLocationDetail
+        """
+        return self._replication_location_detail
+
+    @replication_location_detail.setter
+    def replication_location_detail(self, replication_location_detail):
+        """
+        Sets the replication_location_detail of this CreateMigrationAssetDetails.
+
+        :param replication_location_detail: The replication_location_detail of this CreateMigrationAssetDetails.
+        :type: oci.cloud_migrations.models.ReplicationLocationDetail
+        """
+        self._replication_location_detail = replication_location_detail
 
     @property
     def depends_on(self):

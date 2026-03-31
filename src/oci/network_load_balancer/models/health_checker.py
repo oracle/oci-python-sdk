@@ -15,7 +15,7 @@ class HealthChecker(object):
     The health check policy configuration.
     For more information, see `Editing Network Load Balancer Health Check Policies`__.
 
-    __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm
+    __ https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm
     """
 
     #: A constant which can be used with the protocol property of a HealthChecker.

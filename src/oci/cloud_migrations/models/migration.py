@@ -43,6 +43,14 @@ class Migration(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the migration_type property of a Migration.
+    #: This constant has a value of "OCI"
+    MIGRATION_TYPE_OCI = "OCI"
+
+    #: A constant which can be used with the migration_type property of a Migration.
+    #: This constant has a value of "OLVM"
+    MIGRATION_TYPE_OLVM = "OLVM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Migration object with values from keyword arguments.
@@ -86,6 +94,16 @@ class Migration(object):
             The value to assign to the is_completed property of this Migration.
         :type is_completed: bool
 
+        :param migration_type:
+            The value to assign to the migration_type property of this Migration.
+            Allowed values for this property are: "OCI", "OLVM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type migration_type: str
+
+        :param migration_config:
+            The value to assign to the migration_config property of this Migration.
+        :type migration_config: oci.cloud_migrations.models.MigrationConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Migration.
         :type freeform_tags: dict(str, str)
@@ -109,6 +127,8 @@ class Migration(object):
             'time_updated': 'datetime',
             'replication_schedule_id': 'str',
             'is_completed': 'bool',
+            'migration_type': 'str',
+            'migration_config': 'MigrationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -123,6 +143,8 @@ class Migration(object):
             'time_updated': 'timeUpdated',
             'replication_schedule_id': 'replicationScheduleId',
             'is_completed': 'isCompleted',
+            'migration_type': 'migrationType',
+            'migration_config': 'migrationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -136,6 +158,8 @@ class Migration(object):
         self._time_updated = None
         self._replication_schedule_id = None
         self._is_completed = None
+        self._migration_type = None
+        self._migration_config = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -361,6 +385,56 @@ class Migration(object):
         :type: bool
         """
         self._is_completed = is_completed
+
+    @property
+    def migration_type(self):
+        """
+        Gets the migration_type of this Migration.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+        Allowed values for this property are: "OCI", "OLVM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The migration_type of this Migration.
+        :rtype: str
+        """
+        return self._migration_type
+
+    @migration_type.setter
+    def migration_type(self, migration_type):
+        """
+        Sets the migration_type of this Migration.
+        Type of migration project (OCI/OLVM). This determines the target environment for the migration.
+
+
+        :param migration_type: The migration_type of this Migration.
+        :type: str
+        """
+        allowed_values = ["OCI", "OLVM"]
+        if not value_allowed_none_or_none_sentinel(migration_type, allowed_values):
+            migration_type = 'UNKNOWN_ENUM_VALUE'
+        self._migration_type = migration_type
+
+    @property
+    def migration_config(self):
+        """
+        Gets the migration_config of this Migration.
+
+        :return: The migration_config of this Migration.
+        :rtype: oci.cloud_migrations.models.MigrationConfig
+        """
+        return self._migration_config
+
+    @migration_config.setter
+    def migration_config(self, migration_config):
+        """
+        Sets the migration_config of this Migration.
+
+        :param migration_config: The migration_config of this Migration.
+        :type: oci.cloud_migrations.models.MigrationConfig
+        """
+        self._migration_config = migration_config
 
     @property
     def freeform_tags(self):

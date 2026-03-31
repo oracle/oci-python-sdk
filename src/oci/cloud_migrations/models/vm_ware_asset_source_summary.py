@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmWareAssetSourceSummary(AssetSourceSummary):
     """
-    Description of an asset source.
+    Summary of an VMware asset source provided in the list.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
 
         :param type:
             The value to assign to the type property of this VmWareAssetSourceSummary.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param id:
@@ -79,6 +79,11 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
             The value to assign to the system_tags property of this VmWareAssetSourceSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this VmWareAssetSourceSummary.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         :param vcenter_endpoint:
             The value to assign to the vcenter_endpoint property of this VmWareAssetSourceSummary.
         :type vcenter_endpoint: str
@@ -99,6 +104,7 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'vcenter_endpoint': 'str'
         }
         self.attribute_map = {
@@ -116,6 +122,7 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'vcenter_endpoint': 'vcenterEndpoint'
         }
         self._type = None
@@ -132,6 +139,7 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._vcenter_endpoint = None
         self._type = 'VMWARE'
 

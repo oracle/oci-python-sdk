@@ -76,6 +76,38 @@ class UpdateAwrHubSourceDetails(object):
     TYPE_COMANAGED_EXACS_NONCDB = "COMANAGED_EXACS_NONCDB"
 
     #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "LH_S"
+    TYPE_LH_S = "LH_S"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "APEX_S"
+    TYPE_APEX_S = "APEX_S"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "AJD_S"
+    TYPE_AJD_S = "AJD_S"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "AVD_S"
+    TYPE_AVD_S = "AVD_S"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "LH_D"
+    TYPE_LH_D = "LH_D"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "APEX_D"
+    TYPE_APEX_D = "APEX_D"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "AJD_D"
+    TYPE_AJD_D = "AJD_D"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
+    #: This constant has a value of "AVD_D"
+    TYPE_AVD_D = "AVD_D"
+
+    #: A constant which can be used with the type property of a UpdateAwrHubSourceDetails.
     #: This constant has a value of "UNDEFINED"
     TYPE_UNDEFINED = "UNDEFINED"
 
@@ -86,7 +118,7 @@ class UpdateAwrHubSourceDetails(object):
 
         :param type:
             The value to assign to the type property of this UpdateAwrHubSourceDetails.
-            Allowed values for this property are: "ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "UNDEFINED"
+            Allowed values for this property are: "ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "LH_S", "APEX_S", "AJD_S", "AVD_S", "LH_D", "APEX_D", "AJD_D", "AVD_D", "UNDEFINED"
         :type type: str
 
         :param freeform_tags:
@@ -118,7 +150,7 @@ class UpdateAwrHubSourceDetails(object):
         Gets the type of this UpdateAwrHubSourceDetails.
         source type of the database
 
-        Allowed values for this property are: "ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "UNDEFINED"
+        Allowed values for this property are: "ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "LH_S", "APEX_S", "AJD_S", "AVD_S", "LH_D", "APEX_D", "AJD_D", "AVD_D", "UNDEFINED"
 
 
         :return: The type of this UpdateAwrHubSourceDetails.
@@ -136,7 +168,7 @@ class UpdateAwrHubSourceDetails(object):
         :param type: The type of this UpdateAwrHubSourceDetails.
         :type: str
         """
-        allowed_values = ["ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "UNDEFINED"]
+        allowed_values = ["ADW_S", "ATP_S", "ADW_D", "ATP_D", "EXTERNAL_PDB", "EXTERNAL_NONCDB", "COMANAGED_VM_CDB", "COMANAGED_VM_PDB", "COMANAGED_VM_NONCDB", "COMANAGED_BM_CDB", "COMANAGED_BM_PDB", "COMANAGED_BM_NONCDB", "COMANAGED_EXACS_CDB", "COMANAGED_EXACS_PDB", "COMANAGED_EXACS_NONCDB", "LH_S", "APEX_S", "AJD_S", "AVD_S", "LH_D", "APEX_D", "AJD_D", "AVD_D", "UNDEFINED"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

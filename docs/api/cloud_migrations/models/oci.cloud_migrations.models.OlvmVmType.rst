@@ -1,0 +1,11 @@
+OlvmVmType
+==========
+
+.. currentmodule:: oci.cloud_migrations.models
+
+.. autoclass:: OlvmVmType
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

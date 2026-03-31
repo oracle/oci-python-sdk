@@ -12,12 +12,28 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAssetSourceDetails(object):
     """
-    The information about the new asset source.
+    Asset source update request.
     """
 
     #: A constant which can be used with the type property of a UpdateAssetSourceDetails.
     #: This constant has a value of "VMWARE"
     TYPE_VMWARE = "VMWARE"
+
+    #: A constant which can be used with the type property of a UpdateAssetSourceDetails.
+    #: This constant has a value of "AWS"
+    TYPE_AWS = "AWS"
+
+    #: A constant which can be used with the type property of a UpdateAssetSourceDetails.
+    #: This constant has a value of "OLVM"
+    TYPE_OLVM = "OLVM"
+
+    #: A constant which can be used with the environment_type property of a UpdateAssetSourceDetails.
+    #: This constant has a value of "SOURCE"
+    ENVIRONMENT_TYPE_SOURCE = "SOURCE"
+
+    #: A constant which can be used with the environment_type property of a UpdateAssetSourceDetails.
+    #: This constant has a value of "DESTINATION"
+    ENVIRONMENT_TYPE_DESTINATION = "DESTINATION"
 
     def __init__(self, **kwargs):
         """
@@ -25,12 +41,14 @@ class UpdateAssetSourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.cloud_migrations.models.UpdateVmWareAssetSourceDetails`
+        * :class:`~oci.cloud_migrations.models.UpdateOlvmAssetSourceDetails`
+        * :class:`~oci.cloud_migrations.models.UpdateAwsAssetSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this UpdateAssetSourceDetails.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param display_name:
@@ -40,6 +58,10 @@ class UpdateAssetSourceDetails(object):
         :param assets_compartment_id:
             The value to assign to the assets_compartment_id property of this UpdateAssetSourceDetails.
         :type assets_compartment_id: str
+
+        :param discovery_schedule_id:
+            The value to assign to the discovery_schedule_id property of this UpdateAssetSourceDetails.
+        :type discovery_schedule_id: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAssetSourceDetails.
@@ -53,29 +75,40 @@ class UpdateAssetSourceDetails(object):
             The value to assign to the system_tags property of this UpdateAssetSourceDetails.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this UpdateAssetSourceDetails.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'display_name': 'str',
             'assets_compartment_id': 'str',
+            'discovery_schedule_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str'
         }
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
             'assets_compartment_id': 'assetsCompartmentId',
+            'discovery_schedule_id': 'discoveryScheduleId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'environment_type': 'environmentType'
         }
         self._type = None
         self._display_name = None
         self._assets_compartment_id = None
+        self._discovery_schedule_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -87,6 +120,12 @@ class UpdateAssetSourceDetails(object):
 
         if type == 'VMWARE':
             return 'UpdateVmWareAssetSourceDetails'
+
+        if type == 'OLVM':
+            return 'UpdateOlvmAssetSourceDetails'
+
+        if type == 'AWS':
+            return 'UpdateAwsAssetSourceDetails'
         else:
             return 'UpdateAssetSourceDetails'
 
@@ -96,7 +135,7 @@ class UpdateAssetSourceDetails(object):
         **[Required]** Gets the type of this UpdateAssetSourceDetails.
         Source type.
 
-        Allowed values for this property are: "VMWARE"
+        Allowed values for this property are: "VMWARE", "AWS", "OLVM"
 
 
         :return: The type of this UpdateAssetSourceDetails.
@@ -114,7 +153,7 @@ class UpdateAssetSourceDetails(object):
         :param type: The type of this UpdateAssetSourceDetails.
         :type: str
         """
-        allowed_values = ["VMWARE"]
+        allowed_values = ["VMWARE", "AWS", "OLVM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"
@@ -174,6 +213,34 @@ class UpdateAssetSourceDetails(object):
         :type: str
         """
         self._assets_compartment_id = assets_compartment_id
+
+    @property
+    def discovery_schedule_id(self):
+        """
+        Gets the discovery_schedule_id of this UpdateAssetSourceDetails.
+        The `OCID`__ of the discovery schedule that is going to be assigned to an asset source.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The discovery_schedule_id of this UpdateAssetSourceDetails.
+        :rtype: str
+        """
+        return self._discovery_schedule_id
+
+    @discovery_schedule_id.setter
+    def discovery_schedule_id(self, discovery_schedule_id):
+        """
+        Sets the discovery_schedule_id of this UpdateAssetSourceDetails.
+        The `OCID`__ of the discovery schedule that is going to be assigned to an asset source.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param discovery_schedule_id: The discovery_schedule_id of this UpdateAssetSourceDetails.
+        :type: str
+        """
+        self._discovery_schedule_id = discovery_schedule_id
 
     @property
     def freeform_tags(self):
@@ -252,6 +319,37 @@ class UpdateAssetSourceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this UpdateAssetSourceDetails.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+        Allowed values for this property are: "SOURCE", "DESTINATION"
+
+
+        :return: The environment_type of this UpdateAssetSourceDetails.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this UpdateAssetSourceDetails.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+
+        :param environment_type: The environment_type of this UpdateAssetSourceDetails.
+        :type: str
+        """
+        allowed_values = ["SOURCE", "DESTINATION"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `environment_type`, must be None or one of {allowed_values}"
+            )
+        self._environment_type = environment_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

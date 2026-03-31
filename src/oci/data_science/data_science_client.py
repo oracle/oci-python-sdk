@@ -17533,6 +17533,11 @@ class DataScienceClient(object):
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param str resource_id: (optional)
+            <b>Filter</b> results by the `OCID`__ of the resource associated with the work request.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str operation_type: (optional)
             <b>Filter</b> results by the type of the operation associated with the work request.
 
@@ -17609,6 +17614,7 @@ class DataScienceClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "id",
+            "resource_id",
             "operation_type",
             "status",
             "limit",
@@ -17653,6 +17659,7 @@ class DataScienceClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "id": kwargs.get("id", missing),
+            "resourceId": kwargs.get("resource_id", missing),
             "operationType": kwargs.get("operation_type", missing),
             "status": kwargs.get("status", missing),
             "limit": kwargs.get("limit", missing),

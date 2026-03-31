@@ -65,6 +65,14 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             The value to assign to the password_secret_version property of this CreateLdapBindAccountDetails.
         :type password_secret_version: int
 
+        :param trusted_certificate_secret_id:
+            The value to assign to the trusted_certificate_secret_id property of this CreateLdapBindAccountDetails.
+        :type trusted_certificate_secret_id: str
+
+        :param trusted_certificate_secret_version:
+            The value to assign to the trusted_certificate_secret_version property of this CreateLdapBindAccountDetails.
+        :type trusted_certificate_secret_version: int
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -77,7 +85,9 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             'endpoints': 'list[Endpoint]',
             'bind_distinguished_name': 'str',
             'password_secret_id': 'str',
-            'password_secret_version': 'int'
+            'password_secret_version': 'int',
+            'trusted_certificate_secret_id': 'str',
+            'trusted_certificate_secret_version': 'int'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -90,7 +100,9 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             'endpoints': 'endpoints',
             'bind_distinguished_name': 'bindDistinguishedName',
             'password_secret_id': 'passwordSecretId',
-            'password_secret_version': 'passwordSecretVersion'
+            'password_secret_version': 'passwordSecretVersion',
+            'trusted_certificate_secret_id': 'trustedCertificateSecretId',
+            'trusted_certificate_secret_version': 'trustedCertificateSecretVersion'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -103,6 +115,8 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
         self._bind_distinguished_name = None
         self._password_secret_id = None
         self._password_secret_version = None
+        self._trusted_certificate_secret_id = None
+        self._trusted_certificate_secret_version = None
         self._connector_type = 'LDAPBIND'
 
     @property
@@ -204,6 +218,58 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
         :type: int
         """
         self._password_secret_version = password_secret_version
+
+    @property
+    def trusted_certificate_secret_id(self):
+        """
+        Gets the trusted_certificate_secret_id of this CreateLdapBindAccountDetails.
+        The `OCID`__ of the trusted certificate for the LDAP server in the Vault.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trusted_certificate_secret_id of this CreateLdapBindAccountDetails.
+        :rtype: str
+        """
+        return self._trusted_certificate_secret_id
+
+    @trusted_certificate_secret_id.setter
+    def trusted_certificate_secret_id(self, trusted_certificate_secret_id):
+        """
+        Sets the trusted_certificate_secret_id of this CreateLdapBindAccountDetails.
+        The `OCID`__ of the trusted certificate for the LDAP server in the Vault.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param trusted_certificate_secret_id: The trusted_certificate_secret_id of this CreateLdapBindAccountDetails.
+        :type: str
+        """
+        self._trusted_certificate_secret_id = trusted_certificate_secret_id
+
+    @property
+    def trusted_certificate_secret_version(self):
+        """
+        Gets the trusted_certificate_secret_version of this CreateLdapBindAccountDetails.
+        Version of the trusted certificate secret in the Vault to use.
+
+
+        :return: The trusted_certificate_secret_version of this CreateLdapBindAccountDetails.
+        :rtype: int
+        """
+        return self._trusted_certificate_secret_version
+
+    @trusted_certificate_secret_version.setter
+    def trusted_certificate_secret_version(self, trusted_certificate_secret_version):
+        """
+        Sets the trusted_certificate_secret_version of this CreateLdapBindAccountDetails.
+        Version of the trusted certificate secret in the Vault to use.
+
+
+        :param trusted_certificate_secret_version: The trusted_certificate_secret_version of this CreateLdapBindAccountDetails.
+        :type: int
+        """
+        self._trusted_certificate_secret_version = trusted_certificate_secret_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -27,7 +27,7 @@ class CreateVmTargetAssetDetails(CreateTargetAssetDetails):
 
         :param type:
             The value to assign to the type property of this CreateVmTargetAssetDetails.
-            Allowed values for this property are: "INSTANCE"
+            Allowed values for this property are: "INSTANCE", "OLVM_INSTANCE"
         :type type: str
 
         :param is_excluded_from_execution:

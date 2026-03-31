@@ -1,0 +1,11 @@
+OlvmTargetEnvironment
+=====================
+
+.. currentmodule:: oci.cloud_migrations.models
+
+.. autoclass:: OlvmTargetEnvironment
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
