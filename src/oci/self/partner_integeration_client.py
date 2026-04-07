@@ -181,7 +181,7 @@ class PartnerIntegerationClient(object):
         resource_path = "/partner/subscriptions/{subscriptionId}/actions/activate"
         method = "POST"
         operation_name = "activate_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ActivateSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -321,7 +321,7 @@ class PartnerIntegerationClient(object):
         resource_path = "/partner/subscriptions"
         method = "GET"
         operation_name = "listing_subscriptions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/ListingSubscriptionsCollection/ListingSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -461,7 +461,7 @@ class PartnerIntegerationClient(object):
         resource_path = "/partner/subscriptions/actions/resolve"
         method = "POST"
         operation_name = "resolve_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ResolveSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

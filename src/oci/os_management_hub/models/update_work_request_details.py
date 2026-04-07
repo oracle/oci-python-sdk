@@ -43,6 +43,10 @@ class UpdateWorkRequestDetails(object):
     #: This constant has a value of "CANCELED"
     STATUS_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the status property of a UpdateWorkRequestDetails.
+    #: This constant has a value of "SKIPPED"
+    STATUS_SKIPPED = "SKIPPED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateWorkRequestDetails object with values from keyword arguments.
@@ -50,7 +54,7 @@ class UpdateWorkRequestDetails(object):
 
         :param status:
             The value to assign to the status property of this UpdateWorkRequestDetails.
-            Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+            Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED"
         :type status: str
 
         :param percent_complete:
@@ -96,7 +100,7 @@ class UpdateWorkRequestDetails(object):
         **[Required]** Gets the status of this UpdateWorkRequestDetails.
         Status of current work request.
 
-        Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+        Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED"
 
 
         :return: The status of this UpdateWorkRequestDetails.
@@ -114,7 +118,7 @@ class UpdateWorkRequestDetails(object):
         :param status: The status of this UpdateWorkRequestDetails.
         :type: str
         """
-        allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
                 f"Invalid value for `status`, must be None or one of {allowed_values}"

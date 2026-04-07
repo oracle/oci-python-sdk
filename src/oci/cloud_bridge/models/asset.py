@@ -24,6 +24,10 @@ class Asset(object):
     ASSET_TYPE_VM = "VM"
 
     #: A constant which can be used with the asset_type property of a Asset.
+    #: This constant has a value of "INVENTORY_ASSET"
+    ASSET_TYPE_INVENTORY_ASSET = "INVENTORY_ASSET"
+
+    #: A constant which can be used with the asset_type property of a Asset.
     #: This constant has a value of "AWS_EC2"
     ASSET_TYPE_AWS_EC2 = "AWS_EC2"
 
@@ -39,12 +43,21 @@ class Asset(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the environment_type property of a Asset.
+    #: This constant has a value of "SOURCE"
+    ENVIRONMENT_TYPE_SOURCE = "SOURCE"
+
+    #: A constant which can be used with the environment_type property of a Asset.
+    #: This constant has a value of "DESTINATION"
+    ENVIRONMENT_TYPE_DESTINATION = "DESTINATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Asset object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.cloud_bridge.models.AwsEc2Asset`
+        * :class:`~oci.cloud_bridge.models.InventoryAsset`
         * :class:`~oci.cloud_bridge.models.VmwareVmAsset`
         * :class:`~oci.cloud_bridge.models.AwsEbsAsset`
         * :class:`~oci.cloud_bridge.models.VmAsset`
@@ -77,7 +90,7 @@ class Asset(object):
 
         :param asset_type:
             The value to assign to the asset_type property of this Asset.
-            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type asset_type: str
 
@@ -111,6 +124,12 @@ class Asset(object):
             The value to assign to the system_tags property of this Asset.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this Asset.
+            Allowed values for this property are: "SOURCE", "DESTINATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type environment_type: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -126,7 +145,8 @@ class Asset(object):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -142,7 +162,8 @@ class Asset(object):
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'environment_type': 'environmentType'
         }
         self._display_name = None
         self._inventory_id = None
@@ -158,6 +179,7 @@ class Asset(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -169,6 +191,9 @@ class Asset(object):
 
         if type == 'AWS_EC2':
             return 'AwsEc2Asset'
+
+        if type == 'INVENTORY_ASSET':
+            return 'InventoryAsset'
 
         if type == 'VMWARE_VM':
             return 'VmwareVmAsset'
@@ -331,7 +356,7 @@ class Asset(object):
         **[Required]** Gets the asset_type of this Asset.
         The type of asset.
 
-        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -350,7 +375,7 @@ class Asset(object):
         :param asset_type: The asset_type of this Asset.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
+        allowed_values = ["VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             asset_type = 'UNKNOWN_ENUM_VALUE'
         self._asset_type = asset_type
@@ -552,6 +577,36 @@ class Asset(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this Asset.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+        Allowed values for this property are: "SOURCE", "DESTINATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The environment_type of this Asset.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this Asset.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+
+        :param environment_type: The environment_type of this Asset.
+        :type: str
+        """
+        allowed_values = ["SOURCE", "DESTINATION"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            environment_type = 'UNKNOWN_ENUM_VALUE'
+        self._environment_type = environment_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

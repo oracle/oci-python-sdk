@@ -51,7 +51,9 @@ from .create_aws_ebs_asset_details import CreateAwsEbsAssetDetails
 from .create_aws_ec2_asset_details import CreateAwsEc2AssetDetails
 from .create_discovery_schedule_details import CreateDiscoveryScheduleDetails
 from .create_environment_details import CreateEnvironmentDetails
+from .create_inventory_asset_details import CreateInventoryAssetDetails
 from .create_inventory_details import CreateInventoryDetails
+from .create_olvm_asset_source_details import CreateOlvmAssetSourceDetails
 from .create_vm_ware_asset_source_details import CreateVmWareAssetSourceDetails
 from .create_vmware_vm_asset_details import CreateVmwareVmAssetDetails
 from .customer_tag import CustomerTag
@@ -75,21 +77,88 @@ from .instance_network_interface_attachment import InstanceNetworkInterfaceAttac
 from .instance_private_ip_address import InstancePrivateIpAddress
 from .instance_state import InstanceState
 from .inventory import Inventory
+from .inventory_asset import InventoryAsset
 from .inventory_collection import InventoryCollection
 from .inventory_summary import InventorySummary
+from .ksm import Ksm
+from .logical_unit import LogicalUnit
+from .memory_over_commit import MemoryOverCommit
+from .migration_bandwidth import MigrationBandwidth
 from .monthly_cost_summary import MonthlyCostSummary
 from .nic import Nic
 from .nvdimm import Nvdimm
 from .nvdimm_controller import NvdimmController
+from .olvm_agent import OlvmAgent
+from .olvm_asset_source import OlvmAssetSource
+from .olvm_asset_source_summary import OlvmAssetSourceSummary
+from .olvm_bios import OlvmBios
+from .olvm_bios_type import OlvmBiosType
+from .olvm_boot_menu import OlvmBootMenu
+from .olvm_boot_protocol import OlvmBootProtocol
+from .olvm_certificate import OlvmCertificate
+from .olvm_cluster_asset_details import OlvmClusterAssetDetails
+from .olvm_cluster_properties import OlvmClusterProperties
+from .olvm_configuration import OlvmConfiguration
+from .olvm_console import OlvmConsole
+from .olvm_core import OlvmCore
+from .olvm_cpu import OlvmCpu
+from .olvm_cpu_topology import OlvmCpuTopology
+from .olvm_cpu_tune import OlvmCpuTune
+from .olvm_custom_property import OlvmCustomProperty
+from .olvm_data_center import OlvmDataCenter
+from .olvm_display import OlvmDisplay
+from .olvm_domain import OlvmDomain
+from .olvm_error_handling import OlvmErrorHandling
+from .olvm_fencing_policy import OlvmFencingPolicy
+from .olvm_guest_operating_system import OlvmGuestOperatingSystem
+from .olvm_hardware_information import OlvmHardwareInformation
+from .olvm_high_availability import OlvmHighAvailability
+from .olvm_host import OlvmHost
+from .olvm_host_status import OlvmHostStatus
+from .olvm_host_type import OlvmHostType
+from .olvm_hosted_engine import OlvmHostedEngine
+from .olvm_icon import OlvmIcon
+from .olvm_initialization import OlvmInitialization
+from .olvm_ip import OlvmIp
+from .olvm_iscsi_details import OlvmIscsiDetails
+from .olvm_kernel import OlvmKernel
+from .olvm_memory_policy import OlvmMemoryPolicy
+from .olvm_migration_options import OlvmMigrationOptions
+from .olvm_nic_configuration import OlvmNicConfiguration
+from .olvm_operating_system import OlvmOperatingSystem
+from .olvm_pm_proxy import OlvmPmProxy
+from .olvm_power_management import OlvmPowerManagement
+from .olvm_property import OlvmProperty
+from .olvm_selinux import OlvmSelinux
+from .olvm_serial_number import OlvmSerialNumber
+from .olvm_spm import OlvmSpm
+from .olvm_storage_domain_asset_details import OlvmStorageDomainAssetDetails
+from .olvm_storage_domain_properties import OlvmStorageDomainProperties
+from .olvm_template_asset_details import OlvmTemplateAssetDetails
+from .olvm_template_properties import OlvmTemplateProperties
+from .olvm_template_version import OlvmTemplateVersion
+from .olvm_usb import OlvmUsb
+from .olvm_version import OlvmVersion
+from .olvm_virtual_machine import OlvmVirtualMachine
+from .olvm_vm_placement_policy import OlvmVmPlacementPolicy
+from .olvm_vm_status import OlvmVmStatus
+from .olvm_vm_summary import OlvmVmSummary
+from .olvm_vm_type import OlvmVmType
+from .olvm_vnic_profile_asset_details import OlvmVnicProfileAssetDetails
+from .olvm_vnic_profile_properties import OlvmVnicProfileProperties
 from .placement import Placement
 from .plugin import Plugin
 from .plugin_summary import PluginSummary
 from .remove_agent_dependency_details import RemoveAgentDependencyDetails
 from .scsi_controller import ScsiController
+from .skip_if_connectivity_broken import SkipIfConnectivityBroken
+from .skip_if_sd_active import SkipIfSdActive
+from .storage import Storage
 from .submit_historical_metrics_details import SubmitHistoricalMetricsDetails
 from .supported_cloud_region_collection import SupportedCloudRegionCollection
 from .supported_cloud_region_summary import SupportedCloudRegionSummary
 from .tag import Tag
+from .transparent_huge_pages import TransparentHugePages
 from .update_agent_dependency_details import UpdateAgentDependencyDetails
 from .update_agent_details import UpdateAgentDetails
 from .update_asset_details import UpdateAssetDetails
@@ -99,11 +168,14 @@ from .update_aws_ebs_asset_details import UpdateAwsEbsAssetDetails
 from .update_aws_ec2_asset_details import UpdateAwsEc2AssetDetails
 from .update_discovery_schedule_details import UpdateDiscoveryScheduleDetails
 from .update_environment_details import UpdateEnvironmentDetails
+from .update_inventory_asset_details import UpdateInventoryAssetDetails
 from .update_inventory_details import UpdateInventoryDetails
+from .update_olvm_asset_source_details import UpdateOlvmAssetSourceDetails
 from .update_plugin_details import UpdatePluginDetails
 from .update_vm_asset_details import UpdateVmAssetDetails
 from .update_vm_ware_asset_source_details import UpdateVmWareAssetSourceDetails
 from .update_vmware_vm_asset_details import UpdateVmwareVmAssetDetails
+from .vcpu_pin import VcpuPin
 from .vm_asset import VmAsset
 from .vm_properties import VmProperties
 from .vm_ware_asset_source import VmWareAssetSource
@@ -112,6 +184,7 @@ from .vmware_v_center_properties import VmwareVCenterProperties
 from .vmware_vm_asset import VmwareVmAsset
 from .vmware_vm_properties import VmwareVmProperties
 from .volume_attachment import VolumeAttachment
+from .volume_group import VolumeGroup
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -168,7 +241,9 @@ cloud_bridge_type_mapping = {
     "CreateAwsEc2AssetDetails": CreateAwsEc2AssetDetails,
     "CreateDiscoveryScheduleDetails": CreateDiscoveryScheduleDetails,
     "CreateEnvironmentDetails": CreateEnvironmentDetails,
+    "CreateInventoryAssetDetails": CreateInventoryAssetDetails,
     "CreateInventoryDetails": CreateInventoryDetails,
+    "CreateOlvmAssetSourceDetails": CreateOlvmAssetSourceDetails,
     "CreateVmWareAssetSourceDetails": CreateVmWareAssetSourceDetails,
     "CreateVmwareVmAssetDetails": CreateVmwareVmAssetDetails,
     "CustomerTag": CustomerTag,
@@ -192,21 +267,88 @@ cloud_bridge_type_mapping = {
     "InstancePrivateIpAddress": InstancePrivateIpAddress,
     "InstanceState": InstanceState,
     "Inventory": Inventory,
+    "InventoryAsset": InventoryAsset,
     "InventoryCollection": InventoryCollection,
     "InventorySummary": InventorySummary,
+    "Ksm": Ksm,
+    "LogicalUnit": LogicalUnit,
+    "MemoryOverCommit": MemoryOverCommit,
+    "MigrationBandwidth": MigrationBandwidth,
     "MonthlyCostSummary": MonthlyCostSummary,
     "Nic": Nic,
     "Nvdimm": Nvdimm,
     "NvdimmController": NvdimmController,
+    "OlvmAgent": OlvmAgent,
+    "OlvmAssetSource": OlvmAssetSource,
+    "OlvmAssetSourceSummary": OlvmAssetSourceSummary,
+    "OlvmBios": OlvmBios,
+    "OlvmBiosType": OlvmBiosType,
+    "OlvmBootMenu": OlvmBootMenu,
+    "OlvmBootProtocol": OlvmBootProtocol,
+    "OlvmCertificate": OlvmCertificate,
+    "OlvmClusterAssetDetails": OlvmClusterAssetDetails,
+    "OlvmClusterProperties": OlvmClusterProperties,
+    "OlvmConfiguration": OlvmConfiguration,
+    "OlvmConsole": OlvmConsole,
+    "OlvmCore": OlvmCore,
+    "OlvmCpu": OlvmCpu,
+    "OlvmCpuTopology": OlvmCpuTopology,
+    "OlvmCpuTune": OlvmCpuTune,
+    "OlvmCustomProperty": OlvmCustomProperty,
+    "OlvmDataCenter": OlvmDataCenter,
+    "OlvmDisplay": OlvmDisplay,
+    "OlvmDomain": OlvmDomain,
+    "OlvmErrorHandling": OlvmErrorHandling,
+    "OlvmFencingPolicy": OlvmFencingPolicy,
+    "OlvmGuestOperatingSystem": OlvmGuestOperatingSystem,
+    "OlvmHardwareInformation": OlvmHardwareInformation,
+    "OlvmHighAvailability": OlvmHighAvailability,
+    "OlvmHost": OlvmHost,
+    "OlvmHostStatus": OlvmHostStatus,
+    "OlvmHostType": OlvmHostType,
+    "OlvmHostedEngine": OlvmHostedEngine,
+    "OlvmIcon": OlvmIcon,
+    "OlvmInitialization": OlvmInitialization,
+    "OlvmIp": OlvmIp,
+    "OlvmIscsiDetails": OlvmIscsiDetails,
+    "OlvmKernel": OlvmKernel,
+    "OlvmMemoryPolicy": OlvmMemoryPolicy,
+    "OlvmMigrationOptions": OlvmMigrationOptions,
+    "OlvmNicConfiguration": OlvmNicConfiguration,
+    "OlvmOperatingSystem": OlvmOperatingSystem,
+    "OlvmPmProxy": OlvmPmProxy,
+    "OlvmPowerManagement": OlvmPowerManagement,
+    "OlvmProperty": OlvmProperty,
+    "OlvmSelinux": OlvmSelinux,
+    "OlvmSerialNumber": OlvmSerialNumber,
+    "OlvmSpm": OlvmSpm,
+    "OlvmStorageDomainAssetDetails": OlvmStorageDomainAssetDetails,
+    "OlvmStorageDomainProperties": OlvmStorageDomainProperties,
+    "OlvmTemplateAssetDetails": OlvmTemplateAssetDetails,
+    "OlvmTemplateProperties": OlvmTemplateProperties,
+    "OlvmTemplateVersion": OlvmTemplateVersion,
+    "OlvmUsb": OlvmUsb,
+    "OlvmVersion": OlvmVersion,
+    "OlvmVirtualMachine": OlvmVirtualMachine,
+    "OlvmVmPlacementPolicy": OlvmVmPlacementPolicy,
+    "OlvmVmStatus": OlvmVmStatus,
+    "OlvmVmSummary": OlvmVmSummary,
+    "OlvmVmType": OlvmVmType,
+    "OlvmVnicProfileAssetDetails": OlvmVnicProfileAssetDetails,
+    "OlvmVnicProfileProperties": OlvmVnicProfileProperties,
     "Placement": Placement,
     "Plugin": Plugin,
     "PluginSummary": PluginSummary,
     "RemoveAgentDependencyDetails": RemoveAgentDependencyDetails,
     "ScsiController": ScsiController,
+    "SkipIfConnectivityBroken": SkipIfConnectivityBroken,
+    "SkipIfSdActive": SkipIfSdActive,
+    "Storage": Storage,
     "SubmitHistoricalMetricsDetails": SubmitHistoricalMetricsDetails,
     "SupportedCloudRegionCollection": SupportedCloudRegionCollection,
     "SupportedCloudRegionSummary": SupportedCloudRegionSummary,
     "Tag": Tag,
+    "TransparentHugePages": TransparentHugePages,
     "UpdateAgentDependencyDetails": UpdateAgentDependencyDetails,
     "UpdateAgentDetails": UpdateAgentDetails,
     "UpdateAssetDetails": UpdateAssetDetails,
@@ -216,11 +358,14 @@ cloud_bridge_type_mapping = {
     "UpdateAwsEc2AssetDetails": UpdateAwsEc2AssetDetails,
     "UpdateDiscoveryScheduleDetails": UpdateDiscoveryScheduleDetails,
     "UpdateEnvironmentDetails": UpdateEnvironmentDetails,
+    "UpdateInventoryAssetDetails": UpdateInventoryAssetDetails,
     "UpdateInventoryDetails": UpdateInventoryDetails,
+    "UpdateOlvmAssetSourceDetails": UpdateOlvmAssetSourceDetails,
     "UpdatePluginDetails": UpdatePluginDetails,
     "UpdateVmAssetDetails": UpdateVmAssetDetails,
     "UpdateVmWareAssetSourceDetails": UpdateVmWareAssetSourceDetails,
     "UpdateVmwareVmAssetDetails": UpdateVmwareVmAssetDetails,
+    "VcpuPin": VcpuPin,
     "VmAsset": VmAsset,
     "VmProperties": VmProperties,
     "VmWareAssetSource": VmWareAssetSource,
@@ -229,6 +374,7 @@ cloud_bridge_type_mapping = {
     "VmwareVmAsset": VmwareVmAsset,
     "VmwareVmProperties": VmwareVmProperties,
     "VolumeAttachment": VolumeAttachment,
+    "VolumeGroup": VolumeGroup,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

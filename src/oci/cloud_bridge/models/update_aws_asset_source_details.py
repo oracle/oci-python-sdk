@@ -23,7 +23,7 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
 
         :param type:
             The value to assign to the type property of this UpdateAwsAssetSourceDetails.
-            Allowed values for this property are: "VMWARE", "AWS"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param display_name:
@@ -49,6 +49,11 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
         :param system_tags:
             The value to assign to the system_tags property of this UpdateAwsAssetSourceDetails.
         :type system_tags: dict(str, dict(str, object))
+
+        :param environment_type:
+            The value to assign to the environment_type property of this UpdateAwsAssetSourceDetails.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
 
         :param discovery_credentials:
             The value to assign to the discovery_credentials property of this UpdateAwsAssetSourceDetails.
@@ -79,6 +84,7 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'discovery_credentials': 'AssetSourceCredentials',
             'replication_credentials': 'AssetSourceCredentials',
             'are_historical_metrics_collected': 'bool',
@@ -93,6 +99,7 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'discovery_credentials': 'discoveryCredentials',
             'replication_credentials': 'replicationCredentials',
             'are_historical_metrics_collected': 'areHistoricalMetricsCollected',
@@ -106,6 +113,7 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._discovery_credentials = None
         self._replication_credentials = None
         self._are_historical_metrics_collected = None

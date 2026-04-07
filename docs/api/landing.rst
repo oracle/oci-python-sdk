@@ -100,6 +100,7 @@ API Reference
 * :doc:`Distributed Db Work Request Service <distributed_database/client/oci.distributed_database.DistributedDbWorkRequestServiceClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
+* :doc:`Dynamic Set <os_management_hub/client/oci.os_management_hub.DynamicSetClient>`
 * :doc:`Ekm <key_management/client/oci.key_management.EkmClient>`
 * :doc:`Em Warehouse <em_warehouse/client/oci.em_warehouse.EmWarehouseClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`

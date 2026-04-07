@@ -46,6 +46,7 @@ Container Engine
     oci.container_engine.models.CreateNodePoolNodeConfigDetails
     oci.container_engine.models.CreateNodeShapeConfigDetails
     oci.container_engine.models.CreateVirtualNodePoolDetails
+    oci.container_engine.models.CreateVnicDetails
     oci.container_engine.models.CreateWorkloadMappingDetails
     oci.container_engine.models.CredentialRotationStatus
     oci.container_engine.models.ExtendEndpointDecommissionRollbackDeadlineDetails
@@ -55,6 +56,7 @@ Container Engine
     oci.container_engine.models.ImagePolicyConfig
     oci.container_engine.models.InitialVirtualNodeLabel
     oci.container_engine.models.InstallAddonDetails
+    oci.container_engine.models.Ipv6AddressIpv6SubnetCidrPairDetails
     oci.container_engine.models.KeyDetails
     oci.container_engine.models.KeyValue
     oci.container_engine.models.KubernetesNetworkConfig
@@ -69,6 +71,7 @@ Container Engine
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
     oci.container_engine.models.NodePoolPodNetworkOptionDetails
+    oci.container_engine.models.NodePoolSecondaryVnicDetails
     oci.container_engine.models.NodePoolSummary
     oci.container_engine.models.NodeShapeConfig
     oci.container_engine.models.NodeSourceDetails

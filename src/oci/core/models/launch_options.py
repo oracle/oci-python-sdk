@@ -56,6 +56,10 @@ class LaunchOptions(object):
     #: This constant has a value of "PARAVIRTUALIZED"
     NETWORK_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
 
+    #: A constant which can be used with the network_type property of a LaunchOptions.
+    #: This constant has a value of "ACCELERATEDPV"
+    NETWORK_TYPE_ACCELERATEDPV = "ACCELERATEDPV"
+
     #: A constant which can be used with the remote_data_volume_type property of a LaunchOptions.
     #: This constant has a value of "ISCSI"
     REMOTE_DATA_VOLUME_TYPE_ISCSI = "ISCSI"
@@ -95,7 +99,7 @@ class LaunchOptions(object):
 
         :param network_type:
             The value to assign to the network_type property of this LaunchOptions.
-            Allowed values for this property are: "E1000", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "E1000", "VFIO", "PARAVIRTUALIZED", "ACCELERATEDPV", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type network_type: str
 
@@ -228,8 +232,9 @@ class LaunchOptions(object):
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
         when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 
-        Allowed values for this property are: "E1000", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "E1000", "VFIO", "PARAVIRTUALIZED", "ACCELERATEDPV", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -247,12 +252,13 @@ class LaunchOptions(object):
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
         when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 
 
         :param network_type: The network_type of this LaunchOptions.
         :type: str
         """
-        allowed_values = ["E1000", "VFIO", "PARAVIRTUALIZED"]
+        allowed_values = ["E1000", "VFIO", "PARAVIRTUALIZED", "ACCELERATEDPV"]
         if not value_allowed_none_or_none_sentinel(network_type, allowed_values):
             network_type = 'UNKNOWN_ENUM_VALUE'
         self._network_type = network_type

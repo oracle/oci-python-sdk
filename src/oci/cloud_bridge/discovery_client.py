@@ -1493,7 +1493,7 @@ class DiscoveryClient(object):
         :param str asset_source_type: (optional)
             The asset source type.
 
-            Allowed values are: "VMWARE", "AWS"
+            Allowed values are: "VMWARE", "AWS", "OLVM"
 
         :param str name_contains: (optional)
             A filter to return only supported cloud regions which name contains given nameContains as sub-string.
@@ -1565,7 +1565,7 @@ class DiscoveryClient(object):
                 f"list_supported_cloud_regions got unknown kwargs: {extra_kwargs!r}")
 
         if 'asset_source_type' in kwargs:
-            asset_source_type_allowed_values = ["VMWARE", "AWS"]
+            asset_source_type_allowed_values = ["VMWARE", "AWS", "OLVM"]
             if kwargs['asset_source_type'] not in asset_source_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `asset_source_type`, must be one of { asset_source_type_allowed_values }"

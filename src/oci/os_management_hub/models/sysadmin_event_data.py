@@ -28,6 +28,10 @@ class SysadminEventData(object):
         Initializes a new SysadminEventData object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param error_summary:
+            The value to assign to the error_summary property of this SysadminEventData.
+        :type error_summary: str
+
         :param error_cause:
             The value to assign to the error_cause property of this SysadminEventData.
         :type error_cause: str
@@ -56,6 +60,7 @@ class SysadminEventData(object):
 
         """
         self.swagger_types = {
+            'error_summary': 'str',
             'error_cause': 'str',
             'error_log': 'str',
             'attempted_resolutions': 'list[str]',
@@ -64,6 +69,7 @@ class SysadminEventData(object):
             'additional_details': 'WorkRequestEventDataAdditionalDetails'
         }
         self.attribute_map = {
+            'error_summary': 'errorSummary',
             'error_cause': 'errorCause',
             'error_log': 'errorLog',
             'attempted_resolutions': 'attemptedResolutions',
@@ -71,12 +77,37 @@ class SysadminEventData(object):
             'resolution_log': 'resolutionLog',
             'additional_details': 'additionalDetails'
         }
+        self._error_summary = None
         self._error_cause = None
         self._error_log = None
         self._attempted_resolutions = None
         self._resolution_status = None
         self._resolution_log = None
         self._additional_details = None
+
+    @property
+    def error_summary(self):
+        """
+        Gets the error_summary of this SysadminEventData.
+        Brief description on how this error is categorized.
+
+
+        :return: The error_summary of this SysadminEventData.
+        :rtype: str
+        """
+        return self._error_summary
+
+    @error_summary.setter
+    def error_summary(self, error_summary):
+        """
+        Sets the error_summary of this SysadminEventData.
+        Brief description on how this error is categorized.
+
+
+        :param error_summary: The error_summary of this SysadminEventData.
+        :type: str
+        """
+        self._error_summary = error_summary
 
     @property
     def error_cause(self):

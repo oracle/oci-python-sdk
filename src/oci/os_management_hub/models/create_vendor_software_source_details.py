@@ -50,6 +50,10 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
             The value to assign to the origin_software_source_id property of this CreateVendorSoftwareSourceDetails.
         :type origin_software_source_id: str
 
+        :param origin_display_name:
+            The value to assign to the origin_display_name property of this CreateVendorSoftwareSourceDetails.
+        :type origin_display_name: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -58,7 +62,8 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'software_source_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'origin_software_source_id': 'str'
+            'origin_software_source_id': 'str',
+            'origin_display_name': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -67,7 +72,8 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'software_source_type': 'softwareSourceType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'origin_software_source_id': 'originSoftwareSourceId'
+            'origin_software_source_id': 'originSoftwareSourceId',
+            'origin_display_name': 'originDisplayName'
         }
         self._compartment_id = None
         self._display_name = None
@@ -76,12 +82,13 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
         self._freeform_tags = None
         self._defined_tags = None
         self._origin_software_source_id = None
+        self._origin_display_name = None
         self._software_source_type = 'VENDOR'
 
     @property
     def origin_software_source_id(self):
         """
-        **[Required]** Gets the origin_software_source_id of this CreateVendorSoftwareSourceDetails.
+        Gets the origin_software_source_id of this CreateVendorSoftwareSourceDetails.
         The `OCID`__ of the vendor software source in the root compartment that is being replicated.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -105,6 +112,30 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
         :type: str
         """
         self._origin_software_source_id = origin_software_source_id
+
+    @property
+    def origin_display_name(self):
+        """
+        Gets the origin_display_name of this CreateVendorSoftwareSourceDetails.
+        The display name of the software source to be replicated
+
+
+        :return: The origin_display_name of this CreateVendorSoftwareSourceDetails.
+        :rtype: str
+        """
+        return self._origin_display_name
+
+    @origin_display_name.setter
+    def origin_display_name(self, origin_display_name):
+        """
+        Sets the origin_display_name of this CreateVendorSoftwareSourceDetails.
+        The display name of the software source to be replicated
+
+
+        :param origin_display_name: The origin_display_name of this CreateVendorSoftwareSourceDetails.
+        :type: str
+        """
+        self._origin_display_name = origin_display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

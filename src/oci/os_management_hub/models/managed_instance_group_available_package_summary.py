@@ -39,6 +39,18 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     #: This constant has a value of "I386"
     ARCHITECTURE_I386 = "I386"
 
+    #: A constant which can be used with the architecture property of a ManagedInstanceGroupAvailablePackageSummary.
+    #: This constant has a value of "AMD64"
+    ARCHITECTURE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the architecture property of a ManagedInstanceGroupAvailablePackageSummary.
+    #: This constant has a value of "ARM64"
+    ARCHITECTURE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the architecture property of a ManagedInstanceGroupAvailablePackageSummary.
+    #: This constant has a value of "ALL"
+    ARCHITECTURE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagedInstanceGroupAvailablePackageSummary object with values from keyword arguments.
@@ -62,7 +74,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this ManagedInstanceGroupAvailablePackageSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -203,7 +215,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
         Gets the architecture of this ManagedInstanceGroupAvailablePackageSummary.
         The architecture for which this package was built.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -222,7 +234,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
         :param architecture: The architecture of this ManagedInstanceGroupAvailablePackageSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture

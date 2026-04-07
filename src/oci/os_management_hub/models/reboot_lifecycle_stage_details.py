@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RebootLifecycleStageDetails(object):
     """
-    PProvides the information used for the reboot job.
+    Provides the information used for the reboot job.
     """
 
     def __init__(self, **kwargs):

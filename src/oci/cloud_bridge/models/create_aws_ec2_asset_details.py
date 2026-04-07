@@ -43,7 +43,7 @@ class CreateAwsEc2AssetDetails(CreateAssetDetails):
 
         :param asset_type:
             The value to assign to the asset_type property of this CreateAwsEc2AssetDetails.
-            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+            Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         :param asset_source_ids:

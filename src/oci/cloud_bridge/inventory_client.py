@@ -156,7 +156,7 @@ class InventoryClient(object):
         :param str asset_type: (optional)
             The type of asset.
 
-            Allowed values are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+            Allowed values are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -171,6 +171,12 @@ class InventoryClient(object):
 
         :param str inventory_id: (optional)
             Unique Inventory identifier.
+
+        :param str asset_class_name: (optional)
+            The name of the asset class.
+
+        :param str asset_class_version: (optional)
+            The version of the asset class.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -215,7 +221,9 @@ class InventoryClient(object):
             "sort_order",
             "opc_request_id",
             "group_by",
-            "inventory_id"
+            "inventory_id",
+            "asset_class_name",
+            "asset_class_version"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -230,7 +238,7 @@ class InventoryClient(object):
                 )
 
         if 'asset_type' in kwargs:
-            asset_type_allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
+            asset_type_allowed_values = ["VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"]
             if kwargs['asset_type'] not in asset_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `asset_type`, must be one of { asset_type_allowed_values }"
@@ -254,7 +262,9 @@ class InventoryClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "aggregationProperties": self.base_client.generate_collection_format_param(aggregation_properties, 'multi'),
             "groupBy": self.base_client.generate_collection_format_param(kwargs.get("group_by", missing), 'multi'),
-            "inventoryId": kwargs.get("inventory_id", missing)
+            "inventoryId": kwargs.get("inventory_id", missing),
+            "assetClassName": kwargs.get("asset_class_name", missing),
+            "assetClassVersion": kwargs.get("asset_class_version", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1345,7 +1355,7 @@ class InventoryClient(object):
         :param str asset_type: (optional)
             The type of asset.
 
-            Allowed values are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+            Allowed values are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
 
         :param str asset_id: (optional)
             Unique asset identifier.
@@ -1368,6 +1378,12 @@ class InventoryClient(object):
 
         :param str inventory_id: (optional)
             Unique Inventory identifier.
+
+        :param str asset_class_name: (optional)
+            The name of the asset class.
+
+        :param str asset_class_version: (optional)
+            The version of the asset class.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1414,7 +1430,9 @@ class InventoryClient(object):
             "sort_order",
             "sort_by",
             "opc_request_id",
-            "inventory_id"
+            "inventory_id",
+            "asset_class_name",
+            "asset_class_version"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1429,7 +1447,7 @@ class InventoryClient(object):
                 )
 
         if 'asset_type' in kwargs:
-            asset_type_allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
+            asset_type_allowed_values = ["VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"]
             if kwargs['asset_type'] not in asset_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `asset_type`, must be one of { asset_type_allowed_values }"
@@ -1461,7 +1479,9 @@ class InventoryClient(object):
             "displayName": kwargs.get("display_name", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "inventoryId": kwargs.get("inventory_id", missing)
+            "inventoryId": kwargs.get("inventory_id", missing),
+            "assetClassName": kwargs.get("asset_class_name", missing),
+            "assetClassVersion": kwargs.get("asset_class_version", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

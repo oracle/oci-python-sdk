@@ -24,6 +24,10 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
     ASSET_TYPE_VM = "VM"
 
     #: A constant which can be used with the asset_type property of a ImportInventoryViaAssetsDetails.
+    #: This constant has a value of "INVENTORY_ASSET"
+    ASSET_TYPE_INVENTORY_ASSET = "INVENTORY_ASSET"
+
+    #: A constant which can be used with the asset_type property of a ImportInventoryViaAssetsDetails.
     #: This constant has a value of "AWS_EC2"
     ASSET_TYPE_AWS_EC2 = "AWS_EC2"
 
@@ -60,7 +64,7 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
 
         :param asset_type:
             The value to assign to the asset_type property of this ImportInventoryViaAssetsDetails.
-            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+            Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         """
@@ -118,7 +122,7 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
         **[Required]** Gets the asset_type of this ImportInventoryViaAssetsDetails.
         The type of asset.
 
-        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+        Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
 
 
         :return: The asset_type of this ImportInventoryViaAssetsDetails.
@@ -136,7 +140,7 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
         :param asset_type: The asset_type of this ImportInventoryViaAssetsDetails.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
+        allowed_values = ["VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `asset_type`, must be None or one of {allowed_values}"

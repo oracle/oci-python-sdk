@@ -17,6 +17,26 @@ class AvailableSoftwareSourceSummary(object):
     After a software source is added, packages from that software source can be installed on that managed instance.
     """
 
+    #: A constant which can be used with the software_source_type property of a AvailableSoftwareSourceSummary.
+    #: This constant has a value of "VENDOR"
+    SOFTWARE_SOURCE_TYPE_VENDOR = "VENDOR"
+
+    #: A constant which can be used with the software_source_type property of a AvailableSoftwareSourceSummary.
+    #: This constant has a value of "CUSTOM"
+    SOFTWARE_SOURCE_TYPE_CUSTOM = "CUSTOM"
+
+    #: A constant which can be used with the software_source_type property of a AvailableSoftwareSourceSummary.
+    #: This constant has a value of "VERSIONED"
+    SOFTWARE_SOURCE_TYPE_VERSIONED = "VERSIONED"
+
+    #: A constant which can be used with the software_source_type property of a AvailableSoftwareSourceSummary.
+    #: This constant has a value of "PRIVATE"
+    SOFTWARE_SOURCE_TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the software_source_type property of a AvailableSoftwareSourceSummary.
+    #: This constant has a value of "THIRD_PARTY"
+    SOFTWARE_SOURCE_TYPE_THIRD_PARTY = "THIRD_PARTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AvailableSoftwareSourceSummary object with values from keyword arguments.
@@ -34,20 +54,36 @@ class AvailableSoftwareSourceSummary(object):
             The value to assign to the display_name property of this AvailableSoftwareSourceSummary.
         :type display_name: str
 
+        :param software_source_type:
+            The value to assign to the software_source_type property of this AvailableSoftwareSourceSummary.
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type software_source_type: str
+
+        :param description:
+            The value to assign to the description property of this AvailableSoftwareSourceSummary.
+        :type description: str
+
         """
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'software_source_type': 'str',
+            'description': 'str'
         }
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'software_source_type': 'softwareSourceType',
+            'description': 'description'
         }
         self._id = None
         self._compartment_id = None
         self._display_name = None
+        self._software_source_type = None
+        self._description = None
 
     @property
     def id(self):
@@ -128,6 +164,60 @@ class AvailableSoftwareSourceSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def software_source_type(self):
+        """
+        **[Required]** Gets the software_source_type of this AvailableSoftwareSourceSummary.
+        Type of the software source.
+
+        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The software_source_type of this AvailableSoftwareSourceSummary.
+        :rtype: str
+        """
+        return self._software_source_type
+
+    @software_source_type.setter
+    def software_source_type(self, software_source_type):
+        """
+        Sets the software_source_type of this AvailableSoftwareSourceSummary.
+        Type of the software source.
+
+
+        :param software_source_type: The software_source_type of this AvailableSoftwareSourceSummary.
+        :type: str
+        """
+        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
+        if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
+            software_source_type = 'UNKNOWN_ENUM_VALUE'
+        self._software_source_type = software_source_type
+
+    @property
+    def description(self):
+        """
+        Gets the description of this AvailableSoftwareSourceSummary.
+        Software source description.
+
+
+        :return: The description of this AvailableSoftwareSourceSummary.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this AvailableSoftwareSourceSummary.
+        Software source description.
+
+
+        :param description: The description of this AvailableSoftwareSourceSummary.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)

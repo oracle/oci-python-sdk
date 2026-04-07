@@ -59,6 +59,22 @@ class ManagedInstance(object):
     #: This constant has a value of "I386"
     ARCHITECTURE_I386 = "I386"
 
+    #: A constant which can be used with the architecture property of a ManagedInstance.
+    #: This constant has a value of "AMD64"
+    ARCHITECTURE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the architecture property of a ManagedInstance.
+    #: This constant has a value of "ARM64"
+    ARCHITECTURE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the architecture property of a ManagedInstance.
+    #: This constant has a value of "ALL"
+    ARCHITECTURE_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
+
     #: A constant which can be used with the os_family property of a ManagedInstance.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -88,8 +104,28 @@ class ManagedInstance(object):
     OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
 
     #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
     #: This constant has a value of "ALL"
     OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
 
     #: A constant which can be used with the status property of a ManagedInstance.
     #: This constant has a value of "NORMAL"
@@ -180,13 +216,13 @@ class ManagedInstance(object):
 
         :param architecture:
             The value to assign to the architecture property of this ManagedInstance.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
         :param os_family:
             The value to assign to the os_family property of this ManagedInstance.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -296,6 +332,14 @@ class ManagedInstance(object):
             The value to assign to the agent_version property of this ManagedInstance.
         :type agent_version: str
 
+        :param are_sources_managed:
+            The value to assign to the are_sources_managed property of this ManagedInstance.
+        :type are_sources_managed: bool
+
+        :param time_last_software_refresh:
+            The value to assign to the time_last_software_refresh property of this ManagedInstance.
+        :type time_last_software_refresh: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -337,7 +381,9 @@ class ManagedInstance(object):
             'notification_topic_id': 'str',
             'autonomous_settings': 'AutonomousSettings',
             'is_managed_by_autonomous_linux': 'bool',
-            'agent_version': 'str'
+            'agent_version': 'str',
+            'are_sources_managed': 'bool',
+            'time_last_software_refresh': 'datetime'
         }
         self.attribute_map = {
             'id': 'id',
@@ -379,7 +425,9 @@ class ManagedInstance(object):
             'notification_topic_id': 'notificationTopicId',
             'autonomous_settings': 'autonomousSettings',
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
-            'agent_version': 'agentVersion'
+            'agent_version': 'agentVersion',
+            'are_sources_managed': 'areSourcesManaged',
+            'time_last_software_refresh': 'timeLastSoftwareRefresh'
         }
         self._id = None
         self._display_name = None
@@ -421,6 +469,8 @@ class ManagedInstance(object):
         self._autonomous_settings = None
         self._is_managed_by_autonomous_linux = None
         self._agent_version = None
+        self._are_sources_managed = None
+        self._time_last_software_refresh = None
 
     @property
     def id(self):
@@ -742,7 +792,7 @@ class ManagedInstance(object):
         Gets the architecture of this ManagedInstance.
         The CPU architecture type of the managed instance.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -761,7 +811,7 @@ class ManagedInstance(object):
         :param architecture: The architecture of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
@@ -772,7 +822,7 @@ class ManagedInstance(object):
         Gets the os_family of this ManagedInstance.
         The operating system type of the managed instance.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -791,7 +841,7 @@ class ManagedInstance(object):
         :param os_family: The os_family of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -1429,6 +1479,58 @@ class ManagedInstance(object):
         :type: str
         """
         self._agent_version = agent_version
+
+    @property
+    def are_sources_managed(self):
+        """
+        Gets the are_sources_managed of this ManagedInstance.
+        Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+
+
+        :return: The are_sources_managed of this ManagedInstance.
+        :rtype: bool
+        """
+        return self._are_sources_managed
+
+    @are_sources_managed.setter
+    def are_sources_managed(self, are_sources_managed):
+        """
+        Sets the are_sources_managed of this ManagedInstance.
+        Controls whether OSMH manages software sources for this instance. This defaults to false for Ubuntu and Windows instances.
+
+
+        :param are_sources_managed: The are_sources_managed of this ManagedInstance.
+        :type: bool
+        """
+        self._are_sources_managed = are_sources_managed
+
+    @property
+    def time_last_software_refresh(self):
+        """
+        Gets the time_last_software_refresh of this ManagedInstance.
+        The date and time the instance's software information was last refreshed (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_last_software_refresh of this ManagedInstance.
+        :rtype: datetime
+        """
+        return self._time_last_software_refresh
+
+    @time_last_software_refresh.setter
+    def time_last_software_refresh(self, time_last_software_refresh):
+        """
+        Sets the time_last_software_refresh of this ManagedInstance.
+        The date and time the instance's software information was last refreshed (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_last_software_refresh: The time_last_software_refresh of this ManagedInstance.
+        :type: datetime
+        """
+        self._time_last_software_refresh = time_last_software_refresh
 
     def __repr__(self):
         return formatted_flat_dict(self)

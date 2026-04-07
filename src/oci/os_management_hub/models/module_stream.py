@@ -39,6 +39,18 @@ class ModuleStream(object):
     #: This constant has a value of "I386"
     ARCH_TYPE_I386 = "I386"
 
+    #: A constant which can be used with the arch_type property of a ModuleStream.
+    #: This constant has a value of "AMD64"
+    ARCH_TYPE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the arch_type property of a ModuleStream.
+    #: This constant has a value of "ARM64"
+    ARCH_TYPE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the arch_type property of a ModuleStream.
+    #: This constant has a value of "ALL"
+    ARCH_TYPE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModuleStream object with values from keyword arguments.
@@ -62,7 +74,7 @@ class ModuleStream(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this ModuleStream.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -221,7 +233,7 @@ class ModuleStream(object):
         Gets the arch_type of this ModuleStream.
         The architecture for which the packages in this module stream were built.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -240,7 +252,7 @@ class ModuleStream(object):
         :param arch_type: The arch_type of this ModuleStream.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type

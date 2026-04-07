@@ -34,6 +34,7 @@ from .create_node_pool_details import CreateNodePoolDetails
 from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetails
 from .create_node_shape_config_details import CreateNodeShapeConfigDetails
 from .create_virtual_node_pool_details import CreateVirtualNodePoolDetails
+from .create_vnic_details import CreateVnicDetails
 from .create_workload_mapping_details import CreateWorkloadMappingDetails
 from .credential_rotation_status import CredentialRotationStatus
 from .extend_endpoint_decommission_rollback_deadline_details import ExtendEndpointDecommissionRollbackDeadlineDetails
@@ -43,6 +44,7 @@ from .image import Image
 from .image_policy_config import ImagePolicyConfig
 from .initial_virtual_node_label import InitialVirtualNodeLabel
 from .install_addon_details import InstallAddonDetails
+from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
 from .key_details import KeyDetails
 from .key_value import KeyValue
 from .kubernetes_network_config import KubernetesNetworkConfig
@@ -57,6 +59,7 @@ from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
 from .node_pool_pod_network_option_details import NodePoolPodNetworkOptionDetails
+from .node_pool_secondary_vnic_details import NodePoolSecondaryVnicDetails
 from .node_pool_summary import NodePoolSummary
 from .node_shape_config import NodeShapeConfig
 from .node_source_details import NodeSourceDetails
@@ -137,6 +140,7 @@ container_engine_type_mapping = {
     "CreateNodePoolNodeConfigDetails": CreateNodePoolNodeConfigDetails,
     "CreateNodeShapeConfigDetails": CreateNodeShapeConfigDetails,
     "CreateVirtualNodePoolDetails": CreateVirtualNodePoolDetails,
+    "CreateVnicDetails": CreateVnicDetails,
     "CreateWorkloadMappingDetails": CreateWorkloadMappingDetails,
     "CredentialRotationStatus": CredentialRotationStatus,
     "ExtendEndpointDecommissionRollbackDeadlineDetails": ExtendEndpointDecommissionRollbackDeadlineDetails,
@@ -146,6 +150,7 @@ container_engine_type_mapping = {
     "ImagePolicyConfig": ImagePolicyConfig,
     "InitialVirtualNodeLabel": InitialVirtualNodeLabel,
     "InstallAddonDetails": InstallAddonDetails,
+    "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
     "KeyDetails": KeyDetails,
     "KeyValue": KeyValue,
     "KubernetesNetworkConfig": KubernetesNetworkConfig,
@@ -160,6 +165,7 @@ container_engine_type_mapping = {
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
     "NodePoolPodNetworkOptionDetails": NodePoolPodNetworkOptionDetails,
+    "NodePoolSecondaryVnicDetails": NodePoolSecondaryVnicDetails,
     "NodePoolSummary": NodePoolSummary,
     "NodeShapeConfig": NodeShapeConfig,
     "NodeSourceDetails": NodeSourceDetails,

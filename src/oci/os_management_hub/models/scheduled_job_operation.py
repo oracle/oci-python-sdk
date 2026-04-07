@@ -111,6 +111,18 @@ class ScheduledJobOperation(object):
     #: This constant has a value of "RERUN_WORK_REQUEST"
     OPERATION_TYPE_RERUN_WORK_REQUEST = "RERUN_WORK_REQUEST"
 
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_SNAPS"
+    OPERATION_TYPE_INSTALL_SNAPS = "INSTALL_SNAPS"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "REMOVE_SNAPS"
+    OPERATION_TYPE_REMOVE_SNAPS = "REMOVE_SNAPS"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "SWITCH_SNAP_CHANNEL"
+    OPERATION_TYPE_SWITCH_SNAP_CHANNEL = "SWITCH_SNAP_CHANNEL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledJobOperation object with values from keyword arguments.
@@ -118,7 +130,7 @@ class ScheduledJobOperation(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this ScheduledJobOperation.
-            Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -146,6 +158,18 @@ class ScheduledJobOperation(object):
             The value to assign to the reboot_timeout_in_mins property of this ScheduledJobOperation.
         :type reboot_timeout_in_mins: int
 
+        :param install_snap_details:
+            The value to assign to the install_snap_details property of this ScheduledJobOperation.
+        :type install_snap_details: oci.os_management_hub.models.InstallSnapDetails
+
+        :param remove_snap_details:
+            The value to assign to the remove_snap_details property of this ScheduledJobOperation.
+        :type remove_snap_details: oci.os_management_hub.models.RemoveSnapDetails
+
+        :param switch_snap_channel_details:
+            The value to assign to the switch_snap_channel_details property of this ScheduledJobOperation.
+        :type switch_snap_channel_details: oci.os_management_hub.models.SwitchSnapChannelDetails
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -154,7 +178,10 @@ class ScheduledJobOperation(object):
             'manage_module_streams_details': 'ManageModuleStreamsInScheduledJobDetails',
             'switch_module_streams_details': 'ModuleStreamDetails',
             'software_source_ids': 'list[str]',
-            'reboot_timeout_in_mins': 'int'
+            'reboot_timeout_in_mins': 'int',
+            'install_snap_details': 'InstallSnapDetails',
+            'remove_snap_details': 'RemoveSnapDetails',
+            'switch_snap_channel_details': 'SwitchSnapChannelDetails'
         }
         self.attribute_map = {
             'operation_type': 'operationType',
@@ -163,7 +190,10 @@ class ScheduledJobOperation(object):
             'manage_module_streams_details': 'manageModuleStreamsDetails',
             'switch_module_streams_details': 'switchModuleStreamsDetails',
             'software_source_ids': 'softwareSourceIds',
-            'reboot_timeout_in_mins': 'rebootTimeoutInMins'
+            'reboot_timeout_in_mins': 'rebootTimeoutInMins',
+            'install_snap_details': 'installSnapDetails',
+            'remove_snap_details': 'removeSnapDetails',
+            'switch_snap_channel_details': 'switchSnapChannelDetails'
         }
         self._operation_type = None
         self._package_names = None
@@ -172,6 +202,9 @@ class ScheduledJobOperation(object):
         self._switch_module_streams_details = None
         self._software_source_ids = None
         self._reboot_timeout_in_mins = None
+        self._install_snap_details = None
+        self._remove_snap_details = None
+        self._switch_snap_channel_details = None
 
     @property
     def operation_type(self):
@@ -179,7 +212,7 @@ class ScheduledJobOperation(object):
         **[Required]** Gets the operation_type of this ScheduledJobOperation.
         The type of operation this scheduled job performs.
 
-        Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,7 +231,7 @@ class ScheduledJobOperation(object):
         :param operation_type: The operation_type of this ScheduledJobOperation.
         :type: str
         """
-        allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST"]
+        allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -350,6 +383,66 @@ class ScheduledJobOperation(object):
         :type: int
         """
         self._reboot_timeout_in_mins = reboot_timeout_in_mins
+
+    @property
+    def install_snap_details(self):
+        """
+        Gets the install_snap_details of this ScheduledJobOperation.
+
+        :return: The install_snap_details of this ScheduledJobOperation.
+        :rtype: oci.os_management_hub.models.InstallSnapDetails
+        """
+        return self._install_snap_details
+
+    @install_snap_details.setter
+    def install_snap_details(self, install_snap_details):
+        """
+        Sets the install_snap_details of this ScheduledJobOperation.
+
+        :param install_snap_details: The install_snap_details of this ScheduledJobOperation.
+        :type: oci.os_management_hub.models.InstallSnapDetails
+        """
+        self._install_snap_details = install_snap_details
+
+    @property
+    def remove_snap_details(self):
+        """
+        Gets the remove_snap_details of this ScheduledJobOperation.
+
+        :return: The remove_snap_details of this ScheduledJobOperation.
+        :rtype: oci.os_management_hub.models.RemoveSnapDetails
+        """
+        return self._remove_snap_details
+
+    @remove_snap_details.setter
+    def remove_snap_details(self, remove_snap_details):
+        """
+        Sets the remove_snap_details of this ScheduledJobOperation.
+
+        :param remove_snap_details: The remove_snap_details of this ScheduledJobOperation.
+        :type: oci.os_management_hub.models.RemoveSnapDetails
+        """
+        self._remove_snap_details = remove_snap_details
+
+    @property
+    def switch_snap_channel_details(self):
+        """
+        Gets the switch_snap_channel_details of this ScheduledJobOperation.
+
+        :return: The switch_snap_channel_details of this ScheduledJobOperation.
+        :rtype: oci.os_management_hub.models.SwitchSnapChannelDetails
+        """
+        return self._switch_snap_channel_details
+
+    @switch_snap_channel_details.setter
+    def switch_snap_channel_details(self, switch_snap_channel_details):
+        """
+        Sets the switch_snap_channel_details of this ScheduledJobOperation.
+
+        :param switch_snap_channel_details: The switch_snap_channel_details of this ScheduledJobOperation.
+        :type: oci.os_management_hub.models.SwitchSnapChannelDetails
+        """
+        self._switch_snap_channel_details = switch_snap_channel_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

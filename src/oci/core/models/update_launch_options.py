@@ -31,6 +31,10 @@ class UpdateLaunchOptions(object):
     #: This constant has a value of "PARAVIRTUALIZED"
     NETWORK_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
 
+    #: A constant which can be used with the network_type property of a UpdateLaunchOptions.
+    #: This constant has a value of "ACCELERATEDPV"
+    NETWORK_TYPE_ACCELERATEDPV = "ACCELERATEDPV"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateLaunchOptions object with values from keyword arguments.
@@ -43,7 +47,7 @@ class UpdateLaunchOptions(object):
 
         :param network_type:
             The value to assign to the network_type property of this UpdateLaunchOptions.
-            Allowed values for this property are: "VFIO", "PARAVIRTUALIZED"
+            Allowed values for this property are: "VFIO", "PARAVIRTUALIZED", "ACCELERATEDPV"
         :type network_type: str
 
         :param is_pv_encryption_in_transit_enabled:
@@ -128,6 +132,7 @@ class UpdateLaunchOptions(object):
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
         when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 
         Before you change the networking type, detach all VNICs and block volumes except for the primary
         VNIC and the boot volume.
@@ -143,7 +148,7 @@ class UpdateLaunchOptions(object):
 
         __ https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
 
-        Allowed values for this property are: "VFIO", "PARAVIRTUALIZED"
+        Allowed values for this property are: "VFIO", "PARAVIRTUALIZED", "ACCELERATEDPV"
 
 
         :return: The network_type of this UpdateLaunchOptions.
@@ -159,6 +164,7 @@ class UpdateLaunchOptions(object):
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
         when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 
         Before you change the networking type, detach all VNICs and block volumes except for the primary
         VNIC and the boot volume.
@@ -178,7 +184,7 @@ class UpdateLaunchOptions(object):
         :param network_type: The network_type of this UpdateLaunchOptions.
         :type: str
         """
-        allowed_values = ["VFIO", "PARAVIRTUALIZED"]
+        allowed_values = ["VFIO", "PARAVIRTUALIZED", "ACCELERATEDPV"]
         if not value_allowed_none_or_none_sentinel(network_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `network_type`, must be None or one of {allowed_values}"

@@ -99,6 +99,10 @@ class CreateBucketDetails(object):
             The value to assign to the auto_tiering property of this CreateBucketDetails.
         :type auto_tiering: str
 
+        :param bucket_scope:
+            The value to assign to the bucket_scope property of this CreateBucketDetails.
+        :type bucket_scope: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -111,7 +115,8 @@ class CreateBucketDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
             'versioning': 'str',
-            'auto_tiering': 'str'
+            'auto_tiering': 'str',
+            'bucket_scope': 'str'
         }
         self.attribute_map = {
             'name': 'name',
@@ -124,7 +129,8 @@ class CreateBucketDetails(object):
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
             'versioning': 'versioning',
-            'auto_tiering': 'autoTiering'
+            'auto_tiering': 'autoTiering',
+            'bucket_scope': 'bucketScope'
         }
         self._name = None
         self._compartment_id = None
@@ -137,6 +143,7 @@ class CreateBucketDetails(object):
         self._kms_key_id = None
         self._versioning = None
         self._auto_tiering = None
+        self._bucket_scope = None
 
     @property
     def name(self):
@@ -476,6 +483,38 @@ class CreateBucketDetails(object):
         :type: str
         """
         self._auto_tiering = auto_tiering
+
+    @property
+    def bucket_scope(self):
+        """
+        Gets the bucket_scope of this CreateBucketDetails.
+        Scope in which the bucket is unique. Default value is NAMESPACE.
+        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+        tenancies can have a bucket with same name in their namespace.
+        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+        same name and scope REGION.
+
+
+        :return: The bucket_scope of this CreateBucketDetails.
+        :rtype: str
+        """
+        return self._bucket_scope
+
+    @bucket_scope.setter
+    def bucket_scope(self, bucket_scope):
+        """
+        Sets the bucket_scope of this CreateBucketDetails.
+        Scope in which the bucket is unique. Default value is NAMESPACE.
+        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+        tenancies can have a bucket with same name in their namespace.
+        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+        same name and scope REGION.
+
+
+        :param bucket_scope: The bucket_scope of this CreateBucketDetails.
+        :type: str
+        """
+        self._bucket_scope = bucket_scope
 
     def __repr__(self):
         return formatted_flat_dict(self)

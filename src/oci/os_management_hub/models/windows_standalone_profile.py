@@ -43,22 +43,22 @@ class WindowsStandaloneProfile(Profile):
 
         :param profile_type:
             The value to assign to the profile_type property of this WindowsStandaloneProfile.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"
         :type profile_type: str
 
         :param vendor_name:
             The value to assign to the vendor_name property of this WindowsStandaloneProfile.
-            Allowed values for this property are: "ORACLE", "MICROSOFT"
+            Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL"
         :type vendor_name: str
 
         :param os_family:
             The value to assign to the os_family property of this WindowsStandaloneProfile.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this WindowsStandaloneProfile.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
         :type arch_type: str
 
         :param time_created:

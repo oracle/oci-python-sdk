@@ -87,6 +87,98 @@ class ManagementStation(object):
     #: This constant has a value of "GCP"
     LOCATION_GCP = "GCP"
 
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "ORACLE_LINUX_9"
+    OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "ORACLE_LINUX_8"
+    OS_FAMILY_ORACLE_LINUX_8 = "ORACLE_LINUX_8"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "ORACLE_LINUX_7"
+    OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a ManagementStation.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "X86_64"
+    ARCH_TYPE_X86_64 = "X86_64"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "AARCH64"
+    ARCH_TYPE_AARCH64 = "AARCH64"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "I686"
+    ARCH_TYPE_I686 = "I686"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "NOARCH"
+    ARCH_TYPE_NOARCH = "NOARCH"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "SRC"
+    ARCH_TYPE_SRC = "SRC"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "AMD64"
+    ARCH_TYPE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "ARM64"
+    ARCH_TYPE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the arch_type property of a ManagementStation.
+    #: This constant has a value of "ALL"
+    ARCH_TYPE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementStation object with values from keyword arguments.
@@ -198,6 +290,18 @@ class ManagementStation(object):
             The value to assign to the mirror_package_count property of this ManagementStation.
         :type mirror_package_count: int
 
+        :param os_family:
+            The value to assign to the os_family property of this ManagementStation.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type os_family: str
+
+        :param arch_type:
+            The value to assign to the arch_type property of this ManagementStation.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type arch_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementStation.
         :type freeform_tags: dict(str, str)
@@ -237,6 +341,8 @@ class ManagementStation(object):
             'mirror_size': 'int',
             'mirror_unique_package_count': 'int',
             'mirror_package_count': 'int',
+            'os_family': 'str',
+            'arch_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -267,6 +373,8 @@ class ManagementStation(object):
             'mirror_size': 'mirrorSize',
             'mirror_unique_package_count': 'mirrorUniquePackageCount',
             'mirror_package_count': 'mirrorPackageCount',
+            'os_family': 'osFamily',
+            'arch_type': 'archType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -296,6 +404,8 @@ class ManagementStation(object):
         self._mirror_size = None
         self._mirror_unique_package_count = None
         self._mirror_package_count = None
+        self._os_family = None
+        self._arch_type = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -921,6 +1031,66 @@ class ManagementStation(object):
         :type: int
         """
         self._mirror_package_count = mirror_package_count
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this ManagementStation.
+        The operating system family.
+
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The os_family of this ManagementStation.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this ManagementStation.
+        The operating system family.
+
+
+        :param os_family: The os_family of this ManagementStation.
+        :type: str
+        """
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            os_family = 'UNKNOWN_ENUM_VALUE'
+        self._os_family = os_family
+
+    @property
+    def arch_type(self):
+        """
+        Gets the arch_type of this ManagementStation.
+        The architecture type.
+
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The arch_type of this ManagementStation.
+        :rtype: str
+        """
+        return self._arch_type
+
+    @arch_type.setter
+    def arch_type(self, arch_type):
+        """
+        Sets the arch_type of this ManagementStation.
+        The architecture type.
+
+
+        :param arch_type: The arch_type of this ManagementStation.
+        :type: str
+        """
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
+        if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
+            arch_type = 'UNKNOWN_ENUM_VALUE'
+        self._arch_type = arch_type
 
     @property
     def freeform_tags(self):

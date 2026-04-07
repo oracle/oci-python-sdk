@@ -23,7 +23,7 @@ class AwsAssetSourceSummary(AssetSourceSummary):
 
         :param type:
             The value to assign to the type property of this AwsAssetSourceSummary.
-            Allowed values for this property are: "VMWARE", "AWS"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param id:
@@ -79,6 +79,11 @@ class AwsAssetSourceSummary(AssetSourceSummary):
             The value to assign to the system_tags property of this AwsAssetSourceSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this AwsAssetSourceSummary.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         :param aws_region:
             The value to assign to the aws_region property of this AwsAssetSourceSummary.
         :type aws_region: str
@@ -103,6 +108,7 @@ class AwsAssetSourceSummary(AssetSourceSummary):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'aws_region': 'str',
             'aws_account_key': 'str'
         }
@@ -121,6 +127,7 @@ class AwsAssetSourceSummary(AssetSourceSummary):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'aws_region': 'awsRegion',
             'aws_account_key': 'awsAccountKey'
         }
@@ -138,6 +145,7 @@ class AwsAssetSourceSummary(AssetSourceSummary):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._aws_region = None
         self._aws_account_key = None
         self._type = 'AWS'

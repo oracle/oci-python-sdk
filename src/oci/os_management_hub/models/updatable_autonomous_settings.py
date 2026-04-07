@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatableAutonomousSettings(object):
     """
-    Updatable settings for the Autonomous Linux service.
+    Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
     """
 
     def __init__(self, **kwargs):
