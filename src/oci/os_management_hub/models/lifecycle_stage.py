@@ -16,6 +16,10 @@ class LifecycleStage(object):
     """
 
     #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
 
@@ -44,8 +48,28 @@ class LifecycleStage(object):
     OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
 
     #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
     #: This constant has a value of "ALL"
     OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
 
     #: A constant which can be used with the arch_type property of a LifecycleStage.
     #: This constant has a value of "X86_64"
@@ -71,6 +95,18 @@ class LifecycleStage(object):
     #: This constant has a value of "I386"
     ARCH_TYPE_I386 = "I386"
 
+    #: A constant which can be used with the arch_type property of a LifecycleStage.
+    #: This constant has a value of "AMD64"
+    ARCH_TYPE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the arch_type property of a LifecycleStage.
+    #: This constant has a value of "ARM64"
+    ARCH_TYPE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the arch_type property of a LifecycleStage.
+    #: This constant has a value of "ALL"
+    ARCH_TYPE_ALL = "ALL"
+
     #: A constant which can be used with the vendor_name property of a LifecycleStage.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
@@ -78,6 +114,10 @@ class LifecycleStage(object):
     #: A constant which can be used with the vendor_name property of a LifecycleStage.
     #: This constant has a value of "MICROSOFT"
     VENDOR_NAME_MICROSOFT = "MICROSOFT"
+
+    #: A constant which can be used with the vendor_name property of a LifecycleStage.
+    #: This constant has a value of "CANONICAL"
+    VENDOR_NAME_CANONICAL = "CANONICAL"
 
     #: A constant which can be used with the location property of a LifecycleStage.
     #: This constant has a value of "ON_PREMISE"
@@ -150,19 +190,19 @@ class LifecycleStage(object):
 
         :param os_family:
             The value to assign to the os_family property of this LifecycleStage.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this LifecycleStage.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
         :param vendor_name:
             The value to assign to the vendor_name property of this LifecycleStage.
-            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
 
@@ -401,7 +441,7 @@ class LifecycleStage(object):
         Gets the os_family of this LifecycleStage.
         The operating system of the managed instances in the lifecycle stage.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -420,7 +460,7 @@ class LifecycleStage(object):
         :param os_family: The os_family of this LifecycleStage.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -431,7 +471,7 @@ class LifecycleStage(object):
         Gets the arch_type of this LifecycleStage.
         The CPU architecture of the managed instances in the lifecycle stage.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -450,7 +490,7 @@ class LifecycleStage(object):
         :param arch_type: The arch_type of this LifecycleStage.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type
@@ -461,7 +501,7 @@ class LifecycleStage(object):
         Gets the vendor_name of this LifecycleStage.
         The vendor of the operating system used by the managed instances in the lifecycle stage.
 
-        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -480,7 +520,7 @@ class LifecycleStage(object):
         :param vendor_name: The vendor_name of this LifecycleStage.
         :type: str
         """
-        allowed_values = ["ORACLE", "MICROSOFT"]
+        allowed_values = ["ORACLE", "MICROSOFT", "CANONICAL"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name

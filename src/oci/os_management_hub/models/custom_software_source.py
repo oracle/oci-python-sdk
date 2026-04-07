@@ -79,13 +79,13 @@ class CustomSoftwareSource(SoftwareSource):
 
         :param os_family:
             The value to assign to the os_family property of this CustomSoftwareSource.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this CustomSoftwareSource.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 

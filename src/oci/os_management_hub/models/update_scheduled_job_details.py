@@ -209,7 +209,11 @@ class UpdateScheduledJobDetails(object):
     def recurring_rule(self):
         """
         Gets the recurring_rule of this UpdateScheduledJobDetails.
-        The frequency schedule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job in the `RFC5535`__ format.
+        Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+        In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY\", HOURLY are supported.
+
+        __ https://www.rfc-editor.org/rfc/rfc5535
 
 
         :return: The recurring_rule of this UpdateScheduledJobDetails.
@@ -221,7 +225,11 @@ class UpdateScheduledJobDetails(object):
     def recurring_rule(self, recurring_rule):
         """
         Sets the recurring_rule of this UpdateScheduledJobDetails.
-        The frequency schedule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job in the `RFC5535`__ format.
+        Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+        In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY\", HOURLY are supported.
+
+        __ https://www.rfc-editor.org/rfc/rfc5535
 
 
         :param recurring_rule: The recurring_rule of this UpdateScheduledJobDetails.

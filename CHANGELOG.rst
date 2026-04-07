@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.170.0 - 2026-04-07
+====================
+
+Added 
+----- 
+* Support for managing OLVM environment and endpoint fields for asset sources in the Cloud Bridge service 
+* Support for managing OLVM environment asset class name, asset class version, and asset details in the Cloud Bridge service 
+* Support for Ubuntu, Windows Server 2025, Windows 11, and Dynamic Groupings in the OS Management Hub service 
+* Support for S3 virtual host URLs for existing and regionally unique buckets in the Object Storage service 
+* Support for dual-stack IPv6 endpoints in the Management Agent Cloud service 
+* Support for generic VNIC Attachment node pools with application resource-based pod networking and secondary VNIC profiles in the Kubernetes Engine service 
+* Support for getting currentSize of the instancePool resource in the Compute service 
+* Support for new launch instance networkType value ACCELERATEDPV in the Compute service  
+
+Breaking 
+-------- 
+* Removed parameters `freeform_tags` and `defined_tags` from ApplianceImageSummary model from Cloud bridge service  
+
+====================
 2.169.0 - 2026-03-31
 ====================
 

@@ -167,6 +167,26 @@ class WorkRequestSummary(object):
     #: This constant has a value of "REBOOT"
     OPERATION_TYPE_REBOOT = "REBOOT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "REGISTER_MANAGED_INSTANCE"
+    OPERATION_TYPE_REGISTER_MANAGED_INSTANCE = "REGISTER_MANAGED_INSTANCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "LIST_SNAPS"
+    OPERATION_TYPE_LIST_SNAPS = "LIST_SNAPS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "INSTALL_SNAPS"
+    OPERATION_TYPE_INSTALL_SNAPS = "INSTALL_SNAPS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "REMOVE_SNAPS"
+    OPERATION_TYPE_REMOVE_SNAPS = "REMOVE_SNAPS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "SWITCH_SNAP_CHANNEL"
+    OPERATION_TYPE_SWITCH_SNAP_CHANNEL = "SWITCH_SNAP_CHANNEL"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "WAITING"
     STATUS_WAITING = "WAITING"
@@ -195,6 +215,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CANCELED"
     STATUS_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "SKIPPED"
+    STATUS_SKIPPED = "SKIPPED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSummary object with values from keyword arguments.
@@ -202,13 +226,13 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", "REGISTER_MANAGED_INSTANCE", "LIST_SNAPS", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param status:
             The value to assign to the status property of this WorkRequestSummary.
-            Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -260,6 +284,10 @@ class WorkRequestSummary(object):
             The value to assign to the reboot_timeout_in_mins property of this WorkRequestSummary.
         :type reboot_timeout_in_mins: int
 
+        :param time_finished:
+            The value to assign to the time_finished property of this WorkRequestSummary.
+        :type time_finished: datetime
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -275,7 +303,8 @@ class WorkRequestSummary(object):
             'time_created': 'datetime',
             'time_scheduled': 'datetime',
             'is_managed_by_autonomous_linux': 'bool',
-            'reboot_timeout_in_mins': 'int'
+            'reboot_timeout_in_mins': 'int',
+            'time_finished': 'datetime'
         }
         self.attribute_map = {
             'operation_type': 'operationType',
@@ -291,7 +320,8 @@ class WorkRequestSummary(object):
             'time_created': 'timeCreated',
             'time_scheduled': 'timeScheduled',
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
-            'reboot_timeout_in_mins': 'rebootTimeoutInMins'
+            'reboot_timeout_in_mins': 'rebootTimeoutInMins',
+            'time_finished': 'timeFinished'
         }
         self._operation_type = None
         self._status = None
@@ -307,6 +337,7 @@ class WorkRequestSummary(object):
         self._time_scheduled = None
         self._is_managed_by_autonomous_linux = None
         self._reboot_timeout_in_mins = None
+        self._time_finished = None
 
     @property
     def operation_type(self):
@@ -314,7 +345,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request.
 
-        Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", "REGISTER_MANAGED_INSTANCE", "LIST_SNAPS", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -333,7 +364,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT"]
+        allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", "REGISTER_MANAGED_INSTANCE", "LIST_SNAPS", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -344,7 +375,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the status of this WorkRequestSummary.
         Status of the work request.
 
-        Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -363,7 +394,7 @@ class WorkRequestSummary(object):
         :param status: The status of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -685,6 +716,34 @@ class WorkRequestSummary(object):
         :type: int
         """
         self._reboot_timeout_in_mins = reboot_timeout_in_mins
+
+    @property
+    def time_finished(self):
+        """
+        Gets the time_finished of this WorkRequestSummary.
+        The date and time the work request completed (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_finished of this WorkRequestSummary.
+        :rtype: datetime
+        """
+        return self._time_finished
+
+    @time_finished.setter
+    def time_finished(self, time_finished):
+        """
+        Sets the time_finished of this WorkRequestSummary.
+        The date and time the work request completed (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_finished: The time_finished of this WorkRequestSummary.
+        :type: datetime
+        """
+        self._time_finished = time_finished
 
     def __repr__(self):
         return formatted_flat_dict(self)

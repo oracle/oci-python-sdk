@@ -35,11 +35,16 @@ class CreateProfileDetails(object):
     #: This constant has a value of "WINDOWS_STANDALONE"
     PROFILE_TYPE_WINDOWS_STANDALONE = "WINDOWS_STANDALONE"
 
+    #: A constant which can be used with the profile_type property of a CreateProfileDetails.
+    #: This constant has a value of "UBUNTU_STANDALONE"
+    PROFILE_TYPE_UBUNTU_STANDALONE = "UBUNTU_STANDALONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateProfileDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.os_management_hub.models.CreateUbuntuStandAloneProfileDetails`
         * :class:`~oci.os_management_hub.models.CreateGroupProfileDetails`
         * :class:`~oci.os_management_hub.models.CreateWindowsStandAloneProfileDetails`
         * :class:`~oci.os_management_hub.models.CreateStationProfileDetails`
@@ -66,7 +71,7 @@ class CreateProfileDetails(object):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"
         :type profile_type: str
 
         :param registration_type:
@@ -126,6 +131,9 @@ class CreateProfileDetails(object):
         """
         type = object_dictionary['profileType']
 
+        if type == 'UBUNTU_STANDALONE':
+            return 'CreateUbuntuStandAloneProfileDetails'
+
         if type == 'GROUP':
             return 'CreateGroupProfileDetails'
 
@@ -147,7 +155,7 @@ class CreateProfileDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateProfileDetails.
-        A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering
+        A user-friendly name. Must be unique and you can change the name later. Avoid entering
         confidential information.
 
 
@@ -160,7 +168,7 @@ class CreateProfileDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateProfileDetails.
-        A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering
+        A user-friendly name. Must be unique and you can change the name later. Avoid entering
         confidential information.
 
 
@@ -226,7 +234,7 @@ class CreateProfileDetails(object):
         """
         Gets the management_station_id of this CreateProfileDetails.
         description: The `OCID`__ of the management station to associate
-        with an instance once registered. This is required when creating a profile for non-OCI instances.
+        with an instance once registered. This is used when creating a profile for non-OCI instances.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -241,7 +249,7 @@ class CreateProfileDetails(object):
         """
         Sets the management_station_id of this CreateProfileDetails.
         description: The `OCID`__ of the management station to associate
-        with an instance once registered. This is required when creating a profile for non-OCI instances.
+        with an instance once registered. This is used when creating a profile for non-OCI instances.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -257,7 +265,7 @@ class CreateProfileDetails(object):
         **[Required]** Gets the profile_type of this CreateProfileDetails.
         The type of profile.
 
-        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
+        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"
 
 
         :return: The profile_type of this CreateProfileDetails.
@@ -275,7 +283,7 @@ class CreateProfileDetails(object):
         :param profile_type: The profile_type of this CreateProfileDetails.
         :type: str
         """
-        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"]
+        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"]
         if not value_allowed_none_or_none_sentinel(profile_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `profile_type`, must be None or one of {allowed_values}"

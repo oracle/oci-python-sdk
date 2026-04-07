@@ -24,12 +24,24 @@ class AssetSummary(object):
     ASSET_TYPE_VM = "VM"
 
     #: A constant which can be used with the asset_type property of a AssetSummary.
+    #: This constant has a value of "INVENTORY_ASSET"
+    ASSET_TYPE_INVENTORY_ASSET = "INVENTORY_ASSET"
+
+    #: A constant which can be used with the asset_type property of a AssetSummary.
     #: This constant has a value of "AWS_EC2"
     ASSET_TYPE_AWS_EC2 = "AWS_EC2"
 
     #: A constant which can be used with the asset_type property of a AssetSummary.
     #: This constant has a value of "AWS_EBS"
     ASSET_TYPE_AWS_EBS = "AWS_EBS"
+
+    #: A constant which can be used with the environment_type property of a AssetSummary.
+    #: This constant has a value of "SOURCE"
+    ENVIRONMENT_TYPE_SOURCE = "SOURCE"
+
+    #: A constant which can be used with the environment_type property of a AssetSummary.
+    #: This constant has a value of "DESTINATION"
+    ENVIRONMENT_TYPE_DESTINATION = "DESTINATION"
 
     def __init__(self, **kwargs):
         """
@@ -62,7 +74,7 @@ class AssetSummary(object):
 
         :param asset_type:
             The value to assign to the asset_type property of this AssetSummary.
-            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type asset_type: str
 
@@ -94,6 +106,20 @@ class AssetSummary(object):
             The value to assign to the system_tags property of this AssetSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param asset_class_name:
+            The value to assign to the asset_class_name property of this AssetSummary.
+        :type asset_class_name: str
+
+        :param asset_class_version:
+            The value to assign to the asset_class_version property of this AssetSummary.
+        :type asset_class_version: str
+
+        :param environment_type:
+            The value to assign to the environment_type property of this AssetSummary.
+            Allowed values for this property are: "SOURCE", "DESTINATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type environment_type: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -109,7 +135,10 @@ class AssetSummary(object):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'asset_class_name': 'str',
+            'asset_class_version': 'str',
+            'environment_type': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -125,7 +154,10 @@ class AssetSummary(object):
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'asset_class_name': 'assetClassName',
+            'asset_class_version': 'assetClassVersion',
+            'environment_type': 'environmentType'
         }
         self._display_name = None
         self._inventory_id = None
@@ -141,6 +173,9 @@ class AssetSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._asset_class_name = None
+        self._asset_class_version = None
+        self._environment_type = None
 
     @property
     def display_name(self):
@@ -292,7 +327,7 @@ class AssetSummary(object):
         **[Required]** Gets the asset_type of this AssetSummary.
         The type of asset.
 
-        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -311,7 +346,7 @@ class AssetSummary(object):
         :param asset_type: The asset_type of this AssetSummary.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
+        allowed_values = ["VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             asset_type = 'UNKNOWN_ENUM_VALUE'
         self._asset_type = asset_type
@@ -507,6 +542,84 @@ class AssetSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def asset_class_name(self):
+        """
+        Gets the asset_class_name of this AssetSummary.
+        The name of the asset class.
+
+
+        :return: The asset_class_name of this AssetSummary.
+        :rtype: str
+        """
+        return self._asset_class_name
+
+    @asset_class_name.setter
+    def asset_class_name(self, asset_class_name):
+        """
+        Sets the asset_class_name of this AssetSummary.
+        The name of the asset class.
+
+
+        :param asset_class_name: The asset_class_name of this AssetSummary.
+        :type: str
+        """
+        self._asset_class_name = asset_class_name
+
+    @property
+    def asset_class_version(self):
+        """
+        Gets the asset_class_version of this AssetSummary.
+        The version of the asset class.
+
+
+        :return: The asset_class_version of this AssetSummary.
+        :rtype: str
+        """
+        return self._asset_class_version
+
+    @asset_class_version.setter
+    def asset_class_version(self, asset_class_version):
+        """
+        Sets the asset_class_version of this AssetSummary.
+        The version of the asset class.
+
+
+        :param asset_class_version: The asset_class_version of this AssetSummary.
+        :type: str
+        """
+        self._asset_class_version = asset_class_version
+
+    @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this AssetSummary.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+        Allowed values for this property are: "SOURCE", "DESTINATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The environment_type of this AssetSummary.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this AssetSummary.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+
+        :param environment_type: The environment_type of this AssetSummary.
+        :type: str
+        """
+        allowed_values = ["SOURCE", "DESTINATION"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            environment_type = 'UNKNOWN_ENUM_VALUE'
+        self._environment_type = environment_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

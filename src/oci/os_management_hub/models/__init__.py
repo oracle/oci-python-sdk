@@ -27,6 +27,7 @@ from .available_software_source_summary import AvailableSoftwareSourceSummary
 from .available_windows_update_collection import AvailableWindowsUpdateCollection
 from .available_windows_update_summary import AvailableWindowsUpdateSummary
 from .change_availability_of_software_sources_details import ChangeAvailabilityOfSoftwareSourcesDetails
+from .change_dynamic_set_compartment_details import ChangeDynamicSetCompartmentDetails
 from .change_event_compartment_details import ChangeEventCompartmentDetails
 from .change_lifecycle_environment_compartment_details import ChangeLifecycleEnvironmentCompartmentDetails
 from .change_managed_instance_group_compartment_details import ChangeManagedInstanceGroupCompartmentDetails
@@ -35,6 +36,7 @@ from .change_profile_compartment_details import ChangeProfileCompartmentDetails
 from .change_scheduled_job_compartment_details import ChangeScheduledJobCompartmentDetails
 from .change_software_source_compartment_details import ChangeSoftwareSourceCompartmentDetails
 from .create_custom_software_source_details import CreateCustomSoftwareSourceDetails
+from .create_dynamic_set_details import CreateDynamicSetDetails
 from .create_entitlement_details import CreateEntitlementDetails
 from .create_group_profile_details import CreateGroupProfileDetails
 from .create_lifecycle_environment_details import CreateLifecycleEnvironmentDetails
@@ -51,19 +53,25 @@ from .create_software_source_details import CreateSoftwareSourceDetails
 from .create_software_source_profile_details import CreateSoftwareSourceProfileDetails
 from .create_station_profile_details import CreateStationProfileDetails
 from .create_third_party_software_source_details import CreateThirdPartySoftwareSourceDetails
+from .create_ubuntu_stand_alone_profile_details import CreateUbuntuStandAloneProfileDetails
 from .create_vendor_software_source_details import CreateVendorSoftwareSourceDetails
 from .create_versioned_custom_software_source_details import CreateVersionedCustomSoftwareSourceDetails
 from .create_windows_stand_alone_profile_details import CreateWindowsStandAloneProfileDetails
 from .custom_software_source import CustomSoftwareSource
 from .custom_software_source_filter import CustomSoftwareSourceFilter
 from .custom_software_source_summary import CustomSoftwareSourceSummary
+from .defined_tag import DefinedTag
 from .detach_managed_instances_from_lifecycle_stage_details import DetachManagedInstancesFromLifecycleStageDetails
 from .detach_managed_instances_from_managed_instance_group_details import DetachManagedInstancesFromManagedInstanceGroupDetails
+from .detach_management_station_from_profile_details import DetachManagementStationFromProfileDetails
 from .detach_software_sources_from_managed_instance_details import DetachSoftwareSourcesFromManagedInstanceDetails
 from .detach_software_sources_from_managed_instance_group_details import DetachSoftwareSourcesFromManagedInstanceGroupDetails
 from .detach_software_sources_from_profile_details import DetachSoftwareSourcesFromProfileDetails
 from .disable_module_stream_on_managed_instance_details import DisableModuleStreamOnManagedInstanceDetails
 from .disable_module_stream_on_managed_instance_group_details import DisableModuleStreamOnManagedInstanceGroupDetails
+from .dynamic_set import DynamicSet
+from .dynamic_set_collection import DynamicSetCollection
+from .dynamic_set_summary import DynamicSetSummary
 from .enable_module_stream_on_managed_instance_details import EnableModuleStreamOnManagedInstanceDetails
 from .enable_module_stream_on_managed_instance_group_details import EnableModuleStreamOnManagedInstanceGroupDetails
 from .entitlement_collection import EntitlementCollection
@@ -79,13 +87,17 @@ from .exploit_attempt_additional_details import ExploitAttemptAdditionalDetails
 from .exploit_attempt_event import ExploitAttemptEvent
 from .exploit_attempt_event_content import ExploitAttemptEventContent
 from .exploit_attempt_event_data import ExploitAttemptEventData
+from .free_form_tag import FreeFormTag
 from .group_profile import GroupProfile
 from .id import Id
 from .install_all_windows_updates_on_managed_instances_in_compartment_details import InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails
 from .install_module_stream_profile_on_managed_instance_details import InstallModuleStreamProfileOnManagedInstanceDetails
 from .install_module_stream_profile_on_managed_instance_group_details import InstallModuleStreamProfileOnManagedInstanceGroupDetails
+from .install_packages_on_dynamic_set_details import InstallPackagesOnDynamicSetDetails
 from .install_packages_on_managed_instance_details import InstallPackagesOnManagedInstanceDetails
 from .install_packages_on_managed_instance_group_details import InstallPackagesOnManagedInstanceGroupDetails
+from .install_snap_details import InstallSnapDetails
+from .install_snaps_on_managed_instance_details import InstallSnapsOnManagedInstanceDetails
 from .install_windows_updates_on_managed_instance_details import InstallWindowsUpdatesOnManagedInstanceDetails
 from .install_windows_updates_on_managed_instance_group_details import InstallWindowsUpdatesOnManagedInstanceGroupDetails
 from .installed_package_collection import InstalledPackageCollection
@@ -140,6 +152,7 @@ from .management_station_details import ManagementStationDetails
 from .management_station_event import ManagementStationEvent
 from .management_station_event_data import ManagementStationEventData
 from .management_station_summary import ManagementStationSummary
+from .matching_rule import MatchingRule
 from .mirror_configuration import MirrorConfiguration
 from .mirror_summary import MirrorSummary
 from .mirror_sync_status import MirrorSyncStatus
@@ -166,6 +179,7 @@ from .package_group_summary import PackageGroupSummary
 from .package_name_summary import PackageNameSummary
 from .package_summary import PackageSummary
 from .peer_management_station import PeerManagementStation
+from .preview_managed_instances_details import PreviewManagedInstancesDetails
 from .private_software_source import PrivateSoftwareSource
 from .private_software_source_summary import PrivateSoftwareSourceSummary
 from .profile import Profile
@@ -174,6 +188,7 @@ from .profile_summary import ProfileSummary
 from .profile_version import ProfileVersion
 from .promote_software_source_to_lifecycle_stage_details import PromoteSoftwareSourceToLifecycleStageDetails
 from .proxy_configuration import ProxyConfiguration
+from .reboot_dynamic_set_details import RebootDynamicSetDetails
 from .reboot_event import RebootEvent
 from .reboot_event_data import RebootEventData
 from .reboot_lifecycle_stage_details import RebootLifecycleStageDetails
@@ -181,9 +196,12 @@ from .reboot_managed_instance_details import RebootManagedInstanceDetails
 from .reboot_managed_instance_group_details import RebootManagedInstanceGroupDetails
 from .remove_module_stream_profile_from_managed_instance_details import RemoveModuleStreamProfileFromManagedInstanceDetails
 from .remove_module_stream_profile_from_managed_instance_group_details import RemoveModuleStreamProfileFromManagedInstanceGroupDetails
+from .remove_packages_from_dynamic_set_details import RemovePackagesFromDynamicSetDetails
 from .remove_packages_from_managed_instance_details import RemovePackagesFromManagedInstanceDetails
 from .remove_packages_from_managed_instance_group_details import RemovePackagesFromManagedInstanceGroupDetails
 from .remove_packages_from_software_source_details import RemovePackagesFromSoftwareSourceDetails
+from .remove_snap_details import RemoveSnapDetails
+from .remove_snaps_from_managed_instance_details import RemoveSnapsFromManagedInstanceDetails
 from .replace_packages_in_software_source_details import ReplacePackagesInSoftwareSourceDetails
 from .rerun_work_request_details import RerunWorkRequestDetails
 from .scheduled_job import ScheduledJob
@@ -193,6 +211,11 @@ from .scheduled_job_summary import ScheduledJobSummary
 from .search_software_source_module_streams_details import SearchSoftwareSourceModuleStreamsDetails
 from .search_software_source_modules_details import SearchSoftwareSourceModulesDetails
 from .search_software_source_package_groups_details import SearchSoftwareSourcePackageGroupsDetails
+from .snap_collection import SnapCollection
+from .snap_spec_details import SnapSpecDetails
+from .snap_summary import SnapSummary
+from .snap_update_event import SnapUpdateEvent
+from .snap_update_event_data import SnapUpdateEventData
 from .software_package import SoftwarePackage
 from .software_package_collection import SoftwarePackageCollection
 from .software_package_dependency import SoftwarePackageDependency
@@ -206,28 +229,41 @@ from .software_source_details import SoftwareSourceDetails
 from .software_source_event import SoftwareSourceEvent
 from .software_source_event_data import SoftwareSourceEventData
 from .software_source_profile import SoftwareSourceProfile
+from .software_source_repo_collection import SoftwareSourceRepoCollection
+from .software_source_repo_summary import SoftwareSourceRepoSummary
 from .software_source_summary import SoftwareSourceSummary
 from .software_source_vendor_collection import SoftwareSourceVendorCollection
 from .software_source_vendor_summary import SoftwareSourceVendorSummary
 from .software_sources_details import SoftwareSourcesDetails
 from .software_update_event import SoftwareUpdateEvent
 from .software_update_event_data import SoftwareUpdateEventData
+from .stage_update_on_all_managed_instances_in_compartment_details import StageUpdateOnAllManagedInstancesInCompartmentDetails
+from .stage_update_on_dynamic_set_details import StageUpdateOnDynamicSetDetails
+from .stage_update_on_managed_instance_details import StageUpdateOnManagedInstanceDetails
+from .stage_windows_updates_on_managed_instance_details import StageWindowsUpdatesOnManagedInstanceDetails
+from .stage_windows_updates_on_managed_instances_in_compartment_details import StageWindowsUpdatesOnManagedInstancesInCompartmentDetails
 from .station_health import StationHealth
 from .station_profile import StationProfile
 from .switch_module_stream_on_managed_instance_details import SwitchModuleStreamOnManagedInstanceDetails
 from .switch_module_stream_on_managed_instance_group_details import SwitchModuleStreamOnManagedInstanceGroupDetails
+from .switch_snap_channel_details import SwitchSnapChannelDetails
+from .switch_snap_channel_on_managed_instance_details import SwitchSnapChannelOnManagedInstanceDetails
 from .synchronize_mirrors_details import SynchronizeMirrorsDetails
 from .sysadmin_event import SysadminEvent
 from .sysadmin_event_data import SysadminEventData
 from .system_details import SystemDetails
+from .tag import Tag
+from .target_compartment_details import TargetCompartmentDetails
 from .third_party_software_source import ThirdPartySoftwareSource
 from .third_party_software_source_summary import ThirdPartySoftwareSourceSummary
+from .ubuntu_standalone_profile import UbuntuStandaloneProfile
 from .updatable_autonomous_settings import UpdatableAutonomousSettings
 from .updatable_package_collection import UpdatablePackageCollection
 from .updatable_package_summary import UpdatablePackageSummary
 from .update_all_packages_on_managed_instance_group_details import UpdateAllPackagesOnManagedInstanceGroupDetails
 from .update_all_packages_on_managed_instances_in_compartment_details import UpdateAllPackagesOnManagedInstancesInCompartmentDetails
 from .update_custom_software_source_details import UpdateCustomSoftwareSourceDetails
+from .update_dynamic_set_details import UpdateDynamicSetDetails
 from .update_event_details import UpdateEventDetails
 from .update_lifecycle_environment_details import UpdateLifecycleEnvironmentDetails
 from .update_lifecycle_stage_details import UpdateLifecycleStageDetails
@@ -235,6 +271,7 @@ from .update_managed_instance_details import UpdateManagedInstanceDetails
 from .update_managed_instance_group_details import UpdateManagedInstanceGroupDetails
 from .update_management_station_details import UpdateManagementStationDetails
 from .update_mirror_configuration_details import UpdateMirrorConfigurationDetails
+from .update_packages_on_dynamic_set_details import UpdatePackagesOnDynamicSetDetails
 from .update_packages_on_managed_instance_details import UpdatePackagesOnManagedInstanceDetails
 from .update_private_software_source_details import UpdatePrivateSoftwareSourceDetails
 from .update_profile_details import UpdateProfileDetails
@@ -289,6 +326,7 @@ os_management_hub_type_mapping = {
     "AvailableWindowsUpdateCollection": AvailableWindowsUpdateCollection,
     "AvailableWindowsUpdateSummary": AvailableWindowsUpdateSummary,
     "ChangeAvailabilityOfSoftwareSourcesDetails": ChangeAvailabilityOfSoftwareSourcesDetails,
+    "ChangeDynamicSetCompartmentDetails": ChangeDynamicSetCompartmentDetails,
     "ChangeEventCompartmentDetails": ChangeEventCompartmentDetails,
     "ChangeLifecycleEnvironmentCompartmentDetails": ChangeLifecycleEnvironmentCompartmentDetails,
     "ChangeManagedInstanceGroupCompartmentDetails": ChangeManagedInstanceGroupCompartmentDetails,
@@ -297,6 +335,7 @@ os_management_hub_type_mapping = {
     "ChangeScheduledJobCompartmentDetails": ChangeScheduledJobCompartmentDetails,
     "ChangeSoftwareSourceCompartmentDetails": ChangeSoftwareSourceCompartmentDetails,
     "CreateCustomSoftwareSourceDetails": CreateCustomSoftwareSourceDetails,
+    "CreateDynamicSetDetails": CreateDynamicSetDetails,
     "CreateEntitlementDetails": CreateEntitlementDetails,
     "CreateGroupProfileDetails": CreateGroupProfileDetails,
     "CreateLifecycleEnvironmentDetails": CreateLifecycleEnvironmentDetails,
@@ -313,19 +352,25 @@ os_management_hub_type_mapping = {
     "CreateSoftwareSourceProfileDetails": CreateSoftwareSourceProfileDetails,
     "CreateStationProfileDetails": CreateStationProfileDetails,
     "CreateThirdPartySoftwareSourceDetails": CreateThirdPartySoftwareSourceDetails,
+    "CreateUbuntuStandAloneProfileDetails": CreateUbuntuStandAloneProfileDetails,
     "CreateVendorSoftwareSourceDetails": CreateVendorSoftwareSourceDetails,
     "CreateVersionedCustomSoftwareSourceDetails": CreateVersionedCustomSoftwareSourceDetails,
     "CreateWindowsStandAloneProfileDetails": CreateWindowsStandAloneProfileDetails,
     "CustomSoftwareSource": CustomSoftwareSource,
     "CustomSoftwareSourceFilter": CustomSoftwareSourceFilter,
     "CustomSoftwareSourceSummary": CustomSoftwareSourceSummary,
+    "DefinedTag": DefinedTag,
     "DetachManagedInstancesFromLifecycleStageDetails": DetachManagedInstancesFromLifecycleStageDetails,
     "DetachManagedInstancesFromManagedInstanceGroupDetails": DetachManagedInstancesFromManagedInstanceGroupDetails,
+    "DetachManagementStationFromProfileDetails": DetachManagementStationFromProfileDetails,
     "DetachSoftwareSourcesFromManagedInstanceDetails": DetachSoftwareSourcesFromManagedInstanceDetails,
     "DetachSoftwareSourcesFromManagedInstanceGroupDetails": DetachSoftwareSourcesFromManagedInstanceGroupDetails,
     "DetachSoftwareSourcesFromProfileDetails": DetachSoftwareSourcesFromProfileDetails,
     "DisableModuleStreamOnManagedInstanceDetails": DisableModuleStreamOnManagedInstanceDetails,
     "DisableModuleStreamOnManagedInstanceGroupDetails": DisableModuleStreamOnManagedInstanceGroupDetails,
+    "DynamicSet": DynamicSet,
+    "DynamicSetCollection": DynamicSetCollection,
+    "DynamicSetSummary": DynamicSetSummary,
     "EnableModuleStreamOnManagedInstanceDetails": EnableModuleStreamOnManagedInstanceDetails,
     "EnableModuleStreamOnManagedInstanceGroupDetails": EnableModuleStreamOnManagedInstanceGroupDetails,
     "EntitlementCollection": EntitlementCollection,
@@ -341,13 +386,17 @@ os_management_hub_type_mapping = {
     "ExploitAttemptEvent": ExploitAttemptEvent,
     "ExploitAttemptEventContent": ExploitAttemptEventContent,
     "ExploitAttemptEventData": ExploitAttemptEventData,
+    "FreeFormTag": FreeFormTag,
     "GroupProfile": GroupProfile,
     "Id": Id,
     "InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails": InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails,
     "InstallModuleStreamProfileOnManagedInstanceDetails": InstallModuleStreamProfileOnManagedInstanceDetails,
     "InstallModuleStreamProfileOnManagedInstanceGroupDetails": InstallModuleStreamProfileOnManagedInstanceGroupDetails,
+    "InstallPackagesOnDynamicSetDetails": InstallPackagesOnDynamicSetDetails,
     "InstallPackagesOnManagedInstanceDetails": InstallPackagesOnManagedInstanceDetails,
     "InstallPackagesOnManagedInstanceGroupDetails": InstallPackagesOnManagedInstanceGroupDetails,
+    "InstallSnapDetails": InstallSnapDetails,
+    "InstallSnapsOnManagedInstanceDetails": InstallSnapsOnManagedInstanceDetails,
     "InstallWindowsUpdatesOnManagedInstanceDetails": InstallWindowsUpdatesOnManagedInstanceDetails,
     "InstallWindowsUpdatesOnManagedInstanceGroupDetails": InstallWindowsUpdatesOnManagedInstanceGroupDetails,
     "InstalledPackageCollection": InstalledPackageCollection,
@@ -402,6 +451,7 @@ os_management_hub_type_mapping = {
     "ManagementStationEvent": ManagementStationEvent,
     "ManagementStationEventData": ManagementStationEventData,
     "ManagementStationSummary": ManagementStationSummary,
+    "MatchingRule": MatchingRule,
     "MirrorConfiguration": MirrorConfiguration,
     "MirrorSummary": MirrorSummary,
     "MirrorSyncStatus": MirrorSyncStatus,
@@ -428,6 +478,7 @@ os_management_hub_type_mapping = {
     "PackageNameSummary": PackageNameSummary,
     "PackageSummary": PackageSummary,
     "PeerManagementStation": PeerManagementStation,
+    "PreviewManagedInstancesDetails": PreviewManagedInstancesDetails,
     "PrivateSoftwareSource": PrivateSoftwareSource,
     "PrivateSoftwareSourceSummary": PrivateSoftwareSourceSummary,
     "Profile": Profile,
@@ -436,6 +487,7 @@ os_management_hub_type_mapping = {
     "ProfileVersion": ProfileVersion,
     "PromoteSoftwareSourceToLifecycleStageDetails": PromoteSoftwareSourceToLifecycleStageDetails,
     "ProxyConfiguration": ProxyConfiguration,
+    "RebootDynamicSetDetails": RebootDynamicSetDetails,
     "RebootEvent": RebootEvent,
     "RebootEventData": RebootEventData,
     "RebootLifecycleStageDetails": RebootLifecycleStageDetails,
@@ -443,9 +495,12 @@ os_management_hub_type_mapping = {
     "RebootManagedInstanceGroupDetails": RebootManagedInstanceGroupDetails,
     "RemoveModuleStreamProfileFromManagedInstanceDetails": RemoveModuleStreamProfileFromManagedInstanceDetails,
     "RemoveModuleStreamProfileFromManagedInstanceGroupDetails": RemoveModuleStreamProfileFromManagedInstanceGroupDetails,
+    "RemovePackagesFromDynamicSetDetails": RemovePackagesFromDynamicSetDetails,
     "RemovePackagesFromManagedInstanceDetails": RemovePackagesFromManagedInstanceDetails,
     "RemovePackagesFromManagedInstanceGroupDetails": RemovePackagesFromManagedInstanceGroupDetails,
     "RemovePackagesFromSoftwareSourceDetails": RemovePackagesFromSoftwareSourceDetails,
+    "RemoveSnapDetails": RemoveSnapDetails,
+    "RemoveSnapsFromManagedInstanceDetails": RemoveSnapsFromManagedInstanceDetails,
     "ReplacePackagesInSoftwareSourceDetails": ReplacePackagesInSoftwareSourceDetails,
     "RerunWorkRequestDetails": RerunWorkRequestDetails,
     "ScheduledJob": ScheduledJob,
@@ -455,6 +510,11 @@ os_management_hub_type_mapping = {
     "SearchSoftwareSourceModuleStreamsDetails": SearchSoftwareSourceModuleStreamsDetails,
     "SearchSoftwareSourceModulesDetails": SearchSoftwareSourceModulesDetails,
     "SearchSoftwareSourcePackageGroupsDetails": SearchSoftwareSourcePackageGroupsDetails,
+    "SnapCollection": SnapCollection,
+    "SnapSpecDetails": SnapSpecDetails,
+    "SnapSummary": SnapSummary,
+    "SnapUpdateEvent": SnapUpdateEvent,
+    "SnapUpdateEventData": SnapUpdateEventData,
     "SoftwarePackage": SoftwarePackage,
     "SoftwarePackageCollection": SoftwarePackageCollection,
     "SoftwarePackageDependency": SoftwarePackageDependency,
@@ -468,28 +528,41 @@ os_management_hub_type_mapping = {
     "SoftwareSourceEvent": SoftwareSourceEvent,
     "SoftwareSourceEventData": SoftwareSourceEventData,
     "SoftwareSourceProfile": SoftwareSourceProfile,
+    "SoftwareSourceRepoCollection": SoftwareSourceRepoCollection,
+    "SoftwareSourceRepoSummary": SoftwareSourceRepoSummary,
     "SoftwareSourceSummary": SoftwareSourceSummary,
     "SoftwareSourceVendorCollection": SoftwareSourceVendorCollection,
     "SoftwareSourceVendorSummary": SoftwareSourceVendorSummary,
     "SoftwareSourcesDetails": SoftwareSourcesDetails,
     "SoftwareUpdateEvent": SoftwareUpdateEvent,
     "SoftwareUpdateEventData": SoftwareUpdateEventData,
+    "StageUpdateOnAllManagedInstancesInCompartmentDetails": StageUpdateOnAllManagedInstancesInCompartmentDetails,
+    "StageUpdateOnDynamicSetDetails": StageUpdateOnDynamicSetDetails,
+    "StageUpdateOnManagedInstanceDetails": StageUpdateOnManagedInstanceDetails,
+    "StageWindowsUpdatesOnManagedInstanceDetails": StageWindowsUpdatesOnManagedInstanceDetails,
+    "StageWindowsUpdatesOnManagedInstancesInCompartmentDetails": StageWindowsUpdatesOnManagedInstancesInCompartmentDetails,
     "StationHealth": StationHealth,
     "StationProfile": StationProfile,
     "SwitchModuleStreamOnManagedInstanceDetails": SwitchModuleStreamOnManagedInstanceDetails,
     "SwitchModuleStreamOnManagedInstanceGroupDetails": SwitchModuleStreamOnManagedInstanceGroupDetails,
+    "SwitchSnapChannelDetails": SwitchSnapChannelDetails,
+    "SwitchSnapChannelOnManagedInstanceDetails": SwitchSnapChannelOnManagedInstanceDetails,
     "SynchronizeMirrorsDetails": SynchronizeMirrorsDetails,
     "SysadminEvent": SysadminEvent,
     "SysadminEventData": SysadminEventData,
     "SystemDetails": SystemDetails,
+    "Tag": Tag,
+    "TargetCompartmentDetails": TargetCompartmentDetails,
     "ThirdPartySoftwareSource": ThirdPartySoftwareSource,
     "ThirdPartySoftwareSourceSummary": ThirdPartySoftwareSourceSummary,
+    "UbuntuStandaloneProfile": UbuntuStandaloneProfile,
     "UpdatableAutonomousSettings": UpdatableAutonomousSettings,
     "UpdatablePackageCollection": UpdatablePackageCollection,
     "UpdatablePackageSummary": UpdatablePackageSummary,
     "UpdateAllPackagesOnManagedInstanceGroupDetails": UpdateAllPackagesOnManagedInstanceGroupDetails,
     "UpdateAllPackagesOnManagedInstancesInCompartmentDetails": UpdateAllPackagesOnManagedInstancesInCompartmentDetails,
     "UpdateCustomSoftwareSourceDetails": UpdateCustomSoftwareSourceDetails,
+    "UpdateDynamicSetDetails": UpdateDynamicSetDetails,
     "UpdateEventDetails": UpdateEventDetails,
     "UpdateLifecycleEnvironmentDetails": UpdateLifecycleEnvironmentDetails,
     "UpdateLifecycleStageDetails": UpdateLifecycleStageDetails,
@@ -497,6 +570,7 @@ os_management_hub_type_mapping = {
     "UpdateManagedInstanceGroupDetails": UpdateManagedInstanceGroupDetails,
     "UpdateManagementStationDetails": UpdateManagementStationDetails,
     "UpdateMirrorConfigurationDetails": UpdateMirrorConfigurationDetails,
+    "UpdatePackagesOnDynamicSetDetails": UpdatePackagesOnDynamicSetDetails,
     "UpdatePackagesOnManagedInstanceDetails": UpdatePackagesOnManagedInstanceDetails,
     "UpdatePrivateSoftwareSourceDetails": UpdatePrivateSoftwareSourceDetails,
     "UpdateProfileDetails": UpdateProfileDetails,

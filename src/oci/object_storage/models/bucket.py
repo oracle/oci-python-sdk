@@ -64,6 +64,14 @@ class Bucket(object):
     #: This constant has a value of "InfrequentAccess"
     AUTO_TIERING_INFREQUENT_ACCESS = "InfrequentAccess"
 
+    #: A constant which can be used with the bucket_scope property of a Bucket.
+    #: This constant has a value of "NAMESPACE"
+    BUCKET_SCOPE_NAMESPACE = "NAMESPACE"
+
+    #: A constant which can be used with the bucket_scope property of a Bucket.
+    #: This constant has a value of "REGION"
+    BUCKET_SCOPE_REGION = "REGION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Bucket object with values from keyword arguments.
@@ -161,6 +169,12 @@ class Bucket(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type auto_tiering: str
 
+        :param bucket_scope:
+            The value to assign to the bucket_scope property of this Bucket.
+            Allowed values for this property are: "NAMESPACE", "REGION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bucket_scope: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -183,7 +197,8 @@ class Bucket(object):
             'is_read_only': 'bool',
             'id': 'str',
             'versioning': 'str',
-            'auto_tiering': 'str'
+            'auto_tiering': 'str',
+            'bucket_scope': 'str'
         }
         self.attribute_map = {
             'namespace': 'namespace',
@@ -206,7 +221,8 @@ class Bucket(object):
             'is_read_only': 'isReadOnly',
             'id': 'id',
             'versioning': 'versioning',
-            'auto_tiering': 'autoTiering'
+            'auto_tiering': 'autoTiering',
+            'bucket_scope': 'bucketScope'
         }
         self._namespace = None
         self._name = None
@@ -229,6 +245,7 @@ class Bucket(object):
         self._id = None
         self._versioning = None
         self._auto_tiering = None
+        self._bucket_scope = None
 
     @property
     def namespace(self):
@@ -829,6 +846,44 @@ class Bucket(object):
         if not value_allowed_none_or_none_sentinel(auto_tiering, allowed_values):
             auto_tiering = 'UNKNOWN_ENUM_VALUE'
         self._auto_tiering = auto_tiering
+
+    @property
+    def bucket_scope(self):
+        """
+        Gets the bucket_scope of this Bucket.
+        Scope in which the bucket is unique. Default value is NAMESPACE.
+        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+        tenancies can have a bucket with same name in their namespace.
+        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+        same name and scope REGION.
+
+        Allowed values for this property are: "NAMESPACE", "REGION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bucket_scope of this Bucket.
+        :rtype: str
+        """
+        return self._bucket_scope
+
+    @bucket_scope.setter
+    def bucket_scope(self, bucket_scope):
+        """
+        Sets the bucket_scope of this Bucket.
+        Scope in which the bucket is unique. Default value is NAMESPACE.
+        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+        tenancies can have a bucket with same name in their namespace.
+        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+        same name and scope REGION.
+
+
+        :param bucket_scope: The bucket_scope of this Bucket.
+        :type: str
+        """
+        allowed_values = ["NAMESPACE", "REGION"]
+        if not value_allowed_none_or_none_sentinel(bucket_scope, allowed_values):
+            bucket_scope = 'UNKNOWN_ENUM_VALUE'
+        self._bucket_scope = bucket_scope
 
     def __repr__(self):
         return formatted_flat_dict(self)

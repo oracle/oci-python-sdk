@@ -23,6 +23,10 @@ class AssetSource(object):
     #: This constant has a value of "AWS"
     TYPE_AWS = "AWS"
 
+    #: A constant which can be used with the type property of a AssetSource.
+    #: This constant has a value of "OLVM"
+    TYPE_OLVM = "OLVM"
+
     #: A constant which can be used with the lifecycle_state property of a AssetSource.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -51,19 +55,28 @@ class AssetSource(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the environment_type property of a AssetSource.
+    #: This constant has a value of "SOURCE"
+    ENVIRONMENT_TYPE_SOURCE = "SOURCE"
+
+    #: A constant which can be used with the environment_type property of a AssetSource.
+    #: This constant has a value of "DESTINATION"
+    ENVIRONMENT_TYPE_DESTINATION = "DESTINATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AssetSource object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.cloud_bridge.models.VmWareAssetSource`
+        * :class:`~oci.cloud_bridge.models.OlvmAssetSource`
         * :class:`~oci.cloud_bridge.models.AwsAssetSource`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this AssetSource.
-            Allowed values for this property are: "VMWARE", "AWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -125,6 +138,12 @@ class AssetSource(object):
             The value to assign to the system_tags property of this AssetSource.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this AssetSource.
+            Allowed values for this property are: "SOURCE", "DESTINATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type environment_type: str
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -141,7 +160,8 @@ class AssetSource(object):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str'
         }
         self.attribute_map = {
             'type': 'type',
@@ -158,7 +178,8 @@ class AssetSource(object):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'environment_type': 'environmentType'
         }
         self._type = None
         self._id = None
@@ -175,6 +196,7 @@ class AssetSource(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -187,6 +209,9 @@ class AssetSource(object):
         if type == 'VMWARE':
             return 'VmWareAssetSource'
 
+        if type == 'OLVM':
+            return 'OlvmAssetSource'
+
         if type == 'AWS':
             return 'AwsAssetSource'
         else:
@@ -198,7 +223,7 @@ class AssetSource(object):
         **[Required]** Gets the type of this AssetSource.
         The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
 
-        Allowed values for this property are: "VMWARE", "AWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE", "AWS", "OLVM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -217,7 +242,7 @@ class AssetSource(object):
         :param type: The type of this AssetSource.
         :type: str
         """
-        allowed_values = ["VMWARE", "AWS"]
+        allowed_values = ["VMWARE", "AWS", "OLVM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -613,6 +638,36 @@ class AssetSource(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this AssetSource.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+        Allowed values for this property are: "SOURCE", "DESTINATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The environment_type of this AssetSource.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this AssetSource.
+        Specifies if this is the Source or Destination point for migration - different assets may be discovered depending on setting.
+
+
+        :param environment_type: The environment_type of this AssetSource.
+        :type: str
+        """
+        allowed_values = ["SOURCE", "DESTINATION"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            environment_type = 'UNKNOWN_ENUM_VALUE'
+        self._environment_type = environment_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

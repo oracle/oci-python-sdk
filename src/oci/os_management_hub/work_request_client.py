@@ -573,7 +573,7 @@ class WorkRequestClient(object):
         :param list[str] status: (optional)
             A filter to return work requests that match the given status.
 
-            Allowed values are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+            Allowed values are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED"
 
         :param str resource_id: (optional)
             The `OCID`__ of the resource. This filter returns resources associated with the specified resource.
@@ -628,7 +628,7 @@ class WorkRequestClient(object):
         :param list[str] operation_type: (optional)
             The asynchronous operation tracked by this work request. The filter returns only resources that match the given OperationType.
 
-            Allowed values are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT"
+            Allowed values are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", "REGISTER_MANAGED_INSTANCE", "LIST_SNAPS", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL"
 
         :param str display_name_contains: (optional)
             A filter to return resources that may partially match the given display name.
@@ -655,6 +655,9 @@ class WorkRequestClient(object):
 
         :param bool is_managed_by_autonomous_linux: (optional)
             Indicates whether to list only resources managed by the Autonomous Linux service.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Indicates whether to include subcompartments in the returned results. Default is false.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -708,7 +711,8 @@ class WorkRequestClient(object):
             "rerun_of_id",
             "time_created_less_than",
             "time_created_greater_than_or_equal_to",
-            "is_managed_by_autonomous_linux"
+            "is_managed_by_autonomous_linux",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -716,7 +720,7 @@ class WorkRequestClient(object):
                 f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            status_allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "SKIPPED"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
@@ -738,7 +742,7 @@ class WorkRequestClient(object):
                 )
 
         if 'operation_type' in kwargs:
-            operation_type_allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT"]
+            operation_type_allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", "REGISTER_MANAGED_INSTANCE", "LIST_SNAPS", "INSTALL_SNAPS", "REMOVE_SNAPS", "SWITCH_SNAP_CHANNEL"]
             for operation_type_item in kwargs['operation_type']:
                 if operation_type_item not in operation_type_allowed_values:
                     raise ValueError(
@@ -763,7 +767,8 @@ class WorkRequestClient(object):
             "rerunOfId": kwargs.get("rerun_of_id", missing),
             "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
             "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
-            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing)
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

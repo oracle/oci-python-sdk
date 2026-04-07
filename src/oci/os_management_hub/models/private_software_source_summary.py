@@ -70,12 +70,12 @@ class PrivateSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param os_family:
             The value to assign to the os_family property of this PrivateSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this PrivateSoftwareSourceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
         :type arch_type: str
 
         :param package_count:

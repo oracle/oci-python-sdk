@@ -15,6 +15,18 @@ class UpdateNodePoolDetails(object):
     The properties that define a request to update a node pool.
     """
 
+    #: A constant which can be used with the network_launch_type property of a UpdateNodePoolDetails.
+    #: This constant has a value of "VFIO"
+    NETWORK_LAUNCH_TYPE_VFIO = "VFIO"
+
+    #: A constant which can be used with the network_launch_type property of a UpdateNodePoolDetails.
+    #: This constant has a value of "E1000"
+    NETWORK_LAUNCH_TYPE_E1000 = "E1000"
+
+    #: A constant which can be used with the network_launch_type property of a UpdateNodePoolDetails.
+    #: This constant has a value of "PARAVIRTUALIZED"
+    NETWORK_LAUNCH_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateNodePoolDetails object with values from keyword arguments.
@@ -80,6 +92,15 @@ class UpdateNodePoolDetails(object):
             The value to assign to the node_pool_cycling_details property of this UpdateNodePoolDetails.
         :type node_pool_cycling_details: oci.container_engine.models.NodePoolCyclingDetails
 
+        :param secondary_vnics:
+            The value to assign to the secondary_vnics property of this UpdateNodePoolDetails.
+        :type secondary_vnics: list[oci.container_engine.models.NodePoolSecondaryVnicDetails]
+
+        :param network_launch_type:
+            The value to assign to the network_launch_type property of this UpdateNodePoolDetails.
+            Allowed values for this property are: "VFIO", "E1000", "PARAVIRTUALIZED"
+        :type network_launch_type: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -96,7 +117,9 @@ class UpdateNodePoolDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings',
-            'node_pool_cycling_details': 'NodePoolCyclingDetails'
+            'node_pool_cycling_details': 'NodePoolCyclingDetails',
+            'secondary_vnics': 'list[NodePoolSecondaryVnicDetails]',
+            'network_launch_type': 'str'
         }
         self.attribute_map = {
             'name': 'name',
@@ -113,7 +136,9 @@ class UpdateNodePoolDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings',
-            'node_pool_cycling_details': 'nodePoolCyclingDetails'
+            'node_pool_cycling_details': 'nodePoolCyclingDetails',
+            'secondary_vnics': 'secondaryVnics',
+            'network_launch_type': 'networkLaunchType'
         }
         self._name = None
         self._kubernetes_version = None
@@ -130,6 +155,8 @@ class UpdateNodePoolDetails(object):
         self._defined_tags = None
         self._node_eviction_node_pool_settings = None
         self._node_pool_cycling_details = None
+        self._secondary_vnics = None
+        self._network_launch_type = None
 
     @property
     def name(self):
@@ -516,6 +543,61 @@ class UpdateNodePoolDetails(object):
         :type: oci.container_engine.models.NodePoolCyclingDetails
         """
         self._node_pool_cycling_details = node_pool_cycling_details
+
+    @property
+    def secondary_vnics(self):
+        """
+        Gets the secondary_vnics of this UpdateNodePoolDetails.
+        A list of secondary vnics to attach to nodes
+
+
+        :return: The secondary_vnics of this UpdateNodePoolDetails.
+        :rtype: list[oci.container_engine.models.NodePoolSecondaryVnicDetails]
+        """
+        return self._secondary_vnics
+
+    @secondary_vnics.setter
+    def secondary_vnics(self, secondary_vnics):
+        """
+        Sets the secondary_vnics of this UpdateNodePoolDetails.
+        A list of secondary vnics to attach to nodes
+
+
+        :param secondary_vnics: The secondary_vnics of this UpdateNodePoolDetails.
+        :type: list[oci.container_engine.models.NodePoolSecondaryVnicDetails]
+        """
+        self._secondary_vnics = secondary_vnics
+
+    @property
+    def network_launch_type(self):
+        """
+        Gets the network_launch_type of this UpdateNodePoolDetails.
+        Emulation type for the physical network interface card (NIC) for nodes
+
+        Allowed values for this property are: "VFIO", "E1000", "PARAVIRTUALIZED"
+
+
+        :return: The network_launch_type of this UpdateNodePoolDetails.
+        :rtype: str
+        """
+        return self._network_launch_type
+
+    @network_launch_type.setter
+    def network_launch_type(self, network_launch_type):
+        """
+        Sets the network_launch_type of this UpdateNodePoolDetails.
+        Emulation type for the physical network interface card (NIC) for nodes
+
+
+        :param network_launch_type: The network_launch_type of this UpdateNodePoolDetails.
+        :type: str
+        """
+        allowed_values = ["VFIO", "E1000", "PARAVIRTUALIZED"]
+        if not value_allowed_none_or_none_sentinel(network_launch_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `network_launch_type`, must be None or one of {allowed_values}"
+            )
+        self._network_launch_type = network_launch_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -70,6 +70,10 @@ class SoftwarePackageSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
+        :param last_modified_date:
+            The value to assign to the last_modified_date property of this SoftwarePackageSummary.
+        :type last_modified_date: str
+
         :param checksum:
             The value to assign to the checksum property of this SoftwarePackageSummary.
         :type checksum: str
@@ -97,6 +101,7 @@ class SoftwarePackageSummary(object):
             'type': 'str',
             'version': 'str',
             'architecture': 'str',
+            'last_modified_date': 'str',
             'checksum': 'str',
             'checksum_type': 'str',
             'is_latest': 'bool',
@@ -109,6 +114,7 @@ class SoftwarePackageSummary(object):
             'type': 'type',
             'version': 'version',
             'architecture': 'architecture',
+            'last_modified_date': 'lastModifiedDate',
             'checksum': 'checksum',
             'checksum_type': 'checksumType',
             'is_latest': 'isLatest',
@@ -120,6 +126,7 @@ class SoftwarePackageSummary(object):
         self._type = None
         self._version = None
         self._architecture = None
+        self._last_modified_date = None
         self._checksum = None
         self._checksum_type = None
         self._is_latest = None
@@ -251,6 +258,34 @@ class SoftwarePackageSummary(object):
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
+
+    @property
+    def last_modified_date(self):
+        """
+        Gets the last_modified_date of this SoftwarePackageSummary.
+        The date and time the package was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The last_modified_date of this SoftwarePackageSummary.
+        :rtype: str
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """
+        Sets the last_modified_date of this SoftwarePackageSummary.
+        The date and time the package was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param last_modified_date: The last_modified_date of this SoftwarePackageSummary.
+        :type: str
+        """
+        self._last_modified_date = last_modified_date
 
     @property
     def checksum(self):

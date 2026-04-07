@@ -47,7 +47,7 @@ class VmAsset(Asset):
 
         :param asset_type:
             The value to assign to the asset_type property of this VmAsset.
-            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+            Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         :param time_created:
@@ -79,6 +79,11 @@ class VmAsset(Asset):
             The value to assign to the system_tags property of this VmAsset.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this VmAsset.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         :param compute:
             The value to assign to the compute property of this VmAsset.
         :type compute: oci.cloud_bridge.models.ComputeProperties
@@ -103,6 +108,7 @@ class VmAsset(Asset):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'compute': 'ComputeProperties',
             'vm': 'VmProperties'
         }
@@ -121,6 +127,7 @@ class VmAsset(Asset):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'compute': 'compute',
             'vm': 'vm'
         }
@@ -138,6 +145,7 @@ class VmAsset(Asset):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._compute = None
         self._vm = None
         self._asset_type = 'VM'

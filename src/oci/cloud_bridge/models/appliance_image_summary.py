@@ -94,14 +94,6 @@ class ApplianceImageSummary(object):
             The value to assign to the download_url property of this ApplianceImageSummary.
         :type download_url: str
 
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this ApplianceImageSummary.
-        :type freeform_tags: dict(str, str)
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this ApplianceImageSummary.
-        :type defined_tags: dict(str, dict(str, object))
-
         """
         self.swagger_types = {
             'id': 'str',
@@ -115,9 +107,7 @@ class ApplianceImageSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'download_url': 'str',
-            'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'download_url': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -131,9 +121,7 @@ class ApplianceImageSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'download_url': 'downloadUrl',
-            'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'download_url': 'downloadUrl'
         }
         self._id = None
         self._file_name = None
@@ -147,8 +135,6 @@ class ApplianceImageSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._download_url = None
-        self._freeform_tags = None
-        self._defined_tags = None
 
     @property
     def id(self):
@@ -443,70 +429,6 @@ class ApplianceImageSummary(object):
         :type: str
         """
         self._download_url = download_url
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this ApplianceImageSummary.
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace/scope. For more information, see `Resource Tags`__.
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The freeform_tags of this ApplianceImageSummary.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this ApplianceImageSummary.
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace/scope. For more information, see `Resource Tags`__.
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :param freeform_tags: The freeform_tags of this ApplianceImageSummary.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this ApplianceImageSummary.
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-        For more information, see `Resource Tags`__.
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this ApplianceImageSummary.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this ApplianceImageSummary.
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-        For more information, see `Resource Tags`__.
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this ApplianceImageSummary.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

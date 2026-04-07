@@ -57,6 +57,10 @@ class Event(object):
     #: This constant has a value of "REBOOT"
     TYPE_REBOOT = "REBOOT"
 
+    #: A constant which can be used with the type property of a Event.
+    #: This constant has a value of "SNAP_UPDATE"
+    TYPE_SNAP_UPDATE = "SNAP_UPDATE"
+
     #: A constant which can be used with the lifecycle_state property of a Event.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -92,6 +96,7 @@ class Event(object):
         * :class:`~oci.os_management_hub.models.SoftwareSourceEvent`
         * :class:`~oci.os_management_hub.models.KernelCrashEvent`
         * :class:`~oci.os_management_hub.models.SysadminEvent`
+        * :class:`~oci.os_management_hub.models.SnapUpdateEvent`
         * :class:`~oci.os_management_hub.models.RebootEvent`
         * :class:`~oci.os_management_hub.models.ExploitAttemptEvent`
         * :class:`~oci.os_management_hub.models.AgentEvent`
@@ -105,7 +110,7 @@ class Event(object):
 
         :param type:
             The value to assign to the type property of this Event.
-            Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", "SNAP_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -247,6 +252,9 @@ class Event(object):
         if type == 'SYSADMIN':
             return 'SysadminEvent'
 
+        if type == 'SNAP_UPDATE':
+            return 'SnapUpdateEvent'
+
         if type == 'REBOOT':
             return 'RebootEvent'
 
@@ -305,7 +313,7 @@ class Event(object):
           * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
           * `REBOOT` - Reboot
 
-        Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", "SNAP_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -334,7 +342,7 @@ class Event(object):
         :param type: The type of this Event.
         :type: str
         """
-        allowed_values = ["KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT"]
+        allowed_values = ["KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", "SNAP_UPDATE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

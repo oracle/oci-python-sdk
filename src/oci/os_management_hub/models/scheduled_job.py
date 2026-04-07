@@ -112,6 +112,10 @@ class ScheduledJob(object):
             The value to assign to the lifecycle_stage_ids property of this ScheduledJob.
         :type lifecycle_stage_ids: list[str]
 
+        :param dynamic_set_ids:
+            The value to assign to the dynamic_set_ids property of this ScheduledJob.
+        :type dynamic_set_ids: list[str]
+
         :param is_subcompartment_included:
             The value to assign to the is_subcompartment_included property of this ScheduledJob.
         :type is_subcompartment_included: bool
@@ -181,6 +185,7 @@ class ScheduledJob(object):
             'managed_instance_group_ids': 'list[str]',
             'managed_compartment_ids': 'list[str]',
             'lifecycle_stage_ids': 'list[str]',
+            'dynamic_set_ids': 'list[str]',
             'is_subcompartment_included': 'bool',
             'operations': 'list[ScheduledJobOperation]',
             'work_request_ids': 'list[str]',
@@ -209,6 +214,7 @@ class ScheduledJob(object):
             'managed_instance_group_ids': 'managedInstanceGroupIds',
             'managed_compartment_ids': 'managedCompartmentIds',
             'lifecycle_stage_ids': 'lifecycleStageIds',
+            'dynamic_set_ids': 'dynamicSetIds',
             'is_subcompartment_included': 'isSubcompartmentIncluded',
             'operations': 'operations',
             'work_request_ids': 'workRequestIds',
@@ -236,6 +242,7 @@ class ScheduledJob(object):
         self._managed_instance_group_ids = None
         self._managed_compartment_ids = None
         self._lifecycle_stage_ids = None
+        self._dynamic_set_ids = None
         self._is_subcompartment_included = None
         self._operations = None
         self._work_request_ids = None
@@ -468,7 +475,11 @@ class ScheduledJob(object):
     def recurring_rule(self):
         """
         Gets the recurring_rule of this ScheduledJob.
-        The frequency schedule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job in the `RFC5535`__ format.
+        Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+        In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY\", HOURLY are supported.
+
+        __ https://www.rfc-editor.org/rfc/rfc5535
 
 
         :return: The recurring_rule of this ScheduledJob.
@@ -480,7 +491,11 @@ class ScheduledJob(object):
     def recurring_rule(self, recurring_rule):
         """
         Sets the recurring_rule of this ScheduledJob.
-        The frequency schedule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job in the `RFC5535`__ format.
+        Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported.
+        In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY\", HOURLY are supported.
+
+        __ https://www.rfc-editor.org/rfc/rfc5535
 
 
         :param recurring_rule: The recurring_rule of this ScheduledJob.
@@ -582,7 +597,7 @@ class ScheduledJob(object):
         Gets the lifecycle_stage_ids of this ScheduledJob.
         The lifecycle stage `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -598,7 +613,7 @@ class ScheduledJob(object):
         Sets the lifecycle_stage_ids of this ScheduledJob.
         The lifecycle stage `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -607,6 +622,38 @@ class ScheduledJob(object):
         :type: list[str]
         """
         self._lifecycle_stage_ids = lifecycle_stage_ids
+
+    @property
+    def dynamic_set_ids(self):
+        """
+        Gets the dynamic_set_ids of this ScheduledJob.
+        The dynamic set `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The dynamic_set_ids of this ScheduledJob.
+        :rtype: list[str]
+        """
+        return self._dynamic_set_ids
+
+    @dynamic_set_ids.setter
+    def dynamic_set_ids(self, dynamic_set_ids):
+        """
+        Sets the dynamic_set_ids of this ScheduledJob.
+        The dynamic set `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param dynamic_set_ids: The dynamic_set_ids of this ScheduledJob.
+        :type: list[str]
+        """
+        self._dynamic_set_ids = dynamic_set_ids
 
     @property
     def is_subcompartment_included(self):

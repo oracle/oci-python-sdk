@@ -82,6 +82,10 @@ class ScheduledJobSummary(object):
             The value to assign to the lifecycle_stage_ids property of this ScheduledJobSummary.
         :type lifecycle_stage_ids: list[str]
 
+        :param dynamic_set_ids:
+            The value to assign to the dynamic_set_ids property of this ScheduledJobSummary.
+        :type dynamic_set_ids: list[str]
+
         :param operations:
             The value to assign to the operations property of this ScheduledJobSummary.
         :type operations: list[oci.os_management_hub.models.ScheduledJobOperation]
@@ -133,6 +137,7 @@ class ScheduledJobSummary(object):
             'managed_instance_group_ids': 'list[str]',
             'managed_compartment_ids': 'list[str]',
             'lifecycle_stage_ids': 'list[str]',
+            'dynamic_set_ids': 'list[str]',
             'operations': 'list[ScheduledJobOperation]',
             'lifecycle_state': 'str',
             'is_managed_by_autonomous_linux': 'bool',
@@ -157,6 +162,7 @@ class ScheduledJobSummary(object):
             'managed_instance_group_ids': 'managedInstanceGroupIds',
             'managed_compartment_ids': 'managedCompartmentIds',
             'lifecycle_stage_ids': 'lifecycleStageIds',
+            'dynamic_set_ids': 'dynamicSetIds',
             'operations': 'operations',
             'lifecycle_state': 'lifecycleState',
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
@@ -180,6 +186,7 @@ class ScheduledJobSummary(object):
         self._managed_instance_group_ids = None
         self._managed_compartment_ids = None
         self._lifecycle_stage_ids = None
+        self._dynamic_set_ids = None
         self._operations = None
         self._lifecycle_state = None
         self._is_managed_by_autonomous_linux = None
@@ -442,7 +449,7 @@ class ScheduledJobSummary(object):
         Gets the managed_instance_ids of this ScheduledJobSummary.
         The managed instance `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+        managedInstanceGroupIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -458,7 +465,7 @@ class ScheduledJobSummary(object):
         Sets the managed_instance_ids of this ScheduledJobSummary.
         The managed instance `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+        managedInstanceGroupIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -474,7 +481,7 @@ class ScheduledJobSummary(object):
         Gets the managed_instance_group_ids of this ScheduledJobSummary.
         The managed instance group `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+        managedInstanceIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -490,7 +497,7 @@ class ScheduledJobSummary(object):
         Sets the managed_instance_group_ids of this ScheduledJobSummary.
         The managed instance group `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+        managedInstanceIds, managedCompartmentIds, lifecycleStageIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -506,7 +513,7 @@ class ScheduledJobSummary(object):
         Gets the managed_compartment_ids of this ScheduledJobSummary.
         The compartment `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+        managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -522,7 +529,7 @@ class ScheduledJobSummary(object):
         Sets the managed_compartment_ids of this ScheduledJobSummary.
         The compartment `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+        managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -538,7 +545,7 @@ class ScheduledJobSummary(object):
         Gets the lifecycle_stage_ids of this ScheduledJobSummary.
         The lifecycle stage `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -554,7 +561,7 @@ class ScheduledJobSummary(object):
         Sets the lifecycle_stage_ids of this ScheduledJobSummary.
         The lifecycle stage `OCIDs`__ that this scheduled job operates on.
         A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
-        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+        managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds, and dynamicSetIds.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -563,6 +570,38 @@ class ScheduledJobSummary(object):
         :type: list[str]
         """
         self._lifecycle_stage_ids = lifecycle_stage_ids
+
+    @property
+    def dynamic_set_ids(self):
+        """
+        Gets the dynamic_set_ids of this ScheduledJobSummary.
+        The dynamic set `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The dynamic_set_ids of this ScheduledJobSummary.
+        :rtype: list[str]
+        """
+        return self._dynamic_set_ids
+
+    @dynamic_set_ids.setter
+    def dynamic_set_ids(self, dynamic_set_ids):
+        """
+        Sets the dynamic_set_ids of this ScheduledJobSummary.
+        The dynamic set `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, managedCompartmentIds.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param dynamic_set_ids: The dynamic_set_ids of this ScheduledJobSummary.
+        :type: list[str]
+        """
+        self._dynamic_set_ids = dynamic_set_ids
 
     @property
     def operations(self):

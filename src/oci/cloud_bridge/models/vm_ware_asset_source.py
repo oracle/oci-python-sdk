@@ -23,7 +23,7 @@ class VmWareAssetSource(AssetSource):
 
         :param type:
             The value to assign to the type property of this VmWareAssetSource.
-            Allowed values for this property are: "VMWARE", "AWS"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param id:
@@ -83,6 +83,11 @@ class VmWareAssetSource(AssetSource):
             The value to assign to the system_tags property of this VmWareAssetSource.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this VmWareAssetSource.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         :param vcenter_endpoint:
             The value to assign to the vcenter_endpoint property of this VmWareAssetSource.
         :type vcenter_endpoint: str
@@ -120,6 +125,7 @@ class VmWareAssetSource(AssetSource):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'vcenter_endpoint': 'str',
             'discovery_credentials': 'AssetSourceCredentials',
             'replication_credentials': 'AssetSourceCredentials',
@@ -142,6 +148,7 @@ class VmWareAssetSource(AssetSource):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'vcenter_endpoint': 'vcenterEndpoint',
             'discovery_credentials': 'discoveryCredentials',
             'replication_credentials': 'replicationCredentials',
@@ -163,6 +170,7 @@ class VmWareAssetSource(AssetSource):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._vcenter_endpoint = None
         self._discovery_credentials = None
         self._replication_credentials = None

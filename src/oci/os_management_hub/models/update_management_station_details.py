@@ -15,6 +15,98 @@ class UpdateManagementStationDetails(object):
     Provides the information used to update the management station.
     """
 
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ORACLE_LINUX_9"
+    OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ORACLE_LINUX_8"
+    OS_FAMILY_ORACLE_LINUX_8 = "ORACLE_LINUX_8"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ORACLE_LINUX_7"
+    OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a UpdateManagementStationDetails.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "X86_64"
+    ARCH_TYPE_X86_64 = "X86_64"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "AARCH64"
+    ARCH_TYPE_AARCH64 = "AARCH64"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "I686"
+    ARCH_TYPE_I686 = "I686"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "NOARCH"
+    ARCH_TYPE_NOARCH = "NOARCH"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "SRC"
+    ARCH_TYPE_SRC = "SRC"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "AMD64"
+    ARCH_TYPE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ARM64"
+    ARCH_TYPE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the arch_type property of a UpdateManagementStationDetails.
+    #: This constant has a value of "ALL"
+    ARCH_TYPE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateManagementStationDetails object with values from keyword arguments.
@@ -35,6 +127,16 @@ class UpdateManagementStationDetails(object):
         :param is_auto_config_enabled:
             The value to assign to the is_auto_config_enabled property of this UpdateManagementStationDetails.
         :type is_auto_config_enabled: bool
+
+        :param os_family:
+            The value to assign to the os_family property of this UpdateManagementStationDetails.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
+        :type os_family: str
+
+        :param arch_type:
+            The value to assign to the arch_type property of this UpdateManagementStationDetails.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
+        :type arch_type: str
 
         :param proxy:
             The value to assign to the proxy property of this UpdateManagementStationDetails.
@@ -58,6 +160,8 @@ class UpdateManagementStationDetails(object):
             'description': 'str',
             'hostname': 'str',
             'is_auto_config_enabled': 'bool',
+            'os_family': 'str',
+            'arch_type': 'str',
             'proxy': 'UpdateProxyConfigurationDetails',
             'mirror': 'UpdateMirrorConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
@@ -68,6 +172,8 @@ class UpdateManagementStationDetails(object):
             'description': 'description',
             'hostname': 'hostname',
             'is_auto_config_enabled': 'isAutoConfigEnabled',
+            'os_family': 'osFamily',
+            'arch_type': 'archType',
             'proxy': 'proxy',
             'mirror': 'mirror',
             'freeform_tags': 'freeformTags',
@@ -77,6 +183,8 @@ class UpdateManagementStationDetails(object):
         self._description = None
         self._hostname = None
         self._is_auto_config_enabled = None
+        self._os_family = None
+        self._arch_type = None
         self._proxy = None
         self._mirror = None
         self._freeform_tags = None
@@ -177,6 +285,68 @@ class UpdateManagementStationDetails(object):
         :type: bool
         """
         self._is_auto_config_enabled = is_auto_config_enabled
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this UpdateManagementStationDetails.
+        The operating system family.
+
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
+
+
+        :return: The os_family of this UpdateManagementStationDetails.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this UpdateManagementStationDetails.
+        The operating system family.
+
+
+        :param os_family: The os_family of this UpdateManagementStationDetails.
+        :type: str
+        """
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            raise ValueError(
+                f"Invalid value for `os_family`, must be None or one of {allowed_values}"
+            )
+        self._os_family = os_family
+
+    @property
+    def arch_type(self):
+        """
+        Gets the arch_type of this UpdateManagementStationDetails.
+        The architecture type.
+
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
+
+
+        :return: The arch_type of this UpdateManagementStationDetails.
+        :rtype: str
+        """
+        return self._arch_type
+
+    @arch_type.setter
+    def arch_type(self, arch_type):
+        """
+        Sets the arch_type of this UpdateManagementStationDetails.
+        The architecture type.
+
+
+        :param arch_type: The arch_type of this UpdateManagementStationDetails.
+        :type: str
+        """
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
+        if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `arch_type`, must be None or one of {allowed_values}"
+            )
+        self._arch_type = arch_type
 
     @property
     def proxy(self):

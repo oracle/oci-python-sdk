@@ -1,0 +1,11 @@
+OlvmVmSummary
+=============
+
+.. currentmodule:: oci.cloud_bridge.models
+
+.. autoclass:: OlvmVmSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

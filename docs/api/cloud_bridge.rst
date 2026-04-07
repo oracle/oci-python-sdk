@@ -69,7 +69,9 @@ Cloud Bridge
     oci.cloud_bridge.models.CreateAwsEc2AssetDetails
     oci.cloud_bridge.models.CreateDiscoveryScheduleDetails
     oci.cloud_bridge.models.CreateEnvironmentDetails
+    oci.cloud_bridge.models.CreateInventoryAssetDetails
     oci.cloud_bridge.models.CreateInventoryDetails
+    oci.cloud_bridge.models.CreateOlvmAssetSourceDetails
     oci.cloud_bridge.models.CreateVmWareAssetSourceDetails
     oci.cloud_bridge.models.CreateVmwareVmAssetDetails
     oci.cloud_bridge.models.CustomerTag
@@ -93,21 +95,88 @@ Cloud Bridge
     oci.cloud_bridge.models.InstancePrivateIpAddress
     oci.cloud_bridge.models.InstanceState
     oci.cloud_bridge.models.Inventory
+    oci.cloud_bridge.models.InventoryAsset
     oci.cloud_bridge.models.InventoryCollection
     oci.cloud_bridge.models.InventorySummary
+    oci.cloud_bridge.models.Ksm
+    oci.cloud_bridge.models.LogicalUnit
+    oci.cloud_bridge.models.MemoryOverCommit
+    oci.cloud_bridge.models.MigrationBandwidth
     oci.cloud_bridge.models.MonthlyCostSummary
     oci.cloud_bridge.models.Nic
     oci.cloud_bridge.models.Nvdimm
     oci.cloud_bridge.models.NvdimmController
+    oci.cloud_bridge.models.OlvmAgent
+    oci.cloud_bridge.models.OlvmAssetSource
+    oci.cloud_bridge.models.OlvmAssetSourceSummary
+    oci.cloud_bridge.models.OlvmBios
+    oci.cloud_bridge.models.OlvmBiosType
+    oci.cloud_bridge.models.OlvmBootMenu
+    oci.cloud_bridge.models.OlvmBootProtocol
+    oci.cloud_bridge.models.OlvmCertificate
+    oci.cloud_bridge.models.OlvmClusterAssetDetails
+    oci.cloud_bridge.models.OlvmClusterProperties
+    oci.cloud_bridge.models.OlvmConfiguration
+    oci.cloud_bridge.models.OlvmConsole
+    oci.cloud_bridge.models.OlvmCore
+    oci.cloud_bridge.models.OlvmCpu
+    oci.cloud_bridge.models.OlvmCpuTopology
+    oci.cloud_bridge.models.OlvmCpuTune
+    oci.cloud_bridge.models.OlvmCustomProperty
+    oci.cloud_bridge.models.OlvmDataCenter
+    oci.cloud_bridge.models.OlvmDisplay
+    oci.cloud_bridge.models.OlvmDomain
+    oci.cloud_bridge.models.OlvmErrorHandling
+    oci.cloud_bridge.models.OlvmFencingPolicy
+    oci.cloud_bridge.models.OlvmGuestOperatingSystem
+    oci.cloud_bridge.models.OlvmHardwareInformation
+    oci.cloud_bridge.models.OlvmHighAvailability
+    oci.cloud_bridge.models.OlvmHost
+    oci.cloud_bridge.models.OlvmHostStatus
+    oci.cloud_bridge.models.OlvmHostType
+    oci.cloud_bridge.models.OlvmHostedEngine
+    oci.cloud_bridge.models.OlvmIcon
+    oci.cloud_bridge.models.OlvmInitialization
+    oci.cloud_bridge.models.OlvmIp
+    oci.cloud_bridge.models.OlvmIscsiDetails
+    oci.cloud_bridge.models.OlvmKernel
+    oci.cloud_bridge.models.OlvmMemoryPolicy
+    oci.cloud_bridge.models.OlvmMigrationOptions
+    oci.cloud_bridge.models.OlvmNicConfiguration
+    oci.cloud_bridge.models.OlvmOperatingSystem
+    oci.cloud_bridge.models.OlvmPmProxy
+    oci.cloud_bridge.models.OlvmPowerManagement
+    oci.cloud_bridge.models.OlvmProperty
+    oci.cloud_bridge.models.OlvmSelinux
+    oci.cloud_bridge.models.OlvmSerialNumber
+    oci.cloud_bridge.models.OlvmSpm
+    oci.cloud_bridge.models.OlvmStorageDomainAssetDetails
+    oci.cloud_bridge.models.OlvmStorageDomainProperties
+    oci.cloud_bridge.models.OlvmTemplateAssetDetails
+    oci.cloud_bridge.models.OlvmTemplateProperties
+    oci.cloud_bridge.models.OlvmTemplateVersion
+    oci.cloud_bridge.models.OlvmUsb
+    oci.cloud_bridge.models.OlvmVersion
+    oci.cloud_bridge.models.OlvmVirtualMachine
+    oci.cloud_bridge.models.OlvmVmPlacementPolicy
+    oci.cloud_bridge.models.OlvmVmStatus
+    oci.cloud_bridge.models.OlvmVmSummary
+    oci.cloud_bridge.models.OlvmVmType
+    oci.cloud_bridge.models.OlvmVnicProfileAssetDetails
+    oci.cloud_bridge.models.OlvmVnicProfileProperties
     oci.cloud_bridge.models.Placement
     oci.cloud_bridge.models.Plugin
     oci.cloud_bridge.models.PluginSummary
     oci.cloud_bridge.models.RemoveAgentDependencyDetails
     oci.cloud_bridge.models.ScsiController
+    oci.cloud_bridge.models.SkipIfConnectivityBroken
+    oci.cloud_bridge.models.SkipIfSdActive
+    oci.cloud_bridge.models.Storage
     oci.cloud_bridge.models.SubmitHistoricalMetricsDetails
     oci.cloud_bridge.models.SupportedCloudRegionCollection
     oci.cloud_bridge.models.SupportedCloudRegionSummary
     oci.cloud_bridge.models.Tag
+    oci.cloud_bridge.models.TransparentHugePages
     oci.cloud_bridge.models.UpdateAgentDependencyDetails
     oci.cloud_bridge.models.UpdateAgentDetails
     oci.cloud_bridge.models.UpdateAssetDetails
@@ -117,11 +186,14 @@ Cloud Bridge
     oci.cloud_bridge.models.UpdateAwsEc2AssetDetails
     oci.cloud_bridge.models.UpdateDiscoveryScheduleDetails
     oci.cloud_bridge.models.UpdateEnvironmentDetails
+    oci.cloud_bridge.models.UpdateInventoryAssetDetails
     oci.cloud_bridge.models.UpdateInventoryDetails
+    oci.cloud_bridge.models.UpdateOlvmAssetSourceDetails
     oci.cloud_bridge.models.UpdatePluginDetails
     oci.cloud_bridge.models.UpdateVmAssetDetails
     oci.cloud_bridge.models.UpdateVmWareAssetSourceDetails
     oci.cloud_bridge.models.UpdateVmwareVmAssetDetails
+    oci.cloud_bridge.models.VcpuPin
     oci.cloud_bridge.models.VmAsset
     oci.cloud_bridge.models.VmProperties
     oci.cloud_bridge.models.VmWareAssetSource
@@ -130,6 +202,7 @@ Cloud Bridge
     oci.cloud_bridge.models.VmwareVmAsset
     oci.cloud_bridge.models.VmwareVmProperties
     oci.cloud_bridge.models.VolumeAttachment
+    oci.cloud_bridge.models.VolumeGroup
     oci.cloud_bridge.models.WorkRequest
     oci.cloud_bridge.models.WorkRequestError
     oci.cloud_bridge.models.WorkRequestErrorCollection

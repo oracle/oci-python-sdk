@@ -31,6 +31,22 @@ class UpdatablePackageSummary(PackageSummary):
     #: This constant has a value of "OTHER"
     UPDATE_TYPE_OTHER = "OTHER"
 
+    #: A constant which can be used with the advisory_severity property of a UpdatablePackageSummary.
+    #: This constant has a value of "LOW"
+    ADVISORY_SEVERITY_LOW = "LOW"
+
+    #: A constant which can be used with the advisory_severity property of a UpdatablePackageSummary.
+    #: This constant has a value of "MODERATE"
+    ADVISORY_SEVERITY_MODERATE = "MODERATE"
+
+    #: A constant which can be used with the advisory_severity property of a UpdatablePackageSummary.
+    #: This constant has a value of "IMPORTANT"
+    ADVISORY_SEVERITY_IMPORTANT = "IMPORTANT"
+
+    #: A constant which can be used with the advisory_severity property of a UpdatablePackageSummary.
+    #: This constant has a value of "CRITICAL"
+    ADVISORY_SEVERITY_CRITICAL = "CRITICAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdatablePackageSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.os_management_hub.models.UpdatablePackageSummary.package_classification` attribute
@@ -55,7 +71,7 @@ class UpdatablePackageSummary(PackageSummary):
 
         :param architecture:
             The value to assign to the architecture property of this UpdatablePackageSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -87,6 +103,12 @@ class UpdatablePackageSummary(PackageSummary):
             The value to assign to the related_cves property of this UpdatablePackageSummary.
         :type related_cves: list[str]
 
+        :param advisory_severity:
+            The value to assign to the advisory_severity property of this UpdatablePackageSummary.
+            Allowed values for this property are: "LOW", "MODERATE", "IMPORTANT", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type advisory_severity: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -99,7 +121,8 @@ class UpdatablePackageSummary(PackageSummary):
             'installed_version': 'str',
             'update_type': 'str',
             'errata': 'list[str]',
-            'related_cves': 'list[str]'
+            'related_cves': 'list[str]',
+            'advisory_severity': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -112,7 +135,8 @@ class UpdatablePackageSummary(PackageSummary):
             'installed_version': 'installedVersion',
             'update_type': 'updateType',
             'errata': 'errata',
-            'related_cves': 'relatedCves'
+            'related_cves': 'relatedCves',
+            'advisory_severity': 'advisorySeverity'
         }
         self._display_name = None
         self._name = None
@@ -125,6 +149,7 @@ class UpdatablePackageSummary(PackageSummary):
         self._update_type = None
         self._errata = None
         self._related_cves = None
+        self._advisory_severity = None
         self._package_classification = 'UPDATABLE'
 
     @property
@@ -228,6 +253,36 @@ class UpdatablePackageSummary(PackageSummary):
         :type: list[str]
         """
         self._related_cves = related_cves
+
+    @property
+    def advisory_severity(self):
+        """
+        Gets the advisory_severity of this UpdatablePackageSummary.
+        The severity level of the security update. Only applicable when updateType is SECURITY.
+
+        Allowed values for this property are: "LOW", "MODERATE", "IMPORTANT", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The advisory_severity of this UpdatablePackageSummary.
+        :rtype: str
+        """
+        return self._advisory_severity
+
+    @advisory_severity.setter
+    def advisory_severity(self, advisory_severity):
+        """
+        Sets the advisory_severity of this UpdatablePackageSummary.
+        The severity level of the security update. Only applicable when updateType is SECURITY.
+
+
+        :param advisory_severity: The advisory_severity of this UpdatablePackageSummary.
+        :type: str
+        """
+        allowed_values = ["LOW", "MODERATE", "IMPORTANT", "CRITICAL"]
+        if not value_allowed_none_or_none_sentinel(advisory_severity, allowed_values):
+            advisory_severity = 'UNKNOWN_ENUM_VALUE'
+        self._advisory_severity = advisory_severity
 
     def __repr__(self):
         return formatted_flat_dict(self)

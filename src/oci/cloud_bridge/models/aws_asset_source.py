@@ -23,7 +23,7 @@ class AwsAssetSource(AssetSource):
 
         :param type:
             The value to assign to the type property of this AwsAssetSource.
-            Allowed values for this property are: "VMWARE", "AWS"
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM"
         :type type: str
 
         :param id:
@@ -83,6 +83,11 @@ class AwsAssetSource(AssetSource):
             The value to assign to the system_tags property of this AwsAssetSource.
         :type system_tags: dict(str, dict(str, object))
 
+        :param environment_type:
+            The value to assign to the environment_type property of this AwsAssetSource.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
+
         :param discovery_credentials:
             The value to assign to the discovery_credentials property of this AwsAssetSource.
         :type discovery_credentials: oci.cloud_bridge.models.AssetSourceCredentials
@@ -128,6 +133,7 @@ class AwsAssetSource(AssetSource):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'discovery_credentials': 'AssetSourceCredentials',
             'replication_credentials': 'AssetSourceCredentials',
             'aws_region': 'str',
@@ -152,6 +158,7 @@ class AwsAssetSource(AssetSource):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'discovery_credentials': 'discoveryCredentials',
             'replication_credentials': 'replicationCredentials',
             'aws_region': 'awsRegion',
@@ -175,6 +182,7 @@ class AwsAssetSource(AssetSource):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._discovery_credentials = None
         self._replication_credentials = None
         self._aws_region = None

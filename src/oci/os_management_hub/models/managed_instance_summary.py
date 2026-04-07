@@ -59,6 +59,22 @@ class ManagedInstanceSummary(object):
     #: This constant has a value of "I386"
     ARCHITECTURE_I386 = "I386"
 
+    #: A constant which can be used with the architecture property of a ManagedInstanceSummary.
+    #: This constant has a value of "AMD64"
+    ARCHITECTURE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the architecture property of a ManagedInstanceSummary.
+    #: This constant has a value of "ARM64"
+    ARCHITECTURE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the architecture property of a ManagedInstanceSummary.
+    #: This constant has a value of "ALL"
+    ARCHITECTURE_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
+
     #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -88,8 +104,28 @@ class ManagedInstanceSummary(object):
     OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
 
     #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
     #: This constant has a value of "ALL"
     OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
 
     #: A constant which can be used with the status property of a ManagedInstanceSummary.
     #: This constant has a value of "NORMAL"
@@ -156,13 +192,13 @@ class ManagedInstanceSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this ManagedInstanceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
         :param os_family:
             The value to assign to the os_family property of this ManagedInstanceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -212,6 +248,10 @@ class ManagedInstanceSummary(object):
             The value to assign to the agent_version property of this ManagedInstanceSummary.
         :type agent_version: str
 
+        :param time_last_boot:
+            The value to assign to the time_last_boot property of this ManagedInstanceSummary.
+        :type time_last_boot: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -232,7 +272,8 @@ class ManagedInstanceSummary(object):
             'notification_topic_id': 'str',
             'autonomous_settings': 'AutonomousSettings',
             'is_managed_by_autonomous_linux': 'bool',
-            'agent_version': 'str'
+            'agent_version': 'str',
+            'time_last_boot': 'datetime'
         }
         self.attribute_map = {
             'id': 'id',
@@ -253,7 +294,8 @@ class ManagedInstanceSummary(object):
             'notification_topic_id': 'notificationTopicId',
             'autonomous_settings': 'autonomousSettings',
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
-            'agent_version': 'agentVersion'
+            'agent_version': 'agentVersion',
+            'time_last_boot': 'timeLastBoot'
         }
         self._id = None
         self._display_name = None
@@ -274,6 +316,7 @@ class ManagedInstanceSummary(object):
         self._autonomous_settings = None
         self._is_managed_by_autonomous_linux = None
         self._agent_version = None
+        self._time_last_boot = None
 
     @property
     def id(self):
@@ -443,7 +486,7 @@ class ManagedInstanceSummary(object):
         Gets the architecture of this ManagedInstanceSummary.
         The CPU architecture type of the managed instance.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -462,7 +505,7 @@ class ManagedInstanceSummary(object):
         :param architecture: The architecture of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
@@ -473,7 +516,7 @@ class ManagedInstanceSummary(object):
         Gets the os_family of this ManagedInstanceSummary.
         The operating system type of the managed instance.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -492,7 +535,7 @@ class ManagedInstanceSummary(object):
         :param os_family: The os_family of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -754,6 +797,34 @@ class ManagedInstanceSummary(object):
         :type: str
         """
         self._agent_version = agent_version
+
+    @property
+    def time_last_boot(self):
+        """
+        Gets the time_last_boot of this ManagedInstanceSummary.
+        Time that the instance last booted (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_last_boot of this ManagedInstanceSummary.
+        :rtype: datetime
+        """
+        return self._time_last_boot
+
+    @time_last_boot.setter
+    def time_last_boot(self, time_last_boot):
+        """
+        Sets the time_last_boot of this ManagedInstanceSummary.
+        Time that the instance last booted (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_last_boot: The time_last_boot of this ManagedInstanceSummary.
+        :type: datetime
+        """
+        self._time_last_boot = time_last_boot
 
     def __repr__(self):
         return formatted_flat_dict(self)

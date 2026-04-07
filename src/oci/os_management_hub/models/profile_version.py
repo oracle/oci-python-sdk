@@ -35,6 +35,10 @@ class ProfileVersion(object):
     #: This constant has a value of "WINDOWS_STANDALONE"
     PROFILE_TYPE_WINDOWS_STANDALONE = "WINDOWS_STANDALONE"
 
+    #: A constant which can be used with the profile_type property of a ProfileVersion.
+    #: This constant has a value of "UBUNTU_STANDALONE"
+    PROFILE_TYPE_UBUNTU_STANDALONE = "UBUNTU_STANDALONE"
+
     #: A constant which can be used with the vendor_name property of a ProfileVersion.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
@@ -42,6 +46,14 @@ class ProfileVersion(object):
     #: A constant which can be used with the vendor_name property of a ProfileVersion.
     #: This constant has a value of "MICROSOFT"
     VENDOR_NAME_MICROSOFT = "MICROSOFT"
+
+    #: A constant which can be used with the vendor_name property of a ProfileVersion.
+    #: This constant has a value of "CANONICAL"
+    VENDOR_NAME_CANONICAL = "CANONICAL"
+
+    #: A constant which can be used with the os_family property of a ProfileVersion.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
 
     #: A constant which can be used with the os_family property of a ProfileVersion.
     #: This constant has a value of "ORACLE_LINUX_9"
@@ -72,8 +84,28 @@ class ProfileVersion(object):
     OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
 
     #: A constant which can be used with the os_family property of a ProfileVersion.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a ProfileVersion.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a ProfileVersion.
     #: This constant has a value of "ALL"
     OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a ProfileVersion.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a ProfileVersion.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a ProfileVersion.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
 
     #: A constant which can be used with the arch_type property of a ProfileVersion.
     #: This constant has a value of "X86_64"
@@ -98,6 +130,18 @@ class ProfileVersion(object):
     #: A constant which can be used with the arch_type property of a ProfileVersion.
     #: This constant has a value of "I386"
     ARCH_TYPE_I386 = "I386"
+
+    #: A constant which can be used with the arch_type property of a ProfileVersion.
+    #: This constant has a value of "AMD64"
+    ARCH_TYPE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the arch_type property of a ProfileVersion.
+    #: This constant has a value of "ARM64"
+    ARCH_TYPE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the arch_type property of a ProfileVersion.
+    #: This constant has a value of "ALL"
+    ARCH_TYPE_ALL = "ALL"
 
     #: A constant which can be used with the registration_type property of a ProfileVersion.
     #: This constant has a value of "OCI_LINUX"
@@ -158,25 +202,25 @@ class ProfileVersion(object):
 
         :param profile_type:
             The value to assign to the profile_type property of this ProfileVersion.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type profile_type: str
 
         :param vendor_name:
             The value to assign to the vendor_name property of this ProfileVersion.
-            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
 
         :param os_family:
             The value to assign to the os_family property of this ProfileVersion.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this ProfileVersion.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -500,7 +544,7 @@ class ProfileVersion(object):
         Gets the profile_type of this ProfileVersion.
         The type of profile.
 
-        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -519,7 +563,7 @@ class ProfileVersion(object):
         :param profile_type: The profile_type of this ProfileVersion.
         :type: str
         """
-        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"]
+        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"]
         if not value_allowed_none_or_none_sentinel(profile_type, allowed_values):
             profile_type = 'UNKNOWN_ENUM_VALUE'
         self._profile_type = profile_type
@@ -530,7 +574,7 @@ class ProfileVersion(object):
         **[Required]** Gets the vendor_name of this ProfileVersion.
         The vendor of the operating system for the instance.
 
-        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -549,7 +593,7 @@ class ProfileVersion(object):
         :param vendor_name: The vendor_name of this ProfileVersion.
         :type: str
         """
-        allowed_values = ["ORACLE", "MICROSOFT"]
+        allowed_values = ["ORACLE", "MICROSOFT", "CANONICAL"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name
@@ -560,7 +604,7 @@ class ProfileVersion(object):
         **[Required]** Gets the os_family of this ProfileVersion.
         The operating system family.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -579,7 +623,7 @@ class ProfileVersion(object):
         :param os_family: The os_family of this ProfileVersion.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -590,7 +634,7 @@ class ProfileVersion(object):
         **[Required]** Gets the arch_type of this ProfileVersion.
         The architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -609,7 +653,7 @@ class ProfileVersion(object):
         :param arch_type: The arch_type of this ProfileVersion.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type

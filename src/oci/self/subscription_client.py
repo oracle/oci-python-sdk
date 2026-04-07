@@ -173,7 +173,7 @@ class SubscriptionClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -300,7 +300,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions/{subscriptionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_subscription_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/ChangeSubscriptionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -420,7 +420,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions"
         method = "POST"
         operation_name = "create_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CreateSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -527,7 +527,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions/{subscriptionId}"
         method = "DELETE"
         operation_name = "delete_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/DeleteSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -635,7 +635,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
         operation_name = "get_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/GetSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -743,7 +743,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions/{subscriptionId}/token"
         method = "GET"
         operation_name = "get_subscription_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionToken/GetSubscriptionToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -853,7 +853,7 @@ class SubscriptionClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1002,7 +1002,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions"
         method = "GET"
         operation_name = "list_subscriptions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/SubscriptionCollection/ListSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1167,7 +1167,7 @@ class SubscriptionClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1329,7 +1329,7 @@ class SubscriptionClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1506,7 +1506,7 @@ class SubscriptionClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1654,7 +1654,7 @@ class SubscriptionClient(object):
         resource_path = "/subscriptions/{subscriptionId}"
         method = "PUT"
         operation_name = "update_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/UpdateSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

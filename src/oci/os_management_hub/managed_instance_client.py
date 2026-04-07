@@ -1736,6 +1736,135 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def install_snaps_on_managed_instance(self, managed_instance_id, install_snaps_on_managed_instance_details, **kwargs):
+        """
+        Installs specified snaps on a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.InstallSnapsOnManagedInstanceDetails install_snaps_on_managed_instance_details: (required)
+            Details about snaps to install.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/install_snaps_on_managed_instance.py.html>`__ to see an example of how to use install_snaps_on_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/actions/installSnaps"
+        method = "POST"
+        operation_name = "install_snaps_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallSnapsOnManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"install_snaps_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_snaps_on_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_snaps_on_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def install_windows_updates_on_managed_instance(self, managed_instance_id, install_windows_updates_on_managed_instance_details, **kwargs):
         """
         Installs Windows updates on the specified managed instance.
@@ -1887,8 +2016,7 @@ class ManagedInstanceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
             For important details about how pagination works, see `List Pagination`__.
-
-            Example: `50`
+            Example: `700`
 
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
@@ -3169,6 +3297,182 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_managed_instance_snaps(self, managed_instance_id, **kwargs):
+        """
+        Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str compartment_id: (optional)
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+
+        :param str name: (optional)
+            The resource name.
+
+        :param str name_contains: (optional)
+            A filter to return resources that may partially match the name given.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `3`
+
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for name is ascending.
+
+            Allowed values are: "name"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SnapCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/list_managed_instance_snaps.py.html>`__ to see an example of how to use list_managed_instance_snaps API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/snaps"
+        method = "GET"
+        operation_name = "list_managed_instance_snaps"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceSnaps"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "compartment_id",
+            "name",
+            "name_contains",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_managed_instance_snaps got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "name": kwargs.get("name", missing),
+            "nameContains": kwargs.get("name_contains", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SnapCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SnapCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_managed_instance_updatable_packages(self, managed_instance_id, **kwargs):
         """
         Returns a list of updatable packages for a managed instance.
@@ -3194,6 +3498,11 @@ class ManagedInstanceClient(object):
             The assigned erratum name. It's unique and not changeable.
 
             Example: `ELSA-2020-5804`
+
+        :param list[str] advisory_severity: (optional)
+            The advisory severity.
+
+            Allowed values are: "LOW", "MODERATE", "IMPORTANT", "CRITICAL"
 
         :param str compartment_id: (optional)
             The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
@@ -3265,6 +3574,7 @@ class ManagedInstanceClient(object):
             "display_name",
             "display_name_contains",
             "advisory_name",
+            "advisory_severity",
             "compartment_id",
             "limit",
             "page",
@@ -3295,6 +3605,14 @@ class ManagedInstanceClient(object):
                         f"Invalid value for `classification_type`, must be one of { classification_type_allowed_values }"
                     )
 
+        if 'advisory_severity' in kwargs:
+            advisory_severity_allowed_values = ["LOW", "MODERATE", "IMPORTANT", "CRITICAL"]
+            for advisory_severity_item in kwargs['advisory_severity']:
+                if advisory_severity_item not in advisory_severity_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `advisory_severity`, must be one of { advisory_severity_allowed_values }"
+                    )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -3314,6 +3632,7 @@ class ManagedInstanceClient(object):
             "displayName": self.base_client.generate_collection_format_param(kwargs.get("display_name", missing), 'multi'),
             "displayNameContains": kwargs.get("display_name_contains", missing),
             "advisoryName": self.base_client.generate_collection_format_param(kwargs.get("advisory_name", missing), 'multi'),
+            "advisorySeverity": self.base_client.generate_collection_format_param(kwargs.get("advisory_severity", missing), 'multi'),
             "compartmentId": kwargs.get("compartment_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -3394,12 +3713,12 @@ class ManagedInstanceClient(object):
         :param list[str] arch_type: (optional)
             A filter to return only instances whose architecture type matches the given architecture.
 
-            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
+            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
 
         :param list[str] os_family: (optional)
             A filter to return only resources that match the given operating system family.
 
-            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+            Allowed values are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
 
         :param bool is_management_station: (optional)
             A filter to return only managed instances that are acting as management stations.
@@ -3587,7 +3906,7 @@ class ManagedInstanceClient(object):
                     )
 
         if 'arch_type' in kwargs:
-            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
             for arch_type_item in kwargs['arch_type']:
                 if arch_type_item not in arch_type_allowed_values:
                     raise ValueError(
@@ -3595,7 +3914,7 @@ class ManagedInstanceClient(object):
                     )
 
         if 'os_family' in kwargs:
-            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+            os_family_allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
@@ -4533,6 +4852,135 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def remove_snaps_from_managed_instance(self, managed_instance_id, remove_snaps_from_managed_instance_details, **kwargs):
+        """
+        Removes specified snaps from a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.RemoveSnapsFromManagedInstanceDetails remove_snaps_from_managed_instance_details: (required)
+            Details about snaps to install.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/remove_snaps_from_managed_instance.py.html>`__ to see an example of how to use remove_snaps_from_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/actions/removeSnaps"
+        method = "POST"
+        operation_name = "remove_snaps_from_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveSnapsFromManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_snaps_from_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_snaps_from_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_snaps_from_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def switch_module_stream_on_managed_instance(self, managed_instance_id, switch_module_stream_on_managed_instance_details, **kwargs):
         """
         Enables a new stream for a module that already has a stream enabled.
@@ -4659,6 +5107,135 @@ class ManagedInstanceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=switch_module_stream_on_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def switch_snap_channel_on_managed_instance(self, managed_instance_id, switch_snap_channel_on_managed_instance_details, **kwargs):
+        """
+        Switches the snap channel on a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.SwitchSnapChannelOnManagedInstanceDetails switch_snap_channel_on_managed_instance_details: (required)
+            Details about snaps to install.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/switch_snap_channel_on_managed_instance.py.html>`__ to see an example of how to use switch_snap_channel_on_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/actions/switchSnapChannel"
+        method = "POST"
+        operation_name = "switch_snap_channel_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchSnapChannelOnManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"switch_snap_channel_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=switch_snap_channel_on_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=switch_snap_channel_on_managed_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

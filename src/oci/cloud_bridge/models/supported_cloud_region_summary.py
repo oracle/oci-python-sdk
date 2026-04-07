@@ -23,6 +23,10 @@ class SupportedCloudRegionSummary(object):
     #: This constant has a value of "AWS"
     ASSET_SOURCE_TYPE_AWS = "AWS"
 
+    #: A constant which can be used with the asset_source_type property of a SupportedCloudRegionSummary.
+    #: This constant has a value of "OLVM"
+    ASSET_SOURCE_TYPE_OLVM = "OLVM"
+
     #: A constant which can be used with the lifecycle_state property of a SupportedCloudRegionSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -38,7 +42,7 @@ class SupportedCloudRegionSummary(object):
 
         :param asset_source_type:
             The value to assign to the asset_source_type property of this SupportedCloudRegionSummary.
-            Allowed values for this property are: "VMWARE", "AWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE", "AWS", "OLVM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type asset_source_type: str
 
@@ -52,34 +56,20 @@ class SupportedCloudRegionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this SupportedCloudRegionSummary.
-        :type freeform_tags: dict(str, str)
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this SupportedCloudRegionSummary.
-        :type defined_tags: dict(str, dict(str, object))
-
         """
         self.swagger_types = {
             'asset_source_type': 'str',
             'name': 'str',
-            'lifecycle_state': 'str',
-            'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'lifecycle_state': 'str'
         }
         self.attribute_map = {
             'asset_source_type': 'assetSourceType',
             'name': 'name',
-            'lifecycle_state': 'lifecycleState',
-            'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'lifecycle_state': 'lifecycleState'
         }
         self._asset_source_type = None
         self._name = None
         self._lifecycle_state = None
-        self._freeform_tags = None
-        self._defined_tags = None
 
     @property
     def asset_source_type(self):
@@ -87,7 +77,7 @@ class SupportedCloudRegionSummary(object):
         **[Required]** Gets the asset_source_type of this SupportedCloudRegionSummary.
         The asset source type associated with the supported cloud region.
 
-        Allowed values for this property are: "VMWARE", "AWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE", "AWS", "OLVM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -106,7 +96,7 @@ class SupportedCloudRegionSummary(object):
         :param asset_source_type: The asset_source_type of this SupportedCloudRegionSummary.
         :type: str
         """
-        allowed_values = ["VMWARE", "AWS"]
+        allowed_values = ["VMWARE", "AWS", "OLVM"]
         if not value_allowed_none_or_none_sentinel(asset_source_type, allowed_values):
             asset_source_type = 'UNKNOWN_ENUM_VALUE'
         self._asset_source_type = asset_source_type
@@ -164,70 +154,6 @@ class SupportedCloudRegionSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this SupportedCloudRegionSummary.
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace/scope. For more information, see `Resource Tags`__.
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The freeform_tags of this SupportedCloudRegionSummary.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this SupportedCloudRegionSummary.
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace/scope. For more information, see `Resource Tags`__.
-        Example: `{\"Department\": \"Finance\"}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :param freeform_tags: The freeform_tags of this SupportedCloudRegionSummary.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this SupportedCloudRegionSummary.
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-        For more information, see `Resource Tags`__.
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this SupportedCloudRegionSummary.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this SupportedCloudRegionSummary.
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-        For more information, see `Resource Tags`__.
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this SupportedCloudRegionSummary.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

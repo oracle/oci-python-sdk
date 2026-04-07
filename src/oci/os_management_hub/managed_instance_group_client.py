@@ -2478,6 +2478,194 @@ class ManagedInstanceGroupClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_managed_instance_group_managed_instances(self, managed_instance_group_id, **kwargs):
+        """
+        Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
+
+
+        :param str managed_instance_group_id: (required)
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str managed_instance_id: (optional)
+            The `OCID`__ of the managed instance. This filter returns resources associated with this managed instance.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param bool compartment_id_in_subtree: (optional)
+            Indicates whether to include subcompartments in the returned results. Default is false.
+
+        :param list[str] display_name: (optional)
+            A filter to return resources that match the given display names.
+
+        :param str display_name_contains: (optional)
+            A filter to return resources that may partially match the given display name.
+
+        :param str compartment_id: (optional)
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `3`
+
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ManagedInstanceCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/list_managed_instance_group_managed_instances.py.html>`__ to see an example of how to use list_managed_instance_group_managed_instances API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceGroupId']
+        resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/managedInstances"
+        method = "GET"
+        operation_name = "list_managed_instance_group_managed_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupManagedInstances"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "managed_instance_id",
+            "compartment_id_in_subtree",
+            "display_name",
+            "display_name_contains",
+            "compartment_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_managed_instance_group_managed_instances got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceGroupId": managed_instance_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "managedInstanceId": kwargs.get("managed_instance_id", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "displayName": self.base_client.generate_collection_format_param(kwargs.get("display_name", missing), 'multi'),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ManagedInstanceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ManagedInstanceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_managed_instance_group_modules(self, managed_instance_group_id, **kwargs):
         """
         Retrieve a list of module streams, along with a summary of their
@@ -2708,12 +2896,12 @@ class ManagedInstanceGroupClient(object):
         :param str arch_type: (optional)
             A filter to return only profiles that match the given archType.
 
-            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
+            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
 
         :param str os_family: (optional)
             A filter to return only resources that match the given operating system family.
 
-            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+            Allowed values are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -2819,14 +3007,14 @@ class ManagedInstanceGroupClient(object):
                 f"list_managed_instance_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'arch_type' in kwargs:
-            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
             if kwargs['arch_type'] not in arch_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
-            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+            os_family_allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
                     f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
@@ -3184,6 +3372,130 @@ class ManagedInstanceGroupClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=reboot_managed_instance_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def refresh_software_on_managed_instance_group(self, managed_instance_group_id, **kwargs):
+        """
+        Refreshes the package, Windows update or Snap information on a managed instance with the latest data from the software source. This does not update packages on the instance. It provides the service with the latest package data.
+
+
+        :param str managed_instance_group_id: (required)
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/refresh_software_on_managed_instance_group.py.html>`__ to see an example of how to use refresh_software_on_managed_instance_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceGroupId']
+        resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/refreshSoftware"
+        method = "POST"
+        operation_name = "refresh_software_on_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RefreshSoftwareOnManagedInstanceGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"refresh_software_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceGroupId": managed_instance_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

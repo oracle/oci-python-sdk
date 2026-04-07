@@ -23,6 +23,10 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
     #: This constant has a value of "MICROSOFT"
     VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
+    #: A constant which can be used with the vendor_name property of a VendorSoftwareSourceSummary.
+    #: This constant has a value of "CANONICAL"
+    VENDOR_NAME_CANONICAL = "CANONICAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VendorSoftwareSourceSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.os_management_hub.models.VendorSoftwareSourceSummary.software_source_type` attribute
@@ -81,13 +85,13 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param os_family:
             The value to assign to the os_family property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -117,7 +121,7 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
 
@@ -201,7 +205,7 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
         **[Required]** Gets the vendor_name of this VendorSoftwareSourceSummary.
         Name of the vendor providing the software source.
 
-        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -220,7 +224,7 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
         :param vendor_name: The vendor_name of this VendorSoftwareSourceSummary.
         :type: str
         """
-        allowed_values = ["ORACLE", "MICROSOFT"]
+        allowed_values = ["ORACLE", "MICROSOFT", "CANONICAL"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name

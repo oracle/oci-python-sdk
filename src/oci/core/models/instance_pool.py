@@ -114,6 +114,10 @@ class InstancePool(object):
             The value to assign to the lifecycle_management property of this InstancePool.
         :type lifecycle_management: oci.core.models.InstancePoolLifecycleManagementDetails
 
+        :param current_size:
+            The value to assign to the current_size property of this InstancePool.
+        :type current_size: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -129,7 +133,8 @@ class InstancePool(object):
             'load_balancers': 'list[InstancePoolLoadBalancerAttachment]',
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
-            'lifecycle_management': 'InstancePoolLifecycleManagementDetails'
+            'lifecycle_management': 'InstancePoolLifecycleManagementDetails',
+            'current_size': 'int'
         }
         self.attribute_map = {
             'id': 'id',
@@ -145,7 +150,8 @@ class InstancePool(object):
             'load_balancers': 'loadBalancers',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
-            'lifecycle_management': 'lifecycleManagement'
+            'lifecycle_management': 'lifecycleManagement',
+            'current_size': 'currentSize'
         }
         self._id = None
         self._compartment_id = None
@@ -161,6 +167,7 @@ class InstancePool(object):
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
+        self._current_size = None
 
     @property
     def id(self):
@@ -547,6 +554,30 @@ class InstancePool(object):
         :type: oci.core.models.InstancePoolLifecycleManagementDetails
         """
         self._lifecycle_management = lifecycle_management
+
+    @property
+    def current_size(self):
+        """
+        Gets the current_size of this InstancePool.
+        Count of instance in running state associated to the Instance Pool.
+
+
+        :return: The current_size of this InstancePool.
+        :rtype: int
+        """
+        return self._current_size
+
+    @current_size.setter
+    def current_size(self, current_size):
+        """
+        Sets the current_size of this InstancePool.
+        Count of instance in running state associated to the Instance Pool.
+
+
+        :param current_size: The current_size of this InstancePool.
+        :type: int
+        """
+        self._current_size = current_size
 
     def __repr__(self):
         return formatted_flat_dict(self)

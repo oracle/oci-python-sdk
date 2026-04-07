@@ -663,6 +663,11 @@ class ManagementStationClient(object):
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param str health_state: (optional)
+            A filter that returns information for management stations in the specified health state.
+
+            Allowed values are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -709,7 +714,8 @@ class ManagementStationClient(object):
             "sort_order",
             "sort_by",
             "opc_request_id",
-            "id"
+            "id",
+            "health_state"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -753,6 +759,13 @@ class ManagementStationClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'health_state' in kwargs:
+            health_state_allowed_values = ["HEALTHY", "UNHEALTHY", "UNAVAILABLE"]
+            if kwargs['health_state'] not in health_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `health_state`, must be one of { health_state_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -765,7 +778,8 @@ class ManagementStationClient(object):
             "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "id": kwargs.get("id", missing)
+            "id": kwargs.get("id", missing),
+            "healthState": kwargs.get("health_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

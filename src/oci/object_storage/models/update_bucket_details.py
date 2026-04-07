@@ -90,6 +90,10 @@ class UpdateBucketDetails(object):
             The value to assign to the auto_tiering property of this UpdateBucketDetails.
         :type auto_tiering: str
 
+        :param bucket_scope:
+            The value to assign to the bucket_scope property of this UpdateBucketDetails.
+        :type bucket_scope: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -102,7 +106,8 @@ class UpdateBucketDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
             'versioning': 'str',
-            'auto_tiering': 'str'
+            'auto_tiering': 'str',
+            'bucket_scope': 'str'
         }
         self.attribute_map = {
             'namespace': 'namespace',
@@ -115,7 +120,8 @@ class UpdateBucketDetails(object):
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
             'versioning': 'versioning',
-            'auto_tiering': 'autoTiering'
+            'auto_tiering': 'autoTiering',
+            'bucket_scope': 'bucketScope'
         }
         self._namespace = None
         self._compartment_id = None
@@ -128,6 +134,7 @@ class UpdateBucketDetails(object):
         self._kms_key_id = None
         self._versioning = None
         self._auto_tiering = None
+        self._bucket_scope = None
 
     @property
     def namespace(self):
@@ -458,6 +465,44 @@ class UpdateBucketDetails(object):
         :type: str
         """
         self._auto_tiering = auto_tiering
+
+    @property
+    def bucket_scope(self):
+        """
+        Gets the bucket_scope of this UpdateBucketDetails.
+        Scope in which the bucket is unique. Default value is NAMESPACE.
+        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+        tenancies can have a bucket with same name in their namespace.
+        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+        same name and scope REGION.
+        BucketScope can only be updated from NAMESPACE to REGION, it cannot be updated from REGION to NAMESPACE.
+        Updating bucket scope is possible only if the bucket name is valid and there is no existing regionally unique
+        bucket with the same name.
+
+
+        :return: The bucket_scope of this UpdateBucketDetails.
+        :rtype: str
+        """
+        return self._bucket_scope
+
+    @bucket_scope.setter
+    def bucket_scope(self, bucket_scope):
+        """
+        Sets the bucket_scope of this UpdateBucketDetails.
+        Scope in which the bucket is unique. Default value is NAMESPACE.
+        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
+        tenancies can have a bucket with same name in their namespace.
+        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
+        same name and scope REGION.
+        BucketScope can only be updated from NAMESPACE to REGION, it cannot be updated from REGION to NAMESPACE.
+        Updating bucket scope is possible only if the bucket name is valid and there is no existing regionally unique
+        bucket with the same name.
+
+
+        :param bucket_scope: The bucket_scope of this UpdateBucketDetails.
+        :type: str
+        """
+        self._bucket_scope = bucket_scope
 
     def __repr__(self):
         return formatted_flat_dict(self)

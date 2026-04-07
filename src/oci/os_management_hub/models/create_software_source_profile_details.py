@@ -23,6 +23,14 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
     #: This constant has a value of "MICROSOFT"
     VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
+    #: A constant which can be used with the vendor_name property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "CANONICAL"
+    VENDOR_NAME_CANONICAL = "CANONICAL"
+
+    #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "ORACLE_LINUX_10"
+    OS_FAMILY_ORACLE_LINUX_10 = "ORACLE_LINUX_10"
+
     #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -52,8 +60,28 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
     OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
 
     #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2025"
+    OS_FAMILY_WINDOWS_SERVER_2025 = "WINDOWS_SERVER_2025"
+
+    #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "WINDOWS_11"
+    OS_FAMILY_WINDOWS_11 = "WINDOWS_11"
+
+    #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
     #: This constant has a value of "ALL"
     OS_FAMILY_ALL = "ALL"
+
+    #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "UBUNTU_20_04"
+    OS_FAMILY_UBUNTU_20_04 = "UBUNTU_20_04"
+
+    #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "UBUNTU_22_04"
+    OS_FAMILY_UBUNTU_22_04 = "UBUNTU_22_04"
+
+    #: A constant which can be used with the os_family property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "UBUNTU_24_04"
+    OS_FAMILY_UBUNTU_24_04 = "UBUNTU_24_04"
 
     #: A constant which can be used with the arch_type property of a CreateSoftwareSourceProfileDetails.
     #: This constant has a value of "X86_64"
@@ -79,6 +107,18 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
     #: This constant has a value of "I386"
     ARCH_TYPE_I386 = "I386"
 
+    #: A constant which can be used with the arch_type property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "AMD64"
+    ARCH_TYPE_AMD64 = "AMD64"
+
+    #: A constant which can be used with the arch_type property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "ARM64"
+    ARCH_TYPE_ARM64 = "ARM64"
+
+    #: A constant which can be used with the arch_type property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "ALL"
+    ARCH_TYPE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSoftwareSourceProfileDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.os_management_hub.models.CreateSoftwareSourceProfileDetails.profile_type` attribute
@@ -103,7 +143,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateSoftwareSourceProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"
         :type profile_type: str
 
         :param registration_type:
@@ -124,17 +164,17 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this CreateSoftwareSourceProfileDetails.
-            Allowed values for this property are: "ORACLE", "MICROSOFT"
+            Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL"
         :type vendor_name: str
 
         :param os_family:
             The value to assign to the os_family property of this CreateSoftwareSourceProfileDetails.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+            Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this CreateSoftwareSourceProfileDetails.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
         :type arch_type: str
 
         :param software_source_ids:
@@ -193,7 +233,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         **[Required]** Gets the vendor_name of this CreateSoftwareSourceProfileDetails.
         The vendor of the operating system for the instance.
 
-        Allowed values for this property are: "ORACLE", "MICROSOFT"
+        Allowed values for this property are: "ORACLE", "MICROSOFT", "CANONICAL"
 
 
         :return: The vendor_name of this CreateSoftwareSourceProfileDetails.
@@ -211,7 +251,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         :param vendor_name: The vendor_name of this CreateSoftwareSourceProfileDetails.
         :type: str
         """
-        allowed_values = ["ORACLE", "MICROSOFT"]
+        allowed_values = ["ORACLE", "MICROSOFT", "CANONICAL"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             raise ValueError(
                 f"Invalid value for `vendor_name`, must be None or one of {allowed_values}"
@@ -224,7 +264,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         **[Required]** Gets the os_family of this CreateSoftwareSourceProfileDetails.
         The operating system family.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+        Allowed values for this property are: "ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"
 
 
         :return: The os_family of this CreateSoftwareSourceProfileDetails.
@@ -242,7 +282,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         :param os_family: The os_family of this CreateSoftwareSourceProfileDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+        allowed_values = ["ORACLE_LINUX_10", "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "WINDOWS_SERVER_2025", "WINDOWS_11", "ALL", "UBUNTU_20_04", "UBUNTU_22_04", "UBUNTU_24_04"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             raise ValueError(
                 f"Invalid value for `os_family`, must be None or one of {allowed_values}"
@@ -255,7 +295,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         **[Required]** Gets the arch_type of this CreateSoftwareSourceProfileDetails.
         The architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"
 
 
         :return: The arch_type of this CreateSoftwareSourceProfileDetails.
@@ -273,7 +313,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         :param arch_type: The arch_type of this CreateSoftwareSourceProfileDetails.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", "AMD64", "ARM64", "ALL"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `arch_type`, must be None or one of {allowed_values}"
@@ -283,7 +323,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
     @property
     def software_source_ids(self):
         """
-        Gets the software_source_ids of this CreateSoftwareSourceProfileDetails.
+        **[Required]** Gets the software_source_ids of this CreateSoftwareSourceProfileDetails.
         The list of software source `OCIDs`__ that the registration profile will use.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm

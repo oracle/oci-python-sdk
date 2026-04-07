@@ -47,7 +47,7 @@ class AwsEc2Asset(Asset):
 
         :param asset_type:
             The value to assign to the asset_type property of this AwsEc2Asset.
-            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
+            Allowed values for this property are: "VMWARE_VM", "VM", "INVENTORY_ASSET", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         :param time_created:
@@ -78,6 +78,11 @@ class AwsEc2Asset(Asset):
         :param system_tags:
             The value to assign to the system_tags property of this AwsEc2Asset.
         :type system_tags: dict(str, dict(str, object))
+
+        :param environment_type:
+            The value to assign to the environment_type property of this AwsEc2Asset.
+            Allowed values for this property are: "SOURCE", "DESTINATION"
+        :type environment_type: str
 
         :param compute:
             The value to assign to the compute property of this AwsEc2Asset.
@@ -115,6 +120,7 @@ class AwsEc2Asset(Asset):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'environment_type': 'str',
             'compute': 'ComputeProperties',
             'vm': 'VmProperties',
             'aws_ec2': 'AwsEc2Properties',
@@ -136,6 +142,7 @@ class AwsEc2Asset(Asset):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'environment_type': 'environmentType',
             'compute': 'compute',
             'vm': 'vm',
             'aws_ec2': 'awsEc2',
@@ -156,6 +163,7 @@ class AwsEc2Asset(Asset):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._environment_type = None
         self._compute = None
         self._vm = None
         self._aws_ec2 = None

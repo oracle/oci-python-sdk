@@ -94,6 +94,10 @@ class InstancePoolSummary(object):
             The value to assign to the freeform_tags property of this InstancePoolSummary.
         :type freeform_tags: dict(str, str)
 
+        :param current_size:
+            The value to assign to the current_size property of this InstancePoolSummary.
+        :type current_size: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -105,7 +109,8 @@ class InstancePoolSummary(object):
             'size': 'int',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'current_size': 'int'
         }
         self.attribute_map = {
             'id': 'id',
@@ -117,7 +122,8 @@ class InstancePoolSummary(object):
             'size': 'size',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'current_size': 'currentSize'
         }
         self._id = None
         self._compartment_id = None
@@ -129,6 +135,7 @@ class InstancePoolSummary(object):
         self._time_created = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._current_size = None
 
     @property
     def id(self):
@@ -403,6 +410,30 @@ class InstancePoolSummary(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def current_size(self):
+        """
+        Gets the current_size of this InstancePoolSummary.
+        Count of instance in running state associated to the Instance Pool.
+
+
+        :return: The current_size of this InstancePoolSummary.
+        :rtype: int
+        """
+        return self._current_size
+
+    @current_size.setter
+    def current_size(self, current_size):
+        """
+        Sets the current_size of this InstancePoolSummary.
+        Count of instance in running state associated to the Instance Pool.
+
+
+        :param current_size: The current_size of this InstancePoolSummary.
+        :type: int
+        """
+        self._current_size = current_size
 
     def __repr__(self):
         return formatted_flat_dict(self)

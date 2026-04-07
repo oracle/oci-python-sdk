@@ -35,6 +35,10 @@ class WorkRequestResource(object):
     #: This constant has a value of "SOFTWARE_SOURCE"
     ENTITY_TYPE_SOFTWARE_SOURCE = "SOFTWARE_SOURCE"
 
+    #: A constant which can be used with the entity_type property of a WorkRequestResource.
+    #: This constant has a value of "DYNAMIC_SET"
+    ENTITY_TYPE_DYNAMIC_SET = "DYNAMIC_SET"
+
     #: A constant which can be used with the action_type property of a WorkRequestResource.
     #: This constant has a value of "CREATED"
     ACTION_TYPE_CREATED = "CREATED"
@@ -66,7 +70,7 @@ class WorkRequestResource(object):
 
         :param entity_type:
             The value to assign to the entity_type property of this WorkRequestResource.
-            Allowed values for this property are: "INSTANCE", "GROUP", "COMPARTMENT", "LIFECYCLE_ENVIRONMENT", "SOFTWARE_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTANCE", "GROUP", "COMPARTMENT", "LIFECYCLE_ENVIRONMENT", "SOFTWARE_SOURCE", "DYNAMIC_SET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -122,7 +126,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the entity_type of this WorkRequestResource.
         The resource type that the work request affects.
 
-        Allowed values for this property are: "INSTANCE", "GROUP", "COMPARTMENT", "LIFECYCLE_ENVIRONMENT", "SOFTWARE_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTANCE", "GROUP", "COMPARTMENT", "LIFECYCLE_ENVIRONMENT", "SOFTWARE_SOURCE", "DYNAMIC_SET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -141,7 +145,7 @@ class WorkRequestResource(object):
         :param entity_type: The entity_type of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["INSTANCE", "GROUP", "COMPARTMENT", "LIFECYCLE_ENVIRONMENT", "SOFTWARE_SOURCE"]
+        allowed_values = ["INSTANCE", "GROUP", "COMPARTMENT", "LIFECYCLE_ENVIRONMENT", "SOFTWARE_SOURCE", "DYNAMIC_SET"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type

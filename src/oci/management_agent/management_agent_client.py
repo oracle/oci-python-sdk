@@ -105,7 +105,8 @@ class ManagementAgentClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200202',
-            'service_endpoint_template': 'https://management-agent.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://management-agent.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
+            'endpoint_service_name': 'management-agent',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
@@ -2809,7 +2810,7 @@ class ManagementAgentClient(object):
     def list_management_agents(self, compartment_id, **kwargs):
         """
         Returns a list of Management Agents.
-        If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+        If no explicit page size limit is specified, it will default to 1000.
         The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
 
 

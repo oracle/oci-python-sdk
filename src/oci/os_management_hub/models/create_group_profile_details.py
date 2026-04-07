@@ -39,7 +39,7 @@ class CreateGroupProfileDetails(CreateProfileDetails):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateGroupProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", "UBUNTU_STANDALONE"
         :type profile_type: str
 
         :param registration_type:
