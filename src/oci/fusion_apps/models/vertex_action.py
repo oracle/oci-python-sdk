@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VertexAction(Action):
     """
-    Vertex update action
+    Vertex update action.
     """
 
     def __init__(self, **kwargs):
@@ -69,7 +69,7 @@ class VertexAction(Action):
     def artifact(self):
         """
         Gets the artifact of this VertexAction.
-        patch that delivered the vertex update prerequisite
+        Patch that delivered the Vertex update prerequisite.
 
 
         :return: The artifact of this VertexAction.
@@ -81,7 +81,7 @@ class VertexAction(Action):
     def artifact(self, artifact):
         """
         Sets the artifact of this VertexAction.
-        patch that delivered the vertex update prerequisite
+        Patch that delivered the Vertex update prerequisite.
 
 
         :param artifact: The artifact of this VertexAction.

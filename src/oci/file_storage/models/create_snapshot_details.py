@@ -32,6 +32,10 @@ class CreateSnapshotDetails(object):
             The value to assign to the expiration_time property of this CreateSnapshotDetails.
         :type expiration_time: datetime
 
+        :param lock_duration_details:
+            The value to assign to the lock_duration_details property of this CreateSnapshotDetails.
+        :type lock_duration_details: oci.file_storage.models.LockDurationDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSnapshotDetails.
         :type freeform_tags: dict(str, str)
@@ -49,6 +53,7 @@ class CreateSnapshotDetails(object):
             'file_system_id': 'str',
             'name': 'str',
             'expiration_time': 'datetime',
+            'lock_duration_details': 'LockDurationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
@@ -57,6 +62,7 @@ class CreateSnapshotDetails(object):
             'file_system_id': 'fileSystemId',
             'name': 'name',
             'expiration_time': 'expirationTime',
+            'lock_duration_details': 'lockDurationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'locks': 'locks'
@@ -64,6 +70,7 @@ class CreateSnapshotDetails(object):
         self._file_system_id = None
         self._name = None
         self._expiration_time = None
+        self._lock_duration_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._locks = None
@@ -155,6 +162,26 @@ class CreateSnapshotDetails(object):
         :type: datetime
         """
         self._expiration_time = expiration_time
+
+    @property
+    def lock_duration_details(self):
+        """
+        Gets the lock_duration_details of this CreateSnapshotDetails.
+
+        :return: The lock_duration_details of this CreateSnapshotDetails.
+        :rtype: oci.file_storage.models.LockDurationDetails
+        """
+        return self._lock_duration_details
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, lock_duration_details):
+        """
+        Sets the lock_duration_details of this CreateSnapshotDetails.
+
+        :param lock_duration_details: The lock_duration_details of this CreateSnapshotDetails.
+        :type: oci.file_storage.models.LockDurationDetails
+        """
+        self._lock_duration_details = lock_duration_details
 
     @property
     def freeform_tags(self):

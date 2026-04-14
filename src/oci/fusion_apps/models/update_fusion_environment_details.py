@@ -44,6 +44,10 @@ class UpdateFusionEnvironmentDetails(object):
             The value to assign to the rules property of this UpdateFusionEnvironmentDetails.
         :type rules: list[oci.fusion_apps.models.Rule]
 
+        :param additional_egress_rules:
+            The value to assign to the additional_egress_rules property of this UpdateFusionEnvironmentDetails.
+        :type additional_egress_rules: list[oci.fusion_apps.models.AdditionalEgressRule]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateFusionEnvironmentDetails.
         :type freeform_tags: dict(str, str)
@@ -60,6 +64,7 @@ class UpdateFusionEnvironmentDetails(object):
             'additional_language_packs': 'list[str]',
             'is_i_pv6_dual_stack_enabled': 'bool',
             'rules': 'list[Rule]',
+            'additional_egress_rules': 'list[AdditionalEgressRule]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +75,7 @@ class UpdateFusionEnvironmentDetails(object):
             'additional_language_packs': 'additionalLanguagePacks',
             'is_i_pv6_dual_stack_enabled': 'isIPv6DualStackEnabled',
             'rules': 'rules',
+            'additional_egress_rules': 'additionalEgressRules',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -79,6 +85,7 @@ class UpdateFusionEnvironmentDetails(object):
         self._additional_language_packs = None
         self._is_i_pv6_dual_stack_enabled = None
         self._rules = None
+        self._additional_egress_rules = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -178,7 +185,7 @@ class UpdateFusionEnvironmentDetails(object):
     def is_i_pv6_dual_stack_enabled(self):
         """
         Gets the is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 
 
         :return: The is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
@@ -190,7 +197,7 @@ class UpdateFusionEnvironmentDetails(object):
     def is_i_pv6_dual_stack_enabled(self, is_i_pv6_dual_stack_enabled):
         """
         Sets the is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 
 
         :param is_i_pv6_dual_stack_enabled: The is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
@@ -221,6 +228,30 @@ class UpdateFusionEnvironmentDetails(object):
         :type: list[oci.fusion_apps.models.Rule]
         """
         self._rules = rules
+
+    @property
+    def additional_egress_rules(self):
+        """
+        Gets the additional_egress_rules of this UpdateFusionEnvironmentDetails.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+
+
+        :return: The additional_egress_rules of this UpdateFusionEnvironmentDetails.
+        :rtype: list[oci.fusion_apps.models.AdditionalEgressRule]
+        """
+        return self._additional_egress_rules
+
+    @additional_egress_rules.setter
+    def additional_egress_rules(self, additional_egress_rules):
+        """
+        Sets the additional_egress_rules of this UpdateFusionEnvironmentDetails.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+
+
+        :param additional_egress_rules: The additional_egress_rules of this UpdateFusionEnvironmentDetails.
+        :type: list[oci.fusion_apps.models.AdditionalEgressRule]
+        """
+        self._additional_egress_rules = additional_egress_rules
 
     @property
     def freeform_tags(self):

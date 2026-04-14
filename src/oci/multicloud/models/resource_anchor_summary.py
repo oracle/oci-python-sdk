@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceAnchorSummary(object):
     """
-    Summary information about a ResourceAnchor.
+    The properties that define a resource anchor.
     """
 
     def __init__(self, **kwargs):
@@ -92,6 +92,10 @@ class ResourceAnchorSummary(object):
             The value to assign to the linked_compartment_name property of this ResourceAnchorSummary.
         :type linked_compartment_name: str
 
+        :param resource_anchor_uri:
+            The value to assign to the resource_anchor_uri property of this ResourceAnchorSummary.
+        :type resource_anchor_uri: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -111,7 +115,8 @@ class ResourceAnchorSummary(object):
             'subscription_id': 'str',
             'system_tags': 'dict(str, dict(str, object))',
             'linked_compartment_id': 'str',
-            'linked_compartment_name': 'str'
+            'linked_compartment_name': 'str',
+            'resource_anchor_uri': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -131,7 +136,8 @@ class ResourceAnchorSummary(object):
             'subscription_id': 'subscriptionId',
             'system_tags': 'systemTags',
             'linked_compartment_id': 'linkedCompartmentId',
-            'linked_compartment_name': 'linkedCompartmentName'
+            'linked_compartment_name': 'linkedCompartmentName',
+            'resource_anchor_uri': 'resourceAnchorUri'
         }
         self._id = None
         self._display_name = None
@@ -151,12 +157,13 @@ class ResourceAnchorSummary(object):
         self._system_tags = None
         self._linked_compartment_id = None
         self._linked_compartment_name = None
+        self._resource_anchor_uri = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ResourceAnchorSummary.
-        The `OCID`__ of the ResourceAnchor.
+        The `OCID`__ of the resource anchor.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -170,7 +177,7 @@ class ResourceAnchorSummary(object):
     def id(self, id):
         """
         Sets the id of this ResourceAnchorSummary.
-        The `OCID`__ of the ResourceAnchor.
+        The `OCID`__ of the resource anchor.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -260,7 +267,7 @@ class ResourceAnchorSummary(object):
     def partner_cloud_account_identifier(self):
         """
         Gets the partner_cloud_account_identifier of this ResourceAnchorSummary.
-        Partner Cloud Account Identifier of the Cloud Service Provider.
+        Partner cloud account identifier of the cloud service provider.
 
 
         :return: The partner_cloud_account_identifier of this ResourceAnchorSummary.
@@ -272,7 +279,7 @@ class ResourceAnchorSummary(object):
     def partner_cloud_account_identifier(self, partner_cloud_account_identifier):
         """
         Sets the partner_cloud_account_identifier of this ResourceAnchorSummary.
-        Partner Cloud Account Identifier of the Cloud Service Provider.
+        Partner cloud account identifier of the cloud service provider.
 
 
         :param partner_cloud_account_identifier: The partner_cloud_account_identifier of this ResourceAnchorSummary.
@@ -284,7 +291,7 @@ class ResourceAnchorSummary(object):
     def csp_resource_anchor_id(self):
         """
         Gets the csp_resource_anchor_id of this ResourceAnchorSummary.
-        Resource Anchor Id in the Cloud Service Provider.
+        Resource anchor ID in the cloud service provider.
 
 
         :return: The csp_resource_anchor_id of this ResourceAnchorSummary.
@@ -296,7 +303,7 @@ class ResourceAnchorSummary(object):
     def csp_resource_anchor_id(self, csp_resource_anchor_id):
         """
         Sets the csp_resource_anchor_id of this ResourceAnchorSummary.
-        Resource Anchor Id in the Cloud Service Provider.
+        Resource anchor ID in the cloud service provider.
 
 
         :param csp_resource_anchor_id: The csp_resource_anchor_id of this ResourceAnchorSummary.
@@ -308,7 +315,7 @@ class ResourceAnchorSummary(object):
     def csp_resource_anchor_name(self):
         """
         Gets the csp_resource_anchor_name of this ResourceAnchorSummary.
-        Resource Anchor Name in the Cloud Service Provider.
+        Resource anchor name in the cloud service provider.
 
 
         :return: The csp_resource_anchor_name of this ResourceAnchorSummary.
@@ -320,7 +327,7 @@ class ResourceAnchorSummary(object):
     def csp_resource_anchor_name(self, csp_resource_anchor_name):
         """
         Sets the csp_resource_anchor_name of this ResourceAnchorSummary.
-        Resource Anchor Name in the Cloud Service Provider.
+        Resource anchor name in the cloud service provider.
 
 
         :param csp_resource_anchor_name: The csp_resource_anchor_name of this ResourceAnchorSummary.
@@ -332,7 +339,7 @@ class ResourceAnchorSummary(object):
     def csp_additional_properties(self):
         """
         Gets the csp_additional_properties of this ResourceAnchorSummary.
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Cloud service provider-specific properties, such as AzureSubnetId for Azure.
 
 
         :return: The csp_additional_properties of this ResourceAnchorSummary.
@@ -344,7 +351,7 @@ class ResourceAnchorSummary(object):
     def csp_additional_properties(self, csp_additional_properties):
         """
         Sets the csp_additional_properties of this ResourceAnchorSummary.
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Cloud service provider-specific properties, such as AzureSubnetId for Azure.
 
 
         :param csp_additional_properties: The csp_additional_properties of this ResourceAnchorSummary.
@@ -356,7 +363,7 @@ class ResourceAnchorSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ResourceAnchorSummary.
-        The date and time the ResourceAnchor was created, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was created, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -372,7 +379,7 @@ class ResourceAnchorSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ResourceAnchorSummary.
-        The date and time the ResourceAnchor was created, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was created, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -388,7 +395,7 @@ class ResourceAnchorSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ResourceAnchorSummary.
-        The date and time the ResourceAnchor was updated, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was updated, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -404,7 +411,7 @@ class ResourceAnchorSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ResourceAnchorSummary.
-        The date and time the ResourceAnchor was updated, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was updated, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -420,7 +427,7 @@ class ResourceAnchorSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ResourceAnchorSummary.
-        The current state of the ResourceAnchor.
+        The current state of the resource anchor.
 
 
         :return: The lifecycle_state of this ResourceAnchorSummary.
@@ -432,7 +439,7 @@ class ResourceAnchorSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ResourceAnchorSummary.
-        The current state of the ResourceAnchor.
+        The current state of the resource anchor.
 
 
         :param lifecycle_state: The lifecycle_state of this ResourceAnchorSummary.
@@ -444,7 +451,7 @@ class ResourceAnchorSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ResourceAnchorSummary.
-        A message that describes the current state of the ResourceAnchor in more detail. For example,
+        A message that describes the current state of the resource anchor in more detail. For example,
         can be used to provide actionable information for a resource in the Failed state.
 
 
@@ -457,7 +464,7 @@ class ResourceAnchorSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ResourceAnchorSummary.
-        A message that describes the current state of the ResourceAnchor in more detail. For example,
+        A message that describes the current state of the resource anchor in more detail. For example,
         can be used to provide actionable information for a resource in the Failed state.
 
 
@@ -590,8 +597,10 @@ class ResourceAnchorSummary(object):
     def linked_compartment_id(self):
         """
         Gets the linked_compartment_id of this ResourceAnchorSummary.
-        Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
-        This compartmentId is different from where resource Anchor live.
+        The `OCID`__ of the optional OCI compartment that was created or linked with the resource anchor.
+        This compartment is different from the compartment that contains the resource anchor.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The linked_compartment_id of this ResourceAnchorSummary.
@@ -603,8 +612,10 @@ class ResourceAnchorSummary(object):
     def linked_compartment_id(self, linked_compartment_id):
         """
         Sets the linked_compartment_id of this ResourceAnchorSummary.
-        Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.
-        This compartmentId is different from where resource Anchor live.
+        The `OCID`__ of the optional OCI compartment that was created or linked with the resource anchor.
+        This compartment is different from the compartment that contains the resource anchor.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param linked_compartment_id: The linked_compartment_id of this ResourceAnchorSummary.
@@ -616,7 +627,8 @@ class ResourceAnchorSummary(object):
     def linked_compartment_name(self):
         """
         Gets the linked_compartment_name of this ResourceAnchorSummary.
-        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        The name of the optional OCI compartment that was created or linked with the resource anchor.
+        This compartment is different from the compartment that contains the resource anchor.
 
 
         :return: The linked_compartment_name of this ResourceAnchorSummary.
@@ -628,13 +640,38 @@ class ResourceAnchorSummary(object):
     def linked_compartment_name(self, linked_compartment_name):
         """
         Sets the linked_compartment_name of this ResourceAnchorSummary.
-        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        The name of the optional OCI compartment that was created or linked with the resource anchor.
+        This compartment is different from the compartment that contains the resource anchor.
 
 
         :param linked_compartment_name: The linked_compartment_name of this ResourceAnchorSummary.
         :type: str
         """
         self._linked_compartment_name = linked_compartment_name
+
+    @property
+    def resource_anchor_uri(self):
+        """
+        Gets the resource_anchor_uri of this ResourceAnchorSummary.
+        URI for the cloud service provider's resource anchor.
+
+
+        :return: The resource_anchor_uri of this ResourceAnchorSummary.
+        :rtype: str
+        """
+        return self._resource_anchor_uri
+
+    @resource_anchor_uri.setter
+    def resource_anchor_uri(self, resource_anchor_uri):
+        """
+        Sets the resource_anchor_uri of this ResourceAnchorSummary.
+        URI for the cloud service provider's resource anchor.
+
+
+        :param resource_anchor_uri: The resource_anchor_uri of this ResourceAnchorSummary.
+        :type: str
+        """
+        self._resource_anchor_uri = resource_anchor_uri
 
     def __repr__(self):
         return formatted_flat_dict(self)

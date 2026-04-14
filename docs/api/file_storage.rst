@@ -50,6 +50,7 @@ File Storage
     oci.file_storage.models.LdapBindAccount
     oci.file_storage.models.LdapBindAccountSummary
     oci.file_storage.models.LdapIdmap
+    oci.file_storage.models.LockDurationDetails
     oci.file_storage.models.MountTarget
     oci.file_storage.models.MountTargetSummary
     oci.file_storage.models.OutboundConnector

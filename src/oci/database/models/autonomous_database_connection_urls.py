@@ -56,6 +56,10 @@ class AutonomousDatabaseConnectionUrls(object):
             The value to assign to the database_transforms_url property of this AutonomousDatabaseConnectionUrls.
         :type database_transforms_url: str
 
+        :param spatial_studio_url:
+            The value to assign to the spatial_studio_url property of this AutonomousDatabaseConnectionUrls.
+        :type spatial_studio_url: str
+
         """
         self.swagger_types = {
             'sql_dev_web_url': 'str',
@@ -65,7 +69,8 @@ class AutonomousDatabaseConnectionUrls(object):
             'mongo_db_url': 'str',
             'machine_learning_notebook_url': 'str',
             'ords_url': 'str',
-            'database_transforms_url': 'str'
+            'database_transforms_url': 'str',
+            'spatial_studio_url': 'str'
         }
         self.attribute_map = {
             'sql_dev_web_url': 'sqlDevWebUrl',
@@ -75,7 +80,8 @@ class AutonomousDatabaseConnectionUrls(object):
             'mongo_db_url': 'mongoDbUrl',
             'machine_learning_notebook_url': 'machineLearningNotebookUrl',
             'ords_url': 'ordsUrl',
-            'database_transforms_url': 'databaseTransformsUrl'
+            'database_transforms_url': 'databaseTransformsUrl',
+            'spatial_studio_url': 'spatialStudioUrl'
         }
         self._sql_dev_web_url = None
         self._apex_url = None
@@ -85,6 +91,7 @@ class AutonomousDatabaseConnectionUrls(object):
         self._machine_learning_notebook_url = None
         self._ords_url = None
         self._database_transforms_url = None
+        self._spatial_studio_url = None
 
     @property
     def sql_dev_web_url(self):
@@ -277,6 +284,30 @@ class AutonomousDatabaseConnectionUrls(object):
         :type: str
         """
         self._database_transforms_url = database_transforms_url
+
+    @property
+    def spatial_studio_url(self):
+        """
+        Gets the spatial_studio_url of this AutonomousDatabaseConnectionUrls.
+        The URL of the Spatial Studio for the Autonomous AI Database.
+
+
+        :return: The spatial_studio_url of this AutonomousDatabaseConnectionUrls.
+        :rtype: str
+        """
+        return self._spatial_studio_url
+
+    @spatial_studio_url.setter
+    def spatial_studio_url(self, spatial_studio_url):
+        """
+        Sets the spatial_studio_url of this AutonomousDatabaseConnectionUrls.
+        The URL of the Spatial Studio for the Autonomous AI Database.
+
+
+        :param spatial_studio_url: The spatial_studio_url of this AutonomousDatabaseConnectionUrls.
+        :type: str
+        """
+        self._spatial_studio_url = spatial_studio_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

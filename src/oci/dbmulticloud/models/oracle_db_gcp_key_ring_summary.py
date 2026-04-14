@@ -52,6 +52,10 @@ class OracleDbGcpKeyRingSummary(object):
             The value to assign to the properties property of this OracleDbGcpKeyRingSummary.
         :type properties: dict(str, str)
 
+        :param replication_metadata:
+            The value to assign to the replication_metadata property of this OracleDbGcpKeyRingSummary.
+        :type replication_metadata: oci.dbmulticloud.models.ReplicationMetadata
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OracleDbGcpKeyRingSummary.
         :type lifecycle_state: str
@@ -90,6 +94,7 @@ class OracleDbGcpKeyRingSummary(object):
             'type': 'str',
             'location': 'str',
             'properties': 'dict(str, str)',
+            'replication_metadata': 'ReplicationMetadata',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
             'time_created': 'datetime',
@@ -107,6 +112,7 @@ class OracleDbGcpKeyRingSummary(object):
             'type': 'type',
             'location': 'location',
             'properties': 'properties',
+            'replication_metadata': 'replicationMetadata',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
             'time_created': 'timeCreated',
@@ -123,6 +129,7 @@ class OracleDbGcpKeyRingSummary(object):
         self._type = None
         self._location = None
         self._properties = None
+        self._replication_metadata = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
         self._time_created = None
@@ -334,6 +341,26 @@ class OracleDbGcpKeyRingSummary(object):
         :type: dict(str, str)
         """
         self._properties = properties
+
+    @property
+    def replication_metadata(self):
+        """
+        Gets the replication_metadata of this OracleDbGcpKeyRingSummary.
+
+        :return: The replication_metadata of this OracleDbGcpKeyRingSummary.
+        :rtype: oci.dbmulticloud.models.ReplicationMetadata
+        """
+        return self._replication_metadata
+
+    @replication_metadata.setter
+    def replication_metadata(self, replication_metadata):
+        """
+        Sets the replication_metadata of this OracleDbGcpKeyRingSummary.
+
+        :param replication_metadata: The replication_metadata of this OracleDbGcpKeyRingSummary.
+        :type: oci.dbmulticloud.models.ReplicationMetadata
+        """
+        self._replication_metadata = replication_metadata
 
     @property
     def lifecycle_state(self):

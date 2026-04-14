@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class MetadataClient(object):
     """
-    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](/iaas/Content/multicloud-hub/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -135,18 +135,18 @@ class MetadataClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
-            The subscription service name of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str entity_type: (optional)
-            The resource type query (i.e. dbsystem, instance etc.)
+            The resource type query (for example, dbsystem or instance).
 
             Allowed values are: "dbsystem"
 
         :param str compartment_id: (optional)
             The `OCID`__ of the Multicloud base compartment in which to list resources.
-            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -156,13 +156,13 @@ class MetadataClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str external_location: (optional)
-            The Cloud Service Provider region.
+            The cloud service provider region.
 
         :param str logical_zone: (optional)
-            OCI Logical AD to filter the response.
+            OCI logical availability domain (AD) to filter the response.
 
         :param str cluster_placement_group_id: (optional)
-            The `OCID`__ of the Cluster Placement Group.
+            The `OCID`__ of the cluster placement group.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -182,6 +182,7 @@ class MetadataClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 
@@ -336,17 +337,25 @@ class MetadataClient(object):
 
     def list_external_location_mapping_metadata(self, subscription_service_name, compartment_id, **kwargs):
         """
-        List externalLocation metadata from OCI to the Cloud Service Provider for regions, Physical Availability Zones.
+        List mapped partner cloud regions and zones across cloud service providers
+        for the specified Multicloud base compartment and subscription service name.
+        Each mapping includes the OCI region, logical availability domain, and physical availability domain,
+        along with mapped partner cloud details that depend on the partner cloud.
+        For example, Azure includes a logical zone while AWS doesn't.
+        For more information, see
+        `Cross-Cloud Region-Zone Mapping`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/view-cloud-mapping.htm
 
 
         :param oci.multicloud.models.list[str] subscription_service_name: (required)
-            The subscription type of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str compartment_id: (required)
             The `OCID`__ of the Multicloud base compartment in which to list resources.
-            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -371,6 +380,7 @@ class MetadataClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 
@@ -513,13 +523,13 @@ class MetadataClient(object):
 
 
         :param str subscription_service_name: (required)
-            The subscription service name of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
         :param str compartment_id: (required)
             The `OCID`__ of the Multicloud base compartment in which to list resources.
-            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -529,7 +539,7 @@ class MetadataClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str entity_type: (optional)
-            The resource type query (i.e. dbsystem, instance etc.)
+            The resource type query (for example, dbsystem or instance).
 
             Allowed values are: "dbsystem"
 
@@ -549,6 +559,7 @@ class MetadataClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 

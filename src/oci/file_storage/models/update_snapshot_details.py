@@ -32,20 +32,27 @@ class UpdateSnapshotDetails(object):
             The value to assign to the expiration_time property of this UpdateSnapshotDetails.
         :type expiration_time: datetime
 
+        :param lock_duration_details:
+            The value to assign to the lock_duration_details property of this UpdateSnapshotDetails.
+        :type lock_duration_details: oci.file_storage.models.LockDurationDetails
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'expiration_time': 'datetime'
+            'expiration_time': 'datetime',
+            'lock_duration_details': 'LockDurationDetails'
         }
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'expiration_time': 'expirationTime'
+            'expiration_time': 'expirationTime',
+            'lock_duration_details': 'lockDurationDetails'
         }
         self._freeform_tags = None
         self._defined_tags = None
         self._expiration_time = None
+        self._lock_duration_details = None
 
     @property
     def freeform_tags(self):
@@ -140,6 +147,26 @@ class UpdateSnapshotDetails(object):
         :type: datetime
         """
         self._expiration_time = expiration_time
+
+    @property
+    def lock_duration_details(self):
+        """
+        Gets the lock_duration_details of this UpdateSnapshotDetails.
+
+        :return: The lock_duration_details of this UpdateSnapshotDetails.
+        :rtype: oci.file_storage.models.LockDurationDetails
+        """
+        return self._lock_duration_details
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, lock_duration_details):
+        """
+        Sets the lock_duration_details of this UpdateSnapshotDetails.
+
+        :param lock_duration_details: The lock_duration_details of this UpdateSnapshotDetails.
+        :type: oci.file_storage.models.LockDurationDetails
+        """
+        self._lock_duration_details = lock_duration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

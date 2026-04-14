@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .action import Action
+from .additional_egress_rule import AdditionalEgressRule
 from .admin_user_collection import AdminUserCollection
 from .admin_user_summary import AdminUserSummary
 from .allow_rule import AllowRule
@@ -82,6 +83,7 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for fusion_apps services.
 fusion_apps_type_mapping = {
     "Action": Action,
+    "AdditionalEgressRule": AdditionalEgressRule,
     "AdminUserCollection": AdminUserCollection,
     "AdminUserSummary": AdminUserSummary,
     "AllowRule": AllowRule,

@@ -12,7 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MulticloudSubscriptionCollection(object):
     """
-    Results of a multicloud subscription. Contains both MulticloudSubscription information.
+    Properties that define activated Multicloud subscriptions in the indicated compartment.
+    For more information, see
+    `Listing Multicloud Subscriptions`__.
+
+    __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +41,7 @@ class MulticloudSubscriptionCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this MulticloudSubscriptionCollection.
-        List of MulticloudSubscriptions.
+        List of Multicloud subscriptions.
 
 
         :return: The items of this MulticloudSubscriptionCollection.
@@ -49,7 +53,7 @@ class MulticloudSubscriptionCollection(object):
     def items(self, items):
         """
         Sets the items of this MulticloudSubscriptionCollection.
-        List of MulticloudSubscriptions.
+        List of Multicloud subscriptions.
 
 
         :param items: The items of this MulticloudSubscriptionCollection.

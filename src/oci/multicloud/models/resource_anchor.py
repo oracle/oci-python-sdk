@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceAnchor(object):
     """
-    A ResourceAnchor is a description of a ResourceAnchor.
+    A resource anchor.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to
     an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -212,7 +212,7 @@ class ResourceAnchor(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResourceAnchor.
-        The `OCID`__ of the ResourceAnchor.
+        The `OCID`__ of the resource anchor.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -226,7 +226,7 @@ class ResourceAnchor(object):
     def id(self, id):
         """
         Sets the id of this ResourceAnchor.
-        The `OCID`__ of the ResourceAnchor.
+        The `OCID`__ of the resource anchor.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -340,7 +340,7 @@ class ResourceAnchor(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ResourceAnchor.
-        The date and time the ResourceAnchor was created, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was created, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -356,7 +356,7 @@ class ResourceAnchor(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ResourceAnchor.
-        The date and time the ResourceAnchor was created, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was created, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -372,7 +372,7 @@ class ResourceAnchor(object):
     def time_updated(self):
         """
         Gets the time_updated of this ResourceAnchor.
-        The date and time the ResourceAnchor was updated, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was updated, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -388,7 +388,7 @@ class ResourceAnchor(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ResourceAnchor.
-        The date and time the ResourceAnchor was updated, in the format defined by `RFC 3339`__.
+        The date and time the resource anchor was updated, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -404,7 +404,7 @@ class ResourceAnchor(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ResourceAnchor.
-        The current state of the ResourceAnchor.
+        The current state of the resource anchor.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -419,7 +419,7 @@ class ResourceAnchor(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ResourceAnchor.
-        The current state of the ResourceAnchor.
+        The current state of the resource anchor.
 
 
         :param lifecycle_state: The lifecycle_state of this ResourceAnchor.
@@ -434,7 +434,7 @@ class ResourceAnchor(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ResourceAnchor.
-        A message that describes the current state of the ResourceAnchor in more detail. For example,
+        A message that describes the current state of the resource anchor in more detail. For example,
         can be used to provide actionable information for a resource in the Failed state.
 
 
@@ -447,7 +447,7 @@ class ResourceAnchor(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ResourceAnchor.
-        A message that describes the current state of the ResourceAnchor in more detail. For example,
+        A message that describes the current state of the resource anchor in more detail. For example,
         can be used to provide actionable information for a resource in the Failed state.
 
 

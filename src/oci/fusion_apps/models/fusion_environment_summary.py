@@ -492,7 +492,7 @@ class FusionEnvironmentSummary(object):
     def is_i_pv6_dual_stack_enabled(self):
         """
         Gets the is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 
 
         :return: The is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
@@ -504,7 +504,7 @@ class FusionEnvironmentSummary(object):
     def is_i_pv6_dual_stack_enabled(self, is_i_pv6_dual_stack_enabled):
         """
         Sets the is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
-        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
 
 
         :param is_i_pv6_dual_stack_enabled: The is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.

@@ -28,6 +28,10 @@ class ServiceAttachment(object):
     SERVICE_INSTANCE_TYPE_ANALYTICS_WAREHOUSE = "ANALYTICS_WAREHOUSE"
 
     #: A constant which can be used with the service_instance_type property of a ServiceAttachment.
+    #: This constant has a value of "FUSION_DATA_INTELLIGENCE"
+    SERVICE_INSTANCE_TYPE_FUSION_DATA_INTELLIGENCE = "FUSION_DATA_INTELLIGENCE"
+
+    #: A constant which can be used with the service_instance_type property of a ServiceAttachment.
     #: This constant has a value of "VBCS"
     SERVICE_INSTANCE_TYPE_VBCS = "VBCS"
 
@@ -82,7 +86,7 @@ class ServiceAttachment(object):
 
         :param service_instance_type:
             The value to assign to the service_instance_type property of this ServiceAttachment.
-            Allowed values for this property are: "DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "VBCS", "VISUAL_BUILDER_STUDIO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "FUSION_DATA_INTELLIGENCE", "VBCS", "VISUAL_BUILDER_STUDIO", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type service_instance_type: str
 
@@ -260,7 +264,7 @@ class ServiceAttachment(object):
         **[Required]** Gets the service_instance_type of this ServiceAttachment.
         Type of the serviceInstance.
 
-        Allowed values for this property are: "DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "VBCS", "VISUAL_BUILDER_STUDIO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "FUSION_DATA_INTELLIGENCE", "VBCS", "VISUAL_BUILDER_STUDIO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -279,7 +283,7 @@ class ServiceAttachment(object):
         :param service_instance_type: The service_instance_type of this ServiceAttachment.
         :type: str
         """
-        allowed_values = ["DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "VBCS", "VISUAL_BUILDER_STUDIO"]
+        allowed_values = ["DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "FUSION_DATA_INTELLIGENCE", "VBCS", "VISUAL_BUILDER_STUDIO"]
         if not value_allowed_none_or_none_sentinel(service_instance_type, allowed_values):
             service_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._service_instance_type = service_instance_type

@@ -152,6 +152,10 @@ class NetworkAnchorSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type subscription_type: str
 
+        :param cidr_blocks:
+            The value to assign to the cidr_blocks property of this NetworkAnchorSummary.
+        :type cidr_blocks: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -172,7 +176,8 @@ class NetworkAnchorSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'subscription_type': 'str'
+            'subscription_type': 'str',
+            'cidr_blocks': 'list[str]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -193,7 +198,8 @@ class NetworkAnchorSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'subscription_type': 'subscriptionType'
+            'subscription_type': 'subscriptionType',
+            'cidr_blocks': 'cidrBlocks'
         }
         self._id = None
         self._display_name = None
@@ -214,6 +220,7 @@ class NetworkAnchorSummary(object):
         self._defined_tags = None
         self._system_tags = None
         self._subscription_type = None
+        self._cidr_blocks = None
 
     @property
     def id(self):
@@ -732,6 +739,30 @@ class NetworkAnchorSummary(object):
         if not value_allowed_none_or_none_sentinel(subscription_type, allowed_values):
             subscription_type = 'UNKNOWN_ENUM_VALUE'
         self._subscription_type = subscription_type
+
+    @property
+    def cidr_blocks(self):
+        """
+        Gets the cidr_blocks of this NetworkAnchorSummary.
+        An Azure/GCP/AWS cidrBlocks
+
+
+        :return: The cidr_blocks of this NetworkAnchorSummary.
+        :rtype: list[str]
+        """
+        return self._cidr_blocks
+
+    @cidr_blocks.setter
+    def cidr_blocks(self, cidr_blocks):
+        """
+        Sets the cidr_blocks of this NetworkAnchorSummary.
+        An Azure/GCP/AWS cidrBlocks
+
+
+        :param cidr_blocks: The cidr_blocks of this NetworkAnchorSummary.
+        :type: list[str]
+        """
+        self._cidr_blocks = cidr_blocks
 
     def __repr__(self):
         return formatted_flat_dict(self)

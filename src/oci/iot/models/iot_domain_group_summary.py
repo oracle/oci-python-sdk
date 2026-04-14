@@ -16,6 +16,14 @@ class IotDomainGroupSummary(object):
     """
 
     #: A constant which can be used with the type property of a IotDomainGroupSummary.
+    #: This constant has a value of "PRODUCTION"
+    TYPE_PRODUCTION = "PRODUCTION"
+
+    #: A constant which can be used with the type property of a IotDomainGroupSummary.
+    #: This constant has a value of "DEVELOPMENT"
+    TYPE_DEVELOPMENT = "DEVELOPMENT"
+
+    #: A constant which can be used with the type property of a IotDomainGroupSummary.
     #: This constant has a value of "STANDARD"
     TYPE_STANDARD = "STANDARD"
 
@@ -38,7 +46,7 @@ class IotDomainGroupSummary(object):
 
         :param type:
             The value to assign to the type property of this IotDomainGroupSummary.
-            Allowed values for this property are: "STANDARD", "LIGHTWEIGHT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -173,10 +181,12 @@ class IotDomainGroupSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this IotDomainGroupSummary.
-        Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),
-        making it suitable for development and testing. STANDARD is recommended for production.
+        Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO),
+        making it suitable for development and testing. PRODUCTION is recommended for production workloads.
+        LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed
+        in a future release.
 
-        Allowed values for this property are: "STANDARD", "LIGHTWEIGHT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -189,14 +199,16 @@ class IotDomainGroupSummary(object):
     def type(self, type):
         """
         Sets the type of this IotDomainGroupSummary.
-        Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),
-        making it suitable for development and testing. STANDARD is recommended for production.
+        Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO),
+        making it suitable for development and testing. PRODUCTION is recommended for production workloads.
+        LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed
+        in a future release.
 
 
         :param type: The type of this IotDomainGroupSummary.
         :type: str
         """
-        allowed_values = ["STANDARD", "LIGHTWEIGHT"]
+        allowed_values = ["PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

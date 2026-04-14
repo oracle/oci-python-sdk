@@ -12,7 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MulticloudResourceCollection(object):
     """
-    Multicloud resource information across clouds.
+    Multicloud resources in the indicated Multicloud subscription.
+    For more information, see
+    `Multicloud Resources`__.
+
+    __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-resources.htm
     """
 
     def __init__(self, **kwargs):

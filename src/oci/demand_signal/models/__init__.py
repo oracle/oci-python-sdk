@@ -6,13 +6,21 @@
 
 from __future__ import absolute_import
 
+from .base_resource_configuration import BaseResourceConfiguration
 from .change_occ_demand_signal_compartment_details import ChangeOccDemandSignalCompartmentDetails
+from .compute_resource_configuration import ComputeResourceConfiguration
 from .create_occ_demand_signal_details import CreateOccDemandSignalDetails
+from .create_occ_metric_alarm_details import CreateOccMetricAlarmDetails
+from .exadata_resource_configuration import ExadataResourceConfiguration
+from .network_resource_configuration import NetworkResourceConfiguration
 from .occ_demand_signal import OccDemandSignal
 from .occ_demand_signal_collection import OccDemandSignalCollection
 from .occ_demand_signal_data import OccDemandSignalData
 from .occ_demand_signal_summary import OccDemandSignalSummary
 from .occ_demand_signal_value import OccDemandSignalValue
+from .occ_metric_alarm import OccMetricAlarm
+from .occ_metric_alarm_collection import OccMetricAlarmCollection
+from .occ_metric_alarm_summary import OccMetricAlarmSummary
 from .patch_insert_instruction import PatchInsertInstruction
 from .patch_insert_multiple_instruction import PatchInsertMultipleInstruction
 from .patch_instruction import PatchInstruction
@@ -23,17 +31,27 @@ from .patch_prohibit_instruction import PatchProhibitInstruction
 from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_replace_instruction import PatchReplaceInstruction
 from .patch_require_instruction import PatchRequireInstruction
+from .storage_resource_configuration import StorageResourceConfiguration
 from .update_occ_demand_signal_details import UpdateOccDemandSignalDetails
+from .update_occ_metric_alarm_details import UpdateOccMetricAlarmDetails
 
 # Maps type names to classes for demand_signal services.
 demand_signal_type_mapping = {
+    "BaseResourceConfiguration": BaseResourceConfiguration,
     "ChangeOccDemandSignalCompartmentDetails": ChangeOccDemandSignalCompartmentDetails,
+    "ComputeResourceConfiguration": ComputeResourceConfiguration,
     "CreateOccDemandSignalDetails": CreateOccDemandSignalDetails,
+    "CreateOccMetricAlarmDetails": CreateOccMetricAlarmDetails,
+    "ExadataResourceConfiguration": ExadataResourceConfiguration,
+    "NetworkResourceConfiguration": NetworkResourceConfiguration,
     "OccDemandSignal": OccDemandSignal,
     "OccDemandSignalCollection": OccDemandSignalCollection,
     "OccDemandSignalData": OccDemandSignalData,
     "OccDemandSignalSummary": OccDemandSignalSummary,
     "OccDemandSignalValue": OccDemandSignalValue,
+    "OccMetricAlarm": OccMetricAlarm,
+    "OccMetricAlarmCollection": OccMetricAlarmCollection,
+    "OccMetricAlarmSummary": OccMetricAlarmSummary,
     "PatchInsertInstruction": PatchInsertInstruction,
     "PatchInsertMultipleInstruction": PatchInsertMultipleInstruction,
     "PatchInstruction": PatchInstruction,
@@ -44,5 +62,7 @@ demand_signal_type_mapping = {
     "PatchRemoveInstruction": PatchRemoveInstruction,
     "PatchReplaceInstruction": PatchReplaceInstruction,
     "PatchRequireInstruction": PatchRequireInstruction,
-    "UpdateOccDemandSignalDetails": UpdateOccDemandSignalDetails
+    "StorageResourceConfiguration": StorageResourceConfiguration,
+    "UpdateOccDemandSignalDetails": UpdateOccDemandSignalDetails,
+    "UpdateOccMetricAlarmDetails": UpdateOccMetricAlarmDetails
 }

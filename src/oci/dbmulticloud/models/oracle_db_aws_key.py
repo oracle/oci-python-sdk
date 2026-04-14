@@ -84,6 +84,10 @@ class OracleDbAwsKey(object):
             The value to assign to the properties property of this OracleDbAwsKey.
         :type properties: dict(str, str)
 
+        :param replication_metadata:
+            The value to assign to the replication_metadata property of this OracleDbAwsKey.
+        :type replication_metadata: oci.dbmulticloud.models.ReplicationMetadata
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OracleDbAwsKey.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -126,6 +130,7 @@ class OracleDbAwsKey(object):
             'is_aws_key_enabled': 'bool',
             'location': 'str',
             'properties': 'dict(str, str)',
+            'replication_metadata': 'ReplicationMetadata',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
             'time_created': 'datetime',
@@ -145,6 +150,7 @@ class OracleDbAwsKey(object):
             'is_aws_key_enabled': 'isAwsKeyEnabled',
             'location': 'location',
             'properties': 'properties',
+            'replication_metadata': 'replicationMetadata',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
             'time_created': 'timeCreated',
@@ -163,6 +169,7 @@ class OracleDbAwsKey(object):
         self._is_aws_key_enabled = None
         self._location = None
         self._properties = None
+        self._replication_metadata = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
         self._time_created = None
@@ -422,6 +429,26 @@ class OracleDbAwsKey(object):
         :type: dict(str, str)
         """
         self._properties = properties
+
+    @property
+    def replication_metadata(self):
+        """
+        Gets the replication_metadata of this OracleDbAwsKey.
+
+        :return: The replication_metadata of this OracleDbAwsKey.
+        :rtype: oci.dbmulticloud.models.ReplicationMetadata
+        """
+        return self._replication_metadata
+
+    @replication_metadata.setter
+    def replication_metadata(self, replication_metadata):
+        """
+        Sets the replication_metadata of this OracleDbAwsKey.
+
+        :param replication_metadata: The replication_metadata of this OracleDbAwsKey.
+        :type: oci.dbmulticloud.models.ReplicationMetadata
+        """
+        self._replication_metadata = replication_metadata
 
     @property
     def lifecycle_state(self):

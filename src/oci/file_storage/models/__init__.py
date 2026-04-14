@@ -38,6 +38,7 @@ from .key_tab_secret_details import KeyTabSecretDetails
 from .ldap_bind_account import LdapBindAccount
 from .ldap_bind_account_summary import LdapBindAccountSummary
 from .ldap_idmap import LdapIdmap
+from .lock_duration_details import LockDurationDetails
 from .mount_target import MountTarget
 from .mount_target_summary import MountTargetSummary
 from .outbound_connector import OutboundConnector
@@ -105,6 +106,7 @@ file_storage_type_mapping = {
     "LdapBindAccount": LdapBindAccount,
     "LdapBindAccountSummary": LdapBindAccountSummary,
     "LdapIdmap": LdapIdmap,
+    "LockDurationDetails": LockDurationDetails,
     "MountTarget": MountTarget,
     "MountTargetSummary": MountTargetSummary,
     "OutboundConnector": OutboundConnector,

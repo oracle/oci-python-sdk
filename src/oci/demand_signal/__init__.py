@@ -9,6 +9,8 @@ from __future__ import absolute_import
 
 from .occ_demand_signal_client import OccDemandSignalClient
 from .occ_demand_signal_client_composite_operations import OccDemandSignalClientCompositeOperations
+from .occ_metric_alarm_client import OccMetricAlarmClient
+from .occ_metric_alarm_client_composite_operations import OccMetricAlarmClientCompositeOperations
 from . import models
 
-__all__ = ["OccDemandSignalClient", "OccDemandSignalClientCompositeOperations", "models"]
+__all__ = ["OccDemandSignalClient", "OccDemandSignalClientCompositeOperations", "OccMetricAlarmClient", "OccMetricAlarmClientCompositeOperations", "models"]

@@ -19,6 +19,7 @@ Fusion Apps
     :template: autosummary/model_class.rst
 
     oci.fusion_apps.models.Action
+    oci.fusion_apps.models.AdditionalEgressRule
     oci.fusion_apps.models.AdminUserCollection
     oci.fusion_apps.models.AdminUserSummary
     oci.fusion_apps.models.AllowRule

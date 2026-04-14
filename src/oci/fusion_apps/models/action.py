@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Action(object):
     """
-    Action details
+    Action details.
     """
 
     #: A constant which can be used with the action_type property of a Action.
@@ -119,7 +119,7 @@ class Action(object):
     def reference_key(self):
         """
         Gets the reference_key of this Action.
-        Unique identifier of the object that represents the action
+        Unique identifier of the object that represents the action.
 
 
         :return: The reference_key of this Action.
@@ -131,7 +131,7 @@ class Action(object):
     def reference_key(self, reference_key):
         """
         Sets the reference_key of this Action.
-        Unique identifier of the object that represents the action
+        Unique identifier of the object that represents the action.
 
 
         :param reference_key: The reference_key of this Action.
@@ -143,7 +143,7 @@ class Action(object):
     def action_type(self):
         """
         **[Required]** Gets the action_type of this Action.
-        Type of action
+        Type of action.
 
         Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -158,7 +158,7 @@ class Action(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this Action.
-        Type of action
+        Type of action.
 
 
         :param action_type: The action_type of this Action.
@@ -173,7 +173,7 @@ class Action(object):
     def state(self):
         """
         Gets the state of this Action.
-        A string that describes whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -188,7 +188,7 @@ class Action(object):
     def state(self, state):
         """
         Sets the state of this Action.
-        A string that describes whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold.
 
 
         :param state: The state of this Action.

@@ -179,7 +179,7 @@ class GenerateEnrichmentJobClient(object):
         resource_path = "/semanticStores/{semanticStoreId}/actions/enrich"
         method = "POST"
         operation_name = "generate_enrichment_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GenerateEnrichmentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

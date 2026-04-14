@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class MultiCloudsMetadataClient(object):
     """
-    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](/iaas/Content/multicloud-hub/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -126,8 +126,12 @@ class MultiCloudsMetadataClient(object):
 
     def get_multi_cloud_metadata(self, compartment_id, subscription_id, **kwargs):
         """
-        Gets information about the Multicloud base compartment for a given tenancy Id.
-        A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        Gets details for Multicloud metadata for the specified Multicloud subscription.
+        Multicloud metadata for a subscription includes the Multicloud base compartment (top-level OCI compartment).
+        For more information, see
+        `Getting Details for Multicloud Metadata`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm
 
 
         :param str compartment_id: (required)
@@ -249,8 +253,12 @@ class MultiCloudsMetadataClient(object):
 
     def list_multi_cloud_metadata(self, compartment_id, **kwargs):
         """
-        Gets a list of multicloud metadata with pairs of Multicloud base compartment and subscription across Cloud Service Providers from a tenancy Id.
-        A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        Lists Multicloud metadata for Multicloud subscriptions in the specified compartment.
+        Multicloud metadata for a subscription includes the Multicloud base compartment (top-level OCI compartment).
+        For more information, see
+        `Listing Multicloud Metadata for a Subscription`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-subscription-metadata.htm
 
 
         :param str compartment_id: (required)
@@ -274,6 +282,7 @@ class MultiCloudsMetadataClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 

@@ -12,7 +12,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MultiCloudMetadata(object):
     """
-    Multicloud metadata information including base multicloud compartments information.
+    The Multicloud metadata for the indicated subscription.
+    Multicloud metadata for a subscription includes the Multicloud base compartment (top-level OCI compartment).
+    For more information, see
+    `Getting Details for Multicloud Metadata`__.
+
+    __ https://docs.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +77,9 @@ class MultiCloudMetadata(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MultiCloudMetadata.
-        MultiCloud base compartment OCID associated with subscriptionId.
+        The `OCID`__ of the Multicloud base compartment associated with the indicated subscription (`subscriptionId`).
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this MultiCloudMetadata.
@@ -84,7 +91,9 @@ class MultiCloudMetadata(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MultiCloudMetadata.
-        MultiCloud base compartment OCID associated with subscriptionId.
+        The `OCID`__ of the Multicloud base compartment associated with the indicated subscription (`subscriptionId`).
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this MultiCloudMetadata.
@@ -96,7 +105,9 @@ class MultiCloudMetadata(object):
     def subscription_id(self):
         """
         **[Required]** Gets the subscription_id of this MultiCloudMetadata.
-        Oracle Cloud Infrastructure subscriptionId.
+        The `OCID`__ of the OCI subscription.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this MultiCloudMetadata.
@@ -108,7 +119,9 @@ class MultiCloudMetadata(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this MultiCloudMetadata.
-        Oracle Cloud Infrastructure subscriptionId.
+        The `OCID`__ of the OCI subscription.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this MultiCloudMetadata.
@@ -120,7 +133,7 @@ class MultiCloudMetadata(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this MultiCloudMetadata.
-        The date and time the multicloud compartment was created, in the format defined by `RFC 3339`__.
+        The date and time that the Multicloud base compartment was created, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -136,7 +149,7 @@ class MultiCloudMetadata(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MultiCloudMetadata.
-        The date and time the multicloud compartment was created, in the format defined by `RFC 3339`__.
+        The date and time that the Multicloud base compartment was created, in the format defined by `RFC 3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 

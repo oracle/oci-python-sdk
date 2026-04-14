@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MulticloudSubscriptionSummary(object):
     """
-    Multicloud subscription object
+    A Multicloud subscription.
     """
 
     #: A constant which can be used with the service_name property of a MulticloudSubscriptionSummary.
@@ -51,6 +51,10 @@ class MulticloudSubscriptionSummary(object):
         :param partner_cloud_account_identifier:
             The value to assign to the partner_cloud_account_identifier property of this MulticloudSubscriptionSummary.
         :type partner_cloud_account_identifier: str
+
+        :param partner_cloud_tenant_identifier:
+            The value to assign to the partner_cloud_tenant_identifier property of this MulticloudSubscriptionSummary.
+        :type partner_cloud_tenant_identifier: str
 
         :param service_name:
             The value to assign to the service_name property of this MulticloudSubscriptionSummary.
@@ -109,6 +113,7 @@ class MulticloudSubscriptionSummary(object):
             'classic_subscription_id': 'str',
             'subscription_id': 'str',
             'partner_cloud_account_identifier': 'str',
+            'partner_cloud_tenant_identifier': 'str',
             'service_name': 'str',
             'time_linked_date': 'datetime',
             'payment_plan': 'str',
@@ -126,6 +131,7 @@ class MulticloudSubscriptionSummary(object):
             'classic_subscription_id': 'classicSubscriptionId',
             'subscription_id': 'subscriptionId',
             'partner_cloud_account_identifier': 'partnerCloudAccountIdentifier',
+            'partner_cloud_tenant_identifier': 'partnerCloudTenantIdentifier',
             'service_name': 'serviceName',
             'time_linked_date': 'timeLinkedDate',
             'payment_plan': 'paymentPlan',
@@ -142,6 +148,7 @@ class MulticloudSubscriptionSummary(object):
         self._classic_subscription_id = None
         self._subscription_id = None
         self._partner_cloud_account_identifier = None
+        self._partner_cloud_tenant_identifier = None
         self._service_name = None
         self._time_linked_date = None
         self._payment_plan = None
@@ -159,7 +166,7 @@ class MulticloudSubscriptionSummary(object):
     def classic_subscription_id(self):
         """
         **[Required]** Gets the classic_subscription_id of this MulticloudSubscriptionSummary.
-        Subscription ID for OCI and Partner cloud in classic format.
+        Subscription ID for OCI and partner cloud in classic format.
 
 
         :return: The classic_subscription_id of this MulticloudSubscriptionSummary.
@@ -171,7 +178,7 @@ class MulticloudSubscriptionSummary(object):
     def classic_subscription_id(self, classic_subscription_id):
         """
         Sets the classic_subscription_id of this MulticloudSubscriptionSummary.
-        Subscription ID for OCI and Partner cloud in classic format.
+        Subscription ID for OCI and partner cloud in classic format.
 
 
         :param classic_subscription_id: The classic_subscription_id of this MulticloudSubscriptionSummary.
@@ -183,7 +190,8 @@ class MulticloudSubscriptionSummary(object):
     def subscription_id(self):
         """
         Gets the subscription_id of this MulticloudSubscriptionSummary.
-        URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        URL to the subscription details page.
+        Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
 
 
         :return: The subscription_id of this MulticloudSubscriptionSummary.
@@ -195,7 +203,8 @@ class MulticloudSubscriptionSummary(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this MulticloudSubscriptionSummary.
-        URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        URL to the subscription details page.
+        Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
 
 
         :param subscription_id: The subscription_id of this MulticloudSubscriptionSummary.
@@ -228,10 +237,34 @@ class MulticloudSubscriptionSummary(object):
         self._partner_cloud_account_identifier = partner_cloud_account_identifier
 
     @property
+    def partner_cloud_tenant_identifier(self):
+        """
+        Gets the partner_cloud_tenant_identifier of this MulticloudSubscriptionSummary.
+        The partner cloud tenant ID.
+
+
+        :return: The partner_cloud_tenant_identifier of this MulticloudSubscriptionSummary.
+        :rtype: str
+        """
+        return self._partner_cloud_tenant_identifier
+
+    @partner_cloud_tenant_identifier.setter
+    def partner_cloud_tenant_identifier(self, partner_cloud_tenant_identifier):
+        """
+        Sets the partner_cloud_tenant_identifier of this MulticloudSubscriptionSummary.
+        The partner cloud tenant ID.
+
+
+        :param partner_cloud_tenant_identifier: The partner_cloud_tenant_identifier of this MulticloudSubscriptionSummary.
+        :type: str
+        """
+        self._partner_cloud_tenant_identifier = partner_cloud_tenant_identifier
+
+    @property
     def service_name(self):
         """
         Gets the service_name of this MulticloudSubscriptionSummary.
-        The serviceName that externalLocation map object belongs to.
+        The cloud service provider.
 
         Allowed values for this property are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +279,7 @@ class MulticloudSubscriptionSummary(object):
     def service_name(self, service_name):
         """
         Sets the service_name of this MulticloudSubscriptionSummary.
-        The serviceName that externalLocation map object belongs to.
+        The cloud service provider.
 
 
         :param service_name: The service_name of this MulticloudSubscriptionSummary.
@@ -261,7 +294,7 @@ class MulticloudSubscriptionSummary(object):
     def time_linked_date(self):
         """
         Gets the time_linked_date of this MulticloudSubscriptionSummary.
-        The date and time for when the multicloud was created, in the format defined by
+        The date and time that the Multicloud base compartment was created, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -276,7 +309,7 @@ class MulticloudSubscriptionSummary(object):
     def time_linked_date(self, time_linked_date):
         """
         Sets the time_linked_date of this MulticloudSubscriptionSummary.
-        The date and time for when the multicloud was created, in the format defined by
+        The date and time that the Multicloud base compartment was created, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -339,7 +372,7 @@ class MulticloudSubscriptionSummary(object):
     def time_end_date(self):
         """
         Gets the time_end_date of this MulticloudSubscriptionSummary.
-        The date and time for when the subscription is finishing, in the format defined by
+        The end date and time for the subscription, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -354,7 +387,7 @@ class MulticloudSubscriptionSummary(object):
     def time_end_date(self, time_end_date):
         """
         Sets the time_end_date of this MulticloudSubscriptionSummary.
-        The date and time for when the subscription is finishing, in the format defined by
+        The end date and time for the subscription, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -399,7 +432,7 @@ class MulticloudSubscriptionSummary(object):
     def csp_additional_properties(self):
         """
         Gets the csp_additional_properties of this MulticloudSubscriptionSummary.
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 
 
         :return: The csp_additional_properties of this MulticloudSubscriptionSummary.
@@ -411,7 +444,7 @@ class MulticloudSubscriptionSummary(object):
     def csp_additional_properties(self, csp_additional_properties):
         """
         Sets the csp_additional_properties of this MulticloudSubscriptionSummary.
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 
 
         :param csp_additional_properties: The csp_additional_properties of this MulticloudSubscriptionSummary.
@@ -423,7 +456,7 @@ class MulticloudSubscriptionSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this MulticloudSubscriptionSummary.
-        The date and time the subscription was created, in the format defined by
+        The date and time that the subscription was created, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -438,7 +471,7 @@ class MulticloudSubscriptionSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MulticloudSubscriptionSummary.
-        The date and time the subscription was created, in the format defined by
+        The date and time that the subscription was created, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -453,7 +486,7 @@ class MulticloudSubscriptionSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this MulticloudSubscriptionSummary.
-        The date and time the subscription was updated, in the format defined by
+        The date and time that the subscription was updated, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
@@ -468,7 +501,7 @@ class MulticloudSubscriptionSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this MulticloudSubscriptionSummary.
-        The date and time the subscription was updated, in the format defined by
+        The date and time that the subscription was updated, in the format defined by
         `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339

@@ -76,7 +76,7 @@ class UpgradeAction(Action):
     def version(self):
         """
         Gets the version of this UpgradeAction.
-        name of the repo
+        Name of the repo.
 
 
         :return: The version of this UpgradeAction.
@@ -88,7 +88,7 @@ class UpgradeAction(Action):
     def version(self, version):
         """
         Sets the version of this UpgradeAction.
-        name of the repo
+        Name of the repo.
 
 
         :param version: The version of this UpgradeAction.
@@ -100,7 +100,7 @@ class UpgradeAction(Action):
     def qualifier(self):
         """
         Gets the qualifier of this UpgradeAction.
-        month qualifier
+        Month qualifier.
 
 
         :return: The qualifier of this UpgradeAction.
@@ -112,7 +112,7 @@ class UpgradeAction(Action):
     def qualifier(self, qualifier):
         """
         Sets the qualifier of this UpgradeAction.
-        month qualifier
+        Month qualifier.
 
 
         :param qualifier: The qualifier of this UpgradeAction.

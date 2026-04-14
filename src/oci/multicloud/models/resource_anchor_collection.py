@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceAnchorCollection(object):
     """
-    Results of a resourceAnchor search. Contains both ResourceAnchorSummary items and other information, such as metadata.
+    List of resource anchors in the indicated Multicloud subscription.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ResourceAnchorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ResourceAnchorCollection.
-        List of resourceAnchors.
+        List of resource anchors.
 
 
         :return: The items of this ResourceAnchorCollection.
@@ -49,7 +49,7 @@ class ResourceAnchorCollection(object):
     def items(self, items):
         """
         Sets the items of this ResourceAnchorCollection.
-        List of resourceAnchors.
+        List of resource anchors.
 
 
         :param items: The items of this ResourceAnchorCollection.
