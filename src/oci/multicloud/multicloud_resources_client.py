@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class MulticloudResourcesClient(object):
     """
-    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](/iaas/Content/multicloud-hub/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -124,23 +124,18 @@ class MulticloudResourcesClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
-    def list_multicloud_resources(self, subscription_service_name, subscription_id, **kwargs):
+    def list_multicloud_resources(self, **kwargs):
         """
-        Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+        Lists Multicloud resources in the specified Multicloud subscription.
+        Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+        For more information, see
+        `Multicloud Resources`__.
 
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-resources.htm
 
-        :param str subscription_service_name: (required)
-            The subscription service name of the Cloud Service Provider.
-
-            Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
-
-        :param str subscription_id: (required)
-            The `OCID`__ of the Multicloud subscription in which to list resources.
-
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_anchor_id: (optional)
-            The `OCID`__ of the ResourceAnchor.
+            The `OCID`__ of the resource anchor.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -165,6 +160,7 @@ class MulticloudResourcesClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 
@@ -174,8 +170,21 @@ class MulticloudResourcesClient(object):
 
             Allowed values are: "timeCreated", "displayName"
 
+        :param str subscription_service_name: (optional)
+            The cloud service provider.
+
+            Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
+
+        :param str subscription_id: (optional)
+            The `OCID`__ of the Multicloud subscription in which to list resources.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str external_location: (optional)
-            The Cloud Service Provider region.
+            The cloud service provider region.
+
+        :param str resource_type: (optional)
+            Filter alerts by resource type (e.g. ADBD, VMCluster).
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -206,7 +215,7 @@ class MulticloudResourcesClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/multicloud/list_multicloud_resources.py.html>`__ to see an example of how to use list_multicloud_resources API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['subscriptionServiceName', 'subscriptionId']
+        required_arguments = []
         resource_path = "/omHub/multicloudResources"
         method = "GET"
         operation_name = "list_multicloud_resources"
@@ -223,7 +232,10 @@ class MulticloudResourcesClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "subscription_service_name",
+            "subscription_id",
             "external_location",
+            "resource_type",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -245,11 +257,12 @@ class MulticloudResourcesClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
-        subscription_service_name_allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
-        if subscription_service_name not in subscription_service_name_allowed_values:
-            raise ValueError(
-                f"Invalid value for `subscription_service_name`, must be one of { subscription_service_name_allowed_values }"
-            )
+        if 'subscription_service_name' in kwargs:
+            subscription_service_name_allowed_values = ["ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"]
+            if kwargs['subscription_service_name'] not in subscription_service_name_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `subscription_service_name`, must be one of { subscription_service_name_allowed_values }"
+                )
 
         query_params = {
             "resourceAnchorId": kwargs.get("resource_anchor_id", missing),
@@ -258,9 +271,10 @@ class MulticloudResourcesClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "subscriptionServiceName": subscription_service_name,
-            "subscriptionId": subscription_id,
-            "externalLocation": kwargs.get("external_location", missing)
+            "subscriptionServiceName": kwargs.get("subscription_service_name", missing),
+            "subscriptionId": kwargs.get("subscription_id", missing),
+            "externalLocation": kwargs.get("external_location", missing),
+            "resourceType": kwargs.get("resource_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

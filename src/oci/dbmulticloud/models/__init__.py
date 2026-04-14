@@ -69,6 +69,11 @@ from .patch_oracle_db_azure_connector_details import PatchOracleDbAzureConnector
 from .refresh_oracle_db_aws_key_details import RefreshOracleDbAwsKeyDetails
 from .refresh_oracle_db_azure_vault_details import RefreshOracleDbAzureVaultDetails
 from .refresh_oracle_db_gcp_key_ring_details import RefreshOracleDbGcpKeyRingDetails
+from .replicate_oracle_db_aws_key_details import ReplicateOracleDbAwsKeyDetails
+from .replicate_oracle_db_azure_vault_details import ReplicateOracleDbAzureVaultDetails
+from .replicate_oracle_db_gcp_key_ring_details import ReplicateOracleDbGcpKeyRingDetails
+from .replication_details import ReplicationDetails
+from .replication_metadata import ReplicationMetadata
 from .resources import Resources
 from .service_role_detail import ServiceRoleDetail
 from .service_role_details import ServiceRoleDetails
@@ -156,6 +161,11 @@ dbmulticloud_type_mapping = {
     "RefreshOracleDbAwsKeyDetails": RefreshOracleDbAwsKeyDetails,
     "RefreshOracleDbAzureVaultDetails": RefreshOracleDbAzureVaultDetails,
     "RefreshOracleDbGcpKeyRingDetails": RefreshOracleDbGcpKeyRingDetails,
+    "ReplicateOracleDbAwsKeyDetails": ReplicateOracleDbAwsKeyDetails,
+    "ReplicateOracleDbAzureVaultDetails": ReplicateOracleDbAzureVaultDetails,
+    "ReplicateOracleDbGcpKeyRingDetails": ReplicateOracleDbGcpKeyRingDetails,
+    "ReplicationDetails": ReplicationDetails,
+    "ReplicationMetadata": ReplicationMetadata,
     "Resources": Resources,
     "ServiceRoleDetail": ServiceRoleDetail,
     "ServiceRoleDetails": ServiceRoleDetails,

@@ -3974,7 +3974,7 @@ class IotClient(object):
         :param str type: (optional)
             Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
 
-            Allowed values are: "STANDARD", "LIGHTWEIGHT"
+            Allowed values are: "PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -4062,7 +4062,7 @@ class IotClient(object):
                 )
 
         if 'type' in kwargs:
-            type_allowed_values = ["STANDARD", "LIGHTWEIGHT"]
+            type_allowed_values = ["PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `type`, must be one of { type_allowed_values }"

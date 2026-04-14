@@ -12,7 +12,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MulticloudResourceSummary(object):
     """
-    The multicloud resource, for eg. VMCluster, ExaInfra, and its attributes. The resource and network anchor that represents
+    The properties that define the Multicloud resource.
+    Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+    For more information, see
+    `Multicloud Resources`__.
+
+    __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-resources.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a MulticloudResourceSummary.
@@ -76,6 +81,10 @@ class MulticloudResourceSummary(object):
             The value to assign to the csp_additional_properties property of this MulticloudResourceSummary.
         :type csp_additional_properties: dict(str, str)
 
+        :param resource_additional_properties:
+            The value to assign to the resource_additional_properties property of this MulticloudResourceSummary.
+        :type resource_additional_properties: dict(str, object)
+
         :param time_updated:
             The value to assign to the time_updated property of this MulticloudResourceSummary.
         :type time_updated: datetime
@@ -112,6 +121,7 @@ class MulticloudResourceSummary(object):
             'csp_resource_id': 'str',
             'time_created': 'datetime',
             'csp_additional_properties': 'dict(str, str)',
+            'resource_additional_properties': 'dict(str, object)',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -131,6 +141,7 @@ class MulticloudResourceSummary(object):
             'csp_resource_id': 'cspResourceId',
             'time_created': 'timeCreated',
             'csp_additional_properties': 'cspAdditionalProperties',
+            'resource_additional_properties': 'resourceAdditionalProperties',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
@@ -149,6 +160,7 @@ class MulticloudResourceSummary(object):
         self._csp_resource_id = None
         self._time_created = None
         self._csp_additional_properties = None
+        self._resource_additional_properties = None
         self._time_updated = None
         self._lifecycle_state = None
         self._freeform_tags = None
@@ -183,7 +195,7 @@ class MulticloudResourceSummary(object):
     def resource_display_name(self):
         """
         Gets the resource_display_name of this MulticloudResourceSummary.
-        Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        Endpoint used to retrieve the resource's display name and lifecycle state.
 
 
         :return: The resource_display_name of this MulticloudResourceSummary.
@@ -195,7 +207,7 @@ class MulticloudResourceSummary(object):
     def resource_display_name(self, resource_display_name):
         """
         Sets the resource_display_name of this MulticloudResourceSummary.
-        Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        Endpoint used to retrieve the resource's display name and lifecycle state.
 
 
         :param resource_display_name: The resource_display_name of this MulticloudResourceSummary.
@@ -207,7 +219,7 @@ class MulticloudResourceSummary(object):
     def resource_type(self):
         """
         Gets the resource_type of this MulticloudResourceSummary.
-        What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        Type of resource, such as `VMCluster` or `ExaInfra`,
 
 
         :return: The resource_type of this MulticloudResourceSummary.
@@ -219,7 +231,7 @@ class MulticloudResourceSummary(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this MulticloudResourceSummary.
-        What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        Type of resource, such as `VMCluster` or `ExaInfra`,
 
 
         :param resource_type: The resource_type of this MulticloudResourceSummary.
@@ -231,7 +243,7 @@ class MulticloudResourceSummary(object):
     def compartment_name(self):
         """
         Gets the compartment_name of this MulticloudResourceSummary.
-        Compartment name associated the resource.
+        Name of the compartment associated with the resource.
 
 
         :return: The compartment_name of this MulticloudResourceSummary.
@@ -243,7 +255,7 @@ class MulticloudResourceSummary(object):
     def compartment_name(self, compartment_name):
         """
         Sets the compartment_name of this MulticloudResourceSummary.
-        Compartment name associated the resource.
+        Name of the compartment associated with the resource.
 
 
         :param compartment_name: The compartment_name of this MulticloudResourceSummary.
@@ -255,7 +267,7 @@ class MulticloudResourceSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this MulticloudResourceSummary.
-        Compartment Id of the resource.
+        Id of the compartment associated with the resource.
 
 
         :return: The compartment_id of this MulticloudResourceSummary.
@@ -267,7 +279,7 @@ class MulticloudResourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MulticloudResourceSummary.
-        Compartment Id of the resource.
+        Id of the compartment associated with the resource.
 
 
         :param compartment_id: The compartment_id of this MulticloudResourceSummary.
@@ -279,7 +291,7 @@ class MulticloudResourceSummary(object):
     def vcn_name(self):
         """
         Gets the vcn_name of this MulticloudResourceSummary.
-        Resource Anchor name.
+        Name of the virtual cloud network (VCN) associated with the resource.
 
 
         :return: The vcn_name of this MulticloudResourceSummary.
@@ -291,7 +303,7 @@ class MulticloudResourceSummary(object):
     def vcn_name(self, vcn_name):
         """
         Sets the vcn_name of this MulticloudResourceSummary.
-        Resource Anchor name.
+        Name of the virtual cloud network (VCN) associated with the resource.
 
 
         :param vcn_name: The vcn_name of this MulticloudResourceSummary.
@@ -303,7 +315,7 @@ class MulticloudResourceSummary(object):
     def vcn_id(self):
         """
         Gets the vcn_id of this MulticloudResourceSummary.
-        Id of the Virtual Cloud Network associated to the resource.
+        Id of the virtual cloud network (VCN) associated with the resource.
 
 
         :return: The vcn_id of this MulticloudResourceSummary.
@@ -315,7 +327,7 @@ class MulticloudResourceSummary(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this MulticloudResourceSummary.
-        Id of the Virtual Cloud Network associated to the resource.
+        Id of the virtual cloud network (VCN) associated with the resource.
 
 
         :param vcn_id: The vcn_id of this MulticloudResourceSummary.
@@ -327,7 +339,7 @@ class MulticloudResourceSummary(object):
     def network_anchor_name(self):
         """
         Gets the network_anchor_name of this MulticloudResourceSummary.
-        Name of the network anchor associated to the resource.
+        Name of the network anchor associated with the resource.
 
 
         :return: The network_anchor_name of this MulticloudResourceSummary.
@@ -339,7 +351,7 @@ class MulticloudResourceSummary(object):
     def network_anchor_name(self, network_anchor_name):
         """
         Sets the network_anchor_name of this MulticloudResourceSummary.
-        Name of the network anchor associated to the resource.
+        Name of the network anchor associated with the resource.
 
 
         :param network_anchor_name: The network_anchor_name of this MulticloudResourceSummary.
@@ -351,7 +363,9 @@ class MulticloudResourceSummary(object):
     def network_anchor_id(self):
         """
         Gets the network_anchor_id of this MulticloudResourceSummary.
-        OCID of the Network Anchor
+        The `OCID`__ of the network anchor associated with the resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The network_anchor_id of this MulticloudResourceSummary.
@@ -363,7 +377,9 @@ class MulticloudResourceSummary(object):
     def network_anchor_id(self, network_anchor_id):
         """
         Sets the network_anchor_id of this MulticloudResourceSummary.
-        OCID of the Network Anchor
+        The `OCID`__ of the network anchor associated with the resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param network_anchor_id: The network_anchor_id of this MulticloudResourceSummary.
@@ -375,7 +391,7 @@ class MulticloudResourceSummary(object):
     def csp_resource_id(self):
         """
         Gets the csp_resource_id of this MulticloudResourceSummary.
-        Resource Id that comes from the Multi Cloud Control Plane
+        The resource Id that comes from the Multicloud control plane.
 
 
         :return: The csp_resource_id of this MulticloudResourceSummary.
@@ -387,7 +403,7 @@ class MulticloudResourceSummary(object):
     def csp_resource_id(self, csp_resource_id):
         """
         Sets the csp_resource_id of this MulticloudResourceSummary.
-        Resource Id that comes from the Multi Cloud Control Plane
+        The resource Id that comes from the Multicloud control plane.
 
 
         :param csp_resource_id: The csp_resource_id of this MulticloudResourceSummary.
@@ -429,7 +445,7 @@ class MulticloudResourceSummary(object):
     def csp_additional_properties(self):
         """
         Gets the csp_additional_properties of this MulticloudResourceSummary.
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 
 
         :return: The csp_additional_properties of this MulticloudResourceSummary.
@@ -441,13 +457,37 @@ class MulticloudResourceSummary(object):
     def csp_additional_properties(self, csp_additional_properties):
         """
         Sets the csp_additional_properties of this MulticloudResourceSummary.
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 
 
         :param csp_additional_properties: The csp_additional_properties of this MulticloudResourceSummary.
         :type: dict(str, str)
         """
         self._csp_additional_properties = csp_additional_properties
+
+    @property
+    def resource_additional_properties(self):
+        """
+        Gets the resource_additional_properties of this MulticloudResourceSummary.
+        Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the OCI console.
+
+
+        :return: The resource_additional_properties of this MulticloudResourceSummary.
+        :rtype: dict(str, object)
+        """
+        return self._resource_additional_properties
+
+    @resource_additional_properties.setter
+    def resource_additional_properties(self, resource_additional_properties):
+        """
+        Sets the resource_additional_properties of this MulticloudResourceSummary.
+        Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the OCI console.
+
+
+        :param resource_additional_properties: The resource_additional_properties of this MulticloudResourceSummary.
+        :type: dict(str, object)
+        """
+        self._resource_additional_properties = resource_additional_properties
 
     @property
     def time_updated(self):
@@ -483,7 +523,7 @@ class MulticloudResourceSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this MulticloudResourceSummary.
-        The current state of the multicloud resource.
+        The current state of the Multicloud resource.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -498,7 +538,7 @@ class MulticloudResourceSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this MulticloudResourceSummary.
-        The current state of the multicloud resource.
+        The current state of the Multicloud resource.
 
 
         :param lifecycle_state: The lifecycle_state of this MulticloudResourceSummary.

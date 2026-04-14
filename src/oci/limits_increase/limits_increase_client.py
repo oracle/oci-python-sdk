@@ -180,7 +180,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseItemRequests/{limitsIncreaseItemRequestId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_limits_increase_item_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/CancelLimitsIncreaseItemRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -306,7 +306,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests/{limitsIncreaseRequestId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_limits_increase_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CancelLimitsIncreaseRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -424,7 +424,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests"
         method = "POST"
         operation_name = "create_limits_increase_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/CreateLimitsIncreaseRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -534,7 +534,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests/{limitsIncreaseRequestId}"
         method = "DELETE"
         operation_name = "delete_limits_increase_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/DeleteLimitsIncreaseRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -645,7 +645,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseItemRequests/{limitsIncreaseItemRequestId}"
         method = "GET"
         operation_name = "get_limits_increase_item_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequest/GetLimitsIncreaseItemRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -756,7 +756,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests/{limitsIncreaseRequestId}"
         method = "GET"
         operation_name = "get_limits_increase_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/GetLimitsIncreaseRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -895,7 +895,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseItemRequests"
         method = "GET"
         operation_name = "list_limits_increase_item_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseItemRequestCollection/ListLimitsIncreaseItemRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1055,7 +1055,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseQuestionnaires"
         method = "GET"
         operation_name = "list_limits_increase_questions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseQuestionCollection/ListLimitsIncreaseQuestions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1210,7 +1210,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests"
         method = "GET"
         operation_name = "list_limits_increase_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/ListLimitsIncreaseRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1351,7 +1351,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests/{limitsIncreaseRequestId}"
         method = "PATCH"
         operation_name = "patch_limits_increase_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/PatchLimitsIncreaseRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1475,7 +1475,7 @@ class LimitsIncreaseClient(object):
         resource_path = "/limitsIncreaseRequests/{limitsIncreaseRequestId}"
         method = "PUT"
         operation_name = "update_limits_increase_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits-increase/20251101/LimitsIncreaseRequest/UpdateLimitsIncreaseRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

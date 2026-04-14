@@ -109,7 +109,7 @@ class PatchAction(Action):
     def mode(self):
         """
         Gets the mode of this PatchAction.
-        A string that describes whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold.
 
         Allowed values for this property are: "HOT", "COLD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -124,7 +124,7 @@ class PatchAction(Action):
     def mode(self, mode):
         """
         Sets the mode of this PatchAction.
-        A string that describes whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold.
 
 
         :param mode: The mode of this PatchAction.
@@ -139,7 +139,7 @@ class PatchAction(Action):
     def category(self):
         """
         Gets the category of this PatchAction.
-        patch artifact category
+        Patch artifact category.
 
         Allowed values for this property are: "MONTHLY", "WEEKLY", "ONEOFF", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -154,7 +154,7 @@ class PatchAction(Action):
     def category(self, category):
         """
         Sets the category of this PatchAction.
-        patch artifact category
+        Patch artifact category.
 
 
         :param category: The category of this PatchAction.
@@ -169,7 +169,7 @@ class PatchAction(Action):
     def artifact(self):
         """
         Gets the artifact of this PatchAction.
-        patch bundle name
+        Patch bundle name.
 
 
         :return: The artifact of this PatchAction.
@@ -181,7 +181,7 @@ class PatchAction(Action):
     def artifact(self, artifact):
         """
         Sets the artifact of this PatchAction.
-        patch bundle name
+        Patch bundle name.
 
 
         :param artifact: The artifact of this PatchAction.

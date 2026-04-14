@@ -16,6 +16,14 @@ class CreateIotDomainGroupDetails(object):
     """
 
     #: A constant which can be used with the type property of a CreateIotDomainGroupDetails.
+    #: This constant has a value of "PRODUCTION"
+    TYPE_PRODUCTION = "PRODUCTION"
+
+    #: A constant which can be used with the type property of a CreateIotDomainGroupDetails.
+    #: This constant has a value of "DEVELOPMENT"
+    TYPE_DEVELOPMENT = "DEVELOPMENT"
+
+    #: A constant which can be used with the type property of a CreateIotDomainGroupDetails.
     #: This constant has a value of "STANDARD"
     TYPE_STANDARD = "STANDARD"
 
@@ -34,7 +42,7 @@ class CreateIotDomainGroupDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateIotDomainGroupDetails.
-            Allowed values for this property are: "STANDARD", "LIGHTWEIGHT"
+            Allowed values for this property are: "PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT"
         :type type: str
 
         :param display_name:
@@ -109,10 +117,12 @@ class CreateIotDomainGroupDetails(object):
     def type(self):
         """
         Gets the type of this CreateIotDomainGroupDetails.
-        Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),
-        making it suitable for development and testing. STANDARD is recommended for production.
+        Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO),
+        making it suitable for development and testing. PRODUCTION is recommended for production workloads.
+        LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed
+        in a future release.
 
-        Allowed values for this property are: "STANDARD", "LIGHTWEIGHT"
+        Allowed values for this property are: "PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT"
 
 
         :return: The type of this CreateIotDomainGroupDetails.
@@ -124,14 +134,16 @@ class CreateIotDomainGroupDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateIotDomainGroupDetails.
-        Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),
-        making it suitable for development and testing. STANDARD is recommended for production.
+        Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO),
+        making it suitable for development and testing. PRODUCTION is recommended for production workloads.
+        LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed
+        in a future release.
 
 
         :param type: The type of this CreateIotDomainGroupDetails.
         :type: str
         """
-        allowed_values = ["STANDARD", "LIGHTWEIGHT"]
+        allowed_values = ["PRODUCTION", "DEVELOPMENT", "STANDARD", "LIGHTWEIGHT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

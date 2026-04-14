@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.171.0 - 2026-04-14
+====================
+
+Added 
+----- 
+* Support for filesystem snapshot locking for ransomware protection in the File Storage service 
+* Support for creating refresh-able metadata clones in Autonomous Database in the Database service 
+* Support for cross-region Data Guard for Azure, GCP, and AWS KMS-based databases in the Database MultiCloud service 
+* Support for multicloud policies API and OMHub Resource View and Policy Hub UI features in the Multicloud service 
+* Support for Development and Production domain group types in place of Lightweight and Standard in the OCI Internet of Things (OCI IoT) service 
+* Support for Fusion Data Intelligence (FDI) self-service integration in the Fusion Application as a Service 
+* Support for implementing Customer self-service feature to add egress ports in the Fusion Application as a Service 
+* Support for a new flag to the create and update capacity reservation APIs in the Compute service 
+* Support for alarms and notifications in the OCI Control Center service  
+
+Breaking 
+-------- 
+* Parameter `compartment_id_in_subtree` was removed from the model `OmhubNetworkAnchorClient ` in the MultiCloud service  
+
+====================
 2.170.0 - 2026-04-07
 ====================
 

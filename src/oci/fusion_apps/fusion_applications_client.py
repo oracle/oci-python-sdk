@@ -3904,7 +3904,7 @@ class FusionApplicationsClient(object):
         :param str service_instance_type: (optional)
             A filter that returns all resources that match the specified lifecycle state.
 
-            Allowed values are: "DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "VBCS", "VISUAL_BUILDER_STUDIO"
+            Allowed values are: "DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "FUSION_DATA_INTELLIGENCE", "VBCS", "VISUAL_BUILDER_STUDIO"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -3991,7 +3991,7 @@ class FusionApplicationsClient(object):
                 )
 
         if 'service_instance_type' in kwargs:
-            service_instance_type_allowed_values = ["DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "VBCS", "VISUAL_BUILDER_STUDIO"]
+            service_instance_type_allowed_values = ["DIGITAL_ASSISTANT", "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE", "FUSION_DATA_INTELLIGENCE", "VBCS", "VISUAL_BUILDER_STUDIO"]
             if kwargs['service_instance_type'] not in service_instance_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `service_instance_type`, must be one of { service_instance_type_allowed_values }"

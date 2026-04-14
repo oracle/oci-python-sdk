@@ -165,7 +165,7 @@ class GetEnrichmentJobClient(object):
         resource_path = "/semanticStores/{semanticStoreId}/enrichmentJobs/{enrichmentJobId}"
         method = "GET"
         operation_name = "get_enrichment_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GetEnrichmentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

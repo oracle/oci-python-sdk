@@ -8,12 +8,16 @@ Multicloud
 
     oci.multicloud.MetadataClient
     oci.multicloud.MultiCloudsMetadataClient
+    oci.multicloud.MulticloudAlertsClient
+    oci.multicloud.MulticloudPoliciesClient
     oci.multicloud.MulticloudResourcesClient
     oci.multicloud.MulticloudsubscriptionsClient
     oci.multicloud.OmhubNetworkAnchorClient
     oci.multicloud.OmhubResourceAnchorClient
     oci.multicloud.MetadataClientCompositeOperations
     oci.multicloud.MultiCloudsMetadataClientCompositeOperations
+    oci.multicloud.MulticloudAlertsClientCompositeOperations
+    oci.multicloud.MulticloudPoliciesClientCompositeOperations
     oci.multicloud.MulticloudResourcesClientCompositeOperations
     oci.multicloud.MulticloudsubscriptionsClientCompositeOperations
     oci.multicloud.OmhubNetworkAnchorClientCompositeOperations
@@ -46,6 +50,12 @@ Multicloud
     oci.multicloud.models.MultiCloudMetadata
     oci.multicloud.models.MultiCloudMetadataCollection
     oci.multicloud.models.MultiCloudMetadataSummary
+    oci.multicloud.models.MulticloudAlert
+    oci.multicloud.models.MulticloudAlertCollection
+    oci.multicloud.models.MulticloudAlertSummary
+    oci.multicloud.models.MulticloudPolicy
+    oci.multicloud.models.MulticloudPolicyCollection
+    oci.multicloud.models.MulticloudPolicySummary
     oci.multicloud.models.MulticloudResourceCollection
     oci.multicloud.models.MulticloudResourceSummary
     oci.multicloud.models.MulticloudSubscriptionCollection

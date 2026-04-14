@@ -169,6 +169,10 @@ class SnapshotSchedule(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type month: str
 
+        :param lock_duration_details:
+            The value to assign to the lock_duration_details property of this SnapshotSchedule.
+        :type lock_duration_details: oci.file_storage.models.LockDurationDetails
+
         """
         self.swagger_types = {
             'schedule_prefix': 'str',
@@ -179,7 +183,8 @@ class SnapshotSchedule(object):
             'hour_of_day': 'int',
             'day_of_week': 'str',
             'day_of_month': 'int',
-            'month': 'str'
+            'month': 'str',
+            'lock_duration_details': 'LockDurationDetails'
         }
         self.attribute_map = {
             'schedule_prefix': 'schedulePrefix',
@@ -190,7 +195,8 @@ class SnapshotSchedule(object):
             'hour_of_day': 'hourOfDay',
             'day_of_week': 'dayOfWeek',
             'day_of_month': 'dayOfMonth',
-            'month': 'month'
+            'month': 'month',
+            'lock_duration_details': 'lockDurationDetails'
         }
         self._schedule_prefix = None
         self._time_schedule_start = None
@@ -201,6 +207,7 @@ class SnapshotSchedule(object):
         self._day_of_week = None
         self._day_of_month = None
         self._month = None
+        self._lock_duration_details = None
 
     @property
     def schedule_prefix(self):
@@ -471,6 +478,26 @@ class SnapshotSchedule(object):
         if not value_allowed_none_or_none_sentinel(month, allowed_values):
             month = 'UNKNOWN_ENUM_VALUE'
         self._month = month
+
+    @property
+    def lock_duration_details(self):
+        """
+        Gets the lock_duration_details of this SnapshotSchedule.
+
+        :return: The lock_duration_details of this SnapshotSchedule.
+        :rtype: oci.file_storage.models.LockDurationDetails
+        """
+        return self._lock_duration_details
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, lock_duration_details):
+        """
+        Sets the lock_duration_details of this SnapshotSchedule.
+
+        :param lock_duration_details: The lock_duration_details of this SnapshotSchedule.
+        :type: oci.file_storage.models.LockDurationDetails
+        """
+        self._lock_duration_details = lock_duration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

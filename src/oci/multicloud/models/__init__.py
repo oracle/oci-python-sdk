@@ -24,6 +24,12 @@ from .gcp_cloud_service_provider_metadata_item import GcpCloudServiceProviderMet
 from .multi_cloud_metadata import MultiCloudMetadata
 from .multi_cloud_metadata_collection import MultiCloudMetadataCollection
 from .multi_cloud_metadata_summary import MultiCloudMetadataSummary
+from .multicloud_alert import MulticloudAlert
+from .multicloud_alert_collection import MulticloudAlertCollection
+from .multicloud_alert_summary import MulticloudAlertSummary
+from .multicloud_policy import MulticloudPolicy
+from .multicloud_policy_collection import MulticloudPolicyCollection
+from .multicloud_policy_summary import MulticloudPolicySummary
 from .multicloud_resource_collection import MulticloudResourceCollection
 from .multicloud_resource_summary import MulticloudResourceSummary
 from .multicloud_subscription_collection import MulticloudSubscriptionCollection
@@ -61,6 +67,12 @@ multicloud_type_mapping = {
     "MultiCloudMetadata": MultiCloudMetadata,
     "MultiCloudMetadataCollection": MultiCloudMetadataCollection,
     "MultiCloudMetadataSummary": MultiCloudMetadataSummary,
+    "MulticloudAlert": MulticloudAlert,
+    "MulticloudAlertCollection": MulticloudAlertCollection,
+    "MulticloudAlertSummary": MulticloudAlertSummary,
+    "MulticloudPolicy": MulticloudPolicy,
+    "MulticloudPolicyCollection": MulticloudPolicyCollection,
+    "MulticloudPolicySummary": MulticloudPolicySummary,
     "MulticloudResourceCollection": MulticloudResourceCollection,
     "MulticloudResourceSummary": MulticloudResourceSummary,
     "MulticloudSubscriptionCollection": MulticloudSubscriptionCollection,

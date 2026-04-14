@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalLocationMappingMetadatumSummary(object):
     """
-    Flat Map of CSP Region -> CSP-Physical-AZ -> OCI Site Group
-    All fields in this object has immutable mappings. Please don't add any field that case change
-    for any customer as this is only for Oracle Cloud Infrastructure internal service use.
+    Flat Map of CSP Region -> CSP-Physical-AZ -> OCI Site Group.
     """
 
     def __init__(self, **kwargs):

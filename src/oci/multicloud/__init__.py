@@ -11,6 +11,10 @@ from .metadata_client import MetadataClient
 from .metadata_client_composite_operations import MetadataClientCompositeOperations
 from .multi_clouds_metadata_client import MultiCloudsMetadataClient
 from .multi_clouds_metadata_client_composite_operations import MultiCloudsMetadataClientCompositeOperations
+from .multicloud_alerts_client import MulticloudAlertsClient
+from .multicloud_alerts_client_composite_operations import MulticloudAlertsClientCompositeOperations
+from .multicloud_policies_client import MulticloudPoliciesClient
+from .multicloud_policies_client_composite_operations import MulticloudPoliciesClientCompositeOperations
 from .multicloud_resources_client import MulticloudResourcesClient
 from .multicloud_resources_client_composite_operations import MulticloudResourcesClientCompositeOperations
 from .multicloudsubscriptions_client import MulticloudsubscriptionsClient
@@ -21,4 +25,4 @@ from .omhub_resource_anchor_client import OmhubResourceAnchorClient
 from .omhub_resource_anchor_client_composite_operations import OmhubResourceAnchorClientCompositeOperations
 from . import models
 
-__all__ = ["MetadataClient", "MetadataClientCompositeOperations", "MultiCloudsMetadataClient", "MultiCloudsMetadataClientCompositeOperations", "MulticloudResourcesClient", "MulticloudResourcesClientCompositeOperations", "MulticloudsubscriptionsClient", "MulticloudsubscriptionsClientCompositeOperations", "OmhubNetworkAnchorClient", "OmhubNetworkAnchorClientCompositeOperations", "OmhubResourceAnchorClient", "OmhubResourceAnchorClientCompositeOperations", "models"]
+__all__ = ["MetadataClient", "MetadataClientCompositeOperations", "MultiCloudsMetadataClient", "MultiCloudsMetadataClientCompositeOperations", "MulticloudAlertsClient", "MulticloudAlertsClientCompositeOperations", "MulticloudPoliciesClient", "MulticloudPoliciesClientCompositeOperations", "MulticloudResourcesClient", "MulticloudResourcesClientCompositeOperations", "MulticloudsubscriptionsClient", "MulticloudsubscriptionsClientCompositeOperations", "OmhubNetworkAnchorClient", "OmhubNetworkAnchorClientCompositeOperations", "OmhubResourceAnchorClient", "OmhubResourceAnchorClientCompositeOperations", "models"]

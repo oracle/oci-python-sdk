@@ -179,7 +179,7 @@ class CancelEnrichmentJobClient(object):
         resource_path = "/semanticStores/{semanticStoreId}/enrichmentJobs/{enrichmentJobId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_enrichment_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/CancelEnrichmentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

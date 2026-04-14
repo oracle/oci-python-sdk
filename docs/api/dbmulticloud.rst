@@ -99,6 +99,11 @@ Dbmulticloud
     oci.dbmulticloud.models.RefreshOracleDbAwsKeyDetails
     oci.dbmulticloud.models.RefreshOracleDbAzureVaultDetails
     oci.dbmulticloud.models.RefreshOracleDbGcpKeyRingDetails
+    oci.dbmulticloud.models.ReplicateOracleDbAwsKeyDetails
+    oci.dbmulticloud.models.ReplicateOracleDbAzureVaultDetails
+    oci.dbmulticloud.models.ReplicateOracleDbGcpKeyRingDetails
+    oci.dbmulticloud.models.ReplicationDetails
+    oci.dbmulticloud.models.ReplicationMetadata
     oci.dbmulticloud.models.Resources
     oci.dbmulticloud.models.ServiceRoleDetail
     oci.dbmulticloud.models.ServiceRoleDetails

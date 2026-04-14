@@ -96,6 +96,14 @@ class Snapshot(object):
             The value to assign to the locks property of this Snapshot.
         :type locks: list[oci.file_storage.models.ResourceLock]
 
+        :param lock_duration_details:
+            The value to assign to the lock_duration_details property of this Snapshot.
+        :type lock_duration_details: oci.file_storage.models.LockDurationDetails
+
+        :param time_locked:
+            The value to assign to the time_locked property of this Snapshot.
+        :type time_locked: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Snapshot.
         :type freeform_tags: dict(str, str)
@@ -129,6 +137,8 @@ class Snapshot(object):
             'is_clone_source': 'bool',
             'lifecycle_details': 'str',
             'locks': 'list[ResourceLock]',
+            'lock_duration_details': 'LockDurationDetails',
+            'time_locked': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -147,6 +157,8 @@ class Snapshot(object):
             'is_clone_source': 'isCloneSource',
             'lifecycle_details': 'lifecycleDetails',
             'locks': 'locks',
+            'lock_duration_details': 'lockDurationDetails',
+            'time_locked': 'timeLocked',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -164,6 +176,8 @@ class Snapshot(object):
         self._is_clone_source = None
         self._lifecycle_details = None
         self._locks = None
+        self._lock_duration_details = None
+        self._time_locked = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -511,6 +525,56 @@ class Snapshot(object):
         :type: list[oci.file_storage.models.ResourceLock]
         """
         self._locks = locks
+
+    @property
+    def lock_duration_details(self):
+        """
+        Gets the lock_duration_details of this Snapshot.
+
+        :return: The lock_duration_details of this Snapshot.
+        :rtype: oci.file_storage.models.LockDurationDetails
+        """
+        return self._lock_duration_details
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, lock_duration_details):
+        """
+        Sets the lock_duration_details of this Snapshot.
+
+        :param lock_duration_details: The lock_duration_details of this Snapshot.
+        :type: oci.file_storage.models.LockDurationDetails
+        """
+        self._lock_duration_details = lock_duration_details
+
+    @property
+    def time_locked(self):
+        """
+        Gets the time_locked of this Snapshot.
+        The date and time as per `RFC 3339`__ when this snapshot was locked.
+        It is a read-only property because the user should not be able to set it, it is set by our service.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_locked of this Snapshot.
+        :rtype: datetime
+        """
+        return self._time_locked
+
+    @time_locked.setter
+    def time_locked(self, time_locked):
+        """
+        Sets the time_locked of this Snapshot.
+        The date and time as per `RFC 3339`__ when this snapshot was locked.
+        It is a read-only property because the user should not be able to set it, it is set by our service.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_locked: The time_locked of this Snapshot.
+        :type: datetime
+        """
+        self._time_locked = time_locked
 
     @property
     def freeform_tags(self):

@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class OmhubNetworkAnchorClient(object):
     """
-    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](/iaas/Content/multicloud-hub/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -126,7 +126,11 @@ class OmhubNetworkAnchorClient(object):
 
     def get_network_anchor(self, network_anchor_id, subscription_service_name, subscription_id, **kwargs):
         """
-        Gets information about a NetworkAnchor.
+        Gets details for the specified network anchor. The subscription OCID and service name are required.
+        For more information, see
+        `Getting a Network Anchor's Details`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm
 
 
         :param str network_anchor_id: (required)
@@ -135,7 +139,7 @@ class OmhubNetworkAnchorClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
-            The subscription service name of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
@@ -151,7 +155,7 @@ class OmhubNetworkAnchorClient(object):
             underscore, and dash.
 
         :param str external_location: (optional)
-            The Cloud Service Provider region.
+            The cloud service provider region.
 
         :param bool should_fetch_vcn_name: (optional)
             Whether to fetch and include the vcn display name, which may introduce additional latency.
@@ -270,12 +274,17 @@ class OmhubNetworkAnchorClient(object):
 
     def list_network_anchors(self, **kwargs):
         """
-        Gets a list of NetworkAnchors.
+        Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+        Details listed for each resource include name, state, VCN, and ODB network ID.
+        For more information, see
+        `Listing Network Anchors`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm
 
 
         :param str compartment_id: (optional)
             The `OCID`__ of the Multicloud base compartment or sub-compartment in which to list resources.
-            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -285,7 +294,7 @@ class OmhubNetworkAnchorClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (optional)
-            The subscription service name of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
@@ -299,13 +308,10 @@ class OmhubNetworkAnchorClient(object):
             A filter to return only resources that match the given display name exactly.
 
         :param str external_location: (optional)
-            The Cloud Service Provider region.
+            The cloud service provider region.
 
         :param str network_anchor_oci_subnet_id: (optional)
             A filter to return only NetworkAnchor resources that match the given OCI subnet Id.
-
-        :param bool compartment_id_in_subtree: (optional)
-            If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
 
         :param str network_anchor_oci_vcn_id: (optional)
             A filter to return only NetworkAnchor resources that match the given OCI Vcn Id.
@@ -334,6 +340,7 @@ class OmhubNetworkAnchorClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 
@@ -390,7 +397,6 @@ class OmhubNetworkAnchorClient(object):
             "display_name",
             "external_location",
             "network_anchor_oci_subnet_id",
-            "compartment_id_in_subtree",
             "network_anchor_oci_vcn_id",
             "id",
             "limit",
@@ -441,7 +447,6 @@ class OmhubNetworkAnchorClient(object):
             "displayName": kwargs.get("display_name", missing),
             "externalLocation": kwargs.get("external_location", missing),
             "networkAnchorOciSubnetId": kwargs.get("network_anchor_oci_subnet_id", missing),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "networkAnchorOciVcnId": kwargs.get("network_anchor_oci_vcn_id", missing),
             "id": kwargs.get("id", missing),
             "limit": kwargs.get("limit", missing),

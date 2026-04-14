@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class OmhubResourceAnchorClient(object):
     """
-    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](/iaas/Content/multicloud-hub/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -126,16 +126,20 @@ class OmhubResourceAnchorClient(object):
 
     def get_resource_anchor(self, resource_anchor_id, subscription_service_name, subscription_id, **kwargs):
         """
-        Gets information about a ResourceAnchor.
+        Gets details for the specified resource anchor. The subscription OCID and service name are required.
+        For more information, see
+        `Getting a Resource Anchor's Details (OCI)`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm
 
 
         :param str resource_anchor_id: (required)
-            The `OCID`__ of the ResourceAnchor.
+            The `OCID`__ of the resource anchor.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str subscription_service_name: (required)
-            The subscription service name of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 
@@ -151,7 +155,8 @@ class OmhubResourceAnchorClient(object):
             underscore, and dash.
 
         :param bool should_fetch_compartment_name: (optional)
-            Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+            Whether to fetch and include the compartment name.
+            Setting this field to `true` might introduce additional latency.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -265,12 +270,17 @@ class OmhubResourceAnchorClient(object):
 
     def list_resource_anchors(self, **kwargs):
         """
-        Gets a list of ResourceAnchors.
+        Lists resource anchors in the specified Multicloud subscription.
+        Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+        For more information, see
+        `Listing Resource Anchors`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm
 
 
         :param str compartment_id: (optional)
             The `OCID`__ of the Multicloud base compartment or sub-compartment in which to list resources.
-            A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+            A Multicloud base compartment is an OCI compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -289,7 +299,7 @@ class OmhubResourceAnchorClient(object):
             A filter to return only resources that match the given display name exactly.
 
         :param str id: (optional)
-            The `OCID`__ of the ResourceAnchor.
+            The `OCID`__ of the resource anchor.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -309,6 +319,7 @@ class OmhubResourceAnchorClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 
@@ -319,13 +330,14 @@ class OmhubResourceAnchorClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param bool is_compartment_id_in_subtree: (optional)
-            Check the sub-compartments of a given compartmentId
+            Check the sub-compartments of a given `compartmentId`.
 
         :param bool should_fetch_compartment_name: (optional)
-            Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+            Whether to fetch and include the compartment name.
+            Setting this field to `true` might introduce additional latency.
 
         :param str subscription_service_name: (optional)
-            The subscription service name of the Cloud Service Provider.
+            The cloud service provider.
 
             Allowed values are: "ORACLEDBATAZURE", "ORACLEDBATGOOGLE", "ORACLEDBATAWS"
 

@@ -12,7 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MultiCloudMetadataCollection(object):
     """
-    Multicloud metadata information across clouds.
+    Multicloud metadata for Multicloud subscriptions in the indicated compartment.
+    For more information, see
+    `Listing Multicloud Metadata for a Subscription`__.
+
+    __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-subscription-metadata.htm
     """
 
     def __init__(self, **kwargs):

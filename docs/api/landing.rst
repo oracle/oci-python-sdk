@@ -185,6 +185,8 @@ API Reference
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Multi Cloud Resource Discovery <dbmulticloud/client/oci.dbmulticloud.MultiCloudResourceDiscoveryClient>`
 * :doc:`Multi Clouds Metadata <multicloud/client/oci.multicloud.MultiCloudsMetadataClient>`
+* :doc:`Multicloud Alerts <multicloud/client/oci.multicloud.MulticloudAlertsClient>`
+* :doc:`Multicloud Policies <multicloud/client/oci.multicloud.MulticloudPoliciesClient>`
 * :doc:`Multicloud Resources <multicloud/client/oci.multicloud.MulticloudResourcesClient>`
 * :doc:`Multicloudsubscriptions <multicloud/client/oci.multicloud.MulticloudsubscriptionsClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
@@ -196,6 +198,7 @@ API Reference
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Ocb Agent Svc <cloud_bridge/client/oci.cloud_bridge.OcbAgentSvcClient>`
 * :doc:`Occ Demand Signal <demand_signal/client/oci.demand_signal.OccDemandSignalClient>`
+* :doc:`Occ Metric Alarm <demand_signal/client/oci.demand_signal.OccMetricAlarmClient>`
 * :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oci Cache Config Set <redis/client/oci.redis.OciCacheConfigSetClient>`

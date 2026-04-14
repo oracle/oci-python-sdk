@@ -27,6 +27,14 @@ class InstanceReservationShapeConfigDetails(object):
     __ https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
     """
 
+    #: A constant which can be used with the resource_management property of a InstanceReservationShapeConfigDetails.
+    #: This constant has a value of "DYNAMIC"
+    RESOURCE_MANAGEMENT_DYNAMIC = "DYNAMIC"
+
+    #: A constant which can be used with the resource_management property of a InstanceReservationShapeConfigDetails.
+    #: This constant has a value of "STATIC"
+    RESOURCE_MANAGEMENT_STATIC = "STATIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstanceReservationShapeConfigDetails object with values from keyword arguments.
@@ -40,17 +48,26 @@ class InstanceReservationShapeConfigDetails(object):
             The value to assign to the memory_in_gbs property of this InstanceReservationShapeConfigDetails.
         :type memory_in_gbs: float
 
+        :param resource_management:
+            The value to assign to the resource_management property of this InstanceReservationShapeConfigDetails.
+            Allowed values for this property are: "DYNAMIC", "STATIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_management: str
+
         """
         self.swagger_types = {
             'ocpus': 'float',
-            'memory_in_gbs': 'float'
+            'memory_in_gbs': 'float',
+            'resource_management': 'str'
         }
         self.attribute_map = {
             'ocpus': 'ocpus',
-            'memory_in_gbs': 'memoryInGBs'
+            'memory_in_gbs': 'memoryInGBs',
+            'resource_management': 'resourceManagement'
         }
         self._ocpus = None
         self._memory_in_gbs = None
+        self._resource_management = None
 
     @property
     def ocpus(self):
@@ -99,6 +116,36 @@ class InstanceReservationShapeConfigDetails(object):
         :type: float
         """
         self._memory_in_gbs = memory_in_gbs
+
+    @property
+    def resource_management(self):
+        """
+        Gets the resource_management of this InstanceReservationShapeConfigDetails.
+        This field is reserved for internal use.
+
+        Allowed values for this property are: "DYNAMIC", "STATIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_management of this InstanceReservationShapeConfigDetails.
+        :rtype: str
+        """
+        return self._resource_management
+
+    @resource_management.setter
+    def resource_management(self, resource_management):
+        """
+        Sets the resource_management of this InstanceReservationShapeConfigDetails.
+        This field is reserved for internal use.
+
+
+        :param resource_management: The resource_management of this InstanceReservationShapeConfigDetails.
+        :type: str
+        """
+        allowed_values = ["DYNAMIC", "STATIC"]
+        if not value_allowed_none_or_none_sentinel(resource_management, allowed_values):
+            resource_management = 'UNKNOWN_ENUM_VALUE'
+        self._resource_management = resource_management
 
     def __repr__(self):
         return formatted_flat_dict(self)

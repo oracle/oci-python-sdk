@@ -179,7 +179,7 @@ class GenerateSqlFromNlJobClient(object):
         resource_path = "/semanticStores/{semanticStoreId}/actions/generateSqlFromNl"
         method = "POST"
         operation_name = "generate_sql_from_nl"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/GenerateSqlFromNlJob/GenerateSqlFromNl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

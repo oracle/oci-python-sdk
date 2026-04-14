@@ -38,7 +38,7 @@ requires = [
     "pytz>=2016.10",
     "circuitbreaker>=1.3.1,<2.0.0; python_version <= '3.6'",
     "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'",
-    "urllib3==1.26.2; python_version < '3.10.0'",
+    "urllib3==1.26.20; python_version < '3.10.0'",
     "urllib3>=2.6.3; python_version >= '3.10.0'"
 ]
 

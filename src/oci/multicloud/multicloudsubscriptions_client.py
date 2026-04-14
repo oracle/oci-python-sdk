@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class MulticloudsubscriptionsClient(object):
     """
-    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see <link to docs>.
+    Use the Oracle Multicloud API to retrieve resource anchors and network anchors, and the metadata mappings related a Cloud Service Provider. For more information, see [Oracle Multicloud Hub](/iaas/Content/multicloud-hub/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -126,7 +126,10 @@ class MulticloudsubscriptionsClient(object):
 
     def list_multicloud_subscriptions(self, compartment_id, **kwargs):
         """
-        Gets a list of Multicloud Resources.
+        Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+        `Listing Multicloud Subscriptions`__.
+
+        __ https://docs.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm
 
 
         :param str compartment_id: (required)
@@ -165,6 +168,7 @@ class MulticloudsubscriptionsClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+            In general, the sort order is `DESC` when sorting by time and `ASC` otherwise.
 
             Allowed values are: "ASC", "DESC"
 

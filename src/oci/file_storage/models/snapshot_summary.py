@@ -74,6 +74,10 @@ class SnapshotSummary(object):
             The value to assign to the locks property of this SnapshotSummary.
         :type locks: list[oci.file_storage.models.ResourceLock]
 
+        :param lock_duration_details:
+            The value to assign to the lock_duration_details property of this SnapshotSummary.
+        :type lock_duration_details: oci.file_storage.models.LockDurationDetails
+
         :param snapshot_type:
             The value to assign to the snapshot_type property of this SnapshotSummary.
             Allowed values for this property are: "USER", "POLICY_BASED", "REPLICATION", 'UNKNOWN_ENUM_VALUE'.
@@ -120,6 +124,7 @@ class SnapshotSummary(object):
             'name': 'str',
             'time_created': 'datetime',
             'locks': 'list[ResourceLock]',
+            'lock_duration_details': 'LockDurationDetails',
             'snapshot_type': 'str',
             'snapshot_time': 'datetime',
             'expiration_time': 'datetime',
@@ -137,6 +142,7 @@ class SnapshotSummary(object):
             'name': 'name',
             'time_created': 'timeCreated',
             'locks': 'locks',
+            'lock_duration_details': 'lockDurationDetails',
             'snapshot_type': 'snapshotType',
             'snapshot_time': 'snapshotTime',
             'expiration_time': 'expirationTime',
@@ -153,6 +159,7 @@ class SnapshotSummary(object):
         self._name = None
         self._time_created = None
         self._locks = None
+        self._lock_duration_details = None
         self._snapshot_type = None
         self._snapshot_time = None
         self._expiration_time = None
@@ -338,6 +345,26 @@ class SnapshotSummary(object):
         :type: list[oci.file_storage.models.ResourceLock]
         """
         self._locks = locks
+
+    @property
+    def lock_duration_details(self):
+        """
+        Gets the lock_duration_details of this SnapshotSummary.
+
+        :return: The lock_duration_details of this SnapshotSummary.
+        :rtype: oci.file_storage.models.LockDurationDetails
+        """
+        return self._lock_duration_details
+
+    @lock_duration_details.setter
+    def lock_duration_details(self, lock_duration_details):
+        """
+        Sets the lock_duration_details of this SnapshotSummary.
+
+        :param lock_duration_details: The lock_duration_details of this SnapshotSummary.
+        :type: oci.file_storage.models.LockDurationDetails
+        """
+        self._lock_duration_details = lock_duration_details
 
     @property
     def snapshot_type(self):
