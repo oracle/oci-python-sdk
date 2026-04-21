@@ -155,7 +155,7 @@ class AmazonS3IcebergStorageSummary(IcebergStorageSummary):
     @property
     def secret_access_key_secret_id(self):
         """
-        **[Required]** Gets the secret_access_key_secret_id of this AmazonS3IcebergStorageSummary.
+        Gets the secret_access_key_secret_id of this AmazonS3IcebergStorageSummary.
         The `OCID`__ of the Secret where the Secret Access Key is stored.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm

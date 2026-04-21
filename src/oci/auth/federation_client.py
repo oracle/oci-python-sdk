@@ -99,6 +99,10 @@ class X509FederationClient(object):
         :param bool log_requests: (optional)
         log_request if set to True, will log the request url and response data when retrieving
         the token from the federation endpoint.
+
+        :param list[str] federation_fallback_endpoints: (optional)
+            Optional fallback Auth Service endpoints. These are attempted only when the
+            token request fails due to a connection-level request exception.
         """
 
         kwarg_keys = kwargs.keys()
@@ -114,6 +118,7 @@ class X509FederationClient(object):
             raise TypeError('The following required arguments were not provided: {}'.format(', '.join(missing_keys)))
 
         self.federation_endpoint = kwargs['federation_endpoint']
+        self.federation_fallback_endpoints = kwargs.get('federation_fallback_endpoints') or []
         self.tenancy_id = kwargs['tenancy_id']
         self.session_key_supplier = kwargs['session_key_supplier']
         self.leaf_certificate_retriever = kwargs['leaf_certificate_retriever']
@@ -226,8 +231,30 @@ class X509FederationClient(object):
         fingerprint = ":".join("{:02X}".format(ch) for ch in bytearray(certificate.fingerprint(SHA1())))
         signer = AuthTokenRequestSigner(self.tenancy_id, fingerprint, self.leaf_certificate_retriever)
 
-        self.logger.debug("Requesting token from : %s " % self.federation_endpoint)
-        response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60), headers={constants.HEADER_USER_AGENT: self.user_agent})
+        auth_endpoints_to_try = [self.federation_endpoint]
+        for fallback_endpoint in self.federation_fallback_endpoints:
+            if fallback_endpoint and fallback_endpoint not in auth_endpoints_to_try:
+                auth_endpoints_to_try.append(fallback_endpoint)
+
+        response = None
+        last_request_exception = None
+        selected_federation_endpoint = None
+
+        for endpoint in auth_endpoints_to_try:
+            self.logger.debug("Requesting token from: %s", endpoint)
+            try:
+                response = self.requests_session.post(endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60), headers={constants.HEADER_USER_AGENT: self.user_agent})
+                selected_federation_endpoint = endpoint
+                break
+            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as request_exception:
+                last_request_exception = request_exception
+                self.logger.debug("Request to federation endpoint failed for %s due to: %s", endpoint, request_exception)
+
+        if response is None and last_request_exception is not None:
+            raise last_request_exception
+        if response is None:
+            raise RuntimeError("Unable to retrieve a response from all federation endpoints")
+
         self.logger.debug("Receiving token response......\n{}\n".format(pprint.pformat(
             {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
                 "reason": response.reason}, indent=2)))
@@ -236,7 +263,7 @@ class X509FederationClient(object):
         try:
             parsed_response = response.json()
         except ValueError:
-            error_text = 'Unable to parse response from auth service ({}): {}'.format(self.federation_endpoint, response.text)
+            error_text = 'Unable to parse response from auth service ({}): {}'.format(selected_federation_endpoint, response.text)
 
             # If the response was a 2xx but unparseable, raise it straight away because it implies a potential service issue. If
             # we have a non-2xx but it is not parseable that is a more ambiguous scenario (e.g. could have been an issue with a
@@ -277,7 +304,7 @@ class X509FederationClient(object):
             if 'token' in parsed_response:
                 self.security_token = SecurityTokenContainer(self.session_key_supplier, response.json()['token'])
             else:
-                raise RuntimeError('Could not find token in response from auth service ({}): {}'.format(self.federation_endpoint, parsed_response))
+                raise RuntimeError('Could not find token in response from auth service ({}): {}'.format(selected_federation_endpoint, parsed_response))
 
 
 class AuthTokenRequestSigner(oci.signer.AbstractBaseSigner):

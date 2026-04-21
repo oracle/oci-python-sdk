@@ -1,9 +1,9 @@
-UpdateComputeHostsDetails
-=========================
+UpdateComputeHostDetails
+========================
 
 .. currentmodule:: oci.core.models
 
-.. autoclass:: UpdateComputeHostsDetails
+.. autoclass:: UpdateComputeHostDetails
     :show-inheritance:
     :special-members: __init__
     :members:

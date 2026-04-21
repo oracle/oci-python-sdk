@@ -142,6 +142,18 @@ class VmCluster(object):
             The value to assign to the is_sparse_diskgroup_enabled property of this VmCluster.
         :type is_sparse_diskgroup_enabled: bool
 
+        :param data_storage_percentage:
+            The value to assign to the data_storage_percentage property of this VmCluster.
+        :type data_storage_percentage: int
+
+        :param reco_storage_percentage:
+            The value to assign to the reco_storage_percentage property of this VmCluster.
+        :type reco_storage_percentage: int
+
+        :param sparse_storage_percentage:
+            The value to assign to the sparse_storage_percentage property of this VmCluster.
+        :type sparse_storage_percentage: int
+
         :param vm_cluster_network_id:
             The value to assign to the vm_cluster_network_id property of this VmCluster.
         :type vm_cluster_network_id: str
@@ -275,6 +287,9 @@ class VmCluster(object):
             'is_local_backup_enabled': 'bool',
             'exadata_infrastructure_id': 'str',
             'is_sparse_diskgroup_enabled': 'bool',
+            'data_storage_percentage': 'int',
+            'reco_storage_percentage': 'int',
+            'sparse_storage_percentage': 'int',
             'vm_cluster_network_id': 'str',
             'cpus_enabled': 'int',
             'ocpus_enabled': 'float',
@@ -315,6 +330,9 @@ class VmCluster(object):
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'is_sparse_diskgroup_enabled': 'isSparseDiskgroupEnabled',
+            'data_storage_percentage': 'dataStoragePercentage',
+            'reco_storage_percentage': 'recoStoragePercentage',
+            'sparse_storage_percentage': 'sparseStoragePercentage',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'cpus_enabled': 'cpusEnabled',
             'ocpus_enabled': 'ocpusEnabled',
@@ -354,6 +372,9 @@ class VmCluster(object):
         self._is_local_backup_enabled = None
         self._exadata_infrastructure_id = None
         self._is_sparse_diskgroup_enabled = None
+        self._data_storage_percentage = None
+        self._reco_storage_percentage = None
+        self._sparse_storage_percentage = None
         self._vm_cluster_network_id = None
         self._cpus_enabled = None
         self._ocpus_enabled = None
@@ -671,6 +692,90 @@ class VmCluster(object):
         :type: bool
         """
         self._is_sparse_diskgroup_enabled = is_sparse_diskgroup_enabled
+
+    @property
+    def data_storage_percentage(self):
+        """
+        Gets the data_storage_percentage of this VmCluster.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The data_storage_percentage of this VmCluster.
+        :rtype: int
+        """
+        return self._data_storage_percentage
+
+    @data_storage_percentage.setter
+    def data_storage_percentage(self, data_storage_percentage):
+        """
+        Sets the data_storage_percentage of this VmCluster.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param data_storage_percentage: The data_storage_percentage of this VmCluster.
+        :type: int
+        """
+        self._data_storage_percentage = data_storage_percentage
+
+    @property
+    def reco_storage_percentage(self):
+        """
+        Gets the reco_storage_percentage of this VmCluster.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The reco_storage_percentage of this VmCluster.
+        :rtype: int
+        """
+        return self._reco_storage_percentage
+
+    @reco_storage_percentage.setter
+    def reco_storage_percentage(self, reco_storage_percentage):
+        """
+        Sets the reco_storage_percentage of this VmCluster.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param reco_storage_percentage: The reco_storage_percentage of this VmCluster.
+        :type: int
+        """
+        self._reco_storage_percentage = reco_storage_percentage
+
+    @property
+    def sparse_storage_percentage(self):
+        """
+        Gets the sparse_storage_percentage of this VmCluster.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The sparse_storage_percentage of this VmCluster.
+        :rtype: int
+        """
+        return self._sparse_storage_percentage
+
+    @sparse_storage_percentage.setter
+    def sparse_storage_percentage(self, sparse_storage_percentage):
+        """
+        Sets the sparse_storage_percentage of this VmCluster.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param sparse_storage_percentage: The sparse_storage_percentage of this VmCluster.
+        :type: int
+        """
+        self._sparse_storage_percentage = sparse_storage_percentage
 
     @property
     def vm_cluster_network_id(self):

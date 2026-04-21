@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateComputeGpuMemoryClusterDetails(object):
     """
-    Updates compute GPU memory cluster details.
+    Updates compute GPU Memory Cluster details.
     """
 
     def __init__(self, **kwargs):
@@ -44,6 +44,10 @@ class UpdateComputeGpuMemoryClusterDetails(object):
             The value to assign to the gpu_memory_cluster_scale_config property of this UpdateComputeGpuMemoryClusterDetails.
         :type gpu_memory_cluster_scale_config: oci.core.models.UpdateComputeGpuMemoryClusterScaleConfig
 
+        :param private_ip_ids:
+            The value to assign to the private_ip_ids property of this UpdateComputeGpuMemoryClusterDetails.
+        :type private_ip_ids: list[str]
+
         """
         self.swagger_types = {
             'instance_configuration_id': 'str',
@@ -51,7 +55,8 @@ class UpdateComputeGpuMemoryClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'display_name': 'str',
-            'gpu_memory_cluster_scale_config': 'UpdateComputeGpuMemoryClusterScaleConfig'
+            'gpu_memory_cluster_scale_config': 'UpdateComputeGpuMemoryClusterScaleConfig',
+            'private_ip_ids': 'list[str]'
         }
         self.attribute_map = {
             'instance_configuration_id': 'instanceConfigurationId',
@@ -59,7 +64,8 @@ class UpdateComputeGpuMemoryClusterDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'display_name': 'displayName',
-            'gpu_memory_cluster_scale_config': 'gpuMemoryClusterScaleConfig'
+            'gpu_memory_cluster_scale_config': 'gpuMemoryClusterScaleConfig',
+            'private_ip_ids': 'privateIpIds'
         }
         self._instance_configuration_id = None
         self._size = None
@@ -67,6 +73,7 @@ class UpdateComputeGpuMemoryClusterDetails(object):
         self._freeform_tags = None
         self._display_name = None
         self._gpu_memory_cluster_scale_config = None
+        self._private_ip_ids = None
 
     @property
     def instance_configuration_id(self):
@@ -96,7 +103,7 @@ class UpdateComputeGpuMemoryClusterDetails(object):
     def size(self):
         """
         Gets the size of this UpdateComputeGpuMemoryClusterDetails.
-        The number of instances currently running in the GpuMemoryCluster
+        The desired number of instances for the GPU Memory Cluster.
 
 
         :return: The size of this UpdateComputeGpuMemoryClusterDetails.
@@ -108,7 +115,7 @@ class UpdateComputeGpuMemoryClusterDetails(object):
     def size(self, size):
         """
         Sets the size of this UpdateComputeGpuMemoryClusterDetails.
-        The number of instances currently running in the GpuMemoryCluster
+        The desired number of instances for the GPU Memory Cluster.
 
 
         :param size: The size of this UpdateComputeGpuMemoryClusterDetails.
@@ -229,6 +236,30 @@ class UpdateComputeGpuMemoryClusterDetails(object):
         :type: oci.core.models.UpdateComputeGpuMemoryClusterScaleConfig
         """
         self._gpu_memory_cluster_scale_config = gpu_memory_cluster_scale_config
+
+    @property
+    def private_ip_ids(self):
+        """
+        Gets the private_ip_ids of this UpdateComputeGpuMemoryClusterDetails.
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+
+
+        :return: The private_ip_ids of this UpdateComputeGpuMemoryClusterDetails.
+        :rtype: list[str]
+        """
+        return self._private_ip_ids
+
+    @private_ip_ids.setter
+    def private_ip_ids(self, private_ip_ids):
+        """
+        Sets the private_ip_ids of this UpdateComputeGpuMemoryClusterDetails.
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+
+
+        :param private_ip_ids: The private_ip_ids of this UpdateComputeGpuMemoryClusterDetails.
+        :type: list[str]
+        """
+        self._private_ip_ids = private_ip_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

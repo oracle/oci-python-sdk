@@ -42,6 +42,10 @@ class UpdateAmazonS3IcebergStorageDetails(UpdateIcebergStorageDetails):
             The value to assign to the secret_access_key_secret_id property of this UpdateAmazonS3IcebergStorageDetails.
         :type secret_access_key_secret_id: str
 
+        :param secret_access_key:
+            The value to assign to the secret_access_key property of this UpdateAmazonS3IcebergStorageDetails.
+        :type secret_access_key: str
+
         :param region:
             The value to assign to the region property of this UpdateAmazonS3IcebergStorageDetails.
         :type region: str
@@ -57,6 +61,7 @@ class UpdateAmazonS3IcebergStorageDetails(UpdateIcebergStorageDetails):
             'endpoint': 'str',
             'access_key_id': 'str',
             'secret_access_key_secret_id': 'str',
+            'secret_access_key': 'str',
             'region': 'str',
             'bucket': 'str'
         }
@@ -66,6 +71,7 @@ class UpdateAmazonS3IcebergStorageDetails(UpdateIcebergStorageDetails):
             'endpoint': 'endpoint',
             'access_key_id': 'accessKeyId',
             'secret_access_key_secret_id': 'secretAccessKeySecretId',
+            'secret_access_key': 'secretAccessKey',
             'region': 'region',
             'bucket': 'bucket'
         }
@@ -74,6 +80,7 @@ class UpdateAmazonS3IcebergStorageDetails(UpdateIcebergStorageDetails):
         self._endpoint = None
         self._access_key_id = None
         self._secret_access_key_secret_id = None
+        self._secret_access_key = None
         self._region = None
         self._bucket = None
         self._storage_type = 'AMAZON_S3'
@@ -179,6 +186,34 @@ class UpdateAmazonS3IcebergStorageDetails(UpdateIcebergStorageDetails):
         :type: str
         """
         self._secret_access_key_secret_id = secret_access_key_secret_id
+
+    @property
+    def secret_access_key(self):
+        """
+        Gets the secret_access_key of this UpdateAmazonS3IcebergStorageDetails.
+        Secret access key to access the Amazon S3 bucket.
+        e.g.: \"this-is-not-the-secret\"
+        Deprecated: This field is deprecated and replaced by \"secretAccessKeySecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The secret_access_key of this UpdateAmazonS3IcebergStorageDetails.
+        :rtype: str
+        """
+        return self._secret_access_key
+
+    @secret_access_key.setter
+    def secret_access_key(self, secret_access_key):
+        """
+        Sets the secret_access_key of this UpdateAmazonS3IcebergStorageDetails.
+        Secret access key to access the Amazon S3 bucket.
+        e.g.: \"this-is-not-the-secret\"
+        Deprecated: This field is deprecated and replaced by \"secretAccessKeySecretId\". This field will be removed after February 15 2026.
+
+
+        :param secret_access_key: The secret_access_key of this UpdateAmazonS3IcebergStorageDetails.
+        :type: str
+        """
+        self._secret_access_key = secret_access_key
 
     @property
     def region(self):

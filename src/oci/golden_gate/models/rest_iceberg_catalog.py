@@ -79,7 +79,7 @@ class RestIcebergCatalog(IcebergCatalog):
     @property
     def properties_secret_id(self):
         """
-        **[Required]** Gets the properties_secret_id of this RestIcebergCatalog.
+        Gets the properties_secret_id of this RestIcebergCatalog.
         The `OCID`__ of the Secret that stores the content
         of the configuration file containing additional properties for the REST catalog.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm

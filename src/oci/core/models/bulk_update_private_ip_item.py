@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkUpdatePrivateIpItem(object):
     """
-    secondary private IPv4 address object to update as part of bulk update.
+    A secondary private IPv4 address object to update as part of a bulk operation.
     """
 
     #: A constant which can be used with the lifetime property of a BulkUpdatePrivateIpItem.

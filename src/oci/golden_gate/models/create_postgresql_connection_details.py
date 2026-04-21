@@ -147,10 +147,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             The value to assign to the ssl_key_secret_id property of this CreatePostgresqlConnectionDetails.
         :type ssl_key_secret_id: str
 
-        :param private_ip:
-            The value to assign to the private_ip property of this CreatePostgresqlConnectionDetails.
-        :type private_ip: str
-
         :param db_system_id:
             The value to assign to the db_system_id property of this CreatePostgresqlConnectionDetails.
         :type db_system_id: str
@@ -188,7 +184,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'ssl_cert': 'str',
             'ssl_key': 'str',
             'ssl_key_secret_id': 'str',
-            'private_ip': 'str',
             'db_system_id': 'str'
         }
         self.attribute_map = {
@@ -223,7 +218,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'ssl_cert': 'sslCert',
             'ssl_key': 'sslKey',
             'ssl_key_secret_id': 'sslKeySecretId',
-            'private_ip': 'privateIp',
             'db_system_id': 'dbSystemId'
         }
         self._connection_type = None
@@ -257,7 +251,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._ssl_cert = None
         self._ssl_key = None
         self._ssl_key_secret_id = None
-        self._private_ip = None
         self._db_system_id = None
         self._connection_type = 'POSTGRESQL'
 
@@ -658,44 +651,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._ssl_key_secret_id = ssl_key_secret_id
-
-    @property
-    def private_ip(self):
-        """
-        Gets the private_ip of this CreatePostgresqlConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :return: The private_ip of this CreatePostgresqlConnectionDetails.
-        :rtype: str
-        """
-        return self._private_ip
-
-    @private_ip.setter
-    def private_ip(self, private_ip):
-        """
-        Sets the private_ip of this CreatePostgresqlConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :param private_ip: The private_ip of this CreatePostgresqlConnectionDetails.
-        :type: str
-        """
-        self._private_ip = private_ip
 
     @property
     def db_system_id(self):

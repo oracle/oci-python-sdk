@@ -1412,11 +1412,11 @@ class VirtualNetworkClient(object):
 
     def bulk_create_ipv6s(self, bulk_create_ipv6s_details, **kwargs):
         """
-        Create new IPv6s for a VNIC or Subnet.
+        Create new IPv6s in bulk for a VNIC or subnet.
 
 
         :param oci.core.models.BulkCreateIpv6sDetails bulk_create_ipv6s_details: (required)
-            Bulk Create Ipv6s.
+            Create Ipv6s in bulk.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1520,7 +1520,7 @@ class VirtualNetworkClient(object):
 
 
         :param oci.core.models.BulkCreatePrivateIpsDetails bulk_create_private_ips_details: (required)
-            Create private IPs details.
+            Details used to create secondary private IPs.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1620,11 +1620,11 @@ class VirtualNetworkClient(object):
 
     def bulk_delete_ipv6s(self, bulk_delete_ipv6s_details, **kwargs):
         """
-        Unassigns and deletes IPv6s for a VNIC.
+        Unassign and delete IPv6s for a VNIC in bulk.
 
 
         :param oci.core.models.BulkDeleteIpv6sDetails bulk_delete_ipv6s_details: (required)
-            Delete IPv6s details.
+            Details of the IPv6s to delete.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1724,11 +1724,11 @@ class VirtualNetworkClient(object):
 
     def bulk_delete_private_ips(self, bulk_delete_private_ips_details, **kwargs):
         """
-        Unassigns and deletes secondary private IPv4s for a VNIC.
+        Unassign and delete secondary private IPv4s for a VNIC.
 
 
         :param oci.core.models.BulkDeletePrivateIpsDetails bulk_delete_private_ips_details: (required)
-            Details of secondary IPv4 addresses to deleted.
+            Details of the secondary IPv4 addresses to delete.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1930,11 +1930,11 @@ class VirtualNetworkClient(object):
 
     def bulk_detach_ipv6s(self, bulk_detach_ipv6s_details, **kwargs):
         """
-        detach the specified IPv6s.
+        Detach the specified IPv6s.
 
 
         :param oci.core.models.BulkDetachIpv6sDetails bulk_detach_ipv6s_details: (required)
-            detach IPv6s details.
+            Details needed to detach IPv6s in bulk.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2034,13 +2034,13 @@ class VirtualNetworkClient(object):
 
     def bulk_detach_private_ips(self, bulk_detach_private_ips_details, **kwargs):
         """
-        Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must specify the PrivateIP `OCID`__.
+        Unassign the specified private IP addresses from the Virtual Network Interface Card (VNIC). You must specify the PrivateIP object's `OCID`__.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.BulkDetachPrivateIpsDetails bulk_detach_private_ips_details: (required)
-            Secondary IPv4 addresses to detach.
+            The secondary IPv4 addresses to detach.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2140,11 +2140,11 @@ class VirtualNetworkClient(object):
 
     def bulk_update_ipv6s(self, bulk_update_ipv6s_details, **kwargs):
         """
-        Updates the specified IPv6s.
+        Updates the specified IPv6s in bulk.
 
 
         :param oci.core.models.BulkUpdateIpv6sDetails bulk_update_ipv6s_details: (required)
-            Update IPv6s details.
+            Details of the IPv6s to update.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2244,11 +2244,11 @@ class VirtualNetworkClient(object):
 
     def bulk_update_private_ips(self, bulk_update_private_ips_details, **kwargs):
         """
-        Updates existing secondary Private IPv4s for a VNIC.
+        Update existing secondary private IPv4s for a VNIC.
 
 
         :param oci.core.models.BulkUpdatePrivateIpsDetails bulk_update_private_ips_details: (required)
-            Details of secondary IPv4 addresses to be updated.
+            Details of the secondary IPv4 addresses to update.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or

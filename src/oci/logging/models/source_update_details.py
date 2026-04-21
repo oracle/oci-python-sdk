@@ -37,7 +37,7 @@ class SourceUpdateDetails(object):
     def parameters(self):
         """
         Gets the parameters of this SourceUpdateDetails.
-        Log category parameters are stored here.
+        Log category parameters are stored here. The resource for a service log can't be updated.
 
 
         :return: The parameters of this SourceUpdateDetails.
@@ -49,7 +49,7 @@ class SourceUpdateDetails(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this SourceUpdateDetails.
-        Log category parameters are stored here.
+        Log category parameters are stored here. The resource for a service log can't be updated.
 
 
         :param parameters: The parameters of this SourceUpdateDetails.

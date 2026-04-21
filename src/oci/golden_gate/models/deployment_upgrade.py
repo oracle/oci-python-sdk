@@ -24,56 +24,24 @@ class DeploymentUpgrade(object):
     DEPLOYMENT_UPGRADE_TYPE_AUTOMATIC = "AUTOMATIC"
 
     #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "CREATING"
-    LIFECYCLE_STATE_CREATING = "CREATING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "UPDATING"
-    LIFECYCLE_STATE_UPDATING = "UPDATING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "ACTIVE"
-    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "INACTIVE"
-    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "DELETING"
-    LIFECYCLE_STATE_DELETING = "DELETING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "DELETED"
-    LIFECYCLE_STATE_DELETED = "DELETED"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "FAILED"
-    LIFECYCLE_STATE_FAILED = "FAILED"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "NEEDS_ATTENTION"
-    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+    #: This constant has a value of "WAITING"
+    LIFECYCLE_STATE_WAITING = "WAITING"
 
     #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
     #: This constant has a value of "IN_PROGRESS"
     LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
 
     #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "CANCELING"
-    LIFECYCLE_STATE_CANCELING = "CANCELING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "CANCELED"
-    LIFECYCLE_STATE_CANCELED = "CANCELED"
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
     #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
-    #: This constant has a value of "WAITING"
-    LIFECYCLE_STATE_WAITING = "WAITING"
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
 
     #: A constant which can be used with the lifecycle_sub_state property of a DeploymentUpgrade.
     #: This constant has a value of "RECOVERING"
@@ -172,7 +140,7 @@ class DeploymentUpgrade(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentUpgrade.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -651,9 +619,9 @@ class DeploymentUpgrade(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DeploymentUpgrade.
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Upgrade.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -666,13 +634,13 @@ class DeploymentUpgrade(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DeploymentUpgrade.
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment Upgrade.
 
 
         :param lifecycle_state: The lifecycle_state of this DeploymentUpgrade.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
+        allowed_values = ["WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

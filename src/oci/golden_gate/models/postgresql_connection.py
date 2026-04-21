@@ -40,12 +40,20 @@ class PostgresqlConnection(Connection):
     TECHNOLOGY_TYPE_AZURE_COSMOS_DB_FOR_POSTGRESQL = "AZURE_COSMOS_DB_FOR_POSTGRESQL"
 
     #: A constant which can be used with the technology_type property of a PostgresqlConnection.
+    #: This constant has a value of "EDB_POSTGRES_ADVANCED_SERVER"
+    TECHNOLOGY_TYPE_EDB_POSTGRES_ADVANCED_SERVER = "EDB_POSTGRES_ADVANCED_SERVER"
+
+    #: A constant which can be used with the technology_type property of a PostgresqlConnection.
     #: This constant has a value of "GOOGLE_CLOUD_SQL_POSTGRESQL"
     TECHNOLOGY_TYPE_GOOGLE_CLOUD_SQL_POSTGRESQL = "GOOGLE_CLOUD_SQL_POSTGRESQL"
 
     #: A constant which can be used with the technology_type property of a PostgresqlConnection.
     #: This constant has a value of "GOOGLE_ALLOY_DB_FOR_POSTGRESQL"
     TECHNOLOGY_TYPE_GOOGLE_ALLOY_DB_FOR_POSTGRESQL = "GOOGLE_ALLOY_DB_FOR_POSTGRESQL"
+
+    #: A constant which can be used with the technology_type property of a PostgresqlConnection.
+    #: This constant has a value of "YUGABYTE_DB"
+    TECHNOLOGY_TYPE_YUGABYTE_DB = "YUGABYTE_DB"
 
     #: A constant which can be used with the security_protocol property of a PostgresqlConnection.
     #: This constant has a value of "PLAIN"
@@ -181,7 +189,7 @@ class PostgresqlConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this PostgresqlConnection.
-            Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "YUGABYTE_DB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -372,7 +380,7 @@ class PostgresqlConnection(Connection):
         **[Required]** Gets the technology_type of this PostgresqlConnection.
         The PostgreSQL technology type.
 
-        Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "YUGABYTE_DB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -391,7 +399,7 @@ class PostgresqlConnection(Connection):
         :param technology_type: The technology_type of this PostgresqlConnection.
         :type: str
         """
-        allowed_values = ["OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL"]
+        allowed_values = ["OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "YUGABYTE_DB"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -586,14 +594,9 @@ class PostgresqlConnection(Connection):
     def private_ip(self):
         """
         Gets the private_ip of this PostgresqlConnection.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
 
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
 
 
         :return: The private_ip of this PostgresqlConnection.
@@ -605,14 +608,9 @@ class PostgresqlConnection(Connection):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this PostgresqlConnection.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
+        This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
 
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        For deprecated connections created with this field in the past, either the private IP had to be specified in the connectionString or host field, or the host name had to be resolvable in the target VCN.
 
 
         :param private_ip: The private_ip of this PostgresqlConnection.

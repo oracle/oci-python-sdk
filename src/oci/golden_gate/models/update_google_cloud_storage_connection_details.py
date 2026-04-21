@@ -71,6 +71,10 @@ class UpdateGoogleCloudStorageConnectionDetails(UpdateConnectionDetails):
             The value to assign to the security_attributes property of this UpdateGoogleCloudStorageConnectionDetails.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param endpoint:
+            The value to assign to the endpoint property of this UpdateGoogleCloudStorageConnectionDetails.
+        :type endpoint: str
+
         :param service_account_key_file:
             The value to assign to the service_account_key_file property of this UpdateGoogleCloudStorageConnectionDetails.
         :type service_account_key_file: str
@@ -93,6 +97,7 @@ class UpdateGoogleCloudStorageConnectionDetails(UpdateConnectionDetails):
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
             'security_attributes': 'dict(str, dict(str, object))',
+            'endpoint': 'str',
             'service_account_key_file': 'str',
             'service_account_key_file_secret_id': 'str'
         }
@@ -109,6 +114,7 @@ class UpdateGoogleCloudStorageConnectionDetails(UpdateConnectionDetails):
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
             'security_attributes': 'securityAttributes',
+            'endpoint': 'endpoint',
             'service_account_key_file': 'serviceAccountKeyFile',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
@@ -124,9 +130,36 @@ class UpdateGoogleCloudStorageConnectionDetails(UpdateConnectionDetails):
         self._routing_method = None
         self._does_use_secret_ids = None
         self._security_attributes = None
+        self._endpoint = None
         self._service_account_key_file = None
         self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_CLOUD_STORAGE'
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this UpdateGoogleCloudStorageConnectionDetails.
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+        Default: https://storage.googleapis.com
+
+
+        :return: The endpoint of this UpdateGoogleCloudStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this UpdateGoogleCloudStorageConnectionDetails.
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+        Default: https://storage.googleapis.com
+
+
+        :param endpoint: The endpoint of this UpdateGoogleCloudStorageConnectionDetails.
+        :type: str
+        """
+        self._endpoint = endpoint
 
     @property
     def service_account_key_file(self):

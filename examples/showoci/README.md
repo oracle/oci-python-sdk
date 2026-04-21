@@ -90,7 +90,6 @@ Developed by Adi Zohar, 2018-2025, Contributors: Olaf Heimburger
 - oci.integration.IntegrationInstanceClient
 - oci.analytics.AnalyticsClient
 - oci.oda.OdaClient
-- oci.oce.OceInstanceClient
 - oci.apigateway.GatewaysClient
 - oci.functions.FunctionsManagementClient
 - oci.data_catalog.DataCatalogClient

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDeletePrivateIpsDetails(object):
     """
-    Bulk Secondary IPv4 deletion object.
+    Details used tp delete Secondary IPv4 objects in a bulk operation.
     """
 
     def __init__(self, **kwargs):
@@ -146,7 +146,7 @@ class BulkDeletePrivateIpsDetails(object):
     def bulk_delete_private_ip_item(self):
         """
         **[Required]** Gets the bulk_delete_private_ip_item of this BulkDeletePrivateIpsDetails.
-        Secondary IPv4 addresses to deleted
+        A secondary IPv4 address to delete.
 
 
         :return: The bulk_delete_private_ip_item of this BulkDeletePrivateIpsDetails.
@@ -158,7 +158,7 @@ class BulkDeletePrivateIpsDetails(object):
     def bulk_delete_private_ip_item(self, bulk_delete_private_ip_item):
         """
         Sets the bulk_delete_private_ip_item of this BulkDeletePrivateIpsDetails.
-        Secondary IPv4 addresses to deleted
+        A secondary IPv4 address to delete.
 
 
         :param bulk_delete_private_ip_item: The bulk_delete_private_ip_item of this BulkDeletePrivateIpsDetails.

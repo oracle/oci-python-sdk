@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeGpuMemoryCluster(object):
     """
-    The customer facing object includes GPU memory cluster details.
+    The customer facing object includes GPU Memory Cluster details.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ComputeGpuMemoryCluster.
@@ -78,6 +78,10 @@ class ComputeGpuMemoryCluster(object):
             The value to assign to the gpu_memory_cluster_scale_config property of this ComputeGpuMemoryCluster.
         :type gpu_memory_cluster_scale_config: oci.core.models.ComputeGpuMemoryClusterScaleConfig
 
+        :param private_ip_ids:
+            The value to assign to the private_ip_ids property of this ComputeGpuMemoryCluster.
+        :type private_ip_ids: list[str]
+
         :param defined_tags:
             The value to assign to the defined_tags property of this ComputeGpuMemoryCluster.
         :type defined_tags: dict(str, dict(str, object))
@@ -109,6 +113,7 @@ class ComputeGpuMemoryCluster(object):
             'compute_cluster_id': 'str',
             'size': 'int',
             'gpu_memory_cluster_scale_config': 'ComputeGpuMemoryClusterScaleConfig',
+            'private_ip_ids': 'list[str]',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
@@ -125,6 +130,7 @@ class ComputeGpuMemoryCluster(object):
             'compute_cluster_id': 'computeClusterId',
             'size': 'size',
             'gpu_memory_cluster_scale_config': 'gpuMemoryClusterScaleConfig',
+            'private_ip_ids': 'privateIpIds',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
@@ -140,6 +146,7 @@ class ComputeGpuMemoryCluster(object):
         self._compute_cluster_id = None
         self._size = None
         self._gpu_memory_cluster_scale_config = None
+        self._private_ip_ids = None
         self._defined_tags = None
         self._freeform_tags = None
         self._system_tags = None
@@ -150,7 +157,7 @@ class ComputeGpuMemoryCluster(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this ComputeGpuMemoryCluster.
-        The availability domain of the GPU memory cluster.
+        The availability domain of the GPU Memory Cluster.
 
 
         :return: The availability_domain of this ComputeGpuMemoryCluster.
@@ -162,7 +169,7 @@ class ComputeGpuMemoryCluster(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ComputeGpuMemoryCluster.
-        The availability domain of the GPU memory cluster.
+        The availability domain of the GPU Memory Cluster.
 
 
         :param availability_domain: The availability_domain of this ComputeGpuMemoryCluster.
@@ -174,7 +181,7 @@ class ComputeGpuMemoryCluster(object):
     def id(self):
         """
         **[Required]** Gets the id of this ComputeGpuMemoryCluster.
-        The `OCID`__ for the Customer-unique GPU memory cluster
+        The `OCID`__ for the Customer-unique GPU Memory Cluster
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -188,7 +195,7 @@ class ComputeGpuMemoryCluster(object):
     def id(self, id):
         """
         Sets the id of this ComputeGpuMemoryCluster.
-        The `OCID`__ for the Customer-unique GPU memory cluster
+        The `OCID`__ for the Customer-unique GPU Memory Cluster
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -256,7 +263,7 @@ class ComputeGpuMemoryCluster(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ComputeGpuMemoryCluster.
-        The lifecycle state of the GPU memory cluster
+        The lifecycle state of the GPU Memory Cluster
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -271,7 +278,7 @@ class ComputeGpuMemoryCluster(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ComputeGpuMemoryCluster.
-        The lifecycle state of the GPU memory cluster
+        The lifecycle state of the GPU Memory Cluster
 
 
         :param lifecycle_state: The lifecycle_state of this ComputeGpuMemoryCluster.
@@ -342,7 +349,7 @@ class ComputeGpuMemoryCluster(object):
     def size(self):
         """
         **[Required]** Gets the size of this ComputeGpuMemoryCluster.
-        The number of instances currently running in the GpuMemoryCluster
+        The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
 
 
         :return: The size of this ComputeGpuMemoryCluster.
@@ -354,7 +361,7 @@ class ComputeGpuMemoryCluster(object):
     def size(self, size):
         """
         Sets the size of this ComputeGpuMemoryCluster.
-        The number of instances currently running in the GpuMemoryCluster
+        The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
 
 
         :param size: The size of this ComputeGpuMemoryCluster.
@@ -381,6 +388,30 @@ class ComputeGpuMemoryCluster(object):
         :type: oci.core.models.ComputeGpuMemoryClusterScaleConfig
         """
         self._gpu_memory_cluster_scale_config = gpu_memory_cluster_scale_config
+
+    @property
+    def private_ip_ids(self):
+        """
+        Gets the private_ip_ids of this ComputeGpuMemoryCluster.
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+
+
+        :return: The private_ip_ids of this ComputeGpuMemoryCluster.
+        :rtype: list[str]
+        """
+        return self._private_ip_ids
+
+    @private_ip_ids.setter
+    def private_ip_ids(self, private_ip_ids):
+        """
+        Sets the private_ip_ids of this ComputeGpuMemoryCluster.
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+
+
+        :param private_ip_ids: The private_ip_ids of this ComputeGpuMemoryCluster.
+        :type: list[str]
+        """
+        self._private_ip_ids = private_ip_ids
 
     @property
     def defined_tags(self):
@@ -506,7 +537,7 @@ class ComputeGpuMemoryCluster(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ComputeGpuMemoryCluster.
-        The date and time the GPU memory cluster was created.
+        The date and time the GPU Memory Cluster was created.
 
         Example: `2016-09-15T21:10:29.600Z`
 
@@ -520,7 +551,7 @@ class ComputeGpuMemoryCluster(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ComputeGpuMemoryCluster.
-        The date and time the GPU memory cluster was created.
+        The date and time the GPU Memory Cluster was created.
 
         Example: `2016-09-15T21:10:29.600Z`
 

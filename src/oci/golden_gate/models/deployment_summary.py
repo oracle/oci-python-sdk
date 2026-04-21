@@ -15,58 +15,6 @@ class DeploymentSummary(object):
     Summary of the Deployment.
     """
 
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "CREATING"
-    LIFECYCLE_STATE_CREATING = "CREATING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "UPDATING"
-    LIFECYCLE_STATE_UPDATING = "UPDATING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "ACTIVE"
-    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "INACTIVE"
-    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "DELETING"
-    LIFECYCLE_STATE_DELETING = "DELETING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "DELETED"
-    LIFECYCLE_STATE_DELETED = "DELETED"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "FAILED"
-    LIFECYCLE_STATE_FAILED = "FAILED"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "NEEDS_ATTENTION"
-    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "IN_PROGRESS"
-    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "CANCELING"
-    LIFECYCLE_STATE_CANCELING = "CANCELING"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "CANCELED"
-    LIFECYCLE_STATE_CANCELED = "CANCELED"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "SUCCEEDED"
-    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
-
-    #: A constant which can be used with the lifecycle_state property of a DeploymentSummary.
-    #: This constant has a value of "WAITING"
-    LIFECYCLE_STATE_WAITING = "WAITING"
-
     #: A constant which can be used with the lifecycle_sub_state property of a DeploymentSummary.
     #: This constant has a value of "RECOVERING"
     LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
@@ -198,8 +146,6 @@ class DeploymentSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_sub_state:
@@ -294,10 +240,6 @@ class DeploymentSummary(object):
             The value to assign to the is_latest_version property of this DeploymentSummary.
         :type is_latest_version: bool
 
-        :param time_upgrade_required:
-            The value to assign to the time_upgrade_required property of this DeploymentSummary.
-        :type time_upgrade_required: datetime
-
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentSummary.
             Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
@@ -358,7 +300,6 @@ class DeploymentSummary(object):
             'deployment_url': 'str',
             'system_tags': 'dict(str, dict(str, object))',
             'is_latest_version': 'bool',
-            'time_upgrade_required': 'datetime',
             'deployment_type': 'str',
             'storage_utilization_in_bytes': 'int',
             'is_storage_utilization_limit_exceeded': 'bool',
@@ -396,7 +337,6 @@ class DeploymentSummary(object):
             'deployment_url': 'deploymentUrl',
             'system_tags': 'systemTags',
             'is_latest_version': 'isLatestVersion',
-            'time_upgrade_required': 'timeUpgradeRequired',
             'deployment_type': 'deploymentType',
             'storage_utilization_in_bytes': 'storageUtilizationInBytes',
             'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
@@ -433,7 +373,6 @@ class DeploymentSummary(object):
         self._deployment_url = None
         self._system_tags = None
         self._is_latest_version = None
-        self._time_upgrade_required = None
         self._deployment_type = None
         self._storage_utilization_in_bytes = None
         self._is_storage_utilization_limit_exceeded = None
@@ -610,10 +549,7 @@ class DeploymentSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DeploymentSummary.
-        Possible lifecycle states.
-
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Possible lifecycle states for a Deployment.
 
 
         :return: The lifecycle_state of this DeploymentSummary.
@@ -625,15 +561,12 @@ class DeploymentSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DeploymentSummary.
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
 
 
         :param lifecycle_state: The lifecycle_state of this DeploymentSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
-        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -786,9 +719,18 @@ class DeploymentSummary(object):
     def load_balancer_subnet_id(self):
         """
         Gets the load_balancer_subnet_id of this DeploymentSummary.
-        The `OCID`__ of a public subnet in the customer tenancy.
-        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        The `OCID`__ of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        - Update:
+          - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+          - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        - Must reference a public subnet.
+        - Must be a regional subnet.
+        - Must be in the same VCN as subnetId.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -802,9 +744,18 @@ class DeploymentSummary(object):
     def load_balancer_subnet_id(self, load_balancer_subnet_id):
         """
         Sets the load_balancer_subnet_id of this DeploymentSummary.
-        The `OCID`__ of a public subnet in the customer tenancy.
-        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        The `OCID`__ of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        - Update:
+          - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+          - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        - Must reference a public subnet.
+        - Must be a regional subnet.
+        - Must be in the same VCN as subnetId.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1217,46 +1168,6 @@ class DeploymentSummary(object):
         :type: bool
         """
         self._is_latest_version = is_latest_version
-
-    @property
-    def time_upgrade_required(self):
-        """
-        Gets the time_upgrade_required of this DeploymentSummary.
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-        to check, when deployment will be forced to upgrade to a newer version.
-        Old description:
-        The date the existing version in use will no longer be considered as usable
-        and an upgrade will be required.  This date is typically 6 months after the
-        version was released for use by GGS.  The format is defined by
-        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
-
-        __ https://tools.ietf.org/html/rfc3339
-
-
-        :return: The time_upgrade_required of this DeploymentSummary.
-        :rtype: datetime
-        """
-        return self._time_upgrade_required
-
-    @time_upgrade_required.setter
-    def time_upgrade_required(self, time_upgrade_required):
-        """
-        Sets the time_upgrade_required of this DeploymentSummary.
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-        to check, when deployment will be forced to upgrade to a newer version.
-        Old description:
-        The date the existing version in use will no longer be considered as usable
-        and an upgrade will be required.  This date is typically 6 months after the
-        version was released for use by GGS.  The format is defined by
-        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
-
-        __ https://tools.ietf.org/html/rfc3339
-
-
-        :param time_upgrade_required: The time_upgrade_required of this DeploymentSummary.
-        :type: datetime
-        """
-        self._time_upgrade_required = time_upgrade_required
 
     @property
     def deployment_type(self):

@@ -100,6 +100,14 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the data_storage_percentage property of this CreateCloudVmClusterDetails.
         :type data_storage_percentage: int
 
+        :param reco_storage_percentage:
+            The value to assign to the reco_storage_percentage property of this CreateCloudVmClusterDetails.
+        :type reco_storage_percentage: int
+
+        :param sparse_storage_percentage:
+            The value to assign to the sparse_storage_percentage property of this CreateCloudVmClusterDetails.
+        :type sparse_storage_percentage: int
+
         :param display_name:
             The value to assign to the display_name property of this CreateCloudVmClusterDetails.
         :type display_name: str
@@ -222,6 +230,8 @@ class CreateCloudVmClusterDetails(object):
             'db_servers': 'list[str]',
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
+            'reco_storage_percentage': 'int',
+            'sparse_storage_percentage': 'int',
             'display_name': 'str',
             'cloud_exadata_infrastructure_id': 'str',
             'hostname': 'str',
@@ -262,6 +272,8 @@ class CreateCloudVmClusterDetails(object):
             'db_servers': 'dbServers',
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
+            'reco_storage_percentage': 'recoStoragePercentage',
+            'sparse_storage_percentage': 'sparseStoragePercentage',
             'display_name': 'displayName',
             'cloud_exadata_infrastructure_id': 'cloudExadataInfrastructureId',
             'hostname': 'hostname',
@@ -301,6 +313,8 @@ class CreateCloudVmClusterDetails(object):
         self._db_servers = None
         self._cluster_name = None
         self._data_storage_percentage = None
+        self._reco_storage_percentage = None
+        self._sparse_storage_percentage = None
         self._display_name = None
         self._cloud_exadata_infrastructure_id = None
         self._hostname = None
@@ -650,8 +664,7 @@ class CreateCloudVmClusterDetails(object):
     def data_storage_percentage(self):
         """
         Gets the data_storage_percentage of this CreateCloudVmClusterDetails.
-        The percentage assigned to DATA storage (user data and database files).
-        The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
 
         __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
 
@@ -665,8 +678,7 @@ class CreateCloudVmClusterDetails(object):
     def data_storage_percentage(self, data_storage_percentage):
         """
         Sets the data_storage_percentage of this CreateCloudVmClusterDetails.
-        The percentage assigned to DATA storage (user data and database files).
-        The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
 
         __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
 
@@ -675,6 +687,62 @@ class CreateCloudVmClusterDetails(object):
         :type: int
         """
         self._data_storage_percentage = data_storage_percentage
+
+    @property
+    def reco_storage_percentage(self):
+        """
+        Gets the reco_storage_percentage of this CreateCloudVmClusterDetails.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The reco_storage_percentage of this CreateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._reco_storage_percentage
+
+    @reco_storage_percentage.setter
+    def reco_storage_percentage(self, reco_storage_percentage):
+        """
+        Sets the reco_storage_percentage of this CreateCloudVmClusterDetails.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param reco_storage_percentage: The reco_storage_percentage of this CreateCloudVmClusterDetails.
+        :type: int
+        """
+        self._reco_storage_percentage = reco_storage_percentage
+
+    @property
+    def sparse_storage_percentage(self):
+        """
+        Gets the sparse_storage_percentage of this CreateCloudVmClusterDetails.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The sparse_storage_percentage of this CreateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._sparse_storage_percentage
+
+    @sparse_storage_percentage.setter
+    def sparse_storage_percentage(self, sparse_storage_percentage):
+        """
+        Sets the sparse_storage_percentage of this CreateCloudVmClusterDetails.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param sparse_storage_percentage: The sparse_storage_percentage of this CreateCloudVmClusterDetails.
+        :type: int
+        """
+        self._sparse_storage_percentage = sparse_storage_percentage
 
     @property
     def display_name(self):

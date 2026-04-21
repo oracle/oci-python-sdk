@@ -1,0 +1,11 @@
+SecretMigrateConnectionDetails
+==============================
+
+.. currentmodule:: oci.golden_gate.models
+
+.. autoclass:: SecretMigrateConnectionDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

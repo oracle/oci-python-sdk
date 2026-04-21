@@ -71,6 +71,10 @@ class UpdateGoogleBigQueryConnectionDetails(UpdateConnectionDetails):
             The value to assign to the security_attributes property of this UpdateGoogleBigQueryConnectionDetails.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param endpoint:
+            The value to assign to the endpoint property of this UpdateGoogleBigQueryConnectionDetails.
+        :type endpoint: str
+
         :param service_account_key_file:
             The value to assign to the service_account_key_file property of this UpdateGoogleBigQueryConnectionDetails.
         :type service_account_key_file: str
@@ -93,6 +97,7 @@ class UpdateGoogleBigQueryConnectionDetails(UpdateConnectionDetails):
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
             'security_attributes': 'dict(str, dict(str, object))',
+            'endpoint': 'str',
             'service_account_key_file': 'str',
             'service_account_key_file_secret_id': 'str'
         }
@@ -109,6 +114,7 @@ class UpdateGoogleBigQueryConnectionDetails(UpdateConnectionDetails):
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
             'security_attributes': 'securityAttributes',
+            'endpoint': 'endpoint',
             'service_account_key_file': 'serviceAccountKeyFile',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
@@ -124,9 +130,36 @@ class UpdateGoogleBigQueryConnectionDetails(UpdateConnectionDetails):
         self._routing_method = None
         self._does_use_secret_ids = None
         self._security_attributes = None
+        self._endpoint = None
         self._service_account_key_file = None
         self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_BIGQUERY'
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this UpdateGoogleBigQueryConnectionDetails.
+        A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+        Default: https://bigquery.googleapis.com
+
+
+        :return: The endpoint of this UpdateGoogleBigQueryConnectionDetails.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this UpdateGoogleBigQueryConnectionDetails.
+        A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+        Default: https://bigquery.googleapis.com
+
+
+        :param endpoint: The endpoint of this UpdateGoogleBigQueryConnectionDetails.
+        :type: str
+        """
+        self._endpoint = endpoint
 
     @property
     def service_account_key_file(self):

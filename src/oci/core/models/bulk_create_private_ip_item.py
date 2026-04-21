@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkCreatePrivateIpItem(object):
     """
-    Secondary private IPv4 address object to create as part of bulk creation.
+    An object used to create secondary private IPv4 addresses in a bulk operation.
     """
 
     #: A constant which can be used with the lifetime property of a BulkCreatePrivateIpItem.

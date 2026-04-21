@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+26.04.01 - 26.04.01
+=====================
+* Removed OCE which deprecated
+* Filter IAM Domains based in Home Region if -rg specified
+
+=====================
+26.02.03 - 26.02.03
+=====================
+* Added Private Service Access
+* Added domain url filter to ifilter flag
+* Fix Availability domain fetch api
+
+=====================
 25.09.30 - 25.09.30
 =====================
 * Added FILESYSTEM and OBJECTSTORAGE to the exclude

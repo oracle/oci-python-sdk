@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDetachIpv6sItem(object):
     """
-    Secondary IPv6 object to detach as part of bulk detach operation.
+    A secondary IPv6 object to detach as part of a bulk detach operation.
     """
 
     def __init__(self, **kwargs):

@@ -118,6 +118,26 @@ class UpdateCloudVmClusterDetails(object):
             Allowed values for this property are: "LOCAL", "EXASCALE"
         :type vm_backup_storage_type: str
 
+        :param data_storage_percentage:
+            The value to assign to the data_storage_percentage property of this UpdateCloudVmClusterDetails.
+        :type data_storage_percentage: int
+
+        :param reco_storage_percentage:
+            The value to assign to the reco_storage_percentage property of this UpdateCloudVmClusterDetails.
+        :type reco_storage_percentage: int
+
+        :param sparse_storage_percentage:
+            The value to assign to the sparse_storage_percentage property of this UpdateCloudVmClusterDetails.
+        :type sparse_storage_percentage: int
+
+        :param is_local_backup_enabled:
+            The value to assign to the is_local_backup_enabled property of this UpdateCloudVmClusterDetails.
+        :type is_local_backup_enabled: bool
+
+        :param is_sparse_diskgroup_enabled:
+            The value to assign to the is_sparse_diskgroup_enabled property of this UpdateCloudVmClusterDetails.
+        :type is_sparse_diskgroup_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -139,7 +159,12 @@ class UpdateCloudVmClusterDetails(object):
             'data_collection_options': 'DataCollectionOptions',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
-            'vm_backup_storage_type': 'str'
+            'vm_backup_storage_type': 'str',
+            'data_storage_percentage': 'int',
+            'reco_storage_percentage': 'int',
+            'sparse_storage_percentage': 'int',
+            'is_local_backup_enabled': 'bool',
+            'is_sparse_diskgroup_enabled': 'bool'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -161,7 +186,12 @@ class UpdateCloudVmClusterDetails(object):
             'data_collection_options': 'dataCollectionOptions',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
-            'vm_backup_storage_type': 'vmBackupStorageType'
+            'vm_backup_storage_type': 'vmBackupStorageType',
+            'data_storage_percentage': 'dataStoragePercentage',
+            'reco_storage_percentage': 'recoStoragePercentage',
+            'sparse_storage_percentage': 'sparseStoragePercentage',
+            'is_local_backup_enabled': 'isLocalBackupEnabled',
+            'is_sparse_diskgroup_enabled': 'isSparseDiskgroupEnabled'
         }
         self._display_name = None
         self._cpu_core_count = None
@@ -183,6 +213,11 @@ class UpdateCloudVmClusterDetails(object):
         self._file_system_configuration_details = None
         self._cloud_automation_update_details = None
         self._vm_backup_storage_type = None
+        self._data_storage_percentage = None
+        self._reco_storage_percentage = None
+        self._sparse_storage_percentage = None
+        self._is_local_backup_enabled = None
+        self._is_sparse_diskgroup_enabled = None
 
     @property
     def display_name(self):
@@ -755,6 +790,138 @@ class UpdateCloudVmClusterDetails(object):
                 f"Invalid value for `vm_backup_storage_type`, must be None or one of {allowed_values}"
             )
         self._vm_backup_storage_type = vm_backup_storage_type
+
+    @property
+    def data_storage_percentage(self):
+        """
+        Gets the data_storage_percentage of this UpdateCloudVmClusterDetails.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The data_storage_percentage of this UpdateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._data_storage_percentage
+
+    @data_storage_percentage.setter
+    def data_storage_percentage(self, data_storage_percentage):
+        """
+        Sets the data_storage_percentage of this UpdateCloudVmClusterDetails.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param data_storage_percentage: The data_storage_percentage of this UpdateCloudVmClusterDetails.
+        :type: int
+        """
+        self._data_storage_percentage = data_storage_percentage
+
+    @property
+    def reco_storage_percentage(self):
+        """
+        Gets the reco_storage_percentage of this UpdateCloudVmClusterDetails.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The reco_storage_percentage of this UpdateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._reco_storage_percentage
+
+    @reco_storage_percentage.setter
+    def reco_storage_percentage(self, reco_storage_percentage):
+        """
+        Sets the reco_storage_percentage of this UpdateCloudVmClusterDetails.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param reco_storage_percentage: The reco_storage_percentage of this UpdateCloudVmClusterDetails.
+        :type: int
+        """
+        self._reco_storage_percentage = reco_storage_percentage
+
+    @property
+    def sparse_storage_percentage(self):
+        """
+        Gets the sparse_storage_percentage of this UpdateCloudVmClusterDetails.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The sparse_storage_percentage of this UpdateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._sparse_storage_percentage
+
+    @sparse_storage_percentage.setter
+    def sparse_storage_percentage(self, sparse_storage_percentage):
+        """
+        Sets the sparse_storage_percentage of this UpdateCloudVmClusterDetails.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param sparse_storage_percentage: The sparse_storage_percentage of this UpdateCloudVmClusterDetails.
+        :type: int
+        """
+        self._sparse_storage_percentage = sparse_storage_percentage
+
+    @property
+    def is_local_backup_enabled(self):
+        """
+        Gets the is_local_backup_enabled of this UpdateCloudVmClusterDetails.
+        If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+
+
+        :return: The is_local_backup_enabled of this UpdateCloudVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_local_backup_enabled
+
+    @is_local_backup_enabled.setter
+    def is_local_backup_enabled(self, is_local_backup_enabled):
+        """
+        Sets the is_local_backup_enabled of this UpdateCloudVmClusterDetails.
+        If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
+
+
+        :param is_local_backup_enabled: The is_local_backup_enabled of this UpdateCloudVmClusterDetails.
+        :type: bool
+        """
+        self._is_local_backup_enabled = is_local_backup_enabled
+
+    @property
+    def is_sparse_diskgroup_enabled(self):
+        """
+        Gets the is_sparse_diskgroup_enabled of this UpdateCloudVmClusterDetails.
+        If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
+
+
+        :return: The is_sparse_diskgroup_enabled of this UpdateCloudVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_sparse_diskgroup_enabled
+
+    @is_sparse_diskgroup_enabled.setter
+    def is_sparse_diskgroup_enabled(self, is_sparse_diskgroup_enabled):
+        """
+        Sets the is_sparse_diskgroup_enabled of this UpdateCloudVmClusterDetails.
+        If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
+
+
+        :param is_sparse_diskgroup_enabled: The is_sparse_diskgroup_enabled of this UpdateCloudVmClusterDetails.
+        :type: bool
+        """
+        self._is_sparse_diskgroup_enabled = is_sparse_diskgroup_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

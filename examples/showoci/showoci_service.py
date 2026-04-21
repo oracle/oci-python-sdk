@@ -20,7 +20,7 @@
 #
 # ShowOCIDomains  - class has the identity domain info
 #
-# PaaS Services - OCE and OIC, ODA Tested
+# PaaS Services - OIC, ODA Tested
 #                 OAC need to be tested
 ##########################################################################
 from __future__ import print_function
@@ -39,8 +39,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.09.30"
-    oci_compatible_version = "2.148.0"
+    version = "26.04.01"
+    oci_compatible_version = "2.165.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
 
@@ -73,6 +73,7 @@ class ShowOCIService(object):
     C_NETWORK_SUBNET = 'subnet'
     C_NETWORK_SUBNET_PIP = 'private_ips'
     C_NETWORK_VC = 'virtualcircuit'
+    C_NETWORK_PSA = 'psa'
     C_NETWORK_PRIVATEIP = 'privateip'
     C_NETWORK_DNS_RESOLVERS = 'dns_resolvers'
     C_NETWORK_FIREWALL = 'network_firewall'
@@ -227,7 +228,6 @@ class ShowOCIService(object):
     C_PAAS_NATIVE = "paas_native"
     C_PAAS_NATIVE_OIC = "oic"
     C_PAAS_NATIVE_OAC = "oac"
-    C_PAAS_NATIVE_OCE = "oce"
     C_PAAS_NATIVE_OCVS = "ocvs"
     C_PAAS_NATIVE_VB = "vb"
     C_PAAS_NATIVE_DEVOPS = "devops"
@@ -295,11 +295,13 @@ class ShowOCIService(object):
     EXCLUDE_QUOTAS = 'QUOTAS'
     EXCLUDE_CERTIFICATES = 'CERTIFICATES'
     EXCLUDE_DNSZONE = 'DNSZONE'
+    EXCLUDE_HEALTHCHECK = 'HEALTHCHECK'
+    EXCLUDE_WAF = 'WAF'
+    EXCLUDE_EDGE = 'EDGE'
     EXCLUDE_VCIRCUITS = 'VCIRCUITS'
     EXCLUDE_IPSEC = 'IPSEC'
     EXCLUDE_OIC = "OIC"
     EXCLUDE_OAC = "OAC"
-    EXCLUDE_OCE = 'OCE'
     EXCLUDE_OCVS = "OCVS"
     EXCLUDE_VB = "VB"
     EXCLUDE_OPENSEARCH = "OPENSEARCH"
@@ -322,8 +324,10 @@ class ShowOCIService(object):
     EXCLUDE_CLOUDGUARD = 'CLOUDGUARD'
     EXCLUDE_LOGGING = 'LOGGING'
     EXCLUDE_BASTION = 'BASTION'
+    EXCLUDE_DBMANAGEMENT = 'DBMANAGEMENT'
     EXCLUDE_FSDR = 'FSDR'
     EXCLUDE_DNS = 'DNS'
+    EXCLUDE_PSA = 'PSA'
     EXCLUDE_NETWORKFIREWALL = 'NETWORKFIREWALL'
     EXCLUDE_LOADBALANCER = 'LOADBALANCER'
     EXCLUDE_NETLOADBALANCER = 'NETLOADBALANCER'
@@ -2806,6 +2810,7 @@ class ShowOCIService(object):
 
             virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
             dns_client = self.__create_client(oci.dns.DnsClient, key=self.EXCLUDE_DNS)
+            psa_client = self.__create_client(oci.psa.PrivateServiceAccessClient, key=self.EXCLUDE_PSA)
             nwf_client = self.__create_client(oci.network_firewall.NetworkFirewallClient, key=self.EXCLUDE_NETWORKFIREWALL)
             load_balancer = self.__create_client(oci.load_balancer.LoadBalancerClient, key=self.EXCLUDE_LOADBALANCER)
             network_load_balancer = self.__create_client(oci.network_load_balancer.NetworkLoadBalancerClient, key=self.EXCLUDE_NETLOADBALANCER)
@@ -2834,6 +2839,7 @@ class ShowOCIService(object):
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_RPC)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_VC)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_IGW)
+                self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_PSA)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_LPG)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_ROUTE)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SLIST)
@@ -2881,6 +2887,7 @@ class ShowOCIService(object):
                     network[self.C_NETWORK_IPS] += self.__load_core_network_ips(virtual_network, compartments)
                     network[self.C_NETWORK_RPC] += self.__load_core_network_rpc(virtual_network, compartments)
                     network[self.C_NETWORK_VC] += self.__load_core_network_vc(virtual_network, compartments)
+                    network[self.C_NETWORK_PSA] += self.__load_core_network_psa(psa_client, compartments)
                     network[self.C_NETWORK_IGW] += self.__load_core_network_igw(virtual_network, compartments)
                     network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments)
                     network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments)
@@ -2921,6 +2928,7 @@ class ShowOCIService(object):
 
                     future_network_routes = None
                     future_network_vir = None
+                    future_network_psa = None
                     future_network_dns = None
                     future_network_igw = None
                     future_network_pip = None
@@ -2960,6 +2968,7 @@ class ShowOCIService(object):
                         future_network_drg = executor.submit(self.__load_core_network_drg, virtual_network, compartments)
                         future_network_cpe = executor.submit(self.__load_core_network_cpe, virtual_network, compartments)
                         future_network_ips = executor.submit(self.__load_core_network_ips, virtual_network, compartments)
+                        future_network_psa = executor.submit(self.__load_core_network_psa, psa_client, compartments)
                         future_network_rpc = executor.submit(self.__load_core_network_rpc, virtual_network, compartments)
                         future_network_slt = executor.submit(self.__load_core_network_seclst, virtual_network, compartments)
                         future_network_dhcp = executor.submit(self.__load_core_network_dhcpop, virtual_network, compartments)
@@ -2997,6 +3006,7 @@ class ShowOCIService(object):
                         network[self.C_NETWORK_RPC] += next(as_completed([future_network_rpc])).result()
                         network[self.C_NETWORK_VC] += next(as_completed([future_network_vir])).result()
                         network[self.C_NETWORK_IGW] += next(as_completed([future_network_igw])).result()
+                        network[self.C_NETWORK_PSA] += next(as_completed([future_network_psa])).result()
                         network[self.C_NETWORK_SLIST] += next(as_completed([future_network_slt])).result()
                         network[self.C_NETWORK_DHCP] += next(as_completed([future_network_dhcp])).result()
                         network[self.C_NETWORK_DNS_RESOLVERS] += next(as_completed([future_network_dns])).result()
@@ -3243,6 +3253,96 @@ class ShowOCIService(object):
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])
                            }
+
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # private service access - 1/25/2026
+    ##########################################################################
+    def __load_core_network_psa(self, psa_client, compartments):
+
+        cnt = 0
+        data = []
+        start_time = time.time()
+
+        try:
+
+            errstr = ""
+            header = "Private Service Access"
+            self.__load_print_status_with_threads(header)
+
+            if not psa_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                psas = []
+                try:
+                    psas = oci.pagination.list_call_get_all_results(
+                        psa_client.list_private_service_accesses,
+                        compartment_id=compartment['id'],
+                        lifecycle_state="ACTIVE",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                # oci.psa.models.PrivateServiceAccessSummary
+                for psa in psas:
+                    val = {
+                        'id': str(psa.id),
+                        'name': self.get_value(psa.display_name),
+                        'description': self.get_value(psa.description),
+                        'vcn_id': self.get_value(psa.vcn_id),
+                        'subnet_id': self.get_value(psa.subnet_id),
+                        'vnic_id': self.get_value(psa.vnic_id),
+                        'lifecycle_state': self.get_value(psa.lifecycle_state),
+                        'ipv4_ip': self.get_value(psa.ipv4_ip),
+                        'service_id': self.get_value(psa.service_id),
+                        'nsg_ids': [] if psa.nsg_ids is None else psa.nsg_ids,
+                        'fqdns': [] if psa.fqdns is None else psa.fqdns,
+                        'time_created': self.get_date(psa.time_created),
+                        'time_updated': self.get_date(psa.time_updated),
+                        'security_attributes': [] if psa.security_attributes is None else psa.security_attributes,
+                        'defined_tags': [] if psa.defined_tags is None else psa.defined_tags,
+                        'freeform_tags': [] if psa.freeform_tags is None else psa.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
 
                     data.append(val)
                     cnt += 1
@@ -14756,7 +14856,7 @@ class ShowOCIService(object):
             ons_dp_client = self.__create_client(oci.ons.NotificationDataPlaneClient)
             event_client = self.__create_client(oci.events.EventsClient)
             management_agent_client = self.__create_client(oci.management_agent.ManagementAgentClient)
-            db_management_client = self.__create_client(oci.database_management.DbManagementClient)
+            db_management_client = self.__create_client(oci.database_management.DbManagementClient, key=self.EXCLUDE_DBMANAGEMENT)
             bs_client = self.__create_client(oci.bastion.BastionClient, key=self.EXCLUDE_BASTION)
             cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient, key=self.EXCLUDE_CLOUDGUARD)
             log_client = self.__create_client(oci.logging.LoggingManagementClient, key=self.EXCLUDE_LOGGING)
@@ -15337,6 +15437,10 @@ class ShowOCIService(object):
             header = "DB Management"
             self.__load_print_status_with_threads(header)
 
+            if not db_management_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -15668,13 +15772,19 @@ class ShowOCIService(object):
     def __load_section_edge_services_main(self):
 
         try:
+            # Exclude Edge will exclude the full section
+            if self.EXCLUDE_EDGE in self.flags.exclude:
+                print("Edge Services... Excluded.")
+                print("")
+                return
+
             print("Edge Services...")
 
-            healthcheck_client = self.__create_client(oci.healthchecks.HealthChecksClient)
+            healthcheck_client = self.__create_client(oci.healthchecks.HealthChecksClient, key=self.EXCLUDE_HEALTHCHECK)
             dnszone = self.__create_client(oci.dns.DnsClient, key=self.EXCLUDE_DNSZONE)
-            dnssteering = self.__create_client(oci.dns.DnsClient)
-            waas = self.__create_client(oci.waas.WaasClient)
-            waf = self.__create_client(oci.waf.WafClient)
+            dnssteering = self.__create_client(oci.dns.DnsClient, key=self.EXCLUDE_DNSZONE)
+            waas = self.__create_client(oci.waas.WaasClient, key=self.EXCLUDE_WAF)
+            waf = self.__create_client(oci.waf.WafClient, key=self.EXCLUDE_WAF)
 
             # reference to compartments
             compartments = self.get_compartments()
@@ -15738,6 +15848,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Healthcheck Ping"
             self.__load_print_status_with_threads(header)
+
+            if not healthcheck_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -15844,6 +15958,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Healthcheck HTTP"
             self.__load_print_status_with_threads(header)
+
+            if not healthcheck_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -16047,6 +16165,10 @@ class ShowOCIService(object):
             header = "DNS Steering Policies"
             self.__load_print_status_with_threads(header)
 
+            if not dns_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -16133,6 +16255,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "WAAS Policies"
             self.__load_print_status_with_threads(header)
+
+            if not waas:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -16221,6 +16347,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "WAF"
             self.__load_print_status_with_threads(header)
+
+            if not waf:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -16331,7 +16461,6 @@ class ShowOCIService(object):
             opensearch_client = self.__create_client(oci.opensearch.OpensearchClusterClient, key=self.EXCLUDE_OPENSEARCH)
             virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
             devops_client = self.__create_client(oci.devops.DevopsClient, key=self.EXCLUDE_DEVOPS)
-            oce_client = self.__create_client(oci.oce.OceInstanceClient, key=self.EXCLUDE_OCE)
 
             ds_client = self.__create_client(oci.data_science.DataScienceClient, key=self.EXCLUDE_DATASCIENCE)
             dc_client = self.__create_client(oci.data_catalog.DataCatalogClient, key=self.EXCLUDE_DATACATALOG)
@@ -16352,7 +16481,6 @@ class ShowOCIService(object):
 
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OAC)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OIC)
-            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCE)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCVS)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_VB)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_DEVOPS)
@@ -16376,7 +16504,6 @@ class ShowOCIService(object):
                 paas = self.data[self.C_PAAS_NATIVE]
                 paas[self.C_PAAS_NATIVE_OCVS] += self.__load_paas_ocvs(ocvs_client, cluster_client, esxi_client, virtual_network, compartments)
                 paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
-                paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
                 paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
                 paas[self.C_PAAS_NATIVE_VB] += self.__load_paas_visualbuilder(vb_client, compartments)
                 paas[self.C_PAAS_NATIVE_DEVOPS] += self.__load_paas_devops(devops_client, compartments)
@@ -16400,7 +16527,6 @@ class ShowOCIService(object):
                 with ThreadPoolExecutor(max_workers=self.flags.threads) as executor:
                     future_PAAS_NATIVE_OCVS = executor.submit(self.__load_paas_ocvs, ocvs_client, cluster_client, esxi_client, virtual_network, compartments)
                     future_PAAS_NATIVE_OIC = executor.submit(self.__load_paas_oic, oic_client, compartments)
-                    future_PAAS_NATIVE_OCE = executor.submit(self.__load_paas_oce, oce_client, compartments)
                     future_PAAS_NATIVE_OAC = executor.submit(self.__load_paas_oac, oac_client, compartments)
                     future_PAAS_NATIVE_VB = executor.submit(self.__load_paas_visualbuilder, vb_client, compartments)
                     future_PAAS_NATIVE_DEVOPS = executor.submit(self.__load_paas_devops, devops_client, compartments)
@@ -16419,7 +16545,6 @@ class ShowOCIService(object):
                     paas = self.data[self.C_PAAS_NATIVE]
                     paas[self.C_PAAS_NATIVE_OCVS] += next(as_completed([future_PAAS_NATIVE_OCVS])).result()
                     paas[self.C_PAAS_NATIVE_OIC] += next(as_completed([future_PAAS_NATIVE_OIC])).result()
-                    paas[self.C_PAAS_NATIVE_OCE] += next(as_completed([future_PAAS_NATIVE_OCE])).result()
                     paas[self.C_PAAS_NATIVE_OAC] += next(as_completed([future_PAAS_NATIVE_OAC])).result()
                     paas[self.C_PAAS_NATIVE_VB] += next(as_completed([future_PAAS_NATIVE_VB])).result()
                     paas[self.C_PAAS_NATIVE_DEVOPS] += next(as_completed([future_PAAS_NATIVE_DEVOPS])).result()
@@ -18028,108 +18153,6 @@ class ShowOCIService(object):
                         # add the data
                         cnt += 1
                         data.append(val)
-
-            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
-            return data
-
-        except oci.exceptions.RequestException as e:
-            if self.__check_request_error(e):
-                return data
-            else:
-                self.__load_print_error(e)
-                return data
-        except Exception as e:
-            self.__print_error(e)
-            return data
-
-    ##########################################################################
-    # __load_paas_oce
-    ##########################################################################
-    def __load_paas_oce(self, oce_client, compartments):
-
-        data = []
-        cnt = 0
-        start_time = time.time()
-
-        try:
-
-            errstr = ""
-            header = "OCE Native"
-            self.__load_print_status_with_threads(header)
-
-            if not oce_client:
-                self.__load_print_thread_exclude(header)
-                return data
-
-            # loop on all compartments
-            for compartment in compartments:
-
-                # skip managed paas compartment
-                if self.__if_managed_paas_compartment(compartment['name']):
-                    continue
-
-                oces = []
-                try:
-                    oces = oci.pagination.list_call_get_all_results(
-                        oce_client.list_oce_instances,
-                        compartment['id'],
-                        sort_by="displayName",
-                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                    ).data
-
-                except oci.exceptions.ServiceError as e:
-                    if self.__check_service_error(e, compartment):
-                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
-                        errstr += "a"
-                        continue
-                    else:
-                        self.__load_print_error(e, compartment)
-                        errstr += "e"
-                        continue
-                except oci.exceptions.ConnectTimeout:
-                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
-                    errstr += "a"
-                    continue
-
-                except Exception as e:
-                    self.__load_print_error(e, compartment)
-                    errstr += "e"
-                    continue
-
-                if self.flags.skip_threads:
-                    print(".", end="")
-
-                # oce = oci.oce.models.OceInstanceSummary
-                for oce in oces:
-                    if not self.check_lifecycle_state_active(oce.lifecycle_state):
-                        continue
-
-                    val = {
-                        'id': str(oce.id),
-                        'guid': str(oce.guid),
-                        'description': str(oce.description),
-                        'name': str(oce.name),
-                        'tenancy_name': str(oce.tenancy_name),
-                        'idcs_tenancy': str(oce.idcs_tenancy),
-                        'object_storage_namespace': str(oce.object_storage_namespace),
-                        'admin_email': str(oce.admin_email),
-                        'time_created': str(oce.time_created),
-                        'time_updated': str(oce.time_updated),
-                        'lifecycle_state': str(oce.lifecycle_state),
-                        'state_message': str(oce.state_message),
-                        'service': oce.service,
-                        'sum_info': "PaaS OCE Native",
-                        'sum_size_gb': str("1"),
-                        'compartment_name': str(compartment['name']),
-                        'compartment_path': str(compartment['path']),
-                        'compartment_id': str(compartment['id']),
-                        'defined_tags': [] if oce.defined_tags is None else oce.defined_tags,
-                        'freeform_tags': [] if oce.freeform_tags is None else oce.freeform_tags,
-                        'region_name': str(self.config['region'])}
-
-                    # add the data
-                    cnt += 1
-                    data.append(val)
 
             self.__load_print_thread_cnt(header, cnt, start_time, errstr)
             return data
@@ -20464,6 +20487,8 @@ class ShowOCIDomains(object):
     thread_lock = threading.Lock()
     collection_ljust = 40
     iam_domain_name_filter = []
+    filter_by_region_not = ""
+    filter_by_region = ""
 
     ##########################################################################
     # init class
@@ -20480,6 +20505,8 @@ class ShowOCIDomains(object):
         self.skip_identity_user_credential = flags.skip_identity_user_credential
         self.proxy = flags.proxy
         self.skip_threads = flags.skip_threads
+        self.filter_by_region = flags.filter_by_region
+        self.filter_by_region_not = flags.filter_by_region_not
 
     ##################################################################################
     # get_value function
@@ -20927,6 +20954,45 @@ class ShowOCIDomains(object):
                 list_func_kwargs['start_index'] = next_index
             else:
                 keep_paginating = False
+
+    ##########################################################################
+    # Filter on Region condition
+    ##########################################################################
+    def oci_region_name_filter(self, region_name):
+
+        try:
+            region_okay = True
+
+            # Region Filter
+            if self.filter_by_region:
+                if ',' not in self.filter_by_region:
+                    if str(self.filter_by_region) not in region_name:
+                        region_okay = False
+                else:
+                    region_found = False
+                    for rg in str(self.filter_by_region).split(","):
+                        if rg in region_name:
+                            region_found = True
+                    if not region_found:
+                        region_okay = False
+
+            # Region Filter Not
+            if self.filter_by_region_not:
+                if ',' not in self.filter_by_region_not:
+                    if str(self.filter_by_region_not) in region_name:
+                        region_okay = False
+                else:
+                    region_found = False
+                    for rg in str(self.filter_by_region_not).split(","):
+                        if rg in region_name:
+                            region_found = True
+                    if region_found:
+                        region_okay = False
+            return region_okay
+
+        except Exception as e:
+            self.__print_error(e)
+            return False
 
     ##################################################################################
     # load_identity_users_to_group_members
@@ -22413,9 +22479,31 @@ class ShowOCIDomains(object):
                 # oci.identity.models.DomainSummary
                 for domain in list_domains:
 
+                    # check for region skip
+                    home_region = self.get_value(domain.home_region)
+                    if not self.oci_region_name_filter(home_region):
+                        skip_domain = True
+                        print("--> " + self.get_value(domain.display_name).ljust(self.collection_ljust) + "<-- Skipped based on Region Filter (" + self.get_value(domain.url) + ", Home " + home_region + ")")
+                        continue
+
                     if self.iam_domain_name_filter:
-                        if self.get_value(domain.display_name) not in self.iam_domain_name_filter:
+                        skip_domain = True
+
+                        # check if dfilter in the url (mainly for region)
+                        for dfilter in self.iam_domain_name_filter:
+                            if dfilter in self.get_value(domain.url):
+                                skip_domain = False
+
+                        # for full domain name
+                        if self.get_value(domain.display_name) in self.iam_domain_name_filter:
+                            skip_domain = False
+
+                        if skip_domain:
+                            print("--> " + self.get_value(domain.display_name).ljust(self.collection_ljust) + "<-- Skipped by filter (" + self.get_value(domain.url) + ", Home " + home_region + ")")
                             continue
+
+                    print('')
+                    print("--> " + self.get_value(domain.display_name).ljust(self.collection_ljust) + "<-- Processing ...... (" + self.get_value(domain.url) + ", Home " + home_region + ")")
 
                     domain_data = {
                         'id': self.get_value(domain.id),
@@ -22515,8 +22603,8 @@ class ShowOCIDomains(object):
                         self.__load_identity_rules_to_policies(domain_data['rules'], domain_data['policies'])
 
                     self.data.append(domain_data)
+                    print('')
 
-            print('')
             return self.data
 
         except oci.exceptions.ServiceError as e:

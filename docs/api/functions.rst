@@ -21,6 +21,7 @@ Functions
     :template: autosummary/model_class.rst
 
     oci.functions.models.Application
+    oci.functions.models.ApplicationLoggingConfig
     oci.functions.models.ApplicationSummary
     oci.functions.models.ApplicationTraceConfig
     oci.functions.models.ChangeApplicationCompartmentDetails

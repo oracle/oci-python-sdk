@@ -99,7 +99,7 @@ class CreateComputeGpuMemoryClusterScaleConfig(object):
     def target_size(self):
         """
         Gets the target_size of this CreateComputeGpuMemoryClusterScaleConfig.
-        The configured target size for the GPU Memory cluster.
+        The configured target size for the GPU Memory Cluster.
 
 
         :return: The target_size of this CreateComputeGpuMemoryClusterScaleConfig.
@@ -111,7 +111,7 @@ class CreateComputeGpuMemoryClusterScaleConfig(object):
     def target_size(self, target_size):
         """
         Sets the target_size of this CreateComputeGpuMemoryClusterScaleConfig.
-        The configured target size for the GPU Memory cluster.
+        The configured target size for the GPU Memory Cluster.
 
 
         :param target_size: The target_size of this CreateComputeGpuMemoryClusterScaleConfig.

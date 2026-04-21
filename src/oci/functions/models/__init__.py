@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .application import Application
+from .application_logging_config import ApplicationLoggingConfig
 from .application_summary import ApplicationSummary
 from .application_trace_config import ApplicationTraceConfig
 from .change_application_compartment_details import ChangeApplicationCompartmentDetails
@@ -51,6 +52,7 @@ from .update_function_details import UpdateFunctionDetails
 # Maps type names to classes for functions services.
 functions_type_mapping = {
     "Application": Application,
+    "ApplicationLoggingConfig": ApplicationLoggingConfig,
     "ApplicationSummary": ApplicationSummary,
     "ApplicationTraceConfig": ApplicationTraceConfig,
     "ChangeApplicationCompartmentDetails": ChangeApplicationCompartmentDetails,

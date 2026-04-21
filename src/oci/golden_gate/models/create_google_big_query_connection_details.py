@@ -91,6 +91,10 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
             The value to assign to the technology_type property of this CreateGoogleBigQueryConnectionDetails.
         :type technology_type: str
 
+        :param endpoint:
+            The value to assign to the endpoint property of this CreateGoogleBigQueryConnectionDetails.
+        :type endpoint: str
+
         :param service_account_key_file:
             The value to assign to the service_account_key_file property of this CreateGoogleBigQueryConnectionDetails.
         :type service_account_key_file: str
@@ -118,6 +122,7 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
             'cluster_placement_group_id': 'str',
             'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
+            'endpoint': 'str',
             'service_account_key_file': 'str',
             'service_account_key_file_secret_id': 'str'
         }
@@ -139,6 +144,7 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
+            'endpoint': 'endpoint',
             'service_account_key_file': 'serviceAccountKeyFile',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
@@ -159,6 +165,7 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         self._cluster_placement_group_id = None
         self._security_attributes = None
         self._technology_type = None
+        self._endpoint = None
         self._service_account_key_file = None
         self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_BIGQUERY'
@@ -186,6 +193,32 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._technology_type = technology_type
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this CreateGoogleBigQueryConnectionDetails.
+        A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+        Default: https://bigquery.googleapis.com
+
+
+        :return: The endpoint of this CreateGoogleBigQueryConnectionDetails.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this CreateGoogleBigQueryConnectionDetails.
+        A legal URL to connect to BigQuery including scheme, server name and port (if not the default port).
+        Default: https://bigquery.googleapis.com
+
+
+        :param endpoint: The endpoint of this CreateGoogleBigQueryConnectionDetails.
+        :type: str
+        """
+        self._endpoint = endpoint
 
     @property
     def service_account_key_file(self):

@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "25.09.30"
+    version = "26.04.01"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -547,6 +547,47 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # get Network VCN PSA
+    ##########################################################################
+
+    def __get_core_network_vcn_psa(self, vcn_id):
+        data = []
+        try:
+
+            list_service_psa = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_PSA, 'vcn_id', vcn_id)
+            for arr in list_service_psa:
+                value = {
+                    'id': arr['id'],
+                    'name': arr['name'],
+                    'description': arr['description'],
+                    'vcn_id': arr['vcn_id'],
+                    'subnet_id': arr['subnet_id'],
+                    'subnet_name': self.__get_core_network_subnet_name(arr['subnet_id']),
+                    'vnic_id': arr['vnic_id'],
+                    'lifecycle_state': arr['lifecycle_state'],
+                    'ipv4_ip': arr['ipv4_ip'],
+                    'service_id': arr['service_id'],
+                    'nsg_ids': arr['nsg_ids'],
+                    'nsg_names': self.service.get_network_nsg_names_from_ids(arr['nsg_ids']),
+                    'fqdns': arr['fqdns'],
+                    'time_created': arr['time_created'],
+                    'time_updated': arr['time_updated'],
+                    'security_attributes': arr['security_attributes'],
+                    'compartment_name': arr['compartment_name'],
+                    'compartment_path': arr['compartment_path'],
+                    'compartment_id': arr['compartment_id'],
+                    'defined_tags': arr['defined_tags'],
+                    'freeform_tags': arr['freeform_tags']
+                }
+
+                data.append(value)
+            return data
+
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
     # get dRG details
     ##########################################################################
 
@@ -1026,18 +1067,21 @@ class ShowOCIData(object):
             for vcn in vcns:
 
                 # get details for all components
-                val = {'igw': self.__get_core_network_vcn_igw(vcn['id']),
-                       'sgw': self.__get_core_network_vcn_sgw(vcn['id']),
-                       'nat': self.__get_core_network_vcn_nat(vcn['id']),
-                       'drg_attached': self.__get_core_network_vcn_drg_attached(vcn['id']),
-                       'local_peering': self.__get_core_network_vcn_local_peering(vcn['id']),
-                       'subnets': self.__get_core_network_vcn_subnets(vcn['id']),
-                       'vlans': self.__get_core_network_vcn_vlans(vcn['id']),
-                       'dns_resolvers': self.__get_core_network_vcn_dns_resolver(vcn['id']),
-                       'security_lists': self.__get_core_network_vcn_security_lists(vcn['id']),
-                       'security_groups': self.__get_core_network_vcn_security_groups(vcn['id']),
-                       'route_tables': self.__get_core_network_vcn_route_tables(vcn['id']),
-                       'dhcp_options': self.__get_core_network_vcn_dhcp_options(vcn['id'])}
+                val = {
+                    'igw': self.__get_core_network_vcn_igw(vcn['id']),
+                    'sgw': self.__get_core_network_vcn_sgw(vcn['id']),
+                    'psa': self.__get_core_network_vcn_psa(vcn['id']),
+                    'nat': self.__get_core_network_vcn_nat(vcn['id']),
+                    'drg_attached': self.__get_core_network_vcn_drg_attached(vcn['id']),
+                    'local_peering': self.__get_core_network_vcn_local_peering(vcn['id']),
+                    'subnets': self.__get_core_network_vcn_subnets(vcn['id']),
+                    'vlans': self.__get_core_network_vcn_vlans(vcn['id']),
+                    'dns_resolvers': self.__get_core_network_vcn_dns_resolver(vcn['id']),
+                    'security_lists': self.__get_core_network_vcn_security_lists(vcn['id']),
+                    'security_groups': self.__get_core_network_vcn_security_groups(vcn['id']),
+                    'route_tables': self.__get_core_network_vcn_route_tables(vcn['id']),
+                    'dhcp_options': self.__get_core_network_vcn_dhcp_options(vcn['id'])
+                }
 
                 # assign the data to the vcn
                 main_data = {
@@ -4564,12 +4608,7 @@ class ShowOCIData(object):
             if oac:
                 paas_services['oac'] = oac
 
-            # oce
-            oce = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCE, 'region_name', region_name, 'compartment_id', compartment['id'])
-            if oce:
-                paas_services['oce'] = oce
-
-            # oce
+            # vb
             vb = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_VB, 'region_name', region_name, 'compartment_id', compartment['id'])
             if vb:
                 paas_services['vb'] = vb

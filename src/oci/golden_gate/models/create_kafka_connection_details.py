@@ -101,7 +101,7 @@ class CreateKafkaConnectionDetails(CreateConnectionDetails):
 
         :param bootstrap_servers:
             The value to assign to the bootstrap_servers property of this CreateKafkaConnectionDetails.
-        :type bootstrap_servers: list[oci.golden_gate.models.KafkaBootstrapServer]
+        :type bootstrap_servers: list[oci.golden_gate.models.CreateKafkaBootstrapServer]
 
         :param security_protocol:
             The value to assign to the security_protocol property of this CreateKafkaConnectionDetails.
@@ -192,7 +192,7 @@ class CreateKafkaConnectionDetails(CreateConnectionDetails):
             'technology_type': 'str',
             'stream_pool_id': 'str',
             'cluster_id': 'str',
-            'bootstrap_servers': 'list[KafkaBootstrapServer]',
+            'bootstrap_servers': 'list[CreateKafkaBootstrapServer]',
             'security_protocol': 'str',
             'username': 'str',
             'password': 'str',
@@ -382,7 +382,7 @@ class CreateKafkaConnectionDetails(CreateConnectionDetails):
 
 
         :return: The bootstrap_servers of this CreateKafkaConnectionDetails.
-        :rtype: list[oci.golden_gate.models.KafkaBootstrapServer]
+        :rtype: list[oci.golden_gate.models.CreateKafkaBootstrapServer]
         """
         return self._bootstrap_servers
 
@@ -397,7 +397,7 @@ class CreateKafkaConnectionDetails(CreateConnectionDetails):
 
 
         :param bootstrap_servers: The bootstrap_servers of this CreateKafkaConnectionDetails.
-        :type: list[oci.golden_gate.models.KafkaBootstrapServer]
+        :type: list[oci.golden_gate.models.CreateKafkaBootstrapServer]
         """
         self._bootstrap_servers = bootstrap_servers
 

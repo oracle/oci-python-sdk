@@ -151,6 +151,54 @@ class FusionApplicationsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_email_subdomain_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, create_email_subdomain_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_email_subdomain` and waits for the :py:class:`~oci.fusion_apps.models.EmailSubdomain` acted upon
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param oci.fusion_apps.models.CreateEmailSubdomainDetails create_email_subdomain_details: (required)
+            Details for the new email subdomain
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.EmailSubdomain.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_email_subdomain`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_email_subdomain(fusion_environment_id, marketing_brand_id, create_email_subdomain_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        email_subdomain_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_email_subdomain(fusion_environment_id, marketing_brand_id, email_subdomain_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_fusion_environment_and_wait_for_state(self, create_fusion_environment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_fusion_environment` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
@@ -271,6 +319,99 @@ class FusionApplicationsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_marketing_brand_and_wait_for_state(self, fusion_environment_id, create_marketing_brand_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_marketing_brand` and waits for the :py:class:`~oci.fusion_apps.models.MarketingBrand` acted upon
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param oci.fusion_apps.models.CreateMarketingBrandDetails create_marketing_brand_details: (required)
+            Details for the new MarketingBrand
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.MarketingBrand.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_marketing_brand`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_marketing_brand(fusion_environment_id, create_marketing_brand_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        marketing_brand_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_marketing_brand(fusion_environment_id, marketing_brand_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_microsite_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, create_microsite_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_microsite` and waits for the :py:class:`~oci.fusion_apps.models.Microsite` acted upon
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param oci.fusion_apps.models.CreateMicrositeDetails create_microsite_details: (required)
+            Details for the new microsite
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.Microsite.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_microsite`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_microsite(fusion_environment_id, marketing_brand_id, create_microsite_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        microsite_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_microsite(fusion_environment_id, marketing_brand_id, microsite_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_refresh_activity_and_wait_for_state(self, fusion_environment_id, create_refresh_activity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_refresh_activity` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
@@ -335,6 +476,59 @@ class FusionApplicationsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_service_attachment(create_service_attachment_details, fusion_environment_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_email_subdomain_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, email_subdomain_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_email_subdomain` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str email_subdomain_id: (required)
+            unique emailSubdomain identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_email_subdomain`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_email_subdomain(fusion_environment_id, marketing_brand_id, email_subdomain_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -473,6 +667,109 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_fusion_environment_family(fusion_environment_family_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_marketing_brand_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_marketing_brand` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_marketing_brand`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_marketing_brand(fusion_environment_id, marketing_brand_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_microsite_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, microsite_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_microsite` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str microsite_id: (required)
+            unique microsite identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_microsite`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_microsite(fusion_environment_id, marketing_brand_id, microsite_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -683,6 +980,57 @@ class FusionApplicationsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_email_subdomain_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, email_subdomain_id, update_email_subdomain_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_email_subdomain` and waits for the :py:class:`~oci.fusion_apps.models.EmailSubdomain` acted upon
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str email_subdomain_id: (required)
+            unique emailSubdomain identifier
+
+        :param oci.fusion_apps.models.UpdateEmailSubdomainDetails update_email_subdomain_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.EmailSubdomain.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_email_subdomain`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_email_subdomain(fusion_environment_id, marketing_brand_id, email_subdomain_id, update_email_subdomain_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        email_subdomain_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_email_subdomain(fusion_environment_id, marketing_brand_id, email_subdomain_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_fusion_environment_and_wait_for_state(self, fusion_environment_id, update_fusion_environment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_fusion_environment` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
@@ -767,6 +1115,105 @@ class FusionApplicationsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_marketing_brand_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, update_marketing_brand_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_marketing_brand` and waits for the :py:class:`~oci.fusion_apps.models.MarketingBrand` acted upon
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param oci.fusion_apps.models.UpdateMarketingBrandDetails update_marketing_brand_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.MarketingBrand.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_marketing_brand`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_marketing_brand(fusion_environment_id, marketing_brand_id, update_marketing_brand_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        marketing_brand_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_marketing_brand(fusion_environment_id, marketing_brand_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_microsite_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, microsite_id, update_microsite_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_microsite` and waits for the :py:class:`~oci.fusion_apps.models.Microsite` acted upon
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str microsite_id: (required)
+            unique microsite identifier
+
+        :param oci.fusion_apps.models.UpdateMicrositeDetails update_microsite_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.Microsite.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_microsite`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_microsite(fusion_environment_id, marketing_brand_id, microsite_id, update_microsite_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        microsite_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_microsite(fusion_environment_id, marketing_brand_id, microsite_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_refresh_activity_and_wait_for_state(self, fusion_environment_id, refresh_activity_id, update_refresh_activity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_refresh_activity` and waits for the :py:class:`~oci.fusion_apps.models.RefreshActivity` acted upon
@@ -812,5 +1259,140 @@ class FusionApplicationsClientCompositeOperations(object):
                 e.args = ('',)
             e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def validate_and_configure_email_subdomain_certificate_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, email_subdomain_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.validate_and_configure_email_subdomain_certificate` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str email_subdomain_id: (required)
+            unique emailSubdomain identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.validate_and_configure_email_subdomain_certificate`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.validate_and_configure_email_subdomain_certificate(fusion_environment_id, marketing_brand_id, email_subdomain_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def validate_and_configure_email_subdomain_dns_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, email_subdomain_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.validate_and_configure_email_subdomain_dns` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str email_subdomain_id: (required)
+            unique emailSubdomain identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.validate_and_configure_email_subdomain_dns`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.validate_and_configure_email_subdomain_dns(fusion_environment_id, marketing_brand_id, email_subdomain_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def validate_and_configure_microsite_dns_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, microsite_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.validate_and_configure_microsite_dns` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str marketing_brand_id: (required)
+            unique brand identifier
+
+        :param str microsite_id: (required)
+            unique microsite identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.validate_and_configure_microsite_dns`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.validate_and_configure_microsite_dns(fusion_environment_id, marketing_brand_id, microsite_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)

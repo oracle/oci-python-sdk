@@ -131,10 +131,6 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             The value to assign to the should_validate_server_certificate property of this CreateMicrosoftSqlserverConnectionDetails.
         :type should_validate_server_certificate: bool
 
-        :param private_ip:
-            The value to assign to the private_ip property of this CreateMicrosoftSqlserverConnectionDetails.
-        :type private_ip: str
-
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -163,8 +159,7 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_ca': 'str',
-            'should_validate_server_certificate': 'bool',
-            'private_ip': 'str'
+            'should_validate_server_certificate': 'bool'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -193,8 +188,7 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_ca': 'sslCa',
-            'should_validate_server_certificate': 'shouldValidateServerCertificate',
-            'private_ip': 'privateIp'
+            'should_validate_server_certificate': 'shouldValidateServerCertificate'
         }
         self._connection_type = None
         self._display_name = None
@@ -223,7 +217,6 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
         self._security_protocol = None
         self._ssl_ca = None
         self._should_validate_server_certificate = None
-        self._private_ip = None
         self._connection_type = 'MICROSOFT_SQLSERVER'
 
     @property
@@ -503,44 +496,6 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
         :type: bool
         """
         self._should_validate_server_certificate = should_validate_server_certificate
-
-    @property
-    def private_ip(self):
-        """
-        Gets the private_ip of this CreateMicrosoftSqlserverConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :return: The private_ip of this CreateMicrosoftSqlserverConnectionDetails.
-        :rtype: str
-        """
-        return self._private_ip
-
-    @private_ip.setter
-    def private_ip(self, private_ip):
-        """
-        Sets the private_ip of this CreateMicrosoftSqlserverConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :param private_ip: The private_ip of this CreateMicrosoftSqlserverConnectionDetails.
-        :type: str
-        """
-        self._private_ip = private_ip
 
     def __repr__(self):
         return formatted_flat_dict(self)

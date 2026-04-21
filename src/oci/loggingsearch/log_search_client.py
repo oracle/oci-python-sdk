@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class LogSearchClient(object):
     """
-    Search for logs in your compartments, log groups, and log objects.
+    Use the Logging Search API to search for logs in your compartments, log groups, and log objects. For more information, see [Logging Overview](/iaas/Content/Logging/Concepts/loggingoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -104,7 +104,7 @@ class LogSearchClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190909',
-            'service_endpoint_template': 'https://logging.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://logging.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
@@ -137,14 +137,15 @@ class LogSearchClient(object):
             Search request.
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-            a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. The input value can be null but an empty string will return an error.
+            If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a response. Pagination is not supported in this API.
+            The maximum number of items to return in a response.
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"Search\" call.
+            The input value can be null but an empty string will return an error.
             For important details about how pagination works, see `List Pagination`__.
 
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine

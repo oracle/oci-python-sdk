@@ -38,6 +38,10 @@ class CreateAzureDataLakeStorageIcebergStorageDetails(CreateIcebergStorageDetail
             The value to assign to the account_key_secret_id property of this CreateAzureDataLakeStorageIcebergStorageDetails.
         :type account_key_secret_id: str
 
+        :param account_key:
+            The value to assign to the account_key property of this CreateAzureDataLakeStorageIcebergStorageDetails.
+        :type account_key: str
+
         :param endpoint:
             The value to assign to the endpoint property of this CreateAzureDataLakeStorageIcebergStorageDetails.
         :type endpoint: str
@@ -48,6 +52,7 @@ class CreateAzureDataLakeStorageIcebergStorageDetails(CreateIcebergStorageDetail
             'account_name': 'str',
             'container': 'str',
             'account_key_secret_id': 'str',
+            'account_key': 'str',
             'endpoint': 'str'
         }
         self.attribute_map = {
@@ -55,12 +60,14 @@ class CreateAzureDataLakeStorageIcebergStorageDetails(CreateIcebergStorageDetail
             'account_name': 'accountName',
             'container': 'container',
             'account_key_secret_id': 'accountKeySecretId',
+            'account_key': 'accountKey',
             'endpoint': 'endpoint'
         }
         self._storage_type = None
         self._account_name = None
         self._container = None
         self._account_key_secret_id = None
+        self._account_key = None
         self._endpoint = None
         self._storage_type = 'AZURE_DATA_LAKE_STORAGE'
 
@@ -115,7 +122,7 @@ class CreateAzureDataLakeStorageIcebergStorageDetails(CreateIcebergStorageDetail
     @property
     def account_key_secret_id(self):
         """
-        **[Required]** Gets the account_key_secret_id of this CreateAzureDataLakeStorageIcebergStorageDetails.
+        Gets the account_key_secret_id of this CreateAzureDataLakeStorageIcebergStorageDetails.
         The `OCID`__ of the Secret where the account key is stored.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -139,6 +146,34 @@ class CreateAzureDataLakeStorageIcebergStorageDetails(CreateIcebergStorageDetail
         :type: str
         """
         self._account_key_secret_id = account_key_secret_id
+
+    @property
+    def account_key(self):
+        """
+        Gets the account_key of this CreateAzureDataLakeStorageIcebergStorageDetails.
+        Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
+        e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        Deprecated: This field is deprecated and replaced by \"accountKeySecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The account_key of this CreateAzureDataLakeStorageIcebergStorageDetails.
+        :rtype: str
+        """
+        return self._account_key
+
+    @account_key.setter
+    def account_key(self, account_key):
+        """
+        Sets the account_key of this CreateAzureDataLakeStorageIcebergStorageDetails.
+        Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
+        e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        Deprecated: This field is deprecated and replaced by \"accountKeySecretId\". This field will be removed after February 15 2026.
+
+
+        :param account_key: The account_key of this CreateAzureDataLakeStorageIcebergStorageDetails.
+        :type: str
+        """
+        self._account_key = account_key
 
     @property
     def endpoint(self):

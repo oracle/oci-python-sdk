@@ -51,6 +51,10 @@ class RequestSummarizedUsagesDetails(object):
     #: This constant has a value of "ALLCREDIT"
     QUERY_TYPE_ALLCREDIT = "ALLCREDIT"
 
+    #: A constant which can be used with the query_type property of a RequestSummarizedUsagesDetails.
+    #: This constant has a value of "USAGE_ONLY"
+    QUERY_TYPE_USAGE_ONLY = "USAGE_ONLY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RequestSummarizedUsagesDetails object with values from keyword arguments.
@@ -83,7 +87,7 @@ class RequestSummarizedUsagesDetails(object):
 
         :param query_type:
             The value to assign to the query_type property of this RequestSummarizedUsagesDetails.
-            Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT"
+            Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT", "USAGE_ONLY"
         :type query_type: str
 
         :param group_by:
@@ -306,8 +310,9 @@ class RequestSummarizedUsagesDetails(object):
         Credit - Query the credit adjustments data.
         ExpiredCredit - Query the expired credits data.
         AllCredit - Query the credit adjustments and expired credit.
+        Usage_Only - Query the only usage data without cost or currency.
 
-        Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT"
+        Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT", "USAGE_ONLY"
 
 
         :return: The query_type of this RequestSummarizedUsagesDetails.
@@ -325,12 +330,13 @@ class RequestSummarizedUsagesDetails(object):
         Credit - Query the credit adjustments data.
         ExpiredCredit - Query the expired credits data.
         AllCredit - Query the credit adjustments and expired credit.
+        Usage_Only - Query the only usage data without cost or currency.
 
 
         :param query_type: The query_type of this RequestSummarizedUsagesDetails.
         :type: str
         """
-        allowed_values = ["USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT"]
+        allowed_values = ["USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT", "USAGE_ONLY"]
         if not value_allowed_none_or_none_sentinel(query_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `query_type`, must be None or one of {allowed_values}"
