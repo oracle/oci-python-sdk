@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDetachIpv6sDetails(object):
     """
-    Bulk Secondary IPv6 addresses detach object.
+    Details needed to bulk detach secondary IPv6 addresses.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class BulkDetachIpv6sDetails(object):
     def vnic_id(self):
         """
         Gets the vnic_id of this BulkDetachIpv6sDetails.
-        The `OCID`__ of the VNIC of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
+        The `OCID`__ of the VNIC from which multiple IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -58,7 +58,7 @@ class BulkDetachIpv6sDetails(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this BulkDetachIpv6sDetails.
-        The `OCID`__ of the VNIC of which IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
+        The `OCID`__ of the VNIC from which multiple IPv6s should be detached. The VNIC and IPv6s must be in the same subnet.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class BulkDetachIpv6sDetails(object):
     def bulk_detach_ipv6s_item(self):
         """
         **[Required]** Gets the bulk_detach_ipv6s_item of this BulkDetachIpv6sDetails.
-        Secondary IPv6 addresses to detached.
+        A secondary IPv6 address to detach.
 
 
         :return: The bulk_detach_ipv6s_item of this BulkDetachIpv6sDetails.
@@ -84,7 +84,7 @@ class BulkDetachIpv6sDetails(object):
     def bulk_detach_ipv6s_item(self, bulk_detach_ipv6s_item):
         """
         Sets the bulk_detach_ipv6s_item of this BulkDetachIpv6sDetails.
-        Secondary IPv6 addresses to detached.
+        A secondary IPv6 address to detach.
 
 
         :param bulk_detach_ipv6s_item: The bulk_detach_ipv6s_item of this BulkDetachIpv6sDetails.

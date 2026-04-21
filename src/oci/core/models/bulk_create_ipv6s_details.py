@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkCreateIpv6sDetails(object):
     """
-    Bulk Secondary IPv6 addresses creation object.
+    Details needed to create secondary IPv6 addresses with a bulk operation.
     """
 
     def __init__(self, **kwargs):
@@ -52,7 +52,7 @@ class BulkCreateIpv6sDetails(object):
         """
         Gets the vnic_id of this BulkCreateIpv6sDetails.
         The `OCID`__ of the VNIC to assign the IPv6s to. The
-        IPv6 will be in the VNIC's subnet.
+        IPv6s will be in the VNIC's subnet.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -67,7 +67,7 @@ class BulkCreateIpv6sDetails(object):
         """
         Sets the vnic_id of this BulkCreateIpv6sDetails.
         The `OCID`__ of the VNIC to assign the IPv6s to. The
-        IPv6 will be in the VNIC's subnet.
+        IPv6s will be in the VNIC's subnet.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -111,7 +111,7 @@ class BulkCreateIpv6sDetails(object):
     def bulk_create_ipv6s_item(self):
         """
         **[Required]** Gets the bulk_create_ipv6s_item of this BulkCreateIpv6sDetails.
-        Secondary IPv6 addresses to assign.
+        A secondary IPv6 address to assign.
 
 
         :return: The bulk_create_ipv6s_item of this BulkCreateIpv6sDetails.
@@ -123,7 +123,7 @@ class BulkCreateIpv6sDetails(object):
     def bulk_create_ipv6s_item(self, bulk_create_ipv6s_item):
         """
         Sets the bulk_create_ipv6s_item of this BulkCreateIpv6sDetails.
-        Secondary IPv6 addresses to assign.
+        A secondary IPv6 address to assign.
 
 
         :param bulk_create_ipv6s_item: The bulk_create_ipv6s_item of this BulkCreateIpv6sDetails.

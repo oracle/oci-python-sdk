@@ -95,6 +95,14 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
             The value to assign to the private_key_passphrase_secret_id property of this UpdateOracleAiDataPlatformConnectionDetails.
         :type private_key_passphrase_secret_id: str
 
+        :param private_key_file:
+            The value to assign to the private_key_file property of this UpdateOracleAiDataPlatformConnectionDetails.
+        :type private_key_file: str
+
+        :param private_key_passphrase:
+            The value to assign to the private_key_passphrase property of this UpdateOracleAiDataPlatformConnectionDetails.
+        :type private_key_passphrase: str
+
         :param public_key_fingerprint:
             The value to assign to the public_key_fingerprint property of this UpdateOracleAiDataPlatformConnectionDetails.
         :type public_key_fingerprint: str
@@ -123,6 +131,8 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
             'user_id': 'str',
             'private_key_file_secret_id': 'str',
             'private_key_passphrase_secret_id': 'str',
+            'private_key_file': 'str',
+            'private_key_passphrase': 'str',
             'public_key_fingerprint': 'str',
             'should_use_resource_principal': 'bool'
         }
@@ -145,6 +155,8 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
             'user_id': 'userId',
             'private_key_file_secret_id': 'privateKeyFileSecretId',
             'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId',
+            'private_key_file': 'privateKeyFile',
+            'private_key_passphrase': 'privateKeyPassphrase',
             'public_key_fingerprint': 'publicKeyFingerprint',
             'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
@@ -166,6 +178,8 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
         self._user_id = None
         self._private_key_file_secret_id = None
         self._private_key_passphrase_secret_id = None
+        self._private_key_file = None
+        self._private_key_passphrase = None
         self._public_key_fingerprint = None
         self._should_use_resource_principal = None
         self._connection_type = 'ORACLE_AI_DATA_PLATFORM'
@@ -343,6 +357,60 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._private_key_passphrase_secret_id = private_key_passphrase_secret_id
+
+    @property
+    def private_key_file(self):
+        """
+        Gets the private_key_file of this UpdateOracleAiDataPlatformConnectionDetails.
+        The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Deprecated: This field is deprecated and replaced by \"privateKeyFileSecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The private_key_file of this UpdateOracleAiDataPlatformConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_file
+
+    @private_key_file.setter
+    def private_key_file(self, private_key_file):
+        """
+        Sets the private_key_file of this UpdateOracleAiDataPlatformConnectionDetails.
+        The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Deprecated: This field is deprecated and replaced by \"privateKeyFileSecretId\". This field will be removed after February 15 2026.
+
+
+        :param private_key_file: The private_key_file of this UpdateOracleAiDataPlatformConnectionDetails.
+        :type: str
+        """
+        self._private_key_file = private_key_file
+
+    @property
+    def private_key_passphrase(self):
+        """
+        Gets the private_key_passphrase of this UpdateOracleAiDataPlatformConnectionDetails.
+        The passphrase of the private key.
+        Deprecated: This field is deprecated and replaced by \"privateKeyPassphraseSecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The private_key_passphrase of this UpdateOracleAiDataPlatformConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_passphrase
+
+    @private_key_passphrase.setter
+    def private_key_passphrase(self, private_key_passphrase):
+        """
+        Sets the private_key_passphrase of this UpdateOracleAiDataPlatformConnectionDetails.
+        The passphrase of the private key.
+        Deprecated: This field is deprecated and replaced by \"privateKeyPassphraseSecretId\". This field will be removed after February 15 2026.
+
+
+        :param private_key_passphrase: The private_key_passphrase of this UpdateOracleAiDataPlatformConnectionDetails.
+        :type: str
+        """
+        self._private_key_passphrase = private_key_passphrase
 
     @property
     def public_key_fingerprint(self):

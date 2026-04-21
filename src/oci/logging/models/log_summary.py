@@ -92,6 +92,10 @@ class LogSummary(object):
             The value to assign to the freeform_tags property of this LogSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this LogSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this LogSummary.
         :type time_created: datetime
@@ -119,6 +123,7 @@ class LogSummary(object):
             'configuration': 'Configuration',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'time_last_modified': 'datetime',
             'retention_duration': 'int',
@@ -134,6 +139,7 @@ class LogSummary(object):
             'configuration': 'configuration',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'time_last_modified': 'timeLastModified',
             'retention_duration': 'retentionDuration',
@@ -148,6 +154,7 @@ class LogSummary(object):
         self._configuration = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
         self._time_created = None
         self._time_last_modified = None
         self._retention_duration = None
@@ -396,6 +403,32 @@ class LogSummary(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this LogSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this LogSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this LogSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this LogSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

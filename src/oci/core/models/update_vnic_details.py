@@ -322,6 +322,7 @@ class UpdateVnicDetails(object):
         If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
         belonging to a subnet), the value of the `skipSourceDestCheck` attribute is ignored.
         This is because the source/destination check is always disabled for VNICs in a VLAN.
+
         Example: `true`
 
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
@@ -344,6 +345,7 @@ class UpdateVnicDetails(object):
         If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
         belonging to a subnet), the value of the `skipSourceDestCheck` attribute is ignored.
         This is because the source/destination check is always disabled for VNICs in a VLAN.
+
         Example: `true`
 
         __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip

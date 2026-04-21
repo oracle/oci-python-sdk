@@ -591,8 +591,8 @@ from .update_compute_cluster_details import UpdateComputeClusterDetails
 from .update_compute_gpu_memory_cluster_details import UpdateComputeGpuMemoryClusterDetails
 from .update_compute_gpu_memory_cluster_scale_config import UpdateComputeGpuMemoryClusterScaleConfig
 from .update_compute_gpu_memory_fabric_details import UpdateComputeGpuMemoryFabricDetails
+from .update_compute_host_details import UpdateComputeHostDetails
 from .update_compute_host_group_details import UpdateComputeHostGroupDetails
-from .update_compute_hosts_details import UpdateComputeHostsDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -1290,8 +1290,8 @@ core_type_mapping = {
     "UpdateComputeGpuMemoryClusterDetails": UpdateComputeGpuMemoryClusterDetails,
     "UpdateComputeGpuMemoryClusterScaleConfig": UpdateComputeGpuMemoryClusterScaleConfig,
     "UpdateComputeGpuMemoryFabricDetails": UpdateComputeGpuMemoryFabricDetails,
+    "UpdateComputeHostDetails": UpdateComputeHostDetails,
     "UpdateComputeHostGroupDetails": UpdateComputeHostGroupDetails,
-    "UpdateComputeHostsDetails": UpdateComputeHostsDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,

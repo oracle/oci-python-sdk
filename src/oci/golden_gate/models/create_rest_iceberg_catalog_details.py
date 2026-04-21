@@ -34,20 +34,27 @@ class CreateRestIcebergCatalogDetails(CreateIcebergCatalogDetails):
             The value to assign to the properties_secret_id property of this CreateRestIcebergCatalogDetails.
         :type properties_secret_id: str
 
+        :param properties:
+            The value to assign to the properties property of this CreateRestIcebergCatalogDetails.
+        :type properties: str
+
         """
         self.swagger_types = {
             'catalog_type': 'str',
             'uri': 'str',
-            'properties_secret_id': 'str'
+            'properties_secret_id': 'str',
+            'properties': 'str'
         }
         self.attribute_map = {
             'catalog_type': 'catalogType',
             'uri': 'uri',
-            'properties_secret_id': 'propertiesSecretId'
+            'properties_secret_id': 'propertiesSecretId',
+            'properties': 'properties'
         }
         self._catalog_type = None
         self._uri = None
         self._properties_secret_id = None
+        self._properties = None
         self._catalog_type = 'REST'
 
     @property
@@ -79,7 +86,7 @@ class CreateRestIcebergCatalogDetails(CreateIcebergCatalogDetails):
     @property
     def properties_secret_id(self):
         """
-        **[Required]** Gets the properties_secret_id of this CreateRestIcebergCatalogDetails.
+        Gets the properties_secret_id of this CreateRestIcebergCatalogDetails.
         The `OCID`__ of the Secret that stores the content
         of the configuration file containing additional properties for the REST catalog.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -107,6 +114,30 @@ class CreateRestIcebergCatalogDetails(CreateIcebergCatalogDetails):
         :type: str
         """
         self._properties_secret_id = properties_secret_id
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this CreateRestIcebergCatalogDetails.
+        The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+
+
+        :return: The properties of this CreateRestIcebergCatalogDetails.
+        :rtype: str
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this CreateRestIcebergCatalogDetails.
+        The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+
+
+        :param properties: The properties of this CreateRestIcebergCatalogDetails.
+        :type: str
+        """
+        self._properties = properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

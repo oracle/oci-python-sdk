@@ -674,7 +674,7 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_key_name(self):
         """
         Gets the provider_service_key_name of this CreateVirtualCircuitDetails.
-        The service key name offered by the provider (if the customer is connecting via a provider).
+        The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 
 
         :return: The provider_service_key_name of this CreateVirtualCircuitDetails.
@@ -686,7 +686,7 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_key_name(self, provider_service_key_name):
         """
         Sets the provider_service_key_name of this CreateVirtualCircuitDetails.
-        The service key name offered by the provider (if the customer is connecting via a provider).
+        The service key name or activation key offered by the provider (if the customer is connecting via a provider).
 
 
         :param provider_service_key_name: The provider_service_key_name of this CreateVirtualCircuitDetails.

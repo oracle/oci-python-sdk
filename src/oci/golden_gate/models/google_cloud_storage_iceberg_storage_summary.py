@@ -38,23 +38,30 @@ class GoogleCloudStorageIcebergStorageSummary(IcebergStorageSummary):
             The value to assign to the service_account_key_file_secret_id property of this GoogleCloudStorageIcebergStorageSummary.
         :type service_account_key_file_secret_id: str
 
+        :param endpoint:
+            The value to assign to the endpoint property of this GoogleCloudStorageIcebergStorageSummary.
+        :type endpoint: str
+
         """
         self.swagger_types = {
             'storage_type': 'str',
             'bucket': 'str',
             'project_id': 'str',
-            'service_account_key_file_secret_id': 'str'
+            'service_account_key_file_secret_id': 'str',
+            'endpoint': 'str'
         }
         self.attribute_map = {
             'storage_type': 'storageType',
             'bucket': 'bucket',
             'project_id': 'projectId',
-            'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
+            'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId',
+            'endpoint': 'endpoint'
         }
         self._storage_type = None
         self._bucket = None
         self._project_id = None
         self._service_account_key_file_secret_id = None
+        self._endpoint = None
         self._storage_type = 'GOOGLE_CLOUD_STORAGE'
 
     @property
@@ -108,7 +115,7 @@ class GoogleCloudStorageIcebergStorageSummary(IcebergStorageSummary):
     @property
     def service_account_key_file_secret_id(self):
         """
-        **[Required]** Gets the service_account_key_file_secret_id of this GoogleCloudStorageIcebergStorageSummary.
+        Gets the service_account_key_file_secret_id of this GoogleCloudStorageIcebergStorageSummary.
         The `OCID`__ of the Secret where the content of the service account key file is stored,
         which contains the credentials required to use Google Cloud Storage.
 
@@ -134,6 +141,32 @@ class GoogleCloudStorageIcebergStorageSummary(IcebergStorageSummary):
         :type: str
         """
         self._service_account_key_file_secret_id = service_account_key_file_secret_id
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this GoogleCloudStorageIcebergStorageSummary.
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+        Default: https://storage.googleapis.com
+
+
+        :return: The endpoint of this GoogleCloudStorageIcebergStorageSummary.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this GoogleCloudStorageIcebergStorageSummary.
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+        Default: https://storage.googleapis.com
+
+
+        :param endpoint: The endpoint of this GoogleCloudStorageIcebergStorageSummary.
+        :type: str
+        """
+        self._endpoint = endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

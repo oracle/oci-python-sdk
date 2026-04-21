@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkUpdateIpv6sItem(object):
     """
-    Secondary IPv6 object to update as part of bulk update.
+    A secondary IPv6 object to update as part of a bulk update.
     """
 
     #: A constant which can be used with the lifetime property of a BulkUpdateIpv6sItem.
@@ -175,7 +175,9 @@ class BulkUpdateIpv6sItem(object):
     def ipv6_id(self):
         """
         **[Required]** Gets the ipv6_id of this BulkUpdateIpv6sItem.
-        The OCID of the IPv6.
+        The `OCID`__ of the IPv6 object.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The ipv6_id of this BulkUpdateIpv6sItem.
@@ -187,7 +189,9 @@ class BulkUpdateIpv6sItem(object):
     def ipv6_id(self, ipv6_id):
         """
         Sets the ipv6_id of this BulkUpdateIpv6sItem.
-        The OCID of the IPv6.
+        The `OCID`__ of the IPv6 object.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param ipv6_id: The ipv6_id of this BulkUpdateIpv6sItem.

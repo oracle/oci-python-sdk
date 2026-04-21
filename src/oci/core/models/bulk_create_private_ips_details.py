@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkCreatePrivateIpsDetails(object):
     """
-    Bulk Secondary IPv4 addresses creation object.
+    Details used to create secondary private IPv4 addresses in a bulk operation.
     """
 
     def __init__(self, **kwargs):
@@ -144,7 +144,7 @@ class BulkCreatePrivateIpsDetails(object):
     def bulk_create_private_ip_item(self):
         """
         **[Required]** Gets the bulk_create_private_ip_item of this BulkCreatePrivateIpsDetails.
-        Secondary IPv4 addresses to assign.
+        A secondary IPv4 address to assign.
 
 
         :return: The bulk_create_private_ip_item of this BulkCreatePrivateIpsDetails.
@@ -156,7 +156,7 @@ class BulkCreatePrivateIpsDetails(object):
     def bulk_create_private_ip_item(self, bulk_create_private_ip_item):
         """
         Sets the bulk_create_private_ip_item of this BulkCreatePrivateIpsDetails.
-        Secondary IPv4 addresses to assign.
+        A secondary IPv4 address to assign.
 
 
         :param bulk_create_private_ip_item: The bulk_create_private_ip_item of this BulkCreatePrivateIpsDetails.

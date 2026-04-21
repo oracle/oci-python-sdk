@@ -115,7 +115,7 @@ class AzureDataLakeStorageIcebergStorage(IcebergStorage):
     @property
     def account_key_secret_id(self):
         """
-        **[Required]** Gets the account_key_secret_id of this AzureDataLakeStorageIcebergStorage.
+        Gets the account_key_secret_id of this AzureDataLakeStorageIcebergStorage.
         The `OCID`__ of the Secret where the account key is stored.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm

@@ -27,14 +27,21 @@ Fusion Apps
     oci.fusion_apps.models.ChangeFusionEnvironmentCompartmentDetails
     oci.fusion_apps.models.ChangeFusionEnvironmentFamilyCompartmentDetails
     oci.fusion_apps.models.CreateDataMaskingActivityDetails
+    oci.fusion_apps.models.CreateEmailSubdomainDetails
     oci.fusion_apps.models.CreateFusionEnvironmentAdminUserDetails
     oci.fusion_apps.models.CreateFusionEnvironmentDetails
     oci.fusion_apps.models.CreateFusionEnvironmentFamilyDetails
+    oci.fusion_apps.models.CreateMarketingBrandDetails
+    oci.fusion_apps.models.CreateMicrositeDetails
     oci.fusion_apps.models.CreateRefreshActivityDetails
     oci.fusion_apps.models.CreateServiceAttachmentDetails
     oci.fusion_apps.models.DataMaskingActivity
     oci.fusion_apps.models.DataMaskingActivityCollection
     oci.fusion_apps.models.DataMaskingActivitySummary
+    oci.fusion_apps.models.DnsRecord
+    oci.fusion_apps.models.EmailSubdomain
+    oci.fusion_apps.models.EmailSubdomainCollection
+    oci.fusion_apps.models.EmailSubdomainSummary
     oci.fusion_apps.models.EnvironmentRole
     oci.fusion_apps.models.ExtractDetailsCollection
     oci.fusion_apps.models.ExtractDetailsSummary
@@ -51,6 +58,15 @@ Fusion Apps
     oci.fusion_apps.models.KmsKeyInfo
     oci.fusion_apps.models.LimitAndUsage
     oci.fusion_apps.models.MaintenancePolicy
+    oci.fusion_apps.models.MarketingBrand
+    oci.fusion_apps.models.MarketingBrandCollection
+    oci.fusion_apps.models.MarketingBrandEmailSubdomainCsr
+    oci.fusion_apps.models.MarketingBrandEmailSubdomainDnsConfig
+    oci.fusion_apps.models.MarketingBrandMicrositeDnsConfig
+    oci.fusion_apps.models.MarketingBrandSummary
+    oci.fusion_apps.models.Microsite
+    oci.fusion_apps.models.MicrositeCollection
+    oci.fusion_apps.models.MicrositeSummary
     oci.fusion_apps.models.PatchAction
     oci.fusion_apps.models.QuarterlyUpgradeBeginTimes
     oci.fusion_apps.models.RefreshActivity
@@ -58,6 +74,7 @@ Fusion Apps
     oci.fusion_apps.models.RefreshActivitySummary
     oci.fusion_apps.models.RefreshDetails
     oci.fusion_apps.models.RefreshIssueDetails
+    oci.fusion_apps.models.RequestEmailSubdomainCsrDetails
     oci.fusion_apps.models.ResetFusionEnvironmentPasswordDetails
     oci.fusion_apps.models.Rule
     oci.fusion_apps.models.RuleCondition
@@ -76,11 +93,15 @@ Fusion Apps
     oci.fusion_apps.models.TimeAvailableForRefresh
     oci.fusion_apps.models.TimeAvailableForRefreshCollection
     oci.fusion_apps.models.TimeAvailableForRefreshSummary
+    oci.fusion_apps.models.UpdateEmailSubdomainDetails
     oci.fusion_apps.models.UpdateFamilyMaintenancePolicyDetails
     oci.fusion_apps.models.UpdateFusionEnvironmentDetails
     oci.fusion_apps.models.UpdateFusionEnvironmentFamilyDetails
+    oci.fusion_apps.models.UpdateMarketingBrandDetails
+    oci.fusion_apps.models.UpdateMicrositeDetails
     oci.fusion_apps.models.UpdateRefreshActivityDetails
     oci.fusion_apps.models.UpgradeAction
+    oci.fusion_apps.models.UploadEmailSubdomainCertificateDetails
     oci.fusion_apps.models.VerifyServiceAttachmentDetails
     oci.fusion_apps.models.VertexAction
     oci.fusion_apps.models.WorkRequest

@@ -88,6 +88,7 @@ Golden Gate
     oci.golden_gate.models.CreateIcebergConnectionDetails
     oci.golden_gate.models.CreateIcebergStorageDetails
     oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails
+    oci.golden_gate.models.CreateKafkaBootstrapServer
     oci.golden_gate.models.CreateKafkaConnectionDetails
     oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails
     oci.golden_gate.models.CreateMaintenanceConfigurationDetails
@@ -206,6 +207,7 @@ Golden Gate
     oci.golden_gate.models.MicrosoftFabricConnectionSummary
     oci.golden_gate.models.MicrosoftSqlserverConnection
     oci.golden_gate.models.MicrosoftSqlserverConnectionSummary
+    oci.golden_gate.models.MigrateConnectionDetails
     oci.golden_gate.models.MongoDbConnection
     oci.golden_gate.models.MongoDbConnectionSummary
     oci.golden_gate.models.MysqlConnection
@@ -255,6 +257,7 @@ Golden Gate
     oci.golden_gate.models.RestIcebergCatalogSummary
     oci.golden_gate.models.RestoreDeploymentDetails
     oci.golden_gate.models.RollbackDeploymentUpgradeDetails
+    oci.golden_gate.models.SecretMigrateConnectionDetails
     oci.golden_gate.models.SnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.SnowflakeConnection
     oci.golden_gate.models.SnowflakeConnectionSummary

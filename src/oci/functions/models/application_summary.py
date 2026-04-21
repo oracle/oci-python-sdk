@@ -66,6 +66,10 @@ class ApplicationSummary(object):
             The value to assign to the trace_config property of this ApplicationSummary.
         :type trace_config: oci.functions.models.ApplicationTraceConfig
 
+        :param logging:
+            The value to assign to the logging property of this ApplicationSummary.
+        :type logging: oci.functions.models.ApplicationLoggingConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ApplicationSummary.
         :type freeform_tags: dict(str, str)
@@ -100,6 +104,7 @@ class ApplicationSummary(object):
             'shape': 'str',
             'network_security_group_ids': 'list[str]',
             'trace_config': 'ApplicationTraceConfig',
+            'logging': 'ApplicationLoggingConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
@@ -116,6 +121,7 @@ class ApplicationSummary(object):
             'shape': 'shape',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'trace_config': 'traceConfig',
+            'logging': 'logging',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'time_created': 'timeCreated',
@@ -131,6 +137,7 @@ class ApplicationSummary(object):
         self._shape = None
         self._network_security_group_ids = None
         self._trace_config = None
+        self._logging = None
         self._freeform_tags = None
         self._defined_tags = None
         self._time_created = None
@@ -351,6 +358,26 @@ class ApplicationSummary(object):
         :type: oci.functions.models.ApplicationTraceConfig
         """
         self._trace_config = trace_config
+
+    @property
+    def logging(self):
+        """
+        Gets the logging of this ApplicationSummary.
+
+        :return: The logging of this ApplicationSummary.
+        :rtype: oci.functions.models.ApplicationLoggingConfig
+        """
+        return self._logging
+
+    @logging.setter
+    def logging(self, logging):
+        """
+        Sets the logging of this ApplicationSummary.
+
+        :param logging: The logging of this ApplicationSummary.
+        :type: oci.functions.models.ApplicationLoggingConfig
+        """
+        self._logging = logging
 
     @property
     def freeform_tags(self):

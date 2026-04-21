@@ -86,6 +86,10 @@ class Log(object):
             The value to assign to the freeform_tags property of this Log.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Log.
+        :type system_tags: dict(str, dict(str, object))
+
         :param configuration:
             The value to assign to the configuration property of this Log.
         :type configuration: oci.logging.models.Configuration
@@ -122,6 +126,7 @@ class Log(object):
             'is_enabled': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'configuration': 'Configuration',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
@@ -138,6 +143,7 @@ class Log(object):
             'is_enabled': 'isEnabled',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'configuration': 'configuration',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
@@ -153,6 +159,7 @@ class Log(object):
         self._is_enabled = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
         self._configuration = None
         self._lifecycle_state = None
         self._time_created = None
@@ -377,6 +384,32 @@ class Log(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Log.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Log.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Log.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Log.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def configuration(self):

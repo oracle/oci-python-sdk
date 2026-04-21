@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkUpdatePrivateIpsDetails(object):
     """
-    Bulk Secondary IPv4 addresses update object.
+    Details used for a secondary IPv4 address bulk update.
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,7 @@ class BulkUpdatePrivateIpsDetails(object):
     def bulk_update_private_ip_item(self):
         """
         **[Required]** Gets the bulk_update_private_ip_item of this BulkUpdatePrivateIpsDetails.
-        Secondary IPv4 addresses to updated.
+        A secondary IPv4 address to update.
 
 
         :return: The bulk_update_private_ip_item of this BulkUpdatePrivateIpsDetails.
@@ -86,7 +86,7 @@ class BulkUpdatePrivateIpsDetails(object):
     def bulk_update_private_ip_item(self, bulk_update_private_ip_item):
         """
         Sets the bulk_update_private_ip_item of this BulkUpdatePrivateIpsDetails.
-        Secondary IPv4 addresses to updated.
+        A secondary IPv4 address to update.
 
 
         :param bulk_update_private_ip_item: The bulk_update_private_ip_item of this BulkUpdatePrivateIpsDetails.

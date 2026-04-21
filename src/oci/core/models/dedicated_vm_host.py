@@ -664,8 +664,6 @@ class DedicatedVmHost(object):
     def capacity_bins(self):
         """
         Gets the capacity_bins of this DedicatedVmHost.
-        A list of total and remaining CPU and memory per capacity bucket.
-
 
         :return: The capacity_bins of this DedicatedVmHost.
         :rtype: list[oci.core.models.CapacityBin]
@@ -676,8 +674,6 @@ class DedicatedVmHost(object):
     def capacity_bins(self, capacity_bins):
         """
         Sets the capacity_bins of this DedicatedVmHost.
-        A list of total and remaining CPU and memory per capacity bucket.
-
 
         :param capacity_bins: The capacity_bins of this DedicatedVmHost.
         :type: list[oci.core.models.CapacityBin]

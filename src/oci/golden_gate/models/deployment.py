@@ -55,26 +55,6 @@ class Deployment(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
-    #: A constant which can be used with the lifecycle_state property of a Deployment.
-    #: This constant has a value of "IN_PROGRESS"
-    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
-
-    #: A constant which can be used with the lifecycle_state property of a Deployment.
-    #: This constant has a value of "CANCELING"
-    LIFECYCLE_STATE_CANCELING = "CANCELING"
-
-    #: A constant which can be used with the lifecycle_state property of a Deployment.
-    #: This constant has a value of "CANCELED"
-    LIFECYCLE_STATE_CANCELED = "CANCELED"
-
-    #: A constant which can be used with the lifecycle_state property of a Deployment.
-    #: This constant has a value of "SUCCEEDED"
-    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
-
-    #: A constant which can be used with the lifecycle_state property of a Deployment.
-    #: This constant has a value of "WAITING"
-    LIFECYCLE_STATE_WAITING = "WAITING"
-
     #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
     #: This constant has a value of "RECOVERING"
     LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
@@ -240,7 +220,7 @@ class Deployment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Deployment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -347,10 +327,6 @@ class Deployment(object):
         :param is_latest_version:
             The value to assign to the is_latest_version property of this Deployment.
         :type is_latest_version: bool
-
-        :param time_upgrade_required:
-            The value to assign to the time_upgrade_required property of this Deployment.
-        :type time_upgrade_required: datetime
 
         :param storage_utilization_in_bytes:
             The value to assign to the storage_utilization_in_bytes property of this Deployment.
@@ -468,7 +444,6 @@ class Deployment(object):
             'deployment_url': 'str',
             'system_tags': 'dict(str, dict(str, object))',
             'is_latest_version': 'bool',
-            'time_upgrade_required': 'datetime',
             'storage_utilization_in_bytes': 'int',
             'is_storage_utilization_limit_exceeded': 'bool',
             'deployment_type': 'str',
@@ -527,7 +502,6 @@ class Deployment(object):
             'deployment_url': 'deploymentUrl',
             'system_tags': 'systemTags',
             'is_latest_version': 'isLatestVersion',
-            'time_upgrade_required': 'timeUpgradeRequired',
             'storage_utilization_in_bytes': 'storageUtilizationInBytes',
             'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
             'deployment_type': 'deploymentType',
@@ -585,7 +559,6 @@ class Deployment(object):
         self._deployment_url = None
         self._system_tags = None
         self._is_latest_version = None
-        self._time_upgrade_required = None
         self._storage_utilization_in_bytes = None
         self._is_storage_utilization_limit_exceeded = None
         self._deployment_type = None
@@ -961,9 +934,9 @@ class Deployment(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Deployment.
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -976,13 +949,13 @@ class Deployment(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Deployment.
-        Possible lifecycle states.
+        Possible lifecycle states for a Deployment.
 
 
         :param lifecycle_state: The lifecycle_state of this Deployment.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1185,9 +1158,18 @@ class Deployment(object):
     def load_balancer_subnet_id(self):
         """
         Gets the load_balancer_subnet_id of this Deployment.
-        The `OCID`__ of a public subnet in the customer tenancy.
-        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        The `OCID`__ of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        - Update:
+          - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+          - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        - Must reference a public subnet.
+        - Must be a regional subnet.
+        - Must be in the same VCN as subnetId.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1201,9 +1183,18 @@ class Deployment(object):
     def load_balancer_subnet_id(self, load_balancer_subnet_id):
         """
         Sets the load_balancer_subnet_id of this Deployment.
-        The `OCID`__ of a public subnet in the customer tenancy.
-        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+        The `OCID`__ of a public subnet in the customer tenancy used to host the public load balancer of the deployment.
+
+        Rules:
+        - Create: Mandatory when isPublic is true. Must be a public, regional subnet in the same VCN as subnetId.
+        - Update:
+          - For public deployments, this property must be present and is immutable once set (cannot be changed to a different subnet).
+          - Legacy exception: a public deployment created without this property may continue to be updated without providing it; once set, it becomes immutable.
+
+        Validation:
+        - Must reference a public subnet.
+        - Must be a regional subnet.
+        - Must be in the same VCN as subnetId.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1640,46 +1631,6 @@ class Deployment(object):
         :type: bool
         """
         self._is_latest_version = is_latest_version
-
-    @property
-    def time_upgrade_required(self):
-        """
-        Gets the time_upgrade_required of this Deployment.
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-        to check, when deployment will be forced to upgrade to a newer version.
-        Old description:
-        The date the existing version in use will no longer be considered as usable
-        and an upgrade will be required.  This date is typically 6 months after the
-        version was released for use by GGS.  The format is defined by
-        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
-
-        __ https://tools.ietf.org/html/rfc3339
-
-
-        :return: The time_upgrade_required of this Deployment.
-        :rtype: datetime
-        """
-        return self._time_upgrade_required
-
-    @time_upgrade_required.setter
-    def time_upgrade_required(self, time_upgrade_required):
-        """
-        Sets the time_upgrade_required of this Deployment.
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
-        to check, when deployment will be forced to upgrade to a newer version.
-        Old description:
-        The date the existing version in use will no longer be considered as usable
-        and an upgrade will be required.  This date is typically 6 months after the
-        version was released for use by GGS.  The format is defined by
-        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
-
-        __ https://tools.ietf.org/html/rfc3339
-
-
-        :param time_upgrade_required: The time_upgrade_required of this Deployment.
-        :type: datetime
-        """
-        self._time_upgrade_required = time_upgrade_required
 
     @property
     def storage_utilization_in_bytes(self):

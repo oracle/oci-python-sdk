@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeGpuMemoryClusterInstanceCollection(object):
     """
-    A list of compute GPU memory cluster instances.
+    A list of compute GPU Memory Cluster instances.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ComputeGpuMemoryClusterInstanceCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ComputeGpuMemoryClusterInstanceCollection.
-        The list of compute GPU memory cluster instances.
+        The list of compute GPU Memory Cluster instances.
 
 
         :return: The items of this ComputeGpuMemoryClusterInstanceCollection.
@@ -49,7 +49,7 @@ class ComputeGpuMemoryClusterInstanceCollection(object):
     def items(self, items):
         """
         Sets the items of this ComputeGpuMemoryClusterInstanceCollection.
-        The list of compute GPU memory cluster instances.
+        The list of compute GPU Memory Cluster instances.
 
 
         :param items: The items of this ComputeGpuMemoryClusterInstanceCollection.

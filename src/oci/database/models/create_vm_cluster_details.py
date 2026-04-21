@@ -102,6 +102,18 @@ class CreateVmClusterDetails(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param data_storage_percentage:
+            The value to assign to the data_storage_percentage property of this CreateVmClusterDetails.
+        :type data_storage_percentage: int
+
+        :param reco_storage_percentage:
+            The value to assign to the reco_storage_percentage property of this CreateVmClusterDetails.
+        :type reco_storage_percentage: int
+
+        :param sparse_storage_percentage:
+            The value to assign to the sparse_storage_percentage property of this CreateVmClusterDetails.
+        :type sparse_storage_percentage: int
+
         :param is_sparse_diskgroup_enabled:
             The value to assign to the is_sparse_diskgroup_enabled property of this CreateVmClusterDetails.
         :type is_sparse_diskgroup_enabled: bool
@@ -179,6 +191,9 @@ class CreateVmClusterDetails(object):
             'ssh_public_keys': 'list[str]',
             'vm_cluster_network_id': 'str',
             'license_model': 'str',
+            'data_storage_percentage': 'int',
+            'reco_storage_percentage': 'int',
+            'sparse_storage_percentage': 'int',
             'is_sparse_diskgroup_enabled': 'bool',
             'is_local_backup_enabled': 'bool',
             'time_zone': 'str',
@@ -208,6 +223,9 @@ class CreateVmClusterDetails(object):
             'ssh_public_keys': 'sshPublicKeys',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'license_model': 'licenseModel',
+            'data_storage_percentage': 'dataStoragePercentage',
+            'reco_storage_percentage': 'recoStoragePercentage',
+            'sparse_storage_percentage': 'sparseStoragePercentage',
             'is_sparse_diskgroup_enabled': 'isSparseDiskgroupEnabled',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'time_zone': 'timeZone',
@@ -236,6 +254,9 @@ class CreateVmClusterDetails(object):
         self._ssh_public_keys = None
         self._vm_cluster_network_id = None
         self._license_model = None
+        self._data_storage_percentage = None
+        self._reco_storage_percentage = None
+        self._sparse_storage_percentage = None
         self._is_sparse_diskgroup_enabled = None
         self._is_local_backup_enabled = None
         self._time_zone = None
@@ -558,6 +579,90 @@ class CreateVmClusterDetails(object):
                 f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
+
+    @property
+    def data_storage_percentage(self):
+        """
+        Gets the data_storage_percentage of this CreateVmClusterDetails.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The data_storage_percentage of this CreateVmClusterDetails.
+        :rtype: int
+        """
+        return self._data_storage_percentage
+
+    @data_storage_percentage.setter
+    def data_storage_percentage(self, data_storage_percentage):
+        """
+        Sets the data_storage_percentage of this CreateVmClusterDetails.
+        The percentage assigned to DATA storage (user data and database files). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param data_storage_percentage: The data_storage_percentage of this CreateVmClusterDetails.
+        :type: int
+        """
+        self._data_storage_percentage = data_storage_percentage
+
+    @property
+    def reco_storage_percentage(self):
+        """
+        Gets the reco_storage_percentage of this CreateVmClusterDetails.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The reco_storage_percentage of this CreateVmClusterDetails.
+        :rtype: int
+        """
+        return self._reco_storage_percentage
+
+    @reco_storage_percentage.setter
+    def reco_storage_percentage(self, reco_storage_percentage):
+        """
+        Sets the reco_storage_percentage of this CreateVmClusterDetails.
+        The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param reco_storage_percentage: The reco_storage_percentage of this CreateVmClusterDetails.
+        :type: int
+        """
+        self._reco_storage_percentage = reco_storage_percentage
+
+    @property
+    def sparse_storage_percentage(self):
+        """
+        Gets the sparse_storage_percentage of this CreateVmClusterDetails.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :return: The sparse_storage_percentage of this CreateVmClusterDetails.
+        :rtype: int
+        """
+        return self._sparse_storage_percentage
+
+    @sparse_storage_percentage.setter
+    def sparse_storage_percentage(self, sparse_storage_percentage):
+        """
+        Sets the sparse_storage_percentage of this CreateVmClusterDetails.
+        The percentage assigned to SPARSE storage (Exadata snapshots). See `Storage Configuration`__ in the Exadata documentation for details on the impact of the configuration settings on storage.
+
+        __ https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata
+
+
+        :param sparse_storage_percentage: The sparse_storage_percentage of this CreateVmClusterDetails.
+        :type: int
+        """
+        self._sparse_storage_percentage = sparse_storage_percentage
 
     @property
     def is_sparse_diskgroup_enabled(self):

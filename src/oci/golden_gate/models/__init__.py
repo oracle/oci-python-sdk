@@ -76,6 +76,7 @@ from .create_iceberg_catalog_details import CreateIcebergCatalogDetails
 from .create_iceberg_connection_details import CreateIcebergConnectionDetails
 from .create_iceberg_storage_details import CreateIcebergStorageDetails
 from .create_java_message_service_connection_details import CreateJavaMessageServiceConnectionDetails
+from .create_kafka_bootstrap_server import CreateKafkaBootstrapServer
 from .create_kafka_connection_details import CreateKafkaConnectionDetails
 from .create_kafka_schema_registry_connection_details import CreateKafkaSchemaRegistryConnectionDetails
 from .create_maintenance_configuration_details import CreateMaintenanceConfigurationDetails
@@ -194,6 +195,7 @@ from .microsoft_fabric_connection import MicrosoftFabricConnection
 from .microsoft_fabric_connection_summary import MicrosoftFabricConnectionSummary
 from .microsoft_sqlserver_connection import MicrosoftSqlserverConnection
 from .microsoft_sqlserver_connection_summary import MicrosoftSqlserverConnectionSummary
+from .migrate_connection_details import MigrateConnectionDetails
 from .mongo_db_connection import MongoDbConnection
 from .mongo_db_connection_summary import MongoDbConnectionSummary
 from .mysql_connection import MysqlConnection
@@ -243,6 +245,7 @@ from .rest_iceberg_catalog import RestIcebergCatalog
 from .rest_iceberg_catalog_summary import RestIcebergCatalogSummary
 from .restore_deployment_details import RestoreDeploymentDetails
 from .rollback_deployment_upgrade_details import RollbackDeploymentUpgradeDetails
+from .secret_migrate_connection_details import SecretMigrateConnectionDetails
 from .snooze_deployment_upgrade_details import SnoozeDeploymentUpgradeDetails
 from .snowflake_connection import SnowflakeConnection
 from .snowflake_connection_summary import SnowflakeConnectionSummary
@@ -397,6 +400,7 @@ golden_gate_type_mapping = {
     "CreateIcebergConnectionDetails": CreateIcebergConnectionDetails,
     "CreateIcebergStorageDetails": CreateIcebergStorageDetails,
     "CreateJavaMessageServiceConnectionDetails": CreateJavaMessageServiceConnectionDetails,
+    "CreateKafkaBootstrapServer": CreateKafkaBootstrapServer,
     "CreateKafkaConnectionDetails": CreateKafkaConnectionDetails,
     "CreateKafkaSchemaRegistryConnectionDetails": CreateKafkaSchemaRegistryConnectionDetails,
     "CreateMaintenanceConfigurationDetails": CreateMaintenanceConfigurationDetails,
@@ -515,6 +519,7 @@ golden_gate_type_mapping = {
     "MicrosoftFabricConnectionSummary": MicrosoftFabricConnectionSummary,
     "MicrosoftSqlserverConnection": MicrosoftSqlserverConnection,
     "MicrosoftSqlserverConnectionSummary": MicrosoftSqlserverConnectionSummary,
+    "MigrateConnectionDetails": MigrateConnectionDetails,
     "MongoDbConnection": MongoDbConnection,
     "MongoDbConnectionSummary": MongoDbConnectionSummary,
     "MysqlConnection": MysqlConnection,
@@ -564,6 +569,7 @@ golden_gate_type_mapping = {
     "RestIcebergCatalogSummary": RestIcebergCatalogSummary,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
     "RollbackDeploymentUpgradeDetails": RollbackDeploymentUpgradeDetails,
+    "SecretMigrateConnectionDetails": SecretMigrateConnectionDetails,
     "SnoozeDeploymentUpgradeDetails": SnoozeDeploymentUpgradeDetails,
     "SnowflakeConnection": SnowflakeConnection,
     "SnowflakeConnectionSummary": SnowflakeConnectionSummary,

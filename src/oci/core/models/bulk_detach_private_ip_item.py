@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDetachPrivateIpItem(object):
     """
-    Secondary private IPv4 address object to detach as part of bulk detach operation.
+    An object used to detatch secondary private IPv4 addresses with a bulk operation.
     """
 
     def __init__(self, **kwargs):

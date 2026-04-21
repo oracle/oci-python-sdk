@@ -290,7 +290,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkCreateIpv6sDetails bulk_create_ipv6s_details: (required)
-            Bulk Create Ipv6s.
+            Create Ipv6s in bulk.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -326,7 +326,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkCreatePrivateIpsDetails bulk_create_private_ips_details: (required)
-            Create private IPs details.
+            Details used to create secondary private IPs.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -362,7 +362,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkDeleteIpv6sDetails bulk_delete_ipv6s_details: (required)
-            Delete IPv6s details.
+            Details of the IPv6s to delete.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -398,7 +398,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkDeletePrivateIpsDetails bulk_delete_private_ips_details: (required)
-            Details of secondary IPv4 addresses to deleted.
+            Details of the secondary IPv4 addresses to delete.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -434,7 +434,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkDetachIpv6sDetails bulk_detach_ipv6s_details: (required)
-            detach IPv6s details.
+            Details needed to detach IPv6s in bulk.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -470,7 +470,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkDetachPrivateIpsDetails bulk_detach_private_ips_details: (required)
-            Secondary IPv4 addresses to detach.
+            The secondary IPv4 addresses to detach.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -506,7 +506,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkUpdateIpv6sDetails bulk_update_ipv6s_details: (required)
-            Update IPv6s details.
+            Details of the IPv6s to update.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -542,7 +542,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.core.models.BulkUpdatePrivateIpsDetails bulk_update_private_ips_details: (required)
-            Details of secondary IPv4 addresses to be updated.
+            Details of the secondary IPv4 addresses to update.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`

@@ -58,7 +58,7 @@ class SearchLogsDetails(object):
     def time_start(self):
         """
         **[Required]** Gets the time_start of this SearchLogsDetails.
-        Start filter log's date and time, in the format defined by RFC3339.
+        Start filter log's date and time, in the format defined by RFC 3339.
 
 
         :return: The time_start of this SearchLogsDetails.
@@ -70,7 +70,7 @@ class SearchLogsDetails(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this SearchLogsDetails.
-        Start filter log's date and time, in the format defined by RFC3339.
+        Start filter log's date and time, in the format defined by RFC 3339.
 
 
         :param time_start: The time_start of this SearchLogsDetails.
@@ -82,7 +82,7 @@ class SearchLogsDetails(object):
     def time_end(self):
         """
         **[Required]** Gets the time_end of this SearchLogsDetails.
-        End filter log's date and time, in the format defined by RFC3339.
+        End filter log's date and time, in the format defined by RFC 3339.
 
 
         :return: The time_end of this SearchLogsDetails.
@@ -94,7 +94,7 @@ class SearchLogsDetails(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this SearchLogsDetails.
-        End filter log's date and time, in the format defined by RFC3339.
+        End filter log's date and time, in the format defined by RFC 3339.
 
 
         :param time_end: The time_end of this SearchLogsDetails.

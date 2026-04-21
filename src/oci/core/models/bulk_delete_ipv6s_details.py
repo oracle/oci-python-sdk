@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDeleteIpv6sDetails(object):
     """
-    Bulk Secondary IPv6 addresses deletion object.
+    A secondary IPv6 address bulk deletion object.
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class BulkDeleteIpv6sDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this BulkDeleteIpv6sDetails.
-        The `OCID`__ of the subnet from which the IPv6s addresses are to be deleted.
+        The `OCID`__ of the subnet from which the IPv6s addresses are deleted.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -95,7 +95,7 @@ class BulkDeleteIpv6sDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this BulkDeleteIpv6sDetails.
-        The `OCID`__ of the subnet from which the IPv6s addresses are to be deleted.
+        The `OCID`__ of the subnet from which the IPv6s addresses are deleted.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -109,7 +109,7 @@ class BulkDeleteIpv6sDetails(object):
     def bulk_delete_ipv6s_item(self):
         """
         **[Required]** Gets the bulk_delete_ipv6s_item of this BulkDeleteIpv6sDetails.
-        IPv6 addresses to deleted.
+        An IPv6 address to delete.
 
 
         :return: The bulk_delete_ipv6s_item of this BulkDeleteIpv6sDetails.
@@ -121,7 +121,7 @@ class BulkDeleteIpv6sDetails(object):
     def bulk_delete_ipv6s_item(self, bulk_delete_ipv6s_item):
         """
         Sets the bulk_delete_ipv6s_item of this BulkDeleteIpv6sDetails.
-        IPv6 addresses to deleted.
+        An IPv6 address to delete.
 
 
         :param bulk_delete_ipv6s_item: The bulk_delete_ipv6s_item of this BulkDeleteIpv6sDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDeleteIpv6sItem(object):
     """
-    secondary ip object to delete as part of bulk deletion .
+    A secondary IPv6 object to delete as part of a bulk deletion.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BulkDeleteIpv6sItem(object):
     def ipv6_id(self):
         """
         **[Required]** Gets the ipv6_id of this BulkDeleteIpv6sItem.
-        The `OCID`__ of the IPv6 to be deleted.
+        The `OCID`__ of the IPv6 to delete.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -51,7 +51,7 @@ class BulkDeleteIpv6sItem(object):
     def ipv6_id(self, ipv6_id):
         """
         Sets the ipv6_id of this BulkDeleteIpv6sItem.
-        The `OCID`__ of the IPv6 to be deleted.
+        The `OCID`__ of the IPv6 to delete.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

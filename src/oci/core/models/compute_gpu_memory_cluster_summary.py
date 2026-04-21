@@ -93,7 +93,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ComputeGpuMemoryClusterSummary.
-        The `OCID`__ for the Customer-unique GPU memory cluster
+        The `OCID`__ for the Customer-unique GPU Memory Cluster
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -107,7 +107,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def id(self, id):
         """
         Sets the id of this ComputeGpuMemoryClusterSummary.
-        The `OCID`__ for the Customer-unique GPU memory cluster
+        The `OCID`__ for the Customer-unique GPU Memory Cluster
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -121,7 +121,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ComputeGpuMemoryClusterSummary.
-        The `OCID`__ of the compartment that contains the compute GPU memory cluster.
+        The `OCID`__ of the compartment that contains the compute GPU Memory Cluster.
         compartment.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -136,7 +136,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ComputeGpuMemoryClusterSummary.
-        The `OCID`__ of the compartment that contains the compute GPU memory cluster.
+        The `OCID`__ of the compartment that contains the compute GPU Memory Cluster.
         compartment.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -151,7 +151,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this ComputeGpuMemoryClusterSummary.
-        The availability domain of GPU memory cluster.
+        The availability domain of GPU Memory Cluster.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -165,7 +165,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ComputeGpuMemoryClusterSummary.
-        The availability domain of GPU memory cluster.
+        The availability domain of GPU Memory Cluster.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -179,7 +179,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ComputeGpuMemoryClusterSummary.
-        The current state of the compute GPU memory cluster.
+        The current state of the compute GPU Memory Cluster.
 
 
         :return: The lifecycle_state of this ComputeGpuMemoryClusterSummary.
@@ -191,7 +191,7 @@ class ComputeGpuMemoryClusterSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ComputeGpuMemoryClusterSummary.
-        The current state of the compute GPU memory cluster.
+        The current state of the compute GPU Memory Cluster.
 
 
         :param lifecycle_state: The lifecycle_state of this ComputeGpuMemoryClusterSummary.

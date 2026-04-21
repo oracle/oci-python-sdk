@@ -38,6 +38,10 @@ class UpdateAzureDataLakeStorageIcebergStorageDetails(UpdateIcebergStorageDetail
             The value to assign to the account_key_secret_id property of this UpdateAzureDataLakeStorageIcebergStorageDetails.
         :type account_key_secret_id: str
 
+        :param account_key:
+            The value to assign to the account_key property of this UpdateAzureDataLakeStorageIcebergStorageDetails.
+        :type account_key: str
+
         :param endpoint:
             The value to assign to the endpoint property of this UpdateAzureDataLakeStorageIcebergStorageDetails.
         :type endpoint: str
@@ -48,6 +52,7 @@ class UpdateAzureDataLakeStorageIcebergStorageDetails(UpdateIcebergStorageDetail
             'account_name': 'str',
             'container': 'str',
             'account_key_secret_id': 'str',
+            'account_key': 'str',
             'endpoint': 'str'
         }
         self.attribute_map = {
@@ -55,12 +60,14 @@ class UpdateAzureDataLakeStorageIcebergStorageDetails(UpdateIcebergStorageDetail
             'account_name': 'accountName',
             'container': 'container',
             'account_key_secret_id': 'accountKeySecretId',
+            'account_key': 'accountKey',
             'endpoint': 'endpoint'
         }
         self._storage_type = None
         self._account_name = None
         self._container = None
         self._account_key_secret_id = None
+        self._account_key = None
         self._endpoint = None
         self._storage_type = 'AZURE_DATA_LAKE_STORAGE'
 
@@ -139,6 +146,34 @@ class UpdateAzureDataLakeStorageIcebergStorageDetails(UpdateIcebergStorageDetail
         :type: str
         """
         self._account_key_secret_id = account_key_secret_id
+
+    @property
+    def account_key(self):
+        """
+        Gets the account_key of this UpdateAzureDataLakeStorageIcebergStorageDetails.
+        Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
+        e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        Deprecated: This field is deprecated and replaced by \"accountKeySecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The account_key of this UpdateAzureDataLakeStorageIcebergStorageDetails.
+        :rtype: str
+        """
+        return self._account_key
+
+    @account_key.setter
+    def account_key(self, account_key):
+        """
+        Sets the account_key of this UpdateAzureDataLakeStorageIcebergStorageDetails.
+        Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
+        e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        Deprecated: This field is deprecated and replaced by \"accountKeySecretId\". This field will be removed after February 15 2026.
+
+
+        :param account_key: The account_key of this UpdateAzureDataLakeStorageIcebergStorageDetails.
+        :type: str
+        """
+        self._account_key = account_key
 
     @property
     def endpoint(self):

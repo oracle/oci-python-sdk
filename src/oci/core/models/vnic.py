@@ -701,7 +701,6 @@ class Vnic(object):
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
 
-
         If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
         belonging to a subnet), the `skipSourceDestCheck` attribute is `true`.
         This is because the source/destination check is always disabled for VNICs in a VLAN.
@@ -724,7 +723,6 @@ class Vnic(object):
         Defaults to `false`, which means the check is performed. For information
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
-
 
         If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
         belonging to a subnet), the `skipSourceDestCheck` attribute is `true`.

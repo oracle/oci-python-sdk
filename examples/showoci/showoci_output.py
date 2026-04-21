@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.09.30"
+    version = "26.04.01"
 
     ##########################################################################
     # spaces for align
@@ -346,7 +346,8 @@ class ShowOCIOutput(object):
 
             for val in groups:
                 print(self.taba + val['display_name'] + " (" + val['description'] + ")")
-                print(self.tabs + "Rule    : " + val['matching_rule'])
+                if val['matching_rule']:
+                    print(self.tabs + "Rule    : " + val['matching_rule'])
                 print("")
 
         except Exception as e:
@@ -749,6 +750,10 @@ class ShowOCIOutput(object):
                 if 'igw' in vcn['data']:
                     for igwloop in vcn['data']['igw']:
                         print(self.tabs + "Internet GW : " + igwloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, igwloop['compartment_name']))
+
+                if 'psa' in vcn['data']:
+                    for psaloop in vcn['data']['psa']:
+                        print(self.tabs + "Priv Srv Ac : " + psaloop['name'] + ":" + psaloop['service_id'] + ":" + psaloop['ipv4_ip'] + self.__print_core_network_vcn_compartment(vcn_compartment, psaloop['compartment_name']))
 
                 if 'sgw' in vcn['data']:
                     for sgwloop in vcn['data']['sgw']:
@@ -2607,17 +2612,6 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Vanity : " + val['vanity_domain'] + ", " + val['vanity_url'])
                     print("")
 
-            # OCE
-            if 'oce' in paas_services:
-                self.print_header("OCE Native", 2)
-                for val in paas_services['oce']:
-                    print(self.taba + val['name'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
-                    print(self.tabs + "Email: " + val['admin_email'])
-                    if 'pod' in val['service']:
-                        pod = val['service']['pod']
-                        print(self.tabs + "Pod: " + str(pod['name']) + " (" + str(pod['version']) + ") ")
-                    print("")
-
             # VB
             if 'vb' in paas_services:
                 self.print_header("Visual Builder", 2)
@@ -2625,9 +2619,9 @@ class ShowOCIOutput(object):
                     print(self.taba + val['display_name'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), " + val['consumption_model'] + ", Enabled = " + val['is_visual_builder_enabled'] + ", Nodes = " + val['node_count'])
                     print(self.tabs + "URL: " + val['instance_url'])
                     if val['custom_endpoint']:
-                        print(self.tabs + "   : Custom Endpoint: " + str(pod['custom_endpoint']))
+                        print(self.tabs + "   : Custom Endpoint: " + str(val['custom_endpoint']))
                     if val['alternate_custom_endpoints']:
-                        print(self.tabs + "   : Alt    Endpoint: " + str(pod['alternate_custom_endpoints']))
+                        print(self.tabs + "   : Alt    Endpoint: " + str(val['alternate_custom_endpoints']))
                     print("")
 
             # DevOPS
@@ -3516,12 +3510,6 @@ class ShowOCISummary(object):
                 array = [x for x in paas_services['oac'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
 
-            if 'oce' in paas_services:
-                array = [x for x in paas_services['oce'] if x['lifecycle_state'] == 'ACTIVE']
-                self.__summary_core_size(array)
-                array = [x for x in paas_services['oce'] if x['lifecycle_state'] != 'ACTIVE']
-                self.__summary_core_size(array, add_info="Stopped ")
-
             if 'ocvs' in paas_services:
                 array = [x for x in paas_services['ocvs'] if x['lifecycle_state'] == 'ACTIVE']
                 self.__summary_core_size(array)
@@ -4242,6 +4230,10 @@ class ShowOCISummary(object):
                         if 'igw' in dt:
                             self.__summary_core_count(dt['igw'], "Network VCN Internet Gateways")
 
+                        # PSA
+                        if 'psa' in dt:
+                            self.__summary_core_count(dt['psa'], "Network VCN Private Service Access")
+
                         # NATGW
                         if 'nat' in dt:
                             for nat in dt['nat']:
@@ -4545,7 +4537,6 @@ class ShowOCICSV(object):
     csv_paas_oic = []
     csv_paas_ocvs = []
     csv_paas_ocvs_clusters = []
-    csv_paas_oce = []
     csv_paas_vb = []
     csv_paas_devops = []
     csv_paas_open_search = []
@@ -4754,7 +4745,6 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("paas_oic", self.csv_paas_oic)
             self.__export_to_csv_file("paas_ocvs_vmware", self.csv_paas_ocvs)
             self.__export_to_csv_file("paas_ocvs_clusters", self.csv_paas_ocvs_clusters)
-            self.__export_to_csv_file("paas_oce", self.csv_paas_oce)
             self.__export_to_csv_file("paas_devops", self.csv_paas_devops)
             self.__export_to_csv_file("paas_visualbuilder", self.csv_paas_vb)
             self.__export_to_csv_file("paas_opensearch", self.csv_paas_open_search)
@@ -6649,6 +6639,7 @@ class ShowOCICSV(object):
                     continue
 
                 igw = ""
+                psa = ""
                 sgw = ""
                 nat = ""
                 drg = ""
@@ -6661,6 +6652,9 @@ class ShowOCICSV(object):
 
                 if 'sgw' in vcn['data']:
                     sgw = str(', '.join(x['name'] + " " + x['services'] for x in vcn['data']['sgw']))
+
+                if 'psa' in vcn['data']:
+                    psa = str(', '.join(x['name'] + " " + x['service_id'] for x in vcn['data']['psa']))
 
                 if 'nat' in vcn['data']:
                     nat = self.__csv_list_to_str(vcn['data']['nat'], 'name')
@@ -6697,6 +6691,7 @@ class ShowOCICSV(object):
                     'cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
                     'internet_gateway': igw,
                     'service_gateway': sgw,
+                    'private_service_access': psa,
                     'nat': nat,
                     'drg': drg,
                     'local_peering': lpg,
@@ -10275,43 +10270,6 @@ class ShowOCICSV(object):
             self.__print_error("__csv_paas_oac", e)
 
     ##########################################################################
-    # Paas OCE
-    ##########################################################################
-    def __csv_paas_oce(self, region_name, services):
-        try:
-
-            if len(services) == 0:
-                return
-
-            if services:
-                for ar in services:
-
-                    data = {
-                        'region_name': region_name,
-                        'compartment_name': ar['compartment_name'],
-                        'compartment_path': ar['compartment_path'],
-                        'name': ar['name'],
-                        'description': ar['description'],
-                        'guid': ar['guid'],
-                        'tenancy_name': ar['tenancy_name'],
-                        'idcs_tenancy': ar['idcs_tenancy'],
-                        'object_storage_namespace': ar['object_storage_namespace'],
-                        'admin_email': ar['admin_email'],
-                        'time_created': ar['time_created'][0:16],
-                        'lifecycle_state': ar['lifecycle_state'],
-                        'service': ar['service'],
-                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
-                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                        'id': ar['id']
-                    }
-
-                    self.csv_paas_oce.append(data)
-                    self.__csv_add_service(data, "OCE")
-
-        except Exception as e:
-            self.__print_error("__csv_paas_oce", e)
-
-    ##########################################################################
     # Paas VB
     ##########################################################################
     def __csv_paas_visualbuilder(self, region_name, services):
@@ -10555,9 +10513,6 @@ class ShowOCICSV(object):
 
             if 'oac' in data:
                 self.__csv_paas_oac(region_name, data['oac'])
-
-            if 'oce' in data:
-                self.__csv_paas_oce(region_name, data['oce'])
 
             if 'vb' in data:
                 self.__csv_paas_visualbuilder(region_name, data['vb'])

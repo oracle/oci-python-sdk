@@ -45,7 +45,6 @@
 # - oci.integration.IntegrationInstanceClient
 # - oci.analytics.AnalyticsClient
 # - oci.oda.OdaClient
-# - oci.oce.OceInstanceClient
 # - oci.apigateway.GatewaysClient
 # - oci.functions.FunctionsManagementClient
 # - oci.data_catalog.DataCatalogClient
@@ -81,6 +80,7 @@
 # - oci.data_safe.DataSafeClient
 # - oci.optimizer.OptimizerClient
 # - oci.disaster_recovery.DisasterRecoveryClient
+# - oci.psa.PrivateServiceAccessClient
 #
 # Modules without CSV yet:
 # - datasciencemodeldeployment
@@ -126,7 +126,7 @@ import contextlib
 import os
 import time
 
-version = "25.09.30"
+version = "26.04.01"
 
 ##########################################################################
 # check OCI version

@@ -92,7 +92,7 @@ class OciService(Source):
     def resource(self):
         """
         **[Required]** Gets the resource of this OciService.
-        The unique identifier of the resource emitting the log.
+        The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the OCI service to which the resource belongs to.
 
 
         :return: The resource of this OciService.
@@ -104,7 +104,7 @@ class OciService(Source):
     def resource(self, resource):
         """
         Sets the resource of this OciService.
-        The unique identifier of the resource emitting the log.
+        The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the OCI service to which the resource belongs to.
 
 
         :param resource: The resource of this OciService.
@@ -140,7 +140,7 @@ class OciService(Source):
     def parameters(self):
         """
         Gets the parameters of this OciService.
-        Log category parameters are stored here.
+        Log category parameters are stored here. The resource for a service log can't be updated.
 
 
         :return: The parameters of this OciService.
@@ -152,7 +152,7 @@ class OciService(Source):
     def parameters(self, parameters):
         """
         Sets the parameters of this OciService.
-        Log category parameters are stored here.
+        Log category parameters are stored here. The resource for a service log can't be updated.
 
 
         :param parameters: The parameters of this OciService.

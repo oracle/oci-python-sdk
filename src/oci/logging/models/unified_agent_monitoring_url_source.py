@@ -68,7 +68,7 @@ class UnifiedAgentMonitoringUrlSource(object):
     def scrape_targets(self):
         """
         **[Required]** Gets the scrape_targets of this UnifiedAgentMonitoringUrlSource.
-        List of UnifiedAgentKubernetesScrapeTarget.
+        List of UnifiedAgentUrlScrapeTarget.
 
 
         :return: The scrape_targets of this UnifiedAgentMonitoringUrlSource.
@@ -80,7 +80,7 @@ class UnifiedAgentMonitoringUrlSource(object):
     def scrape_targets(self, scrape_targets):
         """
         Sets the scrape_targets of this UnifiedAgentMonitoringUrlSource.
-        List of UnifiedAgentKubernetesScrapeTarget.
+        List of UnifiedAgentUrlScrapeTarget.
 
 
         :param scrape_targets: The scrape_targets of this UnifiedAgentMonitoringUrlSource.

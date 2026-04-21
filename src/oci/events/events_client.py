@@ -105,7 +105,8 @@ class EventsClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181201',
-            'service_endpoint_template': 'https://events.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://events.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
+            'endpoint_service_name': 'events',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),

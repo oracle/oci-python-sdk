@@ -107,7 +107,8 @@ class LoggingManagementClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200531',
-            'service_endpoint_template': 'https://logging.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://logging.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
+            'endpoint_service_name': 'logging',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
@@ -2162,7 +2163,7 @@ class LoggingManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param str sort_by: (optional)
             The field to sort by (one column only). Default sort order is
@@ -2314,7 +2315,7 @@ class LoggingManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param str sort_by: (optional)
             The field to sort by (one column only). Default sort order is
@@ -2478,7 +2479,7 @@ class LoggingManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param str sort_by: (optional)
             The field to sort by (one column only). Default sort order is
@@ -2644,6 +2645,10 @@ class LoggingManagementClient(object):
         Lists all services that support logging.
 
 
+        :param str compartment_id: (optional)
+            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+                 for nested compartments traversal.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the request ID.
@@ -2682,12 +2687,18 @@ class LoggingManagementClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_services got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2709,6 +2720,7 @@ class LoggingManagementClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -2720,6 +2732,7 @@ class LoggingManagementClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -2755,7 +2768,7 @@ class LoggingManagementClient(object):
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` or `opc-previous-page` response header from the previous \"List\" call.
@@ -2923,7 +2936,7 @@ class LoggingManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3046,7 +3059,7 @@ class LoggingManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3180,7 +3193,7 @@ class LoggingManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            When setting the page limit, specifies the maximum number of unfiltered records that can be fetched from the data store in one request. Filtering happens after the records are retrieved. Subsequent pages might include results that match the query criteria.
 
         :param str sort_order: (optional)
             The sort order to use, whether 'asc' or 'desc'.

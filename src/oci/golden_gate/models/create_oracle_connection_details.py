@@ -123,10 +123,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             The value to assign to the session_mode property of this CreateOracleConnectionDetails.
         :type session_mode: str
 
-        :param private_ip:
-            The value to assign to the private_ip property of this CreateOracleConnectionDetails.
-        :type private_ip: str
-
         :param database_id:
             The value to assign to the database_id property of this CreateOracleConnectionDetails.
         :type database_id: str
@@ -158,7 +154,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'wallet': 'str',
             'wallet_secret_id': 'str',
             'session_mode': 'str',
-            'private_ip': 'str',
             'database_id': 'str'
         }
         self.attribute_map = {
@@ -187,7 +182,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'wallet': 'wallet',
             'wallet_secret_id': 'walletSecretId',
             'session_mode': 'sessionMode',
-            'private_ip': 'privateIp',
             'database_id': 'databaseId'
         }
         self._connection_type = None
@@ -215,7 +209,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         self._wallet = None
         self._wallet_secret_id = None
         self._session_mode = None
-        self._private_ip = None
         self._database_id = None
         self._connection_type = 'ORACLE'
 
@@ -449,10 +442,16 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
     def session_mode(self):
         """
         Gets the session_mode of this CreateOracleConnectionDetails.
-        The mode of the database connection session to be established by the data client.
-        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
-        Connection to a RAC database involves a redirection received from the SCAN listeners
-        to the database node to connect to. By default the mode would be DIRECT.
+        Specifies the session mode for the database connection.
+        Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses.
+        For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT.
+        In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN.
+        It is recommended to configure RAC with FQDN-based SCAN listeners.
+
+        The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
+        In this case, the default is REDIRECT.
+
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
 
 
         :return: The session_mode of this CreateOracleConnectionDetails.
@@ -464,54 +463,22 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
     def session_mode(self, session_mode):
         """
         Sets the session_mode of this CreateOracleConnectionDetails.
-        The mode of the database connection session to be established by the data client.
-        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
-        Connection to a RAC database involves a redirection received from the SCAN listeners
-        to the database node to connect to. By default the mode would be DIRECT.
+        Specifies the session mode for the database connection.
+        Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses.
+        For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT.
+        In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN.
+        It is recommended to configure RAC with FQDN-based SCAN listeners.
+
+        The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
+        In this case, the default is REDIRECT.
+
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
 
 
         :param session_mode: The session_mode of this CreateOracleConnectionDetails.
         :type: str
         """
         self._session_mode = session_mode
-
-    @property
-    def private_ip(self):
-        """
-        Gets the private_ip of this CreateOracleConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :return: The private_ip of this CreateOracleConnectionDetails.
-        :rtype: str
-        """
-        return self._private_ip
-
-    @private_ip.setter
-    def private_ip(self, private_ip):
-        """
-        Sets the private_ip of this CreateOracleConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :param private_ip: The private_ip of this CreateOracleConnectionDetails.
-        :type: str
-        """
-        self._private_ip = private_ip
 
     @property
     def database_id(self):

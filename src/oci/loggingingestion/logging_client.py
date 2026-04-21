@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class LoggingClient(object):
     """
-    Use the Logging Ingestion API to ingest your application logs.
+    Use the Logging Ingestion API to ingest your application logs. For more information, see [Logging Overview](/iaas/Content/Logging/Concepts/loggingoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -104,7 +104,7 @@ class LoggingClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200831',
-            'service_endpoint_template': 'https://ingestion.logging.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://ingestion.logging.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),

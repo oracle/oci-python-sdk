@@ -80,6 +80,10 @@ class LogSavedSearchSummary(object):
             The value to assign to the freeform_tags property of this LogSavedSearchSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this LogSavedSearchSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this LogSavedSearchSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -97,6 +101,7 @@ class LogSavedSearchSummary(object):
             'query': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str'
         }
         self.attribute_map = {
@@ -109,6 +114,7 @@ class LogSavedSearchSummary(object):
             'query': 'query',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'lifecycle_state': 'lifecycleState'
         }
         self._id = None
@@ -120,6 +126,7 @@ class LogSavedSearchSummary(object):
         self._query = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
         self._lifecycle_state = None
 
     @property
@@ -357,6 +364,32 @@ class LogSavedSearchSummary(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this LogSavedSearchSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this LogSavedSearchSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this LogSavedSearchSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this LogSavedSearchSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def lifecycle_state(self):

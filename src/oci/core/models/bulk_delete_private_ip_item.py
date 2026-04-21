@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkDeletePrivateIpItem(object):
     """
-    Secondary private IPv4 address object to delete as part of bulk deletion.
+    Secondary private IPv4 address object to delete as part of a bulk operation.
     """
 
     def __init__(self, **kwargs):

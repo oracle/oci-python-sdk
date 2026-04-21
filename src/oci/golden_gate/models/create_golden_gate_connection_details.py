@@ -115,10 +115,6 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
             The value to assign to the password_secret_id property of this CreateGoldenGateConnectionDetails.
         :type password_secret_id: str
 
-        :param private_ip:
-            The value to assign to the private_ip property of this CreateGoldenGateConnectionDetails.
-        :type private_ip: str
-
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -143,8 +139,7 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
             'port': 'int',
             'username': 'str',
             'password': 'str',
-            'password_secret_id': 'str',
-            'private_ip': 'str'
+            'password_secret_id': 'str'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -169,8 +164,7 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
             'port': 'port',
             'username': 'username',
             'password': 'password',
-            'password_secret_id': 'passwordSecretId',
-            'private_ip': 'privateIp'
+            'password_secret_id': 'passwordSecretId'
         }
         self._connection_type = None
         self._display_name = None
@@ -195,7 +189,6 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
         self._username = None
         self._password = None
         self._password_secret_id = None
-        self._private_ip = None
         self._connection_type = 'GOLDENGATE'
 
     @property
@@ -379,44 +372,6 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._password_secret_id = password_secret_id
-
-    @property
-    def private_ip(self):
-        """
-        Gets the private_ip of this CreateGoldenGateConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :return: The private_ip of this CreateGoldenGateConnectionDetails.
-        :rtype: str
-        """
-        return self._private_ip
-
-    @private_ip.setter
-    def private_ip(self, private_ip):
-        """
-        Sets the private_ip of this CreateGoldenGateConnectionDetails.
-        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
-        field, or make sure the host name is resolvable in the target VCN.
-
-        The private IP address of the connection's endpoint in the customer's VCN, typically a
-        database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
-        In case the privateIp is provided, the subnetId must also be provided.
-        In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
-        In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-
-
-        :param private_ip: The private_ip of this CreateGoldenGateConnectionDetails.
-        :type: str
-        """
-        self._private_ip = private_ip
 
     def __repr__(self):
         return formatted_flat_dict(self)

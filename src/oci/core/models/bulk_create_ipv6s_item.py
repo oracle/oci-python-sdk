@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkCreateIpv6sItem(object):
     """
-    Secondary IPv6 object to creation as part of bulk creation .
+    Secondary IPv6 object to use as part of bulk IPv6 object creation.
     """
 
     #: A constant which can be used with the lifetime property of a BulkCreateIpv6sItem.
@@ -316,7 +316,7 @@ class BulkCreateIpv6sItem(object):
     def cidr_prefix_length(self):
         """
         Gets the cidr_prefix_length of this BulkCreateIpv6sItem.
-        Length of cidr range. Optional field to specify flexible cidr.
+        Length of the CIDR range. Optional field to specify a flexible CIDR.
 
 
         :return: The cidr_prefix_length of this BulkCreateIpv6sItem.
@@ -328,7 +328,7 @@ class BulkCreateIpv6sItem(object):
     def cidr_prefix_length(self, cidr_prefix_length):
         """
         Sets the cidr_prefix_length of this BulkCreateIpv6sItem.
-        Length of cidr range. Optional field to specify flexible cidr.
+        Length of the CIDR range. Optional field to specify a flexible CIDR.
 
 
         :param cidr_prefix_length: The cidr_prefix_length of this BulkCreateIpv6sItem.

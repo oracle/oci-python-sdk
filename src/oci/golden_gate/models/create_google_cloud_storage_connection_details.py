@@ -91,6 +91,10 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
             The value to assign to the technology_type property of this CreateGoogleCloudStorageConnectionDetails.
         :type technology_type: str
 
+        :param endpoint:
+            The value to assign to the endpoint property of this CreateGoogleCloudStorageConnectionDetails.
+        :type endpoint: str
+
         :param service_account_key_file:
             The value to assign to the service_account_key_file property of this CreateGoogleCloudStorageConnectionDetails.
         :type service_account_key_file: str
@@ -118,6 +122,7 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
             'cluster_placement_group_id': 'str',
             'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
+            'endpoint': 'str',
             'service_account_key_file': 'str',
             'service_account_key_file_secret_id': 'str'
         }
@@ -139,6 +144,7 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
+            'endpoint': 'endpoint',
             'service_account_key_file': 'serviceAccountKeyFile',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
@@ -159,6 +165,7 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
         self._cluster_placement_group_id = None
         self._security_attributes = None
         self._technology_type = None
+        self._endpoint = None
         self._service_account_key_file = None
         self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_CLOUD_STORAGE'
@@ -186,6 +193,32 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._technology_type = technology_type
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this CreateGoogleCloudStorageConnectionDetails.
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+        Default: https://storage.googleapis.com
+
+
+        :return: The endpoint of this CreateGoogleCloudStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this CreateGoogleCloudStorageConnectionDetails.
+        A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
+        Default: https://storage.googleapis.com
+
+
+        :param endpoint: The endpoint of this CreateGoogleCloudStorageConnectionDetails.
+        :type: str
+        """
+        self._endpoint = endpoint
 
     @property
     def service_account_key_file(self):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeGpuMemoryClusterInstanceSummary(object):
     """
-    The customer facing GPU memory cluster instance object details.
+    The customer facing GPU Memory Cluster instance object details.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ComputeGpuMemoryClusterInstanceSummary.
@@ -146,7 +146,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this ComputeGpuMemoryClusterInstanceSummary.
-        The availability domain of the GPU memory cluster instance.
+        The availability domain of the GPU Memory Cluster instance.
 
 
         :return: The availability_domain of this ComputeGpuMemoryClusterInstanceSummary.
@@ -158,7 +158,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ComputeGpuMemoryClusterInstanceSummary.
-        The availability domain of the GPU memory cluster instance.
+        The availability domain of the GPU Memory Cluster instance.
 
 
         :param availability_domain: The availability_domain of this ComputeGpuMemoryClusterInstanceSummary.
@@ -170,7 +170,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def id(self):
         """
         Gets the id of this ComputeGpuMemoryClusterInstanceSummary.
-        The `OCID`__ for the Customer-unique GPU memory cluster instance
+        The `OCID`__ for the Customer-unique GPU Memory Cluster instance
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -184,7 +184,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def id(self, id):
         """
         Sets the id of this ComputeGpuMemoryClusterInstanceSummary.
-        The `OCID`__ for the Customer-unique GPU memory cluster instance
+        The `OCID`__ for the Customer-unique GPU Memory Cluster instance
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -228,7 +228,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this ComputeGpuMemoryClusterInstanceSummary.
-        The fault domain the GPU memory cluster instance is running in.
+        The fault domain the GPU Memory Cluster instance is running in.
 
 
         :return: The fault_domain of this ComputeGpuMemoryClusterInstanceSummary.
@@ -240,7 +240,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this ComputeGpuMemoryClusterInstanceSummary.
-        The fault domain the GPU memory cluster instance is running in.
+        The fault domain the GPU Memory Cluster instance is running in.
 
 
         :param fault_domain: The fault_domain of this ComputeGpuMemoryClusterInstanceSummary.
@@ -330,7 +330,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ComputeGpuMemoryClusterInstanceSummary.
-        The lifecycle state of the GPU memory cluster instance
+        The lifecycle state of the GPU Memory Cluster instance
 
         Allowed values for this property are: "MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "SUSPENDING", "SUSPENDED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -345,7 +345,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ComputeGpuMemoryClusterInstanceSummary.
-        The lifecycle state of the GPU memory cluster instance
+        The lifecycle state of the GPU Memory Cluster instance
 
 
         :param lifecycle_state: The lifecycle_state of this ComputeGpuMemoryClusterInstanceSummary.
@@ -386,7 +386,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ComputeGpuMemoryClusterInstanceSummary.
-        The date and time the GPU memory cluster instance was created.
+        The date and time the GPU Memory Cluster instance was created.
 
         Example: `2016-09-15T21:10:29.600Z`
 
@@ -400,7 +400,7 @@ class ComputeGpuMemoryClusterInstanceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ComputeGpuMemoryClusterInstanceSummary.
-        The date and time the GPU memory cluster instance was created.
+        The date and time the GPU Memory Cluster instance was created.
 
         Example: `2016-09-15T21:10:29.600Z`
 

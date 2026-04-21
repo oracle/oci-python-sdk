@@ -65,6 +65,10 @@ class CreateApplicationDetails(object):
             The value to assign to the trace_config property of this CreateApplicationDetails.
         :type trace_config: oci.functions.models.ApplicationTraceConfig
 
+        :param logging:
+            The value to assign to the logging property of this CreateApplicationDetails.
+        :type logging: oci.functions.models.ApplicationLoggingConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateApplicationDetails.
         :type freeform_tags: dict(str, str)
@@ -91,6 +95,7 @@ class CreateApplicationDetails(object):
             'network_security_group_ids': 'list[str]',
             'syslog_url': 'str',
             'trace_config': 'ApplicationTraceConfig',
+            'logging': 'ApplicationLoggingConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'image_policy_config': 'ImagePolicyConfig',
@@ -105,6 +110,7 @@ class CreateApplicationDetails(object):
             'network_security_group_ids': 'networkSecurityGroupIds',
             'syslog_url': 'syslogUrl',
             'trace_config': 'traceConfig',
+            'logging': 'logging',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'image_policy_config': 'imagePolicyConfig',
@@ -118,6 +124,7 @@ class CreateApplicationDetails(object):
         self._network_security_group_ids = None
         self._syslog_url = None
         self._trace_config = None
+        self._logging = None
         self._freeform_tags = None
         self._defined_tags = None
         self._image_policy_config = None
@@ -351,6 +358,26 @@ class CreateApplicationDetails(object):
         :type: oci.functions.models.ApplicationTraceConfig
         """
         self._trace_config = trace_config
+
+    @property
+    def logging(self):
+        """
+        Gets the logging of this CreateApplicationDetails.
+
+        :return: The logging of this CreateApplicationDetails.
+        :rtype: oci.functions.models.ApplicationLoggingConfig
+        """
+        return self._logging
+
+    @logging.setter
+    def logging(self, logging):
+        """
+        Sets the logging of this CreateApplicationDetails.
+
+        :param logging: The logging of this CreateApplicationDetails.
+        :type: oci.functions.models.ApplicationLoggingConfig
+        """
+        self._logging = logging
 
     @property
     def freeform_tags(self):

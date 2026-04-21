@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkUpdateIpv6sDetails(object):
     """
-    Bulk Secondary IPv6 addresses update object.
+    Address details to update for a Secondary IPv6 object.
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,7 @@ class BulkUpdateIpv6sDetails(object):
     def bulk_update_ipv6s_item(self):
         """
         **[Required]** Gets the bulk_update_ipv6s_item of this BulkUpdateIpv6sDetails.
-        Secondary IPv6 addresses to updated.
+        A secondary IPv6 address to update.
 
 
         :return: The bulk_update_ipv6s_item of this BulkUpdateIpv6sDetails.
@@ -86,7 +86,7 @@ class BulkUpdateIpv6sDetails(object):
     def bulk_update_ipv6s_item(self, bulk_update_ipv6s_item):
         """
         Sets the bulk_update_ipv6s_item of this BulkUpdateIpv6sDetails.
-        Secondary IPv6 addresses to updated.
+        A secondary IPv6 address to update.
 
 
         :param bulk_update_ipv6s_item: The bulk_update_ipv6s_item of this BulkUpdateIpv6sDetails.

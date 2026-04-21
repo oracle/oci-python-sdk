@@ -180,6 +180,10 @@ class DatabaseRegistration(object):
             The value to assign to the secret_id property of this DatabaseRegistration.
         :type secret_id: str
 
+        :param connection_id:
+            The value to assign to the connection_id property of this DatabaseRegistration.
+        :type connection_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -205,7 +209,8 @@ class DatabaseRegistration(object):
             'vault_id': 'str',
             'key_id': 'str',
             'secret_compartment_id': 'str',
-            'secret_id': 'str'
+            'secret_id': 'str',
+            'connection_id': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -231,7 +236,8 @@ class DatabaseRegistration(object):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'secret_compartment_id': 'secretCompartmentId',
-            'secret_id': 'secretId'
+            'secret_id': 'secretId',
+            'connection_id': 'connectionId'
         }
         self._id = None
         self._display_name = None
@@ -257,6 +263,7 @@ class DatabaseRegistration(object):
         self._key_id = None
         self._secret_compartment_id = None
         self._secret_id = None
+        self._connection_id = None
 
     @property
     def id(self):
@@ -929,6 +936,36 @@ class DatabaseRegistration(object):
         :type: str
         """
         self._secret_id = secret_id
+
+    @property
+    def connection_id(self):
+        """
+        Gets the connection_id of this DatabaseRegistration.
+        The `OCID`__ of the connection being
+        referenced as the successor resource of the deprecated database registration.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The connection_id of this DatabaseRegistration.
+        :rtype: str
+        """
+        return self._connection_id
+
+    @connection_id.setter
+    def connection_id(self, connection_id):
+        """
+        Sets the connection_id of this DatabaseRegistration.
+        The `OCID`__ of the connection being
+        referenced as the successor resource of the deprecated database registration.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param connection_id: The connection_id of this DatabaseRegistration.
+        :type: str
+        """
+        self._connection_id = connection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

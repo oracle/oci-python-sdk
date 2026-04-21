@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateComputeGpuMemoryClusterDetails(object):
     """
-    The customer facing object includes GPU memory cluster details.
+    The customer facing object includes GPU Memory Cluster details.
     """
 
     def __init__(self, **kwargs):
@@ -60,6 +60,10 @@ class CreateComputeGpuMemoryClusterDetails(object):
             The value to assign to the gpu_memory_cluster_scale_config property of this CreateComputeGpuMemoryClusterDetails.
         :type gpu_memory_cluster_scale_config: oci.core.models.CreateComputeGpuMemoryClusterScaleConfig
 
+        :param private_ip_ids:
+            The value to assign to the private_ip_ids property of this CreateComputeGpuMemoryClusterDetails.
+        :type private_ip_ids: list[str]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -71,7 +75,8 @@ class CreateComputeGpuMemoryClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'display_name': 'str',
-            'gpu_memory_cluster_scale_config': 'CreateComputeGpuMemoryClusterScaleConfig'
+            'gpu_memory_cluster_scale_config': 'CreateComputeGpuMemoryClusterScaleConfig',
+            'private_ip_ids': 'list[str]'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -83,7 +88,8 @@ class CreateComputeGpuMemoryClusterDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'display_name': 'displayName',
-            'gpu_memory_cluster_scale_config': 'gpuMemoryClusterScaleConfig'
+            'gpu_memory_cluster_scale_config': 'gpuMemoryClusterScaleConfig',
+            'private_ip_ids': 'privateIpIds'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -95,12 +101,13 @@ class CreateComputeGpuMemoryClusterDetails(object):
         self._freeform_tags = None
         self._display_name = None
         self._gpu_memory_cluster_scale_config = None
+        self._private_ip_ids = None
 
     @property
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateComputeGpuMemoryClusterDetails.
-        The availability domain of the GPU memory cluster.
+        The availability domain of the GPU Memory Cluster.
 
 
         :return: The availability_domain of this CreateComputeGpuMemoryClusterDetails.
@@ -112,7 +119,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateComputeGpuMemoryClusterDetails.
-        The availability domain of the GPU memory cluster.
+        The availability domain of the GPU Memory Cluster.
 
 
         :param availability_domain: The availability_domain of this CreateComputeGpuMemoryClusterDetails.
@@ -124,7 +131,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateComputeGpuMemoryClusterDetails.
-        The `OCID`__ of the compartment that contains the compute GPU memory cluster.
+        The `OCID`__ of the compartment that contains the compute GPU Memory Cluster.
         compartment.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -139,7 +146,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateComputeGpuMemoryClusterDetails.
-        The `OCID`__ of the compartment that contains the compute GPU memory cluster.
+        The `OCID`__ of the compartment that contains the compute GPU Memory Cluster.
         compartment.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -234,7 +241,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
     def size(self):
         """
         Gets the size of this CreateComputeGpuMemoryClusterDetails.
-        The number of instances currently running in the GpuMemoryCluster
+        The desired number of instances for the GPU Memory Cluster.
 
 
         :return: The size of this CreateComputeGpuMemoryClusterDetails.
@@ -246,7 +253,7 @@ class CreateComputeGpuMemoryClusterDetails(object):
     def size(self, size):
         """
         Sets the size of this CreateComputeGpuMemoryClusterDetails.
-        The number of instances currently running in the GpuMemoryCluster
+        The desired number of instances for the GPU Memory Cluster.
 
 
         :param size: The size of this CreateComputeGpuMemoryClusterDetails.
@@ -367,6 +374,30 @@ class CreateComputeGpuMemoryClusterDetails(object):
         :type: oci.core.models.CreateComputeGpuMemoryClusterScaleConfig
         """
         self._gpu_memory_cluster_scale_config = gpu_memory_cluster_scale_config
+
+    @property
+    def private_ip_ids(self):
+        """
+        Gets the private_ip_ids of this CreateComputeGpuMemoryClusterDetails.
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+
+
+        :return: The private_ip_ids of this CreateComputeGpuMemoryClusterDetails.
+        :rtype: list[str]
+        """
+        return self._private_ip_ids
+
+    @private_ip_ids.setter
+    def private_ip_ids(self, private_ip_ids):
+        """
+        Sets the private_ip_ids of this CreateComputeGpuMemoryClusterDetails.
+        Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
+
+
+        :param private_ip_ids: The private_ip_ids of this CreateComputeGpuMemoryClusterDetails.
+        :type: list[str]
+        """
+        self._private_ip_ids = private_ip_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

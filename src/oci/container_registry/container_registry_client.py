@@ -168,7 +168,7 @@ class ContainerRegistryClient(object):
         resource_path = "/docker/token"
         method = "GET"
         operation_name = "get_access_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-registry/20180419/AccessToken/GetAccessToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

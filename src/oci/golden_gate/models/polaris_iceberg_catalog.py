@@ -148,8 +148,8 @@ class PolarisIcebergCatalog(IcebergCatalog):
     @property
     def client_secret_secret_id(self):
         """
-        **[Required]** Gets the client_secret_secret_id of this PolarisIcebergCatalog.
-        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        Gets the client_secret_secret_id of this PolarisIcebergCatalog.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -163,7 +163,7 @@ class PolarisIcebergCatalog(IcebergCatalog):
     def client_secret_secret_id(self, client_secret_secret_id):
         """
         Sets the client_secret_secret_id of this PolarisIcebergCatalog.
-        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

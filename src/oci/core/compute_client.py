@@ -6687,6 +6687,114 @@ class ComputeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_compute_host(self, compute_host_id, **kwargs):
+        """
+        Gets information about the specified compute host
+
+
+        :param str compute_host_id: (required)
+            The `OCID`__ of the compute host.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ComputeHost`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_compute_host.py.html>`__ to see an example of how to use get_compute_host API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['computeHostId']
+        resource_path = "/computeHosts/{computeHostId}"
+        method = "GET"
+        operation_name = "get_compute_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_compute_host got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "computeHostId": compute_host_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ComputeHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ComputeHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_compute_host_group(self, compute_host_group_id, **kwargs):
         """
         Gets information about the specified compute host group
@@ -6789,114 +6897,6 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="ComputeHostGroup",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-
-    def get_compute_hosts(self, compute_host_id, **kwargs):
-        """
-        Gets information about the specified compute host
-
-
-        :param str compute_host_id: (required)
-            The `OCID`__ of the compute host.
-
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-        :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ComputeHost`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_compute_hosts.py.html>`__ to see an example of how to use get_compute_hosts API.
-        """
-        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['computeHostId']
-        resource_path = "/computeHosts/{computeHostId}"
-        method = "GET"
-        operation_name = "get_compute_hosts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHosts"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "enable_strict_url_encoding",
-            "retry_strategy",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                f"get_compute_hosts got unknown kwargs: {extra_kwargs!r}")
-
-        path_params = {
-            "computeHostId": compute_host_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="ComputeHost",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="ComputeHost",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -15458,6 +15458,134 @@ class ComputeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def update_compute_host(self, compute_host_id, update_compute_host_details, **kwargs):
+        """
+        Customer can update the some fields for ComputeHost record
+
+
+        :param str compute_host_id: (required)
+            The `OCID`__ of the compute host.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.core.models.UpdateComputeHostDetails update_compute_host_details: (required)
+            Update compute capacity topology details.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_compute_host.py.html>`__ to see an example of how to use update_compute_host API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['computeHostId']
+        resource_path = "/computeHosts/{computeHostId}"
+        method = "PUT"
+        operation_name = "update_compute_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_compute_host got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "computeHostId": compute_host_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_compute_host_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_compute_host_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_compute_host_group(self, compute_host_group_id, update_compute_host_group_details, **kwargs):
         """
         Updates the specified compute host group details.
@@ -15582,134 +15710,6 @@ class ComputeClient(object):
                 header_params=header_params,
                 body=update_compute_host_group_details,
                 response_type="ComputeHostGroup",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-
-    def update_compute_hosts(self, compute_host_id, update_compute_hosts_details, **kwargs):
-        """
-        Customer can update the some fields for ComputeHost record
-
-
-        :param str compute_host_id: (required)
-            The `OCID`__ of the compute host.
-
-            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-        :param oci.core.models.UpdateComputeHostsDetails update_compute_hosts_details: (required)
-            Update compute capacity topology details.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :param str opc_request_id: (optional)
-            Unique identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
-
-        :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
-        :return: A :class:`~oci.response.Response` object with data of type None
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_compute_hosts.py.html>`__ to see an example of how to use update_compute_hosts API.
-        """
-        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['computeHostId']
-        resource_path = "/computeHosts/{computeHostId}"
-        method = "PUT"
-        operation_name = "update_compute_hosts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHosts"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "enable_strict_url_encoding",
-            "retry_strategy",
-            "if_match",
-            "opc_request_id",
-            "opc_retry_token"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                f"update_compute_hosts got unknown kwargs: {extra_kwargs!r}")
-
-        path_params = {
-            "computeHostId": compute_host_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=update_compute_hosts_details,
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                body=update_compute_hosts_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
