@@ -172,7 +172,7 @@ class CreateOracleInitialLoadSettings(object):
     @property
     def job_mode(self):
         """
-        **[Required]** Gets the job_mode of this CreateOracleInitialLoadSettings.
+        Gets the job_mode of this CreateOracleInitialLoadSettings.
         Oracle Job Mode
 
         Allowed values for this property are: "FULL", "SCHEMA", "TABLE", "TABLESPACE", "TRANSPORTABLE"

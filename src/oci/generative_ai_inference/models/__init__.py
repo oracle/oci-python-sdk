@@ -68,6 +68,9 @@ from .document import Document
 from .document_content import DocumentContent
 from .document_rank import DocumentRank
 from .document_url import DocumentUrl
+from .embed_content import EmbedContent
+from .embed_image_content import EmbedImageContent
+from .embed_text_content import EmbedTextContent
 from .embed_text_details import EmbedTextDetails
 from .embed_text_result import EmbedTextResult
 from .function import Function
@@ -199,6 +202,9 @@ generative_ai_inference_type_mapping = {
     "DocumentContent": DocumentContent,
     "DocumentRank": DocumentRank,
     "DocumentUrl": DocumentUrl,
+    "EmbedContent": EmbedContent,
+    "EmbedImageContent": EmbedImageContent,
+    "EmbedTextContent": EmbedTextContent,
     "EmbedTextDetails": EmbedTextDetails,
     "EmbedTextResult": EmbedTextResult,
     "Function": Function,

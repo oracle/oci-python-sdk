@@ -41,6 +41,14 @@ class CreateBatchTaskProfileDetails(object):
             The value to assign to the min_memory_in_gbs property of this CreateBatchTaskProfileDetails.
         :type min_memory_in_gbs: int
 
+        :param min_disk_size_in_gbs:
+            The value to assign to the min_disk_size_in_gbs property of this CreateBatchTaskProfileDetails.
+        :type min_disk_size_in_gbs: int
+
+        :param extended_information:
+            The value to assign to the extended_information property of this CreateBatchTaskProfileDetails.
+        :type extended_information: oci.batch.models.CreateBatchTaskProfileExtendedInformationDetails
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateBatchTaskProfileDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -56,6 +64,8 @@ class CreateBatchTaskProfileDetails(object):
             'description': 'str',
             'min_ocpus': 'int',
             'min_memory_in_gbs': 'int',
+            'min_disk_size_in_gbs': 'int',
+            'extended_information': 'CreateBatchTaskProfileExtendedInformationDetails',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -65,6 +75,8 @@ class CreateBatchTaskProfileDetails(object):
             'description': 'description',
             'min_ocpus': 'minOcpus',
             'min_memory_in_gbs': 'minMemoryInGBs',
+            'min_disk_size_in_gbs': 'minDiskSizeInGBs',
+            'extended_information': 'extendedInformation',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -73,6 +85,8 @@ class CreateBatchTaskProfileDetails(object):
         self._description = None
         self._min_ocpus = None
         self._min_memory_in_gbs = None
+        self._min_disk_size_in_gbs = None
+        self._extended_information = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -157,7 +171,7 @@ class CreateBatchTaskProfileDetails(object):
     @property
     def min_ocpus(self):
         """
-        **[Required]** Gets the min_ocpus of this CreateBatchTaskProfileDetails.
+        Gets the min_ocpus of this CreateBatchTaskProfileDetails.
         The minimum required OCPUs.
 
 
@@ -181,7 +195,7 @@ class CreateBatchTaskProfileDetails(object):
     @property
     def min_memory_in_gbs(self):
         """
-        **[Required]** Gets the min_memory_in_gbs of this CreateBatchTaskProfileDetails.
+        Gets the min_memory_in_gbs of this CreateBatchTaskProfileDetails.
         The minimum required memory.
 
 
@@ -201,6 +215,50 @@ class CreateBatchTaskProfileDetails(object):
         :type: int
         """
         self._min_memory_in_gbs = min_memory_in_gbs
+
+    @property
+    def min_disk_size_in_gbs(self):
+        """
+        Gets the min_disk_size_in_gbs of this CreateBatchTaskProfileDetails.
+        The minimum required size of disk space in GBs.
+
+
+        :return: The min_disk_size_in_gbs of this CreateBatchTaskProfileDetails.
+        :rtype: int
+        """
+        return self._min_disk_size_in_gbs
+
+    @min_disk_size_in_gbs.setter
+    def min_disk_size_in_gbs(self, min_disk_size_in_gbs):
+        """
+        Sets the min_disk_size_in_gbs of this CreateBatchTaskProfileDetails.
+        The minimum required size of disk space in GBs.
+
+
+        :param min_disk_size_in_gbs: The min_disk_size_in_gbs of this CreateBatchTaskProfileDetails.
+        :type: int
+        """
+        self._min_disk_size_in_gbs = min_disk_size_in_gbs
+
+    @property
+    def extended_information(self):
+        """
+        Gets the extended_information of this CreateBatchTaskProfileDetails.
+
+        :return: The extended_information of this CreateBatchTaskProfileDetails.
+        :rtype: oci.batch.models.CreateBatchTaskProfileExtendedInformationDetails
+        """
+        return self._extended_information
+
+    @extended_information.setter
+    def extended_information(self, extended_information):
+        """
+        Sets the extended_information of this CreateBatchTaskProfileDetails.
+
+        :param extended_information: The extended_information of this CreateBatchTaskProfileDetails.
+        :type: oci.batch.models.CreateBatchTaskProfileExtendedInformationDetails
+        """
+        self._extended_information = extended_information
 
     @property
     def defined_tags(self):

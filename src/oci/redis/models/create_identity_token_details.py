@@ -28,31 +28,17 @@ class CreateIdentityTokenDetails(object):
             The value to assign to the redis_user property of this CreateIdentityTokenDetails.
         :type redis_user: str
 
-        :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateIdentityTokenDetails.
-        :type freeform_tags: dict(str, str)
-
-        :param defined_tags:
-            The value to assign to the defined_tags property of this CreateIdentityTokenDetails.
-        :type defined_tags: dict(str, dict(str, object))
-
         """
         self.swagger_types = {
             'public_key': 'str',
-            'redis_user': 'str',
-            'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'redis_user': 'str'
         }
         self.attribute_map = {
             'public_key': 'publicKey',
-            'redis_user': 'redisUser',
-            'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'redis_user': 'redisUser'
         }
         self._public_key = None
         self._redis_user = None
-        self._freeform_tags = None
-        self._defined_tags = None
 
     @property
     def public_key(self):
@@ -101,58 +87,6 @@ class CreateIdentityTokenDetails(object):
         :type: str
         """
         self._redis_user = redis_user
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this CreateIdentityTokenDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
-
-
-        :return: The freeform_tags of this CreateIdentityTokenDetails.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this CreateIdentityTokenDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
-
-
-        :param freeform_tags: The freeform_tags of this CreateIdentityTokenDetails.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this CreateIdentityTokenDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-
-
-        :return: The defined_tags of this CreateIdentityTokenDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this CreateIdentityTokenDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
-
-
-        :param defined_tags: The defined_tags of this CreateIdentityTokenDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

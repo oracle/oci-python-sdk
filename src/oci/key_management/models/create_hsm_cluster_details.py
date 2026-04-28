@@ -36,23 +36,30 @@ class CreateHsmClusterDetails(object):
             The value to assign to the freeform_tags property of this CreateHsmClusterDetails.
         :type freeform_tags: dict(str, str)
 
+        :param audit_log_config:
+            The value to assign to the audit_log_config property of this CreateHsmClusterDetails.
+        :type audit_log_config: oci.key_management.models.AuditLoggingConfig
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'audit_log_config': 'AuditLoggingConfig'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'audit_log_config': 'auditLogConfig'
         }
         self._compartment_id = None
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._audit_log_config = None
 
     @property
     def compartment_id(self):
@@ -167,6 +174,26 @@ class CreateHsmClusterDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def audit_log_config(self):
+        """
+        Gets the audit_log_config of this CreateHsmClusterDetails.
+
+        :return: The audit_log_config of this CreateHsmClusterDetails.
+        :rtype: oci.key_management.models.AuditLoggingConfig
+        """
+        return self._audit_log_config
+
+    @audit_log_config.setter
+    def audit_log_config(self, audit_log_config):
+        """
+        Sets the audit_log_config of this CreateHsmClusterDetails.
+
+        :param audit_log_config: The audit_log_config of this CreateHsmClusterDetails.
+        :type: oci.key_management.models.AuditLoggingConfig
+        """
+        self._audit_log_config = audit_log_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

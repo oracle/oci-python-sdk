@@ -201,6 +201,7 @@ API Reference
 * :doc:`Occ Metric Alarm <demand_signal/client/oci.demand_signal.OccMetricAlarmClient>`
 * :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
+* :doc:`Oci Cache Backup <redis/client/oci.redis.OciCacheBackupClient>`
 * :doc:`Oci Cache Config Set <redis/client/oci.redis.OciCacheConfigSetClient>`
 * :doc:`Oci Cache Default Config Set <redis/client/oci.redis.OciCacheDefaultConfigSetClient>`
 * :doc:`Oci Cache Engine Options <redis/client/oci.redis.OciCacheEngineOptionsClient>`

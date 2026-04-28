@@ -274,7 +274,7 @@ class MySqlInitialLoadSettings(object):
     @property
     def job_mode(self):
         """
-        **[Required]** Gets the job_mode of this MySqlInitialLoadSettings.
+        Gets the job_mode of this MySqlInitialLoadSettings.
         MySql Job Mode
 
         Allowed values for this property are: "FULL", "SCHEMA", 'UNKNOWN_ENUM_VALUE'.

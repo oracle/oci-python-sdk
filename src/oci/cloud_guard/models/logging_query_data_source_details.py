@@ -204,7 +204,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def threshold(self):
         """
         Gets the threshold of this LoggingQueryDataSourceDetails.
-        The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 
 
         :return: The threshold of this LoggingQueryDataSourceDetails.
@@ -216,7 +216,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def threshold(self, threshold):
         """
         Sets the threshold of this LoggingQueryDataSourceDetails.
-        The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
+        DEPRECATED - The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 
 
         :param threshold: The threshold of this LoggingQueryDataSourceDetails.
@@ -248,7 +248,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def operator(self):
         """
         Gets the operator of this LoggingQueryDataSourceDetails.
-        Operator used in data source
+        DEPRECATED - Operator used in data source
 
         Allowed values for this property are: "EQUAL", "GREATER", "GREATERTHANEQUALTO", "LESS", "LESSTHANEQUALTO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -263,7 +263,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def operator(self, operator):
         """
         Sets the operator of this LoggingQueryDataSourceDetails.
-        Operator used in data source
+        DEPRECATED - Operator used in data source
 
 
         :param operator: The operator of this LoggingQueryDataSourceDetails.

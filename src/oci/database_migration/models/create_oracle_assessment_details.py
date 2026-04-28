@@ -15,6 +15,14 @@ class CreateOracleAssessmentDetails(CreateAssessmentDetails):
     Create Oracle Assessment resource parameters.
     """
 
+    #: A constant which can be used with the migration_scope property of a CreateOracleAssessmentDetails.
+    #: This constant has a value of "SCHEMA"
+    MIGRATION_SCOPE_SCHEMA = "SCHEMA"
+
+    #: A constant which can be used with the migration_scope property of a CreateOracleAssessmentDetails.
+    #: This constant has a value of "FULL"
+    MIGRATION_SCOPE_FULL = "FULL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOracleAssessmentDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_migration.models.CreateOracleAssessmentDetails.database_combination` attribute
@@ -79,6 +87,11 @@ class CreateOracleAssessmentDetails(CreateAssessmentDetails):
             The value to assign to the defined_tags property of this CreateOracleAssessmentDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param migration_scope:
+            The value to assign to the migration_scope property of this CreateOracleAssessmentDetails.
+            Allowed values for this property are: "SCHEMA", "FULL"
+        :type migration_scope: str
+
         :param exclude_objects:
             The value to assign to the exclude_objects property of this CreateOracleAssessmentDetails.
         :type exclude_objects: list[oci.database_migration.models.OracleDatabaseObject]
@@ -106,6 +119,7 @@ class CreateOracleAssessmentDetails(CreateAssessmentDetails):
             'target_database_connection': 'TargetAssessmentConnection',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'migration_scope': 'str',
             'exclude_objects': 'list[OracleDatabaseObject]',
             'include_objects': 'list[OracleDatabaseObject]',
             'bulk_include_exclude_data': 'str'
@@ -124,6 +138,7 @@ class CreateOracleAssessmentDetails(CreateAssessmentDetails):
             'target_database_connection': 'targetDatabaseConnection',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'migration_scope': 'migrationScope',
             'exclude_objects': 'excludeObjects',
             'include_objects': 'includeObjects',
             'bulk_include_exclude_data': 'bulkIncludeExcludeData'
@@ -141,10 +156,42 @@ class CreateOracleAssessmentDetails(CreateAssessmentDetails):
         self._target_database_connection = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._migration_scope = None
         self._exclude_objects = None
         self._include_objects = None
         self._bulk_include_exclude_data = None
         self._database_combination = 'ORACLE'
+
+    @property
+    def migration_scope(self):
+        """
+        **[Required]** Gets the migration_scope of this CreateOracleAssessmentDetails.
+        Assessment migration scope.
+
+        Allowed values for this property are: "SCHEMA", "FULL"
+
+
+        :return: The migration_scope of this CreateOracleAssessmentDetails.
+        :rtype: str
+        """
+        return self._migration_scope
+
+    @migration_scope.setter
+    def migration_scope(self, migration_scope):
+        """
+        Sets the migration_scope of this CreateOracleAssessmentDetails.
+        Assessment migration scope.
+
+
+        :param migration_scope: The migration_scope of this CreateOracleAssessmentDetails.
+        :type: str
+        """
+        allowed_values = ["SCHEMA", "FULL"]
+        if not value_allowed_none_or_none_sentinel(migration_scope, allowed_values):
+            raise ValueError(
+                f"Invalid value for `migration_scope`, must be None or one of {allowed_values}"
+            )
+        self._migration_scope = migration_scope
 
     @property
     def exclude_objects(self):

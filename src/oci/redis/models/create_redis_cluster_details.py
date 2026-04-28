@@ -66,6 +66,14 @@ class CreateRedisClusterDetails(object):
             The value to assign to the security_attributes property of this CreateRedisClusterDetails.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param backup_id:
+            The value to assign to the backup_id property of this CreateRedisClusterDetails.
+        :type backup_id: str
+
+        :param import_from_object_storage_details:
+            The value to assign to the import_from_object_storage_details property of this CreateRedisClusterDetails.
+        :type import_from_object_storage_details: oci.redis.models.ImportOciCacheFromObjectStorageDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRedisClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -87,6 +95,8 @@ class CreateRedisClusterDetails(object):
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'security_attributes': 'dict(str, dict(str, object))',
+            'backup_id': 'str',
+            'import_from_object_storage_details': 'ImportOciCacheFromObjectStorageDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -102,6 +112,8 @@ class CreateRedisClusterDetails(object):
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'security_attributes': 'securityAttributes',
+            'backup_id': 'backupId',
+            'import_from_object_storage_details': 'importFromObjectStorageDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -116,6 +128,8 @@ class CreateRedisClusterDetails(object):
         self._subnet_id = None
         self._nsg_ids = None
         self._security_attributes = None
+        self._backup_id = None
+        self._import_from_object_storage_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -410,6 +424,50 @@ class CreateRedisClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def backup_id(self):
+        """
+        Gets the backup_id of this CreateRedisClusterDetails.
+        The ID of the OCI Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+
+
+        :return: The backup_id of this CreateRedisClusterDetails.
+        :rtype: str
+        """
+        return self._backup_id
+
+    @backup_id.setter
+    def backup_id(self, backup_id):
+        """
+        Sets the backup_id of this CreateRedisClusterDetails.
+        The ID of the OCI Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
+
+
+        :param backup_id: The backup_id of this CreateRedisClusterDetails.
+        :type: str
+        """
+        self._backup_id = backup_id
+
+    @property
+    def import_from_object_storage_details(self):
+        """
+        Gets the import_from_object_storage_details of this CreateRedisClusterDetails.
+
+        :return: The import_from_object_storage_details of this CreateRedisClusterDetails.
+        :rtype: oci.redis.models.ImportOciCacheFromObjectStorageDetails
+        """
+        return self._import_from_object_storage_details
+
+    @import_from_object_storage_details.setter
+    def import_from_object_storage_details(self, import_from_object_storage_details):
+        """
+        Sets the import_from_object_storage_details of this CreateRedisClusterDetails.
+
+        :param import_from_object_storage_details: The import_from_object_storage_details of this CreateRedisClusterDetails.
+        :type: oci.redis.models.ImportOciCacheFromObjectStorageDetails
+        """
+        self._import_from_object_storage_details = import_from_object_storage_details
 
     @property
     def freeform_tags(self):

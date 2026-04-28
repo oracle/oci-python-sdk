@@ -41,6 +41,8 @@ missing = Sentinel("Missing")
 APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
 PROPAGATION_ENABLED_ENV_VAR_NAME = "PROPAGATION_ENABLED"
 OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME = "OPC_INCOMING_REQUEST_ID"
+PROPAGATION_REQUEST_ID_FILE_ENV_VAR_NAME = "OCI_PYSDK_PROPAGATION_REQUEST_ID_FILE"
+DEFAULT_PROPAGATION_REQUEST_ID_FILE_NAME = "sdk_propagation.txt"
 OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED = "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED"
 OCI_HEADER_PARSING_ERROR_MAX_RETRIES = "OCI_HEADER_PARSING_ERROR_MAX_RETRIES"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
@@ -85,6 +87,61 @@ def build_user_agent(extra=""):
 
 def utc_now():
     return " " + str(datetime.utcnow()) + ": "
+
+
+def _get_propagation_request_id_file_path():
+    file_location = os.environ.get(PROPAGATION_REQUEST_ID_FILE_ENV_VAR_NAME)
+    if file_location is None:
+        file_location = os.path.join(os.path.dirname(os.path.abspath(__file__)), DEFAULT_PROPAGATION_REQUEST_ID_FILE_NAME)
+    return os.path.expandvars(os.path.expanduser(file_location))
+
+
+def _normalize_propagation_request_id(request_id):
+    if request_id is None:
+        return None
+    request_id = str(request_id).strip()
+    if request_id == "":
+        return None
+    segments = request_id.split("/")
+    if len(segments) == 1:
+        return segments[0]
+    stack_id = segments[1]
+    if stack_id == "":
+        return segments[0]
+    return segments[0] + "/" + stack_id
+
+
+def _read_propagation_request_id_from_file():
+    file_location = _get_propagation_request_id_file_path()
+    if not os.path.exists(file_location):
+        return None
+    try:
+        with open(file_location, 'r') as file:
+            for line in file:
+                segments = line.strip().split(':', 1)
+                if len(segments) > 1 and segments[0].strip() == "PROPAGATION_REQUEST_ID":
+                    return _normalize_propagation_request_id(segments[1].strip())
+    except Exception:
+        return None
+    return None
+
+
+def _write_propagation_request_id_to_file(request_id):
+    normalized_request_id = _normalize_propagation_request_id(request_id)
+    if not normalized_request_id:
+        return
+    existing_request_id = _read_propagation_request_id_from_file()
+    if existing_request_id:
+        return
+    file_location = _get_propagation_request_id_file_path()
+    try:
+        file_dir = os.path.dirname(file_location)
+        if file_dir and not os.path.exists(file_dir):
+            os.makedirs(file_dir, exist_ok=True)
+        with open(file_location, 'w') as file:
+            file.write("PROPAGATION_REQUEST_ID:{}".format(normalized_request_id))
+    except Exception:
+        return
 
 
 def is_http_log_enabled(is_enabled):
@@ -688,7 +745,9 @@ class BaseClient(object):
             os.environ.pop(OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME)
 
     def get_downstream_request_id(self):
-        request_id = os.environ.get(OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME)
+        request_id = _read_propagation_request_id_from_file()
+        if self.PROPAGATION_ENABLED and not request_id:
+            request_id = os.environ.get(OPC_INCOMING_REQUEST_ID_ENV_VAR_NAME)
         if self.PROPAGATION_ENABLED and request_id:
             self.logger.debug(f"Downstream requestID: {str(request_id)}")
             self.custom_opc_request_id = request_id
@@ -697,7 +756,9 @@ class BaseClient(object):
     def use_custom_opc_request_id(self, rid: str = None):
         self.custom_opc_request_id = None
         if self.PROPAGATION_ENABLED:
-            rid = self.get_downstream_request_id()
+            downstream_rid = self.get_downstream_request_id()
+            if downstream_rid is not None and downstream_rid != "":
+                rid = downstream_rid
         if rid is not None and rid != "":
             self.PROPAGATION_ENABLED = True
         if self.PROPAGATION_ENABLED:
@@ -714,6 +775,8 @@ class BaseClient(object):
                     stackId = segments[1]
                 self.custom_opc_request_id = segments[0] + "/" + stackId
                 self.logger.debug(f"Truncated request ID to: {str(self.custom_opc_request_id)}")
+        if self.PROPAGATION_ENABLED and self.custom_opc_request_id:
+            _write_propagation_request_id_to_file(self.custom_opc_request_id)
         return self.custom_opc_request_id
 
     def map_service_params_to_values(self, service_params_url, path_params, query_params, required_arguments):

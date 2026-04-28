@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.173.0 - 2026-04-28
+====================
+
+Added 
+----- 
+* Support for OCI cache backup/restore and export/import in the Redis service
+* Support for embed V4 multimodal capabilities in the Generative AI Inference service 
+* Support for new rerank models `CohereH100X1`, `CohereA10080GX1`, `CohereA10040GX1` , `CohereA10X1`  in dedicated AI clusters in the Generative AI service 
+* Support for assessments in the Database Migration Service 
+* Support for improved failure and logging visibility during container creation in the Batch service 
+* Support for group tasks, enhanced task execution observability, job and task lifecycle event visibility, updated job lifecycle behavior and increased task argument length limit in the Batch service 
+* Support for activity logs in dedicated KMS in the Key Management service 
+* Support for demo fusion environment type in the Fusion Apps as a Service service 
+* Support for adding Vanity Domain feature in the Fusion Apps as a Service service 
+* Support for IPv6 dual stack endpoint in the Java Management Service 
+* Support for listing Java installation usage summaries with JRE security status filter in the Java Management service 
+* Support for enabling inheritance in security zone entities after deletion in the Cloud Guard service  
+
+Breaking 
+-------- 
+* Removed parameters `freeform_tags` and `defined_tags` from `CreateIdentityTokenDetails` model from the Redis service  
+
+====================
 2.172.0 - 2026-04-21
 ====================
 

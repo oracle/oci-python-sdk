@@ -104,7 +104,8 @@ class JmsUtilsClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20250521',
-            'service_endpoint_template': 'https://javamanagement-utils.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://utils.javamanagement.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
+            'endpoint_service_name': 'utils.javamanagement',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),

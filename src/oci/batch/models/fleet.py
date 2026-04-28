@@ -19,18 +19,23 @@ class Fleet(object):
     #: This constant has a value of "SERVICE_MANAGED_FLEET"
     TYPE_SERVICE_MANAGED_FLEET = "SERVICE_MANAGED_FLEET"
 
+    #: A constant which can be used with the type property of a Fleet.
+    #: This constant has a value of "SERVICE_MANAGED_GPU_FLEET"
+    TYPE_SERVICE_MANAGED_GPU_FLEET = "SERVICE_MANAGED_GPU_FLEET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Fleet object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.batch.models.ServiceManagedFleet`
+        * :class:`~oci.batch.models.ServiceManagedGpuFleet`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this Fleet.
-            Allowed values for this property are: "SERVICE_MANAGED_FLEET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -53,6 +58,9 @@ class Fleet(object):
 
         if type == 'SERVICE_MANAGED_FLEET':
             return 'ServiceManagedFleet'
+
+        if type == 'SERVICE_MANAGED_GPU_FLEET':
+            return 'ServiceManagedGpuFleet'
         else:
             return 'Fleet'
 
@@ -62,7 +70,7 @@ class Fleet(object):
         **[Required]** Gets the type of this Fleet.
         Type of the fleet. Also serves as a discriminator for sub-entities.
 
-        Allowed values for this property are: "SERVICE_MANAGED_FLEET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class Fleet(object):
         :param type: The type of this Fleet.
         :type: str
         """
-        allowed_values = ["SERVICE_MANAGED_FLEET"]
+        allowed_values = ["SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

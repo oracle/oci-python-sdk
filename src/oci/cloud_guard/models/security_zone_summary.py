@@ -87,6 +87,10 @@ class SecurityZoneSummary(object):
             The value to assign to the lifecycle_details property of this SecurityZoneSummary.
         :type lifecycle_details: str
 
+        :param is_inheritance_after_delete_enabled:
+            The value to assign to the is_inheritance_after_delete_enabled property of this SecurityZoneSummary.
+        :type is_inheritance_after_delete_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SecurityZoneSummary.
         :type freeform_tags: dict(str, str)
@@ -110,6 +114,7 @@ class SecurityZoneSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'is_inheritance_after_delete_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -124,6 +129,7 @@ class SecurityZoneSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'is_inheritance_after_delete_enabled': 'isInheritanceAfterDeleteEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -137,6 +143,7 @@ class SecurityZoneSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._is_inheritance_after_delete_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -362,6 +369,30 @@ class SecurityZoneSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def is_inheritance_after_delete_enabled(self):
+        """
+        Gets the is_inheritance_after_delete_enabled of this SecurityZoneSummary.
+        Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+
+
+        :return: The is_inheritance_after_delete_enabled of this SecurityZoneSummary.
+        :rtype: bool
+        """
+        return self._is_inheritance_after_delete_enabled
+
+    @is_inheritance_after_delete_enabled.setter
+    def is_inheritance_after_delete_enabled(self, is_inheritance_after_delete_enabled):
+        """
+        Sets the is_inheritance_after_delete_enabled of this SecurityZoneSummary.
+        Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+
+
+        :param is_inheritance_after_delete_enabled: The is_inheritance_after_delete_enabled of this SecurityZoneSummary.
+        :type: bool
+        """
+        self._is_inheritance_after_delete_enabled = is_inheritance_after_delete_enabled
 
     @property
     def freeform_tags(self):

@@ -32,20 +32,27 @@ class FleetShape(object):
             The value to assign to the memory_in_gbs property of this FleetShape.
         :type memory_in_gbs: int
 
+        :param disk_size_in_gbs:
+            The value to assign to the disk_size_in_gbs property of this FleetShape.
+        :type disk_size_in_gbs: int
+
         """
         self.swagger_types = {
             'shape_name': 'str',
             'ocpus': 'int',
-            'memory_in_gbs': 'int'
+            'memory_in_gbs': 'int',
+            'disk_size_in_gbs': 'int'
         }
         self.attribute_map = {
             'shape_name': 'shapeName',
             'ocpus': 'ocpus',
-            'memory_in_gbs': 'memoryInGBs'
+            'memory_in_gbs': 'memoryInGBs',
+            'disk_size_in_gbs': 'diskSizeInGBs'
         }
         self._shape_name = None
         self._ocpus = None
         self._memory_in_gbs = None
+        self._disk_size_in_gbs = None
 
     @property
     def shape_name(self):
@@ -75,7 +82,7 @@ class FleetShape(object):
     def ocpus(self):
         """
         **[Required]** Gets the ocpus of this FleetShape.
-        Number of OCPUs required by the shape.
+        Number of OCPUs required for the shape.
 
 
         :return: The ocpus of this FleetShape.
@@ -87,7 +94,7 @@ class FleetShape(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this FleetShape.
-        Number of OCPUs required by the shape.
+        Number of OCPUs required for the shape.
 
 
         :param ocpus: The ocpus of this FleetShape.
@@ -99,7 +106,7 @@ class FleetShape(object):
     def memory_in_gbs(self):
         """
         **[Required]** Gets the memory_in_gbs of this FleetShape.
-        Amount of memory in GBs required by the shape.
+        Amount of memory in GBs required for the shape.
 
 
         :return: The memory_in_gbs of this FleetShape.
@@ -111,13 +118,37 @@ class FleetShape(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this FleetShape.
-        Amount of memory in GBs required by the shape.
+        Amount of memory in GBs required for the shape.
 
 
         :param memory_in_gbs: The memory_in_gbs of this FleetShape.
         :type: int
         """
         self._memory_in_gbs = memory_in_gbs
+
+    @property
+    def disk_size_in_gbs(self):
+        """
+        Gets the disk_size_in_gbs of this FleetShape.
+        Amount of disk space in GBs required for the shape.
+
+
+        :return: The disk_size_in_gbs of this FleetShape.
+        :rtype: int
+        """
+        return self._disk_size_in_gbs
+
+    @disk_size_in_gbs.setter
+    def disk_size_in_gbs(self, disk_size_in_gbs):
+        """
+        Sets the disk_size_in_gbs of this FleetShape.
+        Amount of disk space in GBs required for the shape.
+
+
+        :param disk_size_in_gbs: The disk_size_in_gbs of this FleetShape.
+        :type: int
+        """
+        self._disk_size_in_gbs = disk_size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

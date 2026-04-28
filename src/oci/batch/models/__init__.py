@@ -23,8 +23,10 @@ from .batch_task_environment import BatchTaskEnvironment
 from .batch_task_environment_collection import BatchTaskEnvironmentCollection
 from .batch_task_environment_summary import BatchTaskEnvironmentSummary
 from .batch_task_environment_volume import BatchTaskEnvironmentVolume
+from .batch_task_execution_details import BatchTaskExecutionDetails
 from .batch_task_profile import BatchTaskProfile
 from .batch_task_profile_collection import BatchTaskProfileCollection
+from .batch_task_profile_extended_information import BatchTaskProfileExtendedInformation
 from .batch_task_profile_summary import BatchTaskProfileSummary
 from .batch_task_summary import BatchTaskSummary
 from .best_fit_fleet_assignment_policy import BestFitFleetAssignmentPolicy
@@ -34,22 +36,41 @@ from .change_batch_job_pool_compartment_details import ChangeBatchJobPoolCompart
 from .change_batch_task_environment_compartment_details import ChangeBatchTaskEnvironmentCompartmentDetails
 from .change_batch_task_profile_compartment_details import ChangeBatchTaskProfileCompartmentDetails
 from .compute_task import ComputeTask
+from .compute_task_execution_details import ComputeTaskExecutionDetails
 from .compute_task_summary import ComputeTaskSummary
+from .cpu_architecture_task_profile_extended_information import CpuArchitectureTaskProfileExtendedInformation
+from .cpu_fleet_shape_execution_details import CpuFleetShapeExecutionDetails
+from .cpu_shape_task_profile_extended_information import CpuShapeTaskProfileExtendedInformation
 from .create_batch_context_details import CreateBatchContextDetails
 from .create_batch_job_details import CreateBatchJobDetails
 from .create_batch_job_pool_details import CreateBatchJobPoolDetails
 from .create_batch_task_details import CreateBatchTaskDetails
 from .create_batch_task_environment_details import CreateBatchTaskEnvironmentDetails
 from .create_batch_task_profile_details import CreateBatchTaskProfileDetails
+from .create_batch_task_profile_extended_information_details import CreateBatchTaskProfileExtendedInformationDetails
 from .create_compute_task_details import CreateComputeTaskDetails
+from .create_cpu_architecture_task_profile_extended_information_details import CreateCpuArchitectureTaskProfileExtendedInformationDetails
+from .create_cpu_shape_task_profile_extended_information_details import CreateCpuShapeTaskProfileExtendedInformationDetails
+from .create_fixed_gpu_fleet_shape_details import CreateFixedGpuFleetShapeDetails
 from .create_fleet_details import CreateFleetDetails
+from .create_gpu_fleet_shape_details import CreateGpuFleetShapeDetails
+from .create_gpu_shape_task_profile_extended_information_details import CreateGpuShapeTaskProfileExtendedInformationDetails
+from .create_group_task_details import CreateGroupTaskDetails
 from .create_network_details import CreateNetworkDetails
 from .create_service_managed_fleet_details import CreateServiceManagedFleetDetails
+from .create_service_managed_gpu_fleet_details import CreateServiceManagedGpuFleetDetails
 from .environment_variable import EnvironmentVariable
+from .fixed_gpu_fleet_shape import FixedGpuFleetShape
 from .fleet import Fleet
 from .fleet_assignment_policy import FleetAssignmentPolicy
 from .fleet_shape import FleetShape
+from .fleet_shape_execution_details import FleetShapeExecutionDetails
 from .flex_fit_fleet_assignment_policy import FlexFitFleetAssignmentPolicy
+from .gpu_fleet_shape import GpuFleetShape
+from .gpu_fleet_shape_execution_details import GpuFleetShapeExecutionDetails
+from .gpu_shape_task_profile_extended_information import GpuShapeTaskProfileExtendedInformation
+from .group_task import GroupTask
+from .group_task_summary import GroupTaskSummary
 from .job_priority_configuration import JobPriorityConfiguration
 from .logging_configuration import LoggingConfiguration
 from .network import Network
@@ -60,6 +81,7 @@ from .pause_batch_job_details import PauseBatchJobDetails
 from .private_ip import PrivateIp
 from .security_context import SecurityContext
 from .service_managed_fleet import ServiceManagedFleet
+from .service_managed_gpu_fleet import ServiceManagedGpuFleet
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_networking_bandwidth_options import ShapeNetworkingBandwidthOptions
 from .shape_ocpu_options import ShapeOcpuOptions
@@ -74,6 +96,8 @@ from .update_batch_job_details import UpdateBatchJobDetails
 from .update_batch_job_pool_details import UpdateBatchJobPoolDetails
 from .update_batch_task_environment_details import UpdateBatchTaskEnvironmentDetails
 from .update_batch_task_profile_details import UpdateBatchTaskProfileDetails
+from .update_logging_configuration_details import UpdateLoggingConfigurationDetails
+from .update_oci_logging_configuration import UpdateOciLoggingConfiguration
 from .virtual_network_vnic import VirtualNetworkVnic
 from .vnic import Vnic
 from .work_request import WorkRequest
@@ -104,8 +128,10 @@ batch_type_mapping = {
     "BatchTaskEnvironmentCollection": BatchTaskEnvironmentCollection,
     "BatchTaskEnvironmentSummary": BatchTaskEnvironmentSummary,
     "BatchTaskEnvironmentVolume": BatchTaskEnvironmentVolume,
+    "BatchTaskExecutionDetails": BatchTaskExecutionDetails,
     "BatchTaskProfile": BatchTaskProfile,
     "BatchTaskProfileCollection": BatchTaskProfileCollection,
+    "BatchTaskProfileExtendedInformation": BatchTaskProfileExtendedInformation,
     "BatchTaskProfileSummary": BatchTaskProfileSummary,
     "BatchTaskSummary": BatchTaskSummary,
     "BestFitFleetAssignmentPolicy": BestFitFleetAssignmentPolicy,
@@ -115,22 +141,41 @@ batch_type_mapping = {
     "ChangeBatchTaskEnvironmentCompartmentDetails": ChangeBatchTaskEnvironmentCompartmentDetails,
     "ChangeBatchTaskProfileCompartmentDetails": ChangeBatchTaskProfileCompartmentDetails,
     "ComputeTask": ComputeTask,
+    "ComputeTaskExecutionDetails": ComputeTaskExecutionDetails,
     "ComputeTaskSummary": ComputeTaskSummary,
+    "CpuArchitectureTaskProfileExtendedInformation": CpuArchitectureTaskProfileExtendedInformation,
+    "CpuFleetShapeExecutionDetails": CpuFleetShapeExecutionDetails,
+    "CpuShapeTaskProfileExtendedInformation": CpuShapeTaskProfileExtendedInformation,
     "CreateBatchContextDetails": CreateBatchContextDetails,
     "CreateBatchJobDetails": CreateBatchJobDetails,
     "CreateBatchJobPoolDetails": CreateBatchJobPoolDetails,
     "CreateBatchTaskDetails": CreateBatchTaskDetails,
     "CreateBatchTaskEnvironmentDetails": CreateBatchTaskEnvironmentDetails,
     "CreateBatchTaskProfileDetails": CreateBatchTaskProfileDetails,
+    "CreateBatchTaskProfileExtendedInformationDetails": CreateBatchTaskProfileExtendedInformationDetails,
     "CreateComputeTaskDetails": CreateComputeTaskDetails,
+    "CreateCpuArchitectureTaskProfileExtendedInformationDetails": CreateCpuArchitectureTaskProfileExtendedInformationDetails,
+    "CreateCpuShapeTaskProfileExtendedInformationDetails": CreateCpuShapeTaskProfileExtendedInformationDetails,
+    "CreateFixedGpuFleetShapeDetails": CreateFixedGpuFleetShapeDetails,
     "CreateFleetDetails": CreateFleetDetails,
+    "CreateGpuFleetShapeDetails": CreateGpuFleetShapeDetails,
+    "CreateGpuShapeTaskProfileExtendedInformationDetails": CreateGpuShapeTaskProfileExtendedInformationDetails,
+    "CreateGroupTaskDetails": CreateGroupTaskDetails,
     "CreateNetworkDetails": CreateNetworkDetails,
     "CreateServiceManagedFleetDetails": CreateServiceManagedFleetDetails,
+    "CreateServiceManagedGpuFleetDetails": CreateServiceManagedGpuFleetDetails,
     "EnvironmentVariable": EnvironmentVariable,
+    "FixedGpuFleetShape": FixedGpuFleetShape,
     "Fleet": Fleet,
     "FleetAssignmentPolicy": FleetAssignmentPolicy,
     "FleetShape": FleetShape,
+    "FleetShapeExecutionDetails": FleetShapeExecutionDetails,
     "FlexFitFleetAssignmentPolicy": FlexFitFleetAssignmentPolicy,
+    "GpuFleetShape": GpuFleetShape,
+    "GpuFleetShapeExecutionDetails": GpuFleetShapeExecutionDetails,
+    "GpuShapeTaskProfileExtendedInformation": GpuShapeTaskProfileExtendedInformation,
+    "GroupTask": GroupTask,
+    "GroupTaskSummary": GroupTaskSummary,
     "JobPriorityConfiguration": JobPriorityConfiguration,
     "LoggingConfiguration": LoggingConfiguration,
     "Network": Network,
@@ -141,6 +186,7 @@ batch_type_mapping = {
     "PrivateIp": PrivateIp,
     "SecurityContext": SecurityContext,
     "ServiceManagedFleet": ServiceManagedFleet,
+    "ServiceManagedGpuFleet": ServiceManagedGpuFleet,
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkingBandwidthOptions": ShapeNetworkingBandwidthOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,
@@ -155,6 +201,8 @@ batch_type_mapping = {
     "UpdateBatchJobPoolDetails": UpdateBatchJobPoolDetails,
     "UpdateBatchTaskEnvironmentDetails": UpdateBatchTaskEnvironmentDetails,
     "UpdateBatchTaskProfileDetails": UpdateBatchTaskProfileDetails,
+    "UpdateLoggingConfigurationDetails": UpdateLoggingConfigurationDetails,
+    "UpdateOciLoggingConfiguration": UpdateOciLoggingConfiguration,
     "VirtualNetworkVnic": VirtualNetworkVnic,
     "Vnic": Vnic,
     "WorkRequest": WorkRequest,

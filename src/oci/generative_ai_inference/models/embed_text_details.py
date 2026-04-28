@@ -80,6 +80,10 @@ class EmbedTextDetails(object):
             The value to assign to the inputs property of this EmbedTextDetails.
         :type inputs: list[str]
 
+        :param embed_contents:
+            The value to assign to the embed_contents property of this EmbedTextDetails.
+        :type embed_contents: list[oci.generative_ai_inference.models.EmbedContent]
+
         :param serving_mode:
             The value to assign to the serving_mode property of this EmbedTextDetails.
         :type serving_mode: oci.generative_ai_inference.models.ServingMode
@@ -114,6 +118,7 @@ class EmbedTextDetails(object):
         """
         self.swagger_types = {
             'inputs': 'list[str]',
+            'embed_contents': 'list[EmbedContent]',
             'serving_mode': 'ServingMode',
             'compartment_id': 'str',
             'is_echo': 'bool',
@@ -124,6 +129,7 @@ class EmbedTextDetails(object):
         }
         self.attribute_map = {
             'inputs': 'inputs',
+            'embed_contents': 'embedContents',
             'serving_mode': 'servingMode',
             'compartment_id': 'compartmentId',
             'is_echo': 'isEcho',
@@ -133,6 +139,7 @@ class EmbedTextDetails(object):
             'input_type': 'inputType'
         }
         self._inputs = None
+        self._embed_contents = None
         self._serving_mode = None
         self._compartment_id = None
         self._is_echo = None
@@ -144,7 +151,7 @@ class EmbedTextDetails(object):
     @property
     def inputs(self):
         """
-        **[Required]** Gets the inputs of this EmbedTextDetails.
+        Gets the inputs of this EmbedTextDetails.
         Provide a list of strings or one base64 encoded image with `input_type` setting to `IMAGE`. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
@@ -164,6 +171,30 @@ class EmbedTextDetails(object):
         :type: list[str]
         """
         self._inputs = inputs
+
+    @property
+    def embed_contents(self):
+        """
+        Gets the embed_contents of this EmbedTextDetails.
+        An array of text/image inputs to be embedded. Supported for Embed v4 models.
+
+
+        :return: The embed_contents of this EmbedTextDetails.
+        :rtype: list[oci.generative_ai_inference.models.EmbedContent]
+        """
+        return self._embed_contents
+
+    @embed_contents.setter
+    def embed_contents(self, embed_contents):
+        """
+        Sets the embed_contents of this EmbedTextDetails.
+        An array of text/image inputs to be embedded. Supported for Embed v4 models.
+
+
+        :param embed_contents: The embed_contents of this EmbedTextDetails.
+        :type: list[oci.generative_ai_inference.models.EmbedContent]
+        """
+        self._embed_contents = embed_contents
 
     @property
     def serving_mode(self):

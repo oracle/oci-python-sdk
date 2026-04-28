@@ -19,12 +19,17 @@ class CreateBatchTaskDetails(object):
     #: This constant has a value of "COMPUTE"
     TYPE_COMPUTE = "COMPUTE"
 
+    #: A constant which can be used with the type property of a CreateBatchTaskDetails.
+    #: This constant has a value of "GROUP"
+    TYPE_GROUP = "GROUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateBatchTaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.batch.models.CreateComputeTaskDetails`
+        * :class:`~oci.batch.models.CreateGroupTaskDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -38,7 +43,7 @@ class CreateBatchTaskDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateBatchTaskDetails.
-            Allowed values for this property are: "COMPUTE"
+            Allowed values for this property are: "COMPUTE", "GROUP"
         :type type: str
 
         :param entitlement_claims:
@@ -87,6 +92,9 @@ class CreateBatchTaskDetails(object):
 
         if type == 'COMPUTE':
             return 'CreateComputeTaskDetails'
+
+        if type == 'GROUP':
+            return 'CreateGroupTaskDetails'
         else:
             return 'CreateBatchTaskDetails'
 
@@ -144,7 +152,7 @@ class CreateBatchTaskDetails(object):
         **[Required]** Gets the type of this CreateBatchTaskDetails.
         Type of the batch task. Also serves as a discriminator for sub-entities.
 
-        Allowed values for this property are: "COMPUTE"
+        Allowed values for this property are: "COMPUTE", "GROUP"
 
 
         :return: The type of this CreateBatchTaskDetails.
@@ -162,7 +170,7 @@ class CreateBatchTaskDetails(object):
         :param type: The type of this CreateBatchTaskDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE"]
+        allowed_values = ["COMPUTE", "GROUP"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"
@@ -197,7 +205,7 @@ class CreateBatchTaskDetails(object):
     def dependencies(self):
         """
         Gets the dependencies of this CreateBatchTaskDetails.
-        A list of tasks from the same job this task depends on referenced by name.
+        A list of tasks on which this tasks depends, referenced by name. Dependencies must be within the same parent (job or group task). For tasks within a group task, all dependencies must also be within that same group task.
 
 
         :return: The dependencies of this CreateBatchTaskDetails.
@@ -209,7 +217,7 @@ class CreateBatchTaskDetails(object):
     def dependencies(self, dependencies):
         """
         Sets the dependencies of this CreateBatchTaskDetails.
-        A list of tasks from the same job this task depends on referenced by name.
+        A list of tasks on which this tasks depends, referenced by name. Dependencies must be within the same parent (job or group task). For tasks within a group task, all dependencies must also be within that same group task.
 
 
         :param dependencies: The dependencies of this CreateBatchTaskDetails.

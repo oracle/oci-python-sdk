@@ -164,6 +164,14 @@ class RedisCluster(object):
             The value to assign to the nsg_ids property of this RedisCluster.
         :type nsg_ids: list[str]
 
+        :param backup_id:
+            The value to assign to the backup_id property of this RedisCluster.
+        :type backup_id: str
+
+        :param import_from_object_storage_details:
+            The value to assign to the import_from_object_storage_details property of this RedisCluster.
+        :type import_from_object_storage_details: oci.redis.models.ImportOciCacheFromObjectStorageDetails
+
         :param security_attributes:
             The value to assign to the security_attributes property of this RedisCluster.
         :type security_attributes: dict(str, dict(str, object))
@@ -204,6 +212,8 @@ class RedisCluster(object):
             'cluster_mode': 'str',
             'shard_count': 'int',
             'nsg_ids': 'list[str]',
+            'backup_id': 'str',
+            'import_from_object_storage_details': 'ImportOciCacheFromObjectStorageDetails',
             'security_attributes': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -232,6 +242,8 @@ class RedisCluster(object):
             'cluster_mode': 'clusterMode',
             'shard_count': 'shardCount',
             'nsg_ids': 'nsgIds',
+            'backup_id': 'backupId',
+            'import_from_object_storage_details': 'importFromObjectStorageDetails',
             'security_attributes': 'securityAttributes',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -259,6 +271,8 @@ class RedisCluster(object):
         self._cluster_mode = None
         self._shard_count = None
         self._nsg_ids = None
+        self._backup_id = None
+        self._import_from_object_storage_details = None
         self._security_attributes = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -835,6 +849,50 @@ class RedisCluster(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def backup_id(self):
+        """
+        Gets the backup_id of this RedisCluster.
+        The ID of the OCI Cache Backup from which this cluster was created.
+
+
+        :return: The backup_id of this RedisCluster.
+        :rtype: str
+        """
+        return self._backup_id
+
+    @backup_id.setter
+    def backup_id(self, backup_id):
+        """
+        Sets the backup_id of this RedisCluster.
+        The ID of the OCI Cache Backup from which this cluster was created.
+
+
+        :param backup_id: The backup_id of this RedisCluster.
+        :type: str
+        """
+        self._backup_id = backup_id
+
+    @property
+    def import_from_object_storage_details(self):
+        """
+        Gets the import_from_object_storage_details of this RedisCluster.
+
+        :return: The import_from_object_storage_details of this RedisCluster.
+        :rtype: oci.redis.models.ImportOciCacheFromObjectStorageDetails
+        """
+        return self._import_from_object_storage_details
+
+    @import_from_object_storage_details.setter
+    def import_from_object_storage_details(self, import_from_object_storage_details):
+        """
+        Sets the import_from_object_storage_details of this RedisCluster.
+
+        :param import_from_object_storage_details: The import_from_object_storage_details of this RedisCluster.
+        :type: oci.redis.models.ImportOciCacheFromObjectStorageDetails
+        """
+        self._import_from_object_storage_details = import_from_object_storage_details
 
     @property
     def security_attributes(self):

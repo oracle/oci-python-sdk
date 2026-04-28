@@ -104,7 +104,8 @@ class JavaManagementServiceClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210610',
-            'service_endpoint_template': 'https://javamanagement.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://javamanagement.{region}.{dualStack?ds.:}oci.{secondLevelDomain}',
+            'endpoint_service_name': 'javamanagement',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
@@ -10845,6 +10846,11 @@ class JavaManagementServiceClient(object):
         :param str path_contains: (optional)
             Filter the list with path contains the given value.
 
+        :param str jre_security_status: (optional)
+            The security status of the Java Runtime.
+
+            Allowed values are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10894,7 +10900,8 @@ class JavaManagementServiceClient(object):
             "sort_by",
             "opc_request_id",
             "os_family",
-            "path_contains"
+            "path_contains",
+            "jre_security_status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10941,6 +10948,13 @@ class JavaManagementServiceClient(object):
                         f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
+        if 'jre_security_status' in kwargs:
+            jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
+            if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
+                )
+
         query_params = {
             "jreVendor": kwargs.get("jre_vendor", missing),
             "jreDistribution": kwargs.get("jre_distribution", missing),
@@ -10956,7 +10970,8 @@ class JavaManagementServiceClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi'),
-            "pathContains": kwargs.get("path_contains", missing)
+            "pathContains": kwargs.get("path_contains", missing),
+            "jreSecurityStatus": kwargs.get("jre_security_status", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -23,7 +23,7 @@ class ServiceManagedFleet(Fleet):
 
         :param type:
             The value to assign to the type property of this ServiceManagedFleet.
-            Allowed values for this property are: "SERVICE_MANAGED_FLEET"
+            Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"
         :type type: str
 
         :param name:
@@ -167,7 +167,7 @@ class ServiceManagedFleet(Fleet):
     def details(self):
         """
         Gets the details of this ServiceManagedFleet.
-        A message that describes the current state of the service manage fleet configuration in more detail.
+        A message that describes the current state of the service managed fleet configuration in more detail.
 
 
         :return: The details of this ServiceManagedFleet.
@@ -179,7 +179,7 @@ class ServiceManagedFleet(Fleet):
     def details(self, details):
         """
         Sets the details of this ServiceManagedFleet.
-        A message that describes the current state of the service manage fleet configuration in more detail.
+        A message that describes the current state of the service managed fleet configuration in more detail.
 
 
         :param details: The details of this ServiceManagedFleet.

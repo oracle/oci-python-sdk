@@ -19,6 +19,10 @@ class BatchTask(object):
     #: This constant has a value of "COMPUTE"
     TYPE_COMPUTE = "COMPUTE"
 
+    #: A constant which can be used with the type property of a BatchTask.
+    #: This constant has a value of "GROUP"
+    TYPE_GROUP = "GROUP"
+
     #: A constant which can be used with the lifecycle_state property of a BatchTask.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -53,6 +57,7 @@ class BatchTask(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.batch.models.ComputeTask`
+        * :class:`~oci.batch.models.GroupTask`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -64,13 +69,21 @@ class BatchTask(object):
             The value to assign to the name property of this BatchTask.
         :type name: str
 
+        :param hierarchical_name:
+            The value to assign to the hierarchical_name property of this BatchTask.
+        :type hierarchical_name: str
+
+        :param group_task_name:
+            The value to assign to the group_task_name property of this BatchTask.
+        :type group_task_name: str
+
         :param description:
             The value to assign to the description property of this BatchTask.
         :type description: str
 
         :param type:
             The value to assign to the type property of this BatchTask.
-            Allowed values for this property are: "COMPUTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPUTE", "GROUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -100,6 +113,8 @@ class BatchTask(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'hierarchical_name': 'str',
+            'group_task_name': 'str',
             'description': 'str',
             'type': 'str',
             'lifecycle_state': 'str',
@@ -111,6 +126,8 @@ class BatchTask(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'hierarchical_name': 'hierarchicalName',
+            'group_task_name': 'groupTaskName',
             'description': 'description',
             'type': 'type',
             'lifecycle_state': 'lifecycleState',
@@ -121,6 +138,8 @@ class BatchTask(object):
         }
         self._id = None
         self._name = None
+        self._hierarchical_name = None
+        self._group_task_name = None
         self._description = None
         self._type = None
         self._lifecycle_state = None
@@ -139,6 +158,9 @@ class BatchTask(object):
 
         if type == 'COMPUTE':
             return 'ComputeTask'
+
+        if type == 'GROUP':
+            return 'GroupTask'
         else:
             return 'BatchTask'
 
@@ -191,6 +213,54 @@ class BatchTask(object):
         self._name = name
 
     @property
+    def hierarchical_name(self):
+        """
+        Gets the hierarchical_name of this BatchTask.
+        The hierarchical name of the task, which incorporates names of all parent group tasks, separated by \".\" (dot symbol). Maximum nesting depth is 4 levels. Example: groupTaskA.nestedGroupTaskB.thisTaskName
+
+
+        :return: The hierarchical_name of this BatchTask.
+        :rtype: str
+        """
+        return self._hierarchical_name
+
+    @hierarchical_name.setter
+    def hierarchical_name(self, hierarchical_name):
+        """
+        Sets the hierarchical_name of this BatchTask.
+        The hierarchical name of the task, which incorporates names of all parent group tasks, separated by \".\" (dot symbol). Maximum nesting depth is 4 levels. Example: groupTaskA.nestedGroupTaskB.thisTaskName
+
+
+        :param hierarchical_name: The hierarchical_name of this BatchTask.
+        :type: str
+        """
+        self._hierarchical_name = hierarchical_name
+
+    @property
+    def group_task_name(self):
+        """
+        Gets the group_task_name of this BatchTask.
+        The hierarchical name of the group task. Null for top-level tasks.
+
+
+        :return: The group_task_name of this BatchTask.
+        :rtype: str
+        """
+        return self._group_task_name
+
+    @group_task_name.setter
+    def group_task_name(self, group_task_name):
+        """
+        Sets the group_task_name of this BatchTask.
+        The hierarchical name of the group task. Null for top-level tasks.
+
+
+        :param group_task_name: The group_task_name of this BatchTask.
+        :type: str
+        """
+        self._group_task_name = group_task_name
+
+    @property
     def description(self):
         """
         Gets the description of this BatchTask.
@@ -220,7 +290,7 @@ class BatchTask(object):
         **[Required]** Gets the type of this BatchTask.
         Type of the batch task. Also serves as a discriminator for sub-entities.
 
-        Allowed values for this property are: "COMPUTE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPUTE", "GROUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -239,7 +309,7 @@ class BatchTask(object):
         :param type: The type of this BatchTask.
         :type: str
         """
-        allowed_values = ["COMPUTE"]
+        allowed_values = ["COMPUTE", "GROUP"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -326,7 +396,7 @@ class BatchTask(object):
     def dependencies(self):
         """
         **[Required]** Gets the dependencies of this BatchTask.
-        A list of tasks from the same job this task depends on referenced by name.
+        A list of tasks on which this tasks depends, referenced by name. Dependencies must be within the same parent (job or group task). For tasks within a group task, all dependencies must also be within that same group task.
 
 
         :return: The dependencies of this BatchTask.
@@ -338,7 +408,7 @@ class BatchTask(object):
     def dependencies(self, dependencies):
         """
         Sets the dependencies of this BatchTask.
-        A list of tasks from the same job this task depends on referenced by name.
+        A list of tasks on which this tasks depends, referenced by name. Dependencies must be within the same parent (job or group task). For tasks within a group task, all dependencies must also be within that same group task.
 
 
         :param dependencies: The dependencies of this BatchTask.

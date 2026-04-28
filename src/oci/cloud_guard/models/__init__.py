@@ -31,6 +31,8 @@ from .change_saved_query_compartment_details import ChangeSavedQueryCompartmentD
 from .change_security_policy_compartment_details import ChangeSecurityPolicyCompartmentDetails
 from .change_security_recipe_compartment_details import ChangeSecurityRecipeCompartmentDetails
 from .change_security_zone_compartment_details import ChangeSecurityZoneCompartmentDetails
+from .compliance_document import ComplianceDocument
+from .compliance_document_summary import ComplianceDocumentSummary
 from .composite_condition import CompositeCondition
 from .condition import Condition
 from .condition_group import ConditionGroup
@@ -48,6 +50,7 @@ from .create_detector_recipe_details import CreateDetectorRecipeDetails
 from .create_detector_recipe_detector_rule_details import CreateDetectorRecipeDetectorRuleDetails
 from .create_detector_rule_details import CreateDetectorRuleDetails
 from .create_managed_list_details import CreateManagedListDetails
+from .create_non_disclosure_agreement_details import CreateNonDisclosureAgreementDetails
 from .create_responder_recipe_details import CreateResponderRecipeDetails
 from .create_saved_query_details import CreateSavedQueryDetails
 from .create_security_policy_details import CreateSecurityPolicyDetails
@@ -101,6 +104,7 @@ from .managed_list_summary import ManagedListSummary
 from .managed_list_type_collection import ManagedListTypeCollection
 from .managed_list_type_summary import ManagedListTypeSummary
 from .no_delay_start_policy import NoDelayStartPolicy
+from .non_disclosure_agreement import NonDisclosureAgreement
 from .operator_summary import OperatorSummary
 from .package_detail import PackageDetail
 from .policy_collection import PolicyCollection
@@ -193,7 +197,9 @@ from .security_zone import SecurityZone
 from .security_zone_collection import SecurityZoneCollection
 from .security_zone_summary import SecurityZoneSummary
 from .security_zone_target_details import SecurityZoneTargetDetails
+from .service_collection import ServiceCollection
 from .service_configuration import ServiceConfiguration
+from .service_summary import ServiceSummary
 from .service_type_summary import ServiceTypeSummary
 from .sighting import Sighting
 from .sighting_collection import SightingCollection
@@ -299,6 +305,8 @@ cloud_guard_type_mapping = {
     "ChangeSecurityPolicyCompartmentDetails": ChangeSecurityPolicyCompartmentDetails,
     "ChangeSecurityRecipeCompartmentDetails": ChangeSecurityRecipeCompartmentDetails,
     "ChangeSecurityZoneCompartmentDetails": ChangeSecurityZoneCompartmentDetails,
+    "ComplianceDocument": ComplianceDocument,
+    "ComplianceDocumentSummary": ComplianceDocumentSummary,
     "CompositeCondition": CompositeCondition,
     "Condition": Condition,
     "ConditionGroup": ConditionGroup,
@@ -316,6 +324,7 @@ cloud_guard_type_mapping = {
     "CreateDetectorRecipeDetectorRuleDetails": CreateDetectorRecipeDetectorRuleDetails,
     "CreateDetectorRuleDetails": CreateDetectorRuleDetails,
     "CreateManagedListDetails": CreateManagedListDetails,
+    "CreateNonDisclosureAgreementDetails": CreateNonDisclosureAgreementDetails,
     "CreateResponderRecipeDetails": CreateResponderRecipeDetails,
     "CreateSavedQueryDetails": CreateSavedQueryDetails,
     "CreateSecurityPolicyDetails": CreateSecurityPolicyDetails,
@@ -369,6 +378,7 @@ cloud_guard_type_mapping = {
     "ManagedListTypeCollection": ManagedListTypeCollection,
     "ManagedListTypeSummary": ManagedListTypeSummary,
     "NoDelayStartPolicy": NoDelayStartPolicy,
+    "NonDisclosureAgreement": NonDisclosureAgreement,
     "OperatorSummary": OperatorSummary,
     "PackageDetail": PackageDetail,
     "PolicyCollection": PolicyCollection,
@@ -461,7 +471,9 @@ cloud_guard_type_mapping = {
     "SecurityZoneCollection": SecurityZoneCollection,
     "SecurityZoneSummary": SecurityZoneSummary,
     "SecurityZoneTargetDetails": SecurityZoneTargetDetails,
+    "ServiceCollection": ServiceCollection,
     "ServiceConfiguration": ServiceConfiguration,
+    "ServiceSummary": ServiceSummary,
     "ServiceTypeSummary": ServiceTypeSummary,
     "Sighting": Sighting,
     "SightingCollection": SightingCollection,

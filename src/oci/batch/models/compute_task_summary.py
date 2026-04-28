@@ -33,6 +33,14 @@ class ComputeTaskSummary(BatchTaskSummary):
             The value to assign to the name property of this ComputeTaskSummary.
         :type name: str
 
+        :param hierarchical_name:
+            The value to assign to the hierarchical_name property of this ComputeTaskSummary.
+        :type hierarchical_name: str
+
+        :param group_task_name:
+            The value to assign to the group_task_name property of this ComputeTaskSummary.
+        :type group_task_name: str
+
         :param description:
             The value to assign to the description property of this ComputeTaskSummary.
         :type description: str
@@ -54,6 +62,8 @@ class ComputeTaskSummary(BatchTaskSummary):
             'id': 'str',
             'job_id': 'str',
             'name': 'str',
+            'hierarchical_name': 'str',
+            'group_task_name': 'str',
             'description': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -63,6 +73,8 @@ class ComputeTaskSummary(BatchTaskSummary):
             'id': 'id',
             'job_id': 'jobId',
             'name': 'name',
+            'hierarchical_name': 'hierarchicalName',
+            'group_task_name': 'groupTaskName',
             'description': 'description',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -71,6 +83,8 @@ class ComputeTaskSummary(BatchTaskSummary):
         self._id = None
         self._job_id = None
         self._name = None
+        self._hierarchical_name = None
+        self._group_task_name = None
         self._description = None
         self._lifecycle_state = None
         self._lifecycle_details = None

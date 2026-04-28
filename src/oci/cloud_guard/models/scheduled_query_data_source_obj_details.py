@@ -116,7 +116,7 @@ class ScheduledQueryDataSourceObjDetails(DataSourceDetails):
     def interval_in_seconds(self):
         """
         Gets the interval_in_seconds of this ScheduledQueryDataSourceObjDetails.
-        Interval in minutes which query is run periodically.
+        Interval in seconds which query is run periodically.
 
 
         :return: The interval_in_seconds of this ScheduledQueryDataSourceObjDetails.
@@ -128,7 +128,7 @@ class ScheduledQueryDataSourceObjDetails(DataSourceDetails):
     def interval_in_seconds(self, interval_in_seconds):
         """
         Sets the interval_in_seconds of this ScheduledQueryDataSourceObjDetails.
-        Interval in minutes which query is run periodically.
+        Interval in seconds which query is run periodically.
 
 
         :param interval_in_seconds: The interval_in_seconds of this ScheduledQueryDataSourceObjDetails.

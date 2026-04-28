@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LimitAndUsage(object):
     """
-    The limit and usage for a specific environment type, for example, production, development, or test.
+    The limit and usage for a specific environment type, for example, production, development, demo or test.
     """
 
     def __init__(self, **kwargs):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContinuousQueryStartPolicy(object):
     """
-    Start policy for continuous query
+    DEPRECATED - Start policy for continuous query
     """
 
     #: A constant which can be used with the start_policy_type property of a ContinuousQueryStartPolicy.

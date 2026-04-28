@@ -31,7 +31,7 @@ class CreateComputeTaskDetails(CreateBatchTaskDetails):
 
         :param type:
             The value to assign to the type property of this CreateComputeTaskDetails.
-            Allowed values for this property are: "COMPUTE"
+            Allowed values for this property are: "COMPUTE", "GROUP"
         :type type: str
 
         :param entitlement_claims:

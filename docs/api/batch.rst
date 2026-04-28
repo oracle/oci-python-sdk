@@ -35,8 +35,10 @@ Batch
     oci.batch.models.BatchTaskEnvironmentCollection
     oci.batch.models.BatchTaskEnvironmentSummary
     oci.batch.models.BatchTaskEnvironmentVolume
+    oci.batch.models.BatchTaskExecutionDetails
     oci.batch.models.BatchTaskProfile
     oci.batch.models.BatchTaskProfileCollection
+    oci.batch.models.BatchTaskProfileExtendedInformation
     oci.batch.models.BatchTaskProfileSummary
     oci.batch.models.BatchTaskSummary
     oci.batch.models.BestFitFleetAssignmentPolicy
@@ -46,22 +48,41 @@ Batch
     oci.batch.models.ChangeBatchTaskEnvironmentCompartmentDetails
     oci.batch.models.ChangeBatchTaskProfileCompartmentDetails
     oci.batch.models.ComputeTask
+    oci.batch.models.ComputeTaskExecutionDetails
     oci.batch.models.ComputeTaskSummary
+    oci.batch.models.CpuArchitectureTaskProfileExtendedInformation
+    oci.batch.models.CpuFleetShapeExecutionDetails
+    oci.batch.models.CpuShapeTaskProfileExtendedInformation
     oci.batch.models.CreateBatchContextDetails
     oci.batch.models.CreateBatchJobDetails
     oci.batch.models.CreateBatchJobPoolDetails
     oci.batch.models.CreateBatchTaskDetails
     oci.batch.models.CreateBatchTaskEnvironmentDetails
     oci.batch.models.CreateBatchTaskProfileDetails
+    oci.batch.models.CreateBatchTaskProfileExtendedInformationDetails
     oci.batch.models.CreateComputeTaskDetails
+    oci.batch.models.CreateCpuArchitectureTaskProfileExtendedInformationDetails
+    oci.batch.models.CreateCpuShapeTaskProfileExtendedInformationDetails
+    oci.batch.models.CreateFixedGpuFleetShapeDetails
     oci.batch.models.CreateFleetDetails
+    oci.batch.models.CreateGpuFleetShapeDetails
+    oci.batch.models.CreateGpuShapeTaskProfileExtendedInformationDetails
+    oci.batch.models.CreateGroupTaskDetails
     oci.batch.models.CreateNetworkDetails
     oci.batch.models.CreateServiceManagedFleetDetails
+    oci.batch.models.CreateServiceManagedGpuFleetDetails
     oci.batch.models.EnvironmentVariable
+    oci.batch.models.FixedGpuFleetShape
     oci.batch.models.Fleet
     oci.batch.models.FleetAssignmentPolicy
     oci.batch.models.FleetShape
+    oci.batch.models.FleetShapeExecutionDetails
     oci.batch.models.FlexFitFleetAssignmentPolicy
+    oci.batch.models.GpuFleetShape
+    oci.batch.models.GpuFleetShapeExecutionDetails
+    oci.batch.models.GpuShapeTaskProfileExtendedInformation
+    oci.batch.models.GroupTask
+    oci.batch.models.GroupTaskSummary
     oci.batch.models.JobPriorityConfiguration
     oci.batch.models.LoggingConfiguration
     oci.batch.models.Network
@@ -72,6 +93,7 @@ Batch
     oci.batch.models.PrivateIp
     oci.batch.models.SecurityContext
     oci.batch.models.ServiceManagedFleet
+    oci.batch.models.ServiceManagedGpuFleet
     oci.batch.models.ShapeMemoryOptions
     oci.batch.models.ShapeNetworkingBandwidthOptions
     oci.batch.models.ShapeOcpuOptions
@@ -86,6 +108,8 @@ Batch
     oci.batch.models.UpdateBatchJobPoolDetails
     oci.batch.models.UpdateBatchTaskEnvironmentDetails
     oci.batch.models.UpdateBatchTaskProfileDetails
+    oci.batch.models.UpdateLoggingConfigurationDetails
+    oci.batch.models.UpdateOciLoggingConfiguration
     oci.batch.models.VirtualNetworkVnic
     oci.batch.models.Vnic
     oci.batch.models.WorkRequest

@@ -15,6 +15,14 @@ class OracleAssessment(Assessment):
     Oracle Assessment resource
     """
 
+    #: A constant which can be used with the migration_scope property of a OracleAssessment.
+    #: This constant has a value of "SCHEMA"
+    MIGRATION_SCOPE_SCHEMA = "SCHEMA"
+
+    #: A constant which can be used with the migration_scope property of a OracleAssessment.
+    #: This constant has a value of "FULL"
+    MIGRATION_SCOPE_FULL = "FULL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OracleAssessment object with values from keyword arguments. The default value of the :py:attr:`~oci.database_migration.models.OracleAssessment.database_combination` attribute
@@ -31,7 +39,8 @@ class OracleAssessment(Assessment):
 
         :param database_combination:
             The value to assign to the database_combination property of this OracleAssessment.
-            Allowed values for this property are: "MYSQL", "ORACLE"
+            Allowed values for this property are: "MYSQL", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_combination: str
 
         :param display_name:
@@ -44,27 +53,32 @@ class OracleAssessment(Assessment):
 
         :param network_speed_megabit_per_second:
             The value to assign to the network_speed_megabit_per_second property of this OracleAssessment.
-            Allowed values for this property are: "MBPS_10", "MBPS_100", "MBPS_1000", "MBPS_2500", "MBPS_5000", "MBPS_10000"
+            Allowed values for this property are: "MBPS_10", "MBPS_100", "MBPS_1000", "MBPS_2500", "MBPS_5000", "MBPS_10000", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type network_speed_megabit_per_second: str
 
         :param acceptable_downtime:
             The value to assign to the acceptable_downtime property of this OracleAssessment.
-            Allowed values for this property are: "LESS_THAN_10_MINUTES", "LESS_THAN_1_HOUR", "LESS_THAN_4_HOURS", "LESS_THAN_8_HOURS", "LESS_THAN_12_HOURS", "LESS_THAN_1_DAY", "LESS_THAN_2_DAYS", "MORE_THAN_2_DAYS"
+            Allowed values for this property are: "LESS_THAN_10_MINUTES", "LESS_THAN_1_HOUR", "LESS_THAN_4_HOURS", "LESS_THAN_8_HOURS", "LESS_THAN_12_HOURS", "LESS_THAN_1_DAY", "LESS_THAN_2_DAYS", "MORE_THAN_2_DAYS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type acceptable_downtime: str
 
         :param database_data_size:
             The value to assign to the database_data_size property of this OracleAssessment.
-            Allowed values for this property are: "LESS_THAN_1GB", "GB_1_10", "GB_10_50", "GB_50_100", "GB_100_500", "GB_500_TB_1", "TB_1_3", "TB_3_10", "TB_10_50", "GREATER_THAN_50TB"
+            Allowed values for this property are: "LESS_THAN_1GB", "GB_1_10", "GB_10_50", "GB_50_100", "GB_100_500", "GB_500_TB_1", "TB_1_3", "TB_3_10", "TB_10_50", "GREATER_THAN_50TB", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_data_size: str
 
         :param ddl_expectation:
             The value to assign to the ddl_expectation property of this OracleAssessment.
-            Allowed values for this property are: "DDL_EXPECTED", "DDL_NOT_EXPECTED"
+            Allowed values for this property are: "DDL_EXPECTED", "DDL_NOT_EXPECTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ddl_expectation: str
 
         :param creation_type:
             The value to assign to the creation_type property of this OracleAssessment.
-            Allowed values for this property are: "CREATE_ONLY", "CREATE_AND_RUN_ASSESSORS"
+            Allowed values for this property are: "CREATE_ONLY", "CREATE_AND_RUN_ASSESSORS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type creation_type: str
 
         :param migration_id:
@@ -81,12 +95,14 @@ class OracleAssessment(Assessment):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OracleAssessment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "SUCCEEDED", "IN_PROGRESS", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "SUCCEEDED", "IN_PROGRESS", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param assessment_migration_type:
             The value to assign to the assessment_migration_type property of this OracleAssessment.
-            Allowed values for this property are: "ONLINE", "ONLINE_STANDBY", "OFFLINE"
+            Allowed values for this property are: "ONLINE", "ONLINE_STANDBY", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type assessment_migration_type: str
 
         :param time_created:
@@ -108,6 +124,12 @@ class OracleAssessment(Assessment):
         :param system_tags:
             The value to assign to the system_tags property of this OracleAssessment.
         :type system_tags: dict(str, dict(str, object))
+
+        :param migration_scope:
+            The value to assign to the migration_scope property of this OracleAssessment.
+            Allowed values for this property are: "SCHEMA", "FULL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type migration_scope: str
 
         :param is_cdb_supported:
             The value to assign to the is_cdb_supported property of this OracleAssessment.
@@ -135,6 +157,7 @@ class OracleAssessment(Assessment):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'migration_scope': 'str',
             'is_cdb_supported': 'bool'
         }
         self.attribute_map = {
@@ -158,6 +181,7 @@ class OracleAssessment(Assessment):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'migration_scope': 'migrationScope',
             'is_cdb_supported': 'isCdbSupported'
         }
         self._id = None
@@ -180,8 +204,39 @@ class OracleAssessment(Assessment):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._migration_scope = None
         self._is_cdb_supported = None
         self._database_combination = 'ORACLE'
+
+    @property
+    def migration_scope(self):
+        """
+        **[Required]** Gets the migration_scope of this OracleAssessment.
+        Assessment migration scope.
+
+        Allowed values for this property are: "SCHEMA", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The migration_scope of this OracleAssessment.
+        :rtype: str
+        """
+        return self._migration_scope
+
+    @migration_scope.setter
+    def migration_scope(self, migration_scope):
+        """
+        Sets the migration_scope of this OracleAssessment.
+        Assessment migration scope.
+
+
+        :param migration_scope: The migration_scope of this OracleAssessment.
+        :type: str
+        """
+        allowed_values = ["SCHEMA", "FULL"]
+        if not value_allowed_none_or_none_sentinel(migration_scope, allowed_values):
+            migration_scope = 'UNKNOWN_ENUM_VALUE'
+        self._migration_scope = migration_scope
 
     @property
     def is_cdb_supported(self):

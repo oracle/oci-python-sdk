@@ -58,6 +58,14 @@ class BatchTaskProfile(object):
             The value to assign to the min_memory_in_gbs property of this BatchTaskProfile.
         :type min_memory_in_gbs: int
 
+        :param min_disk_size_in_gbs:
+            The value to assign to the min_disk_size_in_gbs property of this BatchTaskProfile.
+        :type min_disk_size_in_gbs: int
+
+        :param extended_information:
+            The value to assign to the extended_information property of this BatchTaskProfile.
+        :type extended_information: oci.batch.models.BatchTaskProfileExtendedInformation
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BatchTaskProfile.
             Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -92,6 +100,8 @@ class BatchTaskProfile(object):
             'description': 'str',
             'min_ocpus': 'int',
             'min_memory_in_gbs': 'int',
+            'min_disk_size_in_gbs': 'int',
+            'extended_information': 'BatchTaskProfileExtendedInformation',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -106,6 +116,8 @@ class BatchTaskProfile(object):
             'description': 'description',
             'min_ocpus': 'minOcpus',
             'min_memory_in_gbs': 'minMemoryInGBs',
+            'min_disk_size_in_gbs': 'minDiskSizeInGBs',
+            'extended_information': 'extendedInformation',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -119,6 +131,8 @@ class BatchTaskProfile(object):
         self._description = None
         self._min_ocpus = None
         self._min_memory_in_gbs = None
+        self._min_disk_size_in_gbs = None
+        self._extended_information = None
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
@@ -277,6 +291,50 @@ class BatchTaskProfile(object):
         :type: int
         """
         self._min_memory_in_gbs = min_memory_in_gbs
+
+    @property
+    def min_disk_size_in_gbs(self):
+        """
+        Gets the min_disk_size_in_gbs of this BatchTaskProfile.
+        The minimum required size of disk space in GBs.
+
+
+        :return: The min_disk_size_in_gbs of this BatchTaskProfile.
+        :rtype: int
+        """
+        return self._min_disk_size_in_gbs
+
+    @min_disk_size_in_gbs.setter
+    def min_disk_size_in_gbs(self, min_disk_size_in_gbs):
+        """
+        Sets the min_disk_size_in_gbs of this BatchTaskProfile.
+        The minimum required size of disk space in GBs.
+
+
+        :param min_disk_size_in_gbs: The min_disk_size_in_gbs of this BatchTaskProfile.
+        :type: int
+        """
+        self._min_disk_size_in_gbs = min_disk_size_in_gbs
+
+    @property
+    def extended_information(self):
+        """
+        Gets the extended_information of this BatchTaskProfile.
+
+        :return: The extended_information of this BatchTaskProfile.
+        :rtype: oci.batch.models.BatchTaskProfileExtendedInformation
+        """
+        return self._extended_information
+
+    @extended_information.setter
+    def extended_information(self, extended_information):
+        """
+        Sets the extended_information of this BatchTaskProfile.
+
+        :param extended_information: The extended_information of this BatchTaskProfile.
+        :type: oci.batch.models.BatchTaskProfileExtendedInformation
+        """
+        self._extended_information = extended_information
 
     @property
     def lifecycle_state(self):

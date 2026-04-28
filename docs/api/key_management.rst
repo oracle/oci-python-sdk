@@ -26,6 +26,8 @@ Key Management
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.key_management.models.AuditLogging
+    oci.key_management.models.AuditLoggingConfig
     oci.key_management.models.AutoKeyRotationDetails
     oci.key_management.models.BackupKeyDetails
     oci.key_management.models.BackupLocation
@@ -45,6 +47,7 @@ Key Management
     oci.key_management.models.DeleteVaultReplicaDetails
     oci.key_management.models.EkmsPrivateEndpoint
     oci.key_management.models.EkmsPrivateEndpointSummary
+    oci.key_management.models.EnableAuditMgmtLogging
     oci.key_management.models.EncryptDataDetails
     oci.key_management.models.EncryptedData
     oci.key_management.models.ExportKeyDetails
@@ -57,13 +60,17 @@ Key Management
     oci.key_management.models.GenerateKeyDetails
     oci.key_management.models.GeneratedKey
     oci.key_management.models.HsmCluster
+    oci.key_management.models.HsmClusterAuditLoggingInfo
     oci.key_management.models.HsmClusterCollection
+    oci.key_management.models.HsmClusterPendingCreateDynamicGroup
+    oci.key_management.models.HsmClusterPendingInstructions
     oci.key_management.models.HsmClusterSummary
     oci.key_management.models.HsmPartition
     oci.key_management.models.HsmPartitionCollection
     oci.key_management.models.HsmPartitionSummary
     oci.key_management.models.ImportKeyDetails
     oci.key_management.models.ImportKeyVersionDetails
+    oci.key_management.models.InitiateAuditLoggingDetails
     oci.key_management.models.Key
     oci.key_management.models.KeyReplicaDetails
     oci.key_management.models.KeyShape
@@ -87,12 +94,15 @@ Key Management
     oci.key_management.models.ScheduleVaultDeletionDetails
     oci.key_management.models.SignDataDetails
     oci.key_management.models.SignedData
+    oci.key_management.models.UpdateAuditLoggingDestinationDetails
     oci.key_management.models.UpdateEkmsPrivateEndpointDetails
     oci.key_management.models.UpdateHsmClusterDetails
     oci.key_management.models.UpdateKeyDetails
+    oci.key_management.models.UpdateRegisteredVaultForMtlsDetails
     oci.key_management.models.UpdateVaultDetails
     oci.key_management.models.UploadPartitionCertificatesDetails
     oci.key_management.models.Vault
+    oci.key_management.models.VaultMtlsUpdateResponse
     oci.key_management.models.VaultReplicaDetails
     oci.key_management.models.VaultReplicaSummary
     oci.key_management.models.VaultSummary

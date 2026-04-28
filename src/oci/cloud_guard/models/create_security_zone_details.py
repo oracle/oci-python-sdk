@@ -36,6 +36,10 @@ class CreateSecurityZoneDetails(object):
             The value to assign to the compartment_id property of this CreateSecurityZoneDetails.
         :type compartment_id: str
 
+        :param is_inheritance_after_delete_enabled:
+            The value to assign to the is_inheritance_after_delete_enabled property of this CreateSecurityZoneDetails.
+        :type is_inheritance_after_delete_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSecurityZoneDetails.
         :type freeform_tags: dict(str, str)
@@ -50,6 +54,7 @@ class CreateSecurityZoneDetails(object):
             'description': 'str',
             'security_zone_recipe_id': 'str',
             'compartment_id': 'str',
+            'is_inheritance_after_delete_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -58,6 +63,7 @@ class CreateSecurityZoneDetails(object):
             'description': 'description',
             'security_zone_recipe_id': 'securityZoneRecipeId',
             'compartment_id': 'compartmentId',
+            'is_inheritance_after_delete_enabled': 'isInheritanceAfterDeleteEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateSecurityZoneDetails(object):
         self._description = None
         self._security_zone_recipe_id = None
         self._compartment_id = None
+        self._is_inheritance_after_delete_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -163,6 +170,30 @@ class CreateSecurityZoneDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def is_inheritance_after_delete_enabled(self):
+        """
+        Gets the is_inheritance_after_delete_enabled of this CreateSecurityZoneDetails.
+        Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+
+
+        :return: The is_inheritance_after_delete_enabled of this CreateSecurityZoneDetails.
+        :rtype: bool
+        """
+        return self._is_inheritance_after_delete_enabled
+
+    @is_inheritance_after_delete_enabled.setter
+    def is_inheritance_after_delete_enabled(self, is_inheritance_after_delete_enabled):
+        """
+        Sets the is_inheritance_after_delete_enabled of this CreateSecurityZoneDetails.
+        Indicates if upon deletion of the security zone the comparment should inherit parent security zone
+
+
+        :param is_inheritance_after_delete_enabled: The is_inheritance_after_delete_enabled of this CreateSecurityZoneDetails.
+        :type: bool
+        """
+        self._is_inheritance_after_delete_enabled = is_inheritance_after_delete_enabled
 
     @property
     def freeform_tags(self):

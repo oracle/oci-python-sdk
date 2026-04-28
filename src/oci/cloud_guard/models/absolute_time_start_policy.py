@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AbsoluteTimeStartPolicy(ContinuousQueryStartPolicy):
     """
-    Start policy that defines the exact start time
+    DEPRECATED - Start policy that defines the exact start time
     """
 
     def __init__(self, **kwargs):

@@ -299,7 +299,7 @@ class BatchContextSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this BatchContextSummary.
-        A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 
 
         :return: The lifecycle_details of this BatchContextSummary.
@@ -311,7 +311,7 @@ class BatchContextSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this BatchContextSummary.
-        A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 
 
         :param lifecycle_details: The lifecycle_details of this BatchContextSummary.

@@ -2200,7 +2200,7 @@ class BatchComputingClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str task_name: (required)
-            The name of the batch task.
+            The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -2660,6 +2660,11 @@ class BatchComputingClient(object):
 
             __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str shape_type: (optional)
+            The type of a shape.
+
+            Allowed values are: "CPU", "GPU"
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -2703,6 +2708,7 @@ class BatchComputingClient(object):
             "availability_domain",
             "limit",
             "page",
+            "shape_type",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2710,11 +2716,19 @@ class BatchComputingClient(object):
             raise ValueError(
                 f"list_batch_context_shapes got unknown kwargs: {extra_kwargs!r}")
 
+        if 'shape_type' in kwargs:
+            shape_type_allowed_values = ["CPU", "GPU"]
+            if kwargs['shape_type'] not in shape_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `shape_type`, must be one of { shape_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "shapeType": kwargs.get("shape_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3152,7 +3166,23 @@ class BatchComputingClient(object):
             Allowed values are: "ACCEPTED", "WAITING", "IN_PROGRESS", "SUCCEEDED", "FAILED", "CANCELING", "CANCELED"
 
         :param str name: (optional)
-            The name of the task.
+            The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
+
+        :param str task_id: (optional)
+            The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.
+
+        :param str group_task_name: (optional)
+            Hierarchical name of the group task. A filter to return only tasks contained within the selected group task. Omit to return top-level tasks only. Can be combined with task name query parameter, in which case task name becomes a hierarchical name relative to the selected group task, e.g. ?groupTaskName=A.B&taskName=C.D is equal to ?taskName=A.B.C.D. Mutually exclusive with the task id query parameter: you can't pass both.
+
+        :param str type: (optional)
+            Filter tasks by type. Valid values are: COMPUTE, GROUP.
+
+            Allowed values are: "COMPUTE", "GROUP"
+
+        :param str hierarchy_view: (optional)
+            Defines the hierarchical scope of the tasks to be returned. When set to SHALLOW, which is default, only tasks contained directly (non-recursively) within current hierarchy entry are returned. When set to DEEP, tasks contained within current hierarchy entry and all its descendants recursively are returned. The default hierarchy entry is root, i.e. batch job itself. To use a different hierarchy entry, provide the group task name as a query parameter.  The specified group task becomes the entry point instead of the batch job.
+
+            Allowed values are: "SHALLOW", "DEEP"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -3220,6 +3250,10 @@ class BatchComputingClient(object):
             "retry_strategy",
             "lifecycle_state",
             "name",
+            "task_id",
+            "group_task_name",
+            "type",
+            "hierarchy_view",
             "limit",
             "page",
             "sort_order",
@@ -3248,6 +3282,20 @@ class BatchComputingClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'type' in kwargs:
+            type_allowed_values = ["COMPUTE", "GROUP"]
+            if kwargs['type'] not in type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
+                )
+
+        if 'hierarchy_view' in kwargs:
+            hierarchy_view_allowed_values = ["SHALLOW", "DEEP"]
+            if kwargs['hierarchy_view'] not in hierarchy_view_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `hierarchy_view`, must be one of { hierarchy_view_allowed_values }"
+                )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -3265,6 +3313,10 @@ class BatchComputingClient(object):
         query_params = {
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "name": kwargs.get("name", missing),
+            "taskId": kwargs.get("task_id", missing),
+            "groupTaskName": kwargs.get("group_task_name", missing),
+            "type": kwargs.get("type", missing),
+            "hierarchyView": kwargs.get("hierarchy_view", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -3319,7 +3371,7 @@ class BatchComputingClient(object):
 
     def list_batch_jobs(self, **kwargs):
         """
-        Lists the batch jobs by compartment or job `OCID`__. You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match.  List operation only provides a summary information, use GetBatchJob to get the full details on a specific context
+        Lists the batch jobs by compartment or job `OCID`__. You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJob to get the full details on a specific context
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -3892,7 +3944,10 @@ class BatchComputingClient(object):
             Allowed values are: "ACCEPTED", "WAITING", "IN_PROGRESS", "SUCCEEDED", "FAILED", "CANCELING", "CANCELED"
 
         :param str name: (optional)
-            The name of the task.
+            The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.
+
+        :param str task_id: (optional)
+            The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -3962,6 +4017,7 @@ class BatchComputingClient(object):
             "batch_job_id",
             "lifecycle_state",
             "name",
+            "task_id",
             "limit",
             "page",
             "sort_order",
@@ -3999,6 +4055,7 @@ class BatchComputingClient(object):
             "batchJobId": kwargs.get("batch_job_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "name": kwargs.get("name", missing),
+            "taskId": kwargs.get("task_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
