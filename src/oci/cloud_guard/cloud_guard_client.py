@@ -4361,38 +4361,6 @@ class CloudGuardClient(object):
     def delete_wlp_agent(self, wlp_agent_id, **kwargs):
         """
         Deletes and unregisters the WLP agent for an on-premise resource.
-        x-obmcs-splat:
-        routing:
-          strategy: route-to-any-ad
-        serviceList: [ 'cloudguard-cp-SPLAT_ENV' ]
-        resources:
-          wlpAgent:
-            serviceResourceName: WlpAgent
-            targetCompartmentId: downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent', request.resourceId).compartmentId
-            actionKind: delete
-            resourceOcid: request.resourceId
-            reconciliationCanStartAfterSecs: 30
-            permissions: [ \"WLP_AGENT_DELETE\" ]
-        authorization:
-          mode: automated
-          check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
-          allowCrossTenancy: true
-        tagStore:
-          mode: automated
-        maximumAttemptCount: 3
-        throttling:
-          perUserLimit:
-            rpsLimit: 15
-          perTenantLimit:
-            rpsLimit: 30
-        quotas:
-          mode: automated
-        search:
-          mode: backfilling
-          operationResourceName: wlpAgent
-        lock:
-          mode: test
-          operationResourceName: wlpAgent
 
 
         :param str wlp_agent_id: (required)

@@ -24,6 +24,7 @@ Fusion Apps
     oci.fusion_apps.models.AdminUserSummary
     oci.fusion_apps.models.AllowRule
     oci.fusion_apps.models.Capabilities
+    oci.fusion_apps.models.CertificateInfo
     oci.fusion_apps.models.ChangeFusionEnvironmentCompartmentDetails
     oci.fusion_apps.models.ChangeFusionEnvironmentFamilyCompartmentDetails
     oci.fusion_apps.models.CreateDataMaskingActivityDetails
@@ -35,6 +36,8 @@ Fusion Apps
     oci.fusion_apps.models.CreateMicrositeDetails
     oci.fusion_apps.models.CreateRefreshActivityDetails
     oci.fusion_apps.models.CreateServiceAttachmentDetails
+    oci.fusion_apps.models.CreateVanityDomainActivityDetails
+    oci.fusion_apps.models.CreateVanityDomainDetails
     oci.fusion_apps.models.DataMaskingActivity
     oci.fusion_apps.models.DataMaskingActivityCollection
     oci.fusion_apps.models.DataMaskingActivitySummary
@@ -100,8 +103,16 @@ Fusion Apps
     oci.fusion_apps.models.UpdateMarketingBrandDetails
     oci.fusion_apps.models.UpdateMicrositeDetails
     oci.fusion_apps.models.UpdateRefreshActivityDetails
+    oci.fusion_apps.models.UpdateVanityDomainActivityDetails
+    oci.fusion_apps.models.UpdateVanityDomainDetails
     oci.fusion_apps.models.UpgradeAction
     oci.fusion_apps.models.UploadEmailSubdomainCertificateDetails
+    oci.fusion_apps.models.UploadVanityDomainCertificateDetails
+    oci.fusion_apps.models.VanityDnsRecord
+    oci.fusion_apps.models.VanityDomain
+    oci.fusion_apps.models.VanityDomainActivity
+    oci.fusion_apps.models.VanityDomainCollection
+    oci.fusion_apps.models.VanityDomainSummary
     oci.fusion_apps.models.VerifyServiceAttachmentDetails
     oci.fusion_apps.models.VertexAction
     oci.fusion_apps.models.WorkRequest

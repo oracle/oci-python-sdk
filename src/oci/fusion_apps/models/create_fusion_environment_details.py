@@ -222,7 +222,7 @@ class CreateFusionEnvironmentDetails(object):
     def fusion_environment_type(self):
         """
         **[Required]** Gets the fusion_environment_type of this CreateFusionEnvironmentDetails.
-        The type of environment. Valid values are Production, Test, or Development.
+        The type of environment. Valid values are Production, Test, Development, or Demo.
 
 
         :return: The fusion_environment_type of this CreateFusionEnvironmentDetails.
@@ -234,7 +234,7 @@ class CreateFusionEnvironmentDetails(object):
     def fusion_environment_type(self, fusion_environment_type):
         """
         Sets the fusion_environment_type of this CreateFusionEnvironmentDetails.
-        The type of environment. Valid values are Production, Test, or Development.
+        The type of environment. Valid values are Production, Test, Development, or Demo.
 
 
         :param fusion_environment_type: The fusion_environment_type of this CreateFusionEnvironmentDetails.
@@ -366,7 +366,9 @@ class CreateFusionEnvironmentDetails(object):
     def additional_egress_rules(self):
         """
         Gets the additional_egress_rules of this CreateFusionEnvironmentDetails.
-        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see `Securing Network Access to a Fusion Applications Environment`__. If access to a non-standard port is required, however, they can be listed here.
+
+        __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache
 
 
         :return: The additional_egress_rules of this CreateFusionEnvironmentDetails.
@@ -378,7 +380,9 @@ class CreateFusionEnvironmentDetails(object):
     def additional_egress_rules(self, additional_egress_rules):
         """
         Sets the additional_egress_rules of this CreateFusionEnvironmentDetails.
-        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see `Securing Network Access to a Fusion Applications Environment`__. If access to a non-standard port is required, however, they can be listed here.
+
+        __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache
 
 
         :param additional_egress_rules: The additional_egress_rules of this CreateFusionEnvironmentDetails.

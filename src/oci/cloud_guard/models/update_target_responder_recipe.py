@@ -67,7 +67,7 @@ class UpdateTargetResponderRecipe(object):
     @property
     def responder_rules(self):
         """
-        **[Required]** Gets the responder_rules of this UpdateTargetResponderRecipe.
+        Gets the responder_rules of this UpdateTargetResponderRecipe.
         List of responder rules to be updated in the target responder recipe
 
 

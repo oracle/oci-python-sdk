@@ -7,6 +7,8 @@
 from __future__ import absolute_import
 
 
+from .oci_cache_backup_client import OciCacheBackupClient
+from .oci_cache_backup_client_composite_operations import OciCacheBackupClientCompositeOperations
 from .oci_cache_config_set_client import OciCacheConfigSetClient
 from .oci_cache_config_set_client_composite_operations import OciCacheConfigSetClientCompositeOperations
 from .oci_cache_default_config_set_client import OciCacheDefaultConfigSetClient
@@ -21,4 +23,4 @@ from .redis_identity_client import RedisIdentityClient
 from .redis_identity_client_composite_operations import RedisIdentityClientCompositeOperations
 from . import models
 
-__all__ = ["OciCacheConfigSetClient", "OciCacheConfigSetClientCompositeOperations", "OciCacheDefaultConfigSetClient", "OciCacheDefaultConfigSetClientCompositeOperations", "OciCacheEngineOptionsClient", "OciCacheEngineOptionsClientCompositeOperations", "OciCacheUserClient", "OciCacheUserClientCompositeOperations", "RedisClusterClient", "RedisClusterClientCompositeOperations", "RedisIdentityClient", "RedisIdentityClientCompositeOperations", "models"]
+__all__ = ["OciCacheBackupClient", "OciCacheBackupClientCompositeOperations", "OciCacheConfigSetClient", "OciCacheConfigSetClientCompositeOperations", "OciCacheDefaultConfigSetClient", "OciCacheDefaultConfigSetClientCompositeOperations", "OciCacheEngineOptionsClient", "OciCacheEngineOptionsClientCompositeOperations", "OciCacheUserClient", "OciCacheUserClientCompositeOperations", "RedisClusterClient", "RedisClusterClientCompositeOperations", "RedisIdentityClient", "RedisIdentityClientCompositeOperations", "models"]

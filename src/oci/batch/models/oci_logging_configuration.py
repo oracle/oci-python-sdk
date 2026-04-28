@@ -34,20 +34,27 @@ class OciLoggingConfiguration(LoggingConfiguration):
             The value to assign to the log_id property of this OciLoggingConfiguration.
         :type log_id: str
 
+        :param is_job_task_events_propagation_enabled:
+            The value to assign to the is_job_task_events_propagation_enabled property of this OciLoggingConfiguration.
+        :type is_job_task_events_propagation_enabled: bool
+
         """
         self.swagger_types = {
             'type': 'str',
             'log_group_id': 'str',
-            'log_id': 'str'
+            'log_id': 'str',
+            'is_job_task_events_propagation_enabled': 'bool'
         }
         self.attribute_map = {
             'type': 'type',
             'log_group_id': 'logGroupId',
-            'log_id': 'logId'
+            'log_id': 'logId',
+            'is_job_task_events_propagation_enabled': 'isJobTaskEventsPropagationEnabled'
         }
         self._type = None
         self._log_group_id = None
         self._log_id = None
+        self._is_job_task_events_propagation_enabled = None
         self._type = 'OCI_LOGGING'
 
     @property
@@ -105,6 +112,30 @@ class OciLoggingConfiguration(LoggingConfiguration):
         :type: str
         """
         self._log_id = log_id
+
+    @property
+    def is_job_task_events_propagation_enabled(self):
+        """
+        Gets the is_job_task_events_propagation_enabled of this OciLoggingConfiguration.
+        A switch to enable or disable propagation of job and task events to the customer's logs in OCI logging service.
+
+
+        :return: The is_job_task_events_propagation_enabled of this OciLoggingConfiguration.
+        :rtype: bool
+        """
+        return self._is_job_task_events_propagation_enabled
+
+    @is_job_task_events_propagation_enabled.setter
+    def is_job_task_events_propagation_enabled(self, is_job_task_events_propagation_enabled):
+        """
+        Sets the is_job_task_events_propagation_enabled of this OciLoggingConfiguration.
+        A switch to enable or disable propagation of job and task events to the customer's logs in OCI logging service.
+
+
+        :param is_job_task_events_propagation_enabled: The is_job_task_events_propagation_enabled of this OciLoggingConfiguration.
+        :type: bool
+        """
+        self._is_job_task_events_propagation_enabled = is_job_task_events_propagation_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

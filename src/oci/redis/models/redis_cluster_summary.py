@@ -106,6 +106,10 @@ class RedisClusterSummary(object):
             The value to assign to the nsg_ids property of this RedisClusterSummary.
         :type nsg_ids: list[str]
 
+        :param backup_id:
+            The value to assign to the backup_id property of this RedisClusterSummary.
+        :type backup_id: str
+
         :param security_attributes:
             The value to assign to the security_attributes property of this RedisClusterSummary.
         :type security_attributes: dict(str, dict(str, object))
@@ -145,6 +149,7 @@ class RedisClusterSummary(object):
             'cluster_mode': 'str',
             'shard_count': 'int',
             'nsg_ids': 'list[str]',
+            'backup_id': 'str',
             'security_attributes': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -172,6 +177,7 @@ class RedisClusterSummary(object):
             'cluster_mode': 'clusterMode',
             'shard_count': 'shardCount',
             'nsg_ids': 'nsgIds',
+            'backup_id': 'backupId',
             'security_attributes': 'securityAttributes',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -198,6 +204,7 @@ class RedisClusterSummary(object):
         self._cluster_mode = None
         self._shard_count = None
         self._nsg_ids = None
+        self._backup_id = None
         self._security_attributes = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -736,6 +743,30 @@ class RedisClusterSummary(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def backup_id(self):
+        """
+        Gets the backup_id of this RedisClusterSummary.
+        The ID of the OCI Cache Backup from which this cluster was created.
+
+
+        :return: The backup_id of this RedisClusterSummary.
+        :rtype: str
+        """
+        return self._backup_id
+
+    @backup_id.setter
+    def backup_id(self, backup_id):
+        """
+        Sets the backup_id of this RedisClusterSummary.
+        The ID of the OCI Cache Backup from which this cluster was created.
+
+
+        :param backup_id: The backup_id of this RedisClusterSummary.
+        :type: str
+        """
+        self._backup_id = backup_id
 
     @property
     def security_attributes(self):

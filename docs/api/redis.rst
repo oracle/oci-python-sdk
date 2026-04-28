@@ -6,12 +6,14 @@ Redis
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.redis.OciCacheBackupClient
     oci.redis.OciCacheConfigSetClient
     oci.redis.OciCacheDefaultConfigSetClient
     oci.redis.OciCacheEngineOptionsClient
     oci.redis.OciCacheUserClient
     oci.redis.RedisClusterClient
     oci.redis.RedisIdentityClient
+    oci.redis.OciCacheBackupClientCompositeOperations
     oci.redis.OciCacheConfigSetClientCompositeOperations
     oci.redis.OciCacheDefaultConfigSetClientCompositeOperations
     oci.redis.OciCacheEngineOptionsClientCompositeOperations
@@ -34,12 +36,14 @@ Redis
     oci.redis.models.AttachedOciCacheCluster
     oci.redis.models.AttachedOciCacheUser
     oci.redis.models.AuthenticationMode
+    oci.redis.models.ChangeOciCacheBackupCompartmentDetails
     oci.redis.models.ChangeOciCacheConfigSetCompartmentDetails
     oci.redis.models.ChangeOciCacheUserCompartmentDetails
     oci.redis.models.ChangeRedisClusterCompartmentDetails
     oci.redis.models.ConfigurationDetails
     oci.redis.models.ConfigurationInfo
     oci.redis.models.CreateIdentityTokenDetails
+    oci.redis.models.CreateOciCacheBackupDetails
     oci.redis.models.CreateOciCacheConfigSetDetails
     oci.redis.models.CreateOciCacheUserDetails
     oci.redis.models.CreateRedisClusterDetails
@@ -47,11 +51,17 @@ Redis
     oci.redis.models.DefaultConfigurationInfo
     oci.redis.models.DetachOciCacheUsersDetails
     oci.redis.models.EngineVersion
+    oci.redis.models.ExportOciCacheBackupToObjectStorageDetails
     oci.redis.models.IamAuthenticationMode
     oci.redis.models.IdentityTokenDetailsResponse
+    oci.redis.models.ImportOciCacheFromObjectStorageDetails
+    oci.redis.models.ImportOciCacheFromObjectStorageObject
     oci.redis.models.Node
     oci.redis.models.NodeCollection
     oci.redis.models.NodeSummary
+    oci.redis.models.OciCacheBackup
+    oci.redis.models.OciCacheBackupCollection
+    oci.redis.models.OciCacheBackupSummary
     oci.redis.models.OciCacheConfigSet
     oci.redis.models.OciCacheConfigSetCollection
     oci.redis.models.OciCacheConfigSetSummary
@@ -68,6 +78,7 @@ Redis
     oci.redis.models.RedisClusterCollection
     oci.redis.models.RedisClusterSummary
     oci.redis.models.RedisNodeCollection
+    oci.redis.models.UpdateOciCacheBackupDetails
     oci.redis.models.UpdateOciCacheConfigSetDetails
     oci.redis.models.UpdateOciCacheUserDetails
     oci.redis.models.UpdateRedisClusterDetails

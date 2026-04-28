@@ -29,13 +29,21 @@ class ComputeTask(BatchTask):
             The value to assign to the name property of this ComputeTask.
         :type name: str
 
+        :param hierarchical_name:
+            The value to assign to the hierarchical_name property of this ComputeTask.
+        :type hierarchical_name: str
+
+        :param group_task_name:
+            The value to assign to the group_task_name property of this ComputeTask.
+        :type group_task_name: str
+
         :param description:
             The value to assign to the description property of this ComputeTask.
         :type description: str
 
         :param type:
             The value to assign to the type property of this ComputeTask.
-            Allowed values for this property are: "COMPUTE"
+            Allowed values for this property are: "COMPUTE", "GROUP"
         :type type: str
 
         :param lifecycle_state:
@@ -79,10 +87,16 @@ class ComputeTask(BatchTask):
             The value to assign to the batch_task_environment_id property of this ComputeTask.
         :type batch_task_environment_id: str
 
+        :param most_recent_execution_history:
+            The value to assign to the most_recent_execution_history property of this ComputeTask.
+        :type most_recent_execution_history: list[oci.batch.models.BatchTaskExecutionDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'hierarchical_name': 'str',
+            'group_task_name': 'str',
             'description': 'str',
             'type': 'str',
             'lifecycle_state': 'str',
@@ -94,11 +108,14 @@ class ComputeTask(BatchTask):
             'command': 'list[str]',
             'arguments': 'list[str]',
             'fleet_assignment_policy': 'FleetAssignmentPolicy',
-            'batch_task_environment_id': 'str'
+            'batch_task_environment_id': 'str',
+            'most_recent_execution_history': 'list[BatchTaskExecutionDetails]'
         }
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'hierarchical_name': 'hierarchicalName',
+            'group_task_name': 'groupTaskName',
             'description': 'description',
             'type': 'type',
             'lifecycle_state': 'lifecycleState',
@@ -110,10 +127,13 @@ class ComputeTask(BatchTask):
             'command': 'command',
             'arguments': 'arguments',
             'fleet_assignment_policy': 'fleetAssignmentPolicy',
-            'batch_task_environment_id': 'batchTaskEnvironmentId'
+            'batch_task_environment_id': 'batchTaskEnvironmentId',
+            'most_recent_execution_history': 'mostRecentExecutionHistory'
         }
         self._id = None
         self._name = None
+        self._hierarchical_name = None
+        self._group_task_name = None
         self._description = None
         self._type = None
         self._lifecycle_state = None
@@ -126,6 +146,7 @@ class ComputeTask(BatchTask):
         self._arguments = None
         self._fleet_assignment_policy = None
         self._batch_task_environment_id = None
+        self._most_recent_execution_history = None
         self._type = 'COMPUTE'
 
     @property
@@ -251,6 +272,30 @@ class ComputeTask(BatchTask):
         :type: str
         """
         self._batch_task_environment_id = batch_task_environment_id
+
+    @property
+    def most_recent_execution_history(self):
+        """
+        Gets the most_recent_execution_history of this ComputeTask.
+        List of up to 30 most recent execution history entries, from newest to oldest. Be aware that the maximum number of items returned may change in the future.
+
+
+        :return: The most_recent_execution_history of this ComputeTask.
+        :rtype: list[oci.batch.models.BatchTaskExecutionDetails]
+        """
+        return self._most_recent_execution_history
+
+    @most_recent_execution_history.setter
+    def most_recent_execution_history(self, most_recent_execution_history):
+        """
+        Sets the most_recent_execution_history of this ComputeTask.
+        List of up to 30 most recent execution history entries, from newest to oldest. Be aware that the maximum number of items returned may change in the future.
+
+
+        :param most_recent_execution_history: The most_recent_execution_history of this ComputeTask.
+        :type: list[oci.batch.models.BatchTaskExecutionDetails]
+        """
+        self._most_recent_execution_history = most_recent_execution_history
 
     def __repr__(self):
         return formatted_flat_dict(self)

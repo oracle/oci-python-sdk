@@ -273,7 +273,7 @@ class CreateMySqlInitialLoadSettings(object):
     @property
     def job_mode(self):
         """
-        **[Required]** Gets the job_mode of this CreateMySqlInitialLoadSettings.
+        Gets the job_mode of this CreateMySqlInitialLoadSettings.
         MySql Job Mode
 
         Allowed values for this property are: "FULL", "SCHEMA"

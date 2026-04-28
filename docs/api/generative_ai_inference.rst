@@ -80,6 +80,9 @@ Generative Ai Inference
     oci.generative_ai_inference.models.DocumentContent
     oci.generative_ai_inference.models.DocumentRank
     oci.generative_ai_inference.models.DocumentUrl
+    oci.generative_ai_inference.models.EmbedContent
+    oci.generative_ai_inference.models.EmbedImageContent
+    oci.generative_ai_inference.models.EmbedTextContent
     oci.generative_ai_inference.models.EmbedTextDetails
     oci.generative_ai_inference.models.EmbedTextResult
     oci.generative_ai_inference.models.Function

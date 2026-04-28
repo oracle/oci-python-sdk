@@ -23,7 +23,7 @@ class CreateServiceManagedFleetDetails(CreateFleetDetails):
 
         :param type:
             The value to assign to the type property of this CreateServiceManagedFleetDetails.
-            Allowed values for this property are: "SERVICE_MANAGED_FLEET"
+            Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"
         :type type: str
 
         :param name:

@@ -63,6 +63,10 @@ class AssessorCheck(object):
     #: This constant has a value of "FAILED"
     ASSESSOR_CHECK_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the assessor_check_state property of a AssessorCheck.
+    #: This constant has a value of "SKIPPED"
+    ASSESSOR_CHECK_STATE_SKIPPED = "SKIPPED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AssessorCheck object with values from keyword arguments.
@@ -94,7 +98,7 @@ class AssessorCheck(object):
 
         :param assessor_check_state:
             The value to assign to the assessor_check_state property of this AssessorCheck.
-            Allowed values for this property are: "PENDING_APPROVAL", "PENDING_RESOLUTION", "PENDING_VALIDATION", "NOT_ACKNOWLEDGED", "APPROVED", "ACKNOWLEDGED", "VALIDATED", "PASSED", "PENDING", "STARTED", "COMPLETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PENDING_APPROVAL", "PENDING_RESOLUTION", "PENDING_VALIDATION", "NOT_ACKNOWLEDGED", "APPROVED", "ACKNOWLEDGED", "VALIDATED", "PASSED", "PENDING", "STARTED", "COMPLETED", "FAILED", "SKIPPED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type assessor_check_state: str
 
@@ -359,7 +363,7 @@ class AssessorCheck(object):
         **[Required]** Gets the assessor_check_state of this AssessorCheck.
         The current state of the Assessor Check.
 
-        Allowed values for this property are: "PENDING_APPROVAL", "PENDING_RESOLUTION", "PENDING_VALIDATION", "NOT_ACKNOWLEDGED", "APPROVED", "ACKNOWLEDGED", "VALIDATED", "PASSED", "PENDING", "STARTED", "COMPLETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PENDING_APPROVAL", "PENDING_RESOLUTION", "PENDING_VALIDATION", "NOT_ACKNOWLEDGED", "APPROVED", "ACKNOWLEDGED", "VALIDATED", "PASSED", "PENDING", "STARTED", "COMPLETED", "FAILED", "SKIPPED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -378,7 +382,7 @@ class AssessorCheck(object):
         :param assessor_check_state: The assessor_check_state of this AssessorCheck.
         :type: str
         """
-        allowed_values = ["PENDING_APPROVAL", "PENDING_RESOLUTION", "PENDING_VALIDATION", "NOT_ACKNOWLEDGED", "APPROVED", "ACKNOWLEDGED", "VALIDATED", "PASSED", "PENDING", "STARTED", "COMPLETED", "FAILED"]
+        allowed_values = ["PENDING_APPROVAL", "PENDING_RESOLUTION", "PENDING_VALIDATION", "NOT_ACKNOWLEDGED", "APPROVED", "ACKNOWLEDGED", "VALIDATED", "PASSED", "PENDING", "STARTED", "COMPLETED", "FAILED", "SKIPPED"]
         if not value_allowed_none_or_none_sentinel(assessor_check_state, allowed_values):
             assessor_check_state = 'UNKNOWN_ENUM_VALUE'
         self._assessor_check_state = assessor_check_state

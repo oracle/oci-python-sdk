@@ -19,18 +19,23 @@ class CreateFleetDetails(object):
     #: This constant has a value of "SERVICE_MANAGED_FLEET"
     TYPE_SERVICE_MANAGED_FLEET = "SERVICE_MANAGED_FLEET"
 
+    #: A constant which can be used with the type property of a CreateFleetDetails.
+    #: This constant has a value of "SERVICE_MANAGED_GPU_FLEET"
+    TYPE_SERVICE_MANAGED_GPU_FLEET = "SERVICE_MANAGED_GPU_FLEET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateFleetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.batch.models.CreateServiceManagedGpuFleetDetails`
         * :class:`~oci.batch.models.CreateServiceManagedFleetDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this CreateFleetDetails.
-            Allowed values for this property are: "SERVICE_MANAGED_FLEET"
+            Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"
         :type type: str
 
         """
@@ -50,6 +55,9 @@ class CreateFleetDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'SERVICE_MANAGED_GPU_FLEET':
+            return 'CreateServiceManagedGpuFleetDetails'
+
         if type == 'SERVICE_MANAGED_FLEET':
             return 'CreateServiceManagedFleetDetails'
         else:
@@ -61,7 +69,7 @@ class CreateFleetDetails(object):
         **[Required]** Gets the type of this CreateFleetDetails.
         Type of the fleet. Also serves as a discriminator for sub-entities.
 
-        Allowed values for this property are: "SERVICE_MANAGED_FLEET"
+        Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"
 
 
         :return: The type of this CreateFleetDetails.
@@ -79,7 +87,7 @@ class CreateFleetDetails(object):
         :param type: The type of this CreateFleetDetails.
         :type: str
         """
-        allowed_values = ["SERVICE_MANAGED_FLEET"]
+        allowed_values = ["SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

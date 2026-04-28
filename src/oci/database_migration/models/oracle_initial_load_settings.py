@@ -173,7 +173,7 @@ class OracleInitialLoadSettings(object):
     @property
     def job_mode(self):
         """
-        **[Required]** Gets the job_mode of this OracleInitialLoadSettings.
+        Gets the job_mode of this OracleInitialLoadSettings.
         Oracle Job Mode
 
         Allowed values for this property are: "FULL", "SCHEMA", "TABLE", "TABLESPACE", "TRANSPORTABLE", 'UNKNOWN_ENUM_VALUE'.

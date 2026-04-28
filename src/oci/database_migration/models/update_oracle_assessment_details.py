@@ -15,6 +15,14 @@ class UpdateOracleAssessmentDetails(UpdateAssessmentDetails):
     Update Oracle Assessment resource parameters.
     """
 
+    #: A constant which can be used with the migration_scope property of a UpdateOracleAssessmentDetails.
+    #: This constant has a value of "SCHEMA"
+    MIGRATION_SCOPE_SCHEMA = "SCHEMA"
+
+    #: A constant which can be used with the migration_scope property of a UpdateOracleAssessmentDetails.
+    #: This constant has a value of "FULL"
+    MIGRATION_SCOPE_FULL = "FULL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateOracleAssessmentDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_migration.models.UpdateOracleAssessmentDetails.database_combination` attribute
@@ -75,6 +83,11 @@ class UpdateOracleAssessmentDetails(UpdateAssessmentDetails):
             The value to assign to the defined_tags property of this UpdateOracleAssessmentDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param migration_scope:
+            The value to assign to the migration_scope property of this UpdateOracleAssessmentDetails.
+            Allowed values for this property are: "SCHEMA", "FULL"
+        :type migration_scope: str
+
         """
         self.swagger_types = {
             'description': 'str',
@@ -88,7 +101,8 @@ class UpdateOracleAssessmentDetails(UpdateAssessmentDetails):
             'source_database_connection': 'SourceAssessmentConnection',
             'target_database_connection': 'TargetAssessmentConnection',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'migration_scope': 'str'
         }
         self.attribute_map = {
             'description': 'description',
@@ -102,7 +116,8 @@ class UpdateOracleAssessmentDetails(UpdateAssessmentDetails):
             'source_database_connection': 'sourceDatabaseConnection',
             'target_database_connection': 'targetDatabaseConnection',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'migration_scope': 'migrationScope'
         }
         self._description = None
         self._database_combination = None
@@ -116,7 +131,39 @@ class UpdateOracleAssessmentDetails(UpdateAssessmentDetails):
         self._target_database_connection = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._migration_scope = None
         self._database_combination = 'ORACLE'
+
+    @property
+    def migration_scope(self):
+        """
+        Gets the migration_scope of this UpdateOracleAssessmentDetails.
+        Assessment migration scope.
+
+        Allowed values for this property are: "SCHEMA", "FULL"
+
+
+        :return: The migration_scope of this UpdateOracleAssessmentDetails.
+        :rtype: str
+        """
+        return self._migration_scope
+
+    @migration_scope.setter
+    def migration_scope(self, migration_scope):
+        """
+        Sets the migration_scope of this UpdateOracleAssessmentDetails.
+        Assessment migration scope.
+
+
+        :param migration_scope: The migration_scope of this UpdateOracleAssessmentDetails.
+        :type: str
+        """
+        allowed_values = ["SCHEMA", "FULL"]
+        if not value_allowed_none_or_none_sentinel(migration_scope, allowed_values):
+            raise ValueError(
+                f"Invalid value for `migration_scope`, must be None or one of {allowed_values}"
+            )
+        self._migration_scope = migration_scope
 
     def __repr__(self):
         return formatted_flat_dict(self)

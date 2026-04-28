@@ -70,24 +70,6 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(METADATA_URL_BASE)
     METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 
-    @staticmethod
-    def _build_dual_stack_federation_endpoints(primary_federation_endpoint, region):
-        if not primary_federation_endpoint or not region:
-            return []
-
-        # Expected shape for the default auth endpoint:
-        # https://auth.<region>.<secondLevelDomain>/v1/x509
-        auth_endpoint_prefix = f"https://auth.{region}."
-        if not primary_federation_endpoint.startswith(auth_endpoint_prefix):
-            return []
-
-        endpoint_suffix = primary_federation_endpoint[len(auth_endpoint_prefix):]
-        if endpoint_suffix.startswith('ds.'):
-            return []
-
-        dual_stack_endpoint = f"{auth_endpoint_prefix}ds.{endpoint_suffix}"
-        return [dual_stack_endpoint]
-
     def __init__(self, **kwargs):
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
         self.logger.addHandler(logging.NullHandler())
@@ -124,19 +106,15 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         self.tenancy_id = auth_utils.get_tenancy_id_from_certificate(self.leaf_certificate_retriever.get_certificate_as_certificate())
         self.initialize_and_return_region()
 
-        explicit_federation_endpoint = kwargs.get('federation_endpoint')
-        if explicit_federation_endpoint:
-            federation_endpoint = explicit_federation_endpoint
-            federation_fallback_endpoints = []
+        if 'federation_endpoint' in kwargs and kwargs['federation_endpoint']:
+            federation_endpoint = kwargs['federation_endpoint']
         else:
             federation_endpoint = '{}/v1/x509'.format(oci.regions.endpoint_for('auth', self.region))
-            federation_fallback_endpoints = self._build_dual_stack_federation_endpoints(federation_endpoint, self.region)
 
-        self.logger.debug("Federation endpoint is set to: %s", federation_endpoint)
+        self.logger.debug("federation endpoint is set to : %s " % (federation_endpoint))
 
         federation_client = X509FederationClient(
             federation_endpoint=federation_endpoint,
-            federation_fallback_endpoints=federation_fallback_endpoints,
             tenancy_id=self.tenancy_id,
             session_key_supplier=self.session_key_supplier,
             leaf_certificate_retriever=self.leaf_certificate_retriever,

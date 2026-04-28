@@ -43,6 +43,8 @@ Cloud Guard
     oci.cloud_guard.models.ChangeSecurityPolicyCompartmentDetails
     oci.cloud_guard.models.ChangeSecurityRecipeCompartmentDetails
     oci.cloud_guard.models.ChangeSecurityZoneCompartmentDetails
+    oci.cloud_guard.models.ComplianceDocument
+    oci.cloud_guard.models.ComplianceDocumentSummary
     oci.cloud_guard.models.CompositeCondition
     oci.cloud_guard.models.Condition
     oci.cloud_guard.models.ConditionGroup
@@ -60,6 +62,7 @@ Cloud Guard
     oci.cloud_guard.models.CreateDetectorRecipeDetectorRuleDetails
     oci.cloud_guard.models.CreateDetectorRuleDetails
     oci.cloud_guard.models.CreateManagedListDetails
+    oci.cloud_guard.models.CreateNonDisclosureAgreementDetails
     oci.cloud_guard.models.CreateResponderRecipeDetails
     oci.cloud_guard.models.CreateSavedQueryDetails
     oci.cloud_guard.models.CreateSecurityPolicyDetails
@@ -113,6 +116,7 @@ Cloud Guard
     oci.cloud_guard.models.ManagedListTypeCollection
     oci.cloud_guard.models.ManagedListTypeSummary
     oci.cloud_guard.models.NoDelayStartPolicy
+    oci.cloud_guard.models.NonDisclosureAgreement
     oci.cloud_guard.models.OperatorSummary
     oci.cloud_guard.models.PackageDetail
     oci.cloud_guard.models.PolicyCollection
@@ -205,7 +209,9 @@ Cloud Guard
     oci.cloud_guard.models.SecurityZoneCollection
     oci.cloud_guard.models.SecurityZoneSummary
     oci.cloud_guard.models.SecurityZoneTargetDetails
+    oci.cloud_guard.models.ServiceCollection
     oci.cloud_guard.models.ServiceConfiguration
+    oci.cloud_guard.models.ServiceSummary
     oci.cloud_guard.models.ServiceTypeSummary
     oci.cloud_guard.models.Sighting
     oci.cloud_guard.models.SightingCollection

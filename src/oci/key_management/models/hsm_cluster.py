@@ -106,6 +106,14 @@ class HsmCluster(object):
             The value to assign to the freeform_tags property of this HsmCluster.
         :type freeform_tags: dict(str, str)
 
+        :param audit_log_config:
+            The value to assign to the audit_log_config property of this HsmCluster.
+        :type audit_log_config: oci.key_management.models.HsmClusterAuditLoggingInfo
+
+        :param pending_instructions:
+            The value to assign to the pending_instructions property of this HsmCluster.
+        :type pending_instructions: oci.key_management.models.HsmClusterPendingInstructions
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -117,7 +125,9 @@ class HsmCluster(object):
             'dns_name': 'str',
             'time_of_deletion': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'audit_log_config': 'HsmClusterAuditLoggingInfo',
+            'pending_instructions': 'HsmClusterPendingInstructions'
         }
         self.attribute_map = {
             'id': 'id',
@@ -129,7 +139,9 @@ class HsmCluster(object):
             'dns_name': 'dnsName',
             'time_of_deletion': 'timeOfDeletion',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'audit_log_config': 'auditLogConfig',
+            'pending_instructions': 'pendingInstructions'
         }
         self._id = None
         self._compartment_id = None
@@ -141,6 +153,8 @@ class HsmCluster(object):
         self._time_of_deletion = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._audit_log_config = None
+        self._pending_instructions = None
 
     @property
     def id(self):
@@ -431,6 +445,46 @@ class HsmCluster(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def audit_log_config(self):
+        """
+        Gets the audit_log_config of this HsmCluster.
+
+        :return: The audit_log_config of this HsmCluster.
+        :rtype: oci.key_management.models.HsmClusterAuditLoggingInfo
+        """
+        return self._audit_log_config
+
+    @audit_log_config.setter
+    def audit_log_config(self, audit_log_config):
+        """
+        Sets the audit_log_config of this HsmCluster.
+
+        :param audit_log_config: The audit_log_config of this HsmCluster.
+        :type: oci.key_management.models.HsmClusterAuditLoggingInfo
+        """
+        self._audit_log_config = audit_log_config
+
+    @property
+    def pending_instructions(self):
+        """
+        Gets the pending_instructions of this HsmCluster.
+
+        :return: The pending_instructions of this HsmCluster.
+        :rtype: oci.key_management.models.HsmClusterPendingInstructions
+        """
+        return self._pending_instructions
+
+    @pending_instructions.setter
+    def pending_instructions(self, pending_instructions):
+        """
+        Sets the pending_instructions of this HsmCluster.
+
+        :param pending_instructions: The pending_instructions of this HsmCluster.
+        :type: oci.key_management.models.HsmClusterPendingInstructions
+        """
+        self._pending_instructions = pending_instructions
 
     def __repr__(self):
         return formatted_flat_dict(self)

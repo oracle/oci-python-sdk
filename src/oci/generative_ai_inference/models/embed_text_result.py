@@ -28,6 +28,10 @@ class EmbedTextResult(object):
             The value to assign to the inputs property of this EmbedTextResult.
         :type inputs: list[str]
 
+        :param embed_contents:
+            The value to assign to the embed_contents property of this EmbedTextResult.
+        :type embed_contents: list[oci.generative_ai_inference.models.EmbedContent]
+
         :param embeddings:
             The value to assign to the embeddings property of this EmbedTextResult.
         :type embeddings: list[list[float]]
@@ -52,6 +56,7 @@ class EmbedTextResult(object):
         self.swagger_types = {
             'id': 'str',
             'inputs': 'list[str]',
+            'embed_contents': 'list[EmbedContent]',
             'embeddings': 'list[list[float]]',
             'embeddings_by_type': 'object',
             'model_id': 'str',
@@ -61,6 +66,7 @@ class EmbedTextResult(object):
         self.attribute_map = {
             'id': 'id',
             'inputs': 'inputs',
+            'embed_contents': 'embedContents',
             'embeddings': 'embeddings',
             'embeddings_by_type': 'embeddingsByType',
             'model_id': 'modelId',
@@ -69,6 +75,7 @@ class EmbedTextResult(object):
         }
         self._id = None
         self._inputs = None
+        self._embed_contents = None
         self._embeddings = None
         self._embeddings_by_type = None
         self._model_id = None
@@ -122,6 +129,30 @@ class EmbedTextResult(object):
         :type: list[str]
         """
         self._inputs = inputs
+
+    @property
+    def embed_contents(self):
+        """
+        Gets the embed_contents of this EmbedTextResult.
+        The original inputs. Only present if \"isEcho\" is set to true.
+
+
+        :return: The embed_contents of this EmbedTextResult.
+        :rtype: list[oci.generative_ai_inference.models.EmbedContent]
+        """
+        return self._embed_contents
+
+    @embed_contents.setter
+    def embed_contents(self, embed_contents):
+        """
+        Sets the embed_contents of this EmbedTextResult.
+        The original inputs. Only present if \"isEcho\" is set to true.
+
+
+        :param embed_contents: The embed_contents of this EmbedTextResult.
+        :type: list[oci.generative_ai_inference.models.EmbedContent]
+        """
+        self._embed_contents = embed_contents
 
     @property
     def embeddings(self):

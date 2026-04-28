@@ -6,6 +6,8 @@
 
 from __future__ import absolute_import
 
+from .audit_logging import AuditLogging
+from .audit_logging_config import AuditLoggingConfig
 from .auto_key_rotation_details import AutoKeyRotationDetails
 from .backup_key_details import BackupKeyDetails
 from .backup_location import BackupLocation
@@ -25,6 +27,7 @@ from .decrypted_data import DecryptedData
 from .delete_vault_replica_details import DeleteVaultReplicaDetails
 from .ekms_private_endpoint import EkmsPrivateEndpoint
 from .ekms_private_endpoint_summary import EkmsPrivateEndpointSummary
+from .enable_audit_mgmt_logging import EnableAuditMgmtLogging
 from .encrypt_data_details import EncryptDataDetails
 from .encrypted_data import EncryptedData
 from .export_key_details import ExportKeyDetails
@@ -37,13 +40,17 @@ from .external_key_version_reference import ExternalKeyVersionReference
 from .generate_key_details import GenerateKeyDetails
 from .generated_key import GeneratedKey
 from .hsm_cluster import HsmCluster
+from .hsm_cluster_audit_logging_info import HsmClusterAuditLoggingInfo
 from .hsm_cluster_collection import HsmClusterCollection
+from .hsm_cluster_pending_create_dynamic_group import HsmClusterPendingCreateDynamicGroup
+from .hsm_cluster_pending_instructions import HsmClusterPendingInstructions
 from .hsm_cluster_summary import HsmClusterSummary
 from .hsm_partition import HsmPartition
 from .hsm_partition_collection import HsmPartitionCollection
 from .hsm_partition_summary import HsmPartitionSummary
 from .import_key_details import ImportKeyDetails
 from .import_key_version_details import ImportKeyVersionDetails
+from .initiate_audit_logging_details import InitiateAuditLoggingDetails
 from .key import Key
 from .key_replica_details import KeyReplicaDetails
 from .key_shape import KeyShape
@@ -67,12 +74,15 @@ from .schedule_key_version_deletion_details import ScheduleKeyVersionDeletionDet
 from .schedule_vault_deletion_details import ScheduleVaultDeletionDetails
 from .sign_data_details import SignDataDetails
 from .signed_data import SignedData
+from .update_audit_logging_destination_details import UpdateAuditLoggingDestinationDetails
 from .update_ekms_private_endpoint_details import UpdateEkmsPrivateEndpointDetails
 from .update_hsm_cluster_details import UpdateHsmClusterDetails
 from .update_key_details import UpdateKeyDetails
+from .update_registered_vault_for_mtls_details import UpdateRegisteredVaultForMtlsDetails
 from .update_vault_details import UpdateVaultDetails
 from .upload_partition_certificates_details import UploadPartitionCertificatesDetails
 from .vault import Vault
+from .vault_mtls_update_response import VaultMtlsUpdateResponse
 from .vault_replica_details import VaultReplicaDetails
 from .vault_replica_summary import VaultReplicaSummary
 from .vault_summary import VaultSummary
@@ -84,6 +94,8 @@ from .wrapping_key import WrappingKey
 
 # Maps type names to classes for key_management services.
 key_management_type_mapping = {
+    "AuditLogging": AuditLogging,
+    "AuditLoggingConfig": AuditLoggingConfig,
     "AutoKeyRotationDetails": AutoKeyRotationDetails,
     "BackupKeyDetails": BackupKeyDetails,
     "BackupLocation": BackupLocation,
@@ -103,6 +115,7 @@ key_management_type_mapping = {
     "DeleteVaultReplicaDetails": DeleteVaultReplicaDetails,
     "EkmsPrivateEndpoint": EkmsPrivateEndpoint,
     "EkmsPrivateEndpointSummary": EkmsPrivateEndpointSummary,
+    "EnableAuditMgmtLogging": EnableAuditMgmtLogging,
     "EncryptDataDetails": EncryptDataDetails,
     "EncryptedData": EncryptedData,
     "ExportKeyDetails": ExportKeyDetails,
@@ -115,13 +128,17 @@ key_management_type_mapping = {
     "GenerateKeyDetails": GenerateKeyDetails,
     "GeneratedKey": GeneratedKey,
     "HsmCluster": HsmCluster,
+    "HsmClusterAuditLoggingInfo": HsmClusterAuditLoggingInfo,
     "HsmClusterCollection": HsmClusterCollection,
+    "HsmClusterPendingCreateDynamicGroup": HsmClusterPendingCreateDynamicGroup,
+    "HsmClusterPendingInstructions": HsmClusterPendingInstructions,
     "HsmClusterSummary": HsmClusterSummary,
     "HsmPartition": HsmPartition,
     "HsmPartitionCollection": HsmPartitionCollection,
     "HsmPartitionSummary": HsmPartitionSummary,
     "ImportKeyDetails": ImportKeyDetails,
     "ImportKeyVersionDetails": ImportKeyVersionDetails,
+    "InitiateAuditLoggingDetails": InitiateAuditLoggingDetails,
     "Key": Key,
     "KeyReplicaDetails": KeyReplicaDetails,
     "KeyShape": KeyShape,
@@ -145,12 +162,15 @@ key_management_type_mapping = {
     "ScheduleVaultDeletionDetails": ScheduleVaultDeletionDetails,
     "SignDataDetails": SignDataDetails,
     "SignedData": SignedData,
+    "UpdateAuditLoggingDestinationDetails": UpdateAuditLoggingDestinationDetails,
     "UpdateEkmsPrivateEndpointDetails": UpdateEkmsPrivateEndpointDetails,
     "UpdateHsmClusterDetails": UpdateHsmClusterDetails,
     "UpdateKeyDetails": UpdateKeyDetails,
+    "UpdateRegisteredVaultForMtlsDetails": UpdateRegisteredVaultForMtlsDetails,
     "UpdateVaultDetails": UpdateVaultDetails,
     "UploadPartitionCertificatesDetails": UploadPartitionCertificatesDetails,
     "Vault": Vault,
+    "VaultMtlsUpdateResponse": VaultMtlsUpdateResponse,
     "VaultReplicaDetails": VaultReplicaDetails,
     "VaultReplicaSummary": VaultReplicaSummary,
     "VaultSummary": VaultSummary,

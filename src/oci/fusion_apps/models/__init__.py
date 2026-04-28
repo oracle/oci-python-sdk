@@ -12,6 +12,7 @@ from .admin_user_collection import AdminUserCollection
 from .admin_user_summary import AdminUserSummary
 from .allow_rule import AllowRule
 from .capabilities import Capabilities
+from .certificate_info import CertificateInfo
 from .change_fusion_environment_compartment_details import ChangeFusionEnvironmentCompartmentDetails
 from .change_fusion_environment_family_compartment_details import ChangeFusionEnvironmentFamilyCompartmentDetails
 from .create_data_masking_activity_details import CreateDataMaskingActivityDetails
@@ -23,6 +24,8 @@ from .create_marketing_brand_details import CreateMarketingBrandDetails
 from .create_microsite_details import CreateMicrositeDetails
 from .create_refresh_activity_details import CreateRefreshActivityDetails
 from .create_service_attachment_details import CreateServiceAttachmentDetails
+from .create_vanity_domain_activity_details import CreateVanityDomainActivityDetails
+from .create_vanity_domain_details import CreateVanityDomainDetails
 from .data_masking_activity import DataMaskingActivity
 from .data_masking_activity_collection import DataMaskingActivityCollection
 from .data_masking_activity_summary import DataMaskingActivitySummary
@@ -88,8 +91,16 @@ from .update_fusion_environment_family_details import UpdateFusionEnvironmentFam
 from .update_marketing_brand_details import UpdateMarketingBrandDetails
 from .update_microsite_details import UpdateMicrositeDetails
 from .update_refresh_activity_details import UpdateRefreshActivityDetails
+from .update_vanity_domain_activity_details import UpdateVanityDomainActivityDetails
+from .update_vanity_domain_details import UpdateVanityDomainDetails
 from .upgrade_action import UpgradeAction
 from .upload_email_subdomain_certificate_details import UploadEmailSubdomainCertificateDetails
+from .upload_vanity_domain_certificate_details import UploadVanityDomainCertificateDetails
+from .vanity_dns_record import VanityDnsRecord
+from .vanity_domain import VanityDomain
+from .vanity_domain_activity import VanityDomainActivity
+from .vanity_domain_collection import VanityDomainCollection
+from .vanity_domain_summary import VanityDomainSummary
 from .verify_service_attachment_details import VerifyServiceAttachmentDetails
 from .vertex_action import VertexAction
 from .work_request import WorkRequest
@@ -109,6 +120,7 @@ fusion_apps_type_mapping = {
     "AdminUserSummary": AdminUserSummary,
     "AllowRule": AllowRule,
     "Capabilities": Capabilities,
+    "CertificateInfo": CertificateInfo,
     "ChangeFusionEnvironmentCompartmentDetails": ChangeFusionEnvironmentCompartmentDetails,
     "ChangeFusionEnvironmentFamilyCompartmentDetails": ChangeFusionEnvironmentFamilyCompartmentDetails,
     "CreateDataMaskingActivityDetails": CreateDataMaskingActivityDetails,
@@ -120,6 +132,8 @@ fusion_apps_type_mapping = {
     "CreateMicrositeDetails": CreateMicrositeDetails,
     "CreateRefreshActivityDetails": CreateRefreshActivityDetails,
     "CreateServiceAttachmentDetails": CreateServiceAttachmentDetails,
+    "CreateVanityDomainActivityDetails": CreateVanityDomainActivityDetails,
+    "CreateVanityDomainDetails": CreateVanityDomainDetails,
     "DataMaskingActivity": DataMaskingActivity,
     "DataMaskingActivityCollection": DataMaskingActivityCollection,
     "DataMaskingActivitySummary": DataMaskingActivitySummary,
@@ -185,8 +199,16 @@ fusion_apps_type_mapping = {
     "UpdateMarketingBrandDetails": UpdateMarketingBrandDetails,
     "UpdateMicrositeDetails": UpdateMicrositeDetails,
     "UpdateRefreshActivityDetails": UpdateRefreshActivityDetails,
+    "UpdateVanityDomainActivityDetails": UpdateVanityDomainActivityDetails,
+    "UpdateVanityDomainDetails": UpdateVanityDomainDetails,
     "UpgradeAction": UpgradeAction,
     "UploadEmailSubdomainCertificateDetails": UploadEmailSubdomainCertificateDetails,
+    "UploadVanityDomainCertificateDetails": UploadVanityDomainCertificateDetails,
+    "VanityDnsRecord": VanityDnsRecord,
+    "VanityDomain": VanityDomain,
+    "VanityDomainActivity": VanityDomainActivity,
+    "VanityDomainCollection": VanityDomainCollection,
+    "VanityDomainSummary": VanityDomainSummary,
     "VerifyServiceAttachmentDetails": VerifyServiceAttachmentDetails,
     "VertexAction": VertexAction,
     "WorkRequest": WorkRequest,

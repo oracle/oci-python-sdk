@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CitationOptionsV2(object):
     """
-    Options for controlling citation generation in RAG flows.
+    Options for controlling citation generation.
     """
 
     #: A constant which can be used with the mode property of a CitationOptionsV2.
@@ -50,7 +50,7 @@ class CitationOptionsV2(object):
     def mode(self):
         """
         Gets the mode of this CitationOptionsV2.
-        Dictates the approach taken to generating citations as part of the RAG flow. Defaults to \"accurate\".   - \"ACCURATE\": More precise citation generation.   - \"FAST\": Faster but may be less precise.   - \"OFF\": Disables citation generation.   Note: `command-r7b-12-2024` and `command-a-03-2025` only support \"FAST\" and \"OFF\".
+        Dictates the approach taken to generating citations.   - \"ACCURATE\": More precise citation generation.   - \"FAST\": Faster but may be less precise.   - \"OFF\": Disables citation generation.
 
         Allowed values for this property are: "FAST", "ACCURATE", "OFF"
 
@@ -64,7 +64,7 @@ class CitationOptionsV2(object):
     def mode(self, mode):
         """
         Sets the mode of this CitationOptionsV2.
-        Dictates the approach taken to generating citations as part of the RAG flow. Defaults to \"accurate\".   - \"ACCURATE\": More precise citation generation.   - \"FAST\": Faster but may be less precise.   - \"OFF\": Disables citation generation.   Note: `command-r7b-12-2024` and `command-a-03-2025` only support \"FAST\" and \"OFF\".
+        Dictates the approach taken to generating citations.   - \"ACCURATE\": More precise citation generation.   - \"FAST\": Faster but may be less precise.   - \"OFF\": Disables citation generation.
 
 
         :param mode: The mode of this CitationOptionsV2.

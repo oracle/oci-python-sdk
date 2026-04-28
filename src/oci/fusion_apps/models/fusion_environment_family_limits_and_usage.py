@@ -32,20 +32,27 @@ class FusionEnvironmentFamilyLimitsAndUsage(object):
             The value to assign to the development_limit_and_usage property of this FusionEnvironmentFamilyLimitsAndUsage.
         :type development_limit_and_usage: oci.fusion_apps.models.LimitAndUsage
 
+        :param demo_limit_and_usage:
+            The value to assign to the demo_limit_and_usage property of this FusionEnvironmentFamilyLimitsAndUsage.
+        :type demo_limit_and_usage: oci.fusion_apps.models.LimitAndUsage
+
         """
         self.swagger_types = {
             'production_limit_and_usage': 'LimitAndUsage',
             'test_limit_and_usage': 'LimitAndUsage',
-            'development_limit_and_usage': 'LimitAndUsage'
+            'development_limit_and_usage': 'LimitAndUsage',
+            'demo_limit_and_usage': 'LimitAndUsage'
         }
         self.attribute_map = {
             'production_limit_and_usage': 'productionLimitAndUsage',
             'test_limit_and_usage': 'testLimitAndUsage',
-            'development_limit_and_usage': 'developmentLimitAndUsage'
+            'development_limit_and_usage': 'developmentLimitAndUsage',
+            'demo_limit_and_usage': 'demoLimitAndUsage'
         }
         self._production_limit_and_usage = None
         self._test_limit_and_usage = None
         self._development_limit_and_usage = None
+        self._demo_limit_and_usage = None
 
     @property
     def production_limit_and_usage(self):
@@ -106,6 +113,26 @@ class FusionEnvironmentFamilyLimitsAndUsage(object):
         :type: oci.fusion_apps.models.LimitAndUsage
         """
         self._development_limit_and_usage = development_limit_and_usage
+
+    @property
+    def demo_limit_and_usage(self):
+        """
+        **[Required]** Gets the demo_limit_and_usage of this FusionEnvironmentFamilyLimitsAndUsage.
+
+        :return: The demo_limit_and_usage of this FusionEnvironmentFamilyLimitsAndUsage.
+        :rtype: oci.fusion_apps.models.LimitAndUsage
+        """
+        return self._demo_limit_and_usage
+
+    @demo_limit_and_usage.setter
+    def demo_limit_and_usage(self, demo_limit_and_usage):
+        """
+        Sets the demo_limit_and_usage of this FusionEnvironmentFamilyLimitsAndUsage.
+
+        :param demo_limit_and_usage: The demo_limit_and_usage of this FusionEnvironmentFamilyLimitsAndUsage.
+        :type: oci.fusion_apps.models.LimitAndUsage
+        """
+        self._demo_limit_and_usage = demo_limit_and_usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

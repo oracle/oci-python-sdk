@@ -21,6 +21,7 @@ class BatchTaskSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.batch.models.ComputeTaskSummary`
+        * :class:`~oci.batch.models.GroupTaskSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -35,6 +36,14 @@ class BatchTaskSummary(object):
         :param name:
             The value to assign to the name property of this BatchTaskSummary.
         :type name: str
+
+        :param hierarchical_name:
+            The value to assign to the hierarchical_name property of this BatchTaskSummary.
+        :type hierarchical_name: str
+
+        :param group_task_name:
+            The value to assign to the group_task_name property of this BatchTaskSummary.
+        :type group_task_name: str
 
         :param description:
             The value to assign to the description property of this BatchTaskSummary.
@@ -57,6 +66,8 @@ class BatchTaskSummary(object):
             'id': 'str',
             'job_id': 'str',
             'name': 'str',
+            'hierarchical_name': 'str',
+            'group_task_name': 'str',
             'description': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -66,6 +77,8 @@ class BatchTaskSummary(object):
             'id': 'id',
             'job_id': 'jobId',
             'name': 'name',
+            'hierarchical_name': 'hierarchicalName',
+            'group_task_name': 'groupTaskName',
             'description': 'description',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -74,6 +87,8 @@ class BatchTaskSummary(object):
         self._id = None
         self._job_id = None
         self._name = None
+        self._hierarchical_name = None
+        self._group_task_name = None
         self._description = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -89,6 +104,9 @@ class BatchTaskSummary(object):
 
         if type == 'COMPUTE':
             return 'ComputeTaskSummary'
+
+        if type == 'GROUP':
+            return 'GroupTaskSummary'
         else:
             return 'BatchTaskSummary'
 
@@ -167,6 +185,54 @@ class BatchTaskSummary(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def hierarchical_name(self):
+        """
+        Gets the hierarchical_name of this BatchTaskSummary.
+        The hierarchical name of the task, which incorporates names of all parent group tasks, separated by \".\" (dot symbol). Maximum nesting depth is 4 levels. Example: groupTaskA.nestedGroupTaskB.thisTaskName
+
+
+        :return: The hierarchical_name of this BatchTaskSummary.
+        :rtype: str
+        """
+        return self._hierarchical_name
+
+    @hierarchical_name.setter
+    def hierarchical_name(self, hierarchical_name):
+        """
+        Sets the hierarchical_name of this BatchTaskSummary.
+        The hierarchical name of the task, which incorporates names of all parent group tasks, separated by \".\" (dot symbol). Maximum nesting depth is 4 levels. Example: groupTaskA.nestedGroupTaskB.thisTaskName
+
+
+        :param hierarchical_name: The hierarchical_name of this BatchTaskSummary.
+        :type: str
+        """
+        self._hierarchical_name = hierarchical_name
+
+    @property
+    def group_task_name(self):
+        """
+        Gets the group_task_name of this BatchTaskSummary.
+        The hierarchical name of the group task. Null for top-level tasks.
+
+
+        :return: The group_task_name of this BatchTaskSummary.
+        :rtype: str
+        """
+        return self._group_task_name
+
+    @group_task_name.setter
+    def group_task_name(self, group_task_name):
+        """
+        Sets the group_task_name of this BatchTaskSummary.
+        The hierarchical name of the group task. Null for top-level tasks.
+
+
+        :param group_task_name: The group_task_name of this BatchTaskSummary.
+        :type: str
+        """
+        self._group_task_name = group_task_name
 
     @property
     def description(self):

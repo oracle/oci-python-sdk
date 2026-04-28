@@ -496,6 +496,90 @@ class FusionApplicationsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_vanity_domain_and_wait_for_state(self, create_vanity_domain_details, fusion_environment_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_vanity_domain` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.fusion_apps.models.CreateVanityDomainDetails create_vanity_domain_details: (required)
+            The VanityDomain to be created.
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_vanity_domain`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_vanity_domain(create_vanity_domain_details, fusion_environment_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_vanity_domain_activity_and_wait_for_state(self, create_vanity_domain_activity_details, fusion_environment_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_vanity_domain_activity` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.fusion_apps.models.CreateVanityDomainActivityDetails create_vanity_domain_activity_details: (required)
+            The Certificate Details of Vanity Domain Activity
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.create_vanity_domain_activity`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_vanity_domain_activity(create_vanity_domain_activity_details, fusion_environment_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_email_subdomain_and_wait_for_state(self, fusion_environment_id, marketing_brand_id, email_subdomain_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_email_subdomain` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
@@ -896,6 +980,56 @@ class FusionApplicationsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_vanity_domain_activity_and_wait_for_state(self, fusion_environment_id, vanity_domain_activity_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_vanity_domain_activity` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str vanity_domain_activity_id: (required)
+            The unique identifier (OCID) of the VanityDomainActivity
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.delete_vanity_domain_activity`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_vanity_domain_activity(fusion_environment_id, vanity_domain_activity_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def initiate_extract_and_wait_for_state(self, fusion_environment_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.initiate_extract` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
@@ -960,6 +1094,48 @@ class FusionApplicationsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.reset_fusion_environment_password(reset_fusion_environment_password_details, fusion_environment_id, admin_username, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def submit_vanity_domain_validation_and_wait_for_state(self, vanity_domain_id, fusion_environment_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.submit_vanity_domain_validation` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str vanity_domain_id: (required)
+            The unique identifier (OCID) of the VanityDomain
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.submit_vanity_domain_validation`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.submit_vanity_domain_validation(vanity_domain_id, fusion_environment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -1259,6 +1435,141 @@ class FusionApplicationsClientCompositeOperations(object):
                 e.args = ('',)
             e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_vanity_domain_and_wait_for_state(self, fusion_environment_id, vanity_domain_id, update_vanity_domain_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_vanity_domain` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str vanity_domain_id: (required)
+            The unique identifier (OCID) of the VanityDomain
+
+        :param oci.fusion_apps.models.UpdateVanityDomainDetails update_vanity_domain_details: (required)
+            Details for the updating scheduled VanityDomain
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_vanity_domain`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_vanity_domain(fusion_environment_id, vanity_domain_id, update_vanity_domain_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_vanity_domain_activity_and_wait_for_state(self, fusion_environment_id, vanity_domain_activity_id, update_vanity_domain_activity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_vanity_domain_activity` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param str vanity_domain_activity_id: (required)
+            The unique identifier (OCID) of the VanityDomainActivity
+
+        :param oci.fusion_apps.models.UpdateVanityDomainActivityDetails update_vanity_domain_activity_details: (required)
+            Details for the updating scheduled VanityDomainActivity
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.update_vanity_domain_activity`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_vanity_domain_activity(fusion_environment_id, vanity_domain_activity_id, update_vanity_domain_activity_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def upload_vanity_domain_certificate_and_wait_for_state(self, upload_vanity_domain_certificate_details, vanity_domain_id, fusion_environment_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.fusion_apps.FusionApplicationsClient.upload_vanity_domain_certificate` and waits for the :py:class:`~oci.fusion_apps.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.fusion_apps.models.UploadVanityDomainCertificateDetails upload_vanity_domain_certificate_details: (required)
+            The Certificate Details of Vanity Domain to be uploaded
+
+        :param str vanity_domain_id: (required)
+            The unique identifier (OCID) of the VanityDomain
+
+        :param str fusion_environment_id: (required)
+            unique FusionEnvironment identifier
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.fusion_apps.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.fusion_apps.FusionApplicationsClient.upload_vanity_domain_certificate`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.upload_vanity_domain_certificate(upload_vanity_domain_certificate_details, vanity_domain_id, fusion_environment_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

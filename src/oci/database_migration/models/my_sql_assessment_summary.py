@@ -15,6 +15,14 @@ class MySqlAssessmentSummary(AssessmentSummary):
     MySql Assessment Summary
     """
 
+    #: A constant which can be used with the migration_scope property of a MySqlAssessmentSummary.
+    #: This constant has a value of "SCHEMA"
+    MIGRATION_SCOPE_SCHEMA = "SCHEMA"
+
+    #: A constant which can be used with the migration_scope property of a MySqlAssessmentSummary.
+    #: This constant has a value of "FULL"
+    MIGRATION_SCOPE_FULL = "FULL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MySqlAssessmentSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.database_migration.models.MySqlAssessmentSummary.database_combination` attribute
@@ -27,7 +35,8 @@ class MySqlAssessmentSummary(AssessmentSummary):
 
         :param database_combination:
             The value to assign to the database_combination property of this MySqlAssessmentSummary.
-            Allowed values for this property are: "MYSQL", "ORACLE"
+            Allowed values for this property are: "MYSQL", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_combination: str
 
         :param display_name:
@@ -52,7 +61,8 @@ class MySqlAssessmentSummary(AssessmentSummary):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MySqlAssessmentSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "SUCCEEDED", "IN_PROGRESS", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "SUCCEEDED", "IN_PROGRESS", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param freeform_tags:
@@ -67,6 +77,12 @@ class MySqlAssessmentSummary(AssessmentSummary):
             The value to assign to the system_tags property of this MySqlAssessmentSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param migration_scope:
+            The value to assign to the migration_scope property of this MySqlAssessmentSummary.
+            Allowed values for this property are: "SCHEMA", "FULL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type migration_scope: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -79,7 +95,8 @@ class MySqlAssessmentSummary(AssessmentSummary):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'migration_scope': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -92,7 +109,8 @@ class MySqlAssessmentSummary(AssessmentSummary):
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'migration_scope': 'migrationScope'
         }
         self._id = None
         self._database_combination = None
@@ -105,7 +123,38 @@ class MySqlAssessmentSummary(AssessmentSummary):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._migration_scope = None
         self._database_combination = 'MYSQL'
+
+    @property
+    def migration_scope(self):
+        """
+        **[Required]** Gets the migration_scope of this MySqlAssessmentSummary.
+        Assessment migration scope.
+
+        Allowed values for this property are: "SCHEMA", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The migration_scope of this MySqlAssessmentSummary.
+        :rtype: str
+        """
+        return self._migration_scope
+
+    @migration_scope.setter
+    def migration_scope(self, migration_scope):
+        """
+        Sets the migration_scope of this MySqlAssessmentSummary.
+        Assessment migration scope.
+
+
+        :param migration_scope: The migration_scope of this MySqlAssessmentSummary.
+        :type: str
+        """
+        allowed_values = ["SCHEMA", "FULL"]
+        if not value_allowed_none_or_none_sentinel(migration_scope, allowed_values):
+            migration_scope = 'UNKNOWN_ENUM_VALUE'
+        self._migration_scope = migration_scope
 
     def __repr__(self):
         return formatted_flat_dict(self)

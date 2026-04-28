@@ -45,6 +45,10 @@ class UpdateBatchContextDetails(object):
             The value to assign to the entitlements property of this UpdateBatchContextDetails.
         :type entitlements: dict(str, int)
 
+        :param logging_configuration:
+            The value to assign to the logging_configuration property of this UpdateBatchContextDetails.
+        :type logging_configuration: oci.batch.models.UpdateLoggingConfigurationDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -52,7 +56,8 @@ class UpdateBatchContextDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'job_priority_configurations': 'list[JobPriorityConfiguration]',
-            'entitlements': 'dict(str, int)'
+            'entitlements': 'dict(str, int)',
+            'logging_configuration': 'UpdateLoggingConfigurationDetails'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -60,7 +65,8 @@ class UpdateBatchContextDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'job_priority_configurations': 'jobPriorityConfigurations',
-            'entitlements': 'entitlements'
+            'entitlements': 'entitlements',
+            'logging_configuration': 'loggingConfiguration'
         }
         self._display_name = None
         self._description = None
@@ -68,6 +74,7 @@ class UpdateBatchContextDetails(object):
         self._defined_tags = None
         self._job_priority_configurations = None
         self._entitlements = None
+        self._logging_configuration = None
 
     @property
     def display_name(self):
@@ -234,6 +241,26 @@ class UpdateBatchContextDetails(object):
         :type: dict(str, int)
         """
         self._entitlements = entitlements
+
+    @property
+    def logging_configuration(self):
+        """
+        Gets the logging_configuration of this UpdateBatchContextDetails.
+
+        :return: The logging_configuration of this UpdateBatchContextDetails.
+        :rtype: oci.batch.models.UpdateLoggingConfigurationDetails
+        """
+        return self._logging_configuration
+
+    @logging_configuration.setter
+    def logging_configuration(self, logging_configuration):
+        """
+        Sets the logging_configuration of this UpdateBatchContextDetails.
+
+        :param logging_configuration: The logging_configuration of this UpdateBatchContextDetails.
+        :type: oci.batch.models.UpdateLoggingConfigurationDetails
+        """
+        self._logging_configuration = logging_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

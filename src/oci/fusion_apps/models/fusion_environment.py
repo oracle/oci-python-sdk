@@ -27,6 +27,10 @@ class FusionEnvironment(object):
     #: This constant has a value of "DEVELOPMENT"
     FUSION_ENVIRONMENT_TYPE_DEVELOPMENT = "DEVELOPMENT"
 
+    #: A constant which can be used with the fusion_environment_type property of a FusionEnvironment.
+    #: This constant has a value of "DEMO"
+    FUSION_ENVIRONMENT_TYPE_DEMO = "DEMO"
+
     #: A constant which can be used with the lifecycle_state property of a FusionEnvironment.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -90,7 +94,7 @@ class FusionEnvironment(object):
 
         :param fusion_environment_type:
             The value to assign to the fusion_environment_type property of this FusionEnvironment.
-            Allowed values for this property are: "PRODUCTION", "TEST", "DEVELOPMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRODUCTION", "TEST", "DEVELOPMENT", "DEMO", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type fusion_environment_type: str
 
@@ -464,7 +468,7 @@ class FusionEnvironment(object):
         **[Required]** Gets the fusion_environment_type of this FusionEnvironment.
         Type of the FusionEnvironment.
 
-        Allowed values for this property are: "PRODUCTION", "TEST", "DEVELOPMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRODUCTION", "TEST", "DEVELOPMENT", "DEMO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -483,7 +487,7 @@ class FusionEnvironment(object):
         :param fusion_environment_type: The fusion_environment_type of this FusionEnvironment.
         :type: str
         """
-        allowed_values = ["PRODUCTION", "TEST", "DEVELOPMENT"]
+        allowed_values = ["PRODUCTION", "TEST", "DEVELOPMENT", "DEMO"]
         if not value_allowed_none_or_none_sentinel(fusion_environment_type, allowed_values):
             fusion_environment_type = 'UNKNOWN_ENUM_VALUE'
         self._fusion_environment_type = fusion_environment_type

@@ -498,7 +498,9 @@ class RedisClusterClient(object):
 
     def create_redis_cluster(self, create_redis_cluster_details, **kwargs):
         """
-        Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
+        Creates a new OCI Cache cluster. A cluster is a memory-based storage solution.
+        You can optionally initialize the cluster data by restoring from an OCI Cache Backup (backupId) or by importing from Object Storage RDB file(s) (importFromObjectStorageDetails).
+        For more information, see `OCI Cache`__.
 
         __ https://docs.oracle.com/iaas/Content/ocicache/home.htm
 
