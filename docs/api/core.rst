@@ -518,6 +518,12 @@ Core Services
     oci.core.models.NetworkSecurityGroupVnic
     oci.core.models.NetworkingTopology
     oci.core.models.ParavirtualizedVolumeAttachment
+    oci.core.models.PatchSubnetDetails
+    oci.core.models.PatchSubnetInstruction
+    oci.core.models.PatchSubnetReplaceInstruction
+    oci.core.models.PatchVcnDetails
+    oci.core.models.PatchVcnInstruction
+    oci.core.models.PatchVcnReplaceInstruction
     oci.core.models.PeerRegionForRemotePeering
     oci.core.models.PercentageOfCoresEnabledOptions
     oci.core.models.PerformanceBasedAutotunePolicy

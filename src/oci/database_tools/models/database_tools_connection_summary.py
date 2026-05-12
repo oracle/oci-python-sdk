@@ -600,7 +600,7 @@ class DatabaseToolsConnectionSummary(object):
     def runtime_identity(self):
         """
         **[Required]** Gets the runtime_identity of this DatabaseToolsConnectionSummary.
-        Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+        Specifies the identity used when accessing OCI resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller\u2019s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection\u2019s resource principal (RPST).
 
         Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -615,7 +615,7 @@ class DatabaseToolsConnectionSummary(object):
     def runtime_identity(self, runtime_identity):
         """
         Sets the runtime_identity of this DatabaseToolsConnectionSummary.
-        Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+        Specifies the identity used when accessing OCI resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller\u2019s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection\u2019s resource principal (RPST).
 
 
         :param runtime_identity: The runtime_identity of this DatabaseToolsConnectionSummary.

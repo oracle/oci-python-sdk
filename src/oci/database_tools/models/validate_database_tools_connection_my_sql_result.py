@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValidateDatabaseToolsConnectionMySqlResult(ValidateDatabaseToolsConnectionResult):
     """
-    Connection validaton result for the MySQL Server.
+    Connection validation result for the MySQL Server.
     """
 
     def __init__(self, **kwargs):

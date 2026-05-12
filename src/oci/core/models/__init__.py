@@ -500,6 +500,12 @@ from .network_security_group import NetworkSecurityGroup
 from .network_security_group_vnic import NetworkSecurityGroupVnic
 from .networking_topology import NetworkingTopology
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
+from .patch_subnet_details import PatchSubnetDetails
+from .patch_subnet_instruction import PatchSubnetInstruction
+from .patch_subnet_replace_instruction import PatchSubnetReplaceInstruction
+from .patch_vcn_details import PatchVcnDetails
+from .patch_vcn_instruction import PatchVcnInstruction
+from .patch_vcn_replace_instruction import PatchVcnReplaceInstruction
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .percentage_of_cores_enabled_options import PercentageOfCoresEnabledOptions
 from .performance_based_autotune_policy import PerformanceBasedAutotunePolicy
@@ -1199,6 +1205,12 @@ core_type_mapping = {
     "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
     "NetworkingTopology": NetworkingTopology,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
+    "PatchSubnetDetails": PatchSubnetDetails,
+    "PatchSubnetInstruction": PatchSubnetInstruction,
+    "PatchSubnetReplaceInstruction": PatchSubnetReplaceInstruction,
+    "PatchVcnDetails": PatchVcnDetails,
+    "PatchVcnInstruction": PatchVcnInstruction,
+    "PatchVcnReplaceInstruction": PatchVcnReplaceInstruction,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PercentageOfCoresEnabledOptions": PercentageOfCoresEnabledOptions,
     "PerformanceBasedAutotunePolicy": PerformanceBasedAutotunePolicy,

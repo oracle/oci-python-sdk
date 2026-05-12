@@ -25,14 +25,28 @@ class DigitalTwinAdapterEnvelopeMapping(object):
             The value to assign to the time_observed property of this DigitalTwinAdapterEnvelopeMapping.
         :type time_observed: str
 
+        :param target:
+            The value to assign to the target property of this DigitalTwinAdapterEnvelopeMapping.
+        :type target: str
+
+        :param content_root:
+            The value to assign to the content_root property of this DigitalTwinAdapterEnvelopeMapping.
+        :type content_root: str
+
         """
         self.swagger_types = {
-            'time_observed': 'str'
+            'time_observed': 'str',
+            'target': 'str',
+            'content_root': 'str'
         }
         self.attribute_map = {
-            'time_observed': 'timeObserved'
+            'time_observed': 'timeObserved',
+            'target': 'target',
+            'content_root': 'contentRoot'
         }
         self._time_observed = None
+        self._target = None
+        self._content_root = None
 
     @property
     def time_observed(self):
@@ -69,6 +83,54 @@ class DigitalTwinAdapterEnvelopeMapping(object):
         :type: str
         """
         self._time_observed = time_observed
+
+    @property
+    def target(self):
+        """
+        Gets the target of this DigitalTwinAdapterEnvelopeMapping.
+        Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+
+
+        :return: The target of this DigitalTwinAdapterEnvelopeMapping.
+        :rtype: str
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """
+        Sets the target of this DigitalTwinAdapterEnvelopeMapping.
+        Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+
+
+        :param target: The target of this DigitalTwinAdapterEnvelopeMapping.
+        :type: str
+        """
+        self._target = target
+
+    @property
+    def content_root(self):
+        """
+        Gets the content_root of this DigitalTwinAdapterEnvelopeMapping.
+        JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+
+
+        :return: The content_root of this DigitalTwinAdapterEnvelopeMapping.
+        :rtype: str
+        """
+        return self._content_root
+
+    @content_root.setter
+    def content_root(self, content_root):
+        """
+        Sets the content_root of this DigitalTwinAdapterEnvelopeMapping.
+        JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+
+
+        :param content_root: The content_root of this DigitalTwinAdapterEnvelopeMapping.
+        :type: str
+        """
+        self._content_root = content_root
 
     def __repr__(self):
         return formatted_flat_dict(self)

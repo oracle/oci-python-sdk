@@ -77,6 +77,7 @@ API Reference
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
 * :doc:`Database Recovery <recovery/client/oci.recovery.DatabaseRecoveryClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
+* :doc:`Database Tools Runtime <database_tools_runtime/client/oci.database_tools_runtime.DatabaseToolsRuntimeClient>`
 * :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
 * :doc:`Datastore <ocvp/client/oci.ocvp.DatastoreClient>`
 * :doc:`Datastore Cluster <ocvp/client/oci.ocvp.DatastoreClusterClient>`
@@ -385,6 +386,7 @@ API Reference
     database_management
     database_migration
     database_tools
+    database_tools_runtime
     dblm
     dbmulticloud
     delegate_access_control

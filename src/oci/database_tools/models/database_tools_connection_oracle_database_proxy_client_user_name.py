@@ -23,7 +23,7 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientUserName(DatabaseToolsConn
 
         :param proxy_authentication_type:
             The value to assign to the proxy_authentication_type property of this DatabaseToolsConnectionOracleDatabaseProxyClientUserName.
-            Allowed values for this property are: "USER_NAME", "NO_PROXY"
+            Allowed values for this property are: "USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY"
         :type proxy_authentication_type: str
 
         :param user_name:

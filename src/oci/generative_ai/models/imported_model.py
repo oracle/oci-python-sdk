@@ -41,6 +41,38 @@ class ImportedModel(object):
     #: This constant has a value of "TEXT_TO_IMAGE"
     CAPABILITIES_TEXT_TO_IMAGE = "TEXT_TO_IMAGE"
 
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "IMAGE_TEXT_TO_IMAGE"
+    CAPABILITIES_IMAGE_TEXT_TO_IMAGE = "IMAGE_TEXT_TO_IMAGE"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "IMAGE_TEXT_TO_VIDEO"
+    CAPABILITIES_IMAGE_TEXT_TO_VIDEO = "IMAGE_TEXT_TO_VIDEO"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "IMAGE_TO_IMAGE"
+    CAPABILITIES_IMAGE_TO_IMAGE = "IMAGE_TO_IMAGE"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "REALTIME"
+    CAPABILITIES_REALTIME = "REALTIME"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "AUDIO_TO_AUDIO"
+    CAPABILITIES_AUDIO_TO_AUDIO = "AUDIO_TO_AUDIO"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "AUDIO_TO_TEXT"
+    CAPABILITIES_AUDIO_TO_TEXT = "AUDIO_TO_TEXT"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "TEXT_TO_AUDIO"
+    CAPABILITIES_TEXT_TO_AUDIO = "TEXT_TO_AUDIO"
+
+    #: A constant which can be used with the capabilities property of a ImportedModel.
+    #: This constant has a value of "TEXT_TO_VIDEO"
+    CAPABILITIES_TEXT_TO_VIDEO = "TEXT_TO_VIDEO"
+
     #: A constant which can be used with the lifecycle_state property of a ImportedModel.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -88,7 +120,7 @@ class ImportedModel(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this ImportedModel.
-            Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -294,7 +326,7 @@ class ImportedModel(object):
         Gets the capabilities of this ImportedModel.
         Specifies the intended use or supported capabilities of the imported model.
 
-        Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -313,7 +345,7 @@ class ImportedModel(object):
         :param capabilities: The capabilities of this ImportedModel.
         :type: list[str]
         """
-        allowed_values = ["TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE"]
+        allowed_values = ["TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities

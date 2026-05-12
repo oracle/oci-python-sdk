@@ -20,6 +20,10 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientSummary(object):
     PROXY_AUTHENTICATION_TYPE_USER_NAME = "USER_NAME"
 
     #: A constant which can be used with the proxy_authentication_type property of a DatabaseToolsConnectionOracleDatabaseProxyClientSummary.
+    #: This constant has a value of "USER_NAME_AUTO_DETECT"
+    PROXY_AUTHENTICATION_TYPE_USER_NAME_AUTO_DETECT = "USER_NAME_AUTO_DETECT"
+
+    #: A constant which can be used with the proxy_authentication_type property of a DatabaseToolsConnectionOracleDatabaseProxyClientSummary.
     #: This constant has a value of "NO_PROXY"
     PROXY_AUTHENTICATION_TYPE_NO_PROXY = "NO_PROXY"
 
@@ -30,12 +34,13 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientSummary(object):
 
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientNoProxySummary`
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameSummary`
+        * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param proxy_authentication_type:
             The value to assign to the proxy_authentication_type property of this DatabaseToolsConnectionOracleDatabaseProxyClientSummary.
-            Allowed values for this property are: "USER_NAME", "NO_PROXY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type proxy_authentication_type: str
 
@@ -61,6 +66,9 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientSummary(object):
 
         if type == 'USER_NAME':
             return 'DatabaseToolsConnectionOracleDatabaseProxyClientUserNameSummary'
+
+        if type == 'USER_NAME_AUTO_DETECT':
+            return 'DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectSummary'
         else:
             return 'DatabaseToolsConnectionOracleDatabaseProxyClientSummary'
 
@@ -70,7 +78,7 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientSummary(object):
         **[Required]** Gets the proxy_authentication_type of this DatabaseToolsConnectionOracleDatabaseProxyClientSummary.
         The proxy authentication type.
 
-        Allowed values for this property are: "USER_NAME", "NO_PROXY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -89,7 +97,7 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientSummary(object):
         :param proxy_authentication_type: The proxy_authentication_type of this DatabaseToolsConnectionOracleDatabaseProxyClientSummary.
         :type: str
         """
-        allowed_values = ["USER_NAME", "NO_PROXY"]
+        allowed_values = ["USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY"]
         if not value_allowed_none_or_none_sentinel(proxy_authentication_type, allowed_values):
             proxy_authentication_type = 'UNKNOWN_ENUM_VALUE'
         self._proxy_authentication_type = proxy_authentication_type
