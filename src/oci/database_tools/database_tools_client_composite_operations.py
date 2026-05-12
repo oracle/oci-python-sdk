@@ -72,6 +72,53 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def add_database_tools_database_api_gateway_config_lock_and_wait_for_state(self, database_tools_database_api_gateway_config_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_database_api_gateway_config_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_database_api_gateway_config_id: (required)
+            The `OCID`__ of a Database Tools database API gateway config.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_database_api_gateway_config_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_database_tools_database_api_gateway_config_lock(database_tools_database_api_gateway_config_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_database_api_gateway_config_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def add_database_tools_identity_lock_and_wait_for_state(self, database_tools_identity_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_identity_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsIdentity` acted upon
@@ -105,6 +152,100 @@ class DatabaseToolsClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_database_tools_identity(database_tools_identity_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def add_database_tools_mcp_server_lock_and_wait_for_state(self, database_tools_mcp_server_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_mcp_server_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsMcpServer` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_mcp_server_id: (required)
+            The `OCID`__ of a Database Tools MCP server.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsMcpServer.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_mcp_server_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_database_tools_mcp_server_lock(database_tools_mcp_server_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_mcp_server_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_mcp_server(database_tools_mcp_server_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def add_database_tools_mcp_toolset_lock_and_wait_for_state(self, database_tools_mcp_toolset_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_mcp_toolset_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsMcpToolset` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_mcp_toolset_id: (required)
+            The `OCID`__ of a Database Tools MCP Toolset.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsMcpToolset.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_mcp_toolset_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_database_tools_mcp_toolset_lock(database_tools_mcp_toolset_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_mcp_toolset_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_mcp_toolset(database_tools_mcp_toolset_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -163,6 +304,94 @@ class DatabaseToolsClientCompositeOperations(object):
                 e.args = ('',)
             e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def add_database_tools_sql_report_lock_and_wait_for_state(self, database_tools_sql_report_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_sql_report_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsSqlReport` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_sql_report_id: (required)
+            The `OCID`__ of a Database Tools SQL Report.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsSqlReport.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.add_database_tools_sql_report_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_database_tools_sql_report_lock(database_tools_sql_report_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_sql_report_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_sql_report(database_tools_sql_report_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def cascading_delete_database_tools_mcp_server_and_wait_for_state(self, database_tools_mcp_server_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.cascading_delete_database_tools_mcp_server` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_tools_mcp_server_id: (required)
+            The `OCID`__ of a Database Tools MCP server.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.cascading_delete_database_tools_mcp_server`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.cascading_delete_database_tools_mcp_server(database_tools_mcp_server_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -234,6 +463,50 @@ class DatabaseToolsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.change_database_tools_identity_compartment(database_tools_identity_id, change_database_tools_identity_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_database_tools_mcp_server_compartment_and_wait_for_state(self, database_tools_mcp_server_id, change_database_tools_mcp_server_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.change_database_tools_mcp_server_compartment` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_tools_mcp_server_id: (required)
+            The `OCID`__ of a Database Tools MCP server.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.ChangeDatabaseToolsMcpServerCompartmentDetails change_database_tools_mcp_server_compartment_details: (required)
+            Request to change the compartment of the Database Tools MCP server.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.change_database_tools_mcp_server_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_database_tools_mcp_server_compartment(database_tools_mcp_server_id, change_database_tools_mcp_server_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -337,6 +610,48 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_database_tools_database_api_gateway_config_and_wait_for_state(self, create_database_tools_database_api_gateway_config_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_database_api_gateway_config` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig` acted upon
+        to enter the given state(s).
+
+        :param oci.database_tools.models.CreateDatabaseToolsDatabaseApiGatewayConfigDetails create_database_tools_database_api_gateway_config_details: (required)
+            Details for the new Database Tools database API gateway config.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_database_api_gateway_config`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_database_tools_database_api_gateway_config(create_database_tools_database_api_gateway_config_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_database_api_gateway_config_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_database_tools_identity_and_wait_for_state(self, create_database_tools_identity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_identity` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
@@ -376,6 +691,84 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_database_tools_mcp_server_and_wait_for_state(self, create_database_tools_mcp_server_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_mcp_server` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.database_tools.models.CreateDatabaseToolsMcpServerDetails create_database_tools_mcp_server_details: (required)
+            Details for the new Database Tools MCP server.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_mcp_server`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_database_tools_mcp_server(create_database_tools_mcp_server_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_database_tools_mcp_toolset_and_wait_for_state(self, create_database_tools_mcp_toolset_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_mcp_toolset` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.database_tools.models.CreateDatabaseToolsMcpToolsetDetails create_database_tools_mcp_toolset_details: (required)
+            Details for the new Database Tools MCP Toolset.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_mcp_toolset`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_database_tools_mcp_toolset(create_database_tools_mcp_toolset_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_database_tools_private_endpoint_and_wait_for_state(self, create_database_tools_private_endpoint_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_private_endpoint` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
@@ -395,6 +788,45 @@ class DatabaseToolsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_database_tools_private_endpoint(create_database_tools_private_endpoint_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_database_tools_sql_report_and_wait_for_state(self, create_database_tools_sql_report_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_sql_report` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.database_tools.models.CreateDatabaseToolsSqlReportDetails create_database_tools_sql_report_details: (required)
+            Details for the new Database Tools Sql Report.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.create_database_tools_sql_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_database_tools_sql_report(create_database_tools_sql_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -464,6 +896,67 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_database_tools_database_api_gateway_config_and_wait_for_state(self, database_tools_database_api_gateway_config_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_database_api_gateway_config` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_database_api_gateway_config_id: (required)
+            The `OCID`__ of a Database Tools database API gateway config.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_database_api_gateway_config`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
+                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_database_tools_database_api_gateway_config, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
+            else:
+                """
+                If the user does not send in this value, we set it to True by default.
+                We are doing this because during a delete resource scenario and waiting on its state, the service can
+                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
+                """
+                waiter_kwargs["succeed_on_not_found"] = True
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_database_tools_identity_and_wait_for_state(self, database_tools_identity_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_identity` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
@@ -487,6 +980,104 @@ class DatabaseToolsClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_database_tools_identity(database_tools_identity_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_database_tools_mcp_server_and_wait_for_state(self, database_tools_mcp_server_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_mcp_server` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_tools_mcp_server_id: (required)
+            The `OCID`__ of a Database Tools MCP server.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_mcp_server`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_database_tools_mcp_server(database_tools_mcp_server_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_database_tools_mcp_toolset_and_wait_for_state(self, database_tools_mcp_toolset_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_mcp_toolset` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_tools_mcp_toolset_id: (required)
+            The `OCID`__ of a Database Tools MCP Toolset.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_mcp_toolset`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_database_tools_mcp_toolset(database_tools_mcp_toolset_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -559,6 +1150,67 @@ class DatabaseToolsClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_database_tools_sql_report_and_wait_for_state(self, database_tools_sql_report_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_sql_report` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsSqlReport` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_sql_report_id: (required)
+            The `OCID`__ of a Database Tools SQL Report.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsSqlReport.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.delete_database_tools_sql_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_database_tools_sql_report(database_tools_sql_report_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_database_tools_sql_report(database_tools_sql_report_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
+                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_database_tools_sql_report, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
+            else:
+                """
+                If the user does not send in this value, we set it to True by default.
+                We are doing this because during a delete resource scenario and waiting on its state, the service can
+                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
+                """
+                waiter_kwargs["succeed_on_not_found"] = True
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -653,6 +1305,53 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def remove_database_tools_database_api_gateway_config_lock_and_wait_for_state(self, database_tools_database_api_gateway_config_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_database_api_gateway_config_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_database_api_gateway_config_id: (required)
+            The `OCID`__ of a Database Tools database API gateway config.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_database_api_gateway_config_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_database_tools_database_api_gateway_config_lock(database_tools_database_api_gateway_config_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_database_api_gateway_config_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def remove_database_tools_identity_lock_and_wait_for_state(self, database_tools_identity_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_identity_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsIdentity` acted upon
@@ -686,6 +1385,100 @@ class DatabaseToolsClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_database_tools_identity(database_tools_identity_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_database_tools_mcp_server_lock_and_wait_for_state(self, database_tools_mcp_server_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_mcp_server_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsMcpServer` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_mcp_server_id: (required)
+            The `OCID`__ of a Database Tools MCP server.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsMcpServer.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_mcp_server_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_database_tools_mcp_server_lock(database_tools_mcp_server_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_mcp_server_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_mcp_server(database_tools_mcp_server_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_database_tools_mcp_toolset_lock_and_wait_for_state(self, database_tools_mcp_toolset_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_mcp_toolset_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsMcpToolset` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_mcp_toolset_id: (required)
+            The `OCID`__ of a Database Tools MCP Toolset.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsMcpToolset.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_mcp_toolset_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_database_tools_mcp_toolset_lock(database_tools_mcp_toolset_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_mcp_toolset_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_mcp_toolset(database_tools_mcp_toolset_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -747,6 +1540,53 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def remove_database_tools_sql_report_lock_and_wait_for_state(self, database_tools_sql_report_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_sql_report_lock` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsSqlReport` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_sql_report_id: (required)
+            The `OCID`__ of a Database Tools SQL Report.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsSqlReport.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.remove_database_tools_sql_report_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_database_tools_sql_report_lock(database_tools_sql_report_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_sql_report_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_sql_report(database_tools_sql_report_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_database_tools_connection_and_wait_for_state(self, database_tools_connection_id, update_database_tools_connection_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_connection` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
@@ -791,6 +1631,53 @@ class DatabaseToolsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_database_tools_database_api_gateway_config_and_wait_for_state(self, database_tools_database_api_gateway_config_id, update_database_tools_database_api_gateway_config_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_database_api_gateway_config` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_database_api_gateway_config_id: (required)
+            The `OCID`__ of a Database Tools database API gateway config.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.UpdateDatabaseToolsDatabaseApiGatewayConfigDetails update_database_tools_database_api_gateway_config_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_database_api_gateway_config`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id, update_database_tools_database_api_gateway_config_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_database_api_gateway_config_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_database_api_gateway_config(database_tools_database_api_gateway_config_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_database_tools_identity_and_wait_for_state(self, database_tools_identity_id, update_database_tools_identity_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_identity` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
@@ -815,6 +1702,94 @@ class DatabaseToolsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_database_tools_identity(database_tools_identity_id, update_database_tools_identity_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_database_tools_mcp_server_and_wait_for_state(self, database_tools_mcp_server_id, update_database_tools_mcp_server_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_mcp_server` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_tools_mcp_server_id: (required)
+            The `OCID`__ of a Database Tools MCP server.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.UpdateDatabaseToolsMcpServerDetails update_database_tools_mcp_server_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_mcp_server`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_database_tools_mcp_server(database_tools_mcp_server_id, update_database_tools_mcp_server_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_database_tools_mcp_toolset_and_wait_for_state(self, database_tools_mcp_toolset_id, update_database_tools_mcp_toolset_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_mcp_toolset` and waits for the :py:class:`~oci.database_tools.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_tools_mcp_toolset_id: (required)
+            The `OCID`__ of a Database Tools MCP Toolset.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.UpdateDatabaseToolsMcpToolsetDetails update_database_tools_mcp_toolset_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_mcp_toolset`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_database_tools_mcp_toolset(database_tools_mcp_toolset_id, update_database_tools_mcp_toolset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -876,5 +1851,52 @@ class DatabaseToolsClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_database_tools_sql_report_and_wait_for_state(self, database_tools_sql_report_id, update_database_tools_sql_report_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_sql_report` and waits for the :py:class:`~oci.database_tools.models.DatabaseToolsSqlReport` acted upon
+        to enter the given state(s).
+
+        :param str database_tools_sql_report_id: (required)
+            The `OCID`__ of a Database Tools SQL Report.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_tools.models.UpdateDatabaseToolsSqlReportDetails update_database_tools_sql_report_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.DatabaseToolsSqlReport.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_tools.DatabaseToolsClient.update_database_tools_sql_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_database_tools_sql_report(database_tools_sql_report_id, update_database_tools_sql_report_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        database_tools_sql_report_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_database_tools_sql_report(database_tools_sql_report_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)

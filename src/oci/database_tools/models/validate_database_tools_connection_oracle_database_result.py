@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsConnectionResult):
     """
-    Connection validaton result for the Oracle Database.
+    Connection validation result for the Oracle Database.
     """
 
     #: A constant which can be used with the dbms_cloud_status property of a ValidateDatabaseToolsConnectionOracleDatabaseResult.
@@ -59,6 +59,26 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             The value to assign to the database_version property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
         :type database_version: str
 
+        :param current_schema:
+            The value to assign to the current_schema property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type current_schema: str
+
+        :param session_user:
+            The value to assign to the session_user property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type session_user: str
+
+        :param proxy_user:
+            The value to assign to the proxy_user property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type proxy_user: str
+
+        :param authenticated_identity:
+            The value to assign to the authenticated_identity property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type authenticated_identity: str
+
+        :param authentication_method:
+            The value to assign to the authentication_method property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type authentication_method: str
+
         :param dbms_cloud_status:
             The value to assign to the dbms_cloud_status property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
             Allowed values for this property are: "AVAILABLE", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
@@ -73,6 +93,18 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             The value to assign to the database_tools_identity_statuses property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
         :type database_tools_identity_statuses: list[oci.database_tools.models.ValidationIdentityStatus]
 
+        :param enterprise_identity:
+            The value to assign to the enterprise_identity property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type enterprise_identity: str
+
+        :param proxy_enterprise_identity:
+            The value to assign to the proxy_enterprise_identity property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type proxy_enterprise_identity: str
+
+        :param external_authentication_statuses:
+            The value to assign to the external_authentication_statuses property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type external_authentication_statuses: list[oci.database_tools.models.ValidationExternalAuthenticationStatus]
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -82,9 +114,17 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             'action': 'str',
             'database_name': 'str',
             'database_version': 'str',
+            'current_schema': 'str',
+            'session_user': 'str',
+            'proxy_user': 'str',
+            'authenticated_identity': 'str',
+            'authentication_method': 'str',
             'dbms_cloud_status': 'str',
             'cloud_service': 'str',
-            'database_tools_identity_statuses': 'list[ValidationIdentityStatus]'
+            'database_tools_identity_statuses': 'list[ValidationIdentityStatus]',
+            'enterprise_identity': 'str',
+            'proxy_enterprise_identity': 'str',
+            'external_authentication_statuses': 'list[ValidationExternalAuthenticationStatus]'
         }
         self.attribute_map = {
             'type': 'type',
@@ -94,9 +134,17 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             'action': 'action',
             'database_name': 'databaseName',
             'database_version': 'databaseVersion',
+            'current_schema': 'currentSchema',
+            'session_user': 'sessionUser',
+            'proxy_user': 'proxyUser',
+            'authenticated_identity': 'authenticatedIdentity',
+            'authentication_method': 'authenticationMethod',
             'dbms_cloud_status': 'dbmsCloudStatus',
             'cloud_service': 'cloudService',
-            'database_tools_identity_statuses': 'databaseToolsIdentityStatuses'
+            'database_tools_identity_statuses': 'databaseToolsIdentityStatuses',
+            'enterprise_identity': 'enterpriseIdentity',
+            'proxy_enterprise_identity': 'proxyEnterpriseIdentity',
+            'external_authentication_statuses': 'externalAuthenticationStatuses'
         }
         self._type = None
         self._code = None
@@ -105,9 +153,17 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         self._action = None
         self._database_name = None
         self._database_version = None
+        self._current_schema = None
+        self._session_user = None
+        self._proxy_user = None
+        self._authenticated_identity = None
+        self._authentication_method = None
         self._dbms_cloud_status = None
         self._cloud_service = None
         self._database_tools_identity_statuses = None
+        self._enterprise_identity = None
+        self._proxy_enterprise_identity = None
+        self._external_authentication_statuses = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -157,6 +213,126 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         :type: str
         """
         self._database_version = database_version
+
+    @property
+    def current_schema(self):
+        """
+        Gets the current_schema of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        The name of the currently active default schema.
+
+
+        :return: The current_schema of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._current_schema
+
+    @current_schema.setter
+    def current_schema(self, current_schema):
+        """
+        Sets the current_schema of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        The name of the currently active default schema.
+
+
+        :param current_schema: The current_schema of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._current_schema = current_schema
+
+    @property
+    def session_user(self):
+        """
+        Gets the session_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        The name of the session user (the user who logged on).
+
+
+        :return: The session_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._session_user
+
+    @session_user.setter
+    def session_user(self, session_user):
+        """
+        Sets the session_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        The name of the session user (the user who logged on).
+
+
+        :param session_user: The session_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._session_user = session_user
+
+    @property
+    def proxy_user(self):
+        """
+        Gets the proxy_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Name of the database user who opened the current session on behalf of sessionUser.
+
+
+        :return: The proxy_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._proxy_user
+
+    @proxy_user.setter
+    def proxy_user(self, proxy_user):
+        """
+        Sets the proxy_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Name of the database user who opened the current session on behalf of sessionUser.
+
+
+        :param proxy_user: The proxy_user of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._proxy_user = proxy_user
+
+    @property
+    def authenticated_identity(self):
+        """
+        Gets the authenticated_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Returns the identity used in authentication.
+
+
+        :return: The authenticated_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._authenticated_identity
+
+    @authenticated_identity.setter
+    def authenticated_identity(self, authenticated_identity):
+        """
+        Sets the authenticated_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Returns the identity used in authentication.
+
+
+        :param authenticated_identity: The authenticated_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._authenticated_identity = authenticated_identity
+
+    @property
+    def authentication_method(self):
+        """
+        Gets the authentication_method of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Returns the method of authentication.
+
+
+        :return: The authentication_method of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._authentication_method
+
+    @authentication_method.setter
+    def authentication_method(self, authentication_method):
+        """
+        Sets the authentication_method of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Returns the method of authentication.
+
+
+        :param authentication_method: The authentication_method of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._authentication_method = authentication_method
 
     @property
     def dbms_cloud_status(self):
@@ -235,6 +411,78 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         :type: list[oci.database_tools.models.ValidationIdentityStatus]
         """
         self._database_tools_identity_statuses = database_tools_identity_statuses
+
+    @property
+    def enterprise_identity(self):
+        """
+        Gets the enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Displays the enterprise identity value within the USERENV context
+
+
+        :return: The enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._enterprise_identity
+
+    @enterprise_identity.setter
+    def enterprise_identity(self, enterprise_identity):
+        """
+        Sets the enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Displays the enterprise identity value within the USERENV context
+
+
+        :param enterprise_identity: The enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._enterprise_identity = enterprise_identity
+
+    @property
+    def proxy_enterprise_identity(self):
+        """
+        Gets the proxy_enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Displays the proxy enterprise identity value within the USERENV context
+
+
+        :return: The proxy_enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._proxy_enterprise_identity
+
+    @proxy_enterprise_identity.setter
+    def proxy_enterprise_identity(self, proxy_enterprise_identity):
+        """
+        Sets the proxy_enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Displays the proxy enterprise identity value within the USERENV context
+
+
+        :param proxy_enterprise_identity: The proxy_enterprise_identity of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._proxy_enterprise_identity = proxy_enterprise_identity
+
+    @property
+    def external_authentication_statuses(self):
+        """
+        Gets the external_authentication_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Status on whether an external authentication can be used with this connection or not.
+
+
+        :return: The external_authentication_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: list[oci.database_tools.models.ValidationExternalAuthenticationStatus]
+        """
+        return self._external_authentication_statuses
+
+    @external_authentication_statuses.setter
+    def external_authentication_statuses(self, external_authentication_statuses):
+        """
+        Sets the external_authentication_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Status on whether an external authentication can be used with this connection or not.
+
+
+        :param external_authentication_statuses: The external_authentication_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: list[oci.database_tools.models.ValidationExternalAuthenticationStatus]
+        """
+        self._external_authentication_statuses = external_authentication_statuses
 
     def __repr__(self):
         return formatted_flat_dict(self)

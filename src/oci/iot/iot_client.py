@@ -3447,6 +3447,11 @@ class IotClient(object):
         :param str digital_twin_model_spec_uri: (optional)
             Filter resources that match the specified URI (DTMI) of the digital twin model.
 
+        :param str connectivity_type: (optional)
+            Filter resources whose connectivityType matches the specified value.
+
+            Allowed values are: "DIRECT", "INDIRECT", "GATEWAY", "NONE"
+
         :param str id: (optional)
             Filter resources by `OCID`__. Must be a valid OCID of the resource type.
 
@@ -3495,6 +3500,7 @@ class IotClient(object):
             "opc_request_id",
             "digital_twin_model_id",
             "digital_twin_model_spec_uri",
+            "connectivity_type",
             "id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3523,6 +3529,13 @@ class IotClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'connectivity_type' in kwargs:
+            connectivity_type_allowed_values = ["DIRECT", "INDIRECT", "GATEWAY", "NONE"]
+            if kwargs['connectivity_type'] not in connectivity_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `connectivity_type`, must be one of { connectivity_type_allowed_values }"
+                )
+
         query_params = {
             "displayName": kwargs.get("display_name", missing),
             "limit": kwargs.get("limit", missing),
@@ -3532,6 +3545,7 @@ class IotClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "digitalTwinModelId": kwargs.get("digital_twin_model_id", missing),
             "digitalTwinModelSpecUri": kwargs.get("digital_twin_model_spec_uri", missing),
+            "connectivityType": kwargs.get("connectivity_type", missing),
             "iotDomainId": iot_domain_id,
             "id": kwargs.get("id", missing)
         }

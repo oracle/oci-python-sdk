@@ -15,6 +15,14 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     Database Tools connection of an Oracle Database.
     """
 
+    #: A constant which can be used with the authentication_type property of a DatabaseToolsConnectionOracleDatabase.
+    #: This constant has a value of "TOKEN"
+    AUTHENTICATION_TYPE_TOKEN = "TOKEN"
+
+    #: A constant which can be used with the authentication_type property of a DatabaseToolsConnectionOracleDatabase.
+    #: This constant has a value of "PASSWORD"
+    AUTHENTICATION_TYPE_PASSWORD = "PASSWORD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseToolsConnectionOracleDatabase object with values from keyword arguments. The default value of the :py:attr:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabase.type` attribute
@@ -35,7 +43,8 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseToolsConnectionOracleDatabase.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -68,12 +77,14 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
 
         :param type:
             The value to assign to the type property of this DatabaseToolsConnectionOracleDatabase.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param runtime_support:
             The value to assign to the runtime_support property of this DatabaseToolsConnectionOracleDatabase.
-            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type runtime_support: str
 
         :param runtime_endpoint:
@@ -82,7 +93,8 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
 
         :param runtime_identity:
             The value to assign to the runtime_identity property of this DatabaseToolsConnectionOracleDatabase.
-            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type runtime_identity: str
 
         :param related_resource:
@@ -117,6 +129,12 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
             The value to assign to the proxy_client property of this DatabaseToolsConnectionOracleDatabase.
         :type proxy_client: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClient
 
+        :param authentication_type:
+            The value to assign to the authentication_type property of this DatabaseToolsConnectionOracleDatabase.
+            Allowed values for this property are: "TOKEN", "PASSWORD", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type authentication_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -141,7 +159,8 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStore]',
             'private_endpoint_id': 'str',
-            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClient'
+            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClient',
+            'authentication_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -166,7 +185,8 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores',
             'private_endpoint_id': 'privateEndpointId',
-            'proxy_client': 'proxyClient'
+            'proxy_client': 'proxyClient',
+            'authentication_type': 'authenticationType'
         }
         self._id = None
         self._display_name = None
@@ -191,6 +211,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
         self._key_stores = None
         self._private_endpoint_id = None
         self._proxy_client = None
+        self._authentication_type = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -241,7 +262,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def user_name(self):
         """
         Gets the user_name of this DatabaseToolsConnectionOracleDatabase.
-        The database user name.
+        The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 
 
         :return: The user_name of this DatabaseToolsConnectionOracleDatabase.
@@ -253,7 +274,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def user_name(self, user_name):
         """
         Sets the user_name of this DatabaseToolsConnectionOracleDatabase.
-        The database user name.
+        The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 
 
         :param user_name: The user_name of this DatabaseToolsConnectionOracleDatabase.
@@ -378,6 +399,36 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
         :type: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClient
         """
         self._proxy_client = proxy_client
+
+    @property
+    def authentication_type(self):
+        """
+        **[Required]** Gets the authentication_type of this DatabaseToolsConnectionOracleDatabase.
+        Specifies the authentication type used to connect to the database.
+
+        Allowed values for this property are: "TOKEN", "PASSWORD", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The authentication_type of this DatabaseToolsConnectionOracleDatabase.
+        :rtype: str
+        """
+        return self._authentication_type
+
+    @authentication_type.setter
+    def authentication_type(self, authentication_type):
+        """
+        Sets the authentication_type of this DatabaseToolsConnectionOracleDatabase.
+        Specifies the authentication type used to connect to the database.
+
+
+        :param authentication_type: The authentication_type of this DatabaseToolsConnectionOracleDatabase.
+        :type: str
+        """
+        allowed_values = ["TOKEN", "PASSWORD"]
+        if not value_allowed_none_or_none_sentinel(authentication_type, allowed_values):
+            authentication_type = 'UNKNOWN_ENUM_VALUE'
+        self._authentication_type = authentication_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

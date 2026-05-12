@@ -15,6 +15,22 @@ class CreateDigitalTwinInstanceDetails(object):
     The information about new digital twin instance to be created.
     """
 
+    #: A constant which can be used with the connectivity_type property of a CreateDigitalTwinInstanceDetails.
+    #: This constant has a value of "DIRECT"
+    CONNECTIVITY_TYPE_DIRECT = "DIRECT"
+
+    #: A constant which can be used with the connectivity_type property of a CreateDigitalTwinInstanceDetails.
+    #: This constant has a value of "INDIRECT"
+    CONNECTIVITY_TYPE_INDIRECT = "INDIRECT"
+
+    #: A constant which can be used with the connectivity_type property of a CreateDigitalTwinInstanceDetails.
+    #: This constant has a value of "GATEWAY"
+    CONNECTIVITY_TYPE_GATEWAY = "GATEWAY"
+
+    #: A constant which can be used with the connectivity_type property of a CreateDigitalTwinInstanceDetails.
+    #: This constant has a value of "NONE"
+    CONNECTIVITY_TYPE_NONE = "NONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDigitalTwinInstanceDetails object with values from keyword arguments.
@@ -23,6 +39,11 @@ class CreateDigitalTwinInstanceDetails(object):
         :param iot_domain_id:
             The value to assign to the iot_domain_id property of this CreateDigitalTwinInstanceDetails.
         :type iot_domain_id: str
+
+        :param connectivity_type:
+            The value to assign to the connectivity_type property of this CreateDigitalTwinInstanceDetails.
+            Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE"
+        :type connectivity_type: str
 
         :param auth_id:
             The value to assign to the auth_id property of this CreateDigitalTwinInstanceDetails.
@@ -52,6 +73,10 @@ class CreateDigitalTwinInstanceDetails(object):
             The value to assign to the digital_twin_model_spec_uri property of this CreateDigitalTwinInstanceDetails.
         :type digital_twin_model_spec_uri: str
 
+        :param gateways:
+            The value to assign to the gateways property of this CreateDigitalTwinInstanceDetails.
+        :type gateways: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDigitalTwinInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -63,6 +88,7 @@ class CreateDigitalTwinInstanceDetails(object):
         """
         self.swagger_types = {
             'iot_domain_id': 'str',
+            'connectivity_type': 'str',
             'auth_id': 'str',
             'external_key': 'str',
             'display_name': 'str',
@@ -70,11 +96,13 @@ class CreateDigitalTwinInstanceDetails(object):
             'digital_twin_adapter_id': 'str',
             'digital_twin_model_id': 'str',
             'digital_twin_model_spec_uri': 'str',
+            'gateways': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'iot_domain_id': 'iotDomainId',
+            'connectivity_type': 'connectivityType',
             'auth_id': 'authId',
             'external_key': 'externalKey',
             'display_name': 'displayName',
@@ -82,10 +110,12 @@ class CreateDigitalTwinInstanceDetails(object):
             'digital_twin_adapter_id': 'digitalTwinAdapterId',
             'digital_twin_model_id': 'digitalTwinModelId',
             'digital_twin_model_spec_uri': 'digitalTwinModelSpecUri',
+            'gateways': 'gateways',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._iot_domain_id = None
+        self._connectivity_type = None
         self._auth_id = None
         self._external_key = None
         self._display_name = None
@@ -93,6 +123,7 @@ class CreateDigitalTwinInstanceDetails(object):
         self._digital_twin_adapter_id = None
         self._digital_twin_model_id = None
         self._digital_twin_model_spec_uri = None
+        self._gateways = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -123,6 +154,37 @@ class CreateDigitalTwinInstanceDetails(object):
         :type: str
         """
         self._iot_domain_id = iot_domain_id
+
+    @property
+    def connectivity_type(self):
+        """
+        Gets the connectivity_type of this CreateDigitalTwinInstanceDetails.
+        Connectivity type of the digital twin instance
+
+        Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE"
+
+
+        :return: The connectivity_type of this CreateDigitalTwinInstanceDetails.
+        :rtype: str
+        """
+        return self._connectivity_type
+
+    @connectivity_type.setter
+    def connectivity_type(self, connectivity_type):
+        """
+        Sets the connectivity_type of this CreateDigitalTwinInstanceDetails.
+        Connectivity type of the digital twin instance
+
+
+        :param connectivity_type: The connectivity_type of this CreateDigitalTwinInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["DIRECT", "INDIRECT", "GATEWAY", "NONE"]
+        if not value_allowed_none_or_none_sentinel(connectivity_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `connectivity_type`, must be None or one of {allowed_values}"
+            )
+        self._connectivity_type = connectivity_type
 
     @property
     def auth_id(self):
@@ -307,6 +369,34 @@ class CreateDigitalTwinInstanceDetails(object):
         :type: str
         """
         self._digital_twin_model_spec_uri = digital_twin_model_spec_uri
+
+    @property
+    def gateways(self):
+        """
+        Gets the gateways of this CreateDigitalTwinInstanceDetails.
+        An array of unique ids (`OCIDs`__) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gateways of this CreateDigitalTwinInstanceDetails.
+        :rtype: list[str]
+        """
+        return self._gateways
+
+    @gateways.setter
+    def gateways(self, gateways):
+        """
+        Sets the gateways of this CreateDigitalTwinInstanceDetails.
+        An array of unique ids (`OCIDs`__) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param gateways: The gateways of this CreateDigitalTwinInstanceDetails.
+        :type: list[str]
+        """
+        self._gateways = gateways
 
     @property
     def freeform_tags(self):

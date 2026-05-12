@@ -20,6 +20,10 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientDetails(object):
     PROXY_AUTHENTICATION_TYPE_USER_NAME = "USER_NAME"
 
     #: A constant which can be used with the proxy_authentication_type property of a DatabaseToolsConnectionOracleDatabaseProxyClientDetails.
+    #: This constant has a value of "USER_NAME_AUTO_DETECT"
+    PROXY_AUTHENTICATION_TYPE_USER_NAME_AUTO_DETECT = "USER_NAME_AUTO_DETECT"
+
+    #: A constant which can be used with the proxy_authentication_type property of a DatabaseToolsConnectionOracleDatabaseProxyClientDetails.
     #: This constant has a value of "NO_PROXY"
     PROXY_AUTHENTICATION_TYPE_NO_PROXY = "NO_PROXY"
 
@@ -29,13 +33,14 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameDetails`
+        * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectDetails`
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientNoProxyDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param proxy_authentication_type:
             The value to assign to the proxy_authentication_type property of this DatabaseToolsConnectionOracleDatabaseProxyClientDetails.
-            Allowed values for this property are: "USER_NAME", "NO_PROXY"
+            Allowed values for this property are: "USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY"
         :type proxy_authentication_type: str
 
         """
@@ -58,6 +63,9 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientDetails(object):
         if type == 'USER_NAME':
             return 'DatabaseToolsConnectionOracleDatabaseProxyClientUserNameDetails'
 
+        if type == 'USER_NAME_AUTO_DETECT':
+            return 'DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectDetails'
+
         if type == 'NO_PROXY':
             return 'DatabaseToolsConnectionOracleDatabaseProxyClientNoProxyDetails'
         else:
@@ -69,7 +77,7 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientDetails(object):
         **[Required]** Gets the proxy_authentication_type of this DatabaseToolsConnectionOracleDatabaseProxyClientDetails.
         The proxy authentication type.
 
-        Allowed values for this property are: "USER_NAME", "NO_PROXY"
+        Allowed values for this property are: "USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY"
 
 
         :return: The proxy_authentication_type of this DatabaseToolsConnectionOracleDatabaseProxyClientDetails.
@@ -87,7 +95,7 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientDetails(object):
         :param proxy_authentication_type: The proxy_authentication_type of this DatabaseToolsConnectionOracleDatabaseProxyClientDetails.
         :type: str
         """
-        allowed_values = ["USER_NAME", "NO_PROXY"]
+        allowed_values = ["USER_NAME", "USER_NAME_AUTO_DETECT", "NO_PROXY"]
         if not value_allowed_none_or_none_sentinel(proxy_authentication_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `proxy_authentication_type`, must be None or one of {allowed_values}"

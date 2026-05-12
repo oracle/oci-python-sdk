@@ -20,19 +20,35 @@ Database Tools
 
     oci.database_tools.models.AddResourceLockDetails
     oci.database_tools.models.ChangeDatabaseToolsConnectionCompartmentDetails
+    oci.database_tools.models.ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentDetails
     oci.database_tools.models.ChangeDatabaseToolsIdentityCompartmentDetails
+    oci.database_tools.models.ChangeDatabaseToolsMcpServerCompartmentDetails
+    oci.database_tools.models.ChangeDatabaseToolsMcpToolsetCompartmentDetails
     oci.database_tools.models.ChangeDatabaseToolsPrivateEndpointCompartmentDetails
+    oci.database_tools.models.ChangeDatabaseToolsSqlReportCompartmentDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionGenericJdbcDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionMySqlDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails
     oci.database_tools.models.CreateDatabaseToolsConnectionPostgresqlDetails
+    oci.database_tools.models.CreateDatabaseToolsDatabaseApiGatewayConfigDefaultDetails
+    oci.database_tools.models.CreateDatabaseToolsDatabaseApiGatewayConfigDetails
     oci.database_tools.models.CreateDatabaseToolsIdentityDetails
     oci.database_tools.models.CreateDatabaseToolsIdentityOracleDatabaseResourcePrincipalDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpServerDefaultDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpServerDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpToolsetBuiltInSqlToolsDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpToolsetCustomSqlToolDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpToolsetCustomizableReportingToolsDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpToolsetDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpToolsetGenAiSqlAssistantDetails
+    oci.database_tools.models.CreateDatabaseToolsMcpToolsetToolDetails
     oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails
     oci.database_tools.models.CreateDatabaseToolsRelatedResourceDetails
     oci.database_tools.models.CreateDatabaseToolsRelatedResourceMySqlDetails
     oci.database_tools.models.CreateDatabaseToolsRelatedResourcePostgresqlDetails
+    oci.database_tools.models.CreateDatabaseToolsSqlReportDetails
+    oci.database_tools.models.CreateDatabaseToolsSqlReportOracleDatabaseDetails
     oci.database_tools.models.DatabaseToolsConnection
     oci.database_tools.models.DatabaseToolsConnectionCollection
     oci.database_tools.models.DatabaseToolsConnectionGenericJdbc
@@ -47,12 +63,21 @@ Database Tools
     oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientNoProxySummary
     oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientSummary
     oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserName
+    oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetect
+    oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectDetails
+    oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameAutoDetectSummary
     oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameDetails
     oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientUserNameSummary
     oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseSummary
     oci.database_tools.models.DatabaseToolsConnectionPostgresql
     oci.database_tools.models.DatabaseToolsConnectionPostgresqlSummary
     oci.database_tools.models.DatabaseToolsConnectionSummary
+    oci.database_tools.models.DatabaseToolsCustomSqlToolToolsetSource
+    oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfig
+    oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfigCollection
+    oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfigDefault
+    oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfigDefaultSummary
+    oci.database_tools.models.DatabaseToolsDatabaseApiGatewayConfigSummary
     oci.database_tools.models.DatabaseToolsEndpointService
     oci.database_tools.models.DatabaseToolsEndpointServiceCollection
     oci.database_tools.models.DatabaseToolsEndpointServiceSummary
@@ -121,6 +146,44 @@ Database Tools
     oci.database_tools.models.DatabaseToolsKeyStorePostgresqlDetails
     oci.database_tools.models.DatabaseToolsKeyStorePostgresqlSummary
     oci.database_tools.models.DatabaseToolsKeyStoreSummary
+    oci.database_tools.models.DatabaseToolsMcpServer
+    oci.database_tools.models.DatabaseToolsMcpServerBuiltInRole
+    oci.database_tools.models.DatabaseToolsMcpServerCollection
+    oci.database_tools.models.DatabaseToolsMcpServerCustomRole
+    oci.database_tools.models.DatabaseToolsMcpServerDefault
+    oci.database_tools.models.DatabaseToolsMcpServerEndpoint
+    oci.database_tools.models.DatabaseToolsMcpServerRelatedResource
+    oci.database_tools.models.DatabaseToolsMcpServerStorage
+    oci.database_tools.models.DatabaseToolsMcpServerStorageNone
+    oci.database_tools.models.DatabaseToolsMcpServerStorageObjectStorage
+    oci.database_tools.models.DatabaseToolsMcpServerStorageObjectStorageBucket
+    oci.database_tools.models.DatabaseToolsMcpServerSummary
+    oci.database_tools.models.DatabaseToolsMcpServerSummaryDefault
+    oci.database_tools.models.DatabaseToolsMcpToolset
+    oci.database_tools.models.DatabaseToolsMcpToolsetBuiltInSqlTools
+    oci.database_tools.models.DatabaseToolsMcpToolsetBuiltInSqlToolsSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetBuiltInSqlToolsVersion
+    oci.database_tools.models.DatabaseToolsMcpToolsetCollection
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomSqlTool
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomSqlToolSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomSqlToolVariable
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomSqlToolVersion
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomizableReportingTools
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomizableReportingToolsReport
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomizableReportingToolsSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetCustomizableReportingToolsVersion
+    oci.database_tools.models.DatabaseToolsMcpToolsetGenAiSqlAssistant
+    oci.database_tools.models.DatabaseToolsMcpToolsetGenAiSqlAssistantSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetGenAiSqlAssistantVersion
+    oci.database_tools.models.DatabaseToolsMcpToolsetSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetToolDetails
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionBuiltInSqlToolsSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionCollection
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionCustomSqlToolSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionCustomizableReportingToolsSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionGenAiSqlAssistantSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionSummary
+    oci.database_tools.models.DatabaseToolsMcpToolsetVersionTool
     oci.database_tools.models.DatabaseToolsPrivateEndpoint
     oci.database_tools.models.DatabaseToolsPrivateEndpointCollection
     oci.database_tools.models.DatabaseToolsPrivateEndpointReverseConnectionConfiguration
@@ -129,6 +192,13 @@ Database Tools
     oci.database_tools.models.DatabaseToolsRelatedResource
     oci.database_tools.models.DatabaseToolsRelatedResourceMySql
     oci.database_tools.models.DatabaseToolsRelatedResourcePostgresql
+    oci.database_tools.models.DatabaseToolsSqlReport
+    oci.database_tools.models.DatabaseToolsSqlReportCollection
+    oci.database_tools.models.DatabaseToolsSqlReportColumn
+    oci.database_tools.models.DatabaseToolsSqlReportOracleDatabase
+    oci.database_tools.models.DatabaseToolsSqlReportSummary
+    oci.database_tools.models.DatabaseToolsSqlReportSummaryOracleDatabase
+    oci.database_tools.models.DatabaseToolsSqlReportVariable
     oci.database_tools.models.DatabaseToolsUserPassword
     oci.database_tools.models.DatabaseToolsUserPasswordDetails
     oci.database_tools.models.DatabaseToolsUserPasswordSecretId
@@ -144,12 +214,24 @@ Database Tools
     oci.database_tools.models.UpdateDatabaseToolsConnectionMySqlDetails
     oci.database_tools.models.UpdateDatabaseToolsConnectionOracleDatabaseDetails
     oci.database_tools.models.UpdateDatabaseToolsConnectionPostgresqlDetails
+    oci.database_tools.models.UpdateDatabaseToolsDatabaseApiGatewayConfigDefaultDetails
+    oci.database_tools.models.UpdateDatabaseToolsDatabaseApiGatewayConfigDetails
     oci.database_tools.models.UpdateDatabaseToolsIdentityDetails
     oci.database_tools.models.UpdateDatabaseToolsIdentityOracleDatabaseResourcePrincipalDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpServerDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpServerDetailsDefault
+    oci.database_tools.models.UpdateDatabaseToolsMcpToolsetBuiltInSqlToolsDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpToolsetCustomSqlToolDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpToolsetCustomizableReportingToolsDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpToolsetDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpToolsetGenAiSqlAssistantDetails
+    oci.database_tools.models.UpdateDatabaseToolsMcpToolsetToolDetails
     oci.database_tools.models.UpdateDatabaseToolsPrivateEndpointDetails
     oci.database_tools.models.UpdateDatabaseToolsRelatedResourceDetails
     oci.database_tools.models.UpdateDatabaseToolsRelatedResourceMySqlDetails
     oci.database_tools.models.UpdateDatabaseToolsRelatedResourcePostgresqlDetails
+    oci.database_tools.models.UpdateDatabaseToolsSqlReportDetails
+    oci.database_tools.models.UpdateDatabaseToolsSqlReportDetailsOracleDatabase
     oci.database_tools.models.ValidateDatabaseToolsConnectionDetails
     oci.database_tools.models.ValidateDatabaseToolsConnectionMySqlDetails
     oci.database_tools.models.ValidateDatabaseToolsConnectionMySqlResult
@@ -162,6 +244,7 @@ Database Tools
     oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialOracleDatabaseResourcePrincipalDetails
     oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialOracleDatabaseResourcePrincipalResult
     oci.database_tools.models.ValidateDatabaseToolsIdentityCredentialResult
+    oci.database_tools.models.ValidationExternalAuthenticationStatus
     oci.database_tools.models.ValidationIdentityStatus
     oci.database_tools.models.WorkRequest
     oci.database_tools.models.WorkRequestCollection

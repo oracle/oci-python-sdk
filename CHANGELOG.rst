@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.174.0 - 2026-05-12
+====================
+
+Added 
+----- 
+* Support for the Database Tools Runtime service 
+* Support for multi modality models and their new capabilities in the Generative AI service  
+* Support for Indirectly Connected Devices in the OCI Internet of Things (OCI IoT) service 
+* Support for patch APIs to add and delete multiple IPv6 prefixes in the Virtual Cloud Network service 
+* Support for Model Context Protocol (MCP) servers in the Database Tools service 
+* Support for SQL reports in the Database Tools service 
+* Support for database API gateway configurations in the Database Tools service 
+* Support for Oracle database external authentication with OCI IAM and Azure Active Directory in the Database Tools service  
+
+Breaking 
+-------- 
+* Property `connectivity_type` was made required for models `DigitalTwinInstance` and `DigitalTwinInstanceSummary` in the IOT service  
+
+====================
 2.173.1 - 2026-05-05
 ====================
 

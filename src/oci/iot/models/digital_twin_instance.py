@@ -21,6 +21,22 @@ class DigitalTwinInstance(object):
     __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
+    #: A constant which can be used with the connectivity_type property of a DigitalTwinInstance.
+    #: This constant has a value of "DIRECT"
+    CONNECTIVITY_TYPE_DIRECT = "DIRECT"
+
+    #: A constant which can be used with the connectivity_type property of a DigitalTwinInstance.
+    #: This constant has a value of "INDIRECT"
+    CONNECTIVITY_TYPE_INDIRECT = "INDIRECT"
+
+    #: A constant which can be used with the connectivity_type property of a DigitalTwinInstance.
+    #: This constant has a value of "GATEWAY"
+    CONNECTIVITY_TYPE_GATEWAY = "GATEWAY"
+
+    #: A constant which can be used with the connectivity_type property of a DigitalTwinInstance.
+    #: This constant has a value of "NONE"
+    CONNECTIVITY_TYPE_NONE = "NONE"
+
     #: A constant which can be used with the lifecycle_state property of a DigitalTwinInstance.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -41,6 +57,12 @@ class DigitalTwinInstance(object):
         :param iot_domain_id:
             The value to assign to the iot_domain_id property of this DigitalTwinInstance.
         :type iot_domain_id: str
+
+        :param connectivity_type:
+            The value to assign to the connectivity_type property of this DigitalTwinInstance.
+            Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type connectivity_type: str
 
         :param auth_id:
             The value to assign to the auth_id property of this DigitalTwinInstance.
@@ -69,6 +91,10 @@ class DigitalTwinInstance(object):
         :param digital_twin_adapter_id:
             The value to assign to the digital_twin_adapter_id property of this DigitalTwinInstance.
         :type digital_twin_adapter_id: str
+
+        :param gateways:
+            The value to assign to the gateways property of this DigitalTwinInstance.
+        :type gateways: list[str]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DigitalTwinInstance.
@@ -100,6 +126,7 @@ class DigitalTwinInstance(object):
         self.swagger_types = {
             'id': 'str',
             'iot_domain_id': 'str',
+            'connectivity_type': 'str',
             'auth_id': 'str',
             'external_key': 'str',
             'display_name': 'str',
@@ -107,6 +134,7 @@ class DigitalTwinInstance(object):
             'digital_twin_model_id': 'str',
             'digital_twin_model_spec_uri': 'str',
             'digital_twin_adapter_id': 'str',
+            'gateways': 'list[str]',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -117,6 +145,7 @@ class DigitalTwinInstance(object):
         self.attribute_map = {
             'id': 'id',
             'iot_domain_id': 'iotDomainId',
+            'connectivity_type': 'connectivityType',
             'auth_id': 'authId',
             'external_key': 'externalKey',
             'display_name': 'displayName',
@@ -124,6 +153,7 @@ class DigitalTwinInstance(object):
             'digital_twin_model_id': 'digitalTwinModelId',
             'digital_twin_model_spec_uri': 'digitalTwinModelSpecUri',
             'digital_twin_adapter_id': 'digitalTwinAdapterId',
+            'gateways': 'gateways',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -133,6 +163,7 @@ class DigitalTwinInstance(object):
         }
         self._id = None
         self._iot_domain_id = None
+        self._connectivity_type = None
         self._auth_id = None
         self._external_key = None
         self._display_name = None
@@ -140,6 +171,7 @@ class DigitalTwinInstance(object):
         self._digital_twin_model_id = None
         self._digital_twin_model_spec_uri = None
         self._digital_twin_adapter_id = None
+        self._gateways = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -202,6 +234,36 @@ class DigitalTwinInstance(object):
         :type: str
         """
         self._iot_domain_id = iot_domain_id
+
+    @property
+    def connectivity_type(self):
+        """
+        **[Required]** Gets the connectivity_type of this DigitalTwinInstance.
+        Connectivity type of the digital twin instance
+
+        Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The connectivity_type of this DigitalTwinInstance.
+        :rtype: str
+        """
+        return self._connectivity_type
+
+    @connectivity_type.setter
+    def connectivity_type(self, connectivity_type):
+        """
+        Sets the connectivity_type of this DigitalTwinInstance.
+        Connectivity type of the digital twin instance
+
+
+        :param connectivity_type: The connectivity_type of this DigitalTwinInstance.
+        :type: str
+        """
+        allowed_values = ["DIRECT", "INDIRECT", "GATEWAY", "NONE"]
+        if not value_allowed_none_or_none_sentinel(connectivity_type, allowed_values):
+            connectivity_type = 'UNKNOWN_ENUM_VALUE'
+        self._connectivity_type = connectivity_type
 
     @property
     def auth_id(self):
@@ -386,6 +448,34 @@ class DigitalTwinInstance(object):
         :type: str
         """
         self._digital_twin_adapter_id = digital_twin_adapter_id
+
+    @property
+    def gateways(self):
+        """
+        Gets the gateways of this DigitalTwinInstance.
+        An array of unique ids (`OCIDs`__) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gateways of this DigitalTwinInstance.
+        :rtype: list[str]
+        """
+        return self._gateways
+
+    @gateways.setter
+    def gateways(self, gateways):
+        """
+        Sets the gateways of this DigitalTwinInstance.
+        An array of unique ids (`OCIDs`__) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param gateways: The gateways of this DigitalTwinInstance.
+        :type: list[str]
+        """
+        self._gateways = gateways
 
     @property
     def lifecycle_state(self):

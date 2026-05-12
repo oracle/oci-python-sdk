@@ -15,6 +15,14 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     Details of the new Database Tools connection for an Oracle Database.
     """
 
+    #: A constant which can be used with the authentication_type property of a CreateDatabaseToolsConnectionOracleDatabaseDetails.
+    #: This constant has a value of "TOKEN"
+    AUTHENTICATION_TYPE_TOKEN = "TOKEN"
+
+    #: A constant which can be used with the authentication_type property of a CreateDatabaseToolsConnectionOracleDatabaseDetails.
+    #: This constant has a value of "PASSWORD"
+    AUTHENTICATION_TYPE_PASSWORD = "PASSWORD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseToolsConnectionOracleDatabaseDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails.type` attribute
@@ -88,6 +96,11 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             The value to assign to the proxy_client property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         :type proxy_client: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
 
+        :param authentication_type:
+            The value to assign to the authentication_type property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+            Allowed values for this property are: "TOKEN", "PASSWORD"
+        :type authentication_type: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -105,7 +118,8 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreDetails]',
             'private_endpoint_id': 'str',
-            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientDetails'
+            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientDetails',
+            'authentication_type': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -123,7 +137,8 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores',
             'private_endpoint_id': 'privateEndpointId',
-            'proxy_client': 'proxyClient'
+            'proxy_client': 'proxyClient',
+            'authentication_type': 'authenticationType'
         }
         self._display_name = None
         self._compartment_id = None
@@ -141,6 +156,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
         self._key_stores = None
         self._private_endpoint_id = None
         self._proxy_client = None
+        self._authentication_type = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -190,7 +206,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     @property
     def user_name(self):
         """
-        **[Required]** Gets the user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        Gets the user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         The database user name.
 
 
@@ -214,7 +230,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     @property
     def user_password(self):
         """
-        **[Required]** Gets the user_password of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        Gets the user_password of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
 
         :return: The user_password of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         :rtype: oci.database_tools.models.DatabaseToolsUserPasswordDetails
@@ -328,6 +344,37 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
         :type: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
         """
         self._proxy_client = proxy_client
+
+    @property
+    def authentication_type(self):
+        """
+        Gets the authentication_type of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        Specifies the authentication type used by the Database Tools service to authenticate with the database.
+
+        Allowed values for this property are: "TOKEN", "PASSWORD"
+
+
+        :return: The authentication_type of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        :rtype: str
+        """
+        return self._authentication_type
+
+    @authentication_type.setter
+    def authentication_type(self, authentication_type):
+        """
+        Sets the authentication_type of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        Specifies the authentication type used by the Database Tools service to authenticate with the database.
+
+
+        :param authentication_type: The authentication_type of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["TOKEN", "PASSWORD"]
+        if not value_allowed_none_or_none_sentinel(authentication_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `authentication_type`, must be None or one of {allowed_values}"
+            )
+        self._authentication_type = authentication_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -7755,7 +7755,7 @@ class GenerativeAiClient(object):
         :param list[str] capability: (optional)
             A filter to return only resources their capability matches the given capability.
 
-            Allowed values are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE"
+            Allowed values are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -7843,7 +7843,7 @@ class GenerativeAiClient(object):
                 f"list_imported_models got unknown kwargs: {extra_kwargs!r}")
 
         if 'capability' in kwargs:
-            capability_allowed_values = ["TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE"]
+            capability_allowed_values = ["TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"]
             for capability_item in kwargs['capability']:
                 if capability_item not in capability_allowed_values:
                     raise ValueError(
@@ -7950,7 +7950,7 @@ class GenerativeAiClient(object):
         :param list[str] capability: (optional)
             A filter to return only resources their capability matches the given capability.
 
-            Allowed values are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE"
+            Allowed values are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -8038,7 +8038,7 @@ class GenerativeAiClient(object):
                 f"list_models got unknown kwargs: {extra_kwargs!r}")
 
         if 'capability' in kwargs:
-            capability_allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE"]
+            capability_allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"]
             for capability_item in kwargs['capability']:
                 if capability_item not in capability_allowed_values:
                     raise ValueError(
