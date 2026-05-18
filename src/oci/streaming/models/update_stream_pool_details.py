@@ -72,6 +72,10 @@ class UpdateStreamPoolDetails(object):
     def name(self):
         """
         Gets the name of this UpdateStreamPoolDetails.
+        The name of the stream pool. Avoid entering confidential information.
+
+        Example: `MyStreamPool`
+
 
         :return: The name of this UpdateStreamPoolDetails.
         :rtype: str
@@ -82,6 +86,10 @@ class UpdateStreamPoolDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateStreamPoolDetails.
+        The name of the stream pool. Avoid entering confidential information.
+
+        Example: `MyStreamPool`
+
 
         :param name: The name of this UpdateStreamPoolDetails.
         :type: str

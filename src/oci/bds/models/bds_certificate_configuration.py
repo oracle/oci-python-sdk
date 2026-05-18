@@ -35,6 +35,10 @@ class BdsCertificateConfiguration(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a BdsCertificateConfiguration.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     #: A constant which can be used with the type property of a BdsCertificateConfiguration.
     #: This constant has a value of "SELF_SIGNED"
     TYPE_SELF_SIGNED = "SELF_SIGNED"
@@ -62,7 +66,7 @@ class BdsCertificateConfiguration(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BdsCertificateConfiguration.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -213,7 +217,7 @@ class BdsCertificateConfiguration(object):
         **[Required]** Gets the lifecycle_state of this BdsCertificateConfiguration.
         The lifecycle status of the BDS certificate configuration.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -232,7 +236,7 @@ class BdsCertificateConfiguration(object):
         :param lifecycle_state: The lifecycle_state of this BdsCertificateConfiguration.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

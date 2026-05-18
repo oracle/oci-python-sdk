@@ -25,6 +25,14 @@ class ResourceAnalyticsInstanceOacAttachmentDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the capacity_type property of a ResourceAnalyticsInstanceOacAttachmentDetails.
+    #: This constant has a value of "OLPU_COUNT"
+    CAPACITY_TYPE_OLPU_COUNT = "OLPU_COUNT"
+
+    #: A constant which can be used with the capacity_type property of a ResourceAnalyticsInstanceOacAttachmentDetails.
+    #: This constant has a value of "USER_COUNT"
+    CAPACITY_TYPE_USER_COUNT = "USER_COUNT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ResourceAnalyticsInstanceOacAttachmentDetails object with values from keyword arguments.
@@ -51,26 +59,41 @@ class ResourceAnalyticsInstanceOacAttachmentDetails(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param capacity_type:
+            The value to assign to the capacity_type property of this ResourceAnalyticsInstanceOacAttachmentDetails.
+            Allowed values for this property are: "OLPU_COUNT", "USER_COUNT"
+        :type capacity_type: str
+
+        :param capacity_value:
+            The value to assign to the capacity_value property of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        :type capacity_value: int
+
         """
         self.swagger_types = {
             'idcs_domain_id': 'str',
             'network_details': 'ResourceAnalyticsInstanceOacNetworkDetails',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
-            'license_model': 'str'
+            'license_model': 'str',
+            'capacity_type': 'str',
+            'capacity_value': 'int'
         }
         self.attribute_map = {
             'idcs_domain_id': 'idcsDomainId',
             'network_details': 'networkDetails',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
-            'license_model': 'licenseModel'
+            'license_model': 'licenseModel',
+            'capacity_type': 'capacityType',
+            'capacity_value': 'capacityValue'
         }
         self._idcs_domain_id = None
         self._network_details = None
         self._subnet_id = None
         self._nsg_ids = None
         self._license_model = None
+        self._capacity_type = None
+        self._capacity_value = None
 
     @property
     def idcs_domain_id(self):
@@ -198,6 +221,61 @@ class ResourceAnalyticsInstanceOacAttachmentDetails(object):
                 f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
+
+    @property
+    def capacity_type(self):
+        """
+        Gets the capacity_type of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        The capacity model to use for the Analytics Instance.
+
+        Allowed values for this property are: "OLPU_COUNT", "USER_COUNT"
+
+
+        :return: The capacity_type of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        :rtype: str
+        """
+        return self._capacity_type
+
+    @capacity_type.setter
+    def capacity_type(self, capacity_type):
+        """
+        Sets the capacity_type of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        The capacity model to use for the Analytics Instance.
+
+
+        :param capacity_type: The capacity_type of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        :type: str
+        """
+        allowed_values = ["OLPU_COUNT", "USER_COUNT"]
+        if not value_allowed_none_or_none_sentinel(capacity_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `capacity_type`, must be None or one of {allowed_values}"
+            )
+        self._capacity_type = capacity_type
+
+    @property
+    def capacity_value(self):
+        """
+        Gets the capacity_value of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+
+
+        :return: The capacity_value of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        :rtype: int
+        """
+        return self._capacity_value
+
+    @capacity_value.setter
+    def capacity_value(self, capacity_value):
+        """
+        Sets the capacity_value of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+
+
+        :param capacity_value: The capacity_value of this ResourceAnalyticsInstanceOacAttachmentDetails.
+        :type: int
+        """
+        self._capacity_value = capacity_value
 
     def __repr__(self):
         return formatted_flat_dict(self)

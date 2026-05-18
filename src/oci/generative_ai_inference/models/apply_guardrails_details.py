@@ -28,6 +28,10 @@ class ApplyGuardrailsDetails(object):
             The value to assign to the guardrail_configs property of this ApplyGuardrailsDetails.
         :type guardrail_configs: oci.generative_ai_inference.models.GuardrailConfigs
 
+        :param guardrail_version_config:
+            The value to assign to the guardrail_version_config property of this ApplyGuardrailsDetails.
+        :type guardrail_version_config: oci.generative_ai_inference.models.GuardrailVersionConfig
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ApplyGuardrailsDetails.
         :type compartment_id: str
@@ -36,15 +40,18 @@ class ApplyGuardrailsDetails(object):
         self.swagger_types = {
             'input': 'GuardrailsInput',
             'guardrail_configs': 'GuardrailConfigs',
+            'guardrail_version_config': 'GuardrailVersionConfig',
             'compartment_id': 'str'
         }
         self.attribute_map = {
             'input': 'input',
             'guardrail_configs': 'guardrailConfigs',
+            'guardrail_version_config': 'guardrailVersionConfig',
             'compartment_id': 'compartmentId'
         }
         self._input = None
         self._guardrail_configs = None
+        self._guardrail_version_config = None
         self._compartment_id = None
 
     @property
@@ -86,6 +93,26 @@ class ApplyGuardrailsDetails(object):
         :type: oci.generative_ai_inference.models.GuardrailConfigs
         """
         self._guardrail_configs = guardrail_configs
+
+    @property
+    def guardrail_version_config(self):
+        """
+        Gets the guardrail_version_config of this ApplyGuardrailsDetails.
+
+        :return: The guardrail_version_config of this ApplyGuardrailsDetails.
+        :rtype: oci.generative_ai_inference.models.GuardrailVersionConfig
+        """
+        return self._guardrail_version_config
+
+    @guardrail_version_config.setter
+    def guardrail_version_config(self, guardrail_version_config):
+        """
+        Sets the guardrail_version_config of this ApplyGuardrailsDetails.
+
+        :param guardrail_version_config: The guardrail_version_config of this ApplyGuardrailsDetails.
+        :type: oci.generative_ai_inference.models.GuardrailVersionConfig
+        """
+        self._guardrail_version_config = guardrail_version_config
 
     @property
     def compartment_id(self):

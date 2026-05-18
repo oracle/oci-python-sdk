@@ -37,6 +37,14 @@ from .update_connect_harness_details import UpdateConnectHarnessDetails
 from .update_group_details import UpdateGroupDetails
 from .update_stream_details import UpdateStreamDetails
 from .update_stream_pool_details import UpdateStreamPoolDetails
+from .work_request import WorkRequest
+from .work_request_error import WorkRequestError
+from .work_request_error_collection import WorkRequestErrorCollection
+from .work_request_log_entry import WorkRequestLogEntry
+from .work_request_log_entry_collection import WorkRequestLogEntryCollection
+from .work_request_resource import WorkRequestResource
+from .work_request_summary import WorkRequestSummary
+from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for streaming services.
 streaming_type_mapping = {
@@ -70,5 +78,13 @@ streaming_type_mapping = {
     "UpdateConnectHarnessDetails": UpdateConnectHarnessDetails,
     "UpdateGroupDetails": UpdateGroupDetails,
     "UpdateStreamDetails": UpdateStreamDetails,
-    "UpdateStreamPoolDetails": UpdateStreamPoolDetails
+    "UpdateStreamPoolDetails": UpdateStreamPoolDetails,
+    "WorkRequest": WorkRequest,
+    "WorkRequestError": WorkRequestError,
+    "WorkRequestErrorCollection": WorkRequestErrorCollection,
+    "WorkRequestLogEntry": WorkRequestLogEntry,
+    "WorkRequestLogEntryCollection": WorkRequestLogEntryCollection,
+    "WorkRequestResource": WorkRequestResource,
+    "WorkRequestSummary": WorkRequestSummary,
+    "WorkRequestSummaryCollection": WorkRequestSummaryCollection
 }

@@ -1,7 +1,13 @@
-sphinx-rtd-theme==0.4.2
-sphinx==1.8.3
-autodocsumm==0.1.11
-docutils<0.18
+sphinx==1.8.3; python_version < '3.7'
+sphinx==5.0.0; python_version >= '3.7' and python_version < '3.13'
+sphinx==6.2.1; python_version >= '3.13'
+sphinx-rtd-theme==0.4.2; python_version < '3.7'
+sphinx-rtd-theme==0.4.3; python_version >= '3.7'
+autodocsumm==0.1.11; python_version < '3.7'
+autodocsumm==0.2.14; python_version >= '3.7'
+docutils==0.15.2; python_version < '3.13'
+docutils==0.18.1; python_version >= '3.13'
+alabaster==0.7.12; python_version < '3.7'
 Jinja2<3.0.0; python_version == '3.6'
 Jinja2>=3.1.5,<4.0.0; python_version >= '3.7'
 setuptools==59.6.0; python_version == '3.6'

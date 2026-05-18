@@ -36,37 +36,23 @@ class CreateBdsCertificateConfigurationDetails(object):
             The value to assign to the compartment_id property of this CreateBdsCertificateConfigurationDetails.
         :type compartment_id: str
 
-        :param cluster_admin_password:
-            The value to assign to the cluster_admin_password property of this CreateBdsCertificateConfigurationDetails.
-        :type cluster_admin_password: str
-
-        :param secret_id:
-            The value to assign to the secret_id property of this CreateBdsCertificateConfigurationDetails.
-        :type secret_id: str
-
         """
         self.swagger_types = {
             'display_name': 'str',
             'certificate_authority_id': 'str',
             'certificate_type': 'str',
-            'compartment_id': 'str',
-            'cluster_admin_password': 'str',
-            'secret_id': 'str'
+            'compartment_id': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'certificate_authority_id': 'certificateAuthorityId',
             'certificate_type': 'certificateType',
-            'compartment_id': 'compartmentId',
-            'cluster_admin_password': 'clusterAdminPassword',
-            'secret_id': 'secretId'
+            'compartment_id': 'compartmentId'
         }
         self._display_name = None
         self._certificate_authority_id = None
         self._certificate_type = None
         self._compartment_id = None
-        self._cluster_admin_password = None
-        self._secret_id = None
 
     @property
     def display_name(self):
@@ -163,54 +149,6 @@ class CreateBdsCertificateConfigurationDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
-
-    @property
-    def cluster_admin_password(self):
-        """
-        Gets the cluster_admin_password of this CreateBdsCertificateConfigurationDetails.
-        Base-64 encoded password for the cluster admin user.
-
-
-        :return: The cluster_admin_password of this CreateBdsCertificateConfigurationDetails.
-        :rtype: str
-        """
-        return self._cluster_admin_password
-
-    @cluster_admin_password.setter
-    def cluster_admin_password(self, cluster_admin_password):
-        """
-        Sets the cluster_admin_password of this CreateBdsCertificateConfigurationDetails.
-        Base-64 encoded password for the cluster admin user.
-
-
-        :param cluster_admin_password: The cluster_admin_password of this CreateBdsCertificateConfigurationDetails.
-        :type: str
-        """
-        self._cluster_admin_password = cluster_admin_password
-
-    @property
-    def secret_id(self):
-        """
-        Gets the secret_id of this CreateBdsCertificateConfigurationDetails.
-        The secretId for the clusterAdminPassword.
-
-
-        :return: The secret_id of this CreateBdsCertificateConfigurationDetails.
-        :rtype: str
-        """
-        return self._secret_id
-
-    @secret_id.setter
-    def secret_id(self, secret_id):
-        """
-        Sets the secret_id of this CreateBdsCertificateConfigurationDetails.
-        The secretId for the clusterAdminPassword.
-
-
-        :param secret_id: The secret_id of this CreateBdsCertificateConfigurationDetails.
-        :type: str
-        """
-        self._secret_id = secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

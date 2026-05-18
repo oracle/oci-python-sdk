@@ -39,6 +39,8 @@ Resource Analytics
     oci.resource_analytics.models.ResourceAnalyticsInstanceSummary
     oci.resource_analytics.models.TenancyAttachment
     oci.resource_analytics.models.TenancyAttachmentCollection
+    oci.resource_analytics.models.TenancyAttachmentDataPopulation
+    oci.resource_analytics.models.TenancyAttachmentMonitoredRegionSummary
     oci.resource_analytics.models.TenancyAttachmentSummary
     oci.resource_analytics.models.UpdateResourceAnalyticsInstanceDetails
     oci.resource_analytics.models.UpdateTenancyAttachmentDetails

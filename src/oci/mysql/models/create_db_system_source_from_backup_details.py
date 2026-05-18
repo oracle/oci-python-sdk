@@ -23,7 +23,7 @@ class CreateDbSystemSourceFromBackupDetails(CreateDbSystemSourceDetails):
 
         :param source_type:
             The value to assign to the source_type property of this CreateDbSystemSourceFromBackupDetails.
-            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL"
+            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"
         :type source_type: str
 
         :param backup_id:

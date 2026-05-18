@@ -87,6 +87,11 @@ from .grounding_support import GroundingSupport
 from .grounding_support_segment import GroundingSupportSegment
 from .grounding_web_chunk import GroundingWebChunk
 from .guardrail_configs import GuardrailConfigs
+from .guardrail_version import GuardrailVersion
+from .guardrail_version_collection import GuardrailVersionCollection
+from .guardrail_version_config import GuardrailVersionConfig
+from .guardrail_version_response import GuardrailVersionResponse
+from .guardrail_version_summary import GuardrailVersionSummary
 from .guardrails_input import GuardrailsInput
 from .guardrails_results import GuardrailsResults
 from .guardrails_text_input import GuardrailsTextInput
@@ -221,6 +226,11 @@ generative_ai_inference_type_mapping = {
     "GroundingSupportSegment": GroundingSupportSegment,
     "GroundingWebChunk": GroundingWebChunk,
     "GuardrailConfigs": GuardrailConfigs,
+    "GuardrailVersion": GuardrailVersion,
+    "GuardrailVersionCollection": GuardrailVersionCollection,
+    "GuardrailVersionConfig": GuardrailVersionConfig,
+    "GuardrailVersionResponse": GuardrailVersionResponse,
+    "GuardrailVersionSummary": GuardrailVersionSummary,
     "GuardrailsInput": GuardrailsInput,
     "GuardrailsResults": GuardrailsResults,
     "GuardrailsTextInput": GuardrailsTextInput,

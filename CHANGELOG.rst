@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.175.0 - 2026-05-19
+====================
+
+Added 
+----- 
+* Support for the Cost Anomaly Detection service 
+* Support for listing OCI Generative AI Guardrails versions with accuracy and performance in the Generative AI service 
+* Support for guardrail versions when applying guardrails in the Generative AI service 
+* Support for data population status on tenancy attachment in the Resource Analytics service 
+* Support for compute count options in the Resource Analytics service 
+* Support for Cluster Placement Groups (CPG) and security groups (SG) in compute capacity reports in the Compute service 
+* Support for failed node replacement in the Big Data service 
+* Support for creating new DB systems from existing DB systems with an optional replication channels in the MySQL HeatWave service 
+* Support for work requests to track create, update, and delete operations for streams, stream pools, and Kafka Connect configuration resources in the Streaming service  
+
+Breaking 
+-------- 
+* Parameter `cluster_admin_password` and `secret_id` was removed from the model `CreateBdsCertificateConfigurationDetails` in the Big Data service  
+
+====================
 2.174.0 - 2026-05-12
 ====================
 

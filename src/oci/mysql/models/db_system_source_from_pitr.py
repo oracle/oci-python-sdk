@@ -26,7 +26,7 @@ class DbSystemSourceFromPitr(DbSystemSource):
 
         :param source_type:
             The value to assign to the source_type property of this DbSystemSourceFromPitr.
-            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL"
+            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"
         :type source_type: str
 
         :param db_system_id:
