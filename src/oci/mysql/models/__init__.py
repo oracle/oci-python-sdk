@@ -45,6 +45,8 @@ from .create_database_console_details import CreateDatabaseConsoleDetails
 from .create_db_system_details import CreateDbSystemDetails
 from .create_db_system_source_details import CreateDbSystemSourceDetails
 from .create_db_system_source_from_backup_details import CreateDbSystemSourceFromBackupDetails
+from .create_db_system_source_from_db_system_channel_details import CreateDbSystemSourceFromDbSystemChannelDetails
+from .create_db_system_source_from_db_system_details import CreateDbSystemSourceFromDbSystemDetails
 from .create_db_system_source_from_none_details import CreateDbSystemSourceFromNoneDetails
 from .create_db_system_source_from_pitr_details import CreateDbSystemSourceFromPitrDetails
 from .create_db_system_source_import_from_url_details import CreateDbSystemSourceImportFromUrlDetails
@@ -65,6 +67,7 @@ from .db_system_snapshot import DbSystemSnapshot
 from .db_system_snapshot_summary import DbSystemSnapshotSummary
 from .db_system_source import DbSystemSource
 from .db_system_source_from_backup import DbSystemSourceFromBackup
+from .db_system_source_from_db_system import DbSystemSourceFromDbSystem
 from .db_system_source_from_none import DbSystemSourceFromNone
 from .db_system_source_from_pitr import DbSystemSourceFromPitr
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
@@ -171,6 +174,8 @@ mysql_type_mapping = {
     "CreateDbSystemDetails": CreateDbSystemDetails,
     "CreateDbSystemSourceDetails": CreateDbSystemSourceDetails,
     "CreateDbSystemSourceFromBackupDetails": CreateDbSystemSourceFromBackupDetails,
+    "CreateDbSystemSourceFromDbSystemChannelDetails": CreateDbSystemSourceFromDbSystemChannelDetails,
+    "CreateDbSystemSourceFromDbSystemDetails": CreateDbSystemSourceFromDbSystemDetails,
     "CreateDbSystemSourceFromNoneDetails": CreateDbSystemSourceFromNoneDetails,
     "CreateDbSystemSourceFromPitrDetails": CreateDbSystemSourceFromPitrDetails,
     "CreateDbSystemSourceImportFromUrlDetails": CreateDbSystemSourceImportFromUrlDetails,
@@ -191,6 +196,7 @@ mysql_type_mapping = {
     "DbSystemSnapshotSummary": DbSystemSnapshotSummary,
     "DbSystemSource": DbSystemSource,
     "DbSystemSourceFromBackup": DbSystemSourceFromBackup,
+    "DbSystemSourceFromDbSystem": DbSystemSourceFromDbSystem,
     "DbSystemSourceFromNone": DbSystemSourceFromNone,
     "DbSystemSourceFromPitr": DbSystemSourceFromPitr,
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,

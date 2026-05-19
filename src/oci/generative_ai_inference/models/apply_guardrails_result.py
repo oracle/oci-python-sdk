@@ -24,14 +24,21 @@ class ApplyGuardrailsResult(object):
             The value to assign to the results property of this ApplyGuardrailsResult.
         :type results: oci.generative_ai_inference.models.GuardrailsResults
 
+        :param guardrail_version:
+            The value to assign to the guardrail_version property of this ApplyGuardrailsResult.
+        :type guardrail_version: oci.generative_ai_inference.models.GuardrailVersionResponse
+
         """
         self.swagger_types = {
-            'results': 'GuardrailsResults'
+            'results': 'GuardrailsResults',
+            'guardrail_version': 'GuardrailVersionResponse'
         }
         self.attribute_map = {
-            'results': 'results'
+            'results': 'results',
+            'guardrail_version': 'guardrailVersion'
         }
         self._results = None
+        self._guardrail_version = None
 
     @property
     def results(self):
@@ -52,6 +59,26 @@ class ApplyGuardrailsResult(object):
         :type: oci.generative_ai_inference.models.GuardrailsResults
         """
         self._results = results
+
+    @property
+    def guardrail_version(self):
+        """
+        Gets the guardrail_version of this ApplyGuardrailsResult.
+
+        :return: The guardrail_version of this ApplyGuardrailsResult.
+        :rtype: oci.generative_ai_inference.models.GuardrailVersionResponse
+        """
+        return self._guardrail_version
+
+    @guardrail_version.setter
+    def guardrail_version(self, guardrail_version):
+        """
+        Sets the guardrail_version of this ApplyGuardrailsResult.
+
+        :param guardrail_version: The guardrail_version of this ApplyGuardrailsResult.
+        :type: oci.generative_ai_inference.models.GuardrailVersionResponse
+        """
+        self._guardrail_version = guardrail_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

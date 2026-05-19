@@ -56,6 +56,10 @@ class CreateResourceAnalyticsInstanceDetails(object):
             The value to assign to the nsg_ids property of this CreateResourceAnalyticsInstanceDetails.
         :type nsg_ids: list[str]
 
+        :param compute_count:
+            The value to assign to the compute_count property of this CreateResourceAnalyticsInstanceDetails.
+        :type compute_count: int
+
         :param license_model:
             The value to assign to the license_model property of this CreateResourceAnalyticsInstanceDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -78,6 +82,7 @@ class CreateResourceAnalyticsInstanceDetails(object):
             'subnet_id': 'str',
             'is_mutual_tls_required': 'bool',
             'nsg_ids': 'list[str]',
+            'compute_count': 'int',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -90,6 +95,7 @@ class CreateResourceAnalyticsInstanceDetails(object):
             'subnet_id': 'subnetId',
             'is_mutual_tls_required': 'isMutualTlsRequired',
             'nsg_ids': 'nsgIds',
+            'compute_count': 'computeCount',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -101,6 +107,7 @@ class CreateResourceAnalyticsInstanceDetails(object):
         self._subnet_id = None
         self._is_mutual_tls_required = None
         self._nsg_ids = None
+        self._compute_count = None
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -284,6 +291,30 @@ class CreateResourceAnalyticsInstanceDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this CreateResourceAnalyticsInstanceDetails.
+        The compute amount (CPUs) available to the Autonomous Database.
+
+
+        :return: The compute_count of this CreateResourceAnalyticsInstanceDetails.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this CreateResourceAnalyticsInstanceDetails.
+        The compute amount (CPUs) available to the Autonomous Database.
+
+
+        :param compute_count: The compute_count of this CreateResourceAnalyticsInstanceDetails.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     @property
     def license_model(self):

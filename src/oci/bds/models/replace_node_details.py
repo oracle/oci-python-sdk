@@ -32,6 +32,10 @@ class ReplaceNodeDetails(object):
             The value to assign to the cluster_admin_password property of this ReplaceNodeDetails.
         :type cluster_admin_password: str
 
+        :param heterogeneous_shapes:
+            The value to assign to the heterogeneous_shapes property of this ReplaceNodeDetails.
+        :type heterogeneous_shapes: list[str]
+
         :param secret_id:
             The value to assign to the secret_id property of this ReplaceNodeDetails.
         :type secret_id: str
@@ -45,6 +49,7 @@ class ReplaceNodeDetails(object):
             'node_host_name': 'str',
             'node_backup_id': 'str',
             'cluster_admin_password': 'str',
+            'heterogeneous_shapes': 'list[str]',
             'secret_id': 'str',
             'shape': 'str'
         }
@@ -52,12 +57,14 @@ class ReplaceNodeDetails(object):
             'node_host_name': 'nodeHostName',
             'node_backup_id': 'nodeBackupId',
             'cluster_admin_password': 'clusterAdminPassword',
+            'heterogeneous_shapes': 'heterogeneousShapes',
             'secret_id': 'secretId',
             'shape': 'shape'
         }
         self._node_host_name = None
         self._node_backup_id = None
         self._cluster_admin_password = None
+        self._heterogeneous_shapes = None
         self._secret_id = None
         self._shape = None
 
@@ -88,7 +95,7 @@ class ReplaceNodeDetails(object):
     @property
     def node_backup_id(self):
         """
-        **[Required]** Gets the node_backup_id of this ReplaceNodeDetails.
+        Gets the node_backup_id of this ReplaceNodeDetails.
         The id of the nodeBackup to use for replacing the node.
 
 
@@ -132,6 +139,30 @@ class ReplaceNodeDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def heterogeneous_shapes(self):
+        """
+        Gets the heterogeneous_shapes of this ReplaceNodeDetails.
+        Heterogeneous shape of the node if the default shape is not available.
+
+
+        :return: The heterogeneous_shapes of this ReplaceNodeDetails.
+        :rtype: list[str]
+        """
+        return self._heterogeneous_shapes
+
+    @heterogeneous_shapes.setter
+    def heterogeneous_shapes(self, heterogeneous_shapes):
+        """
+        Sets the heterogeneous_shapes of this ReplaceNodeDetails.
+        Heterogeneous shape of the node if the default shape is not available.
+
+
+        :param heterogeneous_shapes: The heterogeneous_shapes of this ReplaceNodeDetails.
+        :type: list[str]
+        """
+        self._heterogeneous_shapes = heterogeneous_shapes
 
     @property
     def secret_id(self):

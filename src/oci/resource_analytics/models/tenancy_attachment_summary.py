@@ -40,6 +40,18 @@ class TenancyAttachmentSummary(object):
             The value to assign to the is_reporting_tenancy property of this TenancyAttachmentSummary.
         :type is_reporting_tenancy: bool
 
+        :param data_population_status:
+            The value to assign to the data_population_status property of this TenancyAttachmentSummary.
+        :type data_population_status: str
+
+        :param time_data_population_started:
+            The value to assign to the time_data_population_started property of this TenancyAttachmentSummary.
+        :type time_data_population_started: datetime
+
+        :param time_data_population_ended:
+            The value to assign to the time_data_population_ended property of this TenancyAttachmentSummary.
+        :type time_data_population_ended: datetime
+
         :param time_created:
             The value to assign to the time_created property of this TenancyAttachmentSummary.
         :type time_created: datetime
@@ -67,6 +79,9 @@ class TenancyAttachmentSummary(object):
             'resource_analytics_instance_id': 'str',
             'tenancy_id': 'str',
             'is_reporting_tenancy': 'bool',
+            'data_population_status': 'str',
+            'time_data_population_started': 'datetime',
+            'time_data_population_ended': 'datetime',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -79,6 +94,9 @@ class TenancyAttachmentSummary(object):
             'resource_analytics_instance_id': 'resourceAnalyticsInstanceId',
             'tenancy_id': 'tenancyId',
             'is_reporting_tenancy': 'isReportingTenancy',
+            'data_population_status': 'dataPopulationStatus',
+            'time_data_population_started': 'timeDataPopulationStarted',
+            'time_data_population_ended': 'timeDataPopulationEnded',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -90,6 +108,9 @@ class TenancyAttachmentSummary(object):
         self._resource_analytics_instance_id = None
         self._tenancy_id = None
         self._is_reporting_tenancy = None
+        self._data_population_status = None
+        self._time_data_population_started = None
+        self._time_data_population_ended = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -227,6 +248,94 @@ class TenancyAttachmentSummary(object):
         :type: bool
         """
         self._is_reporting_tenancy = is_reporting_tenancy
+
+    @property
+    def data_population_status(self):
+        """
+        Gets the data_population_status of this TenancyAttachmentSummary.
+        The overall status of the data population from the tenancy.
+
+
+        :return: The data_population_status of this TenancyAttachmentSummary.
+        :rtype: str
+        """
+        return self._data_population_status
+
+    @data_population_status.setter
+    def data_population_status(self, data_population_status):
+        """
+        Sets the data_population_status of this TenancyAttachmentSummary.
+        The overall status of the data population from the tenancy.
+
+
+        :param data_population_status: The data_population_status of this TenancyAttachmentSummary.
+        :type: str
+        """
+        self._data_population_status = data_population_status
+
+    @property
+    def time_data_population_started(self):
+        """
+        Gets the time_data_population_started of this TenancyAttachmentSummary.
+        The date and time the data population tasks started, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_data_population_started of this TenancyAttachmentSummary.
+        :rtype: datetime
+        """
+        return self._time_data_population_started
+
+    @time_data_population_started.setter
+    def time_data_population_started(self, time_data_population_started):
+        """
+        Sets the time_data_population_started of this TenancyAttachmentSummary.
+        The date and time the data population tasks started, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_data_population_started: The time_data_population_started of this TenancyAttachmentSummary.
+        :type: datetime
+        """
+        self._time_data_population_started = time_data_population_started
+
+    @property
+    def time_data_population_ended(self):
+        """
+        Gets the time_data_population_ended of this TenancyAttachmentSummary.
+        The date and time the data population tasks completed, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_data_population_ended of this TenancyAttachmentSummary.
+        :rtype: datetime
+        """
+        return self._time_data_population_ended
+
+    @time_data_population_ended.setter
+    def time_data_population_ended(self, time_data_population_ended):
+        """
+        Sets the time_data_population_ended of this TenancyAttachmentSummary.
+        The date and time the data population tasks completed, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_data_population_ended: The time_data_population_ended of this TenancyAttachmentSummary.
+        :type: datetime
+        """
+        self._time_data_population_ended = time_data_population_ended
 
     @property
     def time_created(self):

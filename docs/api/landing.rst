@@ -61,7 +61,8 @@ API Reference
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
 * :doc:`Container Registry <container_registry/client/oci.container_registry.ContainerRegistryClient>`
-* :doc:`Cost Ad <budget/client/oci.budget.CostAdClient>`
+* :doc:`Cost Ad <costad/client/oci.costad.CostAdClient>`
+* :doc:`Cost Ad <costad/client/oci.costad.CostAdClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Dashboard <dashboard_service/client/oci.dashboard_service.DashboardClient>`
 * :doc:`Dashboard Group <dashboard_service/client/oci.dashboard_service.DashboardGroupClient>`
@@ -374,6 +375,7 @@ API Reference
     container_instances
     container_registry
     core
+    costad
     dashboard_service
     data_catalog
     data_flow

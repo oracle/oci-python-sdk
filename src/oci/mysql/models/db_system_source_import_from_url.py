@@ -23,7 +23,7 @@ class DbSystemSourceImportFromUrl(DbSystemSource):
 
         :param source_type:
             The value to assign to the source_type property of this DbSystemSourceImportFromUrl.
-            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL"
+            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"
         :type source_type: str
 
         """

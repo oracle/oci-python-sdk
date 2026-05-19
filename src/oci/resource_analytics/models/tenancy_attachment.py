@@ -21,6 +21,42 @@ class TenancyAttachment(object):
     __ https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "ACCEPTED"
+    DATA_POPULATION_STATUS_ACCEPTED = "ACCEPTED"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "IN_PROGRESS"
+    DATA_POPULATION_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "WAITING"
+    DATA_POPULATION_STATUS_WAITING = "WAITING"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "FAILED"
+    DATA_POPULATION_STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "SUCCEEDED"
+    DATA_POPULATION_STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "CANCELING"
+    DATA_POPULATION_STATUS_CANCELING = "CANCELING"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "CANCELED"
+    DATA_POPULATION_STATUS_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    DATA_POPULATION_STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the data_population_status property of a TenancyAttachment.
+    #: This constant has a value of "PARTIALLY_SUCCEEDED"
+    DATA_POPULATION_STATUS_PARTIALLY_SUCCEEDED = "PARTIALLY_SUCCEEDED"
+
     #: A constant which can be used with the lifecycle_state property of a TenancyAttachment.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -74,6 +110,24 @@ class TenancyAttachment(object):
             The value to assign to the is_reporting_tenancy property of this TenancyAttachment.
         :type is_reporting_tenancy: bool
 
+        :param monitored_regions:
+            The value to assign to the monitored_regions property of this TenancyAttachment.
+        :type monitored_regions: list[oci.resource_analytics.models.TenancyAttachmentMonitoredRegionSummary]
+
+        :param data_population_status:
+            The value to assign to the data_population_status property of this TenancyAttachment.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", "PARTIALLY_SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_population_status: str
+
+        :param time_data_population_started:
+            The value to assign to the time_data_population_started property of this TenancyAttachment.
+        :type time_data_population_started: datetime
+
+        :param time_data_population_ended:
+            The value to assign to the time_data_population_ended property of this TenancyAttachment.
+        :type time_data_population_ended: datetime
+
         :param time_created:
             The value to assign to the time_created property of this TenancyAttachment.
         :type time_created: datetime
@@ -103,6 +157,10 @@ class TenancyAttachment(object):
             'resource_analytics_instance_id': 'str',
             'tenancy_id': 'str',
             'is_reporting_tenancy': 'bool',
+            'monitored_regions': 'list[TenancyAttachmentMonitoredRegionSummary]',
+            'data_population_status': 'str',
+            'time_data_population_started': 'datetime',
+            'time_data_population_ended': 'datetime',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -115,6 +173,10 @@ class TenancyAttachment(object):
             'resource_analytics_instance_id': 'resourceAnalyticsInstanceId',
             'tenancy_id': 'tenancyId',
             'is_reporting_tenancy': 'isReportingTenancy',
+            'monitored_regions': 'monitoredRegions',
+            'data_population_status': 'dataPopulationStatus',
+            'time_data_population_started': 'timeDataPopulationStarted',
+            'time_data_population_ended': 'timeDataPopulationEnded',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -126,6 +188,10 @@ class TenancyAttachment(object):
         self._resource_analytics_instance_id = None
         self._tenancy_id = None
         self._is_reporting_tenancy = None
+        self._monitored_regions = None
+        self._data_population_status = None
+        self._time_data_population_started = None
+        self._time_data_population_ended = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -263,6 +329,124 @@ class TenancyAttachment(object):
         :type: bool
         """
         self._is_reporting_tenancy = is_reporting_tenancy
+
+    @property
+    def monitored_regions(self):
+        """
+        **[Required]** Gets the monitored_regions of this TenancyAttachment.
+        List of monitored regions with their data population status.
+
+
+        :return: The monitored_regions of this TenancyAttachment.
+        :rtype: list[oci.resource_analytics.models.TenancyAttachmentMonitoredRegionSummary]
+        """
+        return self._monitored_regions
+
+    @monitored_regions.setter
+    def monitored_regions(self, monitored_regions):
+        """
+        Sets the monitored_regions of this TenancyAttachment.
+        List of monitored regions with their data population status.
+
+
+        :param monitored_regions: The monitored_regions of this TenancyAttachment.
+        :type: list[oci.resource_analytics.models.TenancyAttachmentMonitoredRegionSummary]
+        """
+        self._monitored_regions = monitored_regions
+
+    @property
+    def data_population_status(self):
+        """
+        **[Required]** Gets the data_population_status of this TenancyAttachment.
+        The overall status of the data population from the tenancy.
+
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", "PARTIALLY_SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_population_status of this TenancyAttachment.
+        :rtype: str
+        """
+        return self._data_population_status
+
+    @data_population_status.setter
+    def data_population_status(self, data_population_status):
+        """
+        Sets the data_population_status of this TenancyAttachment.
+        The overall status of the data population from the tenancy.
+
+
+        :param data_population_status: The data_population_status of this TenancyAttachment.
+        :type: str
+        """
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", "PARTIALLY_SUCCEEDED"]
+        if not value_allowed_none_or_none_sentinel(data_population_status, allowed_values):
+            data_population_status = 'UNKNOWN_ENUM_VALUE'
+        self._data_population_status = data_population_status
+
+    @property
+    def time_data_population_started(self):
+        """
+        Gets the time_data_population_started of this TenancyAttachment.
+        The date and time the data population tasks started, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_data_population_started of this TenancyAttachment.
+        :rtype: datetime
+        """
+        return self._time_data_population_started
+
+    @time_data_population_started.setter
+    def time_data_population_started(self, time_data_population_started):
+        """
+        Sets the time_data_population_started of this TenancyAttachment.
+        The date and time the data population tasks started, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_data_population_started: The time_data_population_started of this TenancyAttachment.
+        :type: datetime
+        """
+        self._time_data_population_started = time_data_population_started
+
+    @property
+    def time_data_population_ended(self):
+        """
+        Gets the time_data_population_ended of this TenancyAttachment.
+        The date and time the data population tasks completed, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_data_population_ended of this TenancyAttachment.
+        :rtype: datetime
+        """
+        return self._time_data_population_ended
+
+    @time_data_population_ended.setter
+    def time_data_population_ended(self, time_data_population_ended):
+        """
+        Sets the time_data_population_ended of this TenancyAttachment.
+        The date and time the data population tasks completed, in the format defined by `RFC 3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_data_population_ended: The time_data_population_ended of this TenancyAttachment.
+        :type: datetime
+        """
+        self._time_data_population_ended = time_data_population_ended
 
     @property
     def time_created(self):

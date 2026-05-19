@@ -6939,7 +6939,7 @@ class BdsClient(object):
         :param str lifecycle_state: (optional)
             The state of the BdsCertificateConfiguration.
 
-            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7016,7 +7016,7 @@ class BdsClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
