@@ -87,11 +87,15 @@ If flake8 is not found, make sure you have ``requirements.txt`` installed into y
 
 Generating Documentation
 ========================
-Sphinx is used for documentation. You can generate HTML locally with the following:
+Sphinx is used for documentation. Install the main development/test requirements
+first, then install the documentation-only requirements before building HTML
+locally:
 
 .. code-block:: sh
 
     pip install -r requirements.txt
+    pip install -e .
+    pip install -r docs/requirements.txt
     cd docs
     make html
 

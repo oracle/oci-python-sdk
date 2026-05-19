@@ -23,6 +23,8 @@ from .resource_analytics_instance_oac_network_details import ResourceAnalyticsIn
 from .resource_analytics_instance_summary import ResourceAnalyticsInstanceSummary
 from .tenancy_attachment import TenancyAttachment
 from .tenancy_attachment_collection import TenancyAttachmentCollection
+from .tenancy_attachment_data_population import TenancyAttachmentDataPopulation
+from .tenancy_attachment_monitored_region_summary import TenancyAttachmentMonitoredRegionSummary
 from .tenancy_attachment_summary import TenancyAttachmentSummary
 from .update_resource_analytics_instance_details import UpdateResourceAnalyticsInstanceDetails
 from .update_tenancy_attachment_details import UpdateTenancyAttachmentDetails
@@ -55,6 +57,8 @@ resource_analytics_type_mapping = {
     "ResourceAnalyticsInstanceSummary": ResourceAnalyticsInstanceSummary,
     "TenancyAttachment": TenancyAttachment,
     "TenancyAttachmentCollection": TenancyAttachmentCollection,
+    "TenancyAttachmentDataPopulation": TenancyAttachmentDataPopulation,
+    "TenancyAttachmentMonitoredRegionSummary": TenancyAttachmentMonitoredRegionSummary,
     "TenancyAttachmentSummary": TenancyAttachmentSummary,
     "UpdateResourceAnalyticsInstanceDetails": UpdateResourceAnalyticsInstanceDetails,
     "UpdateTenancyAttachmentDetails": UpdateTenancyAttachmentDetails,

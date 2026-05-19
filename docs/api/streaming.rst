@@ -51,3 +51,11 @@ Streaming
     oci.streaming.models.UpdateGroupDetails
     oci.streaming.models.UpdateStreamDetails
     oci.streaming.models.UpdateStreamPoolDetails
+    oci.streaming.models.WorkRequest
+    oci.streaming.models.WorkRequestError
+    oci.streaming.models.WorkRequestErrorCollection
+    oci.streaming.models.WorkRequestLogEntry
+    oci.streaming.models.WorkRequestLogEntryCollection
+    oci.streaming.models.WorkRequestResource
+    oci.streaming.models.WorkRequestSummary
+    oci.streaming.models.WorkRequestSummaryCollection

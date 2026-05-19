@@ -232,7 +232,7 @@ class MaintenanceDetails(object):
         """
         Gets the maintenance_schedule_type of this MaintenanceDetails.
         The maintenance schedule type of the DB system.
-        EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+        EARLY: Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
         REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 
         Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
@@ -249,7 +249,7 @@ class MaintenanceDetails(object):
         """
         Sets the maintenance_schedule_type of this MaintenanceDetails.
         The maintenance schedule type of the DB system.
-        EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+        EARLY: Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
         REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
 
 

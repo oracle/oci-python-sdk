@@ -31,11 +31,16 @@ class CreateDbSystemSourceDetails(object):
     #: This constant has a value of "IMPORTURL"
     SOURCE_TYPE_IMPORTURL = "IMPORTURL"
 
+    #: A constant which can be used with the source_type property of a CreateDbSystemSourceDetails.
+    #: This constant has a value of "DBSYSTEM"
+    SOURCE_TYPE_DBSYSTEM = "DBSYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDbSystemSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.mysql.models.CreateDbSystemSourceFromDbSystemDetails`
         * :class:`~oci.mysql.models.CreateDbSystemSourceFromBackupDetails`
         * :class:`~oci.mysql.models.CreateDbSystemSourceFromNoneDetails`
         * :class:`~oci.mysql.models.CreateDbSystemSourceImportFromUrlDetails`
@@ -45,7 +50,7 @@ class CreateDbSystemSourceDetails(object):
 
         :param source_type:
             The value to assign to the source_type property of this CreateDbSystemSourceDetails.
-            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL"
+            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"
         :type source_type: str
 
         """
@@ -64,6 +69,9 @@ class CreateDbSystemSourceDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['sourceType']
+
+        if type == 'DBSYSTEM':
+            return 'CreateDbSystemSourceFromDbSystemDetails'
 
         if type == 'BACKUP':
             return 'CreateDbSystemSourceFromBackupDetails'
@@ -85,7 +93,7 @@ class CreateDbSystemSourceDetails(object):
         **[Required]** Gets the source_type of this CreateDbSystemSourceDetails.
         The specific source identifier.
 
-        Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL"
+        Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"
 
 
         :return: The source_type of this CreateDbSystemSourceDetails.
@@ -103,7 +111,7 @@ class CreateDbSystemSourceDetails(object):
         :param source_type: The source_type of this CreateDbSystemSourceDetails.
         :type: str
         """
-        allowed_values = ["NONE", "BACKUP", "PITR", "IMPORTURL"]
+        allowed_values = ["NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `source_type`, must be None or one of {allowed_values}"

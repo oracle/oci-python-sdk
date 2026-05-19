@@ -2,9 +2,12 @@
 # -*- coding: utf-8 -*-
 import datetime
 import oci
+import os
+import re
 import sys
 import pkg_resources
 import sphinx_rtd_theme
+from docutils.utils import Reporter
 
 from sphinx.domains.python import PythonDomain
 
@@ -51,7 +54,52 @@ version = ".".join(release.split(".")[:3])
 
 language = "en"
 
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+def _compute_stale_api_exclude_patterns():
+    """Return dynamic exclude patterns for stale generated API docs.
+
+    We treat an API doc set as stale when both of these are true:
+      1) docs/api/<module>.rst exists
+      2) docs/api/<module>/ exists
+      3) src/oci/<module>/ does not exist
+
+    This keeps behavior modular (no hardcoded service names) and lets docs
+    builds skip stale trees while warning in logs.
+    """
+    docs_dir = os.path.dirname(__file__)
+    api_docs_dir = os.path.join(docs_dir, "api")
+    sdk_src_oci_dir = os.path.abspath(os.path.join(docs_dir, "..", "src", "oci"))
+
+    if not os.path.isdir(api_docs_dir) or not os.path.isdir(sdk_src_oci_dir):
+        return [], []
+
+    stale_exclude_patterns = []
+    stale_module_names = []
+    for module_rst_name in os.listdir(api_docs_dir):
+        if not module_rst_name.endswith(".rst"):
+            continue
+
+        module_name = module_rst_name[:-len(".rst")]
+        generated_service_dir = os.path.join(api_docs_dir, module_name)
+        source_module_dir = os.path.join(sdk_src_oci_dir, module_name)
+
+        # Only treat service-style generated docs as stale candidates.
+        if os.path.isdir(generated_service_dir) and not os.path.isdir(source_module_dir):
+            stale_exclude_patterns.append("api/{}.rst".format(module_name))
+            stale_exclude_patterns.append("api/{}/**".format(module_name))
+            stale_module_names.append(module_name)
+
+    return sorted(set(stale_exclude_patterns)), sorted(set(stale_module_names))
+
+
+_stale_api_exclude_patterns, _stale_api_module_names = _compute_stale_api_exclude_patterns()
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"] + _stale_api_exclude_patterns
+
+if _stale_api_module_names:
+    print(
+        "WARNING: Skipping stale generated API docs with no matching src/oci module: {}".format(
+            ", ".join(_stale_api_module_names)
+        )
+    )
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 #
@@ -268,8 +316,60 @@ class PatchedPythonDomain(PythonDomain):
         return super(PatchedPythonDomain, self).resolve_xref(env, fromdocname, builder, typ, target, node, contnode)
 
 
+_DOCS_COMPAT_DOWNGRADE_MESSAGE_PATTERNS = [
+    re.compile(r"Anonymous hyperlink mismatch"),
+    re.compile(r"Unexpected indentation\.?"),
+    re.compile(r"Unexpected section title(?: or transition)?\.?"),
+    re.compile(r"Unknown target name"),
+    re.compile(r'Error in "code-block" directive'),
+]
+_DOCS_COMPAT_REPORTER_PATCH_INSTALLED = False
+_ORIGINAL_DOCUTILS_REPORTER_SYSTEM_MESSAGE = Reporter.system_message
+
+
+def _is_docs_parser_error_compat_mode_enabled():
+    """Enable targeted error->warning downgrade for modern docutils parsing deltas."""
+    return os.environ.get("OCI_DOCS_DOWNGRADE_PARSER_ERRORS", "false").strip().lower() in ["1", "true", "yes", "on"]
+
+
+def _should_downgrade_docutils_message_level(level, message):
+    if level < Reporter.ERROR_LEVEL:
+        return False
+
+    message_text = str(message)
+    return any(pattern.search(message_text) for pattern in _DOCS_COMPAT_DOWNGRADE_MESSAGE_PATTERNS)
+
+
+def _docs_compat_reporter_system_message(self, level, message, *children, **kwargs):
+    downgraded_level = level
+    if _is_docs_parser_error_compat_mode_enabled() and _should_downgrade_docutils_message_level(level, message):
+        downgraded_level = Reporter.WARNING_LEVEL
+    return _ORIGINAL_DOCUTILS_REPORTER_SYSTEM_MESSAGE(self, downgraded_level, message, *children, **kwargs)
+
+
 def setup(sphinx):
-    sphinx.override_domain(PatchedPythonDomain)
+    # Compatibility across Sphinx versions:
+    # - Older versions expose override_domain()
+    # - Newer versions support add_domain(..., override=True)
+    registered_domain_override = False
+    if hasattr(sphinx, "add_domain"):
+        try:
+            sphinx.add_domain(PatchedPythonDomain, override=True)
+            registered_domain_override = True
+        except TypeError:
+            # Older Sphinx add_domain signature may not accept override
+            pass
+
+    if not registered_domain_override and hasattr(sphinx, "override_domain"):
+        sphinx.override_domain(PatchedPythonDomain)
+
+    global _DOCS_COMPAT_REPORTER_PATCH_INSTALLED
+    if not _DOCS_COMPAT_REPORTER_PATCH_INSTALLED:
+        Reporter.system_message = _docs_compat_reporter_system_message
+        _DOCS_COMPAT_REPORTER_PATCH_INSTALLED = True
+
+    if _is_docs_parser_error_compat_mode_enabled():
+        print("WARNING: OCI docs compatibility mode enabled: selected docutils ERROR/CRITICAL diagnostics are downgraded to WARNING")
 
 
 rst_epilog = """

@@ -99,6 +99,11 @@ Generative Ai Inference
     oci.generative_ai_inference.models.GroundingSupportSegment
     oci.generative_ai_inference.models.GroundingWebChunk
     oci.generative_ai_inference.models.GuardrailConfigs
+    oci.generative_ai_inference.models.GuardrailVersion
+    oci.generative_ai_inference.models.GuardrailVersionCollection
+    oci.generative_ai_inference.models.GuardrailVersionConfig
+    oci.generative_ai_inference.models.GuardrailVersionResponse
+    oci.generative_ai_inference.models.GuardrailVersionSummary
     oci.generative_ai_inference.models.GuardrailsInput
     oci.generative_ai_inference.models.GuardrailsResults
     oci.generative_ai_inference.models.GuardrailsTextInput

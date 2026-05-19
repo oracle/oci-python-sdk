@@ -31,6 +31,10 @@ class DbSystemSource(object):
     #: This constant has a value of "IMPORTURL"
     SOURCE_TYPE_IMPORTURL = "IMPORTURL"
 
+    #: A constant which can be used with the source_type property of a DbSystemSource.
+    #: This constant has a value of "DBSYSTEM"
+    SOURCE_TYPE_DBSYSTEM = "DBSYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemSource object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -39,13 +43,14 @@ class DbSystemSource(object):
         * :class:`~oci.mysql.models.DbSystemSourceFromBackup`
         * :class:`~oci.mysql.models.DbSystemSourceFromPitr`
         * :class:`~oci.mysql.models.DbSystemSourceFromNone`
+        * :class:`~oci.mysql.models.DbSystemSourceFromDbSystem`
         * :class:`~oci.mysql.models.DbSystemSourceImportFromUrl`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param source_type:
             The value to assign to the source_type property of this DbSystemSource.
-            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
@@ -75,6 +80,9 @@ class DbSystemSource(object):
         if type == 'NONE':
             return 'DbSystemSourceFromNone'
 
+        if type == 'DBSYSTEM':
+            return 'DbSystemSourceFromDbSystem'
+
         if type == 'IMPORTURL':
             return 'DbSystemSourceImportFromUrl'
         else:
@@ -86,7 +94,7 @@ class DbSystemSource(object):
         **[Required]** Gets the source_type of this DbSystemSource.
         The specific source identifier.
 
-        Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -105,7 +113,7 @@ class DbSystemSource(object):
         :param source_type: The source_type of this DbSystemSource.
         :type: str
         """
-        allowed_values = ["NONE", "BACKUP", "PITR", "IMPORTURL"]
+        allowed_values = ["NONE", "BACKUP", "PITR", "IMPORTURL", "DBSYSTEM"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type
