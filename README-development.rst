@@ -49,12 +49,12 @@ By default, the tests will look for a config file, 'config' in 'tests/resources'
 If 'tests/resources' does not exist, the tests will try attempt to use
 'tests/configuration/config'.
 The default profile is ``DEFAULT``.  You can change this with the
-``--config-file`` and ``--config-profile`` options.
+``--config`` and ``--config-profile`` options.
 
 .. code-block:: sh
 
     # Use a different config file, still using the DEFAULT profile
-    tox -- --config-file ~/.oci/config
+    tox -- --config ~/.oci/config
 
     # Using a different profile in the default config file
     tox -- --config-profile IAD_PROFILE
