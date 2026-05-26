@@ -37,6 +37,7 @@ from .change_deployment_compartment_details import ChangeDeploymentCompartmentDe
 from .change_deployment_subscription_details import ChangeDeploymentSubscriptionDetails
 from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
 from .change_subscription_details import ChangeSubscriptionDetails
+from .clone_pipeline_details import ClonePipelineDetails
 from .collect_deployment_diagnostic_details import CollectDeploymentDiagnosticDetails
 from .collect_pipeline_diagnostic_details import CollectPipelineDiagnosticDetails
 from .connection import Connection
@@ -108,6 +109,7 @@ from .db2_connection_summary import Db2ConnectionSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
 from .default_cancel_deployment_upgrade_details import DefaultCancelDeploymentUpgradeDetails
 from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
+from .default_clone_pipeline_details import DefaultClonePipelineDetails
 from .default_deployment_wallet_exists_details import DefaultDeploymentWalletExistsDetails
 from .default_pause_pipeline_details import DefaultPausePipelineDetails
 from .default_refresh_connection_details import DefaultRefreshConnectionDetails
@@ -146,9 +148,12 @@ from .deployment_wallet_exists_details import DeploymentWalletExistsDetails
 from .deployment_wallet_exists_response_details import DeploymentWalletExistsResponseDetails
 from .deployment_wallets_operation_collection import DeploymentWalletsOperationCollection
 from .deployment_wallets_operation_summary import DeploymentWalletsOperationSummary
+from .disaster_recovery_precheck_report import DisasterRecoveryPrecheckReport
+from .disaster_recovery_precheck_result import DisasterRecoveryPrecheckResult
 from .elasticsearch_connection import ElasticsearchConnection
 from .elasticsearch_connection_summary import ElasticsearchConnectionSummary
 from .export_deployment_wallet_details import ExportDeploymentWalletDetails
+from .generate_disaster_recovery_precheck_report_details import GenerateDisasterRecoveryPrecheckReportDetails
 from .generate_library_url_details import GenerateLibraryUrlDetails
 from .generate_log_reader_component_library_url_details import GenerateLogReaderComponentLibraryUrlDetails
 from .generic_connection import GenericConnection
@@ -361,6 +366,7 @@ golden_gate_type_mapping = {
     "ChangeDeploymentSubscriptionDetails": ChangeDeploymentSubscriptionDetails,
     "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
     "ChangeSubscriptionDetails": ChangeSubscriptionDetails,
+    "ClonePipelineDetails": ClonePipelineDetails,
     "CollectDeploymentDiagnosticDetails": CollectDeploymentDiagnosticDetails,
     "CollectPipelineDiagnosticDetails": CollectPipelineDiagnosticDetails,
     "Connection": Connection,
@@ -432,6 +438,7 @@ golden_gate_type_mapping = {
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
     "DefaultCancelDeploymentUpgradeDetails": DefaultCancelDeploymentUpgradeDetails,
     "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
+    "DefaultClonePipelineDetails": DefaultClonePipelineDetails,
     "DefaultDeploymentWalletExistsDetails": DefaultDeploymentWalletExistsDetails,
     "DefaultPausePipelineDetails": DefaultPausePipelineDetails,
     "DefaultRefreshConnectionDetails": DefaultRefreshConnectionDetails,
@@ -470,9 +477,12 @@ golden_gate_type_mapping = {
     "DeploymentWalletExistsResponseDetails": DeploymentWalletExistsResponseDetails,
     "DeploymentWalletsOperationCollection": DeploymentWalletsOperationCollection,
     "DeploymentWalletsOperationSummary": DeploymentWalletsOperationSummary,
+    "DisasterRecoveryPrecheckReport": DisasterRecoveryPrecheckReport,
+    "DisasterRecoveryPrecheckResult": DisasterRecoveryPrecheckResult,
     "ElasticsearchConnection": ElasticsearchConnection,
     "ElasticsearchConnectionSummary": ElasticsearchConnectionSummary,
     "ExportDeploymentWalletDetails": ExportDeploymentWalletDetails,
+    "GenerateDisasterRecoveryPrecheckReportDetails": GenerateDisasterRecoveryPrecheckReportDetails,
     "GenerateLibraryUrlDetails": GenerateLibraryUrlDetails,
     "GenerateLogReaderComponentLibraryUrlDetails": GenerateLogReaderComponentLibraryUrlDetails,
     "GenericConnection": GenericConnection,

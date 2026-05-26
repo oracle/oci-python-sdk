@@ -157,6 +157,7 @@ class AutonomousDbVersionSummary(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -182,6 +183,7 @@ class AutonomousDbVersionSummary(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.

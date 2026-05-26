@@ -23,7 +23,7 @@ class IamAuthConfiguration(AuthConfiguration):
 
         :param type:
             The value to assign to the type property of this IamAuthConfiguration.
-            Allowed values for this property are: "IDCS", "IAM", "IDCS_CUSTOM_SERVICE"
+            Allowed values for this property are: "IAM"
         :type type: str
 
         """

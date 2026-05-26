@@ -49,6 +49,7 @@ Golden Gate
     oci.golden_gate.models.ChangeDeploymentSubscriptionDetails
     oci.golden_gate.models.ChangePipelineCompartmentDetails
     oci.golden_gate.models.ChangeSubscriptionDetails
+    oci.golden_gate.models.ClonePipelineDetails
     oci.golden_gate.models.CollectDeploymentDiagnosticDetails
     oci.golden_gate.models.CollectPipelineDiagnosticDetails
     oci.golden_gate.models.Connection
@@ -120,6 +121,7 @@ Golden Gate
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
     oci.golden_gate.models.DefaultCancelDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultCancelSnoozeDeploymentUpgradeDetails
+    oci.golden_gate.models.DefaultClonePipelineDetails
     oci.golden_gate.models.DefaultDeploymentWalletExistsDetails
     oci.golden_gate.models.DefaultPausePipelineDetails
     oci.golden_gate.models.DefaultRefreshConnectionDetails
@@ -158,9 +160,12 @@ Golden Gate
     oci.golden_gate.models.DeploymentWalletExistsResponseDetails
     oci.golden_gate.models.DeploymentWalletsOperationCollection
     oci.golden_gate.models.DeploymentWalletsOperationSummary
+    oci.golden_gate.models.DisasterRecoveryPrecheckReport
+    oci.golden_gate.models.DisasterRecoveryPrecheckResult
     oci.golden_gate.models.ElasticsearchConnection
     oci.golden_gate.models.ElasticsearchConnectionSummary
     oci.golden_gate.models.ExportDeploymentWalletDetails
+    oci.golden_gate.models.GenerateDisasterRecoveryPrecheckReportDetails
     oci.golden_gate.models.GenerateLibraryUrlDetails
     oci.golden_gate.models.GenerateLogReaderComponentLibraryUrlDetails
     oci.golden_gate.models.GenericConnection

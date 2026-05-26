@@ -51,6 +51,10 @@ class DecryptionRule(object):
             The value to assign to the secret property of this DecryptionRule.
         :type secret: str
 
+        :param secrets:
+            The value to assign to the secrets property of this DecryptionRule.
+        :type secrets: list[str]
+
         :param position:
             The value to assign to the position property of this DecryptionRule.
         :type position: oci.network_firewall.models.RulePosition
@@ -70,6 +74,7 @@ class DecryptionRule(object):
             'action': 'str',
             'decryption_profile': 'str',
             'secret': 'str',
+            'secrets': 'list[str]',
             'position': 'RulePosition',
             'parent_resource_id': 'str',
             'description': 'str'
@@ -80,6 +85,7 @@ class DecryptionRule(object):
             'action': 'action',
             'decryption_profile': 'decryptionProfile',
             'secret': 'secret',
+            'secrets': 'secrets',
             'position': 'position',
             'parent_resource_id': 'parentResourceId',
             'description': 'description'
@@ -89,6 +95,7 @@ class DecryptionRule(object):
         self._action = None
         self._decryption_profile = None
         self._secret = None
+        self._secrets = None
         self._position = None
         self._parent_resource_id = None
         self._description = None
@@ -220,6 +227,30 @@ class DecryptionRule(object):
         :type: str
         """
         self._secret = secret
+
+    @property
+    def secrets(self):
+        """
+        Gets the secrets of this DecryptionRule.
+        An array of mapped secrets.
+
+
+        :return: The secrets of this DecryptionRule.
+        :rtype: list[str]
+        """
+        return self._secrets
+
+    @secrets.setter
+    def secrets(self, secrets):
+        """
+        Sets the secrets of this DecryptionRule.
+        An array of mapped secrets.
+
+
+        :param secrets: The secrets of this DecryptionRule.
+        :type: list[str]
+        """
+        self._secrets = secrets
 
     @property
     def position(self):

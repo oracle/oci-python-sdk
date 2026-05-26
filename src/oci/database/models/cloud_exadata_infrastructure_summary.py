@@ -158,6 +158,10 @@ class CloudExadataInfrastructureSummary(object):
             The value to assign to the maintenance_window property of this CloudExadataInfrastructureSummary.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param maintenance_version_preferences:
+            The value to assign to the maintenance_version_preferences property of this CloudExadataInfrastructureSummary.
+        :type maintenance_version_preferences: oci.database.models.MaintenanceVersionPreferenceDetails
+
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this CloudExadataInfrastructureSummary.
         :type last_maintenance_run_id: str
@@ -251,6 +255,7 @@ class CloudExadataInfrastructureSummary(object):
             'time_created': 'datetime',
             'lifecycle_details': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_version_preferences': 'MaintenanceVersionPreferenceDetails',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -294,6 +299,7 @@ class CloudExadataInfrastructureSummary(object):
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_version_preferences': 'maintenanceVersionPreferences',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
@@ -336,6 +342,7 @@ class CloudExadataInfrastructureSummary(object):
         self._time_created = None
         self._lifecycle_details = None
         self._maintenance_window = None
+        self._maintenance_version_preferences = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
         self._freeform_tags = None
@@ -970,6 +977,26 @@ class CloudExadataInfrastructureSummary(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_version_preferences(self):
+        """
+        Gets the maintenance_version_preferences of this CloudExadataInfrastructureSummary.
+
+        :return: The maintenance_version_preferences of this CloudExadataInfrastructureSummary.
+        :rtype: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        return self._maintenance_version_preferences
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, maintenance_version_preferences):
+        """
+        Sets the maintenance_version_preferences of this CloudExadataInfrastructureSummary.
+
+        :param maintenance_version_preferences: The maintenance_version_preferences of this CloudExadataInfrastructureSummary.
+        :type: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        self._maintenance_version_preferences = maintenance_version_preferences
 
     @property
     def last_maintenance_run_id(self):

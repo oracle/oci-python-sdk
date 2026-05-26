@@ -51,6 +51,26 @@ class DeploymentPeerSummary(object):
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
+    #: A constant which can be used with the lifecycle_state property of a DeploymentPeerSummary.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the precheck_status property of a DeploymentPeerSummary.
+    #: This constant has a value of "SUCCEEDED"
+    PRECHECK_STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the precheck_status property of a DeploymentPeerSummary.
+    #: This constant has a value of "IN_PROGRESS"
+    PRECHECK_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the precheck_status property of a DeploymentPeerSummary.
+    #: This constant has a value of "FAILED"
+    PRECHECK_STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the precheck_status property of a DeploymentPeerSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    PRECHECK_STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DeploymentPeerSummary object with values from keyword arguments.
@@ -114,9 +134,19 @@ class DeploymentPeerSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentPeerSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param precheck_status:
+            The value to assign to the precheck_status property of this DeploymentPeerSummary.
+            Allowed values for this property are: "SUCCEEDED", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type precheck_status: str
+
+        :param time_last_precheck_performed:
+            The value to assign to the time_last_precheck_performed property of this DeploymentPeerSummary.
+        :type time_last_precheck_performed: datetime
 
         """
         self.swagger_types = {
@@ -133,7 +163,9 @@ class DeploymentPeerSummary(object):
             'time_last_synced': 'datetime',
             'subscription_id': 'str',
             'cluster_placement_group_id': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'precheck_status': 'str',
+            'time_last_precheck_performed': 'datetime'
         }
         self.attribute_map = {
             'deployment_id': 'deploymentId',
@@ -149,7 +181,9 @@ class DeploymentPeerSummary(object):
             'time_last_synced': 'timeLastSynced',
             'subscription_id': 'subscriptionId',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'precheck_status': 'precheckStatus',
+            'time_last_precheck_performed': 'timeLastPrecheckPerformed'
         }
         self._deployment_id = None
         self._region = None
@@ -165,6 +199,8 @@ class DeploymentPeerSummary(object):
         self._subscription_id = None
         self._cluster_placement_group_id = None
         self._lifecycle_state = None
+        self._precheck_status = None
+        self._time_last_precheck_performed = None
 
     @property
     def deployment_id(self):
@@ -534,7 +570,7 @@ class DeploymentPeerSummary(object):
         **[Required]** Gets the lifecycle_state of this DeploymentPeerSummary.
         Possible lifecycle states for deployment peer.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -553,10 +589,70 @@ class DeploymentPeerSummary(object):
         :param lifecycle_state: The lifecycle_state of this DeploymentPeerSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING"]
+        allowed_values = ["CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def precheck_status(self):
+        """
+        Gets the precheck_status of this DeploymentPeerSummary.
+        Status of the DR precheck result.
+
+        Allowed values for this property are: "SUCCEEDED", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The precheck_status of this DeploymentPeerSummary.
+        :rtype: str
+        """
+        return self._precheck_status
+
+    @precheck_status.setter
+    def precheck_status(self, precheck_status):
+        """
+        Sets the precheck_status of this DeploymentPeerSummary.
+        Status of the DR precheck result.
+
+
+        :param precheck_status: The precheck_status of this DeploymentPeerSummary.
+        :type: str
+        """
+        allowed_values = ["SUCCEEDED", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION"]
+        if not value_allowed_none_or_none_sentinel(precheck_status, allowed_values):
+            precheck_status = 'UNKNOWN_ENUM_VALUE'
+        self._precheck_status = precheck_status
+
+    @property
+    def time_last_precheck_performed(self):
+        """
+        Gets the time_last_precheck_performed of this DeploymentPeerSummary.
+        The timestamp when pre-check started. The format is defined by
+        `RFC3339`__, such as `2024-10-26T20:19:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_precheck_performed of this DeploymentPeerSummary.
+        :rtype: datetime
+        """
+        return self._time_last_precheck_performed
+
+    @time_last_precheck_performed.setter
+    def time_last_precheck_performed(self, time_last_precheck_performed):
+        """
+        Sets the time_last_precheck_performed of this DeploymentPeerSummary.
+        The timestamp when pre-check started. The format is defined by
+        `RFC3339`__, such as `2024-10-26T20:19:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_precheck_performed: The time_last_precheck_performed of this DeploymentPeerSummary.
+        :type: datetime
+        """
+        self._time_last_precheck_performed = time_last_precheck_performed
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -71,6 +71,7 @@ Container Engine
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
     oci.container_engine.models.NodePoolPodNetworkOptionDetails
+    oci.container_engine.models.NodePoolPrimaryVnicDetails
     oci.container_engine.models.NodePoolSecondaryVnicDetails
     oci.container_engine.models.NodePoolSummary
     oci.container_engine.models.NodeShapeConfig

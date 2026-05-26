@@ -23,6 +23,14 @@ class UpdateAutonomousVmClusterDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the distribution_algorithm property of a UpdateAutonomousVmClusterDetails.
+    #: This constant has a value of "RESOURCE_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_RESOURCE_OPTIMIZED = "RESOURCE_OPTIMIZED"
+
+    #: A constant which can be used with the distribution_algorithm property of a UpdateAutonomousVmClusterDetails.
+    #: This constant has a value of "DISTRIBUTION_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_DISTRIBUTION_OPTIMIZED = "DISTRIBUTION_OPTIMIZED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAutonomousVmClusterDetails object with values from keyword arguments.
@@ -57,6 +65,27 @@ class UpdateAutonomousVmClusterDetails(object):
             The value to assign to the total_container_databases property of this UpdateAutonomousVmClusterDetails.
         :type total_container_databases: int
 
+        :param time_zone:
+            The value to assign to the time_zone property of this UpdateAutonomousVmClusterDetails.
+        :type time_zone: str
+
+        :param scan_listener_port_tls:
+            The value to assign to the scan_listener_port_tls property of this UpdateAutonomousVmClusterDetails.
+        :type scan_listener_port_tls: int
+
+        :param scan_listener_port_non_tls:
+            The value to assign to the scan_listener_port_non_tls property of this UpdateAutonomousVmClusterDetails.
+        :type scan_listener_port_non_tls: int
+
+        :param is_mtls_enabled:
+            The value to assign to the is_mtls_enabled property of this UpdateAutonomousVmClusterDetails.
+        :type is_mtls_enabled: bool
+
+        :param distribution_algorithm:
+            The value to assign to the distribution_algorithm property of this UpdateAutonomousVmClusterDetails.
+            Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"
+        :type distribution_algorithm: str
+
         """
         self.swagger_types = {
             'maintenance_window_details': 'MaintenanceWindow',
@@ -65,7 +94,12 @@ class UpdateAutonomousVmClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'autonomous_data_storage_size_in_tbs': 'float',
             'cpu_core_count_per_node': 'int',
-            'total_container_databases': 'int'
+            'total_container_databases': 'int',
+            'time_zone': 'str',
+            'scan_listener_port_tls': 'int',
+            'scan_listener_port_non_tls': 'int',
+            'is_mtls_enabled': 'bool',
+            'distribution_algorithm': 'str'
         }
         self.attribute_map = {
             'maintenance_window_details': 'maintenanceWindowDetails',
@@ -74,7 +108,12 @@ class UpdateAutonomousVmClusterDetails(object):
             'defined_tags': 'definedTags',
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'cpu_core_count_per_node': 'cpuCoreCountPerNode',
-            'total_container_databases': 'totalContainerDatabases'
+            'total_container_databases': 'totalContainerDatabases',
+            'time_zone': 'timeZone',
+            'scan_listener_port_tls': 'scanListenerPortTls',
+            'scan_listener_port_non_tls': 'scanListenerPortNonTls',
+            'is_mtls_enabled': 'isMtlsEnabled',
+            'distribution_algorithm': 'distributionAlgorithm'
         }
         self._maintenance_window_details = None
         self._license_model = None
@@ -83,6 +122,11 @@ class UpdateAutonomousVmClusterDetails(object):
         self._autonomous_data_storage_size_in_tbs = None
         self._cpu_core_count_per_node = None
         self._total_container_databases = None
+        self._time_zone = None
+        self._scan_listener_port_tls = None
+        self._scan_listener_port_non_tls = None
+        self._is_mtls_enabled = None
+        self._distribution_algorithm = None
 
     @property
     def maintenance_window_details(self):
@@ -270,6 +314,137 @@ class UpdateAutonomousVmClusterDetails(object):
         :type: int
         """
         self._total_container_databases = total_container_databases
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this UpdateAutonomousVmClusterDetails.
+        The time zone to use for the Autonomous VM cluster. For details, see `DB System Time Zones`__.
+
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+
+
+        :return: The time_zone of this UpdateAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this UpdateAutonomousVmClusterDetails.
+        The time zone to use for the Autonomous VM cluster. For details, see `DB System Time Zones`__.
+
+        __ https://docs.oracle.com/iaas/Content/Database/References/timezones.htm
+
+
+        :param time_zone: The time_zone of this UpdateAutonomousVmClusterDetails.
+        :type: str
+        """
+        self._time_zone = time_zone
+
+    @property
+    def scan_listener_port_tls(self):
+        """
+        Gets the scan_listener_port_tls of this UpdateAutonomousVmClusterDetails.
+        The SCAN Listener TLS port number. Default value is 2484.
+
+
+        :return: The scan_listener_port_tls of this UpdateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tls
+
+    @scan_listener_port_tls.setter
+    def scan_listener_port_tls(self, scan_listener_port_tls):
+        """
+        Sets the scan_listener_port_tls of this UpdateAutonomousVmClusterDetails.
+        The SCAN Listener TLS port number. Default value is 2484.
+
+
+        :param scan_listener_port_tls: The scan_listener_port_tls of this UpdateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._scan_listener_port_tls = scan_listener_port_tls
+
+    @property
+    def scan_listener_port_non_tls(self):
+        """
+        Gets the scan_listener_port_non_tls of this UpdateAutonomousVmClusterDetails.
+        The SCAN Listener Non TLS port number. Default value is 1521.
+
+
+        :return: The scan_listener_port_non_tls of this UpdateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_non_tls
+
+    @scan_listener_port_non_tls.setter
+    def scan_listener_port_non_tls(self, scan_listener_port_non_tls):
+        """
+        Sets the scan_listener_port_non_tls of this UpdateAutonomousVmClusterDetails.
+        The SCAN Listener Non TLS port number. Default value is 1521.
+
+
+        :param scan_listener_port_non_tls: The scan_listener_port_non_tls of this UpdateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._scan_listener_port_non_tls = scan_listener_port_non_tls
+
+    @property
+    def is_mtls_enabled(self):
+        """
+        Gets the is_mtls_enabled of this UpdateAutonomousVmClusterDetails.
+        Enable mutual TLS(mTLS) authentication for database. Default is TLS.
+
+
+        :return: The is_mtls_enabled of this UpdateAutonomousVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_mtls_enabled
+
+    @is_mtls_enabled.setter
+    def is_mtls_enabled(self, is_mtls_enabled):
+        """
+        Sets the is_mtls_enabled of this UpdateAutonomousVmClusterDetails.
+        Enable mutual TLS(mTLS) authentication for database. Default is TLS.
+
+
+        :param is_mtls_enabled: The is_mtls_enabled of this UpdateAutonomousVmClusterDetails.
+        :type: bool
+        """
+        self._is_mtls_enabled = is_mtls_enabled
+
+    @property
+    def distribution_algorithm(self):
+        """
+        Gets the distribution_algorithm of this UpdateAutonomousVmClusterDetails.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+        Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"
+
+
+        :return: The distribution_algorithm of this UpdateAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._distribution_algorithm
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, distribution_algorithm):
+        """
+        Sets the distribution_algorithm of this UpdateAutonomousVmClusterDetails.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+
+        :param distribution_algorithm: The distribution_algorithm of this UpdateAutonomousVmClusterDetails.
+        :type: str
+        """
+        allowed_values = ["RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(distribution_algorithm, allowed_values):
+            raise ValueError(
+                f"Invalid value for `distribution_algorithm`, must be None or one of {allowed_values}"
+            )
+        self._distribution_algorithm = distribution_algorithm
 
     def __repr__(self):
         return formatted_flat_dict(self)

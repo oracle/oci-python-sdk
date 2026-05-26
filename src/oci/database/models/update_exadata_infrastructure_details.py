@@ -81,6 +81,10 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window property of this UpdateExadataInfrastructureDetails.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param maintenance_version_preferences:
+            The value to assign to the maintenance_version_preferences property of this UpdateExadataInfrastructureDetails.
+        :type maintenance_version_preferences: oci.database.models.MaintenanceVersionPreferenceDetails
+
         :param additional_storage_count:
             The value to assign to the additional_storage_count property of this UpdateExadataInfrastructureDetails.
         :type additional_storage_count: int
@@ -141,6 +145,7 @@ class UpdateExadataInfrastructureDetails(object):
             'corporate_proxy': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_version_preferences': 'MaintenanceVersionPreferenceDetails',
             'additional_storage_count': 'int',
             'is_multi_rack_deployment': 'bool',
             'multi_rack_configuration_file': 'str',
@@ -164,6 +169,7 @@ class UpdateExadataInfrastructureDetails(object):
             'corporate_proxy': 'corporateProxy',
             'contacts': 'contacts',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_version_preferences': 'maintenanceVersionPreferences',
             'additional_storage_count': 'additionalStorageCount',
             'is_multi_rack_deployment': 'isMultiRackDeployment',
             'multi_rack_configuration_file': 'multiRackConfigurationFile',
@@ -186,6 +192,7 @@ class UpdateExadataInfrastructureDetails(object):
         self._corporate_proxy = None
         self._contacts = None
         self._maintenance_window = None
+        self._maintenance_version_preferences = None
         self._additional_storage_count = None
         self._is_multi_rack_deployment = None
         self._multi_rack_configuration_file = None
@@ -410,6 +417,26 @@ class UpdateExadataInfrastructureDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_version_preferences(self):
+        """
+        Gets the maintenance_version_preferences of this UpdateExadataInfrastructureDetails.
+
+        :return: The maintenance_version_preferences of this UpdateExadataInfrastructureDetails.
+        :rtype: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        return self._maintenance_version_preferences
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, maintenance_version_preferences):
+        """
+        Sets the maintenance_version_preferences of this UpdateExadataInfrastructureDetails.
+
+        :param maintenance_version_preferences: The maintenance_version_preferences of this UpdateExadataInfrastructureDetails.
+        :type: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        self._maintenance_version_preferences = maintenance_version_preferences
 
     @property
     def additional_storage_count(self):

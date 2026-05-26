@@ -17,6 +17,7 @@ from .auto_scaling_policy_details import AutoScalingPolicyDetails
 from .backup_operation_details import BackupOperationDetails
 from .backup_setting import BackupSetting
 from .category_log_details import CategoryLogDetails
+from .change_compute_target_compartment_details import ChangeComputeTargetCompartmentDetails
 from .change_data_science_private_endpoint_compartment_details import ChangeDataSciencePrivateEndpointCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_job_run_compartment_details import ChangeJobRunCompartmentDetails
@@ -37,15 +38,19 @@ from .change_schedule_compartment_details import ChangeScheduleCompartmentDetail
 from .clone_create_from_model_group_details import CloneCreateFromModelGroupDetails
 from .clone_create_from_model_group_version_history_details import CloneCreateFromModelGroupVersionHistoryDetails
 from .clone_model_group_details import CloneModelGroupDetails
+from .compute_configuration_details import ComputeConfigurationDetails
+from .compute_target import ComputeTarget
+from .compute_target_shape_summary import ComputeTargetShapeSummary
+from .compute_target_summary import ComputeTargetSummary
+from .compute_target_system_data import ComputeTargetSystemData
 from .configuration_property import ConfigurationProperty
 from .configuration_property_schema import ConfigurationPropertySchema
 from .container_summary import ContainerSummary
 from .create_auth_configuration_details import CreateAuthConfigurationDetails
 from .create_base_model_group_details import CreateBaseModelGroupDetails
+from .create_compute_target_details import CreateComputeTargetDetails
 from .create_data_science_private_endpoint_details import CreateDataSciencePrivateEndpointDetails
 from .create_iam_auth_configuration_create_details import CreateIamAuthConfigurationCreateDetails
-from .create_idcs_auth_configuration_details import CreateIdcsAuthConfigurationDetails
-from .create_idcs_custom_service_auth_configuration_details import CreateIdcsCustomServiceAuthConfigurationDetails
 from .create_job_details import CreateJobDetails
 from .create_job_run_details import CreateJobRunDetails
 from .create_job_run_schedule_action_details import CreateJobRunScheduleActionDetails
@@ -91,11 +96,10 @@ from .generic_oci_resource_instance_component import GenericOciResourceInstanceC
 from .heterogeneous_model_group_details import HeterogeneousModelGroupDetails
 from .homogeneous_model_group_details import HomogeneousModelGroupDetails
 from .iam_auth_configuration import IamAuthConfiguration
-from .idcs_auth_configuration import IdcsAuthConfiguration
-from .idcs_custom_service_auth_configuration import IdcsCustomServiceAuthConfiguration
 from .implementation_log_details import ImplementationLogDetails
 from .implementation_logging import ImplementationLogging
 from .import_model_artifact_details import ImportModelArtifactDetails
+from .inference_http_endpoint import InferenceHttpEndpoint
 from .infrastructure_configuration_details import InfrastructureConfigurationDetails
 from .instance_component import InstanceComponent
 from .instance_configuration import InstanceConfiguration
@@ -123,6 +127,33 @@ from .job_shape_config_details import JobShapeConfigDetails
 from .job_shape_summary import JobShapeSummary
 from .job_summary import JobSummary
 from .log_details import LogDetails
+from .managed_compute_cluster_auto_scaling_policy import ManagedComputeClusterAutoScalingPolicy
+from .managed_compute_cluster_auto_scaling_policy_details import ManagedComputeClusterAutoScalingPolicyDetails
+from .managed_compute_cluster_compute_configuration_details import ManagedComputeClusterComputeConfigurationDetails
+from .managed_compute_cluster_custom_expression_query_scaling_configuration import ManagedComputeClusterCustomExpressionQueryScalingConfiguration
+from .managed_compute_cluster_custom_metric_expression_rule import ManagedComputeClusterCustomMetricExpressionRule
+from .managed_compute_cluster_fixed_size_scaling_policy import ManagedComputeClusterFixedSizeScalingPolicy
+from .managed_compute_cluster_instance_configuration_details import ManagedComputeClusterInstanceConfigurationDetails
+from .managed_compute_cluster_instance_shape_details import ManagedComputeClusterInstanceShapeDetails
+from .managed_compute_cluster_job_infrastructure_configuration_details import ManagedComputeClusterJobInfrastructureConfigurationDetails
+from .managed_compute_cluster_job_resource_configuration import ManagedComputeClusterJobResourceConfiguration
+from .managed_compute_cluster_metric_expression_rule import ManagedComputeClusterMetricExpressionRule
+from .managed_compute_cluster_model_deploy_infrastructure_config_details import ManagedComputeClusterModelDeployInfrastructureConfigDetails
+from .managed_compute_cluster_model_deployment_resource_configuration import ManagedComputeClusterModelDeploymentResourceConfiguration
+from .managed_compute_cluster_model_deployment_system_data import ManagedComputeClusterModelDeploymentSystemData
+from .managed_compute_cluster_predefined_expression_threshold_scaling_configuration import ManagedComputeClusterPredefinedExpressionThresholdScalingConfiguration
+from .managed_compute_cluster_predefined_metric_expression_rule import ManagedComputeClusterPredefinedMetricExpressionRule
+from .managed_compute_cluster_scaling_configuration import ManagedComputeClusterScalingConfiguration
+from .managed_compute_cluster_scaling_policy import ManagedComputeClusterScalingPolicy
+from .managed_compute_cluster_system_data import ManagedComputeClusterSystemData
+from .managed_compute_cluster_threshold_based_auto_scaling_policy_details import ManagedComputeClusterThresholdBasedAutoScalingPolicyDetails
+from .managed_compute_cluster_workload_auto_scaling_policy import ManagedComputeClusterWorkloadAutoScalingPolicy
+from .managed_compute_cluster_workload_auto_scaling_policy_details import ManagedComputeClusterWorkloadAutoScalingPolicyDetails
+from .managed_compute_cluster_workload_fixed_size_scaling_policy import ManagedComputeClusterWorkloadFixedSizeScalingPolicy
+from .managed_compute_cluster_workload_metric_expression_rule import ManagedComputeClusterWorkloadMetricExpressionRule
+from .managed_compute_cluster_workload_scale_policy import ManagedComputeClusterWorkloadScalePolicy
+from .managed_compute_cluster_workload_scaling_policy import ManagedComputeClusterWorkloadScalingPolicy
+from .managed_compute_cluster_workload_threshold_based_policy_details import ManagedComputeClusterWorkloadThresholdBasedPolicyDetails
 from .managed_egress_standalone_job_infrastructure_configuration_details import ManagedEgressStandaloneJobInfrastructureConfigurationDetails
 from .member_model_details import MemberModelDetails
 from .member_model_entries import MemberModelEntries
@@ -149,6 +180,7 @@ from .ml_application_summary import MlApplicationSummary
 from .model import Model
 from .model_artifact_reference_details import ModelArtifactReferenceDetails
 from .model_configuration_details import ModelConfigurationDetails
+from .model_deploy_infrastructure_configuration_details import ModelDeployInfrastructureConfigurationDetails
 from .model_deploy_workload_configuration_details import ModelDeployWorkloadConfigurationDetails
 from .model_deployment import ModelDeployment
 from .model_deployment_configuration_details import ModelDeploymentConfigurationDetails
@@ -235,6 +267,8 @@ from .prediction_uri import PredictionUri
 from .project import Project
 from .project_summary import ProjectSummary
 from .register_model_artifact_reference_details import RegisterModelArtifactReferenceDetails
+from .resource_limit_configuration import ResourceLimitConfiguration
+from .resource_request_configuration import ResourceRequestConfiguration
 from .retention_operation_details import RetentionOperationDetails
 from .retention_setting import RetentionSetting
 from .scaling_configuration import ScalingConfiguration
@@ -249,28 +283,41 @@ from .schedule_interval_trigger import ScheduleIntervalTrigger
 from .schedule_log_details import ScheduleLogDetails
 from .schedule_summary import ScheduleSummary
 from .schedule_trigger import ScheduleTrigger
+from .single_model_configuration_details import SingleModelConfigurationDetails
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
+from .single_model_deployment_flex_configuration_details import SingleModelDeploymentFlexConfigurationDetails
 from .stacked_model_group_details import StackedModelGroupDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .storage_mount_configuration_details import StorageMountConfigurationDetails
 from .tag_configuration import TagConfiguration
+from .target_custom_expression_query_scaling_configuration import TargetCustomExpressionQueryScalingConfiguration
+from .target_custom_metric_expression_rule import TargetCustomMetricExpressionRule
+from .target_predefined_expression_threshold_scaling_configuration import TargetPredefinedExpressionThresholdScalingConfiguration
+from .target_predefined_metric_expression_rule import TargetPredefinedMetricExpressionRule
+from .target_scaling_configuration import TargetScalingConfiguration
 from .threshold_based_auto_scaling_policy_details import ThresholdBasedAutoScalingPolicyDetails
 from .trigger_ml_application_instance_flow_details import TriggerMlApplicationInstanceFlowDetails
 from .trigger_ml_application_instance_view_flow_details import TriggerMlApplicationInstanceViewFlowDetails
 from .trigger_parameter import TriggerParameter
 from .update_category_log_details import UpdateCategoryLogDetails
+from .update_compute_configuration_details import UpdateComputeConfigurationDetails
+from .update_compute_target_details import UpdateComputeTargetDetails
 from .update_data_science_private_endpoint_details import UpdateDataSciencePrivateEndpointDetails
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
 from .update_infrastructure_configuration_details import UpdateInfrastructureConfigurationDetails
 from .update_instance_pool_infrastructure_configuration_details import UpdateInstancePoolInfrastructureConfigurationDetails
 from .update_job_details import UpdateJobDetails
 from .update_job_run_details import UpdateJobRunDetails
+from .update_managed_compute_cluster_configuration_details import UpdateManagedComputeClusterConfigurationDetails
+from .update_managed_compute_cluster_instance_configuration_details import UpdateManagedComputeClusterInstanceConfigurationDetails
+from .update_managed_compute_cluster_model_deploy_infrastructure_config_details import UpdateManagedComputeClusterModelDeployInfrastructureConfigDetails
 from .update_ml_application_details import UpdateMlApplicationDetails
 from .update_ml_application_implementation_details import UpdateMlApplicationImplementationDetails
 from .update_ml_application_implementation_version_details import UpdateMlApplicationImplementationVersionDetails
 from .update_ml_application_instance_details import UpdateMlApplicationInstanceDetails
 from .update_ml_application_instance_view_details import UpdateMlApplicationInstanceViewDetails
 from .update_model_configuration_details import UpdateModelConfigurationDetails
+from .update_model_deploy_infrastructure_configuration_details import UpdateModelDeployInfrastructureConfigurationDetails
 from .update_model_deployment_configuration_details import UpdateModelDeploymentConfigurationDetails
 from .update_model_deployment_details import UpdateModelDeploymentDetails
 from .update_model_deployment_environment_configuration_details import UpdateModelDeploymentEnvironmentConfigurationDetails
@@ -287,7 +334,9 @@ from .update_pipeline_details import UpdatePipelineDetails
 from .update_pipeline_run_details import UpdatePipelineRunDetails
 from .update_project_details import UpdateProjectDetails
 from .update_schedule_details import UpdateScheduleDetails
+from .update_single_model_configuration_details import UpdateSingleModelConfigurationDetails
 from .update_single_model_deployment_configuration_details import UpdateSingleModelDeploymentConfigurationDetails
+from .update_single_model_deployment_flex_configuration_details import UpdateSingleModelDeploymentFlexConfigurationDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -308,6 +357,7 @@ data_science_type_mapping = {
     "BackupOperationDetails": BackupOperationDetails,
     "BackupSetting": BackupSetting,
     "CategoryLogDetails": CategoryLogDetails,
+    "ChangeComputeTargetCompartmentDetails": ChangeComputeTargetCompartmentDetails,
     "ChangeDataSciencePrivateEndpointCompartmentDetails": ChangeDataSciencePrivateEndpointCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeJobRunCompartmentDetails": ChangeJobRunCompartmentDetails,
@@ -328,15 +378,19 @@ data_science_type_mapping = {
     "CloneCreateFromModelGroupDetails": CloneCreateFromModelGroupDetails,
     "CloneCreateFromModelGroupVersionHistoryDetails": CloneCreateFromModelGroupVersionHistoryDetails,
     "CloneModelGroupDetails": CloneModelGroupDetails,
+    "ComputeConfigurationDetails": ComputeConfigurationDetails,
+    "ComputeTarget": ComputeTarget,
+    "ComputeTargetShapeSummary": ComputeTargetShapeSummary,
+    "ComputeTargetSummary": ComputeTargetSummary,
+    "ComputeTargetSystemData": ComputeTargetSystemData,
     "ConfigurationProperty": ConfigurationProperty,
     "ConfigurationPropertySchema": ConfigurationPropertySchema,
     "ContainerSummary": ContainerSummary,
     "CreateAuthConfigurationDetails": CreateAuthConfigurationDetails,
     "CreateBaseModelGroupDetails": CreateBaseModelGroupDetails,
+    "CreateComputeTargetDetails": CreateComputeTargetDetails,
     "CreateDataSciencePrivateEndpointDetails": CreateDataSciencePrivateEndpointDetails,
     "CreateIamAuthConfigurationCreateDetails": CreateIamAuthConfigurationCreateDetails,
-    "CreateIdcsAuthConfigurationDetails": CreateIdcsAuthConfigurationDetails,
-    "CreateIdcsCustomServiceAuthConfigurationDetails": CreateIdcsCustomServiceAuthConfigurationDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobRunDetails": CreateJobRunDetails,
     "CreateJobRunScheduleActionDetails": CreateJobRunScheduleActionDetails,
@@ -382,11 +436,10 @@ data_science_type_mapping = {
     "HeterogeneousModelGroupDetails": HeterogeneousModelGroupDetails,
     "HomogeneousModelGroupDetails": HomogeneousModelGroupDetails,
     "IamAuthConfiguration": IamAuthConfiguration,
-    "IdcsAuthConfiguration": IdcsAuthConfiguration,
-    "IdcsCustomServiceAuthConfiguration": IdcsCustomServiceAuthConfiguration,
     "ImplementationLogDetails": ImplementationLogDetails,
     "ImplementationLogging": ImplementationLogging,
     "ImportModelArtifactDetails": ImportModelArtifactDetails,
+    "InferenceHttpEndpoint": InferenceHttpEndpoint,
     "InfrastructureConfigurationDetails": InfrastructureConfigurationDetails,
     "InstanceComponent": InstanceComponent,
     "InstanceConfiguration": InstanceConfiguration,
@@ -414,6 +467,33 @@ data_science_type_mapping = {
     "JobShapeSummary": JobShapeSummary,
     "JobSummary": JobSummary,
     "LogDetails": LogDetails,
+    "ManagedComputeClusterAutoScalingPolicy": ManagedComputeClusterAutoScalingPolicy,
+    "ManagedComputeClusterAutoScalingPolicyDetails": ManagedComputeClusterAutoScalingPolicyDetails,
+    "ManagedComputeClusterComputeConfigurationDetails": ManagedComputeClusterComputeConfigurationDetails,
+    "ManagedComputeClusterCustomExpressionQueryScalingConfiguration": ManagedComputeClusterCustomExpressionQueryScalingConfiguration,
+    "ManagedComputeClusterCustomMetricExpressionRule": ManagedComputeClusterCustomMetricExpressionRule,
+    "ManagedComputeClusterFixedSizeScalingPolicy": ManagedComputeClusterFixedSizeScalingPolicy,
+    "ManagedComputeClusterInstanceConfigurationDetails": ManagedComputeClusterInstanceConfigurationDetails,
+    "ManagedComputeClusterInstanceShapeDetails": ManagedComputeClusterInstanceShapeDetails,
+    "ManagedComputeClusterJobInfrastructureConfigurationDetails": ManagedComputeClusterJobInfrastructureConfigurationDetails,
+    "ManagedComputeClusterJobResourceConfiguration": ManagedComputeClusterJobResourceConfiguration,
+    "ManagedComputeClusterMetricExpressionRule": ManagedComputeClusterMetricExpressionRule,
+    "ManagedComputeClusterModelDeployInfrastructureConfigDetails": ManagedComputeClusterModelDeployInfrastructureConfigDetails,
+    "ManagedComputeClusterModelDeploymentResourceConfiguration": ManagedComputeClusterModelDeploymentResourceConfiguration,
+    "ManagedComputeClusterModelDeploymentSystemData": ManagedComputeClusterModelDeploymentSystemData,
+    "ManagedComputeClusterPredefinedExpressionThresholdScalingConfiguration": ManagedComputeClusterPredefinedExpressionThresholdScalingConfiguration,
+    "ManagedComputeClusterPredefinedMetricExpressionRule": ManagedComputeClusterPredefinedMetricExpressionRule,
+    "ManagedComputeClusterScalingConfiguration": ManagedComputeClusterScalingConfiguration,
+    "ManagedComputeClusterScalingPolicy": ManagedComputeClusterScalingPolicy,
+    "ManagedComputeClusterSystemData": ManagedComputeClusterSystemData,
+    "ManagedComputeClusterThresholdBasedAutoScalingPolicyDetails": ManagedComputeClusterThresholdBasedAutoScalingPolicyDetails,
+    "ManagedComputeClusterWorkloadAutoScalingPolicy": ManagedComputeClusterWorkloadAutoScalingPolicy,
+    "ManagedComputeClusterWorkloadAutoScalingPolicyDetails": ManagedComputeClusterWorkloadAutoScalingPolicyDetails,
+    "ManagedComputeClusterWorkloadFixedSizeScalingPolicy": ManagedComputeClusterWorkloadFixedSizeScalingPolicy,
+    "ManagedComputeClusterWorkloadMetricExpressionRule": ManagedComputeClusterWorkloadMetricExpressionRule,
+    "ManagedComputeClusterWorkloadScalePolicy": ManagedComputeClusterWorkloadScalePolicy,
+    "ManagedComputeClusterWorkloadScalingPolicy": ManagedComputeClusterWorkloadScalingPolicy,
+    "ManagedComputeClusterWorkloadThresholdBasedPolicyDetails": ManagedComputeClusterWorkloadThresholdBasedPolicyDetails,
     "ManagedEgressStandaloneJobInfrastructureConfigurationDetails": ManagedEgressStandaloneJobInfrastructureConfigurationDetails,
     "MemberModelDetails": MemberModelDetails,
     "MemberModelEntries": MemberModelEntries,
@@ -440,6 +520,7 @@ data_science_type_mapping = {
     "Model": Model,
     "ModelArtifactReferenceDetails": ModelArtifactReferenceDetails,
     "ModelConfigurationDetails": ModelConfigurationDetails,
+    "ModelDeployInfrastructureConfigurationDetails": ModelDeployInfrastructureConfigurationDetails,
     "ModelDeployWorkloadConfigurationDetails": ModelDeployWorkloadConfigurationDetails,
     "ModelDeployment": ModelDeployment,
     "ModelDeploymentConfigurationDetails": ModelDeploymentConfigurationDetails,
@@ -526,6 +607,8 @@ data_science_type_mapping = {
     "Project": Project,
     "ProjectSummary": ProjectSummary,
     "RegisterModelArtifactReferenceDetails": RegisterModelArtifactReferenceDetails,
+    "ResourceLimitConfiguration": ResourceLimitConfiguration,
+    "ResourceRequestConfiguration": ResourceRequestConfiguration,
     "RetentionOperationDetails": RetentionOperationDetails,
     "RetentionSetting": RetentionSetting,
     "ScalingConfiguration": ScalingConfiguration,
@@ -540,28 +623,41 @@ data_science_type_mapping = {
     "ScheduleLogDetails": ScheduleLogDetails,
     "ScheduleSummary": ScheduleSummary,
     "ScheduleTrigger": ScheduleTrigger,
+    "SingleModelConfigurationDetails": SingleModelConfigurationDetails,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
+    "SingleModelDeploymentFlexConfigurationDetails": SingleModelDeploymentFlexConfigurationDetails,
     "StackedModelGroupDetails": StackedModelGroupDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "StorageMountConfigurationDetails": StorageMountConfigurationDetails,
     "TagConfiguration": TagConfiguration,
+    "TargetCustomExpressionQueryScalingConfiguration": TargetCustomExpressionQueryScalingConfiguration,
+    "TargetCustomMetricExpressionRule": TargetCustomMetricExpressionRule,
+    "TargetPredefinedExpressionThresholdScalingConfiguration": TargetPredefinedExpressionThresholdScalingConfiguration,
+    "TargetPredefinedMetricExpressionRule": TargetPredefinedMetricExpressionRule,
+    "TargetScalingConfiguration": TargetScalingConfiguration,
     "ThresholdBasedAutoScalingPolicyDetails": ThresholdBasedAutoScalingPolicyDetails,
     "TriggerMlApplicationInstanceFlowDetails": TriggerMlApplicationInstanceFlowDetails,
     "TriggerMlApplicationInstanceViewFlowDetails": TriggerMlApplicationInstanceViewFlowDetails,
     "TriggerParameter": TriggerParameter,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
+    "UpdateComputeConfigurationDetails": UpdateComputeConfigurationDetails,
+    "UpdateComputeTargetDetails": UpdateComputeTargetDetails,
     "UpdateDataSciencePrivateEndpointDetails": UpdateDataSciencePrivateEndpointDetails,
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,
     "UpdateInfrastructureConfigurationDetails": UpdateInfrastructureConfigurationDetails,
     "UpdateInstancePoolInfrastructureConfigurationDetails": UpdateInstancePoolInfrastructureConfigurationDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateJobRunDetails": UpdateJobRunDetails,
+    "UpdateManagedComputeClusterConfigurationDetails": UpdateManagedComputeClusterConfigurationDetails,
+    "UpdateManagedComputeClusterInstanceConfigurationDetails": UpdateManagedComputeClusterInstanceConfigurationDetails,
+    "UpdateManagedComputeClusterModelDeployInfrastructureConfigDetails": UpdateManagedComputeClusterModelDeployInfrastructureConfigDetails,
     "UpdateMlApplicationDetails": UpdateMlApplicationDetails,
     "UpdateMlApplicationImplementationDetails": UpdateMlApplicationImplementationDetails,
     "UpdateMlApplicationImplementationVersionDetails": UpdateMlApplicationImplementationVersionDetails,
     "UpdateMlApplicationInstanceDetails": UpdateMlApplicationInstanceDetails,
     "UpdateMlApplicationInstanceViewDetails": UpdateMlApplicationInstanceViewDetails,
     "UpdateModelConfigurationDetails": UpdateModelConfigurationDetails,
+    "UpdateModelDeployInfrastructureConfigurationDetails": UpdateModelDeployInfrastructureConfigurationDetails,
     "UpdateModelDeploymentConfigurationDetails": UpdateModelDeploymentConfigurationDetails,
     "UpdateModelDeploymentDetails": UpdateModelDeploymentDetails,
     "UpdateModelDeploymentEnvironmentConfigurationDetails": UpdateModelDeploymentEnvironmentConfigurationDetails,
@@ -578,7 +674,9 @@ data_science_type_mapping = {
     "UpdatePipelineRunDetails": UpdatePipelineRunDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateScheduleDetails": UpdateScheduleDetails,
+    "UpdateSingleModelConfigurationDetails": UpdateSingleModelConfigurationDetails,
     "UpdateSingleModelDeploymentConfigurationDetails": UpdateSingleModelDeploymentConfigurationDetails,
+    "UpdateSingleModelDeploymentFlexConfigurationDetails": UpdateSingleModelDeploymentFlexConfigurationDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

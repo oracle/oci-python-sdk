@@ -39,6 +39,10 @@ class ScheduledAction(object):
     #: This constant has a value of "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"
     ACTION_TYPE_FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE = "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"
 
+    #: A constant which can be used with the action_type property of a ScheduledAction.
+    #: This constant has a value of "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+    ACTION_TYPE_DB_SERVER_ONLINE_SOFTWARE_UPDATE = "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+
     #: A constant which can be used with the lifecycle_state property of a ScheduledAction.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -98,7 +102,7 @@ class ScheduledAction(object):
 
         :param action_type:
             The value to assign to the action_type property of this ScheduledAction.
-            Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_type: str
 
@@ -360,7 +364,7 @@ class ScheduledAction(object):
         **[Required]** Gets the action_type of this ScheduledAction.
         The type of the scheduled action being performed
 
-        Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -379,7 +383,7 @@ class ScheduledAction(object):
         :param action_type: The action_type of this ScheduledAction.
         :type: str
         """
-        allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"]
+        allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"]
         if not value_allowed_none_or_none_sentinel(action_type, allowed_values):
             action_type = 'UNKNOWN_ENUM_VALUE'
         self._action_type = action_type

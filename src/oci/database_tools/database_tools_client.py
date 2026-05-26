@@ -173,7 +173,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_connection_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -291,7 +291,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_database_api_gateway_config_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/AddDatabaseToolsDatabaseApiGatewayConfigLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -409,7 +409,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_identity_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/AddDatabaseToolsIdentityLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -527,7 +527,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_mcp_server_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/AddDatabaseToolsMcpServerLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -645,7 +645,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets/{databaseToolsMcpToolsetId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_mcp_toolset_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/AddDatabaseToolsMcpToolsetLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -763,7 +763,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_private_endpoint_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -881,7 +881,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports/{databaseToolsSqlReportId}/actions/addLock"
         method = "POST"
         operation_name = "add_database_tools_sql_report_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/AddDatabaseToolsSqlReportLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -997,7 +997,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}/actions/cascadingDelete"
         method = "POST"
         operation_name = "cascading_delete_database_tools_mcp_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/CascadingDeleteDatabaseToolsMcpServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1119,7 +1119,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_connection_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1251,7 +1251,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_database_api_gateway_config_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1383,7 +1383,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_identity_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ChangeDatabaseToolsIdentityCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1511,7 +1511,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_mcp_server_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/ChangeDatabaseToolsMcpServerCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1639,7 +1639,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets/{databaseToolsMcpToolsetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_mcp_toolset_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/ChangeDatabaseToolsMcpToolsetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1771,7 +1771,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_private_endpoint_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1899,7 +1899,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports/{databaseToolsSqlReportId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_sql_report_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/ChangeDatabaseToolsSqlReportCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2128,7 +2128,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs"
         method = "POST"
         operation_name = "create_database_tools_database_api_gateway_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/CreateDatabaseToolsDatabaseApiGatewayConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2663,7 +2663,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports"
         method = "POST"
         operation_name = "create_database_tools_sql_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/CreateDatabaseToolsSqlReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2773,7 +2773,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "DELETE"
         operation_name = "delete_database_tools_connection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2896,7 +2896,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}"
         method = "DELETE"
         operation_name = "delete_database_tools_database_api_gateway_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3019,7 +3019,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}"
         method = "DELETE"
         operation_name = "delete_database_tools_identity"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/DeleteDatabaseToolsIdentity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3142,7 +3142,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}"
         method = "DELETE"
         operation_name = "delete_database_tools_mcp_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/DeleteDatabaseToolsMcpServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3265,7 +3265,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets/{databaseToolsMcpToolsetId}"
         method = "DELETE"
         operation_name = "delete_database_tools_mcp_toolset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/DeleteDatabaseToolsMcpToolset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3388,7 +3388,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_database_tools_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3511,7 +3511,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports/{databaseToolsSqlReportId}"
         method = "DELETE"
         operation_name = "delete_database_tools_sql_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/DeleteDatabaseToolsSqlReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3624,7 +3624,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "GET"
         operation_name = "get_database_tools_connection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3731,7 +3731,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}"
         method = "GET"
         operation_name = "get_database_tools_database_api_gateway_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/GetDatabaseToolsDatabaseApiGatewayConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3838,7 +3838,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsEndpointServices/{databaseToolsEndpointServiceId}"
         method = "GET"
         operation_name = "get_database_tools_endpoint_service"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3945,7 +3945,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}"
         method = "GET"
         operation_name = "get_database_tools_identity"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/GetDatabaseToolsIdentity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4052,7 +4052,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}"
         method = "GET"
         operation_name = "get_database_tools_mcp_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/GetDatabaseToolsMcpServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4159,7 +4159,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets/{databaseToolsMcpToolsetId}"
         method = "GET"
         operation_name = "get_database_tools_mcp_toolset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/GetDatabaseToolsMcpToolset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4266,7 +4266,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "GET"
         operation_name = "get_database_tools_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4373,7 +4373,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports/{databaseToolsSqlReportId}"
         method = "GET"
         operation_name = "get_database_tools_sql_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/GetDatabaseToolsSqlReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4480,7 +4480,7 @@ class DatabaseToolsClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4631,7 +4631,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections"
         method = "GET"
         operation_name = "list_database_tools_connections"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4827,7 +4827,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs"
         method = "GET"
         operation_name = "list_database_tools_database_api_gateway_configs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4999,7 +4999,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsEndpointServices"
         method = "GET"
         operation_name = "list_database_tools_endpoint_services"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5168,7 +5168,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities"
         method = "GET"
         operation_name = "list_database_tools_identities"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ListDatabaseToolsIdentities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5352,7 +5352,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers"
         method = "GET"
         operation_name = "list_database_tools_mcp_servers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/ListDatabaseToolsMcpServers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5507,7 +5507,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsetVersions"
         method = "GET"
         operation_name = "list_database_tools_mcp_toolset_versions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolsetVersionCollection/ListDatabaseToolsMcpToolsetVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5645,7 +5645,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets"
         method = "GET"
         operation_name = "list_database_tools_mcp_toolsets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/ListDatabaseToolsMcpToolsets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5822,7 +5822,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints"
         method = "GET"
         operation_name = "list_database_tools_private_endpoints"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5990,7 +5990,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports"
         method = "GET"
         operation_name = "list_database_tools_sql_reports"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/ListDatabaseToolsSqlReports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6151,7 +6151,7 @@ class DatabaseToolsClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6302,7 +6302,7 @@ class DatabaseToolsClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6458,7 +6458,7 @@ class DatabaseToolsClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6594,7 +6594,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}/actions/refreshCredential"
         method = "POST"
         operation_name = "refresh_database_tools_identity_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RefreshDatabaseToolsIdentityCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6710,7 +6710,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_connection_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6828,7 +6828,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_database_api_gateway_config_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/RemoveDatabaseToolsDatabaseApiGatewayConfigLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6946,7 +6946,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_identity_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RemoveDatabaseToolsIdentityLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7064,7 +7064,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_mcp_server_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/RemoveDatabaseToolsMcpServerLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7182,7 +7182,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets/{databaseToolsMcpToolsetId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_mcp_toolset_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/RemoveDatabaseToolsMcpToolsetLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7300,7 +7300,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_private_endpoint_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7418,7 +7418,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports/{databaseToolsSqlReportId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_database_tools_sql_report_lock"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/RemoveDatabaseToolsSqlReportLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7540,7 +7540,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "PUT"
         operation_name = "update_database_tools_connection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7668,7 +7668,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}"
         method = "PUT"
         operation_name = "update_database_tools_database_api_gateway_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/UpdateDatabaseToolsDatabaseApiGatewayConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7798,7 +7798,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}"
         method = "PUT"
         operation_name = "update_database_tools_identity"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/UpdateDatabaseToolsIdentity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7926,7 +7926,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpServers/{databaseToolsMcpServerId}"
         method = "PUT"
         operation_name = "update_database_tools_mcp_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/UpdateDatabaseToolsMcpServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8054,7 +8054,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsMcpToolsets/{databaseToolsMcpToolsetId}"
         method = "PUT"
         operation_name = "update_database_tools_mcp_toolset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/UpdateDatabaseToolsMcpToolset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8182,7 +8182,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_database_tools_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8310,7 +8310,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsSqlReports/{databaseToolsSqlReportId}"
         method = "PUT"
         operation_name = "update_database_tools_sql_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/UpdateDatabaseToolsSqlReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8437,7 +8437,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/validateConnection"
         method = "POST"
         operation_name = "validate_database_tools_connection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8557,7 +8557,7 @@ class DatabaseToolsClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}/actions/validateCredential"
         method = "POST"
         operation_name = "validate_database_tools_identity_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

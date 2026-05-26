@@ -549,6 +549,45 @@ class GoldenGateClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def clone_pipeline_and_wait_for_state(self, clone_pipeline_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.clone_pipeline` and waits for the :py:class:`~oci.golden_gate.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.golden_gate.models.ClonePipelineDetails clone_pipeline_details: (required)
+            Details to clone the pipeline.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.clone_pipeline`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.clone_pipeline(clone_pipeline_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def collect_deployment_diagnostic_and_wait_for_state(self, deployment_id, collect_deployment_diagnostic_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.golden_gate.GoldenGateClient.collect_deployment_diagnostic` and waits for the :py:class:`~oci.golden_gate.models.WorkRequest`
@@ -1313,6 +1352,48 @@ class GoldenGateClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.export_deployment_wallet(deployment_id, export_deployment_wallet_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def generate_disaster_recovery_precheck_report_and_wait_for_state(self, deployment_id, generate_disaster_recovery_precheck_report_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.generate_disaster_recovery_precheck_report` and waits for the :py:class:`~oci.golden_gate.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str deployment_id: (required)
+            A unique Deployment identifier.
+
+        :param oci.golden_gate.models.GenerateDisasterRecoveryPrecheckReportDetails generate_disaster_recovery_precheck_report_details: (required)
+            Parameters for the DR precheck report generation request.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.generate_disaster_recovery_precheck_report`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.generate_disaster_recovery_precheck_report(deployment_id, generate_disaster_recovery_precheck_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

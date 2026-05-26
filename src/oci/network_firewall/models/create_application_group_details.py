@@ -74,7 +74,7 @@ class CreateApplicationGroupDetails(object):
     @property
     def apps(self):
         """
-        **[Required]** Gets the apps of this CreateApplicationGroupDetails.
+        Gets the apps of this CreateApplicationGroupDetails.
         Collection of application names.
 
 

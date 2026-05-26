@@ -58,6 +58,10 @@ class OggDeployment(object):
             The value to assign to the password_secret_id property of this OggDeployment.
         :type password_secret_id: str
 
+        :param key_secret_id:
+            The value to assign to the key_secret_id property of this OggDeployment.
+        :type key_secret_id: str
+
         :param group_to_roles_mapping:
             The value to assign to the group_to_roles_mapping property of this OggDeployment.
         :type group_to_roles_mapping: oci.golden_gate.models.GroupToRolesMappingDetails
@@ -71,6 +75,7 @@ class OggDeployment(object):
             'credential_store': 'str',
             'identity_domain_id': 'str',
             'password_secret_id': 'str',
+            'key_secret_id': 'str',
             'group_to_roles_mapping': 'GroupToRolesMappingDetails'
         }
         self.attribute_map = {
@@ -81,6 +86,7 @@ class OggDeployment(object):
             'credential_store': 'credentialStore',
             'identity_domain_id': 'identityDomainId',
             'password_secret_id': 'passwordSecretId',
+            'key_secret_id': 'keySecretId',
             'group_to_roles_mapping': 'groupToRolesMapping'
         }
         self._deployment_name = None
@@ -90,6 +96,7 @@ class OggDeployment(object):
         self._credential_store = None
         self._identity_domain_id = None
         self._password_secret_id = None
+        self._key_secret_id = None
         self._group_to_roles_mapping = None
 
     @property
@@ -275,6 +282,34 @@ class OggDeployment(object):
         :type: str
         """
         self._password_secret_id = password_secret_id
+
+    @property
+    def key_secret_id(self):
+        """
+        Gets the key_secret_id of this OggDeployment.
+        The `OCID`__ of the Secret where the deployment ssl private key is stored in PEM format.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_secret_id of this OggDeployment.
+        :rtype: str
+        """
+        return self._key_secret_id
+
+    @key_secret_id.setter
+    def key_secret_id(self, key_secret_id):
+        """
+        Sets the key_secret_id of this OggDeployment.
+        The `OCID`__ of the Secret where the deployment ssl private key is stored in PEM format.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param key_secret_id: The key_secret_id of this OggDeployment.
+        :type: str
+        """
+        self._key_secret_id = key_secret_id
 
     @property
     def group_to_roles_mapping(self):

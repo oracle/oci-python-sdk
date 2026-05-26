@@ -28,6 +28,10 @@ class UpdateCloudExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window property of this UpdateCloudExadataInfrastructureDetails.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param maintenance_version_preferences:
+            The value to assign to the maintenance_version_preferences property of this UpdateCloudExadataInfrastructureDetails.
+        :type maintenance_version_preferences: oci.database.models.MaintenanceVersionPreferenceDetails
+
         :param compute_count:
             The value to assign to the compute_count property of this UpdateCloudExadataInfrastructureDetails.
         :type compute_count: int
@@ -52,6 +56,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_version_preferences': 'MaintenanceVersionPreferenceDetails',
             'compute_count': 'int',
             'storage_count': 'int',
             'freeform_tags': 'dict(str, str)',
@@ -61,6 +66,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_version_preferences': 'maintenanceVersionPreferences',
             'compute_count': 'computeCount',
             'storage_count': 'storageCount',
             'freeform_tags': 'freeformTags',
@@ -69,6 +75,7 @@ class UpdateCloudExadataInfrastructureDetails(object):
         }
         self._display_name = None
         self._maintenance_window = None
+        self._maintenance_version_preferences = None
         self._compute_count = None
         self._storage_count = None
         self._freeform_tags = None
@@ -118,6 +125,26 @@ class UpdateCloudExadataInfrastructureDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_version_preferences(self):
+        """
+        Gets the maintenance_version_preferences of this UpdateCloudExadataInfrastructureDetails.
+
+        :return: The maintenance_version_preferences of this UpdateCloudExadataInfrastructureDetails.
+        :rtype: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        return self._maintenance_version_preferences
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, maintenance_version_preferences):
+        """
+        Sets the maintenance_version_preferences of this UpdateCloudExadataInfrastructureDetails.
+
+        :param maintenance_version_preferences: The maintenance_version_preferences of this UpdateCloudExadataInfrastructureDetails.
+        :type: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        self._maintenance_version_preferences = maintenance_version_preferences
 
     @property
     def compute_count(self):

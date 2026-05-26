@@ -19,6 +19,10 @@ class ModelDeploymentSystemData(object):
     #: This constant has a value of "INSTANCE_POOL"
     SYSTEM_INFRA_TYPE_INSTANCE_POOL = "INSTANCE_POOL"
 
+    #: A constant which can be used with the system_infra_type property of a ModelDeploymentSystemData.
+    #: This constant has a value of "MANAGED_COMPUTE_CLUSTER"
+    SYSTEM_INFRA_TYPE_MANAGED_COMPUTE_CLUSTER = "MANAGED_COMPUTE_CLUSTER"
+
     #: A constant which can be used with the model_type property of a ModelDeploymentSystemData.
     #: This constant has a value of "MANAGED_MODEL"
     MODEL_TYPE_MANAGED_MODEL = "MANAGED_MODEL"
@@ -28,13 +32,14 @@ class ModelDeploymentSystemData(object):
         Initializes a new ModelDeploymentSystemData object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.ManagedComputeClusterModelDeploymentSystemData`
         * :class:`~oci.data_science.models.InstancePoolModelDeploymentSystemData`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param system_infra_type:
             The value to assign to the system_infra_type property of this ModelDeploymentSystemData.
-            Allowed values for this property are: "INSTANCE_POOL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTANCE_POOL", "MANAGED_COMPUTE_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type system_infra_type: str
 
@@ -64,6 +69,9 @@ class ModelDeploymentSystemData(object):
         """
         type = object_dictionary['systemInfraType']
 
+        if type == 'MANAGED_COMPUTE_CLUSTER':
+            return 'ManagedComputeClusterModelDeploymentSystemData'
+
         if type == 'INSTANCE_POOL':
             return 'InstancePoolModelDeploymentSystemData'
         else:
@@ -75,7 +83,7 @@ class ModelDeploymentSystemData(object):
         Gets the system_infra_type of this ModelDeploymentSystemData.
         The infrastructure type of the model deployment.
 
-        Allowed values for this property are: "INSTANCE_POOL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTANCE_POOL", "MANAGED_COMPUTE_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -94,7 +102,7 @@ class ModelDeploymentSystemData(object):
         :param system_infra_type: The system_infra_type of this ModelDeploymentSystemData.
         :type: str
         """
-        allowed_values = ["INSTANCE_POOL"]
+        allowed_values = ["INSTANCE_POOL", "MANAGED_COMPUTE_CLUSTER"]
         if not value_allowed_none_or_none_sentinel(system_infra_type, allowed_values):
             system_infra_type = 'UNKNOWN_ENUM_VALUE'
         self._system_infra_type = system_infra_type

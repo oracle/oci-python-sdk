@@ -76,6 +76,10 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_management: str
 
+        :param local_volume_size_in_gbs:
+            The value to assign to the local_volume_size_in_gbs property of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        :type local_volume_size_in_gbs: int
+
         """
         self.swagger_types = {
             'ocpus': 'float',
@@ -83,7 +87,8 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
             'memory_in_gbs': 'float',
             'baseline_ocpu_utilization': 'str',
             'nvmes': 'int',
-            'resource_management': 'str'
+            'resource_management': 'str',
+            'local_volume_size_in_gbs': 'int'
         }
         self.attribute_map = {
             'ocpus': 'ocpus',
@@ -91,7 +96,8 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
             'memory_in_gbs': 'memoryInGBs',
             'baseline_ocpu_utilization': 'baselineOcpuUtilization',
             'nvmes': 'nvmes',
-            'resource_management': 'resourceManagement'
+            'resource_management': 'resourceManagement',
+            'local_volume_size_in_gbs': 'localVolumeSizeInGBs'
         }
         self._ocpus = None
         self._vcpus = None
@@ -99,6 +105,7 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
         self._baseline_ocpu_utilization = None
         self._nvmes = None
         self._resource_management = None
+        self._local_volume_size_in_gbs = None
 
     @property
     def ocpus(self):
@@ -271,6 +278,34 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
         if not value_allowed_none_or_none_sentinel(resource_management, allowed_values):
             resource_management = 'UNKNOWN_ENUM_VALUE'
         self._resource_management = resource_management
+
+    @property
+    def local_volume_size_in_gbs(self):
+        """
+        Gets the local_volume_size_in_gbs of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape
+        is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);
+        any non-null value for a non-DenseLV shape results in an error.
+
+
+        :return: The local_volume_size_in_gbs of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        :rtype: int
+        """
+        return self._local_volume_size_in_gbs
+
+    @local_volume_size_in_gbs.setter
+    def local_volume_size_in_gbs(self, local_volume_size_in_gbs):
+        """
+        Sets the local_volume_size_in_gbs of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape
+        is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);
+        any non-null value for a non-DenseLV shape results in an error.
+
+
+        :param local_volume_size_in_gbs: The local_volume_size_in_gbs of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        :type: int
+        """
+        self._local_volume_size_in_gbs = local_volume_size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

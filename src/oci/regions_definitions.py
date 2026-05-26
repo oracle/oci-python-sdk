@@ -72,6 +72,7 @@ REGIONS_SHORT_NAMES = {
     'str': 'eu-frankfurt-2',
     'beg': 'eu-jovanovac-1',
     'doh': 'me-dcc-doha-1',
+    'vve': 'me-alrayyan-1',
     'ebb': 'us-somerset-1',
     'ebl': 'us-thames-1',
     'avz': 'eu-dcc-zurich-1',
@@ -169,6 +170,7 @@ REGION_REALMS = {
     'eu-jovanovac-1': 'oc20',
 
     'me-dcc-doha-1': 'oc21',
+    'me-alrayyan-1': 'oc21',
 
     'us-somerset-1': 'oc23',
     'us-thames-1': 'oc23',
@@ -285,6 +287,7 @@ REGIONS = [
     'eu-frankfurt-2',
     'eu-jovanovac-1',
     'me-dcc-doha-1',
+    'me-alrayyan-1',
     'us-somerset-1',
     'us-thames-1',
     'eu-dcc-zurich-1',

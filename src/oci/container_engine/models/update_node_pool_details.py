@@ -101,6 +101,10 @@ class UpdateNodePoolDetails(object):
             Allowed values for this property are: "VFIO", "E1000", "PARAVIRTUALIZED"
         :type network_launch_type: str
 
+        :param primary_vnic:
+            The value to assign to the primary_vnic property of this UpdateNodePoolDetails.
+        :type primary_vnic: oci.container_engine.models.NodePoolPrimaryVnicDetails
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -119,7 +123,8 @@ class UpdateNodePoolDetails(object):
             'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'NodePoolCyclingDetails',
             'secondary_vnics': 'list[NodePoolSecondaryVnicDetails]',
-            'network_launch_type': 'str'
+            'network_launch_type': 'str',
+            'primary_vnic': 'NodePoolPrimaryVnicDetails'
         }
         self.attribute_map = {
             'name': 'name',
@@ -138,7 +143,8 @@ class UpdateNodePoolDetails(object):
             'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'nodePoolCyclingDetails',
             'secondary_vnics': 'secondaryVnics',
-            'network_launch_type': 'networkLaunchType'
+            'network_launch_type': 'networkLaunchType',
+            'primary_vnic': 'primaryVnic'
         }
         self._name = None
         self._kubernetes_version = None
@@ -157,6 +163,7 @@ class UpdateNodePoolDetails(object):
         self._node_pool_cycling_details = None
         self._secondary_vnics = None
         self._network_launch_type = None
+        self._primary_vnic = None
 
     @property
     def name(self):
@@ -598,6 +605,26 @@ class UpdateNodePoolDetails(object):
                 f"Invalid value for `network_launch_type`, must be None or one of {allowed_values}"
             )
         self._network_launch_type = network_launch_type
+
+    @property
+    def primary_vnic(self):
+        """
+        Gets the primary_vnic of this UpdateNodePoolDetails.
+
+        :return: The primary_vnic of this UpdateNodePoolDetails.
+        :rtype: oci.container_engine.models.NodePoolPrimaryVnicDetails
+        """
+        return self._primary_vnic
+
+    @primary_vnic.setter
+    def primary_vnic(self, primary_vnic):
+        """
+        Sets the primary_vnic of this UpdateNodePoolDetails.
+
+        :param primary_vnic: The primary_vnic of this UpdateNodePoolDetails.
+        :type: oci.container_engine.models.NodePoolPrimaryVnicDetails
+        """
+        self._primary_vnic = primary_vnic
 
     def __repr__(self):
         return formatted_flat_dict(self)

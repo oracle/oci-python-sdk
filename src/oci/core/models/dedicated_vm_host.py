@@ -115,6 +115,14 @@ class DedicatedVmHost(object):
             The value to assign to the remaining_memory_in_gbs property of this DedicatedVmHost.
         :type remaining_memory_in_gbs: float
 
+        :param total_local_volume_in_gbs:
+            The value to assign to the total_local_volume_in_gbs property of this DedicatedVmHost.
+        :type total_local_volume_in_gbs: float
+
+        :param remaining_local_volume_in_gbs:
+            The value to assign to the remaining_local_volume_in_gbs property of this DedicatedVmHost.
+        :type remaining_local_volume_in_gbs: float
+
         :param capacity_bins:
             The value to assign to the capacity_bins property of this DedicatedVmHost.
         :type capacity_bins: list[oci.core.models.CapacityBin]
@@ -142,6 +150,8 @@ class DedicatedVmHost(object):
             'remaining_ocpus': 'float',
             'total_memory_in_gbs': 'float',
             'remaining_memory_in_gbs': 'float',
+            'total_local_volume_in_gbs': 'float',
+            'remaining_local_volume_in_gbs': 'float',
             'capacity_bins': 'list[CapacityBin]',
             'compute_bare_metal_host_id': 'str'
         }
@@ -163,6 +173,8 @@ class DedicatedVmHost(object):
             'remaining_ocpus': 'remainingOcpus',
             'total_memory_in_gbs': 'totalMemoryInGBs',
             'remaining_memory_in_gbs': 'remainingMemoryInGBs',
+            'total_local_volume_in_gbs': 'totalLocalVolumeInGBs',
+            'remaining_local_volume_in_gbs': 'remainingLocalVolumeInGBs',
             'capacity_bins': 'capacityBins',
             'compute_bare_metal_host_id': 'computeBareMetalHostId'
         }
@@ -183,6 +195,8 @@ class DedicatedVmHost(object):
         self._remaining_ocpus = None
         self._total_memory_in_gbs = None
         self._remaining_memory_in_gbs = None
+        self._total_local_volume_in_gbs = None
+        self._remaining_local_volume_in_gbs = None
         self._capacity_bins = None
         self._compute_bare_metal_host_id = None
 
@@ -661,9 +675,59 @@ class DedicatedVmHost(object):
         self._remaining_memory_in_gbs = remaining_memory_in_gbs
 
     @property
+    def total_local_volume_in_gbs(self):
+        """
+        Gets the total_local_volume_in_gbs of this DedicatedVmHost.
+        The total local volume of the dedicated VM host, in GBs.
+
+
+        :return: The total_local_volume_in_gbs of this DedicatedVmHost.
+        :rtype: float
+        """
+        return self._total_local_volume_in_gbs
+
+    @total_local_volume_in_gbs.setter
+    def total_local_volume_in_gbs(self, total_local_volume_in_gbs):
+        """
+        Sets the total_local_volume_in_gbs of this DedicatedVmHost.
+        The total local volume of the dedicated VM host, in GBs.
+
+
+        :param total_local_volume_in_gbs: The total_local_volume_in_gbs of this DedicatedVmHost.
+        :type: float
+        """
+        self._total_local_volume_in_gbs = total_local_volume_in_gbs
+
+    @property
+    def remaining_local_volume_in_gbs(self):
+        """
+        Gets the remaining_local_volume_in_gbs of this DedicatedVmHost.
+        The remaining local volume of the dedicated VM host, in GBs.
+
+
+        :return: The remaining_local_volume_in_gbs of this DedicatedVmHost.
+        :rtype: float
+        """
+        return self._remaining_local_volume_in_gbs
+
+    @remaining_local_volume_in_gbs.setter
+    def remaining_local_volume_in_gbs(self, remaining_local_volume_in_gbs):
+        """
+        Sets the remaining_local_volume_in_gbs of this DedicatedVmHost.
+        The remaining local volume of the dedicated VM host, in GBs.
+
+
+        :param remaining_local_volume_in_gbs: The remaining_local_volume_in_gbs of this DedicatedVmHost.
+        :type: float
+        """
+        self._remaining_local_volume_in_gbs = remaining_local_volume_in_gbs
+
+    @property
     def capacity_bins(self):
         """
         Gets the capacity_bins of this DedicatedVmHost.
+        A list of total and remaining CPU, memory, and local volume per capacity bucket.
+
 
         :return: The capacity_bins of this DedicatedVmHost.
         :rtype: list[oci.core.models.CapacityBin]
@@ -674,6 +738,8 @@ class DedicatedVmHost(object):
     def capacity_bins(self, capacity_bins):
         """
         Sets the capacity_bins of this DedicatedVmHost.
+        A list of total and remaining CPU, memory, and local volume per capacity bucket.
+
 
         :param capacity_bins: The capacity_bins of this DedicatedVmHost.
         :type: list[oci.core.models.CapacityBin]

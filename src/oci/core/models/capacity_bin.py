@@ -40,6 +40,14 @@ class CapacityBin(object):
             The value to assign to the remaining_memory_in_gbs property of this CapacityBin.
         :type remaining_memory_in_gbs: float
 
+        :param total_local_volume_in_gbs:
+            The value to assign to the total_local_volume_in_gbs property of this CapacityBin.
+        :type total_local_volume_in_gbs: float
+
+        :param remaining_local_volume_in_gbs:
+            The value to assign to the remaining_local_volume_in_gbs property of this CapacityBin.
+        :type remaining_local_volume_in_gbs: float
+
         :param supported_shapes:
             The value to assign to the supported_shapes property of this CapacityBin.
         :type supported_shapes: list[str]
@@ -51,6 +59,8 @@ class CapacityBin(object):
             'remaining_ocpus': 'float',
             'total_memory_in_gbs': 'float',
             'remaining_memory_in_gbs': 'float',
+            'total_local_volume_in_gbs': 'float',
+            'remaining_local_volume_in_gbs': 'float',
             'supported_shapes': 'list[str]'
         }
         self.attribute_map = {
@@ -59,6 +69,8 @@ class CapacityBin(object):
             'remaining_ocpus': 'remainingOcpus',
             'total_memory_in_gbs': 'totalMemoryInGBs',
             'remaining_memory_in_gbs': 'remainingMemoryInGBs',
+            'total_local_volume_in_gbs': 'totalLocalVolumeInGBs',
+            'remaining_local_volume_in_gbs': 'remainingLocalVolumeInGBs',
             'supported_shapes': 'supportedShapes'
         }
         self._capacity_index = None
@@ -66,6 +78,8 @@ class CapacityBin(object):
         self._remaining_ocpus = None
         self._total_memory_in_gbs = None
         self._remaining_memory_in_gbs = None
+        self._total_local_volume_in_gbs = None
+        self._remaining_local_volume_in_gbs = None
         self._supported_shapes = None
 
     @property
@@ -187,6 +201,54 @@ class CapacityBin(object):
         :type: float
         """
         self._remaining_memory_in_gbs = remaining_memory_in_gbs
+
+    @property
+    def total_local_volume_in_gbs(self):
+        """
+        Gets the total_local_volume_in_gbs of this CapacityBin.
+        The total local volume of the capacity bucket, in GBs.
+
+
+        :return: The total_local_volume_in_gbs of this CapacityBin.
+        :rtype: float
+        """
+        return self._total_local_volume_in_gbs
+
+    @total_local_volume_in_gbs.setter
+    def total_local_volume_in_gbs(self, total_local_volume_in_gbs):
+        """
+        Sets the total_local_volume_in_gbs of this CapacityBin.
+        The total local volume of the capacity bucket, in GBs.
+
+
+        :param total_local_volume_in_gbs: The total_local_volume_in_gbs of this CapacityBin.
+        :type: float
+        """
+        self._total_local_volume_in_gbs = total_local_volume_in_gbs
+
+    @property
+    def remaining_local_volume_in_gbs(self):
+        """
+        Gets the remaining_local_volume_in_gbs of this CapacityBin.
+        The remaining local volume of the capacity bucket, in GBs.
+
+
+        :return: The remaining_local_volume_in_gbs of this CapacityBin.
+        :rtype: float
+        """
+        return self._remaining_local_volume_in_gbs
+
+    @remaining_local_volume_in_gbs.setter
+    def remaining_local_volume_in_gbs(self, remaining_local_volume_in_gbs):
+        """
+        Sets the remaining_local_volume_in_gbs of this CapacityBin.
+        The remaining local volume of the capacity bucket, in GBs.
+
+
+        :param remaining_local_volume_in_gbs: The remaining_local_volume_in_gbs of this CapacityBin.
+        :type: float
+        """
+        self._remaining_local_volume_in_gbs = remaining_local_volume_in_gbs
 
     @property
     def supported_shapes(self):

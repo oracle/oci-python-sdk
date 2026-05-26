@@ -71,6 +71,22 @@ class CreateDeploymentDetails(object):
     #: This constant has a value of "DATA_TRANSFORMS"
     DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
 
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "VERIDATA_SERVER"
+    DEPLOYMENT_TYPE_VERIDATA_SERVER = "VERIDATA_SERVER"
+
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "VERIDATA_AGENT"
+    DEPLOYMENT_TYPE_VERIDATA_AGENT = "VERIDATA_AGENT"
+
+    #: A constant which can be used with the disaster_recovery_status property of a CreateDeploymentDetails.
+    #: This constant has a value of "ENABLED"
+    DISASTER_RECOVERY_STATUS_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the disaster_recovery_status property of a CreateDeploymentDetails.
+    #: This constant has a value of "DISABLED"
+    DISASTER_RECOVERY_STATUS_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDeploymentDetails object with values from keyword arguments.
@@ -168,7 +184,7 @@ class CreateDeploymentDetails(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this CreateDeploymentDetails.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS"
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"
         :type deployment_type: str
 
         :param subscription_id:
@@ -182,6 +198,11 @@ class CreateDeploymentDetails(object):
         :param security_attributes:
             The value to assign to the security_attributes property of this CreateDeploymentDetails.
         :type security_attributes: dict(str, dict(str, object))
+
+        :param disaster_recovery_status:
+            The value to assign to the disaster_recovery_status property of this CreateDeploymentDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type disaster_recovery_status: str
 
         :param ogg_data:
             The value to assign to the ogg_data property of this CreateDeploymentDetails.
@@ -227,6 +248,7 @@ class CreateDeploymentDetails(object):
             'subscription_id': 'str',
             'cluster_placement_group_id': 'str',
             'security_attributes': 'dict(str, dict(str, object))',
+            'disaster_recovery_status': 'str',
             'ogg_data': 'CreateOggDeploymentDetails',
             'maintenance_window': 'CreateMaintenanceWindowDetails',
             'maintenance_configuration': 'CreateMaintenanceConfigurationDetails',
@@ -259,6 +281,7 @@ class CreateDeploymentDetails(object):
             'subscription_id': 'subscriptionId',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'security_attributes': 'securityAttributes',
+            'disaster_recovery_status': 'disasterRecoveryStatus',
             'ogg_data': 'oggData',
             'maintenance_window': 'maintenanceWindow',
             'maintenance_configuration': 'maintenanceConfiguration',
@@ -290,6 +313,7 @@ class CreateDeploymentDetails(object):
         self._subscription_id = None
         self._cluster_placement_group_id = None
         self._security_attributes = None
+        self._disaster_recovery_status = None
         self._ogg_data = None
         self._maintenance_window = None
         self._maintenance_configuration = None
@@ -905,7 +929,7 @@ class CreateDeploymentDetails(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS"
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"
 
 
         :return: The deployment_type of this CreateDeploymentDetails.
@@ -925,7 +949,7 @@ class CreateDeploymentDetails(object):
         :param deployment_type: The deployment_type of this CreateDeploymentDetails.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"
@@ -1021,6 +1045,39 @@ class CreateDeploymentDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def disaster_recovery_status(self):
+        """
+        Gets the disaster_recovery_status of this CreateDeploymentDetails.
+        Indicates if disaster recovery is enabled for a deployment.
+        If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The disaster_recovery_status of this CreateDeploymentDetails.
+        :rtype: str
+        """
+        return self._disaster_recovery_status
+
+    @disaster_recovery_status.setter
+    def disaster_recovery_status(self, disaster_recovery_status):
+        """
+        Sets the disaster_recovery_status of this CreateDeploymentDetails.
+        Indicates if disaster recovery is enabled for a deployment.
+        If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+
+
+        :param disaster_recovery_status: The disaster_recovery_status of this CreateDeploymentDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(disaster_recovery_status, allowed_values):
+            raise ValueError(
+                f"Invalid value for `disaster_recovery_status`, must be None or one of {allowed_values}"
+            )
+        self._disaster_recovery_status = disaster_recovery_status
 
     @property
     def ogg_data(self):

@@ -64,6 +64,10 @@ class CreateVnicDetails(object):
             The value to assign to the subnet_id property of this CreateVnicDetails.
         :type subnet_id: str
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateVnicDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -76,7 +80,8 @@ class CreateVnicDetails(object):
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'list[Ipv6AddressIpv6SubnetCidrPairDetails]',
             'nsg_ids': 'list[str]',
             'skip_source_dest_check': 'bool',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -89,7 +94,8 @@ class CreateVnicDetails(object):
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
             'nsg_ids': 'nsgIds',
             'skip_source_dest_check': 'skipSourceDestCheck',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'security_attributes': 'securityAttributes'
         }
         self._display_name = None
         self._assign_ipv6_ip = None
@@ -102,6 +108,7 @@ class CreateVnicDetails(object):
         self._nsg_ids = None
         self._skip_source_dest_check = None
         self._subnet_id = None
+        self._security_attributes = None
 
     @property
     def display_name(self):
@@ -386,6 +393,40 @@ class CreateVnicDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateVnicDetails.
+        `Security attributes`__ are labels
+                for a resource that can be referenced in a `Zero Trust Packet Routing`__
+                (ZPR) policy to control access to ZPR-supported resources.
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this CreateVnicDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateVnicDetails.
+        `Security attributes`__ are labels
+                for a resource that can be referenced in a `Zero Trust Packet Routing`__
+                (ZPR) policy to control access to ZPR-supported resources.
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this CreateVnicDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

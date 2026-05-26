@@ -307,6 +307,10 @@ class AutonomousDwDatabase(object):
     #: This constant has a value of "SHARED"
     NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
 
+    #: A constant which can be used with the net_services_architecture property of a AutonomousDwDatabase.
+    #: This constant has a value of "DRCP"
+    NET_SERVICES_ARCHITECTURE_DRCP = "DRCP"
+
     #: A constant which can be used with the clone_type property of a AutonomousDwDatabase.
     #: This constant has a value of "FULL"
     CLONE_TYPE_FULL = "FULL"
@@ -867,7 +871,7 @@ class AutonomousDwDatabase(object):
 
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this AutonomousDwDatabase.
-            Allowed values for this property are: "DEDICATED", "SHARED"
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP"
         :type net_services_architecture: str
 
         :param availability_domain:
@@ -3117,6 +3121,7 @@ class AutonomousDwDatabase(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -3141,6 +3146,7 @@ class AutonomousDwDatabase(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4876,7 +4882,7 @@ class AutonomousDwDatabase(object):
         Gets the net_services_architecture of this AutonomousDwDatabase.
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 
-        Allowed values for this property are: "DEDICATED", "SHARED"
+        Allowed values for this property are: "DEDICATED", "SHARED", "DRCP"
 
 
         :return: The net_services_architecture of this AutonomousDwDatabase.
@@ -4894,7 +4900,7 @@ class AutonomousDwDatabase(object):
         :param net_services_architecture: The net_services_architecture of this AutonomousDwDatabase.
         :type: str
         """
-        allowed_values = ["DEDICATED", "SHARED"]
+        allowed_values = ["DEDICATED", "SHARED", "DRCP"]
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             raise ValueError(
                 f"Invalid value for `net_services_architecture`, must be None or one of {allowed_values}"

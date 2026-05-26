@@ -31,6 +31,26 @@ class UpdateAutonomousContainerDatabaseDetails(object):
     #: This constant has a value of "LATEST_RELEASE_UPDATE"
     VERSION_PREFERENCE_LATEST_RELEASE_UPDATE = "LATEST_RELEASE_UPDATE"
 
+    #: A constant which can be used with the distribution_affinity property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "MINIMUM_DISTRIBUTION"
+    DISTRIBUTION_AFFINITY_MINIMUM_DISTRIBUTION = "MINIMUM_DISTRIBUTION"
+
+    #: A constant which can be used with the distribution_affinity property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_DISTRIBUTION"
+    DISTRIBUTION_AFFINITY_MAXIMUM_DISTRIBUTION = "MAXIMUM_DISTRIBUTION"
+
+    #: A constant which can be used with the net_services_architecture property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "DEDICATED"
+    NET_SERVICES_ARCHITECTURE_DEDICATED = "DEDICATED"
+
+    #: A constant which can be used with the net_services_architecture property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "SHARED"
+    NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
+
+    #: A constant which can be used with the net_services_architecture property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "DRCP"
+    NET_SERVICES_ARCHITECTURE_DRCP = "DRCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAutonomousContainerDatabaseDetails object with values from keyword arguments.
@@ -82,6 +102,24 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             The value to assign to the backup_config property of this UpdateAutonomousContainerDatabaseDetails.
         :type backup_config: oci.database.models.AutonomousContainerDatabaseBackupConfig
 
+        :param db_split_threshold:
+            The value to assign to the db_split_threshold property of this UpdateAutonomousContainerDatabaseDetails.
+        :type db_split_threshold: int
+
+        :param vm_failover_reservation:
+            The value to assign to the vm_failover_reservation property of this UpdateAutonomousContainerDatabaseDetails.
+        :type vm_failover_reservation: int
+
+        :param distribution_affinity:
+            The value to assign to the distribution_affinity property of this UpdateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"
+        :type distribution_affinity: str
+
+        :param net_services_architecture:
+            The value to assign to the net_services_architecture property of this UpdateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP"
+        :type net_services_architecture: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -94,7 +132,11 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'is_dst_file_update_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'backup_config': 'AutonomousContainerDatabaseBackupConfig'
+            'backup_config': 'AutonomousContainerDatabaseBackupConfig',
+            'db_split_threshold': 'int',
+            'vm_failover_reservation': 'int',
+            'distribution_affinity': 'str',
+            'net_services_architecture': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -107,7 +149,11 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'backup_config': 'backupConfig'
+            'backup_config': 'backupConfig',
+            'db_split_threshold': 'dbSplitThreshold',
+            'vm_failover_reservation': 'vmFailoverReservation',
+            'distribution_affinity': 'distributionAffinity',
+            'net_services_architecture': 'netServicesArchitecture'
         }
         self._display_name = None
         self._customer_contacts = None
@@ -120,6 +166,10 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
+        self._db_split_threshold = None
+        self._vm_failover_reservation = None
+        self._distribution_affinity = None
+        self._net_services_architecture = None
 
     @property
     def display_name(self):
@@ -408,6 +458,116 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         :type: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         self._backup_config = backup_config
+
+    @property
+    def db_split_threshold(self):
+        """
+        Gets the db_split_threshold of this UpdateAutonomousContainerDatabaseDetails.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+
+
+        :return: The db_split_threshold of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._db_split_threshold
+
+    @db_split_threshold.setter
+    def db_split_threshold(self, db_split_threshold):
+        """
+        Sets the db_split_threshold of this UpdateAutonomousContainerDatabaseDetails.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+
+
+        :param db_split_threshold: The db_split_threshold of this UpdateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._db_split_threshold = db_split_threshold
+
+    @property
+    def vm_failover_reservation(self):
+        """
+        Gets the vm_failover_reservation of this UpdateAutonomousContainerDatabaseDetails.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
+
+
+        :return: The vm_failover_reservation of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._vm_failover_reservation
+
+    @vm_failover_reservation.setter
+    def vm_failover_reservation(self, vm_failover_reservation):
+        """
+        Sets the vm_failover_reservation of this UpdateAutonomousContainerDatabaseDetails.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
+
+
+        :param vm_failover_reservation: The vm_failover_reservation of this UpdateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._vm_failover_reservation = vm_failover_reservation
+
+    @property
+    def distribution_affinity(self):
+        """
+        Gets the distribution_affinity of this UpdateAutonomousContainerDatabaseDetails.
+        Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+
+        Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"
+
+
+        :return: The distribution_affinity of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._distribution_affinity
+
+    @distribution_affinity.setter
+    def distribution_affinity(self, distribution_affinity):
+        """
+        Sets the distribution_affinity of this UpdateAutonomousContainerDatabaseDetails.
+        Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+
+
+        :param distribution_affinity: The distribution_affinity of this UpdateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"]
+        if not value_allowed_none_or_none_sentinel(distribution_affinity, allowed_values):
+            raise ValueError(
+                f"Invalid value for `distribution_affinity`, must be None or one of {allowed_values}"
+            )
+        self._distribution_affinity = distribution_affinity
+
+    @property
+    def net_services_architecture(self):
+        """
+        Gets the net_services_architecture of this UpdateAutonomousContainerDatabaseDetails.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+        Allowed values for this property are: "DEDICATED", "SHARED", "DRCP"
+
+
+        :return: The net_services_architecture of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._net_services_architecture
+
+    @net_services_architecture.setter
+    def net_services_architecture(self, net_services_architecture):
+        """
+        Sets the net_services_architecture of this UpdateAutonomousContainerDatabaseDetails.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+
+        :param net_services_architecture: The net_services_architecture of this UpdateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["DEDICATED", "SHARED", "DRCP"]
+        if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
+            raise ValueError(
+                f"Invalid value for `net_services_architecture`, must be None or one of {allowed_values}"
+            )
+        self._net_services_architecture = net_services_architecture
 
     def __repr__(self):
         return formatted_flat_dict(self)

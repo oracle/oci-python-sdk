@@ -58,6 +58,14 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
             The value to assign to the environment_variables property of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
         :type environment_variables: dict(str, str)
 
+        :param predict_api_specification:
+            The value to assign to the predict_api_specification property of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :type predict_api_specification: str
+
+        :param custom_http_endpoints:
+            The value to assign to the custom_http_endpoints property of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :type custom_http_endpoints: list[oci.data_science.models.InferenceHttpEndpoint]
+
         """
         self.swagger_types = {
             'environment_configuration_type': 'str',
@@ -68,7 +76,9 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
             'entrypoint': 'list[str]',
             'server_port': 'int',
             'health_check_port': 'int',
-            'environment_variables': 'dict(str, str)'
+            'environment_variables': 'dict(str, str)',
+            'predict_api_specification': 'str',
+            'custom_http_endpoints': 'list[InferenceHttpEndpoint]'
         }
         self.attribute_map = {
             'environment_configuration_type': 'environmentConfigurationType',
@@ -79,7 +89,9 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
             'entrypoint': 'entrypoint',
             'server_port': 'serverPort',
             'health_check_port': 'healthCheckPort',
-            'environment_variables': 'environmentVariables'
+            'environment_variables': 'environmentVariables',
+            'predict_api_specification': 'predictApiSpecification',
+            'custom_http_endpoints': 'customHttpEndpoints'
         }
         self._environment_configuration_type = None
         self._image = None
@@ -90,6 +102,8 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
         self._server_port = None
         self._health_check_port = None
         self._environment_variables = None
+        self._predict_api_specification = None
+        self._custom_http_endpoints = None
         self._environment_configuration_type = 'OCIR_CONTAINER'
 
     @property
@@ -337,6 +351,58 @@ class UpdateOcirModelDeploymentEnvironmentConfigurationDetails(UpdateModelDeploy
         :type: dict(str, str)
         """
         self._environment_variables = environment_variables
+
+    @property
+    def predict_api_specification(self):
+        """
+        Gets the predict_api_specification of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        The chosen specification from predefined set of endpoints a user can access.
+        For example, if the value is 'openai', the user can access OpenAI-compliant endpoints
+        like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+
+
+        :return: The predict_api_specification of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :rtype: str
+        """
+        return self._predict_api_specification
+
+    @predict_api_specification.setter
+    def predict_api_specification(self, predict_api_specification):
+        """
+        Sets the predict_api_specification of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        The chosen specification from predefined set of endpoints a user can access.
+        For example, if the value is 'openai', the user can access OpenAI-compliant endpoints
+        like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+
+
+        :param predict_api_specification: The predict_api_specification of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :type: str
+        """
+        self._predict_api_specification = predict_api_specification
+
+    @property
+    def custom_http_endpoints(self):
+        """
+        Gets the custom_http_endpoints of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+
+
+        :return: The custom_http_endpoints of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :rtype: list[oci.data_science.models.InferenceHttpEndpoint]
+        """
+        return self._custom_http_endpoints
+
+    @custom_http_endpoints.setter
+    def custom_http_endpoints(self, custom_http_endpoints):
+        """
+        Sets the custom_http_endpoints of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+
+
+        :param custom_http_endpoints: The custom_http_endpoints of this UpdateOcirModelDeploymentEnvironmentConfigurationDetails.
+        :type: list[oci.data_science.models.InferenceHttpEndpoint]
+        """
+        self._custom_http_endpoints = custom_http_endpoints
 
     def __repr__(self):
         return formatted_flat_dict(self)

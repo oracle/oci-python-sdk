@@ -186,6 +186,10 @@ class ExecutionWindowSummary(object):
             The value to assign to the system_tags property of this ExecutionWindowSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param window_details:
+            The value to assign to the window_details property of this ExecutionWindowSummary.
+        :type window_details: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -209,7 +213,8 @@ class ExecutionWindowSummary(object):
             'window_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'window_details': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -233,7 +238,8 @@ class ExecutionWindowSummary(object):
             'window_type': 'windowType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'window_details': 'windowDetails'
         }
         self._id = None
         self._execution_resource_id = None
@@ -257,6 +263,7 @@ class ExecutionWindowSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._window_details = None
 
     @property
     def id(self):
@@ -843,6 +850,36 @@ class ExecutionWindowSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def window_details(self):
+        """
+        Gets the window_details of this ExecutionWindowSummary.
+        A message that gives a description of its creation. For example, if the window type is unplanned,
+        the message must specify the window display name. If the window has been deferred from another window,
+        the message should additionally reference the deferred window\u2019s display name and provide the justification
+        for creating the unplanned window.
+
+
+        :return: The window_details of this ExecutionWindowSummary.
+        :rtype: str
+        """
+        return self._window_details
+
+    @window_details.setter
+    def window_details(self, window_details):
+        """
+        Sets the window_details of this ExecutionWindowSummary.
+        A message that gives a description of its creation. For example, if the window type is unplanned,
+        the message must specify the window display name. If the window has been deferred from another window,
+        the message should additionally reference the deferred window\u2019s display name and provide the justification
+        for creating the unplanned window.
+
+
+        :param window_details: The window_details of this ExecutionWindowSummary.
+        :type: str
+        """
+        self._window_details = window_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

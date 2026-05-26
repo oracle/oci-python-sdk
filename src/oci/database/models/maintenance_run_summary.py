@@ -308,9 +308,17 @@ class MaintenanceRunSummary(object):
             The value to assign to the total_time_taken_in_mins property of this MaintenanceRunSummary.
         :type total_time_taken_in_mins: int
 
+        :param reference_resource_id_for_image_updates:
+            The value to assign to the reference_resource_id_for_image_updates property of this MaintenanceRunSummary.
+        :type reference_resource_id_for_image_updates: str
+
         :param database_software_image_id:
             The value to assign to the database_software_image_id property of this MaintenanceRunSummary.
         :type database_software_image_id: str
+
+        :param window_type_descriptions:
+            The value to assign to the window_type_descriptions property of this MaintenanceRunSummary.
+        :type window_type_descriptions: list[oci.database.models.WindowTypeDescription]
 
         """
         self.swagger_types = {
@@ -347,7 +355,9 @@ class MaintenanceRunSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'is_maintenance_run_granular': 'bool',
             'total_time_taken_in_mins': 'int',
-            'database_software_image_id': 'str'
+            'reference_resource_id_for_image_updates': 'str',
+            'database_software_image_id': 'str',
+            'window_type_descriptions': 'list[WindowTypeDescription]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -383,7 +393,9 @@ class MaintenanceRunSummary(object):
             'system_tags': 'systemTags',
             'is_maintenance_run_granular': 'isMaintenanceRunGranular',
             'total_time_taken_in_mins': 'totalTimeTakenInMins',
-            'database_software_image_id': 'databaseSoftwareImageId'
+            'reference_resource_id_for_image_updates': 'referenceResourceIdForImageUpdates',
+            'database_software_image_id': 'databaseSoftwareImageId',
+            'window_type_descriptions': 'windowTypeDescriptions'
         }
         self._id = None
         self._compartment_id = None
@@ -418,7 +430,9 @@ class MaintenanceRunSummary(object):
         self._system_tags = None
         self._is_maintenance_run_granular = None
         self._total_time_taken_in_mins = None
+        self._reference_resource_id_for_image_updates = None
         self._database_software_image_id = None
+        self._window_type_descriptions = None
 
     @property
     def id(self):
@@ -1265,6 +1279,38 @@ class MaintenanceRunSummary(object):
         self._total_time_taken_in_mins = total_time_taken_in_mins
 
     @property
+    def reference_resource_id_for_image_updates(self):
+        """
+        Gets the reference_resource_id_for_image_updates of this MaintenanceRunSummary.
+        The `OCID`__ of the resource the maintenance run will refer to when trying to fetch target versions.
+        This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.
+        Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The reference_resource_id_for_image_updates of this MaintenanceRunSummary.
+        :rtype: str
+        """
+        return self._reference_resource_id_for_image_updates
+
+    @reference_resource_id_for_image_updates.setter
+    def reference_resource_id_for_image_updates(self, reference_resource_id_for_image_updates):
+        """
+        Sets the reference_resource_id_for_image_updates of this MaintenanceRunSummary.
+        The `OCID`__ of the resource the maintenance run will refer to when trying to fetch target versions.
+        This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.
+        Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param reference_resource_id_for_image_updates: The reference_resource_id_for_image_updates of this MaintenanceRunSummary.
+        :type: str
+        """
+        self._reference_resource_id_for_image_updates = reference_resource_id_for_image_updates
+
+    @property
     def database_software_image_id(self):
         """
         Gets the database_software_image_id of this MaintenanceRunSummary.
@@ -1291,6 +1337,30 @@ class MaintenanceRunSummary(object):
         :type: str
         """
         self._database_software_image_id = database_software_image_id
+
+    @property
+    def window_type_descriptions(self):
+        """
+        Gets the window_type_descriptions of this MaintenanceRunSummary.
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+
+
+        :return: The window_type_descriptions of this MaintenanceRunSummary.
+        :rtype: list[oci.database.models.WindowTypeDescription]
+        """
+        return self._window_type_descriptions
+
+    @window_type_descriptions.setter
+    def window_type_descriptions(self, window_type_descriptions):
+        """
+        Sets the window_type_descriptions of this MaintenanceRunSummary.
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+
+
+        :param window_type_descriptions: The window_type_descriptions of this MaintenanceRunSummary.
+        :type: list[oci.database.models.WindowTypeDescription]
+        """
+        self._window_type_descriptions = window_type_descriptions
 
     def __repr__(self):
         return formatted_flat_dict(self)

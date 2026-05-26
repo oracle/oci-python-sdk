@@ -6,6 +6,8 @@
 
 from __future__ import absolute_import
 
+from .additional_capability_details import AdditionalCapabilityDetails
+from .additional_compute_capability_details import AdditionalComputeCapabilityDetails
 from .capabilities_collection import CapabilitiesCollection
 from .capability_details import CapabilityDetails
 from .change_cluster_placement_group_compartment_details import ChangeClusterPlacementGroupCompartmentDetails
@@ -26,6 +28,8 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for cluster_placement_groups services.
 cluster_placement_groups_type_mapping = {
+    "AdditionalCapabilityDetails": AdditionalCapabilityDetails,
+    "AdditionalComputeCapabilityDetails": AdditionalComputeCapabilityDetails,
     "CapabilitiesCollection": CapabilitiesCollection,
     "CapabilityDetails": CapabilityDetails,
     "ChangeClusterPlacementGroupCompartmentDetails": ChangeClusterPlacementGroupCompartmentDetails,

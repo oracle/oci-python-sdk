@@ -31,6 +31,14 @@ class CreateAutonomousVmClusterDetails(object):
     #: This constant has a value of "OCPU"
     COMPUTE_MODEL_OCPU = "OCPU"
 
+    #: A constant which can be used with the distribution_algorithm property of a CreateAutonomousVmClusterDetails.
+    #: This constant has a value of "RESOURCE_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_RESOURCE_OPTIMIZED = "RESOURCE_OPTIMIZED"
+
+    #: A constant which can be used with the distribution_algorithm property of a CreateAutonomousVmClusterDetails.
+    #: This constant has a value of "DISTRIBUTION_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_DISTRIBUTION_OPTIMIZED = "DISTRIBUTION_OPTIMIZED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousVmClusterDetails object with values from keyword arguments.
@@ -114,6 +122,15 @@ class CreateAutonomousVmClusterDetails(object):
             The value to assign to the is_mtls_enabled property of this CreateAutonomousVmClusterDetails.
         :type is_mtls_enabled: bool
 
+        :param distribution_algorithm:
+            The value to assign to the distribution_algorithm property of this CreateAutonomousVmClusterDetails.
+            Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"
+        :type distribution_algorithm: str
+
+        :param sga_percentage:
+            The value to assign to the sga_percentage property of this CreateAutonomousVmClusterDetails.
+        :type sga_percentage: float
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -134,7 +151,9 @@ class CreateAutonomousVmClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'scan_listener_port_tls': 'int',
             'scan_listener_port_non_tls': 'int',
-            'is_mtls_enabled': 'bool'
+            'is_mtls_enabled': 'bool',
+            'distribution_algorithm': 'str',
+            'sga_percentage': 'float'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -155,7 +174,9 @@ class CreateAutonomousVmClusterDetails(object):
             'defined_tags': 'definedTags',
             'scan_listener_port_tls': 'scanListenerPortTls',
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
-            'is_mtls_enabled': 'isMtlsEnabled'
+            'is_mtls_enabled': 'isMtlsEnabled',
+            'distribution_algorithm': 'distributionAlgorithm',
+            'sga_percentage': 'sgaPercentage'
         }
         self._compartment_id = None
         self._display_name = None
@@ -176,6 +197,8 @@ class CreateAutonomousVmClusterDetails(object):
         self._scan_listener_port_tls = None
         self._scan_listener_port_non_tls = None
         self._is_mtls_enabled = None
+        self._distribution_algorithm = None
+        self._sga_percentage = None
 
     @property
     def compartment_id(self):
@@ -678,6 +701,61 @@ class CreateAutonomousVmClusterDetails(object):
         :type: bool
         """
         self._is_mtls_enabled = is_mtls_enabled
+
+    @property
+    def distribution_algorithm(self):
+        """
+        Gets the distribution_algorithm of this CreateAutonomousVmClusterDetails.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+        Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"
+
+
+        :return: The distribution_algorithm of this CreateAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._distribution_algorithm
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, distribution_algorithm):
+        """
+        Sets the distribution_algorithm of this CreateAutonomousVmClusterDetails.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+
+        :param distribution_algorithm: The distribution_algorithm of this CreateAutonomousVmClusterDetails.
+        :type: str
+        """
+        allowed_values = ["RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(distribution_algorithm, allowed_values):
+            raise ValueError(
+                f"Invalid value for `distribution_algorithm`, must be None or one of {allowed_values}"
+            )
+        self._distribution_algorithm = distribution_algorithm
+
+    @property
+    def sga_percentage(self):
+        """
+        Gets the sga_percentage of this CreateAutonomousVmClusterDetails.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :return: The sga_percentage of this CreateAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._sga_percentage
+
+    @sga_percentage.setter
+    def sga_percentage(self, sga_percentage):
+        """
+        Sets the sga_percentage of this CreateAutonomousVmClusterDetails.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :param sga_percentage: The sga_percentage of this CreateAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._sga_percentage = sga_percentage
 
     def __repr__(self):
         return formatted_flat_dict(self)

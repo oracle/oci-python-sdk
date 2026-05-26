@@ -32,6 +32,10 @@ class CapacityBinPreview(object):
             The value to assign to the total_memory_in_gbs property of this CapacityBinPreview.
         :type total_memory_in_gbs: float
 
+        :param total_local_volume_in_gbs:
+            The value to assign to the total_local_volume_in_gbs property of this CapacityBinPreview.
+        :type total_local_volume_in_gbs: float
+
         :param supported_shapes:
             The value to assign to the supported_shapes property of this CapacityBinPreview.
         :type supported_shapes: list[str]
@@ -41,17 +45,20 @@ class CapacityBinPreview(object):
             'capacity_index': 'int',
             'total_ocpus': 'float',
             'total_memory_in_gbs': 'float',
+            'total_local_volume_in_gbs': 'float',
             'supported_shapes': 'list[str]'
         }
         self.attribute_map = {
             'capacity_index': 'capacityIndex',
             'total_ocpus': 'totalOcpus',
             'total_memory_in_gbs': 'totalMemoryInGBs',
+            'total_local_volume_in_gbs': 'totalLocalVolumeInGBs',
             'supported_shapes': 'supportedShapes'
         }
         self._capacity_index = None
         self._total_ocpus = None
         self._total_memory_in_gbs = None
+        self._total_local_volume_in_gbs = None
         self._supported_shapes = None
 
     @property
@@ -125,6 +132,30 @@ class CapacityBinPreview(object):
         :type: float
         """
         self._total_memory_in_gbs = total_memory_in_gbs
+
+    @property
+    def total_local_volume_in_gbs(self):
+        """
+        Gets the total_local_volume_in_gbs of this CapacityBinPreview.
+        The total local volume of the capacity bucket, in GBs.
+
+
+        :return: The total_local_volume_in_gbs of this CapacityBinPreview.
+        :rtype: float
+        """
+        return self._total_local_volume_in_gbs
+
+    @total_local_volume_in_gbs.setter
+    def total_local_volume_in_gbs(self, total_local_volume_in_gbs):
+        """
+        Sets the total_local_volume_in_gbs of this CapacityBinPreview.
+        The total local volume of the capacity bucket, in GBs.
+
+
+        :param total_local_volume_in_gbs: The total_local_volume_in_gbs of this CapacityBinPreview.
+        :type: float
+        """
+        self._total_local_volume_in_gbs = total_local_volume_in_gbs
 
     @property
     def supported_shapes(self):

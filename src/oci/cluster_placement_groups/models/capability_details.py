@@ -28,17 +28,24 @@ class CapabilityDetails(object):
             The value to assign to the name property of this CapabilityDetails.
         :type name: str
 
+        :param additional_details:
+            The value to assign to the additional_details property of this CapabilityDetails.
+        :type additional_details: oci.cluster_placement_groups.models.AdditionalCapabilityDetails
+
         """
         self.swagger_types = {
             'service': 'str',
-            'name': 'str'
+            'name': 'str',
+            'additional_details': 'AdditionalCapabilityDetails'
         }
         self.attribute_map = {
             'service': 'service',
-            'name': 'name'
+            'name': 'name',
+            'additional_details': 'additionalDetails'
         }
         self._service = None
         self._name = None
+        self._additional_details = None
 
     @property
     def service(self):
@@ -87,6 +94,26 @@ class CapabilityDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def additional_details(self):
+        """
+        Gets the additional_details of this CapabilityDetails.
+
+        :return: The additional_details of this CapabilityDetails.
+        :rtype: oci.cluster_placement_groups.models.AdditionalCapabilityDetails
+        """
+        return self._additional_details
+
+    @additional_details.setter
+    def additional_details(self, additional_details):
+        """
+        Sets the additional_details of this CapabilityDetails.
+
+        :param additional_details: The additional_details of this CapabilityDetails.
+        :type: oci.cluster_placement_groups.models.AdditionalCapabilityDetails
+        """
+        self._additional_details = additional_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

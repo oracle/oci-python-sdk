@@ -23,7 +23,7 @@ class InstancePoolModelDeploymentSystemData(ModelDeploymentSystemData):
 
         :param system_infra_type:
             The value to assign to the system_infra_type property of this InstancePoolModelDeploymentSystemData.
-            Allowed values for this property are: "INSTANCE_POOL"
+            Allowed values for this property are: "INSTANCE_POOL", "MANAGED_COMPUTE_CLUSTER"
         :type system_infra_type: str
 
         :param model_type:

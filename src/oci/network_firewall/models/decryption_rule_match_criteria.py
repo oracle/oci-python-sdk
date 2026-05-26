@@ -44,7 +44,7 @@ class DecryptionRuleMatchCriteria(object):
     def source_address(self):
         """
         Gets the source_address of this DecryptionRuleMatchCriteria.
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
 
 
         :return: The source_address of this DecryptionRuleMatchCriteria.
@@ -56,7 +56,7 @@ class DecryptionRuleMatchCriteria(object):
     def source_address(self, source_address):
         """
         Sets the source_address of this DecryptionRuleMatchCriteria.
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
 
 
         :param source_address: The source_address of this DecryptionRuleMatchCriteria.
@@ -68,7 +68,7 @@ class DecryptionRuleMatchCriteria(object):
     def destination_address(self):
         """
         Gets the destination_address of this DecryptionRuleMatchCriteria.
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
 
 
         :return: The destination_address of this DecryptionRuleMatchCriteria.
@@ -80,7 +80,7 @@ class DecryptionRuleMatchCriteria(object):
     def destination_address(self, destination_address):
         """
         Sets the destination_address of this DecryptionRuleMatchCriteria.
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
 
 
         :param destination_address: The destination_address of this DecryptionRuleMatchCriteria.

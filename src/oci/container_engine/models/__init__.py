@@ -59,6 +59,7 @@ from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
 from .node_pool_pod_network_option_details import NodePoolPodNetworkOptionDetails
+from .node_pool_primary_vnic_details import NodePoolPrimaryVnicDetails
 from .node_pool_secondary_vnic_details import NodePoolSecondaryVnicDetails
 from .node_pool_summary import NodePoolSummary
 from .node_shape_config import NodeShapeConfig
@@ -165,6 +166,7 @@ container_engine_type_mapping = {
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
     "NodePoolPodNetworkOptionDetails": NodePoolPodNetworkOptionDetails,
+    "NodePoolPrimaryVnicDetails": NodePoolPrimaryVnicDetails,
     "NodePoolSecondaryVnicDetails": NodePoolSecondaryVnicDetails,
     "NodePoolSummary": NodePoolSummary,
     "NodeShapeConfig": NodeShapeConfig,

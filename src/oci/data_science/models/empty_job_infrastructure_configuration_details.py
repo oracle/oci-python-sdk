@@ -23,7 +23,7 @@ class EmptyJobInfrastructureConfigurationDetails(JobInfrastructureConfigurationD
 
         :param job_infrastructure_type:
             The value to assign to the job_infrastructure_type property of this EmptyJobInfrastructureConfigurationDetails.
-            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY"
+            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY", "MANAGED_COMPUTE_CLUSTER"
         :type job_infrastructure_type: str
 
         """

@@ -23,7 +23,7 @@ class ModelGroupDeploymentConfigurationDetails(ModelDeploymentConfigurationDetai
 
         :param deployment_type:
             The value to assign to the deployment_type property of this ModelGroupDeploymentConfigurationDetails.
-            Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP"
+            Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP", "SINGLE_MODEL_FLEX"
         :type deployment_type: str
 
         :param model_group_configuration_details:

@@ -18,6 +18,8 @@ Cluster Placement Groups
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.cluster_placement_groups.models.AdditionalCapabilityDetails
+    oci.cluster_placement_groups.models.AdditionalComputeCapabilityDetails
     oci.cluster_placement_groups.models.CapabilitiesCollection
     oci.cluster_placement_groups.models.CapabilityDetails
     oci.cluster_placement_groups.models.ChangeClusterPlacementGroupCompartmentDetails

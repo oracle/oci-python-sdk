@@ -43,7 +43,7 @@ class UpdateApplicationGroupDetails(object):
     @property
     def apps(self):
         """
-        **[Required]** Gets the apps of this UpdateApplicationGroupDetails.
+        Gets the apps of this UpdateApplicationGroupDetails.
         Collection of application names.
 
 
